@@ -71,13 +71,13 @@ public class WinGameScreen extends Screen {
       if (this.field7128 == null) {
          this.field7128 = Lists.newArrayList();
          this.field7129 = new IntOpenHashSet();
-         JSonShader var3 = null;
+         IResource var3 = null;
 
          try {
             short var4 = 274;
             if (this.field7125) {
-               var3 = this.mc.getResourceManager().getShader(new ResourceLocation("texts/end.txt"));
-               InputStream var5 = var3.getFile();
+               var3 = this.mc.getResourceManager().getResource(new ResourceLocation("texts/end.txt"));
+               InputStream var5 = var3.getInputStream();
                BufferedReader var6 = new BufferedReader(new InputStreamReader(var5, StandardCharsets.UTF_8));
                Random var7 = new Random(8124371L);
 
@@ -103,7 +103,7 @@ public class WinGameScreen extends Screen {
                }
             }
 
-            InputStream var17 = this.mc.getResourceManager().getShader(new ResourceLocation("texts/credits.txt")).getFile();
+            InputStream var17 = this.mc.getResourceManager().getResource(new ResourceLocation("texts/credits.txt")).getInputStream();
             BufferedReader var18 = new BufferedReader(new InputStreamReader(var17, StandardCharsets.UTF_8));
 
             String var19;
@@ -225,7 +225,7 @@ public class WinGameScreen extends Screen {
       RenderSystem.popMatrix();
       this.mc.getTextureManager().bindTexture(field7123);
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.ZERO, DestFactor.field12933);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.ZERO, DestFactor.ONE_MINUS_SRC_COLOR);
       int var16 = this.width;
       int var18 = this.height;
       Tessellator var14 = Tessellator.getInstance();

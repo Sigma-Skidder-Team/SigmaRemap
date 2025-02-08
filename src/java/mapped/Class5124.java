@@ -19,7 +19,7 @@ public class Class5124 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       ClientWorld var11 = this.field23305.world;
       RenderSystem.pushMatrix();
       RenderSystem.enableBlend();

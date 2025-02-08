@@ -13,7 +13,7 @@ import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
-public class Class1785 implements JSonShader {
+public class Class1785 implements IResource {
    private static String[] field9623;
    private final String field9624;
    private final ResourceLocation field9625;
@@ -30,12 +30,12 @@ public class Class1785 implements JSonShader {
    }
 
    @Override
-   public ResourceLocation method7762() {
+   public ResourceLocation getLocation() {
       return this.field9625;
    }
 
    @Override
-   public InputStream getFile() {
+   public InputStream getInputStream() {
       return this.field9626;
    }
 
@@ -45,7 +45,7 @@ public class Class1785 implements JSonShader {
 
    @Nullable
    @Override
-   public <T> T method7764(IMetadataSectionSerializer<T> var1) {
+   public <T> T getMetadata(IMetadataSectionSerializer<T> var1) {
       if (!this.method7766()) {
          return null;
       } else {
@@ -71,7 +71,7 @@ public class Class1785 implements JSonShader {
    }
 
    @Override
-   public String method7765() {
+   public String getPackName() {
       return this.field9624;
    }
 

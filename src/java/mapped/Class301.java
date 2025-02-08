@@ -23,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.Executor;
 
-public class Class301 implements Class268 {
+public class Class301 implements IFutureReloadListener {
    private static final Logger field1159 = LogManager.getLogger();
    private static final int field1160 = "functions/".length();
    private static final int field1161 = ".mcfunction".length();
@@ -55,10 +55,10 @@ public class Class301 implements Class268 {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       CompletableFuture<Map<ResourceLocation, Class6879>> var9 = this.field1163.method38419(var2, var5);
       CompletableFuture<Map> var10 = CompletableFuture.supplyAsync(
-            () -> var2.method583("functions", var0x -> var0x.endsWith(".mcfunction")), var5
+            () -> var2.getAllResourceLocations("functions", var0x -> var0x.endsWith(".mcfunction")), var5
          )
          .thenCompose(
             var3x -> {
@@ -88,7 +88,7 @@ public class Class301 implements Class268 {
                return CompletableFuture.allOf(var12).handle((var1xx, var2xx) -> var6x);
             }
          );
-      return var9.thenCombine(var10, Pair::of).thenCompose(var1::method22225).thenAcceptAsync(var1x -> {
+      return var9.thenCombine(var10, Pair::of).thenCompose(var1::markCompleteAwaitingOthers).thenAcceptAsync(var1x -> {
          Map<ResourceLocation, CompletableFuture<Class7744>> var4x = var1x.getSecond();
          Builder<ResourceLocation,  Class7744> var5x = ImmutableMap.builder();
          var4x.forEach((var1xx, var2x) -> var2x.handle((var2xx, var3x) -> {
@@ -106,8 +106,8 @@ public class Class301 implements Class268 {
    }
 
    private static List<String> method1181(IResourceManager var0, ResourceLocation var1) {
-      try (JSonShader var4 = var0.getShader(var1)) {
-         return IOUtils.readLines(var4.getFile(), StandardCharsets.UTF_8);
+      try (IResource var4 = var0.getResource(var1)) {
+         return IOUtils.readLines(var4.getInputStream(), StandardCharsets.UTF_8);
       } catch (IOException var18) {
          throw new CompletionException(var18);
       }

@@ -69,7 +69,7 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     private void method16483(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23699 = true;
             }
@@ -79,7 +79,7 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     private void method16484(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23699 = false;
             }

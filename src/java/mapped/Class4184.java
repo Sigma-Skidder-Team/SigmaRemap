@@ -139,7 +139,7 @@ public class Class4184 extends Class4180 {
          Direction var7 = Direction.Plane.HORIZONTAL.method247(var1);
          BlockPos var8 = var3.offset(var7);
          BlockState var9 = var2.getBlockState(var8);
-         if (var9.isAir() && Block.method11549(var6.method23414(var2, var3), var7)) {
+         if (var9.isAir() && Block.method11549(var6.getCollisionShape(var2, var3), var7)) {
             BooleanProperty var10 = Class3402.method12039(var7.getOpposite());
             var2.setBlockState(var8, Blocks.VINE.getDefaultState().with(var10, Boolean.valueOf(true)), 3);
          }

@@ -65,8 +65,8 @@ public class Class7546 implements Class7544 {
    @Nullable
    @Override
    public Class1768 method24664(IResourceManager var1) {
-      try (JSonShader var4 = var1.getShader(this.field32365)) {
-         NativeImage var6 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getFile());
+      try (IResource var4 = var1.getResource(this.field32365)) {
+         NativeImage var6 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getInputStream());
          int var7 = var6.method7886();
          int var8 = var6.method7887();
          int var9 = var7 / this.field32366.get(0).length;

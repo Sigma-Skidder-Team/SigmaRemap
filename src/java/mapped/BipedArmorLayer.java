@@ -24,14 +24,14 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
       this.field914 = (A)var3;
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method843(var1, var2, (T)var4, EquipmentSlotType.CHEST, var3, this.method847(EquipmentSlotType.CHEST));
       this.method843(var1, var2, (T)var4, EquipmentSlotType.LEGS, var3, this.method847(EquipmentSlotType.LEGS));
       this.method843(var1, var2, (T)var4, EquipmentSlotType.FEET, var3, this.method847(EquipmentSlotType.FEET));
       this.method843(var1, var2, (T)var4, EquipmentSlotType.HEAD, var3, this.method847(EquipmentSlotType.HEAD));
    }
 
-   private void method843(MatrixStack var1, Class7733 var2, T var3, EquipmentSlotType var4, int var5, A var6) {
+   private void method843(MatrixStack var1, IRenderTypeBuffer var2, T var3, EquipmentSlotType var4, int var5, A var6) {
       ItemStack var9 = var3.getItemStackFromSlot(var4);
       if (var9.getItem() instanceof ArmorItem) {
          ArmorItem var10 = (ArmorItem)var9.getItem();
@@ -82,12 +82,12 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
    }
 
    private void method845(
-           MatrixStack var1, Class7733 var2, int var3, ArmorItem var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
+           MatrixStack var1, IRenderTypeBuffer var2, int var3, ArmorItem var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
    ) {
       this.method846(var1, var2, var3, var5, (A)var6, var8, var9, var10, this.method849(var4, var7, var11));
    }
 
-   private void method846(MatrixStack var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
+   private void method846(MatrixStack var1, IRenderTypeBuffer var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
       IVertexBuilder var12 = ItemRenderer.method782(var2, RenderType.method14308(var9), false, var4);
       var5.render(var1, var12, var3, OverlayTexture.NO_OVERLAY, var6, var7, var8, 1.0F);
    }

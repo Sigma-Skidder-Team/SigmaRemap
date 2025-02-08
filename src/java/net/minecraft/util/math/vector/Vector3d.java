@@ -86,7 +86,7 @@ public class Vector3d implements IPosition {
       return this.method11343(var1.getX(), var1.getY(), var1.getZ()) < var2 * var2;
    }
 
-   public double method11341(Vector3d var1) {
+   public double distanceTo(Vector3d var1) {
       double var4 = var1.x - this.x;
       double var6 = var1.y - this.y;
       double var8 = var1.z - this.z;

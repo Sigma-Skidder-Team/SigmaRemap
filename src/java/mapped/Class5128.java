@@ -21,7 +21,7 @@ public class Class5128 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       BlockPos var11 = this.method15866().getBlockPos();
 
       for (BlockPos var13 : this.field23317) {

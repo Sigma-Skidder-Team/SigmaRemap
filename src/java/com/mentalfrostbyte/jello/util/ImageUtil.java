@@ -105,11 +105,11 @@ public class ImageUtil {
     public static BufferedImage method35036(int var0, int var1, int var2, int var3, int var4, int var5, int var6,
             boolean var7) {
         int var10 = 4;
-        var1 = (int) ((float) var1 * GuiManager.portalScaleFactor);
-        var0 = (int) ((float) var0 * GuiManager.portalScaleFactor);
-        var2 = (int) ((float) var2 * GuiManager.portalScaleFactor);
-        var3 = (int) ((float) var3 * GuiManager.portalScaleFactor);
-        var4 = (int) ((float) var4 * GuiManager.portalScaleFactor);
+        var1 = (int) ((float) var1 * GuiManager.scaleFactor);
+        var0 = (int) ((float) var0 * GuiManager.scaleFactor);
+        var2 = (int) ((float) var2 * GuiManager.scaleFactor);
+        var3 = (int) ((float) var3 * GuiManager.scaleFactor);
+        var4 = (int) ((float) var4 * GuiManager.scaleFactor);
         var1 = Minecraft.getInstance().mainWindow.getFramebufferHeight() - var1 - var3;
         if (var4 <= 0) {
             var4 = 1;

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Class2546 implements Class2545 {
    private static String[] field16770;
-   public final Class7733 field16771;
+   public final IRenderTypeBuffer field16771;
    private final boolean field16772;
    private final float field16773;
    private final float field16774;
@@ -34,7 +34,7 @@ public class Class2546 implements Class2545 {
       this.field16783.add(var1);
    }
 
-   public Class2546(FontRenderer var1, Class7733 var2, float var3, float var4, int var5, boolean var6, Matrix4f var7, boolean var8, int var9) {
+   public Class2546(FontRenderer var1, IRenderTypeBuffer var2, float var3, float var4, int var5, boolean var6, Matrix4f var7, boolean var8, int var9) {
       this.field16786 = var1;
       this.field16771 = var2;
       this.field16781 = var3;
@@ -75,7 +75,7 @@ public class Class2546 implements Class2545 {
       if (!(var8 instanceof Class8977)) {
          float var18 = !var9 ? 0.0F : var7.method8701();
          float var16 = !this.field16772 ? 0.0F : var7.method8702();
-         IVertexBuilder var17 = this.field16771.method25597(var8.method32942(this.field16779));
+         IVertexBuilder var17 = this.field16771.getBuffer(var8.method32942(this.field16779));
          FontRenderer.method38832(
             this.field16786,
             var8,
@@ -143,7 +143,7 @@ public class Class2546 implements Class2545 {
 
       if (this.field16783 != null) {
          Class8978 var9 = FontRenderer.method38833(this.field16786, Style.DEFAULT_FONT).method7927();
-         IVertexBuilder var10 = this.field16771.method25597(var9.method32942(this.field16779));
+         IVertexBuilder var10 = this.field16771.getBuffer(var9.method32942(this.field16779));
 
          for (Class8442 var12 : this.field16783) {
             var9.method32941(var12, this.field16778, var10, this.field16780);

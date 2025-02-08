@@ -23,7 +23,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       return MathHelper.clamp(super.method17858(var1, var2) + 7, 0, 15);
    }
 
-   public void render(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       int var9 = var1.method4178();
       float var10 = (float)(var9 % 4 * 16 + 0) / 64.0F;
@@ -45,7 +45,7 @@ public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
       var4.scale(0.3F, 0.3F, 0.3F);
-      IVertexBuilder var23 = var5.method25597(field25142);
+      IVertexBuilder var23 = var5.getBuffer(field25142);
       Class8892 var24 = var4.getLast();
       Matrix4f var25 = var24.getMatrix();
       Matrix3f var26 = var24.method32362();

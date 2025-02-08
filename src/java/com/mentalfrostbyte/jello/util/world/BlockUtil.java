@@ -44,7 +44,7 @@ public class BlockUtil {
    }
 
    public static boolean method34538(Block var0, BlockPos var1) {
-      VoxelShape var4 = var0.getDefaultState().method23414(mc.world, var1);
+      VoxelShape var4 = var0.getDefaultState().getCollisionShape(mc.world, var1);
       return !method34578(var1)
          && mc.world.checkNoEntityCollision(mc.player, var4)
          && var1.getY() <= mc.player.getPosition().getY();

@@ -24,7 +24,7 @@ public class InfoHUD extends Module {
         this.registerSetting(new ModeSetting("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
         this.registerSetting(new BooleanSetting("Show Player", "Renders a miniature version of your character", true));
         this.registerSetting(new BooleanSetting("Show Armor", "Shows your armor's status", true));
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget

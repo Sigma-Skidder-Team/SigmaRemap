@@ -66,7 +66,7 @@ public class PhantomEntity extends Class1111 implements IMob {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.35F;
+      return var2.height * 0.35F;
    }
 
    @Override
@@ -202,7 +202,7 @@ public class PhantomEntity extends Class1111 implements IMob {
    public EntitySize getSize(Pose var1) {
       int var4 = this.method5338();
       EntitySize var5 = super.getSize(var1);
-      float var6 = (var5.field39968 + 0.2F * (float)var4) / var5.field39968;
+      float var6 = (var5.width + 0.2F * (float)var4) / var5.width;
       return var5.method32099(var6);
    }
 

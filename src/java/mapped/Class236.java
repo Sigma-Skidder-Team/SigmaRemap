@@ -31,7 +31,7 @@ public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, LlamaEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, LlamaEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       DyeColor var13 = var4.method4906();
       ResourceLocation var14;
       if (var13 == null) {
@@ -46,7 +46,7 @@ public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {
 
       this.method825().copyModelAttributesTo(this.field886);
       this.field886.setRotationAngles(var4, var5, var6, var8, var9, var10);
-      IVertexBuilder var15 = var2.method25597(RenderType.getEntityCutoutNoCull(var14));
+      IVertexBuilder var15 = var2.getBuffer(RenderType.getEntityCutoutNoCull(var14));
       this.field886.render(var1, var15, var3, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 }

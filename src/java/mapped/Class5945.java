@@ -20,7 +20,7 @@ public class Class5945 extends Class5942<Class955> {
       super(var1);
    }
 
-   public void method18462(Class955 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class955 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       World var9 = var1.method3734();
       if (var9 != null) {
          BlockPos var10 = var1.getPos().offset(var1.method3860().getOpposite());
@@ -55,9 +55,9 @@ public class Class5945 extends Class5942<Class955> {
       }
    }
 
-   private void method18467(BlockPos var1, BlockState var2, MatrixStack var3, Class7733 var4, World var5, boolean var6, int var7) {
+   private void method18467(BlockPos var1, BlockState var2, MatrixStack var3, IRenderTypeBuffer var4, World var5, boolean var6, int var7) {
       RenderType var10 = Class8928.method32631(var2);
-      IVertexBuilder var11 = var4.method25597(var10);
+      IVertexBuilder var11 = var4.getBuffer(var10);
       this.field25935.method812().method24679(var5, this.field25935.method813(var2), var2, var1, var3, var11, var6, new Random(), var2.method23451(var1), var7);
    }
 }

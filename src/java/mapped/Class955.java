@@ -101,7 +101,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    private void method3855(float var1) {
       Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
-      VoxelShape var7 = this.method3854().method23414(this.world, this.getPos());
+      VoxelShape var7 = this.method3854().getCollisionShape(this.world, this.getPos());
       if (!var7.isEmpty()) {
          AxisAlignedBB var8 = this.method3862(var7.getBoundingBox());
          List var9 = this.world.method7181((Entity)null, Class7769.method25747(var8, var4, var5).union(var8));
@@ -180,7 +180,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       if (this.method3859()) {
          Direction var4 = this.method3860();
          if (var4.getAxis().isHorizontal()) {
-            double var5 = this.field5361.method23414(this.world, this.pos).getEnd(Direction.Axis.Y);
+            double var5 = this.field5361.getCollisionShape(this.world, this.pos).getEnd(Direction.Axis.Y);
             AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
 
@@ -332,7 +332,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    public VoxelShape method3866(IBlockReader var1, BlockPos var2) {
       VoxelShape var5;
       if (!this.field5363 && this.field5364) {
-         var5 = this.field5361.with(PistonBlock.field19202, Boolean.valueOf(true)).method23414(var1, var2);
+         var5 = this.field5361.with(PistonBlock.field19202, Boolean.valueOf(true)).getCollisionShape(var1, var2);
       } else {
          var5 = VoxelShapes.empty();
       }
@@ -355,7 +355,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          double var9 = (double)((float)this.field5362.getXOffset() * var8);
          double var11 = (double)((float)this.field5362.getYOffset() * var8);
          double var13 = (double)((float)this.field5362.getZOffset() * var8);
-         return VoxelShapes.or(var5, var7.method23414(var1, var2).withOffset(var9, var11, var13));
+         return VoxelShapes.or(var5, var7.getCollisionShape(var1, var2).withOffset(var9, var11, var13));
       }
    }
 

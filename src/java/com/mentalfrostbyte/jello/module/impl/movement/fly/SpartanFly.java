@@ -44,7 +44,7 @@ public class SpartanFly extends Module {
     @EventTarget
     private void method16268(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23571 = true;
             }
@@ -54,7 +54,7 @@ public class SpartanFly extends Module {
     @EventTarget
     private void method16269(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23571 = false;
             }

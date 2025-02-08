@@ -27,11 +27,11 @@ public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
       this.field25127.method22673(-6.0F, 0.0F, -6.0F, 12.0F, 4.0F, 12.0F);
    }
 
-   public void render(EnderCrystalEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(EnderCrystalEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       float var9 = method17909(var1, var3);
       float var10 = ((float)var1.field5523 + var3) * 3.0F;
-      IVertexBuilder var11 = var5.method25597(field25123);
+      IVertexBuilder var11 = var5.getBuffer(field25123);
       var4.push();
       var4.scale(2.0F, 2.0F, 2.0F);
       var4.translate(0.0, -0.5, 0.0);

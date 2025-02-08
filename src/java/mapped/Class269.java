@@ -3,11 +3,11 @@ package mapped;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public abstract class Class269<T> implements Class268 {
+public abstract class Class269<T> implements IFutureReloadListener {
    @Override
-   public final CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
+   public final CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       return CompletableFuture.<T>supplyAsync(() -> this.method970(var2, var3), var5)
-         .<T>thenCompose(var1::method22225)
+         .<T>thenCompose(var1::markCompleteAwaitingOthers)
          .thenAcceptAsync(var3x -> this.method971((T)var3x, var2, var4), var6);
    }
 

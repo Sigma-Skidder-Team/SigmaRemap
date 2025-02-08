@@ -32,13 +32,13 @@ public abstract class Class281 extends Class269<Map<ResourceLocation, JsonElemen
       HashMap<ResourceLocation, JsonElement> var5 = Maps.newHashMap();
       int var6 = this.field1073.length() + 1;
 
-      for (ResourceLocation var8 : var1.method583(this.field1073, var0 -> var0.endsWith(".json"))) {
+      for (ResourceLocation var8 : var1.getAllResourceLocations(this.field1073, var0 -> var0.endsWith(".json"))) {
          String var9 = var8.getPath();
          ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring(var6, var9.length() - field1071));
 
          try (
-                 JSonShader var11 = var1.getShader(var8);
-                 InputStream var13 = var11.getFile();
+                 IResource var11 = var1.getResource(var8);
+                 InputStream var13 = var11.getInputStream();
                  BufferedReader var15 = new BufferedReader(new InputStreamReader(var13, StandardCharsets.UTF_8));
          ) {
             JsonElement var17 = JSONUtils.method32796(this.field1072, var15, JsonElement.class);

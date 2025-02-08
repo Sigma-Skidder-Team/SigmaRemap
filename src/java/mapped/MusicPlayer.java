@@ -440,7 +440,7 @@ public class MusicPlayer extends Class4278 {
       var9 = QuadraticEasing.easeInOutQuad(var9, 0.0F, 1.0F, 1.0F);
       int var10 = ResourceRegistry.JelloLightFont14.getWidth(var2);
       int var11 = Math.min(var3, var10);
-      int var12 = ResourceRegistry.JelloLightFont14.method23952();
+      int var12 = ResourceRegistry.JelloLightFont14.getHeight();
       int var13 = this.getXA() + (this.field20845 - var11) / 2;
       int var14 = this.getYA() + this.getHeightA() - 50 + var4;
       int var15 = Math.max(0, var10 - var11) * 2;

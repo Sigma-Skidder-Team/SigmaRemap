@@ -16,7 +16,7 @@ public class Class5941 extends Class5942<Class964> {
       super(var1);
    }
 
-   public void method18462(Class964 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class964 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       if (Minecraft.getInstance().player.canUseCommandBlock() || Minecraft.getInstance().player.isSpectator()) {
          BlockPos var9 = var1.method3940();
          BlockPos var10 = var1.method3942();
@@ -77,7 +77,7 @@ public class Class5941 extends Class5942<Class964> {
             float var31 = 1.0F;
             float var32 = 0.9F;
             float var33 = 0.5F;
-            IVertexBuilder var34 = var4.method25597(RenderType.getLines());
+            IVertexBuilder var34 = var4.getBuffer(RenderType.getLines());
             if (var1.method3950() == StructureMode.field318 || var1.method3975()) {
                WorldRenderer.method899(var3, var34, var23, var15, var25, var27, var17, var29, 0.9F, 0.9F, 0.9F, 1.0F, 0.5F, 0.5F, 0.5F);
             }

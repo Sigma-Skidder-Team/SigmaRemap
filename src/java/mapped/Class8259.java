@@ -129,7 +129,7 @@ public class Class8259 {
       Minecraft var4 = Minecraft.getInstance();
       FontResourceManager var5 = (FontResourceManager) Reflector.getFieldValue(var4, Reflector.field43020);
       if (var5 != null) {
-         var5.getReloadListener().method777(var2, Config.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
+         var5.getReloadListener().reload(var2, Config.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
       }
    }
 }

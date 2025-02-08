@@ -33,7 +33,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & IHasHead>
       this.field883 = var4;
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.HEAD);
       if (!var13.isEmpty()) {
          Item var14 = var13.getItem();

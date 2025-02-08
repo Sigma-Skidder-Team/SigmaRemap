@@ -441,7 +441,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
          var8 = 3;
       }
 
-      if (this.getHealth() < this.method3075() && var6 > 0.0F) {
+      if (this.getHealth() < this.getMaxHealth() && var6 > 0.0F) {
          this.heal(var6);
          var5 = true;
       }
@@ -789,7 +789,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
    }
 
    public boolean method4961() {
-      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.isChild() && this.getHealth() >= this.method3075() && this.method4507();
+      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.isChild() && this.getHealth() >= this.getMaxHealth() && this.method4507();
    }
 
    @Nullable
@@ -925,7 +925,7 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.95F;
+      return var2.height * 0.95F;
    }
 
    public boolean method4898() {

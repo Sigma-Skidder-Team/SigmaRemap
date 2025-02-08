@@ -337,14 +337,14 @@ public class Class8066 {
       }
    }
 
-   private void method27735(Class7828 var1, Class7457 var2) {
+   private void method27735(RegionRenderCacheBuilder var1, Class7457 var2) {
       this.method27736(Class9025.field41290, var1, var2);
       this.method27736(Class9025.field41289, var1, var2);
       this.method27736(Class9025.field41291, var1, var2);
    }
 
-   private void method27736(RenderType var1, Class7828 var2, Class7457 var3) {
-      BufferBuilder var6 = var2.method26203(var1);
+   private void method27736(RenderType var1, RegionRenderCacheBuilder var2, Class7457 var3) {
+      BufferBuilder var6 = var2.getBuilder(var1);
       if (var6.method17074()) {
          var3.method24114(var1);
          if (var6.method17081() > 0) {
@@ -525,7 +525,7 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static void method27764(Class8066 var0, Class7828 var1, Class7457 var2) {
+   public static void method27764(Class8066 var0, RegionRenderCacheBuilder var1, Class7457 var2) {
       var0.method27735(var1, var2);
    }
 }

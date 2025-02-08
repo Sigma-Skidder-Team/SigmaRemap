@@ -53,7 +53,7 @@ public class Class4358 extends Class4247 {
                   this.field21306 - var9 * 2 - 120));
       int var11 = 10;
 
-      for (Entry var13 : GuiManager.field41338.entrySet()) {
+      for (Entry var13 : GuiManager.screenToScreenName.entrySet()) {
          Class6984 var14 = new Class6984((Class<? extends Screen>) var13.getKey());
          ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.02F),
                -986896)
@@ -65,7 +65,7 @@ public class Class4358 extends Class4247 {
                      var16 = new ButtonPanel(this.field21308, var14.method21596(), 0, var11++ * 55,
                            this.field21308.getWidthA(), 55, var15, var14.method21596()));
          var16.doThis((var2x, var3x) -> {
-            for (Entry var7 : GuiManager.field41338.entrySet()) {
+            for (Entry var7 : GuiManager.screenToScreenName.entrySet()) {
                Class6984 var8 = new Class6984((Class<? extends Screen>) var7.getKey());
                if (var8.method21596().equals(var16.method13257()) && !this.field21311) {
                   this.field21309 = var8;

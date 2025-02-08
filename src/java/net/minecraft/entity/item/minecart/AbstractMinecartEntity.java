@@ -167,7 +167,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          while (var9.hasNext()) {
             Pose var13 = (Pose)var9.next();
             EntitySize var12 = var1.getSize(var13);
-            float var14 = Math.min(var12.field39968, 1.0F) / 2.0F;
+            float var14 = Math.min(var12.width, 1.0F) / 2.0F;
             UnmodifiableIterator var15 = ((ImmutableList)field5219.get(var13)).iterator();
 
             while (var15.hasNext()) {
@@ -178,7 +178,7 @@ public abstract class AbstractMinecartEntity extends Entity {
                   double var21 = this.world
                      .method7038(Class4527.method14426(this.world, var7), () -> Class4527.method14426(this.world, var7.down()));
                   if (Class4527.method14423(var21)) {
-                     AxisAlignedBB var23 = new AxisAlignedBB((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.field39969, (double)var14);
+                     AxisAlignedBB var23 = new AxisAlignedBB((double)(-var14), 0.0, (double)(-var14), (double)var14, (double)var12.height, (double)var14);
                      Vector3d var24 = Vector3d.method11331(var7, var21);
                      if (Class4527.method14424(this.world, var1, var23.offset(var24))) {
                         var1.setPose(var13);
@@ -195,9 +195,9 @@ public abstract class AbstractMinecartEntity extends Entity {
 
          while (var29.hasNext()) {
             Pose var30 = (Pose)var29.next();
-            double var25 = (double)var1.getSize(var30).field39969;
+            double var25 = (double)var1.getSize(var30).height;
             int var31 = MathHelper.method37774(var10 - (double)var7.getY() + var25);
-            double var27 = Class4527.method14427(var7, var31, var1x -> this.world.getBlockState(var1x).method23414(this.world, var1x));
+            double var27 = Class4527.method14427(var7, var31, var1x -> this.world.getBlockState(var1x).getCollisionShape(this.world, var1x));
             if (var10 + var25 <= var27) {
                var1.setPose(var30);
                break;

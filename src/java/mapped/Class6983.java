@@ -91,7 +91,7 @@ public class Class6983 {
    }
 
    public static boolean method21581(LivingEntity var0, LivingEntity var1) {
-      double var4 = var0.getDistanceNearest(var1.getPosX(), var1.getPosY(), var1.getPosZ());
+      double var4 = var0.getDistanceSq(var1.getPosX(), var1.getPosY(), var1.getPosZ());
       double var6 = (double)(var0.getWidth() * 2.0F * var0.getWidth() * 2.0F + var1.getWidth());
       return var4 <= var6;
    }

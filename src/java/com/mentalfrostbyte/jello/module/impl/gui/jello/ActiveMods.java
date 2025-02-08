@@ -39,7 +39,7 @@ public class ActiveMods extends Module {
         this.registerSetting(new BooleanSetting("Animations", "Scale in animation", true));
         this.registerSetting(new BooleanSetting("Sound", "Toggle sound", true));
         this.getSettingMap().get("Size").addObserver(var1 -> this.setFontSize());
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @Override
@@ -105,7 +105,7 @@ public class ActiveMods extends Module {
                     }
                 }
 
-                int var15 = 23 + var9 * (this.field23616.method23952() + 1);
+                int var15 = 23 + var9 * (this.field23616.getHeight() + 1);
                 int var16 = var8.size();
                 int var12 = Minecraft.getInstance().mainWindow.getHeight();
                 int var13 = var12 / 2 - (9 + 5) * (var16 - 3 + 2);
@@ -177,7 +177,7 @@ public class ActiveMods extends Module {
                             (float) var6 - (float) var8.getWidth(var22) * 1.5F - (float) var20 - 20.0F,
                             (float) (var7 - 20),
                             (float) var8.getWidth(var22) * 3.0F,
-                            var8.method23952() + var21 + 40,
+                            var8.getHeight() + var21 + 40,
                             ResourceList.shadowPNG,
                             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                                     0.36F * var15 * var19));
@@ -186,7 +186,7 @@ public class ActiveMods extends Module {
                             var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11);
                     GL11.glPopMatrix();
                     var10 -= 100;
-                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21)
+                    var7 = (int) ((float) var7 + (float) (var8.getHeight() + var21)
                             * QuadraticEasing.easeInOutQuad(var15, 0.0F, 1.0F, 1.0F));
                 }
 

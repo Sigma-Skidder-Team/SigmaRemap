@@ -93,7 +93,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public void method781(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, Class7733 var5, int var6, int var7, IBakedModel var8) {
+   public void method781(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, IRenderTypeBuffer var5, int var6, int var7, IBakedModel var8) {
       boolean skibidi = false;
          if (!var1.isEmpty()) {
          var4.push();
@@ -161,7 +161,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                   if (EmissiveTextures.hasEmissive()) {
                      EmissiveTextures.beginRenderEmissive();
                      var14 = method785(var5, var17, true, false);
-                     this.method780(var8, var1, Class1699.field9258, var7, var4, var14);
+                     this.method780(var8, var1, LightTexture.MAX_BRIGHTNESS, var7, var4, var14);
                      EmissiveTextures.endRenderEmissive();
                   }
 
@@ -179,7 +179,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public static IVertexBuilder method782(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder method782(IRenderTypeBuffer var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
@@ -189,19 +189,19 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
 
       return !var3
-         ? var0.method25597(var1)
-         : Class7802.method26050(var0.method25597(!var2 ? RenderType.method14332() : RenderType.method14331()), var0.method25597(var1));
+         ? var0.getBuffer(var1)
+         : Class7802.method26050(var0.getBuffer(!var2 ? RenderType.method14332() : RenderType.method14331()), var0.getBuffer(var1));
    }
 
-   public static IVertexBuilder method783(Class7733 var0, RenderType var1, Class8892 var2) {
-      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14334()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
+   public static IVertexBuilder method783(IRenderTypeBuffer var0, RenderType var1, Class8892 var2) {
+      return Class7802.method26050(new Class5427(var0.getBuffer(RenderType.method14334()), var2.getMatrix(), var2.method32362()), var0.getBuffer(var1));
    }
 
-   public static IVertexBuilder method784(Class7733 var0, RenderType var1, Class8892 var2) {
-      return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14335()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
+   public static IVertexBuilder method784(IRenderTypeBuffer var0, RenderType var1, Class8892 var2) {
+      return Class7802.method26050(new Class5427(var0.getBuffer(RenderType.method14335()), var2.getMatrix(), var2.method32362()), var0.getBuffer(var1));
    }
 
-   public static IVertexBuilder method785(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder method785(IRenderTypeBuffer var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
@@ -211,15 +211,15 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
 
       if (!var3) {
-         return var0.method25597(var1);
+         return var0.getBuffer(var1);
       } else {
          return Minecraft.isFabulousGraphicsEnabled() && var1 == Class8624.method30908()
-            ? Class7802.method26050(var0.method25597(RenderType.method14333()), var0.method25597(var1))
-            : Class7802.method26050(var0.method25597(!var2 ? RenderType.method14336() : RenderType.method14334()), var0.method25597(var1));
+            ? Class7802.method26050(var0.getBuffer(RenderType.method14333()), var0.getBuffer(var1))
+            : Class7802.method26050(var0.getBuffer(!var2 ? RenderType.method14336() : RenderType.method14334()), var0.getBuffer(var1));
       }
    }
 
-   public static IVertexBuilder getEntityGlintVertexBuilder(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder getEntityGlintVertexBuilder(IRenderTypeBuffer var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
@@ -229,8 +229,8 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
 
       return !var3
-         ? var0.method25597(var1)
-         : Class7802.method26050(var0.method25597(!var2 ? RenderType.method14337() : RenderType.method14335()), var0.method25597(var1));
+         ? var0.getBuffer(var1)
+         : Class7802.method26050(var0.getBuffer(!var2 ? RenderType.method14337() : RenderType.method14335()), var0.getBuffer(var1));
    }
 
    private void method787(MatrixStack var1, IVertexBuilder var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
@@ -283,11 +283,11 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       return var9 != null ? var9 : this.field848.method29496().getMissingModel();
    }
 
-   public void renderItem(ItemStack var1, ItemCameraTransformsTransformType var2, int var3, int var4, MatrixStack var5, Class7733 var6) {
+   public void renderItem(ItemStack var1, ItemCameraTransformsTransformType var2, int var3, int var4, MatrixStack var5, IRenderTypeBuffer var6) {
       this.method790((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, Class7733 var6, World var7, int var8, int var9) {
+   public void method790(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, IRenderTypeBuffer var6, World var7, int var8, int var9) {
       if (!var2.isEmpty()) {
          IBakedModel var12 = this.method788(var2, var7, var1);
          this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
@@ -307,14 +307,14 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       RenderSystem.enableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field847);
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
       RenderSystem.scalef(1.0F, -1.0F, 1.0F);
       RenderSystem.scalef(16.0F, 16.0F, 16.0F);
       MatrixStack var7 = new MatrixStack();
-      Class7735 var8 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
+      IRenderTypeBuffer.Impl var8 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       boolean var9 = !var4.method22622();
       if (var9) {
          RenderHelper.setupGuiFlatDiffuseLighting();
@@ -376,7 +376,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          if (var2.getCount() != 1 || var5 != null) {
             String var9 = var5 != null ? var5 : String.valueOf(var2.getCount());
             var8.translate(0.0, 0.0, (double)(this.field847 + 200.0F));
-            Class7735 var10 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+            IRenderTypeBuffer.Impl var10 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
             var1.method38810(
                var9,
                (float)(var3 + 19 - 2 - var1.getStringWidth(var9)),
@@ -449,7 +449,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    @Override
-   public void method737(IResourceManager var1) {
+   public void onResourceManagerReload(IResourceManager var1) {
       this.field848.method29497();
    }
 

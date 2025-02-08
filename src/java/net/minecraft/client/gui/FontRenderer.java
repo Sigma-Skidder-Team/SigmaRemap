@@ -87,7 +87,7 @@ public class FontRenderer {
 
    public int method38807(String var1, float var2, float var3, int var4, Matrix4f var5, boolean var6, boolean var7) {
       if (var1 != null) {
-         Class7735 var10 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+         IRenderTypeBuffer.Impl var10 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
          int var11 = this.method38811(var1, var2, var3, var4, var6, var5, var10, false, 0, 15728880, var7);
          var10.finish();
          return var11;
@@ -97,7 +97,7 @@ public class FontRenderer {
    }
 
    public void renderStrings(List<String> var1, GuiPoint[] var2, int var3, Matrix4f var4, boolean var5, boolean var6) {
-      Class7735 var9 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+      IRenderTypeBuffer.Impl var9 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
 
       for (int var10 = 0; var10 < var1.size(); var10++) {
          String var11 = (String)var1.get(var10);
@@ -115,29 +115,29 @@ public class FontRenderer {
    }
 
    private int method38809(Class9125 var1, float var2, float var3, int var4, Matrix4f var5, boolean var6) {
-      Class7735 var9 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+      IRenderTypeBuffer.Impl var9 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
       int var10 = this.method38813(var1, var2, var3, var4, var6, var5, var9, false, 0, 15728880);
       var9.finish();
       return var10;
    }
 
-   public int method38810(String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10) {
+   public int method38810(String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10) {
       return this.method38811(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, this.method38829());
    }
 
    public int method38811(
-           String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10, boolean var11
+           String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10, boolean var11
    ) {
       return this.method38815(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
    }
 
    public int method38812(
-           ITextComponent var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10
+           ITextComponent var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10
    ) {
       return this.method38813(var1.func_241878_f(), var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
-   public int method38813(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10) {
+   public int method38813(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10) {
       return this.method38816(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
@@ -146,7 +146,7 @@ public class FontRenderer {
    }
 
    private int method38815(
-           String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10, boolean var11
+           String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10, boolean var11
    ) {
       if (var11) {
          var1 = this.method38806(var1);
@@ -163,7 +163,7 @@ public class FontRenderer {
       return (int)var2 + (!var5 ? 0 : 1);
    }
 
-   private int method38816(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10) {
+   private int method38816(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10) {
       var4 = method38814(var4);
       Matrix4f var13 = var6.method35514();
       if (var5) {
@@ -175,13 +175,13 @@ public class FontRenderer {
       return (int)var2 + (!var5 ? 0 : 1);
    }
 
-   private float method38817(String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10) {
+   private float method38817(String var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10) {
       Class2546 var13 = new Class2546(this, var7, var2, var3, var4, var5, var6, var8, var10);
       TextProcessing.func_238346_c_(var1, Style.EMPTY, var13);
       return var13.method10741(var9, var2);
    }
 
-   private float method38818(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, Class7733 var7, boolean var8, int var9, int var10) {
+   private float method38818(Class9125 var1, float var2, float var3, int var4, boolean var5, Matrix4f var6, IRenderTypeBuffer var7, boolean var8, int var9, int var10) {
       Class2546 var13 = new Class2546(this, var7, var2, var3, var4, var5, var6, var8, var10);
       var1.method34036(var13);
       return var13.method10741(var9, var2);

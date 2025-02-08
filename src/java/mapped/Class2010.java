@@ -23,7 +23,7 @@ public class Class2010 extends Class2009 {
    }
 
    @Override
-   public CompletableFuture<Class2046> method8527(Class7828 var1) {
+   public CompletableFuture<Class2046> method8527(RegionRenderCacheBuilder var1) {
       if (!this.field13076.get()) {
          if (this.field13078.method27709()) {
             if (!this.field13076.get()) {
@@ -33,7 +33,7 @@ public class Class2010 extends Class2009 {
                float var7 = (float)var4.z;
                Class9244 var8 = Class7457.method24122(this.field13079);
                if (var8 != null && Class7457.method24118(this.field13079).contains(RenderType.method14304())) {
-                  BufferBuilder var9 = var1.method26203(RenderType.method14304());
+                  BufferBuilder var9 = var1.getBuilder(RenderType.method14304());
                   Class8066.method27758(this.field13078, var9);
                   var9.method17062(var8);
                   var9.method17058(
@@ -46,7 +46,7 @@ public class Class2010 extends Class2009 {
                   if (!this.field13076.get()) {
                      CompletableFuture<Class2046> var10 = this.field13078
                         .field34637
-                        .method33327(var1.method26203(RenderType.method14304()), this.field13078.method27711(RenderType.method14304()))
+                        .method33327(var1.getBuilder(RenderType.method14304()), this.field13078.method27711(RenderType.method14304()))
                         .<Class2046>thenApply(var0 -> Class2046.field13359);
                      return var10.handle((var1x, var2) -> {
                         if (var2 != null && !(var2 instanceof CancellationException) && !(var2 instanceof InterruptedException)) {

@@ -24,7 +24,7 @@ public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPl
       this.addLayer(new Class235<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>>(this));
    }
 
-   public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6, float var7, float var8) {
+   public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6, float var7, float var8) {
       BipedModel var11 = this.entityModel;
       var11.setVisible(false);
       var11.bipedHead.showModel = true;

@@ -64,7 +64,7 @@ public class SlimeEntity extends MobEntity implements IMob {
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)(0.2F + 0.1F * (float)var1));
       this.getAttribute(Attributes.ATTACK_DAMAGE).method38661((double)var1);
       if (var2) {
-         this.setHealth(this.method3075());
+         this.setHealth(this.getMaxHealth());
       }
 
       this.field5594 = var1;
@@ -229,7 +229,7 @@ public class SlimeEntity extends MobEntity implements IMob {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return 0.625F * var2.field39969;
+      return 0.625F * var2.height;
    }
 
    public boolean method5325() {

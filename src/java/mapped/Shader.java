@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.function.IntSupplier;
 
-public class Class1706 implements AutoCloseable {
-   private final Class1808 field9293;
+public class Shader implements AutoCloseable {
+   private final ShaderInstance manager;
    public final Framebuffer frameBuffer2;
    public final Framebuffer frameBuffer;
    private final List<IntSupplier> field9296 = Lists.newArrayList();
@@ -20,15 +20,15 @@ public class Class1706 implements AutoCloseable {
    private final List<Integer> field9299 = Lists.newArrayList();
    private Matrix4f field9300;
 
-   public Class1706(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
-      this.field9293 = new Class1808(var1, var2);
+   public Shader(IResourceManager var1, String var2, Framebuffer var3, Framebuffer var4) throws IOException {
+      this.manager = new ShaderInstance(var1, var2);
       this.frameBuffer2 = var3;
       this.frameBuffer = var4;
    }
 
    @Override
    public void close() {
-      this.field9293.close();
+      this.manager.close();
    }
 
    public void method7407(String var1, IntSupplier var2, int var3, int var4) {
@@ -47,20 +47,20 @@ public class Class1706 implements AutoCloseable {
       float var4 = (float)this.frameBuffer.framebufferTextureWidth;
       float var5 = (float)this.frameBuffer.framebufferTextureHeight;
       RenderSystem.viewport(0, 0, (int)var4, (int)var5);
-      this.field9293.method7940("DiffuseSampler", this.frameBuffer2::getFramebufferTexture);
+      this.manager.method7940("DiffuseSampler", this.frameBuffer2::getFramebufferTexture);
 
       for (int var6 = 0; var6 < this.field9296.size(); var6++) {
-         this.field9293.method7940(this.field9297.get(var6), this.field9296.get(var6));
-         this.field9293.getFromName("AuxSize" + var6).method7438((float)this.field9298.get(var6).intValue(), (float)this.field9299.get(var6).intValue());
+         this.manager.method7940(this.field9297.get(var6), this.field9296.get(var6));
+         this.manager.getShaderUniform("AuxSize" + var6).set((float)this.field9298.get(var6).intValue(), (float)this.field9299.get(var6).intValue());
       }
 
-      this.field9293.getFromName("ProjMat").method7444(this.field9300);
-      this.field9293.getFromName("InSize").method7438((float)this.frameBuffer2.framebufferTextureWidth, (float)this.frameBuffer2.framebufferTextureHeight);
-      this.field9293.getFromName("OutSize").method7438(var4, var5);
-      this.field9293.getFromName("Time").setValue(var1);
+      this.manager.getShaderUniform("ProjMat").set(this.field9300);
+      this.manager.getShaderUniform("InSize").set((float)this.frameBuffer2.framebufferTextureWidth, (float)this.frameBuffer2.framebufferTextureHeight);
+      this.manager.getShaderUniform("OutSize").set(var4, var5);
+      this.manager.getShaderUniform("Time").set(var1);
       Minecraft mc = Minecraft.getInstance();
-      this.field9293.getFromName("ScreenSize").method7438((float)mc.getMainWindow().getFramebufferWidth(), (float)mc.getMainWindow().getFramebufferHeight());
-      this.field9293.method7934();
+      this.manager.getShaderUniform("ScreenSize").set((float)mc.getMainWindow().getFramebufferWidth(), (float)mc.getMainWindow().getFramebufferHeight());
+      this.manager.method7934();
       this.frameBuffer.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
       this.frameBuffer.bindFramebuffer(false);
       RenderSystem.depthFunc(519);
@@ -73,7 +73,7 @@ public class Class1706 implements AutoCloseable {
       var7.finishDrawing();
       WorldVertexBufferUploader.draw(var7);
       RenderSystem.depthFunc(515);
-      this.field9293.method7933();
+      this.manager.method7933();
       this.frameBuffer.unbindFramebuffer();
       this.frameBuffer2.unbindFramebufferTexture();
 
@@ -84,7 +84,7 @@ public class Class1706 implements AutoCloseable {
       }
    }
 
-   public Class1808 method7410() {
-      return this.field9293;
+   public ShaderInstance getShaderManager() {
+      return this.manager;
    }
 }

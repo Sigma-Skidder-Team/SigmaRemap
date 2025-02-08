@@ -51,7 +51,7 @@ public class JelloKeyboardScreen extends Screen {
                         this.method13333();
                      } else {
                         int[] var8 = this.field20957.method13105(this.field20957.field20696);
-                        String var9 = MultiUtilities.method17736(this.field20957.field20696);
+                        String var9 = MultiUtilities.getKeyName(this.field20957.field20696);
                         this.field20956 = new Class4375(
                               this, "popover", this.field20957.getXA() + var8[0], this.field20957.getYA() + var8[1],
                               this.field20957.field20696, var9);
@@ -73,7 +73,7 @@ public class JelloKeyboardScreen extends Screen {
          var2.add(new Class6984(var4));
       }
 
-      for (Entry var6 : GuiManager.field41338.entrySet()) {
+      for (Entry var6 : GuiManager.screenToScreenName.entrySet()) {
          var2.add(new Class6984((Class<? extends net.minecraft.client.gui.screen.Screen>) var6.getKey()));
       }
 
@@ -129,7 +129,7 @@ public class JelloKeyboardScreen extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         MultiUtilities.method17742();
+         MultiUtilities.resetShaders();
          field20953.displayGuiScreen(null);
       }
    }

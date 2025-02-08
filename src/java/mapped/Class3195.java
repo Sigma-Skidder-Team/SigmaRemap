@@ -56,7 +56,7 @@ public class Class3195 extends BushBlock implements IGrowable, IWaterLoggable {
 
    @Override
    public boolean isValidGround(BlockState state, IBlockReader var2, BlockPos var3) {
-      return !state.method23414(var2, var3).method19526(Direction.UP).isEmpty() || state.method23454(var2, var3, Direction.UP);
+      return !state.getCollisionShape(var2, var3).method19526(Direction.UP).isEmpty() || state.method23454(var2, var3, Direction.UP);
    }
 
    @Override

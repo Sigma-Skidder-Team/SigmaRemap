@@ -418,7 +418,7 @@ public class Class7551 {
          }
 
          if (var16.method30516().field9353) {
-            var4 = Class1699.field9258;
+            var4 = LightTexture.MAX_BRIGHTNESS;
          }
 
          float var18 = var1.method6877(var16.method30514(), var16.method30515());
@@ -522,9 +522,9 @@ public class Class7551 {
             RenderType var18 = field32374[var17];
             Class9585 var19 = var12.method29436(var18);
             if (var19.method37213() > 0) {
-               Class7828 var20 = var12.method29434();
+               RegionRenderCacheBuilder var20 = var12.method29434();
                if (var20 != null) {
-                  BufferBuilder var21 = var20.method26203(var18);
+                  BufferBuilder var21 = var20.getBuilder(var18);
                   if (!var21.method17074()) {
                      var21.begin(7, DefaultVertexFormats.field43334);
                   }

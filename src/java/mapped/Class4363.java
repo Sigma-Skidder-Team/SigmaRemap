@@ -189,7 +189,7 @@ public class Class4363 extends Class4247 {
          RenderUtil.drawString(
                this.getFont(),
                (float) (this.getXA() + 10),
-               (float) (this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
+               (float) (this.getYA() + (this.getHeightA() - this.getFont().getHeight()) / 2 + 1),
                this.getTypedText() + var4,
                MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks * 0.7F));
          RenderUtil.endScissor();
@@ -197,7 +197,7 @@ public class Class4363 extends Class4247 {
 
       boolean var8 = this.field21330.calcPercent() < 1.0F;
       if (var8) {
-         RenderUtil.drawPortalBackground(
+         RenderUtil.drawBlurredBackground(
                this.method13271(), this.method13272(), this.method13271() + this.getWidthA() + 140,
                this.method13272() + this.getHeightA() + this.method13647());
       }

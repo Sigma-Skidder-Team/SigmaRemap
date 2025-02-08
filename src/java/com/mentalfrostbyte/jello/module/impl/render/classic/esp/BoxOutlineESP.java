@@ -138,7 +138,7 @@ public class BoxOutlineESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.lightmapTexture.method7316();
+        mc.gameRenderer.lightmapTexture.disableLightmap();
     }
 
     private void method16510() {
@@ -147,10 +147,10 @@ public class BoxOutlineESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.method36180();
+        TextureImpl.unbind();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.lightmapTexture.method7317();
+        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        mc.gameRenderer.lightmapTexture.enableLightmap();
     }
 }

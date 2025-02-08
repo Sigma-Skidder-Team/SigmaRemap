@@ -20,7 +20,7 @@ public class AutoWalk extends Module {
 
     @Override
     public void onDisable() {
-        int keyState = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindForward.inputMappingsInput.keyCode);
+        int keyState = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindForward.keyCode.keyCode);
         mc.gameSettings.keyBindForward.pressed = keyState == 1;
     }
 }

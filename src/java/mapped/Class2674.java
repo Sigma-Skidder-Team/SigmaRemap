@@ -92,7 +92,7 @@ public class Class2674 extends Class2672 {
 
          if (!this.field17064.world.method7007(var13)) {
             BlockState var19 = this.field17064.world.getBlockState(var13);
-            VoxelShape var20 = var19.method23414(this.field17064.world, var13);
+            VoxelShape var20 = var19.getCollisionShape(this.field17064.world, var13);
             if (!var20.isEmpty()) {
                var15 = var20.getEnd(Direction.Axis.Y);
             }

@@ -20,7 +20,7 @@ public class Class5748 extends Class5651<PufferfishEntity, Class2827<PufferfishE
       return field25172;
    }
 
-   public void render(PufferfishEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(PufferfishEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       int var9 = entityIn.method4828();
       if (var9 != this.field25173) {
          if (var9 != 0) {

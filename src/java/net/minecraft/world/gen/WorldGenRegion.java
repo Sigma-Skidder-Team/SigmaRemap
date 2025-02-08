@@ -377,7 +377,7 @@ public class WorldGenRegion implements ISeedReader {
    }
 
    @Override
-   public List<PlayerEntity> method6870() {
+   public List<PlayerEntity> getPlayers() {
       return Collections.<PlayerEntity>emptyList();
    }
 

@@ -30,18 +30,18 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
       Gson var5 = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
       Map<ResourceLocation, List<Class1768>> var6 = Maps.newHashMap();
 
-      for (ResourceLocation var8 : var1.method583("font", var0 -> var0.endsWith(".json"))) {
+      for (ResourceLocation var8 : var1.getAllResourceLocations("font", var0 -> var0.endsWith(".json"))) {
          String var9 = var8.getPath();
          ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring("font/".length(), var9.length() - ".json".length()));
          List<Class1768> var11 = var6.computeIfAbsent(var10, var0 -> Lists.newArrayList(new Class1772()));
          var2.startSection(var10::toString);
 
          try {
-            for (JSonShader var13 : var1.method582(var8)) {
-               var2.startSection(var13::method7765);
+            for (IResource var13 : var1.getAllResources(var8)) {
+               var2.startSection(var13::getPackName);
 
                try (
-                       InputStream var14 = var13.getFile();
+                       InputStream var14 = var13.getInputStream();
                        BufferedReader var16 = new BufferedReader(new InputStreamReader(var14, StandardCharsets.UTF_8));
                ) {
                   var2.startSection("reading");
@@ -63,14 +63,14 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
                         var2.endSection();
                      } catch (RuntimeException var51) {
                         FontResourceManager.method6711()
-                           .warn("Unable to read definition '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method7765(), var51.getMessage());
+                           .warn("Unable to read definition '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.getPackName(), var51.getMessage());
                      }
                   }
 
                   var2.endSection();
                } catch (RuntimeException var56) {
                   FontResourceManager.method6711()
-                     .warn("Unable to load font '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.method7765(), var56.getMessage());
+                     .warn("Unable to load font '{}' in fonts.json in resourcepack: '{}': {}", var10, var13.getPackName(), var56.getMessage());
                }
 
                var2.endSection();

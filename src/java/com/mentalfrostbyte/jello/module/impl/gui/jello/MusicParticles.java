@@ -18,7 +18,7 @@ public class MusicParticles extends Module {
 
     public MusicParticles() {
         super(ModuleCategory.GUI, "MusicParticles", "Shows nice particles when music is playing");
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     // $VF: synthetic method

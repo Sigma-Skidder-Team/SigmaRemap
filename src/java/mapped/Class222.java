@@ -19,11 +19,11 @@ public class Class222 extends Class219 {
    }
 
    @Override
-   public void method820(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, Entity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method829(var4, var1, var2, var3, OverlayTexture.NO_OVERLAY);
    }
 
-   public void method829(Entity var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
+   public void method829(Entity var1, MatrixStack var2, IRenderTypeBuffer var3, int var4, int var5) {
       if (Config.method26914() && var1 instanceof AbstractClientPlayerEntity) {
          AbstractClientPlayerEntity var8 = (AbstractClientPlayerEntity)var1;
          BipedModel var9 = this.field867.getEntityModel();

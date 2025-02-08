@@ -111,8 +111,8 @@ public class EnchantmentScreen extends ContainerScreen<Class5822> {
 
       RenderSystem.enableRescaleNormal();
       field4831.method11177(0.0F, var14, var15, var12);
-      Class7735 var16 = Class7733.method25595(Tessellator.getInstance().getBuffer());
-      IVertexBuilder var17 = var16.method25597(field4831.method11028(field4830));
+      IRenderTypeBuffer.Impl var16 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
+      IVertexBuilder var17 = var16.getBuffer(field4831.method11028(field4830));
       field4831.render(var1, var17, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var16.finish();
       var1.pop();

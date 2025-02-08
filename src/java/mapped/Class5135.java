@@ -24,7 +24,7 @@ public class Class5135 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       if (!this.field23341.isEmpty()) {
          long var11 = Util.milliTime();
 

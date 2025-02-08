@@ -88,11 +88,11 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       return this.field853.method38153(var1);
    }
 
-   public void method814(BlockState var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
+   public void method814(BlockState var1, MatrixStack var2, IRenderTypeBuffer var3, int var4, int var5) {
       this.method815(var1, var2, var3, var4, var5, Class7181.field30863);
    }
 
-   public void method815(BlockState var1, MatrixStack var2, Class7733 var3, int var4, int var5, Class7180 var6) {
+   public void method815(BlockState var1, MatrixStack var2, IRenderTypeBuffer var3, int var4, int var5, Class7180 var6) {
       BlockRenderType var9 = var1.getRenderType();
       if (var9 != BlockRenderType.field9885) {
          switch (Class6624.field29144[var9.ordinal()]) {
@@ -103,7 +103,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
                float var13 = (float)(var11 >> 8 & 0xFF) / 255.0F;
                float var14 = (float)(var11 & 0xFF) / 255.0F;
                this.field854
-                  .method24690(var2.getLast(), var3.method25597(Class8928.method32632(var1, false)), var1, var10, var12, var13, var14, var4, var5, var6);
+                  .method24690(var2.getLast(), var3.getBuffer(Class8928.method32632(var1, false)), var1, var10, var12, var13, var14, var4, var5, var6);
                break;
             case 2:
                if (Reflector.field42913.exists()) {
@@ -118,7 +118,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
    }
 
    @Override
-   public void method737(IResourceManager var1) {
+   public void onResourceManagerReload(IResourceManager var1) {
       this.field855.method14919();
    }
 

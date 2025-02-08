@@ -33,7 +33,7 @@ public class BannerTileEntityRenderer extends Class5942<BannerTileEntity> {
       return var2;
    }
 
-   public void method18462(BannerTileEntity var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(BannerTileEntity var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       List var9 = var1.method3890();
       if (var9 != null) {
          float var10 = 0.6666667F;
@@ -77,13 +77,13 @@ public class BannerTileEntityRenderer extends Class5942<BannerTileEntity> {
    }
 
    public static void method18478(
-           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7
+           MatrixStack var0, IRenderTypeBuffer var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7
    ) {
       func_241717_a_(var0, var1, var2, var3, var4, var5, var6, var7, false);
    }
 
    public static void func_241717_a_(
-           MatrixStack var0, Class7733 var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7, boolean var8
+           MatrixStack var0, IRenderTypeBuffer var1, int var2, int var3, ModelRenderer var4, Class7826 var5, boolean var6, List<Pair<Class2154, DyeColor>> var7, boolean var8
    ) {
       var4.render(var0, var5.method26201(var1, RenderType::getEntitySolid, var8), var2, var3);
 

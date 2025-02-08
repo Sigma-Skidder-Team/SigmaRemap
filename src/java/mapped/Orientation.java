@@ -241,7 +241,7 @@ public class Orientation {
                Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).setState(var35);
                Client.getInstance().moduleManager.getModuleByClass(Fly.class).setState(var36);
                if (!var17 || !var16) {
-                  if (var8.field44271.method33972().method11341(this.mc.player.getPositionVec()) > 10.0) {
+                  if (var8.field44271.method33972().distanceTo(this.mc.player.getPositionVec()) > 10.0) {
                      this.method31738();
                   }
                }
@@ -277,7 +277,7 @@ public class Orientation {
                if (this.mc.world.getBlockState(this.field39616).isAir()
                      || Math.sqrt(
                            this.mc.player
-                                 .getDistanceNearest(
+                                 .getDistanceSq(
                                        (double) this.field39616.getX() + 0.5,
                                        (double) this.field39616.getY() + 0.5,
                                        (double) this.field39616.getZ() + 0.5)) > 6.0) {
@@ -412,7 +412,7 @@ public class Orientation {
             (float) (-var10.getWidth(var7) / 2 - 10),
             0.0F,
             (float) (var10.getWidth(var7) / 2 + 10),
-            (float) (var10.method23952() + 2),
+            (float) (var10.getHeight() + 2),
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.1F));
       GL11.glTranslated((double) (-var10.getWidth(var7) / 2), 0.0, 0.0);
       RenderUtil.drawString(var10, 0.0F, 0.0F, var7,

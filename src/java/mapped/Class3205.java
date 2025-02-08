@@ -128,7 +128,7 @@ public class Class3205 extends Class3200 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.method11527(var1);
    }
 

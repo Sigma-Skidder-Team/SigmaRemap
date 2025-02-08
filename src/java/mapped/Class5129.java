@@ -17,7 +17,7 @@ public class Class5129 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       BlockPos var11 = this.field23319.player.getPosition();
       World var12 = this.field23319.player.world;
       RenderSystem.enableBlend();

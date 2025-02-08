@@ -18,7 +18,7 @@ public class Class5674 extends Class5651<EndermanEntity, Class2799<EndermanEntit
       this.addLayer(new Class253(this));
    }
 
-   public void render(EndermanEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(EndermanEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       BlockState var9 = entityIn.method4357();
       Class2799 var10 = this.getEntityModel();
       var10.field17443 = var9 != null;

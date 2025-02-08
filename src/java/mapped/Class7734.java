@@ -2,33 +2,33 @@ package mapped;
 
 import java.util.Optional;
 
-public class Class7734 implements Class7733 {
+public class Class7734 implements IRenderTypeBuffer {
    private static String[] field33207;
-   private final Class7735 field33208;
-   private final Class7735 field33209 = Class7733.method25595(new BufferBuilder(256));
+   private final Impl field33208;
+   private final Impl field33209 = IRenderTypeBuffer.getImpl(new BufferBuilder(256));
    private int field33210 = 255;
    private int field33211 = 255;
    private int field33212 = 255;
    private int field33213 = 255;
 
-   public Class7734(Class7735 var1) {
+   public Class7734(Impl var1) {
       this.field33208 = var1;
    }
 
    @Override
-   public IVertexBuilder method25597(RenderType var1) {
+   public IVertexBuilder getBuffer(RenderType var1) {
       if (!var1.method14354()) {
-         IVertexBuilder var8 = this.field33208.method25597(var1);
+         IVertexBuilder var8 = this.field33208.getBuffer(var1);
          Optional var5 = var1.method14353();
          if (!var5.isPresent()) {
             return var8;
          } else {
-            IVertexBuilder var6 = this.field33209.method25597((RenderType)var5.get());
+            IVertexBuilder var6 = this.field33209.getBuffer((RenderType)var5.get());
             Class5428 var7 = new Class5428(var6, this.field33210, this.field33211, this.field33212, this.field33213);
             return Class7802.method26050(var7, var8);
          }
       } else {
-         IVertexBuilder var4 = this.field33209.method25597(var1);
+         IVertexBuilder var4 = this.field33209.getBuffer(var1);
          return new Class5428(var4, this.field33210, this.field33211, this.field33212, this.field33213);
       }
    }

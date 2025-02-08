@@ -17,7 +17,7 @@ import java.util.List;
 public class Compass extends Module {
     public Compass() {
         super(ModuleCategory.GUI, "Compass", "Fornite style directions");
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget

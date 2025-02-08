@@ -79,8 +79,8 @@ public class Class8043 {
       try {
          String var5 = "optifine/lang/" + var1 + ".lang";
          ResourceLocation var6 = new ResourceLocation(var5);
-         JSonShader var7 = var0.getShader(var6);
-         InputStream var8 = var7.getFile();
+         IResource var7 = var0.getResource(var6);
+         InputStream var8 = var7.getInputStream();
          method27617(var8, var2);
       } catch (IOException var9) {
       }

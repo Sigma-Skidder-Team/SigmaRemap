@@ -150,7 +150,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     private void method16109(EventKeyPress var1) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = true;
             }
@@ -160,7 +160,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     private void method16110(MouseHoverEvent var1) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = false;
             }

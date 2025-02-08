@@ -23,17 +23,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import totalcross.json.JSONException;
 
-public class Class1808 implements Class1809, AutoCloseable {
+public class ShaderInstance implements Class1809, AutoCloseable {
    private static final Logger field9742 = LogManager.getLogger();
-   private static final Class1709 field9743 = new Class1709();
-   private static Class1808 field9744;
+   private static final ShaderDefault field9743 = new ShaderDefault();
+   private static ShaderInstance field9744;
    private static int field9745 = -1;
    private final Map<String, IntSupplier> field9746 = Maps.newHashMap();
    private final List<String> field9747 = Lists.newArrayList();
    private final List<Integer> field9748 = Lists.newArrayList();
-   private final List<Class1708> field9749 = Lists.newArrayList();
+   private final List<ShaderUniform> field9749 = Lists.newArrayList();
    private final List<Integer> field9750 = Lists.newArrayList();
-   private final Map<String, Class1708> field9751 = Maps.newHashMap();
+   private final Map<String, ShaderUniform> field9751 = Maps.newHashMap();
    private final int field9752;
    private final String field9753;
    private boolean field9754;
@@ -43,14 +43,14 @@ public class Class1808 implements Class1809, AutoCloseable {
    private final Class8144 field9758;
    private final Class8144 field9759;
 
-   public Class1808(IResourceManager var1, String var2) throws IOException {
+   public ShaderInstance(IResourceManager var1, String var2) throws IOException {
       ResourceLocation var5 = new ResourceLocation("shaders/program/" + var2 + ".json");
       this.field9753 = var2;
-      JSonShader var6 = null;
+      IResource var6 = null;
 
       try {
-         var6 = var1.getShader(var5);
-         JsonObject var7 = JSONUtils.fromJson(new InputStreamReader(var6.getFile(), StandardCharsets.UTF_8));
+         var6 = var1.getResource(var5);
+         JsonObject var7 = JSONUtils.fromJson(new InputStreamReader(var6.getInputStream(), StandardCharsets.UTF_8));
          String var29 = JSONUtils.getString(var7, "vertex");
          String var30 = JSONUtils.getString(var7, "fragment");
          JsonArray var10 = JSONUtils.method32786(var7, "samplers", (JsonArray)null);
@@ -117,14 +117,14 @@ public class Class1808 implements Class1809, AutoCloseable {
          this.method7938();
          if (this.field9757 != null) {
             for (String var38 : this.field9757) {
-               int var40 = Class1708.method7432(this.field9752, var38);
+               int var40 = ShaderUniform.method7432(this.field9752, var38);
                this.field9756.add(var40);
             }
          }
       } catch (Exception var27) {
          String var8;
          if (var6 != null) {
-            var8 = " (" + var6.method7765() + ")";
+            var8 = " (" + var6.getPackName() + ")";
          } else {
             var8 = "";
          }
@@ -143,10 +143,10 @@ public class Class1808 implements Class1809, AutoCloseable {
       Class8144 var5 = var1.method8097().get(var2);
       if (var5 == null) {
          ResourceLocation var6 = new ResourceLocation("shaders/program/" + var2 + var1.method8095());
-         JSonShader var7 = var0.getShader(var6);
+         IResource var7 = var0.getResource(var6);
 
          try {
-            var5 = Class8144.method28250(var1, var2, var7.getFile(), var7.method7765());
+            var5 = Class8144.method28250(var1, var2, var7.getInputStream(), var7.getPackName());
          } finally {
             IOUtils.closeQuietly(var7);
          }
@@ -215,7 +215,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
    @Override
    public void close() {
-      for (Class1708 var4 : this.field9749) {
+      for (ShaderUniform var4 : this.field9749) {
          var4.close();
       }
 
@@ -256,12 +256,12 @@ public class Class1808 implements Class1809, AutoCloseable {
             int var6 = var5.getAsInt();
             if (var6 != -1) {
                RenderSystem.bindTexture(var6);
-               Class1708.method7431(this.field9748.get(var3), var3);
+               ShaderUniform.method7431(this.field9748.get(var3), var3);
             }
          }
       }
 
-      for (Class1708 var8 : this.field9749) {
+      for (ShaderUniform var8 : this.field9749) {
          var8.method7445();
       }
    }
@@ -272,15 +272,15 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    @Nullable
-   public Class1708 method7936(String var1) {
+   public ShaderUniform func_216539_a(String var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       return this.field9751.get(var1);
    }
 
-   public Class1709 getFromName(String var1) {
+   public ShaderDefault getShaderUniform(String var1) {
       RenderSystem.assertThread(RenderSystem::isOnGameThread);
-      Class1708 var4 = this.method7936(var1);
-      return (Class1709)(var4 != null ? var4 : field9743);
+      ShaderUniform var4 = this.func_216539_a(var1);
+      return (ShaderDefault)(var4 != null ? var4 : field9743);
    }
 
    private void method7938() {
@@ -289,7 +289,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
       for (int var4 = 0; var4 < this.field9747.size(); var4++) {
          String var5 = this.field9747.get(var4);
-         int var6 = Class1708.method7430(this.field9752, var5);
+         int var6 = ShaderUniform.method7430(this.field9752, var5);
          if (var6 != -1) {
             this.field9748.add(var6);
          } else {
@@ -303,9 +303,9 @@ public class Class1808 implements Class1809, AutoCloseable {
          this.field9747.remove(var3.getInt(var8));
       }
 
-      for (Class1708 var10 : this.field9749) {
+      for (ShaderUniform var10 : this.field9749) {
          String var11 = var10.method7436();
-         int var7 = Class1708.method7430(this.field9752, var11);
+         int var7 = ShaderUniform.method7430(this.field9752, var11);
          if (var7 != -1) {
             this.field9750.add(var7);
             var10.method7435(var7);
@@ -339,7 +339,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    private void method7941(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.getJSONObject(var1, "uniform");
       String var5 = JSONUtils.getString(var4, "name");
-      int var6 = Class1708.method7434(JSONUtils.getString(var4, "type"));
+      int var6 = ShaderUniform.method7434(JSONUtils.getString(var4, "type"));
       int var7 = JSONUtils.method32777(var4, "count");
       float[] var8 = new float[Math.max(var7, 16)];
       JsonArray var9 = JSONUtils.method32785(var4, "values");
@@ -368,13 +368,13 @@ public class Class1808 implements Class1809, AutoCloseable {
          }
 
          int var16 = var7 > 1 && var7 <= 4 && var6 < 8 ? var7 - 1 : 0;
-         Class1708 var17 = new Class1708(var5, var6 + var16, var7, this);
+         ShaderUniform var17 = new ShaderUniform(var5, var6 + var16, var7, this);
          if (var6 <= 3) {
-            var17.method7442((int)var8[0], (int)var8[1], (int)var8[2], (int)var8[3]);
+            var17.set((int)var8[0], (int)var8[1], (int)var8[2], (int)var8[3]);
          } else if (var6 <= 7) {
-            var17.method7441(var8[0], var8[1], var8[2], var8[3]);
+            var17.setSafe(var8[0], var8[1], var8[2], var8[3]);
          } else {
-            var17.method7443(var8);
+            var17.set(var8);
          }
 
          this.field9749.add(var17);

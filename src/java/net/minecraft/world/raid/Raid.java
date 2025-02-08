@@ -425,7 +425,7 @@ public class Raid {
       byte var5 = 64;
       Collection var6 = this.field32985.getPlayers();
 
-      for (ServerPlayerEntity var8 : this.field32978.method6870()) {
+      for (ServerPlayerEntity var8 : this.field32978.getPlayers()) {
          Vector3d var9 = var8.getPositionVec();
          Vector3d var10 = Vector3d.method11328(var1);
          float var11 = MathHelper.sqrt(

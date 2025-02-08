@@ -27,7 +27,7 @@ public abstract class EntityRenderer<T extends Entity> {
 
    public final int method17894(T var1, float var2) {
       BlockPos var5 = new BlockPos(var1.method3287(var2));
-      return Class1699.method7321(this.method17858((T)var1, var5), this.method17895((T)var1, var5));
+      return LightTexture.method7321(this.method17858((T)var1, var5), this.method17895((T)var1, var5));
    }
 
    public int method17895(T var1, BlockPos var2) {
@@ -66,7 +66,7 @@ public abstract class EntityRenderer<T extends Entity> {
       return Vector3d.ZERO;
    }
 
-   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       if (Reflector.field42994.exists()) {
          Object var9 = Reflector.method35087(Reflector.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
          Reflector.method35086(var9);
@@ -90,7 +90,7 @@ public abstract class EntityRenderer<T extends Entity> {
       return this.field25097.method32231();
    }
 
-   public void method17893(T var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
+   public void method17893(T var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       boolean var10 = !(var8 > 4096.0);
       if (Reflector.field42879.exists()) {

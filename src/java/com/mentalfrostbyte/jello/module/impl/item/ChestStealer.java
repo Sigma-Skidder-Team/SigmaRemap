@@ -95,11 +95,11 @@ public class ChestStealer extends Module {
                     if (!this.field23621
                             && (
                             this.field23625 == null
-                                    || mc.player.getDistanceNearest(var9, var10, var11)
-                                    > mc.player.getDistanceNearest(var9, var10, var11)
+                                    || mc.player.getDistanceSq(var9, var10, var11)
+                                    > mc.player.getDistanceSq(var9, var10, var11)
                     )
                             && !var8
-                            && Math.sqrt(mc.player.getDistanceNearest(var9, var10, var11)) < 5.0
+                            && Math.sqrt(mc.player.getDistanceSq(var9, var10, var11)) < 5.0
                             && this.field23624.getElapsedTime() > 1000L
                             && mc.currentScreen == null) {
                         BlockRayTraceResult var12 = (BlockRayTraceResult) BlockUtil.method34570(var7.getPos());

@@ -14,7 +14,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.getPrimaryHand() == HandSide.RIGHT;
       ItemStack var14 = !var13 ? var4.getHeldItemMainhand() : var4.getHeldItemOffhand();
       ItemStack var15 = !var13 ? var4.getHeldItemOffhand() : var4.getHeldItemMainhand();
@@ -32,7 +32,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> 
       }
    }
 
-   private void method838(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, HandSide var4, MatrixStack var5, Class7733 var6, int var7) {
+   private void method838(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, HandSide var4, MatrixStack var5, IRenderTypeBuffer var6, int var7) {
       if (!var2.isEmpty()) {
          var5.push();
          this.method825().translateHand(var4, var5);

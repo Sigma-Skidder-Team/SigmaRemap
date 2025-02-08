@@ -98,13 +98,13 @@ public class Class4271 extends Class4247 {
          RenderUtil.drawString(
                this.getFont(),
                (float) (this.getXA() + 10),
-               (float) (this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
+               (float) (this.getYA() + (this.getHeightA() - this.getFont().getHeight()) / 2 + 1),
                this.typedText,
                MultiUtilities.applyAlpha(this.textColor.method19405(), partialTicks * 0.7F));
          RenderUtil.endScissor();
       }
 
-      RenderUtil.drawPortalBackground(
+      RenderUtil.drawBlurredBackground(
             this.method13271(), this.method13272(), this.method13271() + this.getWidthA(),
             this.method13272() + this.getHeightA() + this.method13108());
       GL11.glPushMatrix();

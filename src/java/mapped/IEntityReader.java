@@ -23,7 +23,7 @@ public interface IEntityReader {
       return this.<T>getEntitiesInAABBexcluding(var1, var2, var3);
    }
 
-   List<? extends PlayerEntity> method6870();
+   List<? extends PlayerEntity> getPlayers();
 
    default List<Entity> method7181(Entity var1, AxisAlignedBB var2) {
       return this.getEntitiesInAABBexcluding(var1, var2, EntityPredicates.field34763);
@@ -81,9 +81,9 @@ public interface IEntityReader {
       double var12 = -1.0;
       PlayerEntity var14 = null;
 
-      for (PlayerEntity var16 : this.method6870()) {
+      for (PlayerEntity var16 : this.getPlayers()) {
          if (var9 == null || var9.test(var16)) {
-            double var17 = var16.getDistanceNearest(var1, var3, var5);
+            double var17 = var16.getDistanceSq(var1, var3, var5);
             if ((var7 < 0.0 || var17 < var7 * var7) && (var12 == -1.0 || var17 < var12)) {
                var12 = var17;
                var14 = var16;
@@ -106,9 +106,9 @@ public interface IEntityReader {
    }
 
    default boolean method7187(double var1, double var3, double var5, double var7) {
-      for (PlayerEntity var12 : this.method6870()) {
+      for (PlayerEntity var12 : this.getPlayers()) {
          if (EntityPredicates.field34763.test(var12) && EntityPredicates.field34758.test(var12)) {
-            double var13 = var12.getDistanceNearest(var1, var3, var5);
+            double var13 = var12.getDistanceSq(var1, var3, var5);
             if (var7 < 0.0 || var13 < var7 * var7) {
                return true;
             }
@@ -120,17 +120,17 @@ public interface IEntityReader {
 
    @Nullable
    default PlayerEntity method7188(EntityPredicate var1, LivingEntity var2) {
-      return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var2.getPosX(), var2.getPosY(), var2.getPosZ());
+      return this.<PlayerEntity>method7193(this.getPlayers(), var1, var2, var2.getPosX(), var2.getPosY(), var2.getPosZ());
    }
 
    @Nullable
    default PlayerEntity method7189(EntityPredicate var1, LivingEntity var2, double var3, double var5, double var7) {
-      return this.<PlayerEntity>method7193(this.method6870(), var1, var2, var3, var5, var7);
+      return this.<PlayerEntity>method7193(this.getPlayers(), var1, var2, var3, var5, var7);
    }
 
    @Nullable
    default PlayerEntity method7190(EntityPredicate var1, double var2, double var4, double var6) {
-      return this.<PlayerEntity>method7193(this.method6870(), var1, (LivingEntity)null, var2, var4, var6);
+      return this.<PlayerEntity>method7193(this.getPlayers(), var1, (LivingEntity)null, var2, var4, var6);
    }
 
    @Nullable
@@ -150,7 +150,7 @@ public interface IEntityReader {
 
       for (LivingEntity var16 : var1) {
          if (var2.canTarget(var3, var16)) {
-            double var17 = var16.getDistanceNearest(var4, var6, var8);
+            double var17 = var16.getDistanceSq(var4, var6, var8);
             if (var12 == -1.0 || var17 < var12) {
                var12 = var17;
                var14 = var16;
@@ -164,7 +164,7 @@ public interface IEntityReader {
    default List<PlayerEntity> method7194(EntityPredicate var1, LivingEntity var2, AxisAlignedBB var3) {
       ArrayList var6 = Lists.newArrayList();
 
-      for (PlayerEntity var8 : this.method6870()) {
+      for (PlayerEntity var8 : this.getPlayers()) {
          if (var3.contains(var8.getPosX(), var8.getPosY(), var8.getPosZ()) && var1.canTarget(var2, var8)) {
             var6.add(var8);
          }
@@ -188,8 +188,8 @@ public interface IEntityReader {
 
    @Nullable
    default PlayerEntity method7196(UUID var1) {
-      for (int var4 = 0; var4 < this.method6870().size(); var4++) {
-         PlayerEntity var5 = this.method6870().get(var4);
+      for (int var4 = 0; var4 < this.getPlayers().size(); var4++) {
+         PlayerEntity var5 = this.getPlayers().get(var4);
          if (var1.equals(var5.getUniqueID())) {
             return var5;
          }

@@ -36,7 +36,7 @@ public class Class7020 implements Class7016 {
             } else {
                int var7 = 0;
 
-               for (PlayerEntity var9 : var1.method6870()) {
+               for (PlayerEntity var9 : var1.getPlayers()) {
                   if (!var9.isSpectator()) {
                      BlockPos var10 = var9.getPosition();
                      if (!var1.getDimensionType().hasSkyLight() || var10.getY() >= var1.getSeaLevel() && var1.method7022(var10)) {

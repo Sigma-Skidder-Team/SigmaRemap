@@ -109,7 +109,7 @@ public class Class6997 extends Class6990 {
          BlockPos var4 = this.field30245.method28704();
          if (!var4.equals(this.field30250)) {
             this.field30250 = var4;
-            double var5 = var1.method11341(Vector3d.method11328(this.field30250));
+            double var5 = var1.distanceTo(Vector3d.method11328(this.field30250));
             this.field30253 = !(this.field30243.getAIMoveSpeed() > 0.0F) ? 0.0 : var5 / (double)this.field30243.getAIMoveSpeed() * 100.0;
          } else {
             this.field30251 = this.field30251 + (Util.milliTime() - this.field30252);

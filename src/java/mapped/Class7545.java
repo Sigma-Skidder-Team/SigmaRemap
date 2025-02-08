@@ -24,9 +24,9 @@ public class Class7545 implements Class7544 {
    @Nullable
    @Override
    public Class1768 method24664(IResourceManager var1) {
-      try (JSonShader var4 = Minecraft.getInstance().getResourceManager().getShader(this.field32363)) {
+      try (IResource var4 = Minecraft.getInstance().getResourceManager().getResource(this.field32363)) {
          byte[] var6 = new byte[65536];
-         var4.getFile().read(var6);
+         var4.getInputStream().read(var6);
          return new Class1770(var1, var6, this.field32364);
       } catch (IOException var19) {
          Class1770.method7747().error("Cannot load {}, unicode glyphs will not render correctly", this.field32363);

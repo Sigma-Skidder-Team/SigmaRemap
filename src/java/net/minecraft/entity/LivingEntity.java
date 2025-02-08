@@ -157,7 +157,7 @@ public abstract class LivingEntity extends Entity {
    public LivingEntity(EntityType<? extends LivingEntity> var1, World var2) {
       super(var1, var2);
       this.attributes = new AttributeModifierManager(GlobalEntityTypeAttributes.method37375(var1));
-      this.setHealth(this.method3075());
+      this.setHealth(this.getMaxHealth());
       this.preventEntitySpawning = true;
       this.randomUnused1 = (float) ((Math.random() + 1.0) * 0.01F);
       this.recenterBoundingBox();
@@ -913,7 +913,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void setHealth(float var1) {
-      this.dataManager.set(HEALTH, MathHelper.clamp(var1, 0.0F, this.method3075()));
+      this.dataManager.set(HEALTH, MathHelper.clamp(var1, 0.0F, this.getMaxHealth()));
    }
 
    public boolean getShouldBeDead() {
@@ -1529,7 +1529,7 @@ public abstract class LivingEntity extends Entity {
       }
    }
 
-   public final float method3075() {
+   public final float getMaxHealth() {
       return (float) this.getAttributeValue(Attributes.MAX_HEALTH);
    }
 
@@ -3032,12 +3032,12 @@ public abstract class LivingEntity extends Entity {
    public AxisAlignedBB getPoseAABB(Pose var1) {
       EntitySize var4 = this.getSize(var1);
       return new AxisAlignedBB(
-            (double) (-var4.field39968 / 2.0F),
+            (double) (-var4.width / 2.0F),
             0.0,
-            (double) (-var4.field39968 / 2.0F),
-            (double) (var4.field39968 / 2.0F),
-            (double) var4.field39969,
-            (double) (var4.field39968 / 2.0F));
+            (double) (-var4.width / 2.0F),
+            (double) (var4.width / 2.0F),
+            (double) var4.height,
+            (double) (var4.width / 2.0F));
    }
 
    public Optional<BlockPos> getBedPosition() {

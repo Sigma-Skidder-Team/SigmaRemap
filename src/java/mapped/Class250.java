@@ -18,12 +18,12 @@ public class Class250<T extends PlayerEntity> extends Class219<T, PlayerModel<T>
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method840(var1, var2, var3, (T)var4, var5, var6, var9, var10, true);
       this.method840(var1, var2, var3, (T)var4, var5, var6, var9, var10, false);
    }
 
-   private void method840(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, boolean var9) {
+   private void method840(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, boolean var9) {
       CompoundNBT var12 = !var9 ? var4.method2971() : var4.method2969();
       EntityType.method33199(var12.getString("id")).filter(var0 -> var0 == EntityType.PARROT).ifPresent(var11 -> {
          Entity var14 = Config.method26874().field1000;
@@ -40,7 +40,7 @@ public class Class250<T extends PlayerEntity> extends Class219<T, PlayerModel<T>
 
          var1.push();
          var1.translate(!var9 ? -0.4F : 0.4F, !var4.isCrouching() ? -1.5 : -1.3F, 0.0);
-         IVertexBuilder var17 = var2.method25597(this.field907.method11028(Class5697.field25067[var12.getInt("Variant")]));
+         IVertexBuilder var17 = var2.getBuffer(this.field907.method11028(Class5697.field25067[var12.getInt("Variant")]));
          this.field907.method11019(var1, var17, var3, OverlayTexture.NO_OVERLAY, var5, var6, var7, var8, var4.ticksExisted);
          var1.pop();
          Config.method26874().field1000 = var14;

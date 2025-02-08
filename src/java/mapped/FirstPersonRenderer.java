@@ -46,7 +46,7 @@ public class FirstPersonRenderer {
    }
 
    public void renderItemSide(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4,
-         MatrixStack var5, Class7733 var6, int var7) {
+                              MatrixStack var5, IRenderTypeBuffer var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.isEmpty()) {
          this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, OverlayTexture.NO_OVERLAY);
@@ -61,7 +61,7 @@ public class FirstPersonRenderer {
       return -MathHelper.cos(var4 * (float) Math.PI) * 0.5F + 0.5F;
    }
 
-   private void method37582(MatrixStack var1, Class7733 var2, int var3, HandSide var4) {
+   private void method37582(MatrixStack var1, IRenderTypeBuffer var2, int var3, HandSide var4) {
       this.mc.getTextureManager().bindTexture(this.mc.player.method5371());
       PlayerRenderer var7 = (PlayerRenderer) this.field45085.<AbstractClientPlayerEntity>getRenderer(this.mc.player);
       var1.push();
@@ -79,8 +79,8 @@ public class FirstPersonRenderer {
       var1.pop();
    }
 
-   private void method37583(MatrixStack var1, Class7733 var2, int var3, float var4, HandSide var5, float var6,
-         ItemStack var7) {
+   private void method37583(MatrixStack var1, IRenderTypeBuffer var2, int var3, float var4, HandSide var5, float var6,
+                            ItemStack var7) {
       float var10 = var5 != HandSide.RIGHT ? -1.0F : 1.0F;
       var1.translate((double) (var10 * 0.125F), -0.125, 0.0);
       if (!this.mc.player.isInvisible()) {
@@ -104,7 +104,7 @@ public class FirstPersonRenderer {
       var1.pop();
    }
 
-   private void method37584(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, float var6) {
+   private void method37584(MatrixStack var1, IRenderTypeBuffer var2, int var3, float var4, float var5, float var6) {
       float var9 = MathHelper.sqrt(var6);
       float var10 = -0.2F * MathHelper.sin(var6 * (float) Math.PI);
       float var11 = -0.4F * MathHelper.sin(var9 * (float) Math.PI);
@@ -126,14 +126,14 @@ public class FirstPersonRenderer {
       this.method37585(var1, var2, var3, this.field45079);
    }
 
-   private void method37585(MatrixStack var1, Class7733 var2, int var3, ItemStack var4) {
+   private void method37585(MatrixStack var1, IRenderTypeBuffer var2, int var3, ItemStack var4) {
       var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
       var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
       var1.scale(0.38F, 0.38F, 0.38F);
       var1.translate(-0.5, -0.5, 0.0);
       var1.scale(0.0078125F, 0.0078125F, 0.0078125F);
       MapData var7 = Class3316.method11861(var4, this.mc.world);
-      IVertexBuilder var8 = var2.method25597(var7 != null ? field45077 : field45076);
+      IVertexBuilder var8 = var2.getBuffer(var7 != null ? field45077 : field45076);
       Matrix4f var9 = var1.getLast().getMatrix();
       var8.pos(var9, -7.0F, 135.0F, 0.0F).color(255, 255, 255, 255).tex(0.0F, 1.0F).method17034(var3).endVertex();
       var8.pos(var9, 135.0F, 135.0F, 0.0F).color(255, 255, 255, 255).tex(1.0F, 1.0F).method17034(var3).endVertex();
@@ -144,7 +144,7 @@ public class FirstPersonRenderer {
       }
    }
 
-   private void method37586(MatrixStack var1, Class7733 var2, int var3, float var4, float var5, HandSide var6) {
+   private void method37586(MatrixStack var1, IRenderTypeBuffer var2, int var3, float var4, float var5, HandSide var6) {
       boolean var9 = var6 != HandSide.LEFT;
       float var10 = !var9 ? -1.0F : 1.0F;
       float var11 = MathHelper.sqrt(var5);
@@ -204,7 +204,7 @@ public class FirstPersonRenderer {
       var1.translate((double) ((float) var6 * 0.56F), (double) (-0.52F + var3 * -0.6F), -0.72F);
    }
 
-   public void method37590(float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5) {
+   public void method37590(float var1, MatrixStack var2, IRenderTypeBuffer.Impl var3, ClientPlayerEntity var4, int var5) {
       float var8 = var4.getSwingProgress(var1);
       Hand var9 = (Hand) MoreObjects.firstNonNull(var4.swingingHand, Hand.MAIN_HAND);
       float var10 = MathHelper.lerp(var1, var4.prevRotationPitch, var4.rotationPitch);
@@ -265,8 +265,8 @@ public class FirstPersonRenderer {
    }
 
    private void method37591(
-         AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float swingProgress, ItemStack var6,
-         float equippedProgress, MatrixStack matrixStackIn, Class7733 var9, int var10) {
+           AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float swingProgress, ItemStack var6,
+           float equippedProgress, MatrixStack matrixStackIn, IRenderTypeBuffer var9, int var10) {
       if (!Config.isShaders() || !Shaders.method33153(var4)) {
          boolean var13 = var4 == Hand.MAIN_HAND;
          HandSide handside = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().opposite();

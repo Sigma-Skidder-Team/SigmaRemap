@@ -40,7 +40,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
       int var6 = (int)((float)this.getHeightA() * this.field20581);
       int var7 = this.getXA() - (var5 - this.getWidthA()) / 2;
       int var8 = this.getYA() - (var6 - this.getHeightA()) / 2;
-      RenderUtil.drawPortalBackground(
+      RenderUtil.drawBlurredBackground(
          this.method13271() + var7 - this.xA,
          this.method13272() + var8 - this.yA,
          this.method13271() + var7 - this.xA + var5,

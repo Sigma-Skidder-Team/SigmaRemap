@@ -11,8 +11,8 @@ import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 
 public class TextureImpl implements Texture {
-   public static SGL field43736 = Renderer.get();
-   public static Texture field43737;
+   public static SGL GL = Renderer.get();
+   public static Texture lastBind;
    private int field43738;
    private int field43739;
    private int field43740;
@@ -27,7 +27,7 @@ public class TextureImpl implements Texture {
    private ReloadData field43749;
 
    public static Texture method36176() {
-      return field43737;
+      return lastBind;
    }
 
    public TextureImpl() {
@@ -37,7 +37,7 @@ public class TextureImpl implements Texture {
       this.field43738 = var2;
       this.field43747 = var1;
       this.field43739 = var3;
-      field43737 = this;
+      lastBind = this;
    }
 
    public void method36177(String var1) {
@@ -59,20 +59,20 @@ public class TextureImpl implements Texture {
    }
 
    public static void bindNone() {
-      field43737 = null;
-      field43736.glDisable(3553);
+      lastBind = null;
+      GL.glDisable(3553);
    }
 
-   public static void method36180() {
-      field43737 = null;
+   public static void unbind() {
+      lastBind = null;
    }
 
    @Override
    public void bind() {
-      if (field43737 != this) {
-         field43737 = this;
-         field43736.glEnable(3553);
-         field43736.glBindTexture(this.field43738, this.field43739);
+      if (lastBind != this) {
+         lastBind = this;
+         GL.glEnable(3553);
+         GL.glBindTexture(this.field43738, this.field43739);
       }
    }
 
@@ -143,8 +143,8 @@ public class TextureImpl implements Texture {
       IntBuffer var3 = this.method36188(1);
       var3.put(this.field43739);
       var3.flip();
-      field43736.glDeleteTextures(var3);
-      if (field43737 == this) {
+      GL.glDeleteTextures(var3);
+      if (lastBind == this) {
          bindNone();
       }
 
@@ -174,7 +174,7 @@ public class TextureImpl implements Texture {
    public byte[] getTextureData() {
       ByteBuffer var3 = BufferUtils.createByteBuffer((!this.hasAlpha() ? 3 : 4) * this.field43742 * this.field43743);
       this.bind();
-      field43736.glGetTexImage(3553, 0, !this.hasAlpha() ? 6407 : 6408, 5121, var3);
+      GL.glGetTexImage(3553, 0, !this.hasAlpha() ? 6407 : 6408, 5121, var3);
       byte[] var4 = new byte[var3.limit()];
       var3.get(var4);
       ((Buffer)var3).clear();
@@ -184,8 +184,8 @@ public class TextureImpl implements Texture {
    @Override
    public void setTextureFilter(int var1) {
       this.bind();
-      field43736.glTexParameteri(this.field43738, 10241, var1);
-      field43736.glTexParameteri(this.field43738, 10240, var1);
+      GL.glTexParameteri(this.field43738, 10241, var1);
+      GL.glTexParameteri(this.field43738, 10240, var1);
    }
 
    public void method36189(int var1, int var2, int var3, int var4, ByteBuffer var5) {

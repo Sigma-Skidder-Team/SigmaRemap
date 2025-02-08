@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.stream.Collectors;
 
-public class Class286 implements Class268 {
+public class Class286 implements IFutureReloadListener {
    private final Class9768<Block> field1088 = new Class9768<Block>(Registry.BLOCK::method9187, "tags/blocks", "block");
    private final Class9768<Item> field1089 = new Class9768<Item>(Registry.ITEM::method9187, "tags/items", "item");
    private final Class9768<Fluid> field1090 = new Class9768<Fluid>(Registry.FLUID::method9187, "tags/fluids", "fluid");
@@ -28,13 +28,13 @@ public class Class286 implements Class268 {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       CompletableFuture<Map<ResourceLocation, Class6879>> var9 = this.field1088.method38419(var2, var5);
       CompletableFuture<Map<ResourceLocation, Class6879>> var10 = this.field1089.method38419(var2, var5);
       CompletableFuture<Map<ResourceLocation, Class6879>> var11 = this.field1090.method38419(var2, var5);
       CompletableFuture<Map<ResourceLocation, Class6879>> var12 = this.field1091.method38419(var2, var5);
       return CompletableFuture.allOf(var9, var10, var11, var12)
-         .<Void>thenCompose(var1::method22225)
+         .<Void>thenCompose(var1::markCompleteAwaitingOthers)
          .thenAcceptAsync(
             var5x -> {
                ITagCollection var8 = this.field1088.method38420(var9.join());

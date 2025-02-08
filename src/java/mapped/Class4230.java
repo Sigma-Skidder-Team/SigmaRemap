@@ -12,8 +12,8 @@ public class Class4230 {
    public static int[] method13022(IResourceManager var0, ResourceLocation var1) throws IOException {
       int[] var8;
       try (
-              JSonShader var4 = var0.getShader(var1);
-              NativeImage var6 = NativeImage.method7879(var4.getFile());
+              IResource var4 = var0.getResource(var1);
+              NativeImage var6 = NativeImage.method7879(var4.getInputStream());
       ) {
          var8 = var6.method7892();
       }

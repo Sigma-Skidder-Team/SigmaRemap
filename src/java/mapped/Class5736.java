@@ -30,7 +30,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       this.field25156 = var2;
    }
 
-   public void render(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       super.render(var1, var2, var3, var4, var5, var6);
       var4.push();
       Direction var9 = var1.getHorizontalFacing();
@@ -50,7 +50,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
          var14.method812()
             .method24689(
                var4.getLast(),
-               var5.method25597(Class8624.method30906()),
+               var5.getBuffer(Class8624.method30906()),
                (BlockState)null,
                var15.method1023(var16),
                1.0F,
@@ -114,7 +114,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       }
    }
 
-   public void method17893(ItemFrameEntity var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
+   public void method17893(ItemFrameEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
       super.method17893(var1, var1.method4090().method32149(), var3, var4, var5);
    }
 
@@ -122,7 +122,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       if (! Shaders.isShadowPass) {
          if (!Config.field34162) {
             Entity var4 = this.field25155.getRenderViewEntity();
-            double var5 = var1.getDistanceNearest(var4.getPosX(), var4.getPosY(), var4.getPosZ());
+            double var5 = var1.getDistanceSq(var4.getPosX(), var4.getPosY(), var4.getPosZ());
             if (var5 > field25157) {
                return false;
             }

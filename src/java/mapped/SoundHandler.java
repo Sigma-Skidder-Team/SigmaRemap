@@ -42,15 +42,15 @@ public class SoundHandler extends Class269<Class8657> {
       Class8657 var5 = new Class8657();
       var2.startTick();
 
-      for (String var7 : var1.method579()) {
+      for (String var7 : var1.getResourceNamespaces()) {
          var2.startSection(var7);
 
          try {
-            for (JSonShader var9 : var1.method582(new ResourceLocation(var7, "sounds.json"))) {
-               var2.startSection(var9.method7765());
+            for (IResource var9 : var1.getAllResources(new ResourceLocation(var7, "sounds.json"))) {
+               var2.startSection(var9.getPackName());
 
                try (
-                       InputStream var10 = var9.getFile();
+                       InputStream var10 = var9.getInputStream();
                        InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
                ) {
                   var2.startSection("parse");
@@ -63,7 +63,7 @@ public class SoundHandler extends Class269<Class8657> {
 
                   var2.endSection();
                } catch (RuntimeException var46) {
-                  field1052.warn("Invalid sounds.json in resourcepack: '{}'", var9.method7765(), var46);
+                  field1052.warn("Invalid sounds.json in resourcepack: '{}'", var9.getPackName(), var46);
                }
 
                var2.endSection();
@@ -104,7 +104,7 @@ public class SoundHandler extends Class269<Class8657> {
 
    private static boolean method996(Class6647 var0, ResourceLocation var1, IResourceManager var2) {
       ResourceLocation var5 = var0.method20292();
-      if (var2.method581(var5)) {
+      if (var2.hasResource(var5)) {
          return true;
       } else {
          field1052.warn("File {} does not exist, cannot add it to event {}", var5, var1);

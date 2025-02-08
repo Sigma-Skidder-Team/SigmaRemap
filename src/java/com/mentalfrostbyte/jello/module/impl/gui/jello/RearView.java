@@ -37,7 +37,7 @@ public class RearView extends Module {
         this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
         this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F,
                 1000.0F, 1.0F));
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget
@@ -114,10 +114,10 @@ public class RearView extends Module {
                     RenderUtil.drawRoundedRect((float) (mc.mainWindow.getWidth() - offset - rearViewWidth),
                             (float) (mc.mainWindow.getHeight() + positionY), (float) rearViewWidth,
                             (float) (rearViewHeight - 1), 14.0F, this.animation.calcPercent());
-                    rearViewWidth = (int) ((float) rearViewWidth * GuiManager.portalScaleFactor);
-                    rearViewHeight = (int) ((float) rearViewHeight * GuiManager.portalScaleFactor);
-                    offset = (int) ((float) offset * GuiManager.portalScaleFactor);
-                    positionY = (int) ((float) positionY * GuiManager.portalScaleFactor);
+                    rearViewWidth = (int) ((float) rearViewWidth * GuiManager.scaleFactor);
+                    rearViewHeight = (int) ((float) rearViewHeight * GuiManager.scaleFactor);
+                    offset = (int) ((float) offset * GuiManager.scaleFactor);
+                    positionY = (int) ((float) positionY * GuiManager.scaleFactor);
                     RenderSystem.pushMatrix();
                     this.renderFramebuffer(framebuffer, rearViewWidth, rearViewHeight,
                             mc.mainWindow.getFramebufferWidth() - offset - rearViewWidth,
@@ -133,8 +133,8 @@ public class RearView extends Module {
                     RenderSystem.matrixMode(5888);
                     RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
-                    GL11.glScaled(1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
-                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0);
+                    GL11.glScaled(1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0);
                     framebuffer.unbindFramebuffer();
                     mc.getFramebuffer().bindFramebuffer(true);
                 }

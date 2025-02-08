@@ -20,7 +20,7 @@ public class Class251 extends Class219<IronGolemEntity, Class2880<IronGolemEntit
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible()) {
          Class2286 var13 = var4.method4865();
          if (var13 != Class2286.field15131) {

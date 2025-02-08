@@ -28,9 +28,9 @@ import net.optifine.CustomGuis;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TextureManager implements Class268, Class288, AutoCloseable {
+public class TextureManager implements IFutureReloadListener, Class288, AutoCloseable {
    private static final Logger field1093 = LogManager.getLogger();
-   public static final ResourceLocation field1094 = new ResourceLocation("");
+   public static final ResourceLocation RESOURCE_LOCATION_EMPTY = new ResourceLocation("");
    private final Map<ResourceLocation, Texture> field1095 = Maps.newHashMap();
    private final Set<Class288> field1096 = Sets.newHashSet();
    private final Map<String, Integer> field1097 = Maps.newHashMap();
@@ -103,7 +103,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          var2.method1090(this.field1098);
          return var2;
       } catch (IOException var8) {
-         if (var1 != field1094) {
+         if (var1 != RESOURCE_LOCATION_EMPTY) {
             field1093.warn("Failed to load texture: {}", var1, var8);
          }
 
@@ -174,7 +174,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       Config.method26810("*** Reloading textures ***");
       Config.method26815("Resource packs: " + Config.method26870());
       Iterator var9 = this.field1095.keySet().iterator();
@@ -194,7 +194,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
       EmissiveTextures.method30599();
       return CompletableFuture.allOf(VanillaMainMenuScreen.method2595(this, var5), this.method1078(Widget.WIDGETS_LOCATION, var5))
-         .<Void>thenCompose(var1::method22225)
+         .<Void>thenCompose(var1::markCompleteAwaitingOthers)
          .thenAcceptAsync(var3x -> {
             Class1714.method7515();
             RealmsMainScreen.method2061(this.field1098);

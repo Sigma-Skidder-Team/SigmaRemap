@@ -289,7 +289,7 @@ public class FoxEntity extends AnimalEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return !this.isChild() ? 0.4F : var2.field39969 * 0.85F;
+      return !this.isChild() ? 0.4F : var2.height * 0.85F;
    }
 
    public Class186 method5125() {

@@ -19,7 +19,7 @@ public class Class5944 extends Class5942<Class966> {
       this.field25933.method22670(var4);
    }
 
-   public void method18462(Class966 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class966 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       float var9 = (float)var1.field5416 + var2;
       float var10 = 0.0F;
       float var11 = 0.0F;

@@ -132,7 +132,6 @@ public class ModuleManager {
         this.register(new Weather());
         this.register(new FastBreak());
         this.register(new AntiVanish());
-        this.register(new InteractRange());
         this.register(new Spammer());
         this.register(new Jargon());
         this.register(new ChatFilter());

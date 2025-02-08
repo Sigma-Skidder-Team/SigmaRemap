@@ -140,7 +140,7 @@ public class ModelRenderer {
    public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (this.showModel && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
          RenderType var11 = null;
-         Class7735 var12 = null;
+         IRenderTypeBuffer.Impl var12 = null;
          if (this.field31047 != null) {
             if (this.field31050.field1020) {
                return;
@@ -176,7 +176,7 @@ public class ModelRenderer {
 
          var1.pop();
          if (var11 != null) {
-            var12.method25597(var11);
+            var12.getBuffer(var11);
          }
       }
    }

@@ -28,30 +28,30 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class GuiManager {
-    public static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, String> field41338 = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, String>();
-    private static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>> field41337 = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>>();
-    public static long field41344;
-    public static long field41345;
-    public static long field41346;
-    public static float portalScaleFactor = 1.0F;
-    private static boolean field41351 = true;
+    public static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, String> screenToScreenName = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, String>();
+    private static final Map<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>> replacementScreens = new HashMap<Class<? extends net.minecraft.client.gui.screen.Screen>, Class<? extends Screen>>();
+    public static long arrowCursor;
+    public static long pointingHandCursor;
+    public static long iBeamCursor;
+    public static float scaleFactor = 1.0F;
+    private static boolean hidpiCocoa = true;
 
     static {
-        field41337.put(VanillaMainMenuScreen.class, JelloMainMenuScreen.class);
-        field41337.put(ClickGui.class, JelloClickGUI.class);
-        field41337.put(Class1144.class, JelloKeyboardScreen.class);
-        field41337.put(Maps.class, JelloMaps.class);
-        field41337.put(Snake.class, SnakeGameScreen.class);
-        field41337.put(Bird.class, BirdGameScreen.class);
-        field41337.put(SpotLight.class, SearchBar.class);
-        field41337.put(Class1309.class, JelloInGameOptions.class);
-        field41337.put(Class1133.class, CreditsToCreators.class);
-        field41338.put(ClickGui.class, "Click GUI");
-        field41338.put(Class1144.class, "Keybind Manager");
-        field41338.put(Maps.class, "Jello Maps");
-        field41338.put(Snake.class, "Snake");
-        field41338.put(Bird.class, "Bird");
-        field41338.put(SpotLight.class, "Spotlight");
+        replacementScreens.put(VanillaMainMenuScreen.class, JelloMainMenuScreen.class);
+        replacementScreens.put(ClickGui.class, JelloClickGUI.class);
+        replacementScreens.put(Class1144.class, JelloKeyboardScreen.class);
+        replacementScreens.put(Maps.class, JelloMaps.class);
+        replacementScreens.put(Snake.class, SnakeGameScreen.class);
+        replacementScreens.put(Bird.class, BirdGameScreen.class);
+        replacementScreens.put(SpotLight.class, SearchBar.class);
+        replacementScreens.put(Class1309.class, JelloInGameOptions.class);
+        replacementScreens.put(Class1133.class, CreditsToCreators.class);
+        screenToScreenName.put(ClickGui.class, "Click GUI");
+        screenToScreenName.put(Class1144.class, "Keybind Manager");
+        screenToScreenName.put(Maps.class, "Jello Maps");
+        screenToScreenName.put(Snake.class, "Snake");
+        screenToScreenName.put(Bird.class, "Bird");
+        screenToScreenName.put(SpotLight.class, "Spotlight");
     }
 
     public double field41347;
@@ -70,13 +70,13 @@ public class GuiManager {
     private long field41356;
 
     public GuiManager() {
-        this.field41355 = field41344;
-        this.field41356 = field41344;
-        field41344 = GLFW.glfwCreateStandardCursor(221185);
-        field41345 = GLFW.glfwCreateStandardCursor(221188);
-        field41346 = GLFW.glfwCreateStandardCursor(221186);
-        GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
-        portalScaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight()
+        this.field41355 = arrowCursor;
+        this.field41356 = arrowCursor;
+        arrowCursor = GLFW.glfwCreateStandardCursor(221185);
+        pointingHandCursor = GLFW.glfwCreateStandardCursor(221188);
+        iBeamCursor = GLFW.glfwCreateStandardCursor(221186);
+        GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), arrowCursor);
+        scaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight()
                 / Minecraft.getInstance().mainWindow.getHeight());
     }
 
@@ -106,11 +106,11 @@ public class GuiManager {
             return new GuiSwitch();
         } else if (method33457(var0)) {
             return null;
-        } else if (!field41337.containsKey(var0.getClass())) {
+        } else if (!replacementScreens.containsKey(var0.getClass())) {
             return null;
         } else {
             try {
-                return field41337.get(var0.getClass()).newInstance();
+                return replacementScreens.get(var0.getClass()).newInstance();
             } catch (InstantiationException | IllegalAccessException var4) {
                 var4.printStackTrace();
             }
@@ -125,10 +125,10 @@ public class GuiManager {
             try {
                 JSONObject var2 = FileUtil.readFile(new File(Client.getInstance().file + "/config.json"));
                 if (var2.has("hidpicocoa")) {
-                    field41351 = var2.getBoolean("hidpicocoa");
+                    hidpiCocoa = var2.getBoolean("hidpicocoa");
                 }
 
-                GLFW.glfwWindowHint(143361, field41351 ? 1 : 0);
+                GLFW.glfwWindowHint(143361, hidpiCocoa ? 1 : 0);
             } catch (IOException var3) {
                 var3.printStackTrace();
             }
@@ -136,9 +136,9 @@ public class GuiManager {
     }
 
     public void method33452() {
-        field41337.clear();
-        field41337.put(VanillaMainMenuScreen.class, ClassicMainScreen.class);
-        field41337.put(ClickGui.class, ClassicScreenk.class);
+        replacementScreens.clear();
+        replacementScreens.put(VanillaMainMenuScreen.class, ClassicMainScreen.class);
+        replacementScreens.put(ClickGui.class, ClassicScreenk.class);
     }
 
     public void method33453(int var1, int var2) {
@@ -212,7 +212,7 @@ public class GuiManager {
             }
 
             if (this.screen != null) {
-                this.field41355 = field41344;
+                this.field41355 = arrowCursor;
                 this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
             }
         }
@@ -266,7 +266,7 @@ public class GuiManager {
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F,
-                        !(portalScaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG
+                        !(scaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG
                                 : ResourceList.jelloWatermark2xPNG);
             }
 
@@ -306,7 +306,7 @@ public class GuiManager {
 
         var1.put("guiBlur", this.field41349);
         var1.put("hqIngameBlur", this.field41350);
-        var1.put("hidpicocoa", field41351);
+        var1.put("hidpicocoa", hidpiCocoa);
         return var1;
     }
 
@@ -322,16 +322,16 @@ public class GuiManager {
         this.field41350 = var1;
     }
 
-    public boolean method33472() {
+    public boolean getHqIngameBlur() {
         return this.field41350;
     }
 
     public void method33473(boolean var1) {
-        field41351 = var1;
+        hidpiCocoa = var1;
     }
 
     public boolean method33474() {
-        return field41351;
+        return hidpiCocoa;
     }
 
     public void method33476(JSONObject var1) {
@@ -357,7 +357,7 @@ public class GuiManager {
     }
 
     public Class<? extends net.minecraft.client.gui.screen.Screen> method33477(String var1) {
-        for (Entry var5 : field41338.entrySet()) {
+        for (Entry var5 : screenToScreenName.entrySet()) {
             if (var1.equals(var5.getValue())) {
                 return (Class<? extends net.minecraft.client.gui.screen.Screen>) var5.getKey();
             }
@@ -370,7 +370,7 @@ public class GuiManager {
         if (var1 == null) {
             return "";
         } else {
-            for (Entry var5 : field41338.entrySet()) {
+            for (Entry var5 : screenToScreenName.entrySet()) {
                 if (var1 == var5.getKey()) {
                     return (String) var5.getValue();
                 }
@@ -394,7 +394,7 @@ public class GuiManager {
         }
 
         if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
-            portalScaleFactor = (float) Math.max(
+            scaleFactor = (float) Math.max(
                     Minecraft.getInstance().mainWindow.getFramebufferWidth()
                             / Minecraft.getInstance().mainWindow.getWidth(),
                     Minecraft.getInstance().mainWindow.getFramebufferHeight()
@@ -416,7 +416,7 @@ public class GuiManager {
         }
 
         this.screen = var1;
-        this.field41356 = field41344;
+        this.field41356 = arrowCursor;
         this.method33476(Client.getInstance().getConfig());
         if (this.screen != null) {
             this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
@@ -435,6 +435,6 @@ public class GuiManager {
     }
 
     public boolean method33484(net.minecraft.client.gui.screen.Screen var1) {
-        return field41337.containsKey(var1.getClass());
+        return replacementScreens.containsKey(var1.getClass());
     }
 }

@@ -178,7 +178,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.mc.player.preparePlayerToSpawn();
       int var10 = var1.method17287();
       this.field23273.addPlayer(var10, this.mc.player);
-      this.mc.player.movementInput = new Class9451(this.mc.gameSettings);
+      this.mc.player.movementInput = new MovementInputFromOptions(this.mc.gameSettings);
       this.mc.playerController.setPlayerCapabilities(this.mc.player);
       this.mc.renderViewEntity = this.mc.player;
       this.mc.displayGuiScreen(new Class1312());
@@ -414,7 +414,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ((Entity)var11).rotationPitch = (float)(var1.method17264() * 360) / 256.0F;
          ((Entity)var11).rotationYaw = (float)(var1.method17265() * 360) / 256.0F;
          ((Entity)var11).setEntityId(var16);
-         ((Entity)var11).setUniqueId(var1.method17257());
+         ((Entity)var11).setUniqueId(var1.getUniqueId());
          this.field23273.addEntity(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
             this.mc.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
@@ -466,14 +466,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleSpawnPlayer(SSpawnPlayerPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
-      double var4 = var1.method17594();
-      double var6 = var1.method17595();
-      double var8 = var1.method17596();
-      float var10 = (float)(var1.method17597() * 360) / 256.0F;
-      float var11 = (float)(var1.method17598() * 360) / 256.0F;
-      if (this.method15792(var1.method17593()) != null) {
-         int var12 = var1.method17592();
-         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.method15792(var1.method17593()).method19966());
+      double var4 = var1.getX();
+      double var6 = var1.getY();
+      double var8 = var1.getZ();
+      float var10 = (float)(var1.getYaw() * 360) / 256.0F;
+      float var11 = (float)(var1.getPitch() * 360) / 256.0F;
+      if (this.method15792(var1.getUniqueId()) != null) {
+         int var12 = var1.getEntityID();
+         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.mc.world, this.method15792(var1.getUniqueId()).method19966());
          var13.setEntityId(var12);
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
@@ -814,7 +814,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          }
 
          var12.setEntityId(var1.method17535());
-         var12.setUniqueId(var1.method17536());
+         var12.setUniqueId(var1.getUniqueId());
          var12.setPositionAndRotation(var4, var6, var8, var10, var11);
          var12.setMotion(
             (double)((float)var1.method17541() / 8000.0F), (double)((float)var1.method17542() / 8000.0F), (double)((float)var1.method17543() / 8000.0F)
@@ -967,7 +967,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var13.method5394(var12);
       this.field23273.addPlayer(var7, var13);
       var13.rotationYaw = -180.0F;
-      var13.movementInput = new Class9451(this.mc.gameSettings);
+      var13.movementInput = new MovementInputFromOptions(this.mc.gameSettings);
       this.mc.playerController.setPlayerCapabilities(var13);
       var13.method2965(var6.hasReducedDebug());
       var13.method5403(var6.isShowDeathScreen());

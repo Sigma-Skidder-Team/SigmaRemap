@@ -63,7 +63,7 @@ public class Effect {
          } else if (var1.getHealth() > 1.0F) {
             var1.attackEntityFrom(DamageSource.field39006, 1.0F);
          }
-      } else if (var1.getHealth() < var1.method3075()) {
+      } else if (var1.getHealth() < var1.getMaxHealth()) {
          var1.heal(1.0F);
       }
    }

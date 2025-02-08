@@ -61,7 +61,7 @@ public class TabGUI extends Module {
 
     public TabGUI() {
         super(ModuleCategory.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
         field23788 = this;
     }
 
@@ -69,7 +69,7 @@ public class TabGUI extends Module {
     @HigestPriority
     private void method16590(Render2DEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (Client.getInstance().guiManager.method33472()) {
+            if (Client.getInstance().guiManager.getHqIngameBlur()) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
                         BlurEngine.drawBlur(this.field23768, this.field23769, this.field23770, this.field23771);
@@ -93,7 +93,7 @@ public class TabGUI extends Module {
                     boolean var5 = (float) this.method16592() - this.field23787 < 0.0F;
                     this.field23787 = this.field23787
                             + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
-                    this.field23769 = var1.method13960();
+                    this.field23769 = var1.getYOffset();
                     this.method16600(this.field23768, this.field23769, this.field23770, this.field23771,
                             this.field23763, null, this.field23764, 1.0F);
                     RenderUtil.startScissor((float) this.field23768, (float) this.field23769, (float) this.field23770,
@@ -117,7 +117,7 @@ public class TabGUI extends Module {
                         this.method16594(170, this.field23769, this.method16593(this.field23782), 1.0F);
                     }
 
-                    var1.method13962(this.field23771 + 10);
+                    var1.addOffset(this.field23771 + 10);
                 }
             }
         }
@@ -159,7 +159,7 @@ public class TabGUI extends Module {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.method23952() / 2 + 3
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.getHeight() / 2 + 3
                                 + var7 * this.field23778),
                         var9.getName(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor());
@@ -167,7 +167,7 @@ public class TabGUI extends Module {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
                         (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2
+                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
                                 + var7 * this.field23778),
                         var9.getName(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor());
@@ -198,7 +198,7 @@ public class TabGUI extends Module {
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont20,
                     (float) (var1 + 11) + this.field23773.get(var8),
-                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.method23952() / 2 + 2
+                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
                             + var6 * this.field23778),
                     var8.toString(),
                     -1);
@@ -280,7 +280,7 @@ public class TabGUI extends Module {
                 this.field23791);
         RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F,
                 ResourceList.shadowBottomPNG, this.field23791);
-        RenderUtil.drawPortalBackground(
+        RenderUtil.drawBlurredBackground(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
                 var1 + var4,
@@ -293,11 +293,11 @@ public class TabGUI extends Module {
             if (var12.field35322 == var6) {
                 float var13 = var12.field35323.calcPercent();
                 int var14 = MultiUtilities.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
-                if (Client.getInstance().guiManager.method33472()) {
+                if (Client.getInstance().guiManager.getHqIngameBlur()) {
                     var14 = MultiUtilities.applyAlpha(-1, (1.0F - var13) * 0.14F);
                 }
 
-                RenderUtil.method11436(
+                RenderUtil.drawFilledArc(
                         (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2,
                         (float) var4 * QuadraticEasing.easeOutQuad(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14);
                 if (var12.field35323.calcPercent() == 1.0F) {
@@ -391,7 +391,7 @@ public class TabGUI extends Module {
 
     private void method16600(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7,
             float var8) {
-        boolean var11 = Client.getInstance().guiManager.method33472();
+        boolean var11 = Client.getInstance().guiManager.getHqIngameBlur();
         int var14 = MultiUtilities.method17682(var5).getRGB();
         int var15 = MultiUtilities.method17682(var7).getRGB();
         if (var6 != null) {
@@ -414,7 +414,7 @@ public class TabGUI extends Module {
     }
 
     private void method16601() {
-        if (!Client.getInstance().guiManager.method33472()) {
+        if (!Client.getInstance().guiManager.getHqIngameBlur()) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
                     for (int var4 = 0; var4 < 3; var4++) {

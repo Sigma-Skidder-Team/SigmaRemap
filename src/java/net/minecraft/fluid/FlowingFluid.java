@@ -209,8 +209,8 @@ public abstract class FlowingFluid extends Fluid {
          }
       }
 
-      VoxelShape var14 = var4.method23414(var2, var3);
-      VoxelShape var12 = var6.method23414(var2, var5);
+      VoxelShape var14 = var4.getCollisionShape(var2, var3);
+      VoxelShape var12 = var6.getCollisionShape(var2, var5);
       boolean var13 = ! VoxelShapes.doAdjacentCubeSidesFillSquare(var14, var12, var1);
       if (var9 != null) {
          if (var9.size() == 200) {

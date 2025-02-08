@@ -86,9 +86,9 @@ public interface IBlockReader {
    }
 
    default double method7039(BlockPos var1) {
-      return this.method7038(this.getBlockState(var1).method23414(this, var1), () -> {
+      return this.method7038(this.getBlockState(var1).getCollisionShape(this, var1), () -> {
          BlockPos var4 = var1.down();
-         return this.getBlockState(var4).method23414(this, var4);
+         return this.getBlockState(var4).getCollisionShape(this, var4);
       });
    }
 

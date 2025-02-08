@@ -14,7 +14,7 @@ public class Class253 extends Class219<EndermanEntity, Class2799<EndermanEntity>
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, EndermanEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, EndermanEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       BlockState var13 = var4.method4357();
       if (var13 != null) {
          var1.push();

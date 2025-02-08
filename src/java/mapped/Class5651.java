@@ -27,7 +27,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       }
    }
 
-   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       super.render((T) entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       Entity var9 = entityIn.method4297();
       if (var9 != null) {
@@ -35,7 +35,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       }
    }
 
-   private <E extends Entity> void method17847(T var1, float var2, MatrixStack var3, Class7733 var4, E var5) {
+   private <E extends Entity> void method17847(T var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, E var5) {
       if (!Config.isShaders() || ! Shaders.isShadowPass) {
          var3.push();
          Vector3d var8 = var5.getLeashPosition(var2);
@@ -51,7 +51,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          float var23 = (float)(var8.y - var18);
          float var24 = (float)(var8.z - var20);
          float var25 = 0.025F;
-         IVertexBuilder var26 = var4.method25597(RenderType.method14327());
+         IVertexBuilder var26 = var4.getBuffer(RenderType.method14327());
          Matrix4f var27 = var3.getLast().getMatrix();
          float var28 = MathHelper.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
@@ -97,7 +97,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          float var17 = (float)var16 / 23.0F;
          int var18 = (int) MathHelper.lerp(var17, (float)var5, (float)var6);
          int var19 = (int) MathHelper.lerp(var17, (float)var7, (float)var8);
-         int var20 = Class1699.method7321(var18, var19);
+         int var20 = LightTexture.method7321(var18, var19);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16, false, var11, var12);
          method17849(var0, var1, var20, var2, var3, var4, var9, var10, 24, var16 + 1, true, var11, var12);
       }

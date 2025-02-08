@@ -146,7 +146,7 @@ public class Class7019 implements Class7016 {
 
    private boolean method21753(IBlockReader var1, BlockPos var2) {
       for (BlockPos var6 : BlockPos.method8359(var2, var2.add(1, 2, 1))) {
-         if (!var1.getBlockState(var6).method23414(var1, var6).isEmpty()) {
+         if (!var1.getBlockState(var6).getCollisionShape(var1, var6).isEmpty()) {
             return false;
          }
       }

@@ -12,24 +12,24 @@ import net.minecraft.world.World;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
-public class Class1699 implements AutoCloseable {
+public class LightTexture implements AutoCloseable {
    private final DynamicTexture field9248;
    private final NativeImage field9249;
-   private final ResourceLocation field9250;
+   private final ResourceLocation resourceLocation;
    private boolean field9251;
    private float field9252;
    private final GameRenderer field9253;
-   private final Minecraft field9254;
-   private boolean field9255 = true;
+   private final Minecraft client;
+   private boolean allowed = true;
    private boolean field9256 = false;
    private Vector3f field9257 = new Vector3f();
-   public static final int field9258 = method7321(15, 15);
+   public static final int MAX_BRIGHTNESS = method7321(15, 15);
 
-   public Class1699(GameRenderer var1, Minecraft var2) {
+   public LightTexture(GameRenderer var1, Minecraft var2) {
       this.field9253 = var1;
-      this.field9254 = var2;
+      this.client = var2;
       this.field9248 = new DynamicTexture(16, 16, false);
-      this.field9250 = this.field9254.getTextureManager().method1077("light_map", this.field9248);
+      this.resourceLocation = this.client.getTextureManager().method1077("light_map", this.field9248);
       this.field9249 = this.field9248.method1141();
 
       for (int var5 = 0; var5 < 16; var5++) {
@@ -52,34 +52,34 @@ public class Class1699 implements AutoCloseable {
       this.field9251 = true;
    }
 
-   public void method7316() {
+   public void disableLightmap() {
       RenderSystem.activeTexture(33986);
       RenderSystem.disableTexture();
       RenderSystem.activeTexture(33984);
       if (Config.isShaders()) {
-         Shaders.method33127();
+         Shaders.disableLightmap();
       }
    }
 
-   public void method7317() {
-      if (this.field9255) {
+   public void enableLightmap() {
+      if (this.allowed) {
          RenderSystem.activeTexture(33986);
          RenderSystem.matrixMode(5890);
          RenderSystem.loadIdentity();
          float var3 = 0.00390625F;
-         RenderSystem.scalef(0.00390625F, 0.00390625F, 0.00390625F);
+         RenderSystem.scalef(var3, var3, var3);
          RenderSystem.translatef(8.0F, 8.0F, 8.0F);
          RenderSystem.matrixMode(5888);
-         this.field9254.getTextureManager().bindTexture(this.field9250);
-         RenderSystem.method27863(3553, 10241, 9729);
-         RenderSystem.method27863(3553, 10240, 9729);
-         RenderSystem.method27863(3553, 10242, 33071);
-         RenderSystem.method27863(3553, 10243, 33071);
+         this.client.getTextureManager().bindTexture(this.resourceLocation);
+         RenderSystem.texParameter(3553, 10241, 9729);
+         RenderSystem.texParameter(3553, 10240, 9729);
+         RenderSystem.texParameter(3553, 10242, 33071);
+         RenderSystem.texParameter(3553, 10243, 33071);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableTexture();
          RenderSystem.activeTexture(33984);
          if (Config.isShaders()) {
-            Shaders.method33126();
+            Shaders.enableLightmap();
          }
       }
    }
@@ -87,16 +87,16 @@ public class Class1699 implements AutoCloseable {
    public void updateLightmap(float var1) {
       if (this.field9251) {
          this.field9251 = false;
-         this.field9254.getProfiler().startSection("lightTex");
-         ClientWorld var4 = this.field9254.world;
+         this.client.getProfiler().startSection("lightTex");
+         ClientWorld var4 = this.client.world;
          if (var4 != null) {
             this.field9256 = false;
             if (Config.method26911()) {
-               boolean var5 = this.field9254.player.isPotionActive(Effects.NIGHT_VISION) || this.field9254.player.isPotionActive(Effects.CONDUIT_POWER);
+               boolean var5 = this.client.player.isPotionActive(Effects.NIGHT_VISION) || this.client.player.isPotionActive(Effects.CONDUIT_POWER);
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();
                   this.field9251 = false;
-                  this.field9254.getProfiler().endSection();
+                  this.client.getProfiler().endSection();
                   this.field9256 = true;
                   return;
                }
@@ -110,16 +110,16 @@ public class Class1699 implements AutoCloseable {
                var6 = 1.0F;
             }
 
-            float var7 = this.field9254.player.method5416();
+            float var7 = this.client.player.method5416();
             float var8;
-            if (!this.field9254.player.isPotionActive(Effects.NIGHT_VISION)) {
-               if (var7 > 0.0F && this.field9254.player.isPotionActive(Effects.CONDUIT_POWER)) {
+            if (!this.client.player.isPotionActive(Effects.NIGHT_VISION)) {
+               if (var7 > 0.0F && this.client.player.isPotionActive(Effects.CONDUIT_POWER)) {
                   var8 = var7;
                } else {
                   var8 = 0.0F;
                }
             } else {
-               var8 = GameRenderer.method750(this.field9254.player, var1);
+               var8 = GameRenderer.method750(this.client.player, var1);
             }
 
             Vector3f var9 = new Vector3f(var24, var24, 1.0F);
@@ -160,7 +160,7 @@ public class Class1699 implements AutoCloseable {
                      }
                   }
 
-                  float var26 = (float)this.field9254.gameSettings.gamma;
+                  float var26 = (float)this.client.gameSettings.gamma;
                   Vector3f var28 = this.method7325(var11);
                   var28.method25288(this::method7319);
                   var11.method25284(var28, var26);
@@ -175,7 +175,7 @@ public class Class1699 implements AutoCloseable {
             }
 
             this.field9248.method1140();
-            this.field9254.getProfiler().endSection();
+            this.client.getProfiler().endSection();
          }
       }
    }
@@ -212,11 +212,11 @@ public class Class1699 implements AutoCloseable {
    }
 
    public boolean method7326() {
-      return this.field9255;
+      return this.allowed;
    }
 
    public void method7327(boolean var1) {
-      this.field9255 = var1;
+      this.allowed = var1;
    }
 
    public boolean method7328() {

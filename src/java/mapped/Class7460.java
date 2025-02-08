@@ -47,7 +47,7 @@ public class Class7460 implements Class7458 {
    public int method24128() {
       if (this.field32082 instanceof LivingEntity) {
          LivingEntity var3 = (LivingEntity)this.field32082;
-         return (int)var3.method3075();
+         return (int)var3.getMaxHealth();
       } else {
          return 0;
       }

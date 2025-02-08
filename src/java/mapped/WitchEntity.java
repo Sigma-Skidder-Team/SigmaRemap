@@ -108,7 +108,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
                && (this.isBurning() || this.getLastDamageSource() != null && this.getLastDamageSource().method31141())
                && !this.isPotionActive(Effects.FIRE_RESISTANCE)) {
                var7 = Potions.FIRE_RESISTANCE;
-            } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.method3075()) {
+            } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.getMaxHealth()) {
                var7 = Potions.HEALING;
             } else if (this.rand.nextFloat() < 0.5F
                && this.getAttackTarget() != null

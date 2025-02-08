@@ -31,7 +31,7 @@ public class Class5735<T extends Entity & Class889> extends EntityRenderer<T> {
    }
 
    @Override
-   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       if (var1.ticksExisted >= 2 || !(this.field25097.info.getRenderViewEntity().getDistanceSq(var1) < 12.25)) {
          var4.push();
          var4.scale(this.field25151, this.field25151, this.field25151);

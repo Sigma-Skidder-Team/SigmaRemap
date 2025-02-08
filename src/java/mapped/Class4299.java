@@ -112,7 +112,7 @@ public class Class4299 extends Class4278 {
                112.0F, this.field20830);
       }
 
-      RenderUtil.method11436(
+      RenderUtil.drawFilledArc(
             (float) this.xA + (float) var7 / 12.0F, (float) this.yA + (float) var8 * (1.0F - this.field20835), 10.0F,
             ClientColors.PALE_YELLOW.getColor());
       RenderUtil.endScissor();

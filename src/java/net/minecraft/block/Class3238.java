@@ -98,7 +98,7 @@ public class Class3238 extends Block implements IWaterLoggable {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field18686[this.method11641(var1)];
    }
 

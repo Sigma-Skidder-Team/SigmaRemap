@@ -43,7 +43,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       super(var1);
    }
 
-   public void method18462(SkullTileEntity var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(SkullTileEntity var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       float var9 = var1.method4004(var2);
       BlockState var10 = var1.getBlockState();
       boolean var11 = var10.getBlock() instanceof Class3252;
@@ -52,7 +52,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       method18482(var12, var13, ((Class3251)var10.getBlock()).method11696(), var1.method4005(), var9, var3, var4, var5);
    }
 
-   public static void method18482(Direction var0, float var1, Class2137 var2, GameProfile var3, float var4, MatrixStack var5, Class7733 var6, int var7) {
+   public static void method18482(Direction var0, float var1, Class2137 var2, GameProfile var3, float var4, MatrixStack var5, IRenderTypeBuffer var6, int var7) {
       Class2844 var10 = field25952.get(var2);
       var5.push();
       if (var0 != null) {
@@ -63,7 +63,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       }
 
       var5.scale(-1.0F, -1.0F, 1.0F);
-      IVertexBuilder var12 = var6.method25597(method18483(var2, var3));
+      IVertexBuilder var12 = var6.getBuffer(method18483(var2, var3));
       var10.method11174(var4, var1, 0.0F);
       var10.render(var5, var12, var7, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var5.pop();

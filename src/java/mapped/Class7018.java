@@ -32,11 +32,11 @@ public class Class7018 implements Class7016 {
             } else if (var6.nextInt(5) != 0) {
                return 0;
             } else {
-               int var9 = var1.method6870().size();
+               int var9 = var1.getPlayers().size();
                if (var9 < 1) {
                   return 0;
                } else {
-                  PlayerEntity var10 = var1.method6870().get(var6.nextInt(var9));
+                  PlayerEntity var10 = var1.getPlayers().get(var6.nextInt(var9));
                   if (var10.isSpectator()) {
                      return 0;
                   } else if (var1.method6954(var10.getPosition(), 2)) {

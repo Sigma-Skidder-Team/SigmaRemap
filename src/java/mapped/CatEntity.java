@@ -349,7 +349,7 @@ public class CatEntity extends TameableEntity {
             }
          } else if (this.method4401(var1)) {
             if (!(var6 instanceof Class3321)) {
-               if (var6.isFood() && this.method4381(var5) && this.getHealth() < this.method3075()) {
+               if (var6.isFood() && this.method4381(var5) && this.getHealth() < this.getMaxHealth()) {
                   this.method4501(var1, var5);
                   this.heal((float)var6.getFood().method36157());
                   return ActionResultType.field14819;
@@ -384,7 +384,7 @@ public class CatEntity extends TameableEntity {
       } else if (this.method4393() && this.method4401(var1)) {
          return ActionResultType.SUCCESS;
       } else {
-         return this.method4381(var5) && (this.getHealth() < this.method3075() || !this.method4393()) ? ActionResultType.SUCCESS : ActionResultType.field14820;
+         return this.method4381(var5) && (this.getHealth() < this.getMaxHealth() || !this.method4393()) ? ActionResultType.SUCCESS : ActionResultType.field14820;
       }
    }
 
@@ -395,7 +395,7 @@ public class CatEntity extends TameableEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.5F;
+      return var2.height * 0.5F;
    }
 
    @Override

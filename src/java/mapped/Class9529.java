@@ -21,7 +21,7 @@ public class Class9529 {
    }
 
    public void method36826() {
-      int var3 = Class1699.field9258;
+      int var3 = LightTexture.MAX_BRIGHTNESS;
       this.field44352[0] = var3;
       this.field44352[1] = var3;
       this.field44352[2] = var3;

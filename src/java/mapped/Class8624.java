@@ -132,8 +132,8 @@ public class Class8624 {
 
    public static Class7826 method30913(TileEntity var0, ChestType var1, boolean var2) {
       if (!var2) {
-         if (!(var0 instanceof Class970)) {
-            return !(var0 instanceof Class943) ? method30914(var1, field38792, field38793, field38794) : field38795;
+         if (!(var0 instanceof TrappedChestTileEntity)) {
+            return !(var0 instanceof EnderChestTileEntity) ? method30914(var1, field38792, field38793, field38794) : field38795;
          } else {
             return method30914(var1, field38786, field38787, field38788);
          }

@@ -34,8 +34,8 @@ public class TileEntityRendererDispatcher {
       this.method27959(TileEntityType.field21429, new Class5943(this));
       this.method27959(TileEntityType.field21430, new Class5945(this));
       this.method27959(TileEntityType.CHEST, new Class5953<ChestTileEntity>(this));
-      this.method27959(TileEntityType.field21424, new Class5953<Class943>(this));
-      this.method27959(TileEntityType.field21423, new Class5953<Class970>(this));
+      this.method27959(TileEntityType.field21424, new Class5953<EnderChestTileEntity>(this));
+      this.method27959(TileEntityType.field21423, new Class5953<TrappedChestTileEntity>(this));
       this.method27959(TileEntityType.field21432, new Class5951(this));
       this.method27959(TileEntityType.field21449, new Class5949(this));
       this.method27959(TileEntityType.field21433, new Class5957<Class956>(this));
@@ -71,7 +71,7 @@ public class TileEntityRendererDispatcher {
       this.field34749 = var5;
    }
 
-   public <E extends TileEntity> void method27962(E var1, float var2, MatrixStack var3, Class7733 var4) {
+   public <E extends TileEntity> void method27962(E var1, float var2, MatrixStack var3, IRenderTypeBuffer var4) {
       if (Vector3d.method11328(var1.getPos()).method11340(this.field34748.getPos(), var1.method3773())) {
          Class5942 var7 = this.<TileEntity>method27960(var1);
          if (var7 != null && var1.method3770() && var1.method3786().method13796(var1.getBlockState().getBlock())) {
@@ -80,7 +80,7 @@ public class TileEntityRendererDispatcher {
       }
    }
 
-   private static <T extends TileEntity> void method27963(Class5942<T> var0, T var1, float var2, MatrixStack var3, Class7733 var4) {
+   private static <T extends TileEntity> void method27963(Class5942<T> var0, T var1, float var2, MatrixStack var3, IRenderTypeBuffer var4) {
       World var7 = var1.method3734();
       int var8;
       if (var7 == null) {
@@ -97,7 +97,7 @@ public class TileEntityRendererDispatcher {
       if (EmissiveTextures.isActive()) {
          if (EmissiveTextures.hasEmissive()) {
             EmissiveTextures.beginRenderEmissive();
-            var0.method18462(var1, var2, var3, var4, Class1699.field9258, OverlayTexture.NO_OVERLAY);
+            var0.method18462(var1, var2, var3, var4, LightTexture.MAX_BRIGHTNESS, OverlayTexture.NO_OVERLAY);
             EmissiveTextures.endRenderEmissive();
          }
 
@@ -105,7 +105,7 @@ public class TileEntityRendererDispatcher {
       }
    }
 
-   public <E extends TileEntity> boolean method27964(E var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
+   public <E extends TileEntity> boolean method27964(E var1, MatrixStack var2, IRenderTypeBuffer var3, int var4, int var5) {
       Class5942 var8 = this.<TileEntity>method27960(var1);
       if (var8 != null) {
          method27965(var1, () -> {
@@ -118,7 +118,7 @@ public class TileEntityRendererDispatcher {
             if (EmissiveTextures.isActive()) {
                if (EmissiveTextures.hasEmissive()) {
                   EmissiveTextures.beginRenderEmissive();
-                  var8.method18462(var1, 0.0F, var2, var3, Class1699.field9258, var5);
+                  var8.method18462(var1, 0.0F, var2, var3, LightTexture.MAX_BRIGHTNESS, var5);
                   EmissiveTextures.endRenderEmissive();
                }
 

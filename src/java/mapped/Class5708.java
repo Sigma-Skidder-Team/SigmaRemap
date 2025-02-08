@@ -11,7 +11,7 @@ public class Class5708 extends Class5651<WitchEntity, Class2891<WitchEntity>> {
       this.addLayer(new Class240<WitchEntity>(this));
    }
 
-   public void render(WitchEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(WitchEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       this.entityModel.method11207(!entityIn.getHeldItemMainhand().isEmpty());
       super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
    }

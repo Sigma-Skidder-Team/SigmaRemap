@@ -34,10 +34,10 @@ public class BoxChestESP extends Module {
         int trappedColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity tileEntity : mc.world.loadedTileEntityList) {
-            boolean showRegularChests = tileEntity instanceof ChestTileEntity && !(tileEntity instanceof Class970)
+            boolean showRegularChests = tileEntity instanceof ChestTileEntity && !(tileEntity instanceof TrappedChestTileEntity)
                     && this.access().getBooleanValueFromSettingName("Show Regular Chests");
-            boolean showEnderChests = tileEntity instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
-            boolean showTrappedChests = tileEntity instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
+            boolean showEnderChests = tileEntity instanceof EnderChestTileEntity && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+            boolean showTrappedChests = tileEntity instanceof TrappedChestTileEntity && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
 
             if (showRegularChests || showEnderChests || showTrappedChests) {
                 double x = PositionUtils.getRelativePosition(tileEntity.getPos()).x;
@@ -48,14 +48,14 @@ public class BoxChestESP extends Module {
                 GL11.glEnable(3042);
                 int color = regularColor;
 
-                if (tileEntity instanceof Class970) {
+                if (tileEntity instanceof TrappedChestTileEntity) {
                     color = trappedColor;
-                } else if (tileEntity instanceof Class943) {
+                } else if (tileEntity instanceof EnderChestTileEntity) {
                     color = enderColor;
                 }
 
                 Box3D boundingBox = new Box3D(
-                        tileEntity.getBlockState().method23412(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
+                        tileEntity.getBlockState().getShape(mc.world, tileEntity.getPos()).getBoundingBox().offset(x, y, z)
                 );
 
                 GL11.glAlphaFunc(519, 0.0F);
@@ -78,7 +78,7 @@ public class BoxChestESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.lightmapTexture.method7316();
+        mc.gameRenderer.lightmapTexture.disableLightmap();
     }
 
     private void applyTextureSettings() {
@@ -87,9 +87,9 @@ public class BoxChestESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.method36180();
+        TextureImpl.unbind();
         TextureManager textureManager = mc.getTextureManager();
-        textureManager.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.lightmapTexture.method7317();
+        textureManager.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        mc.gameRenderer.lightmapTexture.enableLightmap();
     }
 }

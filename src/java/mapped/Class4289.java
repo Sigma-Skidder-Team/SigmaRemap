@@ -35,7 +35,7 @@ public class Class4289 extends Class4278 {
 
       for (String var14 : this.field20783.field42047) {
          RenderUtil.drawString(ResourceRegistry.JelloLightFont18, (float) (var4 + 10),
-               (float) (var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.method23952()), var14, var9);
+               (float) (var5 + 5 + var10 * ResourceRegistry.JelloLightFont18.getHeight()), var14, var9);
          var10++;
       }
 

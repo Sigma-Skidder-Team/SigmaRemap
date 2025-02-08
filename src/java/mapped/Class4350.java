@@ -49,7 +49,7 @@ public class Class4350 extends Class4278 {
                RenderUtil.drawString(
                      var5,
                      (float) (this.getXA() + var13 + var4),
-                     (float) (this.getYA() + var4 + var11 * var5.method23952()),
+                     (float) (this.getYA() + var4 + var11 * var5.getHeight()),
                      var15,
                      MultiUtilities.applyAlpha(this.method13588(var15), partialTicks));
                var13 += var5.getWidth(var15);
@@ -72,9 +72,9 @@ public class Class4350 extends Class4278 {
 
          RenderUtil.drawRect(
                (float) var4 + var10,
-               (float) (this.getYA() + var4 + var9 * var5.method23952()),
+               (float) (this.getYA() + var4 + var9 * var5.getHeight()),
                (float) var4 + var10 + 1.0F,
-               (float) (this.getYA() + var4 + var5.getHeight(this.typedText) + var9 * var5.method23952()),
+               (float) (this.getYA() + var4 + var5.getHeight(this.typedText) + var9 * var5.getHeight()),
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks));
          super.draw(partialTicks);
       }
@@ -142,8 +142,8 @@ public class Class4350 extends Class4278 {
       if (this.field20909) {
          String var5 = System.getProperty("line.separator");
          String[] var6 = this.typedText.split("(?<=" + var5 + ")");
-         int var7 = (newWidth - this.method13272() - ResourceRegistry.JelloLightFont18.method23952() / 2)
-               / ResourceRegistry.JelloLightFont18.method23952() - 1;
+         int var7 = (newWidth - this.method13272() - ResourceRegistry.JelloLightFont18.getHeight() / 2)
+               / ResourceRegistry.JelloLightFont18.getHeight() - 1;
          if (var7 > var6.length - 1) {
             var7 = var6.length - 1;
          }

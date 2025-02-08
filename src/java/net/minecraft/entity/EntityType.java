@@ -559,11 +559,11 @@ public class EntityType<T extends Entity> {
    }
 
    public float method33213() {
-      return this.field41125.field39968;
+      return this.field41125.width;
    }
 
    public float method33214() {
-      return this.field41125.field39969;
+      return this.field41125.height;
    }
 
    @Nullable

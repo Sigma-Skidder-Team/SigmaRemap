@@ -760,7 +760,7 @@ public abstract class MobEntity extends LivingEntity {
    @Override
    public int getMaxFallHeight() {
       if (this.getAttackTarget() != null) {
-         int var3 = (int)(this.getHealth() - this.method3075() * 0.33F);
+         int var3 = (int)(this.getHealth() - this.getMaxHealth() * 0.33F);
          var3 -= (3 - this.world.method6997().getId()) * 4;
          if (var3 < 0) {
             var3 = 0;
@@ -1462,11 +1462,11 @@ public abstract class MobEntity extends LivingEntity {
             return null;
          } else {
             ServerWorld var6 = (ServerWorld)var4;
-            return var6.method6870();
+            return var6.getPlayers();
          }
       } else {
          ClientWorld var5 = (ClientWorld)var4;
-         return var5.method6870();
+         return var5.getPlayers();
       }
    }
 

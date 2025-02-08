@@ -54,7 +54,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
 
    public WitherEntity(EntityType<? extends WitherEntity> var1, World var2) {
       super(var1, var2);
-      this.setHealth(this.method3075());
+      this.setHealth(this.getMaxHealth());
       this.method4230().method21674(true);
       this.field5594 = 50;
    }
@@ -312,7 +312,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
             this.heal(1.0F);
          }
 
-         this.field5935.setPercent(this.getHealth() / this.method3075());
+         this.field5935.setPercent(this.getHealth() / this.getMaxHealth());
       } else {
          int var22 = this.method5012() - 1;
          if (var22 <= 0) {
@@ -336,7 +336,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
 
    public void method5003() {
       this.method5013(220);
-      this.setHealth(this.method3075() / 3.0F);
+      this.setHealth(this.getMaxHealth() / 3.0F);
    }
 
    @Override
@@ -519,7 +519,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
 
    @Override
    public boolean method5016() {
-      return this.getHealth() <= this.method3075() / 2.0F;
+      return this.getHealth() <= this.getMaxHealth() / 2.0F;
    }
 
    @Override

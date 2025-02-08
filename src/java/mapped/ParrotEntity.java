@@ -139,7 +139,7 @@ public class ParrotEntity extends ShoulderRidingEntity implements IFlyingAnimal 
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.6F;
+      return var2.height * 0.6F;
    }
 
    @Override

@@ -353,6 +353,6 @@ public class SheepEntity extends AnimalEntity implements Class1020 {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return 0.95F * var2.field39969;
+      return 0.95F * var2.height;
    }
 }

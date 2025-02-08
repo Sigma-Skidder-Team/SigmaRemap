@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.system.MemoryUtil;
 
-public class Class1708 extends Class1709 implements AutoCloseable {
+public class ShaderUniform extends ShaderDefault implements AutoCloseable {
    private static final Logger field9306 = LogManager.getLogger();
    private int field9307;
    private final int field9308;
@@ -21,7 +21,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    private boolean field9313;
    private final Class1809 field9314;
 
-   public Class1708(String var1, int var2, int var3, Class1809 var4) {
+   public ShaderUniform(String var1, int var2, int var3, Class1809 var4) {
       this.field9312 = var1;
       this.field9308 = var3;
       this.field9309 = var2;
@@ -104,14 +104,14 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void setValue(float var1) {
+   public void set(float var1) {
       ((Buffer)this.field9311).position(0);
       this.field9311.put(0, var1);
       this.method7433();
    }
 
    @Override
-   public void method7438(float var1, float var2) {
+   public void set(float var1, float var2) {
       ((Buffer)this.field9311).position(0);
       this.field9311.put(0, var1);
       this.field9311.put(1, var2);
@@ -119,7 +119,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7439(float var1, float var2, float var3) {
+   public void set(float var1, float var2, float var3) {
       ((Buffer)this.field9311).position(0);
       this.field9311.put(0, var1);
       this.field9311.put(1, var2);
@@ -128,7 +128,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7440(float var1, float var2, float var3, float var4) {
+   public void set(float var1, float var2, float var3, float var4) {
       ((Buffer)this.field9311).position(0);
       this.field9311.put(var1);
       this.field9311.put(var2);
@@ -139,7 +139,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7441(float var1, float var2, float var3, float var4) {
+   public void setSafe(float var1, float var2, float var3, float var4) {
       ((Buffer)this.field9311).position(0);
       if (this.field9309 >= 4) {
          this.field9311.put(0, var1);
@@ -161,7 +161,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7442(int var1, int var2, int var3, int var4) {
+   public void set(int var1, int var2, int var3, int var4) {
       ((Buffer)this.field9310).position(0);
       if (this.field9309 >= 0) {
          this.field9310.put(0, var1);
@@ -183,7 +183,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7443(float[] var1) {
+   public void set(float[] var1) {
       if (var1.length >= this.field9308) {
          ((Buffer)this.field9311).position(0);
          this.field9311.put(var1);
@@ -195,7 +195,7 @@ public class Class1708 extends Class1709 implements AutoCloseable {
    }
 
    @Override
-   public void method7444(Matrix4f var1) {
+   public void set(Matrix4f var1) {
       ((Buffer)this.field9311).position(0);
       var1.write(this.field9311);
       this.method7433();

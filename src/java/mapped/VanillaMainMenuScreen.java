@@ -270,7 +270,7 @@ public class VanillaMainMenuScreen extends Screen {
       byte var10 = 30;
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
-      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.ceil(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
       float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);

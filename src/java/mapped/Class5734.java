@@ -19,12 +19,12 @@ public class Class5734 extends EntityRenderer<WitherSkullEntity> {
       return 15;
    }
 
-   public void render(WitherSkullEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(WitherSkullEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       var4.scale(-1.0F, -1.0F, 1.0F);
       float var9 = MathHelper.method37828(var1.prevRotationYaw, var1.rotationYaw, var3);
       float var10 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
-      IVertexBuilder var11 = var5.method25597(this.field25148.method11028(this.method17843(var1)));
+      IVertexBuilder var11 = var5.getBuffer(this.field25148.method11028(this.method17843(var1)));
       this.field25148.method11174(0.0F, var9, var10);
       this.field25148.render(var4, var11, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();

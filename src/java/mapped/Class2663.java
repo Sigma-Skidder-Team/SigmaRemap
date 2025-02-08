@@ -135,12 +135,12 @@ public class Class2663 extends Class2661 {
       this.field17030++;
       if (this.field17030 <= 600) {
          Vector3d var3 = Vector3d.method11330(BeeEntity.method4469(this.field17031)).add(0.0, 0.6F, 0.0);
-         if (!(var3.method11341(this.field17031.getPositionVec()) > 1.0)) {
+         if (!(var3.distanceTo(this.field17031.getPositionVec()) > 1.0)) {
             if (this.field17029 == null) {
                this.field17029 = var3;
             }
 
-            boolean var4 = this.field17031.getPositionVec().method11341(this.field17029) <= 0.1;
+            boolean var4 = this.field17031.getPositionVec().distanceTo(this.field17029) <= 0.1;
             boolean var5 = true;
             if (!var4 && this.field17030 > 600) {
                BeeEntity.method4473(this.field17031, null);

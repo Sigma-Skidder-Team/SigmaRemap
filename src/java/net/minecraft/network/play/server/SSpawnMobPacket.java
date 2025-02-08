@@ -89,7 +89,7 @@ public class SSpawnMobPacket implements IPacket<IClientPlayNetHandler> {
       return this.field24760;
    }
 
-   public UUID method17536() {
+   public UUID getUniqueId() {
       return this.field24761;
    }
 

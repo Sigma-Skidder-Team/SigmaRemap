@@ -56,7 +56,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
       return this.entityModel;
    }
 
-   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, entityIn, this,
             partialTicks, matrixStackIn, var5, var6)) {
          if (animateModelLiving) {
@@ -168,7 +168,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          boolean var21 = var18.isEntityGlowing(entityIn);
          RenderType var22 = this.method17882((T) entityIn, var19, var20, var21);
          if (var22 != null) {
-            IVertexBuilder var23 = var5.method25597(var22);
+            IVertexBuilder var23 = var5.getBuffer(var22);
             float var24 = this.method17879((T) entityIn, partialTicks);
             if (var17) {
                if (entityIn.hurtTime > 0 || entityIn.deathTime > 0) {

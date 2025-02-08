@@ -25,12 +25,12 @@ public class Class5120 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       ActiveRenderInfo var11 = this.field23291.gameRenderer.getActiveRenderInfo();
       ClientWorld var12 = this.field23291.world;
       DimensionType var13 = var12.getDimensionType();
       BlockPos var14 = new BlockPos(var11.getPos().x, 0.0, var11.getPos().z);
-      IVertexBuilder var15 = var2.method25597(RenderType.getLines());
+      IVertexBuilder var15 = var2.getBuffer(RenderType.getLines());
       if (this.field23292.containsKey(var13)) {
          for (MutableBoundingBox var17 : this.field23292.get(var13).values()) {
             if (var14.withinDistance(var17.method38401(), 500.0)) {

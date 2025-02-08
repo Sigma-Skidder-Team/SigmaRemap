@@ -53,7 +53,7 @@ public class Class8444 {
    private boolean method29697() {
       Chunk var3 = MiniMap.getMC().world.getChunk(this.field36184.getPos().x, this.field36184.getPos().z + 1);
       Chunk var4 = MiniMap.getMC2().world.getChunk(this.field36184.getPos().x, this.field36184.getPos().z - 1);
-      return var3 != null && var3.field9115 && var4 != null && var4.field9115;
+      return var3 != null && var3.loaded && var4 != null && var4.loaded;
    }
 
    public boolean method29698(Chunk var1) {

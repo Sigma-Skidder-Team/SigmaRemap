@@ -15,7 +15,7 @@ public class Class5726 extends EntityRenderer<FireworkRocketEntity> {
       this.field25134 = var2;
    }
 
-   public void render(FireworkRocketEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FireworkRocketEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));

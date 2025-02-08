@@ -42,17 +42,17 @@ public class Class7826 {
       return this.field33605;
    }
 
-   public IVertexBuilder method26200(Class7733 var1, Function<ResourceLocation, RenderType> var2) {
+   public IVertexBuilder method26200(IRenderTypeBuffer var1, Function<ResourceLocation, RenderType> var2) {
       TextureAtlasSprite var5 = this.getSprite();
       RenderType var6 = this.method26199(var2);
       if (var5.field9353 && var6.method14364()) {
          var6 = RenderType.getEntityCutout(this.field33603);
       }
 
-      return var5.method7474(var1.method25597(var6));
+      return var5.method7474(var1.getBuffer(var6));
    }
 
-   public IVertexBuilder method26201(Class7733 var1, Function<ResourceLocation, RenderType> var2, boolean var3) {
+   public IVertexBuilder method26201(IRenderTypeBuffer var1, Function<ResourceLocation, RenderType> var2, boolean var3) {
       return this.getSprite().method7474(ItemRenderer.getEntityGlintVertexBuilder(var1, this.method26199(var2), true, var3));
    }
 

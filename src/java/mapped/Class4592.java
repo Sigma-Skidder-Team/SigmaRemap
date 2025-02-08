@@ -33,8 +33,8 @@ public class Class4592 extends Class4587 {
       var8.rotate(Vector3f.XP.rotationDegrees(150.0F * var6 - 60.0F));
       var8.scale(-1.0F, -1.0F, 1.0F);
       var8.translate(0.0, -1.101F, 1.5);
-      Class7735 var9 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
-      IVertexBuilder var10 = var9.method25597(this.field22079);
+      IRenderTypeBuffer.Impl var9 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
+      IVertexBuilder var10 = var9.getBuffer(this.field22079);
       this.field22078.render(var8, var10, 15728880, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, var7);
       var9.finish();
    }

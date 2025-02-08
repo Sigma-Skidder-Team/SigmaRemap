@@ -123,7 +123,7 @@ public class Class5423 implements IVertexBuilder {
    }
 
    @Override
-   public Class7735 method17049() {
+   public IRenderTypeBuffer.Impl method17049() {
       return this.field24107.method17049();
    }
 }

@@ -686,8 +686,8 @@ public class Class9336 {
          return null;
       } else {
          try {
-            JSonShader var6 = var0.getShader(var1);
-            NativeImage var7 = NativeImage.method7879(var6.getFile());
+            IResource var6 = var0.getResource(var1);
+            NativeImage var7 = NativeImage.method7879(var6.getInputStream());
             if (var7 == null) {
                return null;
             } else if (var7.method7886() == var2 && var7.method7887() == var3) {

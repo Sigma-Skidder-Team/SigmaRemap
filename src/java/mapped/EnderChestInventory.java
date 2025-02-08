@@ -6,13 +6,13 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 
 public class EnderChestInventory extends Class927 {
-   private Class943 field5457;
+   private EnderChestTileEntity field5457;
 
    public EnderChestInventory() {
       super(27);
    }
 
-   public void method4064(Class943 var1) {
+   public void method4064(EnderChestTileEntity var1) {
       this.field5457 = var1;
    }
 

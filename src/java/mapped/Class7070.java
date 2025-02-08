@@ -83,7 +83,7 @@ public class Class7070 {
             }
 
             Class7120 var9 = new Class7120(this);
-            Minecraft.getInstance().getConnection().getRecipeManager().method777(var9, var3, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, Util.getServerExecutor(), Minecraft.getInstance());
+            Minecraft.getInstance().getConnection().getRecipeManager().reload(var9, var3, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, Util.getServerExecutor(), Minecraft.getInstance());
          }
 
          Optional<FurnaceRecipe> var7 = Minecraft.getInstance().getConnection().getRecipeManager()

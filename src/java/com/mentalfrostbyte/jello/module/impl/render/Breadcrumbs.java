@@ -79,7 +79,7 @@ public class Breadcrumbs extends Module {
 
             for (Vector3d breadcrumb : this.breadcrumbsPath) {
                 Vector3d adjustedBreadcrumb = this.adjustForRendering(breadcrumb);
-                double distance = breadcrumb.method11341(interpolatedPlayerPosition);
+                double distance = breadcrumb.distanceTo(interpolatedPlayerPosition);
                 double fadeFactor = !this.getBooleanValueFromSettingName("Fade Out") ? 0.6F
                         : 1.0 - Math.min(1.0, distance / 14.0);
                 if (!(distance > 24.0)) {

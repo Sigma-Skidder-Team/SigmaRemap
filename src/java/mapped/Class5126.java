@@ -20,7 +20,7 @@ public class Class5126 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       double var11 = (double) Util.nanoTime();
       if (var11 - this.field23311 > 3.0E9) {
          this.field23311 = var11;

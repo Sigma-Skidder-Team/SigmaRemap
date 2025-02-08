@@ -17,7 +17,7 @@ public class Class5954 extends Class5942<ShulkerBoxTileEntity> {
       this.field25966 = var1;
    }
 
-   public void method18462(ShulkerBoxTileEntity var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(ShulkerBoxTileEntity var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       Direction var9 = Direction.UP;
       if (var1.method3770()) {
          BlockState var10 = var1.method3734().getBlockState(var1.getPos());

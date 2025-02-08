@@ -312,7 +312,7 @@ public abstract class Module {
         return this.field23394 != null ? this.field23394 : this;
     }
 
-    public void method16005(boolean var1) {
+    public void setAvailableOnClassic(boolean var1) {
         this.field23392 = var1;
     }
 

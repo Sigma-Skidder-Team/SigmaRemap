@@ -7,13 +7,13 @@ import java.io.Closeable;
 import java.io.InputStream;
 import javax.annotation.Nullable;
 
-public interface JSonShader extends Closeable {
-   ResourceLocation method7762();
+public interface IResource extends Closeable {
+   ResourceLocation getLocation();
 
-   InputStream getFile();
+   InputStream getInputStream();
 
    @Nullable
-   <T> T method7764(IMetadataSectionSerializer<T> var1);
+   <T> T getMetadata(IMetadataSectionSerializer<T> var1);
 
-   String method7765();
+   String getPackName();
 }

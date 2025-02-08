@@ -11,7 +11,7 @@ public class Class254<T extends DrownedEntity> extends Class219<T, Class2793<T>>
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       method823(this.method825(), this.field911, field910, var1, var2, var3, (T)var4, var5, var6, var8, var9, var10, var7, 1.0F, 1.0F, 1.0F);
    }
 }

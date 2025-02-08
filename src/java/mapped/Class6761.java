@@ -126,7 +126,7 @@ public class Class6761 extends Class6762 {
          return (double)var1.getY() + 0.5;
       } else {
          BlockPos var4 = var1.down();
-         VoxelShape var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
+         VoxelShape var5 = this.field29475.getBlockState(var4).getCollisionShape(this.field29475, var4);
          return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Axis.Y) : 0.0);
       }
    }

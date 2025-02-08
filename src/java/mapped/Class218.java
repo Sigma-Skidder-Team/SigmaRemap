@@ -34,7 +34,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
       var2.addReloadListener(this);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible()) {
          Class7921 var13 = ((Class1041)var4).method4674();
          Class9564 var14 = var13.method26570();
@@ -63,8 +63,8 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
 
    public <K> Class1984 method819(Object2ObjectMap<K, Class1984> var1, String var2, Class2351<K> var3, K var4) {
       return (Class1984)var1.computeIfAbsent(var4, var4x -> {
-         try (JSonShader var7 = this.field861.getShader(this.method818(var2, var3.getKey(var4)))) {
-            Class7469 var9 = var7.<Class7469>method7764(Class7469.field32108);
+         try (IResource var7 = this.field861.getResource(this.method818(var2, var3.getKey(var4)))) {
+            Class7469 var9 = var7.<Class7469>getMetadata(Class7469.field32108);
             if (var9 != null) {
                return var9.method24191();
             }
@@ -76,7 +76,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
    }
 
    @Override
-   public void method737(IResourceManager var1) {
+   public void onResourceManagerReload(IResourceManager var1) {
       this.field860.clear();
       this.field859.clear();
    }

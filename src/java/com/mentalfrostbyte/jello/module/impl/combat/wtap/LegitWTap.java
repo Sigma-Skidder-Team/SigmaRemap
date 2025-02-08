@@ -19,7 +19,7 @@ public class LegitWTap extends Module {
             if (mc.player.swingProgressInt != 1) {
                 if (mc.player.swingProgressInt == 0) {
                     mc.gameSettings.keyBindForward.pressed = InputMappings.isKeyDown(
-                            Minecraft.getInstance().mainWindow.getHandle(), mc.gameSettings.keyBindForward.inputMappingsInput.keyCode
+                            Minecraft.getInstance().mainWindow.getHandle(), mc.gameSettings.keyBindForward.keyCode.keyCode
                     );
                 }
             } else {

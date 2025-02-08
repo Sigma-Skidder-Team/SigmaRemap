@@ -53,7 +53,7 @@ public class SquidEntity extends WaterMobEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.5F;
+      return var2.height * 0.5F;
    }
 
    @Override

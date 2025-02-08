@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.util.render.blur;
 
 import mapped.IResourceManager;
 import mapped.IResourcePack;
-import mapped.JSonShader;
+import mapped.IResource;
 import mapped.JelloBlurJSON;
 import net.minecraft.util.ResourceLocation;
 
@@ -15,32 +15,32 @@ import java.util.stream.Stream;
 
 public class SigmaBlurShader implements IResourceManager {
    @Override
-   public Set<String> method579() {
-      return BlurEngine.method29975().getResourceManager().method579();
+   public Set<String> getResourceNamespaces() {
+      return BlurEngine.method29975().getResourceManager().getResourceNamespaces();
    }
 
    @Override
-   public JSonShader getShader(ResourceLocation var1) throws IOException {
-      return (JSonShader)(!var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().getShader(var1) : new JelloBlurJSON());
+   public IResource getResource(ResourceLocation var1) throws IOException {
+      return (IResource)(!var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().getResource(var1) : new JelloBlurJSON());
    }
 
    @Override
-   public boolean method581(ResourceLocation var1) {
-      return !var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().method581(var1) : true;
+   public boolean hasResource(ResourceLocation var1) {
+      return !var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().hasResource(var1) : true;
    }
 
    @Override
-   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
-      return BlurEngine.method29975().getResourceManager().method582(var1);
+   public List<IResource> getAllResources(ResourceLocation var1) throws IOException {
+      return BlurEngine.method29975().getResourceManager().getAllResources(var1);
    }
 
    @Override
-   public Collection<ResourceLocation> method583(String var1, Predicate<String> var2) {
-      return BlurEngine.method29975().getResourceManager().method583(var1, var2);
+   public Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2) {
+      return BlurEngine.method29975().getResourceManager().getAllResourceLocations(var1, var2);
    }
 
    @Override
-   public Stream<IResourcePack> method584() {
+   public Stream<IResourcePack> getResourcePackStream() {
       return null;
    }
 }

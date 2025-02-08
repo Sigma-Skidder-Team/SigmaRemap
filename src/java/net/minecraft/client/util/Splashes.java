@@ -25,8 +25,8 @@ public class Splashes extends Class269<List<String>> {
 
    public List<String> method970(IResourceManager var1, IProfiler var2) {
       try (
-              JSonShader var5 = Minecraft.getInstance().getResourceManager().getShader(field1045);
-              BufferedReader var7 = new BufferedReader(new InputStreamReader(var5.getFile(), StandardCharsets.UTF_8));
+              IResource var5 = Minecraft.getInstance().getResourceManager().getResource(field1045);
+              BufferedReader var7 = new BufferedReader(new InputStreamReader(var5.getInputStream(), StandardCharsets.UTF_8));
       ) {
          return var7.lines().<String>map(String::trim).filter(var0 -> var0.hashCode() != 125780783).collect(Collectors.<String>toList());
       } catch (IOException var38) {

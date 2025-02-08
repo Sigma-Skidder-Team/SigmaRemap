@@ -24,7 +24,7 @@ public class Class5725 extends EntityRenderer<BoatEntity> {
       this.shadowSize = 0.8F;
    }
 
-   public void render(BoatEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(BoatEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       var4.translate(0.0, 0.375, 0.0);
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
@@ -46,10 +46,10 @@ public class Class5725 extends EntityRenderer<BoatEntity> {
       var4.scale(-1.0F, -1.0F, 1.0F);
       var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
       this.field25132.setRotationAngles(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
-      IVertexBuilder var12 = var5.method25597(this.field25132.method11028(this.method17843(var1)));
+      IVertexBuilder var12 = var5.getBuffer(this.field25132.method11028(this.method17843(var1)));
       this.field25132.render(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       if (!var1.canSwim()) {
-         IVertexBuilder var13 = var5.method25597(RenderType.method14328());
+         IVertexBuilder var13 = var5.getBuffer(RenderType.method14328());
          this.field25132.method11199().render(var4, var13, var6, OverlayTexture.NO_OVERLAY);
       }
 

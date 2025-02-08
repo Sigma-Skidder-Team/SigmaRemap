@@ -15,7 +15,7 @@ public abstract class Class5942<T extends TileEntity> {
       this.field25928 = var1;
    }
 
-   public abstract void method18462(T var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6);
+   public abstract void method18462(T var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6);
 
    public boolean method18461(T var1) {
       return false;

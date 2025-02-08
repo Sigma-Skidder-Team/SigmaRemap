@@ -386,7 +386,7 @@ public class DragonFightManager {
 
    public void method26124(EnderDragonEntity var1) {
       if (var1.getUniqueID().equals(this.field33547)) {
-         this.bossInfo.setPercent(var1.getHealth() / var1.method3075());
+         this.bossInfo.setPercent(var1.getHealth() / var1.getMaxHealth());
          this.field33541 = 0;
          if (var1.method3381()) {
             this.bossInfo.setName(var1.getDisplayName());

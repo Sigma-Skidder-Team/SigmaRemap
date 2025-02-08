@@ -67,7 +67,7 @@ public class Class7015 implements Class7016 {
    }
 
    private boolean method21743(ServerWorld var1) {
-      for (PlayerEntity var5 : var1.method6870()) {
+      for (PlayerEntity var5 : var1.getPlayers()) {
          if (!var5.isSpectator()) {
             BlockPos var6 = var5.getPosition();
             if (var1.method6952(var6) && var1.getBiome(var6).getCategory() != Biome.Category.MUSHROOM) {

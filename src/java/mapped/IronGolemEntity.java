@@ -200,7 +200,7 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    }
 
    public Class2286 method4865() {
-      return Class2286.method9024(this.getHealth() / this.method3075());
+      return Class2286.method9024(this.getHealth() / this.getMaxHealth());
    }
 
    @Override

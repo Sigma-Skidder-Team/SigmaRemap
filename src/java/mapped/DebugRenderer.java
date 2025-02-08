@@ -85,7 +85,7 @@ public class DebugRenderer {
       return this.field34484;
    }
 
-   public void method27453(MatrixStack var1, Class7735 var2, double var3, double var5, double var7) {
+   public void method27453(MatrixStack var1, IRenderTypeBuffer.Impl var2, double var3, double var5, double var7) {
       if (this.field34484 && !Minecraft.getInstance().isReducedDebug()) {
          this.field34468.method15813(var1, var2, var3, var5, var7);
       }
@@ -181,7 +181,7 @@ public class DebugRenderer {
          float var23 = !var9 ? 0.0F : (float)(-var16.getStringWidth(var0)) / 2.0F;
          var23 -= var10 / var8;
          RenderSystem.enableAlphaTest();
-         Class7735 var24 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+         IRenderTypeBuffer.Impl var24 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
          var16.method38810(var0, var23, 0.0F, var7, false, Class6979.method21542().method21548(), var24, var11, 0, 15728880);
          var24.finish();
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);

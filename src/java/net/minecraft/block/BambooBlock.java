@@ -74,7 +74,7 @@ public class BambooBlock extends Block implements IGrowable {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       Vector3d var7 = var1.method23421(var2, var3);
       return field19124.withOffset(var7.x, var7.y, var7.z);
    }

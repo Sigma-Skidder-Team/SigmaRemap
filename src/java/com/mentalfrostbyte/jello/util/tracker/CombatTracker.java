@@ -60,7 +60,7 @@ public class CombatTracker {
     private void method29513(TickEvent tickEvent) {
         if (this.field36050.player.ticksExisted % 100 == 0) {
             this.method29514();
-            List<AbstractClientPlayerEntity> var4 = this.field36050.world.method6870();
+            List<AbstractClientPlayerEntity> var4 = this.field36050.world.getPlayers();
 
             var4.removeIf(var6 -> this.field36053.contains(var6.getUniqueID())
                     || Client.getInstance().combatManager.isTargetABot(var6)

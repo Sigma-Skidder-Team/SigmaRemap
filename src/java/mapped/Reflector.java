@@ -152,7 +152,7 @@ public class Reflector {
       field42864, "dispatchRenderLast", new Class[]{WorldRenderer.class, MatrixStack.class, float.class, Matrix4f.class, long.class}
    );
    public static Class6631 field42866 = new Class6631(field42864, "drawItemLayered");
-   public static Class6631 field42867 = new Class6631(field42864, "drawScreen");
+   public static Class6631 ForgeHooksClient_drawScreen = new Class6631(field42864, "drawScreen");
    public static Class6631 field42868 = new Class6631(field42864, "fillNormal");
    public static Class6631 field42869 = new Class6631(field42864, "fireKeyInput");
    public static Class6631 field42870 = new Class6631(field42864, "handleCameraTransforms");
@@ -275,18 +275,18 @@ public class Reflector {
    public static Class6636 field42985 = new Class6636("net.minecraftforge.fml.client.registry.RenderingRegistry");
    public static Class6631 field42986 = new Class6631(field42985, "loadEntityRenderers", new Class[]{EntityRendererManager.class});
    public static Class6636 field42987 = new Class6636("net.minecraftforge.client.event.RenderItemInFrameEvent");
-   public static Class6634 field42988 = new Class6634(field42987, new Class[]{ItemFrameEntity.class, Class5736.class, MatrixStack.class, Class7733.class, int.class});
+   public static Class6634 field42988 = new Class6634(field42987, new Class[]{ItemFrameEntity.class, Class5736.class, MatrixStack.class, IRenderTypeBuffer.class, int.class});
    public static Class6636 field42989 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Pre");
    public static Class6634 field42990 = new Class6634(
-      field42989, new Class[]{LivingEntity.class, LivingRenderer.class, float.class, MatrixStack.class, Class7733.class, int.class}
+      field42989, new Class[]{LivingEntity.class, LivingRenderer.class, float.class, MatrixStack.class, IRenderTypeBuffer.class, int.class}
    );
    public static Class6636 field42991 = new Class6636("net.minecraftforge.client.event.RenderLivingEvent$Post");
    public static Class6634 field42992 = new Class6634(
-      field42991, new Class[]{LivingEntity.class, LivingRenderer.class, float.class, MatrixStack.class, Class7733.class, int.class}
+      field42991, new Class[]{LivingEntity.class, LivingRenderer.class, float.class, MatrixStack.class, IRenderTypeBuffer.class, int.class}
    );
    public static Class6636 field42993 = new Class6636("net.minecraftforge.client.event.RenderNameplateEvent");
    public static Class6634 field42994 = new Class6634(
-      field42993, new Class[]{Entity.class, ITextComponent.class, EntityRenderer.class, MatrixStack.class, Class7733.class, int.class, float.class}
+      field42993, new Class[]{Entity.class, ITextComponent.class, EntityRenderer.class, MatrixStack.class, IRenderTypeBuffer.class, int.class, float.class}
    );
    public static Class6631 field42995 = new Class6631(field42993, "getContent");
    public static Class6636 field42996 = new Class6636("net.minecraftforge.client.event.ScreenshotEvent");

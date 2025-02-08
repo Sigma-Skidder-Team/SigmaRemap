@@ -30,8 +30,8 @@ public class Class1770 implements Class1768 {
          ResourceLocation var8 = this.method7743(var7);
 
          try (
-                 JSonShader var9 = this.field9587.getShader(var8);
-                 NativeImage var11 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var9.getFile());
+                 IResource var9 = this.field9587.getResource(var8);
+                 NativeImage var11 = NativeImage.method7880(NativeImage.PixelFormat.field14626, var9.getInputStream());
          ) {
             if (var11.method7886() == 256 && var11.method7887() == 256) {
                for (int var13 = 0; var13 < 256; var13++) {
@@ -93,8 +93,8 @@ public class Class1770 implements Class1768 {
 
    @Nullable
    private NativeImage method7744(ResourceLocation var1) {
-      try (JSonShader var4 = this.field9587.getShader(var1)) {
-         return NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getFile());
+      try (IResource var4 = this.field9587.getResource(var1)) {
+         return NativeImage.method7880(NativeImage.PixelFormat.field14626, var4.getInputStream());
       } catch (IOException var18) {
          field9586.error("Couldn't load texture {}", var1, var18);
          return null;

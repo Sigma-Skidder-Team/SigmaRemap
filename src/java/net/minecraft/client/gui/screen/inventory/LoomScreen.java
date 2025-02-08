@@ -76,7 +76,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       this.blit(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
       RenderHelper.setupGuiFlatDiffuseLighting();
       if (this.field4804 != null && !this.field4810) {
-         Class7735 var14 = this.mc.getRenderTypeBuffers().getBufferSource();
+         IRenderTypeBuffer.Impl var14 = this.mc.getRenderTypeBuffers().getBufferSource();
          var1.push();
          var1.translate((double)(var7 + 139), (double)(var8 + 52), 0.0);
          var1.scale(24.0F, -24.0F, 1.0F);
@@ -144,7 +144,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
       var9.translate(0.5, 0.5, 0.5);
       float var10 = 0.6666667F;
       var9.scale(0.6666667F, -0.6666667F, -0.6666667F);
-      Class7735 var11 = this.mc.getRenderTypeBuffers().getBufferSource();
+      IRenderTypeBuffer.Impl var11 = this.mc.getRenderTypeBuffers().getBufferSource();
       this.field4803.rotateAngleX = 0.0F;
       this.field4803.rotationPointY = -32.0F;
       List var12 = BannerTileEntity.getPatternColorData(DyeColor.field393, BannerTileEntity.method3886(var6));

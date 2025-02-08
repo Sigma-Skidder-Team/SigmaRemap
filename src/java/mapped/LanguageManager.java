@@ -45,8 +45,8 @@ public class LanguageManager implements IResourceManagerReloadListener {
    }
 
    @Override
-   public void method737(IResourceManager var1) {
-      this.field1036 = method963(var1.method584());
+   public void onResourceManagerReload(IResourceManager var1) {
+      this.field1036 = method963(var1.getResourcePackStream());
       Class2019 var4 = this.field1036.getOrDefault("en_us", field1035);
       this.field1038 = this.field1036.getOrDefault(this.field1037, var4);
       ArrayList var5 = Lists.newArrayList(new Class2019[]{var4});

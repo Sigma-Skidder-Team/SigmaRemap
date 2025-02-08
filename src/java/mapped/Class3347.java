@@ -30,7 +30,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 
-public class Class3347 extends Class3346<Class943> implements IWaterLoggable {
+public class Class3347 extends Class3346<EnderChestTileEntity> implements IWaterLoggable {
    public static final DirectionProperty field18860 = HorizontalBlock.HORIZONTAL_FACING;
    public static final BooleanProperty field18861 = BlockStateProperties.WATERLOGGED;
    public static final VoxelShape field18862 = Block.makeCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
@@ -68,12 +68,12 @@ public class Class3347 extends Class3346<Class943> implements IWaterLoggable {
    public ActionResultType onBlockActivated(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       EnderChestInventory var9 = var4.method2942();
       TileEntity var10 = var2.getTileEntity(var3);
-      if (var9 != null && var10 instanceof Class943) {
+      if (var9 != null && var10 instanceof EnderChestTileEntity) {
          BlockPos var11 = var3.up();
          if (var2.getBlockState(var11).method23400(var2, var11)) {
             return ActionResultType.method9002(var2.isRemote);
          } else if (!var2.isRemote) {
-            Class943 var12 = (Class943)var10;
+            EnderChestTileEntity var12 = (EnderChestTileEntity)var10;
             var9.method4064(var12);
             var4.method2766(new Class953((var1x, var2x, var3x) -> ChestContainer.method18162(var1x, var2x, var9), field18863));
             var4.method2911(Stats.field40156);
@@ -89,7 +89,7 @@ public class Class3347 extends Class3346<Class943> implements IWaterLoggable {
 
    @Override
    public TileEntity method11646(IBlockReader var1) {
-      return new Class943();
+      return new EnderChestTileEntity();
    }
 
    @Override

@@ -975,7 +975,7 @@ public class RealmsMainScreen extends RealmsScreen {
    }
 
    public static void method2061(IResourceManager var0) {
-      Collection<ResourceLocation> var3 = var0.method583("textures/gui/images", var0x -> var0x.endsWith(".png"));
+      Collection<ResourceLocation> var3 = var0.getAllResourceLocations("textures/gui/images", var0x -> var0x.endsWith(".png"));
       field4261 = var3.stream().filter(var0x -> var0x.getNamespace().equals("realms")).collect(ImmutableList.toImmutableList());
    }
 

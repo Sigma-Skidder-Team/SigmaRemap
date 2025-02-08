@@ -98,7 +98,7 @@ public class CartographyTableScreen extends ContainerScreen<Class5836> {
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)var2, (float)var3, 1.0F);
          RenderSystem.scalef(var4, var4, 1.0F);
-         Class7735 var7 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+         IRenderTypeBuffer.Impl var7 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
          this.mc.gameRenderer.method756().method593(new MatrixStack(), var7, var1, true, 15728880);
          var7.finish();
          RenderSystem.popMatrix();

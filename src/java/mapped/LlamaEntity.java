@@ -174,7 +174,7 @@ public class LlamaEntity extends Class1066 implements Class1022 {
          var7 = 2.0F;
       }
 
-      if (this.getHealth() < this.method3075() && var7 > 0.0F) {
+      if (this.getHealth() < this.getMaxHealth() && var7 > 0.0F) {
          this.heal(var7);
          var8 = true;
       }

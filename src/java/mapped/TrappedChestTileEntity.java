@@ -2,10 +2,9 @@ package mapped;
 
 import net.minecraft.tileentity.TileEntityType;
 
-public class Class970 extends ChestTileEntity {
-   private static String[] field5434;
+public class TrappedChestTileEntity extends ChestTileEntity {
 
-   public Class970() {
+   public TrappedChestTileEntity() {
       super(TileEntityType.field21423);
    }
 

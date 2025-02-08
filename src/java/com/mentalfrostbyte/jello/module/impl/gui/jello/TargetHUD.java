@@ -58,7 +58,7 @@ public class TargetHUD extends Module {
         this.registerSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));
         this.registerSetting(new BooleanSetting("Armor", "Draw target's armor", false));
         this.registerSetting(new BooleanSetting("Head", "Draw target's head", false));
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
         this.field23689 = new Animation(800, 200, Animation.Direction.BACKWARDS);
         this.field23691 = new Animation(1500, 200, Animation.Direction.BACKWARDS);
         this.field23692 = new Animation(950, 200, Animation.Direction.BACKWARDS);
@@ -220,7 +220,7 @@ public class TargetHUD extends Module {
             Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
             var10.rotate(var11);
             var4.setRenderShadow(false);
-            Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
+            IRenderTypeBuffer.Impl var12 = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
             RenderSystem.runAsFancy(
                     () -> var5.method17924(
                             var9, 100.0F, 0.0F, var10, var12, 15728880,
@@ -246,7 +246,7 @@ public class TargetHUD extends Module {
     private Color method16477(Entity var1) {
         if (var1 instanceof LivingEntity) {
             LivingEntity var4 = (LivingEntity) var1;
-            float var5 = var4.getHealth() / var4.method3075() * 20.0F;
+            float var5 = var4.getHealth() / var4.getMaxHealth() * 20.0F;
             if (var5 > 20.0F) {
                 var5 = 20.0F;
             }

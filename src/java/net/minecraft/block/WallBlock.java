@@ -121,7 +121,7 @@ public class WallBlock extends Block implements IWaterLoggable {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return this.field19113.get(var1);
    }
 
@@ -200,7 +200,7 @@ public class WallBlock extends Block implements IWaterLoggable {
    }
 
    private BlockState method12060(IWorldReader var1, BlockState var2, BlockPos var3, BlockState var4, boolean var5, boolean var6, boolean var7, boolean var8) {
-      VoxelShape var11 = var4.method23414(var1, var3).method19526(Direction.DOWN);
+      VoxelShape var11 = var4.getCollisionShape(var1, var3).method19526(Direction.DOWN);
       BlockState var12 = this.method12062(var2, var5, var6, var7, var8, var11);
       return var12.with(field19106, Boolean.valueOf(this.method12061(var12, var4, var11)));
    }

@@ -206,22 +206,22 @@ public interface IVertexBuilder extends Class5421 {
       return new int[]{var1, var2, var3, var4};
    }
 
-   default Class7735 method17049() {
+   default IRenderTypeBuffer.Impl method17049() {
       return null;
    }
 
    default int method17050(int var1, int[] var2, int var3) {
       int var6 = method17051(0);
-      int var7 = Class1699.method7322(var2[var3 + var6]);
-      int var8 = Class1699.method7323(var2[var3 + var6]);
+      int var7 = LightTexture.method7322(var2[var3 + var6]);
+      int var8 = LightTexture.method7323(var2[var3 + var6]);
       if (var7 == 0 && var8 == 0) {
          return var1;
       } else {
-         int var9 = Class1699.method7322(var1);
-         int var10 = Class1699.method7323(var1);
+         int var9 = LightTexture.method7322(var1);
+         int var10 = LightTexture.method7323(var1);
          var9 = Math.max(var9, var7);
          var10 = Math.max(var10, var8);
-         return Class1699.method7321(var9, var10);
+         return LightTexture.method7321(var9, var10);
       }
    }
 

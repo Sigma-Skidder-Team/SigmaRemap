@@ -26,7 +26,7 @@ import org.lwjgl.opengl.GL11;
 
 public class ShadowESP extends Module {
     public static Class2191 field23794 = Class2191.field14327;
-    public Class7735 field23795 = Class7733.method25596(mc.getRenderTypeBuffers().field33890, new BufferBuilder(256));
+    public IRenderTypeBuffer.Impl field23795 = IRenderTypeBuffer.getImpl(mc.getRenderTypeBuffers().fixedBuffers, new BufferBuilder(256));
 
     public ShadowESP() {
         super(ModuleCategory.RENDER, "Shadow", "Draws a line arround entities");
@@ -120,8 +120,8 @@ public class ShadowESP extends Module {
                 boolean var19 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+                        GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
                 RenderSystem.enableBlend();
                 mc.gameSettings.entityShadows = false;
                 int var20 = var10.getFireTimer();
@@ -152,7 +152,7 @@ public class ShadowESP extends Module {
     }
 
     public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9,
-            Class7733 var10) {
+            IRenderTypeBuffer var10) {
         double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
@@ -205,7 +205,7 @@ public class ShadowESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.lightmapTexture.method7316();
+        mc.gameRenderer.lightmapTexture.disableLightmap();
     }
 
     private void method16613() {
@@ -214,11 +214,11 @@ public class ShadowESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.method36180();
+        TextureImpl.unbind();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.lightmapTexture.method7317();
+        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        mc.gameRenderer.lightmapTexture.enableLightmap();
         GL11.glLightModelfv(2899, new float[] { 0.4F, 0.4F, 0.4F, 1.0F });
         field23794 = Class2191.field14327;
     }

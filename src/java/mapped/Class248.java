@@ -20,10 +20,10 @@ public class Class248 extends Class219<HorseEntity, Class2856<HorseEntity>> {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, HorseEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, HorseEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ResourceLocation var13 = field904.get(var4.method4996());
       if (var13 != null && !var4.isInvisible()) {
-         IVertexBuilder var14 = var2.method25597(RenderType.getEntityTranslucent(var13));
+         IVertexBuilder var14 = var2.getBuffer(RenderType.getEntityTranslucent(var13));
          this.method825().render(var1, var14, var3, LivingRenderer.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }

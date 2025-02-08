@@ -23,36 +23,36 @@ import java.util.List;
 import java.util.Map;
 
 public class ShaderGroup implements AutoCloseable {
-   private final Framebuffer field8936;
-   private final IResourceManager field8937;
-   private final String field8938;
-   public final List<Class1706> elements = Lists.newArrayList();
-   private final Map<String, Framebuffer> field8940 = Maps.newHashMap();
-   private final List<Framebuffer> field8941 = Lists.newArrayList();
-   private Matrix4f field8942;
-   private int field8943;
-   private int field8944;
-   private float field8945;
-   private float field8946;
+   private final Framebuffer mainFramebuffer;
+   private final IResourceManager resourceManager;
+   private final String shaderGroupName;
+   public final List<Shader> listShaders = Lists.newArrayList();
+   private final Map<String, Framebuffer> mapFramebuffers = Maps.newHashMap();
+   private final List<Framebuffer> listFramebuffers = Lists.newArrayList();
+   private Matrix4f projectionMatrix;
+   private int mainFramebufferWidth;
+   private int mainFramebufferHeight;
+   private float time;
+   private float lastStamp;
 
    public ShaderGroup(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
-      this.field8937 = var2;
-      this.field8936 = var3;
-      this.field8945 = 0.0F;
-      this.field8946 = 0.0F;
-      this.field8943 = var3.framebufferWidth;
-      this.field8944 = var3.framebufferHeight;
-      this.field8938 = var4.toString();
+      this.resourceManager = var2;
+      this.mainFramebuffer = var3;
+      this.time = 0.0F;
+      this.lastStamp = 0.0F;
+      this.mainFramebufferWidth = var3.framebufferWidth;
+      this.mainFramebufferHeight = var3.framebufferHeight;
+      this.shaderGroupName = var4.toString();
       this.method6524();
       this.method6517(var1, var4);
    }
 
    private void method6517(TextureManager var1, ResourceLocation var2) throws IOException, JsonSyntaxException {
-      JSonShader var5 = null;
+      IResource var5 = null;
 
       try {
-         var5 = this.field8937.getShader(var2);
-         JsonObject var6 = JSONUtils.fromJson(new InputStreamReader(var5.getFile(), StandardCharsets.UTF_8));
+         var5 = this.resourceManager.getResource(var2);
+         JsonObject var6 = JSONUtils.fromJson(new InputStreamReader(var5.getInputStream(), StandardCharsets.UTF_8));
          if (JSONUtils.method32759(var6, "targets")) {
             JsonArray var22 = var6.getAsJsonArray("targets");
             int var24 = 0;
@@ -89,7 +89,7 @@ public class ShaderGroup implements AutoCloseable {
       } catch (Exception var20) {
          String var7;
          if (var5 != null) {
-            var7 = " (" + var5.method7765() + ")";
+            var7 = " (" + var5.getPackName() + ")";
          } else {
             var7 = "";
          }
@@ -106,15 +106,15 @@ public class ShaderGroup implements AutoCloseable {
       if (!JSONUtils.method32756(var1)) {
          JsonObject var4 = JSONUtils.getJSONObject(var1, "target");
          String var5 = JSONUtils.getString(var4, "name");
-         int var6 = JSONUtils.getInt(var4, "width", this.field8943);
-         int var7 = JSONUtils.getInt(var4, "height", this.field8944);
-         if (this.field8940.containsKey(var5)) {
+         int var6 = JSONUtils.getInt(var4, "width", this.mainFramebufferWidth);
+         int var7 = JSONUtils.getInt(var4, "height", this.mainFramebufferHeight);
+         if (this.mapFramebuffers.containsKey(var5)) {
             throw new JSONException(var5 + " is already defined");
          }
 
          this.method6522(var5, var6, var7);
       } else {
-         this.method6522(var1.getAsString(), this.field8943, this.field8944);
+         this.method6522(var1.getAsString(), this.mainFramebufferWidth, this.mainFramebufferHeight);
       }
    }
 
@@ -123,14 +123,14 @@ public class ShaderGroup implements AutoCloseable {
       String var6 = JSONUtils.getString(var5, "name");
       String var7 = JSONUtils.getString(var5, "intarget");
       String var8 = JSONUtils.getString(var5, "outtarget");
-      Framebuffer var9 = this.method6528(var7);
-      Framebuffer var10 = this.method6528(var8);
+      Framebuffer var9 = this.getFramebuffer(var7);
+      Framebuffer var10 = this.getFramebuffer(var8);
       if (var9 == null) {
          throw new JSONException("Input target '" + var7 + "' does not exist");
       } else if (var10 == null) {
          throw new JSONException("Output target '" + var8 + "' does not exist");
       } else {
-         Class1706 var11 = this.method6523(var6, var9, var10);
+         Shader var11 = this.method6523(var6, var9, var10);
          JsonArray var12 = JSONUtils.method32786(var5, "auxtargets", (JsonArray)null);
          if (var12 != null) {
             int var13 = 0;
@@ -150,17 +150,17 @@ public class ShaderGroup implements AutoCloseable {
                      var20 = var18;
                   }
 
-                  Framebuffer var21 = this.method6528(var20);
+                  Framebuffer var21 = this.getFramebuffer(var20);
                   if (var21 == null) {
                      if (var19) {
                         throw new JSONException("Render target '" + var20 + "' can't be used as depth buffer");
                      }
 
                      ResourceLocation var22 = new ResourceLocation("textures/effect/" + var20 + ".png");
-                     JSonShader var23 = null;
+                     IResource var23 = null;
 
                      try {
-                        var23 = this.field8937.getShader(var22);
+                        var23 = this.resourceManager.getResource(var22);
                      } catch (FileNotFoundException var33) {
                         throw new JSONException("Render target or texture '" + var20 + "' does not exist");
                      } finally {
@@ -173,11 +173,11 @@ public class ShaderGroup implements AutoCloseable {
                      int var26 = JSONUtils.method32777(var16, "height");
                      boolean var27 = JSONUtils.method32768(var16, "bilinear");
                      if (var27) {
-                        RenderSystem.method27863(3553, 10241, 9729);
-                        RenderSystem.method27863(3553, 10240, 9729);
+                        RenderSystem.texParameter(3553, 10241, 9729);
+                        RenderSystem.texParameter(3553, 10240, 9729);
                      } else {
-                        RenderSystem.method27863(3553, 10241, 9728);
-                        RenderSystem.method27863(3553, 10240, 9728);
+                        RenderSystem.texParameter(3553, 10241, 9728);
+                        RenderSystem.texParameter(3553, 10240, 9728);
                      }
 
                      var11.method7407(var40, var24::getGlTextureId, var25, var26);
@@ -218,7 +218,7 @@ public class ShaderGroup implements AutoCloseable {
    private void method6520(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.getJSONObject(var1, "uniform");
       String var5 = JSONUtils.getString(var4, "name");
-      Class1708 var6 = this.elements.get(this.elements.size() - 1).method7410().method7936(var5);
+      ShaderUniform var6 = this.listShaders.get(this.listShaders.size() - 1).getShaderManager().func_216539_a(var5);
       if (var6 == null) {
          throw new JSONException("Uniform '" + var5 + "' does not exist");
       } else {
@@ -242,96 +242,96 @@ public class ShaderGroup implements AutoCloseable {
             default:
                break;
             case 1:
-               var6.setValue(var7[0]);
+               var6.set(var7[0]);
                break;
             case 2:
-               var6.method7438(var7[0], var7[1]);
+               var6.set(var7[0], var7[1]);
                break;
             case 3:
-               var6.method7439(var7[0], var7[1], var7[2]);
+               var6.set(var7[0], var7[1], var7[2]);
                break;
             case 4:
-               var6.method7440(var7[0], var7[1], var7[2], var7[3]);
+               var6.set(var7[0], var7[1], var7[2], var7[3]);
          }
       }
    }
 
    public Framebuffer method6521(String var1) {
-      return this.field8940.get(var1);
+      return this.mapFramebuffers.get(var1);
    }
 
    public void method6522(String var1, int var2, int var3) {
       Framebuffer var6 = new Framebuffer(var2, var3, true, Minecraft.IS_RUNNING_ON_MAC);
       var6.setFramebufferColor(0.0F, 0.0F, 0.0F, 0.0F);
-      this.field8940.put(var1, var6);
-      if (var2 == this.field8943 && var3 == this.field8944) {
-         this.field8941.add(var6);
+      this.mapFramebuffers.put(var1, var6);
+      if (var2 == this.mainFramebufferWidth && var3 == this.mainFramebufferHeight) {
+         this.listFramebuffers.add(var6);
       }
    }
 
    @Override
    public void close() {
-      for (Framebuffer var4 : this.field8940.values()) {
+      for (Framebuffer var4 : this.mapFramebuffers.values()) {
          var4.deleteFramebuffer();
       }
 
-      for (Class1706 var6 : this.elements) {
+      for (Shader var6 : this.listShaders) {
          var6.close();
       }
 
-      this.elements.clear();
+      this.listShaders.clear();
    }
 
-   public Class1706 method6523(String var1, Framebuffer var2, Framebuffer var3) throws IOException {
-      Class1706 var6 = new Class1706(this.field8937, var1, var2, var3);
-      this.elements.add(this.elements.size(), var6);
+   public Shader method6523(String var1, Framebuffer var2, Framebuffer var3) throws IOException {
+      Shader var6 = new Shader(this.resourceManager, var1, var2, var3);
+      this.listShaders.add(this.listShaders.size(), var6);
       return var6;
    }
 
    private void method6524() {
-      this.field8942 = Matrix4f.method35512((float)this.field8936.framebufferTextureWidth, (float)this.field8936.framebufferTextureHeight, 0.1F, 1000.0F);
+      this.projectionMatrix = Matrix4f.method35512((float)this.mainFramebuffer.framebufferTextureWidth, (float)this.mainFramebuffer.framebufferTextureHeight, 0.1F, 1000.0F);
    }
 
    public void createBindFramebuffers(int var1, int var2) {
-      this.field8943 = this.field8936.framebufferTextureWidth;
-      this.field8944 = this.field8936.framebufferTextureHeight;
+      this.mainFramebufferWidth = this.mainFramebuffer.framebufferTextureWidth;
+      this.mainFramebufferHeight = this.mainFramebuffer.framebufferTextureHeight;
       this.method6524();
 
-      for (Class1706 var6 : this.elements) {
-         var6.method7408(this.field8942);
+      for (Shader var6 : this.listShaders) {
+         var6.method7408(this.projectionMatrix);
       }
 
-      for (Framebuffer var8 : this.field8941) {
+      for (Framebuffer var8 : this.listFramebuffers) {
          var8.resize(var1, var2, Minecraft.IS_RUNNING_ON_MAC);
       }
    }
 
-   public void method6526(float var1) {
-      if (!(var1 < this.field8946)) {
-         this.field8945 = this.field8945 + (var1 - this.field8946);
+   public void render(float var1) {
+      if (!(var1 < this.lastStamp)) {
+         this.time = this.time + (var1 - this.lastStamp);
       } else {
-         this.field8945 = this.field8945 + (1.0F - this.field8946);
-         this.field8945 += var1;
+         this.time = this.time + (1.0F - this.lastStamp);
+         this.time += var1;
       }
 
-      this.field8946 = var1;
+      this.lastStamp = var1;
 
-      while (this.field8945 > 20.0F) {
-         this.field8945 -= 20.0F;
+      while (this.time > 20.0F) {
+         this.time -= 20.0F;
       }
 
-      for (Class1706 var5 : this.elements) {
-         var5.method7409(this.field8945 / 20.0F);
+      for (Shader var5 : this.listShaders) {
+         var5.method7409(this.time / 20.0F);
       }
    }
 
    public final String method6527() {
-      return this.field8938;
+      return this.shaderGroupName;
    }
 
-   public Framebuffer method6528(String var1) {
+   public Framebuffer getFramebuffer(String var1) {
       if (var1 != null) {
-         return !var1.equals("minecraft:main") ? this.field8940.get(var1) : this.field8936;
+         return !var1.equals("minecraft:main") ? this.mapFramebuffers.get(var1) : this.mainFramebuffer;
       } else {
          return null;
       }

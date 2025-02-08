@@ -30,14 +30,14 @@ public class Class262<T extends MooshroomEntity> extends Class219<T, Class2870<T
       this.field923.method22691(nArrayArray2, 0.0f, 0.0f, -10.0f, 0.0f, 16.0f, 20.0f, 0.0f);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isChild() && !var4.isInvisible()) {
          BlockRendererDispatcher var13 = Minecraft.getInstance().getBlockRendererDispatcher();
          BlockState var14 = var4.method5037().method8934();
          ResourceLocation var15 = this.method852(var14);
          IVertexBuilder var16 = null;
          if (var15 != null) {
-            var16 = var2.method25597(RenderType.getEntityCutout(var15));
+            var16 = var2.getBuffer(RenderType.getEntityCutout(var15));
          }
 
          int var17 = LivingRenderer.method17883(var4, 0.0F);

@@ -19,7 +19,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
       this.shadowSize = 0.7F;
    }
 
-   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       super.render((T)var1, var2, var3, var4, var5, var6);
       var4.push();
       long var9 = (long)var1.getEntityId() * 493286711L;
@@ -81,7 +81,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
 
       var4.scale(-1.0F, -1.0F, 1.0F);
       this.field25144.setRotationAngles((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
-      IVertexBuilder var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
+      IVertexBuilder var34 = var5.getBuffer(this.field25144.method11028(this.method17843((T)var1)));
       this.field25144.render(var4, var34, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
    }
@@ -90,7 +90,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<
       return field25143;
    }
 
-   public void method17915(T var1, float var2, BlockState var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void method17915(T var1, float var2, BlockState var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       Minecraft.getInstance().getBlockRendererDispatcher().method814(var3, var4, var5, var6, OverlayTexture.NO_OVERLAY);
    }
 }

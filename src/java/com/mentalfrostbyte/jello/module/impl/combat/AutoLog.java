@@ -25,7 +25,7 @@ public class AutoLog extends Module {
     @EventTarget
     public void method16498(TickEvent var1) {
         if (this.isEnabled() && mc.player.ticksExisted > 10 && mc.getIntegratedServer() == null && mc.getCurrentServerData() != null) {
-            float var4 = mc.player.getHealth() / mc.player.method3075() * 10.0F;
+            float var4 = mc.player.getHealth() / mc.player.getMaxHealth() * 10.0F;
             if (var4 < this.getNumberValueBySettingName("Min Health") || InvManagerUtils.method25878(Items.TOTEM_OF_UNDYING) == 0) {
                 boolean var5 = this.getBooleanValueFromSettingName("One Time Use");
                 mc.world.sendQuittingDisconnectingPacket();

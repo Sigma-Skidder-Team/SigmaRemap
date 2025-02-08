@@ -55,10 +55,10 @@ public class JelloPortalScreen extends MultiplayerScreen {
     @Override
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
         super.render(matrixStack, mouseX, mouseY, partialTicks);
-        RenderUtil.drawPortalBackground(
+        RenderUtil.drawBlurredBackground(
                 0, 0, Minecraft.getInstance().mainWindow.getWidth(),
                 (int) (30.0 * Minecraft.getInstance().mainWindow.getGuiScaleFactor()
-                        / (double) GuiManager.portalScaleFactor));
+                        / (double) GuiManager.scaleFactor));
         this.renderBackground(matrixStack);
         RenderUtil.endScissor();
         this.versionSelectorWidget.render(matrixStack, mouseX, mouseY, partialTicks);

@@ -39,7 +39,7 @@ public class ShulkerInfo extends Module {
 
     public ShulkerInfo() {
         super(ModuleCategory.GUI, "ShulkerInfo", "Shows shulker information");
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget
@@ -107,10 +107,10 @@ public class ShulkerInfo extends Module {
             }
 
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-            TextureImpl.method36180();
+            TextureImpl.unbind();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -191,9 +191,9 @@ public class ShulkerInfo extends Module {
                     int var9 = Math.round(16.0F * RenderUtil.method11417());
                     int var10 = 1;
                     int var11 = 12;
-                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.portalScaleFactor
+                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.scaleFactor
                             - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
-                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.portalScaleFactor - 33.0);
+                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.scaleFactor - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
                     GL11.glPopMatrix();
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -211,7 +211,7 @@ public class ShulkerInfo extends Module {
 
     private void method16676(int var1, int var2, List<ItemStack> var3, String var4, boolean var5) {
         int var8 = 12;
-        int var9 = ResourceRegistry.JelloLightFont25.method23952();
+        int var9 = ResourceRegistry.JelloLightFont25.getHeight();
         int var10 = Math.round(16.0F * RenderUtil.method11417());
         int var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;

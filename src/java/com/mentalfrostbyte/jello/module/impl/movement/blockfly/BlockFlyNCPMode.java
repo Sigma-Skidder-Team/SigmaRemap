@@ -151,7 +151,7 @@ public class BlockFlyNCPMode extends Module {
     @EventTarget
     private void method16806(EventKeyPress var1) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23929 = true;
             }
@@ -161,7 +161,7 @@ public class BlockFlyNCPMode extends Module {
     @EventTarget
     private void method16807(MouseHoverEvent var1) {
         if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keyCode.keyCode) {
                 var1.setCancelled(true);
                 this.field23929 = false;
             }

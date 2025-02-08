@@ -49,7 +49,7 @@ public class Class5658 extends Class5651<GuardianEntity, Class2820> {
       return new Vector3d(var7, var9, var11);
    }
 
-   public void render(GuardianEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(GuardianEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       LivingEntity var9 = entityIn.method5306();
       if (var9 != null) {
@@ -96,7 +96,7 @@ public class Class5658 extends Class5651<GuardianEntity, Class2820> {
          float var45 = 0.4999F;
          float var46 = -1.0F + var12;
          float var47 = var17 * 2.5F + var46;
-         IVertexBuilder var48 = var5.method25597(field25022);
+         IVertexBuilder var48 = var5.getBuffer(field25022);
          Class8892 var49 = matrixStackIn.getLast();
          Matrix4f var50 = var49.getMatrix();
          Matrix3f var51 = var49.method32362();

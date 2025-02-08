@@ -13,7 +13,7 @@ public interface IReloadableResourceManager extends IResourceManager, AutoClosea
 
    Class8335 reloadResources(Executor var1, Executor var2, CompletableFuture<Unit> var3, List<IResourcePack> var4);
 
-   void addReloadListener(Class268 var1);
+   void addReloadListener(IFutureReloadListener var1);
 
    @Override
    void close();

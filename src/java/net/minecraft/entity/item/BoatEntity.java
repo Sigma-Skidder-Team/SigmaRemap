@@ -78,7 +78,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public float getEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969;
+      return var2.height;
    }
 
    @Override
@@ -499,7 +499,7 @@ public class BoatEntity extends Entity {
                      BlockState var19 = this.world.getBlockState(var14);
                      if (!(var19.getBlock() instanceof LilyPadBlock)
                         && VoxelShapes.compare(
-                           var19.method23414(this.world, var14).withOffset((double)var15, (double)var18, (double)var16), var11, IBooleanFunction.AND
+                           var19.getCollisionShape(this.world, var14).withOffset((double)var15, (double)var18, (double)var16), var11, IBooleanFunction.AND
                         )) {
                         var12 += var19.getBlock().method11571();
                         var13++;

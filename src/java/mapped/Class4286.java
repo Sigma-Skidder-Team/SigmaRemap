@@ -69,7 +69,7 @@ public class Class4286 extends Class4278 {
       boolean var5 = this.method13298() && this.getScreen().getScreen().method13114(newHeight, newWidth);
       this.field20777.changeDirection(!var5 ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       if (var5) {
-         Client.getInstance().guiManager.method33459(GuiManager.field41345);
+         Client.getInstance().guiManager.method33459(GuiManager.pointingHandCursor);
       }
 
       super.updatePanelDimensions(newHeight, newWidth);

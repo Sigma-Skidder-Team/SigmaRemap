@@ -23,7 +23,7 @@ public class UIButton extends Class4247 {
       super.updatePanelDimensions(newHeight, newWidth);
       this.field20711.changeDirection(!this.method13298() ? Animation.Direction.BACKWARDS : Animation.Direction.FORWARDS);
       if (this.method13298()) {
-         Client.getInstance().guiManager.method33459(GuiManager.field41345);
+         Client.getInstance().guiManager.method33459(GuiManager.pointingHandCursor);
       }
    }
 

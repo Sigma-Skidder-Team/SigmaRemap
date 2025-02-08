@@ -27,8 +27,8 @@ public class Class297 extends Class293 {
    }
 
    private static InputStream method1174(IResourceManager var0, VanillaPack var1) throws IOException {
-      return !var0.method581(ResourceLoadProgressGui.method5683())
+      return !var0.hasResource(ResourceLoadProgressGui.method5683())
          ? var1.getResourceStream(ResourcePackType.CLIENT_RESOURCES, ResourceLoadProgressGui.method5683())
-         : var0.getShader(ResourceLoadProgressGui.method5683()).getFile();
+         : var0.getResource(ResourceLoadProgressGui.method5683()).getInputStream();
    }
 }

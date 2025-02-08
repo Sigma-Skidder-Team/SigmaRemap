@@ -31,7 +31,7 @@ public abstract class Class2009 implements Comparable<Class2009> {
       }
    }
 
-   public abstract CompletableFuture<Class2046> method8527(Class7828 var1);
+   public abstract CompletableFuture<Class2046> method8527(RegionRenderCacheBuilder var1);
 
    public abstract void method8528();
 

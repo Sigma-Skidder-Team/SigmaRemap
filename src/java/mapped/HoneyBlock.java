@@ -31,7 +31,7 @@ public class HoneyBlock extends Class3231 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field18980;
    }
 
@@ -51,7 +51,7 @@ public class HoneyBlock extends Class3231 {
    public void onEntityCollision(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (this.method11972(var3, var4)) {
          this.method11973(var4, var3);
-         this.method11974(var4);
+         this.setSlideVelocity(var4);
          this.method11975(var2, var4);
       }
 
@@ -81,16 +81,16 @@ public class HoneyBlock extends Class3231 {
       }
    }
 
-   private void method11974(Entity var1) {
-      Vector3d var4 = var1.getMotion();
-      if (!(var4.y < -0.13)) {
-         var1.setMotion(new Vector3d(var4.x, -0.05, var4.z));
+   private void setSlideVelocity(Entity entity) {
+      Vector3d vector3d = entity.getMotion();
+      if (!(vector3d.y < -0.13)) {
+         entity.setMotion(new Vector3d(vector3d.x, -0.05, vector3d.z));
       } else {
-         double var5 = -0.05 / var4.y;
-         var1.setMotion(new Vector3d(var4.x * var5, -0.05, var4.z * var5));
+         double d0 = -0.05 / vector3d.y;
+         entity.setMotion(new Vector3d(vector3d.x * d0, -0.05, vector3d.z * d0));
       }
 
-      var1.fallDistance = 0.0F;
+      entity.fallDistance = 0.0F;
    }
 
    private void method11975(World var1, Entity var2) {

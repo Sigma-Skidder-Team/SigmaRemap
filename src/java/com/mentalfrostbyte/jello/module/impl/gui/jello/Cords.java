@@ -59,7 +59,7 @@ public class Cords extends Module {
                                 + " "
                                 + mc.player.getPosition().getZ();
                         float var6 = 85;
-                        int var7 = var1.method13960();
+                        int var7 = var1.getYOffset();
                         float var8 = 150;
                         float var9 = (float) ResourceRegistry.JelloLightFont18.getWidth(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);

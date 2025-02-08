@@ -191,7 +191,7 @@ public class Client {
         GL11.glPushMatrix();
         double var3 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
         GL11.glScaled(var3, var3, var3);
-        GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, GuiManager.portalScaleFactor);
+        GL11.glScaled(GuiManager.scaleFactor, GuiManager.scaleFactor, GuiManager.scaleFactor);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
@@ -199,7 +199,7 @@ public class Client {
         RenderSystem.enableBlend();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         GL11.glDisable(2896);
-        RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+        RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
         getInstance().eventManager.call(new EventRender2D());
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableCull();
@@ -228,7 +228,7 @@ public class Client {
         if (getInstance().clientMode != ClientMode.NOADDONS) {
             double var5 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
             GL11.glScaled(var5, var5, 1.0);
-            GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, 1.0);
+            GL11.glScaled(GuiManager.scaleFactor, GuiManager.scaleFactor, 1.0);
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
@@ -239,7 +239,7 @@ public class Client {
             GL11.glAlphaFunc(518, 0.1F);
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -252,7 +252,7 @@ public class Client {
             this.eventManager.call(new Render3DEvent());
             RenderSystem.enableDepthTest();
             RenderSystem.depthMask(true);
-            mc.getTextureManager().bindTexture(TextureManager.field1094);
+            mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 

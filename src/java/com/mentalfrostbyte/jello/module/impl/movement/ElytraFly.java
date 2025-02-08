@@ -77,7 +77,7 @@ public class ElytraFly extends Module {
                 var1.setY(this.field23530);
             }
 
-            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode);
+            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.keyCode.keyCode);
             if (var7 == 1 && this.getBooleanValueFromSettingName("NCP")) {
                 var1.setY(-0.9F);
             } else if (!mc.player.isSneaking()) {

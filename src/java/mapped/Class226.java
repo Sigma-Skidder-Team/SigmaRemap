@@ -12,8 +12,8 @@ public abstract class Class226<T extends Entity, M extends Class2827<T>> extends
    }
 
    @Override
-   public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      IVertexBuilder var13 = var2.method25597(this.method834());
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+      IVertexBuilder var13 = var2.getBuffer(this.method834());
       if (Config.isShaders()) {
          Shaders.method33081();
       }

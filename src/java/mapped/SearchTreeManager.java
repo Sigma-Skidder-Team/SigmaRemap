@@ -15,7 +15,7 @@ public class SearchTreeManager implements IResourceManagerReloadListener {
    private final Map<Key<?>, IMutableSearchTree<?>> field1033 = Maps.newHashMap();
 
    @Override
-   public void method737(IResourceManager var1) {
+   public void onResourceManagerReload(IResourceManager var1) {
       for (IMutableSearchTree var5 : this.field1033.values()) {
          var5.method21736();
       }

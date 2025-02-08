@@ -493,7 +493,7 @@ public class MultiUtilities {
       mc.playerController.attackEntity(mc.player, var0);
    }
 
-   public static String method17736(int var0) {
+   public static String getKeyName(int var0) {
       for (Class2287 var6 : Class2287.values()) {
          if (var6.field15204 == var0) {
             return var6.field15201;
@@ -581,16 +581,16 @@ public class MultiUtilities {
 
    public static void method17741(int var0) {
       if (mc.gameRenderer.shaderGroup != null) {
-         mc.gameRenderer.shaderGroup.elements.get(0).method7410().getFromName("Radius").setValue((float) var0);
-         mc.gameRenderer.shaderGroup.elements.get(1).method7410().getFromName("Radius").setValue((float) var0);
+         mc.gameRenderer.shaderGroup.listShaders.get(0).getShaderManager().getShaderUniform("Radius").set((float) var0);
+         mc.gameRenderer.shaderGroup.listShaders.get(1).getShaderManager().getShaderUniform("Radius").set((float) var0);
       }
    }
 
-   public static void method17742() {
-      if (mc.gameRenderer.shaderIndex == GameRenderer.field830) {
+   public static void resetShaders() {
+      if (mc.gameRenderer.shaderIndex == GameRenderer.SHADER_COUNT) {
          mc.gameRenderer.shaderGroup = null;
       } else {
-         mc.gameRenderer.loadShader(GameRenderer.field829[mc.gameRenderer.shaderIndex]);
+         mc.gameRenderer.loadShader(GameRenderer.SHADERS_TEXTURES[mc.gameRenderer.shaderIndex]);
       }
    }
 

@@ -168,7 +168,7 @@ public class Class4348 extends Class4278 {
       int var6 = (int) (var3 / 60000L % 60L);
       int var7 = (int) (var3 / 3600000L % 24L);
       int var8 = (int) (var3 / 86400000L);
-      RenderUtil.drawPortalBackground(
+      RenderUtil.drawBlurredBackground(
             this.method13271() + this.method13280(),
             this.method13272() + this.method13282(),
             this.method13271() + this.method13280() + this.widthA,

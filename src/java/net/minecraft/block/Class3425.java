@@ -136,7 +136,7 @@ public class Class3425 extends Block {
       BlockState var5 = var1.getBlockState(var2);
       boolean var6 = var5.<Boolean>get(field19163);
       boolean var7 = false;
-      List<Entity> var8 = var1.method7181(null, var5.method23412(var1, var2).getBoundingBox().offset(var2));
+      List<Entity> var8 = var1.method7181(null, var5.getShape(var1, var2).getBoundingBox().offset(var2));
       if (!var8.isEmpty()) {
          for (Entity var10 : var8) {
             if (!var10.method3371()) {

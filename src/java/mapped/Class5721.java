@@ -18,7 +18,7 @@ public class Class5721 extends EntityRenderer<FallingBlockEntity> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(FallingBlockEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FallingBlockEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       BlockState var9 = var1.method3556();
       if (var9.getRenderType() == BlockRenderType.MODEL) {
          World var10 = var1.method3554();
@@ -34,7 +34,7 @@ public class Class5721 extends EntityRenderer<FallingBlockEntity> {
                   var9,
                   var11,
                   var4,
-                  var5.method25597(Class8928.method32631(var9)),
+                  var5.getBuffer(Class8928.method32631(var9)),
                   false,
                   new Random(),
                   var9.method23451(var1.method3553()),

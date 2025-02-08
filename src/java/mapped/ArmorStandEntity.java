@@ -536,7 +536,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * (!this.isChild() ? 0.9F : 0.5F);
+      return var2.height * (!this.isChild() ? 0.9F : 0.5F);
    }
 
    @Override

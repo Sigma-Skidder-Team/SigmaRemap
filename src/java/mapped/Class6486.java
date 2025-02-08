@@ -38,7 +38,7 @@ public final class Class6486 {
          this.field28441 = null;
       }
 
-      this.field28442 = var4.method11502(var1, Class1666.field9078, BlockPos.ZERO, ISelectionContext.method14947());
+      this.field28442 = var4.getCollisionShape(var1, Class1666.field9078, BlockPos.ZERO, ISelectionContext.method14947());
       this.field28443 = Arrays.<Direction.Axis>stream(Direction.Axis.values())
          .anyMatch(var1x -> this.field28442.getStart(var1x) < 0.0 || this.field28442.getEnd(var1x) > 1.0);
       this.field28444 = new boolean[field28436.length * field28437];
@@ -49,7 +49,7 @@ public final class Class6486 {
          }
       }
 
-      this.field28445 = Block.method11550(var1.method23414(Class1666.field9078, BlockPos.ZERO));
+      this.field28445 = Block.method11550(var1.getCollisionShape(Class1666.field9078, BlockPos.ZERO));
    }
 
    public boolean method19649(Direction var1, Class2156 var2) {

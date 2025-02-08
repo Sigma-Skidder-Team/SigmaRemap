@@ -47,10 +47,10 @@ public class OutlineChestESP extends Module {
       int var6 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
-         boolean var9 = var8 instanceof ChestTileEntity && !(var8 instanceof Class970)
+         boolean var9 = var8 instanceof ChestTileEntity && !(var8 instanceof TrappedChestTileEntity)
                && this.access().getBooleanValueFromSettingName("Show Regular Chests");
-         boolean var10 = var8 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
-         boolean var11 = var8 instanceof Class970
+         boolean var10 = var8 instanceof EnderChestTileEntity && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+         boolean var11 = var8 instanceof TrappedChestTileEntity
                && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = PositionUtils.getRelativePosition(var8.getPos()).x;
@@ -59,8 +59,8 @@ public class OutlineChestESP extends Module {
             GL11.glDisable(2929);
             GL11.glEnable(3042);
             int var18 = var4;
-            if (!(var8 instanceof Class943)) {
-               if (var8 instanceof Class970) {
+            if (!(var8 instanceof EnderChestTileEntity)) {
+               if (var8 instanceof TrappedChestTileEntity) {
                   var18 = var6;
                }
             } else {
@@ -68,7 +68,7 @@ public class OutlineChestESP extends Module {
             }
 
             Box3D var19 = new Box3D(
-                  var8.getBlockState().method23412(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14,
+                  var8.getBlockState().getShape(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14,
                         var16));
             if (var1) {
                RenderUtil.renderWireframeBox(var19, 3.0F, var18);
@@ -93,7 +93,7 @@ public class OutlineChestESP extends Module {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      mc.gameRenderer.lightmapTexture.method7316();
+      mc.gameRenderer.lightmapTexture.disableLightmap();
    }
 
    private void method16966() {
@@ -102,10 +102,10 @@ public class OutlineChestESP extends Module {
       GL11.glEnable(3553);
       GL11.glEnable(2903);
       RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-      TextureImpl.method36180();
+      TextureImpl.unbind();
       TextureManager var10000 = mc.getTextureManager();
       mc.getTextureManager();
-      var10000.bindTexture(TextureManager.field1094);
-      mc.gameRenderer.lightmapTexture.method7317();
+      var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+      mc.gameRenderer.lightmapTexture.enableLightmap();
    }
 }

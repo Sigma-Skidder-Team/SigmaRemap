@@ -60,7 +60,7 @@ public class Class3410 extends Block {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19093[var1.<Integer>get(field19092) - 1];
    }
 
@@ -86,7 +86,7 @@ public class Class3410 extends Block {
          return false;
       } else {
          return !var6.isIn(Blocks.HONEY_BLOCK) && !var6.isIn(Blocks.SOUL_SAND)
-            ? Block.method11549(var6.method23414(var2, var3.down()), Direction.UP)
+            ? Block.method11549(var6.getCollisionShape(var2, var3.down()), Direction.UP)
                || var6.getBlock() == this && var6.<Integer>get(field19092) == 8
             : true;
       }

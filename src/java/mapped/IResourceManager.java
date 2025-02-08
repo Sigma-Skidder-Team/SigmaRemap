@@ -10,15 +10,15 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public interface IResourceManager {
-   Set<String> method579();
+   Set<String> getResourceNamespaces();
 
-   JSonShader getShader(ResourceLocation var1) throws IOException;
+   IResource getResource(ResourceLocation var1) throws IOException;
 
-   boolean method581(ResourceLocation var1);
+   boolean hasResource(ResourceLocation var1);
 
-   List<JSonShader> method582(ResourceLocation var1) throws IOException;
+   List<IResource> getAllResources(ResourceLocation var1) throws IOException;
 
-   Collection<ResourceLocation> method583(String var1, Predicate<String> var2);
+   Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2);
 
-   Stream<IResourcePack> method584();
+   Stream<IResourcePack> getResourcePackStream();
 }

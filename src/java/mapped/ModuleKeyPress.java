@@ -28,7 +28,7 @@ public class ModuleKeyPress {
                         try {
                            Screen var6 = var5.method27057()
                               .getDeclaredConstructor(ITextComponent.class)
-                              .newInstance(new StringTextComponent(GuiManager.field41338.get(var5.method27057())));
+                              .newInstance(new StringTextComponent(GuiManager.screenToScreenName.get(var5.method27057())));
                            if (Client.getInstance().guiManager.method33484(var6)) {
                               field35741.displayGuiScreen(var6);
                            }

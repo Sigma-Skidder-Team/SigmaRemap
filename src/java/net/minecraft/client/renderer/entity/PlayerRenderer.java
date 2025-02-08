@@ -37,7 +37,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       this.addLayer(new Class233<>(this));
    }
 
-   public void render(AbstractClientPlayerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(AbstractClientPlayerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       this.setModelVisibilities(entityIn);
       super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
    }
@@ -131,7 +131,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var2.scale(0.9375F, 0.9375F, 0.9375F);
    }
 
-   public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
+   public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       var3.push();
       if (var8 < 100.0) {
@@ -150,15 +150,15 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var3.pop();
    }
 
-   public void method17890(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
+   public void method17890(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4) {
       this.method17892(var1, var2, var3, var4, this.entityModel.bipedRightArm, this.entityModel.bipedRightArmwear);
    }
 
-   public void method17891(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4) {
+   public void method17891(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4) {
       this.method17892(var1, var2, var3, var4, this.entityModel.bipedLeftArm, this.entityModel.bipedLeftArmwear);
    }
 
-   private void method17892(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, ModelRenderer var5, ModelRenderer var6) {
+   private void method17892(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, ModelRenderer var5, ModelRenderer var6) {
       PlayerModel var9 = this.getEntityModel();
       this.setModelVisibilities(var4);
       var9.swingProgress = 0.0F;
@@ -166,9 +166,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var9.swimAnimation = 0.0F;
       var9.setRotationAngles(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.rotateAngleX = 0.0F;
-      var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
+      var5.render(var1, var2.getBuffer(RenderType.getEntitySolid(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
       var6.rotateAngleX = 0.0F;
-      var6.render(var1, var2.method25597(RenderType.getEntityTranslucent(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
+      var6.render(var1, var2.getBuffer(RenderType.getEntityTranslucent(var4.method5371())), var3, OverlayTexture.NO_OVERLAY);
    }
 
    public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {

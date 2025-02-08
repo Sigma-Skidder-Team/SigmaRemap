@@ -164,14 +164,14 @@ public class Class7473 {
    }
 
    public static Vector3d method24206(TeleportationRepositioner var0, Direction.Axis var1, Vector3d var2, EntitySize var3) {
-      double var6 = (double)var0.field44254 - (double)var3.field39968;
-      double var8 = (double)var0.field44255 - (double)var3.field39969;
+      double var6 = (double)var0.field44254 - (double)var3.width;
+      double var8 = (double)var0.field44255 - (double)var3.height;
       BlockPos var10 = var0.field44253;
       double var11;
       if (!(var6 > 0.0)) {
          var11 = 0.5;
       } else {
-         float var13 = (float)var10.func_243648_a(var1) + var3.field39968 / 2.0F;
+         float var13 = (float)var10.func_243648_a(var1) + var3.width / 2.0F;
          var11 = MathHelper.clamp(MathHelper.method37813(var2.getCoordinate(var1) - (double)var13, 0.0, var6), 0.0, 1.0);
       }
 
@@ -196,8 +196,8 @@ public class Class7473 {
       double var15 = (double)var1.field44255;
       int var17 = var2 != var12 ? 90 : 0;
       Vector3d var18 = var2 != var12 ? new Vector3d(var5.z, var5.y, -var5.x) : var5;
-      double var19 = (double)var4.field39968 / 2.0 + (var13 - (double)var4.field39968) * var3.getX();
-      double var21 = (var15 - (double)var4.field39969) * var3.getY();
+      double var19 = (double)var4.width / 2.0 + (var13 - (double)var4.width) * var3.getX();
+      double var21 = (var15 - (double)var4.height) * var3.getY();
       double var23 = 0.5 + var3.getZ();
       boolean var25 = var12 == Direction.Axis.X;
       Vector3d var26 = new Vector3d(

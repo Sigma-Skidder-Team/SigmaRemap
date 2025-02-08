@@ -74,7 +74,7 @@ public class BlockState extends AbstractBlock.AbstractBlockState {
    }
 
    @Override
-   public BlockState method23457() {
+   public BlockState getSelf() {
       return this;
    }
 }

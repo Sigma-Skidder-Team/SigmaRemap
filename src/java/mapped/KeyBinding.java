@@ -27,7 +27,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
    private final String keyDescription;
    private final InputMappingsInput keyCodeDefault;
    private final String keyCategory;
-   public InputMappingsInput inputMappingsInput;
+   public InputMappingsInput keyCode;
    public boolean pressed;
    private int pressTime;
 
@@ -47,8 +47,8 @@ public class KeyBinding implements Comparable<KeyBinding> {
 
    public static void updateKeyBindState() {
       for (KeyBinding keybinding : KEYBIND_ARRAY.values()) {
-         if (keybinding.inputMappingsInput.getType() == InputMappingsType.KEYSYM && keybinding.inputMappingsInput.getKeyCode() != InputMappings.INPUT_INVALID.getKeyCode()) {
-            keybinding.setPressed(InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), keybinding.inputMappingsInput.getKeyCode()));
+         if (keybinding.keyCode.getType() == InputMappingsType.KEYSYM && keybinding.keyCode.getKeyCode() != InputMappings.INPUT_INVALID.getKeyCode()) {
+            keybinding.setPressed(InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), keybinding.keyCode.getKeyCode()));
          }
       }
    }
@@ -63,7 +63,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
       HASH.clear();
 
       for (KeyBinding var3 : KEYBIND_ARRAY.values()) {
-         HASH.put(var3.inputMappingsInput, var3);
+         HASH.put(var3.keyCode, var3);
       }
    }
 
@@ -73,11 +73,11 @@ public class KeyBinding implements Comparable<KeyBinding> {
 
    public KeyBinding(String var1, InputMappingsType var2, int var3, String var4) {
       this.keyDescription = var1;
-      this.inputMappingsInput = var2.method8197(var3);
-      this.keyCodeDefault = this.inputMappingsInput;
+      this.keyCode = var2.method8197(var3);
+      this.keyCodeDefault = this.keyCode;
       this.keyCategory = var4;
       KEYBIND_ARRAY.put(var1, this);
-      HASH.put(this.inputMappingsInput, this);
+      HASH.put(this.keyCode, this);
       KEYBIND_SET.add(var4);
    }
 
@@ -112,7 +112,7 @@ public class KeyBinding implements Comparable<KeyBinding> {
    }
 
    public void bind(InputMappingsInput var1) {
-      this.inputMappingsInput = var1;
+      this.keyCode = var1;
    }
 
    public int compareTo(KeyBinding var1) {
@@ -127,33 +127,33 @@ public class KeyBinding implements Comparable<KeyBinding> {
    }
 
    public boolean conflicts(KeyBinding var1) {
-      return this.inputMappingsInput.equals(var1.inputMappingsInput);
+      return this.keyCode.equals(var1.keyCode);
    }
 
    public boolean isInvalid() {
-      return this.inputMappingsInput.equals(InputMappings.INPUT_INVALID);
+      return this.keyCode.equals(InputMappings.INPUT_INVALID);
    }
 
    public boolean matchesKey(int keysym, int scancode) {
       return keysym != InputMappings.INPUT_INVALID.getKeyCode()
-         ? this.inputMappingsInput.getType() == InputMappingsType.KEYSYM && this.inputMappingsInput.getKeyCode() == keysym
-         : this.inputMappingsInput.getType() == InputMappingsType.SCANCODE && this.inputMappingsInput.getKeyCode() == scancode;
+         ? this.keyCode.getType() == InputMappingsType.KEYSYM && this.keyCode.getKeyCode() == keysym
+         : this.keyCode.getType() == InputMappingsType.SCANCODE && this.keyCode.getKeyCode() == scancode;
    }
 
    public boolean matchesMouseKey(int var1) {
-      return this.inputMappingsInput.getType() == InputMappingsType.MOUSE && this.inputMappingsInput.getKeyCode() == var1;
+      return this.keyCode.getType() == InputMappingsType.MOUSE && this.keyCode.getKeyCode() == var1;
    }
 
    public ITextComponent func_238171_j_() {
-      return this.inputMappingsInput.func_237520_d_();
+      return this.keyCode.func_237520_d_();
    }
 
    public boolean isDefault() {
-      return this.inputMappingsInput.equals(this.keyCodeDefault);
+      return this.keyCode.equals(this.keyCodeDefault);
    }
 
    public String getTranslationKey() {
-      return this.inputMappingsInput.getTranslationKey();
+      return this.keyCode.getTranslationKey();
    }
 
    public void setPressed(boolean var1) {

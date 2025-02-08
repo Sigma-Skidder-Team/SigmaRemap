@@ -12,7 +12,7 @@ public class Class5719 extends EntityRenderer<LightningBoltEntity> {
       super(var1);
    }
 
-   public void render(LightningBoltEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(LightningBoltEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       float[] var9 = new float[8];
       float[] var10 = new float[8];
       float var11 = 0.0F;
@@ -26,7 +26,7 @@ public class Class5719 extends EntityRenderer<LightningBoltEntity> {
          var12 += (float)(var13.nextInt(11) - 5);
       }
 
-      IVertexBuilder var32 = var5.method25597(RenderType.method14341());
+      IVertexBuilder var32 = var5.getBuffer(RenderType.method14341());
       Matrix4f var15 = var4.getLast().getMatrix();
 
       for (int var16 = 0; var16 < 4; var16++) {

@@ -52,11 +52,11 @@ import java.util.stream.StreamSupport;
 public class Chunk implements IChunk {
    private static final Logger field9110 = LogManager.getLogger();
    public static final ChunkSection field9111 = null;
-   private final ChunkSection[] field9112 = new ChunkSection[16];
-   private BiomeContainer field9113;
-   private final Map<BlockPos, CompoundNBT> field9114 = Maps.newHashMap();
-   public boolean field9115;
-   private final World field9116;
+   private final ChunkSection[] sections = new ChunkSection[16];
+   private BiomeContainer blockBiomeArray;
+   private final Map<BlockPos, CompoundNBT> deferredTileEntities = Maps.newHashMap();
+   public boolean loaded;
+   private final World world;
    private final Map<Heightmap.Type, Heightmap> heightMap = Maps.newEnumMap(Heightmap.Type.class);
    private final UpgradeData field9118;
    private final Map<BlockPos, TileEntity> field9119 = Maps.newHashMap();
@@ -101,7 +101,7 @@ public class Chunk implements IChunk {
       Consumer<Chunk> var10
    ) {
       this.field9120 = new Class51[16];
-      this.field9116 = var1;
+      this.world = var1;
       this.field9132 = var2;
       this.field9118 = var4;
 
@@ -115,16 +115,16 @@ public class Chunk implements IChunk {
          this.field9120[var17] = new Class51<Entity>(Entity.class);
       }
 
-      this.field9113 = var3;
+      this.blockBiomeArray = var3;
       this.field9124 = var5;
       this.field9125 = var6;
       this.field9129 = var7;
       this.field9131 = var10;
       if (var9 != null) {
-         if (this.field9112.length != var9.length) {
-            field9110.warn("Could not set level chunk sections, array length is {} instead of {}", var9.length, this.field9112.length);
+         if (this.sections.length != var9.length) {
+            field9110.warn("Could not set level chunk sections, array length is {} instead of {}", var9.length, this.sections.length);
          } else {
-            System.arraycopy(var9, 0, this.field9112, 0, this.field9112.length);
+            System.arraycopy(var9, 0, this.sections, 0, this.sections.length);
          }
       }
    }
@@ -153,7 +153,7 @@ public class Chunk implements IChunk {
          this.method7135(var10);
       }
 
-      this.field9114.putAll(var2.method7115());
+      this.deferredTileEntities.putAll(var2.method7115());
 
       for (int var8 = 0; var8 < var2.getPackedPositions().length; var8++) {
          this.field9123[var8] = var2.getPackedPositions()[var8];
@@ -179,14 +179,14 @@ public class Chunk implements IChunk {
 
    @Override
    public Set<BlockPos> getTileEntitiesPos() {
-      HashSet var3 = Sets.newHashSet(this.field9114.keySet());
+      HashSet var3 = Sets.newHashSet(this.deferredTileEntities.keySet());
       var3.addAll(this.field9119.keySet());
       return var3;
    }
 
    @Override
    public ChunkSection[] getSections() {
-      return this.field9112;
+      return this.sections;
    }
 
    @Override
@@ -194,7 +194,7 @@ public class Chunk implements IChunk {
       int var4 = var1.getX();
       int var5 = var1.getY();
       int var6 = var1.getZ();
-      if (this.field9116.isDebug()) {
+      if (this.world.isDebug()) {
          BlockState var11 = null;
          if (var5 == 60) {
             var11 = Blocks.BARRIER.getDefaultState();
@@ -207,8 +207,8 @@ public class Chunk implements IChunk {
          return var11 == null ? Blocks.AIR.getDefaultState() : var11;
       } else {
          try {
-            if (var5 >= 0 && var5 >> 4 < this.field9112.length) {
-               ChunkSection var7 = this.field9112[var5 >> 4];
+            if (var5 >= 0 && var5 >> 4 < this.sections.length) {
+               ChunkSection var7 = this.sections[var5 >> 4];
                if (!ChunkSection.isEmpty(var7)) {
                   return var7.method21852(var4 & 15, var5 & 15, var6 & 15);
                }
@@ -231,8 +231,8 @@ public class Chunk implements IChunk {
 
    public FluidState method7130(int var1, int var2, int var3) {
       try {
-         if (var2 >= 0 && var2 >> 4 < this.field9112.length) {
-            ChunkSection var6 = this.field9112[var2 >> 4];
+         if (var2 >= 0 && var2 >> 4 < this.sections.length) {
+            ChunkSection var6 = this.sections[var2 >> 4];
             if (!ChunkSection.isEmpty(var6)) {
                return var6.method21853(var1 & 15, var2 & 15, var3 & 15);
             }
@@ -253,14 +253,14 @@ public class Chunk implements IChunk {
       int var6 = var1.getX() & 15;
       int var7 = var1.getY();
       int var8 = var1.getZ() & 15;
-      ChunkSection var9 = this.field9112[var7 >> 4];
+      ChunkSection var9 = this.sections[var7 >> 4];
       if (var9 == field9111) {
          if (var2.isAir()) {
             return null;
          }
 
          var9 = new ChunkSection(var7 >> 4 << 4);
-         this.field9112[var7 >> 4] = var9;
+         this.sections[var7 >> 4] = var9;
       }
 
       boolean var10 = var9.method21858();
@@ -274,15 +274,15 @@ public class Chunk implements IChunk {
          this.heightMap.get(Heightmap.Type.WORLD_SURFACE).method24578(var6, var7, var8, var2);
          boolean var14 = var9.method21858();
          if (var10 != var14) {
-            this.field9116.getChunkProvider().getLightManager().method641(var1, var14);
+            this.world.getChunkProvider().getLightManager().method641(var1, var14);
          }
 
-         if (this.field9116.isRemote) {
+         if (this.world.isRemote) {
             if (var13 != var12 && var13 instanceof ITileEntityProvider) {
-               this.field9116.method6762(var1);
+               this.world.method6762(var1);
             }
          } else {
-            var11.onReplaced(this.field9116, var1, var2, var3);
+            var11.onReplaced(this.world, var1, var2, var3);
          }
 
          if (var9.method21852(var6, var7 & 15, var8).isIn(var12)) {
@@ -293,8 +293,8 @@ public class Chunk implements IChunk {
                }
             }
 
-            if (!this.field9116.isRemote) {
-               var2.method23428(this.field9116, var1, var11, var3);
+            if (!this.world.isRemote) {
+               var2.method23428(this.world, var1, var11, var3);
             }
 
             if (var12 instanceof ITileEntityProvider) {
@@ -302,8 +302,8 @@ public class Chunk implements IChunk {
                if (var16 != null) {
                   var16.method3780();
                } else {
-                  var16 = ((ITileEntityProvider)var12).method11646(this.field9116);
-                  this.field9116.method6761(var1, var16);
+                  var16 = ((ITileEntityProvider)var12).method11646(this.world);
+                  this.world.method6761(var1, var16);
                }
             }
 
@@ -319,7 +319,7 @@ public class Chunk implements IChunk {
 
    @Nullable
    public WorldLightManager method7131() {
-      return this.field9116.getChunkProvider().getLightManager();
+      return this.world.getChunkProvider().getLightManager();
    }
 
    @Override
@@ -377,7 +377,7 @@ public class Chunk implements IChunk {
    private TileEntity method7134(BlockPos var1) {
       BlockState var4 = this.getBlockState(var1);
       Block var5 = var4.getBlock();
-      return var5.isTileEntityProvider() ? ((ITileEntityProvider)var5).method11646(this.field9116) : null;
+      return var5.isTileEntityProvider() ? ((ITileEntityProvider)var5).method11646(this.world) : null;
    }
 
    @Nullable
@@ -390,7 +390,7 @@ public class Chunk implements IChunk {
    public TileEntity method7029(BlockPos var1, Class2206 var2) {
       TileEntity var5 = this.field9119.get(var1);
       if (var5 == null) {
-         CompoundNBT var6 = this.field9114.remove(var1);
+         CompoundNBT var6 = this.deferredTileEntities.remove(var1);
          if (var6 != null) {
             TileEntity var7 = this.method7149(var1, var6);
             if (var7 != null) {
@@ -406,7 +406,7 @@ public class Chunk implements IChunk {
          }
       } else if (var2 == Class2206.field14421) {
          var5 = this.method7134(var1);
-         this.field9116.method6761(var1, var5);
+         this.world.method6761(var1, var5);
       }
 
       return var5;
@@ -414,15 +414,15 @@ public class Chunk implements IChunk {
 
    public void method7135(TileEntity var1) {
       this.addTileEntity(var1.getPos(), var1);
-      if (this.field9115 || this.field9116.isRemote()) {
-         this.field9116.method6761(var1.getPos(), var1);
+      if (this.loaded || this.world.isRemote()) {
+         this.world.method6761(var1.getPos(), var1);
       }
    }
 
    @Override
    public void addTileEntity(BlockPos var1, TileEntity var2) {
       if (this.getBlockState(var1).getBlock() instanceof ITileEntityProvider) {
-         var2.method3769(this.field9116, var1);
+         var2.method3769(this.world, var1);
          var2.method3779();
          TileEntity var5 = this.field9119.put(var1.toImmutable(), var2);
          if (var5 != null && var5 != var2) {
@@ -433,7 +433,7 @@ public class Chunk implements IChunk {
 
    @Override
    public void addTileEntity(CompoundNBT var1) {
-      this.field9114.put(new BlockPos(var1.getInt("x"), var1.getInt("y"), var1.getInt("z")), var1);
+      this.deferredTileEntities.put(new BlockPos(var1.getInt("x"), var1.getInt("y"), var1.getInt("z")), var1);
    }
 
    @Nullable
@@ -445,7 +445,7 @@ public class Chunk implements IChunk {
          var6.putBoolean("keepPacked", false);
          return var6;
       } else {
-         CompoundNBT var5 = this.field9114.get(var1);
+         CompoundNBT var5 = this.deferredTileEntities.get(var1);
          if (var5 != null) {
             var5 = var5.copy();
             var5.putBoolean("keepPacked", true);
@@ -457,7 +457,7 @@ public class Chunk implements IChunk {
 
    @Override
    public void removeTileEntity(BlockPos var1) {
-      if (this.field9115 || this.field9116.isRemote()) {
+      if (this.loaded || this.world.isRemote()) {
          TileEntity var4 = this.field9119.remove(var1);
          if (var4 != null) {
             var4.method3765();
@@ -548,24 +548,24 @@ public class Chunk implements IChunk {
    public void read(BiomeContainer var1, PacketBuffer var2, CompoundNBT var3, int var4) {
       boolean var7 = var1 != null;
       Predicate<BlockPos> var8 = !var7 ? var1x -> (var4 & 1 << (var1x.getY() >> 4)) != 0 : var0 -> true;
-      Sets.newHashSet(this.field9119.keySet()).stream().filter(var8).forEach(this.field9116::method6762);
+      Sets.newHashSet(this.field9119.keySet()).stream().filter(var8).forEach(this.world::method6762);
 
-      for (int var9 = 0; var9 < this.field9112.length; var9++) {
-         ChunkSection var10 = this.field9112[var9];
+      for (int var9 = 0; var9 < this.sections.length; var9++) {
+         ChunkSection var10 = this.sections[var9];
          if ((var4 & 1 << var9) != 0) {
             if (var10 == field9111) {
                var10 = new ChunkSection(var9 << 4);
-               this.field9112[var9] = var10;
+               this.sections[var9] = var10;
             }
 
             var10.method21866(var2);
          } else if (var7 && var10 != field9111) {
-            this.field9112[var9] = field9111;
+            this.sections[var9] = field9111;
          }
       }
 
       if (var1 != null) {
-         this.field9113 = var1;
+         this.blockBiomeArray = var1;
       }
 
       for (Heightmap.Type var12 : Heightmap.Type.values()) {
@@ -582,15 +582,15 @@ public class Chunk implements IChunk {
 
    @Override
    public BiomeContainer getBiomes() {
-      return this.field9113;
+      return this.blockBiomeArray;
    }
 
    public void setLoaded(boolean var1) {
-      this.field9115 = var1;
+      this.loaded = var1;
    }
 
    public World method7144() {
-      return this.field9116;
+      return this.world;
    }
 
    @Override
@@ -608,7 +608,7 @@ public class Chunk implements IChunk {
 
    @Override
    public CompoundNBT getDeferredTileEntity(BlockPos var1) {
-      return this.field9114.get(var1);
+      return this.deferredTileEntities.get(var1);
    }
 
    @Override
@@ -638,7 +638,7 @@ public class Chunk implements IChunk {
 
    @Override
    public boolean isModified() {
-      return this.field9128 || this.field9126 && this.field9116.getGameTime() != this.field9127;
+      return this.field9128 || this.field9126 && this.world.getGameTime() != this.field9127;
    }
 
    public void method7147(boolean var1) {
@@ -714,8 +714,8 @@ public class Chunk implements IChunk {
                Short var6 = (Short)var5.next();
                BlockPos var7 = ChunkPrimer.method7114(var6, var4, var3);
                BlockState var8 = this.getBlockState(var7);
-               BlockState var9 = Block.method11542(var8, this.field9116, var7);
-               this.field9116.setBlockState(var7, var9, 20);
+               BlockState var9 = Block.method11542(var8, this.world, var7);
+               this.world.setBlockState(var7, var9, 20);
             }
 
             this.field9123[var4].clear();
@@ -724,11 +724,11 @@ public class Chunk implements IChunk {
 
       this.method7150();
 
-      for (BlockPos var11 : Sets.newHashSet(this.field9114.keySet())) {
+      for (BlockPos var11 : Sets.newHashSet(this.deferredTileEntities.keySet())) {
          this.getTileEntity(var11);
       }
 
-      this.field9114.clear();
+      this.deferredTileEntities.clear();
       this.field9118.method32603(this);
    }
 
@@ -744,14 +744,14 @@ public class Chunk implements IChunk {
             var6 = null;
             field9110.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", var1, var5);
          } else {
-            var6 = ((ITileEntityProvider)var7).method11646(this.field9116);
+            var6 = ((ITileEntityProvider)var7).method11646(this.world);
          }
       }
 
       if (var6 == null) {
          field9110.warn("Tried to load a block entity for block {} but failed at location {}", var5, var1);
       } else {
-         var6.method3769(this.field9116, var1);
+         var6.method3769(this.world, var1);
          this.method7135(var6);
       }
 
@@ -771,21 +771,21 @@ public class Chunk implements IChunk {
    public void method7150() {
       if (!(this.field9124 instanceof Class6806)) {
          if (this.field9124 instanceof Class6801) {
-            ((Class6801)this.field9124).method20723(this.field9116.getBlockTickScheduler());
+            ((Class6801)this.field9124).method20723(this.world.getBlockTickScheduler());
             this.field9124 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Block>)this.field9124).method20738(this.field9116.getBlockTickScheduler(), var1 -> this.getBlockState(var1).getBlock());
+         ((Class6806<Block>)this.field9124).method20738(this.world.getBlockTickScheduler(), var1 -> this.getBlockState(var1).getBlock());
          this.field9124 = Class6804.method20727();
       }
 
       if (!(this.field9125 instanceof Class6806)) {
          if (this.field9125 instanceof Class6801) {
-            ((Class6801)this.field9125).method20723(this.field9116.getPendingFluidTicks());
+            ((Class6801)this.field9125).method20723(this.world.getPendingFluidTicks());
             this.field9125 = Class6804.method20727();
          }
       } else {
-         ((Class6806<Fluid>)this.field9125).method20738(this.field9116.getPendingFluidTicks(), var1 -> this.getFluidState(var1).getFluid());
+         ((Class6806<Fluid>)this.field9125).method20738(this.world.getPendingFluidTicks(), var1 -> this.getFluidState(var1).getFluid());
          this.field9125 = Class6804.method20727();
       }
    }

@@ -379,7 +379,7 @@ public class RenderSystem {
       GlStateManager.method23805();
    }
 
-   public static void method27863(int var0, int var1, int var2) {
+   public static void texParameter(int var0, int var1, int var2) {
       GlStateManager.texParameter(var0, var1, var2);
    }
 
@@ -808,7 +808,7 @@ public class RenderSystem {
    }
 
    public static void defaultBlendFunc() {
-      blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932, GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
    }
 
    public static void method27939() {

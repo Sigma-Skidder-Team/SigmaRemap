@@ -35,7 +35,7 @@ public class Class2011 extends Class2009 {
    }
 
    @Override
-   public CompletableFuture<Class2046> method8527(Class7828 var1) {
+   public CompletableFuture<Class2046> method8527(RegionRenderCacheBuilder var1) {
       if (!this.field13076.get()) {
          if (this.field13078.method27709()) {
             if (!this.field13076.get()) {
@@ -49,7 +49,7 @@ public class Class2011 extends Class2009 {
                if (!this.field13076.get()) {
                   List<CompletableFuture<Void>> var10 = Lists.newArrayList();
                   Class7457.method24116(var8)
-                     .forEach(var3 -> var10.add(this.field13078.field34637.method33327(var1.method26203(var3), this.field13078.method27711(var3))));
+                     .forEach(var3 -> var10.add(this.field13078.field34637.method33327(var1.getBuilder(var3), this.field13078.method27711(var3))));
                   return Util.gather(var10).handle((var2, var3) -> {
                      if (var3 != null && !(var3 instanceof CancellationException) && !(var3 instanceof InterruptedException)) {
                         Minecraft.getInstance().crashed(CrashReport.makeCrashReport(var3, "Rendering chunk"));
@@ -79,7 +79,7 @@ public class Class2011 extends Class2009 {
       }
    }
 
-   private Set<TileEntity> method8532(float var1, float var2, float var3, Class7457 var4, Class7828 var5) {
+   private Set<TileEntity> method8532(float var1, float var2, float var3, Class7457 var4, RegionRenderCacheBuilder var5) {
       boolean var8 = true;
       BlockPos var9 = Class8066.method27754(this.field13078).toImmutable();
       BlockPos var10 = var9.add(15, 15, 15);
@@ -123,7 +123,7 @@ public class Class2011 extends Class2009 {
                            Reflector.callVoid(Reflector.field42895, var26);
                         }
 
-                        BufferBuilder var27 = var5.method26203(var26);
+                        BufferBuilder var27 = var5.getBuilder(var26);
                         var27.method17044(var26);
                         Class8391 var28 = var27.method17022(var20, var19);
                         var28.method29435(var5);
@@ -151,7 +151,7 @@ public class Class2011 extends Class2009 {
                         }
 
                         var40 = Class8066.method27760(this.field13078, var14, var20, var19, var40);
-                        BufferBuilder var42 = var5.method26203(var40);
+                        BufferBuilder var42 = var5.getBuilder(var40);
                         var42.method17044(var40);
                         Class8391 var43 = var42.method17022(var20, var19);
                         var43.method29435(var5);
@@ -187,7 +187,7 @@ public class Class2011 extends Class2009 {
          }
 
          if (Class7457.method24118(var4).contains(RenderType.method14304())) {
-            BufferBuilder var29 = var5.method26203(RenderType.method14304());
+            BufferBuilder var29 = var5.getBuilder(RenderType.method14304());
             var29.method17058(
                (float)Class8066.method27761(this.field13078) + var1 - (float)var9.getX(),
                (float)Class8066.method27762(this.field13078) + var2 - (float)var9.getY(),
@@ -196,7 +196,7 @@ public class Class2011 extends Class2009 {
             Class7457.method24119(var4, var29.method17060());
          }
 
-         Class7457.method24116(var4).stream().map(var5::method26203).forEach(BufferBuilder::finishDrawing);
+         Class7457.method24116(var4).stream().map(var5::getBuilder).forEach(BufferBuilder::finishDrawing);
 
          for (RenderType var36 : Class9016.field41242) {
             var4.method24108(var36, (BitSet)null);
@@ -204,10 +204,10 @@ public class Class2011 extends Class2009 {
 
          for (RenderType var33 : Class7457.method24116(var4)) {
             if (Config.isShaders()) {
-               Class7698.method25386(var5.method26203(var33));
+               Class7698.method25386(var5.getBuilder(var33));
             }
 
-            BufferBuilder var35 = var5.method26203(var33);
+            BufferBuilder var35 = var5.getBuilder(var33);
             if (var35.field24134 != null && !var35.field24134.isEmpty()) {
                var4.method24108(var33, (BitSet)var35.field24134.clone());
             }

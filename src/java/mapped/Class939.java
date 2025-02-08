@@ -125,7 +125,7 @@ public abstract class Class939 extends Class932 {
    public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+            var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;

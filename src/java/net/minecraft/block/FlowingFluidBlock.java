@@ -46,7 +46,7 @@ public class FlowingFluidBlock extends Block implements Class3405 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return var4.method14950(field19082, var3, true)
             && var1.<Integer>get(field19079) == 0
             && var4.method14952(var2.getFluidState(var3.up()), this.field19080)

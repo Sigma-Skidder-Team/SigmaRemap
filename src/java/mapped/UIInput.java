@@ -76,7 +76,7 @@ public class UIInput extends Class4278 {
       }
 
       if (this.method13298() && this.field20905) {
-         Client.getInstance().guiManager.method33459(GuiManager.field41346);
+         Client.getInstance().guiManager.method33459(GuiManager.iBeamCursor);
       }
 
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;

@@ -63,7 +63,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
    }
 
    @Override
-   public void method18462(T var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(T var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       World var9 = var1.method3734();
       boolean var10 = var9 != null;
       BlockState var11 = !var10 ? Blocks.CHEST.getDefaultState().with(ChestBlock.field18865, Direction.SOUTH) : var1.getBlockState();

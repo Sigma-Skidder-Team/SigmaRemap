@@ -65,7 +65,7 @@ public class NameTags extends Module {
         this.registerSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
         this.registerSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
         this.registerSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget
@@ -271,10 +271,10 @@ public class NameTags extends Module {
 
             GL11.glDisable(2896);
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-            TextureImpl.method36180();
+            TextureImpl.unbind();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -383,7 +383,7 @@ public class NameTags extends Module {
             GL11.glDisable(2896);
             GL11.glDepthMask(false);
             String var17 = (float) Math.round(((LivingEntity) var7).getHealth() * 10.0F) / 10.0F + "";
-            float var18 = Math.min(((LivingEntity) var7).getHealth() / ((LivingEntity) var7).method3075(), 1.0F);
+            float var18 = Math.min(((LivingEntity) var7).getHealth() / ((LivingEntity) var7).getMaxHealth(), 1.0F);
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0F);
             GL11.glTranslated(var14, var15 + 0.6F - 0.33333334F * (1.0F - var8), var16);
@@ -405,27 +405,27 @@ public class NameTags extends Module {
             int var21 = var12.getWidth(var13) / 2;
             if (!field24003.containsKey(var13)) {
                 RenderUtil.drawRoundedRect((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20),
-                        (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                        (float) (var12.getHeight() + 27), 20.0F, 0.5F);
             } else {
                 int var22 = Color.getHSBColor((float) (System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F)
                         .getRGB();
-                RenderUtil.drawImage((float) (-var21 - 10 - 31), -25.0F, (float) (var12.method23952() + 27),
-                        (float) (var12.method23952() + 27), field24003.get(var13),
+                RenderUtil.drawImage((float) (-var21 - 10 - 31), -25.0F, (float) (var12.getHeight() + 27),
+                        (float) (var12.getHeight() + 27), field24003.get(var13),
                         MultiUtilities.applyAlpha(var22, 0.7F));
-                RenderUtil.drawImage((float) (-var21 - 10 - 31 + var12.method23952() + 27), -25.0F, 14.0F,
-                        (float) (var12.method23952() + 27), ResourceList.shadowRightPNG,
+                RenderUtil.drawImage((float) (-var21 - 10 - 31 + var12.getHeight() + 27), -25.0F, 14.0F,
+                        (float) (var12.getHeight() + 27), ResourceList.shadowRightPNG,
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.6F));
                 RenderUtil.drawRoundedRect((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27),
-                        (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                        (float) (var12.getHeight() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }
 
-            RenderUtil.drawRect((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2),
+            RenderUtil.drawRect((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.getHeight() + 2),
                     var19);
             RenderUtil.drawRect((float) (-var21 - 10),
-                    (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F,
+                    (float) (var12.getHeight() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F,
                     Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),
-                    (float) (var12.method23952() + 2), var20);
+                    (float) (var12.getHeight() + 2), var20);
             GL11.glPushMatrix();
             GL11.glTranslated(-var12.getWidth(var13) / 2, 0.0, 0.0);
             int var26 = ResourceRegistry.JelloLightFont14.getWidth("Health: 20.0");

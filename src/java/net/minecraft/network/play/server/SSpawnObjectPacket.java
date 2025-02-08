@@ -120,7 +120,7 @@ public class SSpawnObjectPacket implements IPacket<IClientPlayNetHandler> {
       return this.field24360;
    }
 
-   public UUID method17257() {
+   public UUID getUniqueId() {
       return this.field24361;
    }
 

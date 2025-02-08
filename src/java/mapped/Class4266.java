@@ -121,7 +121,7 @@ public class Class4266 extends Class4247 {
                int var8 = this.yA + (var11.field30491 ? 0 : var7);
                int var9 = this.widthA / 2;
                RenderUtil.method11421(this.xA, var8, this.xA + this.widthA, var8 + var7, true);
-               RenderUtil.method11436(
+               RenderUtil.drawFilledArc(
                      (float) (this.xA + var9),
                      (float) (var8 + this.heightA / 4),
                      (float) (var9 * 2 - 4) * var11.field30490 + 4.0F,

@@ -18,7 +18,7 @@ public class Class7096 extends Class7092 {
    public Class8266 method22068(IWorldReader var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       BlockPos var9 = var5.field35530;
       boolean var10 = var1.getBlockState(var9).isIn(Blocks.LAVA);
-      return var10 && !Block.method11550(var5.field35531.method23412(var1, var9))
+      return var10 && !Block.method11550(var5.field35531.getShape(var1, var9))
          ? new Class8266(var9, Blocks.LAVA.getDefaultState(), var5.field35532)
          : var5;
    }

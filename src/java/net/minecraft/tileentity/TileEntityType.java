@@ -21,8 +21,8 @@ public class TileEntityType<T extends TileEntity> {
    private static final Logger field21420 = LogManager.getLogger();
    public static final TileEntityType<Class986> field21421 = method13794("furnace", Class9785.<Class986>method38569(Class986::new, Blocks.FURNACE));
    public static final TileEntityType<ChestTileEntity> CHEST = method13794("chest", Class9785.<ChestTileEntity>method38569(ChestTileEntity::new, Blocks.CHEST));
-   public static final TileEntityType<Class970> field21423 = method13794("trapped_chest", Class9785.<Class970>method38569(Class970::new, Blocks.TRAPPED_CHEST));
-   public static final TileEntityType<Class943> field21424 = method13794("ender_chest", Class9785.<Class943>method38569(Class943::new, Blocks.ENDER_CHEST));
+   public static final TileEntityType<TrappedChestTileEntity> field21423 = method13794("trapped_chest", Class9785.<TrappedChestTileEntity>method38569(TrappedChestTileEntity::new, Blocks.TRAPPED_CHEST));
+   public static final TileEntityType<EnderChestTileEntity> field21424 = method13794("ender_chest", Class9785.<EnderChestTileEntity>method38569(EnderChestTileEntity::new, Blocks.ENDER_CHEST));
    public static final TileEntityType<Class947> field21425 = method13794("jukebox", Class9785.<Class947>method38569(Class947::new, Blocks.JUKEBOX));
    public static final TileEntityType<Class971> field21426 = method13794("dispenser", Class9785.<Class971>method38569(Class971::new, Blocks.DISPENSER));
    public static final TileEntityType<Class972> field21427 = method13794("dropper", Class9785.<Class972>method38569(Class972::new, Blocks.DROPPER));

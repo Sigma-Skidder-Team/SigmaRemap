@@ -172,9 +172,9 @@ public class AutoMLG extends PremiumModule {
                     && (
                     var12 == null
                             || mc.player
-                            .getDistanceNearest((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
+                            .getDistanceSq((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
                             > mc.player
-                            .getDistanceNearest((double) var15.getX() + 0.5 - var3, var15.getY() + 1, (double) var15.getZ() + 0.5 - var7)
+                            .getDistanceSq((double) var15.getX() + 0.5 - var3, var15.getY() + 1, (double) var15.getZ() + 0.5 - var7)
             )) {
                 var12 = var15;
             }
@@ -197,9 +197,9 @@ public class AutoMLG extends PremiumModule {
                         && (
                         var12 == null
                                 || mc.player
-                                .getDistanceNearest((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
+                                .getDistanceSq((double) var12.getX() + 0.5 - var3, var12.getY() + 1, (double) var12.getZ() + 0.5 - var7)
                                 > mc.player
-                                .getDistanceNearest((double) var22.getX() + 0.5 - var3, var22.getY() + 1, (double) var22.getZ() + 0.5 - var7)
+                                .getDistanceSq((double) var22.getX() + 0.5 - var3, var22.getY() + 1, (double) var22.getZ() + 0.5 - var7)
                 )) {
                     var12 = var22;
                 }

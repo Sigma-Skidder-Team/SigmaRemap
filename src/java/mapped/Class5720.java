@@ -19,7 +19,7 @@ public class Class5720 extends EntityRenderer<DragonFireball> {
       return 15;
    }
 
-   public void render(DragonFireball var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(DragonFireball var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       var4.scale(2.0F, 2.0F, 2.0F);
       var4.rotate(this.field25097.method32230());
@@ -27,7 +27,7 @@ public class Class5720 extends EntityRenderer<DragonFireball> {
       Class8892 var9 = var4.getLast();
       Matrix4f var10 = var9.getMatrix();
       Matrix3f var11 = var9.method32362();
-      IVertexBuilder var12 = var5.method25597(field25118);
+      IVertexBuilder var12 = var5.getBuffer(field25118);
       method17908(var12, var10, var11, var6, 0.0F, 0, 0, 1);
       method17908(var12, var10, var11, var6, 1.0F, 0, 1, 1);
       method17908(var12, var10, var11, var6, 1.0F, 1, 1, 0);

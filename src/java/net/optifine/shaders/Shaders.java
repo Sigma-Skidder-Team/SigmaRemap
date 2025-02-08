@@ -4420,14 +4420,14 @@ public class Shaders {
         }
     }
 
-    public static void method33126() {
+    public static void enableLightmap() {
         field40667 = true;
         if (field40848 == field40818) {
             method33021(field40819);
         }
     }
 
-    public static void method33127() {
+    public static void disableLightmap() {
         field40667 = false;
         if (field40848 == field40819) {
             method33021(field40818);

@@ -21,7 +21,7 @@ public class Class5118 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       World var11 = this.field23289.player.world;
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
@@ -33,7 +33,7 @@ public class Class5118 implements Class5119 {
       for (BlockPos var14 : BlockPos.method8359(var12.add(-6, -6, -6), var12.add(6, 6, 6))) {
          BlockState var15 = var11.getBlockState(var14);
          if (!var15.isIn(Blocks.AIR)) {
-            VoxelShape var16 = var15.method23412(var11, var14);
+            VoxelShape var16 = var15.getShape(var11, var14);
 
             for (AxisAlignedBB var18 : var16.method19521()) {
                AxisAlignedBB var19 = var18.offset(var14).grow(0.002).offset(-var3, -var5, -var7);

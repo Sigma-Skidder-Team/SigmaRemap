@@ -79,10 +79,10 @@ public class Class7543 implements Class7544 {
       STBTTFontinfo var4 = null;
       ByteBuffer var5 = null;
 
-      try (JSonShader var6 = var1.getShader(new ResourceLocation(this.field32357.getNamespace(), "font/" + this.field32357.getPath()))) {
+      try (IResource var6 = var1.getResource(new ResourceLocation(this.field32357.getNamespace(), "font/" + this.field32357.getPath()))) {
          field32356.debug("Loading font {}", this.field32357);
          var4 = STBTTFontinfo.malloc();
-         var5 = TextureUtil.method30373(var6.getFile());
+         var5 = TextureUtil.method30373(var6.getInputStream());
          ((Buffer)var5).flip();
          field32356.debug("Reading font {}", this.field32357);
          if (!STBTruetype.stbtt_InitFont(var4, var5)) {

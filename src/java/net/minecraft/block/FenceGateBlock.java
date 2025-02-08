@@ -74,7 +74,7 @@ public class FenceGateBlock extends HorizontalBlock {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>get(OPEN)) {
          return var1.<Direction>get(HORIZONTAL_FACING).getAxis() != Direction.Axis.Z ? field18494 : field18493;
       } else {

@@ -23,17 +23,17 @@ public class Class5957<T extends Class956> extends Class5942<T> {
       super(var1);
    }
 
-   public void method18462(T var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(T var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       if (!Config.isShaders() || !ShadersRender.method17174(var1, var2, this.method18490(), var3, var4, var5, var6)) {
          field25980.setSeed(31100L);
          double var9 = var1.getPos().distanceSq(this.field25928.field34748.getPos(), true);
          int var11 = this.method18489(var9);
          float var12 = this.method18490();
          Matrix4f var13 = var3.getLast().getMatrix();
-         this.method18487((T)var1, var12, 0.15F, var13, var4.method25597(field25981.get(0)));
+         this.method18487((T)var1, var12, 0.15F, var13, var4.getBuffer(field25981.get(0)));
 
          for (int var14 = 1; var14 < var11; var14++) {
-            this.method18487((T)var1, var12, 2.0F / (float)(18 - var14), var13, var4.method25597(field25981.get(var14)));
+            this.method18487((T)var1, var12, 2.0F / (float)(18 - var14), var13, var4.getBuffer(field25981.get(var14)));
          }
       }
    }

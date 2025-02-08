@@ -39,7 +39,7 @@ public abstract class AbstractFishEntity extends WaterMobEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.65F;
+      return var2.height * 0.65F;
    }
 
    public static MutableAttribute method4791() {

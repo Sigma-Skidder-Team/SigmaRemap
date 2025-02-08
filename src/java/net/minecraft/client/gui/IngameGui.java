@@ -348,8 +348,8 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.renderCrosshair(10);
                 RenderSystem.popMatrix();
             } else {
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.field12933,
-                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ONE_MINUS_DST_COLOR, DestFactor.ONE_MINUS_SRC_COLOR,
+                        GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
@@ -725,7 +725,7 @@ public class IngameGui extends AbstractGui {
 
     private int method5974(LivingEntity var1) {
         if (var1 != null && var1.method3312()) {
-            float var4 = var1.method3075();
+            float var4 = var1.getMaxHealth();
             int var5 = (int) (var4 + 0.5F) / 2;
             if (var5 > 30) {
                 var5 = 30;
@@ -995,8 +995,8 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.field12933,
-                    GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.ZERO, DestFactor.ONE_MINUS_SRC_COLOR,
+                    GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
             if (!(var5 > 0.0F)) {
                 RenderSystem.color4f(this.field6723, this.field6723, this.field6723, 1.0F);
             } else {
@@ -1018,8 +1018,8 @@ public class IngameGui extends AbstractGui {
             RenderSystem.defaultBlendFunc();
         } else {
             RenderSystem.enableDepthTest();
-            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-                    GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+            RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+                    GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
         }
     }
 

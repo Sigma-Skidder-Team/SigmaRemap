@@ -839,7 +839,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
          if (Class8998.method33247(var5) != var1) {
             var5.method33243(var1);
          } else {
-            var5.method33246(this.world.method6870());
+            var5.method33246(this.world.getPlayers());
          }
       }
 
@@ -931,7 +931,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
          Class8998 var7 = new Class8998(this, var1, var5, var6, var4.method33227());
          this.field8973.put(var1.getEntityId(), var7);
-         var7.method33246(this.world.method6870());
+         var7.method33246(this.world.getPlayers());
          if (var1 instanceof ServerPlayerEntity) {
             ServerPlayerEntity var8 = (ServerPlayerEntity)var1;
             this.method6573(var8, true);
@@ -967,7 +967,7 @@ public class ChunkManager extends Class1648 implements Class1650 {
 
    public void method6579() {
       ArrayList var3 = Lists.newArrayList();
-      List var4 = this.world.method6870();
+      List var4 = this.world.getPlayers();
       ObjectIterator var5 = this.field8973.values().iterator();
 
       while (var5.hasNext()) {

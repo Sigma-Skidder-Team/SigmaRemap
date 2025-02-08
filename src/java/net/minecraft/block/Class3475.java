@@ -150,7 +150,7 @@ public class Class3475 extends Block implements Class3476 {
          1.0F,
          false
       );
-      double var6 = var5.method23412(var0, var1).method19522(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
+      double var6 = var5.getShape(var0, var1).method19522(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
       double var8 = 0.13125F;
       double var10 = 0.7375F;
       Random var12 = var0.method6814();
@@ -182,7 +182,7 @@ public class Class3475 extends Block implements Class3476 {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       return field19329[0];
    }
 

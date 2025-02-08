@@ -567,7 +567,7 @@ public class Config {
       IResourceManager var2 = method26862();
       if (var2 != null) {
          try {
-            InputStream var3 = var2.getShader(new ResourceLocation("optifine/color.properties")).getFile();
+            InputStream var3 = var2.getResource(new ResourceLocation("optifine/color.properties")).getInputStream();
             if (var3 == null) {
                return;
             }
@@ -835,12 +835,12 @@ public class Config {
    }
 
    public static InputStream method26864(IResourceManager var0, ResourceLocation var1) throws IOException {
-      JSonShader var4 = var0.getShader(var1);
-      return var4 != null ? var4.getFile() : null;
+      IResource var4 = var0.getResource(var1);
+      return var4 != null ? var4.getInputStream() : null;
    }
 
-   public static JSonShader method26865(ResourceLocation var0) throws IOException {
-      return field34157.getResourceManager().getShader(var0);
+   public static IResource method26865(ResourceLocation var0) throws IOException {
+      return field34157.getResourceManager().getResource(var0);
    }
 
    public static boolean method26866(ResourceLocation var0) {
@@ -854,7 +854,7 @@ public class Config {
 
    public static boolean method26867(IResourceManager var0, ResourceLocation var1) {
       try {
-         JSonShader var4 = var0.getShader(var1);
+         IResource var4 = var0.getResource(var1);
          return var4 != null;
       } catch (IOException var5) {
          return false;

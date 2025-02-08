@@ -22,7 +22,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
    }
 
    @Override
-   public void method836(MatrixStack var1, Class7733 var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
+   public void method836(MatrixStack var1, IRenderTypeBuffer var2, int var3, Entity var4, float var5, float var6, float var7, float var8) {
       float var11 = MathHelper.sqrt(var5 * var5 + var7 * var7);
       float var12 = (float)(Math.atan2((double)var5, (double)var7) * 180.0F / (float)Math.PI);
       float var13 = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
@@ -37,7 +37,7 @@ public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends 
       var1.rotate(Vector3f.XP.rotationDegrees(45.0F));
       var1.scale(0.03125F, 0.03125F, 0.03125F);
       var1.translate(2.5, 0.0, 0.0);
-      IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(field879));
+      IVertexBuilder var19 = var2.getBuffer(RenderType.getEntityCutoutNoCull(field879));
 
       for (int var20 = 0; var20 < 4; var20++) {
          var1.rotate(Vector3f.XP.rotationDegrees(90.0F));

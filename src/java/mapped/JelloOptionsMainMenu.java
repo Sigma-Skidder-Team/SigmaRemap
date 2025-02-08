@@ -38,7 +38,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
             var13.method13036(var1x -> Client.getInstance().guiManager.method33469(var13.method13703()));
             UICheckBox var14;
             this.addToList(var14 = new UICheckBox(this, "guiBlurIngameCheckBox", var5 / 2 + 130, var6 - 220, 25, 25));
-            var14.method13705(Client.getInstance().guiManager.method33472(), false);
+            var14.method13705(Client.getInstance().guiManager.getHqIngameBlur(), false);
             var14.method13036(var1x -> Client.getInstance().guiManager.method33471(var14.method13703()));
       }
 
@@ -57,7 +57,7 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.4F * partialTicks));
             String var5 = "Click GUI is currently bound to: "
                         + MultiUtilities
-                                    .method17736(Client.getInstance().moduleManager.getMacOSTouchBar()
+                                    .getKeyName(Client.getInstance().moduleManager.getMacOSTouchBar()
                                                 .method13728(ClickGui.class))
                         + " Key";
             RenderUtil.drawString(

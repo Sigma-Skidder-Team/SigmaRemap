@@ -416,7 +416,7 @@ public class FishingBobberEntity extends ProjectileEntity {
       BlockState var4 = this.world.getBlockState(var1);
       if (!var4.isAir() && !var4.isIn(Blocks.LILY_PAD)) {
          FluidState var5 = var4.getFluidState();
-         return var5.method23486(FluidTags.WATER) && var5.isSource() && var4.method23414(this.world, var1).isEmpty()
+         return var5.method23486(FluidTags.WATER) && var5.isSource() && var4.getCollisionShape(this.world, var1).isEmpty()
             ? Class2331.field15948
             : Class2331.field15949;
       } else {

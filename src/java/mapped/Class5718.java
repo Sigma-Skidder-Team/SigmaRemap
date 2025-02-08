@@ -28,7 +28,7 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(EnderDragonEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(EnderDragonEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       var4.push();
       float var9 = (float)var1.method4317(7, var3)[0];
       float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
@@ -40,17 +40,17 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
       boolean var11 = var1.hurtTime > 0;
       this.field25115.setLivingAnimations(var1, 0.0F, 0.0F, var3);
       if (var1.field5635 <= 0) {
-         IVertexBuilder var12 = var5.method25597(field25110);
+         IVertexBuilder var12 = var5.getBuffer(field25110);
          this.field25115.render(var4, var12, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
          float var22 = (float)var1.field5635 / 200.0F;
-         IVertexBuilder var13 = var5.method25597(RenderType.method14324(field25107, var22));
+         IVertexBuilder var13 = var5.getBuffer(RenderType.method14324(field25107, var22));
          this.field25115.render(var4, var13, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-         IVertexBuilder var14 = var5.method25597(field25111);
+         IVertexBuilder var14 = var5.getBuffer(field25111);
          this.field25115.render(var4, var14, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      IVertexBuilder var23 = var5.method25597(field25112);
+      IVertexBuilder var23 = var5.getBuffer(field25112);
       if (Config.isShaders()) {
          Shaders.method33081();
       }
@@ -66,7 +66,7 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
          float var24 = ((float)var1.field5635 + var3) / 200.0F;
          float var26 = Math.min(!(var24 > 0.8F) ? 0.0F : (var24 - 0.8F) / 0.2F, 1.0F);
          Random var15 = new Random(432L);
-         IVertexBuilder var16 = var5.method25597(RenderType.method14341());
+         IVertexBuilder var16 = var5.getBuffer(RenderType.method14341());
          var4.push();
          var4.translate(0.0, -1.0, -2.0);
 
@@ -125,14 +125,14 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
       var0.pos(var1, 0.0F, var2, 1.0F * var3).color(255, 0, 255, 0).endVertex();
    }
 
-   public static void method17906(float var0, float var1, float var2, float var3, int var4, MatrixStack var5, Class7733 var6, int var7) {
+   public static void method17906(float var0, float var1, float var2, float var3, int var4, MatrixStack var5, IRenderTypeBuffer var6, int var7) {
       float var10 = MathHelper.sqrt(var0 * var0 + var2 * var2);
       float var11 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2);
       var5.push();
       var5.translate(0.0, 2.0, 0.0);
       var5.rotate(Vector3f.YP.method25285((float)(-Math.atan2((double)var2, (double)var0)) - (float) (Math.PI / 2)));
       var5.rotate(Vector3f.XP.method25285((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
-      IVertexBuilder var12 = var6.method25597(field25113);
+      IVertexBuilder var12 = var6.getBuffer(field25113);
       float var13 = 0.0F - ((float)var4 + var3) * 0.01F;
       float var14 = MathHelper.sqrt(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
       byte var15 = 8;

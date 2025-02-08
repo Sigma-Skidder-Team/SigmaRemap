@@ -78,7 +78,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
       this.field5623 = new EnderDragonPartEntity[]{
          this.field5624, this.field5625, this.field5626, this.field5627, this.field5628, this.field5629, this.field5630, this.field5631
       };
-      this.setHealth(this.method3075());
+      this.setHealth(this.getMaxHealth());
       this.noClip = true;
       this.ignoreFrustumCheck = true;
       if (!(var2 instanceof ServerWorld)) {
@@ -369,7 +369,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
    private void method4320() {
       if (this.field5637 != null) {
          if (!this.field5637.removed) {
-            if (this.ticksExisted % 10 == 0 && this.getHealth() < this.method3075()) {
+            if (this.ticksExisted % 10 == 0 && this.getHealth() < this.getMaxHealth()) {
                this.setHealth(this.getHealth() + 1.0F);
             }
          } else {
@@ -484,7 +484,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
 
                if (this.field5639.method32672().method23358()) {
                   this.field5641 = (int)((float)this.field5641 + (var6 - this.getHealth()));
-                  if ((float)this.field5641 > 0.25F * this.method3075()) {
+                  if ((float)this.field5641 > 0.25F * this.getMaxHealth()) {
                      this.field5641 = 0;
                      this.field5639.method32671(Class9598.field44900);
                   }

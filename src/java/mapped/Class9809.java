@@ -29,15 +29,15 @@ public class Class9809 {
    private static final ShulkerBoxTileEntity field45843 = new ShulkerBoxTileEntity((DyeColor)null);
    public static final Class9809 field45844 = new Class9809();
    private final ChestTileEntity field45845 = new ChestTileEntity();
-   private final ChestTileEntity field45846 = new Class970();
-   private final Class943 field45847 = new Class943();
+   private final ChestTileEntity field45846 = new TrappedChestTileEntity();
+   private final EnderChestTileEntity field45847 = new EnderChestTileEntity();
    private final BannerTileEntity field45848 = new BannerTileEntity();
    private final Class967 field45849 = new Class967();
    private final Class959 field45850 = new Class959();
    private final ShieldModel modelShield = new ShieldModel();
    private final Class2842 field45852 = new Class2842();
 
-   public void method38685(ItemStack var1, ItemCameraTransformsTransformType var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method38685(ItemStack var1, ItemCameraTransformsTransformType var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       if (EmissiveTextures.isActive()) {
          EmissiveTextures.beginRender();
       }
@@ -46,7 +46,7 @@ public class Class9809 {
       if (EmissiveTextures.isActive()) {
          if (EmissiveTextures.hasEmissive()) {
             EmissiveTextures.beginRenderEmissive();
-            this.method38686(var1, var3, var4, Class1699.field9258, var6);
+            this.method38686(var1, var3, var4, LightTexture.MAX_BRIGHTNESS, var6);
             EmissiveTextures.endRenderEmissive();
          }
 
@@ -54,7 +54,7 @@ public class Class9809 {
       }
    }
 
-   public void method38686(ItemStack var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
+   public void method38686(ItemStack var1, MatrixStack var2, IRenderTypeBuffer var3, int var4, int var5) {
       Item var8 = var1.getItem();
       if (!(var8 instanceof BlockItem)) {
          if (var8 != Items.field38119) {

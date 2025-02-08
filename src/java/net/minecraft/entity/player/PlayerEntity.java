@@ -450,7 +450,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public void preparePlayerToSpawn() {
       this.setPose(Pose.STANDING);
       super.preparePlayerToSpawn();
-      this.setHealth(this.method3075());
+      this.setHealth(this.getMaxHealth());
       this.deathTime = 0;
    }
 
@@ -469,7 +469,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
       if (this.world.method6997() == Difficulty.PEACEFUL
             && this.world.getGameRules().getBoolean(GameRules.field24231)) {
-         if (this.getHealth() < this.method3075() && this.ticksExisted % 20 == 0) {
+         if (this.getHealth() < this.getMaxHealth() && this.ticksExisted % 20 == 0) {
             this.heal(1.0F);
          }
 
@@ -1676,7 +1676,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public boolean method2934() {
-      return this.getHealth() > 0.0F && this.getHealth() < this.method3075();
+      return this.getHealth() > 0.0F && this.getHealth() < this.getMaxHealth();
    }
 
    public boolean method2935() {

@@ -23,7 +23,7 @@ import org.lwjgl.opengl.GL11;
 
 public class FillESP extends Module {
     public boolean field23481 = false;
-    public Class7735 field23482 = Class7733.method25596(mc.getRenderTypeBuffers().field33890, new BufferBuilder(256));
+    public IRenderTypeBuffer.Impl field23482 = IRenderTypeBuffer.getImpl(mc.getRenderTypeBuffers().fixedBuffers, new BufferBuilder(256));
 
     public FillESP() {
         super(ModuleCategory.RENDER, "Fill", "Fill ESP");
@@ -74,8 +74,8 @@ public class FillESP extends Module {
                 boolean var18 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
-                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-                        GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+                        GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
                 RenderSystem.enableBlend();
                 mc.gameSettings.entityShadows = false;
                 this.method16136(var9, var11, var13, var15, mc.timer.renderPartialTicks, var17, this.field23482);
@@ -104,7 +104,7 @@ public class FillESP extends Module {
     }
 
     public void method16136(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9,
-            Class7733 var10) {
+            IRenderTypeBuffer var10) {
         double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
@@ -146,7 +146,7 @@ public class FillESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.lightmapTexture.method7316();
+        mc.gameRenderer.lightmapTexture.disableLightmap();
     }
 
     private void method16140() {
@@ -155,11 +155,11 @@ public class FillESP extends Module {
         GL11.glEnable(3553);
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-        TextureImpl.method36180();
+        TextureImpl.unbind();
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
-        var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.lightmapTexture.method7317();
+        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        mc.gameRenderer.lightmapTexture.enableLightmap();
         GL11.glLightModelfv(2899, new float[] { 0.4F, 0.4F, 0.4F, 1.0F });
     }
 }

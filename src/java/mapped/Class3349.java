@@ -20,7 +20,7 @@ public class Class3349 extends ChestBlock {
 
    @Override
    public TileEntity method11646(IBlockReader var1) {
-      return new Class970();
+      return new TrappedChestTileEntity();
    }
 
    @Override

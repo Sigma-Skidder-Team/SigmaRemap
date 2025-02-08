@@ -164,7 +164,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
          RenderSystem.shadeModel(7424);
          RenderSystem.disableBlend();
          RenderSystem.enableTexture();
-         Class7735 var18 = Class7733.method25595(Tessellator.getInstance().getBuffer());
+         IRenderTypeBuffer.Impl var18 = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
          var1.translate(0.0, 0.0, 400.0);
 
          for (int var19 = 0; var19 < var2.size(); var19++) {

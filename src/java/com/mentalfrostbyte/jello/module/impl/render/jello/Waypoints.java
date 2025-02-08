@@ -33,12 +33,11 @@ import java.util.UUID;
 
 public class Waypoints extends Module {
     public HashMap<UUID, Class8351> field23572 = new HashMap<UUID, Class8351>();
-    private final ModuleCategory field23573 = ModuleCategory.PLAYER;
 
     public Waypoints() {
         super(ModuleCategory.RENDER, "Waypoints", "Renders waypoints you added in Jello maps");
         this.registerSetting(new BooleanSetting("Unspawn Positions", "Adds a waypoint when a player unspawns", false));
-        this.method16005(false);
+        this.setAvailableOnClassic(false);
     }
 
     @EventTarget
@@ -54,15 +53,15 @@ public class Waypoints extends Module {
                     if (!(var1.getPacket() instanceof SSpawnMobPacket)) {
                         if (var1.getPacket() instanceof SSpawnPlayerPacket) {
                             SSpawnPlayerPacket var4 = (SSpawnPlayerPacket) var1.getPacket();
-                            this.field23572.remove(var4.method17593());
+                            this.field23572.remove(var4.getUniqueId());
                         }
                     } else {
                         SSpawnMobPacket var10 = (SSpawnMobPacket) var1.getPacket();
-                        this.field23572.remove(var10.method17536());
+                        this.field23572.remove(var10.getUniqueId());
                     }
                 } else {
                     SSpawnObjectPacket var11 = (SSpawnObjectPacket) var1.getPacket();
-                    this.field23572.remove(var11.method17257());
+                    this.field23572.remove(var11.getUniqueId());
                 }
             } else {
                 SDestroyEntitiesPacket var12 = (SDestroyEntitiesPacket) var1.getPacket();
@@ -103,8 +102,8 @@ public class Waypoints extends Module {
         }
 
         var4.sort(
-                (var0, var1x) -> !(mc.player.getDistanceNearest((double) var0.field35890, (double) var0.field35893,
-                        (double) var0.field35891) < mc.player.getDistanceNearest((double) var1x.field35890,
+                (var0, var1x) -> !(mc.player.getDistanceSq((double) var0.field35890, (double) var0.field35893,
+                        (double) var0.field35891) < mc.player.getDistanceSq((double) var1x.field35890,
                                 (double) var1x.field35893, (double) var1x.field35891))
                                         ? -1
                                         : 1);
@@ -163,10 +162,10 @@ public class Waypoints extends Module {
             }
 
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
-            TextureImpl.method36180();
+            TextureImpl.unbind();
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         }
     }
 
@@ -276,10 +275,10 @@ public class Waypoints extends Module {
                 ClientColors.DEEP_TEAL.getColor(), 75.0F), 0.5F);
         RenderUtil.drawRect(
                 (float) (-var9.getWidth(var4) / 2 - 14), -5.0F, (float) var9.getWidth(var4) / 2.0F + 14.0F,
-                (float) (var9.method23952() + 7), var11);
+                (float) (var9.getHeight() + 7), var11);
         RenderUtil.drawRoundedRect(
                 (float) (-var9.getWidth(var4) / 2 - 14), -5.0F, (float) (var9.getWidth(var4) + 28),
-                (float) (var9.method23952() + 12), 20.0F, 0.5F);
+                (float) (var9.getHeight() + 12), 20.0F, 0.5F);
         GL11.glTranslated(-var9.getWidth(var4) / 2, 0.0, 0.0);
         RenderUtil.drawString(var9, 0.0F, 0.0F, var4,
                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.8F));

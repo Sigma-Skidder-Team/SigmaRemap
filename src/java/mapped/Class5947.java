@@ -24,7 +24,7 @@ public class Class5947 extends Class5942<Class954> {
       super(var1);
    }
 
-   public void method18462(Class954 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class954 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       BlockState var9 = var1.getBlockState();
       var3.push();
       float var10 = 0.6666667F;
@@ -96,7 +96,7 @@ public class Class5947 extends Class5942<Class954> {
          if (!Config.field34162) {
             BlockPos var3 = var0.getPos();
             Entity var4 = Minecraft.getInstance().getRenderViewEntity();
-            double var5 = var4.getDistanceNearest((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
+            double var5 = var4.getDistanceSq((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
             if (var5 > field25939) {
                return false;
             }

@@ -73,7 +73,7 @@ public class Class9278 {
          if (var5.getItem() instanceof Class3316) {
             MapData var6 = Class3316.method11861(var5, this.field42667);
 
-            for (ServerPlayerEntity var8 : this.field42667.method6870()) {
+            for (ServerPlayerEntity var8 : this.field42667.getPlayers()) {
                var6.method24594(var8, var5);
                IPacket var9 = ((Class3316)var5.getItem()).method11858(var5, this.field42667, var8);
                if (var9 != null) {

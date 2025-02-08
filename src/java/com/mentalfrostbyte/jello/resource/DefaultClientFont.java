@@ -26,7 +26,7 @@ public class DefaultClientFont extends TrueTypeFont {
    }
 
    @Override
-   public int method23952() {
+   public int getHeight() {
       return 9 * this.field31945;
    }
 

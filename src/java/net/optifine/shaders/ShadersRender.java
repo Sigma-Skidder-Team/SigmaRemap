@@ -103,7 +103,7 @@ public class ShadersRender {
       }
    }
 
-   public static void method17156(FirstPersonRenderer var0, float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
+   public static void method17156(FirstPersonRenderer var0, float var1, MatrixStack var2, IRenderTypeBuffer.Impl var3, ClientPlayerEntity var4, int var5, boolean var6) {
       GlStateManager.depthMask(true);
       if (var6) {
          GlStateManager.depthFunc(519);
@@ -223,7 +223,7 @@ public class ShadersRender {
          var8.getProfiler().endStartSection("shadow entities");
          WorldRenderer var20 = var8.worldRenderer;
          EntityRendererManager var21 = var8.getRenderManager();
-         Class7735 var22 = var20.method937().getBufferSource();
+         IRenderTypeBuffer.Impl var22 = var20.method937().getBufferSource();
          boolean var23 = Shaders.isShadowPass && !var8.player.isSpectator();
 
          for (Class7002 var25 : var20.method938()) {
@@ -500,7 +500,7 @@ public class ShadersRender {
       }
    }
 
-   public static boolean method17174(Class956 var0, float var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public static boolean method17174(Class956 var0, float var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       if (! Shaders.isShadowPass && Shaders.field40848.method26485() == 0) {
          return false;
       } else {
@@ -508,7 +508,7 @@ public class ShadersRender {
          Class8892 var9 = var3.getLast();
          Matrix4f var10 = var9.getMatrix();
          Matrix3f var11 = var9.method32362();
-         IVertexBuilder var12 = var4.method25597(RenderType.getEntitySolid(field24257));
+         IVertexBuilder var12 = var4.getBuffer(RenderType.getEntitySolid(field24257));
          float var13 = 0.5F;
          float var14 = var13 * 0.15F;
          float var15 = var13 * 0.3F;

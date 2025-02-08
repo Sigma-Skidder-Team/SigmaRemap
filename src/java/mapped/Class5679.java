@@ -18,7 +18,7 @@ public class Class5679 extends Class5676<IllusionerEntity> {
       return field25044;
    }
 
-   public void render(IllusionerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(IllusionerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       if (!entityIn.isInvisible()) {
          super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
       } else {

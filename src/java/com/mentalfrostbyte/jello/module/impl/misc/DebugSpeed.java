@@ -26,7 +26,7 @@ public class DebugSpeed extends Module {
         if (this.isEnabled()) {
             Vector3d var4 = new Vector3d(mc.player.getPosX(), 0.0, mc.player.getPosZ());
             if (mc.player.onGround && this.field23558 != null) {
-                double var5 = var4.method11341(this.field23558) / (double) this.field23557;
+                double var5 = var4.distanceTo(this.field23558) / (double) this.field23557;
                 var5 *= mc.timer.timerSpeed;
                 boolean var7 = Client.getInstance().getPlayerTracker().getgroundTicks() > 1 && mc.player.jumpTicks == 0;
                 double var8 = !var7 ? 0.312948 : 0.280616;

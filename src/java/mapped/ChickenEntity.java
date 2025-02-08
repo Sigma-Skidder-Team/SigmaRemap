@@ -47,7 +47,7 @@ public class ChickenEntity extends AnimalEntity {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return !this.isChild() ? var2.field39969 * 0.92F : var2.field39969 * 0.85F;
+      return !this.isChild() ? var2.height * 0.92F : var2.height * 0.85F;
    }
 
    public static MutableAttribute method5069() {

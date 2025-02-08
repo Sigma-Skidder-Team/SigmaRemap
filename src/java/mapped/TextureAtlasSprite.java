@@ -407,7 +407,7 @@ public class TextureAtlasSprite implements AutoCloseable {
 
    public IVertexBuilder method7474(IVertexBuilder var1) {
       if (this.method7465() == Class8684.field39209) {
-         Class7735 var4 = var1.method17049();
+         IRenderTypeBuffer.Impl var4 = var1.method17049();
          if (var4 != null) {
             return var4.method25606();
          }
@@ -578,18 +578,18 @@ public class TextureAtlasSprite implements AutoCloseable {
       ResourceLocation var5 = new ResourceLocation(this.method7465().getNamespace(), this.method7465().getPath() + var1);
       ResourceLocation var6 = this.field9324.method1096(var5);
       TextureAtlasSprite var7 = null;
-      if (this.field9359.method581(var6)) {
-         try (JSonShader var8 = this.field9359.getShader(var6)) {
-            JSonShader var10 = this.field9359.getShader(var6);
-            Class7756 var11 = new Class7756(var6.toString(), var10.getFile());
-            Class7788 var12 = var8.<Class7788>method7764(Class7788.field33411);
+      if (this.field9359.hasResource(var6)) {
+         try (IResource var8 = this.field9359.getResource(var6)) {
+            IResource var10 = this.field9359.getResource(var6);
+            Class7756 var11 = new Class7756(var6.toString(), var10.getInputStream());
+            Class7788 var12 = var8.<Class7788>getMetadata(Class7788.field33411);
             if (var12 == null) {
                var12 = Class7788.field33412;
             }
 
             Pair var13 = var12.method25807(var11.field33321, var11.field33322);
             Class9431 var14 = new Class9431(var5, (Integer)var13.getFirst(), (Integer)var13.getSecond(), var12);
-            NativeImage var15 = NativeImage.method7879(var8.getFile());
+            NativeImage var15 = NativeImage.method7879(var8.getInputStream());
             if (var15.method7886() != this.method7457()) {
                NativeImage var16 = Class8684.method31279(var15, this.method7457());
                if (var16 != var15) {

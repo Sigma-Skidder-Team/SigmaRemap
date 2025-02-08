@@ -33,7 +33,7 @@ public class Class8391 {
    private Class8557[] field35997 = new Class8557[2];
    private Class8557[] field35998 = new Class8557[3];
    private Class8557[] field35999 = new Class8557[4];
-   private Class7828 field36000 = null;
+   private RegionRenderCacheBuilder field36000 = null;
    private Class9585[] field36001 = new Class9585[RenderType.field21819.length];
    private boolean field36002 = false;
    private Long2ByteLinkedOpenHashMap field36003 = new Long2ByteLinkedOpenHashMap();
@@ -221,11 +221,11 @@ public class Class8391 {
       return this.field35995;
    }
 
-   public Class7828 method29434() {
+   public RegionRenderCacheBuilder method29434() {
       return this.field36000;
    }
 
-   public void method29435(Class7828 var1) {
+   public void method29435(RegionRenderCacheBuilder var1) {
       this.field36000 = var1;
    }
 

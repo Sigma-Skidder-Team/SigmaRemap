@@ -12,7 +12,7 @@ public class Class258 extends Class219<HorseEntity, Class2856<HorseEntity>> {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, HorseEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, HorseEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.method4990();
       if (var13.getItem() instanceof Class3275) {
          Class3275 var14 = (Class3275)var13.getItem();
@@ -33,7 +33,7 @@ public class Class258 extends Class219<HorseEntity, Class2856<HorseEntity>> {
             var17 = (float)(var18 & 0xFF) / 255.0F;
          }
 
-         IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(var14.method11797()));
+         IVertexBuilder var19 = var2.getBuffer(RenderType.getEntityCutoutNoCull(var14.method11797()));
          this.field918.render(var1, var19, var3, OverlayTexture.NO_OVERLAY, var15, var16, var17, 1.0F);
       }
    }

@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.stream.Collectors;
 
-public class ParticleManager implements Class268 {
+public class ParticleManager implements IFutureReloadListener {
    private static final List<Class6843> field1167 = ImmutableList.of(
       Class6843.field29734, Class6843.field29735, Class6843.field29737, Class6843.field29736, Class6843.field29738
    );
@@ -141,7 +141,7 @@ public class ParticleManager implements Class268 {
    }
 
    @Override
-   public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
+   public CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       Map<ResourceLocation, List<ResourceLocation>> var9 = com.google.common.collect.Maps.newConcurrentMap();
       CompletableFuture[] var10 = Registry.PARTICLE_TYPE
          .method9190()
@@ -157,7 +157,7 @@ public class ParticleManager implements Class268 {
             var3.endTick();
             return var7;
          }, var5)
-         .<Class8226>thenCompose(var1::method22225)
+         .<Class8226>thenCompose(var1::markCompleteAwaitingOthers)
          .thenAcceptAsync(
             var3x -> {
                this.field1169.clear();
@@ -189,8 +189,8 @@ public class ParticleManager implements Class268 {
       ResourceLocation var6 = new ResourceLocation(var2.getNamespace(), "particles/" + var2.getPath() + ".json");
 
       try (
-              JSonShader var7 = var1.getShader(var6);
-              InputStreamReader var9 = new InputStreamReader(var7.getFile(), Charsets.UTF_8);
+              IResource var7 = var1.getResource(var6);
+              InputStreamReader var9 = new InputStreamReader(var7.getInputStream(), Charsets.UTF_8);
       ) {
          Class8532 var11 = Class8532.method30266(JSONUtils.fromJson(var9));
          List<ResourceLocation> var12 = var11.method30265();
@@ -319,12 +319,12 @@ public class ParticleManager implements Class268 {
       }
    }
 
-   public void method1203(MatrixStack var1, Class7735 var2, Class1699 var3, ActiveRenderInfo var4, float var5) {
+   public void method1203(MatrixStack var1, IRenderTypeBuffer.Impl var2, LightTexture var3, ActiveRenderInfo var4, float var5) {
       this.method1204(var1, var2, var3, var4, var5, (Class7647)null);
    }
 
-   public void method1204(MatrixStack var1, Class7735 var2, Class1699 var3, ActiveRenderInfo var4, float var5, Class7647 var6) {
-      var3.method7317();
+   public void method1204(MatrixStack var1, IRenderTypeBuffer.Impl var2, LightTexture var3, ActiveRenderInfo var4, float var5, Class7647 var6) {
+      var3.enableLightmap();
       Runnable var9 = () -> {
          RenderSystem.enableAlphaTest();
          RenderSystem.method27939();
@@ -381,7 +381,7 @@ public class ParticleManager implements Class268 {
       RenderSystem.depthFunc(515);
       RenderSystem.disableBlend();
       RenderSystem.method27939();
-      var3.method7316();
+      var3.disableLightmap();
       RenderSystem.method27841();
       RenderSystem.enableDepthTest();
    }
@@ -403,7 +403,7 @@ public class ParticleManager implements Class268 {
       }
 
       if (var6) {
-         VoxelShape var9 = var2.method23412(this.world, var1);
+         VoxelShape var9 = var2.getShape(this.world, var1);
          double var7 = 0.25;
          var9.method19520(
             (var3, var5x, var7x, var9x, var11, var13) -> {
@@ -451,7 +451,7 @@ public class ParticleManager implements Class268 {
          int var7 = var1.getY();
          int var8 = var1.getZ();
          float var9 = 0.1F;
-         AxisAlignedBB var10 = var5.method23412(this.world, var1).getBoundingBox();
+         AxisAlignedBB var10 = var5.getShape(this.world, var1).getBoundingBox();
          double var11 = (double)var6 + this.field1172.nextDouble() * (var10.maxX - var10.minX - 0.2F) + 0.1F + var10.minX;
          double var13 = (double)var7 + this.field1172.nextDouble() * (var10.maxY - var10.minY - 0.2F) + 0.1F + var10.minY;
          double var15 = (double)var8 + this.field1172.nextDouble() * (var10.maxZ - var10.minZ - 0.2F) + 0.1F + var10.minZ;

@@ -181,7 +181,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
       Texture largeLogo = ResourceList.logoLargePNG;
       int imageWidth = largeLogo.getImageWidth();
       int imageHeight = largeLogo.getImageHeight();
-      if (GuiManager.portalScaleFactor > 1.0F) {
+      if (GuiManager.scaleFactor > 1.0F) {
          largeLogo = ResourceList.logoLarge2xPNG;
       }
 

@@ -18,7 +18,7 @@ public class Class6984 {
    }
 
    public String method21596() {
-      return this.field30212 == null ? GuiManager.field41338.get(this.field30213) : this.field30212.getName();
+      return this.field30212 == null ? GuiManager.screenToScreenName.get(this.field30213) : this.field30212.getName();
    }
 
    public String method21597() {

@@ -4,14 +4,14 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class EntitySize {
-   public final float field39968;
-   public final float field39969;
-   public final boolean field39970;
+   public final float width;
+   public final float height;
+   public final boolean fixed;
 
    public EntitySize(float var1, float var2, boolean var3) {
-      this.field39968 = var1;
-      this.field39969 = var2;
-      this.field39970 = var3;
+      this.width = var1;
+      this.height = var2;
+      this.fixed = var3;
    }
 
    public AxisAlignedBB method32097(Vector3d var1) {
@@ -19,8 +19,8 @@ public class EntitySize {
    }
 
    public AxisAlignedBB method32098(double var1, double var3, double var5) {
-      float var9 = this.field39968 / 2.0F;
-      float var10 = this.field39969;
+      float var9 = this.width / 2.0F;
+      float var10 = this.height;
       return new AxisAlignedBB(var1 - (double)var9, var3, var5 - (double)var9, var1 + (double)var9, var3 + (double)var10, var5 + (double)var9);
    }
 
@@ -29,7 +29,7 @@ public class EntitySize {
    }
 
    public EntitySize method32100(float var1, float var2) {
-      return !this.field39970 && (var1 != 1.0F || var2 != 1.0F) ? method32101(this.field39968 * var1, this.field39969 * var2) : this;
+      return !this.fixed && (var1 != 1.0F || var2 != 1.0F) ? method32101(this.width * var1, this.height * var2) : this;
    }
 
    public static EntitySize method32101(float var0, float var1) {
@@ -42,6 +42,6 @@ public class EntitySize {
 
    @Override
    public String toString() {
-      return "EntityDimensions w=" + this.field39968 + ", h=" + this.field39969 + ", fixed=" + this.field39970;
+      return "EntityDimensions w=" + this.width + ", h=" + this.height + ", fixed=" + this.fixed;
    }
 }

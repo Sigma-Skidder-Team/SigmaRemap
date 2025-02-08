@@ -590,8 +590,8 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float getJumpFactor() {
-      float var3 = this.world.getBlockState(this.getPosition()).getBlock().method11573();
-      float var4 = this.world.getBlockState(this.getPositionUnderneath()).getBlock().method11573();
+      float var3 = this.world.getBlockState(this.getPosition()).getBlock().getJumpFactor();
+      float var4 = this.world.getBlockState(this.getPositionUnderneath()).getBlock().getJumpFactor();
       return (double) var3 != 1.0 ? var3 : var4;
    }
 
@@ -1026,9 +1026,9 @@ public abstract class Entity implements INameable, ICommandSource {
 
       float var7 = (float) MathHelper.floor(this.getPosY());
 
-      for (int var8 = 0; (float) var8 < 1.0F + this.size.field39968 * 20.0F; var8++) {
-         double var9 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
-         double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
+      for (int var8 = 0; (float) var8 < 1.0F + this.size.width * 20.0F; var8++) {
+         double var9 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.width;
+         double var11 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.width;
          this.world
                .addParticle(
                      ParticleTypes.BUBBLE,
@@ -1040,9 +1040,9 @@ public abstract class Entity implements INameable, ICommandSource {
                      var5.z);
       }
 
-      for (int var13 = 0; (float) var13 < 1.0F + this.size.field39968 * 20.0F; var13++) {
-         double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
-         double var15 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.field39968;
+      for (int var13 = 0; (float) var13 < 1.0F + this.size.width * 20.0F; var13++) {
+         double var14 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.width;
+         double var15 = (this.rand.nextDouble() * 2.0 - 1.0) * (double) this.size.width;
          this.world
                .addParticle(
                      ParticleTypes.field34099,
@@ -1075,9 +1075,9 @@ public abstract class Entity implements INameable, ICommandSource {
          this.world
                .addParticle(
                      new BlockParticleData(ParticleTypes.BLOCK, var7),
-                     this.getPosX() + (this.rand.nextDouble() - 0.5) * (double) this.size.field39968,
+                     this.getPosX() + (this.rand.nextDouble() - 0.5) * (double) this.size.width,
                      this.getPosY() + 0.1,
-                     this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double) this.size.field39968,
+                     this.getPosZ() + (this.rand.nextDouble() - 0.5) * (double) this.size.width,
                      var8.x * -4.0,
                      1.5,
                      var8.z * -4.0);
@@ -1179,7 +1179,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return MathHelper.sqrt(var4 * var4 + var5 * var5 + var6 * var6);
    }
 
-   public double getDistanceNearest(double var1, double var3, double var5) {
+   public double getDistanceSq(double var1, double var3, double var5) {
       double var9 = this.getPosX() - var1;
       double var11 = this.getPosY() - var3;
       double var13 = this.getPosZ() - var5;
@@ -1589,7 +1589,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public boolean isEntityInsideOpaqueBlock() {
       if (!this.noClip) {
          float var3 = 0.1F;
-         float var4 = this.size.field39968 * 0.8F;
+         float var4 = this.size.width * 0.8F;
          AxisAlignedBB var5 = AxisAlignedBB.withSizeAtOrigin((double) var4, 0.1F, (double) var4).offset(this.getPosX(),
                this.getPosYEye(), this.getPosZ());
          return this.world.func_241457_a_(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny()
@@ -1638,7 +1638,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public double method3310() {
-      return (double) this.size.field39969 * 0.75;
+      return (double) this.size.height * 0.75;
    }
 
    public boolean method3311(Entity var1) {
@@ -2359,29 +2359,29 @@ public abstract class Entity implements INameable, ICommandSource {
       EntitySize var5 = this.getSize(var4);
       this.size = var5;
       this.eyeHeight = this.getEyeHeight(var4, var5);
-      if (!(var5.field39968 < var3.field39968)) {
+      if (!(var5.width < var3.width)) {
          AxisAlignedBB var6 = this.getBoundingBox();
          this.setBoundingBox(
                new AxisAlignedBB(
                      var6.minX,
                      var6.minY,
                      var6.minZ,
-                     var6.minX + (double) var5.field39968,
-                     var6.minY + (double) var5.field39969,
-                     var6.minZ + (double) var5.field39968));
-         if (var5.field39968 > var3.field39968 && !this.firstUpdate && !this.world.isRemote) {
-            float var9 = var3.field39968 - var5.field39968;
+                     var6.minX + (double) var5.width,
+                     var6.minY + (double) var5.height,
+                     var6.minZ + (double) var5.width));
+         if (var5.width > var3.width && !this.firstUpdate && !this.world.isRemote) {
+            float var9 = var3.width - var5.width;
             this.move(MoverType.SELF, new Vector3d((double) var9, 0.0, (double) var9));
          }
       } else {
-         double var7 = (double) var5.field39968 / 2.0;
+         double var7 = (double) var5.width / 2.0;
          this.setBoundingBox(
                new AxisAlignedBB(
                      this.getPosX() - var7,
                      this.getPosY(),
                      this.getPosZ() - var7,
                      this.getPosX() + var7,
-                     this.getPosY() + (double) var5.field39969,
+                     this.getPosY() + (double) var5.height,
                      this.getPosZ() + var7));
       }
    }
@@ -2413,9 +2413,9 @@ public abstract class Entity implements INameable, ICommandSource {
 
    public AxisAlignedBB getBoundingBox(Pose var1) {
       EntitySize var4 = this.getSize(var1);
-      float var5 = var4.field39968 / 2.0F;
+      float var5 = var4.width / 2.0F;
       Vector3d var6 = new Vector3d(this.getPosX() - (double) var5, this.getPosY(), this.getPosZ() - (double) var5);
-      Vector3d var7 = new Vector3d(this.getPosX() + (double) var5, this.getPosY() + (double) var4.field39969,
+      Vector3d var7 = new Vector3d(this.getPosX() + (double) var5, this.getPosY() + (double) var4.height,
             this.getPosZ() + (double) var5);
       return new AxisAlignedBB(var6, var7);
    }
@@ -2425,7 +2425,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public float getEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.85F;
+      return var2.height * 0.85F;
    }
 
    public float getEyeHeight(Pose var1) {
@@ -2771,11 +2771,11 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public final float getWidth() {
-      return this.size.field39968;
+      return this.size.width;
    }
 
    public final float getHeight() {
-      return this.size.field39969;
+      return this.size.height;
    }
 
    public abstract IPacket<?> createSpawnPacket();

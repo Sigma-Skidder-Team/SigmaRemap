@@ -22,7 +22,7 @@ public class Class7893 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      List<ServerPlayerEntity> var5 = var1.method6870()
+      List<ServerPlayerEntity> var5 = var1.getPlayers()
          .stream()
          .filter(EntityPredicates.field34763)
          .filter(var1x -> var2.isEntityInRange(var1x, 16.0))

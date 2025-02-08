@@ -40,7 +40,7 @@ public class Class5950 extends Class5942<Class967> {
       this.field25949[3].rotateAngleZ = (float) Math.PI;
    }
 
-   public void method18462(Class967 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class967 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       Class7826 var9 = Class8624.field38785[var1.method4000().method309()];
       World var10 = var1.method3734();
       if (var10 == null) {
@@ -65,7 +65,7 @@ public class Class5950 extends Class5942<Class967> {
       }
    }
 
-   private void method18480(MatrixStack var1, Class7733 var2, boolean var3, Direction var4, Class7826 var5, int var6, int var7, boolean var8) {
+   private void method18480(MatrixStack var1, IRenderTypeBuffer var2, boolean var3, Direction var4, Class7826 var5, int var6, int var7, boolean var8) {
       this.field25947.showModel = var3;
       this.field25948.showModel = !var3;
       this.field25949[0].showModel = !var3;

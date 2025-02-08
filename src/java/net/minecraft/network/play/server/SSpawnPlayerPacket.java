@@ -9,79 +9,78 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class SSpawnPlayerPacket implements IPacket<IClientPlayNetHandler> {
-   private static String[] field24832;
-   private int field24833;
-   private UUID field24834;
-   private double field24835;
-   private double field24836;
-   private double field24837;
-   private byte field24838;
-   private byte field24839;
+   private int entityId;
+   private UUID uniqueId;
+   private double x;
+   private double y;
+   private double z;
+   private byte yaw;
+   private byte pitch;
 
    public SSpawnPlayerPacket() {
    }
 
    public SSpawnPlayerPacket(PlayerEntity var1) {
-      this.field24833 = var1.getEntityId();
-      this.field24834 = var1.getGameProfile().getId();
-      this.field24835 = var1.getPosX();
-      this.field24836 = var1.getPosY();
-      this.field24837 = var1.getPosZ();
-      this.field24838 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
-      this.field24839 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
+      this.entityId = var1.getEntityId();
+      this.uniqueId = var1.getGameProfile().getId();
+      this.x = var1.getPosX();
+      this.y = var1.getPosY();
+      this.z = var1.getPosZ();
+      this.yaw = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
+      this.pitch = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24833 = var1.readVarInt();
-      this.field24834 = var1.readUniqueId();
-      this.field24835 = var1.readDouble();
-      this.field24836 = var1.readDouble();
-      this.field24837 = var1.readDouble();
-      this.field24838 = var1.readByte();
-      this.field24839 = var1.readByte();
+      this.entityId = var1.readVarInt();
+      this.uniqueId = var1.readUniqueId();
+      this.x = var1.readDouble();
+      this.y = var1.readDouble();
+      this.z = var1.readDouble();
+      this.yaw = var1.readByte();
+      this.pitch = var1.readByte();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24833);
-      var1.writeUniqueId(this.field24834);
-      var1.writeDouble(this.field24835);
-      var1.writeDouble(this.field24836);
-      var1.writeDouble(this.field24837);
-      var1.writeByte(this.field24838);
-      var1.writeByte(this.field24839);
+      var1.writeVarInt(this.entityId);
+      var1.writeUniqueId(this.uniqueId);
+      var1.writeDouble(this.x);
+      var1.writeDouble(this.y);
+      var1.writeDouble(this.z);
+      var1.writeByte(this.yaw);
+      var1.writeByte(this.pitch);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {
       var1.handleSpawnPlayer(this);
    }
 
-   public int method17592() {
-      return this.field24833;
+   public int getEntityID() {
+      return this.entityId;
    }
 
-   public UUID method17593() {
-      return this.field24834;
+   public UUID getUniqueId() {
+      return this.uniqueId;
    }
 
-   public double method17594() {
-      return this.field24835;
+   public double getX() {
+      return this.x;
    }
 
-   public double method17595() {
-      return this.field24836;
+   public double getY() {
+      return this.y;
    }
 
-   public double method17596() {
-      return this.field24837;
+   public double getZ() {
+      return this.z;
    }
 
-   public byte method17597() {
-      return this.field24838;
+   public byte getYaw() {
+      return this.yaw;
    }
 
-   public byte method17598() {
-      return this.field24839;
+   public byte getPitch() {
+      return this.pitch;
    }
 }

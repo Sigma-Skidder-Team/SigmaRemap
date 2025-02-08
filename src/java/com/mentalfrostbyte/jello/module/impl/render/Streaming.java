@@ -30,10 +30,6 @@ public class Streaming extends Module {
     }
 
     @EventTarget
-    public void EventRenderNameTag(EventRenderNameTag event) {
-    }
-
-    @EventTarget
     public void EventRenderEntity(EventRenderEntity event) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("Hide skins")) {

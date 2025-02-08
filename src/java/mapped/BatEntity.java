@@ -237,6 +237,6 @@ public class BatEntity extends Class1113 {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 / 2.0F;
+      return var2.height / 2.0F;
    }
 }

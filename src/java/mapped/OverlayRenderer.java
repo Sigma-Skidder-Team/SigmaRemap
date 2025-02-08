@@ -19,7 +19,7 @@ import org.apache.commons.lang3.tuple.Pair;
 public class OverlayRenderer {
    private static final ResourceLocation TEXTURE_UNDERWATER = new ResourceLocation("textures/misc/underwater.png");
 
-   public static void method18789(Minecraft var0, MatrixStack var1) {
+   public static void renderOverlays(Minecraft var0, MatrixStack var1) {
       RenderSystem.disableAlphaTest();
       ClientPlayerEntity var4 = var0.player;
       if (!var4.noClip) {
@@ -135,8 +135,8 @@ public class OverlayRenderer {
       RenderSystem.disableBlend();
    }
 
-   private static void renderFire(Minecraft minecraftIn, MatrixStack var1) {
-      BufferBuilder var4 = Tessellator.getInstance().getBuffer();
+   private static void renderFire(Minecraft minecraftIn, MatrixStack matrixStackIn) {
+      BufferBuilder bufferbuilder = Tessellator.getInstance().getBuffer();
       RenderSystem.depthFunc(519);
       RenderSystem.depthMask(false);
       RenderSystem.enableBlend();
@@ -148,43 +148,38 @@ public class OverlayRenderer {
       }
 
       minecraftIn.getTextureManager().bindTexture(textureatlassprite.getAtlasTexture().getTextureLocation());
-      float var6 = textureatlassprite.getMinU();
-      float var7 = textureatlassprite.getMaxU();
-      float var8 = (var6 + var7) / 2.0F;
-      float var9 = textureatlassprite.getMinV();
-      float var10 = textureatlassprite.getMaxV();
-      float var11 = (var9 + var10) / 2.0F;
-      float var12 = textureatlassprite.getUvShrinkRatio();
-      float var13 = MathHelper.lerp(var12, var6, var8);
-      float var14 = MathHelper.lerp(var12, var7, var8);
-      float var15 = MathHelper.lerp(var12, var9, var11);
-      float var16 = MathHelper.lerp(var12, var10, var11);
-      float var17 = 1.0F;
+      float f = textureatlassprite.getMinU();
+      float f1 = textureatlassprite.getMaxU();
+      float f2 = (f + f1) / 2.0F;
+      float f3 = textureatlassprite.getMinV();
+      float f4 = textureatlassprite.getMaxV();
+      float f5 = (f3 + f4) / 2.0F;
+      float f6 = textureatlassprite.getUvShrinkRatio();
+      float f7 = MathHelper.lerp(f6, f, f2);
+      float f8 = MathHelper.lerp(f6, f1, f2);
+      float f9 = MathHelper.lerp(f6, f3, f5);
+      float f10 = MathHelper.lerp(f6, f4, f5);
+
       RenderFireEvent renderFireEvent = new RenderFireEvent(0.9F);
       Client.getInstance().eventManager.call(renderFireEvent);
 
       for (int i = 0; i < 2; i++) {
-         var1.push();
-         float var20 = -0.5F;
-         float var21 = 0.5F;
-         float var22 = -0.5F;
-         float var23 = 0.5F;
-         float var24 = -0.5F;
-         var1.translate((double) ((float) (-(i * 2 - 1)) * 0.24F), -0.3F, 0.0);
-         var1.rotate(Vector3f.YP.rotationDegrees((float) (i * 2 - 1) * 10.0F));
-         Matrix4f var25 = var1.getLast().getMatrix();
-         var4.begin(7, DefaultVertexFormats.POSITION_COLOR_TEX);
-         var4.pos(var25, -0.5F, -0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(var14, var16)
+         matrixStackIn.push();
+         matrixStackIn.translate((double) ((float) (-(i * 2 - 1)) * 0.24F), -0.3F, 0.0);
+         matrixStackIn.rotate(Vector3f.YP.rotationDegrees((float) (i * 2 - 1) * 10.0F));
+         Matrix4f matrix4f = matrixStackIn.getLast().getMatrix();
+         bufferbuilder.begin(7, DefaultVertexFormats.POSITION_COLOR_TEX);
+         bufferbuilder.pos(matrix4f, -0.5F, -0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(f8, f10)
                .endVertex();
-         var4.pos(var25, 0.5F, -0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(var13, var16)
-               .endVertex();
-         var4.pos(var25, 0.5F, 0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(var13, var15)
-               .endVertex();
-         var4.pos(var25, -0.5F, 0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(var14, var15)
-               .endVertex();
-         var4.finishDrawing();
-         WorldVertexBufferUploader.draw(var4);
-         var1.pop();
+         bufferbuilder.pos(matrix4f, 0.5F, -0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(f7, f10)
+                 .endVertex();
+         bufferbuilder.pos(matrix4f, 0.5F, 0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(f7, f9)
+                 .endVertex();
+         bufferbuilder.pos(matrix4f, -0.5F, 0.5F, -0.5F).color(1.0F, 1.0F, 1.0F, renderFireEvent.getFireHeight()).tex(f8, f9)
+                 .endVertex();
+         bufferbuilder.finishDrawing();
+         WorldVertexBufferUploader.draw(bufferbuilder);
+         matrixStackIn.pop();
       }
 
       RenderSystem.disableBlend();

@@ -60,7 +60,7 @@ public abstract class Class5823 extends Container {
       return this.field25514
          .<Boolean>applyOrElse(
             (var2, var3) -> this.method18191(var2.getBlockState(var3))
-                  ? var1.getDistanceNearest((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
+                  ? var1.getDistanceSq((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
                   : false,
             true
          );

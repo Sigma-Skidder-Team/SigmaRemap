@@ -20,18 +20,18 @@ import org.apache.logging.log4j.Logger;
 public class Class9016 {
    private static final Logger field41228 = LogManager.getLogger();
    private final PriorityQueue<Class2009> field41229 = Queues.newPriorityQueue();
-   private final Queue<Class7828> field41230;
+   private final Queue<RegionRenderCacheBuilder> field41230;
    private final Queue<Runnable> field41231 = Queues.newConcurrentLinkedQueue();
    private volatile int field41232;
    private volatile int field41233;
-   private final Class7828 field41234;
+   private final RegionRenderCacheBuilder field41234;
    private final Class322<Runnable> field41235;
    private final Executor field41236;
    private World field41237;
    private final WorldRenderer field41238;
    private Vector3d field41239 = Vector3d.ZERO;
    private int field41240;
-   private List<Class7828> field41241 = new ArrayList<Class7828>();
+   private List<RegionRenderCacheBuilder> field41241 = new ArrayList<RegionRenderCacheBuilder>();
    public static final RenderType[] field41242 = RenderType.method14349().<RenderType>toArray(new RenderType[0]);
    private static final boolean field41243 = Reflector.field42864.method20245();
    private static final boolean field41244 = Reflector.field42940.exists();
@@ -39,11 +39,11 @@ public class Class9016 {
    private static final boolean field41246 = Reflector.field42895.exists();
    public static int field41247;
 
-   public Class9016(World var1, WorldRenderer var2, Executor var3, boolean var4, Class7828 var5) {
+   public Class9016(World var1, WorldRenderer var2, Executor var3, boolean var4, RegionRenderCacheBuilder var5) {
       this(var1, var2, var3, var4, var5, -1);
    }
 
-   public Class9016(World var1, WorldRenderer var2, Executor var3, boolean var4, Class7828 var5, int var6) {
+   public Class9016(World var1, WorldRenderer var2, Executor var3, boolean var4, RegionRenderCacheBuilder var5, int var6) {
       this.field41237 = var1;
       this.field41238 = var2;
       int var9 = Math.max(
@@ -61,7 +61,7 @@ public class Class9016 {
 
       try {
          for (int var14 = 0; var14 < var12; var14++) {
-            var13.add(new Class7828());
+            var13.add(new RegionRenderCacheBuilder());
          }
       } catch (OutOfMemoryError var17) {
          field41228.warn("Allocated only {}/{} buffers", var13.size(), var12);
@@ -90,7 +90,7 @@ public class Class9016 {
       if (!this.field41230.isEmpty()) {
          Class2009 var3 = this.field41229.poll();
          if (var3 != null) {
-            Class7828 var4 = this.field41230.poll();
+            RegionRenderCacheBuilder var4 = this.field41230.poll();
             this.field41232 = this.field41229.size();
             this.field41233 = this.field41230.size();
             CompletableFuture.runAsync(() -> {
@@ -187,7 +187,7 @@ public class Class9016 {
    public void method33332() {
       while (this.field41241.size() != this.field41240) {
          this.method33323();
-         Class7828 var3 = this.field41230.poll();
+         RegionRenderCacheBuilder var3 = this.field41230.poll();
          if (var3 != null) {
             this.field41241.add(var3);
          }
@@ -233,7 +233,7 @@ public class Class9016 {
    }
 
    // $VF: synthetic method
-   public static Class7828 method33347(Class9016 var0) {
+   public static RegionRenderCacheBuilder method33347(Class9016 var0) {
       return var0.field41234;
    }
 

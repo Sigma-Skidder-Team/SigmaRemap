@@ -7,14 +7,14 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 
-public class Class943 extends TileEntity implements Class942, ITickableTileEntity {
+public class EnderChestTileEntity extends TileEntity implements Class942, ITickableTileEntity {
    private static String[] field5317;
    public float field5318;
    public float field5319;
    public int field5320;
    private int field5321;
 
-   public Class943() {
+   public EnderChestTileEntity() {
       super(TileEntityType.field21424);
    }
 
@@ -109,7 +109,7 @@ public class Class943 extends TileEntity implements Class942, ITickableTileEntit
    public boolean method3768(PlayerEntity var1) {
       return this.world.getTileEntity(this.pos) == this
          ? !(
-            var1.getDistanceNearest((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
+            var1.getDistanceSq((double)this.pos.getX() + 0.5, (double)this.pos.getY() + 0.5, (double)this.pos.getZ() + 0.5)
                > 64.0
          )
          : false;

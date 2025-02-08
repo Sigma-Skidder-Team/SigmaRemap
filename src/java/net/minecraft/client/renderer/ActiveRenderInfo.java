@@ -52,14 +52,14 @@ public class ActiveRenderInfo {
          if (var2 instanceof LivingEntity && ((LivingEntity)var2).isSleeping()) {
             Direction var8 = ((LivingEntity)var2).getBedDirection();
             this.method37501(var8 == null ? 0.0F : var8.getHorizontalAngle() - 180.0F, 0.0F);
-            this.method37500(0.0, 0.3, 0.0);
+            this.movePosition(0.0, 0.3, 0.0);
          }
       } else {
          if (var4) {
             this.method37501(this.yaw + 180.0F, -this.pitch);
          }
 
-         this.method37500(-this.method37499(4.0), 0.0, 0.0);
+         this.movePosition(-this.method37499(4.0), 0.0, 0.0);
       }
    }
 
@@ -70,7 +70,7 @@ public class ActiveRenderInfo {
       }
    }
 
-   private double method37499(double var1) {
+   private double method37499(double startingDistance) {
       for (int var5 = 0; var5 < 8; var5++) {
          float var6 = (float)((var5 & 1) * 2 - 1);
          float var7 = (float)((var5 >> 1 & 1) * 2 - 1);
@@ -78,25 +78,25 @@ public class ActiveRenderInfo {
          var6 *= 0.1F;
          var7 *= 0.1F;
          var8 *= 0.1F;
-         Vector3d var9 = this.pos.add((double)var6, (double)var7, (double)var8);
-         Vector3d var10 = new Vector3d(
-            this.pos.x - (double)this.look.method25269() * var1 + (double)var6 + (double)var8,
-            this.pos.y - (double)this.look.method25270() * var1 + (double)var7,
-            this.pos.z - (double)this.look.method25271() * var1 + (double)var8
+         Vector3d vector3d = this.pos.add((double)var6, (double)var7, (double)var8);
+         Vector3d vector3d1 = new Vector3d(
+            this.pos.x - (double)this.look.method25269() * startingDistance + (double)var6 + (double)var8,
+            this.pos.y - (double)this.look.method25270() * startingDistance + (double)var7,
+            this.pos.z - (double)this.look.method25271() * startingDistance + (double)var8
          );
-         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, RayTraceContext.BlockMode.VISUAL, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
-         if (var11.getType() != RayTraceResult.Type.MISS) {
-            double var12 = var11.getHitVec().method11341(this.pos);
-            if (var12 < var1 && !Client.getInstance().moduleManager.getModuleByClass(CameraNoClip.class).isEnabled()) {
-               var1 = var12;
+         BlockRayTraceResult raytraceresult = this.world.rayTraceBlocks(new RayTraceContext(vector3d, vector3d1, RayTraceContext.BlockMode.VISUAL, RayTraceContext.FluidMode.NONE, this.renderViewEntity));
+         if (raytraceresult.getType() != RayTraceResult.Type.MISS) {
+            double d0 = raytraceresult.getHitVec().distanceTo(this.pos);
+            if (d0 < startingDistance && !Client.getInstance().moduleManager.getModuleByClass(CameraNoClip.class).isEnabled()) {
+               startingDistance = d0;
             }
          }
       }
 
-      return var1;
+      return startingDistance;
    }
 
-   public void method37500(double var1, double var3, double var5) {
+   public void movePosition(double var1, double var3, double var5) {
       double var9 = (double)this.look.method25269() * var1 + (double)this.up.method25269() * var3 + (double)this.left.method25269() * var5;
       double var11 = (double)this.look.method25270() * var1 + (double)this.up.method25270() * var3 + (double)this.left.method25270() * var5;
       double var13 = (double)this.look.method25271() * var1 + (double)this.up.method25271() * var3 + (double)this.left.method25271() * var5;

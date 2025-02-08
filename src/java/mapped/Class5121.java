@@ -22,7 +22,7 @@ public class Class5121 implements Class5119 {
    }
 
    @Override
-   public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
+   public void method15813(MatrixStack var1, IRenderTypeBuffer var2, double var3, double var5, double var7) {
       double var11 = (double) Util.nanoTime();
       if (var11 - this.field23297 > 1.0E8) {
          this.field23297 = var11;
@@ -30,7 +30,7 @@ public class Class5121 implements Class5119 {
          this.field23298 = var13.world.func_234867_d_(var13, var13.getBoundingBox().grow(6.0), var0 -> true).collect(Collectors.<VoxelShape>toList());
       }
 
-      IVertexBuilder var16 = var2.method25597(RenderType.getLines());
+      IVertexBuilder var16 = var2.getBuffer(RenderType.getLines());
 
       for (VoxelShape var15 : this.field23298) {
          WorldRenderer.method895(var1, var16, var15, -var3, -var5, -var7, 1.0F, 1.0F, 1.0F, 1.0F);

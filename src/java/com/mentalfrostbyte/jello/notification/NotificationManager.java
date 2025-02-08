@@ -99,7 +99,7 @@ public class NotificationManager {
                 RenderUtil.drawRect(
                         (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923),
                         (float) (var8 + this.field39924 - 1), var11);
-                RenderUtil.drawPortalBackground(var7, var8, var7 + this.field39923 - this.field39927,
+                RenderUtil.drawBlurredBackground(var7, var8, var7 + this.field39923 - this.field39927,
                         var8 + this.field39924);
                 RenderUtil.drawString(
                         this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2),

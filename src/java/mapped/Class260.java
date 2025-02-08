@@ -13,7 +13,7 @@ public class Class260 extends Class219<SnowGolemEntity, Class2878<SnowGolemEntit
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, SnowGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, SnowGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible() && var4.method4531()) {
          var1.push();
          this.method825().method11197().translateRotate(var1);

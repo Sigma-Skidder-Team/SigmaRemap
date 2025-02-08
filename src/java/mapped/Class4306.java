@@ -82,7 +82,7 @@ public class Class4306 extends CustomGuiScreen {
    public void draw(float partialTicks) {
       float var4 = 0.07F;
       float var5 = 0.3F;
-      RenderUtil.method11436(
+      RenderUtil.drawFilledArc(
             (float) this.xA,
             (float) this.yA,
             (float) this.getWidthA(),

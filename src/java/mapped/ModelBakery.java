@@ -332,18 +332,18 @@ public class ModelBakery {
                List<Pair<String, Class9032>> var15;
                try {
                   var15 = this.field40532
-                     .method582(var11)
+                     .getAllResources(var11)
                      .stream()
                      .map(
                         var1x -> {
-                           try (InputStream var4x = var1x.getFile()) {
-                              return Pair.of(var1x.method7765(), Class9032.method33448(this.field40536, new InputStreamReader(var4x, StandardCharsets.UTF_8)));
+                           try (InputStream var4x = var1x.getInputStream()) {
+                              return Pair.of(var1x.getPackName(), Class9032.method33448(this.field40536, new InputStreamReader(var4x, StandardCharsets.UTF_8)));
                            } catch (Exception var18x) {
                               throw new Class2494(
                                  String.format(
                                     "Exception loading blockstate definition: '%s' in resourcepack: '%s': %s",
-                                    var1x.method7762(),
-                                    var1x.method7765(),
+                                    var1x.getLocation(),
+                                    var1x.getPackName(),
                                     var18x.getMessage()
                                  )
                               );
@@ -519,7 +519,7 @@ public class ModelBakery {
 
    private Class7496 method32849(ResourceLocation var1) throws IOException {
       Object var4 = null;
-      JSonShader var5 = null;
+      IResource var5 = null;
 
       Class7496 var10;
       try {
@@ -543,8 +543,8 @@ public class ModelBakery {
             var4 = new StringReader(var9);
          } else {
             var7 = this.method32852(var1);
-            var5 = this.field40532.getShader(var7);
-            var4 = new InputStreamReader(var5.getFile(), StandardCharsets.UTF_8);
+            var5 = this.field40532.getResource(var7);
+            var4 = new InputStreamReader(var5.getInputStream(), StandardCharsets.UTF_8);
          }
 
          Class7496 var15 = Class7496.method24426((Reader)var4);

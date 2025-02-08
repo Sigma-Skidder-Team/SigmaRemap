@@ -249,7 +249,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public float getStandingEyeHeight(Pose var1, EntitySize var2) {
-      return var2.field39969 * 0.8F;
+      return var2.height * 0.8F;
    }
 
    @Override
@@ -319,7 +319,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                return ActionResultType.SUCCESS;
             }
          } else {
-            if (this.method4381(var5) && this.getHealth() < this.method3075()) {
+            if (this.method4381(var5) && this.getHealth() < this.getMaxHealth()) {
                if (!var1.abilities.isCreativeMode) {
                   var5.shrink(1);
                }
@@ -376,7 +376,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    public float method4380() {
       if (!this.method4369()) {
-         return !this.method4393() ? (float) (Math.PI / 5) : (0.55F - (this.method3075() - this.getHealth()) * 0.02F) * (float) Math.PI;
+         return !this.method4393() ? (float) (Math.PI / 5) : (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float) Math.PI;
       } else {
          return 1.5393804F;
       }

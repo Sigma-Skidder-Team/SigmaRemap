@@ -217,7 +217,7 @@ public class TrueTypeFont implements Font {
         }
     }
 
-    public int method23952() {
+    public int getHeight() {
         return this.fontHeight;
     }
 

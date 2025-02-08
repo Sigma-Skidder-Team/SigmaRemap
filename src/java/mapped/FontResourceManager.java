@@ -18,7 +18,7 @@ public class FontResourceManager implements AutoCloseable {
    private final Map<ResourceLocation, Class1807> field8993 = Maps.newHashMap();
    private final TextureManager field8994;
    private Map<ResourceLocation, ResourceLocation> field8995 = ImmutableMap.of();
-   private final Class268 field8996 = new Class272(this);
+   private final IFutureReloadListener field8996 = new Class272(this);
 
    public FontResourceManager(TextureManager var1) {
       this.field8994 = var1;
@@ -35,7 +35,7 @@ public class FontResourceManager implements AutoCloseable {
       return new FontRenderer(var1 -> this.field8993.getOrDefault(this.field8995.getOrDefault(var1, var1), this.field8992));
    }
 
-   public Class268 getReloadListener() {
+   public IFutureReloadListener getReloadListener() {
       return this.field8996;
    }
 

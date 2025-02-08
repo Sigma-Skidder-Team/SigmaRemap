@@ -126,7 +126,7 @@ public class ScaffoldingBlock extends Block implements IWaterLoggable {
    }
 
    @Override
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (var4.method14950(VoxelShapes.method27426(), var3, true) && !var4.method14949()) {
          return field19180;
       } else {

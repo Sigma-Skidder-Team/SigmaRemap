@@ -96,16 +96,16 @@ public class RenderUtil {
       method11421((int) var0, (int) var1, (int) var0 + (int) var2, (int) var1 + (int) var3, true);
    }
 
-   public static void drawPortalBackground(int var0, int var1, int var2, int var3) {
+   public static void drawBlurredBackground(int var0, int var1, int var2, int var3) {
       method11421(var0, var1, var2, var3, false);
    }
 
    public static void method11421(int var0, int var1, int var2, int var3, boolean var4) {
       if (!var4) {
-         var0 = (int) ((float) var0 * GuiManager.portalScaleFactor);
-         var1 = (int) ((float) var1 * GuiManager.portalScaleFactor);
-         var2 = (int) ((float) var2 * GuiManager.portalScaleFactor);
-         var3 = (int) ((float) var3 * GuiManager.portalScaleFactor);
+         var0 = (int) ((float) var0 * GuiManager.scaleFactor);
+         var1 = (int) ((float) var1 * GuiManager.scaleFactor);
+         var2 = (int) ((float) var2 * GuiManager.scaleFactor);
+         var3 = (int) ((float) var3 * GuiManager.scaleFactor);
       } else {
          float[] var7 = method11416(var0, var1);
          var0 = (int) var7[0];
@@ -202,8 +202,8 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-            GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+            GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.color4f(var8, var9, var10, var14);
       var12.begin(7, DefaultVertexFormats.field43341);
       var12.pos((double) var0, (double) var3, 0.0).endVertex();
@@ -230,8 +230,8 @@ public class RenderUtil {
 
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-            GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+            GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       var4.bindFramebuffer(true);
       var4.framebufferRender((int) var0 - (int) var2, (int) var1 - (int) var3);
       RenderSystem.enableTexture();
@@ -270,8 +270,8 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-            GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+            GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
@@ -307,8 +307,8 @@ public class RenderUtil {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
       RenderSystem.disableAlphaTest();
-      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.field12932,
-            GlStateManager.SourceFactor.ONE, DestFactor.field12936);
+      RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, DestFactor.ONE_MINUS_SRC_ALPHA,
+            GlStateManager.SourceFactor.ONE, DestFactor.ZERO);
       RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();
@@ -405,7 +405,7 @@ public class RenderUtil {
       RenderSystem.disableBlend();
    }
 
-   public static void method11436(float var0, float var1, float var2, int var3) {
+   public static void drawFilledArc(float var0, float var1, float var2, int var3) {
       method11445(var0, var1, 0.0F, 360.0F, var2 - 1.0F, var3);
    }
 
@@ -427,7 +427,7 @@ public class RenderUtil {
       RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
-      GL11.glPointSize(var2 * GuiManager.portalScaleFactor);
+      GL11.glPointSize(var2 * GuiManager.scaleFactor);
       GL11.glBegin(0);
       GL11.glVertex2f(var0, var1);
       GL11.glEnd();
@@ -474,7 +474,7 @@ public class RenderUtil {
       float var15 = (float) (var4 & 0xFF) / 255.0F;
       GL11.glPushMatrix();
       boolean var16 = false;
-      if ((double) GuiManager.portalScaleFactor == 2.0) {
+      if ((double) GuiManager.scaleFactor == 2.0) {
          if (var0 == ResourceRegistry.JelloLightFont20) {
             var0 = ResourceRegistry.JelloLightFont40;
          } else if (var0 == ResourceRegistry.JelloLightFont25) {
@@ -500,11 +500,11 @@ public class RenderUtil {
             int var18 = (int) var17[0];
             int var19 = (int) var17[1];
             GL11.glTranslatef(var1, var2, 0.0F);
-            GL11.glScalef(1.0F / GuiManager.portalScaleFactor, 1.0F / GuiManager.portalScaleFactor,
-                  1.0F / GuiManager.portalScaleFactor);
+            GL11.glScalef(1.0F / GuiManager.scaleFactor, 1.0F / GuiManager.scaleFactor,
+                  1.0F / GuiManager.scaleFactor);
             GL11.glTranslatef(-var1, -var2, 0.0F);
-            var10 = (int) ((float) var10 * GuiManager.portalScaleFactor);
-            var11 = (int) ((float) var11 * GuiManager.portalScaleFactor);
+            var10 = (int) ((float) var10 * GuiManager.scaleFactor);
+            var11 = (int) ((float) var11 * GuiManager.scaleFactor);
          }
       }
 
@@ -838,7 +838,7 @@ public class RenderUtil {
       for (int var7 = 0; var7 < 360; var7 = (int) ((float) var7 + 51.42857F)) {
          float var8 = (float) Math.cos((double) ((float) var7 + var6) * Math.PI / 180.0) * var2;
          float var9 = (float) Math.sin((double) ((float) var7 + var6) * Math.PI / 180.0) * var2;
-         method11436(var0 + var8, var1 + var9, var2 / 4.0F, var3);
+         drawFilledArc(var0 + var8, var1 + var9, var2 / 4.0F, var3);
       }
    }
 
@@ -852,7 +852,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(7);
@@ -945,7 +945,7 @@ public class RenderUtil {
          GL11.glEnable(3042);
          GL11.glDisable(3553);
          GL11.glDisable(2896);
-         GL11.glLineWidth(1.8F * GuiManager.portalScaleFactor);
+         GL11.glLineWidth(1.8F * GuiManager.scaleFactor);
          GL11.glBlendFunc(770, 771);
          GL11.glEnable(2848);
          GL11.glBegin(0);
@@ -1066,7 +1066,7 @@ public class RenderUtil {
       drawImage((float) (var0 + var10), (float) (var1 + var10 + var3), (float) var9, (float) var9,
             ResourceList.floatingCornerPNG, var4);
       GL11.glPopMatrix();
-      drawPortalBackground(var5 - var9, var6 + var10, var5 - var11 + var9, var6 - var10 + var3);
+      drawBlurredBackground(var5 - var9, var6 + var10, var5 - var11 + var9, var6 - var10 + var3);
 
       for (int var12 = 0; var12 < var3; var12 += var9) {
          drawImage((float) (var0 - var11), (float) (var1 + var10 + var12), (float) var9, (float) var9,
@@ -1074,7 +1074,7 @@ public class RenderUtil {
       }
 
       endScissor();
-      drawPortalBackground(var5, var6 - var11, var5 + var2 - var10, var6 + var10);
+      drawBlurredBackground(var5, var6 - var11, var5 + var2 - var10, var6 + var10);
 
       for (int var13 = 0; var13 < var2; var13 += var9) {
          GL11.glPushMatrix();
@@ -1087,7 +1087,7 @@ public class RenderUtil {
       }
 
       endScissor();
-      drawPortalBackground(var5 + var2 - var10, var6 - var11, var0 + var2 + var11, var6 + var3 - var10);
+      drawBlurredBackground(var5 + var2 - var10, var6 - var11, var0 + var2 + var11, var6 + var3 - var10);
 
       for (int var14 = 0; var14 < var3; var14 += var9) {
          GL11.glPushMatrix();
@@ -1100,7 +1100,7 @@ public class RenderUtil {
       }
 
       endScissor();
-      drawPortalBackground(var5 - var10, var6 - var11 + var3 - var9, var5 + var2 - var10, var6 + var3 + var10 * 2);
+      drawBlurredBackground(var5 - var10, var6 - var11 + var3 - var9, var5 + var2 - var10, var6 + var3 + var10 * 2);
 
       for (int var15 = 0; var15 < var2; var15 += var9) {
          GL11.glPushMatrix();
@@ -1224,10 +1224,10 @@ public class RenderUtil {
    }
 
    public static void method11472(float var0, float var1, float var2, float var3, float var4, int var5) {
-      method11436(var0 + var4, var1 + var4, var4, var5);
-      method11436(var0 - var4 + var2, var1 + var4, var4, var5);
-      method11436(var0 + var4, var1 - var4 + var3, var4, var5);
-      method11436(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
+      drawFilledArc(var0 + var4, var1 + var4, var4, var5);
+      drawFilledArc(var0 - var4 + var2, var1 + var4, var4, var5);
+      drawFilledArc(var0 + var4, var1 - var4 + var3, var4, var5);
+      drawFilledArc(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
       drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
       drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
    }
@@ -1291,7 +1291,7 @@ public class RenderUtil {
 
    public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         mc.getTextureManager().bindTexture(TextureManager.field1094);
+         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
          GL11.glPushMatrix();
          GL11.glTranslatef((float) var1, (float) var2, 0.0F);
          GL11.glScalef((float) var3 / 16.0F, (float) var4 / 16.0F, 0.0F);
@@ -1313,8 +1313,8 @@ public class RenderUtil {
          GL11.glAlphaFunc(519, 0.0F);
          RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
-         TextureImpl.method36180();
-         mc.getTextureManager().bindTexture(TextureManager.field1094);
+         TextureImpl.unbind();
+         mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
          RenderHelper.setupGui3DDiffuseLighting();
       }
    }
@@ -1329,14 +1329,14 @@ public class RenderUtil {
       RenderSystem.scalef(var3 / 16.0F, var3 / 16.0F, 1.0F);
       mc.getItemRenderer().method791(var0, 0, 0);
       mc.getItemRenderer().field847 += 1101.0F;
-      TextureImpl.method36180();
-      mc.getTextureManager().bindTexture(TextureManager.field1094);
+      TextureImpl.unbind();
+      mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
       GL11.glPopMatrix();
    }
 
    public static java.awt.Color getColorFromScreen(int mouseX, int mouseY, java.awt.Color var2) {
-      mouseX = (int) ((float) mouseX * GuiManager.portalScaleFactor);
-      mouseY = (int) ((float) mouseY * GuiManager.portalScaleFactor);
+      mouseX = (int) ((float) mouseX * GuiManager.scaleFactor);
+      mouseY = (int) ((float) mouseY * GuiManager.scaleFactor);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
       GL11.glReadPixels(mouseX, Minecraft.getInstance().mainWindow.getFramebufferHeight() - mouseY, 1, 1, 6407, 5120,
@@ -1363,9 +1363,9 @@ public class RenderUtil {
       return !isSuccessful
             ? null
             : new double[] {
-                  (double) (screenCoords.get(0) / GuiManager.portalScaleFactor),
+                  (double) (screenCoords.get(0) / GuiManager.scaleFactor),
                   (double) (((float) mc.framebuffer.framebufferHeight - screenCoords.get(1))
-                        / GuiManager.portalScaleFactor),
+                        / GuiManager.scaleFactor),
                   (double) screenCoords.get(2)
             };
    }

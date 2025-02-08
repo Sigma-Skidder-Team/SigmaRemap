@@ -10,9 +10,9 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, PlayerModel<A
       super(var1);
    }
 
-   public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if ("deadmau5".equals(var4.getName().getString()) && var4.method5370() && !var4.isInvisible()) {
-         IVertexBuilder var13 = var2.method25597(RenderType.getEntitySolid(var4.method5371()));
+         IVertexBuilder var13 = var2.getBuffer(RenderType.getEntitySolid(var4.method5371()));
          int var14 = LivingRenderer.method17883(var4, 0.0F);
 
          for (int var15 = 0; var15 < 2; var15++) {

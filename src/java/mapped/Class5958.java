@@ -12,7 +12,7 @@ public class Class5958 extends Class5957<Class957> {
       super(var1);
    }
 
-   public void method18462(Class957 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method18462(Class957 var1, float var2, MatrixStack var3, IRenderTypeBuffer var4, int var5, int var6) {
       if (var1.method3872() || var1.method3873()) {
          float var9 = !var1.method3872() ? var1.method3875(var2) : var1.method3874(var2);
          double var10 = !var1.method3872() ? 50.0 : 256.0;

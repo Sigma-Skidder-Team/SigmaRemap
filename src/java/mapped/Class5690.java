@@ -18,7 +18,7 @@ public class Class5690 extends Class5651<WolfEntity, Class2859<WolfEntity>> {
       return var1.method4380();
    }
 
-   public void render(WolfEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, Class7733 var5, int var6) {
+   public void render(WolfEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
       if (entityIn.method4375()) {
          float var9 = entityIn.method4376(partialTicks);
          this.entityModel.method11190(var9, var9, var9);

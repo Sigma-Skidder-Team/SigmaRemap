@@ -21,7 +21,7 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
       super(var1);
    }
 
-   public void render(FishingBobberEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(FishingBobberEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       PlayerEntity var9 = var1.method3544();
       if (var9 != null) {
          var4.push();
@@ -32,7 +32,7 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
          Class8892 var10 = var4.getLast();
          Matrix4f var11 = var10.getMatrix();
          Matrix3f var12 = var10.method32362();
-         IVertexBuilder var13 = var5.method25597(field25160);
+         IVertexBuilder var13 = var5.getBuffer(field25160);
          method17922(var13, var11, var12, var6, 0.0F, 0, 0, 1);
          method17922(var13, var11, var12, var6, 1.0F, 0, 1, 1);
          method17922(var13, var11, var12, var6, 1.0F, 1, 1, 0);
@@ -80,7 +80,7 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
-         IVertexBuilder var44 = var5.method25597(RenderType.getLines());
+         IVertexBuilder var44 = var5.getBuffer(RenderType.getLines());
          Matrix4f var45 = var4.getLast().getMatrix();
          byte var46 = 16;
 

@@ -205,12 +205,12 @@ public abstract class AbstractBlock {
 
    @Deprecated
    public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23412(var2, var3);
+      return var1.getShape(var2, var3);
    }
 
    @Deprecated
    public VoxelShape method11995(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return this.method11502(var1, var2, var3, ISelectionContext.method14947());
+      return this.getCollisionShape(var1, var2, var3, ISelectionContext.method14947());
    }
 
    @Deprecated
@@ -254,13 +254,13 @@ public abstract class AbstractBlock {
    }
 
    @Deprecated
-   public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return !this.canCollide ? VoxelShapes.empty() : var1.method23412(var2, var3);
+   public VoxelShape getCollisionShape(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
+      return !this.canCollide ? VoxelShapes.empty() : var1.getShape(var2, var3);
    }
 
    @Deprecated
    public VoxelShape method11635(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      return this.method11502(var1, var2, var3, var4);
+      return this.getCollisionShape(var1, var2, var3, var4);
    }
 
    @Deprecated
@@ -640,11 +640,11 @@ public abstract class AbstractBlock {
        public AbstractBlockState(Block var1, ImmutableMap<Property<?>, Comparable<?>> var2, MapCodec<BlockState> var3) {
           super(var1, var2, var3);
           Properties var6 = var1.field19013;
-          this.field31564 = Properties.method26654(var6).applyAsInt(this.method23457());
-          this.field31565 = var1.isTransparent(this.method23457());
+          this.field31564 = Properties.method26654(var6).applyAsInt(this.getSelf());
+          this.field31565 = var1.isTransparent(this.getSelf());
           this.field31566 = Properties.method26655(var6);
           this.field31567 = Properties.method26643(var6);
-          this.field31568 = (MaterialColor) Properties.method26653(var6).apply(this.method23457());
+          this.field31568 = (MaterialColor) Properties.method26653(var6).apply(this.getSelf());
           this.field31569 = Properties.method26656(var6);
           this.field31570 = Properties.method26657(var6);
           this.field31571 = Properties.method26658(var6);
@@ -657,7 +657,7 @@ public abstract class AbstractBlock {
 
        public void cacheState() {
           if (!this.getBlock().method11582()) {
-             this.field31577 = new Class6486(this.method23457());
+             this.field31577 = new Class6486(this.getSelf());
           }
        }
 
@@ -670,15 +670,15 @@ public abstract class AbstractBlock {
        }
 
        public boolean method23385(IBlockReader var1, BlockPos var2, EntityType<?> var3) {
-          return Properties.method26664(this.getBlock().field19013).method38752(this.method23457(), var1, var2, var3);
+          return Properties.method26664(this.getBlock().field19013).method38752(this.getSelf(), var1, var2, var3);
        }
 
        public boolean method23386(IBlockReader var1, BlockPos var2) {
-          return this.field31577 == null ? this.getBlock().propagatesSkylightDown(this.method23457(), var1, var2) : Class6486.method19652(this.field31577);
+          return this.field31577 == null ? this.getBlock().propagatesSkylightDown(this.getSelf(), var1, var2) : Class6486.method19652(this.field31577);
        }
 
        public int getOpacity(IBlockReader var1, BlockPos var2) {
-          return this.field31577 == null ? this.getBlock().method11996(this.method23457(), var1, var2) : Class6486.method19653(this.field31577);
+          return this.field31577 == null ? this.getBlock().method11996(this.getSelf(), var1, var2) : Class6486.method19653(this.field31577);
        }
 
        public VoxelShape getFaceOcclusionShape(IBlockReader var1, BlockPos var2, Direction var3) {
@@ -688,7 +688,7 @@ public abstract class AbstractBlock {
        }
 
        public VoxelShape getRenderShapeTrue(IBlockReader var1, BlockPos var2) {
-          return this.getBlock().method11503(this.method23457(), var1, var2);
+          return this.getBlock().method11503(this.getSelf(), var1, var2);
        }
 
        public boolean method23390() {
@@ -714,43 +714,43 @@ public abstract class AbstractBlock {
        }
 
        public BlockState rotate(Rotation var1) {
-          return this.getBlock().rotate(this.method23457(), var1);
+          return this.getBlock().rotate(this.getSelf(), var1);
        }
 
        public BlockState method23396(Mirror var1) {
-          return this.getBlock().mirror(this.method23457(), var1);
+          return this.getBlock().mirror(this.getSelf(), var1);
        }
 
        public BlockRenderType getRenderType() {
-          return this.getBlock().method11526(this.method23457());
+          return this.getBlock().method11526(this.getSelf());
        }
 
        public boolean method23398(IBlockReader var1, BlockPos var2) {
-          return this.field31576.method30847(this.method23457(), var1, var2);
+          return this.field31576.method30847(this.getSelf(), var1, var2);
        }
 
        public float method23399(IBlockReader var1, BlockPos var2) {
-          return this.getBlock().method11636(this.method23457(), var1, var2);
+          return this.getBlock().method11636(this.getSelf(), var1, var2);
        }
 
        public boolean method23400(IBlockReader var1, BlockPos var2) {
-          return this.field31572.method30847(this.method23457(), var1, var2);
+          return this.field31572.method30847(this.getSelf(), var1, var2);
        }
 
        public boolean method23401() {
-          return this.getBlock().method11516(this.method23457());
+          return this.getBlock().method11516(this.getSelf());
        }
 
        public int method23402(IBlockReader var1, BlockPos var2, Direction var3) {
-          return this.getBlock().method11514(this.method23457(), var1, var2, var3);
+          return this.getBlock().method11514(this.getSelf(), var1, var2, var3);
        }
 
        public boolean hasComparatorInputOverride() {
-          return this.getBlock().method11648(this.method23457());
+          return this.getBlock().method11648(this.getSelf());
        }
 
        public int method23404(World var1, BlockPos var2) {
-          return this.getBlock().method11649(this.method23457(), var1, var2);
+          return this.getBlock().method11649(this.getSelf(), var1, var2);
        }
 
        public float getBlockHardness(IBlockReader var1, BlockPos var2) {
@@ -758,20 +758,20 @@ public abstract class AbstractBlock {
        }
 
        public float method23406(PlayerEntity var1, IBlockReader var2, BlockPos var3) {
-          return this.getBlock().method11997(this.method23457(), var1, var2, var3);
+          return this.getBlock().method11997(this.getSelf(), var1, var2, var3);
        }
 
        public int method23407(IBlockReader var1, BlockPos var2, Direction var3) {
-          return this.getBlock().method11515(this.method23457(), var1, var2, var3);
+          return this.getBlock().method11515(this.getSelf(), var1, var2, var3);
        }
 
        public PushReaction method23408() {
-          return this.getBlock().method11689(this.method23457());
+          return this.getBlock().method11689(this.getSelf());
        }
 
        public boolean method23409(IBlockReader var1, BlockPos var2) {
           if (this.field31577 == null) {
-             BlockState var5 = this.method23457();
+             BlockState var5 = this.getSelf();
              return !var5.isSolid() ? false : Block.method11550(var5.getRenderShapeTrue(var1, var2));
           } else {
              return this.field31577.field28438;
@@ -782,36 +782,36 @@ public abstract class AbstractBlock {
           return this.field31571;
        }
 
-       public boolean method23411(BlockState var1, Direction var2) {
-          return this.getBlock().method11634(this.method23457(), var1, var2);
+       public boolean isSideInvisible(BlockState var1, Direction var2) {
+          return this.getBlock().method11634(this.getSelf(), var1, var2);
        }
 
-       public VoxelShape method23412(IBlockReader var1, BlockPos var2) {
-          return this.method23413(var1, var2, ISelectionContext.method14947());
+       public VoxelShape getShape(IBlockReader var1, BlockPos var2) {
+          return this.getShape(var1, var2, ISelectionContext.method14947());
        }
 
-       public VoxelShape method23413(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
-          return this.getBlock().getShape(this.method23457(), var1, var2, var3);
+       public VoxelShape getShape(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
+          return this.getBlock().getShape(this.getSelf(), var1, var2, var3);
        }
 
-       public VoxelShape method23414(IBlockReader var1, BlockPos var2) {
+       public VoxelShape getCollisionShape(IBlockReader var1, BlockPos var2) {
           return this.field31577 == null ? this.getCollisionShape(var1, var2, ISelectionContext.method14947()) : this.field31577.field28442;
        }
 
        public VoxelShape getCollisionShape(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
-          return this.getBlock().method11502(this.method23457(), var1, var2, var3);
+          return this.getBlock().getCollisionShape(this.getSelf(), var1, var2, var3);
        }
 
        public VoxelShape method23416(IBlockReader var1, BlockPos var2) {
-          return this.getBlock().method11995(this.method23457(), var1, var2);
+          return this.getBlock().method11995(this.getSelf(), var1, var2);
        }
 
        public VoxelShape method23417(IBlockReader var1, BlockPos var2, ISelectionContext var3) {
-          return this.getBlock().method11635(this.method23457(), var1, var2, var3);
+          return this.getBlock().method11635(this.getSelf(), var1, var2, var3);
        }
 
        public VoxelShape method23418(IBlockReader var1, BlockPos var2) {
-          return this.getBlock().method11938(this.method23457(), var1, var2);
+          return this.getBlock().method11938(this.getSelf(), var1, var2);
        }
 
        public final boolean method23419(IBlockReader var1, BlockPos var2, Entity var3) {
@@ -837,11 +837,11 @@ public abstract class AbstractBlock {
        }
 
        public boolean method23422(World var1, BlockPos var2, int var3, int var4) {
-          return this.getBlock().method11647(this.method23457(), var1, var2, var3, var4);
+          return this.getBlock().method11647(this.getSelf(), var1, var2, var3, var4);
        }
 
        public void neighborChanged(World var1, BlockPos var2, Block var3, BlockPos var4, boolean var5) {
-          this.getBlock().method11506(this.method23457(), var1, var2, var3, var4, var5);
+          this.getBlock().method11506(this.getSelf(), var1, var2, var3, var4, var5);
        }
 
        public final void method23424(IWorld var1, BlockPos var2, int var3) {
@@ -855,7 +855,7 @@ public abstract class AbstractBlock {
           for (Direction var11 : field19003) {
              var7.method8377(var2, var11);
              BlockState var12 = var1.getBlockState(var7);
-             BlockState var13 = var12.method23439(var11.getOpposite(), this.method23457(), var1, var7, var2);
+             BlockState var13 = var12.method23439(var11.getOpposite(), this.getSelf(), var1, var7, var2);
              Block.method11544(var12, var13, var1, var7, var3, var4);
           }
        }
@@ -865,80 +865,80 @@ public abstract class AbstractBlock {
        }
 
        public void updateDiagonalNeighbors(IWorld var1, BlockPos var2, int var3, int var4) {
-          this.getBlock().method11618(this.method23457(), var1, var2, var3, var4);
+          this.getBlock().method11618(this.getSelf(), var1, var2, var3, var4);
        }
 
        public void method23428(World var1, BlockPos var2, BlockState var3, boolean var4) {
-          this.getBlock().onBlockAdded(this.method23457(), var1, var2, var3, var4);
+          this.getBlock().onBlockAdded(this.getSelf(), var1, var2, var3, var4);
        }
 
        public void onReplaced(World var1, BlockPos var2, BlockState var3, boolean var4) {
-          this.getBlock().onReplaced(this.method23457(), var1, var2, var3, var4);
+          this.getBlock().onReplaced(this.getSelf(), var1, var2, var3, var4);
        }
 
        public void method23430(ServerWorld var1, BlockPos var2, Random var3) {
-          this.getBlock().tick(this.method23457(), var1, var2, var3);
+          this.getBlock().tick(this.getSelf(), var1, var2, var3);
        }
 
        public void method23431(ServerWorld var1, BlockPos var2, Random var3) {
-          this.getBlock().randomTick(this.method23457(), var1, var2, var3);
+          this.getBlock().randomTick(this.getSelf(), var1, var2, var3);
        }
 
        public void method23432(World var1, BlockPos var2, Entity var3) {
-          this.getBlock().onEntityCollision(this.method23457(), var1, var2, var3);
+          this.getBlock().onEntityCollision(this.getSelf(), var1, var2, var3);
        }
 
        public void method23433(ServerWorld var1, BlockPos var2, ItemStack var3) {
-          this.getBlock().method11965(this.method23457(), var1, var2, var3);
+          this.getBlock().method11965(this.getSelf(), var1, var2, var3);
        }
 
        public List<ItemStack> method23434(Class9464 var1) {
-          return this.getBlock().method11697(this.method23457(), var1);
+          return this.getBlock().method11697(this.getSelf(), var1);
        }
 
        public ActionResultType onBlockActivated(World var1, PlayerEntity var2, Hand var3, BlockRayTraceResult var4) {
-          return this.getBlock().onBlockActivated(this.method23457(), var1, var4.getPos(), var2, var3, var4);
+          return this.getBlock().onBlockActivated(this.getSelf(), var1, var4.getPos(), var2, var3, var4);
        }
 
        public void onBlockClicked(World var1, BlockPos var2, PlayerEntity var3) {
-          this.getBlock().onBlockClicked(this.method23457(), var1, var2, var3);
+          this.getBlock().onBlockClicked(this.getSelf(), var1, var2, var3);
        }
 
        public boolean method23437(IBlockReader var1, BlockPos var2) {
-          return this.field31573.method30847(this.method23457(), var1, var2);
+          return this.field31573.method30847(this.getSelf(), var1, var2);
        }
 
        public boolean method23438(IBlockReader var1, BlockPos var2) {
-          return this.field31574.method30847(this.method23457(), var1, var2);
+          return this.field31574.method30847(this.getSelf(), var1, var2);
        }
 
        public BlockState method23439(Direction var1, BlockState var2, IWorld var3, BlockPos var4, BlockPos var5) {
-          return this.getBlock().updatePostPlacement(this.method23457(), var1, var2, var3, var4, var5);
+          return this.getBlock().updatePostPlacement(this.getSelf(), var1, var2, var3, var4, var5);
        }
 
        public boolean method23440(IBlockReader var1, BlockPos var2, PathType var3) {
-          return this.getBlock().allowsMovement(this.method23457(), var1, var2, var3);
+          return this.getBlock().allowsMovement(this.getSelf(), var1, var2, var3);
        }
 
        public boolean method23441(BlockItemUseContext var1) {
-          return this.getBlock().method11497(this.method23457(), var1);
+          return this.getBlock().method11497(this.getSelf(), var1);
        }
 
        public boolean method23442(Fluid var1) {
-          return this.getBlock().method11650(this.method23457(), var1);
+          return this.getBlock().method11650(this.getSelf(), var1);
        }
 
        public boolean isValidPosition(IWorldReader var1, BlockPos var2) {
-          return this.getBlock().isValidPosition(this.method23457(), var1, var2);
+          return this.getBlock().isValidPosition(this.getSelf(), var1, var2);
        }
 
        public boolean method23444(IBlockReader var1, BlockPos var2) {
-          return this.field31575.method30847(this.method23457(), var1, var2);
+          return this.field31575.method30847(this.getSelf(), var1, var2);
        }
 
        @Nullable
        public Class949 method23445(World var1, BlockPos var2) {
-          return this.getBlock().method11528(this.method23457(), var1, var2);
+          return this.getBlock().method11528(this.getSelf(), var1, var2);
        }
 
        public boolean isIn(ITag<Block> var1) {
@@ -954,19 +954,19 @@ public abstract class AbstractBlock {
        }
 
        public FluidState getFluidState() {
-          return this.getBlock().getFluidState(this.method23457());
+          return this.getBlock().getFluidState(this.getSelf());
        }
 
        public boolean method23450() {
-          return this.getBlock().ticksRandomly(this.method23457());
+          return this.getBlock().ticksRandomly(this.getSelf());
        }
 
        public long method23451(BlockPos var1) {
-          return this.getBlock().method11691(this.method23457(), var1);
+          return this.getBlock().method11691(this.getSelf(), var1);
        }
 
        public SoundType getSoundType() {
-          return this.getBlock().method11580(this.method23457());
+          return this.getBlock().method11580(this.getSelf());
        }
 
        public void method23453(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
@@ -978,14 +978,14 @@ public abstract class AbstractBlock {
        }
 
        public boolean method23455(IBlockReader var1, BlockPos var2, Direction var3, Class2156 var4) {
-          return this.field31577 == null ? var4.method8876(this.method23457(), var1, var2, var3) : this.field31577.method19649(var3, var4);
+          return this.field31577 == null ? var4.method8876(this.getSelf(), var1, var2, var3) : this.field31577.method19649(var3, var4);
        }
 
        public boolean method23456(IBlockReader var1, BlockPos var2) {
-          return this.field31577 == null ? Block.method11550(this.method23414(var1, var2)) : this.field31577.field28445;
+          return this.field31577 == null ? Block.method11550(this.getCollisionShape(var1, var2)) : this.field31577.field28445;
        }
 
-       public abstract BlockState method23457();
+       public abstract BlockState getSelf();
 
        public boolean method23458() {
           return this.field31570;

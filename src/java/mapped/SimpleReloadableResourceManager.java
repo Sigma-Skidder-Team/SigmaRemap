@@ -21,8 +21,8 @@ import java.util.stream.Stream;
 public class SimpleReloadableResourceManager implements IReloadableResourceManager {
    private static final Logger field723 = LogManager.getLogger();
    private final Map<String, Class1817> field724 = Maps.newHashMap();
-   private final List<Class268> field725 = Lists.newArrayList();
-   private final List<Class268> field726 = Lists.newArrayList();
+   private final List<IFutureReloadListener> field725 = Lists.newArrayList();
+   private final List<IFutureReloadListener> field726 = Lists.newArrayList();
    private final Set<String> field727 = Sets.newLinkedHashSet();
    private final List<IResourcePack> field728 = Lists.newArrayList();
    private final ResourcePackType field729;
@@ -47,42 +47,42 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    }
 
    @Override
-   public Set<String> method579() {
+   public Set<String> getResourceNamespaces() {
       return this.field727;
    }
 
    @Override
-   public JSonShader getShader(ResourceLocation var1) throws IOException {
+   public IResource getResource(ResourceLocation var1) throws IOException {
       IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
       } else {
-         return var4.getShader(var1);
+         return var4.getResource(var1);
       }
    }
 
    @Override
-   public boolean method581(ResourceLocation var1) {
+   public boolean hasResource(ResourceLocation var1) {
       IResourceManager var4 = this.field724.get(var1.getNamespace());
-      return var4 == null ? false : var4.method581(var1);
+      return var4 == null ? false : var4.hasResource(var1);
    }
 
    @Override
-   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
+   public List<IResource> getAllResources(ResourceLocation var1) throws IOException {
       IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
       } else {
-         return var4.method582(var1);
+         return var4.getAllResources(var1);
       }
    }
 
    @Override
-   public Collection<ResourceLocation> method583(String var1, Predicate<String> var2) {
+   public Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2) {
       HashSet var5 = Sets.newHashSet();
 
       for (Class1817 var7 : this.field724.values()) {
-         var5.addAll(var7.method583(var1, var2));
+         var5.addAll(var7.getAllResourceLocations(var1, var2));
       }
 
       ArrayList var8 = Lists.newArrayList(var5);
@@ -103,12 +103,12 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    }
 
    @Override
-   public void addReloadListener(Class268 var1) {
+   public void addReloadListener(IFutureReloadListener var1) {
       this.field725.add(var1);
       this.field726.add(var1);
    }
 
-   public Class8335 method590(Executor var1, Executor var2, List<Class268> var3, CompletableFuture<Unit> var4) {
+   public Class8335 method590(Executor var1, Executor var2, List<IFutureReloadListener> var3, CompletableFuture<Unit> var4) {
       Object var7;
       if (!field723.isDebugEnabled()) {
          var7 = Class8337.method29228(this, Lists.newArrayList(var3), var1, var2, var4);
@@ -140,7 +140,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    }
 
    @Override
-   public Stream<IResourcePack> method584() {
+   public Stream<IResourcePack> getResourcePackStream() {
       return this.field728.stream();
    }
 

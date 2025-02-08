@@ -33,10 +33,10 @@ public class Class2580 extends LanguageMap {
          var5 |= var7.method8551();
          String var8 = String.format("lang/%s.json", var7.getCode());
 
-         for (String var10 : var0.method579()) {
+         for (String var10 : var0.getResourceNamespaces()) {
             try {
                ResourceLocation var11 = new ResourceLocation(var10, var8);
-               method10783(var0.method582(var11), var4);
+               method10783(var0.getAllResources(var11), var4);
                Class8043.method27618(var0, var7.getCode(), var4);
             } catch (FileNotFoundException var12) {
             } catch (Exception var13) {
@@ -48,9 +48,9 @@ public class Class2580 extends LanguageMap {
       return new Class2580(ImmutableMap.copyOf(var4), var5);
    }
 
-   private static void method10783(List<JSonShader> var0, Map<String, String> var1) {
-      for (JSonShader var5 : var0) {
-         try (InputStream var6 = var5.getFile()) {
+   private static void method10783(List<IResource> var0, Map<String, String> var1) {
+      for (IResource var5 : var0) {
+         try (InputStream var6 = var5.getInputStream()) {
             LanguageMap.func_240593_a_(var6, var1::put);
          } catch (IOException var19) {
             field16800.warn("Failed to load translations from {}", var5, var19);

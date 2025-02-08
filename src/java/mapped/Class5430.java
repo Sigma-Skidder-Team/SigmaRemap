@@ -2,14 +2,14 @@ package mapped;
 
 public class Class5430 implements IVertexBuilder {
    private static String[] field24166;
-   private Class7735 field24167 = null;
+   private IRenderTypeBuffer.Impl field24167 = null;
 
-   public Class5430(Class7735 var1) {
+   public Class5430(IRenderTypeBuffer.Impl var1) {
       this.field24167 = var1;
    }
 
    @Override
-   public Class7735 method17049() {
+   public IRenderTypeBuffer.Impl method17049() {
       return this.field24167;
    }
 

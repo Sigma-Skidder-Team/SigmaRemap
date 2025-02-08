@@ -71,7 +71,7 @@ public class JelloMaps extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         MultiUtilities.method17742();
+         MultiUtilities.resetShaders();
          field21033.displayGuiScreen(null);
       }
    }

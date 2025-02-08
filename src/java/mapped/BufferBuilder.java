@@ -54,7 +54,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    private int[] field24139 = new int[4];
    private IntBuffer field24140;
    private FloatBuffer field24141;
-   private Class7735 field24142;
+   private IRenderTypeBuffer.Impl field24142;
 
    public BufferBuilder(int var1) {
       this.field24113 = GLAllocation.method22266(var1 * 4);
@@ -707,11 +707,11 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public Class7735 method17049() {
+   public IRenderTypeBuffer.Impl method17049() {
       return this.field24142;
    }
 
-   public void method17086(Class7735 var1) {
+   public void method17086(IRenderTypeBuffer.Impl var1) {
       this.field24142 = var1;
    }
 

@@ -33,12 +33,12 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public Set<String> method579() {
+   public Set<String> getResourceNamespaces() {
       return ImmutableSet.of(this.field9816);
    }
 
    @Override
-   public JSonShader getShader(ResourceLocation var1) throws IOException {
+   public IResource getResource(ResourceLocation var1) throws IOException {
       this.method8064(var1);
       IResourcePack var4 = null;
       ResourceLocation var5 = method8066(var1);
@@ -63,7 +63,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public boolean method581(ResourceLocation var1) {
+   public boolean hasResource(ResourceLocation var1) {
       if (!this.method8065(var1)) {
          return false;
       } else {
@@ -94,7 +94,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
+   public List<IResource> getAllResources(ResourceLocation var1) throws IOException {
       this.method8064(var1);
       ArrayList var4 = Lists.newArrayList();
       ResourceLocation var5 = method8066(var1);
@@ -114,7 +114,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public Collection<ResourceLocation> method583(String var1, Predicate<String> var2) {
+   public Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2) {
       ArrayList var5 = Lists.newArrayList();
 
       for (IResourcePack var7 : this.field9814) {
@@ -126,7 +126,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public Stream<IResourcePack> method584() {
+   public Stream<IResourcePack> getResourcePackStream() {
       return this.field9814.stream();
    }
 

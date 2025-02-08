@@ -118,7 +118,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       quaternion1.conjugate();
       entityrenderermanager.setCameraOrientation(quaternion1);
       entityrenderermanager.setRenderShadow(false);
-      Class7735 irendertypebuffer$impl = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
+      IRenderTypeBuffer.Impl irendertypebuffer$impl = Minecraft.getInstance().getRenderTypeBuffers().getBufferSource();
       RenderSystem.runAsFancy(() ->
       {
          entityrenderermanager.renderEntityStatic(livingEntity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, matrixstack, irendertypebuffer$impl, 15728880);

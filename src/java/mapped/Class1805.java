@@ -25,12 +25,12 @@ public class Class1805 implements Closeable {
    }
 
    public static Class1805 method7875(IResourceManager var0, ResourceLocation var1) {
-      try (JSonShader var4 = var0.getShader(var1)) {
-         NativeImage var6 = NativeImage.method7879(var4.getFile());
+      try (IResource var4 = var0.getResource(var1)) {
+         NativeImage var6 = NativeImage.method7879(var4.getInputStream());
          Class9620 var7 = null;
 
          try {
-            var7 = var4.<Class9620>method7764(Class9620.field44993);
+            var7 = var4.<Class9620>getMetadata(Class9620.field44993);
          } catch (RuntimeException var19) {
             Class293.method1148().warn("Failed reading metadata of: {}", var1, var19);
          }

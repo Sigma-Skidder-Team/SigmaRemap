@@ -66,7 +66,7 @@ public class SpawnEggItem extends Item {
          }
 
          BlockPos var12;
-         if (!var8.method23414(var4, var6).isEmpty()) {
+         if (!var8.getCollisionShape(var4, var6).isEmpty()) {
             var12 = var6.offset(var7);
          } else {
             var12 = var6;

@@ -45,26 +45,26 @@ public class Class9768<T> {
          () -> {
             Map<ResourceLocation, Class6879> var4 = Maps.newHashMap();
 
-            for (ResourceLocation var6 : var1.method583(this.field45706, var0 -> var0.endsWith(".json"))) {
+            for (ResourceLocation var6 : var1.getAllResourceLocations(this.field45706, var0 -> var0.endsWith(".json"))) {
                String var7 = var6.getPath();
                ResourceLocation var8 = new ResourceLocation(var6.getNamespace(), var7.substring(this.field45706.length() + 1, var7.length() - field45704));
 
                try {
-                  for (JSonShader var10 : var1.method582(var6)) {
+                  for (IResource var10 : var1.getAllResources(var6)) {
                      try (
-                             InputStream var11 = var10.getFile();
+                             InputStream var11 = var10.getInputStream();
                              BufferedReader var13 = new BufferedReader(new InputStreamReader(var11, StandardCharsets.UTF_8));
                      ) {
                         JsonObject var15 = JSONUtils.<JsonObject>method32796(field45703, var13, JsonObject.class);
                         if (var15 == null) {
                            field45702.error(
-                              "Couldn't load {} tag list {} from {} in data pack {} as it is empty or null", this.field45707, var8, var6, var10.method7765()
+                              "Couldn't load {} tag list {} from {} in data pack {} as it is empty or null", this.field45707, var8, var6, var10.getPackName()
                            );
                         } else {
-                           var4.computeIfAbsent(var8, var0 -> Class6879.method20942()).method20950(var15, var10.method7765());
+                           var4.computeIfAbsent(var8, var0 -> Class6879.method20942()).method20950(var15, var10.getPackName());
                         }
                      } catch (IOException | RuntimeException var59) {
-                        field45702.error("Couldn't read {} tag list {} from {} in data pack {}", this.field45707, var8, var6, var10.method7765(), var59);
+                        field45702.error("Couldn't read {} tag list {} from {} in data pack {}", this.field45707, var8, var6, var10.getPackName(), var59);
                      } finally {
                         IOUtils.closeQuietly(var10);
                      }

@@ -72,7 +72,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static BlockState method11538(BlockState var0, BlockState var1, World var2, BlockPos var3) {
-      VoxelShape var6 = VoxelShapes.method27434(var0.method23414(var2, var3), var1.method23414(var2, var3), IBooleanFunction.field44039)
+      VoxelShape var6 = VoxelShapes.method27434(var0.getCollisionShape(var2, var3), var1.getCollisionShape(var2, var3), IBooleanFunction.field44039)
          .withOffset((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
 
       for (Entity var8 : var2.method7181((Entity)null, var6.getBoundingBox())) {
@@ -150,7 +150,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       Client.getInstance().eventManager.call(var8);
       if (!var8.isCancelled()) {
          if (!var8.method13971()) {
-            if (!var0.method23411(var7, var3)) {
+            if (!var0.isSideInvisible(var7, var3)) {
                if (!var7.isSolid()) {
                   return true;
                } else {
@@ -201,7 +201,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public boolean propagatesSkylightDown(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return !method11550(var1.method23412(var2, var3)) && var1.getFluidState().isEmpty();
+      return !method11550(var1.getShape(var2, var3)) && var1.getFluidState().isEmpty();
    }
 
    public void animateTick(BlockState var1, World var2, BlockPos var3, Random var4) {
@@ -336,7 +336,7 @@ public class Block extends AbstractBlock implements IItemProvider {
       return this.field19010;
    }
 
-   public float method11573() {
+   public float getJumpFactor() {
       return this.field19011;
    }
 

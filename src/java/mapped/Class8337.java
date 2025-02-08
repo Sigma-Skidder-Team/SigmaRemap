@@ -17,25 +17,25 @@ public class Class8337<S> implements Class8335 {
    public final IResourceManager field35844;
    public final CompletableFuture<Unit> field35845 = new CompletableFuture<Unit>();
    public final CompletableFuture<List<S>> field35846;
-   private final Set<Class268> field35847;
+   private final Set<IFutureReloadListener> field35847;
    private final int field35848;
    private int field35849;
    private int field35850;
    private final AtomicInteger field35851 = new AtomicInteger();
    private final AtomicInteger field35852 = new AtomicInteger();
 
-   public static Class8337<Void> method29228(IResourceManager var0, List<Class268> var1, Executor var2, Executor var3, CompletableFuture<Unit> var4) {
+   public static Class8337<Void> method29228(IResourceManager var0, List<IFutureReloadListener> var1, Executor var2, Executor var3, CompletableFuture<Unit> var4) {
       return new Class8337<Void>(
          var2,
          var3,
          var0,
          var1,
-         (var1x, var2x, var3x, var4x, var5) -> var3x.method777(var1x, var2x, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var2, var5),
+         (var1x, var2x, var3x, var4x, var5) -> var3x.reload(var1x, var2x, EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var2, var5),
          var4
       );
    }
 
-   public Class8337(Executor var1, Executor var2, IResourceManager var3, List<Class268> var4, Class9663<S> var5, CompletableFuture<Unit> var6) {
+   public Class8337(Executor var1, Executor var2, IResourceManager var3, List<IFutureReloadListener> var4, Class9663<S> var5, CompletableFuture<Unit> var6) {
       this.field35844 = var3;
       this.field35848 = var4.size();
       this.field35851.incrementAndGet();
@@ -44,7 +44,7 @@ public class Class8337<S> implements Class8335 {
       CompletableFuture var10 = var6;
       this.field35847 = Sets.newHashSet(var4);
 
-      for (Class268 var12 : var4) {
+      for (IFutureReloadListener var12 : var4) {
          CompletableFuture var14 = var5.method37714(new Class7123(this, var2, var12, var10), var3, var12, var2x -> {
             this.field35851.incrementAndGet();
             var1.execute(() -> {

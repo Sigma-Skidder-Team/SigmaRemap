@@ -13,7 +13,7 @@ public class Class5722 extends EntityRenderer<EvokerFangsEntity> {
       super(var1);
    }
 
-   public void render(EvokerFangsEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(EvokerFangsEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
       float var9 = var1.method3584(var3);
       if (var9 != 0.0F) {
          float var10 = 2.0F;
@@ -28,7 +28,7 @@ public class Class5722 extends EntityRenderer<EvokerFangsEntity> {
          var4.translate(0.0, -0.626F, 0.0);
          var4.scale(0.5F, 0.5F, 0.5F);
          this.field25121.setRotationAngles(var1, var9, 0.0F, 0.0F, var1.rotationYaw, var1.rotationPitch);
-         IVertexBuilder var12 = var5.method25597(this.field25121.method11028(field25120));
+         IVertexBuilder var12 = var5.getBuffer(this.field25121.method11028(field25120));
          this.field25121.render(var4, var12, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
          var4.pop();
          super.render(var1, var2, var3, var4, var5, var6);

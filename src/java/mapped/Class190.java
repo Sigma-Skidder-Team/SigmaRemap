@@ -18,32 +18,32 @@ public enum Class190 implements IResourceManager {
    private static final Class190[] field722 = new Class190[]{field721};
 
    @Override
-   public Set<String> method579() {
+   public Set<String> getResourceNamespaces() {
       return ImmutableSet.of();
    }
 
    @Override
-   public JSonShader getShader(ResourceLocation var1) throws IOException {
+   public IResource getResource(ResourceLocation var1) throws IOException {
       throw new FileNotFoundException(var1.toString());
    }
 
    @Override
-   public boolean method581(ResourceLocation var1) {
+   public boolean hasResource(ResourceLocation var1) {
       return false;
    }
 
    @Override
-   public List<JSonShader> method582(ResourceLocation var1) {
+   public List<IResource> getAllResources(ResourceLocation var1) {
       return ImmutableList.of();
    }
 
    @Override
-   public Collection<ResourceLocation> method583(String var1, Predicate<String> var2) {
+   public Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2) {
       return ImmutableSet.of();
    }
 
    @Override
-   public Stream<IResourcePack> method584() {
+   public Stream<IResourcePack> getResourcePackStream() {
       return Stream.<IResourcePack>of();
    }
 }

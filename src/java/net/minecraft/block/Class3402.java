@@ -129,7 +129,7 @@ public class Class3402 extends Block {
 
    public static boolean method12034(IBlockReader var0, BlockPos var1, Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return Block.method11549(var5.method23414(var0, var1), var2.getOpposite());
+      return Block.method11549(var5.getCollisionShape(var0, var1), var2.getOpposite());
    }
 
    private BlockState method12035(BlockState var1, IBlockReader var2, BlockPos var3) {

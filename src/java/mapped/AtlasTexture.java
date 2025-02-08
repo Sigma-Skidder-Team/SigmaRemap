@@ -312,9 +312,9 @@ public class AtlasTexture extends Texture implements Class288 {
                ResourceLocation var6x = this.method1096(var8);
 
                Class9431 var12;
-               try (JSonShader var7 = var1.getShader(var6x)) {
-                  Class7756 var9 = new Class7756(var7.toString(), var7.getFile());
-                  Class7788 var10 = var7.<Class7788>method7764(Class7788.field33411);
+               try (IResource var7 = var1.getResource(var6x)) {
+                  Class7756 var9 = new Class7756(var7.toString(), var7.getInputStream());
+                  Class7788 var10 = var7.<Class7788>getMetadata(Class7788.field33411);
                   if (var10 == null) {
                      var10 = Class7788.field33412;
                   }
@@ -365,8 +365,8 @@ public class AtlasTexture extends Texture implements Class288 {
    private TextureAtlasSprite method1095(IResourceManager var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7) {
       ResourceLocation var10 = this.method1096(var2.method36195());
 
-      try (JSonShader var11 = var1.getShader(var10)) {
-         NativeImage var13 = NativeImage.method7879(var11.getFile());
+      try (IResource var11 = var1.getResource(var10)) {
+         NativeImage var13 = NativeImage.method7879(var11.getInputStream());
          TextureAtlasSprite var14 = new TextureAtlasSprite(this, var2, var5, var3, var4, var6, var7, var13);
          var14.method7498(var1);
          return var14;
@@ -590,9 +590,9 @@ public class AtlasTexture extends Texture implements Class288 {
          ResourceLocation var9 = this.method1096(var8);
 
          try {
-            JSonShader var10 = var2.getShader(var9);
+            IResource var10 = var2.getResource(var9);
             if (var10 != null) {
-               InputStream var11 = var10.getFile();
+               InputStream var11 = var10.getInputStream();
                if (var11 != null) {
                   Dimension var12 = Class8684.method31285(var11, "png");
                   var11.close();

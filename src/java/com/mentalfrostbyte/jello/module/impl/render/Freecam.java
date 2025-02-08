@@ -151,12 +151,12 @@ public class Freecam extends Module {
     @EventTarget
     private void method16643(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() != mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
-                if (var1.getKey() != mc.gameSettings.keyBindJump.inputMappingsInput.keyCode) {
-                    if (var1.getKey() != mc.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
-                        if (var1.getKey() != mc.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
-                            if (var1.getKey() != mc.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
-                                if (var1.getKey() == mc.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
+            if (var1.getKey() != mc.gameSettings.keyBindSneak.keyCode.keyCode) {
+                if (var1.getKey() != mc.gameSettings.keyBindJump.keyCode.keyCode) {
+                    if (var1.getKey() != mc.gameSettings.keyBindForward.keyCode.keyCode) {
+                        if (var1.getKey() != mc.gameSettings.keyBindBack.keyCode.keyCode) {
+                            if (var1.getKey() != mc.gameSettings.keyBindLeft.keyCode.keyCode) {
+                                if (var1.getKey() == mc.gameSettings.keyBindRight.keyCode.keyCode) {
                                     var1.setCancelled(true);
                                     this.field23829 = true;
                                 }
@@ -189,12 +189,12 @@ public class Freecam extends Module {
     @EventTarget
     private void method16644(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() != mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
-                if (var1.getMouseButton() != mc.gameSettings.keyBindJump.inputMappingsInput.keyCode) {
-                    if (var1.getMouseButton() != mc.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
-                        if (var1.getMouseButton() != mc.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
-                            if (var1.getMouseButton() != mc.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
-                                if (var1.getMouseButton() == mc.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
+            if (var1.getMouseButton() != mc.gameSettings.keyBindSneak.keyCode.keyCode) {
+                if (var1.getMouseButton() != mc.gameSettings.keyBindJump.keyCode.keyCode) {
+                    if (var1.getMouseButton() != mc.gameSettings.keyBindForward.keyCode.keyCode) {
+                        if (var1.getMouseButton() != mc.gameSettings.keyBindBack.keyCode.keyCode) {
+                            if (var1.getMouseButton() != mc.gameSettings.keyBindLeft.keyCode.keyCode) {
+                                if (var1.getMouseButton() == mc.gameSettings.keyBindRight.keyCode.keyCode) {
                                     var1.setCancelled(true);
                                     this.field23829 = false;
                                 }
@@ -273,8 +273,8 @@ public class Freecam extends Module {
                     double var5 = var4.x;
                     double var7 = var4.y;
                     double var9 = var4.z;
-                    float var11 = PlayerEntity.STANDING_SIZE.field39968;
-                    float var12 = PlayerEntity.STANDING_SIZE.field39969;
+                    float var11 = PlayerEntity.STANDING_SIZE.width;
+                    float var12 = PlayerEntity.STANDING_SIZE.height;
                     mc.player
                             .setBoundingBox(new AxisAlignedBB(var5 - (double) var11, var7, var9 - (double) var11, var5 + (double) var11, var7 + (double) var12, var9 + (double) var11));
                     var1.setCancelled(true);

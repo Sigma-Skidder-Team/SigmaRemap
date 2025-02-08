@@ -120,7 +120,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       BlockPos var32 = this.getPosition();
       BlockState var6 = this.world.getBlockState(var32);
       if (!var6.isAir() && !var3) {
-         VoxelShape var7 = var6.method23414(this.world, var32);
+         VoxelShape var7 = var6.getCollisionShape(this.world, var32);
          if (!var7.isEmpty()) {
             Vector3d var8 = this.getPositionVec();
 

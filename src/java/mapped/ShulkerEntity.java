@@ -357,7 +357,7 @@ public class ShulkerEntity extends Class1056 implements IMob {
       if (!super.attackEntityFrom(source, var2)) {
          return false;
       } else {
-         if ((double)this.getHealth() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {
+         if ((double)this.getHealth() < (double)this.getMaxHealth() * 0.5 && this.rand.nextInt(4) == 0) {
             this.method4846();
          }
 
