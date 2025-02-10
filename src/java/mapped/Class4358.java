@@ -67,7 +67,7 @@ public class Class4358 extends Class4247 {
          var16.doThis((var2x, var3x) -> {
             for (Entry var7 : GuiManager.screenToScreenName.entrySet()) {
                Class6984 var8 = new Class6984((Class<? extends Screen>) var7.getKey());
-               if (var8.method21596().equals(var16.method13257()) && !this.field21311) {
+               if (var8.method21596().equals(var16.getName()) && !this.field21311) {
                   this.field21309 = var8;
                   this.field21311 = true;
                   break;

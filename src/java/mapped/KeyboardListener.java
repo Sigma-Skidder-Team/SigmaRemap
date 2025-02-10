@@ -290,7 +290,7 @@ public class KeyboardListener {
 
    public void onKeyEvent(long windowPointer, int key, int scanCode, int action, int modifiers) {
       if (windowPointer == this.mc.getMainWindow().getHandle()) {
-         if (Client.getInstance().guiManager.method33480() != null) {
+         if (Client.getInstance().guiManager.getCurrentScreen() != null) {
             Client.getInstance().guiManager.method33453(key, action);
             return;
          }
@@ -461,7 +461,7 @@ public class KeyboardListener {
 
    private void method36346(long var1, int var3, int var4) {
       if (var1 == this.mc.getMainWindow().getHandle()) {
-         if (Client.getInstance().guiManager.method33480() != null) {
+         if (Client.getInstance().guiManager.getCurrentScreen() != null) {
             Client.getInstance().guiManager.method33454(var3, var4);
             return;
          }

@@ -132,8 +132,8 @@ public abstract class Widget extends AbstractGui implements Class1190, IGuiEvent
    public boolean mouseClicked(double var1, double var3, int var5) {
       if (this.active && this.visible) {
          if (this.method5735(var5)) {
-            boolean var8 = this.method5736(var1, var3);
-            if (var8) {
+            boolean flag = this.method5736(var1, var3);
+            if (flag) {
                this.playDownSound(Minecraft.getInstance().getSoundHandler());
                this.onClick(var1, var3);
                return true;
@@ -211,7 +211,7 @@ public abstract class Widget extends AbstractGui implements Class1190, IGuiEvent
    }
 
    public void playDownSound(SoundHandler var1) {
-      var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+      var1.play(SimpleSound.master(SoundEvents.UI_BUTTON_CLICK, 1.0F));
    }
 
    public int method5740() {

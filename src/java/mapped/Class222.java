@@ -10,7 +10,7 @@ import net.optifine.Config;
 import java.util.Map;
 import java.util.Set;
 
-public class Class222 extends Class219 {
+public class Class222 extends LayerRenderer {
    private PlayerRenderer field867 = null;
 
    public Class222(PlayerRenderer var1) {
@@ -19,7 +19,7 @@ public class Class222 extends Class219 {
    }
 
    @Override
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, Entity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, Entity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method829(var4, var1, var2, var3, OverlayTexture.NO_OVERLAY);
    }
 

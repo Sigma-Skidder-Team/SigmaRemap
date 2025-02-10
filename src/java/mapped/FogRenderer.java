@@ -201,8 +201,8 @@ public class FogRenderer {
       }
 
       if (Reflector.field42800.exists()) {
-         Object var31 = Reflector.method35087(Reflector.field42800, var0, var1, field40348, field40349, field40350);
-         Reflector.method35086(var31);
+         Object var31 = Reflector.newInstance(Reflector.field42800, var0, var1, field40348, field40349, field40350);
+         Reflector.postForgeBusEvent(var31);
          field40348 = Reflector.callFloat(var31, Reflector.field42801);
          field40349 = Reflector.callFloat(var31, Reflector.field42802);
          field40350 = Reflector.callFloat(var31, Reflector.field42803);

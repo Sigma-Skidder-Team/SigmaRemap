@@ -34,7 +34,7 @@ public class Class4053 extends Class4051 {
          Iterator var9 = var8.iterator();
 
          while (var9.hasNext()) {
-            Class219 var10 = (Class219)var9.next();
+            LayerRenderer var10 = (LayerRenderer)var9.next();
             if (var10 instanceof Class249) {
                var9.remove();
             }

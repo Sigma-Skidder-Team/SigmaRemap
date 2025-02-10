@@ -15,19 +15,19 @@ public class Class5726 extends EntityRenderer<FireworkRocketEntity> {
       this.field25134 = var2;
    }
 
-   public void render(FireworkRocketEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.rotate(this.field25097.method32230());
-      var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-      if (var1.method3508()) {
-         var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
-         var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-         var4.rotate(Vector3f.XP.rotationDegrees(90.0F));
+   public void render(FireworkRocketEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.rotate(this.field25097.method32230());
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
+      if (entityIn.method3508()) {
+         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(180.0F));
+         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
+         matrixStackIn.rotate(Vector3f.XP.rotationDegrees(90.0F));
       }
 
-      this.field25134.renderItem(var1.method3509(), ItemCameraTransformsTransformType.GROUND, var6, OverlayTexture.NO_OVERLAY, var4, var5);
-      var4.pop();
-      super.render(var1, var2, var3, var4, var5, var6);
+      this.field25134.renderItem(entityIn.method3509(), ItemCameraTransformsTransformType.GROUND, packedLightIn, OverlayTexture.NO_OVERLAY, matrixStackIn, bufferIn);
+      matrixStackIn.pop();
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public ResourceLocation method17843(FireworkRocketEntity var1) {

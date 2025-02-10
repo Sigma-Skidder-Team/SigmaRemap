@@ -534,7 +534,7 @@ public class ClientWorld extends World {
       }
 
       if (var1 == this.mc.player) {
-         this.mc.getSoundHandler().method1000(new Class6332(var3, var4, var2));
+         this.mc.getSoundHandler().play(new Class6332(var3, var4, var2));
       }
    }
 
@@ -547,12 +547,12 @@ public class ClientWorld extends World {
    public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9,
          float var10, boolean var11) {
       double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
-      MinecraftSoundManager var16 = new MinecraftSoundManager(var7, var8, var9, var10, var1, var3, var5);
+      SimpleSound var16 = new SimpleSound(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;
          this.mc.getSoundHandler().method1001(var16, (int) (var17 * 20.0));
       } else {
-         this.mc.getSoundHandler().method1000(var16);
+         this.mc.getSoundHandler().play(var16);
       }
    }
 

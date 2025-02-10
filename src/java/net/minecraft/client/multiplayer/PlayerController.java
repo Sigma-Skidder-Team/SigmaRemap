@@ -178,7 +178,7 @@ public class PlayerController {
                   SoundType var6 = var5.getSoundType();
                   this.mc
                         .getSoundHandler()
-                        .method1000(new MinecraftSoundManager(var6.getHitSound(), SoundCategory.field14732,
+                        .play(new SimpleSound(var6.getHitSound(), SoundCategory.field14732,
                               (var6.getVolume() + 1.0F) / 8.0F, var6.getPitch() * 0.5F, var1));
                }
 

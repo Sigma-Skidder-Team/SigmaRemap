@@ -55,7 +55,7 @@ public class Class4251 extends Class4247 {
                         20.0F,
                         partialTicks * 0.9F);
             float var5 = 0.88F;
-            if (!Client.getInstance().guiManager.method33470()) {
+            if (!Client.getInstance().guiManager.getGuiBlur()) {
                   var5 = 0.95F;
             }
 

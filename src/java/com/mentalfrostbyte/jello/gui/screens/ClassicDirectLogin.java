@@ -56,7 +56,7 @@ public class ClassicDirectLogin extends Screen {
             }
          }).start();
       });
-      this.field20988.doThis((var0, var1) -> Client.getInstance().guiManager.method33482(new SigmaClassicAltManager()));
+      this.field20988.doThis((var0, var1) -> Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager()));
       this.field20989.doThis((var1, var2) -> {
          String var5x = "";
 
@@ -103,7 +103,7 @@ public class ClassicDirectLogin extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         Client.getInstance().guiManager.method33482(new SigmaClassicAltManager());
+         Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager());
       }
    }
 }

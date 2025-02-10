@@ -15,7 +15,7 @@ public class Class4300 extends Class4278 {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13304(var7);
       this.doThis((var0, var1x) -> Minecraft.getInstance().getSoundHandler()
-            .method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F)));
+            .play(SimpleSound.master(SoundEvents.UI_BUTTON_CLICK, 1.0F)));
       this.field20839 = var8;
    }
 

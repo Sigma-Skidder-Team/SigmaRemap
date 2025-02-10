@@ -196,7 +196,7 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    @Override
-   public void method13161(JSONObject var1) {
+   public void loadConfig(JSONObject var1) {
       for (CustomGuiScreen var5 : this.field21055.method13241()) {
          if (!(var5 instanceof Class4292)) {
             for (CustomGuiScreen var7 : var5.method13241()) {

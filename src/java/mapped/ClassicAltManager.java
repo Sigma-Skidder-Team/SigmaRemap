@@ -61,11 +61,11 @@ public class ClassicAltManager extends CustomGuiScreen {
       this.field21146.doThis((var1x, var2x) -> {
          Class4349 var5 = var10.method13406();
          if (var5 != null) {
-            Client.getInstance().guiManager.method33482(new ClassicEditAlt(var5.field21249));
+            Client.getInstance().guiManager.handleScreen(new ClassicEditAlt(var5.field21249));
          }
       });
-      this.field21147.doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new ClassicAddAlt()));
-      this.field21145.doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new ClassicDirectLogin()));
+      this.field21147.doThis((var0, var1x) -> Client.getInstance().guiManager.handleScreen(new ClassicAddAlt()));
+      this.field21145.doThis((var0, var1x) -> Client.getInstance().guiManager.handleScreen(new ClassicDirectLogin()));
    }
 
    @Override

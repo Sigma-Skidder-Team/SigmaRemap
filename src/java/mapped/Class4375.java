@@ -58,7 +58,7 @@ public class Class4375 extends Class4247 {
 
       for (CustomGuiScreen var6 : this.method13241()) {
          if (var6.getHeightA() != 0) {
-            var4.add(var6.method13257());
+            var4.add(var6.getName());
          }
       }
 

@@ -29,7 +29,7 @@ public class ModuleKeyPress {
                            Screen var6 = var5.method27057()
                               .getDeclaredConstructor(ITextComponent.class)
                               .newInstance(new StringTextComponent(GuiManager.screenToScreenName.get(var5.method27057())));
-                           if (Client.getInstance().guiManager.method33484(var6)) {
+                           if (Client.getInstance().guiManager.hasReplacement(var6)) {
                               field35741.displayGuiScreen(var6);
                            }
                         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException | InstantiationException var7) {

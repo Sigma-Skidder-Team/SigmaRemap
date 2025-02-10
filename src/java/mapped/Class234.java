@@ -10,14 +10,14 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 import net.optifine.Config;
 
-public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
+public class Class234 extends LayerRenderer<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
    private static String[] field880;
 
    public Class234(Class5714<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
          ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var13.getItem() != Items.ELYTRA) {

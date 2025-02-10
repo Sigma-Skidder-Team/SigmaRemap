@@ -11,7 +11,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
-public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
+public class Class220<T extends LivingEntity, M extends Class2827<T>> extends LayerRenderer<T, M> {
    private static final ResourceLocation field864 = new ResourceLocation("textures/entity/elytra.png");
    private final Class2863<T> field865 = new Class2863<T>();
 
@@ -19,7 +19,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
       if (this.method827(var13, (T)var4)) {
          ResourceLocation var14;

@@ -2935,9 +2935,9 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.mc.ingameGUI.method5984(var5.method11813());
          }
 
-         MinecraftSoundManager var6 = MinecraftSoundManager.method19295(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+         SimpleSound var6 = SimpleSound.method19295(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
          this.field958.put(var2, var6);
-         this.mc.getSoundHandler().method1000(var6);
+         this.mc.getSoundHandler().play(var6);
       }
 
       this.method910(this.world, var2, var1 != null);
@@ -3213,7 +3213,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             this.world.method6858(var3, SoundEvents.field26344, SoundCategory.field14732, 0.3F, this.world.rand.nextFloat() * 0.1F + 0.9F, false);
             break;
          case 1032:
-            this.mc.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
+            this.mc.getSoundHandler().play(SimpleSound.method19296(SoundEvents.field26977, var5.nextFloat() * 0.4F + 0.8F, 0.25F));
             break;
          case 1033:
             this.world.method6858(var3, SoundEvents.field26456, SoundCategory.field14732, 1.0F, 1.0F, false);

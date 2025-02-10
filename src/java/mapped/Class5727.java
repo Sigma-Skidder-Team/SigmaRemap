@@ -12,10 +12,10 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
       super(var1);
    }
 
-   public void render(T var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
+   public void render(T entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
+      matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch)));
       boolean var9 = false;
       float var10 = 0.0F;
       float var11 = 0.5F;
@@ -26,38 +26,38 @@ public abstract class Class5727<T extends AbstractArrowEntity> extends EntityRen
       float var16 = 0.15625F;
       float var17 = 0.3125F;
       float var18 = 0.05625F;
-      float var19 = (float)var1.field5103 - var3;
+      float var19 = (float) entityIn.field5103 - partialTicks;
       if (var19 > 0.0F) {
          float var20 = -MathHelper.sin(var19 * 3.0F) * var19;
-         var4.rotate(Vector3f.ZP.rotationDegrees(var20));
+         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(var20));
       }
 
-      var4.rotate(Vector3f.XP.rotationDegrees(45.0F));
-      var4.scale(0.05625F, 0.05625F, 0.05625F);
-      var4.translate(-4.0, 0.0, 0.0);
-      IVertexBuilder var25 = var5.getBuffer(RenderType.getEntityCutout(this.method17843((T)var1)));
-      Class8892 var21 = var4.getLast();
+      matrixStackIn.rotate(Vector3f.XP.rotationDegrees(45.0F));
+      matrixStackIn.scale(0.05625F, 0.05625F, 0.05625F);
+      matrixStackIn.translate(-4.0, 0.0, 0.0);
+      IVertexBuilder var25 = bufferIn.getBuffer(RenderType.getEntityCutout(this.method17843((T) entityIn)));
+      Class8892 var21 = matrixStackIn.getLast();
       Matrix4f var22 = var21.getMatrix();
       Matrix3f var23 = var21.method32362();
-      this.method17913(var22, var23, var25, -7, -2, -2, 0.0F, 0.15625F, -1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, -2, 2, 0.15625F, 0.15625F, -1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, 2, 2, 0.15625F, 0.3125F, -1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, 2, -2, 0.0F, 0.3125F, -1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, 2, -2, 0.0F, 0.15625F, 1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, 2, 2, 0.15625F, 0.15625F, 1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, -2, 2, 0.15625F, 0.3125F, 1, 0, 0, var6);
-      this.method17913(var22, var23, var25, -7, -2, -2, 0.0F, 0.3125F, 1, 0, 0, var6);
+      this.method17913(var22, var23, var25, -7, -2, -2, 0.0F, 0.15625F, -1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, -2, 2, 0.15625F, 0.15625F, -1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, 2, 2, 0.15625F, 0.3125F, -1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, 2, -2, 0.0F, 0.3125F, -1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, 2, -2, 0.0F, 0.15625F, 1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, 2, 2, 0.15625F, 0.15625F, 1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, -2, 2, 0.15625F, 0.3125F, 1, 0, 0, packedLightIn);
+      this.method17913(var22, var23, var25, -7, -2, -2, 0.0F, 0.3125F, 1, 0, 0, packedLightIn);
 
       for (int var24 = 0; var24 < 4; var24++) {
-         var4.rotate(Vector3f.XP.rotationDegrees(90.0F));
-         this.method17913(var22, var23, var25, -8, -2, 0, 0.0F, 0.0F, 0, 1, 0, var6);
-         this.method17913(var22, var23, var25, 8, -2, 0, 0.5F, 0.0F, 0, 1, 0, var6);
-         this.method17913(var22, var23, var25, 8, 2, 0, 0.5F, 0.15625F, 0, 1, 0, var6);
-         this.method17913(var22, var23, var25, -8, 2, 0, 0.0F, 0.15625F, 0, 1, 0, var6);
+         matrixStackIn.rotate(Vector3f.XP.rotationDegrees(90.0F));
+         this.method17913(var22, var23, var25, -8, -2, 0, 0.0F, 0.0F, 0, 1, 0, packedLightIn);
+         this.method17913(var22, var23, var25, 8, -2, 0, 0.5F, 0.0F, 0, 1, 0, packedLightIn);
+         this.method17913(var22, var23, var25, 8, 2, 0, 0.5F, 0.15625F, 0, 1, 0, packedLightIn);
+         this.method17913(var22, var23, var25, -8, 2, 0, 0.0F, 0.15625F, 0, 1, 0, packedLightIn);
       }
 
-      var4.pop();
-      super.render((T)var1, var2, var3, var4, var5, var6);
+      matrixStackIn.pop();
+      super.render((T) entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public void method17913(

@@ -125,7 +125,7 @@ public class SoundHandler extends Class269<Class8657> {
       this.field1056.method13771(var1);
    }
 
-   public void method1000(Class6340 var1) {
+   public void play(Class6340 var1) {
       this.field1056.method13770(var1);
    }
 

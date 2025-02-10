@@ -18,9 +18,9 @@ public class Class5679 extends Class5676<IllusionerEntity> {
       return field25044;
    }
 
-   public void render(IllusionerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(IllusionerEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       if (!entityIn.isInvisible()) {
-         super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
       } else {
          Vector3d[] var9 = entityIn.method4611(partialTicks);
          float var10 = this.method17871(entityIn, partialTicks);
@@ -32,7 +32,7 @@ public class Class5679 extends Class5676<IllusionerEntity> {
                var9[var11].y + (double) MathHelper.cos((float)var11 + var10 * 0.75F) * 0.0125,
                var9[var11].z + (double) MathHelper.cos((float)var11 + var10 * 0.7F) * 0.025
             );
-            super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+            super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
             matrixStackIn.pop();
          }
       }

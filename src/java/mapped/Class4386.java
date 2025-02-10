@@ -53,7 +53,7 @@ public class Class4386 {
       field21402.clear();
 
       for (SoundEvent var4 : Registry.SOUND_EVENT) {
-         ResourceLocation var5 = var4.method36383();
+         ResourceLocation var5 = var4.getName();
          if (this.field21403.method997(var5) == null) {
             field21401.warn("Missing sound for event: {}", Registry.SOUND_EVENT.getKey(var4));
             field21402.add(var5);

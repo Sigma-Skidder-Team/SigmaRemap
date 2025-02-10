@@ -62,7 +62,7 @@ public class Class7957 {
             break;
          case 2:
             var3.put("type", "screen");
-            var3.put("target", Client.getInstance().guiManager.method33478((Class<? extends Screen>) this.field34205));
+            var3.put("target", Client.getInstance().guiManager.getNameForTarget((Class<? extends Screen>) this.field34205));
       }
 
       var3.put("key", this.field34204);

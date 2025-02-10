@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.item.crafting.StonecuttingRecipe;
 import mapped.Class5811;
-import mapped.MinecraftSoundManager;
+import mapped.SimpleSound;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -114,7 +114,7 @@ public class StonecutterScreen extends ContainerScreen<Class5811> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.enchantItem(this.mc.player, var11)) {
-               Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27181, 1.0F));
+               Minecraft.getInstance().getSoundHandler().play(SimpleSound.master(SoundEvents.field27181, 1.0F));
                this.mc.playerController.sendEnchantPacket(this.field4727.windowId, var11);
                return true;
             }

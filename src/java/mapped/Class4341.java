@@ -161,7 +161,7 @@ public class Class4341 extends Class4339 implements Class4342 {
 
       for (ButtonPanel var6 : this.field21215) {
          var4++;
-         if (var6.method13257().equals(var1.getName() + "Button")) {
+         if (var6.getName().equals(var1.getName() + "Button")) {
             break;
          }
       }

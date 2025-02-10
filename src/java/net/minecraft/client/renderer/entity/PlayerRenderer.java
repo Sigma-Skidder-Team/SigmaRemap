@@ -37,9 +37,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       this.addLayer(new Class233<>(this));
    }
 
-   public void render(AbstractClientPlayerEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(AbstractClientPlayerEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       this.setModelVisibilities(entityIn);
-      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public Vector3d getRenderOffset(AbstractClientPlayerEntity var1, float var2) {
@@ -131,7 +131,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       var2.scale(0.9375F, 0.9375F, 0.9375F);
    }
 
-   public void method17893(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
+   public void renderName(AbstractClientPlayerEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       var3.push();
       if (var8 < 100.0) {
@@ -139,14 +139,14 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
          ScoreObjective var11 = var10.getObjectiveInDisplaySlot(2);
          if (var11 != null) {
             Score var12 = var10.method20980(var1.getScoreboardName(), var11);
-            super.method17893(
+            super.renderName(
                var1, new StringTextComponent(Integer.toString(var12.getScorePoints())).appendString(" ").append(var11.method29338()), var3, var4, var5
             );
             var3.translate(0.0, 0.25875F, 0.0);
          }
       }
 
-      super.method17893(var1, var2, var3, var4, var5);
+      super.renderName(var1, var2, var3, var4, var5);
       var3.pop();
    }
 

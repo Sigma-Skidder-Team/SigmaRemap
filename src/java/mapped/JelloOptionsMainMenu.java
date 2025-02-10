@@ -34,12 +34,12 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     .method13438(new Class1133(new StringTextComponent("GuiCredits"))));
             UICheckBox var13;
             this.addToList(var13 = new UICheckBox(this, "guiBlurCheckBox", var5 / 2 - 70, var6 - 220, 25, 25));
-            var13.method13705(Client.getInstance().guiManager.method33470(), false);
-            var13.method13036(var1x -> Client.getInstance().guiManager.method33469(var13.method13703()));
+            var13.method13705(Client.getInstance().guiManager.getGuiBlur(), false);
+            var13.method13036(var1x -> Client.getInstance().guiManager.setGuiBlur(var13.method13703()));
             UICheckBox var14;
             this.addToList(var14 = new UICheckBox(this, "guiBlurIngameCheckBox", var5 / 2 + 130, var6 - 220, 25, 25));
             var14.method13705(Client.getInstance().guiManager.getHqIngameBlur(), false);
-            var14.method13036(var1x -> Client.getInstance().guiManager.method33471(var14.method13703()));
+            var14.method13036(var1x -> Client.getInstance().guiManager.setHqIngameBlur(var14.method13703()));
       }
 
       @Override

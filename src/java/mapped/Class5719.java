@@ -12,12 +12,12 @@ public class Class5719 extends EntityRenderer<LightningBoltEntity> {
       super(var1);
    }
 
-   public void render(LightningBoltEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
+   public void render(LightningBoltEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       float[] var9 = new float[8];
       float[] var10 = new float[8];
       float var11 = 0.0F;
       float var12 = 0.0F;
-      Random var13 = new Random(var1.field5172);
+      Random var13 = new Random(entityIn.field5172);
 
       for (int var14 = 7; var14 >= 0; var14--) {
          var9[var14] = var11;
@@ -26,11 +26,11 @@ public class Class5719 extends EntityRenderer<LightningBoltEntity> {
          var12 += (float)(var13.nextInt(11) - 5);
       }
 
-      IVertexBuilder var32 = var5.getBuffer(RenderType.method14341());
-      Matrix4f var15 = var4.getLast().getMatrix();
+      IVertexBuilder var32 = bufferIn.getBuffer(RenderType.method14341());
+      Matrix4f var15 = matrixStackIn.getLast().getMatrix();
 
       for (int var16 = 0; var16 < 4; var16++) {
-         Random var17 = new Random(var1.field5172);
+         Random var17 = new Random(entityIn.field5172);
 
          for (int var18 = 0; var18 < 3; var18++) {
             int var19 = 7;

@@ -13,7 +13,7 @@ import net.optifine.Config;
 
 import java.util.Map;
 
-public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A extends BipedModel<T>> extends Class219<T, M> {
+public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A extends BipedModel<T>> extends LayerRenderer<T, M> {
    private static final Map<String, ResourceLocation> field912 = Maps.newHashMap();
    private final A field913;
    private final A field914;
@@ -24,7 +24,7 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
       this.field914 = (A)var3;
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       this.method843(var1, var2, (T)var4, EquipmentSlotType.CHEST, var3, this.method847(EquipmentSlotType.CHEST));
       this.method843(var1, var2, (T)var4, EquipmentSlotType.LEGS, var3, this.method847(EquipmentSlotType.LEGS));
       this.method843(var1, var2, (T)var4, EquipmentSlotType.FEET, var3, this.method847(EquipmentSlotType.FEET));

@@ -39,7 +39,7 @@ public class MouseHelper {
    }
 
    private void method36730(long var1, int var3, int var4, int var5) {
-      if (Client.getInstance().guiManager.method33480() != null) {
+      if (Client.getInstance().guiManager.getCurrentScreen() != null) {
          Client.getInstance().guiManager.method33456(var3, var4);
       } else {
          if (this.field44285.currentScreen == null) {
@@ -146,7 +146,7 @@ public class MouseHelper {
    }
 
    private void method36731(long var1, double var3, double var5) {
-      if (Client.getInstance().guiManager.method33480() == null) {
+      if (Client.getInstance().guiManager.getCurrentScreen() == null) {
          EventMouse var9 = new EventMouse(var5);
          Client.getInstance().eventManager.call(var9);
          if (!var9.isCancelled()) {

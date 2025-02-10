@@ -91,7 +91,7 @@ public class Reflector {
    public static Class6634 EntityJoinWorldEvent_Constructor = new Class6634(field42806, new Class[]{Entity.class, World.class});
    public static Class6636 field42808 = new Class6636("net.minecraftforge.eventbus.api.Event");
    public static Class6631 field42809 = new Class6631(field42808, "isCanceled");
-   public static Class6631 field42810 = new Class6631(field42808, "getResult");
+   public static Class6631 Event_getResult = new Class6631(field42808, "getResult");
    public static Class6636 field42811 = new Class6636("net.minecraftforge.eventbus.api.IEventBus");
    public static Class6631 field42812 = new Class6631(field42811, "post");
    public static Class6636 field42813 = new Class6636("net.minecraftforge.eventbus.api.Event$Result");
@@ -285,10 +285,10 @@ public class Reflector {
       field42991, new Class[]{LivingEntity.class, LivingRenderer.class, float.class, MatrixStack.class, IRenderTypeBuffer.class, int.class}
    );
    public static Class6636 field42993 = new Class6636("net.minecraftforge.client.event.RenderNameplateEvent");
-   public static Class6634 field42994 = new Class6634(
+   public static Class6634 RenderNameplateEvent_Constructor = new Class6634(
       field42993, new Class[]{Entity.class, ITextComponent.class, EntityRenderer.class, MatrixStack.class, IRenderTypeBuffer.class, int.class, float.class}
    );
-   public static Class6631 field42995 = new Class6631(field42993, "getContent");
+   public static Class6631 RenderNameplateEvent_getContent = new Class6631(field42993, "getContent");
    public static Class6636 field42996 = new Class6636("net.minecraftforge.client.event.ScreenshotEvent");
    public static Class6631 field42997 = new Class6631(field42996, "getCancelMessage");
    public static Class6631 field42998 = new Class6631(field42996, "getScreenshotFile");
@@ -803,11 +803,11 @@ public class Reflector {
    }
 
    public static boolean postForgeBusEvent(Class6634 var0, Object... var1) {
-      Object var4 = method35087(var0, var1);
-      return var4 != null ? method35086(var4) : false;
+      Object var4 = newInstance(var0, var1);
+      return var4 != null ? postForgeBusEvent(var4) : false;
    }
 
-   public static boolean method35086(Object var0) {
+   public static boolean postForgeBusEvent(Object var0) {
       if (var0 != null) {
          Object var3 = method35071(field42968);
          if (var3 != null) {
@@ -826,7 +826,7 @@ public class Reflector {
       }
    }
 
-   public static Object method35087(Class6634 var0, Object... var1) {
+   public static Object newInstance(Class6634 var0, Object... var1) {
       Constructor var4 = var0.method20239();
       if (var4 == null) {
          return null;

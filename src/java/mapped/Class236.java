@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 
-public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {
+public class Class236 extends LayerRenderer<LlamaEntity, Class2854<LlamaEntity>> {
    private static final ResourceLocation[] field884 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/llama/decor/white.png"),
       new ResourceLocation("textures/entity/llama/decor/orange.png"),
@@ -31,7 +31,7 @@ public class Class236 extends Class219<LlamaEntity, Class2854<LlamaEntity>> {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, LlamaEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, LlamaEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       DyeColor var13 = var4.method4906();
       ResourceLocation var14;
       if (var13 == null) {

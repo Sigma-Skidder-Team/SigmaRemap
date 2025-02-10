@@ -66,7 +66,7 @@ public class Class1118 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public String method5377() {
+   public String getSkinType() {
       return DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }
 

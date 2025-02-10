@@ -23,8 +23,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.storage.MapData;
 
 public class ReflectorForge {
-   public static Object field44532 = Reflector.method35071(Reflector.field42815);
-   public static Object field44533 = Reflector.method35071(Reflector.field42814);
+   public static Object EVENT_RESULT_ALLOW = Reflector.method35071(Reflector.field42815);
+   public static Object EVENT_RESULT_DENY = Reflector.method35071(Reflector.field42814);
    public static Object field44534 = Reflector.method35071(Reflector.field42816);
    public static final boolean field44535 = Reflector.field42829.exists();
    public static final boolean field44536 = Reflector.field42835.exists();

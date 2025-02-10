@@ -38,7 +38,7 @@ public class Class1209 extends Button {
    @Override
    public void playDownSound(SoundHandler var1) {
       if (this.field6522) {
-         var1.method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field26414, 1.0F));
+         var1.play(SimpleSound.master(SoundEvents.field26414, 1.0F));
       }
    }
 }

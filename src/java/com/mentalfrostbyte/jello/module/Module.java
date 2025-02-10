@@ -267,7 +267,7 @@ public abstract class Module {
 
                     if (Client.getInstance().clientMode == ClientMode.CLASSIC
                             && Client.getInstance().moduleManager.getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                        Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
+                        Minecraft.getInstance().getSoundHandler().play(SimpleSound.master(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
 
@@ -281,7 +281,7 @@ public abstract class Module {
 
                 if (Client.getInstance().clientMode == ClientMode.CLASSIC
                         && Client.getInstance().moduleManager.getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
-                    Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
+                    Minecraft.getInstance().getSoundHandler().play(SimpleSound.master(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 
                 this.onEnable();

@@ -49,7 +49,7 @@ public class Class7604 implements Class7601 {
          if (!this.field32645 && var3 > 0L) {
             this.field32645 = true;
             if (var7.method34938() == Class1965.field12815) {
-               var2.method5915().getSoundHandler().method1000(MinecraftSoundManager.method19293(SoundEvents.field27182, 1.0F, 1.0F));
+               var2.method5915().getSoundHandler().play(SimpleSound.master(SoundEvents.field27182, 1.0F, 1.0F));
             }
          }
 

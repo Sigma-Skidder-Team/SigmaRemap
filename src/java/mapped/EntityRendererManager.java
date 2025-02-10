@@ -43,9 +43,9 @@ import java.util.Map;
 
 public class EntityRendererManager {
     private static final RenderType field40010 = RenderType.method14323(new ResourceLocation("textures/misc/shadow.png"));
-    private final Map<EntityType<?>, EntityRenderer<?>> field40011 = Maps.newHashMap();
-    private final Map<String, PlayerRenderer> field40012 = Maps.newHashMap();
-    private final PlayerRenderer field40013;
+    private final Map<EntityType<?>, EntityRenderer<?>> renderers = Maps.newHashMap();
+    private final Map<String, PlayerRenderer> skinMap = Maps.newHashMap();
+    private final PlayerRenderer playerRenderer;
     private final FontRenderer field40014;
     public final TextureManager field40015;
     private World world;
@@ -67,7 +67,7 @@ public class EntityRendererManager {
     }
 
     private <T extends Entity> void method32209(EntityType<T> var1, EntityRenderer<? super T> var2) {
-        this.field40011.put(var1, var2);
+        this.renderers.put(var1, var2);
     }
 
     private void method32210(ItemRenderer var1, IReloadableResourceManager var2) {
@@ -185,27 +185,27 @@ public class EntityRendererManager {
         this.field40014 = var4;
         this.options = var5;
         this.method32210(var2, var3);
-        this.field40013 = new PlayerRenderer(this);
-        this.field40012.put("default", this.field40013);
-        this.field40012.put("slim", new PlayerRenderer(this, true));
-        Class222.method830(this.field40012);
+        this.playerRenderer = new PlayerRenderer(this);
+        this.skinMap.put("default", this.playerRenderer);
+        this.skinMap.put("slim", new PlayerRenderer(this, true));
+        Class222.method830(this.skinMap);
     }
 
     public void method32211() {
         for (EntityType var4 : Registry.ENTITY_TYPE) {
-            if (var4 != EntityType.PLAYER && !this.field40011.containsKey(var4)) {
+            if (var4 != EntityType.PLAYER && !this.renderers.containsKey(var4)) {
                 throw new IllegalStateException("No renderer registered for " + Registry.ENTITY_TYPE.getKey(var4));
             }
         }
     }
 
-    public <T extends Entity> EntityRenderer<? super T> getRenderer(T var1) {
-        if (!(var1 instanceof AbstractClientPlayerEntity)) {
-            return (EntityRenderer<? super T>) this.field40011.get(var1.getType());
+    public <T extends Entity> EntityRenderer<? super T> getRenderer(T entityIn) {
+        if (!(entityIn instanceof AbstractClientPlayerEntity)) {
+            return (EntityRenderer<? super T>) this.renderers.get(entityIn.getType());
         } else {
-            String var4 = ((AbstractClientPlayerEntity) var1).method5377();
-            PlayerRenderer var5 = this.field40012.get(var4);
-            return (EntityRenderer<? super T>) (var5 == null ? this.field40013 : var5);
+            String s = ((AbstractClientPlayerEntity) entityIn).getSkinType();
+            PlayerRenderer playerrenderer = this.skinMap.get(s);
+            return (EntityRenderer<? super T>) (playerrenderer == null ? this.playerRenderer : playerrenderer);
         }
     }
 
@@ -516,10 +516,10 @@ public class EntityRendererManager {
     }
 
     public Map<EntityType<?>, EntityRenderer<?>> method32232() {
-        return this.field40011;
+        return this.renderers;
     }
 
     public Map<String, PlayerRenderer> method32233() {
-        return Collections.<String, PlayerRenderer>unmodifiableMap(this.field40012);
+        return Collections.<String, PlayerRenderer>unmodifiableMap(this.skinMap);
     }
 }

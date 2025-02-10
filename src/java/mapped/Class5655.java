@@ -19,12 +19,12 @@ public class Class5655 extends Class5651<TropicalFishEntity, Class2827<TropicalF
       return var1.method4827();
    }
 
-   public void render(TropicalFishEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(TropicalFishEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       Object var9 = entityIn.method4824() != 0 ? this.field25009 : this.field25008;
       this.entityModel = (Class2827<TropicalFishEntity>)var9;
       float[] var10 = entityIn.method4820();
       ((Class2808)var9).method11018(var10[0], var10[1], var10[2]);
-      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
       ((Class2808)var9).method11018(1.0F, 1.0F, 1.0F);
    }
 

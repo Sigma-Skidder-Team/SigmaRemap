@@ -164,7 +164,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
       });
       this.field21130.doThis((var1x, var2x) -> {
          if (this.field21134++ > 8) {
-            Client.getInstance().guiManager.method33482(new LoginAndOutScreen());
+            Client.getInstance().guiManager.handleScreen(new LoginAndOutScreen());
          }
       });
    }
@@ -215,7 +215,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
    }
 
    public void displayScreen(Screen var1) {
-      Client.getInstance().guiManager.method33482(var1);
+      Client.getInstance().guiManager.handleScreen(var1);
       this.playClickSound();
    }
 

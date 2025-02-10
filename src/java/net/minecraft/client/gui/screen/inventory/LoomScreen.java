@@ -166,7 +166,7 @@ public class LoomScreen extends ContainerScreen<Class5837> {
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.enchantItem(this.mc.player, var11)) {
-               Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27177, 1.0F));
+               Minecraft.getInstance().getSoundHandler().play(SimpleSound.master(SoundEvents.field27177, 1.0F));
                this.mc.playerController.sendEnchantPacket(this.field4727.windowId, var11);
                return true;
             }

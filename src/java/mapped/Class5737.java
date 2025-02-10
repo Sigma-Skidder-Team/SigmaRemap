@@ -18,17 +18,17 @@ public class Class5737 extends EntityRenderer<PaintingEntity> {
       super(var1);
    }
 
-   public void render(PaintingEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
-      Class9078 var9 = var1.field5496;
+   public void render(PaintingEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F - entityYaw));
+      Class9078 var9 = entityIn.field5496;
       float var10 = 0.0625F;
-      var4.scale(0.0625F, 0.0625F, 0.0625F);
-      IVertexBuilder var11 = var5.getBuffer(RenderType.getEntitySolid(this.method17843(var1)));
+      matrixStackIn.scale(0.0625F, 0.0625F, 0.0625F);
+      IVertexBuilder var11 = bufferIn.getBuffer(RenderType.getEntitySolid(this.method17843(entityIn)));
       PaintingSpriteUploader var12 = Minecraft.getInstance().getPaintingSpriteUploader();
-      this.method17919(var4, var11, var1, var9.method33825(), var9.method33826(), var12.method1020(var9), var12.method1021());
-      var4.pop();
-      super.render(var1, var2, var3, var4, var5, var6);
+      this.method17919(matrixStackIn, var11, entityIn, var9.method33825(), var9.method33826(), var12.method1020(var9), var12.method1021());
+      matrixStackIn.pop();
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public ResourceLocation method17843(PaintingEntity var1) {

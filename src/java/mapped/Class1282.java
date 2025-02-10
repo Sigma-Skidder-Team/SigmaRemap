@@ -132,7 +132,7 @@ public class Class1282 extends Class1274<Class1171> {
 
       if (this.field6841 >= 0) {
          this.method6102(this.method6098(this.field6841));
-         this.mc.getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+         this.mc.getSoundHandler().play(SimpleSound.master(SoundEvents.UI_BUTTON_CLICK, 1.0F));
       }
    }
 

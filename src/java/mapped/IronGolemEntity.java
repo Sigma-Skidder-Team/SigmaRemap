@@ -249,7 +249,7 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       Item var6 = var5.getItem();
-      if (var6 == Items.field37801) {
+      if (var6 == Items.IRON_INGOT) {
          float var7 = this.getHealth();
          this.heal(25.0F);
          if (this.getHealth() != var7) {

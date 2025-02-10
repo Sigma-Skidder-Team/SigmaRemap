@@ -5,7 +5,7 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
 import net.optifine.Config;
 
-public class Class249 extends Class219<SheepEntity, Class2869<SheepEntity>> {
+public class Class249 extends LayerRenderer<SheepEntity, Class2869<SheepEntity>> {
    private static final ResourceLocation field905 = new ResourceLocation("textures/entity/sheep/sheep_fur.png");
    public Class2868<SheepEntity> field906 = new Class2868<SheepEntity>();
 
@@ -13,7 +13,7 @@ public class Class249 extends Class219<SheepEntity, Class2869<SheepEntity>> {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, SheepEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, SheepEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.method4519() && !var4.isInvisible()) {
          float var14;
          float var15;

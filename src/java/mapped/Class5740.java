@@ -14,24 +14,24 @@ public class Class5740 extends EntityRenderer<TntEntity> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(TntEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.translate(0.0, 0.5, 0.0);
-      if ((float)var1.method4184() - var3 + 1.0F < 10.0F) {
-         float var9 = 1.0F - ((float)var1.method4184() - var3 + 1.0F) / 10.0F;
+   public void render(TntEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.translate(0.0, 0.5, 0.0);
+      if ((float) entityIn.method4184() - partialTicks + 1.0F < 10.0F) {
+         float var9 = 1.0F - ((float) entityIn.method4184() - partialTicks + 1.0F) / 10.0F;
          var9 = MathHelper.clamp(var9, 0.0F, 1.0F);
          var9 *= var9;
          var9 *= var9;
          float var10 = 1.0F + var9 * 0.3F;
-         var4.scale(var10, var10, var10);
+         matrixStackIn.scale(var10, var10, var10);
       }
 
-      var4.rotate(Vector3f.YP.rotationDegrees(-90.0F));
-      var4.translate(-0.5, -0.5, 0.5);
-      var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
-      Class5733.method17916(Blocks.TNT.getDefaultState(), var4, var5, var6, var1.method4184() / 5 % 2 == 0);
-      var4.pop();
-      super.render(var1, var2, var3, var4, var5, var6);
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(-90.0F));
+      matrixStackIn.translate(-0.5, -0.5, 0.5);
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(90.0F));
+      Class5733.method17916(Blocks.TNT.getDefaultState(), matrixStackIn, bufferIn, packedLightIn, entityIn.method4184() / 5 % 2 == 0);
+      matrixStackIn.pop();
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public ResourceLocation method17843(TntEntity var1) {

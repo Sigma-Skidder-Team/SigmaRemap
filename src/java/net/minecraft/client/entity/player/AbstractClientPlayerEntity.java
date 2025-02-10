@@ -141,7 +141,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
       return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(StringUtils.stripControlCodes(var0)));
    }
 
-   public String method5377() {
+   public String getSkinType() {
       NetworkPlayerInfo var3 = this.method5369();
       return var3 != null ? var3.method19972() : DefaultPlayerSkin.getSkinType(this.getUniqueID());
    }

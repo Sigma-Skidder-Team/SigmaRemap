@@ -866,7 +866,7 @@ public class SoundEvents {
    public static final SoundEvent field27173 = register("entity.turtle.shamble");
    public static final SoundEvent field27174 = register("entity.turtle.shamble_baby");
    public static final SoundEvent field27175 = register("entity.turtle.swim");
-   public static final SoundEvent field27176 = register("ui.button.click");
+   public static final SoundEvent UI_BUTTON_CLICK = register("ui.button.click");
    public static final SoundEvent field27177 = register("ui.loom.select_pattern");
    public static final SoundEvent field27178 = register("ui.loom.take_result");
    public static final SoundEvent field27179 = register("ui.cartography_table.take_result");

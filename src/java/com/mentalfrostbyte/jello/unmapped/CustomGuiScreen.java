@@ -105,7 +105,7 @@ public class CustomGuiScreen implements IGuiEventListener {
 
     public CustomGuiScreen method13221(String var1) {
         for (CustomGuiScreen var5 : this.children) {
-            if (var5.method13257().equals(var1)) {
+            if (var5.getName().equals(var1)) {
                 return var5;
             }
         }
@@ -359,9 +359,9 @@ public class CustomGuiScreen implements IGuiEventListener {
     public void addToList(CustomGuiScreen var1) {
         if (var1 != null) {
             for (CustomGuiScreen var5 : this.method13241()) {
-                if (var5.method13257().equals(var1.method13257())) {
-                    System.out.println("Children with duplicate IDs! Child with id \"" + var5.method13257()
-                            + "\" already exists in view \"" + this.method13257() + "\"!");
+                if (var5.getName().equals(var1.getName())) {
+                    System.out.println("Children with duplicate IDs! Child with id \"" + var5.getName()
+                            + "\" already exists in view \"" + this.getName() + "\"!");
                     return;
                 }
             }
@@ -381,7 +381,7 @@ public class CustomGuiScreen implements IGuiEventListener {
 
     public boolean method13231(String var1) {
         for (CustomGuiScreen var5 : this.method13241()) {
-            if (var5.method13257().equals(var1)) {
+            if (var5.getName().equals(var1)) {
                 return true;
             }
         }
@@ -392,7 +392,7 @@ public class CustomGuiScreen implements IGuiEventListener {
     public void method13232(CustomGuiScreen var1) {
         if (var1 != null) {
             for (CustomGuiScreen var5 : this.method13241()) {
-                if (var5.method13257().equals(var1.method13257())) {
+                if (var5.getName().equals(var1.getName())) {
                     throw new RuntimeException("Children with duplicate IDs!");
                 }
             }
@@ -405,7 +405,7 @@ public class CustomGuiScreen implements IGuiEventListener {
     public void method13233(CustomGuiScreen var1) {
         if (var1 != null) {
             for (CustomGuiScreen var5 : this.method13241()) {
-                if (var5.method13257().equals(var1.method13257())) {
+                if (var5.getName().equals(var1.getName())) {
                     throw new RuntimeException("Children with duplicate IDs!");
                 }
             }
@@ -484,7 +484,7 @@ public class CustomGuiScreen implements IGuiEventListener {
 
     public JSONObject method13160(JSONObject var1) {
         if (this.method13299()) {
-            var1.put("id", this.method13257());
+            var1.put("id", this.getName());
             var1.put("x", this.getXA());
             var1.put("y", this.getYA());
             if (this.method13301()) {
@@ -515,7 +515,7 @@ public class CustomGuiScreen implements IGuiEventListener {
         return var1;
     }
 
-    public void method13161(JSONObject var1) {
+    public void loadConfig(JSONObject var1) {
         if (this.method13299()) {
             this.xA = CJsonUtils.getIntOrDefault(var1, "x", this.xA);
             this.yA = CJsonUtils.getIntOrDefault(var1, "y", this.yA);
@@ -540,8 +540,8 @@ public class CustomGuiScreen implements IGuiEventListener {
                     int var10 = CJsonUtils.getIntOrDefault(var8, "index", -1);
 
                     for (CustomGuiScreen var12 : var6) {
-                        if (var12.method13257().equals(var9)) {
-                            var12.method13161(var8);
+                        if (var12.getName().equals(var9)) {
+                            var12.loadConfig(var8);
                             if (var10 >= 0) {
                                 this.children.remove(var12);
                                 if (var10 > this.children.size()) {
@@ -629,7 +629,7 @@ public class CustomGuiScreen implements IGuiEventListener {
         }
     }
 
-    public String method13257() {
+    public String getName() {
         return this.name;
     }
 

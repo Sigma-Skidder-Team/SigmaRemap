@@ -54,7 +54,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       if (!Reflector.field42952.exists()) {
          this.field848 = new Class8400(var2);
       } else {
-         this.field848 = (Class8400) Reflector.method35087(Reflector.field42952, this.field851);
+         this.field848 = (Class8400) Reflector.newInstance(Reflector.field42952, this.field851);
       }
 
       for (Item var7 : Registry.ITEM) {

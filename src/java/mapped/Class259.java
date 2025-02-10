@@ -6,14 +6,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
 
-public class Class259 extends Class219<DolphinEntity, Class2805<DolphinEntity>> {
+public class Class259 extends LayerRenderer<DolphinEntity, Class2805<DolphinEntity>> {
    private static String[] field919;
 
    public Class259(Class5714<DolphinEntity, Class2805<DolphinEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, DolphinEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, DolphinEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.getPrimaryHand() == HandSide.RIGHT;
       var1.push();
       float var14 = 1.0F;

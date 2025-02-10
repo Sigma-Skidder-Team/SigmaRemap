@@ -28,58 +28,58 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
       this.shadowSize = 0.5F;
    }
 
-   public void render(EnderDragonEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      float var9 = (float)var1.method4317(7, var3)[0];
-      float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
-      var4.rotate(Vector3f.YP.rotationDegrees(-var9));
-      var4.rotate(Vector3f.XP.rotationDegrees(var10 * 10.0F));
-      var4.translate(0.0, 0.0, 1.0);
-      var4.scale(-1.0F, -1.0F, 1.0F);
-      var4.translate(0.0, -1.501F, 0.0);
-      boolean var11 = var1.hurtTime > 0;
-      this.field25115.setLivingAnimations(var1, 0.0F, 0.0F, var3);
-      if (var1.field5635 <= 0) {
-         IVertexBuilder var12 = var5.getBuffer(field25110);
-         this.field25115.render(var4, var12, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+   public void render(EnderDragonEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      float var9 = (float) entityIn.method4317(7, partialTicks)[0];
+      float var10 = (float)(entityIn.method4317(5, partialTicks)[1] - entityIn.method4317(10, partialTicks)[1]);
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(-var9));
+      matrixStackIn.rotate(Vector3f.XP.rotationDegrees(var10 * 10.0F));
+      matrixStackIn.translate(0.0, 0.0, 1.0);
+      matrixStackIn.scale(-1.0F, -1.0F, 1.0F);
+      matrixStackIn.translate(0.0, -1.501F, 0.0);
+      boolean var11 = entityIn.hurtTime > 0;
+      this.field25115.setLivingAnimations(entityIn, 0.0F, 0.0F, partialTicks);
+      if (entityIn.field5635 <= 0) {
+         IVertexBuilder var12 = bufferIn.getBuffer(field25110);
+         this.field25115.render(matrixStackIn, var12, packedLightIn, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
-         float var22 = (float)var1.field5635 / 200.0F;
-         IVertexBuilder var13 = var5.getBuffer(RenderType.method14324(field25107, var22));
-         this.field25115.render(var4, var13, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-         IVertexBuilder var14 = var5.getBuffer(field25111);
-         this.field25115.render(var4, var14, var6, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
+         float var22 = (float) entityIn.field5635 / 200.0F;
+         IVertexBuilder var13 = bufferIn.getBuffer(RenderType.method14324(field25107, var22));
+         this.field25115.render(matrixStackIn, var13, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+         IVertexBuilder var14 = bufferIn.getBuffer(field25111);
+         this.field25115.render(matrixStackIn, var14, packedLightIn, OverlayTexture.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      IVertexBuilder var23 = var5.getBuffer(field25112);
+      IVertexBuilder var23 = bufferIn.getBuffer(field25112);
       if (Config.isShaders()) {
          Shaders.method33081();
       }
 
       Config.method26874().field1020 = true;
-      this.field25115.render(var4, var23, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      this.field25115.render(matrixStackIn, var23, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
       Config.method26874().field1020 = false;
       if (Config.isShaders()) {
          Shaders.method33082();
       }
 
-      if (var1.field5635 > 0) {
-         float var24 = ((float)var1.field5635 + var3) / 200.0F;
+      if (entityIn.field5635 > 0) {
+         float var24 = ((float) entityIn.field5635 + partialTicks) / 200.0F;
          float var26 = Math.min(!(var24 > 0.8F) ? 0.0F : (var24 - 0.8F) / 0.2F, 1.0F);
          Random var15 = new Random(432L);
-         IVertexBuilder var16 = var5.getBuffer(RenderType.method14341());
-         var4.push();
-         var4.translate(0.0, -1.0, -2.0);
+         IVertexBuilder var16 = bufferIn.getBuffer(RenderType.method14341());
+         matrixStackIn.push();
+         matrixStackIn.translate(0.0, -1.0, -2.0);
 
          for (int var17 = 0; (float)var17 < (var24 + var24 * var24) / 2.0F * 60.0F; var17++) {
-            var4.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F + var24 * 90.0F));
+            matrixStackIn.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
+            matrixStackIn.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
+            matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F));
+            matrixStackIn.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
+            matrixStackIn.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
+            matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F + var24 * 90.0F));
             float var18 = var15.nextFloat() * 20.0F + 5.0F + var26 * 10.0F;
             float var19 = var15.nextFloat() * 2.0F + 1.0F + var26 * 2.0F;
-            Matrix4f var20 = var4.getLast().getMatrix();
+            Matrix4f var20 = matrixStackIn.getLast().getMatrix();
             int var21 = (int)(255.0F * (1.0F - var26));
             method17902(var16, var20, var21);
             method17903(var16, var20, var18, var19);
@@ -92,20 +92,20 @@ public class Class5718 extends EntityRenderer<EnderDragonEntity> {
             method17903(var16, var20, var18, var19);
          }
 
-         var4.pop();
+         matrixStackIn.pop();
       }
 
-      var4.pop();
-      if (var1.field5637 != null) {
-         var4.push();
-         float var25 = (float)(var1.field5637.getPosX() - MathHelper.lerp((double)var3, var1.prevPosX, var1.getPosX()));
-         float var27 = (float)(var1.field5637.getPosY() - MathHelper.lerp((double)var3, var1.prevPosY, var1.getPosY()));
-         float var28 = (float)(var1.field5637.getPosZ() - MathHelper.lerp((double)var3, var1.prevPosZ, var1.getPosZ()));
-         method17906(var25, var27 + Class5723.method17909(var1.field5637, var3), var28, var3, var1.ticksExisted, var4, var5, var6);
-         var4.pop();
+      matrixStackIn.pop();
+      if (entityIn.field5637 != null) {
+         matrixStackIn.push();
+         float var25 = (float)(entityIn.field5637.getPosX() - MathHelper.lerp((double) partialTicks, entityIn.prevPosX, entityIn.getPosX()));
+         float var27 = (float)(entityIn.field5637.getPosY() - MathHelper.lerp((double) partialTicks, entityIn.prevPosY, entityIn.getPosY()));
+         float var28 = (float)(entityIn.field5637.getPosZ() - MathHelper.lerp((double) partialTicks, entityIn.prevPosZ, entityIn.getPosZ()));
+         method17906(var25, var27 + Class5723.method17909(entityIn.field5637, partialTicks), var28, partialTicks, entityIn.ticksExisted, matrixStackIn, bufferIn, packedLightIn);
+         matrixStackIn.pop();
       }
 
-      super.render(var1, var2, var3, var4, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    private static void method17902(IVertexBuilder var0, Matrix4f var1, int var2) {

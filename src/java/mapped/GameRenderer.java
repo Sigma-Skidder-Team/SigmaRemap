@@ -648,7 +648,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                     var13.addDetail("Overlay name", () -> this.mc.loadingGui.getClass().getCanonicalName());
                     throw new ReportedException(var12);
                 }
-            } else if (this.mc.currentScreen != null && Client.getInstance().guiManager.method33480() == null) {
+            } else if (this.mc.currentScreen != null && Client.getInstance().guiManager.getCurrentScreen() == null) {
                 try {
                     if (Reflector.ForgeHooksClient_drawScreen.exists()) {
                         Reflector.callVoid(Reflector.ForgeHooksClient_drawScreen, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());

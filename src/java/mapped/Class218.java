@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 
-public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T> & Class2801> extends Class219<T, M> implements IResourceManagerReloadListener {
+public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T> & Class2801> extends LayerRenderer<T, M> implements IResourceManagerReloadListener {
    private static final Int2ObjectMap<ResourceLocation> field858 = Util.<Int2ObjectMap<ResourceLocation>>make(new Int2ObjectOpenHashMap(), var0 -> {
       var0.put(1, new ResourceLocation("stone"));
       var0.put(2, new ResourceLocation("iron"));
@@ -34,7 +34,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
       var2.addReloadListener(this);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible()) {
          Class7921 var13 = ((Class1041)var4).method4674();
          Class9564 var14 = var13.method26570();

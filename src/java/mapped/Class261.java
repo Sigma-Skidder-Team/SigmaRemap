@@ -6,7 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class261<T extends LivingEntity> extends Class219<T, PlayerModel<T>> {
+public class Class261<T extends LivingEntity> extends LayerRenderer<T, PlayerModel<T>> {
    public static final ResourceLocation field921 = new ResourceLocation("textures/entity/trident_riptide.png");
    private final ModelRenderer field922 = new ModelRenderer(64, 64, 0, 0);
 
@@ -15,7 +15,7 @@ public class Class261<T extends LivingEntity> extends Class219<T, PlayerModel<T>
       this.field922.method22673(-8.0F, -16.0F, -8.0F, 16.0F, 32.0F, 16.0F);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.isSpinAttacking()) {
          IVertexBuilder var13 = var2.getBuffer(RenderType.getEntityCutoutNoCull(field921));
 

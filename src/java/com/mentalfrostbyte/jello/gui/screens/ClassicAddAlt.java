@@ -57,7 +57,7 @@ public class ClassicAddAlt extends Screen {
             }
          }).start();
       });
-      this.field21119.doThis((var0, var1) -> Client.getInstance().guiManager.method33482(new SigmaClassicAltManager()));
+      this.field21119.doThis((var0, var1) -> Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager()));
       this.field21120.doThis((var1, var2) -> {
          String var5x = "";
 
@@ -103,7 +103,7 @@ public class ClassicAddAlt extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         Client.getInstance().guiManager.method33482(new SigmaClassicAltManager());
+         Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager());
       }
    }
 }

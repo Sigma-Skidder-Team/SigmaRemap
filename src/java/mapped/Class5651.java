@@ -14,8 +14,8 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       super(var1, (M)var2, var3);
    }
 
-   public boolean method17852(T var1) {
-      return super.method17852((T)var1) && (var1.getAlwaysRenderNameTagForRender() || var1.method3381() && var1 == this.field25097.field40019);
+   public boolean canRenderName(T var1) {
+      return super.canRenderName((T)var1) && (var1.getAlwaysRenderNameTagForRender() || var1.method3381() && var1 == this.field25097.field40019);
    }
 
    public boolean method17854(T var1, Class7647 var2, double var3, double var5, double var7) {
@@ -27,11 +27,11 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       }
    }
 
-   public void render(T entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
-      super.render((T) entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+   public void render(T entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      super.render((T) entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
       Entity var9 = entityIn.method4297();
       if (var9 != null) {
-         this.method17847((T) entityIn, partialTicks, matrixStackIn, var5, var9);
+         this.method17847((T) entityIn, partialTicks, matrixStackIn, bufferIn, var9);
       }
    }
 

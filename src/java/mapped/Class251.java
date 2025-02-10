@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 
-public class Class251 extends Class219<IronGolemEntity, Class2880<IronGolemEntity>> {
+public class Class251 extends LayerRenderer<IronGolemEntity, Class2880<IronGolemEntity>> {
    private static final Map<Class2286, ResourceLocation> field908 = ImmutableMap.of(
       Class2286.field15132,
       new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_low.png"),
@@ -20,7 +20,7 @@ public class Class251 extends Class219<IronGolemEntity, Class2880<IronGolemEntit
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, IronGolemEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible()) {
          Class2286 var13 = var4.method4865();
          if (var13 != Class2286.field15131) {

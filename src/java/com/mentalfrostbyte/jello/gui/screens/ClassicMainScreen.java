@@ -110,7 +110,7 @@ public class ClassicMainScreen extends Screen {
         }
 
         public void method13435(Screen var1) {
-                Client.getInstance().guiManager.method33482(var1);
+                Client.getInstance().guiManager.handleScreen(var1);
                 this.method13436();
         }
 

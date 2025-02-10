@@ -624,8 +624,8 @@ public abstract class MobEntity extends LivingEntity {
          PlayerEntity var3 = this.world.method7185(this, -1.0);
          if (Reflector.field42844.exists()) {
             Object var4 = Reflector.field42844.method20223(this);
-            if (var4 != ReflectorForge.field44533) {
-               if (var4 == ReflectorForge.field44532) {
+            if (var4 != ReflectorForge.EVENT_RESULT_DENY) {
+               if (var4 == ReflectorForge.EVENT_RESULT_ALLOW) {
                   this.remove();
                   var3 = null;
                }

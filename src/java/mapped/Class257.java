@@ -6,14 +6,14 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class257 extends Class219<FoxEntity, Class2864<FoxEntity>> {
+public class Class257 extends LayerRenderer<FoxEntity, Class2864<FoxEntity>> {
    private static String[] field916;
 
    public Class257(Class5714<FoxEntity, Class2864<FoxEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, FoxEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, FoxEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       boolean var13 = var4.isSleeping();
       boolean var14 = var4.isChild();
       var1.push();

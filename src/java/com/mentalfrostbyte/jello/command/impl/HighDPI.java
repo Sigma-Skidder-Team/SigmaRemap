@@ -17,13 +17,13 @@ public class HighDPI extends Command {
    public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length <= 0) {
          if (Minecraft.IS_RUNNING_ON_MAC) {
-            if (!Client.getInstance().guiManager.method33474()) {
+            if (!Client.getInstance().guiManager.getHidpiCocoa()) {
                var3.send("HighDPI was enabled!");
             } else {
                var3.send("HighDPI was disabled!");
             }
 
-            Client.getInstance().guiManager.method33473(!Client.getInstance().guiManager.method33474());
+            Client.getInstance().guiManager.setHidpiCocoa(!Client.getInstance().guiManager.getHidpiCocoa());
          } else {
             throw new CommandException("This feature is only available on macOS!");
          }

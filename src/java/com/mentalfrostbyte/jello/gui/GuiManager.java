@@ -13,7 +13,6 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.MultiplayerScreen;
 import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
@@ -62,16 +61,11 @@ public class GuiManager {
     private final List<Integer> field41341 = new ArrayList<Integer>();
     private final List<Integer> field41342 = new ArrayList<Integer>();
     private final List<Integer> field41343 = new ArrayList<Integer>();
-    private boolean field41349 = true;
-    private boolean field41350 = true;
+    private boolean guiBlur = true;
+    private boolean hqIngameBlur = true;
     private Screen screen;
-    private GLFWKeyCallback field41353;
-    private long field41355;
-    private long field41356;
 
     public GuiManager() {
-        this.field41355 = arrowCursor;
-        this.field41356 = arrowCursor;
         arrowCursor = GLFW.glfwCreateStandardCursor(221185);
         pointingHandCursor = GLFW.glfwCreateStandardCursor(221188);
         iBeamCursor = GLFW.glfwCreateStandardCursor(221186);
@@ -168,7 +162,6 @@ public class GuiManager {
     }
 
     public void method33459(long var1) {
-        this.field41355 = var1;
     }
 
     public void endTick() {
@@ -212,7 +205,6 @@ public class GuiManager {
             }
 
             if (this.screen != null) {
-                this.field41355 = arrowCursor;
                 this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
             }
         }
@@ -296,63 +288,63 @@ public class GuiManager {
         }
     }
 
-    public JSONObject method33468(JSONObject var1) {
+    public JSONObject getUIConfig(JSONObject var1) {
         if (this.screen != null) {
             JSONObject var4 = this.screen.method13160(new JSONObject());
             if (var4.length() != 0) {
-                var1.put(this.screen.method13257(), var4);
+                var1.put(this.screen.getName(), var4);
             }
         }
 
-        var1.put("guiBlur", this.field41349);
-        var1.put("hqIngameBlur", this.field41350);
+        var1.put("guiBlur", this.guiBlur);
+        var1.put("hqIngameBlur", this.hqIngameBlur);
         var1.put("hidpicocoa", hidpiCocoa);
         return var1;
     }
 
-    public void method33469(boolean var1) {
-        this.field41349 = var1;
+    public void setGuiBlur(boolean var1) {
+        this.guiBlur = var1;
     }
 
-    public boolean method33470() {
-        return this.field41349;
+    public boolean getGuiBlur() {
+        return this.guiBlur;
     }
 
-    public void method33471(boolean var1) {
-        this.field41350 = var1;
+    public void setHqIngameBlur(boolean var1) {
+        this.hqIngameBlur = var1;
     }
 
     public boolean getHqIngameBlur() {
-        return this.field41350;
+        return this.hqIngameBlur;
     }
 
-    public void method33473(boolean var1) {
+    public void setHidpiCocoa(boolean var1) {
         hidpiCocoa = var1;
     }
 
-    public boolean method33474() {
+    public boolean getHidpiCocoa() {
         return hidpiCocoa;
     }
 
-    public void method33476(JSONObject var1) {
+    public void loadUIConfig(JSONObject var1) {
         if (this.screen != null) {
             JSONObject var4 = null;
 
             try {
-                var4 = Client.getInstance().getConfig().getJSONObject(this.screen.method13257());
+                var4 = Client.getInstance().getConfig().getJSONObject(this.screen.getName());
             } catch (Exception var9) {
                 var4 = new JSONObject();
             } finally {
-                this.screen.method13161(var4);
+                this.screen.loadConfig(var4);
             }
         }
 
         if (var1.has("guiBlur")) {
-            this.field41349 = var1.getBoolean("guiBlur");
+            this.guiBlur = var1.getBoolean("guiBlur");
         }
 
         if (var1.has("hqIngameBlur")) {
-            this.field41350 = var1.getBoolean("hqIngameBlur");
+            this.hqIngameBlur = var1.getBoolean("hqIngameBlur");
         }
     }
 
@@ -366,7 +358,7 @@ public class GuiManager {
         return null;
     }
 
-    public String method33478(Class<? extends net.minecraft.client.gui.screen.Screen> var1) {
+    public String getNameForTarget(Class<? extends net.minecraft.client.gui.screen.Screen> var1) {
         if (var1 == null) {
             return "";
         } else {
@@ -382,7 +374,7 @@ public class GuiManager {
 
     public void onResize() throws JSONException {
         if (this.screen != null) {
-            this.method33468(Client.getInstance().getConfig());
+            this.getUIConfig(Client.getInstance().getConfig());
 
             try {
                 this.screen = this.screen.getClass().newInstance();
@@ -390,7 +382,7 @@ public class GuiManager {
                 var4.printStackTrace();
             }
 
-            this.method33476(Client.getInstance().getConfig());
+            this.loadUIConfig(Client.getInstance().getConfig());
         }
 
         if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
@@ -402,22 +394,21 @@ public class GuiManager {
         }
     }
 
-    public Screen method33480() {
+    public Screen getCurrentScreen() {
         return this.screen;
     }
 
-    public void method33481() throws JSONException {
-        this.method33482(handleScreen(Minecraft.getInstance().currentScreen));
+    public void handleCurrentScreen() throws JSONException {
+        this.handleScreen(handleScreen(Minecraft.getInstance().currentScreen));
     }
 
-    public void method33482(Screen var1) {
+    public void handleScreen(Screen screen) {
         if (this.screen != null) {
-            this.method33468(Client.getInstance().getConfig());
+            this.getUIConfig(Client.getInstance().getConfig());
         }
 
-        this.screen = var1;
-        this.field41356 = arrowCursor;
-        this.method33476(Client.getInstance().getConfig());
+        this.screen = screen;
+        this.loadUIConfig(Client.getInstance().getConfig());
         if (this.screen != null) {
             this.screen.updatePanelDimensions(this.field41354[0], this.field41354[1]);
         }
@@ -427,14 +418,7 @@ public class GuiManager {
         }
     }
 
-    public void method33483(net.minecraft.client.gui.screen.Screen var1) {
-        if (var1 != null) {
-            Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(var1);
-        }
-    }
-
-    public boolean method33484(net.minecraft.client.gui.screen.Screen var1) {
+    public boolean hasReplacement(net.minecraft.client.gui.screen.Screen var1) {
         return replacementScreens.containsKey(var1.getClass());
     }
 }

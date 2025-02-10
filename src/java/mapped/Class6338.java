@@ -19,7 +19,7 @@ public abstract class Class6338 implements Class6340 {
    public boolean field27865;
 
    public Class6338(SoundEvent var1, SoundCategory var2) {
-      this(var1.method36383(), var2);
+      this(var1.getName(), var2);
    }
 
    public Class6338(ResourceLocation var1, SoundCategory var2) {

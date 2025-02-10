@@ -18,12 +18,12 @@ public class Class5674 extends Class5651<EndermanEntity, Class2799<EndermanEntit
       this.addLayer(new Class253(this));
    }
 
-   public void render(EndermanEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(EndermanEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       BlockState var9 = entityIn.method4357();
       Class2799 var10 = this.getEntityModel();
       var10.field17443 = var9 != null;
       var10.field17444 = entityIn.method4358();
-      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public Vector3d getRenderOffset(EndermanEntity var1, float var2) {

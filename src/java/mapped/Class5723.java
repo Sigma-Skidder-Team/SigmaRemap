@@ -27,47 +27,47 @@ public class Class5723 extends EntityRenderer<EnderCrystalEntity> {
       this.field25127.method22673(-6.0F, 0.0F, -6.0F, 12.0F, 4.0F, 12.0F);
    }
 
-   public void render(EnderCrystalEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      float var9 = method17909(var1, var3);
-      float var10 = ((float)var1.field5523 + var3) * 3.0F;
-      IVertexBuilder var11 = var5.getBuffer(field25123);
-      var4.push();
-      var4.scale(2.0F, 2.0F, 2.0F);
-      var4.translate(0.0, -0.5, 0.0);
+   public void render(EnderCrystalEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      float var9 = method17909(entityIn, partialTicks);
+      float var10 = ((float) entityIn.field5523 + partialTicks) * 3.0F;
+      IVertexBuilder var11 = bufferIn.getBuffer(field25123);
+      matrixStackIn.push();
+      matrixStackIn.scale(2.0F, 2.0F, 2.0F);
+      matrixStackIn.translate(0.0, -0.5, 0.0);
       int var12 = OverlayTexture.NO_OVERLAY;
-      if (var1.method4145()) {
-         this.field25127.render(var4, var11, var6, var12);
+      if (entityIn.method4145()) {
+         this.field25127.render(matrixStackIn, var11, packedLightIn, var12);
       }
 
-      var4.rotate(Vector3f.YP.rotationDegrees(var10));
-      var4.translate(0.0, (double)(1.5F + var9 / 2.0F), 0.0);
-      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
-      this.field25126.render(var4, var11, var6, var12);
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(var10));
+      matrixStackIn.translate(0.0, (double)(1.5F + var9 / 2.0F), 0.0);
+      matrixStackIn.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      this.field25126.render(matrixStackIn, var11, packedLightIn, var12);
       float var13 = 0.875F;
-      var4.scale(0.875F, 0.875F, 0.875F);
-      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
-      var4.rotate(Vector3f.YP.rotationDegrees(var10));
-      this.field25126.render(var4, var11, var6, var12);
-      var4.scale(0.875F, 0.875F, 0.875F);
-      var4.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
-      var4.rotate(Vector3f.YP.rotationDegrees(var10));
-      this.field25125.render(var4, var11, var6, var12);
-      var4.pop();
-      var4.pop();
-      BlockPos var14 = var1.method4143();
+      matrixStackIn.scale(0.875F, 0.875F, 0.875F);
+      matrixStackIn.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(var10));
+      this.field25126.render(matrixStackIn, var11, packedLightIn, var12);
+      matrixStackIn.scale(0.875F, 0.875F, 0.875F);
+      matrixStackIn.rotate(new Quaternion(new Vector3f(field25124, 0.0F, field25124), 60.0F, true));
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(var10));
+      this.field25125.render(matrixStackIn, var11, packedLightIn, var12);
+      matrixStackIn.pop();
+      matrixStackIn.pop();
+      BlockPos var14 = entityIn.method4143();
       if (var14 != null) {
          float var15 = (float)var14.getX() + 0.5F;
          float var16 = (float)var14.getY() + 0.5F;
          float var17 = (float)var14.getZ() + 0.5F;
-         float var18 = (float)((double)var15 - var1.getPosX());
-         float var19 = (float)((double)var16 - var1.getPosY());
-         float var20 = (float)((double)var17 - var1.getPosZ());
-         var4.translate((double)var18, (double)var19, (double)var20);
-         Class5718.method17906(-var18, -var19 + var9, -var20, var3, var1.field5523, var4, var5, var6);
+         float var18 = (float)((double)var15 - entityIn.getPosX());
+         float var19 = (float)((double)var16 - entityIn.getPosY());
+         float var20 = (float)((double)var17 - entityIn.getPosZ());
+         matrixStackIn.translate((double)var18, (double)var19, (double)var20);
+         Class5718.method17906(-var18, -var19 + var9, -var20, partialTicks, entityIn.field5523, matrixStackIn, bufferIn, packedLightIn);
       }
 
-      super.render(var1, var2, var3, var4, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public static float method17909(EnderCrystalEntity var0, float var1) {

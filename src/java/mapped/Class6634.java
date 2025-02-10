@@ -65,7 +65,7 @@ public class Class6634 implements Class6632 {
    }
 
    public Object method20243(Object... var1) {
-      return Reflector.method35087(this, var1);
+      return Reflector.newInstance(this, var1);
    }
 
    @Override

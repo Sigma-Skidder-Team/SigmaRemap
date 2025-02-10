@@ -128,7 +128,7 @@ public class Class4366 extends Class4247 {
       }
 
       for (CustomGuiScreen var7 : this.method13241()) {
-         if (!var7.method13257().equals("dropdownButton")) {
+         if (!var7.getName().equals("dropdownButton")) {
             var7.setEnabled(this.field21345);
          }
       }

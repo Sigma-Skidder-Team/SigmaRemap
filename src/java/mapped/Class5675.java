@@ -12,9 +12,9 @@ public class Class5675 extends Class5651<SlimeEntity, Class2826<SlimeEntity>> {
       this.addLayer(new Class247<SlimeEntity>(this));
    }
 
-   public void render(SlimeEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(SlimeEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       this.shadowSize = 0.25F * (float) entityIn.method5319();
-      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public void method17857(SlimeEntity var1, MatrixStack var2, float var3) {

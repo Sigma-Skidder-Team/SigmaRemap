@@ -30,7 +30,7 @@ public class Class5742 extends LivingRenderer<ArmorStandEntity, Class2892> {
       }
    }
 
-   public boolean method17852(ArmorStandEntity var1) {
+   public boolean canRenderName(ArmorStandEntity var1) {
       double var4 = this.field25097.method32228(var1);
       float var6 = !var1.isCrouching() ? 64.0F : 32.0F;
       return !(var4 >= (double)(var6 * var6)) ? var1.method3383() : false;

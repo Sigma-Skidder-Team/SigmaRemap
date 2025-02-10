@@ -9,12 +9,12 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.ColorSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.PositionUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mentalfrostbyte.jello.util.ClientColors;
 import lol.TextureImpl;
 import mapped.*;
 import net.minecraft.entity.Entity;
@@ -98,7 +98,7 @@ public class ShadowESP extends Module {
         float var7 = (float) (var4 >> 8 & 0xFF) / 255.0F;
         float var8 = (float) (var4 & 0xFF) / 255.0F;
         GL11.glEnable(2896);
-        GL11.glLightModelfv(2899, new float[] { var6, var7, var8, var5 });
+        GL11.glLightModelfv(2899, new float[]{var6, var7, var8, var5});
         RenderSystem.enableLighting();
         if (field23794 == Class2191.field14329) {
             GL11.glEnable(10754);
@@ -152,7 +152,7 @@ public class ShadowESP extends Module {
     }
 
     public void method16608(Entity var1, double var2, double var4, double var6, float var8, MatrixStack var9,
-            IRenderTypeBuffer var10) {
+                            IRenderTypeBuffer var10) {
         double var13 = MathHelper.lerp(var8, var1.lastTickPosX, var1.getPosX());
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
@@ -215,11 +215,9 @@ public class ShadowESP extends Module {
         GL11.glEnable(2903);
         RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
         TextureImpl.unbind();
-        TextureManager var10000 = mc.getTextureManager();
-        mc.getTextureManager();
-        var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
+        mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
         mc.gameRenderer.lightmapTexture.enableLightmap();
-        GL11.glLightModelfv(2899, new float[] { 0.4F, 0.4F, 0.4F, 1.0F });
+        GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
         field23794 = Class2191.field14327;
     }
 }

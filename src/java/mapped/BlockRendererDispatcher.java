@@ -29,7 +29,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       if (!Reflector.field42820.exists()) {
          this.field854 = new Class7551(this.field857);
       } else {
-         this.field854 = (Class7551) Reflector.method35087(Reflector.field42820, this.field857);
+         this.field854 = (Class7551) Reflector.newInstance(Reflector.field42820, this.field857);
       }
 
       this.field855 = new Class4829();

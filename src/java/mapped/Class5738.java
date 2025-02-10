@@ -21,32 +21,32 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
       super(var1);
    }
 
-   public void render(FishingBobberEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      PlayerEntity var9 = var1.method3544();
+   public void render(FishingBobberEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      PlayerEntity var9 = entityIn.method3544();
       if (var9 != null) {
-         var4.push();
-         var4.push();
-         var4.scale(0.5F, 0.5F, 0.5F);
-         var4.rotate(this.field25097.method32230());
-         var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-         Class8892 var10 = var4.getLast();
+         matrixStackIn.push();
+         matrixStackIn.push();
+         matrixStackIn.scale(0.5F, 0.5F, 0.5F);
+         matrixStackIn.rotate(this.field25097.method32230());
+         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F));
+         Class8892 var10 = matrixStackIn.getLast();
          Matrix4f var11 = var10.getMatrix();
          Matrix3f var12 = var10.method32362();
-         IVertexBuilder var13 = var5.getBuffer(field25160);
-         method17922(var13, var11, var12, var6, 0.0F, 0, 0, 1);
-         method17922(var13, var11, var12, var6, 1.0F, 0, 1, 1);
-         method17922(var13, var11, var12, var6, 1.0F, 1, 1, 0);
-         method17922(var13, var11, var12, var6, 0.0F, 1, 0, 0);
-         var4.pop();
+         IVertexBuilder var13 = bufferIn.getBuffer(field25160);
+         method17922(var13, var11, var12, packedLightIn, 0.0F, 0, 0, 1);
+         method17922(var13, var11, var12, packedLightIn, 1.0F, 0, 1, 1);
+         method17922(var13, var11, var12, packedLightIn, 1.0F, 1, 1, 0);
+         method17922(var13, var11, var12, packedLightIn, 0.0F, 1, 0, 0);
+         matrixStackIn.pop();
          int var14 = var9.getPrimaryHand() != HandSide.RIGHT ? -1 : 1;
          ItemStack var15 = var9.getHeldItemMainhand();
          if (var15.getItem() != Items.field37906) {
             var14 = -var14;
          }
 
-         float var16 = var9.getSwingProgress(var3);
+         float var16 = var9.getSwingProgress(partialTicks);
          float var17 = MathHelper.sin(MathHelper.sqrt(var16) * (float) Math.PI);
-         float var18 = MathHelper.lerp(var3, var9.prevRenderYawOffset, var9.renderYawOffset) * (float) (Math.PI / 180.0);
+         float var18 = MathHelper.lerp(partialTicks, var9.prevRenderYawOffset, var9.renderYawOffset) * (float) (Math.PI / 180.0);
          double var19 = (double) MathHelper.sin(var18);
          double var21 = (double) MathHelper.cos(var18);
          double var23 = (double)var14 * 0.35;
@@ -59,29 +59,29 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
             double var33 = this.field25097.options.fov;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
-            var35 = var35.method11350(-MathHelper.lerp(var3, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));
-            var35 = var35.method11351(-MathHelper.lerp(var3, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
+            var35 = var35.method11350(-MathHelper.lerp(partialTicks, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));
+            var35 = var35.method11351(-MathHelper.lerp(partialTicks, var9.prevRotationYaw, var9.rotationYaw) * (float) (Math.PI / 180.0));
             var35 = var35.method11351(var17 * 0.5F);
             var35 = var35.method11350(-var17 * 0.7F);
-            var27 = MathHelper.lerp((double)var3, var9.prevPosX, var9.getPosX()) + var35.x;
-            var29 = MathHelper.lerp((double)var3, var9.prevPosY, var9.getPosY()) + var35.y;
-            var31 = MathHelper.lerp((double)var3, var9.prevPosZ, var9.getPosZ()) + var35.z;
+            var27 = MathHelper.lerp((double) partialTicks, var9.prevPosX, var9.getPosX()) + var35.x;
+            var29 = MathHelper.lerp((double) partialTicks, var9.prevPosY, var9.getPosY()) + var35.y;
+            var31 = MathHelper.lerp((double) partialTicks, var9.prevPosZ, var9.getPosZ()) + var35.z;
             var36 = var9.getEyeHeight();
          } else {
-            var27 = MathHelper.lerp((double)var3, var9.prevPosX, var9.getPosX()) - var21 * var23 - var19 * 0.8;
-            var29 = var9.prevPosY + (double)var9.getEyeHeight() + (var9.getPosY() - var9.prevPosY) * (double)var3 - 0.45;
-            var31 = MathHelper.lerp((double)var3, var9.prevPosZ, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
+            var27 = MathHelper.lerp((double) partialTicks, var9.prevPosX, var9.getPosX()) - var21 * var23 - var19 * 0.8;
+            var29 = var9.prevPosY + (double)var9.getEyeHeight() + (var9.getPosY() - var9.prevPosY) * (double) partialTicks - 0.45;
+            var31 = MathHelper.lerp((double) partialTicks, var9.prevPosZ, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
             var36 = !var9.isCrouching() ? 0.0F : -0.1875F;
          }
 
-         double var49 = MathHelper.lerp((double)var3, var1.prevPosX, var1.getPosX());
-         double var37 = MathHelper.lerp((double)var3, var1.prevPosY, var1.getPosY()) + 0.25;
-         double var39 = MathHelper.lerp((double)var3, var1.prevPosZ, var1.getPosZ());
+         double var49 = MathHelper.lerp((double) partialTicks, entityIn.prevPosX, entityIn.getPosX());
+         double var37 = MathHelper.lerp((double) partialTicks, entityIn.prevPosY, entityIn.getPosY()) + 0.25;
+         double var39 = MathHelper.lerp((double) partialTicks, entityIn.prevPosZ, entityIn.getPosZ());
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
-         IVertexBuilder var44 = var5.getBuffer(RenderType.getLines());
-         Matrix4f var45 = var4.getLast().getMatrix();
+         IVertexBuilder var44 = bufferIn.getBuffer(RenderType.getLines());
+         Matrix4f var45 = matrixStackIn.getLast().getMatrix();
          byte var46 = 16;
 
          for (int var47 = 0; var47 < 16; var47++) {
@@ -89,8 +89,8 @@ public class Class5738 extends EntityRenderer<FishingBobberEntity> {
             method17923(var41, var42, var43, var44, var45, method17921(var47 + 1, 16));
          }
 
-         var4.pop();
-         super.render(var1, var2, var3, var4, var5, var6);
+         matrixStackIn.pop();
+         super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
       }
    }
 

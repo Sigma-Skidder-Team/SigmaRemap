@@ -5,12 +5,12 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class Class252 extends Class219<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
+public class Class252 extends LayerRenderer<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
    public Class252(Class5714<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> var1) {
       super(var1);
    }
 
-   public void method820(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
+   public void render(MatrixStack var1, IRenderTypeBuffer var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if ("deadmau5".equals(var4.getName().getString()) && var4.method5370() && !var4.isInvisible()) {
          IVertexBuilder var13 = var2.getBuffer(RenderType.getEntitySolid(var4.method5371()));
          int var14 = LivingRenderer.method17883(var4, 0.0F);

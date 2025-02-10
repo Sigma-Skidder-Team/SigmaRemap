@@ -20,7 +20,7 @@ public class MusicTicker {
    public void tick() {
       BackgroundMusicSelector var3 = this.field41440.getBackgroundMusicSelector();
       if (this.field41441 != null) {
-         if (!var3.method12189().method36383().equals(this.field41441.method19279()) && var3.method12192()) {
+         if (!var3.method12189().getName().equals(this.field41441.method19279()) && var3.method12192()) {
             this.field41440.getSoundHandler().method1009(this.field41441);
             this.field41442 = MathHelper.method37782(this.field41439, 0, var3.method12190() / 2);
          }
@@ -38,9 +38,9 @@ public class MusicTicker {
    }
 
    public void method33667(BackgroundMusicSelector var1) {
-      this.field41441 = MinecraftSoundManager.method19294(var1.method12189());
+      this.field41441 = SimpleSound.music(var1.method12189());
       if (this.field41441.method19281() != SoundHandler.field1051) {
-         this.field41440.getSoundHandler().method1000(this.field41441);
+         this.field41440.getSoundHandler().play(this.field41441);
       }
 
       this.field41442 = Integer.MAX_VALUE;
@@ -56,6 +56,6 @@ public class MusicTicker {
    }
 
    public boolean isBackgroundMusicPlaying(BackgroundMusicSelector var1) {
-      return this.field41441 != null ? var1.method12189().method36383().equals(this.field41441.method19279()) : false;
+      return this.field41441 != null ? var1.method12189().getName().equals(this.field41441.method19279()) : false;
    }
 }

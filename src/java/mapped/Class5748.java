@@ -20,7 +20,7 @@ public class Class5748 extends Class5651<PufferfishEntity, Class2827<PufferfishE
       return field25172;
    }
 
-   public void render(PufferfishEntity entityIn, float var2, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer var5, int var6) {
+   public void render(PufferfishEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
       int var9 = entityIn.method4828();
       if (var9 != this.field25173) {
          if (var9 != 0) {
@@ -36,7 +36,7 @@ public class Class5748 extends Class5651<PufferfishEntity, Class2827<PufferfishE
 
       this.field25173 = var9;
       this.shadowSize = 0.1F + 0.1F * (float)var9;
-      super.render(entityIn, var2, partialTicks, matrixStackIn, var5, var6);
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public void method17842(PufferfishEntity var1, MatrixStack var2, float var3, float var4, float var5) {

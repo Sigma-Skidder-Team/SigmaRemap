@@ -59,13 +59,13 @@ public class Class4337 extends CustomGuiScreen {
    }
 
    public void method13494(Screen var1) {
-      Client.getInstance().guiManager.method33482(var1);
+      Client.getInstance().guiManager.handleScreen(var1);
       this.method13495();
    }
 
    public void method13495() {
       Minecraft.getInstance().getSoundHandler()
-            .method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27176, 1.0F));
+            .play(SimpleSound.master(SoundEvents.UI_BUTTON_CLICK, 1.0F));
    }
 
    private int method13496() {

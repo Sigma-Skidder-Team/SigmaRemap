@@ -11,7 +11,7 @@ public class SoundEvent {
       this.field43937 = var1;
    }
 
-   public ResourceLocation method36383() {
+   public ResourceLocation getName() {
       return this.field43937;
    }
 }

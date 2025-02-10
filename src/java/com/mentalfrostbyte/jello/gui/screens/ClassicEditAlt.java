@@ -51,7 +51,7 @@ public class ClassicEditAlt extends Screen {
          this.field21032 = "Edited!";
       });
       this.field21030
-            .doThis((var0, var1x) -> Client.getInstance().guiManager.method33482(new SigmaClassicAltManager()));
+            .doThis((var0, var1x) -> Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager()));
    }
 
    @Override
@@ -81,7 +81,7 @@ public class ClassicEditAlt extends Screen {
    public void keyPressed(int keyCode) {
       super.keyPressed(keyCode);
       if (keyCode == 256) {
-         Client.getInstance().guiManager.method33482(new SigmaClassicAltManager());
+         Client.getInstance().guiManager.handleScreen(new SigmaClassicAltManager());
       }
    }
 }

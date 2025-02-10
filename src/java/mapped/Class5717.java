@@ -14,16 +14,16 @@ public class Class5717 extends EntityRenderer<LlamaSpitEntity> {
       super(var1);
    }
 
-   public void render(LlamaSpitEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.translate(0.0, 0.15F, 0.0);
-      var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
-      this.field25105.setRotationAngles(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
-      IVertexBuilder var9 = var5.getBuffer(this.field25105.method11028(field25104));
-      this.field25105.render(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-      var4.pop();
-      super.render(var1, var2, var3, var4, var5, var6);
+   public void render(LlamaSpitEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.translate(0.0, 0.15F, 0.0);
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
+      matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch)));
+      this.field25105.setRotationAngles(entityIn, partialTicks, 0.0F, -0.1F, 0.0F, 0.0F);
+      IVertexBuilder var9 = bufferIn.getBuffer(this.field25105.method11028(field25104));
+      this.field25105.render(matrixStackIn, var9, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      matrixStackIn.pop();
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public ResourceLocation method17843(LlamaSpitEntity var1) {

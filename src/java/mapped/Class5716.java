@@ -15,14 +15,14 @@ public class Class5716 extends EntityRenderer<TridentEntity> {
       super(var1);
    }
 
-   public void render(TridentEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      var4.push();
-      var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch) + 90.0F));
-      IVertexBuilder var9 = ItemRenderer.getEntityGlintVertexBuilder(var5, this.field25103.method11028(this.method17843(var1)), false, var1.method3496());
-      this.field25103.render(var4, var9, var6, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-      var4.pop();
-      super.render(var1, var2, var3, var4, var5, var6);
+   public void render(TridentEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      matrixStackIn.push();
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationYaw, entityIn.rotationYaw) - 90.0F));
+      matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(partialTicks, entityIn.prevRotationPitch, entityIn.rotationPitch) + 90.0F));
+      IVertexBuilder var9 = ItemRenderer.getEntityGlintVertexBuilder(bufferIn, this.field25103.method11028(this.method17843(entityIn)), false, entityIn.method3496());
+      this.field25103.render(matrixStackIn, var9, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+      matrixStackIn.pop();
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
    }
 
    public ResourceLocation method17843(TridentEntity var1) {

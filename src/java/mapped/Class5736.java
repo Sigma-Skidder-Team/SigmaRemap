@@ -30,70 +30,70 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       this.field25156 = var2;
    }
 
-   public void render(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, IRenderTypeBuffer var5, int var6) {
-      super.render(var1, var2, var3, var4, var5, var6);
-      var4.push();
-      Direction var9 = var1.getHorizontalFacing();
-      Vector3d var10 = this.getRenderOffset(var1, var3);
-      var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
+   public void render(ItemFrameEntity entityIn, float entityYaw, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn) {
+      super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+      matrixStackIn.push();
+      Direction var9 = entityIn.getHorizontalFacing();
+      Vector3d var10 = this.getRenderOffset(entityIn, partialTicks);
+      matrixStackIn.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
-      var4.translate((double)var9.getXOffset() * 0.46875, (double)var9.getYOffset() * 0.46875, (double)var9.getZOffset() * 0.46875);
-      var4.rotate(Vector3f.XP.rotationDegrees(var1.rotationPitch));
-      var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var1.rotationYaw));
-      boolean var13 = var1.isInvisible();
+      matrixStackIn.translate((double)var9.getXOffset() * 0.46875, (double)var9.getYOffset() * 0.46875, (double)var9.getZOffset() * 0.46875);
+      matrixStackIn.rotate(Vector3f.XP.rotationDegrees(entityIn.rotationPitch));
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(180.0F - entityIn.rotationYaw));
+      boolean var13 = entityIn.isInvisible();
       if (!var13) {
          BlockRendererDispatcher var14 = this.field25155.getBlockRendererDispatcher();
          ModelManager var15 = var14.getBlockModelShapes().getModelManager();
-         Class1997 var16 = !(var1.method4090().getItem() instanceof Class3316) ? field25153 : field25154;
-         var4.push();
-         var4.translate(-0.5, -0.5, -0.5);
+         Class1997 var16 = !(entityIn.method4090().getItem() instanceof Class3316) ? field25153 : field25154;
+         matrixStackIn.push();
+         matrixStackIn.translate(-0.5, -0.5, -0.5);
          var14.method812()
             .method24689(
-               var4.getLast(),
-               var5.getBuffer(Class8624.method30906()),
+               matrixStackIn.getLast(),
+               bufferIn.getBuffer(Class8624.method30906()),
                (BlockState)null,
                var15.method1023(var16),
                1.0F,
                1.0F,
                1.0F,
-               var6,
+                    packedLightIn,
                OverlayTexture.NO_OVERLAY
             );
-         var4.pop();
+         matrixStackIn.pop();
       }
 
-      ItemStack var19 = var1.method4090();
+      ItemStack var19 = entityIn.method4090();
       if (!var19.isEmpty()) {
          boolean var20 = var19.getItem() instanceof Class3316;
          if (!var13) {
-            var4.translate(0.0, 0.0, 0.4375);
+            matrixStackIn.translate(0.0, 0.0, 0.4375);
          } else {
-            var4.translate(0.0, 0.0, 0.5);
+            matrixStackIn.translate(0.0, 0.0, 0.5);
          }
 
-         int var21 = !var20 ? var1.method4093() : var1.method4093() % 4 * 2;
-         var4.rotate(Vector3f.ZP.rotationDegrees((float)var21 * 360.0F / 8.0F));
-         if (!Reflector.postForgeBusEvent(Reflector.field42988, var1, this, var4, var5, var6)) {
+         int var21 = !var20 ? entityIn.method4093() : entityIn.method4093() % 4 * 2;
+         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees((float)var21 * 360.0F / 8.0F));
+         if (!Reflector.postForgeBusEvent(Reflector.field42988, entityIn, this, matrixStackIn, bufferIn, packedLightIn)) {
             if (!var20) {
-               var4.scale(0.5F, 0.5F, 0.5F);
-               if (this.method17917(var1)) {
-                  this.field25156.renderItem(var19, ItemCameraTransformsTransformType.FIXED, var6, OverlayTexture.NO_OVERLAY, var4, var5);
+               matrixStackIn.scale(0.5F, 0.5F, 0.5F);
+               if (this.method17917(entityIn)) {
+                  this.field25156.renderItem(var19, ItemCameraTransformsTransformType.FIXED, packedLightIn, OverlayTexture.NO_OVERLAY, matrixStackIn, bufferIn);
                }
             } else {
-               var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
+               matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                float var17 = 0.0078125F;
-               var4.scale(0.0078125F, 0.0078125F, 0.0078125F);
-               var4.translate(-64.0, -64.0, 0.0);
-               MapData var18 = ReflectorForge.method37048(var19, var1.world);
-               var4.translate(0.0, 0.0, -1.0);
+               matrixStackIn.scale(0.0078125F, 0.0078125F, 0.0078125F);
+               matrixStackIn.translate(-64.0, -64.0, 0.0);
+               MapData var18 = ReflectorForge.method37048(var19, entityIn.world);
+               matrixStackIn.translate(0.0, 0.0, -1.0);
                if (var18 != null) {
-                  this.field25155.gameRenderer.method756().method593(var4, var5, var18, true, var6);
+                  this.field25155.gameRenderer.method756().method593(matrixStackIn, bufferIn, var18, true, packedLightIn);
                }
             }
          }
       }
 
-      var4.pop();
+      matrixStackIn.pop();
    }
 
    public Vector3d getRenderOffset(ItemFrameEntity var1, float var2) {
@@ -104,7 +104,7 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       return AtlasTexture.LOCATION_BLOCKS_TEXTURE;
    }
 
-   public boolean method17852(ItemFrameEntity var1) {
+   public boolean canRenderName(ItemFrameEntity var1) {
       if (Minecraft.isGuiEnabled() && !var1.method4090().isEmpty() && var1.method4090().method32152() && this.field25097.field40019 == var1) {
          double var4 = this.field25097.method32228(var1);
          float var6 = !var1.isDiscrete() ? 64.0F : 32.0F;
@@ -114,8 +114,8 @@ public class Class5736 extends EntityRenderer<ItemFrameEntity> {
       }
    }
 
-   public void method17893(ItemFrameEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
-      super.method17893(var1, var1.method4090().method32149(), var3, var4, var5);
+   public void renderName(ItemFrameEntity var1, ITextComponent var2, MatrixStack var3, IRenderTypeBuffer var4, int var5) {
+      super.renderName(var1, var1.method4090().method32149(), var3, var4, var5);
    }
 
    private boolean method17917(ItemFrameEntity var1) {

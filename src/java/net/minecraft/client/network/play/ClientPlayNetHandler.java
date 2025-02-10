@@ -417,7 +417,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          ((Entity)var11).setUniqueId(var1.getUniqueId());
          this.field23273.addEntity(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
-            this.mc.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
+            this.mc.getSoundHandler().play(new Class6345((AbstractMinecartEntity)var11));
          }
       }
    }
@@ -906,7 +906,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                }
             }
          } else {
-            this.mc.getSoundHandler().method1000(new Class6347((GuardianEntity)var4));
+            this.mc.getSoundHandler().play(new Class6347((GuardianEntity)var4));
          }
       }
    }
@@ -1623,8 +1623,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.mc);
       this.mc
          .getSoundHandler()
-         .method1000(
-            new MinecraftSoundManager(
+         .play(
+            new SimpleSound(
                var1.getSoundName(),
                var1.getCategory(),
                var1.getVolume(),
