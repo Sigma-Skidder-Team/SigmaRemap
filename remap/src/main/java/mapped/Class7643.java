@@ -34,7 +34,7 @@ import java.util.List;
 public class Class7643
 {
     private static Minecraft field30332;
-    private boolean field30333;
+    private boolean playing;
     private Class9175 field30334;
     private int field30335;
     private long field30336;
@@ -50,20 +50,20 @@ public class Class7643
     private int field30346;
     private long field30347;
     private int field30348;
-    private Class8681 field30349;
+    private Class8681 currentVideo;
     private boolean field30350;
     private Class258 field30351;
-    public List<double[]> field30352;
+    public List<double[]> visualizerData;
     private boolean field30353;
     public ArrayList<Double> field30354;
-    public SourceDataLine field30355;
+    public SourceDataLine sourceDataLine;
     private static final float field30356 = 32768.0f;
     private double field30357;
     private boolean field30358;
     private double field30359;
     
     public Class7643() {
-        this.field30333 = false;
+        this.playing = false;
         this.field30335 = 50;
         this.field30336 = -1L;
         this.field30337 = new Thread();
@@ -73,7 +73,7 @@ public class Class7643
         this.field30347 = 0L;
         this.field30350 = true;
         this.field30351 = Class258.field1230;
-        this.field30352 = new ArrayList<double[]>();
+        this.visualizerData = new ArrayList<double[]>();
         this.field30353 = false;
         this.field30354 = new ArrayList<Double>();
         this.field30358 = false;
@@ -117,9 +117,9 @@ public class Class7643
     @EventListener
     private void method24161(final Class5740 class5740) {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
-            if (this.field30333) {
-                if (this.field30352.size() != 0) {
-                    final double[] array = this.field30352.get(0);
+            if (this.playing) {
+                if (this.visualizerData.size() != 0) {
+                    final double[] array = this.visualizerData.get(0);
                     if (this.field30354.isEmpty()) {
                         for (int i = 0; i < array.length; ++i) {
                             if (this.field30354.size() < 1024) {
@@ -148,8 +148,8 @@ public class Class7643
     
     @EventListener
     private void method24162(final Class5734 class5734) {
-        if (this.field30333) {
-            if (this.field30352.size() != 0) {
+        if (this.playing) {
+            if (this.visualizerData.size() != 0) {
                 if (this.field30350) {
                     this.method24163();
                 }
@@ -158,7 +158,7 @@ public class Class7643
     }
     
     private void method24163() {
-        if (this.field30352.size() == 0) {
+        if (this.visualizerData.size() == 0) {
             return;
         }
         if (this.notificationImage == null) {
@@ -213,12 +213,12 @@ public class Class7643
     
     @EventListener
     private void method24164(final Class5743 class5743) {
-        if (!this.field30333) {
-            this.field30352.clear();
+        if (!this.playing) {
+            this.visualizerData.clear();
             this.field30354.clear();
         }
         try {
-            if (this.isThumbnailProcessing && this.thumbnailImage != null && this.scaledThumbnail != null && this.field30349 == null) {
+            if (this.isThumbnailProcessing && this.thumbnailImage != null && this.scaledThumbnail != null && this.currentVideo == null) {
                 if (this.field30342 != null) {
                     this.field30342.release();
                 }
@@ -235,7 +235,7 @@ public class Class7643
             ex.printStackTrace();
         }
         if (!this.isThumbnailProcessing) {
-            this.startProcessingVideoThumbnail(this.field30349);
+            this.startProcessingVideoThumbnail(this.currentVideo);
         }
     }
     
@@ -248,14 +248,14 @@ public class Class7643
     }
     
     private void startProcessingVideoThumbnail(final Class8681 class8681) {
-        if (this.field30349 != null) {
-            this.field30352.clear();
-            new Thread(() -> this.method24174(this.field30349)).start();
+        if (this.currentVideo != null) {
+            this.visualizerData.clear();
+            new Thread(() -> this.method24174(this.currentVideo)).start();
         }
     }
     
     private void method24167() {
-        this.field30352.clear();
+        this.visualizerData.clear();
         if (this.field30334 != null) {
             while (this.field30345 != null && this.field30345.isAlive()) {
                 this.field30345.interrupt();
@@ -269,18 +269,17 @@ public class Class7643
                     final URL url;
                     Client.method35174().setThreadName(url.toString());
                     this.field30346 = i;
-                    this.field30349 = this.field30334.field38866.get(i);
-                    this.field30352.clear();
-                    while (!this.field30333) {
+                    this.currentVideo = this.field30334.field38866.get(i);
+                    this.visualizerData.clear();
+                    while (!this.playing) {
                         try {
                             Thread.sleep(300L);
                         }
                         catch (final InterruptedException ex) {}
-                        final double[] array = new double[0];
-                        this.field30352.clear();
+                        this.visualizerData.clear();
                         if (Thread.interrupted()) {
-                            if (this.field30355 != null) {
-                                this.field30355.close();
+                            if (this.sourceDataLine != null) {
+                                this.sourceDataLine.close();
                             }
                             return;
                         }
@@ -308,8 +307,8 @@ public class Class7643
                             }
                             final Class6890 class1752 = class1751.method19491().get(1);
                             final AudioFormat format = new AudioFormat((float)class1752.method21188(), class1752.method21189(), class1752.method21187(), true, true);
-                            (this.field30355 = AudioSystem.getSourceDataLine(format)).open();
-                            this.field30355.start();
+                            (this.sourceDataLine = AudioSystem.getSourceDataLine(format)).open();
+                            this.sourceDataLine.start();
                             this.field30336 = (long)class1751.method19499();
                             if (this.field30336 > 1300L) {
                                 ((Class1750)inputStream2).close();
@@ -318,28 +317,28 @@ public class Class7643
                             final Class4206 class1753 = new Class4206(class1752.method21178());
                             final Class9157 class1754 = new Class9157();
                             while (class1752.method21181()) {
-                                while (!this.field30333) {
+                                while (!this.playing) {
                                     Thread.sleep(300L);
                                     final double[] array2 = new double[0];
-                                    this.field30352.clear();
+                                    this.visualizerData.clear();
                                     if (Thread.interrupted()) {
-                                        this.field30355.close();
+                                        this.sourceDataLine.close();
                                         return;
                                     }
                                 }
                                 class1753.method12669(class1752.method21182().method7931(), class1754);
                                 class1754.method33417();
                                 final byte[] array3;
-                                this.field30355.write(array3, 0, array3.length);
+                                this.sourceDataLine.write(array3, 0, array3.length);
                                 method24170(class1754.method33417(), format);
                                 final float[] array4;
                                 new Class8599(array4.length).method29128(array4);
                                 final float[][] array5;
-                                this.field30352.add(method24171(array5[0], array5[1]));
-                                if (this.field30352.size() > 18) {
-                                    this.field30352.remove(0);
+                                this.visualizerData.add(method24171(array5[0], array5[1]));
+                                if (this.visualizerData.size() > 18) {
+                                    this.visualizerData.remove(0);
                                 }
-                                this.method24193(this.field30355, this.field30335);
+                                this.method24193(this.sourceDataLine, this.field30335);
                                 if (!Thread.interrupted()) {
                                     this.field30347 = Math.round(class1752.method21185());
                                     this.field30359 = class1752.method21184();
@@ -354,11 +353,11 @@ public class Class7643
                                     this.field30347 = 0L;
                                 }
                                 if (Thread.interrupted()) {
-                                    this.field30355.close();
+                                    this.sourceDataLine.close();
                                     return;
                                 }
                             }
-                            this.field30355.close();
+                            this.sourceDataLine.close();
                             ((Class1750)inputStream2).close();
                         }
                         else {
@@ -454,7 +453,7 @@ public class Class7643
             else {
                 this.scaledThumbnail = read;
             }
-            this.field30349 = null;
+            this.currentVideo = null;
         }
         catch (final NumberFormatException | IOException ex) {
             ((Throwable)ex).printStackTrace();
@@ -463,11 +462,11 @@ public class Class7643
     
     public void method24175(final boolean field30333) {
         if (!field30333) {
-            if (this.field30355 != null) {
-                this.field30355.flush();
+            if (this.sourceDataLine != null) {
+                this.sourceDataLine.flush();
             }
         }
-        this.field30333 = field30333;
+        this.playing = field30333;
     }
     
     public void method24176(final int field30335) {
@@ -512,7 +511,7 @@ public class Class7643
             field30334.field38866.add(class8681);
         }
         this.field30334 = field30334;
-        this.field30333 = true;
+        this.playing = true;
         this.field30347 = 0L;
         this.field30359 = 0.0;
         for (int i = 0; i < field30334.field38866.size(); ++i) {
@@ -528,7 +527,7 @@ public class Class7643
     }
     
     public boolean method24184() {
-        return this.field30333;
+        return this.playing;
     }
     
     public URL method24185() {

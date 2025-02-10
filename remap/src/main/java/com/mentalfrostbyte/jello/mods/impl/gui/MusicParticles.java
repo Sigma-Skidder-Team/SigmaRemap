@@ -31,7 +31,7 @@ public class MusicParticles extends PremiumModule
     private void method10683(final Class5740 class5740) {
         if (this.isEnabled() && MusicParticles.mc.player != null) {
             if (Client.getInstance().method35199().method24184()) {
-                if (Client.getInstance().method35199().field30352.size() != 0) {
+                if (Client.getInstance().method35199().visualizerData.size() != 0) {
                     final float min = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - this.field16021) / 1.810361E7f));
                     double max = 0.0;
                     final int n = 4750;
