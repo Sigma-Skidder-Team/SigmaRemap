@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-public class TextReplaceEvent extends Class4406 {
+public class TextReplaceEvent extends CancellableEvent {
     private String text;
 
     public TextReplaceEvent(String var1) {

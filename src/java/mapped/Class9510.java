@@ -15,7 +15,7 @@ public class Class9510 {
    public Class9510 field44278;
    public Class2317 field44279 = Class2317.field15873;
    public Class2285 field44280 = Class2285.field15121;
-   public Set<Long> field44281 = new HashSet<Long>();
+   public Set<Long> field44281 = new HashSet<>();
    public Set<Long> field44282 = new HashSet<Long>();
    public Set<Long> field44283 = new HashSet<Long>();
    public Set<Long> field44284 = new HashSet<Long>();

@@ -546,7 +546,7 @@ public class ClientWorld extends World {
    @Override
    public void playSound(double var1, double var3, double var5, SoundEvent var7, SoundCategory var8, float var9,
          float var10, boolean var11) {
-      double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().method11343(var1, var3, var5);
+      double var14 = this.mc.gameRenderer.getActiveRenderInfo().getPos().squareDistanceTo(var1, var3, var5);
       SimpleSound var16 = new SimpleSound(var7, var8, var9, var10, var1, var3, var5);
       if (var11 && var14 > 100.0) {
          double var17 = Math.sqrt(var14) / 40.0;

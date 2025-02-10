@@ -32,14 +32,14 @@ public class OldAACSpeed extends Module {
     public void onEnable() {
         this.field23537 = Client.getInstance().getPlayerTracker().getgroundTicks() <= 0 ? 1 : 0;
         this.field23534 = MovementUtil.getSpeed();
-        this.field23535 = MovementUtil.otherStrafe()[0];
+        this.field23535 = MovementUtil.getDirectionArray()[0];
     }
 
     @EventTarget
     public void method16226(EventMove var1) {
         if (this.isEnabled()) {
             if (!mc.player.onGround) {
-                if (MultiUtilities.method17686() && AACAntiKB.field23907 >= 7) {
+                if (MultiUtilities.isMoving() && AACAntiKB.field23907 >= 7) {
                     this.field23536++;
                     if (this.field23536 == 1) {
                         if (this.field23537 != 1) {
@@ -55,9 +55,9 @@ public class OldAACSpeed extends Module {
                         this.field23534 = MovementUtil.getSpeed();
                     }
 
-                    this.field23535 = MovementUtil.method37092(var1, this.field23534, MovementUtil.otherStrafe()[0], this.field23535, 45.0F);
+                    this.field23535 = MovementUtil.setMotion(var1, this.field23534, MovementUtil.getDirectionArray()[0], this.field23535, 45.0F);
                 }
-            } else if (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()) {
+            } else if (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.isMoving()) {
                 this.field23536 = 0;
                 mc.player.jump();
                 var1.setX(mc.player.getMotion().x);
@@ -66,7 +66,7 @@ public class OldAACSpeed extends Module {
             } else if (var1.getY() != 0.4 + (double) MovementUtil.getJumpBoost() * 0.1) {
                 this.field23537 = 0;
             } else {
-                MovementUtil.setSpeed(var1, this.field23534);
+                MovementUtil.setMotion(var1, this.field23534);
             }
         }
     }
@@ -86,9 +86,9 @@ public class OldAACSpeed extends Module {
                 this.field23534 = 0.5;
             }
 
-            this.field23535 = MovementUtil.otherStrafe()[0];
-            var1.method14003(this.field23534);
-            var1.method14002(0.4 + (double) MovementUtil.getJumpBoost() * 0.1);
+            this.field23535 = MovementUtil.getDirectionArray()[0];
+            var1.setStrafeSpeed(this.field23534);
+            var1.setY(0.4 + (double) MovementUtil.getJumpBoost() * 0.1);
             this.field23536 = 0;
         }
     }

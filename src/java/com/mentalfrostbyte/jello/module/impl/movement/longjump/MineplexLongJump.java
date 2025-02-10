@@ -50,7 +50,7 @@ public class MineplexLongJump extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
-                    if (this.field23807 && !MultiUtilities.method17686()) {
+                    if (this.field23807 && !MultiUtilities.isMoving()) {
                         this.field23807 = !this.field23807;
                         this.field23802 = 0.5;
                         this.field23805 = 1;
@@ -66,7 +66,7 @@ public class MineplexLongJump extends Module {
                         this.field23803 -= 0.02;
                     }
 
-                    if (this.field23804 > 6 && !MultiUtilities.method17686()) {
+                    if (this.field23804 > 6 && !MultiUtilities.isMoving()) {
                         this.field23803 -= 0.05;
                     }
 
@@ -85,7 +85,7 @@ public class MineplexLongJump extends Module {
                         this.field23802 = 0.3;
                     }
 
-                    MovementUtil.setSpeed(var1, this.field23802);
+                    MovementUtil.setMotion(var1, this.field23802);
                     var1.setY(this.field23803);
                 }
             } else {
@@ -103,13 +103,13 @@ public class MineplexLongJump extends Module {
                     }
                 }
 
-                this.field23807 = MultiUtilities.method17686();
+                this.field23807 = MultiUtilities.isMoving();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (MultiUtilities.method17686()
+                if (MultiUtilities.isMoving()
                         && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                 }
             }
         }
@@ -131,8 +131,8 @@ public class MineplexLongJump extends Module {
             }
 
             this.field23804 = 0;
-            var1.method14003(0.0);
-            var1.method14002(this.field23803);
+            var1.setStrafeSpeed(0.0);
+            var1.setY(this.field23803);
         }
     }
 

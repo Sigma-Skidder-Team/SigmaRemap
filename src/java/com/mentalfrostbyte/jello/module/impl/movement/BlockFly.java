@@ -298,7 +298,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
         if (this.method16735() != 0 && (!mc.player.collidedVertically
                 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-            if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
+            if (!MultiUtilities.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
@@ -320,9 +320,9 @@ public class BlockFly extends ModuleWithModuleSettings {
                         if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
-                                if (!MultiUtilities.method17686()) {
+                                if (!MultiUtilities.isMoving()) {
                                     MovementUtil.strafe(0.0);
-                                    MovementUtil.setSpeed(var1, 0.0);
+                                    MovementUtil.setMotion(var1, 0.0);
                                 }
 
                                 var1.setY(MovementUtil.getJumpValue());
@@ -334,9 +334,9 @@ public class BlockFly extends ModuleWithModuleSettings {
                     case "AAC":
                         if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                             var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
-                            if (mc.gameSettings.keyBindJump.pressed && !MultiUtilities.method17686()) {
+                            if (mc.gameSettings.keyBindJump.pressed && !MultiUtilities.isMoving()) {
                                 MovementUtil.strafe(0.0);
-                                MovementUtil.setSpeed(var1, 0.0);
+                                MovementUtil.setMotion(var1, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
@@ -351,7 +351,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                             var1.setY(0.0);
-                            MovementUtil.setSpeed(var1, 0.0);
+                            MovementUtil.setMotion(var1, 0.0);
                             mc.timer.timerSpeed = 0.8038576F;
                         }
                 }
@@ -366,10 +366,10 @@ public class BlockFly extends ModuleWithModuleSettings {
                 mc.player.jumpTicks = 20;
                 var1.setY(MovementUtil.getJumpValue());
             }
-        } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
+        } else if (!MultiUtilities.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
-            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+            MovementUtil.setMotion(var1, MovementUtil.getSpeed());
             MovementUtil.strafe(MovementUtil.getSpeed());
         }
 

@@ -53,7 +53,7 @@ public class AACAntiKB extends Module {
                         double var15 = ((double) var4 * var9 - (double) var5 * var7) * var11;
                         float var17 = (float) (Math.atan2(var13, var15) * 180.0 / Math.PI) - 90.0F;
                         float var18 = RotationHelper.angleDiff(this.field23908, var17);
-                        if (var18 > 100.0F && MultiUtilities.method17686()) {
+                        if (var18 > 100.0F && MultiUtilities.isMoving()) {
                             var1.setX(var1.getX() + var13);
                             var1.setZ(var1.getZ() + var15);
                         } else {

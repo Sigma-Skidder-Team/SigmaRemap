@@ -82,7 +82,7 @@ public class Freecam extends Module {
     }
 
     @EventTarget
-    public void method16641(Render3DEvent var1) {
+    public void method16641(EventRender3D var1) {
         if (this.isEnabled()) {
             field23814.resetPositionToBB();
             field23814.boundingBox = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);

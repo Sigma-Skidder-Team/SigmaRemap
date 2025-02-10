@@ -51,7 +51,7 @@ public class SpiderStep extends Module {
 
                     var7 = !(var7 > 0.42) ? var7 : 0.4199998;
                     var1.setY(var7);
-                    this.field23761 = MovementUtil.otherStrafe()[0] - 90.0F;
+                    this.field23761 = MovementUtil.getDirectionArray()[0] - 90.0F;
                     this.field23758 = 1;
                     this.field23759 = mc.player.getPosY();
                     var4 = var1.getHeight();
@@ -89,7 +89,7 @@ public class SpiderStep extends Module {
 
                 var4 = var4 > 0.42 ? 0.4199998 : var4;
                 var1.setY(var4 * 0.797);
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
                 this.field23758++;
             } else if (this.field23758 == 2) {
                 var1.setY(this.field23759 + this.field23760 - mc.player.getPosY());
@@ -104,20 +104,20 @@ public class SpiderStep extends Module {
                     String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
                         case "NCP":
-                            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+                            MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                             break;
                         case "AAC":
-                            MovementUtil.setSpeed(var1, 0.301);
+                            MovementUtil.setMotion(var1, 0.301);
                             break;
                         case "Gomme":
-                            MovementUtil.setSpeed(var1, 0.175);
+                            MovementUtil.setMotion(var1, 0.175);
                     }
                 } else {
-                    MovementUtil.setSpeed(var1, 0.25);
+                    MovementUtil.setMotion(var1, 0.25);
                 }
 
-                if (!MultiUtilities.method17686()) {
-                    MovementUtil.setSpeed(var1, 0.0);
+                if (!MultiUtilities.isMoving()) {
+                    MovementUtil.setMotion(var1, 0.0);
                 }
 
                 this.field23758 = 0;

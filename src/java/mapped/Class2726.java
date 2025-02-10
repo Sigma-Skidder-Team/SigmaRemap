@@ -58,7 +58,7 @@ public class Class2726 extends Class2595 {
          if (var6.method23486(FluidTags.WATER) || var5.isAir()) {
             double var7 = var4.length();
             if (var7 > 0.0) {
-               var4.method11333();
+               var4.normalize();
                float var9 = 3.0F;
                if (var7 > 5.0) {
                   var9 = (float)((double)var9 - (var7 - 5.0) / 5.0);

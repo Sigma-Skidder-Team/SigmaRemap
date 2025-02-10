@@ -435,7 +435,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    private boolean isLiquidPresentInAABB(AxisAlignedBB var1) {
-      return this.world.hasNoCollisions(this, var1) && !this.world.method7014(var1);
+      return this.world.hasNoCollisions(this, var1) && !this.world.containsAnyLiquid(var1);
    }
 
    public void setOnGround(boolean var1) {
@@ -1100,7 +1100,7 @@ public abstract class Entity implements INameable, ICommandSource {
    private static Vector3d getAbsoluteMotion(Vector3d var0, float var1, float var2) {
       double var5 = var0.lengthSquared();
       if (!(var5 < 1.0E-7)) {
-         Vector3d var7 = (!(var5 > 1.0) ? var0 : var0.method11333()).scale((double) var1);
+         Vector3d var7 = (!(var5 > 1.0) ? var0 : var0.normalize()).scale((double) var1);
          float var8 = MathHelper.sin(var2 * (float) (Math.PI / 180.0));
          float var9 = MathHelper.cos(var2 * (float) (Math.PI / 180.0));
          return new Vector3d(
@@ -2744,14 +2744,14 @@ public abstract class Entity implements INameable, ICommandSource {
             }
 
             if (!(this instanceof PlayerEntity)) {
-               var17 = var17.method11333();
+               var17 = var17.normalize();
             }
 
             Vector3d var30 = this.getMotion();
             var17 = var17.scale(var2 * 1.0);
             double var27 = 0.003;
             if (Math.abs(var30.x) < 0.003 && Math.abs(var30.z) < 0.003 && var17.length() < 0.0045000000000000005) {
-               var17 = var17.method11333().scale(0.0045000000000000005);
+               var17 = var17.normalize().scale(0.0045000000000000005);
             }
 
             this.setMotion(this.getMotion().add(var17));

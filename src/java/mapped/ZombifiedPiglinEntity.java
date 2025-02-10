@@ -160,7 +160,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    @Override
    public boolean method4266(IWorldReader var1) {
-      return var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox());
+      return var1.checkNoEntityCollision(this) && !var1.containsAnyLiquid(this.getBoundingBox());
    }
 
    @Override

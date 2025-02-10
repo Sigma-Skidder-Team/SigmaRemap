@@ -85,7 +85,7 @@ public abstract class ProjectileEntity extends Entity {
 
    public void shoot(double var1, double var3, double var5, float var7, float var8) {
       Vector3d var11 = new Vector3d(var1, var3, var5)
-         .method11333()
+         .normalize()
          .add(
             this.rand.nextGaussian() * 0.0075F * (double)var8,
             this.rand.nextGaussian() * 0.0075F * (double)var8,

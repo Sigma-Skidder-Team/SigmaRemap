@@ -45,12 +45,12 @@ public class RedeskyLongJump extends Module {
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.method17686()
-                        || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()
+                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.isMoving()
+                        || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.isMoving()
                         || var1.getY() == MovementUtil.getJumpValue()) {
                     this.field23981 = 1;
                     var1.setY(MovementUtil.getJumpValue());
-                    MovementUtil.setSpeed(var1, 0.55);
+                    MovementUtil.setMotion(var1, 0.55);
                 }
             }
         } else if (this.field23981 > 0) {
@@ -83,7 +83,7 @@ public class RedeskyLongJump extends Module {
                         var7 = 1.32;
                 }
 
-                MovementUtil.setSpeed(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
+                MovementUtil.setMotion(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
                 var1.setY((double) this.getNumberValueBySettingName("Heigh") * MovementUtil.getJumpValue());
                 this.field23982 = 1.0;
             } else if (var1.getY() < 0.0 && mc.player.fallDistance < 3.0F) {

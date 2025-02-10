@@ -124,7 +124,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
       return this.getFluidState(var1).method23486(FluidTags.WATER);
    }
 
-   default boolean method7014(AxisAlignedBB var1) {
+   default boolean containsAnyLiquid(AxisAlignedBB var1) {
       int var4 = MathHelper.floor(var1.minX);
       int var5 = MathHelper.method37774(var1.maxX);
       int var6 = MathHelper.floor(var1.minY);

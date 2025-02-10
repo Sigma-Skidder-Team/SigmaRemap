@@ -111,7 +111,7 @@ public class Class2780 extends Class2595 {
                var3.getPosY() - this.field17382.getPosY(),
                var3.getPosZ() - this.field17382.getPosZ()
             )
-            .method11333()
+            .normalize()
             .scale(Math.max(var4 - 2.0, 0.0));
          this.field17382
             .method4230()

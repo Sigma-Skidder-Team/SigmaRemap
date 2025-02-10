@@ -83,7 +83,7 @@ public class Class2820 extends Class2803<GuardianEntity> {
          Vector3d var16 = var1.getLook(0.0F);
          var16 = new Vector3d(var16.x, 0.0, var16.z);
          Vector3d var17 = new Vector3d(var13.x - var12.x, 0.0, var13.z - var12.z)
-            .method11333()
+            .normalize()
             .method11351((float) (Math.PI / 2));
          double var18 = var16.dotProduct(var17);
          this.field17573.rotationPointX = MathHelper.sqrt((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);

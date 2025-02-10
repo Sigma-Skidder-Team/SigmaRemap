@@ -37,7 +37,7 @@ public class GommeAntiKB extends Module {
             var1.setZ(var1.getZ() * 0.5);
         } else if (this.field23610 == 2) {
             this.field23610++;
-            MovementUtil.setSpeed(var1, this.getNumberValueBySettingName("Boost"));
+            MovementUtil.setMotion(var1, this.getNumberValueBySettingName("Boost"));
         }
     }
 

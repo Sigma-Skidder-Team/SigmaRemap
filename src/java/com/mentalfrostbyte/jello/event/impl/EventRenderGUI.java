@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
-public class EventRenderGUI extends Class4406 {
+public class EventRenderGUI extends CancellableEvent {
     public boolean field21522;
 
     public EventRenderGUI(boolean var1) {

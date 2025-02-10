@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.combat;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -152,7 +152,7 @@ public class InfiniteAura extends Module {
     }
 
     @EventTarget
-    public void method16774(Render3DEvent var1) {
+    public void method16774(EventRender3D var1) {
         if (this.isEnabled() && this.field23900 != null && this.field23900.size() != 0) {
             for (List<Vector3d> var5 : this.field23900) {
                 GL11.glPushMatrix();

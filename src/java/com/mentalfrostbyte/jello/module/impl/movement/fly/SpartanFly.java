@@ -109,13 +109,13 @@ public class SpartanFly extends Module {
                         this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                                 ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                                 : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
-                        MovementUtil.setSpeed(var1, 0.35);
+                        MovementUtil.setMotion(var1, 0.35);
                     }
                 }
             } else {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
-                MovementUtil.setSpeed(var1, 0.35);
+                MovementUtil.setMotion(var1, 0.35);
                 this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                         ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                         : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);

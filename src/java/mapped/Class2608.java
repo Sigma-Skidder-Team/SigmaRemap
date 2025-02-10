@@ -59,7 +59,7 @@ public class Class2608 extends Class2595 {
             Vector3d var5 = this.field16860.getPositionVec();
             Vector3d var6 = var5.subtract(var4);
             var4 = var6.scale(0.4).add(var4);
-            Vector3d var7 = var4.subtract(var5).method11333().scale(10.0).add(var5);
+            Vector3d var7 = var4.subtract(var5).normalize().scale(10.0).add(var5);
             BlockPos var8 = new BlockPos(var7);
             var8 = this.field16860.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, var8);
             if (!var3.method21654((double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), 1.0)) {

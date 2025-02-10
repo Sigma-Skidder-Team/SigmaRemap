@@ -21,7 +21,7 @@ public class MinemenSpeed extends Module {
                 calculatedSpeed = 0.679 + (double) MovementUtil.getSpeedBoost() * 0.12;
             }
 
-            MovementUtil.setSpeed(event, calculatedSpeed);
+            MovementUtil.setMotion(event, calculatedSpeed);
         }
     }
 }

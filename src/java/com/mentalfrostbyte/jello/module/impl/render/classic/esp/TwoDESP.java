@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 import com.ibm.icu.text.NumberFormat;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender2D;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
@@ -115,7 +115,7 @@ public class TwoDESP extends Module {
     }
 
     @EventTarget
-    public void method16514(Render3DEvent var1) {
+    public void method16514(EventRender3D var1) {
         if (this.isEnabled()) {
             this.method16519();
         }

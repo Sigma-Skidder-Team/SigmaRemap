@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -318,7 +318,7 @@ public class AutoMiner extends Module {
    }
 
    @EventTarget
-   public void method16084(Render3DEvent var1) {
+   public void method16084(EventRender3D var1) {
       if (this.isEnabled()) {
          this.method16086();
       }

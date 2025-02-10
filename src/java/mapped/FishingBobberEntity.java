@@ -264,7 +264,7 @@ public class FishingBobberEntity extends ProjectileEntity {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      this.setMotion(this.getMotion().method11333().scale(var1.method31418(this)));
+      this.setMotion(this.getMotion().normalize().scale(var1.method31418(this)));
    }
 
    private void method3536() {

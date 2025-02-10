@@ -131,7 +131,7 @@ public class BlockFlyAACMode extends Module {
 
                 this.field23526 = AACSpeed.method16016(this.field23524, this.field23525, () -> this.field23525 = 0);
                 if (this.field23524 >= 0) {
-                    MovementUtil.setSpeed(var1, this.field23526);
+                    MovementUtil.setMotion(var1, this.field23526);
                 }
             }
         }
@@ -274,7 +274,7 @@ public class BlockFlyAACMode extends Module {
     public void method16211(JumpEvent var1) {
         if (this.isEnabled()) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
+                    && (!MultiUtilities.isMoving() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

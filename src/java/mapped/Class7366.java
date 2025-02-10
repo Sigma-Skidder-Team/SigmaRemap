@@ -17,7 +17,7 @@ public class Class7366 extends Class7361 {
 
    @Override
    public void method23359() {
-      Vector3d var3 = this.field31519.method4334(1.0F).method11333();
+      Vector3d var3 = this.field31519.method4334(1.0F).normalize();
       var3.method11351((float) (-Math.PI / 4));
       double var4 = this.field31519.field5624.getPosX();
       double var6 = this.field31519.field5624.getPosYHeight(0.5);
@@ -50,7 +50,7 @@ public class Class7366 extends Class7361 {
          this.field31531 = Vector3d.method11330(this.field31519.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Class2909.field17994));
       }
 
-      if (this.field31531.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ()) < 1.0) {
+      if (this.field31531.squareDistanceTo(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ()) < 1.0) {
          this.field31519.method4336().<Class7365>method32673(Class9598.field44901).method23370();
          this.field31519.method4336().method32671(Class9598.field44902);
       }

@@ -131,19 +131,19 @@ public class HypixelFly extends Module {
                     break;
                 case "Fast":
                     event.setY(MovementUtil.getJumpValue());
-                    MovementUtil.setSpeed(event, var28);
+                    MovementUtil.setMotion(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtil.getSpeedBoost();
                     break;
                 case "NoDmg":
                     event.setY(MovementUtil.getJumpValue());
-                    MovementUtil.setSpeed(event, var28);
+                    MovementUtil.setMotion(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = var28 * 0.987;
                     break;
                 case "Funcraft":
                     event.setY(MovementUtil.getJumpValue());
-                    MovementUtil.setSpeed(event, var28);
+                    MovementUtil.setMotion(event, var28);
                     this.grounded = !this.grounded;
                     this.flySpeed = 0.51 + (double) this.getNumberValueBySettingName("Speed");
             }
@@ -161,11 +161,11 @@ public class HypixelFly extends Module {
             double var10 = curMode.equals("Basic") ? MovementUtil.method37076() : MovementUtil.method37076() - 0.008;
             if (this.flySpeed < var10) {
                 this.flySpeed = var10;
-            } else if (!MultiUtilities.method17686()) {
+            } else if (!MultiUtilities.isMoving()) {
                 this.flySpeed = var10;
             }
 
-            MovementUtil.setSpeed(event, this.flySpeed);
+            MovementUtil.setMotion(event, this.flySpeed);
             if (!mc.player.onGround || !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23563++;
                 event.setY(0.0);

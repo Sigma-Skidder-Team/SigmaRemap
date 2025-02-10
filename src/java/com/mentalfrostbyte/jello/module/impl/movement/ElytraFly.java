@@ -51,18 +51,18 @@ public class ElytraFly extends Module {
     public void method16221(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = MovementUtil.getSpeed();
-            boolean var6 = MultiUtilities.method17686();
+            boolean var6 = MultiUtilities.isMoving();
             if (!this.getBooleanValueFromSettingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
 
-            MovementUtil.setSpeed(var1, 0.0);
+            MovementUtil.setMotion(var1, 0.0);
             if (!mc.player.isElytraFlying()) {
                 this.field23528 = 0;
             } else {
                 if (this.field23528 > 0) {
                     if (this.field23528 > 7) {
-                        MovementUtil.setSpeed(var1, var4 * 6.3F);
+                        MovementUtil.setMotion(var1, var4 * 6.3F);
                     }
 
                     MultiUtilities.setPlayerYMotion(-0.071);
@@ -73,7 +73,7 @@ public class ElytraFly extends Module {
             }
 
             if (this.field23530 > 1.0001E-4F && mc.player.isJumping) {
-                MovementUtil.setSpeed(var1, var4 * 6.3F);
+                MovementUtil.setMotion(var1, var4 * 6.3F);
                 var1.setY(this.field23530);
             }
 

@@ -98,12 +98,12 @@ public class MineplexFly extends Module {
     public void method16458(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23675) {
-                MovementUtil.setSpeed(var1, 0.01);
+                MovementUtil.setMotion(var1, 0.01);
             } else {
                 float var4 = mc.player.rotationYaw + 90.0F;
                 if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
-                        if (this.field23674 && !MultiUtilities.method17686()) {
+                        if (this.field23674 && !MultiUtilities.isMoving()) {
                             this.field23674 = !this.field23674;
                             this.field23671 = 0.5;
                         }
@@ -119,20 +119,20 @@ public class MineplexFly extends Module {
                             this.field23672 -= 0.02;
                         }
 
-                        if (this.field23669 > 6 && !MultiUtilities.method17686()) {
+                        if (this.field23669 > 6 && !MultiUtilities.isMoving()) {
                             this.field23672 -= 0.05;
                         }
 
                         var1.setY(this.field23672);
-                        if (mc.player.collidedHorizontally || !MultiUtilities.method17686()) {
+                        if (mc.player.collidedHorizontally || !MultiUtilities.isMoving()) {
                             this.field23671 = 0.35;
                         }
 
-                        MovementUtil.setSpeed(var1, this.field23671);
+                        MovementUtil.setMotion(var1, this.field23671);
                     }
                 } else {
                     if (this.field23669 > 0) {
-                        MovementUtil.setSpeed(var1, 0.0);
+                        MovementUtil.setMotion(var1, 0.0);
                         this.access().toggle();
                         return;
                     }
@@ -155,11 +155,11 @@ public class MineplexFly extends Module {
                     CPlayerTryUseItemOnBlockPacket var9 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var8);
                     mc.getConnection().sendPacket(var9);
                     if (!(this.field23671 < (double) this.getNumberValueBySettingName("Boost"))) {
-                        MovementUtil.setSpeed(var1, 0.0);
+                        MovementUtil.setMotion(var1, 0.0);
                         mc.player.jump();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
-                        this.field23674 = MultiUtilities.method17686();
+                        this.field23674 = MultiUtilities.isMoving();
                         var1.setY(this.field23672);
                         this.field23673 = mc.player.getPosY();
                         this.field23668++;

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.*;
@@ -113,7 +113,7 @@ public class Nuker extends Module {
     }
 
     @EventTarget
-    public void method16264(Render3DEvent var1) {
+    public void method16264(EventRender3D var1) {
         if (this.field23566 != null && !mc.world.getBlockState(this.field23566).isAir()) {
             int var4 = MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
             GL11.glPushMatrix();

@@ -14,7 +14,6 @@ import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -188,7 +187,7 @@ public class MiniMap extends Module {
                             RenderUtil.endScissor();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
-                            int var15 = (int) MovementUtil.otherStrafe()[0];
+                            int var15 = (int) MovementUtil.getDirectionArray()[0];
                             GL11.glTranslatef((float) (field23711 + field23710 / 2 + 1),
                                     (float) (field23712 + field23709 / 2 + 3), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);

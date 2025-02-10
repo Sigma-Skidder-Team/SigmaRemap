@@ -746,7 +746,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public boolean method4266(IWorldReader var1) {
-      return !var1.method7014(this.getBoundingBox()) && var1.checkNoEntityCollision(this);
+      return !var1.containsAnyLiquid(this.getBoundingBox()) && var1.checkNoEntityCollision(this);
    }
 
    public int method4267() {

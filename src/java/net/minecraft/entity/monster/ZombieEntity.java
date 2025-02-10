@@ -269,7 +269,7 @@ public class ZombieEntity extends MonsterEntity {
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
                      && this.world.checkNoEntityCollision(var10)
                      && this.world.hasNoCollisions(var10)
-                     && !this.world.method7014(var10.getBoundingBox())) {
+                     && !this.world.containsAnyLiquid(var10.getBoundingBox())) {
                      var10.setAttackTarget(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), SpawnReason.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);

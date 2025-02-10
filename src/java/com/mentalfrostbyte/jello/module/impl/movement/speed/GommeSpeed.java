@@ -23,13 +23,13 @@ public class GommeSpeed extends Module {
     public void onEnable() {
         this.field23581 = 0;
         this.field23582 = 0;
-        this.field23584 = MovementUtil.otherStrafe()[0];
+        this.field23584 = MovementUtil.getDirectionArray()[0];
     }
 
     @Override
     public void onDisable() {
-        if (MultiUtilities.method17686()) {
-            MovementUtil.method37093(0.27, MovementUtil.otherStrafe()[0], this.field23584, 45.0F);
+        if (MultiUtilities.isMoving()) {
+            MovementUtil.method37093(0.27, MovementUtil.getDirectionArray()[0], this.field23584, 45.0F);
         } else {
             MovementUtil.strafe(0.0);
         }
@@ -77,14 +77,14 @@ public class GommeSpeed extends Module {
                         }
                     }
 
-                    if (MultiUtilities.method17686()) {
-                        this.field23584 = MovementUtil.method37092(var1, Math.max(this.field23583, 0.23), MovementUtil.otherStrafe()[0], this.field23584, 45.0F);
+                    if (MultiUtilities.isMoving()) {
+                        this.field23584 = MovementUtil.setMotion(var1, Math.max(this.field23583, 0.23), MovementUtil.getDirectionArray()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
-                        MovementUtil.setSpeed(var1, 0.0);
+                        MovementUtil.setMotion(var1, 0.0);
                     }
                 }
-            } else if (MultiUtilities.method17686()) {
+            } else if (MultiUtilities.isMoving()) {
                 this.field23581 = 0;
                 var1.setY(MovementUtil.getJumpValue());
                 double[] var9 = new double[]{0.549, 0.625};
@@ -93,8 +93,8 @@ public class GommeSpeed extends Module {
                     this.field23582++;
                 }
 
-                MovementUtil.setSpeed(var1, this.field23583);
-                this.field23584 = MovementUtil.otherStrafe()[0];
+                MovementUtil.setMotion(var1, this.field23583);
+                this.field23584 = MovementUtil.getDirectionArray()[0];
             }
         }
     }

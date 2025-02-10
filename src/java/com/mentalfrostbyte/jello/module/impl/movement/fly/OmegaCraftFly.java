@@ -94,7 +94,7 @@ public class OmegaCraftFly extends Module {
             if (this.field23700 > 1) {
                 mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
                 double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtil.getSpeedBoost() * 0.02 : 0.25;
-                MovementUtil.setSpeed(var1, var4);
+                MovementUtil.setMotion(var1, var4);
                 this.field23700 = 0;
             }
         } else {
@@ -106,7 +106,7 @@ public class OmegaCraftFly extends Module {
             }
 
             double var6 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.6 : 0.25;
-            MovementUtil.setSpeed(var1, var6);
+            MovementUtil.setMotion(var1, var6);
         }
 
         MultiUtilities.setPlayerXMotion(var1.getX());

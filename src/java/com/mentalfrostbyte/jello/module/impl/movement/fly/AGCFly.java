@@ -75,14 +75,14 @@ public class AGCFly extends Module {
                 if (this.field23902 == -1) {
                     var1.setY(this.field23903 != 3 ? 0.001 : 0.095);
                     if (this.field23903 != 3) {
-                        MovementUtil.setSpeed(var1, 0.32);
+                        MovementUtil.setMotion(var1, 0.32);
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

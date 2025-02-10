@@ -61,13 +61,13 @@ public class YPortSpeed extends Module {
                         if (MovementUtil.isMoving() && mc.player.onGround) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
-                            MovementUtil.setSpeed(var1, 0.461);
+                            MovementUtil.setMotion(var1, 0.461);
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
                                 && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtil.getJumpValue() + (double) MovementUtil.getJumpBoost() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
-                            MovementUtil.setSpeed(var1, 0.312);
+                            MovementUtil.setMotion(var1, 0.312);
                             var1.setY(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
                             MultiUtilities.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
@@ -77,11 +77,11 @@ public class YPortSpeed extends Module {
                         }
                         break;
                     case "OldNCP":
-                        if (mc.player.onGround && MultiUtilities.method17686()) {
+                        if (mc.player.onGround && MultiUtilities.isMoving()) {
                             this.field23545 = 2;
                         }
 
-                        if (this.field23545 == 1 && MultiUtilities.method17686()) {
+                        if (this.field23545 == 1 && MultiUtilities.isMoving()) {
                             this.field23545 = 2;
                             this.field23543 = 1.38 * MovementUtil.getSpeed() - 0.01;
                         } else if (this.field23545 == 2) {
@@ -109,7 +109,7 @@ public class YPortSpeed extends Module {
                         }
 
                         this.field23543 = Math.max(this.field23543, MovementUtil.getSpeed());
-                        MovementUtil.setSpeed(var1, this.field23543);
+                        MovementUtil.setMotion(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
                         MultiUtilities.setPlayerYMotion(var1.getY());
                 }

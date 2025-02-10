@@ -69,7 +69,7 @@ public class Class6983 {
       ItemEntity var7 = new ItemEntity(var0.world, var0.getPosX(), var5, var0.getPosZ(), var1);
       float var8 = 0.3F;
       Vector3d var9 = var2.subtract(var0.getPositionVec());
-      var9 = var9.method11333().scale(0.3F);
+      var9 = var9.normalize().scale(0.3F);
       var7.setMotion(var9);
       var7.setDefaultPickupDelay();
       var0.world.addEntity(var7);

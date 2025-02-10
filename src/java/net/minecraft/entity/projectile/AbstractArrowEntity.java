@@ -346,7 +346,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             }
 
             if (this.field5106 > 0) {
-               Vector3d var14 = this.getMotion().mul(1.0, 0.0, 1.0).method11333().scale((double)this.field5106 * 0.6);
+               Vector3d var14 = this.getMotion().mul(1.0, 0.0, 1.0).normalize().scale((double)this.field5106 * 0.6);
                if (var14.lengthSquared() > 0.0) {
                   var13.addVelocity(var14.x, 0.1, var14.z);
                }
@@ -389,7 +389,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       super.method3466(var1);
       Vector3d var4 = var1.getHitVec().method11337(this.getPosX(), this.getPosY(), this.getPosZ());
       this.setMotion(var4);
-      Vector3d var5 = var4.method11333().scale(0.05F);
+      Vector3d var5 = var4.normalize().scale(0.05F);
       this.setRawPosition(this.getPosX() - var5.x, this.getPosY() - var5.y, this.getPosZ() - var5.z);
       this.playSound(this.method3477(), 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
       this.field5100 = true;

@@ -63,7 +63,7 @@ public class Class5658 extends Class5651<GuardianEntity, Class2820> {
          Vector3d var15 = this.method17861(entityIn, (double)var13, partialTicks);
          Vector3d var16 = var14.subtract(var15);
          float var17 = (float)(var16.length() + 1.0);
-         var16 = var16.method11333();
+         var16 = var16.normalize();
          float var18 = (float)Math.acos(var16.y);
          float var19 = (float)Math.atan2(var16.z, var16.x);
          matrixStackIn.rotate(Vector3f.YP.rotationDegrees(((float) (Math.PI / 2) - var19) * (180.0F / (float)Math.PI)));

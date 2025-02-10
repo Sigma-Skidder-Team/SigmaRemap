@@ -159,7 +159,7 @@ public class Test extends Module {
     }
 
     @EventTarget
-    public void method16551(Render3DEvent var1) {
+    public void method16551(EventRender3D var1) {
     }
 
     @EventTarget
@@ -194,7 +194,7 @@ public class Test extends Module {
     }
 
     @EventTarget
-    public void method16557(Render3DEvent var1) {
+    public void method16557(EventRender3D var1) {
     }
 
     @EventTarget

@@ -46,11 +46,11 @@ public class HawkFly extends Module {
             double var4 = 0.125;
             if (this.field23424 != -1) {
                 if (this.field23424 == 0) {
-                    MovementUtil.setSpeed(var1, 0.18);
+                    MovementUtil.setMotion(var1, 0.18);
                 }
             } else {
                 var1.setY(0.015);
-                MovementUtil.setSpeed(var1, var4);
+                MovementUtil.setMotion(var1, var4);
             }
 
             MultiUtilities.setPlayerYMotion(var1.getY());

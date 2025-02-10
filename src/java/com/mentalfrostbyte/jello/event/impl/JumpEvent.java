@@ -20,11 +20,11 @@ public class JumpEvent extends CancellableEvent {
         return this.vector;
     }
 
-    public void method14002(double var1) {
+    public void setY(double var1) {
         this.vector.y = var1;
     }
 
-    public void method14003(double var1) {
+    public void setStrafeSpeed(double var1) {
         float[] var5 = MovementUtil.lenientStrafe();
         float var6 = var5[1];
         float var7 = var5[2];
@@ -43,7 +43,7 @@ public class JumpEvent extends CancellableEvent {
         this.field21588 = true;
     }
 
-    public void method14004(Vector3d var1) {
+    public void setVector(Vector3d var1) {
         this.vector = var1;
         this.field21588 = true;
     }

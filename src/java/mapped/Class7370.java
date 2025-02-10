@@ -42,7 +42,7 @@ public class Class7370 extends Class7361 {
          this.field31544 = Vector3d.method11330(var5);
       }
 
-      double var3 = this.field31544.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ());
+      double var3 = this.field31544.squareDistanceTo(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ());
       if (!(var3 < 100.0) && !(var3 > 22500.0) && !this.field31519.collidedHorizontally && !this.field31519.collidedVertically) {
          this.field31519.setHealth(1.0F);
       } else {

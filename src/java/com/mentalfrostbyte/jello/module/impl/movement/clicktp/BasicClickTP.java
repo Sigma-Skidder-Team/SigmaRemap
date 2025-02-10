@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.clicktp;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -97,7 +97,7 @@ public class BasicClickTP extends Module {
     }
 
     @EventTarget
-    public void method16325(Render3DEvent var1) {
+    public void method16325(EventRender3D var1) {
         if (this.isEnabled() && this.field23589 != null && this.field23589.size() != 0) {
             if (this.field23590.getElapsedTime() > 4000L) {
                 this.field23590.stop();

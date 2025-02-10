@@ -47,7 +47,7 @@ public class NCPPhase extends PremiumModule {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                if (!MultiUtilities.method17686()) {
+                if (!MultiUtilities.isMoving()) {
                     if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && !MultiUtilities.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         event.setY(var6 - 1.0);
@@ -91,17 +91,17 @@ public class NCPPhase extends PremiumModule {
                 if (this.field23652 != 0) {
                     if (!MultiUtilities.method17761()) {
                         this.field23651 = false;
-                        MovementUtil.setSpeed(var1, 0.0);
+                        MovementUtil.setMotion(var1, 0.0);
                         return;
                     }
 
                     if (!this.field23651) {
-                        MovementUtil.setSpeed(var1, !this.getBooleanValueFromSettingName("Hypixel") ? 0.0031 : 0.03);
+                        MovementUtil.setMotion(var1, !this.getBooleanValueFromSettingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
-                        MovementUtil.setSpeed(var1, 0.617);
+                        MovementUtil.setMotion(var1, 0.617);
                     }
                 } else {
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                     MovementUtil.method37095(6.000000238415E-4);
                 }
 

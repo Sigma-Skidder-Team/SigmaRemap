@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
@@ -27,7 +27,7 @@ public class SkeletonESP extends Module {
         this.registerSetting(new BooleanSetting("CSGO", "Add a CSGO look.", true));
     }
 
-    private void method16089(Render3DEvent var1, PlayerEntity entity) {
+    private void method16089(EventRender3D var1, PlayerEntity entity) {
         Color color = new Color(
                 !Client.getInstance().friendManager.method26998(entity.getName().getString())
                         ? (!entity.getName().getString().equalsIgnoreCase(mc.player.getName().getString())
@@ -178,7 +178,7 @@ public class SkeletonESP extends Module {
         }
     }
 
-    private Vector3d method16090(Render3DEvent var1, PlayerEntity var2) {
+    private Vector3d method16090(EventRender3D var1, PlayerEntity var2) {
         float var5 = mc.getRenderPartialTicks();
         double var6 = var2.lastTickPosX + (var2.getPosX() - var2.lastTickPosX) * (double) var5;
         double var8 = var2.lastTickPosY + (var2.getPosY() - var2.lastTickPosY) * (double) var5;

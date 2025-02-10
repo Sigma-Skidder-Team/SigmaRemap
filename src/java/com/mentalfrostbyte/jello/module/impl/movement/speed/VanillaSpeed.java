@@ -17,7 +17,7 @@ public class VanillaSpeed extends Module {
     public void EventMove(EventMove event) {
         if (this.isEnabled()) {
             double speedInput= MovementUtil.getSpeed() * (double) this.getNumberValueBySettingName("Speed");
-            MovementUtil.setSpeed(event, speedInput);
+            MovementUtil.setMotion(event, speedInput);
         }
     }
 }

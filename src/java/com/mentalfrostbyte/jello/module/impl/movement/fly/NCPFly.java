@@ -42,21 +42,21 @@ public class NCPFly extends Module {
                     if (this.field23919 != 0) {
                         if (this.field23919 == 1) {
                             var1.setY(-1.0E-7);
-                            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+                            MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                             MultiUtilities.setPlayerYMotion(var1.getY());
                         }
                     } else {
                         var1.setY(-1.0E-7);
-                        MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+                        MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                         MultiUtilities.setPlayerYMotion(var1.getY());
                     }
                 } else {
                     var1.setY(0.0);
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+                    MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                 }
             } else {
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

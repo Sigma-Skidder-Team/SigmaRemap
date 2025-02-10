@@ -36,7 +36,7 @@ public class Class7374 extends Class7361 {
          }
 
          double var33 = this.field31556 != null
-            ? this.field31556.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
+            ? this.field31556.squareDistanceTo(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
             : 0.0;
          if (var33 < 100.0 || var33 > 22500.0) {
             this.method23379();
@@ -56,13 +56,13 @@ public class Class7374 extends Class7361 {
             Vector3d var15 = new Vector3d(
                   this.field31557.getPosX() - this.field31519.getPosX(), 0.0, this.field31557.getPosZ() - this.field31519.getPosZ()
                )
-               .method11333();
+               .normalize();
             Vector3d var16 = new Vector3d(
                   (double) MathHelper.sin(this.field31519.rotationYaw * (float) (Math.PI / 180.0)),
                   0.0,
                   (double)(-MathHelper.cos(this.field31519.rotationYaw * (float) (Math.PI / 180.0)))
                )
-               .method11333();
+               .normalize();
             float var17 = (float)var16.dotProduct(var15);
             float var18 = (float)(Math.acos((double)var17) * 180.0F / (float)Math.PI);
             var18 += 0.5F;

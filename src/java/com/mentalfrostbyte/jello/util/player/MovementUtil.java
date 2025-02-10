@@ -90,7 +90,7 @@ public class MovementUtil {
       return getAdjustedStrafe(forward, strafe);
    }
 
-   public static float[] otherStrafe() {
+   public static float[] getDirectionArray() {
       MovementInput input = mc.player.movementInput;
       float forward = input.moveForward;
       float strafe = input.moveStrafe;
@@ -200,7 +200,7 @@ public class MovementUtil {
       return var2 || var3 || var4 || var5;
    }
 
-   public static void setSpeed(EventMove moveEvent, double motionSpeed) {
+   public static void setMotion(EventMove moveEvent, double motionSpeed) {
       float[] var5 = lenientStrafe();
       float var6 = var5[1];
       float var7 = var5[2];
@@ -270,7 +270,7 @@ public class MovementUtil {
       mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var2, var4, var6, true));
    }
 
-   public static float method37092(EventMove var0, double var1, float var3, float var4, float var5) {
+   public static float setMotion(EventMove var0, double var1, float var3, float var4, float var5) {
       float var8 = RotationHelper.angleDiff(var4, var3);
       if (!(var8 > var5)) {
          var4 = var3;
@@ -305,7 +305,7 @@ public class MovementUtil {
       double var8 = var7.lengthSquared();
       float var10 = 0.6F;
       double var11 = !var0 ? (double) mc.player.jumpMovementFactor : (double)(mc.player.getAIMoveSpeed() * (0.21600002F / (var10 * var10 * var10)));
-      Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.method11333()).scale(var11);
+      Vector3d var13 = (!(var8 > 1.0) ? var7 : var7.normalize()).scale(var11);
       float var14 = MathHelper.sin(mc.player.rotationYaw * (float) (Math.PI / 180.0));
       float var15 = MathHelper.cos(mc.player.rotationYaw * (float) (Math.PI / 180.0));
       return new Vector3d(

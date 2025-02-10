@@ -22,7 +22,7 @@ public class Class6837 extends Class6829 {
             this.field29708 - this.field29724.getPosX(), this.field29709 - this.field29724.getPosY(), this.field29710 - this.field29724.getPosZ()
          );
          double var4 = var3.length();
-         var3 = var3.method11333();
+         var3 = var3.normalize();
          if (!this.method20820(var3, MathHelper.method37774(var4))) {
             this.field29714 = Class2335.field15966;
          } else {

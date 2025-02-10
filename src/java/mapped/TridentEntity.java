@@ -78,7 +78,7 @@ public class TridentEntity extends AbstractArrowEntity {
             }
 
             double var6 = 0.05 * (double)var4;
-            this.setMotion(this.getMotion().scale(0.95).add(var5.method11333().scale(var6)));
+            this.setMotion(this.getMotion().scale(0.95).add(var5.normalize().scale(var6)));
             if (this.field5115 == 0) {
                this.playSound(SoundEvents.field27150, 10.0F, 1.0F);
             }

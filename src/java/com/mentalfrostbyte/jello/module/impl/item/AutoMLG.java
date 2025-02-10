@@ -56,7 +56,7 @@ public class AutoMLG extends PremiumModule {
     private void method16422(EventMove var1) {
         if (this.isEnabled()) {
             if (field23649 > 0 && !mc.player.onGround) {
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

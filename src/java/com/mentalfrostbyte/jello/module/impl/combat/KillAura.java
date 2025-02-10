@@ -314,7 +314,7 @@ public class KillAura extends Module {
     }
 
     @EventTarget
-    public void on3D(Render3DEvent var1) {
+    public void on3D(EventRender3D var1) {
         if (entities != null) {
             Iterator<Entry<Entity, Animation>> var4 = this.field23961.entrySet().iterator();
 

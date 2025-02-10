@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
@@ -281,7 +281,7 @@ public class NoteblockPlayer extends Module {
     }
 
     @EventTarget
-    private void method16409(Render3DEvent var1) {
+    private void method16409(EventRender3D var1) {
         if (this.isEnabled()) {
             if (this.field23641 != null) {
                 for (BlockPos var7 : this.field23642) {

@@ -43,7 +43,7 @@ public class Class2863<T extends LivingEntity> extends AgeableModel<T> {
          float var13 = 1.0F;
          Vector3d var14 = var1.getMotion();
          if (var14.y < 0.0) {
-            Vector3d var15 = var14.method11333();
+            Vector3d var15 = var14.normalize();
             var13 = 1.0F - (float)Math.pow(-var15.y, 1.5);
          }
 

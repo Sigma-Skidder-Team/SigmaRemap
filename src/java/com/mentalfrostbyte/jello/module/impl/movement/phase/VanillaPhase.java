@@ -42,7 +42,7 @@ public class VanillaPhase extends Module {
     private void EventMove(EventMove event) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally || MultiUtilities.method17761()) {
-                MovementUtil.setSpeed(event, 0.0);
+                MovementUtil.setMotion(event, 0.0);
                 MovementUtil.method37095(1.7);
             }
         }

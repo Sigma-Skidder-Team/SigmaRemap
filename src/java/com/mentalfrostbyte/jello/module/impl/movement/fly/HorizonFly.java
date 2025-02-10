@@ -45,18 +45,18 @@ public class HorizonFly extends Module {
                 if (this.field23497 != -1) {
                     if (this.field23497 != 0) {
                         if (this.field23497 >= 1) {
-                            MovementUtil.setSpeed(var1, var4 + 5.0E-4);
+                            MovementUtil.setMotion(var1, var4 + 5.0E-4);
                         }
                     } else {
-                        MovementUtil.setSpeed(var1, var4 + 0.0015);
+                        MovementUtil.setMotion(var1, var4 + 0.0015);
                     }
                 } else {
                     var1.setY(MovementUtil.getJumpValue());
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtil.setSpeed(var1, 0.125);
+                    MovementUtil.setMotion(var1, 0.125);
                 }
             } else {
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -134,7 +134,7 @@ public class Auto32k extends Module {
     }
 
     @EventTarget
-    private void method16718(Render3DEvent var1) {
+    private void method16718(EventRender3D var1) {
         if (this.isEnabled()) {
             if (this.field23870 != null) {
                 GL11.glAlphaFunc(516, 0.0F);

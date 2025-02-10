@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.ColorSetting;
@@ -32,7 +32,7 @@ public class FillESP extends Module {
     }
 
     @EventTarget
-    private void method16133(Render3DEvent var1) {
+    private void method16133(EventRender3D var1) {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 this.method16139();

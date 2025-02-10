@@ -54,7 +54,7 @@ public abstract class CreatureEntity extends MobEntity {
                Vector3d var6 = new Vector3d(
                      var3.getPosX() - this.getPosX(), var3.getPosY() - this.getPosY(), var3.getPosZ() - this.getPosZ()
                   )
-                  .method11333()
+                  .normalize()
                   .scale((double)Math.max(var4 - 2.0F, 0.0F));
                this.method4230()
                   .method21654(this.getPosX() + var6.x, this.getPosY() + var6.y, this.getPosZ() + var6.z, this.method4773());

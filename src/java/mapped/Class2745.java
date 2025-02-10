@@ -48,7 +48,7 @@ public class Class2745 extends Class2595 {
          this.field17275.getPosX() - this.field17274.getPosX(), 0.0, this.field17275.getPosZ() - this.field17274.getPosZ()
       );
       if (var4.lengthSquared() > 1.0E-7) {
-         var4 = var4.method11333().scale(0.4).add(var3.scale(0.2));
+         var4 = var4.normalize().scale(0.4).add(var3.scale(0.2));
       }
 
       this.field17274.setMotion(var4.x, (double)this.field17276, var4.z);

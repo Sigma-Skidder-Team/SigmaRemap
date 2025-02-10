@@ -38,7 +38,7 @@ public class Class2687 extends Class2595 {
       Vector3d var3;
       if (BeeEntity.method4478(this.field17112) && !BeeEntity.method4458(this.field17112, BeeEntity.method4453(this.field17112), 22)) {
          Vector3d var4 = Vector3d.method11328(BeeEntity.method4453(this.field17112));
-         var3 = var4.subtract(this.field17112.getPositionVec()).method11333();
+         var3 = var4.subtract(this.field17112.getPositionVec()).normalize();
       } else {
          var3 = this.field17112.getLook(0.0F);
       }

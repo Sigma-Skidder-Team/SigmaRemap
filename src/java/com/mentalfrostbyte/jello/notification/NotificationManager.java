@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.notification;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
@@ -134,7 +134,7 @@ public class NotificationManager {
     }
 
     @EventTarget
-    private void method31997(Render3DEvent var1) {
+    private void method31997(EventRender3D var1) {
         if (this.field39918.player == null) {
             ;
         }

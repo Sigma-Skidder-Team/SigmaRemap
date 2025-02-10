@@ -27,7 +27,7 @@ public class Class7369 extends Class7361 {
    @Override
    public void method23360() {
       double var3 = this.field31541 != null
-         ? this.field31541.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
+         ? this.field31541.squareDistanceTo(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
          : 0.0;
       if (var3 < 100.0 || var3 > 22500.0 || this.field31519.collidedHorizontally || this.field31519.collidedVertically) {
          this.method23373();

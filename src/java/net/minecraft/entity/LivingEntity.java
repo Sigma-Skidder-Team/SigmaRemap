@@ -1161,7 +1161,7 @@ public abstract class LivingEntity extends Entity {
          Vector3d var9 = var1.method31112();
          if (var9 != null) {
             Vector3d var7 = this.getLook(1.0F);
-            Vector3d var8 = var9.subtractReverse(this.getPositionVec()).method11333();
+            Vector3d var8 = var9.subtractReverse(this.getPositionVec()).normalize();
             var8 = new Vector3d(var8.x, 0.0, var8.z);
             if (var8.dotProduct(var7) < 0.0) {
                return true;
@@ -1313,7 +1313,7 @@ public abstract class LivingEntity extends Entity {
       if (!(var1 <= 0.0F)) {
          this.isAirBorne = true;
          Vector3d var8 = this.getMotion();
-         Vector3d var9 = new Vector3d(var2, 0.0, var4).method11333().scale((double) var1);
+         Vector3d var9 = new Vector3d(var2, 0.0, var4).normalize().scale((double) var1);
          this.setMotion(
                var8.x / 2.0 - var9.x,
                !this.onGround ? var8.y : Math.min(0.4, var8.y / 2.0 + (double) var1),
@@ -2978,7 +2978,7 @@ public abstract class LivingEntity extends Entity {
 
          if (var21) {
             this.setPositionAndUpdate(var1, var16, var5);
-            if (var20.hasNoCollisions(this) && !var20.method7014(this.getBoundingBox())) {
+            if (var20.hasNoCollisions(this) && !var20.containsAnyLiquid(this.getBoundingBox())) {
                var18 = true;
             }
          }
@@ -3092,7 +3092,7 @@ public abstract class LivingEntity extends Entity {
                return new Vector3d((double) var3x.getX() + 0.5, (double) var3x.getY() + 0.1,
                      (double) var3x.getZ() + 0.5);
             });
-            Vector3d var6 = Vector3d.method11330(var1).subtract(var5).method11333();
+            Vector3d var6 = Vector3d.method11330(var1).subtract(var5).normalize();
             float var7 = (float) MathHelper
                   .wrapDegrees(MathHelper.method37814(var6.z, var6.x) * 180.0F / (float) Math.PI - 90.0);
             this.setPosition(var5.x, var5.y, var5.z);

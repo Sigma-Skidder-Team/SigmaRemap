@@ -38,7 +38,7 @@ public class ViperMCSpeed extends Module {
                 speed /= 1.3F;
             }
 
-            MovementUtil.setSpeed(event, speed);
+            MovementUtil.setMotion(event, speed);
         }
     }
 }

@@ -141,7 +141,7 @@ public class VanillaFly extends Module {
                 verticalSpeed = -speed / 2.0;
             }
 
-            MovementUtil.setSpeed(event, speed);
+            MovementUtil.setMotion(event, speed);
             event.setY(verticalSpeed);
             MultiUtilities.setPlayerYMotion(event.getY());
         }

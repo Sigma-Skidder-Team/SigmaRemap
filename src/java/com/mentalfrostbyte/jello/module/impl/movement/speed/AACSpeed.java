@@ -34,13 +34,13 @@ public class AACSpeed extends Module {
       this.field23398 = -1;
       this.field23399 = 0;
       this.field23403 = mc.player.getPosY();
-      this.field23404 = MovementUtil.otherStrafe()[0];
+      this.field23404 = MovementUtil.getDirectionArray()[0];
       this.field23400 = 0;
    }
 
    @Override
    public void onDisable() {
-      MovementUtil.method37093(0.27, MovementUtil.otherStrafe()[0], this.field23404, 45.0F);
+      MovementUtil.method37093(0.27, MovementUtil.getDirectionArray()[0], this.field23404, 45.0F);
    }
 
    @EventTarget
@@ -64,7 +64,7 @@ public class AACSpeed extends Module {
                this.field23398 = -1;
             }
 
-            if (MultiUtilities.method17686() && this.getBooleanValueFromSettingName("Auto Jump")) {
+            if (MultiUtilities.isMoving() && this.getBooleanValueFromSettingName("Auto Jump")) {
                mc.player.jump();
                var1.setY(mc.player.getMotion().y);
             }
@@ -95,7 +95,7 @@ public class AACSpeed extends Module {
                mc.player.getMotion().y = this.field23402;
          }
 
-         if (!MultiUtilities.method17686()) {
+         if (!MultiUtilities.isMoving()) {
             this.field23401 = 0.0;
          }
 
@@ -104,7 +104,7 @@ public class AACSpeed extends Module {
          }
 
          if (this.field23398 >= 0) {
-            this.field23404 = MovementUtil.method37092(var1, this.field23401, MovementUtil.otherStrafe()[0], this.field23404, 45.0F);
+            this.field23404 = MovementUtil.setMotion(var1, this.field23401, MovementUtil.getDirectionArray()[0], this.field23404, 45.0F);
          }
 
          MultiUtilities.setPlayerYMotion(var1.getY());
@@ -144,7 +144,7 @@ public class AACSpeed extends Module {
    public void method16011(JumpEvent var1) {
       this.field23398 = 0;
       this.field23400 = 0;
-      this.field23404 = MovementUtil.otherStrafe()[0];
+      this.field23404 = MovementUtil.getDirectionArray()[0];
       String var4 = this.getStringSettingValueByName("Mode");
       switch (var4) {
          case "Basic":

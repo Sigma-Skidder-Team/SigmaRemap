@@ -102,7 +102,7 @@ public class ExperienceOrbEntity extends Entity {
          double var6 = var5.lengthSquared();
          if (var6 < 64.0) {
             double var8 = 1.0 - Math.sqrt(var6) / 8.0;
-            this.setMotion(this.getMotion().add(var5.method11333().scale(var8 * var8 * 0.1)));
+            this.setMotion(this.getMotion().add(var5.normalize().scale(var8 * var8 * 0.1)));
          }
       }
 

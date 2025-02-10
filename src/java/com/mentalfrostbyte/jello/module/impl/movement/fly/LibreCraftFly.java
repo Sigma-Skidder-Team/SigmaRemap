@@ -70,16 +70,16 @@ public class LibreCraftFly extends Module {
                     if (this.field23910 == 0) {
                         var1.setY(0.0);
                         MultiUtilities.setPlayerYMotion(var1.getY());
-                        MovementUtil.setSpeed(var1, 0.35);
+                        MovementUtil.setMotion(var1, 0.35);
                     }
                 } else {
                     var1.setY(0.299);
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtil.setSpeed(var1, this.getNumberValueBySettingName("Speed"));
+                    MovementUtil.setMotion(var1, this.getNumberValueBySettingName("Speed"));
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
@@ -103,7 +103,7 @@ public class JelloEdit extends Module {
     }
 
     @EventTarget
-    private void onRender(Render3DEvent event) {
+    private void onRender(EventRender3D event) {
         if (this.isEnabled() && this.schematicFile != null && !this.schematicFile.getDataPackets().isEmpty()) {
             GL11.glAlphaFunc(516, 0.0F);
 

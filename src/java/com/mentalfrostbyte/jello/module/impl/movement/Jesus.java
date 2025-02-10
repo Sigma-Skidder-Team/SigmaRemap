@@ -133,7 +133,7 @@ public class Jesus extends Module {
                      }
 
                      if (this.field24016 > 0) {
-                        MovementUtil.setSpeed(var1, 0.25 + (double) MovementUtil.getSpeedBoost() * 0.05);
+                        MovementUtil.setMotion(var1, 0.25 + (double) MovementUtil.getSpeedBoost() * 0.05);
                         this.field24016++;
                      }
 
@@ -146,7 +146,7 @@ public class Jesus extends Module {
                } else if (isWalkingOnLiquid() && this.field24015 % 2 == 0) {
                   this.field24016++;
                   double var12 = this.method16954((double)this.field24016);
-                  MovementUtil.setSpeed(var1, 0.25);
+                  MovementUtil.setMotion(var1, 0.25);
                   if (var12 != -999.0) {
                      var1.setY(var12);
                   }
@@ -166,7 +166,7 @@ public class Jesus extends Module {
                var1.setCancelled(true);
             }
 
-            var1.method14003(0.2);
+            var1.setStrafeSpeed(0.2);
          }
       }
    }

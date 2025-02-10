@@ -88,13 +88,13 @@ public class CubecraftFly extends Module {
         } else if (MultiUtilities.isCubecraft()) {
             if (this.field23845 > 0) {
                 var1.setY(0.0);
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
                 this.field23845++;
             } else {
                 if (this.field23845 != 0) {
                     if (this.field23847) {
                         var1.setY(0.0);
-                        MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+                        MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 /*
@@ -146,7 +146,7 @@ public class CubecraftFly extends Module {
                     Client.getInstance().notificationManager
                             .send(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                     var1.setY(0.0);
                     long var14 = MultiUtilities.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
@@ -162,7 +162,7 @@ public class CubecraftFly extends Module {
                 MultiUtilities.setPlayerYMotion(var1.getY());
             }
         } else {
-            MovementUtil.setSpeed(var1, MovementUtil.getSpeed());
+            MovementUtil.setMotion(var1, MovementUtil.getSpeed());
             var1.setY(0.0);
             if (mc.player.ticksExisted % 2 == 0) {
                 double var4 = mc.player.getPosX();

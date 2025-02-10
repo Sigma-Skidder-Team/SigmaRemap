@@ -28,7 +28,7 @@ public class Class4558 implements Iterator<BlockPos> {
       Vector3d var10 = new Vector3d(
          (double)(var2.getX() - var1.getX()), (double)(var2.getY() - var1.getY()), (double)(var2.getZ() - var1.getZ())
       );
-      Vector3d var11 = var10.method11333();
+      Vector3d var11 = var10.normalize();
       Vector3d var12 = new Vector3d(1.0, 0.0, 0.0);
       double var13 = var11.dotProduct(var12);
       double var15 = Math.abs(var13);

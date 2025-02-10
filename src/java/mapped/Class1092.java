@@ -37,7 +37,7 @@ public interface Class1092 {
          double var12 = var1.getPosZ() - var0.getPosZ();
          float var14 = (float)(var0.world.rand.nextInt(21) - 10);
          double var15 = var8 * (double)(var0.world.rand.nextFloat() * 0.5F + 0.2F);
-         Vector3d var17 = new Vector3d(var10, 0.0, var12).method11333().scale(var15).method11351(var14);
+         Vector3d var17 = new Vector3d(var10, 0.0, var12).normalize().scale(var15).method11351(var14);
          double var18 = var8 * (double)var0.world.rand.nextFloat() * 0.5;
          var1.addVelocity(var17.x, var18, var17.z);
          var1.velocityChanged = true;

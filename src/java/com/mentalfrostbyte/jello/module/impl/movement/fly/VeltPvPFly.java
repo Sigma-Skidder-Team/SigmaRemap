@@ -80,7 +80,7 @@ public class VeltPvPFly extends Module {
                         }
 
                         MultiUtilities.setPlayerYMotion(var1.getY());
-                        MovementUtil.setSpeed(var1, var4 - 0.1);
+                        MovementUtil.setMotion(var1, var4 - 0.1);
                     }
                 } else {
                     if (!mc.gameSettings.keyBindJump.isKeyDown()) {
@@ -92,11 +92,11 @@ public class VeltPvPFly extends Module {
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtil.setSpeed(var1, var4);
+                    MovementUtil.setMotion(var1, var4);
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
             }
         }
     }

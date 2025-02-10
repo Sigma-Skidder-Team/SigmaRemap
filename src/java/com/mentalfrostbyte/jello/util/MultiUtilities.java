@@ -106,13 +106,13 @@ public class MultiUtilities {
       }
    }
 
-   public static boolean method17684(Entity var0) {
+   public static boolean inLiquid(Entity var0) {
       ClientWorld var3 = mc.world;
       AxisAlignedBB var4 = var0.boundingBox;
-      return var3.method7014(var4);
+      return var3.containsAnyLiquid(var4);
    }
 
-   public static boolean method17686() {
+   public static boolean isMoving() {
       return mc.player.moveStrafing != 0.0F || mc.player.moveForward != 0.0F;
    }
 

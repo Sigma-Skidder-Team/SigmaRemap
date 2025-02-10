@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -33,7 +33,7 @@ public class Projectiles extends Module {
     }
 
     @EventTarget
-    public void method16523(Render3DEvent var1) {
+    public void method16523(EventRender3D var1) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null) {
                 ProjectileThingy var4 = ProjectileThingy

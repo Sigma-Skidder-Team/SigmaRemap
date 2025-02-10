@@ -184,7 +184,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    }
 
    private void method3879(ServerWorld var1) {
-      Vector3d var4 = new Vector3d((double)this.getPos().getX(), 0.0, (double)this.getPos().getZ()).method11333();
+      Vector3d var4 = new Vector3d((double)this.getPos().getX(), 0.0, (double)this.getPos().getZ()).normalize();
       Vector3d var5 = var4.scale(1024.0);
 
       for (int var6 = 16; method3881(var1, var5).getTopFilledSegment() > 0 && var6-- > 0; var5 = var5.add(var4.scale(-16.0))) {

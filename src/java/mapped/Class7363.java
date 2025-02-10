@@ -36,13 +36,13 @@ public class Class7363 extends Class7362 {
             }
          }
       } else if (this.field31523 <= 25) {
-         Vector3d var4 = new Vector3d(var3.getPosX() - this.field31519.getPosX(), 0.0, var3.getPosZ() - this.field31519.getPosZ()).method11333();
+         Vector3d var4 = new Vector3d(var3.getPosX() - this.field31519.getPosX(), 0.0, var3.getPosZ() - this.field31519.getPosZ()).normalize();
          Vector3d var5 = new Vector3d(
                (double) MathHelper.sin(this.field31519.rotationYaw * (float) (Math.PI / 180.0)),
                0.0,
                (double)(-MathHelper.cos(this.field31519.rotationYaw * (float) (Math.PI / 180.0)))
             )
-            .method11333();
+            .normalize();
          float var6 = (float)var5.dotProduct(var4);
          float var7 = (float)(Math.acos((double)var6) * 180.0F / (float)Math.PI) + 0.5F;
          if (var7 < 0.0F || var7 > 10.0F) {

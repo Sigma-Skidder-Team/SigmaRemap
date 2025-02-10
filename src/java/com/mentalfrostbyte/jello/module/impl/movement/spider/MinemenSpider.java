@@ -47,7 +47,7 @@ public class MinemenSpider extends Module {
                 event.setY(0.6);
             }
 
-            MovementUtil.setSpeed(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
+            MovementUtil.setMotion(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
         }
 
         if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSettingName("SneakVClip")) {
@@ -81,14 +81,14 @@ public class MinemenSpider extends Module {
                     && !mc.gameSettings.keyBindSneak.isKeyDown()
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 0.01, 0.0)).count() > 0L) {
                 event.setY(1.0E-14);
-                MovementUtil.setSpeed(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
+                MovementUtil.setMotion(event, 0.689 + (double) MovementUtil.getSpeedBoost() * 0.06);
             }
 
             if (this.field23813) {
                 mc.timer.timerSpeed = 1.0F;
                 this.field23813 = false;
                 event.setY(1.0E-14);
-                MovementUtil.setSpeed(event, 0.28);
+                MovementUtil.setMotion(event, 0.28);
             }
         }
 

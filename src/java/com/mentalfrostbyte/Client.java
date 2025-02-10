@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventManager;
 import com.mentalfrostbyte.jello.event.impl.EventRender2D;
 import com.mentalfrostbyte.jello.event.impl.EventWritter;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleManager;
 import com.mentalfrostbyte.jello.music.MusicManager;
@@ -69,7 +69,7 @@ public class Client {
     public NotificationManager notificationManager;
     private SlotChangeTracker slotChangeTracker;
     public WaypointsManager waypointsManager;
-    private Orientation orientation;
+    private MinerTracker minerTracker;
     public ClientMode clientMode = ClientMode.PREMIUM;
     private DiscordRichPresence discordRichPresence;
 
@@ -127,8 +127,8 @@ public class Client {
         this.waypointsManager.init();
         this.blurEngine = new BlurEngine();
         this.blurEngine.init();
-        this.orientation = new Orientation();
-        this.orientation.init();
+        this.minerTracker = new MinerTracker();
+        this.minerTracker.init();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");
         long var6 = System.currentTimeMillis();
         this.logger.info("Initialized.");
@@ -249,7 +249,7 @@ public class Client {
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
             GL11.glDisable(2896);
-            this.eventManager.call(new Render3DEvent());
+            this.eventManager.call(new EventRender3D());
             RenderSystem.enableDepthTest();
             RenderSystem.depthMask(true);
             mc.getTextureManager().bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
@@ -276,8 +276,8 @@ public class Client {
         return this.slotChangeTracker;
     }
 
-    public Orientation getOrientation() {
-        return this.orientation;
+    public MinerTracker getOrientation() {
+        return this.minerTracker;
     }
 
     public JSONObject getConfig() {

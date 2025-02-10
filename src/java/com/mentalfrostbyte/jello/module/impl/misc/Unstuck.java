@@ -33,7 +33,7 @@ public class Unstuck extends Module {
     public void method16285(EventMove var1) {
         if (this.isEnabled()) {
             if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags")) {
-                MovementUtil.setSpeed(var1, 0.0);
+                MovementUtil.setMotion(var1, 0.0);
                 var1.setY(0.0);
                 mc.player.setMotion(0.0, 0.0, 0.0);
             }

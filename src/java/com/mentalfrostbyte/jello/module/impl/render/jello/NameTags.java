@@ -195,7 +195,7 @@ public class NameTags extends Module {
     }
 
     @EventTarget
-    public void on3D(Render3DEvent event) {
+    public void on3D(EventRender3D event) {
         if (this.isEnabled()) {
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
             boolean shouldMagnify = this.getBooleanValueFromSettingName("Magnify");

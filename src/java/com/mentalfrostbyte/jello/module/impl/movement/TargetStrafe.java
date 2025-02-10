@@ -126,7 +126,7 @@ public class TargetStrafe extends Module {
 
         if (this.field23496 && mc.player.getDistance(var1) > this.getNumberValueBySettingName("Radius")) {
             if (!var27.equals("Halt")) {
-                MovementUtil.setSpeed(var6, var2);
+                MovementUtil.setMotion(var6, var2);
                 if (var27.equals("Smart")) {
                     var26 = new Vector3d(
                             mc.player.getPositionVec().x + var6.getX(),
@@ -134,11 +134,11 @@ public class TargetStrafe extends Module {
                             mc.player.getPositionVec().z + var6.getZ()
                     );
                     if (this.method16153(var26) && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
-                        MovementUtil.setSpeed(var6, 0.0);
+                        MovementUtil.setMotion(var6, 0.0);
                     }
                 }
             } else {
-                MovementUtil.setSpeed(var6, 0.0);
+                MovementUtil.setMotion(var6, 0.0);
             }
         }
     }

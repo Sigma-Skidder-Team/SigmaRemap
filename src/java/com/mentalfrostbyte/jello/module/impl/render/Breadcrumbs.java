@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -56,7 +56,7 @@ public class Breadcrumbs extends Module {
     }
 
     @EventTarget
-    public void onRender3D(Render3DEvent event) {
+    public void onRender3D(EventRender3D event) {
         if (this.isEnabled()) {
             Vector3d interpolatedPlayerPosition = new Vector3d(
                     mc.player.lastTickPosX

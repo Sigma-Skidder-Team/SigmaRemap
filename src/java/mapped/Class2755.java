@@ -67,7 +67,7 @@ public class Class2755 extends Class2754 {
             var3.getPosY() - this.field17295.getPosY(),
             var3.getPosZ() - this.field17295.getPosZ()
          )
-         .method11333();
+         .normalize();
       this.field17295.setMotion(this.field17295.getMotion().add(var4.x * 0.8, 0.9, var4.z * 0.8));
       this.field17295.method4230().method21666();
    }

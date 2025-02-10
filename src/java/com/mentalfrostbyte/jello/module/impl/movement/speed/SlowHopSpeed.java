@@ -35,7 +35,7 @@ public class SlowHopSpeed extends Module {
         if (this.isEnabled()) {
             boolean var4 = this.getBooleanValueFromSettingName("AutoJump");
             double var5 = MovementUtil.getSpeed();
-            boolean var7 = MultiUtilities.method17686();
+            boolean var7 = MultiUtilities.isMoving();
             if (!mc.player.onGround) {
                 this.field23599++;
                 this.field23600 = 0.36 - (double) this.field23599 / 250.0;
@@ -43,7 +43,7 @@ public class SlowHopSpeed extends Module {
                     this.field23600 = var5;
                 }
 
-                MovementUtil.setSpeed(var1, this.field23600);
+                MovementUtil.setMotion(var1, this.field23600);
             } else {
                 this.field23599 = 0;
                 mc.player.jump();
@@ -55,9 +55,9 @@ public class SlowHopSpeed extends Module {
     @EventTarget
     public void method16339(JumpEvent var1) {
         if (this.isEnabled()) {
-            var1.method14002(0.407 + 0.1 * (double) MovementUtil.getJumpBoost());
+            var1.setY(0.407 + 0.1 * (double) MovementUtil.getJumpBoost());
             this.field23599 = 0;
-            var1.method14003(1.8);
+            var1.setStrafeSpeed(1.8);
         }
     }
 }

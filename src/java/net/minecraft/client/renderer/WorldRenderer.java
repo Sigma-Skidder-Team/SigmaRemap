@@ -3023,7 +3023,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                   var18 = 38416.0;
                }
 
-               if (var16.getPos().method11343(var4, var6, var8) > var18) {
+               if (var16.getPos().squareDistanceTo(var4, var6, var8) > var18) {
                   return null;
                }
 

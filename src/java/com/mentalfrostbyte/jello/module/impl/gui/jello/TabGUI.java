@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -322,7 +322,7 @@ public class TabGUI extends Module {
     }
 
     @EventTarget
-    private void method16598(Render3DEvent var1) {
+    private void method16598(EventRender3D var1) {
         if (this.isEnabled() && mc.player != null) {
             this.method16601();
             this.field23780 = (float) Math.max(Math.round(6.0F - (float) Minecraft.getFps() / 10.0F), 1);

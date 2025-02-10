@@ -51,7 +51,7 @@ public interface ICrossbowUser extends Class1022 {
    }
 
    default Vector3f method4540(LivingEntity var1, Vector3d var2, float var3) {
-      Vector3d var6 = var2.method11333();
+      Vector3d var6 = var2.normalize();
       Vector3d var7 = var6.method11335(new Vector3d(0.0, 1.0, 0.0));
       if (var7.lengthSquared() <= 1.0E-7) {
          var7 = var6.method11335(var1.getUpVector(1.0F));

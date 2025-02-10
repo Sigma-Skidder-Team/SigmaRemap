@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.clicktp.BasicClickTP;
@@ -24,7 +24,7 @@ public class ClickTP extends ModuleWithModuleSettings {
     }
 
     @EventTarget
-    public void method16752(Render3DEvent var1) {
+    public void method16752(EventRender3D var1) {
         if (this.isEnabled() && (mc.player.isSneaking() || !this.getBooleanValueFromSettingName("Sneak"))) {
             BlockRayTraceResult var4 = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Maximum range"));
             BlockPos var5 = null;

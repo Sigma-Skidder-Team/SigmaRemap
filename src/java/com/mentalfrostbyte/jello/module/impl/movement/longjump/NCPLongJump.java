@@ -53,18 +53,18 @@ public class NCPLongJump extends Module {
                 this.field23477++;
                 if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSettingName("Auto Disable")) {
                     this.access().toggle();
-                    MovementUtil.setSpeed(var1, MovementUtil.method37076() * 0.8);
+                    MovementUtil.setMotion(var1, MovementUtil.method37076() * 0.8);
                     return;
                 }
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.method17686()) {
+                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.isMoving()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
                         var1.setZ(mc.player.getMotion().z);
-                    } else if (this.access().getBooleanValueFromSettingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.method17686()) {
+                    } else if (this.access().getBooleanValueFromSettingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.isMoving()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
@@ -98,11 +98,11 @@ public class NCPLongJump extends Module {
                         }
                     }
 
-                    if (mc.player.collidedHorizontally || !MultiUtilities.method17686()) {
+                    if (mc.player.collidedHorizontally || !MultiUtilities.isMoving()) {
                         this.field23480 = var5;
                     }
 
-                    MovementUtil.setSpeed(var1, this.field23480);
+                    MovementUtil.setMotion(var1, this.field23480);
                     if (MovementUtil.getJumpBoost() == 0) {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
@@ -130,7 +130,7 @@ public class NCPLongJump extends Module {
                 }
 
                 if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSettingName("Auto Jump")) {
-                    MovementUtil.setSpeed(var1, MovementUtil.method37076() * 0.2);
+                    MovementUtil.setMotion(var1, MovementUtil.method37076() * 0.2);
                 }
             }
 
@@ -143,13 +143,13 @@ public class NCPLongJump extends Module {
         if (this.isEnabled() && mc.player != null) {
             this.field23479 = true;
             this.field23480 = MovementUtil.method37076();
-            var1.method14003(this.field23480);
-            var1.method14002(0.425 + (double) MovementUtil.getJumpBoost() * 0.1);
+            var1.setStrafeSpeed(this.field23480);
+            var1.setY(0.425 + (double) MovementUtil.getJumpBoost() * 0.1);
             if (this.getStringSettingValueByName("Glide Mode").equals("High") && MovementUtil.getJumpBoost() == 0) {
-                var1.method14002(0.599);
-                var1.method14003(0.0);
+                var1.setY(0.599);
+                var1.setStrafeSpeed(0.0);
                 if ((double) this.getNumberValueBySettingName("Boost") > 1.5) {
-                    var1.method14003(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtil.getSpeedBoost() * 0.05);
+                    var1.setStrafeSpeed(0.28 + (double) this.getNumberValueBySettingName("Boost") * 0.1 + (double) MovementUtil.getSpeedBoost() * 0.05);
                 }
 
                 if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {

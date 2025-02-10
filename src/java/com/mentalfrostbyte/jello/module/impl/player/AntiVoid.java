@@ -72,7 +72,7 @@ public class AntiVoid extends Module {
                     this.fallDistanceAccumulated = 0.0;
                 }
             } else {
-                MovementUtil.setSpeed(event, 0.0);
+                MovementUtil.setMotion(event, 0.0);
                 event.setY(0.0);
                 this.disableTimer--;
             }
@@ -84,7 +84,7 @@ public class AntiVoid extends Module {
 
             if (this.speedBoostTimer > 0) {
                 this.speedBoostTimer--;
-                MovementUtil.setSpeed(event, 0.1);
+                MovementUtil.setMotion(event, 0.1);
             }
         }
     }

@@ -4,7 +4,7 @@ import com.google.gson.JsonSyntaxException;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -51,7 +51,7 @@ public class BlurEngine {
 
     @EventTarget
     @LowestPriority
-    public void on3DRender(Render3DEvent event) {
+    public void on3DRender(EventRender3D event) {
         if (Client.getInstance().guiManager.getHqIngameBlur() && frameBuffWidth < screenWidth && frameBuffHeight < screenHeight) {
             if (frameBuff == null) {
                 try {

@@ -30,7 +30,7 @@ public class Class7372 extends Class7361 {
    @Override
    public void method23360() {
       double var3 = this.field31552 != null
-         ? this.field31552.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
+         ? this.field31552.squareDistanceTo(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ())
          : 0.0;
       if (var3 < 100.0 || var3 > 22500.0 || this.field31519.collidedHorizontally || this.field31519.collidedVertically) {
          this.method23377();
@@ -52,7 +52,7 @@ public class Class7372 extends Class7361 {
          if (var5 == null) {
             var6 = this.field31519.method4329(40.0, (double)var4.getY(), 0.0);
          } else {
-            Vector3d var7 = new Vector3d(var5.getPosX(), 0.0, var5.getPosZ()).method11333();
+            Vector3d var7 = new Vector3d(var5.getPosX(), 0.0, var5.getPosZ()).normalize();
             var6 = this.field31519.method4329(-var7.x * 40.0, 105.0, -var7.z * 40.0);
          }
 

@@ -87,13 +87,13 @@ public abstract class FlowingFluid extends Fluid {
          for (Direction var20 : Direction.Plane.HORIZONTAL) {
             var10.method8377(var2, var20);
             if (this.method25070(var1, var10, var20) || this.method25070(var1, var10.up(), var20)) {
-               var18 = var18.method11333().add(0.0, -6.0, 0.0);
+               var18 = var18.normalize().add(0.0, -6.0, 0.0);
                break;
             }
          }
       }
 
-      return var18.method11333();
+      return var18.normalize();
    }
 
    private boolean method25069(FluidState var1) {

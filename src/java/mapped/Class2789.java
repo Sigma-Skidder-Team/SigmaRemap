@@ -44,7 +44,7 @@ public class Class2789 extends Class2595 {
                   (double)var3.getY() - this.field17419.getPosY(),
                   (double)var3.getZ() - this.field17419.getPosZ()
                )
-               .method11333();
+               .normalize();
             Vector3d var5 = var4.scale(10.0).add(this.field17419.getPosX(), this.field17419.getPosY(), this.field17419.getPosZ());
             WanderingTraderEntity.method4765(this.field17422).method21654(var5.x, var5.y, var5.z, this.field17421);
          }

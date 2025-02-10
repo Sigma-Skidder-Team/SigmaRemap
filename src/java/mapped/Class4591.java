@@ -161,7 +161,7 @@ public class Class4591 extends Class4588 {
 
    private boolean method14527() {
       Minecraft var3 = Minecraft.getInstance();
-      return var3.gameRenderer.getActiveRenderInfo().getPos().method11343(this.field22041, this.field22042, this.field22043) >= 256.0;
+      return var3.gameRenderer.getActiveRenderInfo().getPos().squareDistanceTo(this.field22041, this.field22042, this.field22043) >= 256.0;
    }
 
    private void method14528(

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -23,7 +23,7 @@ public class Tracers extends Module {
     }
 
     @EventTarget
-    public void method16521(Render3DEvent event) {
+    public void method16521(EventRender3D event) {
         if (this.isEnabled()) {
             GL11.glBlendFunc(770, 771);
             GL11.glAlphaFunc(519, 0.0F);

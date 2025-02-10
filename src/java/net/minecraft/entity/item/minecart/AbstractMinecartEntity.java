@@ -715,13 +715,13 @@ public abstract class AbstractMinecartEntity extends Entity {
             } else {
                double var12 = var1.getPosX() - this.getPosX();
                double var14 = var1.getPosZ() - this.getPosZ();
-               Vector3d var16 = new Vector3d(var12, 0.0, var14).method11333();
+               Vector3d var16 = new Vector3d(var12, 0.0, var14).normalize();
                Vector3d var17 = new Vector3d(
                      (double) MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)),
                      0.0,
                      (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0))
                   )
-                  .method11333();
+                  .normalize();
                double var18 = Math.abs(var16.dotProduct(var17));
                if (var18 < 0.8F) {
                   return;

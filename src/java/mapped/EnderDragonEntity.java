@@ -213,13 +213,13 @@ public class EnderDragonEntity extends MobEntity implements IMob {
                   double var20 = MathHelper.clamp(
                      MathHelper.wrapDegrees(180.0 - MathHelper.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
                   );
-                  Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).method11333();
+                  Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).normalize();
                   Vector3d var23 = new Vector3d(
                         (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                         this.getMotion().y,
                         (double)(-MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)))
                      )
-                     .method11333();
+                     .normalize();
                   float var24 = Math.max(((float)var23.dotProduct(var22) + 0.5F) / 1.5F, 0.0F);
                   this.field5636 *= 0.8F;
                   this.field5636 = (float)((double)this.field5636 + var20 * (double)var47.method23367());
@@ -233,7 +233,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
                      this.move(MoverType.SELF, this.getMotion().scale(0.8F));
                   }
 
-                  Vector3d var27 = this.getMotion().method11333();
+                  Vector3d var27 = this.getMotion().normalize();
                   double var28 = 0.8 + 0.15 * (var27.dotProduct(var23) + 1.0) / 2.0;
                   this.setMotion(this.getMotion().mul(var28, 0.91F, var28));
                }

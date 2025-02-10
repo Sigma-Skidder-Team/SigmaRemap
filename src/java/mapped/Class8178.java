@@ -36,7 +36,7 @@ public final class Class8178 implements Class8176 {
          if (var7 != null
             && !(
                ((Entity)var6).getPositionVec()
-                     .method11343((double)var7.getX() + 0.5, ((Entity)var6).getPositionVec().getY(), (double)var7.getZ() + 0.5)
+                     .squareDistanceTo((double)var7.getX() + 0.5, ((Entity)var6).getPositionVec().getY(), (double)var7.getZ() + 0.5)
                   < 1.0E-5F
             )) {
             boolean var12 = var3 instanceof PlayerEntity && ((PlayerEntity)var3).method2905();

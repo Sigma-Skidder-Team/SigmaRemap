@@ -130,7 +130,7 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
             var3 = new Vector3d(var3.x, var5, var3.z);
             Vector3d var7 = new Vector3d(var4.getPosX() - this.getPosX(), 0.0, var4.getPosZ() - this.getPosZ());
             if (horizontalMag(var7) > 9.0) {
-               Vector3d var8 = var7.method11333();
+               Vector3d var8 = var7.normalize();
                var3 = var3.add(var8.x * 0.3 - var3.x * 0.6, 0.0, var8.z * 0.3 - var3.z * 0.6);
             }
          }

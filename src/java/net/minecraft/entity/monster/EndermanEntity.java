@@ -169,10 +169,10 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
    private boolean method4352(PlayerEntity var1) {
       ItemStack var4 = var1.inventory.field5440.get(3);
       if (var4.getItem() != Blocks.CARVED_PUMPKIN.asItem()) {
-         Vector3d var5 = var1.getLook(1.0F).method11333();
+         Vector3d var5 = var1.getLook(1.0F).normalize();
          Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.getPosYEye() - var1.getPosYEye(), this.getPosZ() - var1.getPosZ());
          double var7 = var6.length();
-         var6 = var6.method11333();
+         var6 = var6.normalize();
          double var9 = var5.dotProduct(var6);
          return !(var9 > 1.0 - 0.025 / var7) ? false : var1.canEntityBeSeen(this);
       } else {
@@ -241,7 +241,7 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
 
    private boolean method4354(Entity var1) {
       Vector3d var4 = new Vector3d(this.getPosX() - var1.getPosX(), this.getPosYHeight(0.5) - var1.getPosYEye(), this.getPosZ() - var1.getPosZ());
-      var4 = var4.method11333();
+      var4 = var4.normalize();
       double var5 = 16.0;
       double var7 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.x * 16.0;
       double var9 = this.getPosY() + (double)(this.rand.nextInt(16) - 8) - var4.y * 16.0;

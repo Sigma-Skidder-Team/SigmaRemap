@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.render.jello;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -111,7 +111,7 @@ public class Waypoints extends Module {
     }
 
     @EventTarget
-    public void method16277(Render3DEvent var1) {
+    public void method16277(EventRender3D var1) {
         if (this.isEnabled()) {
             for (Class8351 var5 : this.method16276(Client.getInstance().waypointsManager.method29989())) {
                 BlockPos var6 = new BlockPos(

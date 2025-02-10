@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.render.classic;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventRender2D;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
@@ -64,7 +64,7 @@ public class Nametags extends Module {
     }
 
     @EventTarget
-    public void on3D(Render3DEvent event) {
+    public void on3D(EventRender3D event) {
         if (this.isEnabled()) {
             this.playerScreenPositions.clear();
 

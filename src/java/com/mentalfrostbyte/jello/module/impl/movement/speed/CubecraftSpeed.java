@@ -46,7 +46,7 @@ public class CubecraftSpeed extends Module {
     public void method16361(EventMove var1) {
         if (this.isEnabled()
                 && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()
-                && !MultiUtilities.method17684(mc.player)) {
+                && !MultiUtilities.inLiquid(mc.player)) {
             String var4 = this.getStringSettingValueByName("Mode");
             switch (var4) {
                 case "Basic":
@@ -57,7 +57,7 @@ public class CubecraftSpeed extends Module {
                         if (this.getBooleanValueFromSettingName("AutoJump")) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
-                            MovementUtil.setSpeed(var1, this.field23619);
+                            MovementUtil.setMotion(var1, this.field23619);
                         }
 
                         if (this.field23618 == 1) {
@@ -84,7 +84,7 @@ public class CubecraftSpeed extends Module {
                         }
                     }
 
-                    MovementUtil.setSpeed(var1, this.field23619);
+                    MovementUtil.setMotion(var1, this.field23619);
                     break;
                 case "Hop":
                     if (!mc.player.collidedVertically || !MultiUtilities.isAboveBounds(mc.player, 0.001F) || !MovementUtil.isMoving()) {
@@ -99,18 +99,18 @@ public class CubecraftSpeed extends Module {
                         }
 
                         this.field23619 = Math.max(this.field23619, 0.2);
-                        MovementUtil.setSpeed(var1, this.field23619);
+                        MovementUtil.setMotion(var1, this.field23619);
                     } else if (this.getBooleanValueFromSettingName("AutoJump")) {
                         mc.player.jump();
                         var1.setY(mc.player.getMotion().y);
-                        MovementUtil.setSpeed(var1, this.field23619);
+                        MovementUtil.setMotion(var1, this.field23619);
                     }
                     break;
                 case "YPort":
                     if (mc.player.onGround) {
-                        if (MultiUtilities.method17686()) {
+                        if (MultiUtilities.isMoving()) {
                             var1.setY(0.53000000000001);
-                            MovementUtil.setSpeed(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
+                            MovementUtil.setMotion(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
                             this.field23618 = 0;
                         }
 
@@ -122,12 +122,12 @@ public class CubecraftSpeed extends Module {
                         mc.timer.timerSpeed = 1.0F - this.getNumberValueBySettingName("Speed") * 0.13F;
                         if (this.field23618 == 0 && var1.getY() == 0.44100000858307864) {
                             this.field23618 = 1;
-                            MovementUtil.setSpeed(var1, 0.286);
+                            MovementUtil.setMotion(var1, 0.286);
                             var1.setY(-0.265);
                             MultiUtilities.setPlayerYMotion(var1.getY());
                         } else if (this.field23618 == 1) {
                             this.field23618 = -1;
-                            MovementUtil.setSpeed(var1, 0.285);
+                            MovementUtil.setMotion(var1, 0.285);
                         }
                     }
             }
@@ -154,10 +154,10 @@ public class CubecraftSpeed extends Module {
     @EventTarget
     public void method16363(JumpEvent var1) {
         if (this.isEnabled()) {
-            var1.method14002(0.4);
+            var1.setY(0.4);
             this.field23619 = 0.6 + (double) MovementUtil.getSpeedBoost() * 0.1;
             this.field23618 = 0;
-            var1.method14003(this.field23619);
+            var1.setStrafeSpeed(this.field23619);
         }
     }
 }

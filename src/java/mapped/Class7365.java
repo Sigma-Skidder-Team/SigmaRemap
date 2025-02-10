@@ -20,7 +20,7 @@ public class Class7365 extends Class7362 {
    public void method23359() {
       this.field31527++;
       if (this.field31527 % 2 == 0 && this.field31527 < 10) {
-         Vector3d var3 = this.field31519.method4334(1.0F).method11333();
+         Vector3d var3 = this.field31519.method4334(1.0F).normalize();
          var3.method11351((float) (-Math.PI / 4));
          double var4 = this.field31519.field5624.getPosX();
          double var6 = this.field31519.field5624.getPosYHeight(0.5);
@@ -60,7 +60,7 @@ public class Class7365 extends Class7362 {
                   0.0,
                   this.field31519.field5624.getPosZ() - this.field31519.getPosZ()
                )
-               .method11333();
+               .normalize();
             float var4 = 5.0F;
             double var5 = this.field31519.field5624.getPosX() + var3.x * 5.0 / 2.0;
             double var7 = this.field31519.field5624.getPosZ() + var3.z * 5.0 / 2.0;

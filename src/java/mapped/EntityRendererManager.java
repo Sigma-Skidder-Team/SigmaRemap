@@ -504,7 +504,7 @@ public class EntityRendererManager {
     }
 
     public double getDistanceToCamera(double var1, double var3, double var5) {
-        return this.info.getPos().method11343(var1, var3, var5);
+        return this.info.getPos().squareDistanceTo(var1, var3, var5);
     }
 
     public Quaternion method32230() {

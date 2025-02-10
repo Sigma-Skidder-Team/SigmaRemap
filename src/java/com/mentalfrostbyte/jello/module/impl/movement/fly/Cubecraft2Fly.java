@@ -94,15 +94,15 @@ public class Cubecraft2Fly extends PremiumModule {
             if (this.field23696 != 1) {
                 if (this.field23696 != 2) {
                     var1.setY(0.0);
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                 } else {
                     var1.setY(-9.999999999E-5);
-                    MovementUtil.setSpeed(var1, 0.28);
+                    MovementUtil.setMotion(var1, 0.28);
                 }
             } else {
                 var1.setY(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99)
                         : (!this.field23699 ? 0.99 : 1.0E-4));
-                MovementUtil.setSpeed(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8)
+                MovementUtil.setMotion(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8)
                         : (!this.field23699 ? 2.8 : 3.7));
             }
 
@@ -114,12 +114,12 @@ public class Cubecraft2Fly extends PremiumModule {
                         if (this.field23696 == -1) {
                             this.field23696++;
                             var1.setY(-0.4);
-                            MovementUtil.setSpeed(var1, 0.0);
+                            MovementUtil.setMotion(var1, 0.0);
                         }
                     } else {
                         var1.setY(0.4);
                         this.field23696++;
-                        MovementUtil.setSpeed(var1, 0.0);
+                        MovementUtil.setMotion(var1, 0.0);
                     }
                 } else {
                     if (this.field23697.getElapsedTime() > 1000L) {
@@ -129,7 +129,7 @@ public class Cubecraft2Fly extends PremiumModule {
                     }
 
                     var1.setY(0.0);
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                 }
             }
         }

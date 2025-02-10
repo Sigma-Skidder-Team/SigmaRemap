@@ -43,7 +43,7 @@ public class HypixelHighJump extends Module {
          if (this.field23405 >= 0) {
             this.field23405++;
             var1.setY(0.0);
-            MovementUtil.setSpeed(var1, 0.0);
+            MovementUtil.setMotion(var1, 0.0);
             var1.setY((double)this.getNumberValueBySettingName("Motion"));
             this.field23406 = true;
             this.field23407 = mc.player.getPosY();

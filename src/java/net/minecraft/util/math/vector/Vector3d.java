@@ -49,7 +49,7 @@ public class Vector3d implements IPosition {
       return new Vector3d(var1.x - this.x, var1.y - this.y, var1.z - this.z);
    }
 
-   public Vector3d method11333() {
+   public Vector3d normalize() {
       double var3 = (double) MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
       return !(var3 < 1.0E-4) ? new Vector3d(this.x / var3, this.y / var3, this.z / var3) : ZERO;
    }
@@ -83,7 +83,7 @@ public class Vector3d implements IPosition {
    }
 
    public boolean method11340(IPosition var1, double var2) {
-      return this.method11343(var1.getX(), var1.getY(), var1.getZ()) < var2 * var2;
+      return this.squareDistanceTo(var1.getX(), var1.getY(), var1.getZ()) < var2 * var2;
    }
 
    public double distanceTo(Vector3d var1) {
@@ -100,7 +100,7 @@ public class Vector3d implements IPosition {
       return var4 * var4 + var6 * var6 + var8 * var8;
    }
 
-   public double method11343(double var1, double var3, double var5) {
+   public double squareDistanceTo(double var1, double var3, double var5) {
       double var9 = var1 - this.x;
       double var11 = var3 - this.y;
       double var13 = var5 - this.z;

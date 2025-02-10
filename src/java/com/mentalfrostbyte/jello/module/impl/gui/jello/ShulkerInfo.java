@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.command.impl.Peek;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventMouse;
 import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -55,7 +55,7 @@ public class ShulkerInfo extends Module {
     }
 
     @EventTarget
-    public void method16671(Render3DEvent var1) {
+    public void method16671(EventRender3D var1) {
         if (this.isEnabled()) {
             RenderSystem.glMultiTexCoord2f(33986, 240.0F, 240.0F);
 

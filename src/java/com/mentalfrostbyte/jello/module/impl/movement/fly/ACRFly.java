@@ -78,7 +78,7 @@ public class ACRFly extends Module {
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
-                    MovementUtil.setSpeed(var1, 0.35);
+                    MovementUtil.setMotion(var1, 0.35);
                 }
             } else {
                 double var4 = !this.getBooleanValueFromSettingName("Offset") ? 0.0 : 0.01;
@@ -92,7 +92,7 @@ public class ACRFly extends Module {
 
                 var1.setY(var4);
                 MultiUtilities.setPlayerYMotion(var1.getY());
-                MovementUtil.setSpeed(var1, this.getNumberValueBySettingName("Speed"));
+                MovementUtil.setMotion(var1, this.getNumberValueBySettingName("Speed"));
             }
         }
     }

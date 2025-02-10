@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.combat.aimbot;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Aimbot;
@@ -20,7 +20,7 @@ public class SmoothAimbot extends Module {
     }
 
     @EventTarget
-    private void method16765(Render3DEvent var1) {
+    private void method16765(EventRender3D var1) {
         if (this.isEnabled()) {
             if (!(mc.player.rotationPitch > 45.0F)) {
                 Entity var4 = ((Aimbot) this.access()).getTarget(this.getNumberValueBySettingName("Range"));

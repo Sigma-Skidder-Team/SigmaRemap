@@ -15,7 +15,7 @@ public class VanillaHighJump extends Module {
     @EventTarget
     public void JumpEvent(JumpEvent event) {
         if (this.isEnabled()) {
-            event.method14002(this.getNumberValueBySettingName("Motion"));
+            event.setY(this.getNumberValueBySettingName("Motion"));
         }
     }
 }

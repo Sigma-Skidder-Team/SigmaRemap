@@ -43,7 +43,7 @@ public class JumpSpider extends Module {
                 mc.player.jump();
                 event.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                MovementUtil.setSpeed(event, 0.28 + (double) MovementUtil.getSpeedBoost() * 0.05);
+                MovementUtil.setMotion(event, 0.28 + (double) MovementUtil.getSpeedBoost() * 0.05);
                 event.setY(0.0);
             } else {
                 event.setY(-0.0784);

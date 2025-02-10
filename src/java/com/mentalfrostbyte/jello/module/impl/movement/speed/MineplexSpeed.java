@@ -60,7 +60,7 @@ public class MineplexSpeed extends Module {
     public void method16250(EventMove var1) {
         if (this.isEnabled()
                 && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()
-                && !MultiUtilities.method17684(mc.player)) {
+                && !MultiUtilities.inLiquid(mc.player)) {
             double var4 = this.getNumberValueBySettingName("OnGround Speed");
             if (!mc.player.onGround) {
                 if (mc.player.collidedHorizontally) {
@@ -68,7 +68,7 @@ public class MineplexSpeed extends Module {
                     this.field23553 = 1;
                 }
 
-                if (!MultiUtilities.method17686()) {
+                if (!MultiUtilities.isMoving()) {
                     this.field23555 = 0.3;
                 }
 
@@ -77,7 +77,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtil.setSpeed(var1, this.field23555);
+                MovementUtil.setMotion(var1, this.field23555);
             } else {
                 if (this.field23552 > 1) {
                     this.field23553 = 0;
@@ -85,13 +85,13 @@ public class MineplexSpeed extends Module {
                     this.field23552++;
                 }
 
-                if (this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.method17686()) {
+                if (this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.isMoving()) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                 }
 
                 if (var1.getY() == 0.4199998) {
-                    MovementUtil.setSpeed(var1, 0.0);
+                    MovementUtil.setMotion(var1, 0.0);
                     return;
                 }
 
@@ -101,7 +101,7 @@ public class MineplexSpeed extends Module {
 
                 int var6 = this.method16254();
                 if (var6 == -1) {
-                    MovementUtil.setSpeed(var1, 0.2);
+                    MovementUtil.setMotion(var1, 0.2);
                     return;
                 }
 
@@ -123,7 +123,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtil.setSpeed(var1, this.field23555);
+                MovementUtil.setMotion(var1, this.field23555);
             }
         }
     }
@@ -142,8 +142,8 @@ public class MineplexSpeed extends Module {
                 this.field23553++;
             }
 
-            var1.method14003(0.0);
-            var1.method14002(0.4199998);
+            var1.setStrafeSpeed(0.0);
+            var1.setY(0.4199998);
             if (mc.player.inventory.currentItem != this.field23554) {
                 mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
                 this.field23554 = mc.player.inventory.currentItem;

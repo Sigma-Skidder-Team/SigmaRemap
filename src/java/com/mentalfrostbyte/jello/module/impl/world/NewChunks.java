@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -38,7 +38,7 @@ public class NewChunks extends Module {
     }
 
     @EventTarget
-    private void onRender3D(Render3DEvent event) {
+    private void onRender3D(EventRender3D event) {
         if (this.isEnabled()) {
             for (Iterator<ChunkPos> iterator = this.updatedChunks.iterator(); iterator.hasNext(); iterator.remove()) {
                 ChunkPos chunkPos = iterator.next();

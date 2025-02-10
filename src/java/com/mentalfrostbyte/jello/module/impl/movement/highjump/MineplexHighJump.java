@@ -47,7 +47,7 @@ public class MineplexHighJump extends Module {
 
          if (!mc.player.onGround && this.field24023) {
             this.field24024 = Math.max(this.field24024, 0.499);
-            MovementUtil.setSpeed(var1, this.field24024);
+            MovementUtil.setMotion(var1, this.field24024);
             this.field24024 -= 0.007;
             double var4 = 0.5;
             if (this.getNumberValueBySettingName("Motion") > 3.0F) {

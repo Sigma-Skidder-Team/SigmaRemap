@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
-import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.event.impl.EventRender3D;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
@@ -247,7 +247,7 @@ public class AutoCrystal extends Module {
     }
 
     @EventTarget
-    public void method16375(Render3DEvent var1) {
+    public void method16375(EventRender3D var1) {
         int var4 = MultiUtilities.applyAlpha(100000000, 0.2F);
         GL11.glPushMatrix();
         GL11.glDisable(2929);

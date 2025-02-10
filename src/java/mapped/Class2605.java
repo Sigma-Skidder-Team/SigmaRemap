@@ -11,6 +11,6 @@ public abstract class Class2605 extends Class2595 {
    }
 
    public boolean method10812() {
-      return PhantomEntity.method5339(this.field16851).method11343(this.field16851.getPosX(), this.field16851.getPosY(), this.field16851.getPosZ()) < 4.0;
+      return PhantomEntity.method5339(this.field16851).squareDistanceTo(this.field16851.getPosX(), this.field16851.getPosY(), this.field16851.getPosZ()) < 4.0;
    }
 }

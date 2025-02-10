@@ -313,7 +313,7 @@ public class BlockFlyHypixelMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
+                    if (mc.player.onGround && MultiUtilities.isMoving() && !mc.player.isSneaking() && !this.field23474) {
                         this.field23475 = false;
                         mc.player.jump();
                         ((Speed) Client.getInstance().moduleManager.getModuleByClass(Speed.class)).method16764();
@@ -325,7 +325,7 @@ public class BlockFlyHypixelMode extends Module {
                     break;
                 case "AAC":
                     if (this.field23470 == 0 && mc.player.onGround) {
-                        MovementUtil.setSpeed(var1, MovementUtil.getSpeed() * 0.82);
+                        MovementUtil.setMotion(var1, MovementUtil.getSpeed() * 0.82);
                     }
                     break;
                 case "Cubecraft":
@@ -334,7 +334,7 @@ public class BlockFlyHypixelMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
+                        if (MultiUtilities.isMoving() && !mc.player.isSneaking() && !this.field23474) {
                             var1.setY(1.00000000000001);
                         }
                     } else if (this.field23471 == 1) {
@@ -362,12 +362,12 @@ public class BlockFlyHypixelMode extends Module {
                         var1.setY(-1.023456987345906);
                     }
 
-                    if (!MultiUtilities.method17686()) {
+                    if (!MultiUtilities.isMoving()) {
                         var6 = 0.0;
                     }
 
                     if (mc.player.fallDistance < 1.0F) {
-                        MovementUtil.method37092(var1, var6, var8, var8, 360.0F);
+                        MovementUtil.setMotion(var1, var6, var8, var8, 360.0F);
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
@@ -409,7 +409,7 @@ public class BlockFlyHypixelMode extends Module {
     public void method16114(JumpEvent var1) {
         if (this.isEnabled() && this.field23475) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
+                    && (!MultiUtilities.isMoving() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }
