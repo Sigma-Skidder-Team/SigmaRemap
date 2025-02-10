@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Class9011 {
+public class MetaData {
    private static final String[] field41217 = new String[]{
       "undefined",
       "blues",
@@ -168,7 +168,7 @@ public class Class9011 {
    };
    private Map<Class8076<?>, Object> field41219 = new HashMap<Class8076<?>, Object>();
 
-   public void method33301(Class5066 var1, Class5066 var2) {
+   public void method33301(Box var1, Box var2) {
       if (var2.method15437(1668313716L)) {
          Class5017 var5 = (Class5017)var2.method15438(1668313716L);
          this.method33306(Class8076.field34710, new Locale(var5.method15376()));
@@ -192,7 +192,7 @@ public class Class9011 {
       }
    }
 
-   private void method33302(Class5066 var1) {
+   private void method33302(Box var1) {
       if (var1.method15437(1634493037L)) {
          Class5025 var4 = (Class5025)var1.method15438(1634493037L);
          this.method33306(Class8076.field34673, var4.method15386());
@@ -230,8 +230,8 @@ public class Class9011 {
       }
    }
 
-   private void method33303(Class5066 var1) {
-      for (Class5066 var6 : var1.method15439()) {
+   private void method33303(Box var1) {
+      for (Box var6 : var1.method15439()) {
          long var7 = var6.method15431();
          Class4982 var9 = (Class4982)var6.method15438(1684108385L);
          if (var7 != 2839630420L) {

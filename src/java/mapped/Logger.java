@@ -7,5 +7,5 @@ public interface Logger {
 
    void error(String var1);
 
-   void dummyMethod(String var1);
+   void setThreadName(String var1);
 }

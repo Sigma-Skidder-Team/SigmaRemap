@@ -29,7 +29,7 @@ public class Class6448 extends AudioByteManager {
    private int field28357;
 
    @Override
-   public void readData(DataStreamReader reader) throws IOException {
+   public void readData(MP4InputStream reader) throws IOException {
       boolean var4 = reader.readInt() == 1;
       if (!var4) {
          int var5 = reader.readInt();

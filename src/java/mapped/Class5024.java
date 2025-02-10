@@ -11,7 +11,7 @@ public class Class5024 extends Class5023 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       this.method15384(var1);
       this.field22985 = var1.readBits(4);
       this.field22986 = (int)var1.readBits(2);

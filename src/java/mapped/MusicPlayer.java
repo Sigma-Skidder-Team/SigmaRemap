@@ -5,9 +5,9 @@ import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
-import com.mentalfrostbyte.jello.util.youtube.YoutubeType;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeContentType;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
-import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
+import com.mentalfrostbyte.jello.unmapped.MusicVideoManager;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -35,9 +35,9 @@ public class MusicPlayer extends Class4278 {
    private Class4339 field20852;
    private CustomGuiScreen pngButtons;
    private MusicManager field20854 = Client.getInstance().musicManager;
-   public static Map<String, MusicPlayerVideo> field20855 = new LinkedHashMap<String, MusicPlayerVideo>();
+   public static Map<String, MusicVideoManager> field20855 = new LinkedHashMap<String, MusicVideoManager>();
    public static String field20856;
-   public static MusicPlayerVideo field20857;
+   public static MusicVideoManager field20857;
    private ButtonPanel play;
    private ButtonPanel pause;
    private ButtonPanel forwards;
@@ -48,7 +48,7 @@ public class MusicPlayer extends Class4278 {
    private CustomGuiScreen field20865;
    public SearchBoxButton searchBox;
    public Class4359 field20867;
-   public static MusicPlayerVideo[] videos;
+   public static MusicVideoManager[] videos;
    private static CookieManager field20869 = new CookieManager();
    public static long field20870 = 0L;
    public float field20871 = 0.0F;
@@ -60,15 +60,15 @@ public class MusicPlayer extends Class4278 {
       super(var1, var2, 875, 55, 800, 600, false);
 
       if (videos == null) {
-         MusicPlayerVideo[] var4 = new MusicPlayerVideo[] {
-               new MusicPlayerVideo("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
-               new MusicPlayerVideo("NCS", "PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD", YoutubeType.PLAYLIST)
+         MusicVideoManager[] var4 = new MusicVideoManager[] {
+               new MusicVideoManager("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeContentType.PLAYLIST),
+               new MusicVideoManager("NCS", "PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD", YoutubeContentType.PLAYLIST)
          };
          videos = var4;
       }
@@ -103,7 +103,7 @@ public class MusicPlayer extends Class4278 {
       MusicPlayer player = this;
 
       int var9 = 0;
-      for (MusicPlayerVideo video : videos) {
+      for (MusicVideoManager video : videos) {
          var7.add(new Thread(() -> {
             if (!field20855.containsKey(video.id) && !video.field44779) {
                video.field44779 = true;
@@ -184,8 +184,8 @@ public class MusicPlayer extends Class4278 {
       this.field20852.field21207 = 65;
    }
 
-   private void method13190(MusicPlayerVideo var1, YoutubeVideoData var2) {
-      this.field20854.method24317(var1, var2);
+   private void method13190(MusicVideoManager var1, YoutubeVideoData var2) {
+      this.field20854.playSong(var1, var2);
       field20857 = var1;
    }
 
@@ -552,7 +552,7 @@ public class MusicPlayer extends Class4278 {
    }
 
    // $VF: synthetic method
-   public static void method13211(MusicPlayer var0, MusicPlayerVideo var1, YoutubeVideoData var2) {
+   public static void method13211(MusicPlayer var0, MusicVideoManager var1, YoutubeVideoData var2) {
       var0.method13190(var1, var2);
    }
 }

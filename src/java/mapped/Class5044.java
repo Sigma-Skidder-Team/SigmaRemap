@@ -12,7 +12,7 @@ public class Class5044 extends Class5041 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       var1.skipBytes(12L);
 
       while (this.method15430(var1) > 0L && var1.readInt() == 128) {

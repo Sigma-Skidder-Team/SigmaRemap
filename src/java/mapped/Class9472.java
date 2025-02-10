@@ -38,22 +38,22 @@ public class Class9472 {
       Class9650 var4 = null;
 
       try {
-         Class8490 var5 = new Class8490(new RandomAccessFile(var0, "r"));
-         Class8583 var6 = var5.method30073();
+         MP4Container var5 = new MP4Container(new RandomAccessFile(var0, "r"));
+         Movie var6 = var5.getMovie();
          List var7 = var6.method30674(Class2267.field14741);
          if (var7.isEmpty()) {
             throw new Exception("movie does not contain any AAC track");
          }
 
-         Class7356 var8 = (Class7356)var7.get(0);
-         var4 = new Class9650(new File(var1), var8.method23338(), var8.method23337(), var8.method23339());
-         Class6542 var9 = new Class6542(var8.method23320());
-         Class8210 var10 = new Class8210();
+         VideoTrack var8 = (VideoTrack)var7.get(0);
+         var4 = new Class9650(new File(var1), var8.getHeight(), var8.getWidth(), var8.getDepth());
+         Decoder var9 = new Decoder(var8.getDecoderSpecificInfo());
+         SampleBuffer var10 = new SampleBuffer();
 
-         while (var8.method23323()) {
-            Class1994 var11 = var8.method23324();
-            var9.method19888(var11.method8282(), var10);
-            var4.method37638(var10.method28523());
+         while (var8.hasMoreFrames()) {
+            Frame var11 = var8.readNextFrame();
+            var9.decodeFrame(var11.getData(), var10);
+            var4.method37638(var10.getData());
          }
       } finally {
          if (var4 != null) {
@@ -67,17 +67,17 @@ public class Class9472 {
 
       try {
          Class9120 var5 = new Class9120(new FileInputStream(var0));
-         Class6542 var6 = new Class6542(var5.method34012());
-         Class8210 var7 = new Class8210();
+         Decoder var6 = new Decoder(var5.method34012());
+         SampleBuffer var7 = new SampleBuffer();
 
          while (true) {
             byte[] var8 = var5.method34013();
-            var6.method19888(var8, var7);
+            var6.decodeFrame(var8, var7);
             if (var4 == null) {
                var4 = new Class9650(new File(var1), var7.method28524(), var7.method28525(), var7.method28526());
             }
 
-            var4.method37638(var7.method28523());
+            var4.method37638(var7.getData());
          }
       } finally {
          if (var4 != null) {

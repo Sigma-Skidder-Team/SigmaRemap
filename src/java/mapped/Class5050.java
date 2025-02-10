@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public abstract class Class5050 extends Class5046 {
+public abstract class Class5050 extends SampleEntry {
    private String field23041;
 
    public Class5050(String var1) {
@@ -10,7 +10,7 @@ public abstract class Class5050 extends Class5046 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field23041 = var1.method31866((int)this.method15430(var1), "UTF-8");
    }

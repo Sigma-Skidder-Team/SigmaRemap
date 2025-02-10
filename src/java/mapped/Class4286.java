@@ -160,7 +160,7 @@ public class Class4286 extends Class4278 {
                      this.field20776.release();
                   }
 
-                  this.field20776 = TextureUtil.method32933("picture", ImageUtil.method35032(this.field20773, 14));
+                  this.field20776 = TextureUtil.method32933("picture", ImageUtil.applyBlur(this.field20773, 14));
                } catch (IOException var13) {
                   var13.printStackTrace();
                }

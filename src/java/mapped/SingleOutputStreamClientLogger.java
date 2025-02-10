@@ -47,7 +47,7 @@ public class SingleOutputStreamClientLogger implements Logger {
     * wtf part 2
     */
    @Override
-   public void dummyMethod(String var1) {
+   public void setThreadName(String var1) {
       Client.getInstance();
    }
 }

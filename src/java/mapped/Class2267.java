@@ -1,6 +1,6 @@
 package mapped;
 
-public enum Class2267 implements Class2268 {
+public enum Class2267 implements Codec {
    field14741,
    field14742,
    field14743,
@@ -15,7 +15,7 @@ public enum Class2267 implements Class2268 {
       field14741, field14742, field14743, field14744, field14745, field14746, field14747, field14748, field14749
    };
 
-   public static Class2268 method8996(long var0) {
+   public static Codec method8996(long var0) {
       Class2267 var4;
       if (var0 != 1836069985L) {
          if (var0 != 1633889587L) {

@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class5015 extends Class4975 {
+public class Class5015 extends FullBox {
    private long field22969;
    private long field22970;
    private long field22971;
@@ -13,7 +13,7 @@ public class Class5015 extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field22969 = var1.readBits(4);
       this.field22970 = this.field22850 != 1 ? 0L : var1.readBits(4);

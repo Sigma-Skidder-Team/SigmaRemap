@@ -2,19 +2,19 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.util.youtube.YoutubeJPGThumbnail;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
-import com.mentalfrostbyte.jello.util.youtube.YoutubeType;
+import com.mentalfrostbyte.jello.util.youtube.YoutubeContentType;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MusicPlayerVideo {
+public class MusicVideoManager {
     public String displayName;
     public String id;
-    public YoutubeType type;
+    public YoutubeContentType type;
     public List<YoutubeVideoData> youtubeVideos = new ArrayList<>();
     public boolean field44779 = false;
 
-    public MusicPlayerVideo(String name, String id, YoutubeType type) {
+    public MusicVideoManager(String name, String id, YoutubeContentType type) {
         this.displayName = name;
         this.id = id;
         this.type = type;
@@ -23,8 +23,8 @@ public class MusicPlayerVideo {
     public void updateVideos() {
         this.youtubeVideos = new ArrayList<>();
         YoutubeJPGThumbnail[] thumbnails = new YoutubeJPGThumbnail[0];
-        if (this.type != YoutubeType.CHANNEL) {
-            if (this.type == YoutubeType.PLAYLIST) {
+        if (this.type != YoutubeContentType.CHANNEL) {
+            if (this.type == YoutubeContentType.PLAYLIST) {
                 System.out.println("getting from playlist " + this.displayName);
                 thumbnails = ThumbnailUtil.getFromPlaylist(this.id);
             }
@@ -41,8 +41,8 @@ public class MusicPlayerVideo {
     @Override
     public boolean equals(Object thumbnail) {
         if (thumbnail != this) {
-            if (thumbnail instanceof MusicPlayerVideo) {
-                MusicPlayerVideo musicPlayerTrumnaheil = (MusicPlayerVideo) thumbnail;
+            if (thumbnail instanceof MusicVideoManager) {
+                MusicVideoManager musicPlayerTrumnaheil = (MusicVideoManager) thumbnail;
                 return musicPlayerTrumnaheil.id.equals(this.id);
             } else {
                 return false;

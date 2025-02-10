@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6401 extends Class6399 {
+public class Class6401 extends Protection {
    private static String[] field28011;
    private final String field28012;
    private final String field28013;
@@ -8,9 +8,9 @@ public class Class6401 extends Class6399 {
    private final byte[] field28015;
    private final byte[] field28016;
 
-   public Class6401(Class5066 var1) {
+   public Class6401(Box var1) {
       super(var1);
-      Class5066 var4 = var1.method15438(1935894633L);
+      Box var4 = var1.method15438(1935894633L);
       this.field28012 = new String(((Class5042)var4.method15438(1970496882L)).method15443());
       byte[] var5 = ((Class5042)var4.method15438(1851878757L)).method15443();
       int var6 = 0;

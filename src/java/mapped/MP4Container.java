@@ -11,35 +11,35 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Class8490 {
-   private final DataStreamReader field37152;
-   private final List<Class5066> field37153;
+public class MP4Container {
+   private final MP4InputStream in;
+   private final List<Box> field37153;
    private Class2036 field37154;
    private Class2036 field37155;
    private Class2036[] field37156;
    private Class5070 field37157;
    private Class5006 field37158;
-   private Class5066 field37159;
-   private Class8583 field37160;
+   private Box moov;
+   private Movie movie;
 
-   public Class8490(InputStream var1) throws IOException {
-      this.field37152 = new DataStreamReader(var1);
-      this.field37153 = new ArrayList<Class5066>();
-      this.method30069();
+   public MP4Container(InputStream var1) throws IOException {
+      this.in = new MP4InputStream(var1);
+      this.field37153 = new ArrayList<Box>();
+      this.readContent();
    }
 
-   public Class8490(RandomAccessFile var1) throws IOException {
-      this.field37152 = new DataStreamReader(var1);
-      this.field37153 = new ArrayList<Class5066>();
-      this.method30069();
+   public MP4Container(RandomAccessFile var1) throws IOException {
+      this.in = new MP4InputStream(var1);
+      this.field37153 = new ArrayList<Box>();
+      this.readContent();
    }
 
-   private void method30069() throws IOException {
-      Class5066 var3 = null;
+   private void readContent() throws IOException {
+      Box var3 = null;
       boolean var4 = false;
 
-      while (this.field37152.method31875()) {
-         var3 = Class6412.method19535(null, this.field37152);
+      while (this.in.method31875()) {
+         var3 = Class6412.method19535(null, this.in);
          if (this.field37153.isEmpty() && var3.method15431() != 1718909296L) {
             throw new Class2454("no MP4 signature found");
          }
@@ -54,7 +54,7 @@ public class Class8490 {
                         break;
                      }
 
-                     if (!this.field37152.method31874()) {
+                     if (!this.in.method31874()) {
                         throw new Class2454("movie box at end of file, need random access");
                      }
                   }
@@ -62,8 +62,8 @@ public class Class8490 {
                   this.field37158 = (Class5006)var3;
                }
             } else {
-               if (this.field37160 == null) {
-                  this.field37159 = var3;
+               if (this.movie == null) {
+                  this.moov = var3;
                }
 
                var4 = true;
@@ -103,20 +103,20 @@ public class Class8490 {
       return this.field37156;
    }
 
-   public Class8583 method30073() {
-      if (this.field37159 != null) {
-         if (this.field37160 == null) {
-            this.field37160 = new Class8583(this.field37159, this.field37152);
+   public Movie getMovie() {
+      if (this.moov != null) {
+         if (this.movie == null) {
+            this.movie = new Movie(this.moov, this.in);
          }
 
-         return this.field37160;
+         return this.movie;
       } else {
          return null;
       }
    }
 
-   public List<Class5066> method30074() {
-      return Collections.<Class5066>unmodifiableList(this.field37153);
+   public List<Box> method30074() {
+      return Collections.<Box>unmodifiableList(this.field37153);
    }
 
    static {

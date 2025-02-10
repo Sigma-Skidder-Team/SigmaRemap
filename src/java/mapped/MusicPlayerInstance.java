@@ -2,15 +2,15 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
-import com.mentalfrostbyte.jello.unmapped.MusicPlayerVideo;
+import com.mentalfrostbyte.jello.unmapped.MusicVideoManager;
 
 public class MusicPlayerInstance implements Runnable {
-   public final MusicPlayerVideo thubmnail;
+   public final MusicVideoManager thubmnail;
    public final ColorHelper colorHelper;
    public final MusicPlayer musicPlayer;
    public final MusicPlayer musicPlayer2;
 
-   public MusicPlayerInstance(MusicPlayer var1, MusicPlayerVideo var2, ColorHelper var3, MusicPlayer var4) {
+   public MusicPlayerInstance(MusicPlayer var1, MusicVideoManager var2, ColorHelper var3, MusicPlayer var4) {
       this.musicPlayer2 = var1;
       this.thubmnail = var2;
       this.colorHelper = var3;

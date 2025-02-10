@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Class5010 extends Class4975 {
+public class Class5010 extends FullBox {
    private final Map<Long, String> field22962 = new HashMap<Long, String>();
 
    public Class5010() {
@@ -12,7 +12,7 @@ public class Class5010 extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       var1.skipBytes(4L);
       int var4 = var1.readInt();

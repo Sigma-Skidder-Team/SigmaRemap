@@ -1,9 +1,9 @@
 package mapped;
 
-public abstract class Class6399 {
-   private final Class2268 field28009;
+public abstract class Protection {
+   private final Codec field28009;
 
-   public static Class6399 method19498(Class5066 var0) {
+   public static Protection method19498(Box var0) {
       Object var3 = null;
       if (var0.method15437(1935894637L)) {
          Class4988 var4 = (Class4988)var0.method15438(1935894637L);
@@ -17,12 +17,12 @@ public abstract class Class6399 {
          var3 = new Class6400(var0);
       }
 
-      return (Class6399)var3;
+      return (Protection)var3;
    }
 
-   public Class6399(Class5066 var1) {
+   public Protection(Box var1) {
       long var4 = ((Class5067)var1.method15438(1718775137L)).method15503();
-      Class2268 var6;
+      Codec var6;
       if ((var6 = Class2267.method8996(var4)).equals(Class2267.field14749)) {
          if ((var6 = Class2269.method8997(var4)).equals(Class2269.field14754)) {
             this.field28009 = null;
@@ -34,7 +34,7 @@ public abstract class Class6399 {
       }
    }
 
-   public Class2268 method19499() {
+   public Codec method19499() {
       return this.field28009;
    }
 

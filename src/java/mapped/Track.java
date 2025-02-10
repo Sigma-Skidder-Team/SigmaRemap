@@ -12,25 +12,25 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class Class7354 {
-   private final DataStreamReader field31473;
-   public final Class5089 field31474;
+public abstract class Track {
+   private final MP4InputStream field31473;
+   public final TrackHeaderBox field31474;
    private final Class5035 field31475;
    private final boolean field31476;
-   private final List<Class1994> field31477;
+   private final List<Frame> field31477;
    private URL field31478;
    private int field31479;
    public AudioByteManager.BinaryDataDescriptor field31480;
    public Class8307 field31481;
-   public Class6399 field31482;
+   public Protection field31482;
 
-   public Class7354(Class5066 var1, DataStreamReader var2) {
+   public Track(Box var1, MP4InputStream var2) {
       this.field31473 = var2;
-      this.field31474 = (Class5089)var1.method15438(1953196132L);
-      Class5066 var5 = var1.method15438(1835297121L);
+      this.field31474 = (TrackHeaderBox)var1.method15438(1953196132L);
+      Box var5 = var1.method15438(1835297121L);
       this.field31475 = (Class5035)var5.method15438(1835296868L);
-      Class5066 var6 = var5.method15438(1835626086L);
-      Class5066 var7 = var6.method15438(1684631142L);
+      Box var6 = var5.method15438(1835626086L);
+      Box var7 = var6.method15438(1684631142L);
       Class5029 var8 = (Class5029)var7.method15438(1685218662L);
       if (var8.method15437(1970433056L)) {
          Class4999 var9 = (Class4999)var8.method15438(1970433056L);
@@ -48,20 +48,20 @@ public abstract class Class7354 {
          this.field31478 = null;
       }
 
-      Class5066 var12 = var6.method15438(1937007212L);
+      Box var12 = var6.method15438(1937007212L);
       if (var12.method15436()) {
-         this.field31477 = new ArrayList<Class1994>();
+         this.field31477 = new ArrayList<Frame>();
          this.method23307(var12);
       } else {
-         this.field31477 = Collections.<Class1994>emptyList();
+         this.field31477 = Collections.<Frame>emptyList();
       }
 
       this.field31479 = 0;
    }
 
-   private void method23307(Class5066 var1) {
+   private void method23307(Box var1) {
       double var4 = (double)this.field31475.method15411();
-      Class2169 var6 = this.method23310();
+      Type var6 = this.getType();
       long[] var7 = ((Class4996)var1.method15438(1937011578L)).method15343();
       Class5012 var8;
       if (!var1.method15437(1937007471L)) {
@@ -106,7 +106,7 @@ public abstract class Class7354 {
 
             for (int var26 = 0; (long)var26 < var12[var23]; var26++) {
                double var27 = (double)var16[var29] / var4;
-               this.field31477.add(new Class1994(var6, var21, var7[var29], var27));
+               this.field31477.add(new Frame(var6, var21, var7[var29], var27));
                var21 += var7[var29];
                var29++;
             }
@@ -129,7 +129,7 @@ public abstract class Class7354 {
       }
    }
 
-   public <T> void method23309(Class5066 var1, Class<T> var2) {
+   public <T> void method23309(Box var1, Class<T> var2) {
       try {
          Object var5 = var2.newInstance();
          if (var1.getClass().isInstance(var5)) {
@@ -142,9 +142,9 @@ public abstract class Class7354 {
       }
    }
 
-   public abstract Class2169 method23310();
+   public abstract Type getType();
 
-   public abstract Class2268 method23311();
+   public abstract Codec getCodec();
 
    public boolean method23312() {
       return this.field31474.method15560();
@@ -178,7 +178,7 @@ public abstract class Class7354 {
       return this.field31478;
    }
 
-   public byte[] method23320() {
+   public byte[] getDecoderSpecificInfo() {
       return this.field31480.getBinaryData();
    }
 
@@ -186,17 +186,17 @@ public abstract class Class7354 {
       return this.field31481;
    }
 
-   public Class6399 method23322() {
+   public Protection method23322() {
       return this.field31482;
    }
 
-   public boolean method23323() {
+   public boolean hasMoreFrames() {
       return this.field31479 < this.field31477.size();
    }
 
-   public Class1994 method23324() throws IOException {
-      Class1994 var3 = null;
-      if (this.method23323()) {
+   public Frame readNextFrame() throws IOException {
+      Frame var3 = null;
+      if (this.hasMoreFrames()) {
          var3 = this.field31477.get(this.field31479);
          if (var3.method8278() < this.field31473.getPosition()) {
             this.field31473.method31877();
@@ -236,11 +236,11 @@ public abstract class Class7354 {
       return var3;
    }
 
-   public double method23325(double var1) {
+   public double seek(double var1) {
       if (var1 > this.method23326()) {
-         return this.method23327();
+         return this.getNextTimeStamp();
       } else {
-         Class1994 var5 = null;
+         Frame var5 = null;
 
          for (int var6 = 0; var6 < this.field31477.size(); var6++) {
             var5 = this.field31477.get(var6++);
@@ -262,8 +262,8 @@ public abstract class Class7354 {
          var5 = this.field31477.get(var6++);
 
          try {
-            if (((Class1994)var5).method8278() <= this.field31473.getPosition() + this.field31473.method31872()) {
-               var3 = Math.max(((Class1994)var5).method8280(), var3);
+            if (((Frame)var5).method8278() <= this.field31473.getPosition() + this.field31473.method31872()) {
+               var3 = Math.max(((Frame)var5).method8280(), var3);
             }
          } catch (IOException var8) {
             var8.printStackTrace();
@@ -273,7 +273,7 @@ public abstract class Class7354 {
       return var3;
    }
 
-   public double method23327() {
+   public double getNextTimeStamp() {
       return this.field31477.get(Math.min(this.field31479, this.field31477.size() - 1)).method8280();
    }
 }

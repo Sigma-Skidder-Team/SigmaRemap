@@ -1,15 +1,15 @@
 package mapped;
 
-public class Class7355 extends Class7354 {
+public class Class7355 extends Track {
    private final Class5036 field31483;
    private final Class5053 field31484;
-   private final Class2268 field31485;
+   private final Codec field31485;
 
-   public Class7355(Class5066 var1, DataStreamReader var2) {
+   public Class7355(Box var1, MP4InputStream var2) {
       super(var1, var2);
-      Class5066 var5 = var1.method15438(1835297121L).method15438(1835626086L);
+      Box var5 = var1.method15438(1835297121L).method15438(1835626086L);
       this.field31483 = (Class5036)var5.method15438(1986881636L);
-      Class5066 var6 = var5.method15438(1937007212L);
+      Box var6 = var5.method15438(1937007212L);
       Class5001 var7 = (Class5001)var6.method15438(1937011556L);
       if (!(var7.method15439().get(0) instanceof Class5053)) {
          this.field31484 = null;
@@ -22,7 +22,7 @@ public class Class7355 extends Class7354 {
                this.field31481 = Class8307.method29064((Class5056)this.field31484.method15439().get(0));
             } else {
                this.method23308((Class5086)this.field31484.method15438(1702061171L));
-               this.field31482 = Class6399.method19498(this.field31484.method15438(1936289382L));
+               this.field31482 = Protection.method19498(this.field31484.method15438(1936289382L));
             }
          } else {
             this.method23308((Class5086)this.field31484.method15438(1702061171L));
@@ -33,12 +33,12 @@ public class Class7355 extends Class7354 {
    }
 
    @Override
-   public Class2169 method23310() {
-      return Class2169.field14239;
+   public Type getType() {
+      return Type.field14239;
    }
 
    @Override
-   public Class2268 method23311() {
+   public Codec getCodec() {
       return this.field31485;
    }
 
@@ -71,6 +71,6 @@ public class Class7355 extends Class7354 {
    }
 
    public int method23335() {
-      return this.field31474.method15567();
+      return this.field31474.getLayer();
    }
 }

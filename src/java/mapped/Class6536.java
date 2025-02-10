@@ -408,13 +408,13 @@ public class Class6536 implements Class6515 {
       }
    }
 
-   public void method19857(Class8210 var1) {
+   public void method19857(SampleBuffer var1) {
       boolean var4 = var1.method28530();
       int var5 = this.field28837.length;
       int var6 = this.field28825 && this.field28824.method19750() ? 2 : 1;
       int var7 = var6 * this.field28824.method19741();
       int var8 = var6 * this.field28824.method19746().method9033();
-      byte[] var9 = var1.method28523();
+      byte[] var9 = var1.getData();
       if (var9.length != var5 * var7 * 2) {
          var9 = new byte[var5 * var7 * 2];
       }

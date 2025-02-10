@@ -15,7 +15,7 @@ public class Class6412 implements Class6413 {
    private static final Map<Long, Class<? extends Class5041>[]> field28041;
    private static final Map<Long, String[]> field28042;
 
-   public static Class5066 method19535(Class5066 var0, DataStreamReader var1) throws IOException {
+   public static Box method19535(Box var0, MP4InputStream var1) throws IOException {
       long var4 = var1.getPosition();
       long var6 = var1.readBits(4);
       long var8 = var1.readBits(4);
@@ -39,7 +39,7 @@ public class Class6412 implements Class6413 {
       var10.method15429(var0, var6, var8, var4);
       var10.method15262(var1);
       Class var11 = var10.getClass();
-      if (var11 == Class5041.class || var11 == Class4975.class) {
+      if (var11 == Class5041.class || var11 == FullBox.class) {
          var10.method15441(var1);
       }
 
@@ -57,7 +57,7 @@ public class Class6412 implements Class6413 {
       return var10;
    }
 
-   public static Class5066 method19536(DataStreamReader var0, Class<? extends Class5041> var1) throws IOException {
+   public static Box method19536(MP4InputStream var0, Class<? extends Class5041> var1) throws IOException {
       long var4 = var0.getPosition();
       long var6 = var0.readBits(4);
       long var8 = var0.readBits(4);
@@ -183,9 +183,9 @@ public class Class6412 implements Class6413 {
       field28040.put(1835427940L, Class5000.class);
       field28040.put(1835430497L, Class5041.class);
       field28040.put(1835430511L, Class5021.class);
-      field28040.put(1836476516L, Class5078.class);
+      field28040.put(1836476516L, MovieHeaderBox.class);
       field28040.put(1952540531L, Class5044.class);
-      field28040.put(1852663908L, Class4975.class);
+      field28040.put(1852663908L, FullBox.class);
       field28040.put(1718775137L, Class5067.class);
       field28040.put(1885430882L, Class4992.class);
       field28040.put(1885431150L, Class5041.class);
@@ -205,7 +205,7 @@ public class Class6412 implements Class6413 {
       field28040.put(1935894633L, Class5041.class);
       field28040.put(1937011560L, Class5080.class);
       field28040.put(1936419184L, Class5069.class);
-      field28040.put(1936549988L, Class5040.class);
+      field28040.put(1936549988L, VideoMediaHeaderBox.class);
       field28040.put(1937072755L, Class5034.class);
       field28040.put(1937011571L, Class4980.class);
       field28040.put(1953653099L, Class5041.class);
@@ -214,7 +214,7 @@ public class Class6412 implements Class6413 {
       field28040.put(1952868452L, Class5088.class);
       field28040.put(1952871009L, Class4989.class);
       field28040.put(1953658222L, Class4994.class);
-      field28040.put(1953196132L, Class5089.class);
+      field28040.put(1953196132L, TrackHeaderBox.class);
       field28040.put(1953654118L, Class5065.class);
       field28040.put(1953719660L, Class5090.class);
       field28040.put(1969517665L, Class5041.class);
@@ -294,16 +294,16 @@ public class Class6412 implements Class6413 {
       field28040.put(1932670515L, Class5053.class);
       field28040.put(1701733238L, Class5053.class);
       field28040.put(1635148593L, Class5053.class);
-      field28040.put(1836069985L, Class5047.class);
-      field28040.put(1633889587L, Class5047.class);
-      field28040.put(1700998451L, Class5047.class);
-      field28040.put(1685220723L, Class5047.class);
-      field28040.put(1935764850L, Class5047.class);
-      field28040.put(1935767394L, Class5047.class);
-      field28040.put(1936029283L, Class5047.class);
-      field28040.put(1936810864L, Class5047.class);
-      field28040.put(1936944502L, Class5047.class);
-      field28040.put(1701733217L, Class5047.class);
+      field28040.put(1836069985L, VideoSampleEntry.class);
+      field28040.put(1633889587L, VideoSampleEntry.class);
+      field28040.put(1700998451L, VideoSampleEntry.class);
+      field28040.put(1685220723L, VideoSampleEntry.class);
+      field28040.put(1935764850L, VideoSampleEntry.class);
+      field28040.put(1935767394L, VideoSampleEntry.class);
+      field28040.put(1936029283L, VideoSampleEntry.class);
+      field28040.put(1936810864L, VideoSampleEntry.class);
+      field28040.put(1936944502L, VideoSampleEntry.class);
+      field28040.put(1701733217L, VideoSampleEntry.class);
       field28040.put(1836070003L, Class5048.class);
       field28040.put(1835365492L, Class5052.class);
       field28040.put(1835365496L, Class5051.class);
@@ -324,12 +324,12 @@ public class Class6412 implements Class6413 {
       field28040.put(1868850273L, Class5038.class);
       field28040.put(1668706933L, Class4993.class);
       field28040.put(1868851301L, Class5016.class);
-      field28040.put(1868853869L, Class4975.class);
+      field28040.put(1868853869L, FullBox.class);
       field28040.put(1768124021L, Class4993.class);
       field28040.put(1768842869L, Class4993.class);
       field28040.put(1819435893L, Class4993.class);
       field28040.put(1835299433L, Class5041.class);
-      field28040.put(1868852077L, Class4975.class);
+      field28040.put(1868852077L, FullBox.class);
       field28040.put(1868853858L, Class5032.class);
       field28040.put(1868854388L, Class5011.class);
       field28040.put(1970496882L, Class5042.class);

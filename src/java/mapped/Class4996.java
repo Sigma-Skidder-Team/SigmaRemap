@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class Class4996 extends Class4975 {
+public class Class4996 extends FullBox {
    private long field22927;
    private long[] field22928;
 
@@ -12,7 +12,7 @@ public class Class4996 extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       boolean var4 = this.field23024 == 1937013298L;
       int var5;
@@ -42,7 +42,7 @@ public class Class4996 extends Class4975 {
       }
    }
 
-   private void method15341(DataStreamReader var1, int var2) throws IOException {
+   private void method15341(MP4InputStream var1, int var2) throws IOException {
       for (int var5 = 0; (long)var5 < this.field22927; var5++) {
          this.field22928[var5] = var1.readBits(var2);
       }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class IPMPControlInfo extends Class4975 {
+public class IPMPControlInfo extends FullBox {
    private List<AudioByteManager> field22938;
 
    public IPMPControlInfo() {
@@ -13,7 +13,7 @@ public class IPMPControlInfo extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field22938 = new ArrayList<>();
 

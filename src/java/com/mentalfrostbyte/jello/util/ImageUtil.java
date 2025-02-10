@@ -15,7 +15,7 @@ import java.nio.ByteBuffer;
 public class ImageUtil {
     private static String[] field42741;
 
-    public static BufferedImage method35032(BufferedImage var0, int var1) {
+    public static BufferedImage applyBlur(BufferedImage var0, int var1) {
         if (var0 != null) {
             if (var0.getWidth() > var1 + var1) {
                 if (var0.getHeight() > var1 + var1) {
@@ -135,8 +135,8 @@ public class ImageUtil {
         if (var5 <= 1) {
             return var12;
         } else {
-            return !var7 ? method35032(method35040(var12, var5, var6), var5)
-                    : method35032(method35041(var12, var5), var5);
+            return !var7 ? applyBlur(method35040(var12, var5, var6), var5)
+                    : applyBlur(method35041(var12, var5), var5);
         }
     }
 

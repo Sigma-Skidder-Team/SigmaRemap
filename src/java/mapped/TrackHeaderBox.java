@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class5089 extends Class4975 {
+public class TrackHeaderBox extends FullBox {
    private boolean field23162;
    private boolean field23163;
    private boolean field23164;
@@ -17,12 +17,12 @@ public class Class5089 extends Class4975 {
    private double field23173;
    private double[] field23174 = new double[9];
 
-   public Class5089() {
+   public TrackHeaderBox() {
       super("Track Header Box");
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field23162 = (this.field22851 & 1) == 1;
       this.field23163 = (this.field22851 & 2) == 2;
@@ -79,27 +79,27 @@ public class Class5089 extends Class4975 {
       return this.field23167;
    }
 
-   public int method15567() {
+   public int getLayer() {
       return this.field23169;
    }
 
-   public int method15568() {
+   public int getAlternateGroup() {
       return this.field23170;
    }
 
-   public double method15569() {
+   public double getVolume() {
       return this.field23171;
    }
 
-   public double method15570() {
+   public double getWidth() {
       return this.field23172;
    }
 
-   public double method15571() {
+   public double getHeight() {
       return this.field23173;
    }
 
-   public double[] method15572() {
+   public double[] getMatrix() {
       return this.field23174;
    }
 }

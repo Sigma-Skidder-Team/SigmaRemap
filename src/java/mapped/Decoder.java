@@ -4,7 +4,7 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 
-public class Class6542 implements Class6515 {
+public class Decoder implements Class6515 {
    private final Class6516 field28898;
    private final Class6536 field28899;
    private final Class6518 field28900;
@@ -15,7 +15,7 @@ public class Class6542 implements Class6515 {
       return var0.method8217();
    }
 
-   public Class6542(byte[] var1) throws Class2460 {
+   public Decoder(byte[] var1) throws Class2460 {
       this.field28898 = Class6516.method19755(var1);
       if (this.field28898 != null) {
          if (method19886(this.field28898.method19744())) {
@@ -37,7 +37,7 @@ public class Class6542 implements Class6515 {
       return this.field28898;
    }
 
-   public void method19888(byte[] var1, Class8210 var2) throws Class2460 {
+   public void decodeFrame(byte[] var1, SampleBuffer var2) throws Class2460 {
       if (var1 != null) {
          this.field28901.method34391(var1);
       }
@@ -53,7 +53,7 @@ public class Class6542 implements Class6515 {
       }
    }
 
-   private void method19889(Class8210 var1) throws Class2460 {
+   private void method19889(SampleBuffer var1) throws Class2460 {
       if (Class9340.method35345(this.field28901)) {
          this.field28902 = Class9340.method35346(this.field28901);
          Class6525 var4 = this.field28902.method35348();

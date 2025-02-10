@@ -2,7 +2,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class IPMPControlBox extends Class4975 {
+public class IPMPControlBox extends FullBox {
    private AudioByteManager field22873;
    private AudioByteManager[] field22874;
 
@@ -11,7 +11,7 @@ public class IPMPControlBox extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field22873 = AudioByteManager.readDescriptor(var1);
       int var4 = var1.readInt();

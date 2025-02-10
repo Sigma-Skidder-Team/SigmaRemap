@@ -3,7 +3,7 @@ package mapped;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Class1782 extends InputStream {
+public class MusicStream extends InputStream {
    private static String[] field9616;
    private final Class8807 field9617;
    private Class1764 field9618;
@@ -12,7 +12,7 @@ public class Class1782 extends InputStream {
    private volatile boolean field9621;
    private Thread field9622;
 
-   public Class1782(InputStream var1, Class8807 var2) {
+   public MusicStream(InputStream var1, Class8807 var2) {
       this.field9617 = var2;
       this.field9618 = new Class1764(this);
       this.field9619 = 0;
@@ -99,27 +99,27 @@ public class Class1782 extends InputStream {
    }
 
    // $VF: synthetic method
-   public static Class1764 method7757(Class1782 var0) {
+   public static Class1764 method7757(MusicStream var0) {
       return var0.field9618;
    }
 
    // $VF: synthetic method
-   public static int method7758(Class1782 var0) {
+   public static int method7758(MusicStream var0) {
       return var0.field9619;
    }
 
    // $VF: synthetic method
-   public static int method7759(Class1782 var0, int var1) {
+   public static int method7759(MusicStream var0, int var1) {
       return var0.field9619 = var1;
    }
 
    // $VF: synthetic method
-   public static boolean method7760(Class1782 var0, boolean var1) {
+   public static boolean method7760(MusicStream var0, boolean var1) {
       return var0.field9621 = var1;
    }
 
    // $VF: synthetic method
-   public static Class8807 method7761(Class1782 var0) {
+   public static Class8807 method7761(MusicStream var0) {
       return var0.field9617;
    }
 }

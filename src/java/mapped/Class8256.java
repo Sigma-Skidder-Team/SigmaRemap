@@ -40,27 +40,27 @@ public class Class8256 {
       SourceDataLine var3 = null;
 
       try {
-         Class8490 var4 = new Class8490(new RandomAccessFile(var0, "r"));
-         Class8583 var5 = var4.method30073();
+         MP4Container var4 = new MP4Container(new RandomAccessFile(var0, "r"));
+         Movie var5 = var4.getMovie();
          List var6 = var5.method30674(Class2267.field14741);
          if (var6.isEmpty()) {
             throw new Exception("movie does not contain any AAC track");
          }
 
-         Class7356 var7 = (Class7356)var6.get(0);
-         AudioFormat var8 = new AudioFormat((float)var7.method23338(), var7.method23339(), var7.method23337(), true, true);
+         VideoTrack var7 = (VideoTrack)var6.get(0);
+         AudioFormat var8 = new AudioFormat((float)var7.getHeight(), var7.getDepth(), var7.getWidth(), true, true);
          var3 = AudioSystem.getSourceDataLine(var8);
          var3.open();
          var3.start();
-         Class6542 var9 = new Class6542(var7.method23320());
-         Class8210 var10 = new Class8210();
+         Decoder var9 = new Decoder(var7.getDecoderSpecificInfo());
+         SampleBuffer var10 = new SampleBuffer();
 
-         while (var7.method23323()) {
-            Class1994 var11 = var7.method23324();
+         while (var7.hasMoreFrames()) {
+            Frame var11 = var7.readNextFrame();
 
             try {
-               var9.method19888(var11.method8282(), var10);
-               byte[] var12 = var10.method28523();
+               var9.decodeFrame(var11.getData(), var10);
+               byte[] var12 = var10.getData();
                var3.write(var12, 0, var12.length);
             } catch (Class2460 var17) {
                var17.printStackTrace();
@@ -79,12 +79,12 @@ public class Class8256 {
 
       try {
          Class9120 var4 = new Class9120(new FileInputStream(var0));
-         Class6542 var5 = new Class6542(var4.method34012());
-         Class8210 var6 = new Class8210();
+         Decoder var5 = new Decoder(var4.method34012());
+         SampleBuffer var6 = new SampleBuffer();
 
          while (true) {
             byte[] var7 = var4.method34013();
-            var5.method19888(var7, var6);
+            var5.decodeFrame(var7, var6);
             if (var3 == null) {
                AudioFormat var8 = new AudioFormat((float)var6.method28524(), var6.method28526(), var6.method28525(), true, true);
                var3 = AudioSystem.getSourceDataLine(var8);
@@ -92,7 +92,7 @@ public class Class8256 {
                var3.start();
             }
 
-            var7 = var6.method28523();
+            var7 = var6.getData();
             var3.write(var7, 0, var7.length);
          }
       } finally {

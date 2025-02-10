@@ -64,7 +64,7 @@ public class SearchBoxButton extends Class4278 {
                                                    183,
                                                    220,
                                                    var4));
-                                 var7x.doThis((var2, var3xx) -> this.field20843.method24317(null, var4));
+                                 var7x.doThis((var2, var3xx) -> this.field20843.playSong(null, var4));
                               }
                            }
                         });

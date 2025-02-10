@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
-public class Class4982 extends Class4975 {
+public class Class4982 extends FullBox {
    private static final String[] field22870 = new String[]{"yyyy", "yyyy-MM", "yyyy-MM-dd"};
    private Class2086 field22871;
    private byte[] field22872;
@@ -17,7 +17,7 @@ public class Class4982 extends Class4975 {
    }
 
    @Override
-   public void method15262(DataStreamReader var1) throws IOException {
+   public void method15262(MP4InputStream var1) throws IOException {
       super.method15262(var1);
       this.field22871 = Class2086.method8742(this.field22851);
       var1.skipBytes(4L);
