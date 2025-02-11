@@ -299,7 +299,7 @@ public class Class8268 {
          ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1, String.valueOf('#'));
       }
 
-      ISuggestionProvider.suggestIterable(Registry.BLOCK.method9190(), var1);
+      ISuggestionProvider.suggestIterable(Registry.BLOCK.keySet(), var1);
       return var1.buildFuture();
    }
 

@@ -78,7 +78,7 @@ public class NoGroundCriticals extends Module {
                 if (!var8 && !Jesus.isWalkingOnLiquid()) {
                     switch (this.field23410) {
                         case 0:
-                            var1.method13908(true);
+                            var1.setMoving(true);
                             this.field23410--;
                             break;
                         case 1:
@@ -86,7 +86,7 @@ public class NoGroundCriticals extends Module {
                             this.field23410--;
                             break;
                         case 2:
-                            var1.method13908(true);
+                            var1.setMoving(true);
                             var4 = 0.065;
                             this.field23410--;
                             if (!this.field23411) {
@@ -95,7 +95,7 @@ public class NoGroundCriticals extends Module {
                             }
                             break;
                         case 3:
-                            var1.method13908(true);
+                            var1.setMoving(true);
                             var4 = 0.0;
                             var6 = true;
                             this.field23410--;

@@ -14,7 +14,7 @@ public class PaintingSpriteUploader extends Class277 {
 
    @Override
    public Stream<ResourceLocation> method1017() {
-      return Stream.<ResourceLocation>concat(Registry.field16079.method9190().stream(), Stream.of(field1061));
+      return Stream.<ResourceLocation>concat(Registry.field16079.keySet().stream(), Stream.of(field1061));
    }
 
    public TextureAtlasSprite method1020(Class9078 var1) {

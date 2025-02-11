@@ -89,7 +89,7 @@ public class OmegaCraftTestFly extends Module {
                 var1.setY(1000.0);
             }
 
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

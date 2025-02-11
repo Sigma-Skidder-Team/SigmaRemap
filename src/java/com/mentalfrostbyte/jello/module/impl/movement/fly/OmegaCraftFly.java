@@ -70,7 +70,7 @@ public class OmegaCraftFly extends Module {
     @EventTarget
     public void method16495(EventUpdate var1) {
         if (var1.isPre()) {
-            var1.method13908(true);
+            var1.setMoving(true);
             if (this.field23700 != 0) {
                 if (this.field23700 == 1) {
                     var1.setGround(false);

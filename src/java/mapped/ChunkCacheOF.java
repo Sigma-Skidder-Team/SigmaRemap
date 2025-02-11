@@ -13,7 +13,7 @@ import net.minecraft.world.lighting.WorldLightManager;
 
 import java.util.Arrays;
 
-public class Class1664 implements IBlockDisplayReader {
+public class ChunkCacheOF implements IBlockDisplayReader {
    private static String[] field9061;
    private final Class1677 field9062;
    private final int field9063;
@@ -32,7 +32,7 @@ public class Class1664 implements IBlockDisplayReader {
    private static final Class9712 field9076 = new Class9712(BlockState.class, 16);
    private static final Class9712 field9077 = new Class9712(Biome.class, 16);
 
-   public Class1664(Class1677 var1, BlockPos var2, BlockPos var3, int var4) {
+   public ChunkCacheOF(Class1677 var1, BlockPos var2, BlockPos var3, int var4) {
       this.field9062 = var1;
       int var7 = var2.getX() - var4 >> 4;
       int var8 = var2.getY() - var4 >> 4;
@@ -140,7 +140,7 @@ public class Class1664 implements IBlockDisplayReader {
       return this.field9070;
    }
 
-   public Biome method7028(BlockPos var1) {
+   public Biome getBiome(BlockPos var1) {
       int var4 = this.method7023(var1);
       if (var4 >= 0 && var4 < this.field9073 && this.field9072 != null) {
          Biome var5 = this.field9072[var4];

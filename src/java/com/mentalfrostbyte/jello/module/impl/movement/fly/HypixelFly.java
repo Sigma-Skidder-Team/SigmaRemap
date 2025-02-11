@@ -102,7 +102,7 @@ public class HypixelFly extends Module {
                 }
             }
 
-            event.method13908(true);
+            event.setMoving(true);
         }
     }
 

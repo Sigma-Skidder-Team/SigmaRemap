@@ -45,7 +45,7 @@ public class RedeskyLongJump extends Module {
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.isMoving()
+                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var6) && MultiUtilities.isMoving()
                         || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.isMoving()
                         || var1.getY() == MovementUtil.getJumpValue()) {
                     this.field23981 = 1;

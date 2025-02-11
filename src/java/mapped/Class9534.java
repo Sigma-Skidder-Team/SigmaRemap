@@ -38,7 +38,7 @@ public class Class9534 implements ArgumentType<Enchantment> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.suggestIterable(Registry.ENCHANTMENT.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.ENCHANTMENT.keySet(), var2);
    }
 
    public Collection<String> getExamples() {

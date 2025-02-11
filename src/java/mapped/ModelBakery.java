@@ -162,7 +162,7 @@ public class ModelBakery {
 
       var1.endStartSection("items");
 
-      for (ResourceLocation var16 : Registry.ITEM.method9190()) {
+      for (ResourceLocation var16 : Registry.ITEM.keySet()) {
          this.method32845(new Class1997(var16, "inventory"));
       }
 

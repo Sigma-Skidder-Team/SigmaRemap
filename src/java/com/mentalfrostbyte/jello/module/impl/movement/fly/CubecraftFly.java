@@ -176,7 +176,7 @@ public class CubecraftFly extends Module {
     @EventTarget
     public void method16689(EventUpdate var1) {
         if (var1.isPre() && MultiUtilities.isCubecraft()) {
-            var1.method13908(true);
+            var1.setMoving(true);
             if (/*
                  * JelloPortal.getCurrentVersionApplied() ==
                  * ViaVerList._1_8_x.getVersionNumber() &&

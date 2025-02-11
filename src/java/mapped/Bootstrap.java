@@ -29,7 +29,7 @@ public class Bootstrap {
    public static void method25566() {
       if (!field33186) {
          field33186 = true;
-         if (Registry.field16035.method9190().isEmpty()) {
+         if (Registry.field16035.keySet().isEmpty()) {
             throw new IllegalStateException("Unable to load registries");
          }
 

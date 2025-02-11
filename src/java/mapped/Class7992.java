@@ -352,7 +352,7 @@ public class Class7992 {
    private static int method27261(String var0) {
       String var3 = "effect." + var0;
 
-      for (ResourceLocation var5 : Registry.EFFECTS.method9190()) {
+      for (ResourceLocation var5 : Registry.EFFECTS.keySet()) {
          if (Registry.EFFECTS.method9193(var5)) {
             Effect var6 = Registry.EFFECTS.getOrDefault(var5);
             String var7 = var6.getName();

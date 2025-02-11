@@ -21,7 +21,7 @@ public class Class4452 implements Class4442 {
    @Override
    public void method14013(Class8297 var1) throws IOException {
       JsonObject var4 = new JsonObject();
-      Registry.field16035.method9190().forEach(var1x -> var4.add(var1x.toString(), method14087((Registry<?>) Registry.field16035.getOrDefault(var1x))));
+      Registry.field16035.keySet().forEach(var1x -> var4.add(var1x.toString(), method14087((Registry<?>) Registry.field16035.getOrDefault(var1x))));
       Path var5 = this.field21631.method33776().resolve("reports/registries.json");
       Class4442.method14020(field21630, var1, var4, var5);
    }
@@ -37,7 +37,7 @@ public class Class4452 implements Class4442 {
       var3.addProperty("protocol_id", var11);
       JsonObject var5 = new JsonObject();
 
-      for (ResourceLocation var7 : var0.method9190()) {
+      for (ResourceLocation var7 : var0.keySet()) {
          T var8 = var0.getOrDefault(var7);
          int var9 = var0.getId(var8);
          JsonObject var10 = new JsonObject();

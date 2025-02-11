@@ -51,7 +51,7 @@ public class NCPPhase extends PremiumModule {
                     if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && !MultiUtilities.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         event.setY(var6 - 1.0);
-                        event.method13908(true);
+                        event.setMoving(true);
                         event.setYaw(event.getYaw() + 10.0F);
                         MultiUtilities.setPlayerYMotion(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
@@ -70,7 +70,7 @@ public class NCPPhase extends PremiumModule {
                 return;
             }
 
-            event.method13908(true);
+            event.setMoving(true);
         }
     }
 

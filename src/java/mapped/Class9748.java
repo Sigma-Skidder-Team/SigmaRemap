@@ -253,10 +253,10 @@ public class Class9748 {
          }, var0 -> !var0.method30327(), new TranslationTextComponent("argument.entity.options.team.description"));
          method38218("type", var0 -> {
             var0.method30313((var1, var2) -> {
-               ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.method9190(), var1, String.valueOf('!'));
+               ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.keySet(), var1, String.valueOf('!'));
                ISuggestionProvider.suggestIterable(EntityTypeTags.method30861().getRegisteredTags(), var1, "!#");
                if (!var0.method30333()) {
-                  ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.method9190(), var1);
+                  ISuggestionProvider.suggestIterable(Registry.ENTITY_TYPE.keySet(), var1);
                   ISuggestionProvider.suggestIterable(EntityTypeTags.method30861().getRegisteredTags(), var1, String.valueOf('#'));
                }
 

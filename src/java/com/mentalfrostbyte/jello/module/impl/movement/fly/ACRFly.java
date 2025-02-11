@@ -113,7 +113,7 @@ public class ACRFly extends Module {
                 var1.setGround(true);
             }
 
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

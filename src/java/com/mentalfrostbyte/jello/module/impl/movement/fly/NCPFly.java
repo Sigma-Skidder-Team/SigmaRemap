@@ -73,7 +73,7 @@ public class NCPFly extends Module {
                 var1.setY(-150.0 - Math.random() * 150.0);
             }
 
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

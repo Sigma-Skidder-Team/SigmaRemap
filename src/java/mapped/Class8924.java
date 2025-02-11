@@ -25,7 +25,7 @@ public abstract class Class8924 {
             EntityType var5 = Registry.ENTITY_TYPE
                .method9187(var6)
                .orElseThrow(
-                  () -> new JsonSyntaxException("Unknown entity type '" + var6 + "', valid types are: " + field40402.join(Registry.ENTITY_TYPE.method9190()))
+                  () -> new JsonSyntaxException("Unknown entity type '" + var6 + "', valid types are: " + field40402.join(Registry.ENTITY_TYPE.keySet()))
                );
             return new Class8927(var5);
          } else {

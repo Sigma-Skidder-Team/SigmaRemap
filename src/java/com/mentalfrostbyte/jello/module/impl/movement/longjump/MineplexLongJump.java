@@ -41,7 +41,7 @@ public class MineplexLongJump extends Module {
     @EventTarget
     public void method16621(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre() && this.field23804 >= 0) {
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 
@@ -106,7 +106,7 @@ public class MineplexLongJump extends Module {
                 this.field23807 = MultiUtilities.isMoving();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (MultiUtilities.isMoving()
-                        && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
+                        && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                     MovementUtil.setMotion(var1, 0.0);

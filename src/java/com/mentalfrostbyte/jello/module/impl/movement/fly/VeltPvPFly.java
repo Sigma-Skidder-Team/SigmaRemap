@@ -123,7 +123,7 @@ public class VeltPvPFly extends Module {
                 this.field23420 += 2;
             }
 
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

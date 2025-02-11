@@ -30,7 +30,7 @@ import net.minecraft.util.math.vector.Vector3d;
 public class BlockFlySmoothMode extends Module {
     private float pitch;
     private float yaw;
-    private Class7843 field23971;
+    private BlockCache field23971;
     private int field23972 = -1;
     private int field23973;
     private int field23974;
@@ -137,7 +137,7 @@ public class BlockFlySmoothMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16886(EventUpdate event) {
-        if (this.isEnabled() && this.field23976.method16735() != 0) {
+        if (this.isEnabled() && this.field23976.getValidItemCount() != 0) {
             if (!event.isPre()) {
                 if (this.yaw != 999.0F) {
                     this.field23976.method16736();
@@ -177,12 +177,12 @@ public class BlockFlySmoothMode extends Module {
             } else {
                 this.field23973++;
                 this.field23980--;
-                event.method13908(true);
+                event.setMoving(true);
                 this.field23975 = Hand.MAIN_HAND;
-                if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
+                if (BlockFly.shouldPlaceItem(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                         && (
                         mc.player.getHeldItem(this.field23975).isEmpty()
-                                || !BlockFly.method16733(mc.player.getHeldItem(this.field23975).getItem())
+                                || !BlockFly.shouldPlaceItem(mc.player.getHeldItem(this.field23975).getItem())
                 )) {
                     this.field23975 = Hand.OFF_HAND;
                 }
@@ -205,7 +205,7 @@ public class BlockFlySmoothMode extends Module {
                     var8 = this.field23979;
                 }
 
-                if (!BlockUtil.method34578(
+                if (!BlockUtil.isValidBlockPosition(
                         new BlockPos(
                                 mc.player.getPositionVec().getX(),
                                 mc.player.getPositionVec().getY() - 1.0,
@@ -217,8 +217,8 @@ public class BlockFlySmoothMode extends Module {
                 }
 
                 BlockPos var18 = new BlockPos(var4, var8 - 1.0, var6);
-                if (!BlockUtil.method34578(var18) && this.field23976.method16739(this.field23975) && this.field23980 <= 0) {
-                    Class7843 var11 = BlockUtil.method34575(var18, false);
+                if (!BlockUtil.isValidBlockPosition(var18) && this.field23976.canPlaceItem(this.field23975) && this.field23980 <= 0) {
+                    BlockCache var11 = BlockUtil.findValidBlockCache(var18, false);
                     this.field23971 = var11;
                     float[] rots = BlockUtil.method34565();
                     if (var11 != null && rots != null) {
@@ -256,7 +256,7 @@ public class BlockFlySmoothMode extends Module {
     @EventTarget
     @HigherPriority
     public void method16887(EventMove var1) {
-        if (this.isEnabled() && this.field23976.method16735() != 0) {
+        if (this.isEnabled() && this.field23976.getValidItemCount() != 0) {
             if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.field23979 = mc.player.getPosY();
             }
@@ -411,7 +411,7 @@ public class BlockFlySmoothMode extends Module {
         double var17 = 0.0;
 
         for (double var19 = this.getNumberValueBySettingName("Extend") * 2.0F;
-             BlockUtil.method34578(var12);
+             BlockUtil.isValidBlockPosition(var12);
              var12 = new BlockPos(var13, mc.player.getPosY() - 1.0, var15)
         ) {
             if (++var17 > var19) {

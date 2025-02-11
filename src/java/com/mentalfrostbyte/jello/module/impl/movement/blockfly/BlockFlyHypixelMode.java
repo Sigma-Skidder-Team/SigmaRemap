@@ -31,7 +31,7 @@ import net.minecraft.util.math.vector.Vector3d;
 public class BlockFlyHypixelMode extends Module {
     private float pitch;
     private float yaw;
-    private Class7843 field23468;
+    private BlockCache field23468;
     private int field23469 = -1;
     private int field23470;
     private int field23471;
@@ -170,7 +170,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     @LowerPriority
     public void method16111(EventUpdate event) {
-        if (this.isEnabled() && this.field23473.method16735() != 0) {
+        if (this.isEnabled() && this.field23473.getValidItemCount() != 0) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(Fly.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
                 if (!event.isPre()) {
@@ -197,12 +197,12 @@ public class BlockFlyHypixelMode extends Module {
                     }
                 } else {
                     this.field23470++;
-                    event.method13908(true);
+                    event.setMoving(true);
                     this.field23472 = Hand.MAIN_HAND;
-                    if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
+                    if (BlockFly.shouldPlaceItem(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                             && (
                             mc.player.getHeldItem(this.field23472).isEmpty()
-                                    || !BlockFly.method16733(mc.player.getHeldItem(this.field23472).getItem())
+                                    || !BlockFly.shouldPlaceItem(mc.player.getHeldItem(this.field23472).getItem())
                     )) {
                         this.field23472 = Hand.OFF_HAND;
                     }
@@ -221,7 +221,7 @@ public class BlockFlyHypixelMode extends Module {
                         var9 = this.field23476;
                     }
 
-                    if (!BlockUtil.method34578(
+                    if (!BlockUtil.isValidBlockPosition(
                             new BlockPos(
                                     mc.player.getPositionVec().getX(),
                                     mc.player.getPositionVec().getY() - 1.0,
@@ -233,8 +233,8 @@ public class BlockFlyHypixelMode extends Module {
                     }
 
                     BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
-                    if (!BlockUtil.method34578(var11) && this.field23473.method16739(this.field23472)) {
-                        Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSettingName("Downwards"));
+                    if (!BlockUtil.isValidBlockPosition(var11) && this.field23473.canPlaceItem(this.field23472)) {
+                        BlockCache var12 = BlockUtil.findValidBlockCache(var11, !this.field23474 && this.getBooleanValueFromSettingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
                             float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
@@ -291,7 +291,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     @HigherPriority
     public void method16112(EventMove var1) {
-        if (this.isEnabled() && this.field23473.method16735() != 0) {
+        if (this.isEnabled() && this.field23473.getValidItemCount() != 0) {
             if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.field23476 = mc.player.getPosY();
             }

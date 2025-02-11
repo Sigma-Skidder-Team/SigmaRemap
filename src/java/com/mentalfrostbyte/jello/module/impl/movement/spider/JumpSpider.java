@@ -68,7 +68,7 @@ public class JumpSpider extends Module {
             }
 
             if (var4 != null) {
-                event.method13908(true);
+                event.setMoving(true);
                 double movementOffset = 0.0;
                 switch (mode) {
                     case "AGC":

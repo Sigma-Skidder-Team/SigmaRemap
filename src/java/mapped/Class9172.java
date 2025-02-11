@@ -386,7 +386,7 @@ public class Class9172 {
    }
 
    private static void method34274() {
-      for (ResourceLocation var3 : Registry.BLOCK.method9190()) {
+      for (ResourceLocation var3 : Registry.BLOCK.keySet()) {
          Block var4 = Registry.BLOCK.getOrDefault(var3);
          int var5 = var4.getDefaultState().method23490();
          Class9590[] var6 = method34263(var5);

@@ -49,6 +49,6 @@ public class Class8050 implements ArgumentType<IParticleData> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.suggestIterable(Registry.PARTICLE_TYPE.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.PARTICLE_TYPE.keySet(), var2);
    }
 }

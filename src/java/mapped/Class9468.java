@@ -37,7 +37,7 @@ public class Class9468 implements ArgumentType<Effect> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return ISuggestionProvider.suggestIterable(Registry.EFFECTS.method9190(), var2);
+      return ISuggestionProvider.suggestIterable(Registry.EFFECTS.keySet(), var2);
    }
 
    public Collection<String> getExamples() {

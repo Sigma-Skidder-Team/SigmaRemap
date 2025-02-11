@@ -59,7 +59,7 @@ public class NCPLongJump extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.isMoving()) {
+                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) && this.field23477 > 0 && MultiUtilities.isMoving()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);

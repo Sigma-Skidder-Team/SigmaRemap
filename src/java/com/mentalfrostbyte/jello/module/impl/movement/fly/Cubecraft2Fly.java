@@ -142,7 +142,7 @@ public class Cubecraft2Fly extends PremiumModule {
         }
 
         if (this.isEnabled() && var1.isPre()) {
-            var1.method13908(true);
+            var1.setMoving(true);
             var1.setGround(true);
             if (this.field23696 != 3) {
                 if (this.field23696 > 3) {

@@ -83,7 +83,7 @@ public class Jesus extends Module {
 
          if (isWalkingOnLiquid() && !this.method16951(mc.player.boundingBox)) {
             mc.player.jumpTicks = 0;
-            var1.method13908(true);
+            var1.setMoving(true);
             this.field24015++;
             if (this.field24015 % 2 == 0) {
                var1.setY(var1.getY() - 0.001);

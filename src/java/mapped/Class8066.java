@@ -353,11 +353,11 @@ public class Class8066 {
       }
    }
 
-   private Class1664 method27737(BlockPos var1) {
+   private ChunkCacheOF method27737(BlockPos var1) {
       BlockPos var4 = var1.add(-1, -1, -1);
       BlockPos var5 = var1.add(16, 16, 16);
       Class1677 var6 = this.method27738(Class9016.method33344(this.field34637), var4, var5, 1);
-      return new Class1664(var6, var4, var5, 1);
+      return new ChunkCacheOF(var6, var4, var5, 1);
    }
 
    public Class1677 method27738(World var1, BlockPos var2, BlockPos var3, int var4) {
@@ -485,7 +485,7 @@ public class Class8066 {
    }
 
    // $VF: synthetic method
-   public static Class1664 method27756(Class8066 var0, BlockPos var1) {
+   public static ChunkCacheOF method27756(Class8066 var0, BlockPos var1) {
       return var0.method27737(var1);
    }
 

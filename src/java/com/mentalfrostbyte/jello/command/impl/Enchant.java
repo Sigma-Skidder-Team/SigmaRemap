@@ -25,7 +25,7 @@ public class Enchant extends Command {
                Enchantment var6 = null;
                ItemStack var7 = mc.player.getHeldItemMainhand().copy();
 
-               for (ResourceLocation var9 : Registry.ENCHANTMENT.method9190()) {
+               for (ResourceLocation var9 : Registry.ENCHANTMENT.keySet()) {
                   if (var2[0].getArguments().equals(var9.getPath())) {
                      var6 = Registry.ENCHANTMENT.getOrDefault(var9);
                   }

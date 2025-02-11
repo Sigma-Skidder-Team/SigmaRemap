@@ -14,10 +14,10 @@ public class Class4049 {
    }
 
    public static final int method12821(BlockState var0, IBlockDisplayReader var1, BlockPos var2) {
-      if (!(var1 instanceof Class1664)) {
+      if (!(var1 instanceof ChunkCacheOF)) {
          return WorldRenderer.method945(var1, var0, var2);
       } else {
-         Class1664 var5 = (Class1664)var1;
+         ChunkCacheOF var5 = (ChunkCacheOF)var1;
          int[] var6 = var5.method7027();
          int var7 = var5.method7023(var2);
          if (var7 >= 0 && var7 < var6.length && var6 != null) {

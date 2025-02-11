@@ -34,7 +34,7 @@ public class Class6268 implements Class6267 {
          this.field27748.put(var6.method8136(), var6);
       }
 
-      for (ResourceLocation var15 : BiomeUtils.method31411()) {
+      for (ResourceLocation var15 : BiomeUtils.getLocations()) {
          String var7 = var15.getPath().trim();
          var7 = "BIOME_" + var7.toUpperCase().replace(' ', '_');
          int var8 = BiomeUtils.getId(var15);

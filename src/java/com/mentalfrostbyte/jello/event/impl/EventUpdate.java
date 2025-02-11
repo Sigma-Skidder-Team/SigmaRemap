@@ -43,7 +43,7 @@ public class EventUpdate extends CancellableEvent {
         return this.field21495;
     }
 
-    public void method13908(boolean var1) {
+    public void setMoving(boolean var1) {
         this.field21495 = var1;
     }
 

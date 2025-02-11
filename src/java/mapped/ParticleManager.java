@@ -144,7 +144,7 @@ public class ParticleManager implements IFutureReloadListener {
    public CompletableFuture<Void> reload(IStage var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       Map<ResourceLocation, List<ResourceLocation>> var9 = com.google.common.collect.Maps.newConcurrentMap();
       CompletableFuture[] var10 = Registry.PARTICLE_TYPE
-         .method9190()
+         .keySet()
          .stream()
          .map(var4x -> CompletableFuture.runAsync(() -> this.method1194(var2, var4x, var9), var5))
          .toArray(CompletableFuture[]::new);

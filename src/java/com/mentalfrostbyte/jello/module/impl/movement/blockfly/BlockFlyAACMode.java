@@ -152,7 +152,7 @@ public class BlockFlyAACMode extends Module {
         if (var3 != null && var3.getType() == RayTraceResult.Type.BLOCK) {
             if (this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {
                 BlockFly var10000 = (BlockFly) this.access();
-                if (!BlockFly.method16733(mc.player.getHeldItem(Hand.MAIN_HAND).getItem())) {
+                if (!BlockFly.shouldPlaceItem(mc.player.getHeldItem(Hand.MAIN_HAND).getItem())) {
                     return false;
                 }
             }
@@ -169,7 +169,7 @@ public class BlockFlyAACMode extends Module {
 
             if (var3.getFace() == Direction.UP
                     && (double) (var3.getPos().getY() + 2) > mc.player.getPosY()
-                    && BlockUtil.method34578(var3.getPos())) {
+                    && BlockUtil.isValidBlockPosition(var3.getPos())) {
                 return false;
             }
 

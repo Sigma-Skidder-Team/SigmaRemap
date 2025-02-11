@@ -98,7 +98,7 @@ public class AGCFly extends Module {
                     } else {
                         double var4 = this.method16785();
                         var1.setY(var4 - 1.0E-4);
-                        var1.method13908(true);
+                        var1.setMoving(true);
                         var1.setGround(true);
                     }
                 }
@@ -106,7 +106,7 @@ public class AGCFly extends Module {
                 double var6 = this.method16785();
                 var1.setY(var6 - 1.0E-4);
                 var1.setGround(true);
-                var1.method13908(true);
+                var1.setMoving(true);
                 this.field23903 = !this.field23904
                         ? (!mc.gameSettings.keyBindJump.isKeyDown() ? 1 : 3)
                         : (!mc.gameSettings.keyBindJump.isKeyDown() ? 2 : 1);

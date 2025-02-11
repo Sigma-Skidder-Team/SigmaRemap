@@ -62,7 +62,7 @@ public class HypixelHighJump extends Module {
    public void method16019(EventUpdate var1) {
       if (this.isEnabled()) {
          if (this.field23405 >= 0) {
-            var1.method13908(true);
+            var1.setMoving(true);
          }
       }
    }

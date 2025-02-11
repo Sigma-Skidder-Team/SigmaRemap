@@ -25,7 +25,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6987 {
-   private static final SuggestionProvider<CommandSource> field30228 = (var0, var1) -> ISuggestionProvider.suggestIterable(Registry.ATTRIBUTE.method9190(), var1);
+   private static final SuggestionProvider<CommandSource> field30228 = (var0, var1) -> ISuggestionProvider.suggestIterable(Registry.ATTRIBUTE.keySet(), var1);
    private static final DynamicCommandExceptionType field30229 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.attribute.failed.entity", var0)
    );

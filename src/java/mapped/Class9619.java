@@ -362,7 +362,7 @@ public class Class9619 {
             return null;
          } else {
             if (var0.field30558 != null) {
-               Biome var12 = BiomeUtils.method31415(var1, var3);
+               Biome var12 = BiomeUtils.getBiome(var1, var3);
                if (!var0.method22130(var12)) {
                   return null;
                }

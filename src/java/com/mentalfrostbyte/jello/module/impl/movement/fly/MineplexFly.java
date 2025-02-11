@@ -63,7 +63,7 @@ public class MineplexFly extends Module {
     @EventTarget
     public void method16454(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

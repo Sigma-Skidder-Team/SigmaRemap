@@ -113,7 +113,7 @@ public class Class9759 {
          ISuggestionProvider.suggestIterable(var2.getRegisteredTags(), var1, String.valueOf('#'));
       }
 
-      return ISuggestionProvider.suggestIterable(Registry.ITEM.method9190(), var1);
+      return ISuggestionProvider.suggestIterable(Registry.ITEM.keySet(), var1);
    }
 
    public CompletableFuture<Suggestions> method38363(SuggestionsBuilder var1, ITagCollection<Item> var2) {

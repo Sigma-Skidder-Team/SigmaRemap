@@ -17,7 +17,7 @@ public class FullBlockPhase extends Module {
     @EventTarget
     private void EventUpdate(EventUpdate event) {
         if (this.isEnabled() && MultiUtilities.method17761()) {
-            event.method13908(true);
+            event.setMoving(true);
         }
     }
 

@@ -73,7 +73,7 @@ public class HorizonFly extends Module {
                 var1.setY(0.0);
             }
 
-            var1.method13908(true);
+            var1.setMoving(true);
         }
     }
 

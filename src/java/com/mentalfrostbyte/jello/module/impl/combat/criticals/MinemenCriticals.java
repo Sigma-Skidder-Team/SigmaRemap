@@ -39,7 +39,7 @@ public class MinemenCriticals extends Module {
                     }
 
                     this.field23966++;
-                    var1.method13908(true);
+                    var1.setMoving(true);
                 }
 
                 if (mc.playerController.getIsHittingBlock() && mc.player.onGround) {

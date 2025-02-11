@@ -89,7 +89,7 @@ public class Class2011 extends Class2009 {
       MatrixStack var13 = new MatrixStack();
       if (!Class8066.method27755(this.field13078, var9)) {
          Class9016.field41247++;
-         Class1664 var14 = Class8066.method27756(this.field13078, var9);
+         ChunkCacheOF var14 = Class8066.method27756(this.field13078, var9);
          var14.method7024();
          RenderType[] var15 = new RenderType[1];
          Class7551.method24692();

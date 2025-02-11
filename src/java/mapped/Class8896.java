@@ -338,13 +338,13 @@ public class Class8896 {
          }
 
          if (var4) {
-            HashSet var11 = new HashSet<ResourceLocation>(BiomeUtils.method31411());
+            HashSet var11 = new HashSet<ResourceLocation>(BiomeUtils.getLocations());
 
             for (BiomeId var13 : var6) {
                var11.remove(var13.method30137());
             }
 
-            var6 = BiomeUtils.method31414(var11);
+            var6 = BiomeUtils.getBiomeIds(var11);
          }
 
          return var6.toArray(new BiomeId[var6.size()]);
@@ -363,7 +363,7 @@ public class Class8896 {
          if (field40261 == null) {
             field40261 = new HashMap<ResourceLocation, BiomeId>();
 
-            for (ResourceLocation var9 : BiomeUtils.method31411()) {
+            for (ResourceLocation var9 : BiomeUtils.getLocations()) {
                BiomeId var10 = BiomeUtils.getBiomeId(var9);
                if (var10 != null) {
                   String var11 = var9.getPath().replace(" ", "").replace("_", "").toLowerCase();

@@ -634,7 +634,7 @@ public class Class9680 {
    }
 
    public static Biome method37851(IBlockDisplayReader var0, BlockPos var1) {
-      Biome var4 = BiomeUtils.method31415(var0, var1);
+      Biome var4 = BiomeUtils.getBiome(var0, var1);
       if ((var4 == BiomeUtils.SWAMP || var4 == BiomeUtils.SWAMP_HILLS) && !Config.method26906()) {
          var4 = BiomeUtils.PLAINS;
       }
@@ -1231,7 +1231,7 @@ public class Class9680 {
    private static int method37889() {
       int var2 = 0;
 
-      for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
+      for (ResourceLocation var4 : Registry.EFFECTS.keySet()) {
          Effect var5 = Class9056.method33703(var4);
          int var6 = Effect.getId(var5);
          if (var6 > var2) {
@@ -1248,7 +1248,7 @@ public class Class9680 {
       } else {
          var0 = Class9402.method35765(var0, "potion.", "effect.");
 
-         for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
+         for (ResourceLocation var4 : Registry.EFFECTS.keySet()) {
             Effect var5 = Class9056.method33703(var4);
             if (var5.getName().equals(var0)) {
                return Effect.getId(var5);
