@@ -12,7 +12,7 @@ public class PotionSpriteUploader extends Class277 {
 
    @Override
    public Stream<ResourceLocation> method1017() {
-      return Registry.EFFECTS.method9190().stream();
+      return Registry.EFFECTS.keySet().stream();
    }
 
    public TextureAtlasSprite method1022(Effect var1) {

@@ -159,7 +159,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
    }
 
    @Override
-   public Set<ResourceLocation> method9190() {
+   public Set<ResourceLocation> keySet() {
       return Collections.<ResourceLocation>unmodifiableSet(this.field16144.keySet());
    }
 

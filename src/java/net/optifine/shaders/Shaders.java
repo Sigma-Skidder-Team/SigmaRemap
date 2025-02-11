@@ -2877,7 +2877,7 @@ public class Shaders {
     private static void method33031() {
         field40981 = new IdentityHashMap<Block, Integer>(300);
         if (field40981.isEmpty()) {
-            for (ResourceLocation var1 : Registry.BLOCK.method9190()) {
+            for (ResourceLocation var1 : Registry.BLOCK.keySet()) {
                 Block var2 = Registry.BLOCK.getOrDefault(var1);
                 int var3 = Registry.BLOCK.getId(var2);
                 field40981.put(var2, var3);

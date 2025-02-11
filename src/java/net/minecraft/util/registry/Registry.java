@@ -166,7 +166,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
 
    public static <T extends MutableRegistry<?>> void method9174(MutableRegistry<T> var0) {
       var0.forEach(var1 -> {
-         if (var1.method9190().isEmpty()) {
+         if (var1.keySet().isEmpty()) {
             field16031.error("Registry '{}' was empty after loading", var0.getKey(var1));
             if (SharedConstants.developmentMode) {
                throw new IllegalStateException("Registry: '" + var0.getKey(var1) + "' is empty, not allowed, fix me!");
@@ -247,7 +247,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    public <U> Stream<U> keys(DynamicOps<U> var1) {
-      return this.method9190().stream().<U>map(var1x -> (U)var1.createString(var1x.toString()));
+      return this.keySet().stream().<U>map(var1x -> (U)var1.createString(var1x.toString()));
    }
 
    @Nullable
@@ -285,7 +285,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
       }
    }
 
-   public abstract Set<ResourceLocation> method9190();
+   public abstract Set<ResourceLocation> keySet();
 
    public abstract Set<Entry<RegistryKey<T>, T>> method9191();
 

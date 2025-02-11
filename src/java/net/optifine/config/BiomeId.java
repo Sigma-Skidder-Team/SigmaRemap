@@ -45,7 +45,7 @@ public class BiomeId {
       return "" + this.field37202;
    }
 
-   public static BiomeId method30138(ResourceLocation var0) {
+   public static BiomeId make(ResourceLocation var0) {
       BiomeId var3 = new BiomeId(var0);
       return var3.field37204 != null ? var3 : null;
    }
