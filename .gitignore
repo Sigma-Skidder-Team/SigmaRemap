@@ -1,27 +1,20 @@
-# Compiled class file
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
 *.ctxt
+*.jar
+*.ini
+*.iml
 
-# Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
-# Intellij #
 target/
 out/
 run/
+
 .idea
-libraries/desktop.ini
-*.iml
-/.settings
 .project
 .classpath
-*.iml
+/.settings
