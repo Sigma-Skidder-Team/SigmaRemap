@@ -30,7 +30,7 @@ public class Brain<E extends LivingEntity> {
    private static final Logger field30098 = LogManager.getLogger();
    private final Supplier<Codec<Brain<E>>> field30099;
    private final Map<MemoryModuleType<?>, Optional<? extends Class8222<?>>> field30100 = Maps.newHashMap();
-   private final Map<Class7963<? extends Class7882<? super E>>, Class7882<? super E>> field30101 = Maps.newLinkedHashMap();
+   private final Map<SensorType<? extends Sensor<? super E>>, Sensor<? super E>> field30101 = Maps.newLinkedHashMap();
    private final Map<Integer, Map<Activity, Set<Class3676<? super E>>>> field30102 = Maps.newTreeMap();
    private Schedule field30103 = Schedule.field35349;
    private final Map<Activity, Set<Pair<MemoryModuleType<?>, Class2217>>> field30104 = Maps.newHashMap();
@@ -41,13 +41,13 @@ public class Brain<E extends LivingEntity> {
    private long field30109 = -9999L;
 
    public static <E extends LivingEntity> Class6971<E> createCodec(
-           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
+           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends SensorType<? extends Sensor<? super E>>> var1
    ) {
       return new Class6971<E>(var0, var1, null);
    }
 
    public static <E extends LivingEntity> Codec<Brain<E>> method21401(
-           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends Class7963<? extends Class7882<? super E>>> var1
+           Collection<? extends MemoryModuleType<?>> var0, Collection<? extends SensorType<? extends Sensor<? super E>>> var1
    ) {
       MutableObject var4 = new MutableObject();
       var4.setValue(new Class9490(var0, var1, var4).fieldOf("memories").codec());
@@ -56,7 +56,7 @@ public class Brain<E extends LivingEntity> {
 
    public Brain(
       Collection<? extends MemoryModuleType<?>> var1,
-      Collection<? extends Class7963<? extends Class7882<? super E>>> var2,
+      Collection<? extends SensorType<? extends Sensor<? super E>>> var2,
       ImmutableList<Class9802<?>> var3,
       Supplier<Codec<Brain<E>>> var4
    ) {
@@ -66,11 +66,11 @@ public class Brain<E extends LivingEntity> {
          this.field30100.put(var8, Optional.empty());
       }
 
-      for (Class7963 var14 : var2) {
+      for (SensorType var14 : var2) {
          this.field30101.put(var14, var14.method27086());
       }
 
-      for (Class7882 var15 : this.field30101.values()) {
+      for (Sensor var15 : this.field30101.values()) {
          for (Object var10 : var15.method26424()) {
             this.field30100.put((MemoryModuleType<?>) var10, Optional.empty());
          }
@@ -297,7 +297,7 @@ public class Brain<E extends LivingEntity> {
    }
 
    private void method21433(ServerWorld var1, E var2) {
-      for (Class7882 var6 : this.field30101.values()) {
+      for (Sensor var6 : this.field30101.values()) {
          var6.method26429(var1, var2);
       }
    }

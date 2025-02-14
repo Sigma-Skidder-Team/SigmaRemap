@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class7889 extends Class7882<LivingEntity> {
+public class Class7889 extends Sensor<LivingEntity> {
    private static String[] field33840;
 
    @Override

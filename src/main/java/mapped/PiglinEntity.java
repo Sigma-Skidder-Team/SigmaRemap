@@ -40,8 +40,8 @@ public class PiglinEntity extends AbstractPiglinEntity implements ICrossbowUser 
    private static final AttributeModifier field5745 = new AttributeModifier(field5744, "Baby speed boost", 0.2F, AttributeModifier.Operation.field13353);
    private final Class927 field5746 = new Class927(8);
    private boolean field5747 = false;
-   public static final ImmutableList<Class7963<? extends Class7882<? super PiglinEntity>>> field5748 = ImmutableList.of(
-      Class7963.field34239, Class7963.field34240, Class7963.field34238, Class7963.field34242, Class7963.field34247
+   public static final ImmutableList<SensorType<? extends Sensor<? super PiglinEntity>>> field5748 = ImmutableList.of(
+      SensorType.field34239, SensorType.field34240, SensorType.field34238, SensorType.field34242, SensorType.field34247
    );
    public static final ImmutableList<MemoryModuleType<?>> field5749 = ImmutableList.of(
       MemoryModuleType.field39825,

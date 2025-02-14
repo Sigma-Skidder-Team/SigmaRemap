@@ -22,8 +22,8 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 
 public class PiglinBruteEntity extends AbstractPiglinEntity {
-   public static final ImmutableList<Class7963<? extends Class7882<? super PiglinBruteEntity>>> field5752 = ImmutableList.of(
-      Class7963.field34239, Class7963.field34240, Class7963.field34238, Class7963.field34242, Class7963.field34248
+   public static final ImmutableList<SensorType<? extends Sensor<? super PiglinBruteEntity>>> field5752 = ImmutableList.of(
+      SensorType.field34239, SensorType.field34240, SensorType.field34238, SensorType.field34242, SensorType.field34248
    );
    public static final ImmutableList<MemoryModuleType<?>> field5753 = ImmutableList.of(
       MemoryModuleType.field39825,

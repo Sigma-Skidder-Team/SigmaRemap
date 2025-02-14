@@ -79,7 +79,7 @@ public abstract class Registry<T> implements com.mojang.serialization.Codec<T>, 
    public static final RegistryKey<Registry<VillagerProfession>> field16057 = createKey("villager_profession");
    public static final RegistryKey<Registry<PointOfInterestType>> field16058 = createKey("point_of_interest_type");
    public static final RegistryKey<Registry<MemoryModuleType<?>>> field16059 = createKey("memory_module_type");
-   public static final RegistryKey<Registry<Class7963<?>>> field16060 = createKey("sensor_type");
+   public static final RegistryKey<Registry<SensorType<?>>> field16060 = createKey("sensor_type");
    public static final RegistryKey<Registry<Schedule>> field16061 = createKey("schedule");
    public static final RegistryKey<Registry<Activity>> field16062 = createKey("activity");
    public static final RegistryKey<Registry<Class7131>> field16063 = createKey("loot_pool_entry_type");
@@ -112,7 +112,7 @@ public abstract class Registry<T> implements com.mojang.serialization.Codec<T>, 
    public static final Class2351<VillagerProfession> VILLAGER_PROFESSION = method9176(field16057, "none", () -> VillagerProfession.field36011);
    public static final Class2351<PointOfInterestType> POINT_OF_INTEREST_TYPE = method9176(field16058, "unemployed", () -> PointOfInterestType.UNEMPLOYED);
    public static final Class2351<MemoryModuleType<?>> field16092 = method9176(field16059, "dummy", () -> MemoryModuleType.field39812);
-   public static final Class2351<Class7963<?>> field16093 = method9176(field16060, "dummy", () -> Class7963.field34237);
+   public static final Class2351<SensorType<?>> field16093 = method9176(field16060, "dummy", () -> SensorType.field34237);
    public static final Registry<Schedule> field16094 = method9175(field16061, () -> Schedule.field35349);
    public static final Registry<Activity> field16095 = method9175(field16062, () -> Activity.field40220);
    public static final Registry<Class7131> field16096 = method9175(field16063, () -> Class8695.field39239);

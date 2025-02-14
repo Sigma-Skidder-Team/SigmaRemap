@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7883 extends Class7882<LivingEntity> {
+public class Class7883 extends Sensor<LivingEntity> {
    private static String[] field33830;
    private static final ImmutableMap<EntityType<?>, Float> field33831 = ImmutableMap.<EntityType<?>, Float> builder()
       .put(EntityType.DROWNED, 8.0F)

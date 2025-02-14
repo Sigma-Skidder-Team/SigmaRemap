@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7884 extends Class7882<HoglinEntity> {
+public class Class7884 extends Sensor<HoglinEntity> {
    private static String[] field33832;
 
    @Override

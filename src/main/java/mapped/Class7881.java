@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7881 extends Class7882<LivingEntity> {
+public class Class7881 extends Sensor<LivingEntity> {
    private static String[] field33824;
 
    @Override

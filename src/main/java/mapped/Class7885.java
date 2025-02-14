@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7885 extends Class7882<LivingEntity> {
+public class Class7885 extends Sensor<LivingEntity> {
    private static String[] field33833;
 
    public Class7885() {

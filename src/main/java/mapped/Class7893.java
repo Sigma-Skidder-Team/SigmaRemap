@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class7893 extends Class7882<LivingEntity> {
+public class Class7893 extends Sensor<LivingEntity> {
    private static String[] field33844;
 
    @Override

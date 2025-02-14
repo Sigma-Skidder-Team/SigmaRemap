@@ -36,8 +36,8 @@ public class HoglinEntity extends AnimalEntity implements IMob, Class1092 {
    private int field5977;
    private int field5978 = 0;
    private boolean field5979 = false;
-   public static final ImmutableList<? extends Class7963<? extends Class7882<? super HoglinEntity>>> field5980 = ImmutableList.of(
-      Class7963.field34239, Class7963.field34240, Class7963.field34250, Class7963.field34249
+   public static final ImmutableList<? extends SensorType<? extends Sensor<? super HoglinEntity>>> field5980 = ImmutableList.of(
+      SensorType.field34239, SensorType.field34240, SensorType.field34250, SensorType.field34249
    );
    public static final ImmutableList<? extends MemoryModuleType<?>> field5981 = ImmutableList.of(
       MemoryModuleType.field39829,

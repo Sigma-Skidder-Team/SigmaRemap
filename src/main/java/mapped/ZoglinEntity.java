@@ -32,8 +32,8 @@ import java.util.Optional;
 public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    private static final DataParameter<Boolean> field5982 = EntityDataManager.<Boolean>createKey(ZoglinEntity.class, DataSerializers.BOOLEAN);
    private int field5983;
-   public static final ImmutableList<? extends Class7963<? extends Class7882<? super ZoglinEntity>>> field5984 = ImmutableList.of(
-      Class7963.field34239, Class7963.field34240
+   public static final ImmutableList<? extends SensorType<? extends Sensor<? super ZoglinEntity>>> field5984 = ImmutableList.of(
+      SensorType.field34239, SensorType.field34240
    );
    public static final ImmutableList<? extends MemoryModuleType<?>> field5985 = ImmutableList.of(
       MemoryModuleType.field39818,

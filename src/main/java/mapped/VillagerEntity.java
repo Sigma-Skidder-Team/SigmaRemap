@@ -108,16 +108,16 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
          MemoryModuleType.field39842
       }
    );
-   private static final ImmutableList<Class7963<? extends Class7882<? super VillagerEntity>>> field5792 = ImmutableList.of(
-      Class7963.field34239,
-      Class7963.field34240,
-      Class7963.field34238,
-      Class7963.field34241,
-      Class7963.field34242,
-      Class7963.field34243,
-      Class7963.field34244,
-      Class7963.field34245,
-      Class7963.field34246
+   private static final ImmutableList<SensorType<? extends Sensor<? super VillagerEntity>>> field5792 = ImmutableList.of(
+      SensorType.field34239,
+      SensorType.field34240,
+      SensorType.field34238,
+      SensorType.field34241,
+      SensorType.field34242,
+      SensorType.field34243,
+      SensorType.field34244,
+      SensorType.field34245,
+      SensorType.field34246
    );
    public static final Map<MemoryModuleType<Class9378>, BiPredicate<VillagerEntity, PointOfInterestType>> field5793 = ImmutableMap.of(
       MemoryModuleType.field39813,

@@ -6,19 +6,19 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.Set;
 
-public abstract class Class7882<E extends LivingEntity> {
+public abstract class Sensor<E extends LivingEntity> {
    private static final Random field33825 = new Random();
    private static final EntityPredicate field33826 = new EntityPredicate().method30203(16.0).method30205().method30207();
    private static final EntityPredicate field33827 = new EntityPredicate().method30203(16.0).method30205().method30207().method30208();
    private final int field33828;
    private long field33829;
 
-   public Class7882(int var1) {
+   public Sensor(int var1) {
       this.field33828 = var1;
       this.field33829 = (long)field33825.nextInt(var1);
    }
 
-   public Class7882() {
+   public Sensor() {
       this(20);
    }
 

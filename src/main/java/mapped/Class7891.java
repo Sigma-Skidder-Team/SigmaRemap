@@ -8,7 +8,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Class7891 extends Class7882<VillagerEntity> {
+public class Class7891 extends Sensor<VillagerEntity> {
    private static String[] field33842;
 
    public Class7891() {

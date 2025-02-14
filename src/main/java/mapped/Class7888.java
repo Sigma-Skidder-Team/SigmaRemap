@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7888 extends Class7882<Class1045> {
+public class Class7888 extends Sensor<Class1045> {
    private static String[] field33839;
 
    @Override

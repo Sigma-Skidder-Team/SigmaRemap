@@ -6,7 +6,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Set;
 
-public class Class7895 extends Class7882<LivingEntity> {
+public class Class7895 extends Sensor<LivingEntity> {
    private static String[] field33846;
 
    @Override

@@ -11,13 +11,13 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class7887 extends Class7882<MobEntity> {
+public class NearestBedSensor extends Sensor<MobEntity> {
    private static String[] field33835;
    private final Long2LongMap field33836 = new Long2LongOpenHashMap();
    private int field33837;
    private long field33838;
 
-   public Class7887() {
+   public NearestBedSensor() {
       super(20);
    }
 
@@ -44,7 +44,7 @@ public class Class7887 extends Class7882<MobEntity> {
                return false;
             }
          };
-         Stream var7 = var5.method6668(PointOfInterestType.HOME.getPredicate(), var6, var2.getPosition(), 48, PointOfInterestManager.Status.ANY);
+         Stream var7 = var5.findAll(PointOfInterestType.HOME.getPredicate(), var6, var2.getPosition(), 48, PointOfInterestManager.Status.ANY);
          Class8238 var8 = var2.method4230().method21649(var7, PointOfInterestType.HOME.getValidRange());
          if (var8 != null && var8.method28708()) {
             BlockPos var9 = var8.method28712();
