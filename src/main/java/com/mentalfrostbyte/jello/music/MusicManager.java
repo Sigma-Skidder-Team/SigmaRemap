@@ -14,9 +14,15 @@ import com.mentalfrostbyte.jello.unmapped.MusicVideoManager;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
+import com.sapher.youtubedl.YoutubeDL;
+import com.sapher.youtubedl.YoutubeDLException;
+import com.sapher.youtubedl.YoutubeDLRequest;
+import com.sapher.youtubedl.YoutubeDLResponse;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 import com.mentalfrostbyte.jello.util.ClientColors;
+import net.sourceforge.jaad.aac.Decoder;
+import net.sourceforge.jaad.aac.SampleBuffer;
 import org.newdawn.slick.opengl.Texture;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -582,7 +588,7 @@ public class MusicManager {
     public URL method24323(URL var1) {
         String var4 = var1.toString();
         String var5 = System.getProperty("user.home");
-        Youtuhe request = new YoutubeDLRequest(var4, var5);
+        YoutubeDLRequest request = new YoutubeDLRequest(var4, var5);
         request.setOption("get-url");
         request.setOption("no-check-certificate");
         request.setOption("rm-cache-dir");

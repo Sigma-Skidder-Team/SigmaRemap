@@ -101,7 +101,7 @@ public abstract class LevelBasedGraph {
       this.scheduleUpdate(var1, var1, this.levelCount - 1, false);
    }
 
-   protected void scheduleUpdate(long var1, long var3, int var5, boolean var6) {
+   public void scheduleUpdate(long var1, long var3, int var5, boolean var6) {
       this.propagateLevel(var1, var3, var5, this.getLevel(var3), this.propagationLevels.get(var3) & 255, var6);
       this.needsUpdate = this.minLevelToUpdate < this.levelCount;
    }

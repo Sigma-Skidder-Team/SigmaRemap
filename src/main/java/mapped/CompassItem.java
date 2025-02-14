@@ -53,7 +53,7 @@ public class CompassItem extends Item implements IVanishable {
          if (var9.isPresent()
             && var9.get() == var2.getDimensionKey()
             && var8.contains("LodestonePos")
-            && !((ServerWorld)var2).getPointOfInterestManager().method6664(PointOfInterestType.LODESTONE, NBTUtil.readBlockPos(var8.getCompound("LodestonePos")))) {
+            && !((ServerWorld)var2).getPointOfInterestManager().hasTypeAtPosition(PointOfInterestType.LODESTONE, NBTUtil.readBlockPos(var8.getCompound("LodestonePos")))) {
             var8.remove("LodestonePos");
          }
       }

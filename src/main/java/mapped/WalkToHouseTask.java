@@ -55,7 +55,7 @@ public class WalkToHouseTask extends Class3676<LivingEntity> {
             return false;
          }
       };
-      Stream var10 = var8.method6668(PointOfInterestType.HOME.getPredicate(), var9, var2.getPosition(), 48, PointOfInterestManager.Status.ANY);
+      Stream var10 = var8.findAll(PointOfInterestType.HOME.getPredicate(), var9, var2.getPosition(), 48, PointOfInterestManager.Status.ANY);
       Class8238 var11 = var7.method4230().method21649(var10, PointOfInterestType.HOME.getValidRange());
       if (var11 != null && var11.method28708()) {
          BlockPos var12 = var11.method28712();

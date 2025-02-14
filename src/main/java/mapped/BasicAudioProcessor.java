@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 
-public class BasicAudioProcessor implements Class8807 {
+public class BasicAudioProcessor implements AudioProcessor {
    public final MusicManager field39642;
 
    public BasicAudioProcessor(MusicManager var1) {
@@ -11,7 +11,7 @@ public class BasicAudioProcessor implements Class8807 {
    }
 
    @Override
-   public void method31803(byte[] var1, int var2, int var3) {
+   public void processBuffer(byte[] var1, int var2, int var3) {
       Client.getClientLogger().setThreadName("DONE");
    }
 }
