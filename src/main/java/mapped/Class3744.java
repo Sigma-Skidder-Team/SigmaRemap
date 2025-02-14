@@ -25,7 +25,7 @@ public class Class3744<E extends MobEntity, T> extends Class3676<E> {
       return this.field19880.test((E)var2);
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       Brain var7 = var2.getBrain();
       var7.method21407(this.field19882, (T)var7.getMemory(this.field19881).get(), (long)this.field19883.method29319(var1.rand));
    }

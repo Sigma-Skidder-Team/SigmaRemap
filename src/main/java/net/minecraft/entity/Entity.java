@@ -2180,7 +2180,7 @@ public abstract class Entity implements INameable, ICommandSource {
                BlockState var5x = this.world.getBlockState(this.field_242271_ac);
                Direction.Axis var6x;
                Vector3d var7x;
-               if (!var5x.method23462(BlockStateProperties.HORIZONTAL_AXIS)) {
+               if (!var5x.hasProperty(BlockStateProperties.HORIZONTAL_AXIS)) {
                   var6x = Direction.Axis.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
@@ -2215,7 +2215,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
-      return var1.method6937().method12331(var2, var3);
+      return var1.method6937().getExistingPortal(var2, var3);
    }
 
    public boolean method3367() {

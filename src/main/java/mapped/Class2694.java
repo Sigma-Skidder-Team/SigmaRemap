@@ -34,7 +34,7 @@ public class Class2694 extends Class2692 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.method10913();
       this.field17140 = 2 + this.field17133.getRNG().nextInt(3);
       this.field17133.method5130(true);

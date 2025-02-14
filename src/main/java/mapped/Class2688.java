@@ -30,7 +30,7 @@ public class Class2688 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       List var3 = this.field17115
          .world
          .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17115.getBoundingBox().grow(8.0, 8.0, 8.0), DolphinEntity.field5808);

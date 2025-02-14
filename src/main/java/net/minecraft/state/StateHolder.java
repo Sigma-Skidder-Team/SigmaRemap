@@ -70,7 +70,7 @@ public abstract class StateHolder<O, S> {
       return Collections.<Property<?>>unmodifiableCollection(this.field31580.keySet());
    }
 
-   public <T extends Comparable<T>> boolean method23462(Property<T> var1) {
+   public <T extends Comparable<T>> boolean hasProperty(Property<T> var1) {
       return this.field31580.containsKey(var1);
    }
 

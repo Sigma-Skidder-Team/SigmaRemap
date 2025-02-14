@@ -54,7 +54,7 @@ public class Class3690<T> extends Class3676<CreatureEntity> {
       }
    }
 
-   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, CreatureEntity var2, long var3) {
       method12542(var2, this.method12540(var2), this.field19715);
    }
 

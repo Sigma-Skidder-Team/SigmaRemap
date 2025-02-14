@@ -4,7 +4,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 
-public class Class2788 extends Class2785 {
+public class Class2788 extends BreedGoal {
    private static String[] field17405;
    private final PandaEntity field17415;
    private int field17416;

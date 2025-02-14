@@ -85,18 +85,18 @@ public class LlamaEntity extends Class1066 implements Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2762(this, 1.2));
-      this.field5600.addGoal(2, new Class2780(this, 2.1F));
-      this.field5600.addGoal(3, new Class2598(this, 1.25, 40, 20.0F));
-      this.field5600.addGoal(3, new Class2747(this, 1.2));
-      this.field5600.addGoal(4, new Class2785(this, 1.0));
-      this.field5600.addGoal(5, new Class2764(this, 1.0));
-      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
-      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5601.addGoal(1, new Class2705(this));
-      this.field5601.addGoal(2, new Class2717(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2762(this, 1.2));
+      this.goalSelector.addGoal(2, new Class2780(this, 2.1F));
+      this.goalSelector.addGoal(3, new Class2598(this, 1.25, 40, 20.0F));
+      this.goalSelector.addGoal(3, new Class2747(this, 1.2));
+      this.goalSelector.addGoal(4, new BreedGoal(this, 1.0));
+      this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.0));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new Class2705(this));
+      this.targetSelector.addGoal(2, new Class2717(this));
    }
 
    public static MutableAttribute method4888() {

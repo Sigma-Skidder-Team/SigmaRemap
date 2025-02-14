@@ -39,19 +39,19 @@ public class VindicatorEntity extends Class1025 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2644(this));
-      this.field5600.addGoal(2, new Class2646(this, this));
-      this.field5600.addGoal(3, new Class2759(this, this, 10.0F));
-      this.field5600.addGoal(4, new Class2656(this, this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
-      this.field5601.addGoal(4, new Class2713(this));
-      this.field5600.addGoal(8, new Class2736(this, 0.6));
-      this.field5600.addGoal(9, new Class2612(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2644(this));
+      this.goalSelector.addGoal(2, new Class2646(this, this));
+      this.goalSelector.addGoal(3, new Class2759(this, this, 10.0F));
+      this.goalSelector.addGoal(4, new Class2656(this, this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).method10918());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.targetSelector.addGoal(4, new Class2713(this));
+      this.goalSelector.addGoal(8, new Class2736(this, 0.6));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
    }
 
    @Override

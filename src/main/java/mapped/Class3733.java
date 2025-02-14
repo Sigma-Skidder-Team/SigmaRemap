@@ -32,7 +32,7 @@ public class Class3733<E extends MobEntity> extends Class3676<E> {
       }
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       this.field19847.apply((E)var2).ifPresent(var2x -> this.method12659((E)var2, var2x));
    }
 

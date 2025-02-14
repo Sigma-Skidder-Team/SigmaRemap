@@ -49,18 +49,18 @@ public class EndermanEntity extends MonsterEntity implements IAngerable {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2624(this));
-      this.field5600.addGoal(2, new Class2647(this, 1.0, false));
-      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0, 0.0F));
-      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5600.addGoal(10, new Class2685(this));
-      this.field5600.addGoal(11, new Class2734(this));
-      this.field5601.addGoal(1, new Class2710(this, this::method4367));
-      this.field5601.addGoal(2, new HurtByTargetGoal(this));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<EndermiteEntity>(this, EndermiteEntity.class, 10, true, false, field5650));
-      this.field5601.addGoal(4, new ResetAngerGoal<EndermanEntity>(this, false));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2624(this));
+      this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0, 0.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.goalSelector.addGoal(10, new Class2685(this));
+      this.goalSelector.addGoal(11, new Class2734(this));
+      this.targetSelector.addGoal(1, new Class2710(this, this::method4367));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<EndermiteEntity>(this, EndermiteEntity.class, 10, true, false, field5650));
+      this.targetSelector.addGoal(4, new ResetAngerGoal<EndermanEntity>(this, false));
    }
 
    public static MutableAttribute method4345() {

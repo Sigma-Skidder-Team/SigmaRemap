@@ -28,7 +28,7 @@ public class Class3700 extends Class3676<CreatureEntity> {
          && ((Class9378)var5.get()).method35579().withinDistance(var2.getPositionVec(), (double)this.field19753);
    }
 
-   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, CreatureEntity var2, long var3) {
       if (var3 > this.field19755) {
          Brain<?> var7 = var2.getBrain();
          Optional<Class9378> var8 = var7.getMemory(this.field19751);

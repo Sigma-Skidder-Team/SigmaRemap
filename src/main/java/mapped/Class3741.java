@@ -20,7 +20,7 @@ public class Class3741<E extends LivingEntity> extends Class3676<E> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       if (!this.method12699((E)var2)) {
          Class6983.method21576(var2, this.method12700((E)var2), this.field19868, 1);
       } else {

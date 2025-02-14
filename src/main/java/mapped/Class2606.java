@@ -23,7 +23,7 @@ public class Class2606 extends Class2605 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16854 = 5.0F + PhantomEntity.method5341(this.field16851).nextFloat() * 10.0F;
       this.field16855 = -4.0F + PhantomEntity.method5342(this.field16851).nextFloat() * 9.0F;
       this.field16856 = !PhantomEntity.method5343(this.field16851).nextBoolean() ? -1.0F : 1.0F;

@@ -41,8 +41,8 @@ public class Class3702<E extends LivingEntity> extends Class3676<E> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, E var2, long var3) {
-      this.field19760.method12502(var1, (E)var2, var3);
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
+      this.field19760.startExecuting(var1, (E)var2, var3);
    }
 
    @Override

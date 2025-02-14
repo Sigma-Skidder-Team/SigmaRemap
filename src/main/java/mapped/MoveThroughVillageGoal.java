@@ -110,7 +110,7 @@ public class MoveThroughVillageGoal extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17103.method4230().method21656(this.field17105, this.field17104);
    }
 

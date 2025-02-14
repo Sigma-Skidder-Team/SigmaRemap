@@ -19,7 +19,7 @@ public class Class6996 extends Class6995 {
 
    @Override
    public void method21658() {
-      if (!Class2663.method10870(BeeEntity.method4451(this.field30270))) {
+      if (!PollinateGoal.method10870(BeeEntity.method4451(this.field30270))) {
          super.method21658();
       }
    }

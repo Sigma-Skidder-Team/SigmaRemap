@@ -51,15 +51,15 @@ public class GuardianEntity extends MonsterEntity {
    public void method4219() {
       Class2660 var3 = new Class2660(this, 1.0);
       this.field6076 = new Class2736(this, 1.0, 80);
-      this.field5600.addGoal(4, new Class2724(this));
-      this.field5600.addGoal(5, var3);
-      this.field5600.addGoal(7, this.field6076);
-      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2612(this, GuardianEntity.class, 12.0F, 0.01F));
-      this.field5600.addGoal(9, new Class2668(this));
+      this.goalSelector.addGoal(4, new Class2724(this));
+      this.goalSelector.addGoal(5, var3);
+      this.goalSelector.addGoal(7, this.field6076);
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, GuardianEntity.class, 12.0F, 0.01F));
+      this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
       this.field6076.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
       var3.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
    }
 
    public static MutableAttribute method5300() {

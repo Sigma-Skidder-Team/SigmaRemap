@@ -30,7 +30,7 @@ public class Class2776 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17369.addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, 100));
    }
 

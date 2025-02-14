@@ -28,7 +28,7 @@ public class Class3747<E extends PiglinEntity> extends Class3676<E> {
       return Class4388.method13827(var5.method4124().getItem());
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       var2.getBrain().method21407(MemoryModuleType.field39851, true, (long)this.field19892);
    }
 }

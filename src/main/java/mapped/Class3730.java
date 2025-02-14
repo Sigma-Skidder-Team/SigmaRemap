@@ -24,8 +24,8 @@ public class Class3730 extends Class3676<MobEntity> {
       return var2.isChild() && this.method12648(var1, var2);
    }
 
-   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
-      super.method12502(var1, var2, var3);
+   public void startExecuting(ServerWorld var1, MobEntity var2, long var3) {
+      super.startExecuting(var1, var2, var3);
       this.method12652(var2).ifPresent(var3x -> {
          this.field19835 = var3x;
          this.field19836 = 100;

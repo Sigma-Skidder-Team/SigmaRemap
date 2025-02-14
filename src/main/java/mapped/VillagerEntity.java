@@ -170,20 +170,20 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
       VillagerProfession var4 = this.method4674().method26571();
       if (!this.isChild()) {
          var1.method21414(Schedule.field35352);
-         var1.method21428(Activity.field40221, Class9379.method35582(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39814, Class2217.field14484)));
+         var1.method21428(Activity.field40221, VillagerTasks.method35582(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39814, Class2217.field14484)));
       } else {
          var1.method21414(Schedule.field35351);
-         var1.method21427(Activity.field40222, Class9379.method35583(0.5F));
+         var1.method21427(Activity.field40222, VillagerTasks.method35583(0.5F));
       }
 
-      var1.method21427(Activity.field40219, Class9379.method35581(var4, 0.5F));
-      var1.method21428(Activity.field40224, Class9379.method35585(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39816, Class2217.field14484)));
-      var1.method21427(Activity.field40223, Class9379.method35584(var4, 0.5F));
-      var1.method21427(Activity.field40220, Class9379.method35586(var4, 0.5F));
-      var1.method21427(Activity.field40225, Class9379.method35587(var4, 0.5F));
-      var1.method21427(Activity.field40227, Class9379.method35588(var4, 0.5F));
-      var1.method21427(Activity.field40226, Class9379.method35589(var4, 0.5F));
-      var1.method21427(Activity.field40228, Class9379.method35590(var4, 0.5F));
+      var1.method21427(Activity.field40219, VillagerTasks.method35581(var4, 0.5F));
+      var1.method21428(Activity.field40224, VillagerTasks.method35585(var4, 0.5F), ImmutableSet.of(Pair.of(MemoryModuleType.field39816, Class2217.field14484)));
+      var1.method21427(Activity.field40223, VillagerTasks.method35584(var4, 0.5F));
+      var1.method21427(Activity.field40220, VillagerTasks.method35586(var4, 0.5F));
+      var1.method21427(Activity.field40225, VillagerTasks.method35587(var4, 0.5F));
+      var1.method21427(Activity.field40227, VillagerTasks.method35588(var4, 0.5F));
+      var1.method21427(Activity.field40226, VillagerTasks.method35589(var4, 0.5F));
+      var1.method21427(Activity.field40228, VillagerTasks.method35590(var4, 0.5F));
       var1.method21415(ImmutableSet.of(Activity.field40219));
       var1.method21424(Activity.field40220);
       var1.method21419(Activity.field40220);
@@ -578,11 +578,11 @@ public class VillagerEntity extends Class1043 implements Class1062, Class1041 {
          this.brain.<Class9378>getMemory(var1).ifPresent(var3 -> {
             ServerWorld var6 = var4.method1318(var3.method35578());
             if (var6 != null) {
-               Class1653 var7 = var6.getPointOfInterestManager();
-               Optional var8 = var7.method6676(var3.method35579());
+               PointOfInterestManager var7 = var6.getPointOfInterestManager();
+               Optional var8 = var7.getType(var3.method35579());
                BiPredicate var9 = field5793.get(var1);
                if (var8.isPresent() && var9.test(this, var8.get())) {
-                  var7.method6674(var3.method35579());
+                  var7.release(var3.method35579());
                   DebugPacketSender.method23615(var6, var3.method35579());
                }
             }

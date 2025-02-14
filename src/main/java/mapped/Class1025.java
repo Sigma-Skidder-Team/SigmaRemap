@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.World;
 
-public abstract class Class1025 extends Class1026 {
+public abstract class Class1025 extends AbstractRaiderEntity {
    public Class1025(EntityType<? extends Class1025> var1, World var2) {
       super(var1, var2);
    }

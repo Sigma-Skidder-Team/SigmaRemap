@@ -7,18 +7,18 @@ public abstract class Class2661 extends Class2595 {
       this.field17022 = var1;
    }
 
-   public abstract boolean method10860();
+   public abstract boolean canBeeStart();
 
-   public abstract boolean method10861();
+   public abstract boolean canBeeContinue();
 
    @Override
    public boolean method10803() {
-      return this.method10860() && !this.field17022.method4369();
+      return this.canBeeStart() && !this.field17022.method4369();
    }
 
    @Override
    public boolean method10806() {
-      return this.method10861() && !this.field17022.method4369();
+      return this.canBeeContinue() && !this.field17022.method4369();
    }
 
    // $VF: synthetic method

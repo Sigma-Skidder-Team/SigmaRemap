@@ -32,8 +32,8 @@ public class Class2673 extends Class2672 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field17061 = this.field17062.getAttackTarget().getEntityId();
    }
 

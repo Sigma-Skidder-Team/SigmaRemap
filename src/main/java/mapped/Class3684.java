@@ -23,7 +23,7 @@ public class Class3684 extends Class3676<MobEntity> {
       return var1.method3093(var1x -> var1x instanceof Class3262 && var1.method4234((Class3262)var1x));
    }
 
-   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, MobEntity var2, long var3) {
       LivingEntity var7 = this.method12524(var2);
       Class6983.method21574(var2, var7);
       var2.swingArm(Hand.MAIN_HAND);

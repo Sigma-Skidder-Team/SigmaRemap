@@ -41,13 +41,13 @@ public class SlimeEntity extends MobEntity implements IMob {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2735(this));
-      this.field5600.addGoal(2, new Class2620(this));
-      this.field5600.addGoal(3, new Class2621(this));
-      this.field5600.addGoal(5, new Class2601(this));
-      this.field5601
+      this.goalSelector.addGoal(1, new Class2735(this));
+      this.goalSelector.addGoal(2, new Class2620(this));
+      this.goalSelector.addGoal(3, new Class2621(this));
+      this.goalSelector.addGoal(5, new Class2601(this));
+      this.targetSelector
          .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    @Override

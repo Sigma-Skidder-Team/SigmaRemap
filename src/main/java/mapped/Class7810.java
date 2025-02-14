@@ -146,7 +146,7 @@ public class Class7810 {
       this.method26074(Items.field37852, Class9756.field45623);
       this.method26074(Items.field37824, Class9756.field45624);
       this.method26074(Items.field38083, Class9756.field45623);
-      this.method26074(Items.field37801, Class9756.field45623);
+      this.method26074(Items.IRON_INGOT, Class9756.field45623);
       this.method26074(Items.field37854, Class9756.field45623);
       this.method26074(Items.field38128, Class9756.field45623);
       this.method26074(Items.field37822, Class9756.field45624);

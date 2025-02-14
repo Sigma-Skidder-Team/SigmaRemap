@@ -39,15 +39,15 @@ public class PigEntity extends AnimalEntity implements Class1071, Class1069 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2747(this, 1.25));
-      this.field5600.addGoal(3, new Class2785(this, 1.0));
-      this.field5600.addGoal(4, new Class2680(this, 1.2, Ingredient.fromItems(Items.field38064), false));
-      this.field5600.addGoal(4, new Class2680(this, 1.2, false, field5914));
-      this.field5600.addGoal(5, new Class2764(this, 1.1));
-      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(8, new Class2668(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2747(this, 1.25));
+      this.goalSelector.addGoal(3, new BreedGoal(this, 1.0));
+      this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, Ingredient.fromItems(Items.field38064), false));
+      this.goalSelector.addGoal(4, new TemptGoal(this, 1.2, false, field5914));
+      this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
    }
 
    public static MutableAttribute method4989() {

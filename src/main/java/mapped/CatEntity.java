@@ -44,7 +44,7 @@ public class CatEntity extends TameableEntity {
       var0.put(10, new ResourceLocation("textures/entity/cat/all_black.png"));
    });
    private Class2774<PlayerEntity> field6042;
-   private Class2680 field6043;
+   private TemptGoal field6043;
    private float field6044;
    private float field6045;
    private float field6046;
@@ -63,20 +63,20 @@ public class CatEntity extends TameableEntity {
    @Override
    public void method4219() {
       this.field6043 = new Class2682(this, 0.6, field6036, true);
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(1, new Class2778(this));
-      this.field5600.addGoal(2, new Class2784(this));
-      this.field5600.addGoal(3, this.field6043);
-      this.field5600.addGoal(5, new Class2631(this, 1.1, 8));
-      this.field5600.addGoal(6, new Class2725(this, 1.0, 10.0F, 5.0F, false));
-      this.field5600.addGoal(7, new Class2637(this, 0.8));
-      this.field5600.addGoal(8, new Class2745(this, 0.3F));
-      this.field5600.addGoal(9, new Class2695(this));
-      this.field5600.addGoal(10, new Class2785(this, 0.8));
-      this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
-      this.field5600.addGoal(12, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.addGoal(1, new Class2716<RabbitEntity>(this, RabbitEntity.class, false, (Predicate<LivingEntity>)null));
-      this.field5601.addGoal(1, new Class2716<TurtleEntity>(this, TurtleEntity.class, false, TurtleEntity.field5963));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2778(this));
+      this.goalSelector.addGoal(2, new Class2784(this));
+      this.goalSelector.addGoal(3, this.field6043);
+      this.goalSelector.addGoal(5, new Class2631(this, 1.1, 8));
+      this.goalSelector.addGoal(6, new Class2725(this, 1.0, 10.0F, 5.0F, false));
+      this.goalSelector.addGoal(7, new Class2637(this, 0.8));
+      this.goalSelector.addGoal(8, new Class2745(this, 0.3F));
+      this.goalSelector.addGoal(9, new Class2695(this));
+      this.goalSelector.addGoal(10, new BreedGoal(this, 0.8));
+      this.goalSelector.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
+      this.goalSelector.addGoal(12, new LookAtGoal(this, PlayerEntity.class, 10.0F));
+      this.targetSelector.addGoal(1, new Class2716<RabbitEntity>(this, RabbitEntity.class, false, (Predicate<LivingEntity>)null));
+      this.targetSelector.addGoal(1, new Class2716<TurtleEntity>(this, TurtleEntity.class, false, TurtleEntity.field5963));
    }
 
    public int method5250() {
@@ -409,9 +409,9 @@ public class CatEntity extends TameableEntity {
          this.field6042 = new Class2774<PlayerEntity>(this, PlayerEntity.class, 16.0F, 0.8, 1.33);
       }
 
-      this.field5600.method20003(this.field6042);
+      this.goalSelector.method20003(this.field6042);
       if (!this.method4393()) {
-         this.field5600.addGoal(4, this.field6042);
+         this.goalSelector.addGoal(4, this.field6042);
       }
    }
 }

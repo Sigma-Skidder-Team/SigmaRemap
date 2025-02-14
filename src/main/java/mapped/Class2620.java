@@ -30,9 +30,9 @@ public class Class2620 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16906 = 300;
-      super.method10804();
+      super.startExecuting();
    }
 
    @Override

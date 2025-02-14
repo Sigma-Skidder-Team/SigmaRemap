@@ -19,8 +19,8 @@ public class Class2722 extends Class2699 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17210.setAttackTarget(VexEntity.method5282(this.field17210).getAttackTarget());
-      super.method10804();
+      super.startExecuting();
    }
 }

@@ -52,7 +52,7 @@ public class HurtByTargetGoal extends Class2699 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17153.setAttackTarget(this.field17153.getRevengeTarget());
       this.field17159 = this.field17153.getAttackTarget();
       this.field17181 = this.field17153.getRevengeTiemr();
@@ -61,7 +61,7 @@ public class HurtByTargetGoal extends Class2699 {
          this.method10919();
       }
 
-      super.method10804();
+      super.startExecuting();
    }
 
    public void method10919() {

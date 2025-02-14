@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2604 extends Class2603 {
+public class Class2604 extends SwimGoal {
    private static String[] field16848;
    public final FoxEntity field16850;
 
@@ -10,8 +10,8 @@ public class Class2604 extends Class2603 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       FoxEntity.method5167(this.field16850);
    }
 

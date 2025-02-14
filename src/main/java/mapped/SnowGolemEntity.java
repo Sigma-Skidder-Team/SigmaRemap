@@ -34,11 +34,11 @@ public class SnowGolemEntity extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2598(this, 1.25, 20, 10.0F));
-      this.field5600.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0, 1.0000001E-5F));
-      this.field5600.addGoal(3, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(4, new Class2668(this));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof IMob));
+      this.goalSelector.addGoal(1, new Class2598(this, 1.25, 20, 10.0F));
+      this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0, 1.0000001E-5F));
+      this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof IMob));
    }
 
    public static MutableAttribute method4529() {

@@ -209,23 +209,23 @@ public class PandaEntity extends AnimalEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(2, new Class2748(this, 2.0));
-      this.field5600.addGoal(2, new Class2788(this, this, 1.0));
-      this.field5600.addGoal(3, new Class2649(this, 1.2F, true));
-      this.field5600.addGoal(4, new Class2680(this, 1.0, Ingredient.fromItems(Blocks.BAMBOO.asItem()), false));
-      this.field5600.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
-      this.field5600.addGoal(6, new Class2771<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
-      this.field5600.addGoal(7, new Class2623(this));
-      this.field5600.addGoal(8, new Class2689(this));
-      this.field5600.addGoal(8, new Class2769(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(2, new Class2748(this, 2.0));
+      this.goalSelector.addGoal(2, new Class2788(this, this, 1.0));
+      this.goalSelector.addGoal(3, new Class2649(this, 1.2F, true));
+      this.goalSelector.addGoal(4, new TemptGoal(this, 1.0, Ingredient.fromItems(Blocks.BAMBOO.asItem()), false));
+      this.goalSelector.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
+      this.goalSelector.addGoal(6, new Class2771<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.0, 2.0));
+      this.goalSelector.addGoal(7, new Class2623(this));
+      this.goalSelector.addGoal(8, new Class2689(this));
+      this.goalSelector.addGoal(8, new Class2769(this));
       this.field6034 = new Class2616(this, PlayerEntity.class, 6.0F);
-      this.field5600.addGoal(9, this.field6034);
-      this.field5600.addGoal(10, new Class2668(this));
-      this.field5600.addGoal(12, new Class2732(this));
-      this.field5600.addGoal(13, new Class2764(this, 1.25));
-      this.field5600.addGoal(14, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5601.addGoal(1, new Class2706(this).method10918(new Class[0]));
+      this.goalSelector.addGoal(9, this.field6034);
+      this.goalSelector.addGoal(10, new LookRandomlyGoal(this));
+      this.goalSelector.addGoal(12, new Class2732(this));
+      this.goalSelector.addGoal(13, new FollowParentGoal(this, 1.25));
+      this.goalSelector.addGoal(14, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.targetSelector.addGoal(1, new Class2706(this).method10918(new Class[0]));
    }
 
    public static MutableAttribute method5208() {

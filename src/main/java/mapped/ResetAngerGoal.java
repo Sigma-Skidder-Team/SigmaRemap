@@ -31,14 +31,14 @@ public class ResetAngerGoal<T extends MobEntity & IAngerable> extends Class2595 
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17380 = this.field17378.getRevengeTiemr();
       this.field17378.method4371();
       if (this.field17379) {
          this.method10968().stream().filter(var1 -> var1 != this.field17378).<IAngerable>map(var0 -> (IAngerable)var0).forEach(IAngerable::method4371);
       }
 
-      super.method10804();
+      super.startExecuting();
    }
 
    private List<MobEntity> method10968() {

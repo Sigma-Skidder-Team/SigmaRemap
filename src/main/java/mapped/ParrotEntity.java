@@ -114,14 +114,14 @@ public class ParrotEntity extends ShoulderRidingEntity implements IFlyingAnimal 
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2747(this, 1.25));
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(2, new Class2778(this));
-      this.field5600.addGoal(2, new Class2725(this, 1.0, 5.0F, 1.0F, true));
-      this.field5600.addGoal(2, new Class2738(this, 1.0));
-      this.field5600.addGoal(3, new Class2619(this));
-      this.field5600.addGoal(3, new Class2611(this, 1.0, 3.0F, 7.0F));
+      this.goalSelector.addGoal(0, new Class2747(this, 1.25));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(2, new Class2778(this));
+      this.goalSelector.addGoal(2, new Class2725(this, 1.0, 5.0F, 1.0F, true));
+      this.goalSelector.addGoal(2, new Class2738(this, 1.0));
+      this.goalSelector.addGoal(3, new Class2619(this));
+      this.goalSelector.addGoal(3, new Class2611(this, 1.0, 3.0F, 7.0F));
    }
 
    public static MutableAttribute method4406() {

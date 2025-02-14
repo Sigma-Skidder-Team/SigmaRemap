@@ -61,13 +61,13 @@ public class WitherEntity extends MonsterEntity implements Class1080, Class1022 
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2733(this));
-      this.field5600.addGoal(2, new Class2598(this, 1.0, 40, 20.0F));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(7, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this));
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 0, false, false, field5936));
+      this.goalSelector.addGoal(0, new Class2733(this));
+      this.goalSelector.addGoal(2, new Class2598(this, 1.0, 40, 20.0F));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 0, false, false, field5936));
    }
 
    @Override

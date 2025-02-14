@@ -85,8 +85,8 @@ public class Class7019 implements Class7016 {
          } else {
             BlockPos var5 = var4.getPosition();
             byte var6 = 48;
-            Class1653 var7 = var1.getPointOfInterestManager();
-            Optional<BlockPos> var8 = var7.method6670(PointOfInterestType.MEETING.getPredicate(), var0 -> true, var5, 48, Class2093.field13637);
+            PointOfInterestManager var7 = var1.getPointOfInterestManager();
+            Optional<BlockPos> var8 = var7.find(PointOfInterestType.MEETING.getPredicate(), var0 -> true, var5, 48, PointOfInterestManager.Status.ANY);
             BlockPos var9 = var8.orElse(var5);
             BlockPos var10 = this.method21752(var1, var9, 48);
             if (var10 != null && this.method21753(var1, var10)) {

@@ -20,7 +20,7 @@ public abstract class AbstractGroupFishEntity extends AbstractFishEntity {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(5, new Class2622(this));
+      this.goalSelector.addGoal(5, new Class2622(this));
    }
 
    @Override

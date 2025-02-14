@@ -30,12 +30,12 @@ public class SilverfishEntity extends MonsterEntity {
    @Override
    public void method4219() {
       this.field6080 = new Class2753(this);
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(3, this.field6080);
-      this.field5600.addGoal(4, new Class2647(this, 1.0, false));
-      this.field5600.addGoal(5, new Class2744(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(3, this.field6080);
+      this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(5, new Class2744(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    @Override

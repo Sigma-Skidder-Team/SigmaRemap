@@ -4,7 +4,7 @@ import net.minecraft.entity.LivingEntity;
 
 import java.util.EnumSet;
 
-public class Class2613 extends Class2612 {
+public class Class2613 extends LookAtGoal {
    private static String[] field16880;
 
    public Class2613(MobEntity var1, Class<? extends LivingEntity> var2, float var3, float var4) {

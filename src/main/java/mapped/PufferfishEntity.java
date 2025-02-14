@@ -82,7 +82,7 @@ public class PufferfishEntity extends AbstractFishEntity {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(1, new Class2767(this));
+      this.goalSelector.addGoal(1, new Class2767(this));
    }
 
    @Override

@@ -34,7 +34,7 @@ public class Class2597 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16825 = 40;
       this.field16824.setEntityState(this.field16823, (byte)10);
       this.field16823.method4230().method21666();

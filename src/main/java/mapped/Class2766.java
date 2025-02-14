@@ -31,7 +31,7 @@ public class Class2766 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       LivingEntity var3 = this.field17340.getAttackTarget();
       Vector3d var4 = var3.getEyePosition(1.0F);
       VexEntity.method5280(this.field17340).method20813(var4.x, var4.y, var4.z, 1.0);

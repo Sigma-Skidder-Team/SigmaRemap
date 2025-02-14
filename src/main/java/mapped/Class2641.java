@@ -34,8 +34,8 @@ public class Class2641 extends Class2640 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       FoxEntity.method5167(this.field16973);
-      super.method10804();
+      super.startExecuting();
    }
 }

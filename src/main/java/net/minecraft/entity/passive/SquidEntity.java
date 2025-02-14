@@ -43,8 +43,8 @@ public class SquidEntity extends WaterMobEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2679(this, this));
-      this.field5600.addGoal(1, new Class2726(this));
+      this.goalSelector.addGoal(0, new Class2679(this, this));
+      this.goalSelector.addGoal(1, new Class2726(this));
    }
 
    public static MutableAttribute method4836() {

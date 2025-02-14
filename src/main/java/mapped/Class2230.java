@@ -131,7 +131,7 @@ public enum Class2230 implements Class2234 {
                          for (Direction var16 : field14623) {
                              var4.method8377(var11, var16);
                              BlockState var17 = var1.getBlockState(var4);
-                             if (var17.method23462(BlockStateProperties.DISTANCE) && var12.get(BlockStateProperties.DISTANCE) > var6) {
+                             if (var17.hasProperty(BlockStateProperties.DISTANCE) && var12.get(BlockStateProperties.DISTANCE) > var6) {
                                  var9.add(var4.toImmutable());
                              }
                          }

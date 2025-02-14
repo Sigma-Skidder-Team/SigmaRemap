@@ -149,7 +149,7 @@ public class FallingBlockEntity extends Entity {
                      boolean var11 = FallingBlock.method11598(this.world.getBlockState(var18.down())) && (!var5 || !var6);
                      boolean var12 = this.field5176.isValidPosition(this.world, var18) && !var11;
                      if (var10 && var12) {
-                        if (this.field5176.method23462(BlockStateProperties.WATERLOGGED) && this.world.getFluidState(var18).getFluid() == Fluids.WATER) {
+                        if (this.field5176.hasProperty(BlockStateProperties.WATERLOGGED) && this.world.getFluidState(var18).getFluid() == Fluids.WATER) {
                            this.field5176 = this.field5176.with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(true));
                         }
 

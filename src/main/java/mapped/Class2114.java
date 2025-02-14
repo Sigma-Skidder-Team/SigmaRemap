@@ -9,8 +9,8 @@ import java.util.function.Supplier;
 
 public enum Class2114 implements Class2115 {
    field13773("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.field26354, 0.0F, 0.0F, () -> Ingredient.fromItems(Items.LEATHER)),
-   field13774("chainmail", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.field26348, 0.0F, 0.0F, () -> Ingredient.method339(Items.field37801)),
-   field13775("iron", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.field26353, 0.0F, 0.0F, () -> Ingredient.method339(Items.field37801)),
+   field13774("chainmail", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.field26348, 0.0F, 0.0F, () -> Ingredient.method339(Items.IRON_INGOT)),
+   field13775("iron", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.field26353, 0.0F, 0.0F, () -> Ingredient.method339(Items.IRON_INGOT)),
    field13776("gold", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.field26352, 0.0F, 0.0F, () -> Ingredient.fromItems(Items.GOLD_INGOT)),
    field13777("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.field26349, 2.0F, 0.0F, () -> Ingredient.fromItems(Items.DIAMOND)),
    field13778("turtle", 25, new int[]{2, 5, 6, 2}, 9, SoundEvents.field26356, 0.0F, 0.0F, () -> Ingredient.fromItems(Items.SCUTE)),

@@ -28,7 +28,7 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17194 = 5;
       this.field17195 = 0;
       this.field17192.method4360();
@@ -79,7 +79,7 @@ public class Class2710 extends NearestAttackableTargetGoal<PlayerEntity> {
       } else if (--this.field17194 <= 0) {
          this.field17190 = this.field17193;
          this.field17193 = null;
-         super.method10804();
+         super.startExecuting();
       }
    }
 }

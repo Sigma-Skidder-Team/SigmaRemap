@@ -30,7 +30,7 @@ public class Class7887 extends Class7882<MobEntity> {
       if (var2.isChild()) {
          this.field33837 = 0;
          this.field33838 = var1.getGameTime() + (long)var1.method6814().nextInt(20);
-         Class1653 var5 = var1.getPointOfInterestManager();
+         PointOfInterestManager var5 = var1.getPointOfInterestManager();
          Predicate<BlockPos> var6 = var1x -> {
             long var4 = var1x.toLong();
             if (!this.field33836.containsKey(var4)) {
@@ -44,11 +44,11 @@ public class Class7887 extends Class7882<MobEntity> {
                return false;
             }
          };
-         Stream var7 = var5.method6668(PointOfInterestType.HOME.getPredicate(), var6, var2.getPosition(), 48, Class2093.field13637);
+         Stream var7 = var5.method6668(PointOfInterestType.HOME.getPredicate(), var6, var2.getPosition(), 48, PointOfInterestManager.Status.ANY);
          Class8238 var8 = var2.method4230().method21649(var7, PointOfInterestType.HOME.getValidRange());
          if (var8 != null && var8.method28708()) {
             BlockPos var9 = var8.method28712();
-            Optional var10 = var5.method6676(var9);
+            Optional var10 = var5.getType(var9);
             if (var10.isPresent()) {
                var2.getBrain().method21406(MemoryModuleType.field39834, var9);
             }

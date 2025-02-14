@@ -24,7 +24,7 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
       }
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       Class6983.method21576(var2, this.method12518((E)var2), this.field19696, this.field19695.method29320() - 1);
    }
 

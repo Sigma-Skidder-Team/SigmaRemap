@@ -66,7 +66,7 @@ public class Class3725 extends Class3676<VillagerEntity> {
       return var6 instanceof WheatBlock && !((WheatBlock)var6).method12179(var5);
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
       this.method12627(var2);
       var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37934));
       this.field19815 = var3;

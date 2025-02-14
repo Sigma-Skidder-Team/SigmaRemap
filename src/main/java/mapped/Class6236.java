@@ -36,7 +36,7 @@ public final class Class6236 extends Class6230 {
       ServerWorld var5 = var1.method11326();
       BlockPos var6 = var1.method11323().offset(var1.method11324().<Direction>get(DispenserBlock.field18899));
       BlockState var7 = var5.getBlockState(var6);
-      if (var7.method23447(BlockTags.field32794, var0 -> var0.method23462(Class3366.field18936)) && var7.<Integer>get(Class3366.field18936) >= 5) {
+      if (var7.method23447(BlockTags.field32794, var0 -> var0.hasProperty(Class3366.field18936)) && var7.<Integer>get(Class3366.field18936) >= 5) {
          ((Class3366)var7.getBlock()).method11946(var5, var7, var6, (PlayerEntity)null, Class2084.field13572);
          this.method19204(true);
          return this.method19208(var1, var2, new ItemStack(Items.field38177));

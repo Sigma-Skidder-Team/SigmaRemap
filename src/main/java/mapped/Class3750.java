@@ -11,8 +11,8 @@ public class Class3750 extends Class3676<VillagerEntity> {
       super(ImmutableMap.of());
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
-      boolean var7 = Class3711.method12592(var2) || Class3711.method12591(var2) || method12712(var2);
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
+      boolean var7 = PanicTask.method12592(var2) || PanicTask.method12591(var2) || method12712(var2);
       if (!var7) {
          var2.getBrain().method21405(MemoryModuleType.field39835);
          var2.getBrain().method21405(MemoryModuleType.field39836);

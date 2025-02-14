@@ -46,7 +46,7 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    private static final DataParameter<Boolean> field5906 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.BOOLEAN);
    private static final DataParameter<Boolean> field5907 = EntityDataManager.<Boolean>createKey(StriderEntity.class, DataSerializers.BOOLEAN);
    private final Class6500 field5908 = new Class6500(this.dataManager, field5905, field5907);
-   private Class2680 field5909;
+   private TemptGoal field5909;
    private Class2747 field5910;
 
    public StriderEntity(EntityType<? extends StriderEntity> var1, World var2) {
@@ -118,16 +118,16 @@ public class StriderEntity extends AnimalEntity implements Class1071, Class1069 
    @Override
    public void method4219() {
       this.field5910 = new Class2747(this, 1.65);
-      this.field5600.addGoal(1, this.field5910);
-      this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5909 = new Class2680(this, 1.4, false, field5904);
-      this.field5600.addGoal(3, this.field5909);
-      this.field5600.addGoal(4, new Class2638(this, 1.5));
-      this.field5600.addGoal(5, new Class2764(this, 1.1));
-      this.field5600.addGoal(7, new Class2736(this, 1.0, 60));
-      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5600.addGoal(9, new Class2612(this, StriderEntity.class, 8.0F));
+      this.goalSelector.addGoal(1, this.field5910);
+      this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
+      this.field5909 = new TemptGoal(this, 1.4, false, field5904);
+      this.goalSelector.addGoal(3, this.field5909);
+      this.goalSelector.addGoal(4, new Class2638(this, 1.5));
+      this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1));
+      this.goalSelector.addGoal(7, new Class2736(this, 1.0, 60));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, StriderEntity.class, 8.0F));
    }
 
    public void method4977(boolean var1) {

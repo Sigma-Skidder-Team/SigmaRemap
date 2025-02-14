@@ -30,7 +30,7 @@ import java.time.temporal.ChronoField;
 
 public abstract class Class1082 extends MonsterEntity implements Class1022 {
    private final Class2758<Class1082> field5946 = new Class2758<Class1082>(this, 1.0, 20, 15.0F);
-   private final Class2647 field5947 = new Class2652(this, this, 1.2, false);
+   private final MeleeAttackGoal field5947 = new Class2652(this, this, 1.2, false);
 
    public Class1082(EntityType<? extends Class1082> var1, World var2) {
       super(var1, var2);
@@ -39,16 +39,16 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(2, new Class2617(this));
-      this.field5600.addGoal(3, new Class2640(this, 1.0));
-      this.field5600.addGoal(3, new Class2770<WolfEntity>(this, WolfEntity.class, 6.0F, 1.0, 1.2));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(6, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this));
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
+      this.goalSelector.addGoal(2, new Class2617(this));
+      this.goalSelector.addGoal(3, new Class2640(this, 1.0));
+      this.goalSelector.addGoal(3, new Class2770<WolfEntity>(this, WolfEntity.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    public static MutableAttribute method5029() {
@@ -130,11 +130,11 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
 
    public void method5031() {
       if (this.world != null && !this.world.isRemote) {
-         this.field5600.method20003(this.field5947);
-         this.field5600.method20003(this.field5946);
+         this.goalSelector.method20003(this.field5947);
+         this.goalSelector.method20003(this.field5946);
          ItemStack var3 = this.getHeldItem(ProjectileHelper.method36389(this, Items.BOW));
          if (var3.getItem() != Items.BOW) {
-            this.field5600.addGoal(4, this.field5947);
+            this.goalSelector.addGoal(4, this.field5947);
          } else {
             int var4 = 20;
             if (this.world.method6997() != Difficulty.HARD) {
@@ -142,7 +142,7 @@ public abstract class Class1082 extends MonsterEntity implements Class1022 {
             }
 
             this.field5946.method10961(var4);
-            this.field5600.addGoal(4, this.field5946);
+            this.goalSelector.addGoal(4, this.field5946);
          }
       }
    }

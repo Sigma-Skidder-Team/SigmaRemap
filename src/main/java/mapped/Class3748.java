@@ -28,7 +28,7 @@ public class Class3748<E extends MobEntity> extends Class3676<E> {
       this.field19895 = var2;
    }
 
-   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, MobEntity var2, long var3) {
       BlockPos var7 = method12709(var2);
       boolean var8 = var7.withinDistance(var2.getPosition(), (double)this.field19894);
       if (!var8) {

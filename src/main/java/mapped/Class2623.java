@@ -48,7 +48,7 @@ public class Class2623 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       List var3 = this.field16917
          .world
          .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field16917.getBoundingBox().grow(8.0, 8.0, 8.0), PandaEntity.method5243());

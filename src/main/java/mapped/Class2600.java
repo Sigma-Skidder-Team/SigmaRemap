@@ -20,7 +20,7 @@ public class Class2600 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16839 = 20 * (1 + ShulkerEntity.method4862(this.field16840).nextInt(3));
       this.field16840.method4852(30);
    }

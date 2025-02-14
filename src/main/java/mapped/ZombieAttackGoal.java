@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.monster.ZombieEntity;
 
-public class ZombieAttackGoal extends Class2647 {
+public class ZombieAttackGoal extends MeleeAttackGoal {
    private static String[] field16989;
    private final ZombieEntity field17006;
    private int field17007;
@@ -13,8 +13,8 @@ public class ZombieAttackGoal extends Class2647 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field17007 = 0;
    }
 

@@ -56,7 +56,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var7 = Class7999.method27304()
          .method27305(var6)
          .method27308(
-            Items.field37801,
+            Items.IRON_INGOT,
             new TranslationTextComponent("advancements.story.smelt_iron.title"),
             new TranslationTextComponent("advancements.story.smelt_iron.description"),
             (ResourceLocation)null,
@@ -65,7 +65,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("iron", Class4491.method14164(Items.field37801))
+         .method27312("iron", Class4491.method14164(Items.IRON_INGOT))
          .method27317(var1, "story/smelt_iron");
       Advancement var8 = Class7999.method27304()
          .method27305(var7)

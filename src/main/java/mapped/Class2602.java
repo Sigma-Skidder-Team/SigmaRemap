@@ -53,7 +53,7 @@ public class Class2602 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       for (BoatEntity var4 : this.field16845.world.<BoatEntity>getEntitiesWithinAABB(BoatEntity.class, this.field16845.getBoundingBox().grow(5.0))) {
          if (var4.method3407() != null && var4.method3407() instanceof PlayerEntity) {
             this.field16846 = (PlayerEntity)var4.method3407();

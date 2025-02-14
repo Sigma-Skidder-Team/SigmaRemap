@@ -33,7 +33,7 @@ public class Class3704<E extends MobEntity> extends Class3676<E> {
       return this.method12581((E)var2) && this.method12582((E)var2);
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       var2.getBrain().method21406(MemoryModuleType.field39825, new Class7865(this.method12583((E)var2), true));
       var2.method4228().method20814(-this.field19765, 0.0F);
       var2.rotationYaw = MathHelper.method37796(var2.rotationYaw, var2.rotationYawHead, 0.0F);

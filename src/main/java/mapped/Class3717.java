@@ -67,7 +67,7 @@ public class Class3717 extends Class3676<VillagerEntity> {
       }
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
       this.field19797 = false;
       this.field19798 = var3;
       PlayerEntity var7 = this.method12607(var2).get();

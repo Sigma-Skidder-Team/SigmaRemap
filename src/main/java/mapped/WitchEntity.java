@@ -28,12 +28,12 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class WitchEntity extends Class1026 implements Class1022 {
+public class WitchEntity extends AbstractRaiderEntity implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
    private static final AttributeModifier field5719 = new AttributeModifier(field5718, "Drinking speed penalty", -0.25, AttributeModifier.Operation.ADDITION);
    private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(WitchEntity.class, DataSerializers.BOOLEAN);
    private int field5721;
-   private Class2712<Class1026> field5722;
+   private Class2712<AbstractRaiderEntity> field5722;
    private Class2711<PlayerEntity> field5723;
 
    public WitchEntity(EntityType<? extends WitchEntity> var1, World var2) {
@@ -43,18 +43,18 @@ public class WitchEntity extends Class1026 implements Class1022 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5722 = new Class2712<Class1026>(
-         this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.WITCH
+      this.field5722 = new Class2712<AbstractRaiderEntity>(
+         this, AbstractRaiderEntity.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.WITCH
       );
       this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<LivingEntity>)null);
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(2, new Class2598(this, 1.0, 60, 10.0F));
-      this.field5600.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(3, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(3, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class));
-      this.field5601.addGoal(2, this.field5722);
-      this.field5601.addGoal(3, this.field5723);
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(2, new Class2598(this, 1.0, 60, 10.0F));
+      this.goalSelector.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(3, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class));
+      this.targetSelector.addGoal(2, this.field5722);
+      this.targetSelector.addGoal(3, this.field5723);
    }
 
    @Override
@@ -211,7 +211,7 @@ public class WitchEntity extends Class1026 implements Class1022 {
          double var10 = var1.getPosZ() + var5.z - this.getPosZ();
          float var12 = MathHelper.sqrt(var6 * var6 + var10 * var10);
          Potion var13 = Potions.HARMING;
-         if (!(var1 instanceof Class1026)) {
+         if (!(var1 instanceof AbstractRaiderEntity)) {
             if (var12 >= 8.0F && !var1.isPotionActive(Effects.SLOWNESS)) {
                var13 = Potions.SLOWNESS;
             } else if (var1.getHealth() >= 8.0F && !var1.isPotionActive(Effects.POISON)) {

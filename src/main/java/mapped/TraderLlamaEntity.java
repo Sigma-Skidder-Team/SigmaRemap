@@ -42,8 +42,8 @@ public class TraderLlamaEntity extends LlamaEntity {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(1, new Class2747(this, 2.0));
-      this.field5601.addGoal(1, new Class2701(this, this));
+      this.goalSelector.addGoal(1, new Class2747(this, 2.0));
+      this.targetSelector.addGoal(1, new Class2701(this, this));
    }
 
    @Override

@@ -65,7 +65,7 @@ public class Class3749 extends Class3676<VillagerEntity> {
       return var6 instanceof WheatBlock && ((WheatBlock)var6).method12179(var5) || var5.isAir() && var7 instanceof FarmlandBlock;
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
       if (var3 > this.field19898 && this.field19897 != null) {
          var2.getBrain().method21406(MemoryModuleType.field39825, new Class7863(this.field19897));
          var2.getBrain().method21406(MemoryModuleType.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));

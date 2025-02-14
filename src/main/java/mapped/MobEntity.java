@@ -47,8 +47,8 @@ public abstract class MobEntity extends LivingEntity {
    public Class7956 field5597;
    private final Class7395 field5598;
    public Class6990 field5599;
-   public final Class6603 field5600;
-   public final Class6603 field5601;
+   public final Class6603 goalSelector;
+   public final Class6603 targetSelector;
    private LivingEntity field5602;
    private final Class9363 field5603;
    private final NonNullList<ItemStack> field5604 = NonNullList.<ItemStack>method68(2, ItemStack.EMPTY);
@@ -68,8 +68,8 @@ public abstract class MobEntity extends LivingEntity {
 
    public MobEntity(EntityType<? extends MobEntity> var1, World var2) {
       super(var1, var2);
-      this.field5600 = new Class6603(var2.method6821());
-      this.field5601 = new Class6603(var2.method6821());
+      this.goalSelector = new Class6603(var2.method6821());
+      this.targetSelector = new Class6603(var2.method6821());
       this.field5595 = new Class8092(this);
       this.field5596 = new Class6829(this);
       this.field5597 = new Class7956(this);
@@ -286,9 +286,9 @@ public abstract class MobEntity extends LivingEntity {
    public void method4240() {
       boolean var3 = !(this.method3407() instanceof MobEntity);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
-      this.field5600.method20010(Class2240.field14657, var3);
-      this.field5600.method20010(Class2240.field14659, var3 && var4);
-      this.field5600.method20010(Class2240.field14658, var3);
+      this.goalSelector.method20010(Class2240.field14657, var3);
+      this.goalSelector.method20010(Class2240.field14659, var3 && var4);
+      this.goalSelector.method20010(Class2240.field14658, var3);
    }
 
    @Override
@@ -663,10 +663,10 @@ public abstract class MobEntity extends LivingEntity {
       this.field5603.method35459();
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("targetSelector");
-      this.field5601.method20004();
+      this.targetSelector.method20004();
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("goalSelector");
-      this.field5600.method20004();
+      this.goalSelector.method20004();
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("navigation");
       this.field5599.method21658();
@@ -687,7 +687,7 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public void sendDebugPackets() {
-      DebugPacketSender.method23620(this.world, this, this.field5600);
+      DebugPacketSender.method23620(this.world, this, this.goalSelector);
    }
 
    public void updateAITasks() {

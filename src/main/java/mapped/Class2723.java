@@ -7,7 +7,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Random;
 
-public class Class2723<T extends PillagerEntity> extends Class2595 {
+public class Class2723<T extends PatrollerEntity> extends Class2595 {
    private static String[] field17211;
    private final T field17212;
    private final double field17213;
@@ -29,7 +29,7 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
    }
 
    @Override
@@ -41,7 +41,7 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
       boolean var3 = this.field17212.method4577();
       Class6990 var4 = this.field17212.method4230();
       if (var4.method21664()) {
-         List<PillagerEntity> var5 = this.method10931();
+         List<PatrollerEntity> var5 = this.method10931();
          if (this.field17212.method4579() && var5.isEmpty()) {
             this.field17212.method4580(false);
          } else if (var3 && this.field17212.method4574().withinDistance(this.field17212.getPositionVec(), 10.0)) {
@@ -58,7 +58,7 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
                )
              {
                if (var3) {
-                  for (PillagerEntity var12 : var5) {
+                  for (PatrollerEntity var12 : var5) {
                      var12.method4573(var10);
                   }
                }
@@ -70,10 +70,10 @@ public class Class2723<T extends PillagerEntity> extends Class2595 {
       }
    }
 
-   private List<PillagerEntity> method10931() {
+   private List<PatrollerEntity> method10931() {
       return this.field17212
          .world
-         .<PillagerEntity>getEntitiesInAABBexcluding(PillagerEntity.class, this.field17212.getBoundingBox().grow(16.0), var1 -> var1.method4549() && !var1.isEntityEqual(this.field17212));
+         .<PatrollerEntity>getEntitiesInAABBexcluding(PatrollerEntity.class, this.field17212.getBoundingBox().grow(16.0), var1 -> var1.method4549() && !var1.isEntityEqual(this.field17212));
    }
 
    private boolean method10932() {

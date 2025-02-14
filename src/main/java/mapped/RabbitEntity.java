@@ -52,16 +52,16 @@ public class RabbitEntity extends AnimalEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(1, new Class2749(this, 2.2));
-      this.field5600.addGoal(2, new Class2785(this, 0.8));
-      this.field5600.addGoal(3, new Class2680(this, 1.0, Ingredient.fromItems(Items.field38052, Items.field38057, Blocks.DANDELION), false));
-      this.field5600.addGoal(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
-      this.field5600.addGoal(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
-      this.field5600.addGoal(4, new Class2772<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.2, 2.2));
-      this.field5600.addGoal(5, new Class2634(this));
-      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
-      this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2749(this, 2.2));
+      this.goalSelector.addGoal(2, new BreedGoal(this, 0.8));
+      this.goalSelector.addGoal(3, new TemptGoal(this, 1.0, Ingredient.fromItems(Items.field38052, Items.field38057, Blocks.DANDELION), false));
+      this.goalSelector.addGoal(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(4, new Class2772<MonsterEntity>(this, MonsterEntity.class, 4.0F, 2.2, 2.2));
+      this.goalSelector.addGoal(5, new Class2634(this));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
+      this.goalSelector.addGoal(11, new LookAtGoal(this, PlayerEntity.class, 10.0F));
    }
 
    @Override
@@ -307,10 +307,10 @@ public class RabbitEntity extends AnimalEntity {
    public void method5115(int var1) {
       if (var1 == 99) {
          this.getAttribute(Attributes.ARMOR).method38661(8.0);
-         this.field5600.addGoal(4, new Class2648(this));
-         this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
-         this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-         this.field5601.addGoal(2, new NearestAttackableTargetGoal<WolfEntity>(this, WolfEntity.class, true));
+         this.goalSelector.addGoal(4, new Class2648(this));
+         this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918());
+         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<WolfEntity>(this, WolfEntity.class, true));
          if (!this.method3381()) {
             this.method3379(new TranslationTextComponent(Util.makeTranslationKey("entity", field5987)));
          }

@@ -37,7 +37,7 @@ public class Class2683 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       if (this.field17097.world instanceof ServerWorld) {
          ServerWorld var3 = (ServerWorld)this.field17097.world;
          this.field17098 = false;

@@ -25,8 +25,8 @@ import org.apache.logging.log4j.util.Supplier;
 
 public class Class8377 {
    private static final Logger field35948 = LogManager.getLogger();
-   private final Short2ObjectMap<Class9343> field35949 = new Short2ObjectOpenHashMap();
-   private final Map<PointOfInterestType, Set<Class9343>> field35950 = Maps.newHashMap();
+   private final Short2ObjectMap<PointOfInterest> field35949 = new Short2ObjectOpenHashMap();
+   private final Map<PointOfInterestType, Set<PointOfInterest>> field35950 = Maps.newHashMap();
    private final Runnable field35951;
    private boolean field35952;
 
@@ -35,7 +35,7 @@ public class Class8377 {
             var1 -> var1.group(
                      RecordCodecBuilder.point(var0),
                      Codec.BOOL.optionalFieldOf("Valid", false).forGetter(var0xx -> var0xx.field35952),
-                     Class9343.method35350(var0).listOf().fieldOf("Records").forGetter(var0xx -> ImmutableList.copyOf(var0xx.field35949.values()))
+                     PointOfInterest.method35350(var0).listOf().fieldOf("Records").forGetter(var0xx -> ImmutableList.copyOf(var0xx.field35949.values()))
                   )
                   .apply(var1, Class8377::new)
          )
@@ -46,33 +46,33 @@ public class Class8377 {
       this(var1, true, ImmutableList.of());
    }
 
-   private Class8377(Runnable var1, boolean var2, List<Class9343> var3) {
+   private Class8377(Runnable var1, boolean var2, List<PointOfInterest> var3) {
       this.field35951 = var1;
       this.field35952 = var2;
       var3.forEach(this::method29353);
    }
 
-   public Stream<Class9343> method29351(Predicate<PointOfInterestType> var1, Class2093 var2) {
+   public Stream<PointOfInterest> method29351(Predicate<PointOfInterestType> var1, PointOfInterestManager.Status var2) {
       return this.field35950
          .entrySet()
          .stream()
          .filter(var1x -> var1.test(var1x.getKey()))
-         .<Class9343>flatMap(var0 -> var0.getValue().stream())
+         .<PointOfInterest>flatMap(var0 -> var0.getValue().stream())
          .filter(var2.method8754());
    }
 
    public void method29352(BlockPos var1, PointOfInterestType var2) {
-      if (this.method29353(new Class9343(var1, var2, this.field35951))) {
+      if (this.method29353(new PointOfInterest(var1, var2, this.field35951))) {
          field35948.debug("Added POI of type {} @ {}", new Supplier[]{() -> var2, () -> var1});
          this.field35951.run();
       }
    }
 
-   private boolean method29353(Class9343 var1) {
+   private boolean method29353(PointOfInterest var1) {
       BlockPos var4 = var1.method35355();
       PointOfInterestType var5 = var1.method35356();
       short var6 = SectionPos.toRelativeOffset(var4);
-      Class9343 var7 = (Class9343)this.field35949.get(var6);
+      PointOfInterest var7 = (PointOfInterest)this.field35949.get(var6);
       if (var7 == null) {
          this.field35949.put(var6, var1);
          this.field35950.computeIfAbsent(var5, var0 -> Sets.newHashSet()).add(var1);
@@ -85,7 +85,7 @@ public class Class8377 {
    }
 
    public void method29354(BlockPos var1) {
-      Class9343 var4 = (Class9343)this.field35949.remove(SectionPos.toRelativeOffset(var1));
+      PointOfInterest var4 = (PointOfInterest)this.field35949.remove(SectionPos.toRelativeOffset(var1));
       if (var4 != null) {
          this.field35950.get(var4.method35356()).remove(var4);
          field35948.debug("Removed POI of type {} @ {}", new Supplier[]{var4::method35356, var4::method35355});
@@ -96,7 +96,7 @@ public class Class8377 {
    }
 
    public boolean method29355(BlockPos var1) {
-      Class9343 var4 = (Class9343)this.field35949.get(SectionPos.toRelativeOffset(var1));
+      PointOfInterest var4 = (PointOfInterest)this.field35949.get(SectionPos.toRelativeOffset(var1));
       if (var4 != null) {
          boolean var5 = var4.method35352();
          this.field35951.run();
@@ -108,13 +108,13 @@ public class Class8377 {
 
    public boolean method29356(BlockPos var1, Predicate<PointOfInterestType> var2) {
       short var5 = SectionPos.toRelativeOffset(var1);
-      Class9343 var6 = (Class9343)this.field35949.get(var5);
+      PointOfInterest var6 = (PointOfInterest)this.field35949.get(var5);
       return var6 != null && var2.test(var6.method35356());
    }
 
    public Optional<PointOfInterestType> method29357(BlockPos var1) {
       short var4 = SectionPos.toRelativeOffset(var1);
-      Class9343 var5 = (Class9343)this.field35949.get(var4);
+      PointOfInterest var5 = (PointOfInterest)this.field35949.get(var4);
       return var5 == null ? Optional.<PointOfInterestType>empty() : Optional.<PointOfInterestType>of(var5.method35356());
    }
 
@@ -124,7 +124,7 @@ public class Class8377 {
          this.method29359();
          var1.accept((var2, var3) -> {
             short var6 = SectionPos.toRelativeOffset(var2);
-            Class9343 var7 = (Class9343)var4.computeIfAbsent(var6, var3x -> new Class9343(var2, var3, this.field35951));
+            PointOfInterest var7 = (PointOfInterest)var4.computeIfAbsent(var6, var3x -> new PointOfInterest(var2, var3, this.field35951));
             this.method29353(var7);
          });
          this.field35952 = true;

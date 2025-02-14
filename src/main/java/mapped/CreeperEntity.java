@@ -37,16 +37,16 @@ public class CreeperEntity extends MonsterEntity implements Class1080 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(2, new Class2627(this));
-      this.field5600.addGoal(3, new Class2770<OcelotEntity>(this, OcelotEntity.class, 6.0F, 1.0, 1.2));
-      this.field5600.addGoal(3, new Class2770<CatEntity>(this, CatEntity.class, 6.0F, 1.0, 1.2));
-      this.field5600.addGoal(4, new Class2647(this, 1.0, false));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(6, new Class2668(this));
-      this.field5601.addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(2, new HurtByTargetGoal(this));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(2, new Class2627(this));
+      this.goalSelector.addGoal(3, new Class2770<OcelotEntity>(this, OcelotEntity.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(3, new Class2770<CatEntity>(this, CatEntity.class, 6.0F, 1.0, 1.2));
+      this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
    }
 
    public static MutableAttribute method5018() {

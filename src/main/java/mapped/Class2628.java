@@ -51,7 +51,7 @@ public abstract class Class2628 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.method10834();
       this.field16931 = 0;
       this.field16932 = this.field16928.getRNG().nextInt(this.field16928.getRNG().nextInt(1200) + 1200) + 1200;

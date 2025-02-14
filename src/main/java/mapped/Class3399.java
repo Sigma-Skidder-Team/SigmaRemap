@@ -215,11 +215,11 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    private int method12018(BlockState var1) {
-      return var1.method23462(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19052.getInt(var1.getBlock());
+      return var1.hasProperty(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19052.getInt(var1.getBlock());
    }
 
    private int method12019(BlockState var1) {
-      return var1.method23462(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19051.getInt(var1.getBlock());
+      return var1.hasProperty(BlockStateProperties.WATERLOGGED) && var1.<Boolean>get(BlockStateProperties.WATERLOGGED) ? 0 : this.field19051.getInt(var1.getBlock());
    }
 
    private void method12020(World var1, BlockPos var2, int var3, Random var4, int var5) {

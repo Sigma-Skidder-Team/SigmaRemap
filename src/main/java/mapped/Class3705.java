@@ -36,7 +36,7 @@ public class Class3705 extends Class3676<LivingEntity> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, LivingEntity var2, long var3) {
       LivingEntity var7 = this.method12584(var2);
       if (this.field19768.test(var2, var7)) {
          var2.getBrain().method21407(MemoryModuleType.field39857, true, (long)this.field19767);

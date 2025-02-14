@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 
-public class Class2658 extends Class2647 {
+public class Class2658 extends MeleeAttackGoal {
    private static String[] field16989;
    public final PolarBearEntity field17010;
 

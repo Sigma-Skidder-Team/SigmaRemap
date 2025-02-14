@@ -18,8 +18,8 @@ public class Class2599 extends Class2598 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field16837.method4304(true);
       this.field16837.setActiveHand(Hand.MAIN_HAND);
    }

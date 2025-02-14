@@ -33,10 +33,10 @@ public class GhastEntity extends Class1111 implements IMob {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(5, new Class2684(this));
-      this.field5600.addGoal(7, new Class2757(this));
-      this.field5600.addGoal(7, new Class2639(this));
-      this.field5601
+      this.goalSelector.addGoal(5, new Class2684(this));
+      this.goalSelector.addGoal(7, new Class2757(this));
+      this.goalSelector.addGoal(7, new Class2639(this));
+      this.targetSelector
          .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
    }
 

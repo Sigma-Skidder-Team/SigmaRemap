@@ -33,10 +33,10 @@ public class Class2625 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       if (!this.field16924) {
          this.field16924 = true;
-         this.field16922.method10804();
+         this.field16922.startExecuting();
       }
    }
 

@@ -33,8 +33,8 @@ public class Class3715 extends Class3676<LivingEntity> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      super.method12502(var1, var2, var3);
+   public void startExecuting(ServerWorld var1, LivingEntity var2, long var3) {
+      super.startExecuting(var1, var2, var3);
       Brain<?> var7 = var2.getBrain();
       var7.<List<LivingEntity>>getMemory(MemoryModuleType.field39819)
          .ifPresent(

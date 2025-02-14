@@ -30,8 +30,8 @@ public class WanderingTraderEntity extends Class1043 {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector
          .addGoal(
             0,
             new Class2596<WanderingTraderEntity>(
@@ -41,26 +41,26 @@ public class WanderingTraderEntity extends Class1043 {
                var1 -> this.world.method6741() && !var1.isInvisible()
             )
          );
-      this.field5600
+      this.goalSelector
          .addGoal(
             0,
             new Class2596<WanderingTraderEntity>(this, new ItemStack(Items.MILK_BUCKET), SoundEvents.field27222, var1 -> this.world.method6740() && var1.isInvisible())
          );
-      this.field5600.addGoal(1, new Class2781(this));
-      this.field5600.addGoal(1, new Class2770<ZombieEntity>(this, ZombieEntity.class, 8.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<EvokerEntity>(this, EvokerEntity.class, 12.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<VindicatorEntity>(this, VindicatorEntity.class, 8.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<VexEntity>(this, VexEntity.class, 8.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<Class1024>(this, Class1024.class, 15.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<IllusionerEntity>(this, IllusionerEntity.class, 12.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2770<ZoglinEntity>(this, ZoglinEntity.class, 10.0F, 0.5, 0.5));
-      this.field5600.addGoal(1, new Class2747(this, 0.5));
-      this.field5600.addGoal(1, new Class2615(this));
-      this.field5600.addGoal(2, new Class2789(this, this, 2.0, 0.35));
-      this.field5600.addGoal(4, new Class2660(this, 0.35));
-      this.field5600.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 0.35));
-      this.field5600.addGoal(9, new Class2613(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
+      this.goalSelector.addGoal(1, new Class2781(this));
+      this.goalSelector.addGoal(1, new Class2770<ZombieEntity>(this, ZombieEntity.class, 8.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<EvokerEntity>(this, EvokerEntity.class, 12.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<VindicatorEntity>(this, VindicatorEntity.class, 8.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<VexEntity>(this, VexEntity.class, 8.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<Class1024>(this, Class1024.class, 15.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<IllusionerEntity>(this, IllusionerEntity.class, 12.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2770<ZoglinEntity>(this, ZoglinEntity.class, 10.0F, 0.5, 0.5));
+      this.goalSelector.addGoal(1, new Class2747(this, 0.5));
+      this.goalSelector.addGoal(1, new Class2615(this));
+      this.goalSelector.addGoal(2, new Class2789(this, this, 2.0, 0.35));
+      this.goalSelector.addGoal(4, new Class2660(this, 0.35));
+      this.goalSelector.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 0.35));
+      this.goalSelector.addGoal(9, new Class2613(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
    }
 
    @Nullable

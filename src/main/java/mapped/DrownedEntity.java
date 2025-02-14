@@ -43,17 +43,17 @@ public class DrownedEntity extends ZombieEntity implements Class1022 {
 
    @Override
    public void applyEntityAI() {
-      this.field5600.addGoal(1, new Class2670(this, 1.0));
-      this.field5600.addGoal(2, new Class2599(this, 1.0, 40, 10.0F));
-      this.field5600.addGoal(2, new Class2655(this, 1.0, false));
-      this.field5600.addGoal(5, new Class2629(this, 1.0));
-      this.field5600.addGoal(6, new Class2659(this, 1.0, this.world.getSeaLevel()));
-      this.field5600.addGoal(7, new Class2736(this, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, DrownedEntity.class).method10918(ZombifiedPiglinEntity.class));
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
-      this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
+      this.goalSelector.addGoal(1, new Class2670(this, 1.0));
+      this.goalSelector.addGoal(2, new Class2599(this, 1.0, 40, 10.0F));
+      this.goalSelector.addGoal(2, new Class2655(this, 1.0, false));
+      this.goalSelector.addGoal(5, new Class2629(this, 1.0));
+      this.goalSelector.addGoal(6, new Class2659(this, 1.0, this.world.getSeaLevel()));
+      this.goalSelector.addGoal(7, new Class2736(this, 1.0));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, DrownedEntity.class).method10918(ZombifiedPiglinEntity.class));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    @Override

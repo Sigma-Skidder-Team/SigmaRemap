@@ -48,7 +48,7 @@ public class Class2790 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       List var3 = this.field17424
          .world
          .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17424.getBoundingBox().grow(8.0, 8.0, 8.0), FoxEntity.method5166());

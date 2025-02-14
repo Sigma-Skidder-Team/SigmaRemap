@@ -25,7 +25,7 @@ public class Class3721<E extends PiglinEntity> extends Class3676<E> {
       return !var2.isChild() && !Class4388.method13840(var2);
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       HoglinEntity var7 = var2.getBrain().<HoglinEntity>getMemory(MemoryModuleType.field39858).get();
       Class4388.method13849(var2, var7);
       Class4388.method13861(var2);

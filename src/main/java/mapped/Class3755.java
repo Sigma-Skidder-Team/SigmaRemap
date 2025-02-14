@@ -35,7 +35,7 @@ public class Class3755<E extends LivingEntity, T extends Entity> extends Class36
    }
 
    @Override
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       var2.stopRiding();
       var2.getBrain().method21405(MemoryModuleType.field39830);
    }

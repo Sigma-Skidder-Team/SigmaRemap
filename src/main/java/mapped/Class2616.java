@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
-public class Class2616 extends Class2612 {
+public class Class2616 extends LookAtGoal {
    private static String[] field16880;
    private final PandaEntity field16890;
 

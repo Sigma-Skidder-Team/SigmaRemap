@@ -36,8 +36,8 @@ public class Class3729 extends Class3676<VillagerEntity> {
       return this.method12508(var1, var2) && this.field19832 > 0 && var2.getBrain().<LivingEntity>getMemory(MemoryModuleType.field39828).isPresent();
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
-      super.method12502(var1, var2, var3);
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
+      super.startExecuting(var1, var2, var3);
       this.method12645(var2);
       this.field19830 = 0;
       this.field19831 = 0;

@@ -20,7 +20,7 @@ public class Class2639 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16964 = 0;
    }
 

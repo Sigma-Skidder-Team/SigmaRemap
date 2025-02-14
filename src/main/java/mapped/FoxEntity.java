@@ -82,34 +82,34 @@ public class FoxEntity extends AnimalEntity {
       this.field6001 = new NearestAttackableTargetGoal<AnimalEntity>(this, AnimalEntity.class, 10, false, false, var0 -> var0 instanceof ChickenEntity || var0 instanceof RabbitEntity);
       this.field6002 = new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, false, false, TurtleEntity.field5963);
       this.field6003 = new NearestAttackableTargetGoal<AbstractFishEntity>(this, AbstractFishEntity.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
-      this.field5600.addGoal(0, new Class2604(this));
-      this.field5600.addGoal(1, new Class2698(this));
-      this.field5600.addGoal(2, new Class2750(this, 2.2));
-      this.field5600.addGoal(3, new Class2786(this, 1.0));
-      this.field5600
+      this.goalSelector.addGoal(0, new Class2604(this));
+      this.goalSelector.addGoal(1, new Class2698(this));
+      this.goalSelector.addGoal(2, new Class2750(this, 2.2));
+      this.goalSelector.addGoal(3, new Class2786(this, 1.0));
+      this.goalSelector
          .addGoal(
             4,
             new Class2770<PlayerEntity>(
                this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.getUniqueID()) && !this.isFoxAggroed()
             )
          );
-      this.field5600
+      this.goalSelector
          .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.isFoxAggroed()));
-      this.field5600.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.isFoxAggroed()));
-      this.field5600.addGoal(5, new Class2729(this));
-      this.field5600.addGoal(6, new Class2755(this));
-      this.field5600.addGoal(6, new Class2641(this, 1.25));
-      this.field5600.addGoal(7, new Class2650(this, 1.2F, true));
-      this.field5600.addGoal(7, new Class2693(this));
-      this.field5600.addGoal(8, new Class2765(this, this, 1.25));
-      this.field5600.addGoal(9, new Class2609(this, 32, 200));
-      this.field5600.addGoal(10, new Class2636(this, 1.2F, 12, 2));
-      this.field5600.addGoal(10, new Class2745(this, 0.4F));
-      this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(11, new Class2790(this));
-      this.field5600.addGoal(12, new Class2614(this, PlayerEntity.class, 24.0F));
-      this.field5600.addGoal(13, new Class2694(this));
-      this.field5601
+      this.goalSelector.addGoal(4, new Class2770<PolarBearEntity>(this, PolarBearEntity.class, 8.0F, 1.6, 1.4, var1 -> !this.isFoxAggroed()));
+      this.goalSelector.addGoal(5, new Class2729(this));
+      this.goalSelector.addGoal(6, new Class2755(this));
+      this.goalSelector.addGoal(6, new Class2641(this, 1.25));
+      this.goalSelector.addGoal(7, new Class2650(this, 1.2F, true));
+      this.goalSelector.addGoal(7, new Class2693(this));
+      this.goalSelector.addGoal(8, new Class2765(this, this, 1.25));
+      this.goalSelector.addGoal(9, new Class2609(this, 32, 200));
+      this.goalSelector.addGoal(10, new Class2636(this, 1.2F, 12, 2));
+      this.goalSelector.addGoal(10, new Class2745(this, 0.4F));
+      this.goalSelector.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(11, new Class2790(this));
+      this.goalSelector.addGoal(12, new Class2614(this, PlayerEntity.class, 24.0F));
+      this.goalSelector.addGoal(13, new Class2694(this));
+      this.targetSelector
          .addGoal(3, new Class2714(LivingEntity.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
    }
 
@@ -268,13 +268,13 @@ public class FoxEntity extends AnimalEntity {
 
    private void method5124() {
       if (this.method5125() != Class186.field691) {
-         this.field5601.addGoal(4, this.field6003);
-         this.field5601.addGoal(6, this.field6001);
-         this.field5601.addGoal(6, this.field6002);
+         this.targetSelector.addGoal(4, this.field6003);
+         this.targetSelector.addGoal(6, this.field6001);
+         this.targetSelector.addGoal(6, this.field6002);
       } else {
-         this.field5601.addGoal(4, this.field6001);
-         this.field5601.addGoal(4, this.field6002);
-         this.field5601.addGoal(6, this.field6003);
+         this.targetSelector.addGoal(4, this.field6001);
+         this.targetSelector.addGoal(4, this.field6002);
+         this.targetSelector.addGoal(6, this.field6003);
       }
    }
 
@@ -728,7 +728,7 @@ public class FoxEntity extends AnimalEntity {
       var0.method5135(var1);
    }
 
-   public class Class2614 extends Class2612 {
+   public class Class2614 extends LookAtGoal {
 
       public Class2614(MobEntity var1, Class<? extends LivingEntity> var2, float var3) {
          super(var1, var2, var3);
@@ -777,7 +777,7 @@ public class FoxEntity extends AnimalEntity {
       }
 
       @Override
-      public void method10804() {
+      public void startExecuting() {
          this.method10923(this.field17201);
          this.field17190 = this.field17201;
          if (this.field17202 != null) {
@@ -787,7 +787,7 @@ public class FoxEntity extends AnimalEntity {
          FoxEntity.this.playSound(SoundEvents.field26588, 1.0F, 1.0F);
          method5175(FoxEntity.this, true);
          method5176(FoxEntity.this);
-         super.method10804();
+         super.startExecuting();
       }
    }
 }

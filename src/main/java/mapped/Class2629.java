@@ -32,10 +32,10 @@ public class Class2629 extends Class2628 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16939.method4649(false);
       DrownedEntity.method4650(this.field16939, this.field16939.field5757);
-      super.method10804();
+      super.startExecuting();
    }
 
    @Override

@@ -17,7 +17,7 @@ public class Class2645 extends Class2642 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16987 = 20;
       this.method10851(true);
    }

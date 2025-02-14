@@ -356,7 +356,7 @@ public class Class9172 {
          boolean var9 = true;
 
          for (Property var11 : var6) {
-            if (!var8.method23462(var11)) {
+            if (!var8.hasProperty(var11)) {
                var9 = false;
                break;
             }

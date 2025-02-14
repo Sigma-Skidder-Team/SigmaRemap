@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2765 extends Class2764 {
+public class Class2765 extends FollowParentGoal {
    private static String[] field17332;
    private final FoxEntity field17337;
    public final FoxEntity field17338;
@@ -22,8 +22,8 @@ public class Class2765 extends Class2764 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       FoxEntity.method5167(this.field17337);
-      super.method10804();
+      super.startExecuting();
    }
 }

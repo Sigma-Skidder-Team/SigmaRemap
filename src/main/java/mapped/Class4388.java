@@ -54,9 +54,9 @@ public class Class4388 {
          Activity.field40219,
          0,
          ImmutableList.<Class3676<? super PiglinEntity>>of(
-            new Class3681(45, 90),
-            new Class3735(),
-            new Class3697(),
+            new LookTask(45, 90),
+            new WalkToTargetTask(),
+            new InteractWithDoorTask(),
             method13810(),
             method13811(),
             new Class3722<>(),
@@ -111,8 +111,8 @@ public class Class4388 {
                  new Class3733<>(AbstractPiglinEntity::func_242337_eM, Class4388::method13831),
                  new Class3740<>(var0x -> !var0x.method4623(), new Class3748<>(2, 1.0F)),
                  new Class3740<>(PiglinEntity::method4623, new Class3748<>(4, 0.6F)),
-                 new Class3693<>(
-               ImmutableList.of(Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new Class3675(10, 20), 1))
+                 new FirstShuffledTask<>(
+               ImmutableList.of(Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1), Pair.of(new Class3718(0.6F, 2, 1), 1), Pair.of(new DummyTask(10, 20), 1))
             )
          ),
          MemoryModuleType.field39856
@@ -123,7 +123,7 @@ public class Class4388 {
       var0.method21426(
          Activity.field40231,
          10,
-         ImmutableList.<Class3676<? super PiglinEntity>>of(new Class3724<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
+         ImmutableList.<Class3676<? super PiglinEntity>>of(new PickupWantedItemTask<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
          MemoryModuleType.field39851
       );
    }
@@ -156,24 +156,24 @@ public class Class4388 {
       );
    }
 
-   private static Class3693<PiglinEntity> method13807() {
-      return new Class3693<PiglinEntity>(
+   private static FirstShuffledTask<PiglinEntity> method13807() {
+      return new FirstShuffledTask<PiglinEntity>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
             Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
-            Pair.of(new Class3675(30, 60), 1)
+            Pair.of(new DummyTask(30, 60), 1)
          )
       );
    }
 
-   private static Class3693<PiglinEntity> method13808() {
-      return new Class3693<PiglinEntity>(
+   private static FirstShuffledTask<PiglinEntity> method13808() {
+      return new FirstShuffledTask<PiglinEntity>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
             Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, MemoryModuleType.field39828, 0.6F, 2), 2),
             Pair.of(new Class3740<LivingEntity>(Class4388::method13874, new Class3694(0.6F, 3)), 2),
-            Pair.of(new Class3675(30, 60), 1)
+            Pair.of(new DummyTask(30, 60), 1)
          )
       );
    }

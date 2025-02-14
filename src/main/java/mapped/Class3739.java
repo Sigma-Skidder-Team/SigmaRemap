@@ -33,7 +33,7 @@ public class Class3739 extends Class3676<CreatureEntity> {
       return var1.method6814().nextInt(10) == 0 && this.method12691(var2);
    }
 
-   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, CreatureEntity var2, long var3) {
       LivingEntity var7 = this.method12688(var2);
       if (var7 == null) {
          Optional var8 = this.method12684(var2);

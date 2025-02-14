@@ -24,7 +24,7 @@ public class Class3720 extends Class3676<MobEntity> {
       this.field19805 = var1;
    }
 
-   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, MobEntity var2, long var3) {
       LivingEntity var7 = var2.getBrain().<LivingEntity>getMemory(MemoryModuleType.ATTACK_TARGET).get();
       if (Class6983.method21583(var2, var7) && Class6983.method21580(var2, var7, 1)) {
          this.method12614(var2);

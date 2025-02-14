@@ -51,15 +51,15 @@ public class Class7091 extends Class7092 {
       if (var9 != null) {
          BlockState var10 = var5.field35531;
          BlockState var11 = var9.getDefaultState();
-         if (var10.method23462(StairsBlock.FACING)) {
+         if (var10.hasProperty(StairsBlock.FACING)) {
             var11 = var11.with(StairsBlock.FACING, var10.<Direction>get(StairsBlock.FACING));
          }
 
-         if (var10.method23462(StairsBlock.HALF)) {
+         if (var10.hasProperty(StairsBlock.HALF)) {
             var11 = var11.with(StairsBlock.HALF, var10.<Half>get(StairsBlock.HALF));
          }
 
-         if (var10.method23462(SlabBlock.field18605)) {
+         if (var10.hasProperty(SlabBlock.field18605)) {
             var11 = var11.with(SlabBlock.field18605, var10.<SlabType>get(SlabBlock.field18605));
          }
 

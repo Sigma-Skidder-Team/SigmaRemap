@@ -53,18 +53,18 @@ public class PolarBearEntity extends AnimalEntity implements IAngerable {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2658(this));
-      this.field5600.addGoal(1, new Class2752(this));
-      this.field5600.addGoal(4, new Class2764(this, 1.25));
-      this.field5600.addGoal(5, new Class2736(this, 1.0));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(7, new Class2668(this));
-      this.field5601.addGoal(1, new Class2707(this));
-      this.field5601.addGoal(2, new Class2720(this));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.addGoal(4, new NearestAttackableTargetGoal<FoxEntity>(this, FoxEntity.class, 10, true, true, (Predicate<LivingEntity>)null));
-      this.field5601.addGoal(5, new ResetAngerGoal<PolarBearEntity>(this, false));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2658(this));
+      this.goalSelector.addGoal(1, new Class2752(this));
+      this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25));
+      this.goalSelector.addGoal(5, new Class2736(this, 1.0));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new Class2707(this));
+      this.targetSelector.addGoal(2, new Class2720(this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<FoxEntity>(this, FoxEntity.class, 10, true, true, (Predicate<LivingEntity>)null));
+      this.targetSelector.addGoal(5, new ResetAngerGoal<PolarBearEntity>(this, false));
    }
 
    public static MutableAttribute method5180() {

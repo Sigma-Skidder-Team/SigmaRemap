@@ -142,9 +142,9 @@ public class SkeletonHorseEntity extends AbstractHorseEntity {
       if (var1 != this.field5920) {
          this.field5920 = var1;
          if (!var1) {
-            this.field5600.method20003(this.field5919);
+            this.goalSelector.method20003(this.field5919);
          } else {
-            this.field5600.addGoal(1, this.field5919);
+            this.goalSelector.addGoal(1, this.field5919);
          }
       }
    }

@@ -77,18 +77,18 @@ public abstract class AbstractHorseEntity extends AnimalEntity implements Class1
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2747(this, 1.2));
-      this.field5600.addGoal(1, new Class2762(this, 1.2));
-      this.field5600.addGoal(2, new Class2785(this, 1.0, AbstractHorseEntity.class));
-      this.field5600.addGoal(4, new Class2764(this, 1.0));
-      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
-      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(8, new Class2668(this));
+      this.goalSelector.addGoal(1, new Class2747(this, 1.2));
+      this.goalSelector.addGoal(1, new Class2762(this, 1.2));
+      this.goalSelector.addGoal(2, new BreedGoal(this, 1.0, AbstractHorseEntity.class));
+      this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.0));
+      this.goalSelector.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
       this.method4929();
    }
 
    public void method4929() {
-      this.field5600.addGoal(0, new Class2603(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
    }
 
    @Override

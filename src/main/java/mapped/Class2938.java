@@ -36,7 +36,7 @@ public class Class2938 extends Class2898<Class4712> {
             if (var15.doesSnowGenerate(var1, var8)) {
                var1.setBlockState(var8, Blocks.SNOW.getDefaultState(), 2);
                BlockState var16 = var1.getBlockState(var9);
-               if (var16.method23462(PodzolBlock.field19323)) {
+               if (var16.hasProperty(PodzolBlock.field19323)) {
                   var1.setBlockState(var9, var16.with(PodzolBlock.field19323, Boolean.valueOf(true)), 2);
                }
             }

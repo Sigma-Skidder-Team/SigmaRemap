@@ -29,13 +29,13 @@ public class EndermiteEntity extends MonsterEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(2, new Class2647(this, 1.0, false));
-      this.field5600.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    @Override

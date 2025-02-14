@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 
-public class Class2653 extends Class2647 {
+public class Class2653 extends MeleeAttackGoal {
    private static String[] field16989;
    public final RavagerEntity field17005;
 

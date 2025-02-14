@@ -46,8 +46,8 @@ public class Class2758<T extends MonsterEntity & Class1022> extends Class2595 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field17304.method4304(true);
    }
 

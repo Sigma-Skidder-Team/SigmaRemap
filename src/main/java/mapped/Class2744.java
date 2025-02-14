@@ -52,7 +52,7 @@ public class Class2744 extends Class2736 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       if (this.field17272) {
          World var3 = this.field17258.world;
          BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
@@ -64,7 +64,7 @@ public class Class2744 extends Class2736 {
             this.field17258.remove();
          }
       } else {
-         super.method10804();
+         super.startExecuting();
       }
    }
 }

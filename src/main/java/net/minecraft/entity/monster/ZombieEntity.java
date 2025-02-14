@@ -58,21 +58,21 @@ public class ZombieEntity extends MonsterEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(4, new Class2633(this, this, 1.0, 3));
-      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(8, new Class2668(this));
+      this.goalSelector.addGoal(4, new Class2633(this, this, 1.0, 3));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
       this.applyEntityAI();
    }
 
    public void applyEntityAI() {
-      this.field5600.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
-      this.field5600.addGoal(6, new MoveThroughVillageGoal(this, 1.0, true, 4, this::method4655));
-      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918(ZombifiedPiglinEntity.class));
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
-      this.field5601.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
+      this.goalSelector.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(6, new MoveThroughVillageGoal(this, 1.0, true, 4, this::method4655));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918(ZombifiedPiglinEntity.class));
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<TurtleEntity>(this, TurtleEntity.class, 10, true, false, TurtleEntity.field5963));
    }
 
    public static MutableAttribute method4653() {
@@ -106,13 +106,13 @@ public class ZombieEntity extends MonsterEntity {
             this.field5765 = var1;
             ((Class6991)this.method4230()).method21682(var1);
             if (!var1) {
-               this.field5600.method20003(this.field5764);
+               this.goalSelector.method20003(this.field5764);
             } else {
-               this.field5600.addGoal(1, this.field5764);
+               this.goalSelector.addGoal(1, this.field5764);
             }
          }
       } else if (this.field5765) {
-         this.field5600.method20003(this.field5764);
+         this.goalSelector.method20003(this.field5764);
          this.field5765 = false;
       }
    }

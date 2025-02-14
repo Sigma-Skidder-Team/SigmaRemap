@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2649 extends Class2647 {
+public class Class2649 extends MeleeAttackGoal {
    private static String[] field16989;
    private final PandaEntity field17001;
 

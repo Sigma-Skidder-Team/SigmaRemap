@@ -12,8 +12,8 @@ public class Class2707 extends HurtByTargetGoal {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       if (this.field17185.isChild()) {
          this.method10919();
          this.method10807();

@@ -62,7 +62,7 @@ public class Class7017 implements Class7016 {
 
    private int method21746(ServerWorld var1, BlockPos var2) {
       byte var5 = 48;
-      if (var1.getPointOfInterestManager().method6663(PointOfInterestType.HOME.getPredicate(), var2, 48, Class2093.field13636) > 4L) {
+      if (var1.getPointOfInterestManager().method6663(PointOfInterestType.HOME.getPredicate(), var2, 48, PointOfInterestManager.Status.IS_OCCUPIED) > 4L) {
          List var6 = var1.<CatEntity>getEntitiesWithinAABB(CatEntity.class, new AxisAlignedBB(var2).grow(48.0, 8.0, 48.0));
          if (var6.size() < 5) {
             return this.method21748(var2, var1);

@@ -28,7 +28,7 @@ public class Class9743 {
 
    private static void method38194(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
       var1.method21425(Activity.field40219, 0,
-              ImmutableList.of(new Class3681(45, 90), new Class3735(), new Class3697(), new Class3701<>()));
+              ImmutableList.of(new LookTask(45, 90), new WalkToTargetTask(), new InteractWithDoorTask(), new Class3701<>()));
    }
 
    private static void method38195(PiglinBruteEntity var0, Brain<PiglinBruteEntity> var1) {
@@ -48,27 +48,27 @@ public class Class9743 {
       );
    }
 
-   private static Class3693<PiglinBruteEntity> method38197() {
-      return new Class3693<PiglinBruteEntity>(
+   private static FirstShuffledTask<PiglinBruteEntity> method38197() {
+      return new FirstShuffledTask<PiglinBruteEntity>(
          ImmutableList.of(
             Pair.of(new Class3738(EntityType.PLAYER, 8.0F), 1),
             Pair.of(new Class3738(EntityType.PIGLIN, 8.0F), 1),
             Pair.of(new Class3738(EntityType.PIGLIN_BRUTE, 8.0F), 1),
             Pair.of(new Class3738(8.0F), 1),
-            Pair.of(new Class3675(30, 60), 1)
+            Pair.of(new DummyTask(30, 60), 1)
          )
       );
    }
 
-   private static Class3693<PiglinBruteEntity> method38198() {
-      return new Class3693<PiglinBruteEntity>(
+   private static FirstShuffledTask<PiglinBruteEntity> method38198() {
+      return new FirstShuffledTask<PiglinBruteEntity>(
          ImmutableList.of(
             Pair.of(new Class3718(0.6F), 2),
             Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN, 8, MemoryModuleType.field39828, 0.6F, 2), 2),
             Pair.of(Class3696.<LivingEntity>method12551(EntityType.PIGLIN_BRUTE, 8, MemoryModuleType.field39828, 0.6F, 2), 2),
             Pair.of(new Class3700(MemoryModuleType.field39813, 0.6F, 2, 100), 2),
             Pair.of(new Class3726(MemoryModuleType.field39813, 0.6F, 5), 2),
-            Pair.of(new Class3675(30, 60), 1)
+            Pair.of(new DummyTask(30, 60), 1)
          )
       );
    }

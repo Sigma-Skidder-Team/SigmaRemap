@@ -12,7 +12,7 @@ public class Class3680<E extends PiglinEntity> extends Class3676<E> {
       super(ImmutableMap.of(MemoryModuleType.ATTACK_TARGET, Class2217.field14484, MemoryModuleType.field39855, Class2217.field14486));
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       if (this.method12515((E)var2)) {
          Class4388.method13861(var2);
       }

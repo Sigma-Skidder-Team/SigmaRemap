@@ -32,7 +32,7 @@ public class Class2596<T extends MobEntity> extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16817.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.field16818.copy());
       this.field16817.setActiveHand(Hand.MAIN_HAND);
    }

@@ -31,7 +31,7 @@ public class Class9069 {
    }
 
    private static void method33779(Brain<HoglinEntity> var0) {
-      var0.method21425(Activity.field40219, 0, ImmutableList.of(new Class3681(45, 90), new Class3735()));
+      var0.method21425(Activity.field40219, 0, ImmutableList.of(new LookTask(45, 90), new WalkToTargetTask()));
    }
 
    private static void method33780(Brain<HoglinEntity> var0) {
@@ -82,8 +82,8 @@ public class Class9069 {
       );
    }
 
-   private static Class3693<HoglinEntity> method33783() {
-      return new Class3693<HoglinEntity>(ImmutableList.of(Pair.of(new Class3718(0.4F), 2), Pair.of(new Class3694(0.4F, 3), 2), Pair.of(new Class3675(30, 60), 1)));
+   private static FirstShuffledTask<HoglinEntity> method33783() {
+      return new FirstShuffledTask<HoglinEntity>(ImmutableList.of(Pair.of(new Class3718(0.4F), 2), Pair.of(new Class3694(0.4F, 3), 2), Pair.of(new DummyTask(30, 60), 1)));
    }
 
    public static void method33784(HoglinEntity var0) {

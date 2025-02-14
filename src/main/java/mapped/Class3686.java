@@ -20,7 +20,7 @@ public class Class3686 extends Class3676<LivingEntity> {
    }
 
    @Override
-   public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, LivingEntity var2, long var3) {
       Optional<Vector3d> var7 = Optional.ofNullable(this.method12532(var1, var2));
       if (var7.isPresent()) {
          var2.getBrain().method21408(MemoryModuleType.field39824, var7.map(var1x -> new Class8999(var1x, this.field19704, 0)));

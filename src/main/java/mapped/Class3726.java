@@ -27,7 +27,7 @@ public class Class3726 extends Class3676<CreatureEntity> {
          && ((Class9378)var5.get()).method35579().withinDistance(var2.getPositionVec(), (double)this.field19822);
    }
 
-   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, CreatureEntity var2, long var3) {
       if (var3 > this.field19821) {
          Optional<Vector3d> var7 = Optional.<Vector3d>ofNullable(Class8037.method27583(var2, 8, 6));
          var2.getBrain().method21408(MemoryModuleType.field39824, var7.map(var1x -> new Class8999(var1x, this.field19823, 1)));

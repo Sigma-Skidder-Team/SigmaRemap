@@ -27,7 +27,7 @@ public class Class3706 extends Class3676<VillagerEntity> {
       }
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
       Brain<VillagerEntity> var7 = var2.getBrain();
       var7.method21406(MemoryModuleType.field39845, var3);
       var7.getMemory(MemoryModuleType.field39814).ifPresent(var1x -> var7.method21406(MemoryModuleType.field39825, new Class7863(var1x.method35579())));

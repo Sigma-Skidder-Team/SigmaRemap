@@ -36,14 +36,14 @@ public abstract class Class3676<E extends LivingEntity> {
          this.field19685 = Class2092.field13633;
          int var7 = this.field19687 + var1.method6814().nextInt(this.field19688 + 1 - this.field19687);
          this.field19686 = var3 + (long)var7;
-         this.method12502(var1, (E)var2, var3);
+         this.startExecuting(var1, (E)var2, var3);
          return true;
       } else {
          return false;
       }
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
    }
 
    public final void method12503(ServerWorld var1, E var2, long var3) {

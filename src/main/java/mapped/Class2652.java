@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2652 extends Class2647 {
+public class Class2652 extends MeleeAttackGoal {
    private static String[] field16989;
    public final Class1082 field17004;
 
@@ -16,8 +16,8 @@ public class Class2652 extends Class2647 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field17004.method4304(true);
    }
 }

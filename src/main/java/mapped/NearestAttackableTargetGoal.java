@@ -66,9 +66,9 @@ public class NearestAttackableTargetGoal<T extends LivingEntity> extends Class26
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17153.setAttackTarget(this.field17190);
-      super.method10804();
+      super.startExecuting();
    }
 
    public void method10923(LivingEntity var1) {

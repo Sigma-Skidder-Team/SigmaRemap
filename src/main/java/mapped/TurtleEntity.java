@@ -148,15 +148,15 @@ public class TurtleEntity extends AnimalEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2751(this, 1.2));
-      this.field5600.addGoal(1, new Class2787(this, 1.0));
-      this.field5600.addGoal(1, new Class2630(this, 1.0));
-      this.field5600.addGoal(2, new Class2731(this, 1.1, Blocks.SEAGRASS.asItem()));
-      this.field5600.addGoal(3, new Class2635(this, 1.0));
-      this.field5600.addGoal(4, new Class2760(this, 1.0));
-      this.field5600.addGoal(7, new Class2594(this, 1.0));
-      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(9, new Class2743(this, 1.0, 100));
+      this.goalSelector.addGoal(0, new Class2751(this, 1.2));
+      this.goalSelector.addGoal(1, new Class2787(this, 1.0));
+      this.goalSelector.addGoal(1, new Class2630(this, 1.0));
+      this.goalSelector.addGoal(2, new Class2731(this, 1.1, Blocks.SEAGRASS.asItem()));
+      this.goalSelector.addGoal(3, new Class2635(this, 1.0));
+      this.goalSelector.addGoal(4, new Class2760(this, 1.0));
+      this.goalSelector.addGoal(7, new Class2594(this, 1.0));
+      this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(9, new Class2743(this, 1.0, 100));
    }
 
    public static MutableAttribute method5054() {

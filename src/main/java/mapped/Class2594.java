@@ -23,7 +23,7 @@ public class Class2594 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       Random var5 = TurtleEntity.method5065(this.field16812);
       int var6 = var5.nextInt(1025) - 512;
       int var7 = var5.nextInt(9) - 4;

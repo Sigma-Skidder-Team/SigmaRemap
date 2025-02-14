@@ -42,19 +42,19 @@ public class IronGolemEntity extends Class1056 implements IAngerable {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2647(this, 1.0, true));
-      this.field5600.addGoal(2, new Class2782(this, 0.9, 32.0F));
-      this.field5600.addGoal(2, new Class2742(this, 0.6, false));
-      this.field5600.addGoal(4, new Class2739(this, 0.6));
-      this.field5600.addGoal(5, new Class2777(this));
-      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5601.addGoal(1, new Class2700(this));
-      this.field5601.addGoal(2, new HurtByTargetGoal(this));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601
+      this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.0, true));
+      this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9, 32.0F));
+      this.goalSelector.addGoal(2, new ReturnToVillageGoal(this, 0.6, false));
+      this.goalSelector.addGoal(4, new PatrolVillageGoal(this, 0.6));
+      this.goalSelector.addGoal(5, new ShowVillagerFlowerGoal(this));
+      this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new DefendVillageTargetGoal(this));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.targetSelector
          .addGoal(3, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, var0 -> var0 instanceof IMob && !(var0 instanceof CreeperEntity)));
-      this.field5601.addGoal(4, new ResetAngerGoal<IronGolemEntity>(this, false));
+      this.targetSelector.addGoal(4, new ResetAngerGoal<IronGolemEntity>(this, false));
    }
 
    @Override

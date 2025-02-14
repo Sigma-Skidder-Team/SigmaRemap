@@ -35,14 +35,14 @@ public class ChickenEntity extends AnimalEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(1, new Class2747(this, 1.4));
-      this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.0, false, field5964));
-      this.field5600.addGoal(4, new Class2764(this, 1.1));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(7, new Class2668(this));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(1, new Class2747(this, 1.4));
+      this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
+      this.goalSelector.addGoal(3, new TemptGoal(this, 1.0, false, field5964));
+      this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(7, new LookRandomlyGoal(this));
    }
 
    @Override

@@ -60,7 +60,7 @@ public class Class6603 {
                && method20005(var8, var8.method10810(), this.field29041)
                && var8.method10803()) {
                method20006(var8, var8.method10810(), this.field29041);
-               var8.method10804();
+               var8.startExecuting();
             }
          }
       }

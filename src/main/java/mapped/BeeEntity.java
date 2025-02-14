@@ -49,9 +49,9 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
    private int field5695 = 0;
    private BlockPos field5696 = null;
    private BlockPos field5697 = null;
-   private Class2663 field5698;
-   private Class2664 field5699;
-   private Class2665 field5700;
+   private PollinateGoal field5698;
+   private FindBeehiveGoal field5699;
+   private FindFlowerGoal field5700;
    private int field5701;
 
    public BeeEntity(EntityType<? extends BeeEntity> var1, World var2) {
@@ -79,24 +79,24 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2651(this, this, 1.4F, true));
-      this.field5600.addGoal(1, new Class2666(this, null));
-      this.field5600.addGoal(2, new Class2785(this, 1.0));
-      this.field5600.addGoal(3, new Class2680(this, 1.25, Ingredient.fromTag(ItemTags.field26107), false));
-      this.field5698 = new Class2663(this);
-      this.field5600.addGoal(4, this.field5698);
-      this.field5600.addGoal(5, new Class2764(this, 1.25));
-      this.field5600.addGoal(5, new Class2667(this, null));
-      this.field5699 = new Class2664(this);
-      this.field5600.addGoal(5, this.field5699);
-      this.field5700 = new Class2665(this);
-      this.field5600.addGoal(6, this.field5700);
-      this.field5600.addGoal(7, new Class2662(this, null));
-      this.field5600.addGoal(8, new Class2687(this));
-      this.field5600.addGoal(9, new Class2603(this));
-      this.field5601.addGoal(1, new Class2708(this, this).method10918(new Class[0]));
-      this.field5601.addGoal(2, new Class2715(this));
-      this.field5601.addGoal(3, new ResetAngerGoal<BeeEntity>(this, true));
+      this.goalSelector.addGoal(0, new StingGoal(this, this, 1.4F, true));
+      this.goalSelector.addGoal(1, new EnterBeehiveGoal(this, null));
+      this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
+      this.goalSelector.addGoal(3, new TemptGoal(this, 1.25, Ingredient.fromTag(ItemTags.field26107), false));
+      this.field5698 = new PollinateGoal(this);
+      this.goalSelector.addGoal(4, this.field5698);
+      this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.25));
+      this.goalSelector.addGoal(5, new UpdateBeehiveGoal(this, null));
+      this.field5699 = new FindBeehiveGoal(this);
+      this.goalSelector.addGoal(5, this.field5699);
+      this.field5700 = new FindFlowerGoal(this);
+      this.goalSelector.addGoal(6, this.field5700);
+      this.goalSelector.addGoal(7, new FindPollinationTargetGoal(this, null));
+      this.goalSelector.addGoal(8, new WanderGoal(this));
+      this.goalSelector.addGoal(9, new SwimGoal(this));
+      this.targetSelector.addGoal(1, new AngerGoal(this, this).method10918(new Class[0]));
+      this.targetSelector.addGoal(2, new AttackPlayerGoal(this));
+      this.targetSelector.addGoal(3, new ResetAngerGoal<BeeEntity>(this, true));
    }
 
    @Override
@@ -246,7 +246,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
    }
 
    private boolean method4425() {
-      if (this.field5692 <= 0 && !Class2663.method10870(this.field5698) && !this.method4440() && this.getAttackTarget() == null) {
+      if (this.field5692 <= 0 && !PollinateGoal.method10870(this.field5698) && !this.method4440() && this.getAttackTarget() == null) {
          boolean var3 = this.method4424() || this.world.method6795() || this.world.method6741() || this.method4438();
          return var3 && !this.method4430();
       } else {
@@ -531,7 +531,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
       if (!this.isInvulnerableTo(source)) {
          Entity var5 = source.getTrueSource();
          if (!this.world.isRemote) {
-            Class2663.method10871(this.field5698);
+            PollinateGoal.method10871(this.field5698);
          }
 
          return super.attackEntityFrom(source, var2);
@@ -560,7 +560,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
    }
 
    // $VF: synthetic method
-   public static Class2663 method4451(BeeEntity var0) {
+   public static PollinateGoal method4451(BeeEntity var0) {
       return var0.field5698;
    }
 
@@ -770,7 +770,7 @@ public class BeeEntity extends AnimalEntity implements IAngerable, IFlyingAnimal
    }
 
    // $VF: synthetic method
-   public static Class2664 method4493(BeeEntity var0) {
+   public static FindBeehiveGoal method4493(BeeEntity var0) {
       return var0.field5699;
    }
 

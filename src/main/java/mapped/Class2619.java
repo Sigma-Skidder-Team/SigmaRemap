@@ -26,7 +26,7 @@ public class Class2619 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field16902 = (ServerPlayerEntity)this.field16901.method4400();
       this.field16903 = false;
    }

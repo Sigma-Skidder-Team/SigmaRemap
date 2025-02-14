@@ -64,7 +64,7 @@ public class Class7531 extends WorldSavedData {
       DebugPacketSender.method23621(this.field32333, this.field32332.values());
    }
 
-   public static boolean method24612(Class1026 var0, Raid var1) {
+   public static boolean method24612(AbstractRaiderEntity var0, Raid var1) {
       return var0 != null && var1 != null && var1.method25394() != null
          ? var0.isAlive() && var0.method4547() && var0.getIdleTime() <= 2400 && var0.world.getDimensionType() == var1.method25394().getDimensionType()
          : false;
@@ -82,12 +82,12 @@ public class Class7531 extends WorldSavedData {
             return null;
          } else {
             BlockPos var5 = var1.getPosition();
-            List<Class9343> var6 = this.field32333.getPointOfInterestManager().method6666(PointOfInterestType.MATCH_ANY, var5, 64, Class2093.field13636).collect(Collectors.toList());
+            List<PointOfInterest> var6 = this.field32333.getPointOfInterestManager().func_219146_b(PointOfInterestType.MATCH_ANY, var5, 64, PointOfInterestManager.Status.IS_OCCUPIED).collect(Collectors.toList());
             int var7 = 0;
             Vector3d var8 = Vector3d.ZERO;
 
-            for (Class9343 var10 : var6) {
-               BlockPos var11 = var10.method35355();
+            for (PointOfInterest var10 : var6) {
+               BlockPos var11 = var10.getPos();
                var8 = var8.add((double)var11.getX(), (double)var11.getY(), (double)var11.getZ());
                var7++;
             }

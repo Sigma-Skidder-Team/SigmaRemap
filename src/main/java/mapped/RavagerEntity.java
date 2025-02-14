@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
-public class RavagerEntity extends Class1026 {
+public class RavagerEntity extends AbstractRaiderEntity {
    private static final Predicate<Entity> field5727 = var0 -> var0.isAlive() && !(var0 instanceof RavagerEntity);
    private int field5728;
    private int field5729;
@@ -41,25 +41,25 @@ public class RavagerEntity extends Class1026 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(4, new Class2653(this));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.4));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
-      this.field5601.addGoal(2, new HurtByTargetGoal(this, Class1026.class).method10918());
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(4, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, true));
-      this.field5601.addGoal(4, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(4, new Class2653(this));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.4));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 8.0F));
+      this.targetSelector.addGoal(2, new HurtByTargetGoal(this, AbstractRaiderEntity.class).method10918());
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, true));
+      this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    @Override
    public void method4240() {
       boolean var3 = !(this.method3407() instanceof MobEntity) || this.method3407().getType().method33228(EntityTypeTags.field38735);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
-      this.field5600.method20010(Class2240.field14657, var3);
-      this.field5600.method20010(Class2240.field14659, var3 && var4);
-      this.field5600.method20010(Class2240.field14658, var3);
-      this.field5600.method20010(Class2240.field14660, var3);
+      this.goalSelector.method20010(Class2240.field14657, var3);
+      this.goalSelector.method20010(Class2240.field14659, var3 && var4);
+      this.goalSelector.method20010(Class2240.field14658, var3);
+      this.goalSelector.method20010(Class2240.field14660, var3);
    }
 
    public static MutableAttribute method4581() {

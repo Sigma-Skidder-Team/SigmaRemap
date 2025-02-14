@@ -55,11 +55,11 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    @Override
    public void applyEntityAI() {
-      this.field5600.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
-      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.addGoal(3, new ResetAngerGoal<ZombifiedPiglinEntity>(this, true));
+      this.goalSelector.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
+      this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.targetSelector.addGoal(3, new ResetAngerGoal<ZombifiedPiglinEntity>(this, true));
    }
 
    public static MutableAttribute func_234352_eU_() {

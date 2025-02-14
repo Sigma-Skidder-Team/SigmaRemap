@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.SoundEvents;
 
-public class Class2650 extends Class2647 {
+public class Class2650 extends MeleeAttackGoal {
    private static String[] field16989;
    public final FoxEntity field17002;
 
@@ -23,9 +23,9 @@ public class Class2650 extends Class2647 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17002.method5144(false);
-      super.method10804();
+      super.startExecuting();
    }
 
    @Override

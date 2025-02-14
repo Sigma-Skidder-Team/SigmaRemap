@@ -56,7 +56,7 @@ public class Class2755 extends Class2754 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17295.setJumping(true);
       this.field17295.method5141(true);
       this.field17295.method5144(false);

@@ -15,7 +15,7 @@ public class Class3722<E extends PiglinEntity> extends Class3676<E> {
       return !var2.getHeldItemOffhand().isEmpty() && var2.getHeldItemOffhand().getItem() != Items.field38119;
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       Class4388.method13817(var2, true);
    }
 }

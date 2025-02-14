@@ -105,7 +105,7 @@ public class Class4455 extends Class4441<Item> {
       this.method14014(ItemTags.field26119).method31560(Items.ARROW, Items.field38117, Items.field38116);
       this.method14014(ItemTags.field26120).method31560(Items.field38048, Items.field38047);
       this.method14014(ItemTags.field26121)
-         .method31560(Items.NETHERITE_INGOT, Items.EMERALD, Items.DIAMOND, Items.GOLD_INGOT, Items.field37801);
+         .method31560(Items.NETHERITE_INGOT, Items.EMERALD, Items.DIAMOND, Items.GOLD_INGOT, Items.IRON_INGOT);
       this.method14014(ItemTags.field26108).method31558(Items.field37445).method31558(Items.field38169).method31558(Items.field38172);
       this.method14014(ItemTags.field26109)
          .method31559(ItemTags.field26110)

@@ -55,8 +55,8 @@ public class Raid {
    private static final ITextComponent DEFEAT = new TranslationTextComponent("event.minecraft.raid.defeat");
    private static final ITextComponent RAID_VICTORY = RAID.deepCopy().appendString(" - ").append(VICTORY);
    private static final ITextComponent RAID_DEFEAT = RAID.deepCopy().appendString(" - ").append(DEFEAT);
-   private final Map<Integer, Class1026> field32973 = Maps.newHashMap();
-   private final Map<Integer, Set<Class1026>> field32974 = Maps.newHashMap();
+   private final Map<Integer, AbstractRaiderEntity> field32973 = Maps.newHashMap();
+   private final Map<Integer, Set<AbstractRaiderEntity>> field32974 = Maps.newHashMap();
    private final Set<UUID> field32975 = Sets.newHashSet();
    private long field32976;
    private BlockPos field32977;
@@ -389,13 +389,13 @@ public class Raid {
    }
 
    private void method25411() {
-      Iterator<Set<Class1026>> var3 = this.field32974.values().iterator();
-      Set<Class1026> var4 = Sets.newHashSet();
+      Iterator<Set<AbstractRaiderEntity>> var3 = this.field32974.values().iterator();
+      Set<AbstractRaiderEntity> var4 = Sets.newHashSet();
 
       while (var3.hasNext()) {
-         Set<Class1026> var5 = var3.next();
+         Set<AbstractRaiderEntity> var5 = var3.next();
 
-         for (Class1026 var7 : var5) {
+         for (AbstractRaiderEntity var7 : var5) {
             BlockPos var8 = var7.getPosition();
             if (var7.removed || var7.world.getDimensionKey() != this.field32978.getDimensionKey() || this.field32977.distanceSq(var8) >= 12544.0) {
                var4.add(var7);
@@ -415,7 +415,7 @@ public class Raid {
          }
       }
 
-      for (Class1026 var10 : var4) {
+      for (AbstractRaiderEntity var10 : var4) {
          this.method25419(var10, true);
       }
    }
@@ -452,7 +452,7 @@ public class Raid {
          int var13 = 0;
 
          for (int var14 = 0; var14 < var12; var14++) {
-            Class1026 var15 = (Class1026)Class2127.method8809(var11).create(this.field32978);
+            AbstractRaiderEntity var15 = (AbstractRaiderEntity)Class2127.method8809(var11).create(this.field32978);
             if (!var4 && var15.method4570()) {
                var15.method4576(true);
                this.method25426(var5, var15);
@@ -461,7 +461,7 @@ public class Raid {
 
             this.method25414(var5, var15, var1, false);
             if (Class2127.method8809(var11) == EntityType.RAVAGER) {
-               Class1026 var16 = null;
+               AbstractRaiderEntity var16 = null;
                if (var5 != this.method25435(Difficulty.NORMAL)) {
                   if (var5 >= this.method25435(Difficulty.HARD)) {
                      if (var13 != 0) {
@@ -490,7 +490,7 @@ public class Raid {
       this.method25420();
    }
 
-   public void method25414(int var1, Class1026 var2, BlockPos var3, boolean var4) {
+   public void method25414(int var1, AbstractRaiderEntity var2, BlockPos var3, boolean var4) {
       boolean var7 = this.method25424(var1, var2);
       if (var7) {
          var2.method4550(this);
@@ -514,8 +514,8 @@ public class Raid {
    public float method25416() {
       float var3 = 0.0F;
 
-      for (Set<Class1026> var5 : this.field32974.values()) {
-         for (Class1026 var7 : var5) {
+      for (Set<AbstractRaiderEntity> var5 : this.field32974.values()) {
+         for (AbstractRaiderEntity var7 : var5) {
             var3 += var7.getHealth();
          }
       }
@@ -531,7 +531,7 @@ public class Raid {
       return this.field32974.values().stream().mapToInt(Set::size).sum();
    }
 
-   public void method25419(Class1026 var1, boolean var2) {
+   public void method25419(AbstractRaiderEntity var1, boolean var2) {
       Set var5 = this.field32974.get(var1.method4554());
       if (var5 != null) {
          boolean var6 = var5.remove(var1);
@@ -571,7 +571,7 @@ public class Raid {
    }
 
    @Nullable
-   public Class1026 method25422(int var1) {
+   public AbstractRaiderEntity method25422(int var1) {
       return this.field32973.get(var1);
    }
 
@@ -612,16 +612,16 @@ public class Raid {
       return null;
    }
 
-   private boolean method25424(int var1, Class1026 var2) {
+   private boolean method25424(int var1, AbstractRaiderEntity var2) {
       return this.method25425(var1, var2, true);
    }
 
-   public boolean method25425(int var1, Class1026 var2, boolean var3) {
+   public boolean method25425(int var1, AbstractRaiderEntity var2, boolean var3) {
       this.field32974.computeIfAbsent(var1, var0 -> Sets.newHashSet());
-      Set<Class1026> var6 = this.field32974.get(var1);
-      Class1026 var7 = null;
+      Set<AbstractRaiderEntity> var6 = this.field32974.get(var1);
+      AbstractRaiderEntity var7 = null;
 
-      for (Class1026 var9 : var6) {
+      for (AbstractRaiderEntity var9 : var6) {
          if (var9.getUniqueID().equals(var2.getUniqueID())) {
             var7 = var9;
             break;
@@ -643,7 +643,7 @@ public class Raid {
       return true;
    }
 
-   public void method25426(int var1, Class1026 var2) {
+   public void method25426(int var1, AbstractRaiderEntity var2) {
       this.field32973.put(var1, var2);
       var2.setItemStackToSlot(EquipmentSlotType.HEAD, method25421());
       var2.method4279(EquipmentSlotType.HEAD, 2.0F);

@@ -117,19 +117,19 @@ public class DolphinEntity extends WaterMobEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(0, new Class2727(this));
-      this.field5600.addGoal(0, new Class2763(this));
-      this.field5600.addGoal(1, new Class2683(this));
-      this.field5600.addGoal(2, new Class2776(this, 4.0));
-      this.field5600.addGoal(4, new Class2740(this, 1.0, 10));
-      this.field5600.addGoal(4, new Class2668(this));
-      this.field5600.addGoal(5, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.addGoal(5, new Class2756(this, 10));
-      this.field5600.addGoal(6, new Class2647(this, 1.2F, true));
-      this.field5600.addGoal(8, new Class2688(this));
-      this.field5600.addGoal(8, new Class2602(this));
-      this.field5600.addGoal(9, new Class2770<GuardianEntity>(this, GuardianEntity.class, 8.0F, 1.0, 1.0));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, GuardianEntity.class).method10918());
+      this.goalSelector.addGoal(0, new Class2727(this));
+      this.goalSelector.addGoal(0, new Class2763(this));
+      this.goalSelector.addGoal(1, new Class2683(this));
+      this.goalSelector.addGoal(2, new Class2776(this, 4.0));
+      this.goalSelector.addGoal(4, new Class2740(this, 1.0, 10));
+      this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
+      this.goalSelector.addGoal(5, new LookAtGoal(this, PlayerEntity.class, 6.0F));
+      this.goalSelector.addGoal(5, new Class2756(this, 10));
+      this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.2F, true));
+      this.goalSelector.addGoal(8, new Class2688(this));
+      this.goalSelector.addGoal(8, new Class2602(this));
+      this.goalSelector.addGoal(9, new Class2770<GuardianEntity>(this, GuardianEntity.class, 8.0F, 1.0, 1.0));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, GuardianEntity.class).method10918());
    }
 
    public static MutableAttribute method4782() {

@@ -35,15 +35,15 @@ public class SpiderEntity extends MonsterEntity {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2603(this));
-      this.field5600.addGoal(3, new Class2745(this, 0.4F));
-      this.field5600.addGoal(4, new Class2657(this));
-      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
-      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(6, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this));
-      this.field5601.addGoal(2, new Class2718<PlayerEntity>(this, PlayerEntity.class));
-      this.field5601.addGoal(3, new Class2718<IronGolemEntity>(this, IronGolemEntity.class));
+      this.goalSelector.addGoal(1, new SwimGoal(this));
+      this.goalSelector.addGoal(3, new Class2745(this, 0.4F));
+      this.goalSelector.addGoal(4, new Class2657(this));
+      this.goalSelector.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
+      this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
+      this.targetSelector.addGoal(2, new Class2718<PlayerEntity>(this, PlayerEntity.class));
+      this.targetSelector.addGoal(3, new Class2718<IronGolemEntity>(this, IronGolemEntity.class));
    }
 
    @Override

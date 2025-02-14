@@ -71,7 +71,7 @@ public class EntitySpawnPlacementRegistry {
       register(EntityType.PIG, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);
       register(EntityType.HOGLIN, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HoglinEntity::method5081);
       register(EntityType.PIGLIN, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PiglinEntity::method4615);
-      register(EntityType.PILLAGER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PillagerEntity::method4572);
+      register(EntityType.PILLAGER, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PatrollerEntity::method4572);
       register(EntityType.POLAR_BEAR, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PolarBearEntity::method5181);
       register(EntityType.RABBIT, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, RabbitEntity::method5117);
       register(EntityType.SHEEP, EntitySpawnPlacementRegistry$PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::canAnimalSpawn);

@@ -39,8 +39,8 @@ public class Class2643 extends Class2642 {
    }
 
    @Override
-   public void method10804() {
-      super.method10804();
+   public void startExecuting() {
+      super.startExecuting();
       this.field16982 = 0;
    }
 

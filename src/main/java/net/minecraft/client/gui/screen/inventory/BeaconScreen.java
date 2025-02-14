@@ -121,7 +121,7 @@ public class BeaconScreen extends ContainerScreen<Class5821> {
       this.field4563.method793(new ItemStack(Items.EMERALD), var7 + 41, var8 + 109);
       this.field4563.method793(new ItemStack(Items.DIAMOND), var7 + 41 + 22, var8 + 109);
       this.field4563.method793(new ItemStack(Items.GOLD_INGOT), var7 + 42 + 44, var8 + 109);
-      this.field4563.method793(new ItemStack(Items.field37801), var7 + 42 + 66, var8 + 109);
+      this.field4563.method793(new ItemStack(Items.IRON_INGOT), var7 + 42 + 66, var8 + 109);
       this.field4563.field847 = 0.0F;
    }
 

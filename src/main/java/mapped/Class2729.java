@@ -30,7 +30,7 @@ public class Class2729 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17239.method5130(false);
       FoxEntity.method5170(this.field17239, false);
    }

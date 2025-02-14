@@ -64,7 +64,7 @@ public class Class2756 extends Class2754 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       Direction var3 = this.field17298.method3387();
       this.field17298.setMotion(this.field17298.getMotion().add((double)var3.getXOffset() * 0.6, 0.7, (double)var3.getZOffset() * 0.6));
       this.field17298.method4230().method21666();

@@ -20,7 +20,7 @@ public class Class2768 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17344 = 10;
       PhantomEntity.method5352(this.field17345, Class2143.field14028);
       this.method10963();

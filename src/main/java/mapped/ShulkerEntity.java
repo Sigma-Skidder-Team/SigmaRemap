@@ -50,13 +50,13 @@ public class ShulkerEntity extends Class1056 implements IMob {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.addGoal(4, new Class2746(this));
-      this.field5600.addGoal(7, new Class2600(this));
-      this.field5600.addGoal(8, new Class2668(this));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
-      this.field5601.addGoal(2, new Class2721(this, this));
-      this.field5601.addGoal(3, new Class2719(this));
+      this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+      this.goalSelector.addGoal(4, new Class2746(this));
+      this.goalSelector.addGoal(7, new Class2600(this));
+      this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.targetSelector.addGoal(2, new Class2721(this, this));
+      this.targetSelector.addGoal(3, new Class2719(this));
    }
 
    @Override

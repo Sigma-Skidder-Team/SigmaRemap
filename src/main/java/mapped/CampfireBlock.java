@@ -260,7 +260,7 @@ public class CampfireBlock extends ContainerBlock implements IWaterLoggable {
    }
 
    public static boolean method11655(BlockState var0) {
-      return var0.method23462(field18698) && var0.isIn(BlockTags.field32809) && var0.<Boolean>get(field18698);
+      return var0.hasProperty(field18698) && var0.isIn(BlockTags.field32809) && var0.<Boolean>get(field18698);
    }
 
    @Override
@@ -294,7 +294,7 @@ public class CampfireBlock extends ContainerBlock implements IWaterLoggable {
    }
 
    public static boolean method11656(BlockState var0) {
-      return var0.method23447(BlockTags.field32809, var0x -> var0x.method23462(BlockStateProperties.WATERLOGGED) && var0x.method23462(BlockStateProperties.LIT))
+      return var0.method23447(BlockTags.field32809, var0x -> var0x.hasProperty(BlockStateProperties.WATERLOGGED) && var0x.hasProperty(BlockStateProperties.LIT))
          && !var0.<Boolean>get(BlockStateProperties.WATERLOGGED)
          && !var0.<Boolean>get(BlockStateProperties.LIT);
    }

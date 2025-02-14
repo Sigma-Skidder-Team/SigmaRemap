@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2681 extends Class2680 {
+public class Class2681 extends TemptGoal {
    private static String[] field17091;
    private final OcelotEntity field17092;
 

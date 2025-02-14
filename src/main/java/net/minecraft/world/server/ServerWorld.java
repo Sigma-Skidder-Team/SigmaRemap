@@ -92,7 +92,7 @@ public class ServerWorld extends World implements ISeedReader {
    public boolean field9047;
    private boolean field9048;
    private int field9049;
-   private final Class3634 field9050;
+   private final Teleporter field9050;
    private final Class6805<Block> field9051 = new Class6805<Block>(
       this, var0 -> var0 == null || var0.getDefaultState().isAir(), Registry.BLOCK::getKey, this::method6906
    );
@@ -139,7 +139,7 @@ public class ServerWorld extends World implements ISeedReader {
          var7,
          () -> var1.getServerWorld().getSavedData()
       );
-      this.field9050 = new Class3634(this);
+      this.field9050 = new Teleporter(this);
       this.calculateInitialSkylight();
       this.calculateInitialWeather();
       this.getWorldBorder().method24544(var1.method1389());
@@ -1038,7 +1038,7 @@ public class ServerWorld extends World implements ISeedReader {
       return this.field9045;
    }
 
-   public Class3634 method6937() {
+   public Teleporter method6937() {
       return this.field9050;
    }
 

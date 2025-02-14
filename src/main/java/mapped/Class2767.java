@@ -19,7 +19,7 @@ public class Class2767 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       PufferfishEntity.method4834(this.field17342, 1);
       PufferfishEntity.method4835(this.field17342, 0);
    }

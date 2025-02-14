@@ -7,7 +7,7 @@ import net.minecraft.world.GameRules;
 
 import java.util.Random;
 
-public class Class2787 extends Class2785 {
+public class Class2787 extends BreedGoal {
    private static String[] field17405;
    private final TurtleEntity field17414;
 

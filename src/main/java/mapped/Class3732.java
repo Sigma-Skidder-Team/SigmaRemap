@@ -31,7 +31,7 @@ public class Class3732<E extends PiglinEntity> extends Class3676<E> {
       return var2.getHeldItemOffhand().isEmpty();
    }
 
-   public void method12502(ServerWorld var1, E var2, long var3) {
+   public void startExecuting(ServerWorld var1, E var2, long var3) {
       Brain var7 = var2.getBrain();
       Optional var8 = var7.<Integer>getMemory(MemoryModuleType.field39852);
       if (var8.isPresent()) {

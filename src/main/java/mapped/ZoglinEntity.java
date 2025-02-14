@@ -71,7 +71,7 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
    }
 
    private static void method5093(Brain<ZoglinEntity> var0) {
-      var0.method21425(Activity.field40219, 0, ImmutableList.of(new Class3681(45, 90), new Class3735()));
+      var0.method21425(Activity.field40219, 0, ImmutableList.of(new LookTask(45, 90), new WalkToTargetTask()));
    }
 
    private static void method5094(Brain<ZoglinEntity> var0) {
@@ -81,8 +81,8 @@ public class ZoglinEntity extends MonsterEntity implements IMob, Class1092 {
          ImmutableList.<Class3676<? super ZoglinEntity>>of(
                  new Class3733<>(ZoglinEntity::method5096),
             new Class3702<>(new Class3738(8.0F), RangedInteger.method29318(30, 60)),
-            new Class3693<>(ImmutableList.of(Pair.of(new Class3718(0.4F), 2),
-                    Pair.of(new Class3694(0.4F, 3), 2), Pair.of(new Class3675(30, 60), 1)))
+            new FirstShuffledTask<>(ImmutableList.of(Pair.of(new Class3718(0.4F), 2),
+                    Pair.of(new Class3694(0.4F, 3), 2), Pair.of(new DummyTask(30, 60), 1)))
          )
       );
    }

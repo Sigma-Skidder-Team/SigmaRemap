@@ -6,7 +6,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class2786 extends Class2785 {
+public class Class2786 extends BreedGoal {
    private static String[] field17405;
    public final FoxEntity field17413;
 
@@ -16,10 +16,10 @@ public class Class2786 extends Class2785 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       FoxEntity.method5167((FoxEntity)this.field17407);
       FoxEntity.method5167((FoxEntity)this.field17410);
-      super.method10804();
+      super.startExecuting();
    }
 
    @Override

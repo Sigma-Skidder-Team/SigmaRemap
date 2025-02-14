@@ -25,7 +25,7 @@ public class Class3712 extends Class3676<CreatureEntity> {
       this.field19781 = var3;
    }
 
-   public void method12502(ServerWorld var1, CreatureEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, CreatureEntity var2, long var3) {
       BlockPos var7 = var2.getPosition();
       if (!var1.method6952(var7)) {
          SectionPos var8 = SectionPos.from(var7);

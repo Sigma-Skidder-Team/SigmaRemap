@@ -10,11 +10,11 @@ public enum Class2127 {
    field13881(EntityType.RAVAGER, new int[]{0, 0, 0, 1, 0, 1, 0, 2});
 
    private static final Class2127[] field13882 = values();
-   private final EntityType<? extends Class1026> field13883;
+   private final EntityType<? extends AbstractRaiderEntity> field13883;
    private final int[] field13884;
    private static final Class2127[] field13885 = new Class2127[]{field13877, field13878, field13879, field13880, field13881};
 
-   private Class2127(EntityType<? extends Class1026> var3, int[] var4) {
+   private Class2127(EntityType<? extends AbstractRaiderEntity> var3, int[] var4) {
       this.field13883 = var3;
       this.field13884 = var4;
    }

@@ -46,16 +46,16 @@ public class Class1024 extends Class1025 implements ICrossbowUser {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.addGoal(0, new Class2603(this));
-      this.field5600.addGoal(2, new Class2759(this, this, 10.0F));
-      this.field5600.addGoal(3, new Class2691<Class1024>(this, 1.0, 8.0F));
-      this.field5600.addGoal(8, new Class2736(this, 0.6));
-      this.field5600.addGoal(9, new Class2612(this, PlayerEntity.class, 15.0F, 1.0F));
-      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 15.0F));
-      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
-      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
-      this.field5601.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
+      this.goalSelector.addGoal(0, new SwimGoal(this));
+      this.goalSelector.addGoal(2, new Class2759(this, this, 10.0F));
+      this.goalSelector.addGoal(3, new Class2691<Class1024>(this, 1.0, 8.0F));
+      this.goalSelector.addGoal(8, new Class2736(this, 0.6));
+      this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 15.0F, 1.0F));
+      this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 15.0F));
+      this.targetSelector.addGoal(1, new HurtByTargetGoal(this, AbstractRaiderEntity.class).method10918());
+      this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<IronGolemEntity>(this, IronGolemEntity.class, true));
    }
 
    public static MutableAttribute method4541() {

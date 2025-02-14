@@ -18,6 +18,6 @@ public class Class8094 extends Class8092 {
 
    @Override
    public boolean method28038() {
-      return !Class2663.method10870(BeeEntity.method4451(this.field34821));
+      return !PollinateGoal.method10870(BeeEntity.method4451(this.field34821));
    }
 }

@@ -34,13 +34,13 @@ public class Class2703 extends Class2699 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17153.setAttackTarget(this.field17176);
       LivingEntity var3 = this.field17175.method4400();
       if (var3 != null) {
          this.field17177 = var3.getLastAttackedEntityTime();
       }
 
-      super.method10804();
+      super.startExecuting();
    }
 }

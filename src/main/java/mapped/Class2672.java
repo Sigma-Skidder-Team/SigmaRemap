@@ -31,7 +31,7 @@ public abstract class Class2672 extends Class2595 {
    }
 
    @Override
-   public void method10804() {
+   public void startExecuting() {
       this.field17057 = this.method10891();
       this.field17059.field5734 = this.method10892();
       this.field17058 = this.field17059.ticksExisted + this.method10893();

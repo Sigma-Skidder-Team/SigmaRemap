@@ -36,7 +36,7 @@ public class Class3736 extends Class3676<AnimalEntity> {
       return var2.method4507() && this.method12666(var2).isPresent();
    }
 
-   public void method12502(ServerWorld var1, AnimalEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, AnimalEntity var2, long var3) {
       AnimalEntity var7 = this.method12666(var2).get();
       var2.getBrain().method21406(MemoryModuleType.field39829, var7);
       var7.getBrain().method21406(MemoryModuleType.field39829, var2);

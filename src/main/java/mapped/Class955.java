@@ -293,7 +293,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
          if (this.field5361 != null && this.world.getBlockState(this.pos).isIn(Blocks.MOVING_PISTON)) {
             BlockState var4 = Block.method11542(this.field5361, this.world, this.pos);
             if (!var4.isAir()) {
-               if (var4.method23462(BlockStateProperties.WATERLOGGED) && var4.<Boolean>get(BlockStateProperties.WATERLOGGED)) {
+               if (var4.hasProperty(BlockStateProperties.WATERLOGGED) && var4.<Boolean>get(BlockStateProperties.WATERLOGGED)) {
                   var4 = var4.with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false));
                }
 

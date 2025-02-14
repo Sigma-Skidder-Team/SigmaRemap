@@ -49,7 +49,7 @@ public abstract class CreatureEntity extends MobEntity {
          this.method4774(var4);
          if (!(var4 > 10.0F)) {
             if (!(var4 > 6.0F)) {
-               this.field5600.method20009(Class2240.field14657);
+               this.goalSelector.method20009(Class2240.field14657);
                float var5 = 2.0F;
                Vector3d var6 = new Vector3d(
                      var3.getPosX() - this.getPosX(), var3.getPosY() - this.getPosY(), var3.getPosZ() - this.getPosZ()
@@ -69,7 +69,7 @@ public abstract class CreatureEntity extends MobEntity {
             }
          } else {
             this.method4294(true, true);
-            this.field5600.method20008(Class2240.field14657);
+            this.goalSelector.method20008(Class2240.field14657);
          }
       }
    }

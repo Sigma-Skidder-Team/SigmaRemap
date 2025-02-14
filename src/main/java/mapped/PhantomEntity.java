@@ -39,10 +39,10 @@ public class PhantomEntity extends Class1111 implements IMob {
 
    @Override
    public void method4219() {
-      this.field5600.addGoal(1, new Class2768(this));
-      this.field5600.addGoal(2, new Class2607(this));
-      this.field5600.addGoal(3, new Class2606(this));
-      this.field5601.addGoal(1, new Class2690(this));
+      this.goalSelector.addGoal(1, new Class2768(this));
+      this.goalSelector.addGoal(2, new Class2607(this));
+      this.goalSelector.addGoal(3, new Class2606(this));
+      this.targetSelector.addGoal(1, new Class2690(this));
    }
 
    @Override

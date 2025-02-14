@@ -24,7 +24,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
       return var3 <= this.field19809 && this.method12616(var2);
    }
 
-   public void method12502(ServerWorld var1, VillagerEntity var2, long var3) {
+   public void startExecuting(ServerWorld var1, VillagerEntity var2, long var3) {
       Class1045 var7 = var2.getBrain().<Class1045>getMemory(MemoryModuleType.field39829).get();
       Class6983.method21569(var2, var7, 0.5F);
       var1.setEntityState(var7, (byte)18);
@@ -55,7 +55,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
       if (var6.isPresent()) {
          Optional var7 = this.method12619(var1, var2, var3);
          if (!var7.isPresent()) {
-            var1.getPointOfInterestManager().method6674((BlockPos)var6.get());
+            var1.getPointOfInterestManager().release((BlockPos)var6.get());
             DebugPacketSender.method23615(var1, (BlockPos)var6.get());
          } else {
             this.method12620(var1, (VillagerEntity)var7.get(), (BlockPos)var6.get());
@@ -79,7 +79,7 @@ public class Class3723 extends Class3676<VillagerEntity> {
    }
 
    private Optional<BlockPos> method12617(ServerWorld var1, VillagerEntity var2) {
-      return var1.getPointOfInterestManager().method6672(PointOfInterestType.HOME.getPredicate(), var2x -> this.method12618(var2, var2x), var2.getPosition(), 48);
+      return var1.getPointOfInterestManager().take(PointOfInterestType.HOME.getPredicate(), var2x -> this.method12618(var2, var2x), var2.getPosition(), 48);
    }
 
    private boolean method12618(VillagerEntity var1, BlockPos var2) {
