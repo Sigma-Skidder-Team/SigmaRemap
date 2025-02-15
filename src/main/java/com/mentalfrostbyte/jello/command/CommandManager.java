@@ -19,7 +19,7 @@ public class CommandManager {
     public static final String CHAT_PREFIX = "§f[§6Sigma§f]§7";
     private static final List<Runnable> field38299 = new ArrayList<Runnable>();
     public List<Command> commands = new ArrayList<Command>();
-    private boolean field38298 = true;
+    private boolean noCustomPrefix = true;
 
     public static void method30238(Runnable var0) {
         field38299.add(var0);
@@ -79,8 +79,8 @@ public class CommandManager {
     }
 
     public String getPrefix() {
-        if (this.field38298) {
-            this.field38298 = false;
+        if (this.noCustomPrefix) {
+            this.noCustomPrefix = false;
             return "§f[§6Sigma§f]§7";
         } else {
             String var3 = "";
@@ -93,8 +93,8 @@ public class CommandManager {
         }
     }
 
-    public void method30236() {
-        this.field38298 = true;
+    public void setNoCustomPrefix() {
+        this.noCustomPrefix = true;
     }
 
     @EventTarget
@@ -119,7 +119,7 @@ public class CommandManager {
 
                 if (var5.startsWith(".")) {
                     var1.setCancelled(true);
-                    this.method30236();
+                    this.setNoCustomPrefix();
                     String[] var6 = var5.substring(".".length()).split(" ");
                     Command var7 = this.method30231(var6[0]);
                     if (var7 == null) {

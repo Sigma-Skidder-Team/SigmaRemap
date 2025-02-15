@@ -88,7 +88,7 @@ public class BowAimbot extends Module {
             Entity var6 = (Entity) var5.next();
             if (var6 == mc.player) {
                 var5.remove();
-            } else if (Client.getInstance().friendManager.method26997(var6)) {
+            } else if (Client.getInstance().friendManager.isFriend(var6)) {
                 var5.remove();
             } else if (!(var6 instanceof LivingEntity)) {
                 var5.remove();

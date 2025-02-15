@@ -204,7 +204,7 @@ public class InfiniteAura extends Module {
         while (var7.hasNext()) {
             Entity var8 = ((TimedEntity) var7.next()).getEntity();
             if (var8 != mc.player) {
-                if (!Client.getInstance().friendManager.method26997(var8)) {
+                if (!Client.getInstance().friendManager.isFriend(var8)) {
                     if (var8 instanceof LivingEntity) {
                         if (((LivingEntity) var8).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var8) > var1)) {

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import totalcross.json.JSONArray;
 import net.minecraft.entity.Entity;
-import mapped.Class8906;
+import mapped.ChatUtilThing;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONException;
 
@@ -14,144 +14,144 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FriendManager {
-    public List<String> field34176 = new CopyOnWriteArrayList<>();
     public List<String> friends = new CopyOnWriteArrayList<>();
-    private final Minecraft field34179 = Minecraft.getInstance();
+    public List<String> enemies = new CopyOnWriteArrayList<>();
+    private final Minecraft mc = Minecraft.getInstance();
 
     public void init() {
         Client.getInstance().eventManager.register(this);
         try {
-            this.method27011();
+            this.loadFromCurrentConfig();
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
     }
 
     @EventTarget
-    private void method26996(EventKeyPress var1) throws JSONException {
-        if (var1.getKey() == this.field34179.gameSettings.keyBindPickBlock.keyCode.keyCode
-                && this.field34179.pointedEntity != null
-                && this.field34179.pointedEntity.getName() != null) {
-            CommandManager var4 = Client.getInstance().commandManager;
-            var4.method30236();
-            if (this.method26997(this.field34179.pointedEntity)) {
-                this.method27005(this.field34179.pointedEntity.getName().getUnformattedComponentText());
-                Class8906.method32487(
-                        var4.getPrefix() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText()
+    private void onKeyPress(EventKeyPress event) throws JSONException {
+        if (event.getKey() == this.mc.gameSettings.keyBindPickBlock.keyCode.keyCode
+                && this.mc.pointedEntity != null
+                && this.mc.pointedEntity.getName() != null) {
+            CommandManager commandManager = Client.getInstance().commandManager;
+            commandManager.setNoCustomPrefix();
+            if (this.isFriend(this.mc.pointedEntity)) {
+                this.removeFriend(this.mc.pointedEntity.getName().getUnformattedComponentText());
+                ChatUtilThing.sendMessage(
+                        commandManager.getPrefix() + " " + this.mc.pointedEntity.getName().getUnformattedComponentText()
                                 + " is no longer your friend.");
             } else {
-                this.method27001(this.field34179.pointedEntity.getName().getUnformattedComponentText());
-                Class8906.method32487(
-                        var4.getPrefix() + " " + this.field34179.pointedEntity.getName().getUnformattedComponentText()
+                this.addFriend(this.mc.pointedEntity.getName().getUnformattedComponentText());
+                ChatUtilThing.sendMessage(
+                        commandManager.getPrefix() + " " + this.mc.pointedEntity.getName().getUnformattedComponentText()
                                 + " is now your friend.");
             }
 
-            this.method27009();
+            this.updateConfigFriends();
         }
     }
 
-    public boolean method26997(Entity var1) {
-        return this.field34176.contains(var1.getName().getUnformattedComponentText().toLowerCase());
+    public boolean isFriend(Entity entity) {
+        return this.friends.contains(entity.getName().getUnformattedComponentText().toLowerCase());
     }
 
-    public boolean method26998(String var1) {
-        return this.field34176.contains(var1.toLowerCase());
+    public boolean isFriend(String name) {
+        return this.friends.contains(name.toLowerCase());
     }
 
-    public boolean isFriend(Entity var1) {
-        return this.friends.contains(var1.getName().getUnformattedComponentText().toLowerCase());
+    public boolean isEnemy(Entity entity) {
+        return this.enemies.contains(entity.getName().getUnformattedComponentText().toLowerCase());
     }
 
-    public boolean method27000(String var1) {
-        return this.friends.contains(var1.toLowerCase());
+    public boolean isEnemy(String name) {
+        return this.enemies.contains(name.toLowerCase());
     }
 
-    public boolean method27001(String var1) {
-        if (this.method26998(var1)) {
+    public boolean addFriend(String name) {
+        if (this.isFriend(name)) {
             return false;
         } else {
-            this.field34176.add(var1.toLowerCase());
-            this.method27009();
+            this.friends.add(name.toLowerCase());
+            this.updateConfigFriends();
             return true;
         }
     }
 
-    public boolean method27002(String var1) {
-        if (this.method27000(var1)) {
+    public boolean addEnemy(String name) {
+        if (this.isEnemy(name)) {
             return false;
         } else {
-            this.friends.add(var1.toLowerCase());
-            this.method27010();
+            this.enemies.add(name.toLowerCase());
+            this.updateConfigEnemies();
             return true;
         }
     }
 
-    public List<String> method27003() {
-        return this.field34176;
-    }
-
-    public List<String> method27004() {
+    public List<String> getFriends() {
         return this.friends;
     }
 
-    public boolean method27005(String var1) {
-        boolean var4 = this.field34176.remove(var1.toLowerCase());
-        if (var4) {
-            this.method27009();
-        }
-
-        return var4;
+    public List<String> getEnemies() {
+        return this.enemies;
     }
 
-    public boolean method27006(String var1) {
-        boolean var4 = this.friends.remove(var1.toLowerCase());
-        if (var4) {
-            this.method27010();
+    public boolean removeFriend(String name) {
+        boolean contained = this.friends.remove(name.toLowerCase());
+        if (contained) {
+            this.updateConfigFriends();
         }
 
-        return var4;
+        return contained;
     }
 
-    public boolean method27007() {
-        if (!this.field34176.isEmpty()) {
-            this.field34176.clear();
-            this.method27009();
-            return true;
-        } else {
-            return false;
+    public boolean removeEnemy(String name) {
+        boolean contained = this.enemies.remove(name.toLowerCase());
+        if (contained) {
+            this.updateConfigEnemies();
         }
+
+        return contained;
     }
 
-    public boolean method27008() {
+    public boolean removeAllFriends() {
         if (!this.friends.isEmpty()) {
             this.friends.clear();
-            this.method27010();
+            this.updateConfigFriends();
             return true;
         } else {
             return false;
         }
     }
 
-    public void method27009() {
-        Client.getInstance().getConfig().put("friends", this.field34176);
+    public boolean removeAllEnemies() {
+        if (!this.enemies.isEmpty()) {
+            this.enemies.clear();
+            this.updateConfigEnemies();
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void method27010() {
-        Client.getInstance().getConfig().put("enemies", this.friends);
+    public void updateConfigFriends() {
+        Client.getInstance().getConfig().put("friends", this.friends);
     }
 
-    private void method27011() throws JSONException {
+    public void updateConfigEnemies() {
+        Client.getInstance().getConfig().put("enemies", this.enemies);
+    }
+
+    private void loadFromCurrentConfig() throws JSONException {
         if (Client.getInstance().getConfig().has("friends")) {
-            JSONArray var3 = Client.getInstance().getConfig().getJSONArray("friends");
-            if (var3 != null) {
-                var3.forEach(var1 -> this.field34176.add((String) var1));
+            JSONArray configFriends = Client.getInstance().getConfig().getJSONArray("friends");
+            if (configFriends != null) {
+                configFriends.forEach(friend -> this.friends.add((String) friend));
             }
         }
 
         if (Client.getInstance().getConfig().has("enemies")) {
-            JSONArray var4 = Client.getInstance().getConfig().getJSONArray("enemies");
-            if (var4 != null) {
-                var4.forEach(var1 -> this.friends.add((String) var1));
+            JSONArray configEnemies = Client.getInstance().getConfig().getJSONArray("enemies");
+            if (configEnemies != null) {
+                configEnemies.forEach(enemy -> this.enemies.add((String) enemy));
             }
         }
     }

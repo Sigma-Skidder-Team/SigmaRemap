@@ -599,7 +599,7 @@ public class KillAura extends Module {
                         && !entities.isEmpty()) {
                     if (this.field23942 + 1 < entities.size()) {
                         if (timedEntityIdk != null && !Client.getInstance().friendManager
-                                .isFriend(entities.get(this.field23942).getEntity())) {
+                                .isEnemy(entities.get(this.field23942).getEntity())) {
                             this.field23942++;
                         }
                     } else {

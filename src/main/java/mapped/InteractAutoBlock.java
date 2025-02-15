@@ -167,7 +167,7 @@ public class InteractAutoBlock {
          Entity ent = timedEntity.getEntity();
          if (ent == this.mc.player || ent == Blink.clientPlayerEntity) {
             entities.remove();
-         } else if (Client.getInstance().friendManager.method26997(ent)) {
+         } else if (Client.getInstance().friendManager.isFriend(ent)) {
             entities.remove();
          } else if (!(ent instanceof LivingEntity)) {
             entities.remove();

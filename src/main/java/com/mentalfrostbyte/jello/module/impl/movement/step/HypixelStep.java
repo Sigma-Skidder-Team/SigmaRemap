@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
-import mapped.Class8906;
+import mapped.ChatUtilThing;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 
@@ -162,9 +162,9 @@ public class HypixelStep extends Module {
 
     private void sendBlinkingStatusMessage() {
         if (isBlinking) {
-            Class8906.method32487("Blinking is now enabled.");
+            ChatUtilThing.sendMessage("Blinking is now enabled.");
         } else {
-            Class8906.method32487("Blinking is now disabled.");
+            ChatUtilThing.sendMessage("Blinking is now disabled.");
         }
     }
 

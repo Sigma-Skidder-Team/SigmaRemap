@@ -82,7 +82,7 @@ public class UIInput extends Class4278 {
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;
       if (this.field20905) {
          if (this.field20752) {
-            this.field20749 = Class8906.method32494(var5, this.font, (float) this.method13271(), newHeight, this.field20746);
+            this.field20749 = ChatUtilThing.method32494(var5, this.font, (float) this.method13271(), newHeight, this.field20746);
          }
       } else {
          this.field20749 = 0;
@@ -111,7 +111,7 @@ public class UIInput extends Class4278 {
          }
 
          this.field20752 = true;
-         this.field20749 = Class8906.method32494(var6, this.font, (float) this.method13271(), mouseX, this.field20746);
+         this.field20749 = ChatUtilThing.method32494(var6, this.font, (float) this.method13271(), mouseX, this.field20746);
          if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
                && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
@@ -170,7 +170,7 @@ public class UIInput extends Class4278 {
 
                   if (var12 != "") {
                      if (this.field20750 != this.field20751) {
-                        this.typedText = Class8906.method32493(this.typedText, var12, this.field20750,
+                        this.typedText = ChatUtilThing.method32493(this.typedText, var12, this.field20750,
                               this.field20751);
                         if (this.field20749 > this.field20750) {
                            this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751)
@@ -180,7 +180,7 @@ public class UIInput extends Class4278 {
                         this.field20749 = this.field20749 + var12.length();
                         this.field20750 = this.field20749;
                      } else {
-                        this.typedText = Class8906.method32492(this.typedText, var12, this.field20749);
+                        this.typedText = ChatUtilThing.method32492(this.typedText, var12, this.field20749);
                         this.field20749 = this.field20749 + var12.length();
                         this.field20750 = this.field20749;
                      }
@@ -195,7 +195,7 @@ public class UIInput extends Class4278 {
                         Minecraft.getInstance().mainWindow.getHandle(),
                         this.typedText.substring(Math.min(this.field20750, this.field20751),
                               Math.max(this.field20750, this.field20751)));
-                  this.typedText = Class8906.method32493(this.typedText, "", this.field20750, this.field20751);
+                  this.typedText = ChatUtilThing.method32493(this.typedText, "", this.field20750, this.field20751);
                   if (this.field20749 > this.field20750) {
                      this.field20749 = this.field20749
                            - (Math.max(this.field20750, this.field20751) - Math.min(this.field20750, this.field20751));
@@ -212,7 +212,7 @@ public class UIInput extends Class4278 {
             case 259:
                if (this.typedText.length() > 0) {
                   if (this.field20750 != this.field20751) {
-                     this.typedText = Class8906.method32493(this.typedText, "", this.field20750, this.field20751);
+                     this.typedText = ChatUtilThing.method32493(this.typedText, "", this.field20750, this.field20751);
                      if (this.field20749 > this.field20750) {
                         this.field20749 = this.field20749 - (Math.max(this.field20750, this.field20751)
                               - Math.min(this.field20750, this.field20751));
@@ -229,11 +229,11 @@ public class UIInput extends Class4278 {
                      }
 
                      if (var11 != -1) {
-                        this.typedText = Class8906.method32493(this.typedText, "", var11, this.field20749);
+                        this.typedText = ChatUtilThing.method32493(this.typedText, "", var11, this.field20749);
                         this.field20749 = var11;
                      }
                   } else {
-                     this.typedText = Class8906.method32493(this.typedText, "", this.field20749 - 1, this.field20749);
+                     this.typedText = ChatUtilThing.method32493(this.typedText, "", this.field20749 - 1, this.field20749);
                      this.field20749--;
                   }
 
@@ -325,11 +325,11 @@ public class UIInput extends Class4278 {
    @Override
    public void charTyped(char typed) {
       super.charTyped(typed);
-      if (this.method13297() && Class8906.method32486(typed)) {
+      if (this.method13297() && ChatUtilThing.method32486(typed)) {
          if (this.field20750 == this.field20751) {
-            this.typedText = Class8906.method32492(this.typedText, Character.toString(typed), this.field20749);
+            this.typedText = ChatUtilThing.method32492(this.typedText, Character.toString(typed), this.field20749);
          } else {
-            this.typedText = Class8906.method32493(this.typedText, Character.toString(typed), this.field20750,
+            this.typedText = ChatUtilThing.method32493(this.typedText, Character.toString(typed), this.field20750,
                   this.field20751);
          }
 

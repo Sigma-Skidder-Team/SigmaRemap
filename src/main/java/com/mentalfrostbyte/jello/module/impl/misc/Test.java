@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import mapped.ArmorStandEntity;
 import mapped.Class3597;
 import mapped.Class8781;
-import mapped.Class8906;
+import mapped.ChatUtilThing;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -249,7 +249,7 @@ public class Test extends Module {
                     CPlayerPacket var17 = (CPlayerPacket) var4;
                     double var8 = var17.getY(0.0);
                     String var10 = !var17.isOnGround() ? "§c" : "§a";
-                    Class8906.method32487(var10 + var8);
+                    ChatUtilThing.sendMessage(var10 + var8);
                 }
             } else {
                 CUseEntityPacket var18 = (CUseEntityPacket) var4;
@@ -345,7 +345,7 @@ public class Test extends Module {
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
-                if (!Client.getInstance().friendManager.method26997(var6)) {
+                if (!Client.getInstance().friendManager.isFriend(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var6) > var1)) {
@@ -397,7 +397,7 @@ public class Test extends Module {
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
-                if (!Client.getInstance().friendManager.method26997(var7)) {
+                if (!Client.getInstance().friendManager.isFriend(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var7) > var1)) {

@@ -32,7 +32,7 @@ public class Enemy extends Command {
                   Pattern var14 = Pattern.compile("[a-zA-Z0-9_]{2,16}");
                   boolean var15 = var14.matcher(var2[1].getArguments()).matches();
                   if (var15) {
-                     boolean var16 = Client.getInstance().friendManager.method27002(var2[1].getArguments());
+                     boolean var16 = Client.getInstance().friendManager.addEnemy(var2[1].getArguments());
                      if (!var16) {
                         var3.send("\"" + var2[1].getArguments() + "\" is already your enemy.");
                      } else {
@@ -47,7 +47,7 @@ public class Enemy extends Command {
                if (var2.length != 2) {
                   var3.send("Usage : .enemy remove <name>");
                } else {
-                  boolean var13 = Client.getInstance().friendManager.method27006(var2[1].getArguments());
+                  boolean var13 = Client.getInstance().friendManager.removeEnemy(var2[1].getArguments());
                   if (!var13) {
                      var3.send("\"" + var2[1].getArguments() + "\" is not your enemy.");
                   } else {
@@ -56,7 +56,7 @@ public class Enemy extends Command {
                }
                break;
             case "list":
-               List<String> var9 = Client.getInstance().friendManager.method27004();
+               List<String> var9 = Client.getInstance().friendManager.getEnemies();
                if (var9.isEmpty()) {
                   var3.send("You have no enemies");
                } else {
@@ -75,7 +75,7 @@ public class Enemy extends Command {
                }
                break;
             case "clear":
-               if (Client.getInstance().friendManager.method27008()) {
+               if (Client.getInstance().friendManager.removeAllEnemies()) {
                   var3.send("Cleared all your enemies.");
                } else {
                   var3.send("You have no enemies.");

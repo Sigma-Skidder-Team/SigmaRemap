@@ -29,7 +29,7 @@ public class SkeletonESP extends Module {
 
     private void method16089(EventRender3D var1, PlayerEntity entity) {
         Color color = new Color(
-                !Client.getInstance().friendManager.method26998(entity.getName().getString())
+                !Client.getInstance().friendManager.isFriend(entity.getName().getString())
                         ? (!entity.getName().getString().equalsIgnoreCase(mc.player.getName().getString())
                         ? new Color(16775672).getRGB()
                         : -6684775)

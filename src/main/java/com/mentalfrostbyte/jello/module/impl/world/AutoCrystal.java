@@ -320,7 +320,7 @@ public class AutoCrystal extends Module {
         while (var5.hasNext()) {
             Entity var6 = (Entity) var5.next();
             if (var6 != mc.player) {
-                if (!Client.getInstance().friendManager.method26997(var6)) {
+                if (!Client.getInstance().friendManager.isFriend(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var6) > var1)) {

@@ -391,8 +391,8 @@ public class NameTags extends Module {
             GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getPitch(), 1.0F, 0.0F, 0.0F);
             GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
             int var19 = this.backgroundColor;
-            if (!Client.getInstance().friendManager.method26997(var7)) {
-                if (Client.getInstance().friendManager.isFriend(var7)) {
+            if (!Client.getInstance().friendManager.isFriend(var7)) {
+                if (Client.getInstance().friendManager.isEnemy(var7)) {
                     var19 = MultiUtilities.applyAlpha(-6750208, 0.5F);
                 }
             } else {

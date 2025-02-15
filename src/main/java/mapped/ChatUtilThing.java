@@ -9,7 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 import org.newdawn.slick.Color;
 
-public class Class8906 {
+public class ChatUtilThing {
    private static Pattern field40303;
    private static Matcher field40304;
    private static final String field40305 = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$";
@@ -18,8 +18,8 @@ public class Class8906 {
       return var0 != 167 && var0 >= ' ' && var0 != 127;
    }
 
-   public static void method32487(String var0) {
-      Minecraft.getInstance().ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(var0));
+   public static void sendMessage(String message) {
+      Minecraft.getInstance().ingameGUI.getChatGUI().sendChatMessage(new StringTextComponent(message));
    }
 
    public static boolean method32488(String var0) {

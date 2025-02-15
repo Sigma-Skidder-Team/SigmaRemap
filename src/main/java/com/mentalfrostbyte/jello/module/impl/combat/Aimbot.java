@@ -38,7 +38,7 @@ public class Aimbot extends ModuleWithModuleSettings {
         while (var6.hasNext()) {
             Entity var7 = (Entity) var6.next();
             if (var7 != mc.player) {
-                if (!Client.getInstance().friendManager.method26997(var7)) {
+                if (!Client.getInstance().friendManager.isFriend(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
                             if (!(mc.player.getDistance(var7) > var1)) {

@@ -123,9 +123,9 @@ public class Class4350 extends Class4278 {
    @Override
    public void charTyped(char typed) {
       super.charTyped(typed);
-      if (this.method13297() && Class8906.method32486(typed)
+      if (this.method13297() && ChatUtilThing.method32486(typed)
             && ResourceRegistry.JelloLightFont18.getWidth(Character.toString(typed)) > 1) {
-         this.typedText = Class8906.method32492(this.typedText, Character.toString(typed), this.field21260);
+         this.typedText = ChatUtilThing.method32492(this.typedText, Character.toString(typed), this.field21260);
          this.field21260++;
       }
    }
@@ -158,7 +158,7 @@ public class Class4350 extends Class4278 {
             var8 += var6[var9].length();
          }
 
-         this.field21260 = var8 + Class8906.method32494(var6[var7], ResourceRegistry.JelloLightFont18,
+         this.field21260 = var8 + ChatUtilThing.method32494(var6[var7], ResourceRegistry.JelloLightFont18,
                (float) this.method13271(), newHeight, 30.0F);
          if (this.typedText.substring(0, this.field21260).endsWith(var5)
                && this.field21260 != this.typedText.length()) {

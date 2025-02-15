@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
-import mapped.Class8906;
+import mapped.ChatUtilThing;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.StringNBT;
 import net.minecraft.item.ItemStack;
@@ -49,7 +49,7 @@ public class ServerCrasher extends PremiumModule {
                             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var6 - var14, var8 + var12, var10 + var14, false));
                         }
 
-                        Class8906.method32487("Trying to crash the server..");
+                        ChatUtilThing.sendMessage("Trying to crash the server..");
                         this.toggle();
                         break;
                     case "Vanilla":
@@ -60,7 +60,7 @@ public class ServerCrasher extends PremiumModule {
                                 mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
                             }
 
-                            Class8906.method32487("Trying to crash the server..");
+                            ChatUtilThing.sendMessage("Trying to crash the server..");
                         }
                         break;
                     case "Book":
@@ -96,7 +96,7 @@ public class ServerCrasher extends PremiumModule {
                         break;
                     case "Infinity":
                         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
-                        Class8906.method32487("Trying to crash the server..");
+                        ChatUtilThing.sendMessage("Trying to crash the server..");
                         this.toggle();
                         break;
                     case "BrainFreeze":
@@ -120,7 +120,7 @@ public class ServerCrasher extends PremiumModule {
                                 );
                         if (this.field23695++ >= 200) {
                             this.toggle();
-                            Class8906.method32487("Trying to crash the server..");
+                            ChatUtilThing.sendMessage("Trying to crash the server..");
                         }
                 }
             }
