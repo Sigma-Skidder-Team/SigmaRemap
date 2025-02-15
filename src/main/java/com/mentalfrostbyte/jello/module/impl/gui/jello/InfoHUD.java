@@ -87,7 +87,7 @@ public class InfoHUD extends Module {
             if (!(var7.getItem() instanceof AirItem)) {
                 var5++;
                 int var8 = var2 - 32 * var5;
-                RenderUtil.method11479(var7, var1, var8, 32, 32);
+                RenderUtil.drawItem(var7, var1, var8, 32, 32);
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {

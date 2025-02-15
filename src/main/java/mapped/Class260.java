@@ -24,7 +24,7 @@ public class Class260 extends LayerRenderer<SnowGolemEntity, Class2878<SnowGolem
          ItemStack var14 = new ItemStack(Blocks.CARVED_PUMPKIN);
          Minecraft.getInstance()
             .getItemRenderer()
-            .method790(var4, var14, ItemCameraTransformsTransformType.HEAD, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));
+            .renderItem(var4, var14, ItemCameraTransformsTransformType.HEAD, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));
          var1.pop();
       }
    }

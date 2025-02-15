@@ -27,7 +27,7 @@ public class Class4578 extends Class4566 {
 
    public Class4578(ClientWorld var1, double var2, double var4, double var6, ItemStack var8) {
       super(var1, var2, var4, var6, 0.0, 0.0, 0.0);
-      this.method14502(Minecraft.getInstance().getItemRenderer().method788(var8, var1, (LivingEntity)null).getParticleTexture());
+      this.method14502(Minecraft.getInstance().getItemRenderer().getItemModelWithOverrides(var8, var1, (LivingEntity)null).getParticleTexture());
       this.field22057 = 1.0F;
       this.field22035 /= 2.0F;
       this.field22021 = this.field22054.nextFloat() * 3.0F;

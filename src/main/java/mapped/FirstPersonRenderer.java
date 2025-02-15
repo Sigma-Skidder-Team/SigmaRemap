@@ -49,7 +49,7 @@ public class FirstPersonRenderer {
                               MatrixStack var5, IRenderTypeBuffer var6, int var7) {
       Class7992.method27282(var4);
       if (!var2.isEmpty()) {
-         this.field45086.method790(var1, var2, var3, var4, var5, var6, var1.world, var7, OverlayTexture.NO_OVERLAY);
+         this.field45086.renderItem(var1, var2, var3, var4, var5, var6, var1.world, var7, OverlayTexture.NO_OVERLAY);
       }
 
       Class7992.method27282(false);

@@ -50,7 +50,7 @@ public class Class5724 extends EntityRenderer<ItemEntity> {
       ItemStack var9 = entityIn.method4124();
       int var10 = !var9.isEmpty() ? Item.getIdFromItem(var9.getItem()) + var9.method32117() : 187;
       this.field25130.setSeed((long)var10);
-      IBakedModel var11 = this.field25129.method788(var9, entityIn.world, (LivingEntity)null);
+      IBakedModel var11 = this.field25129.getItemModelWithOverrides(var9, entityIn.world, (LivingEntity)null);
       boolean var12 = var11.method22621();
       int var13 = this.method17910(var9);
       float var14 = 0.25F;
@@ -93,7 +93,7 @@ public class Class5724 extends EntityRenderer<ItemEntity> {
             }
          }
 
-         this.field25129.method781(var9, ItemCameraTransformsTransformType.GROUND, false, matrixStackIn, bufferIn, packedLightIn, OverlayTexture.NO_OVERLAY, var11);
+         this.field25129.renderItem(var9, ItemCameraTransformsTransformType.GROUND, false, matrixStackIn, bufferIn, packedLightIn, OverlayTexture.NO_OVERLAY, var11);
          matrixStackIn.pop();
          if (!var12) {
             matrixStackIn.translate((double)(0.0F * var18), (double)(0.0F * var19), (double)(0.09375F * var20));

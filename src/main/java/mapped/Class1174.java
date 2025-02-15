@@ -67,7 +67,7 @@ public class Class1174 extends Class1155<Class1174> {
       this.method5597(var1, var2 + 1, var3 + 1);
       RenderSystem.enableRescaleNormal();
       if (!var4.isEmpty()) {
-         this.field6359.field6849.field4563.method791(var4, var2 + 2, var3 + 2);
+         this.field6359.field6849.field4563.renderItemIntoGUI(var4, var2 + 2, var3 + 2);
       }
 
       RenderSystem.disableRescaleNormal();

@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourcePackInfo;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Class7070 {
+public class FurnaceTracker {
    public int field30448;
    public float field30449;
    public float field30450;
@@ -23,12 +23,12 @@ public class Class7070 {
    public ItemStack field30454;
    public ItemStack field30455;
 
-   public Class7070(int var1) {
+   public FurnaceTracker(int var1) {
       this.field30448 = var1;
    }
 
    public void method21984() {
-      this.method21987();
+      this.refreshOutput();
       boolean var3 = this.field30454 != null && this.field30454.count > 0;
       boolean var4 = this.field30453 != null && this.field30453.count > 0;
       boolean var5 = this.method21986() != null
@@ -104,7 +104,7 @@ public class Class7070 {
       return var3 == null ? null : var3.getItem();
    }
 
-   public ItemStack method21987() {
+   public ItemStack refreshOutput() {
       if (this.field30455 != null && this.field30455.getItem() instanceof AirItem) {
          this.field30455 = null;
       }

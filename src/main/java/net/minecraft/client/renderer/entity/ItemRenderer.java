@@ -93,7 +93,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public void method781(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, IRenderTypeBuffer var5, int var6, int var7, IBakedModel var8) {
+   public void renderItem(ItemStack var1, ItemCameraTransformsTransformType var2, boolean var3, MatrixStack var4, IRenderTypeBuffer var5, int var6, int var7, IBakedModel var8) {
       boolean skibidi = false;
          if (!var1.isEmpty()) {
          var4.push();
@@ -264,7 +264,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public IBakedModel method788(ItemStack var1, World var2, LivingEntity var3) {
+   public IBakedModel getItemModelWithOverrides(ItemStack var1, World var2, LivingEntity var3) {
       Item var6 = var1.getItem();
       IBakedModel var7;
       if (var6 != Items.TRIDENT) {
@@ -284,21 +284,21 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public void renderItem(ItemStack var1, ItemCameraTransformsTransformType var2, int var3, int var4, MatrixStack var5, IRenderTypeBuffer var6) {
-      this.method790((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
+      this.renderItem((LivingEntity)null, var1, var2, false, var5, var6, (World)null, var3, var4);
    }
 
-   public void method790(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, IRenderTypeBuffer var6, World var7, int var8, int var9) {
+   public void renderItem(LivingEntity var1, ItemStack var2, ItemCameraTransformsTransformType var3, boolean var4, MatrixStack var5, IRenderTypeBuffer var6, World var7, int var8, int var9) {
       if (!var2.isEmpty()) {
-         IBakedModel var12 = this.method788(var2, var7, var1);
-         this.method781(var2, var3, var4, var5, var6, var8, var9, var12);
+         IBakedModel var12 = this.getItemModelWithOverrides(var2, var7, var1);
+         this.renderItem(var2, var3, var4, var5, var6, var8, var9, var12);
       }
    }
 
-   public void method791(ItemStack var1, int var2, int var3) {
-      this.method792(var1, var2, var3, this.method788(var1, (World)null, (LivingEntity)null));
+   public void renderItemIntoGUI(ItemStack var1, int var2, int var3) {
+      this.renderItemModelIntoGUI(var1, var2, var3, this.getItemModelWithOverrides(var1, (World)null, (LivingEntity)null));
    }
 
-   public void method792(ItemStack var1, int var2, int var3, IBakedModel var4) {
+   public void renderItemModelIntoGUI(ItemStack var1, int var2, int var3, IBakedModel var4) {
       field852 = true;
       RenderSystem.pushMatrix();
       this.field849.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
@@ -320,7 +320,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          RenderHelper.setupGuiFlatDiffuseLighting();
       }
 
-      this.method781(var1, ItemCameraTransformsTransformType.GUI, false, var7, var8, 15728880, OverlayTexture.NO_OVERLAY, var4);
+      this.renderItem(var1, ItemCameraTransformsTransformType.GUI, false, var7, var8, 15728880, OverlayTexture.NO_OVERLAY, var4);
       var8.finish();
       RenderSystem.enableDepthTest();
       if (var9) {
@@ -350,7 +350,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          this.field847 += 50.0F;
 
          try {
-            this.method792(var2, var3, var4, this.method788(var2, (World)null, var1));
+            this.renderItemModelIntoGUI(var2, var3, var4, this.getItemModelWithOverrides(var2, (World)null, var1));
          } catch (Throwable var10) {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Rendering item");
             CrashReportCategory var9 = var8.makeCategory("Item being rendered");
