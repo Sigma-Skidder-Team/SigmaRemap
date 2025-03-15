@@ -196,8 +196,4 @@ public class Main {
    public static Logger getLogger() {
       return LOGGER;
    }
-
-   static {
-      System.setProperty("java.awt.headless", "true");
-   }
 }
