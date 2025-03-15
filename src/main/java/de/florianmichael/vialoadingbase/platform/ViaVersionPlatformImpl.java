@@ -20,7 +20,6 @@ package de.florianmichael.vialoadingbase.platform;
 
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaAPI;
-import com.viaversion.viaversion.api.command.ViaCommandSender;
 import com.viaversion.viaversion.api.configuration.ViaVersionConfig;
 import com.viaversion.viaversion.api.connection.UserConnection;
 import com.viaversion.viaversion.api.platform.UnsupportedSoftware;
@@ -58,27 +57,17 @@ public class ViaVersionPlatformImpl implements ViaPlatform<UserConnection> {
     }
 
     @Override
-    public ViaCommandSender[] getOnlinePlayers() {
-        return new ViaCommandSender[0];
-    }
-
-    @Override
-    public void sendMessage(UUID uuid, String msg) {
-        if (uuid == null) {
-            this.getLogger().info(msg);
+    public void sendMessage(UserConnection connection, String message) {
+        if (connection == null) {
+            this.getLogger().info(message);
         } else {
-            this.getLogger().info("[" + uuid + "] " + msg);
+            this.getLogger().info("[" + connection.getId() + "] " + message);
         }
     }
 
     @Override
-    public boolean kickPlayer(UUID uuid, String s) {
+    public boolean kickPlayer(UserConnection conn, String s) {
         return false;
-    }
-
-    @Override
-    public boolean disconnect(UserConnection connection, String message) {
-        return ViaPlatform.super.disconnect(connection, message);
     }
 
     @Override
@@ -148,11 +137,6 @@ public class ViaVersionPlatformImpl implements ViaPlatform<UserConnection> {
     @Override
     public String getPlatformVersion() {
         return ViaLoadingBase.VERSION;
-    }
-
-    @Override
-    public boolean isPluginEnabled() {
-        return true;
     }
 
     public VLBViaConfig getConfig() {

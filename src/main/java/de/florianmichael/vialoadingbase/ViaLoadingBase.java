@@ -18,6 +18,7 @@
 
 package de.florianmichael.vialoadingbase;
 
+import com.mentalfrostbyte.Client;
 import com.viaversion.viaversion.ViaManagerImpl;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.platform.providers.ViaProviders;
@@ -89,9 +90,13 @@ public class ViaLoadingBase {
     }
 
     public void reload(final ProtocolVersion protocolVersion) {
+        if(protocolVersion == null) return;
+
         this.targetProtocolVersion = protocolVersion;
 
         if (this.onProtocolReload != null) this.onProtocolReload.accept(targetProtocolVersion);
+
+        Client.getInstance().getLogger().info(String.format("ViaLoadingBase has reloaded to %s (%s)", targetProtocolVersion.getName(), targetProtocolVersion.getVersion()));
     }
 
     public void initPlatform() {
@@ -240,7 +245,8 @@ public class ViaLoadingBase {
                 ViaLoadingBase.LOGGER.severe("Please check your ViaLoadingBaseBuilder arguments!");
                 return;
             }
-            new ViaLoadingBase(platforms, runDirectory, nativeVersion, forceNativeVersionCondition, dumpSupplier, providers, managerBuilderConsumer, onProtocolReload);
+
+            ViaLoadingBase.instance = new ViaLoadingBase(platforms, runDirectory, nativeVersion, forceNativeVersionCondition, dumpSupplier, providers, managerBuilderConsumer, onProtocolReload);
         }
     }
 }

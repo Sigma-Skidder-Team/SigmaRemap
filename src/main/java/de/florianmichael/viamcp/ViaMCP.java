@@ -25,12 +25,12 @@ import com.viaversion.viaversion.protocols.v1_16_1to1_16_2.packet.ServerboundPac
 import com.viaversion.viaversion.protocols.v1_16_4to1_17.packet.ClientboundPackets1_17;
 import com.viaversion.viaversion.protocols.v1_16_4to1_17.packet.ServerboundPackets1_17;
 import de.florianmichael.vialoadingbase.ViaLoadingBase;
-import de.florianmichael.viamcp.gui.AsyncVersionSlider;
+import net.minecraft.util.SharedConstants;
 
 import java.io.File;
 
 public class ViaMCP {
-    public final static int NATIVE_VERSION = 754; //https://minecraft.fandom.com/wiki/Protocol_version
+    public final static int NATIVE_VERSION = SharedConstants.getNativeVersion();
     public static ViaMCP INSTANCE;
 
     public static void create() {

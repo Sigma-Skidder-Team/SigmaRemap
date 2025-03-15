@@ -19,7 +19,6 @@
 package de.florianmichael.vialoadingbase.model;
 
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
-import de.florianmichael.vialoadingbase.ViaLoadingBase;
 
 @Deprecated
 public class ProtocolRange {

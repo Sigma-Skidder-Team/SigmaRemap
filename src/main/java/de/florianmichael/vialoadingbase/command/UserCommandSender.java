@@ -38,7 +38,7 @@ public class UserCommandSender implements ViaCommandSender {
 
     @Override
     public void sendMessage(String s) {
-        Via.getPlatform().sendMessage(getUUID(), s);
+        Via.getPlatform().sendMessage(user, s);
     }
 
     @Override

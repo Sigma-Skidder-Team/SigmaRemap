@@ -50,7 +50,7 @@ public class SharedConstants {
       return version;
    }
 
-   public static int getProtocolVersion() {
+   public static int getNativeVersion() {
       return 754;
    }
 

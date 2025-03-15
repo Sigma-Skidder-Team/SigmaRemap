@@ -26,6 +26,8 @@ import java.util.List;
 public class ProtocolInfo {
     private static final String NO_DESC = "No Description Available";
 
+    public static ProtocolInfo R1_21_4 = new ProtocolInfo("The Garden Awakens", NO_DESC, "Dec 3, 2024", ProtocolVersion.v1_21_4);
+    public static ProtocolInfo R1_21_2 = new ProtocolInfo("Bundles of Bravery", NO_DESC, "Oct 22, 2024", ProtocolVersion.v1_21_2);
     public static ProtocolInfo R1_21 = new ProtocolInfo("Tricky Trials", NO_DESC, "June 13, 2024", ProtocolVersion.v1_21);
     public static ProtocolInfo R1_20_5 = new ProtocolInfo("Trails & Tales", NO_DESC, "April 23, 2024", ProtocolVersion.v1_20_5);
     public static ProtocolInfo R1_20_3 = new ProtocolInfo("Trails & Tales", NO_DESC, "December 5, 2023", ProtocolVersion.v1_20_3);
@@ -70,7 +72,7 @@ public class ProtocolInfo {
     public static ProtocolInfo R1_7 = new ProtocolInfo("The Update that Changed the World", NO_DESC, "October 22, 2013 - February 26, 2014", ProtocolVersion.v1_7_2);
 
     public final static List<ProtocolInfo> PROTOCOL_INFOS = Arrays.asList(R1_7, R1_7_6, R1_8, R1_9, R1_9_1, R1_9_2, R1_9_3, R1_10, R1_11, R1_11_1, R1_12, R1_12_1, R1_12_2, R1_13, R1_13_1, R1_13_2, R1_14, R1_14_1, R1_14_2, R1_14_3, R1_14_4,
-            R1_15, R1_15_1, R1_15_2, R1_16, R1_16_1, R1_16_2, R1_16_3, R1_16_4, R1_17, R1_17_1, R1_18, R1_18_2, R1_19, R1_19_1, R1_19_3, R1_19_4, R1_20, R1_20_2, R1_20_3, R1_20_5, R1_21);
+            R1_15, R1_15_1, R1_15_2, R1_16, R1_16_1, R1_16_2, R1_16_3, R1_16_4, R1_17, R1_17_1, R1_18, R1_18_2, R1_19, R1_19_1, R1_19_3, R1_19_4, R1_20, R1_20_2, R1_20_3, R1_20_5, R1_21, R1_21_2, R1_21_4);
 
     private final String name;
     private final String description;
