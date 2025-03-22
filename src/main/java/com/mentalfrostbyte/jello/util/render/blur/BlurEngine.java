@@ -43,8 +43,8 @@ public class BlurEngine {
     }
 
     @EventTarget
-    public void method29972(ReceivePacketEvent var1) {
-        if (var1.getPacket() instanceof SCloseWindowPacket) {
+    public void onPacket(ReceivePacketEvent event) {
+        if (event.getPacket() instanceof SCloseWindowPacket) {
             MultiUtilities.resetShaders();
         }
     }
@@ -137,7 +137,7 @@ public class BlurEngine {
     }
 
     // $VF: synthetic method
-    public static Minecraft method29975() {
+    public static Minecraft getMC() {
         return mc;
     }
 }

@@ -16,27 +16,27 @@ import java.util.stream.Stream;
 public class SigmaBlurShader implements IResourceManager {
    @Override
    public Set<String> getResourceNamespaces() {
-      return BlurEngine.method29975().getResourceManager().getResourceNamespaces();
+      return BlurEngine.getMC().getResourceManager().getResourceNamespaces();
    }
 
    @Override
-   public IResource getResource(ResourceLocation var1) throws IOException {
-      return (IResource)(!var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().getResource(var1) : new JelloBlurJSON());
+   public IResource getResource(ResourceLocation resource) throws IOException {
+      return (IResource)(!resource.getPath().equals("jelloblur") ? BlurEngine.getMC().getResourceManager().getResource(resource) : new JelloBlurJSON());
    }
 
    @Override
-   public boolean hasResource(ResourceLocation var1) {
-      return !var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().hasResource(var1) : true;
+   public boolean hasResource(ResourceLocation resource) {
+      return !resource.getPath().equals("jelloblur") ? BlurEngine.getMC().getResourceManager().hasResource(resource) : true;
    }
 
    @Override
-   public List<IResource> getAllResources(ResourceLocation var1) throws IOException {
-      return BlurEngine.method29975().getResourceManager().getAllResources(var1);
+   public List<IResource> getAllResources(ResourceLocation resource) throws IOException {
+      return BlurEngine.getMC().getResourceManager().getAllResources(resource);
    }
 
    @Override
    public Collection<ResourceLocation> getAllResourceLocations(String var1, Predicate<String> var2) {
-      return BlurEngine.method29975().getResourceManager().getAllResourceLocations(var1, var2);
+      return BlurEngine.getMC().getResourceManager().getAllResourceLocations(var1, var2);
    }
 
    @Override

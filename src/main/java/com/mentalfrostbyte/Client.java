@@ -303,7 +303,7 @@ public class Client {
         if (this.moduleManager == null && RandomModuleThread.field8341 != null) {
             this.moduleManager = new ModuleManager();
             this.moduleManager.register(this.clientMode);
-            this.moduleManager.method14659(this.config);
+            this.moduleManager.loadProfileFromJSON(this.config);
             this.moduleManager.saveCurrentConfigToJSON(this.config);
         }
        // System.gc();

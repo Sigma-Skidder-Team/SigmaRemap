@@ -286,7 +286,7 @@ public class ModuleManager {
         return obj;
     }
 
-    public void method14659(JSONObject var1) {
+    public void loadProfileFromJSON(JSONObject var1) {
         String var4 = null;
 
         try {
