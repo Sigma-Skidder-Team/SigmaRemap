@@ -5,6 +5,7 @@
 package com.mentalfrostbyte;
 
 import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.auth.LicenseManager;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
 import club.minnced.discord.rpc.DiscordRichPresence;
@@ -12,6 +13,7 @@ import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import org.lwjgl.glfw.GLFW;
 import slick2d.Texture;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +44,7 @@ public class Client
     private Class7861 field40698;
     private Class8707 field40699;
     private CombatTracker field40700;
-    private NetworkManager2 field40701;
+    private LicenseManager field40701;
     private Class5837 field40702;
     private Class9086 field40703;
     private Class7951 field40704;
@@ -85,7 +87,7 @@ public class Client
         this.field40689 = new Class6883();
         (this.field40691 = new Class9070()).method32666();
         ClientAssets.decryptTextures();
-        (this.field40701 = new NetworkManager2()).method19338();
+        (this.field40701 = new LicenseManager()).method19338();
         (this.field40702 = new Class5837()).method17548();
         this.guiManager = new Class9000();
         (this.field40693 = new Class8706()).method29876();
@@ -265,7 +267,7 @@ public class Client
         return this.field40689;
     }
     
-    public ModuleManager method35189() {
+    public ModuleManager moduleManager() {
         return this.moduleManager;
     }
     
@@ -313,7 +315,7 @@ public class Client
         return this.field40706;
     }
     
-    public NetworkManager2 getNetworkManager() {
+    public LicenseManager getNetworkManager() {
         return this.field40701;
     }
     
@@ -363,7 +365,7 @@ public class Client
             GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Jello for Sigma 5.0");
         }
         if (this.moduleManager == null) {
-            if (Class1607.thread != null) {
+            if (ModuleSettingInitializr.thread != null) {
                 (this.moduleManager = new ModuleManager()).register(this.clientMode);
                 this.moduleManager.loadModProfiles(this.config);
                 this.moduleManager.method21547();
@@ -373,7 +375,7 @@ public class Client
     }
     
     static {
-        Client.mc = Minecraft.method5277();
+        Client.mc = Minecraft.getInstance();
         Client.textureList = new ArrayList<Texture>();
         Client.field40711 = false;
     }

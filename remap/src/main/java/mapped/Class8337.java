@@ -25,7 +25,7 @@ public class Class8337
         URLConnection urlConnection = null;
         byte[] array;
         try {
-            urlConnection = new URL(s).openConnection(Minecraft.method5277().method5289());
+            urlConnection = new URL(s).openConnection(Minecraft.getInstance().method5289());
             urlConnection.setDoInput(true);
             urlConnection.setDoOutput(false);
             urlConnection.connect();
@@ -62,7 +62,7 @@ public class Class8337
         HttpURLConnection httpURLConnection = null;
         String string;
         try {
-            httpURLConnection = (HttpURLConnection)new URL(spec).openConnection(Minecraft.method5277().method5289());
+            httpURLConnection = (HttpURLConnection)new URL(spec).openConnection(Minecraft.getInstance().method5289());
             httpURLConnection.setRequestMethod("POST");
             if (map != null) {
                 for (final String key : map.keySet()) {
@@ -101,7 +101,7 @@ public class Class8337
         if (Class8337.field34230 == null) {
             try {
                 if (Config.method28935(System.getProperty("player.models.local"), false)) {
-                    Class8337.field34230 = new File(Minecraft.method5277().field4652, "playermodels").toURI().toURL().toExternalForm();
+                    Class8337.field34230 = new File(Minecraft.getInstance().field4652, "playermodels").toURI().toURL().toExternalForm();
                 }
             }
             catch (final Exception ex) {

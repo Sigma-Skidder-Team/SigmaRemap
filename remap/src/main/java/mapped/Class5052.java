@@ -24,6 +24,6 @@ public class Class5052 extends RealmsScreen
     
     @Override
     public void init() {
-        Minecraft.method5277().displayGuiScreen(this.field21701);
+        Minecraft.getInstance().displayGuiScreen(this.field21701);
     }
 }

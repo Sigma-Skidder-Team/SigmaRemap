@@ -12,6 +12,8 @@ import java.io.InputStream;
 
 import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONObject;
+
 import java.io.FileInputStream;
 import java.io.File;
 import java.util.Iterator;
@@ -92,7 +94,7 @@ public class ProfileManager
             }
             this.field38428.add(this.field38429 = new Class8241(s, new JSONObject()));
         }
-        Client.getInstance().method35189().load(this.field38429.field33838);
+        Client.getInstance().moduleManager().load(this.field38429.field33838);
     }
     
     public boolean method32705(final String s) {
@@ -107,7 +109,7 @@ public class ProfileManager
     }
     
     public void method32706() throws IOException {
-        this.field38429.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
+        this.field38429.field33838 = Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
         final File file = new File(Client.getInstance().method35208() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
@@ -131,18 +133,18 @@ public class ProfileManager
     
     public void method32708(final Class8241 field38429) {
         Client.getInstance().method35179();
-        Class1607.field8978 = new HashMap<Object, Integer>();
+        ModuleSettingInitializr.field8978 = new HashMap<Object, Integer>();
         if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
-            this.field38429.field33838 = Client.getInstance().method35189().saveCurrentConfigToJSON(new JSONObject());
+            this.field38429.field33838 = Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
             this.field38429 = field38429;
             Client.getInstance().method35206().put("profile", field38429.field33839);
-            Client.getInstance().method35189().load(field38429.field33838);
+            Client.getInstance().moduleManager().load(field38429.field33838);
             Client.getInstance().method35179();
             return;
         }
         this.field38429.field33838 = field38429.method27290();
         Client.getInstance().method35206().put("profile", "Classic");
-        Client.getInstance().method35189().load(field38429.field33838);
+        Client.getInstance().moduleManager().load(field38429.field33838);
         Client.getInstance().method35179();
     }
     

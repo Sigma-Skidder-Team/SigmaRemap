@@ -7,6 +7,9 @@ package mapped;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import org.json.JSONException;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.io.IOException;
 import java.net.URL;
 
@@ -25,11 +28,11 @@ public class Class8718
             if (!method29941.has("releases")) {
                 return url;
             }
-            final JSONArray method29942 = method29941.method13263("releases");
-            if (method29942.method460(0)) {
+            final JSONArray method29942 = method29941.getJSONArray("releases");
+            if (method29942.isNull(0)) {
                 return url;
             }
-            final JSONObject method29943 = method29942.getJSONObject(0).method13264("release-group");
+            final JSONObject method29943 = method29942.getJSONObject(0).getJSONObject("release-group");
             if (!method29943.has("id")) {
                 return url;
             }
@@ -38,7 +41,7 @@ public class Class8718
             if (!method29944.has("images")) {
                 return url;
             }
-            return new URL(method29944.method13263("images").getJSONObject(0).method13264("thumbnails").getString("small"));
+            return new URL(method29944.getJSONArray("images").getJSONObject(0).getJSONObject("thumbnails").getString("small"));
         }
         catch (final IOException ex) {
             ex.printStackTrace();

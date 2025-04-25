@@ -25,14 +25,14 @@ public class Class4780 extends Class4703<Class861>
         final Class8539 field4601 = class861.field4601;
         class862.method22565(0.0625f, 0.0625f, 0.0625f);
         final Class4150 method25214 = class863.method25214(Class6332.method18767(this.method14141(class861)));
-        final Class1786 method25215 = Minecraft.method5277().method5324();
+        final Class1786 method25215 = Minecraft.getInstance().method5324();
         this.method14142(class862, method25214, class861, field4601.method28647(), field4601.method28648(), method25215.method6444(field4601), method25215.method6445());
         class862.method22568();
         super.method13951(class861, n, n2, class862, class863, n3);
     }
     
     public ResourceLocation method14141(final Class861 class861) {
-        return Minecraft.method5277().method5324().method6445().method7504().method6340();
+        return Minecraft.getInstance().method5324().method6445().method7504().method6340();
     }
     
     private void method14142(final MatrixStack class7351, final Class4150 class7352, final Class861 class7353, final int n, final int n2, final TextureAtlasSprite class7354, final TextureAtlasSprite class7355) {

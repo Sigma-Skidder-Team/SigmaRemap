@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 
 public class Class8782
@@ -98,16 +101,16 @@ public class Class8782
                                         if (!method30564(class8827, class8829, str)) {
                                             continue;
                                         }
-                                        if (class8829.method13274() != 0) {
-                                            if (class8829.method13274() == 1 && class8829.opt("content") != null) {
-                                                class8828.method13254(str, class8829.opt("content"));
+                                        if (class8829.length() != 0) {
+                                            if (class8829.length() == 1 && class8829.opt("content") != null) {
+                                                class8828.accumulate(str, class8829.opt("content"));
                                             }
                                             else {
-                                                class8828.method13254(str, class8829);
+                                                class8828.accumulate(str, class8829);
                                             }
                                         }
                                         else {
-                                            class8828.method13254(str, "");
+                                            class8828.accumulate(str, "");
                                         }
                                         return false;
                                     }
@@ -116,7 +119,7 @@ public class Class8782
                                         if (s2.length() <= 0) {
                                             continue;
                                         }
-                                        class8829.method13254("content", method30565(s2));
+                                        class8829.accumulate("content", method30565(s2));
                                     }
                                 }
                                 else {
@@ -129,11 +132,11 @@ public class Class8782
                         }
                         else {
                             if (class8827.method30799() == Class8782.field36926) {
-                                if (class8829.method13274() <= 0) {
-                                    class8828.method13254(str, "");
+                                if (class8829.length() <= 0) {
+                                    class8828.accumulate(str, "");
                                 }
                                 else {
-                                    class8828.method13254(str, class8829);
+                                    class8828.accumulate(str, class8829);
                                 }
                                 return false;
                             }
@@ -144,14 +147,14 @@ public class Class8782
                         final String s3 = (String)o;
                         o = class8827.method30799();
                         if (o != Class8782.field36925) {
-                            class8829.method13254(s3, "");
+                            class8829.accumulate(s3, "");
                         }
                         else {
                             final Object method30801 = class8827.method30799();
                             if (!(method30801 instanceof String)) {
                                 throw class8827.syntaxError("Missing value");
                             }
-                            class8829.method13254(s3, method30565((String)method30801));
+                            class8829.accumulate(s3, method30565((String)method30801));
                             o = null;
                         }
                     }
@@ -172,13 +175,13 @@ public class Class8782
             }
         }
         else {
-            final char method30803 = class8827.method30785();
+            final char method30803 = class8827.next();
             if (method30803 != '-') {
                 if (method30803 == '[') {
-                    if ("CDATA".equals(class8827.method30799()) && class8827.method30785() == '[') {
+                    if ("CDATA".equals(class8827.method30799()) && class8827.next() == '[') {
                         final String method30804 = class8827.method30795();
                         if (method30804.length() > 0) {
-                            class8828.method13254("content", method30804);
+                            class8828.accumulate("content", method30804);
                         }
                         return false;
                     }
@@ -186,7 +189,7 @@ public class Class8782
                 }
             }
             else {
-                if (class8827.method30785() == '-') {
+                if (class8827.next() == '-') {
                     class8827.method30800("-->");
                     return false;
                 }
@@ -222,7 +225,7 @@ public class Class8782
             return Boolean.FALSE;
         }
         if ("null".equalsIgnoreCase(anObject)) {
-            return JSONObject.field19729;
+            return JSONObject.NULL;
         }
         try {
             final char char1 = anObject.charAt(0);
@@ -249,7 +252,7 @@ public class Class8782
     public static JSONObject method30566(final String s) throws org.json.JSONException {
         final JSONObject JSONObject = new JSONObject();
         final Class8827 class4406 = new Class8827(s);
-        while (class4406.method30784() && class4406.method30800("<")) {
+        while (class4406.more() && class4406.method30800("<")) {
             method30564(class4406, JSONObject, null);
         }
         return JSONObject;
@@ -269,7 +272,7 @@ public class Class8782
                 if (o instanceof JSONArray) {
                     final JSONArray JSONArray = (JSONArray)o;
                     for (int method462 = JSONArray.length(), i = 0; i < method462; ++i) {
-                        sb.append(toString(JSONArray.method463(i), (str != null) ? str : "array"));
+                        sb.append(toString(JSONArray.opt(i), (str != null) ? str : "array"));
                     }
                     return sb.toString();
                 }
@@ -283,7 +286,7 @@ public class Class8782
             sb.append('>');
         }
         final JSONObject class89 = (JSONObject)o;
-        final Iterator<String> method463 = class89.method13272();
+        final Iterator<String> method463 = class89.keys();
         while (method463.hasNext()) {
             final String s2 = method463.next();
             Object method464 = class89.opt(s2);
@@ -305,7 +308,7 @@ public class Class8782
                 else {
                     final JSONArray class90 = (JSONArray)method464;
                     for (int method465 = class90.length(), j = 0; j < method465; ++j) {
-                        final Object method466 = class90.method449(j);
+                        final Object method466 = class90.get(j);
                         if (!(method466 instanceof JSONArray)) {
                             sb.append(toString(method466, s2));
                         }
@@ -330,7 +333,7 @@ public class Class8782
                     if (k > 0) {
                         sb.append('\n');
                     }
-                    sb.append(method30562(class91.method449(k).toString()));
+                    sb.append(method30562(class91.get(k).toString()));
                 }
             }
         }

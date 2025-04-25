@@ -28,7 +28,7 @@ public class Class6995 implements Class6991
     
     @Override
     public void method21404(final float n, final int n2) {
-        Minecraft.method5277().method5290().method5849(Class569.field3395);
+        Minecraft.getInstance().method5290().method5849(Class569.field3395);
         if (this.field27291 >= 0) {
             AbstractGui.blit(0, 0, 160.0f, 0.0f, 16, 16, 256, 256);
         }

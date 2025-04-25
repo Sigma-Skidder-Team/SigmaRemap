@@ -12,7 +12,7 @@ public abstract class Class662 extends Widget
     public double field3694;
     
     public Class662(final int n, final int n2, final int n3, final int n4, final double n5) {
-        this(Minecraft.method5277().gameSettings, n, n2, n3, n4, n5);
+        this(Minecraft.getInstance().gameSettings, n, n2, n3, n4, n5);
     }
     
     public Class662(final Class5760 field3693, final int n, final int n2, final int n3, final int n4, final double field3694) {
@@ -79,7 +79,7 @@ public abstract class Class662 extends Widget
     
     @Override
     public void method3356(final double n, final double n2) {
-        super.method3363(Minecraft.method5277().method5299());
+        super.method3363(Minecraft.getInstance().method5299());
     }
     
     public abstract void method3711();

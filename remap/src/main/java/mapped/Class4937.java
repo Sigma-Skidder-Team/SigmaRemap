@@ -80,7 +80,7 @@ public class Class4937 extends Class4800
     }
     
     public void method14861(final Screen class527) {
-        Minecraft.method5277().displayGuiScreen(class527);
+        Minecraft.getInstance().displayGuiScreen(class527);
         this.method14863();
     }
     

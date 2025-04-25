@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 public class CJsonUtils
 {
     private static String[] field33370;
@@ -19,7 +22,7 @@ public class CJsonUtils
     
     public static byte method26631(final JSONObject JSONObject, final String s, final byte b) {
         try {
-            return (byte) JSONObject.method13262(s);
+            return (byte) JSONObject.getInt(s);
         }
         catch (final JSONException class4406) {
             return b;
@@ -28,7 +31,7 @@ public class CJsonUtils
     
     public static int method26632(final JSONObject JSONObject, final String s, final int n) {
         try {
-            return JSONObject.method13262(s);
+            return JSONObject.getInt(s);
         }
         catch (final JSONException class4406) {
             return n;
@@ -37,7 +40,7 @@ public class CJsonUtils
     
     public static long method26633(final JSONObject JSONObject, final String s, final long n) {
         try {
-            return JSONObject.method13265(s);
+            return JSONObject.getLong(s);
         }
         catch (final JSONException class4406) {
             return n;
@@ -46,7 +49,7 @@ public class CJsonUtils
     
     public static float method26634(final JSONObject JSONObject, final String s, final float n) {
         try {
-            return (float) JSONObject.method13261(s);
+            return (float) JSONObject.getDouble(s);
         }
         catch (final JSONException class4406) {
             return n;
@@ -55,7 +58,7 @@ public class CJsonUtils
     
     public static double method26635(final JSONObject JSONObject, final String s, final double n) {
         try {
-            return JSONObject.method13261(s);
+            return JSONObject.getDouble(s);
         }
         catch (final JSONException class4406) {
             return n;
@@ -73,7 +76,7 @@ public class CJsonUtils
     
     public static JSONObject method26637(final JSONObject JSONObject, final String s) {
         try {
-            return JSONObject.method13264(s);
+            return JSONObject.getJSONObject(s);
         }
         catch (final JSONException class4406) {
             return null;
@@ -82,7 +85,7 @@ public class CJsonUtils
     
     public static JSONArray getJSONArrayOrNull(final JSONObject JSONObject, final String s) {
         try {
-            return JSONObject.method13263(s);
+            return JSONObject.getJSONArray(s);
         }
         catch (final JSONException class4406) {
             return null;

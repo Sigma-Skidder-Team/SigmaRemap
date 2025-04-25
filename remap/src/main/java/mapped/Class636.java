@@ -9,7 +9,7 @@ public class Class636 extends Class633
     private final Minecraft field3634;
     
     public Class636() {
-        this.field3634 = Minecraft.method5277();
+        this.field3634 = Minecraft.getInstance();
     }
     
     @Override

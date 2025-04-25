@@ -14,7 +14,7 @@ public final class Class900 extends Thread
     
     @Override
     public void run() {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         if (method5277 != null) {
             final IntegratedServer method5278 = method5277.method5285();
             if (method5278 != null) {

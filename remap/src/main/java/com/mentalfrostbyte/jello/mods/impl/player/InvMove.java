@@ -81,7 +81,7 @@ public class InvMove extends Module
                     return;
                 }
                 if (Client.getInstance().getGuimanager().method32154() != null && Client.getInstance().getGuimanager().method32154().method14230()) {
-                    final Class350[] field23460 = Minecraft.method5277().gameSettings.field23460;
+                    final Class350[] field23460 = Minecraft.getInstance().gameSettings.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;
                     }

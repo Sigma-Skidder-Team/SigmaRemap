@@ -35,13 +35,13 @@ public class Class4908 extends Class4825
     
     @Override
     public void draw(final float n) {
-        final double max = Math.max(-1.0, Math.min(1.0, (Minecraft.method5277().field4650.method26959() - Minecraft.method5277().window.method7694() / 2) / (Minecraft.method5277().window.method7694() / 2)));
-        final double max2 = Math.max(-1.0, Math.min(1.0, (Minecraft.method5277().field4650.method26960() - Minecraft.method5277().window.method7695() / 2) / (Minecraft.method5277().window.method7695() / 2)));
+        final double max = Math.max(-1.0, Math.min(1.0, (Minecraft.getInstance().field4650.method26959() - Minecraft.getInstance().window.method7694() / 2) / (Minecraft.getInstance().window.method7694() / 2)));
+        final double max2 = Math.max(-1.0, Math.min(1.0, (Minecraft.getInstance().field4650.method26960() - Minecraft.getInstance().window.method7695() / 2) / (Minecraft.getInstance().window.method7695() / 2)));
         GL11.glPushMatrix();
         GL11.glMatrixMode(5888);
         GL11.glEnable(2929);
         GL11.glTranslatef((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), -1000.0f);
-        RenderSystem.method30067(Matrix4f.method20755(20.0, (float)(Minecraft.method5277().window.method7692() / Minecraft.method5277().window.method7693()), 0.5f, 1.0f));
+        RenderSystem.method30067(Matrix4f.method20755(20.0, (float)(Minecraft.getInstance().window.method7692() / Minecraft.getInstance().window.method7693()), 0.5f, 1.0f));
         RenderSystem.method30057(5888);
         RenderSystem.method30058();
         GL11.glRotated(1.0 * Math.abs(max * max2), max2, max, 0.0);

@@ -175,7 +175,7 @@ public class HypixelFly extends Module {
         if (this.field16078 < 2.1) {
             this.field16078 = 1.0f;
         }
-        if (!Client.getInstance().method35189().getModuleByClass(Timer.class).isEnabled()) {
+        if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
             HypixelFly.mc.timer.timerSpeed = this.field16078;
         }
         if (this.field16079) {

@@ -33,9 +33,9 @@ public class Class8090
             class5723.method16999(class5724.method23923(class5723.method16998()));
         }
         if (class5723.method16998() instanceof Class4298) {
-            if (Minecraft.method5277().world != null) {
+            if (Minecraft.getInstance().world != null) {
                 final Class4298 class5727 = (Class4298)class5723.method16998();
-                final Chunk class5728 = new Chunk(Minecraft.method5277().world, new ChunkPos(class5727.method12909(), class5727.method12910()), class5727.method12915());
+                final Chunk class5728 = new Chunk(Minecraft.getInstance().world, new ChunkPos(class5727.method12909(), class5727.method12910()), class5727.method12915());
                 class5728.method7063(class5727.method12915(), new PacketBuffer(class5727.method12905().copy()), class5727.method12913(), class5727.method12911());
                 if (class5728 != null) {
                     int n = 0;

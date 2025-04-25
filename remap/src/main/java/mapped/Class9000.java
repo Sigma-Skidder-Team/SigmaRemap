@@ -17,6 +17,8 @@ import java.util.Iterator;
 import org.lwjgl.glfw.GLFW;
 import java.util.ArrayList;
 import org.lwjgl.glfw.GLFWKeyCallback;
+import totalcross.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -58,8 +60,8 @@ public class Class9000
         Class9000.field37989 = GLFW.glfwCreateStandardCursor(221185);
         Class9000.field37990 = GLFW.glfwCreateStandardCursor(221188);
         Class9000.field37991 = GLFW.glfwCreateStandardCursor(221186);
-        GLFW.glfwSetCursor(Minecraft.method5277().window.getHandle(), Class9000.field37989);
-        Class9000.field37993 = (float)(Minecraft.method5277().window.method7693() / Minecraft.method5277().window.method7695());
+        GLFW.glfwSetCursor(Minecraft.getInstance().window.getHandle(), Class9000.field37989);
+        Class9000.field37993 = (float)(Minecraft.getInstance().window.method7693() / Minecraft.getInstance().window.method7695());
     }
     
     public void method33452() {
@@ -100,20 +102,20 @@ public class Class9000
     
     public static boolean method32131(final Screen class527) {
         if (class527 instanceof Class720 && !(class527 instanceof Class721)) {
-            Minecraft.method5277().currentScreen = null;
-            Minecraft.method5277().displayGuiScreen(new Class721(((Class720)class527).field3931));
+            Minecraft.getInstance().currentScreen = null;
+            Minecraft.getInstance().displayGuiScreen(new Class721(((Class720)class527).field3931));
             return true;
         }
         if (class527 instanceof Class551 && !(class527 instanceof Class552)) {
-            Minecraft.method5277().currentScreen = null;
-            Minecraft.method5277().displayGuiScreen(new Class552());
+            Minecraft.getInstance().currentScreen = null;
+            Minecraft.getInstance().displayGuiScreen(new Class552());
             return true;
         }
         if (Client.getInstance().getClientMode() == ClientMode.NOADDONS) {
             if (class527 instanceof Class548) {
                 if (!(class527 instanceof Class549)) {
-                    Minecraft.method5277().currentScreen = null;
-                    Minecraft.method5277().displayGuiScreen(new Class549());
+                    Minecraft.getInstance().currentScreen = null;
+                    Minecraft.getInstance().displayGuiScreen(new Class549());
                     return true;
                 }
             }
@@ -152,8 +154,8 @@ public class Class9000
     
     public void method32134() {
         if (this.field37997 != null) {
-            this.field37999[0] = Math.max(0, Math.min(Minecraft.method5277().window.method7694(), (int) Minecraft.method5277().field4650.method26959()));
-            this.field37999[1] = Math.max(0, Math.min(Minecraft.method5277().window.method7695(), (int) Minecraft.method5277().field4650.method26960()));
+            this.field37999[0] = Math.max(0, Math.min(Minecraft.getInstance().window.method7694(), (int) Minecraft.getInstance().field4650.method26959()));
+            this.field37999[1] = Math.max(0, Math.min(Minecraft.getInstance().window.method7695(), (int) Minecraft.getInstance().field4650.method26960()));
             final Iterator<Integer> iterator = this.field37984.iterator();
             while (iterator.hasNext()) {
                 this.method32137(iterator.next());
@@ -214,13 +216,13 @@ public class Class9000
     
     public void renderWatermark() {
         ClientAssets.gingerbread.bind();
-        if (Minecraft.method5277().world != null) {
+        if (Minecraft.getInstance().world != null) {
             GL11.glDisable(2896);
             int n = 0;
             final int n2 = 0;
             final int n3 = 170;
-            if (Minecraft.method5277().gameSettings.field23466) {
-                n = Minecraft.method5277().window.method7694() / 2 - n3 / 2;
+            if (Minecraft.getInstance().gameSettings.field23466) {
+                n = Minecraft.getInstance().window.method7694() / 2 - n3 / 2;
             }
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 final float n4 = 0.5f + TabGUI.field15637.calcPercent() * 0.5f;
@@ -239,7 +241,7 @@ public class Class9000
             Client.getInstance().getEventBus().method21097(new Class5740());
         }
         if (this.field37997 != null) {
-            if (Minecraft.method5277().field4701 == null) {
+            if (Minecraft.getInstance().field4701 == null) {
                 this.field37997.draw(1.0f);
             }
         }
@@ -247,7 +249,7 @@ public class Class9000
     
     public void method32139(final float n) {
         if (this.field37997 != null) {
-            if (Minecraft.method5277().field4701 == null) {
+            if (Minecraft.getInstance().field4701 == null) {
                 this.field37997.method14235(n);
             }
         }
@@ -255,7 +257,7 @@ public class Class9000
     
     public void method32140(final int n, final int n2, final int n3) {
         if (this.field37997 != null) {
-            if (Minecraft.method5277().field4701 == null) {
+            if (Minecraft.getInstance().field4701 == null) {
                 this.field37997.method14211(n, n2, n3);
             }
         }
@@ -263,7 +265,7 @@ public class Class9000
     
     public void method32141(final int n, final int n2, final int n3) {
         if (this.field37997 != null) {
-            if (Minecraft.method5277().field4701 == null) {
+            if (Minecraft.getInstance().field4701 == null) {
                 this.field37997.method14233(n, n2, n3);
             }
         }
@@ -272,13 +274,13 @@ public class Class9000
     public JSONObject method32142(final JSONObject JSONObject) {
         if (this.field37997 != null) {
             final JSONObject method14202 = this.field37997.method14202(new JSONObject());
-            if (method14202.method13274() != 0) {
+            if (method14202.length() != 0) {
                 JSONObject.put(this.field37997.method14266(), method14202);
             }
         }
-        JSONObject.method13295("guiBlur", this.field37994);
-        JSONObject.method13295("hqIngameBlur", this.field37995);
-        JSONObject.method13295("hidpicocoa", Class9000.field37996);
+        JSONObject.put("guiBlur", this.field37994);
+        JSONObject.put("hqIngameBlur", this.field37995);
+        JSONObject.put("hidpicocoa", Class9000.field37996);
         return JSONObject;
     }
     
@@ -307,7 +309,7 @@ public class Class9000
     }
     
     public static void method32149() {
-        Minecraft.method5277();
+        Minecraft.getInstance();
         if (!Minecraft.field4623) {
             return;
         }
@@ -327,7 +329,7 @@ public class Class9000
         if (this.field37997 != null) {
             JSONObject method13264 = null;
             try {
-                method13264 = Client.getInstance().method35206().method13264(this.field37997.method14266());
+                method13264 = Client.getInstance().method35206().getJSONObject(this.field37997.method14266());
             }
             catch (final Exception ex) {
                 method13264 = new JSONObject();
@@ -378,10 +380,10 @@ public class Class9000
             }
             this.method32150(Client.getInstance().method35206());
         }
-        if (Minecraft.method5277().window.method7694() != 0 && Minecraft.method5277().window.method7695() != 0) {
-            Class9000.field37993 = (float)Math.max(Minecraft.method5277().window.method7692() / Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7693() / Minecraft.method5277().window.method7695());
+        if (Minecraft.getInstance().window.method7694() != 0 && Minecraft.getInstance().window.method7695() != 0) {
+            Class9000.field37993 = (float)Math.max(Minecraft.getInstance().window.method7692() / Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7693() / Minecraft.getInstance().window.method7695());
         }
-        RenderUtil.method26861(Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695());
+        RenderUtil.method26861(Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7695());
     }
     
     public Class4800 method32154() {
@@ -389,7 +391,7 @@ public class Class9000
     }
     
     public void method32155() {
-        this.method32156(method32132(Minecraft.method5277().currentScreen));
+        this.method32156(method32132(Minecraft.getInstance().currentScreen));
     }
     
     public void method32156(final Class4800 field37997) {
@@ -402,15 +404,15 @@ public class Class9000
         if (this.field37997 != null) {
             this.field37997.method14200(this.field37999[0], this.field37999[1]);
         }
-        if (Client.getInstance().method35189() != null) {
-            Client.getInstance().method35189().getJelloTouch().method21965(null);
+        if (Client.getInstance().moduleManager() != null) {
+            Client.getInstance().moduleManager().getJelloTouch().method21965(null);
         }
     }
     
     public void method32157(final Screen class527) {
         if (class527 != null) {
-            Minecraft.method5277().currentScreen = null;
-            Minecraft.method5277().displayGuiScreen(class527);
+            Minecraft.getInstance().currentScreen = null;
+            Minecraft.getInstance().displayGuiScreen(class527);
         }
     }
     

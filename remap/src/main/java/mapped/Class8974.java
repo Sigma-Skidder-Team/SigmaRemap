@@ -81,7 +81,7 @@ public class Class8974
     }
     
     public boolean method31864() {
-        if (Math.sqrt(this.method31868()) <= Minecraft.method5277().gameSettings.field23382 * 16 && Client.getInstance().method35192().method28375()) {
+        if (Math.sqrt(this.method31868()) <= Minecraft.getInstance().gameSettings.field23382 * 16 && Client.getInstance().method35192().method28375()) {
             return true;
         }
         if (this.method31868() > 576.0) {
@@ -141,7 +141,7 @@ public class Class8974
     }
     
     public double method31868() {
-        final Class6092 method5833 = Minecraft.method5277().field4644.method5833();
+        final Class6092 method5833 = Minecraft.getInstance().field4644.method5833();
         final double n = this.field37814.minX + 8.0 - method5833.method18161().x;
         final double n2 = this.field37814.minY + 8.0 - method5833.method18161().y;
         final double n3 = this.field37814.minZ + 8.0 - method5833.method18161().z;

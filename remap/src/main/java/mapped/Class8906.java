@@ -69,7 +69,7 @@ public class Class8906
     }
     
     private static Map<EntityType, Class4703> method31382() {
-        final Map<EntityType, Class4703> method28719 = Minecraft.method5277().method5306().method28719();
+        final Map<EntityType, Class4703> method28719 = Minecraft.getInstance().method5306().method28719();
         if (method28719 != null) {
             if (Class8906.field37445 == null) {
                 Class8906.field37445 = new HashMap<EntityType, Class4703>(method28719);

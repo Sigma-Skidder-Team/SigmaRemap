@@ -105,7 +105,7 @@ public class Class8707
     }
     
     static {
-        Class8707.field36586 = Minecraft.method5277();
+        Class8707.field36586 = Minecraft.getInstance();
         Class8707.field36590 = Class8707.field36586.field4667.field24886;
         Class8707.field36591 = Class8707.field36586.field4667.field24887;
         Class8707.field36592 = 0;

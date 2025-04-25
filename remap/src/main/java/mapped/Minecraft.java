@@ -453,7 +453,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     }
     
     public static void method5239(final CrashReport class7689) {
-        final File file = new File(new File(method5277().field4652, "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
+        final File file = new File(new File(getInstance().field4652, "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-client.txt");
         Class9280.method34259(class7689.method24414());
         if (class7689.method24415() != null) {
             Class9280.method34259("#@!@# Game crashed! Crash report saved to: #@!@# " + class7689.method24415());
@@ -1573,7 +1573,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         method24417.addDetail("CPU", Class7691::method24459);
     }
     
-    public static Minecraft method5277() {
+    public static Minecraft getInstance() {
         return Minecraft.field4621;
     }
     

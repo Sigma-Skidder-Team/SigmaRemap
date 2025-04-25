@@ -26,6 +26,6 @@ public class Class9134
     }
     
     static {
-        field38711 = Minecraft.method5277();
+        field38711 = Minecraft.getInstance();
     }
 }

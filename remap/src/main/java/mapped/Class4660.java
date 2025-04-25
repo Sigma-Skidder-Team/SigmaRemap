@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 public class Class4660 implements Class4659
 {
     public final /* synthetic */ CombatTracker field20166;
@@ -19,7 +21,7 @@ public class Class4660 implements Class4659
             final JSONObject class4406 = new JSONObject();
             class4406.put("messageId", JSONObject.getString("messageId"));
             CombatTracker.method33666(this.field20166).method14942("message-received", class4406);
-            this.field20166.field38990.method33644(JSONObject.getString("senderId"), JSONObject.getString("message"), JSONObject.method13265("timestamp"));
+            this.field20166.field38990.method33644(JSONObject.getString("senderId"), JSONObject.getString("message"), JSONObject.getLong("timestamp"));
         }
     }
 }

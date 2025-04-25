@@ -13,8 +13,8 @@ public class Class6510 implements Class6507
         customGuiScreen.method14273(0);
         customGuiScreen.method14275(0);
         if (class4804 == null) {
-            customGuiScreen.method14277(Minecraft.method5277().window.method7694());
-            customGuiScreen.method14279(Minecraft.method5277().window.method7695());
+            customGuiScreen.method14277(Minecraft.getInstance().window.method7694());
+            customGuiScreen.method14279(Minecraft.getInstance().window.method7695());
         }
         else {
             customGuiScreen.method14277(class4804.method14276());

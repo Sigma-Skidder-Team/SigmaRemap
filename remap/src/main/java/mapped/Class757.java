@@ -47,7 +47,7 @@ public class Class757 extends ClientPlayerEntity
     @Override
     public void method1659() {
         final Class5743 class5743 = new Class5743();
-        if (Class1607.field8977) {
+        if (ModuleSettingInitializr.field8977) {
             try {
                 if (this.ticksExisted % 150 == 0) {
                     Thread.sleep((long)(1800.0 + 7000.0 * Math.random()));

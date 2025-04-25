@@ -158,7 +158,7 @@ public class Class744 extends Class516<Class3439>
                         if (n8 < 14.0) {
                             if (n9 < 14.0) {
                                 if (((Class3439)this.field3077).method10877(this.minecraft.player, i)) {
-                                    Minecraft.method5277().method5299().method6422(Class6836.method20933(Class8520.field35663, 1.0f));
+                                    Minecraft.getInstance().method5299().method6422(Class6836.method20933(Class8520.field35663, 1.0f));
                                     this.minecraft.playerController.method27326(((Class3439)this.field3077).field16154, i);
                                     return true;
                                 }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONTokener;
+
 import java.util.logging.Level;
 
 public final class Class6746 implements Class6747

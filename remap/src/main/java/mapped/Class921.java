@@ -28,11 +28,11 @@ public class Class921 extends Thread
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
-            Class9019.method32311(this.field4900, NetworkManager.method11183(byName, this.field4899, Minecraft.method5277().gameSettings.method17129()));
+            Class9019.method32311(this.field4900, NetworkManager.method11183(byName, this.field4899, Minecraft.getInstance().gameSettings.method17129()));
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
-            Class9019.method32312(this.field4900).method11173(new Class5808(Class9019.method32312(this.field4900), Minecraft.method5277(), Class9019.method32313(this.field4900).method15403(), p0 -> {}));
+            Class9019.method32312(this.field4900).method11173(new Class5808(Class9019.method32312(this.field4900), Minecraft.getInstance(), Class9019.method32313(this.field4900).method15403(), p0 -> {}));
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
@@ -40,7 +40,7 @@ public class Class921 extends Thread
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
-            Class9019.method32312(this.field4900).method11174(new Class4327(Minecraft.method5277().method5287().method33694()));
+            Class9019.method32312(this.field4900).method11174(new Class4327(Minecraft.getInstance().method5287().method33694()));
         }
         catch (final UnknownHostException ex) {
             Realms.method25371();

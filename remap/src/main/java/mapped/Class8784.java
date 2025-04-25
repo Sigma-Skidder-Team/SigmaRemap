@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Module;
+import totalcross.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -48,8 +49,8 @@ public class Class8784
     public Class8241 method30570(final Class8241 class8241, final String string1) {
         final Class8241 class8242 = new Class8241(string1, class8241);
         class8242.method27292();
-        final Class8241 class8243 = new Class8241("settings", this.method30569(string1).method13264("modConfig"));
-        for (final Module class8244 : Client.getInstance().method35189().getModuleMap().values()) {
+        final Class8241 class8243 = new Class8241("settings", this.method30569(string1).getJSONObject("modConfig"));
+        for (final Module class8244 : Client.getInstance().moduleManager().getModuleMap().values()) {
             final JSONObject method27294 = class8243.method27294(class8244);
             if (method27294 == null) {
                 continue;

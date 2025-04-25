@@ -46,7 +46,7 @@ public class Class8297
                             if (s.endsWith("!")) {
                                 n = 16719904;
                             }
-                            Minecraft.method5277().fontRenderer.drawStringWithShadow(s, (float)(method3899.x + 5), (float)(method3899.y + 5 + i * 11), n);
+                            Minecraft.getInstance().fontRenderer.drawStringWithShadow(s, (float)(method3899.x + 5), (float)(method3899.y + 5 + i * 11), n);
                         }
                     }
                 }

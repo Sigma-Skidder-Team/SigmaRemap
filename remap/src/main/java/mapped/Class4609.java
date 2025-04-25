@@ -47,28 +47,28 @@ public class Class4609
     }
     
     public static void method13669(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
-        final double y = class354.getY() + 0.5 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
+        final double x = class354.getX() + 0.5 - Minecraft.getInstance().player.posX;
+        final double y = class354.getY() + 0.5 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ;
         final double x2 = MathHelper.sqrt(x * x + y2 * y2);
         final float n = (float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f;
         final float n2 = (float)(-(Math.atan2(y, x2) * 180.0 / 3.141592653589793));
-        Minecraft.method5277().player.rotationYaw += MathHelper.method35668(n - Minecraft.method5277().player.rotationYaw);
-        Minecraft.method5277().player.rotationPitch += MathHelper.method35668(n2 - Minecraft.method5277().player.rotationPitch);
+        Minecraft.getInstance().player.rotationYaw += MathHelper.method35668(n - Minecraft.getInstance().player.rotationYaw);
+        Minecraft.getInstance().player.rotationPitch += MathHelper.method35668(n2 - Minecraft.getInstance().player.rotationPitch);
     }
     
     public static void method13670(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
-        final double y = class354.getY() + 0.5 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
-        Minecraft.method5277().method5269().method17292(new Class4356(Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch), Minecraft.method5277().player.onGround));
+        final double x = class354.getX() + 0.5 - Minecraft.getInstance().player.posX;
+        final double y = class354.getY() + 0.5 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ;
+        Minecraft.getInstance().method5269().method17292(new Class4356(Minecraft.getInstance().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.getInstance().player.rotationYaw), Minecraft.getInstance().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.getInstance().player.rotationPitch), Minecraft.getInstance().player.onGround));
     }
     
     public static float[] method13671(final BlockPos class354) {
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX;
-        final double y = class354.getY() - 0.25 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ;
-        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.getInstance().player.posX;
+        final double y = class354.getY() - 0.25 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892());
+        final double y2 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ;
+        return new float[] { Minecraft.getInstance().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.getInstance().player.rotationYaw), Minecraft.getInstance().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.getInstance().player.rotationPitch) };
     }
     
     public static float[] method13672(final BlockPos class354, final Direction class355) {
@@ -100,10 +100,10 @@ public class Class4609
                 break;
             }
         }
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
-        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.getInstance().player.posX + n;
+        final double y = class354.getY() - 0.02 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892()) + n3;
+        final double y2 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ + n2;
+        return new float[] { Minecraft.getInstance().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.getInstance().player.rotationYaw), Minecraft.getInstance().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.getInstance().player.rotationPitch) };
     }
     
     public static float[] method13673(final BlockPos class354, final Direction class355) {
@@ -147,10 +147,10 @@ public class Class4609
         if (n3 == 0.0f) {
             n3 = (float)(0.6000000238418579 - Math.sin((System.currentTimeMillis() - 500L) / 1600.0) * 0.2);
         }
-        final double x = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
-        final double y2 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
-        return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
+        final double x = class354.getX() + 0.5 - Minecraft.getInstance().player.posX + n;
+        final double y = class354.getY() - 0.02 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892()) + n3;
+        final double y2 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ + n2;
+        return new float[] { Minecraft.getInstance().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.getInstance().player.rotationYaw), Minecraft.getInstance().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.getInstance().player.rotationPitch) };
     }
     
     public static float method13674(final BlockPos class354, final Direction class355) {
@@ -174,10 +174,10 @@ public class Class4609
                 break;
             }
         }
-        final double n3 = class354.getX() + 0.5 - Minecraft.method5277().player.posX + n;
-        final double n4 = class354.getZ() + 0.5 - Minecraft.method5277().player.posZ + n2;
-        final double y = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + 1.0;
-        final double y2 = class354.getY() - 0.02 - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892());
+        final double n3 = class354.getX() + 0.5 - Minecraft.getInstance().player.posX + n;
+        final double n4 = class354.getZ() + 0.5 - Minecraft.getInstance().player.posZ + n2;
+        final double y = class354.getY() - 0.02 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892()) + 1.0;
+        final double y2 = class354.getY() - 0.02 - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892());
         final double n5 = MathHelper.sqrt(n3 * n3 + n4 * n4);
         return (float)(-(Math.atan2(y2, n5) * 180.0 / 3.141592653589793)) - (float)(-(Math.atan2(y, n5) * 180.0 / 3.141592653589793));
     }
@@ -343,10 +343,10 @@ public class Class4609
             final double n = method13696.getHitVec().x - method13696.getPos().getX();
             final double n2 = method13696.getHitVec().z - method13696.getPos().getZ();
             final double n3 = method13696.getHitVec().y - method13696.getPos().getY();
-            final double x = method13696.getPos().getX() - Minecraft.method5277().player.posX + n;
-            final double y = method13696.getPos().getY() - (Minecraft.method5277().player.posY + Minecraft.method5277().player.method1892()) + n3;
-            final double y2 = method13696.getPos().getZ() - Minecraft.method5277().player.posZ + n2;
-            return new float[] { Minecraft.method5277().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.method5277().player.rotationYaw), Minecraft.method5277().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.method5277().player.rotationPitch) };
+            final double x = method13696.getPos().getX() - Minecraft.getInstance().player.posX + n;
+            final double y = method13696.getPos().getY() - (Minecraft.getInstance().player.posY + Minecraft.getInstance().player.method1892()) + n3;
+            final double y2 = method13696.getPos().getZ() - Minecraft.getInstance().player.posZ + n2;
+            return new float[] { Minecraft.getInstance().player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - Minecraft.getInstance().player.rotationYaw), Minecraft.getInstance().player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - Minecraft.getInstance().player.rotationPitch) };
         }
         return null;
     }
@@ -577,6 +577,6 @@ public class Class4609
     }
     
     static {
-        field20075 = Minecraft.method5277();
+        field20075 = Minecraft.getInstance();
     }
 }

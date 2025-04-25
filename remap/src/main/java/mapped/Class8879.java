@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Module;
+import totalcross.json.JSONObject;
 
 public class Class8879
 {
@@ -34,13 +35,13 @@ public class Class8879
             return;
         }
         if (JSONObject.has("key")) {
-            this.field37347 = JSONObject.method13262("key");
+            this.field37347 = JSONObject.getInt("key");
         }
         if (JSONObject.has("type")) {
             final String method13268 = JSONObject.getString("type");
             switch (method13268) {
                 case "mod": {
-                    for (final Module field37348 : Client.getInstance().method35189().getModuleMap().values()) {
+                    for (final Module field37348 : Client.getInstance().moduleManager().getModuleMap().values()) {
                         if (JSONObject.getString("target").equals(field37348.getName())) {
                             this.field37348 = field37348;
                         }
@@ -72,7 +73,7 @@ public class Class8879
                 break;
             }
         }
-        JSONObject.method13298("key", this.field37347);
+        JSONObject.put("key", this.field37347);
         return JSONObject;
     }
     

@@ -62,7 +62,7 @@ public class NarratorChatListener implements Class7894
     }
     
     private static Class2051 method25557() {
-        return Minecraft.method5277().gameSettings.field23475;
+        return Minecraft.getInstance().gameSettings.field23475;
     }
     
     private void method25558(final boolean b, final String s) {
@@ -75,7 +75,7 @@ public class NarratorChatListener implements Class7894
     public void method25559(final Class2051 class2051) {
         this.method25561();
         this.field32405.say(new Class2259("options.narrator", new Object[0]).getString() + " : " + new Class2259(class2051.method8138(), new Object[0]).getString(), true);
-        final Class690 method5318 = Minecraft.method5277().method5318();
+        final Class690 method5318 = Minecraft.getInstance().method5318();
         if (!this.field32405.active()) {
             Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled", new Object[0]), new Class2259("options.narrator.notavailable", new Object[0]));
         }

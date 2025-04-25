@@ -2,9 +2,12 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.auth;
 
 import com.mentalfrostbyte.Client;
+import mapped.CaptchaChecker;
+import mapped.CombatTracker;
+import mapped.PremiumChecker;
 import org.apache.commons.io.FileUtils;
 
 import java.nio.charset.StandardCharsets;
@@ -24,9 +27,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import java.util.UUID;
 import org.apache.http.client.HttpClient;
-import xd.JSONObject;
+import xd.CustomJSONObject;
 
-public class NetworkManager2
+public class LicenseManager
 {
     public HttpClient httpClient;
     public CaptchaChecker captcha;
@@ -36,13 +39,13 @@ public class NetworkManager2
     public String registerUrl;
     public String claimPremiumUrl;
     public String challengeUrl;
-    public String field25693;
+    public String session;
     public String token;
     public static boolean premium;
     public static boolean field25696;
     public CombatTracker combatTracker;
     
-    public NetworkManager2() {
+    public LicenseManager() {
         this.mainURL = "https://jelloprg.sigmaclient.info/";
         this.loginUrl = this.mainURL + "/login";
         this.registerUrl = this.mainURL + "/register";
@@ -76,18 +79,18 @@ public class NetworkManager2
                 String response_real;
                 try (InputStream inputStream = entity.getContent()) {
                     String var13 = IOUtils.toString(inputStream, "UTF-8");
-                    JSONObject jsonObject = new JSONObject(var13);
-                    if (jsonObject.getBoolean("success")) {
-                        if (jsonObject.has("premium")) {
-                            new Thread(new PremiumChecker(jsonObject.has("premium"))).start();
+                    CustomJSONObject customJsonObject = new CustomJSONObject(var13);
+                    if (customJsonObject.getBoolean("success")) {
+                        if (customJsonObject.has("premium")) {
+                            new Thread(new PremiumChecker(customJsonObject.has("premium"))).start();
                         }
 
-                        this.handleLoginResponse(jsonObject);
+                        this.handleLoginResponse(customJsonObject);
                         return null;
                     }
 
-                    if (jsonObject.has("error")) {
-                        error = jsonObject.getString("error");
+                    if (customJsonObject.has("error")) {
+                        error = customJsonObject.getString("error");
                     }
 
                     response_real = error;
@@ -122,13 +125,13 @@ public class NetworkManager2
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONObject class8774 = new JSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
-                    if (class8774.getBoolean("success")) {
-                        this.handleLoginResponse(class8774);
+                    final CustomJSONObject json = new CustomJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    if (json.getBoolean("success")) {
+                        this.handleLoginResponse(json);
                         return;
                     }
-                    if (class8774.has("error")) {
-                        s4 = class8774.getString("error");
+                    if (json.has("error")) {
+                        s4 = json.getString("error");
                     }
                 }
             }
@@ -180,7 +183,7 @@ public class NetworkManager2
             final HttpEntity entity = this.httpClient.execute((HttpUriRequest)httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONObject class8774 = new JSONObject(IOUtils.toString(content, "UTF-8"));
+                    final CustomJSONObject class8774 = new CustomJSONObject(IOUtils.toString(content, "UTF-8"));
                     if (class8774.getBoolean("success")) {
                         this.handleLoginResponse(class8774);
                         return null;
@@ -211,13 +214,13 @@ public class NetworkManager2
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final JSONObject jsonObject = new JSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
-                    if (jsonObject.getBoolean("success")) {
-                        final String uid = jsonObject.getString("uid");
+                    final CustomJSONObject customJsonObject = new CustomJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    if (customJsonObject.getBoolean("success")) {
+                        final String uid = customJsonObject.getString("uid");
                         boolean completed = false;
 
-                        if (jsonObject.has("captcha")) {
-                            completed = jsonObject.getBoolean("captcha");
+                        if (customJsonObject.has("captcha")) {
+                            completed = customJsonObject.getBoolean("captcha");
                         }
                         this.captcha = new CaptchaChecker(uid, completed);
                         return this.captcha;
@@ -232,46 +235,46 @@ public class NetworkManager2
         return null;
     }
     
-    public void handleLoginResponse(final mapped.JSONObject JSONObject) {
-        String method13268 = null;
-        String method13269 = null;
-        String method13270 = null;
+    public void handleLoginResponse(final totalcross.json.JSONObject JSONObject) {
+        String username = null;
+        String authToken = null;
+        String agoraToken = null;
         if (JSONObject.has("username")) {
-            method13269 = JSONObject.getString("username");
+            username = JSONObject.getString("username");
         }
         if (JSONObject.has("auth_token")) {
-            method13268 = JSONObject.getString("auth_token");
+            authToken = JSONObject.getString("auth_token");
         }
         if (JSONObject.has("agora_token")) {
-            method13270 = JSONObject.getString("agora_token");
+            agoraToken = JSONObject.getString("agora_token");
         }
-        if (method13268 != null && method13269 != null && method13270 != null) {
+        if (authToken != null && username != null && agoraToken != null) {
             try {
-                this.encryptor = new Encryptor(method13269, method13268, method13270);
+                this.encryptor = new Encryptor(username, authToken, agoraToken);
                 FileUtils.writeByteArrayToFile(new File("jello/jello.lic"), this.encryptor.encrypt());
             }
             catch (final IOException ex) {}
         }
         if (JSONObject.has("session")) {
-            this.method19346(JSONObject.getString("session"));
+            this.setSession(JSONObject.getString("session"));
         }
     }
     
-    public void method19346(final String field25693) {
-        if (!field25693.equals("error")) {
-            this.field25693 = field25693;
+    public void setSession(final String session) {
+        if (!session.equals("error")) {
+            this.session = session;
         }
         else {
-            this.field25693 = null;
+            this.session = null;
         }
     }
     
-    public Encryptor method19347() {
+    public Encryptor getEncryptor() {
         return this.encryptor;
     }
     
     public void resetLicense() {
-        this.field25693 = null;
+        this.session = null;
         this.encryptor = null;
         premium = false;
         final File file = new File("jello/jello.lic");
@@ -280,11 +283,11 @@ public class NetworkManager2
         }
     }
     
-    public String method19349() {
-        return this.field25693;
+    public String getSession() {
+        return this.session;
     }
     
-    public String method19350() {
+    public String getUsername() {
         return "User";
     }
     
@@ -297,7 +300,7 @@ public class NetworkManager2
     }
     
     static {
-        NetworkManager2.premium = false;
-        NetworkManager2.field25696 = false;
+        LicenseManager.premium = false;
+        LicenseManager.field25696 = false;
     }
 }

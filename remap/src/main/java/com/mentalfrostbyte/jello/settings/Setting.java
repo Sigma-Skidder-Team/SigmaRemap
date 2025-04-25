@@ -4,7 +4,7 @@
 
 package com.mentalfrostbyte.jello.settings;
 
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.Class7655;
 
 import java.util.Iterator;

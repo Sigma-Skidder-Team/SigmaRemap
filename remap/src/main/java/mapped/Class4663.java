@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 public class Class4663 implements Class4659
 {
     public final /* synthetic */ CombatTracker field20176;

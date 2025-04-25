@@ -34,7 +34,7 @@ public class Class9036
     
     public static void method32479() {
         if (Class9036.field38216 == null) {
-            Class9036.field38216 = Minecraft.method5277();
+            Class9036.field38216 = Minecraft.getInstance();
             Class9036.field38217 = Class9036.field38216.gameSettings;
             Class9036.field38218 = Class9036.field38216.method5327();
         }

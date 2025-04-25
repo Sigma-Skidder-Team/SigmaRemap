@@ -16,7 +16,7 @@ public class Class6977
     public final Class<? extends Block> field27276;
     
     public Class6977(final Class<? extends Block> field27276) {
-        this.field27275 = Minecraft.method5277();
+        this.field27275 = Minecraft.getInstance();
         this.field27276 = field27276;
     }
     

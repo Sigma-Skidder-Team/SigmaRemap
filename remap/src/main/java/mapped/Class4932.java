@@ -17,7 +17,7 @@ public class Class4932 extends Class4800
     
     public Class4932() {
         super("SnakeGameScreen");
-        this.field21122 = Minecraft.method5277();
+        this.field21122 = Minecraft.getInstance();
         this.field21123 = new Class7617();
         this.field21127 = 14;
         this.setListening(false);
@@ -53,7 +53,7 @@ public class Class4932 extends Class4800
         super.method14204(n);
         if (n == 256) {
             ColorUtils.method19172();
-            Minecraft.method5277().displayGuiScreen(null);
+            Minecraft.getInstance().displayGuiScreen(null);
         }
     }
 }

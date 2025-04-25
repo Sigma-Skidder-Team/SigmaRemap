@@ -1543,7 +1543,7 @@ public class Class5799 implements IClientPlayNetHandler
                     this.field23808.execute(() -> {
                         final Minecraft field23808 = this.field23808;
                         new Class546(b -> {
-                            this.field23808 = Minecraft.method5277();
+                            this.field23808 = Minecraft.getInstance();
                             final ServerData method5282 = this.field23808.method5282();
                             if (!b) {
                                 if (method5282 != null) {

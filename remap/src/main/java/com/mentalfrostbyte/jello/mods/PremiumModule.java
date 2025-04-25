@@ -31,9 +31,9 @@ public class PremiumModule extends Module
     }
     
     @Override
-    public void method9908(final boolean b) {
+    public void setEnabled(final boolean b) {
         if (Client.getInstance().getNetworkManager().isPremium()) {
-            super.method9908(b);
+            super.setEnabled(b);
             return;
         }
         if (this.enabled != b) {

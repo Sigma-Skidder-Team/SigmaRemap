@@ -111,7 +111,7 @@ public abstract class Widget extends AbstractGui implements IRenderable, IGuiEve
     }
     
     public void method3353(final int n, final int n2, final float n3) {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         final FontRenderer field4643 = method5277.fontRenderer;
         method5277.method5290().method5849(Widget.field3421);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, this.field3433);
@@ -143,7 +143,7 @@ public abstract class Widget extends AbstractGui implements IRenderable, IGuiEve
             return false;
         }
         if (this.method3358(n3) && this.method3359(n, n2)) {
-            this.method3363(Minecraft.method5277().method5299());
+            this.method3363(Minecraft.getInstance().method5299());
             this.method3355(n, n2);
             return true;
         }

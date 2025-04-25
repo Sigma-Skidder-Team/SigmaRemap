@@ -27,7 +27,7 @@ public class Class667 extends Class654
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        Minecraft.method5277().method5290().method5849(Class654.field3421);
+        Minecraft.getInstance().method5290().method5849(Class654.field3421);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         Class2147 class2147;
         if (this.field3431) {

@@ -47,7 +47,7 @@ public class Class646 extends Class645
             RenderSystem.method30063(1.0f, n4, 1.0f);
             RenderSystem.translatef((float)(-(this.field3426 + 8)), (float)(-(this.field3427 + 12)), 0.0f);
         }
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         method5277.method5290().method5849(this.field3657);
         RenderSystem.disableDepthTest();
         int field3659 = this.field3659;

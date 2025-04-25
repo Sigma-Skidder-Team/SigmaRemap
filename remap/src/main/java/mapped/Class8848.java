@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -37,7 +39,7 @@ public class Class8848
     public JSONObject method30979() {
         final JSONObject JSONObject = new JSONObject();
         JSONObject.put("server", this.field37203);
-        JSONObject.method13299("until", this.field37204.getTime());
+        JSONObject.put("until", this.field37204.getTime());
         return JSONObject;
     }
     
@@ -50,7 +52,7 @@ public class Class8848
     }
     
     public ServerData method30982() {
-        final Class9295 class9295 = new Class9295(Minecraft.method5277());
+        final Class9295 class9295 = new Class9295(Minecraft.getInstance());
         class9295.method34331();
         for (int method34336 = class9295.method34336(), i = 0; i < method34336; ++i) {
             final ServerData method34337 = class9295.method34333(i);

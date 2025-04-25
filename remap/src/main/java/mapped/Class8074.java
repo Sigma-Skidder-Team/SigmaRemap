@@ -12,7 +12,7 @@ public class Class8074
     private Minecraft field33264;
     
     public Class8074() {
-        this.field33264 = Minecraft.method5277();
+        this.field33264 = Minecraft.getInstance();
     }
     
     public void method26494() {

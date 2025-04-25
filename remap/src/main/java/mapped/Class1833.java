@@ -24,7 +24,7 @@ public class Class1833 extends Class1799<Class850, Class5868<Class850>>
             class7351.method22564(0.25, 0.1875, 0.25);
             class7351.method22565(-0.5f, -0.5f, 0.5f);
             class7351.method22566(Vector3f.YP.rotationDegrees(90.0f));
-            Minecraft.method5277().method5305().method5795(method5080, class7351, class7352, n, Class1904.field10335);
+            Minecraft.getInstance().method5305().method5795(method5080, class7351, class7352, n, Class1904.field10335);
             class7351.method22568();
         }
     }

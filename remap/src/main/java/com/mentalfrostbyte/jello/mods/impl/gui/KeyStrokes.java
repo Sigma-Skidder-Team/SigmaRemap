@@ -54,10 +54,10 @@ public class KeyStrokes extends Module
         if (!this.isEnabled() || KeyStrokes.mc.player == null) {
             return;
         }
-        if (Minecraft.method5277().gameSettings.field23466) {
+        if (Minecraft.getInstance().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             this.field15539 = class5740.method17028();
             if (Client.getInstance().getGuimanager().method32146()) {
                 for (final Class2090 class5741 : Class2090.values()) {

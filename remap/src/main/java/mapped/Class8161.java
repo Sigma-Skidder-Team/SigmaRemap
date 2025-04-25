@@ -152,7 +152,7 @@ public class Class8161
         final Class5720 class5720 = new Class5720(d);
         Client.getInstance().getEventBus().method21097(class5720);
         if (!class5720.isCancelled()) {
-            if (n == Minecraft.method5277().method5332().getHandle()) {
+            if (n == Minecraft.getInstance().method5332().getHandle()) {
                 final double d2 = (this.field33604.gameSettings.field23423 ? Math.signum(d) : d) * this.field33604.gameSettings.field23411;
                 if (this.field33604.field4701 == null) {
                     if (this.field33604.currentScreen == null) {
@@ -192,7 +192,7 @@ public class Class8161
     }
     
     private void method26955(final long n, final double n9, final double n11) {
-        if (n == Minecraft.method5277().method5332().getHandle()) {
+        if (n == Minecraft.getInstance().method5332().getHandle()) {
             if (this.field33612) {
                 this.field33608 = n9;
                 this.field33609 = n11;

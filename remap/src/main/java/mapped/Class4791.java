@@ -20,7 +20,7 @@ public class Class4791 extends Class4703<Class862>
     
     public Class4791(final Class8551 class8551, final ItemRenderer field20430) {
         super(class8551);
-        this.field20429 = Minecraft.method5277();
+        this.field20429 = Minecraft.getInstance();
         this.field20430 = field20430;
     }
     
@@ -108,7 +108,7 @@ public class Class4791 extends Class4703<Class862>
     }
     
     public static void method14174() {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         final double max = Math.max(6.0 * method5277.method5332().method7695() / Config.method28867(method5277.gameSettings.field23471, 1.0, 120.0), 16.0);
         Class4791.field20431 = max * max;
     }

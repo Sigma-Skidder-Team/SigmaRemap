@@ -221,7 +221,7 @@ public class ItemRenderer implements Class1657
         RenderSystem.method30063(1.0f, -1.0f, 1.0f);
         RenderSystem.method30063(16.0f, 16.0f, 16.0f);
         final MatrixStack class8322 = new MatrixStack();
-        final IRenderTypeBuffer.Impl method34967 = Minecraft.method5277().method5333().method11006();
+        final IRenderTypeBuffer.Impl method34967 = Minecraft.getInstance().method5333().method11006();
         final boolean b = !method34966.method18694();
         if (b) {
             Class8317.method27611();
@@ -239,7 +239,7 @@ public class ItemRenderer implements Class1657
     }
     
     public void method6540(final ItemStack class8321, final int n, final int n2) {
-        this.method6541(Minecraft.method5277().player, class8321, n, n2);
+        this.method6541(Minecraft.getInstance().player, class8321, n, n2);
     }
     
     public void method6541(final LivingEntity class511, final ItemStack class512, final int n, final int n2) {
@@ -305,8 +305,8 @@ public class ItemRenderer implements Class1657
                 RenderSystem.enableTexture();
                 RenderSystem.enableDepthTest();
             }
-            final ClientPlayerEntity field4684 = Minecraft.method5277().player;
-            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Minecraft.method5277().method5314()) : 0.0f;
+            final ClientPlayerEntity field4684 = Minecraft.getInstance().player;
+            final float n7 = (field4684 != null) ? field4684.method2906().method25770(class1845.getItem(), Minecraft.getInstance().method5314()) : 0.0f;
             if (n7 > 0.0f) {
                 RenderSystem.disableDepthTest();
                 RenderSystem.disableTexture();

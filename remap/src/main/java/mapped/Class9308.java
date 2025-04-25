@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 
 public class Class9308
@@ -22,20 +24,20 @@ public class Class9308
         else {
             JSONObject.put("HTTP-Version", method30780);
             JSONObject.put("Status-Code", class4406.method30780());
-            JSONObject.put("Reason-Phrase", class4406.method30790('\0'));
-            class4406.method30785();
+            JSONObject.put("Reason-Phrase", class4406.nextTo('\0'));
+            class4406.next();
         }
-        while (class4406.method30784()) {
-            final String method30781 = class4406.method30790(':');
-            class4406.method30786(':');
-            JSONObject.put(method30781, class4406.method30790('\0'));
-            class4406.method30785();
+        while (class4406.more()) {
+            final String method30781 = class4406.nextTo(':');
+            class4406.next(':');
+            JSONObject.put(method30781, class4406.nextTo('\0'));
+            class4406.next();
         }
         return JSONObject;
     }
     
     public static String toString(final JSONObject JSONObject) throws org.json.JSONException {
-        final Iterator<String> method13272 = JSONObject.method13272();
+        final Iterator<String> method13272 = JSONObject.keys();
         final StringBuilder sb = new StringBuilder();
         if (JSONObject.has("Status-Code") && JSONObject.has("Reason-Phrase")) {
             sb.append(JSONObject.getString("HTTP-Version"));
@@ -74,7 +76,7 @@ public class Class9308
             if ("Request-URI".equals(s)) {
                 continue;
             }
-            if (JSONObject.method13271(s)) {
+            if (JSONObject.isNull(s)) {
                 continue;
             }
             sb.append(s);

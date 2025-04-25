@@ -20,7 +20,7 @@ public class Class552 extends Class551
             Class552.field3323 = new Date();
             Client.getInstance().getLogger().info("Saving profiles...");
             try {
-                Client.getInstance().method35189().getProfile().method32706();
+                Client.getInstance().moduleManager().getProfile().method32706();
                 Client.getInstance().method35179();
             }
             catch (final IOException ex) {

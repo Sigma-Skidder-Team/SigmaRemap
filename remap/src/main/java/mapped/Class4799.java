@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.UglyClickGUICategory;
+import totalcross.json.JSONObject;
 
 public class Class4799 extends Class4800
 {
@@ -79,7 +80,7 @@ public class Class4799 extends Class4800
     }
     
     static {
-        Class4799.field20454 = Minecraft.method5277();
+        Class4799.field20454 = Minecraft.getInstance();
         Class4799.field20456 = true;
     }
 }

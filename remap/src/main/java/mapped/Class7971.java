@@ -28,6 +28,8 @@ import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import slick2d.Texture;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.util.Date;
 import java.awt.image.BufferedImage;
@@ -101,7 +103,7 @@ public class Class7971
             this.field32790 = method25907(JSONObject.getString("password"));
         }
         if (JSONObject.has("bans")) {
-            final Iterator<Object> iterator = JSONObject.method13263("bans").iterator();
+            final Iterator<Object> iterator = JSONObject.getJSONArray("bans").iterator();
             while (iterator.hasNext()) {
                 this.field32791.add(new Class8848(iterator.next()));
             }
@@ -113,16 +115,16 @@ public class Class7971
             this.field32788 = JSONObject.getString("knownUUID");
         }
         if (JSONObject.has("dateAdded")) {
-            this.field32793 = JSONObject.method13265("dateAdded");
+            this.field32793 = JSONObject.getLong("dateAdded");
         }
         else {
             this.field32793 = System.currentTimeMillis();
         }
         if (JSONObject.has("lastUsed")) {
-            this.field32792 = JSONObject.method13265("lastUsed");
+            this.field32792 = JSONObject.getLong("lastUsed");
         }
         if (JSONObject.has("useCount")) {
-            this.field32794 = JSONObject.method13262("useCount");
+            this.field32794 = JSONObject.getInt("useCount");
         }
         if (JSONObject.has("skin")) {
             final byte[] base64Binary = DatatypeConverter.parseBase64Binary(JSONObject.getString("skin"));
@@ -286,9 +288,9 @@ public class Class7971
         JSONObject.put("password", method25906(this.field32790));
         JSONObject.put("knownName", this.field32787);
         JSONObject.put("knownUUID", this.field32788);
-        JSONObject.method13298("useCount", this.field32794);
-        JSONObject.method13299("lastUsed", this.field32792);
-        JSONObject.method13299("dateAdded", this.field32793);
+        JSONObject.put("useCount", this.field32794);
+        JSONObject.put("lastUsed", this.field32792);
+        JSONObject.put("dateAdded", this.field32793);
         if (this.field32795 != null) {
             final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             final Base64OutputStream output = new Base64OutputStream((OutputStream)byteArrayOutputStream);
@@ -309,7 +311,7 @@ public class Class7971
         final JSONArray JSONArray = new JSONArray();
         final Iterator<Class8848> iterator = this.field32791.iterator();
         while (iterator.hasNext()) {
-            JSONArray.method486(iterator.next().method30979());
+            JSONArray.put(iterator.next().method30979());
         }
         return JSONArray;
     }

@@ -126,7 +126,7 @@ public class AutoArmor extends Module
                                 if (!(AutoArmor.mc.player.inventory.getStackInSlot(36 + Class2215.field13604.getIndex()).getItem() instanceof Class4080)) {
                                     final Class4080 class2216 = (Class4080)method20053.getItem();
                                     if (Class2215.field13604 == class2215) {
-                                        if (!Client.getInstance().method35189().getModuleByClass(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
+                                        if (!Client.getInstance().moduleManager().getModuleByClass(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
                                             this.method10603(b);
                                             if (!(AutoArmor.mc.player.inventory.getStackInSlot(36 + class2215.getIndex()).getItem() instanceof AirBlock)) {
                                                 InvManagerUtil.method29323(8 - class2215.getIndex(), 0, true);
@@ -138,7 +138,7 @@ public class AutoArmor extends Module
                                                 AutoArmor.mc.method5269().method17292(new Class4336(AutoArmor.mc.player, Class287.field1599));
                                                 AutoArmor.mc.player.setFlag(7, true);
                                             }
-                                            if (Client.getInstance().method35189().getModuleByClass(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
+                                            if (Client.getInstance().moduleManager().getModuleByClass(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
                                                 return;
                                             }
                                         }
@@ -153,7 +153,7 @@ public class AutoArmor extends Module
                                 if (class2217.method12257() == class2215) {
                                     if (InvManagerUtil.method29369(method20053)) {
                                         if (InvManagerUtil.method29347(method20053) > 0) {
-                                            if (!Client.getInstance().method35189().getModuleByClass(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
+                                            if (!Client.getInstance().moduleManager().getModuleByClass(AutoArmor.class).method9883("Fake Items") || Client.getInstance().method35195().method28162(j) >= 1500L) {
                                                 this.method10603(b);
                                                 final Item method20054 = AutoArmor.mc.player.inventory.getStackInSlot(36 + class2217.method12257().getIndex()).getItem();
                                                 if (!(method20054 instanceof Class4080)) {
@@ -168,7 +168,7 @@ public class AutoArmor extends Module
                                                 InvManagerUtil.method29367(AutoArmor.mc.player.container.field16154, j, 0, Class2133.field12438, AutoArmor.mc.player, true);
                                                 this.field15964.method23934();
                                                 AutoArmor.field15966 = true;
-                                                if (Client.getInstance().method35189().getModuleByClass(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
+                                                if (Client.getInstance().moduleManager().getModuleByClass(AutoArmor.class).getNumberSettingValueByName("Delay") > 0.0f) {
                                                     return;
                                                 }
                                             }

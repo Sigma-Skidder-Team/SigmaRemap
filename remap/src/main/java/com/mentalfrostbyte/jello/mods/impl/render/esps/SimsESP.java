@@ -26,7 +26,7 @@ public class SimsESP extends Module
                     if (Client.getInstance().method35191().method31751(class5740)) {
                         continue;
                     }
-                    method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Minecraft.method5277().timer.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Minecraft.method5277().timer.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Minecraft.method5277().timer.field26528, class5740);
+                    method10800(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * Minecraft.getInstance().timer.field26528, class5740.lastTickPosY + class5740.method1931() + (class5740.posY - class5740.lastTickPosY) * Minecraft.getInstance().timer.field26528, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * Minecraft.getInstance().timer.field26528, class5740);
                 }
             }
         }

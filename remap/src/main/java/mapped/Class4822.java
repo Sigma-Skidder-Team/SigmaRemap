@@ -132,7 +132,7 @@ public class Class4822 extends Class4817
         }
         if (this.field20634 instanceof ModuleWithSettings) {
             final ModuleWithSettings class3247 = (ModuleWithSettings)this.field20634;
-            for (final Module key : class3247.field15742) {
+            for (final Module key : class3247.moduleArray) {
                 int method14435 = 10;
                 final CustomGuiScreen value = new CustomGuiScreen(this, key.getName() + "SubView", 0, method14434, this.field20480, this.field20481 - method14434);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));

@@ -5,6 +5,9 @@
 package mapped;
 
 import org.json.JSONException;
+import totalcross.json.JSONObject;
+import totalcross.json.JSONTokener;
+
 import java.io.Serializable;
 
 public class Class8160
@@ -37,16 +40,16 @@ public class Class8160
     public static JSONObject method26950(final String s) throws JSONException {
         final JSONObject JSONObject = new JSONObject();
         final JSONTokener class4406 = new JSONTokener(s);
-        JSONObject.put("name", class4406.method30790('='));
-        class4406.method30786('=');
-        JSONObject.put("value", class4406.method30790(';'));
-        class4406.method30785();
-        while (class4406.method30784()) {
-            final String method26951 = method26951(class4406.method30791("=;"));
+        JSONObject.put("name", class4406.nextTo('='));
+        class4406.next('=');
+        JSONObject.put("value", class4406.nextTo(';'));
+        class4406.next();
+        while (class4406.more()) {
+            final String method26951 = method26951(class4406.nextTo("=;"));
             Serializable s2;
-            if (class4406.method30785() == '=') {
-                s2 = method26951(class4406.method30790(';'));
-                class4406.method30785();
+            if (class4406.next() == '=') {
+                s2 = method26951(class4406.nextTo(';'));
+                class4406.next();
             }
             else {
                 if (!method26951.equals("secure")) {
@@ -76,7 +79,7 @@ public class Class8160
             sb.append(";path=");
             sb.append(method26949(JSONObject.getString("path")));
         }
-        if (JSONObject.method13280("secure")) {
+        if (JSONObject.optBoolean("secure")) {
             sb.append(";secure");
         }
         return sb.toString();
@@ -90,8 +93,8 @@ public class Class8160
             if (char1 != '+') {
                 if (char1 == '%') {
                     if (i + 2 < length) {
-                        final int method30782 = JSONTokener.method30782(s.charAt(i + 1));
-                        final int method30783 = JSONTokener.method30782(s.charAt(i + 2));
+                        final int method30782 = JSONTokener.dehexchar(s.charAt(i + 1));
+                        final int method30783 = JSONTokener.dehexchar(s.charAt(i + 2));
                         if (method30782 >= 0) {
                             if (method30783 >= 0) {
                                 char1 = (char)(method30782 * 16 + method30783);

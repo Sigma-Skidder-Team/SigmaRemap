@@ -27,7 +27,7 @@ public class Class682 extends Class648
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         method5277.method5290().method5849(Class682.field3725);
         RenderSystem.enableDepthTest();
         final FontRenderer field4643 = method5277.fontRenderer;

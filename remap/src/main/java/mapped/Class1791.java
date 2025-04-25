@@ -33,7 +33,7 @@ public class Class1791 extends Class1776<List<String>>
     }
     
     public List<String> method6459(final Class6582 class6582, final IProfiler class6583) {
-        try (final Class1671 method19933 = Minecraft.method5277().method5291().method19933(Class1791.field9914);
+        try (final Class1671 method19933 = Minecraft.getInstance().method5291().method19933(Class1791.field9914);
              final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method19933.method5887(), StandardCharsets.UTF_8))) {
             return (List<String>)bufferedReader.lines().map((Function<? super String, ?>)String::trim).filter(s -> s.hashCode() != 125780783).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
         }

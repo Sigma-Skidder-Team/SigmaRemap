@@ -127,9 +127,9 @@ public class Waypoints extends Module
                             }
                         }
                     }
-                    final float n3 = (float)(class5740.field33472 - Minecraft.method5277().field4644.method5833().method18161().getY());
-                    float n4 = (float)(class5740.field33469 - Minecraft.method5277().field4644.method5833().method18161().getX());
-                    float n5 = (float)(class5740.field33470 - Minecraft.method5277().field4644.method5833().method18161().getZ());
+                    final float n3 = (float)(class5740.field33472 - Minecraft.getInstance().field4644.method5833().method18161().getY());
+                    float n4 = (float)(class5740.field33469 - Minecraft.getInstance().field4644.method5833().method18161().getX());
+                    float n5 = (float)(class5740.field33470 - Minecraft.getInstance().field4644.method5833().method18161().getZ());
                     if (class5740.field33469 < 0) {
                         --n4;
                     }

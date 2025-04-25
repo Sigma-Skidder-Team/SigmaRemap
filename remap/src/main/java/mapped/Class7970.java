@@ -1244,7 +1244,7 @@ public class Class7970
     }
     
     private static TextureAtlasSprite method25865(final IBlockReader class1855, final Class7096 class1856, final BlockPos class1857, Class7096 class1858, final int n) {
-        final Class6313 method35428 = Minecraft.method5277().method5305().method5787().method35428(class1858);
+        final Class6313 method35428 = Minecraft.getInstance().method5305().method5787().method35428(class1858);
         if (method35428 == null) {
             return null;
         }

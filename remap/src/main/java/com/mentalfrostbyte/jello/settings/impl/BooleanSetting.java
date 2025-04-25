@@ -8,6 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.*;
+import totalcross.json.JSONObject;
 
 public class BooleanSetting extends Setting<Boolean> {
     public boolean field21516;

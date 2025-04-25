@@ -15,7 +15,7 @@ public class Class653 extends Class649
         this.field3681 = field3681;
         super(n, n2);
         this.field3678 = field3682;
-        this.field3679 = Minecraft.method5277().method5325().method6446(field3682);
+        this.field3679 = Minecraft.getInstance().method5325().method6446(field3682);
         this.field3680 = field3683;
     }
     
@@ -48,7 +48,7 @@ public class Class653 extends Class649
     
     @Override
     public void method3706() {
-        Minecraft.method5277().method5290().method5849(this.field3679.method7504().method6340());
+        Minecraft.getInstance().method5290().method5849(this.field3679.method7504().method6340());
         AbstractGui.blit(this.field3426 + 2, this.field3427 + 2, this.getBlitOffset(), 18, 18, this.field3679);
     }
 }

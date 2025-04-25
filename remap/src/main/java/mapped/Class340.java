@@ -29,7 +29,7 @@ public enum Class340 implements Class326
     
     private Class340(final String field2099) {
         this.field2099 = field2099;
-        this.field2100 = Minecraft.method5277().method5306();
+        this.field2100 = Minecraft.getInstance().method5306();
     }
     
     public String method1017() {

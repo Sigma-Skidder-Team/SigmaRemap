@@ -171,16 +171,16 @@ public class Class8797
     }
     
     public boolean method30699(final BlockPos class354) {
-        return this.field36992.field36694.contains(class354.toLong()) || Minecraft.method5277().world.getBlockState(class354).method21727(Class8797.field36991.world, class354).method24540();
+        return this.field36992.field36694.contains(class354.toLong()) || Minecraft.getInstance().world.getBlockState(class354).method21727(Class8797.field36991.world, class354).method24540();
     }
     
     public boolean method30700() {
         final BlockPos method30692 = this.method30692();
-        return !this.field36992.field36694.contains(this.method30692().toLong()) && !Minecraft.method5277().world.getBlockState(method30692).method21727(Class8797.field36991.world, method30692).method24540() && Minecraft.method5277().world.getBlockState(method30692).method21727(Class8797.field36991.world, method30692).method24537().method18507() == 1.0;
+        return !this.field36992.field36694.contains(this.method30692().toLong()) && !Minecraft.getInstance().world.getBlockState(method30692).method21727(Class8797.field36991.world, method30692).method24540() && Minecraft.getInstance().world.getBlockState(method30692).method21727(Class8797.field36991.world, method30692).method24537().method18507() == 1.0;
     }
     
     static {
-        Class8797.field36991 = Minecraft.method5277();
+        Class8797.field36991 = Minecraft.getInstance();
         Class8797.field36993 = new Class8422[] { new Class8422(1.0, 0.0, 0.0), new Class8422(-1.0, 0.0, 0.0), new Class8422(0.0, 0.0, 1.0), new Class8422(0.0, 0.0, -1.0), new Class8422(0.0, -1.0, 0.0), new Class8422(0.0, 1.0, 0.0) };
     }
 }

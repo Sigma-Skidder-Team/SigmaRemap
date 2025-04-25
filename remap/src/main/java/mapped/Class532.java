@@ -88,7 +88,7 @@ public class Class532 extends Screen
     }
     
     public static void method3066(final Class7952 class7952, final String s) {
-        final Class690 method5318 = Minecraft.method5277().method5318();
+        final Class690 method5318 = Minecraft.getInstance().method5318();
         long method5319 = 0L;
         Throwable t = null;
         try {

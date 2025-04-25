@@ -31,7 +31,7 @@ public class InfoHUD extends Module
         if (!this.isEnabled() || InfoHUD.mc.player == null) {
             return;
         }
-        if (Minecraft.method5277().gameSettings.field23464) {
+        if (Minecraft.getInstance().gameSettings.field23464) {
             return;
         }
         if (!(InfoHUD.mc.currentScreen instanceof ChatScreen)) {

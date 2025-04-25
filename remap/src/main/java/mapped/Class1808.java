@@ -27,7 +27,7 @@ public class Class1808 extends Class1799<Class791, Class5840<Class791>>
                 }
                 class7351.method22567();
                 class7351.method22564(0.10000000149011612, n9, n8);
-                Minecraft.method5277().method5308().method35143(class7353, method2718, Class2016.field11493, false, class7351, class7352, n);
+                Minecraft.getInstance().method5308().method35143(class7353, method2718, Class2016.field11493, false, class7351, class7352, n);
                 class7351.method22568();
             }
         }

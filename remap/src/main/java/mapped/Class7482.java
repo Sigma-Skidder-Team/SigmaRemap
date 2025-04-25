@@ -300,6 +300,6 @@ public class Class7482
     }
     
     static {
-        Class7482.field28903 = Minecraft.method5277();
+        Class7482.field28903 = Minecraft.getInstance();
     }
 }

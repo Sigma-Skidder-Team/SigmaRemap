@@ -24,7 +24,7 @@ public class Class634 extends Class633
         this.field3629 = field3629;
         this.field3622 = field3630;
         this.field3624 = field3631;
-        this.field3623 = Minecraft.method5277();
+        this.field3623 = Minecraft.getInstance();
         this.field3625 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3631.field41613) + "/icon");
         this.field3627 = (Class1773)this.field3623.method5290().method5853(this.field3625);
     }

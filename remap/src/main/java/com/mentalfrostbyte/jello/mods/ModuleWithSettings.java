@@ -13,22 +13,24 @@ import com.mentalfrostbyte.jello.mods.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 @InDevelopment
 public class ModuleWithSettings extends Module
 {
-    public Module[] field15742;
+    public Module[] moduleArray;
     public Module parentModule;
     private List<String> field15744;
     public StringSetting field15745;
     private final List<Class8510> field15746;
     
-    public ModuleWithSettings(final Category class8013, final String str, final String s, final Module... field15742) {
+    public ModuleWithSettings(final Category class8013, final String str, final String s, final Module... moduleArray) {
         super(class8013, str, s);
         this.field15744 = new ArrayList<String>();
         this.field15746 = new ArrayList<Class8510>();
-        this.field15742 = field15742;
-        for (final Module class8014 : this.field15742) {
+        this.moduleArray = moduleArray;
+        for (final Module class8014 : this.moduleArray) {
             Client.getInstance().getEventBus().register2(class8014);
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
@@ -40,7 +42,7 @@ public class ModuleWithSettings extends Module
     
     public void method10258() {
         this.method10259();
-        for (final Module field15743 : this.field15742) {
+        for (final Module field15743 : this.moduleArray) {
             final boolean equals = this.getStringSettingValueByName("Type").equals(field15743.name);
             if (this.isEnabled() && ModuleWithSettings.mc.player != null) {
                 field15743.method9907(equals);
@@ -49,7 +51,7 @@ public class ModuleWithSettings extends Module
                 }
             }
             else if (this.isEnabled()) {
-                field15743.method9908(equals);
+                field15743.setEnabled(equals);
             }
             this.method10262(field15743, equals);
         }
@@ -57,20 +59,20 @@ public class ModuleWithSettings extends Module
     
     private void method10259() {
         int n = 0;
-        final Module[] field15742 = this.field15742;
+        final Module[] field15742 = this.moduleArray;
         for (int length = field15742.length, i = 0; i < length; ++i) {
             if (this.getStringSettingValueByName("Type").equals(field15742[i].name)) {
                 n = 1;
             }
         }
         if (n == 0) {
-            this.method9893("Type", this.field15742[0].name);
+            this.method9893("Type", this.moduleArray[0].name);
         }
     }
     
     public Module method10260() {
         this.method10259();
-        for (final Module class3167 : this.field15742) {
+        for (final Module class3167 : this.moduleArray) {
             if (this.getStringSettingValueByName("Type").equals(class3167.name)) {
                 return class3167;
             }
@@ -90,7 +92,7 @@ public class ModuleWithSettings extends Module
     public JSONObject method9895(final JSONObject JSONObject) {
         final JSONObject method26637 = CJsonUtils.method26637(JSONObject, "sub-options");
         if (method26637 != null) {
-            for (final Module class4406 : this.field15742) {
+            for (final Module class4406 : this.moduleArray) {
                 final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(method26637, class4406.getName());
                 if (method26638 != null) {
                     for (int j = 0; j < method26638.length(); ++j) {
@@ -125,11 +127,11 @@ public class ModuleWithSettings extends Module
     @Override
     public JSONObject method9896(final JSONObject JSONObject) {
         final JSONObject class4406 = new JSONObject();
-        for (final Module class4407 : this.field15742) {
+        for (final Module class4407 : this.moduleArray) {
             final JSONArray class4408 = new JSONArray();
             final Iterator<Setting> iterator = class4407.field15525.values().iterator();
             while (iterator.hasNext()) {
-                class4408.method486(iterator.next().method15193(new JSONObject()));
+                class4408.put(iterator.next().method15193(new JSONObject()));
             }
             class4406.put(class4407.getName(), class4408);
         }
@@ -142,14 +144,14 @@ public class ModuleWithSettings extends Module
         this.method10258();
         if (this.parentModule instanceof PremiumModule) {
             if (!Client.getInstance().getNetworkManager().isPremium()) {
-                this.method9908(false);
+                this.setEnabled(false);
             }
         }
     }
     
     @Override
     public void onDisable() {
-        final Module[] field15742 = this.field15742;
+        final Module[] field15742 = this.moduleArray;
         for (int length = field15742.length, i = 0; i < length; ++i) {
             field15742[i].method9909(false);
         }
@@ -157,7 +159,7 @@ public class ModuleWithSettings extends Module
     
     @Override
     public void resetModuleState() {
-        final Module[] field15742 = this.field15742;
+        final Module[] field15742 = this.moduleArray;
         for (int length = field15742.length, i = 0; i < length; ++i) {
             field15742[i].method9907(false);
         }
@@ -179,7 +181,7 @@ public class ModuleWithSettings extends Module
     @Override
     public void initialize() {
         super.initialize();
-        final Module[] field15742 = this.field15742;
+        final Module[] field15742 = this.moduleArray;
         for (int length = field15742.length, i = 0; i < length; ++i) {
             field15742[i].initialize();
         }

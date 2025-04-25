@@ -34,7 +34,7 @@ public class Class4941 extends Class4800
         if (Class4941.field21224.getDirection() == Direction.FORWARDS) {
             if (Class4941.field21224.calcPercent() == 0.0f) {
                 if (Class4941.field21227 != null) {
-                    Minecraft.method5277().displayGuiScreen(Class4941.field21227);
+                    Minecraft.getInstance().displayGuiScreen(Class4941.field21227);
                 }
             }
         }
@@ -86,7 +86,7 @@ public class Class4941 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().displayGuiScreen(null);
+            Minecraft.getInstance().displayGuiScreen(null);
         }
     }
     

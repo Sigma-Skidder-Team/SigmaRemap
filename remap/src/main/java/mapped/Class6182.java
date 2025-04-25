@@ -18,7 +18,7 @@ public class Class6182 extends Class6159
     public Class6182(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final BlockState field24988) {
         super(class1847, n, n2, n3, n4, n5, n6);
         this.field24988 = field24988;
-        this.method18423(Minecraft.method5277().method5305().method5787().method35427(field24988));
+        this.method18423(Minecraft.getInstance().method5305().method5787().method35427(field24988));
         this.field24952 = 1.0f;
         this.field24953 = 0.6f;
         this.field24954 = 0.6f;
@@ -52,7 +52,7 @@ public class Class6182 extends Class6159
     }
     
     public void method18454(final BlockPos class354) {
-        final int method25441 = Minecraft.method5277().method5316().method25441(this.field24988, this.field24932, class354, 0);
+        final int method25441 = Minecraft.getInstance().method5316().method25441(this.field24988, this.field24932, class354, 0);
         this.field24953 *= (method25441 >> 16 & 0xFF) / 255.0f;
         this.field24954 *= (method25441 >> 8 & 0xFF) / 255.0f;
         this.field24955 *= (method25441 & 0xFF) / 255.0f;

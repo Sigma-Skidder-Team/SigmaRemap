@@ -170,9 +170,9 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     public static void method10709(final BlockPos class354) {
-        final double n = class354.getX() + 0.5f - Minecraft.method5277().field4644.method5833().method18161().getX();
-        final double n2 = class354.getY() + 1.0f - Minecraft.method5277().field4644.method5833().method18161().getY();
-        final double n3 = class354.getZ() + 0.5f - Minecraft.method5277().field4644.method5833().method18161().getZ();
+        final double n = class354.getX() + 0.5f - Minecraft.getInstance().field4644.method5833().method18161().getX();
+        final double n2 = class354.getY() + 1.0f - Minecraft.getInstance().field4644.method5833().method18161().getY();
+        final double n3 = class354.getZ() + 0.5f - Minecraft.getInstance().field4644.method5833().method18161().getZ();
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
         GL11.glEnable(2848);
@@ -181,7 +181,7 @@ public class NoteblockPlayer extends PremiumModule
         GL11.glDisable(2929);
         GL11.glDepthMask(false);
         GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
-        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Minecraft.method5277().player.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.method5277().player.rotationYaw));
+        final Vec3d method16755 = new Vec3d(0.0, 0.0, 1.0).rotatePitch(-(float)Math.toRadians(Minecraft.getInstance().player.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.getInstance().player.rotationYaw));
         GL11.glBegin(1);
         GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
         GL11.glVertex3d(n, n2, n3);

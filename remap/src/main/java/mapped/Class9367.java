@@ -87,7 +87,7 @@ public class Class9367 implements Class9366<ClientPlayerEntity>
     
     @Override
     public Class5994 method34748(final Runnable runnable, final Long n) {
-        if (Minecraft.method5277().world != null) {
+        if (Minecraft.getInstance().world != null) {
             final Class5993 class5993 = new Class5993(this.field40175.method19877(this, runnable).method21851(n * 50L, TimeUnit.MILLISECONDS).method21855());
             this.field40176.add(class5993);
             return class5993;

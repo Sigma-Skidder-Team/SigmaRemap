@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
+import totalcross.json.JSONObject;
 
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class Class4889 extends Class4841
         ProfileManager method21556;
         Class8241 method21557;
         int n;
-        for (method21556 = Client.getInstance().method35189().getProfile(), method21557 = method21556.method32707(), n = 1; method21556.method32705(method21557.field33839 + " Copy " + n); ++n) {}
+        for (method21556 = Client.getInstance().moduleManager().getProfile(), method21557 = method21556.method32707(), n = 1; method21556.method32705(method21557.field33839 + " Copy " + n); ++n) {}
         method21556.method32700(method21557.method27291(method21557.field33839 + " Copy " + n));
         this.runThisOnDimensionUpdate(() -> this.method14640());
         this.field20901.method14706(false);
@@ -47,7 +48,7 @@ public class Class4889 extends Class4841
     
     public void method14636(final Class8241 class8241) {
         Client.getInstance();
-        final ProfileManager method21556 = Client.getInstance().method35189().getProfile();
+        final ProfileManager method21556 = Client.getInstance().moduleManager().getProfile();
         method21556.method32707();
         int n;
         for (n = 1; method21556.method32705(class8241.field33839 + " " + n); ++n) {}
@@ -60,7 +61,7 @@ public class Class4889 extends Class4841
         Client.getInstance();
         ProfileManager method21556;
         int n;
-        for (method21556 = Client.getInstance().method35189().getProfile(), n = 1; method21556.method32705("New Profile " + n); ++n) {}
+        for (method21556 = Client.getInstance().moduleManager().getProfile(), n = 1; method21556.method32705("New Profile " + n); ++n) {}
         method21556.method32700(new Class8241("New Profile " + n, new JSONObject()));
         this.runThisOnDimensionUpdate(() -> this.method14640());
         this.field20901.method14706(false);
@@ -96,7 +97,7 @@ public class Class4889 extends Class4841
         this.field20902.clear();
         int i = 0;
         final int n = 70;
-        final Iterator<Class8241> iterator = Client.getInstance().method35189().getProfile().method32709().iterator();
+        final Iterator<Class8241> iterator = Client.getInstance().moduleManager().getProfile().method32709().iterator();
         while (iterator.hasNext()) {
             final Class4830 class4830 = new Class4830(this, "profile" + i, 0, n * i, this.field20900.method14276(), n, iterator.next(), i);
             this.field20900.addToList(class4830);

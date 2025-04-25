@@ -55,20 +55,20 @@ public class Class4811 extends CustomGuiScreen
         this.addToList(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
         this.addToList(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
         this.field20575.method14256((class4803, n) -> {
-            if (Client.getInstance().getNetworkManager().method19347() != null) {
+            if (Client.getInstance().getNetworkManager().getEncryptor() != null) {
                 ((MainMenuScreen)this.getParent()).method14792();
             }
             else {
                 this.method14351(new RegisterScreen());
             }
         });
-        this.field20570.doThis((class4803, n) -> this.method14350(new Class544(Minecraft.method5277().currentScreen)));
-        this.field20571.doThis((class4803, n) -> this.method14350(new Class721(Minecraft.method5277().currentScreen)));
-        this.field20573.doThis((class4803, n) -> this.method14350(new Class550(Minecraft.method5277().currentScreen, Minecraft.method5277().gameSettings)));
+        this.field20570.doThis((class4803, n) -> this.method14350(new Class544(Minecraft.getInstance().currentScreen)));
+        this.field20571.doThis((class4803, n) -> this.method14350(new Class721(Minecraft.getInstance().currentScreen)));
+        this.field20573.doThis((class4803, n) -> this.method14350(new Class550(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
         this.field20574.doThis((class4803, n) -> this.method14351(new Class4934()));
         this.field20572.doThis((class4803, n) -> this.method14348());
         this.field20578.doThis((class4803, n) -> {
-            if (Client.getInstance().getNetworkManager().method19347() != null) {
+            if (Client.getInstance().getNetworkManager().getEncryptor() != null) {
                 ((MainMenuScreen)this.getParent()).method14794();
             }
             else {
@@ -112,7 +112,7 @@ public class Class4811 extends CustomGuiScreen
     }
     
     public void method14350(final Screen class527) {
-        Minecraft.method5277().displayGuiScreen(class527);
+        Minecraft.getInstance().displayGuiScreen(class527);
         this.method14349();
     }
     

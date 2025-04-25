@@ -57,7 +57,7 @@ public class UglyClickGUICategory extends Class4807
         this.addToList(this.otherCat = new UglyClickGUICategoryIcon(this, "other", 201, 358, 170, 130, "Others", UglyClickGUICategory.others, UglyClickGUICategory.others2));
         final Class4886 class4804;
         this.addToList(class4804 = new Class4886(this, "exit", this.method14276() - 41, 9));
-        class4804.doThis((class4803, n) -> Minecraft.method5277().displayGuiScreen(null));
+        class4804.doThis((class4803, n) -> Minecraft.getInstance().displayGuiScreen(null));
         final Class4799 class4805 = (Class4799)this.getParent();
         this.combatCat.doThis((class4800, n) -> class4805.method14198("Combat", Category.COMBAT));
         this.movementCat.doThis((class4800, n) -> class4805.method14198("Movement", Category.MOVEMENT));

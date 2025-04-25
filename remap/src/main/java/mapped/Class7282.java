@@ -80,7 +80,7 @@ public class Class7282
     
     public void method22332(final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final double n, final double n2, final double n3) {
         if (this.field28224) {
-            if (!Minecraft.method5277().method5317()) {
+            if (!Minecraft.getInstance().method5317()) {
                 this.field28209.method18269(class7351, class7352, n, n2, n3);
             }
         }
@@ -104,14 +104,14 @@ public class Class7282
     }
     
     public static void method22334(final BlockPos class354, final BlockPos class355, final float n, final float n2, final float n3, final float n4) {
-        final Class6092 method5833 = Minecraft.method5277().field4644.method5833();
+        final Class6092 method5833 = Minecraft.getInstance().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new AxisAlignedBB(class354, class355).offset(method5833.method18161().inverse()), n, n2, n3, n4);
         }
     }
     
     public static void method22335(final BlockPos class354, final float n, final float n2, final float n3, final float n4, final float n5) {
-        final Class6092 method5833 = Minecraft.method5277().field4644.method5833();
+        final Class6092 method5833 = Minecraft.getInstance().field4644.method5833();
         if (method5833.method18167()) {
             method22336(new AxisAlignedBB(class354).offset(method5833.method18161().inverse()).intersect(n), n2, n3, n4, n5);
         }
@@ -142,7 +142,7 @@ public class Class7282
     }
     
     public static void method22341(final String s, final double n, final double n2, final double n3, final int n4, final float n5, final boolean b, final float n6, final boolean b2) {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         final Class6092 method5278 = method5277.field4644.method5833();
         if (method5278.method18167()) {
             if (method5277.method5306().field35909 != null) {

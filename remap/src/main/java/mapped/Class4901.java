@@ -45,7 +45,7 @@ public class Class4901 extends Class4841
         final int n5 = 90;
         final int n6 = 40;
         this.addToList(this.field20959 = new Class4847(this, "zoom", n3 - n6 - 10, n4 - n5 - 10, n6, n5));
-        this.field20960 = Minecraft.method5277().world.method6965(Minecraft.method5277().player.method1894()).method7019();
+        this.field20960 = Minecraft.getInstance().world.method6965(Minecraft.getInstance().player.method1894()).method7019();
         this.setListening(false);
     }
     
@@ -81,7 +81,7 @@ public class Class4901 extends Class4841
             final int max = Math.max(this.field20480, this.field20481);
             final float n4 = (this.field20480 - max) / 2.0f;
             final float n5 = n - (this.method14280() + (this.field20481 - max) / 2.0f + max / 2);
-            final float n6 = Minecraft.method5277().window.method7695() - n2 - (this.method14281() + n4 + max / 2);
+            final float n6 = Minecraft.getInstance().window.method7695() - n2 - (this.method14281() + n4 + max / 2);
             final float n7 = max / ((this.field20961 - 1) * 2.0f);
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
             final float n9 = this.field20960.field32291 * 16 - this.field20962 * 16.0f;
@@ -106,7 +106,7 @@ public class Class4901 extends Class4841
     
     @Override
     public void draw(final float n) {
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         final ChunkPos class7859;
         final ChunkPos field20970 = class7859 = new ChunkPos(this.field20960.field32290, this.field20960.field32291);
         class7859.field32290 -= (int)Math.floor(this.field20963);

@@ -23,7 +23,7 @@ public class Class7569
     public static synchronized Class6554 method23790(final Class754 class754) {
         if (Class7569.field30018) {
             if (System.currentTimeMillis() > Class7569.field30019 + 5000L) {
-                final ClientPlayerEntity field4684 = Minecraft.method5277().player;
+                final ClientPlayerEntity field4684 = Minecraft.getInstance().player;
                 if (field4684 != null) {
                     method23791(field4684.method4105(), null);
                     Class7569.field30019 = System.currentTimeMillis();

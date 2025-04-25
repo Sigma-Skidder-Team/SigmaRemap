@@ -5,13 +5,16 @@
 package mapped;
 
 import org.json.JSONException;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+import totalcross.json.JSONTokener;
 
 public class Class9524
 {
     private static String method35550(final JSONTokener JSONTokener) throws JSONException {
         char method30785;
         do {
-            method30785 = JSONTokener.method30785();
+            method30785 = JSONTokener.next();
         } while (method30785 == ' ' || method30785 == '\t');
         switch (method30785) {
             case 0: {
@@ -22,7 +25,7 @@ public class Class9524
                 final char c = method30785;
                 final StringBuffer sb = new StringBuffer();
                 while (true) {
-                    final char method30786 = JSONTokener.method30785();
+                    final char method30786 = JSONTokener.next();
                     if (method30786 == c) {
                         return sb.toString();
                     }
@@ -39,7 +42,7 @@ public class Class9524
             }
             default: {
                 JSONTokener.back();
-                return JSONTokener.method30790(',');
+                return JSONTokener.nextTo(',');
             }
         }
     }
@@ -50,7 +53,7 @@ public class Class9524
         Label_0101: {
             while (true) {
                 final String method35550 = method35550(JSONTokener);
-                c = JSONTokener.method30785();
+                c = JSONTokener.next();
                 if (method35550 == null) {
                     break;
                 }
@@ -61,12 +64,12 @@ public class Class9524
                         }
                     }
                 }
-                class8827.method486(method35550);
+                class8827.put(method35550);
                 while (c != ',') {
                     if (c != ' ') {
                         break Label_0101;
                     }
-                    c = JSONTokener.method30785();
+                    c = JSONTokener.next();
                 }
             }
             return null;
@@ -83,7 +86,7 @@ public class Class9524
     
     public static JSONObject method35552(final JSONArray JSONArray, final JSONTokener class89) throws JSONException {
         final JSONArray method35551 = method35551(class89);
-        return (method35551 == null) ? null : method35551.method496(JSONArray);
+        return (method35551 == null) ? null : method35551.toJSONObject(JSONArray);
     }
     
     public static String method35553(final JSONArray JSONArray) {
@@ -92,7 +95,7 @@ public class Class9524
             if (i > 0) {
                 sb.append(',');
             }
-            final Object method463 = JSONArray.method463(i);
+            final Object method463 = JSONArray.opt(i);
             if (method463 != null) {
                 final String string = method463.toString();
                 Label_0084: {
@@ -150,7 +153,7 @@ public class Class9524
             if (method35552 == null) {
                 break;
             }
-            class90.method486(method35552);
+            class90.put(method35552);
         }
         if (class90.length() != 0) {
             return class90;
@@ -159,9 +162,9 @@ public class Class9524
     }
     
     public static String toString(final JSONArray JSONArray) throws JSONException {
-        final JSONObject method475 = JSONArray.method475(0);
+        final JSONObject method475 = JSONArray.optJSONObject(0);
         if (method475 != null) {
-            final JSONArray method476 = method475.method13275();
+            final JSONArray method476 = method475.names();
             if (method476 != null) {
                 return method35553(method476) + toString(method476, JSONArray);
             }
@@ -173,9 +176,9 @@ public class Class9524
         if (JSONArray != null && JSONArray.length() != 0) {
             final StringBuffer sb = new StringBuffer();
             for (int i = 0; i < class89.length(); ++i) {
-                final JSONObject method475 = class89.method475(i);
+                final JSONObject method475 = class89.optJSONObject(i);
                 if (method475 != null) {
-                    sb.append(method35553(method475.method13310(JSONArray)));
+                    sb.append(method35553(method475.toJSONArray(JSONArray)));
                 }
             }
             return sb.toString();

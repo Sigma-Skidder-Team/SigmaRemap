@@ -67,10 +67,10 @@ public class Cords extends Module
         if (Cords.mc.player == null) {
             return;
         }
-        if (Minecraft.method5277().gameSettings.field23466) {
+        if (Minecraft.getInstance().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             final float min = Math.min(1.0f, 0.6f + this.field15925.calcPercent() * 4.0f);
             final String string = Cords.mc.player.method1894().getX() + " " + Cords.mc.player.method1894().getY() + " " + Cords.mc.player.method1894().getZ();
             final int n = 85;

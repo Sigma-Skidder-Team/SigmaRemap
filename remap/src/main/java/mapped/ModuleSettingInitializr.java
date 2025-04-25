@@ -13,60 +13,58 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Class1607 implements Runnable
-{
+public class ModuleSettingInitializr implements Runnable {
     public static Thread thread;
     public static boolean field8977;
     public static HashMap<Object, Integer> field8978;
-    
+
     @Override
     public void run() {
-        Class1607.field8978 = new HashMap<>();
+        ModuleSettingInitializr.field8978 = new HashMap<>();
         while (!Thread.currentThread().isInterrupted()) {
             try {
                 Thread.sleep(150000L);
                 if (!Thread.currentThread().isInterrupted()) {
-                    if (Minecraft.method5277().world == null) {
+                    if (Minecraft.getInstance().world == null) {
                         continue;
                     }
                     boolean b = false;
                     boolean b2 = false;
-                    if (Client.getInstance().method35189() == null) {
+                    if (Client.getInstance().moduleManager() == null) {
                         continue;
                     }
-                    final List<Module> list = new ArrayList(Client.getInstance().method35189().getModuleMap().values());
-                    for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
-                        if (class3167 instanceof ModuleWithSettings) {
-                            list.addAll(Arrays.asList(((ModuleWithSettings)class3167).field15742));
+                    final List<Module> list = new ArrayList<>(Client.getInstance().moduleManager().getModuleMap().values());
+                    for (final Module mod : Client.getInstance().moduleManager().getModuleMap().values()) {
+                        if (mod instanceof ModuleWithSettings) {
+                            list.addAll(Arrays.asList(((ModuleWithSettings) mod).moduleArray));
                         }
                     }
                     for (final Module key : list) {
                         if (key.getClass().getSuperclass() != Module.class && key.getClass().getSuperclass() != ModuleWithSettings.class) {
                             b = true;
-                            if (Class1607.field8978.containsKey(key) && Class1607.field8978.get(key) != key.method9904()) {
+                            if (ModuleSettingInitializr.field8978.containsKey(key) && ModuleSettingInitializr.field8978.get(key) != key.getRandomAssOffset()) {
                                 System.out.println(key.getName() + " DIFFER!");
                                 b2 = true;
                             }
-                            Class1607.field8978.put(key, key.method9904());
+                            ModuleSettingInitializr.field8978.put(key, key.getRandomAssOffset());
                         }
                     }
                     if (!b2 && b) {
                         continue;
                     }
-                    Class1607.field8977 = true;
+                    ModuleSettingInitializr.field8977 = true;
                     continue;
                 }
-            }
-            catch (final InterruptedException ex) {
+            } catch (final InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
             break;
         }
     }
-    
+
     static {
-        Class1607.thread = new Thread(new Class1607());
-        Class1607.field8977 = false;
-        Class1607.thread.start();
+        ModuleSettingInitializr.thread = new Thread(new ModuleSettingInitializr());
+        ModuleSettingInitializr.field8977 = false;
+        ModuleSettingInitializr.thread.start();
     }
 }

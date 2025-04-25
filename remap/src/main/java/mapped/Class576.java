@@ -269,17 +269,17 @@ public class Class576 extends Widget implements IRenderable, IGuiEventListener
             return true;
         }
         if (Screen.method3051(n)) {
-            Minecraft.method5277().field4651.method22508(this.method3379());
+            Minecraft.getInstance().field4651.method22508(this.method3379());
             return true;
         }
         if (Screen.method3050(n)) {
             if (this.field3444) {
-                this.method3381(Minecraft.method5277().field4651.method22507());
+                this.method3381(Minecraft.getInstance().field4651.method22507());
             }
             return true;
         }
         if (Screen.method3049(n)) {
-            Minecraft.method5277().field4651.method22508(this.method3379());
+            Minecraft.getInstance().field4651.method22508(this.method3379());
             if (this.field3444) {
                 this.method3381("");
             }

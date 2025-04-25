@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+
 public class Class8531
 {
     private static String[] field35806;
@@ -20,18 +22,18 @@ public class Class8531
     }
     
     public Class8531(final JSONArray JSONArray) {
-        this.field35807 = Float.parseFloat(JSONArray.method459(0));
-        this.field35808 = Float.parseFloat(JSONArray.method459(1));
-        this.field35809 = Float.parseFloat(JSONArray.method459(2));
-        this.field35810 = Float.parseFloat(JSONArray.method459(3));
+        this.field35807 = Float.parseFloat(JSONArray.getString(0));
+        this.field35808 = Float.parseFloat(JSONArray.getString(1));
+        this.field35809 = Float.parseFloat(JSONArray.getString(2));
+        this.field35810 = Float.parseFloat(JSONArray.getString(3));
     }
     
     public JSONArray method28615() {
         final JSONArray JSONArray = new JSONArray();
-        JSONArray.method493(0, Float.toString(this.field35807));
-        JSONArray.method493(1, Float.toString(this.field35808));
-        JSONArray.method493(2, Float.toString(this.field35809));
-        JSONArray.method493(3, Float.toString(this.field35810));
+        JSONArray.put(0, Float.toString(this.field35807));
+        JSONArray.put(1, Float.toString(this.field35808));
+        JSONArray.put(2, Float.toString(this.field35809));
+        JSONArray.put(3, Float.toString(this.field35810));
         return JSONArray;
     }
     

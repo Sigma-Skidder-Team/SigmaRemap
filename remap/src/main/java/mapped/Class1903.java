@@ -42,7 +42,7 @@ public class Class1903 implements AutoCloseable
     public void method7377(final boolean field10332, final Executor executor, final Executor executor2) {
         if (field10332 != this.field10332) {
             this.field10332 = field10332;
-            this.field10333.method5785(new Class7887(this), Minecraft.method5277().method5291(), Class5026.field21549, Class5026.field21549, executor, executor2);
+            this.field10333.method5785(new Class7887(this), Minecraft.getInstance().method5291(), Class5026.field21549, Class5026.field21549, executor, executor2);
         }
     }
     

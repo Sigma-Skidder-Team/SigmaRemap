@@ -41,7 +41,7 @@ public final class Class1913 extends TextureAtlasSprite
     public static Class1773 method7553() {
         if (Class1913.field10403 == null) {
             Class1913.field10403 = new Class1773(Class1913.field10404.method29528());
-            Minecraft.method5277().method5290().method5851(Class1913.field10402, Class1913.field10403);
+            Minecraft.getInstance().method5290().method5851(Class1913.field10402, Class1913.field10403);
         }
         return Class1913.field10403;
     }

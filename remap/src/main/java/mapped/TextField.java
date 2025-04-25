@@ -134,7 +134,7 @@ public class TextField extends Class4825
         }
         this.field20681 = true;
         this.field20678 = Class9274.method34216(s, this.field20496, (float)this.method14280(), n, this.field20675);
-        if (!Class8341.method27798(Minecraft.method5277().window.getHandle(), 340) && !Class8341.method27798(Minecraft.method5277().window.getHandle(), 344)) {
+        if (!Class8341.method27798(Minecraft.getInstance().window.getHandle(), 340) && !Class8341.method27798(Minecraft.getInstance().window.getHandle(), 344)) {
             this.field20679 = this.field20678;
         }
         return false;
@@ -194,7 +194,7 @@ public class TextField extends Class4825
                 }
                 case 268: {
                     this.field20678 = 0;
-                    if (!Class8341.method27798(Minecraft.method5277().window.getHandle(), 340) && !Class8341.method27798(Minecraft.method5277().window.getHandle(), 344)) {
+                    if (!Class8341.method27798(Minecraft.getInstance().window.getHandle(), 340) && !Class8341.method27798(Minecraft.getInstance().window.getHandle(), 344)) {
                         this.field20679 = this.field20678;
                         break;
                     }
@@ -202,7 +202,7 @@ public class TextField extends Class4825
                 }
                 case 269: {
                     this.field20678 = this.field20495.length();
-                    if (!Class8341.method27798(Minecraft.method5277().window.getHandle(), 340) && !Class8341.method27798(Minecraft.method5277().window.getHandle(), 344)) {
+                    if (!Class8341.method27798(Minecraft.getInstance().window.getHandle(), 340) && !Class8341.method27798(Minecraft.getInstance().window.getHandle(), 344)) {
                         this.field20679 = this.field20678;
                         break;
                     }
@@ -229,7 +229,7 @@ public class TextField extends Class4825
                     else {
                         --this.field20678;
                     }
-                    if (!Class8341.method27798(Minecraft.method5277().window.getHandle(), 340) && !Class8341.method27798(Minecraft.method5277().window.getHandle(), 344)) {
+                    if (!Class8341.method27798(Minecraft.getInstance().window.getHandle(), 340) && !Class8341.method27798(Minecraft.getInstance().window.getHandle(), 344)) {
                         this.field20679 = this.field20678;
                         break;
                     }
@@ -256,7 +256,7 @@ public class TextField extends Class4825
                     else {
                         ++this.field20678;
                     }
-                    if (!Class8341.method27798(Minecraft.method5277().window.getHandle(), 340) && !Class8341.method27798(Minecraft.method5277().window.getHandle(), 344)) {
+                    if (!Class8341.method27798(Minecraft.getInstance().window.getHandle(), 340) && !Class8341.method27798(Minecraft.getInstance().window.getHandle(), 344)) {
                         this.field20679 = this.field20678;
                         break;
                     }
@@ -273,7 +273,7 @@ public class TextField extends Class4825
                 }
                 case 88: {
                     if (this.method14472() && this.field20679 != this.field20680) {
-                        GLFW.glfwSetClipboardString(Minecraft.method5277().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
+                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
                         this.field20495 = Class9274.method34215(this.field20495, "", this.field20679, this.field20680);
                         if (this.field20678 > this.field20679) {
                             this.field20678 -= Math.max(this.field20679, this.field20680) - Math.min(this.field20679, this.field20680);
@@ -287,7 +287,7 @@ public class TextField extends Class4825
                 }
                 case 67: {
                     if (this.method14472() && this.field20679 != this.field20680) {
-                        GLFW.glfwSetClipboardString(Minecraft.method5277().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
+                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
                         break;
                     }
                     break;
@@ -298,7 +298,7 @@ public class TextField extends Class4825
                     }
                     String glfwGetClipboardString = "";
                     try {
-                        glfwGetClipboardString = GLFW.glfwGetClipboardString(Minecraft.method5277().window.getHandle());
+                        glfwGetClipboardString = GLFW.glfwGetClipboardString(Minecraft.getInstance().window.getHandle());
                         if (glfwGetClipboardString == null) {
                             glfwGetClipboardString = "";
                         }
@@ -328,7 +328,7 @@ public class TextField extends Class4825
     }
     
     public boolean method14472() {
-        return Class8341.method27798(Minecraft.method5277().window.getHandle(), 341) || Class8341.method27798(Minecraft.method5277().window.getHandle(), 345) || Class8341.method27798(Minecraft.method5277().window.getHandle(), 343);
+        return Class8341.method27798(Minecraft.getInstance().window.getHandle(), 341) || Class8341.method27798(Minecraft.getInstance().window.getHandle(), 345) || Class8341.method27798(Minecraft.getInstance().window.getHandle(), 343);
     }
     
     @Override

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 public class Class5736 implements Class5730
 {
     private static String[] field23301;

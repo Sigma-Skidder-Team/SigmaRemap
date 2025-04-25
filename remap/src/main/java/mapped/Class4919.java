@@ -11,7 +11,7 @@ public class Class4919 extends Class4825
     
     public Class4919(final Class4801 field21051, final CustomGuiScreen customGuiScreen, final String s) {
         this.field21051 = field21051;
-        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+        super(customGuiScreen, s, 0, 0, Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7695(), false);
     }
     
     @Override

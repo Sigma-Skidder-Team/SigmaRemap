@@ -42,6 +42,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.commons.codec.binary.Base64;
 import slick2d.TrueTypeFont;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -260,7 +262,7 @@ public class ColorUtils
             string += line;
         }
         String method13269 = "";
-        for (final JSONObject JSONObject : new JSONObject(string).method13263("properties")) {
+        for (final JSONObject JSONObject : new JSONObject(string).getJSONArray("properties")) {
             if (!JSONObject.has("value")) {
                 continue;
             }
@@ -272,9 +274,9 @@ public class ColorUtils
         if (Base64.isBase64(method13269)) {
             final JSONObject class4406 = new JSONObject(new String(Base64.decodeBase64(method13269)));
             if (class4406.has("textures")) {
-                final JSONObject method13270 = class4406.method13264("textures");
+                final JSONObject method13270 = class4406.getJSONObject("textures");
                 if (method13270.has("SKIN")) {
-                    method13268 = method13270.method13264("SKIN").getString("url");
+                    method13268 = method13270.getJSONObject("SKIN").getString("url");
                 }
             }
             return method13268;
@@ -291,7 +293,7 @@ public class ColorUtils
             string += line;
         }
         String method13269 = "";
-        for (final JSONObject JSONObject : new JSONObject(string).method13263("properties")) {
+        for (final JSONObject JSONObject : new JSONObject(string).getJSONArray("properties")) {
             if (!JSONObject.has("value")) {
                 continue;
             }
@@ -303,10 +305,10 @@ public class ColorUtils
         if (Base64.isBase64(method13269)) {
             final JSONObject class4406 = new JSONObject(new String(Base64.decodeBase64(method13269)));
             if (class4406.has("textures")) {
-                final JSONObject method13270 = class4406.method13264("textures");
+                final JSONObject method13270 = class4406.getJSONObject("textures");
                 System.out.println("tex");
                 if (method13270.has("SKIN")) {
-                    method13268 = method13270.method13264("SKIN").getString("url");
+                    method13268 = method13270.getJSONObject("SKIN").getString("url");
                 }
             }
             System.out.println(method13268);
@@ -333,7 +335,7 @@ public class ColorUtils
         }
         final JSONArray JSONArray = new JSONArray(string);
         for (int i = 0; i < JSONArray.length(); ++i) {
-            list.add(new JSONObject(JSONArray.method449(i).toString()).getString("name"));
+            list.add(new JSONObject(JSONArray.get(i).toString()).getString("name"));
         }
         return list;
     }
@@ -682,7 +684,7 @@ public class ColorUtils
                     if (!ColorUtils.field25541.player.onGround) {
                         break Label_0330;
                     }
-                    if (!Client.getInstance().method35189().getModuleByClass(Criticals.class).isEnabled()) {
+                    if (!Client.getInstance().moduleManager().getModuleByClass(Criticals.class).isEnabled()) {
                         break Label_0330;
                     }
                 }
@@ -948,7 +950,7 @@ public class ColorUtils
         if (!class399.method1850()) {
             if (class399 instanceof PlayerEntity) {
                 if (Class9011.method32262((PlayerEntity)class399)) {
-                    if (Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
+                    if (Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled()) {
                         return false;
                     }
                 }
@@ -978,7 +980,7 @@ public class ColorUtils
     }
     
     static {
-        field25541 = Minecraft.method5277();
+        field25541 = Minecraft.getInstance();
         field25543 = new float[4];
         field25544 = new float[4];
         field25545 = new ResourceLocation("shaders/post/blur.json");

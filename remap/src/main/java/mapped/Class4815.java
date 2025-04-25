@@ -167,14 +167,14 @@ public class Class4815 extends CustomGuiScreen implements Class4816
                     if (this.method14272() < 0) {
                         this.method14273(0);
                     }
-                    if (this.method14272() + this.method14276() > Minecraft.method5277().window.method7694()) {
-                        this.method14273(Minecraft.method5277().window.method7694() - this.method14276());
+                    if (this.method14272() + this.method14276() > Minecraft.getInstance().window.method7694()) {
+                        this.method14273(Minecraft.getInstance().window.method7694() - this.method14276());
                     }
                     if (this.method14274() < 0) {
                         this.method14275(0);
                     }
-                    if (this.method14274() + this.method14278() > Minecraft.method5277().window.method7695()) {
-                        this.method14275(Minecraft.method5277().window.method7695() - this.method14278());
+                    if (this.method14274() + this.method14278() > Minecraft.getInstance().window.method7695()) {
+                        this.method14275(Minecraft.getInstance().window.method7695() - this.method14278());
                     }
                 }
                 else {

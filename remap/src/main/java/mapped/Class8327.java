@@ -18,7 +18,7 @@ public class Class8327
     public Minecraft field34199;
     
     public Class8327() {
-        this.field34199 = Minecraft.method5277();
+        this.field34199 = Minecraft.getInstance();
     }
     
     @EventListener

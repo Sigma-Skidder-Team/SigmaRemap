@@ -15,7 +15,7 @@ public class Class703 extends Class698
     public Class703(final Screen field3868, final ITextComponent class2250) {
         super(class2250);
         this.field3868 = field3868;
-        this.field3869 = Minecraft.method5277().gameSettings;
+        this.field3869 = Minecraft.getInstance().gameSettings;
     }
     
     public Class703(final Screen field3868, final Class5760 field3869, final ITextComponent class2250) {

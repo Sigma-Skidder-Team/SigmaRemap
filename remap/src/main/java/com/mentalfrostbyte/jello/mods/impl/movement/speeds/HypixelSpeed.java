@@ -40,7 +40,7 @@ public class HypixelSpeed extends Module
     public void onDisable() {
         HypixelSpeed.field15955 = false;
         if (Math.abs(HypixelSpeed.mc.timer.timerSpeed - 1.4123) < 0.001) {
-            if (!Client.getInstance().method35189().getModuleByClass(Timer.class).isEnabled()) {
+            if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
                 HypixelSpeed.mc.timer.timerSpeed = 1.0f;
             }
         }
@@ -51,8 +51,8 @@ public class HypixelSpeed extends Module
         if (this.isEnabled()) {
             if (HypixelSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
-                    if (!Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
-                        if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
+                    if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+                        if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                             if (updateWalkingEvent.method17046()) {
                                 if (!HypixelSpeed.mc.player.onGround) {
                                     if (updateWalkingEvent.method17046()) {
@@ -69,7 +69,7 @@ public class HypixelSpeed extends Module
                                     }
                                 }
                                 else {
-                                    final Module method21551 = Client.getInstance().method35189().getModuleByClass(Criticals.class);
+                                    final Module method21551 = Client.getInstance().moduleManager().getModuleByClass(Criticals.class);
                                     boolean b = false;
                                     Label_0166: {
                                         if (method21551.isEnabled()) {
@@ -107,8 +107,8 @@ public class HypixelSpeed extends Module
         ++this.field15952;
         if (!Jesus.method10433()) {
             if (!HypixelSpeed.mc.player.method1706()) {
-                if (!Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
-                    if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+                    if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                         HypixelSpeed.field15955 = false;
                         HypixelSpeed.mc.player.field2985 = 5;
                         if (!HypixelSpeed.mc.player.onGround) {
@@ -139,7 +139,7 @@ public class HypixelSpeed extends Module
                                     }
                                 }
                                 if (Math.abs(HypixelSpeed.mc.timer.timerSpeed - 1.4123) < 0.001) {
-                                    if (!Client.getInstance().method35189().getModuleByClass(Timer.class).isEnabled()) {
+                                    if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
                                         HypixelSpeed.mc.timer.timerSpeed = 1.0f;
                                     }
                                 }
@@ -177,9 +177,9 @@ public class HypixelSpeed extends Module
     public void method10590(final Class5722 class5722) {
         if (this.isEnabled()) {
             if (!Jesus.method10433()) {
-                if (!Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
-                    if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
-                        if (HypixelSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
+                    if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
+                        if (HypixelSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                             return;
                         }
                         if (!this.method9883("Auto Jump") && !HypixelSpeed.mc.player.field2967) {
@@ -202,7 +202,7 @@ public class HypixelSpeed extends Module
                         class5722.method16996(field15954);
                         this.field15954 = field15954;
                         if (this.method9883("Timer")) {
-                            if (!Client.getInstance().method35189().getModuleByClass(Timer.class).isEnabled()) {
+                            if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
                                 HypixelSpeed.mc.timer.timerSpeed = 1.4123f;
                             }
                         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 import java.net.URISyntaxException;
 import java.net.URI;
 import java.util.HashMap;
@@ -26,7 +28,7 @@ public class Class959 extends Class956
     public void method5481(final String s) {
         final JSONObject JSONObject = new JSONObject(s);
         if (JSONObject.has("action")) {
-            switch (JSONObject.method13262("action")) {
+            switch (JSONObject.getInt("action")) {
                 case 1: {
                     this.field5102.method17552(Class7679.method24379(String.valueOf(JSONObject.getBoolean("variation"))));
                     break;

@@ -12,7 +12,7 @@ public class Class619<E extends Class623<E>> extends Class608<E>
     private final Class5056 field3593;
     
     public Class619(final Class5056 field3593, final int n, final int n2, final int n3, final int n4, final int n5) {
-        super(Minecraft.method5277(), n, n2, n3, n4, n5);
+        super(Minecraft.getInstance(), n, n2, n3, n4, n5);
         this.field3593 = field3593;
     }
     

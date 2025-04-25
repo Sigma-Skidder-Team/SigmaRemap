@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.CJsonUtils;
 
 import java.awt.Color;
@@ -44,7 +44,7 @@ public class ColorSetting extends Setting<Integer> {
     public JSONObject method15193(final JSONObject JSONObject) {
         JSONObject.put("name", this.method15204());
         JSONObject.put("value", this.method15222());
-        JSONObject.method13295("rainbow", this.field21520);
+        JSONObject.put("rainbow", this.field21520);
         return JSONObject;
     }
 

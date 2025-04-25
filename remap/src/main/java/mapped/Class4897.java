@@ -7,6 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.auth.Encryptor;
 import slick2d.Texture;
 
 public class Class4897 extends Class4841
@@ -34,14 +35,14 @@ public class Class4897 extends Class4841
     
     @Override
     public void draw(final float n) {
-        this.field20948 = Client.getInstance().getNetworkManager().method19347();
+        this.field20948 = Client.getInstance().getNetworkManager().getEncryptor();
         String field32930 = "Log in";
         final Texture field32931 = ClientAssets.account;
         if (this.field20948 != null) {
             field32930 = this.field20948.username;
         }
         this.method14277(this.field20496.getWidth(field32930) + 50 + 60);
-        this.method14273(Minecraft.method5277().window.method7694() - this.field20480 - 20);
+        this.method14273(Minecraft.getInstance().window.method7694() - this.field20480 - 20);
         this.field20943 = Math.max(0.0f, Math.min(1.0f, this.field20943 + ((this.field20508 >= this.x && this.field20509 <= this.y + this.method14278()) ? 0.1f : -0.1f)));
         RenderUtil.method26913((float)this.x, (float)this.y, (float)this.method14276(), (float)this.method14278(), 20.0f, this.field20943 * 0.2f * n);
         RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.method14276()), (float)(this.y + this.method14278()), ColorUtils.applyAlpha(ClientColors.DULL_GREEN.color, (0.2f * this.field20943 + (this.method14309() ? 0.2f : 0.0f)) * n));

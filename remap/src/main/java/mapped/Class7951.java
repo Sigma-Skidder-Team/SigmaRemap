@@ -30,7 +30,7 @@ public class Class7951
     private TrueTypeFont field32665;
     
     public Class7951() {
-        this.field32654 = Minecraft.method5277();
+        this.field32654 = Minecraft.getInstance();
         this.field32655 = new ArrayList<Notification>();
         this.field32656 = 20;
         this.field32657 = 1;
@@ -80,14 +80,14 @@ public class Class7951
     
     @EventListener
     private void method25779(final Class5740 class5740) {
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             final int n = 6;
             final Minecraft field32654 = this.field32654;
             this.field32657 = Math.max(Math.round((float)(n - Minecraft.method5338() / 10)), 1);
             for (int i = 0; i < this.field32655.size(); ++i) {
                 final Notification class5741 = this.field32655.get(i);
                 final float method25777 = this.method25777(class5741);
-                final int n2 = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
+                final int n2 = Minecraft.getInstance().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
                 final int n3 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
                 final float min = Math.min(1.0f, method25777);
                 final int rgb = new Color(0.14f, 0.14f, 0.14f, min * 0.93f).getRGB();
@@ -131,7 +131,7 @@ public class Class7951
         for (int i = 0; i < this.field32655.size(); ++i) {
             final Notification class6224 = this.field32655.get(i);
             final float method25777 = this.method25777(class6224);
-            final int n = Minecraft.method5277().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
+            final int n = Minecraft.getInstance().window.method7694() - this.field32662 - (int)(this.field32659 * method25777 * method25777);
             final int n2 = this.field32654.window.method7695() - this.field32660 - this.field32661 - i * (int)(this.field32660 * this.method25778(i) + this.field32663 * this.method25778(i));
             for (int j = 0; j < 3; ++j) {
                 class6224.field25090[j] = RenderUtil.method26930(n + this.field32659 / 3 * j, n2, class6224.field25090[j]);

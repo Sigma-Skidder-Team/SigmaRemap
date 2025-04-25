@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 import java.io.IOException;
 import java.io.Writer;
 
@@ -157,6 +159,6 @@ public class Class8687
     }
     
     public Class8687 method29778(final Object o) throws org.json.JSONException {
-        return this.method29766(JSONObject.method13311(o));
+        return this.method29766(JSONObject.valueToString(o));
     }
 }

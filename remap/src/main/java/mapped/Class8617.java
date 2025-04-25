@@ -24,7 +24,7 @@ public class Class8617
         this.field36159 = false;
         this.field36160 = System.currentTimeMillis();
         this.field36161 = 1.0f;
-        this.field36162 = Minecraft.method5277();
+        this.field36162 = Minecraft.getInstance();
     }
     
     public void method29223() {

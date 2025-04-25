@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.gui.BrainFreeze;
+import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -40,7 +41,7 @@ public class Class4801 extends Class4800
         int n = 30;
         int n2 = 30;
         this.addToList(this.field20466 = new Class4912(this, "brainFreeze"));
-        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
+        for (final Module class3167 : Client.getInstance().moduleManager().getModuleMap().values()) {
             if (this.field20464.containsKey(class3167.getCategoryBasedOnMode())) {
                 continue;
             }
@@ -139,7 +140,7 @@ public class Class4801 extends Class4800
         this.field20465.setEnabled(this.field20465.method14276() < this.method14276() && this.field20465.method14278() < this.method14278());
         super.method14200(n, n2);
         ColorUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
-        this.field20466.setEnabled(Client.getInstance().method35189().getModuleByClass(BrainFreeze.class).isEnabled());
+        this.field20466.setEnabled(Client.getInstance().moduleManager().getModuleByClass(BrainFreeze.class).isEnabled());
         if (this.field20467 != null) {
             final int n3 = n - this.field20467.method14280();
             final int n4 = n2 - this.field20467.method14281();
@@ -228,7 +229,7 @@ public class Class4801 extends Class4800
     @Override
     public void method14204(final int n) {
         super.method14204(n);
-        final int method21959 = Client.getInstance().method35189().getJelloTouch().method21959(Class722.class);
+        final int method21959 = Client.getInstance().moduleManager().getJelloTouch().method21959(Class722.class);
         if (n != 256) {
             if (n != method21959) {
                 return;
@@ -266,8 +267,8 @@ public class Class4801 extends Class4800
             n3 -= this.field20468.field20927.calcPercent() * 0.1f;
             n2 *= 1.0f + n4 * 0.2f;
         }
-        if (Client.getInstance().method35189().getProfile().method32707() != null) {
-            final String field33839 = Client.getInstance().method35189().getProfile().method32707().field33839;
+        if (Client.getInstance().moduleManager().getProfile().method32707() != null) {
+            final String field33839 = Client.getInstance().moduleManager().getProfile().method32707().field33839;
             RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final CustomGuiScreen customGuiScreen : this.method14250()) {
@@ -283,7 +284,7 @@ public class Class4801 extends Class4800
     }
     
     static {
-        Class4801.field20460 = Minecraft.method5277();
+        Class4801.field20460 = Minecraft.getInstance();
         Class4801.field20470 = true;
     }
 }

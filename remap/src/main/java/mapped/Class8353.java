@@ -31,6 +31,6 @@ public class Class8353
     }
     
     static {
-        Class8353.field34280 = Minecraft.method5277();
+        Class8353.field34280 = Minecraft.getInstance();
     }
 }

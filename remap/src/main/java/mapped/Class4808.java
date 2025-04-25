@@ -17,7 +17,7 @@ public class Class4808 extends Class4807
     public Class4808(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final Category[] array) {
         super(customGuiScreen, s, n - 296, n2 - 346, 592, 692);
         this.field20529 = 0;
-        for (final Module class4804 : Client.getInstance().method35189().getModuleMap().values()) {
+        for (final Module class4804 : Client.getInstance().moduleManager().getModuleMap().values()) {
             if (class4804.method9916()) {
                 for (int length = array.length, i = 0; i < length; ++i) {
                     if (class4804.getCategoryBasedOnMode().equals(array[i])) {

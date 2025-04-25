@@ -8,6 +8,8 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 import slick2d.TrueTypeFont;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -546,13 +548,13 @@ public class CustomGuiScreen implements Class4925
     public JSONObject method14202(final JSONObject JSONObject) {
         if (this.method14310()) {
             JSONObject.put("id", this.method14266());
-            JSONObject.method13298("x", this.method14272());
-            JSONObject.method13298("y", this.method14274());
+            JSONObject.put("x", this.method14272());
+            JSONObject.put("y", this.method14274());
             if (this.method14312()) {
-                JSONObject.method13298("width", this.method14276());
-                JSONObject.method13298("height", this.method14278());
+                JSONObject.put("width", this.method14276());
+                JSONObject.put("height", this.method14278());
             }
-            JSONObject.method13298("index", (this.field20475 == null) ? 0 : this.field20475.method14249(this));
+            JSONObject.put("index", (this.field20475 == null) ? 0 : this.field20475.method14249(this));
             return this.method14254(JSONObject);
         }
         return JSONObject;
@@ -565,10 +567,10 @@ public class CustomGuiScreen implements Class4925
                 continue;
             }
             final JSONObject method14202 = class4407.method14202(new JSONObject());
-            if (method14202.method13274() <= 0) {
+            if (method14202.length() <= 0) {
                 continue;
             }
-            class4406.method486(method14202);
+            class4406.put(method14202);
         }
         JSONObject.put("children", class4406);
         return JSONObject;
@@ -583,7 +585,7 @@ public class CustomGuiScreen implements Class4925
                 this.field20481 = CJsonUtils.method26632(JSONObject, "height", this.field20481);
             }
             final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "children");
-            JSONObject.method13273().iterator();
+            JSONObject.keySet().iterator();
             if (method26638 != null) {
                 final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
                 for (int i = 0; i < method26638.length(); ++i) {

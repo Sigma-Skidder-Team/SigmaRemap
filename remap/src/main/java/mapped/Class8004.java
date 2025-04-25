@@ -21,7 +21,7 @@ public class Class8004
         if (n == -1) {
             return;
         }
-        for (final Class8879 class8879 : Client.getInstance().method35189().getJelloTouch().method21964(n)) {
+        for (final Class8879 class8879 : Client.getInstance().moduleManager().getJelloTouch().method21964(n)) {
             if (class8879 != null && class8879.method31228()) {
                 switch (Class9204.field38998[class8879.method31231().ordinal()]) {
                     case 1: {
@@ -51,6 +51,6 @@ public class Class8004
     }
     
     static {
-        field32966 = Minecraft.method5277();
+        field32966 = Minecraft.getInstance();
     }
 }

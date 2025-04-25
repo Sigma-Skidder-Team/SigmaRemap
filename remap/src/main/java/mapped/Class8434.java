@@ -16,7 +16,7 @@ public class Class8434
     private HashMap<Integer, Date> field34666;
     
     public Class8434() {
-        this.field34665 = Minecraft.method5277();
+        this.field34665 = Minecraft.getInstance();
         this.field34666 = new HashMap<Integer, Date>();
     }
     

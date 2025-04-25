@@ -47,7 +47,7 @@ public class Class6707 extends Class6693
                     }
                     if (method20364 != -1) {
                         class6428.method19104("Key " + array[1].method26314() + " was set for module " + method20363.getFormattedName());
-                        Client.getInstance().method35189().getJelloTouch().method21956(method20364, method20363);
+                        Client.getInstance().moduleManager().getJelloTouch().method21956(method20364, method20363);
                     }
                     else {
                         class6428.method19104("Keybind was reset for module " + method20363.getFormattedName());
@@ -60,7 +60,7 @@ public class Class6707 extends Class6693
                     throw new Class2332("Module " + array[0].method26314() + " not found");
                 }
                 final String prefix = "key.keyboard.";
-                final int method20366 = Client.getInstance().method35189().getJelloTouch().method21960(method20365);
+                final int method20366 = Client.getInstance().moduleManager().getJelloTouch().method21960(method20365);
                 String substring = null;
                 for (final Map.Entry<String, V> entry : Class7985.field32861.entrySet()) {
                     if (!entry.getKey().startsWith(prefix)) {
@@ -97,7 +97,7 @@ public class Class6707 extends Class6693
     }
     
     public Module method20363(final String anotherString) {
-        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
+        for (final Module class3167 : Client.getInstance().moduleManager().getModuleMap().values()) {
             if (!class3167.getName().replace(" ", "").equalsIgnoreCase(anotherString)) {
                 continue;
             }

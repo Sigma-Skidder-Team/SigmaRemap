@@ -147,12 +147,12 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                 this.field20309 = f;
             }
             final boolean method35715 = this.method13983(field20303);
-            final boolean b = !method35715 && !field20303.method1824(Minecraft.method5277().player);
+            final boolean b = !method35715 && !field20303.method1824(Minecraft.getInstance().player);
             class7354.method17005(Class1953.field10633);
             Client.getInstance().getEventBus().method21097(class7354);
             Class6332 class7355;
             if (!class7354.method17019() && field20303 instanceof Class755) {
-                class7355 = this.method13981((T)new Class755(Minecraft.method5277().world, new GameProfile(this.field20313, "Steve")), method35715, b);
+                class7355 = this.method13981((T)new Class755(Minecraft.getInstance().world, new GameProfile(this.field20313, "Steve")), method35715, b);
             }
             else {
                 class7355 = this.method13981(field20303, method35715, b);
@@ -332,7 +332,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
         if (method28715 >= n * n) {
             return false;
         }
-        final Minecraft method28716 = Minecraft.method5277();
+        final Minecraft method28716 = Minecraft.getInstance();
         final ClientPlayerEntity field4684 = method28716.player;
         final boolean b = !t.method1824(field4684);
         if (t != field4684) {

@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +34,7 @@ public class Class6437
             for (int method462 = JSONArray.length(), i = 0; i < method462; ++i) {
                 Object o2;
                 try {
-                    o2 = (JSONArray.method460(i) ? null : JSONArray.method449(i));
+                    o2 = (JSONArray.isNull(i) ? null : JSONArray.get(i));
                 }
                 catch (final JSONException thrown) {
                     Class6437.field25565.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);
@@ -44,7 +47,7 @@ public class Class6437
         }
         else if (o instanceof JSONObject) {
             final JSONObject class89 = (JSONObject)o;
-            final Iterator<String> method463 = class89.method13272();
+            final Iterator<String> method463 = class89.keys();
             while (method463.hasNext()) {
                 final String s = method463.next();
                 Object method464;

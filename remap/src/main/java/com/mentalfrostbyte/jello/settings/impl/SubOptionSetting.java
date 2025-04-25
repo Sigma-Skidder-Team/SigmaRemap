@@ -6,9 +6,9 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.CJsonUtils;
-import mapped.JSONArray;
+import totalcross.json.JSONArray;
 
 import java.util.Iterator;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
         final JSONArray class4406 = new JSONArray();
         final Iterator<Setting> iterator = (Iterator<Setting>) this.method15224().iterator();
         while (iterator.hasNext()) {
-            class4406.method486(iterator.next().method15193(new JSONObject()));
+            class4406.put(iterator.next().method15193(new JSONObject()));
         }
         JSONObject.put("children", class4406);
         JSONObject.put("name", this.method15204());

@@ -36,7 +36,7 @@ public class Class8491
     public boolean field34864;
     
     public Class8491() {
-        this.field34856 = Minecraft.method5277();
+        this.field34856 = Minecraft.getInstance();
         this.field34857 = new ArrayList<BlockPos>();
         this.field34863 = false;
         this.field34860 = new Class7614(this);
@@ -178,7 +178,7 @@ public class Class8491
     @EventListener
     @Class6763
     public void method28373(final Class5723 class5723) {
-        if (!Client.getInstance().method35189().getModuleByClass(OldHitting.class).isEnabled() && Class9367.method34762() != Class7906.field32452.method25613()) {
+        if (!Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() && Class9367.method34762() != Class7906.field32452.method25613()) {
             if (!Class8491.field34858.isEmpty()) {
                 Class8491.field34858.clear();
             }
@@ -187,7 +187,7 @@ public class Class8491
             final Class4402 class5724 = (Class4402)class5723.method16998();
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
-                    if (Client.getInstance().method35189().getModuleByClass(OldHitting.class).isEnabled() || Class9367.method34762() == Class7906.field32452.method25613()) {
+                    if (Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() || Class9367.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (Class8491.field34858.contains(method6741)) {

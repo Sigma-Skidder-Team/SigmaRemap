@@ -23,7 +23,7 @@ public class Class6981 extends Class6977
     @Override
     public Set<Class9488> method21398(final BlockPos class354, final BlockState class355, final Class7614 class356) {
         final HashSet set = new HashSet();
-        final BlockState method6701 = Minecraft.method5277().world.getBlockState(class354);
+        final BlockState method6701 = Minecraft.getInstance().world.getBlockState(class354);
         if (method6701.getBlock() instanceof Class3999) {
             set.add(new Class9488(class354, ((StateHolder<Object, BlockState>)method6701).with((IProperty<Comparable>)Class3999.field18026, (Comparable)class355.get((IProperty<V>)Class3999.field18026))));
         }

@@ -30,7 +30,7 @@ public enum Class325 implements Class326
     
     private Class325(final String field2040) {
         this.field2040 = field2040;
-        this.field2041 = Minecraft.method5277().method5306();
+        this.field2041 = Minecraft.getInstance().method5306();
     }
     
     public String method1005() {
@@ -39,7 +39,7 @@ public enum Class325 implements Class326
     
     @Override
     public boolean method1006() {
-        final Entity method5303 = Minecraft.method5277().method5303();
+        final Entity method5303 = Minecraft.getInstance().method5303();
         if (method5303 instanceof LivingEntity) {
             final LivingEntity class511 = (LivingEntity)method5303;
             switch (Class7475.field28873[this.ordinal()]) {

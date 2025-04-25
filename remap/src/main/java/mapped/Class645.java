@@ -41,7 +41,7 @@ public class Class645 extends Widget
     
     @Override
     public void method3353(final int n, final int n2, final float n3) {
-        Minecraft.method5277().method5290().method5849(this.field3657);
+        Minecraft.getInstance().method5290().method5849(this.field3657);
         RenderSystem.disableDepthTest();
         int field3659 = this.field3659;
         int field3660 = this.field3660;

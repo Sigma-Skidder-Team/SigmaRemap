@@ -213,7 +213,7 @@ public class Class9147
     }
     
     static {
-        Class9147.field38775 = Minecraft.method5277();
+        Class9147.field38775 = Minecraft.getInstance();
         Class9147.field38776 = new Class9407[] { new Class9407(1.0, 0.0, 0.0), new Class9407(-1.0, 0.0, 0.0), new Class9407(0.0, 0.0, 1.0), new Class9407(0.0, 0.0, -1.0) };
     }
 }

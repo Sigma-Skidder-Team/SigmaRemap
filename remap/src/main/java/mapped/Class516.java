@@ -338,7 +338,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                             }
                             else {
                                 if (!this.minecraft.gameSettings.field23447.method1067(n3)) {
-                                    final boolean b = field3102 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 344));
+                                    final boolean b = field3102 != -999 && (Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 344));
                                     Class2133 class2133 = Class2133.field12437;
                                     if (!b) {
                                         if (field3102 == -999) {
@@ -547,7 +547,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             }
             else if (!this.minecraft.player.inventory.method2375().method27620()) {
                 if (!this.minecraft.gameSettings.field23447.method1067(n3)) {
-                    final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 344));
+                    final boolean b = field3081 != -999 && (Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 344));
                     if (b) {
                         this.field3102 = ((method2981 != null && method2981.method20054()) ? method2981.method20053().method27641() : ItemStack.EMPTY);
                     }

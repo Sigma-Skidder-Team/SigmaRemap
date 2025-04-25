@@ -8,6 +8,9 @@ import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
 import com.mojang.authlib.exceptions.AuthenticationException;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 import java.io.File;
 import java.util.ArrayList;
@@ -76,7 +79,7 @@ public class Class7861
     
     public boolean method25463(final Class7971 class7971) {
         try {
-            Minecraft.method5277().field4642 = class7971.method25903();
+            Minecraft.getInstance().field4642 = class7971.method25903();
             this.field32298 = class7971.method25888();
             return true;
         }
@@ -108,7 +111,7 @@ public class Class7861
         final JSONArray JSONArray = new JSONArray();
         final Iterator<Class7971> iterator = this.field32296.iterator();
         while (iterator.hasNext()) {
-            JSONArray.method486(iterator.next().method25904());
+            JSONArray.put(iterator.next().method25904());
         }
         final JSONObject class89 = new JSONObject();
         class89.put("alts", JSONArray);
@@ -126,7 +129,7 @@ public class Class7861
             if (!method35586.has("alts")) {
                 method35586.put("alts", new JSONArray());
             }
-            final Iterator<Object> iterator = method35586.method13263("alts").iterator();
+            final Iterator<Object> iterator = method35586.getJSONArray("alts").iterator();
             while (iterator.hasNext()) {
                 this.field32296.add(new Class7971(iterator.next()));
             }
@@ -144,6 +147,6 @@ public class Class7861
         if (this.method25469() != null) {
             return class7971.method25888().equals(this.method25469());
         }
-        return class7971.method25889().equals(Minecraft.method5277().method5287().method33692());
+        return class7971.method25889().equals(Minecraft.getInstance().method5287().method33692());
     }
 }

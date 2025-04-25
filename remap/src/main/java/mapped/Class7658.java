@@ -20,6 +20,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.Chunk;
 import org.lwjgl.BufferUtils;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.ArrayList;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
@@ -41,7 +44,7 @@ public class Class7658
     public ByteBuffer field30407;
     
     public Class7658() {
-        this.field30396 = Minecraft.method5277();
+        this.field30396 = Minecraft.getInstance();
         this.field30397 = new ArrayList<ChunkPos>();
         this.field30398 = new ArrayList<ChunkPos>();
         this.field30399 = new ArrayList<Class8124>();
@@ -88,7 +91,7 @@ public class Class7658
         final JSONArray JSONArray = new JSONArray();
         final Iterator<Class8124> iterator = this.field30399.iterator();
         while (iterator.hasNext()) {
-            JSONArray.method486(iterator.next().method26749());
+            JSONArray.put(iterator.next().method26749());
         }
         final JSONObject class89 = new JSONObject();
         class89.put("waypoints", JSONArray);
@@ -107,7 +110,7 @@ public class Class7658
             if (!method35586.has("waypoints")) {
                 method35586.put("waypoints", new JSONArray());
             }
-            final Iterator<Object> iterator = method35586.method13263("waypoints").iterator();
+            final Iterator<Object> iterator = method35586.getJSONArray("waypoints").iterator();
             while (iterator.hasNext()) {
                 this.field30399.add(new Class8124(iterator.next()));
             }

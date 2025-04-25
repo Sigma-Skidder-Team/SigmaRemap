@@ -14,7 +14,7 @@ public class Class6492 extends Class6490
     public Minecraft field25849;
     
     public Class6492() {
-        this.field25849 = Minecraft.method5277();
+        this.field25849 = Minecraft.getInstance();
     }
     
     @Override

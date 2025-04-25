@@ -88,7 +88,7 @@ public abstract class Class4703<T extends Entity>
             class7351.method22566(this.field20283.method28717());
             class7351.method22565(-0.025f, -0.025f, 0.025f);
             final Matrix4f method32111 = class7351.getLast().getMatrix();
-            final int n4 = (int)(Minecraft.method5277().gameSettings.method17114(0.25f) * 255.0f) << 24;
+            final int n4 = (int)(Minecraft.getInstance().gameSettings.method17114(0.25f) * 255.0f) << 24;
             final FontRenderer method32112 = this.method13957();
             final float n5 = (float)(-method32112.getStringWidth(anObject) / 2);
             method32112.renderString(anObject, n5, (float)n3, 553648127, false, method32111, class7352, b, n4, n);

@@ -30,7 +30,7 @@ public class Class721 extends Class720
     @Override
     public void render(final int n, final int n2, final float n3) {
         super.render(n, n2, n3);
-        RenderUtil.method26870(0, 0, Minecraft.method5277().window.method7694(), (int)(30.0 * Minecraft.method5277().window.getGuiScaleFactor() / Class9000.field37993));
+        RenderUtil.method26870(0, 0, Minecraft.getInstance().window.method7694(), (int)(30.0 * Minecraft.getInstance().window.getGuiScaleFactor() / Class9000.field37993));
         this.renderBackground();
         RenderUtil.endScissor();
         this.field3944.render(n, n2, n3);

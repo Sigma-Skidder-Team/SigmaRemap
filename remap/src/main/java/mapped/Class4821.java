@@ -34,7 +34,7 @@ public class Class4821 extends Class4817 implements Class4820
     
     public void method14390() {
         int n = 0;
-        for (final Module class3167 : Client.getInstance().method35189().getModulesByCategory(this.field20629)) {
+        for (final Module class3167 : Client.getInstance().moduleManager().getModulesByCategory(this.field20629)) {
             final int method19118 = ColorUtils.applyAlpha(-3487030, 0.0f);
             final ColorHelper method19119 = new ColorHelper(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.DEEP_TEAL.color);
             method19119.method19736(Class2056.field11734);
@@ -92,7 +92,7 @@ public class Class4821 extends Class4817 implements Class4820
         final Class4924 class4924 = (Class4924)this.field20475;
         final double n3 = 0.07000000029802322;
         final double n4 = 60.0;
-        Minecraft.method5277();
+        Minecraft.getInstance();
         final float n5 = (float)(n3 * (n4 / Minecraft.method5338()));
         this.field20633 += (this.method14403() ? (this.field20632 ? (-n5) : n5) : 0.0f);
         this.field20633 = Math.max(0.0f, Math.min(1.0f, this.field20633));

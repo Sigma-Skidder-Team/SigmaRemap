@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+
 public class Class952 implements Runnable
 {
     public final /* synthetic */ String field5039;
@@ -21,11 +23,11 @@ public class Class952 implements Runnable
     @Override
     public void run() {
         final JSONArray JSONArray = new JSONArray();
-        JSONArray.method486(this.field5039);
+        JSONArray.put(this.field5039);
         if (this.field5040 != null) {
             final Object[] field5040 = this.field5040;
             for (int length = field5040.length, i = 0; i < length; ++i) {
-                JSONArray.method486(field5040[i]);
+                JSONArray.put(field5040[i]);
             }
         }
         final Class9041 class89 = new Class9041(2, JSONArray);

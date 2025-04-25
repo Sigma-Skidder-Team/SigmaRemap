@@ -82,7 +82,7 @@ public class InfiniteAura extends Module
                 final ArrayList<Class9407> method10096 = Class9147.method33405(new Class9407(method10095.posX, method10095.posY, method10095.posZ), new Class9407(class5744.posX, class5744.posY, class5744.posZ));
                 this.field15649.add(method10096);
                 Collections.reverse(method10096);
-                this.method10092(method10096, Client.getInstance().method35189().getModuleByClass(Criticals.class).isEnabled());
+                this.method10092(method10096, Client.getInstance().moduleManager().getModuleByClass(Criticals.class).isEnabled());
                 ColorUtils.method19165(method10095, !this.method9883("No Swing"));
                 Collections.reverse(method10096);
                 this.method10092(method10096, false);
@@ -192,7 +192,7 @@ public class InfiniteAura extends Module
                                             if (!Class9011.method32262((PlayerEntity)method26798)) {
                                                 continue;
                                             }
-                                            if (!Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
+                                            if (!Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled()) {
                                                 continue;
                                             }
                                             iterator2.remove();
@@ -235,8 +235,8 @@ public class InfiniteAura extends Module
     
     public boolean method10095() {
         if (this.field15647) {
-            if (Minecraft.method5277().player.getHeldItemMainhand() != null) {
-                if (Minecraft.method5277().player.getHeldItemMainhand().getItem() instanceof Class4077) {
+            if (Minecraft.getInstance().player.getHeldItemMainhand() != null) {
+                if (Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof Class4077) {
                     return true;
                 }
             }

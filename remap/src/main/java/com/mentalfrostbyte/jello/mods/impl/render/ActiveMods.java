@@ -60,7 +60,7 @@ public class ActiveMods extends Module
                 this.field15899.method35856(0.0f);
             }
             int n = -2;
-            final int n2 = Minecraft.method5277().window.method7694() - 2;
+            final int n2 = Minecraft.getInstance().window.method7694() - 2;
             final int n3 = -2;
             new java.awt.Color(0, 192, 255, 255).getRGB();
             int n4 = new java.awt.Color(0, 192, 255, 255).getRGB();
@@ -136,7 +136,7 @@ public class ActiveMods extends Module
     private void method10489() {
         if (this.field15896.isEmpty()) {
             this.field15896.clear();
-            for (final Module key : Client.getInstance().method35189().getModuleMap().values()) {
+            for (final Module key : Client.getInstance().moduleManager().getModuleMap().values()) {
                 if (key == this) {
                     continue;
                 }

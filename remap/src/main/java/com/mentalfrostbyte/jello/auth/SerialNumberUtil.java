@@ -5,9 +5,9 @@
 package com.mentalfrostbyte.jello.auth;
 
 import com.sun.jna.Platform;
-import mapped.LinuxSNGetter;
-import mapped.MacOSSNGetter;
-import mapped.WindowsSNGetter;
+import com.mentalfrostbyte.jello.auth.getters.LinuxSNGetter;
+import com.mentalfrostbyte.jello.auth.getters.MacOSSNGetter;
+import com.mentalfrostbyte.jello.auth.getters.WindowsSNGetter;
 
 import java.util.Base64;
 import java.security.NoSuchAlgorithmException;

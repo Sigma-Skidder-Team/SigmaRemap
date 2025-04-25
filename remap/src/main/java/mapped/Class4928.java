@@ -30,8 +30,8 @@ public class Class4928 extends Class4800
         super.draw(n);
         final int method24918 = ClientAssets.mentalfrostbyte.getImageWidth();
         final int method24919 = ClientAssets.mentalfrostbyte.getImageHeight();
-        final int min = Math.min(method24918, (int)(Minecraft.method5277().window.method7695() / 1.65f));
-        final int min2 = Math.min(method24919, (int)(Minecraft.method5277().window.method7695() / 1.65f));
+        final int min = Math.min(method24918, (int)(Minecraft.getInstance().window.method7695() / 1.65f));
+        final int min2 = Math.min(method24919, (int)(Minecraft.getInstance().window.method7695() / 1.65f));
         this.method14789();
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * this.field21083));
         final float method24920 = Class7707.method24584((this.field21083 >= 0.5) ? ((float)(this.field21083 - 0.5) * 2.0f) : 0.0f, 0.0f, 1.0f, 1.0f);
@@ -76,7 +76,7 @@ public class Class4928 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new Class548());
         }
     }
 }

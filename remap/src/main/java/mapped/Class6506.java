@@ -12,7 +12,7 @@ public class Class6506 implements Class6507
     public void method19597(final CustomGuiScreen customGuiScreen, final CustomGuiScreen class4804) {
         customGuiScreen.method14275(0);
         if (class4804 == null) {
-            customGuiScreen.method14279(Minecraft.method5277().window.method7695());
+            customGuiScreen.method14279(Minecraft.getInstance().window.method7695());
         }
         else {
             customGuiScreen.method14279(class4804.method14278());

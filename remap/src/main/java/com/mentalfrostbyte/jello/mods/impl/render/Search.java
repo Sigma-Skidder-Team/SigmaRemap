@@ -52,7 +52,7 @@ public class Search extends Module
                 this.method10371(((Class4312)class5723.method16998()).field19330);
             }
             if (class5723.method16998() instanceof Class4298) {
-                if (Minecraft.method5277().world != null) {
+                if (Minecraft.getInstance().world != null) {
                     final Class4298 class5724 = (Class4298)class5723.method16998();
                     this.method10371(new ChunkPos(class5724.method12909(), class5724.method12910()));
                 }

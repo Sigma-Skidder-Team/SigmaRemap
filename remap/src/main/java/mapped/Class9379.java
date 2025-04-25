@@ -124,7 +124,7 @@ public class Class9379
     }
     
     static {
-        Class9379.field40212 = Minecraft.method5277();
+        Class9379.field40212 = Minecraft.getInstance();
         field40213 = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
         field40214 = Class9379.field40213;
         field40215 = 64 - Class9379.field40213 - Class9379.field40214;

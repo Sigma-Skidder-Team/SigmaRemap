@@ -72,7 +72,7 @@ public class ActiveMods extends Module
     @Override
     public void initialize() {
         this.field15890.clear();
-        for (final Module class3167 : Client.getInstance().method35189().getModuleMap().values()) {
+        for (final Module class3167 : Client.getInstance().moduleManager().getModuleMap().values()) {
             if (class3167.getCategoryBasedOnMode() != Category.GUI) {
                 this.field15890.add(class3167);
                 this.field15893.put(class3167, new Animation(150, 150, Direction.FORWARDS));
@@ -112,7 +112,7 @@ public class ActiveMods extends Module
                 }
                 final int n2 = 23 + n * (this.field15894.getHeight() + 1);
                 final int size = method6786.size();
-                final int n3 = Minecraft.method5277().window.method7695() / 2;
+                final int n3 = Minecraft.getInstance().window.method7695() / 2;
                 ActiveMods.mc.fontRenderer.getClass();
                 final int n4 = n3 - (9 + 5) * (size - 3 + 2);
                 if (n2 <= n4) {
@@ -137,16 +137,16 @@ public class ActiveMods extends Module
             }
             this.field15893.get(key).changeDirection(key.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             int n = 10;
             final int n2 = 1;
-            final int method7694 = Minecraft.method5277().window.method7694();
+            final int method7694 = Minecraft.getInstance().window.method7694();
             final TrueTypeFont field15894 = this.field15894;
             int field15895 = n - 4;
             if (this.field15894 == ClientFonts.JelloLight14) {
                 n -= 3;
             }
-            if (Minecraft.method5277().gameSettings.field23466) {
+            if (Minecraft.getInstance().gameSettings.field23466) {
                 field15895 = (int)(ActiveMods.mc.field4647.field3763.field3801.size() * 9 * ActiveMods.mc.window.getGuiScaleFactor() + 7.0);
             }
             int n3 = 0;
@@ -192,7 +192,7 @@ public class ActiveMods extends Module
     private Color method10480(final int n, final int n2, final Color color) {
         final ByteBuffer allocateDirect = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
-        GL11.glReadPixels(n, Minecraft.method5277().window.method7695() - n2, 1, 1, 6407, 5120, allocateDirect);
+        GL11.glReadPixels(n, Minecraft.getInstance().window.method7695() - n2, 1, 1, 6407, 5120, allocateDirect);
         Color method19109 = new Color(allocateDirect.get(0) * 2, allocateDirect.get(1) * 2, allocateDirect.get(2) * 2, 1);
         if (color != null) {
             method19109 = ColorUtils.method19109(method19109, color, 0.08f);

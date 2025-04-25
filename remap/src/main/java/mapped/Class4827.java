@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
+import totalcross.json.JSONObject;
 
 public class Class4827 extends Class4825 implements Class4828
 {
@@ -133,7 +134,7 @@ public class Class4827 extends Class4825 implements Class4828
     
     @Override
     public JSONObject method14202(final JSONObject JSONObject) {
-        JSONObject.method13298("offset", this.field20650);
+        JSONObject.put("offset", this.field20650);
         return super.method14202(JSONObject);
     }
     

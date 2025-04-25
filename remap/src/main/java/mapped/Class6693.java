@@ -54,6 +54,6 @@ public abstract class Class6693
     public abstract void run(final String p0, final Class8025[] p1, final Class6428 p2) throws CommandException;
     
     static {
-        field26420 = Minecraft.method5277();
+        field26420 = Minecraft.getInstance();
     }
 }

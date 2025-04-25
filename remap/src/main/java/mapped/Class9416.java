@@ -518,6 +518,6 @@ public class Class9416
     }
     
     static {
-        Class9416.field40402 = Minecraft.method5277();
+        Class9416.field40402 = Minecraft.getInstance();
     }
 }

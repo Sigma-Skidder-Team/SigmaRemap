@@ -97,7 +97,7 @@ public class IntegratedServer extends MinecraftServer
     public void method1469(final BooleanSupplier booleanSupplier) {
         this.method5681();
         final boolean field9271 = this.field9271;
-        this.field9271 = (Minecraft.method5277().method5269() != null && Minecraft.method5277().method5298());
+        this.field9271 = (Minecraft.getInstance().method5269() != null && Minecraft.getInstance().method5298());
         final Class5029 method1590 = this.method1590();
         if (!field9271) {
             if (this.field9271) {

@@ -67,7 +67,7 @@ public class Class1845 implements AutoCloseable
             method32115.pos(method32114, -1.0f, -1.0f, n2 * -0.001f).method12399(255, 255, 255, 255).tex(n3, n6).method12440(n).endVertex();
             class7351.method22568();
             if (class7353.method34528() != null) {
-                final FontRenderer field4643 = Minecraft.method5277().fontRenderer;
+                final FontRenderer field4643 = Minecraft.getInstance().fontRenderer;
                 final String method32116 = class7353.method34528().getFormattedText();
                 final float n7 = (float)field4643.getStringWidth(method32116);
                 final float method32117 = MathHelper.clamp(25.0f / n7, 0.0f, 0.6666667f);

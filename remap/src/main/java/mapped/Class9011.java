@@ -9,7 +9,7 @@ public class Class9011
     private static String[] field38041;
     
     public static boolean method32262(final PlayerEntity playerEntity) {
-        return method32263(Minecraft.method5277().player) == method32263(playerEntity);
+        return method32263(Minecraft.getInstance().player) == method32263(playerEntity);
     }
     
     public static int method32263(final PlayerEntity playerEntity) {

@@ -67,7 +67,7 @@ public class SpiderStep extends Module
                 if (updateWalkingEvent.method17046()) {
                     if (this.field15787 != 1) {
                         if (this.field15787 == 3) {
-                            final Module method21551 = Client.getInstance().method35189().getModuleByClass(Criticals.class);
+                            final Module method21551 = Client.getInstance().moduleManager().getModuleByClass(Criticals.class);
                             if (method21551.isEnabled() && method21551.getStringSettingValueByName("Type").equals("NoGround")) {
                                 updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                             }

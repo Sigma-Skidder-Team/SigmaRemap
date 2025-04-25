@@ -20,7 +20,7 @@ public class Class923 extends Thread
     @Override
     public void run() {
         try {
-            this.field4904.method21397(this.field4903, Class6579.method19925(this.field4903, Minecraft.method5277().method5289()), null);
+            this.field4904.method21397(this.field4903, Class6579.method19925(this.field4903, Minecraft.getInstance().method5289()), null);
         }
         catch (final Exception ex) {
             this.field4904.method21397(this.field4903, null, ex);

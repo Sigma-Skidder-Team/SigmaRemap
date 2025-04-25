@@ -48,10 +48,10 @@ public class MainMenuScreen extends Class4800
         }
         this.field21095.changeDirection(Direction.FORWARDS);
         this.field21096.changeDirection(Direction.FORWARDS);
-        final int n = Minecraft.method5277().window.method7694() * Minecraft.method5277().window.method7695() / 14000;
+        final int n = Minecraft.getInstance().window.method7694() * Minecraft.getInstance().window.method7695() / 14000;
         final Random random = new Random();
         for (int i = 0; i < n; ++i) {
-            this.field21098.add(new Class4804(this, Integer.toString(i), random.nextInt(Minecraft.method5277().window.method7694()), random.nextInt(Minecraft.method5277().window.method7695()), 7 + random.nextInt(5), (1 + random.nextInt(4)) * (random.nextBoolean() ? -1 : 1), 1 + random.nextInt(2)));
+            this.field21098.add(new Class4804(this, Integer.toString(i), random.nextInt(Minecraft.getInstance().window.method7694()), random.nextInt(Minecraft.getInstance().window.method7695()), 7 + random.nextInt(5), (1 + random.nextInt(4)) * (random.nextBoolean() ? -1 : 1), 1 + random.nextInt(2)));
         }
         this.addToList(this.field21091 = new Class4811(this, "main", 0, 0, this.field20480, this.field20481));
         this.addToList(this.field21092 = new Class4812(this, "changelog", 0, 0, this.field20480, this.field20481));
@@ -111,10 +111,10 @@ public class MainMenuScreen extends Class4800
         }
         final float n5 = n4 - this.field21088;
         final float n6 = (float)(field21089 - this.field21089);
-        if (Minecraft.method5277().field4701 == null) {
+        if (Minecraft.getInstance().field4701 == null) {
             this.field21095.changeDirection(Direction.BACKWARDS);
             this.field21096.changeDirection(Direction.BACKWARDS);
-            final float n7 = 0.5f - this.field21089 / (float) Minecraft.method5277().window.method7694() * -1.0f;
+            final float n7 = 0.5f - this.field21089 / (float) Minecraft.getInstance().window.method7694() * -1.0f;
             final float n8 = 1.0f - this.field21095.calcPercent();
             final float n9 = 1.0f - this.field21096.calcPercent();
             if (Client.getInstance().method35185()) {}

@@ -102,17 +102,17 @@ public class Class568 extends Class566
         }
         GL11.glEnable(3008);
         GL11.glEnable(3042);
-        RenderUtil.method26904(0.0f, 0.0f, (float) Minecraft.method5277().window.method7694(), (float) Minecraft.method5277().window.method7695(), Class568.field3392, n);
-        RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.method5277().window.method7694(), (float) Minecraft.method5277().window.method7695(), ColorUtils.applyAlpha(0, 0.75f));
+        RenderUtil.method26904(0.0f, 0.0f, (float) Minecraft.getInstance().window.method7694(), (float) Minecraft.getInstance().window.method7695(), Class568.field3392, n);
+        RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.getInstance().window.method7694(), (float) Minecraft.getInstance().window.method7695(), ColorUtils.applyAlpha(0, 0.75f));
         final int n3 = 455;
         final int n4 = 78;
-        final int n5 = (Minecraft.method5277().window.method7694() - n3) / 2;
-        final int round = Math.round((Minecraft.method5277().window.method7695() - n4) / 2 - 14.0f * n);
+        final int n5 = (Minecraft.getInstance().window.method7694() - n3) / 2;
+        final int round = Math.round((Minecraft.getInstance().window.method7695() - n4) / 2 - 14.0f * n);
         final float n6 = 0.75f + n * n * n * n * 0.25f;
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)(Minecraft.method5277().window.method7694() / 2), (float)(Minecraft.method5277().window.method7695() / 2), 0.0f);
+        GL11.glTranslatef((float)(Minecraft.getInstance().window.method7694() / 2), (float)(Minecraft.getInstance().window.method7695() / 2), 0.0f);
         GL11.glScalef(n6, n6, 0.0f);
-        GL11.glTranslatef((float)(-Minecraft.method5277().window.method7694() / 2), (float)(-Minecraft.method5277().window.method7695() / 2), 0.0f);
+        GL11.glTranslatef((float)(-Minecraft.getInstance().window.method7694() / 2), (float)(-Minecraft.getInstance().window.method7695() / 2), 0.0f);
         RenderUtil.drawImage((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         final float min = Math.min(1.0f, n2 * 1.02f);
         final int n7 = 80;

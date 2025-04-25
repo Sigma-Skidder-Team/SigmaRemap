@@ -15,7 +15,7 @@ public class Class9472
     
     public Class9472(final Class8065 field40731) {
         this.field40731 = field40731;
-        this.field40730 = Minecraft.method5277();
+        this.field40730 = Minecraft.getInstance();
     }
     
     public void method35257(final float n, final float n2) {

@@ -36,7 +36,7 @@ public class Class4810 extends CustomGuiScreen
         this.addToList(this.field20569 = new Class4909(this, "alpha", n5 + n4 * 3 + 48, 48, n4, 40, "Alphalts", ClientColors.DEEP_TEAL.color));
         final Class4936 class4804 = (Class4936)this.getParent();
         this.field20564.doThis((class4937, n) -> class4804.method14848(Client.getInstance().method35198().method25466().get(new Random().nextInt(Client.getInstance().method35198().method25466().size()))));
-        this.field20562.doThis((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
+        this.field20562.doThis((class4803, n) -> Minecraft.getInstance().displayGuiScreen(new Class548()));
         this.field20563.doThis((class4937, n) -> class4804.method14845());
         this.field20565.doThis((class4937, n) -> class4804.method14846());
         this.field20567.doThis((class4937, n) -> {

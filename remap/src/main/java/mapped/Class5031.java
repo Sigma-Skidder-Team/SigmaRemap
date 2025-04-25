@@ -10,6 +10,8 @@ import java.net.URLConnection;
 import java.util.stream.Collectors;
 import java.nio.charset.StandardCharsets;
 import org.json.JSONException;
+import totalcross.json.JSONObject;
+
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

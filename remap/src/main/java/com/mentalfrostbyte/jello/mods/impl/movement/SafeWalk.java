@@ -21,7 +21,7 @@ public class SafeWalk extends Module
         if (!this.isEnabled() || !SafeWalk.mc.player.onGround) {
             return;
         }
-        if (!Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
+        if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
             class5738.method17026(true);
         }
     }

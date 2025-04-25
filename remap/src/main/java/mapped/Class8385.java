@@ -217,7 +217,7 @@ public class Class8385
     }
     
     static {
-        Class8385.field34375 = Minecraft.method5277();
+        Class8385.field34375 = Minecraft.getInstance();
         Class8385.field34376 = new Class8422[] { new Class8422(1.0, 0.0, 0.0), new Class8422(-1.0, 0.0, 0.0), new Class8422(0.0, 0.0, 1.0), new Class8422(0.0, 0.0, -1.0), new Class8422(0.0, -1.0, 0.0), new Class8422(0.0, 1.0, 0.0) };
     }
 }

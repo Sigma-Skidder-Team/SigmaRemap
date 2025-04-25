@@ -40,7 +40,7 @@ public class Class4813 extends CustomGuiScreen
         Client.getInstance();
         final String string = append.append("5.0.0b6").toString();
         RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.x + (this.method14276() - ClientFonts.JelloLight20.getWidth(string)) / 2), (float)(this.y + 70), string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * n));
-        final String string2 = "Click GUI is currently bound to: " + ColorUtils.method19166(Client.getInstance().method35189().getJelloTouch().method21959(Class722.class)) + " Key";
+        final String string2 = "Click GUI is currently bound to: " + ColorUtils.method19166(Client.getInstance().moduleManager().getJelloTouch().method21959(Class722.class)) + " Key";
         RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(string2)) / 2), (float)(this.method14274() + this.method14278() - 180), string2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * n));
         final String s = "Configure all your keybinds in the keybind manager!";
         RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight14.getWidth(s)) / 2), (float)(this.method14274() + this.method14278() - 150), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * n));

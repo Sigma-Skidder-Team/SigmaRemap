@@ -35,7 +35,7 @@ public class Class4876 extends Class4868
         }
         RenderUtil.startScissor((float)this.method14272(), this.method14274() - n2 * 3.0f, (float)this.method14276(), (float)this.method14278());
         final int n3 = 40;
-        RenderUtil.method26905(n3 * (-Class4939.field21207 / Minecraft.method5277().window.method7694()), n3 * (-Class4939.field21208 / Minecraft.method5277().window.method7695()), (float)(Minecraft.method5277().window.method7694() + n3), (float)(Minecraft.method5277().window.method7695() + n3), Class568.field3392);
+        RenderUtil.method26905(n3 * (-Class4939.field21207 / Minecraft.getInstance().window.method7694()), n3 * (-Class4939.field21208 / Minecraft.getInstance().window.method7695()), (float)(Minecraft.getInstance().window.method7694() + n3), (float)(Minecraft.getInstance().window.method7695() + n3), Class568.field3392);
         RenderUtil.endScissor();
         if (this.field20864) {
             RenderUtil.method26874((float)this.method14272(), this.method14274() - n2 * 3.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(-12319668, 0.5f));

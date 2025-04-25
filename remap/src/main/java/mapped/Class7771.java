@@ -46,7 +46,7 @@ public class Class7771
                 if (this.field31818 == null) {
                     if (this.field31817 != null) {
                         this.field31818 = new Class1773(this.field31817);
-                        Minecraft.method5277().method5290().method5851(this.field31816, this.field31818);
+                        Minecraft.getInstance().method5290().method5851(this.field31816, this.field31818);
                     }
                 }
                 method28895.method5849(this.field31816);

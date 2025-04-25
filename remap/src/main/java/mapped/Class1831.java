@@ -63,7 +63,7 @@ public class Class1831<T extends LivingEntity, M extends Class5845<T> & Class585
                 if (b) {
                     class7351.method22564(0.0, 0.1875, 0.0);
                 }
-                Minecraft.method5277().method5308().method35143(t, method2718, Class2016.field11491, false, class7351, class7352, n);
+                Minecraft.getInstance().method5308().method35143(t, method2718, Class2016.field11491, false, class7351, class7352, n);
             }
             class7351.method22568();
         }

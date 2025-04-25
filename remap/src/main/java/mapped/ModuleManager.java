@@ -19,6 +19,8 @@ import com.mentalfrostbyte.jello.mods.impl.player.*;
 import com.mentalfrostbyte.jello.mods.impl.render.*;
 import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.mods.impl.world.*;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -231,7 +233,7 @@ public class ModuleManager
             else {
                 Client.getInstance().getEventBus().unregister(class4410);
                 if (class4410 instanceof ModuleWithSettings) {
-                    final Module[] module1 = ((ModuleWithSettings)class4410).field15742;
+                    final Module[] module1 = ((ModuleWithSettings)class4410).moduleArray;
                     for (int length = module1.length, j = 0; j < length; ++j) {
                         Client.getInstance().getEventBus().unregister(module1[j]);
                     }
@@ -246,7 +248,7 @@ public class ModuleManager
         final JSONArray class4406 = new JSONArray();
         final Iterator<Module> iterator = this.moduleMap.values().iterator();
         while (iterator.hasNext()) {
-            class4406.method486(iterator.next().method9896(new JSONObject()));
+            class4406.put(iterator.next().method9896(new JSONObject()));
         }
         JSONObject.put("mods", class4406);
         return JSONObject;

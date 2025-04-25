@@ -52,7 +52,7 @@ public class Breadcrumbs extends Module
     }
     
     public Vec3d method10418(final Vec3d class5487) {
-        return class5487.add(new Vec3d(-Minecraft.method5277().field4644.method5833().method18161().getX(), -Minecraft.method5277().field4644.method5833().method18161().getY(), -Minecraft.method5277().field4644.method5833().method18161().getZ()));
+        return class5487.add(new Vec3d(-Minecraft.getInstance().field4644.method5833().method18161().getX(), -Minecraft.getInstance().field4644.method5833().method18161().getY(), -Minecraft.getInstance().field4644.method5833().method18161().getZ()));
     }
     
     @EventListener

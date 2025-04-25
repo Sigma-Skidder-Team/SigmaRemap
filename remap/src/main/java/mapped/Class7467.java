@@ -4,18 +4,21 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 
 public class Class7467
 {
     private static Object method23005(final Class8827 class8827, final boolean b, final JSONArray class8828) throws org.json.JSONException {
-        while (class8827.method30784()) {
+        while (class8827.more()) {
             final Object method30796 = class8827.method30796();
             if (method30796 != Class8782.field36927) {
                 if (class8828 == null) {
                     continue;
                 }
-                class8828.method486((method30796 instanceof String) ? Class8782.method30565((String)method30796) : method30796);
+                class8828.put((method30796 instanceof String) ? Class8782.method30565((String)method30796) : method30796);
             }
             else {
                 final Object method30797 = class8827.method30799();
@@ -29,13 +32,13 @@ public class Class7467
                     if (!b) {
                         class8830.put("tagName", s);
                         if (class8828 != null) {
-                            class8828.method486(class8830);
+                            class8828.put(class8830);
                         }
                     }
                     else {
-                        class8829.method486(s);
+                        class8829.put(s);
                         if (class8828 != null) {
-                            class8828.method486(class8829);
+                            class8828.put(class8829);
                         }
                     }
                     Object o = null;
@@ -53,21 +56,21 @@ public class Class7467
                             }
                             o = class8827.method30799();
                             if (o != Class8782.field36925) {
-                                class8830.method13254(s2, "");
+                                class8830.accumulate(s2, "");
                             }
                             else {
                                 final Object method30798 = class8827.method30799();
                                 if (!(method30798 instanceof String)) {
                                     throw class8827.syntaxError("Missing value");
                                 }
-                                class8830.method13254(s2, Class8782.method30565((String)method30798));
+                                class8830.accumulate(s2, Class8782.method30565((String)method30798));
                                 o = null;
                             }
                         }
                         else {
                             if (b) {
-                                if (class8830.method13274() > 0) {
-                                    class8829.method486(class8830);
+                                if (class8830.length() > 0) {
+                                    class8829.put(class8830);
                                 }
                             }
                             if (o != Class8782.field36930) {
@@ -117,7 +120,7 @@ public class Class7467
                         class8827.method30800("?>");
                     }
                     else {
-                        final char method30799 = class8827.method30785();
+                        final char method30799 = class8827.next();
                         if (method30799 != '-') {
                             if (method30799 != '[') {
                                 int n = 1;
@@ -137,16 +140,16 @@ public class Class7467
                                 } while (n > 0);
                             }
                             else {
-                                if (!class8827.method30799().equals("CDATA") || class8827.method30785() != '[') {
+                                if (!class8827.method30799().equals("CDATA") || class8827.next() != '[') {
                                     throw class8827.syntaxError("Expected 'CDATA['");
                                 }
                                 if (class8828 == null) {
                                     continue;
                                 }
-                                class8828.method486(class8827.method30795());
+                                class8828.put(class8827.method30795());
                             }
                         }
-                        else if (class8827.method30785() != '-') {
+                        else if (class8827.next() != '-') {
                             class8827.back();
                         }
                         else {
@@ -187,12 +190,12 @@ public class Class7467
     
     public static String toString(final JSONArray JSONArray) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
-        final String method459 = JSONArray.method459(0);
+        final String method459 = JSONArray.getString(0);
         Class8782.method30563(method459);
         final String method460 = Class8782.method30562(method459);
         sb.append('<');
         sb.append(method460);
-        final Object method461 = JSONArray.method463(1);
+        final Object method461 = JSONArray.opt(1);
         int n;
         if (!(method461 instanceof JSONObject)) {
             n = 1;
@@ -200,11 +203,11 @@ public class Class7467
         else {
             n = 2;
             final JSONObject class89 = (JSONObject)method461;
-            final Iterator<String> method462 = class89.method13272();
+            final Iterator<String> method462 = class89.keys();
             while (method462.hasNext()) {
                 final String s = method462.next();
                 Class8782.method30563(s);
-                final String method463 = class89.method13292(s);
+                final String method463 = class89.optString(s);
                 if (method463 == null) {
                     continue;
                 }
@@ -220,7 +223,7 @@ public class Class7467
         if (n < method464) {
             sb.append('>');
             do {
-                final Object method465 = JSONArray.method449(n);
+                final Object method465 = JSONArray.get(n);
                 ++n;
                 if (method465 != null) {
                     if (!(method465 instanceof String)) {
@@ -255,13 +258,13 @@ public class Class7467
     
     public static String toString(final JSONObject JSONObject) throws org.json.JSONException {
         final StringBuilder sb = new StringBuilder();
-        final String method13292 = JSONObject.method13292("tagName");
+        final String method13292 = JSONObject.optString("tagName");
         if (method13292 != null) {
             Class8782.method30563(method13292);
             final String method13293 = Class8782.method30562(method13292);
             sb.append('<');
             sb.append(method13293);
-            final Iterator<String> method13294 = JSONObject.method13272();
+            final Iterator<String> method13294 = JSONObject.keys();
             while (method13294.hasNext()) {
                 final String s = method13294.next();
                 if ("tagName".equals(s)) {
@@ -271,7 +274,7 @@ public class Class7467
                     continue;
                 }
                 Class8782.method30563(s);
-                final String method13295 = JSONObject.method13292(s);
+                final String method13295 = JSONObject.optString(s);
                 if (method13295 == null) {
                     continue;
                 }
@@ -282,11 +285,11 @@ public class Class7467
                 sb.append(Class8782.method30562(method13295));
                 sb.append('\"');
             }
-            final JSONArray method13296 = JSONObject.method13288("childNodes");
+            final JSONArray method13296 = JSONObject.optJSONArray("childNodes");
             if (method13296 != null) {
                 sb.append('>');
                 for (int method13297 = method13296.length(), i = 0; i < method13297; ++i) {
-                    final Object method13298 = method13296.method449(i);
+                    final Object method13298 = method13296.get(i);
                     if (method13298 != null) {
                         if (!(method13298 instanceof String)) {
                             if (!(method13298 instanceof JSONObject)) {

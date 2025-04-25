@@ -26,7 +26,7 @@ public class Class8866
     public boolean field37270;
     
     public Class8866(final Module field37268) {
-        this.field37269 = Minecraft.method5277();
+        this.field37269 = Minecraft.getInstance();
         this.field37268 = field37268;
         this.method31133();
     }
@@ -140,7 +140,7 @@ public class Class8866
                                         else if (!method26798.method1850()) {
                                             if (method26798 instanceof PlayerEntity) {
                                                 if (Class9011.method32262((PlayerEntity)method26798)) {
-                                                    if (Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
+                                                    if (Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled()) {
                                                         iterator2.remove();
                                                         continue;
                                                     }

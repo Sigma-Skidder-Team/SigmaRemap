@@ -36,7 +36,7 @@ public class Class700 extends Class698
         super(new Class2259("options.videoTitle", new Object[0]));
         this.field3855 = new Class8297(this, new Class7298());
         this.field3856 = this.buttons;
-        this.field3858 = Minecraft.method5277().gameSettings;
+        this.field3858 = Minecraft.getInstance().gameSettings;
         this.field3852 = field3852;
         this.field3853 = field3853;
     }

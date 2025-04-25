@@ -17,7 +17,7 @@ public class Class1769 extends Class1767
     
     @Override
     public Class1674 method6297(final Class6582 class6582) {
-        final Class1728 method25740 = Minecraft.method5277().method5293().method25740();
+        final Class1728 method25740 = Minecraft.getInstance().method5293().method25740();
         try (final InputStream method25741 = method25740.method6097(Class346.field2137, Class567.method3312())) {
             return new Class1674(null, Class1846.method6637(method25741));
         }

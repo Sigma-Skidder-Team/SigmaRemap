@@ -14,7 +14,7 @@ public class Class635 extends Class633
     public Class635(final Class720 field3630, final Class9506 field3631) {
         this.field3630 = field3630;
         this.field3632 = field3631;
-        this.field3631 = Minecraft.method5277();
+        this.field3631 = Minecraft.getInstance();
     }
     
     @Override

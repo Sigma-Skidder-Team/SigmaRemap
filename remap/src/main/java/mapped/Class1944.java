@@ -29,7 +29,7 @@ public abstract class Class1944 implements Comparable<Class1944>
         this.field10597 = new AtomicBoolean(false);
         this.field10596 = field10600;
         if (class7859 != null) {
-            this.field10598 = Class8758.method30317(Minecraft.method5277().world, class7859);
+            this.field10598 = Class8758.method30317(Minecraft.getInstance().world, class7859);
         }
         else {
             this.field10598 = Collections.emptyMap();

@@ -35,7 +35,7 @@ public class TestSpeedSpeed extends Module
     public void method10141(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player != null) {
-                if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                     if (TestSpeedSpeed.mc.player.onGround) {
                         if (updateWalkingEvent.method17046()) {
                             updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
@@ -88,8 +88,8 @@ public class TestSpeedSpeed extends Module
     public void method10143(final Class5722 class5722) {
         if (this.isEnabled()) {
             if (!Jesus.method10433()) {
-                if (!Client.getInstance().method35189().getModuleByClass(Fly.class).isEnabled()) {
-                    if (TestSpeedSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled()) {
+                if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
+                    if (TestSpeedSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                         return;
                     }
                     this.field15671 = Class7482.method23144()[0];

@@ -85,7 +85,7 @@ public class Class9295
     }
     
     public static void method34339(final ServerData class9575) {
-        final Class9295 class9576 = new Class9295(Minecraft.method5277());
+        final Class9295 class9576 = new Class9295(Minecraft.getInstance());
         class9576.method34331();
         for (int i = 0; i < class9576.method34336(); ++i) {
             final ServerData method34333 = class9576.method34333(i);

@@ -26,7 +26,7 @@ public class Class4837 extends Class4825
     public Class4837(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String field20734) {
         super(customGuiScreen, s, n, n2, n3, n4, Class4837.field20733, false);
         this.field20734 = null;
-        this.field20736 = Minecraft.method5277();
+        this.field20736 = Minecraft.getInstance();
         this.field20734 = field20734;
     }
     
@@ -75,7 +75,7 @@ public class Class4837 extends Class4825
         final Class5860 class9207 = new Class5860(0.0f, false);
         if (this.field20738 != null) {
             final Class4711 class9208 = new Class4711(this.field20736.method5306());
-            Minecraft.method5277().method5333().method11006();
+            Minecraft.getInstance().method5333().method11006();
             final MatrixStack class9209 = new MatrixStack();
             RenderSystem.pushMatrix();
             this.field20736.method5306().method28702(false);

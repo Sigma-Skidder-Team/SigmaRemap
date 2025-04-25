@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 import java.util.Date;
 import java.util.TreeMap;
 

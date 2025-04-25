@@ -16,7 +16,7 @@ public class Class6990 implements Class6988, Class6991
     
     public Class6990() {
         this.field27282 = Lists.newArrayList();
-        final Iterator<Class6749> iterator = Minecraft.method5277().world.method6782().method19650().iterator();
+        final Iterator<Class6749> iterator = Minecraft.getInstance().world.method6782().method19650().iterator();
         while (iterator.hasNext()) {
             this.field27282.add(new Class6994(this, iterator.next()));
         }
@@ -44,7 +44,7 @@ public class Class6990 implements Class6988, Class6991
     
     @Override
     public void method21404(final float n, final int n2) {
-        Minecraft.method5277().method5290().method5849(Class569.field3395);
+        Minecraft.getInstance().method5290().method5849(Class569.field3395);
         AbstractGui.blit(0, 0, 16.0f, 0.0f, 16, 16, 256, 256);
     }
     

@@ -18,7 +18,7 @@ public class Class698 extends Screen
     public Class698(final ITextComponent class2250) {
         super(class2250);
         this.field3842 = this.buttons;
-        this.field3843 = Minecraft.method5277().fontRenderer;
+        this.field3843 = Minecraft.getInstance().fontRenderer;
         this.field3844 = false;
     }
     

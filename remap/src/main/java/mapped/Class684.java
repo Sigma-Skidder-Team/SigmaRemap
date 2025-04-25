@@ -258,7 +258,7 @@ public class Class684 extends AbstractGui
     
     public int method3772() {
         final int method3775 = method3775(this.field3742.gameSettings.field23402);
-        final Class1925 method3776 = Minecraft.method5277().method5332();
+        final Class1925 method3776 = Minecraft.getInstance().method5332();
         return MathHelper.method35651(method3775, 0, (int)((method3776.method7692() - 3) / method3776.getGuiScaleFactor()));
     }
     

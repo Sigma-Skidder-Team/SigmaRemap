@@ -115,11 +115,11 @@ public class Class518 extends Class517<Class3427> implements Class519
         class511.rotationPitch = -n7 * 20.0f;
         class511.field2953 = class511.rotationYaw;
         class511.field2954 = class511.rotationYaw;
-        final Class8551 method33330 = Minecraft.method5277().method5306();
+        final Class8551 method33330 = Minecraft.getInstance().method5306();
         method33329.conjugate();
         method33330.method28701(method33329);
         method33330.method28702(false);
-        final IRenderTypeBuffer.Impl method33331 = Minecraft.method5277().method5333().method11006();
+        final IRenderTypeBuffer.Impl method33331 = Minecraft.getInstance().method5333().method11006();
         method33330.method28706(class511, 0.0, 0.0, 0.0, 0.0f, 1.0f, class512, method33331, 15728880);
         method33331.finish();
         method33330.method28702(true);

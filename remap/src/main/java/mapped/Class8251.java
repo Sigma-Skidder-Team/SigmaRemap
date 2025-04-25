@@ -34,7 +34,7 @@ public class Class8251
     public static void method27362(final Class7038 class7038) {
         method27367();
         if (class7038 != null) {
-            if (Class9570.field41383.method22605() && Minecraft.method5277().method5291() == null) {
+            if (Class9570.field41383.method22605() && Minecraft.getInstance().method5291() == null) {
                 Config.method28847("[Shaders] Delayed loading of entity mappings after resources are loaded");
                 Class8251.field33892 = true;
             }

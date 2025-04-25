@@ -49,7 +49,7 @@ public class Class350 implements Comparable<Class350>
             if (class350.field2161.method26047() == Class8341.field34248.method26047()) {
                 continue;
             }
-            class350.method1071(Class8341.method27798(Minecraft.method5277().method5332().getHandle(), class350.field2161.method26047()));
+            class350.method1071(Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), class350.field2161.method26047()));
         }
     }
     

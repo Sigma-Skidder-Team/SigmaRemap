@@ -46,20 +46,20 @@ public class Class4804 extends CustomGuiScreen
         this.x = Math.round(this.field20515);
         this.y = Math.round(this.field20516);
         if (this.field20515 + this.field20480 >= 0.0f) {
-            if (this.field20515 > Minecraft.method5277().window.method7694()) {
+            if (this.field20515 > Minecraft.getInstance().window.method7694()) {
                 this.field20515 = (float)(0 - this.field20480);
             }
         }
         else {
-            this.field20515 = (float) Minecraft.method5277().window.method7694();
+            this.field20515 = (float) Minecraft.getInstance().window.method7694();
         }
         if (this.field20516 + this.field20481 >= 0.0f) {
-            if (this.field20516 > Minecraft.method5277().window.method7695()) {
+            if (this.field20516 > Minecraft.getInstance().window.method7695()) {
                 this.field20516 = (float)(0 - this.field20481);
             }
         }
         else {
-            this.field20516 = (float) Minecraft.method5277().window.method7695();
+            this.field20516 = (float) Minecraft.getInstance().window.method7695();
         }
         final float n = (float)(field20519 - this.method14280());
         final float n2 = (float)(field20520 - this.method14281());

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONObject;
+
 public class Class8124
 {
     public String field33468;
@@ -38,13 +40,13 @@ public class Class8124
             this.field33468 = JSONObject.getString("name");
         }
         if (JSONObject.has("color")) {
-            this.field33471 = JSONObject.method13262("color");
+            this.field33471 = JSONObject.getInt("color");
         }
         if (JSONObject.has("x")) {
-            this.field33469 = JSONObject.method13262("x");
+            this.field33469 = JSONObject.getInt("x");
         }
         if (JSONObject.has("z")) {
-            this.field33470 = JSONObject.method13262("z");
+            this.field33470 = JSONObject.getInt("z");
         }
         this.field33473 = true;
     }
@@ -52,9 +54,9 @@ public class Class8124
     public JSONObject method26749() {
         final JSONObject JSONObject = new JSONObject();
         JSONObject.put("name", this.field33468);
-        JSONObject.method13298("color", this.field33471);
-        JSONObject.method13298("x", this.field33469);
-        JSONObject.method13298("z", this.field33470);
+        JSONObject.put("color", this.field33471);
+        JSONObject.put("x", this.field33469);
+        JSONObject.put("z", this.field33470);
         return JSONObject;
     }
     

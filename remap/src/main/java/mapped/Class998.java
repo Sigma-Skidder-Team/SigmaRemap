@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 public class Class998 implements Runnable
 {
     public final /* synthetic */ JSONArray field5328;

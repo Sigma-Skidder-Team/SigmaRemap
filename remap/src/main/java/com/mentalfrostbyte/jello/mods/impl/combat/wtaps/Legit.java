@@ -23,7 +23,7 @@ public class Legit extends Module
             Legit.mc.gameSettings.field23441.field2162 = true;
             if (Legit.mc.player.field2935 != 1) {
                 if (Legit.mc.player.field2935 == 0) {
-                    Legit.mc.gameSettings.field23435.field2162 = Class8341.method27798(Minecraft.method5277().window.getHandle(), Legit.mc.gameSettings.field23435.field2161.field32860);
+                    Legit.mc.gameSettings.field23435.field2162 = Class8341.method27798(Minecraft.getInstance().window.getHandle(), Legit.mc.gameSettings.field23435.field2161.field32860);
                 }
             }
             else {

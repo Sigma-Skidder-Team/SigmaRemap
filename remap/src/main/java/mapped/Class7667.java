@@ -107,7 +107,7 @@ public class Class7667
     
     public static Class654 method24312(final Class548 class548, final int n, final int n2) {
         if (Class9570.field41399.method22619()) {
-            return new Class654(class548.width / 2 - 100, n + n2 * 2, 98, 20, Class8822.method30773("fml.menu.mods", new Object[0]), class549 -> Minecraft.method5277().displayGuiScreen((Screen)Class9570.field41399.method22621(class548)));
+            return new Class654(class548.width / 2 - 100, n + n2 * 2, 98, 20, Class8822.method30773("fml.menu.mods", new Object[0]), class549 -> Minecraft.getInstance().displayGuiScreen((Screen)Class9570.field41399.method22621(class548)));
         }
         return null;
     }

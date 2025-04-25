@@ -5,6 +5,8 @@
 package mapped;
 
 import org.json.JSONException;
+import totalcross.json.JSONTokener;
+
 import java.util.HashMap;
 
 public class Class8827 extends JSONTokener
@@ -18,8 +20,8 @@ public class Class8827 extends JSONTokener
     public String method30795() throws JSONException {
         final StringBuilder sb = new StringBuilder();
         while (true) {
-            final char method30785 = this.method30785();
-            if (this.method30783()) {
+            final char method30785 = this.next();
+            if (this.end()) {
                 throw this.syntaxError("Unclosed CDATA");
             }
             sb.append(method30785);
@@ -44,7 +46,7 @@ public class Class8827 extends JSONTokener
     public Object method30796() throws JSONException {
         char c;
         do {
-            c = this.method30785();
+            c = this.next();
         } while (Character.isWhitespace(c));
         if (c == '\0') {
             return null;
@@ -58,7 +60,7 @@ public class Class8827 extends JSONTokener
                 else {
                     sb.append(this.method30797(c));
                 }
-                c = this.method30785();
+                c = this.next();
             }
             this.back();
             return sb.toString().trim();
@@ -70,7 +72,7 @@ public class Class8827 extends JSONTokener
         final StringBuilder obj = new StringBuilder();
         char method30785;
         while (true) {
-            method30785 = this.method30785();
+            method30785 = this.next();
             if (!Character.isLetterOrDigit(method30785) && method30785 != '#') {
                 break;
             }
@@ -87,7 +89,7 @@ public class Class8827 extends JSONTokener
     public Object method30798() throws JSONException {
         char method30785;
         do {
-            method30785 = this.method30785();
+            method30785 = this.next();
         } while (Character.isWhitespace(method30785));
         switch (method30785) {
             case '\0': {
@@ -115,7 +117,7 @@ public class Class8827 extends JSONTokener
             case '\'': {
                 char method30786;
                 do {
-                    method30786 = this.method30785();
+                    method30786 = this.next();
                     if (method30786 == '\0') {
                         throw this.syntaxError("Unterminated string");
                     }
@@ -124,7 +126,7 @@ public class Class8827 extends JSONTokener
             }
             default: {
                 while (true) {
-                    final char method30787 = this.method30785();
+                    final char method30787 = this.next();
                     if (Character.isWhitespace(method30787)) {
                         return Boolean.TRUE;
                     }
@@ -154,7 +156,7 @@ public class Class8827 extends JSONTokener
     public Object method30799() throws JSONException {
         char ch;
         do {
-            ch = this.method30785();
+            ch = this.next();
         } while (Character.isWhitespace(ch));
         switch (ch) {
             case '\0': {
@@ -183,7 +185,7 @@ public class Class8827 extends JSONTokener
                 final char c = ch;
                 final StringBuilder sb = new StringBuilder();
                 while (true) {
-                    final char method30785 = this.method30785();
+                    final char method30785 = this.next();
                     if (method30785 == '\0') {
                         throw this.syntaxError("Unterminated string");
                     }
@@ -203,7 +205,7 @@ public class Class8827 extends JSONTokener
                 final StringBuilder sb2 = new StringBuilder();
                 while (true) {
                     sb2.append(ch);
-                    ch = this.method30785();
+                    ch = this.next();
                     if (Character.isWhitespace(ch)) {
                         return sb2.toString();
                     }
@@ -241,7 +243,7 @@ public class Class8827 extends JSONTokener
         final int length = s.length();
         final char[] array = new char[length];
         for (int i = 0; i < length; ++i) {
-            final char method30785 = this.method30785();
+            final char method30785 = this.next();
             if (method30785 == '\0') {
                 return false;
             }
@@ -262,7 +264,7 @@ public class Class8827 extends JSONTokener
             if (n3 != 0) {
                 return true;
             }
-            final char method30786 = this.method30785();
+            final char method30786 = this.next();
             if (method30786 == '\0') {
                 return false;
             }

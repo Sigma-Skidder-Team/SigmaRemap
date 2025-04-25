@@ -109,7 +109,7 @@ public class Class6176 extends Class6175
     }
     
     private boolean method18447() {
-        return Minecraft.method5277().field4644.method5833().method18161().squareDistanceTo(this.field24936, this.field24937, this.field24938) >= 256.0;
+        return Minecraft.getInstance().field4644.method5833().method18161().squareDistanceTo(this.field24936, this.field24937, this.field24938) >= 256.0;
     }
     
     private void method18448(final double n, final double n2, final double n3, final double n4, final double n5, final double n6, final int[] array, final int[] array2, final boolean b, final boolean b2) {

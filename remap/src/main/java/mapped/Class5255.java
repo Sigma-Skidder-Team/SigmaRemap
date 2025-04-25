@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.List;
@@ -33,8 +36,8 @@ public class Class5255
         if (o instanceof byte[]) {
             final JSONObject JSONObject = new JSONObject();
             try {
-                JSONObject.method13295("_placeholder", true);
-                JSONObject.method13298("num", list.size());
+                JSONObject.put("_placeholder", true);
+                JSONObject.put("num", list.size());
             }
             catch (final JSONException thrown) {
                 Class5255.field22286.log(Level.WARNING, "An error occured while putting data to JSONObject", thrown);
@@ -48,7 +51,7 @@ public class Class5255
             final JSONArray class4407 = (JSONArray)o;
             for (int method462 = class4407.length(), i = 0; i < method462; ++i) {
                 try {
-                    class4406.method493(i, method16359(class4407.method449(i), list));
+                    class4406.put(i, method16359(class4407.get(i), list));
                 }
                 catch (final JSONException thrown2) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting packet data to JSONObject", thrown2);
@@ -60,7 +63,7 @@ public class Class5255
         if (o instanceof JSONObject) {
             final JSONObject class4408 = new JSONObject();
             final JSONObject class4409 = (JSONObject)o;
-            final Iterator<String> method463 = class4409.method13272();
+            final Iterator<String> method463 = class4409.keys();
             while (method463.hasNext()) {
                 final String s = method463.next();
                 try {
@@ -87,7 +90,7 @@ public class Class5255
             final JSONArray JSONArray = (JSONArray)o;
             for (int method462 = JSONArray.length(), i = 0; i < method462; ++i) {
                 try {
-                    JSONArray.method493(i, method16361(JSONArray.method449(i), array));
+                    JSONArray.put(i, method16361(JSONArray.get(i), array));
                 }
                 catch (final JSONException thrown) {
                     Class5255.field22286.log(Level.WARNING, "An error occured while putting packet data to JSONObject", thrown);
@@ -100,11 +103,11 @@ public class Class5255
             return o;
         }
         final JSONObject class89 = (JSONObject)o;
-        if (class89.method13280("_placeholder")) {
-            final int method463 = class89.method13287("num", -1);
+        if (class89.optBoolean("_placeholder")) {
+            final int method463 = class89.optInt("num", -1);
             return (method463 >= 0 && method463 < array.length) ? array[method463] : null;
         }
-        final Iterator<String> method464 = class89.method13272();
+        final Iterator<String> method464 = class89.keys();
         while (method464.hasNext()) {
             final String s = method464.next();
             try {

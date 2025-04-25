@@ -54,7 +54,7 @@ public class Class647 extends Widget
         if (!Screen.method3046()) {
             this.field3670 += n3;
         }
-        final Minecraft method5277 = Minecraft.method5277();
+        final Minecraft method5277 = Minecraft.getInstance();
         method5277.method5290().method5849(Class647.field3666);
         int n4 = 29;
         if (!this.field3669.method35943()) {

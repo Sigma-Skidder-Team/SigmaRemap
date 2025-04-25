@@ -32,7 +32,7 @@ public enum Class338 implements Class328
     
     private Class338(final String field2080) {
         this.field2080 = field2080;
-        this.field2081 = Minecraft.method5277().method5306();
+        this.field2081 = Minecraft.getInstance().method5306();
     }
     
     public String method1015() {

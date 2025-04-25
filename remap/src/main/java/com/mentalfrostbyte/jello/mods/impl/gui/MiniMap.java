@@ -140,10 +140,10 @@ public class MiniMap extends Module
                     if (this.field15832 == null) {
                         return;
                     }
-                    if (Minecraft.method5277().gameSettings.field23466) {
+                    if (Minecraft.getInstance().gameSettings.field23466) {
                         return;
                     }
-                    if (!Minecraft.method5277().gameSettings.field23464) {
+                    if (!Minecraft.getInstance().gameSettings.field23464) {
                         final ByteBuffer field15832 = this.field15832;
                         this.field15840 = class5740.method17028();
                         if (field15832 != null) {

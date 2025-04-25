@@ -16,7 +16,7 @@ public class Class4835 extends Class4825
     
     public Class4835(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(customGuiScreen, s, n, n2, n3, n4, false);
-        this.field20722 = Minecraft.method5277();
+        this.field20722 = Minecraft.getInstance();
         this.field20721 = new ItemStack(Item.method11697(n5));
     }
     

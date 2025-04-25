@@ -331,9 +331,9 @@ public class NewNameTags extends Module
     public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         String method9887 = (s == null) ? class399.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
-        if (Client.getInstance().method35189().getModuleByClass(NameProtect.class).isEnabled()) {
+        if (Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).isEnabled()) {
             if (method9887.equals(NewNameTags.mc.method5287().method33692())) {
-                method9887 = Client.getInstance().method35189().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username");
+                method9887 = Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username");
             }
         }
         if (method9887.length() != 0) {

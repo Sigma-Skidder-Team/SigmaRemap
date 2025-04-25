@@ -200,7 +200,7 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public Class7417 method15441() {
-        return new Class7417(Minecraft.method5277().method5243());
+        return new Class7417(Minecraft.getInstance().method5243());
     }
     
     public void method15442() {
@@ -215,7 +215,7 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public boolean method15445(final int n) {
-        return Class8341.method27798(Minecraft.method5277().method5332().getHandle(), n);
+        return Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), n);
     }
     
     public void method15446() {

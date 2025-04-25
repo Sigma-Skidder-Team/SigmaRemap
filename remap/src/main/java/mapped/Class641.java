@@ -28,7 +28,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         this.field3648 = field3648;
         this.field3642 = class620.method3611();
         this.field3643 = field3649;
-        this.field3641 = Minecraft.method5277();
+        this.field3641 = Minecraft.getInstance();
         this.field3644 = new ResourceLocation("worlds/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3649.method7808()) + "/icon");
         this.field3645 = class621.method25800(field3649.method7808(), "icon.png");
         if (!this.field3645.isFile()) {

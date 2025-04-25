@@ -110,7 +110,7 @@ public class Class9265
     public static void method34180() {
         final Class7888 class7888 = new Class7888();
         final Executor method27841 = Util.method27841();
-        final Minecraft method27842 = Minecraft.method5277();
+        final Minecraft method27842 = Minecraft.getInstance();
         method27842.method5323().method7378().method5785(class7888, Config.method28896(), Class5026.field21549, Class5026.field21549, method27841, method27842);
     }
 }

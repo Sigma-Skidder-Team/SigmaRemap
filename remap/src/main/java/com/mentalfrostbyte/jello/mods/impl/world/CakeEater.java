@@ -53,7 +53,7 @@ public class CakeEater extends Module
         if (!this.isEnabled()) {
             return;
         }
-        final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Fly.class);
+        final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Fly.class);
         if (class5745.method10260() instanceof MineplexFly && ((MineplexFly)class5745.method10260()).method10632()) {
             return;
         }

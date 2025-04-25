@@ -88,7 +88,7 @@ public class RearView extends PremiumModule
         if (!this.isEnabled()) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             if (!this.method9883("Smart Visibility")) {
                 this.field15985.changeDirection((RearView.mc.currentScreen != null && !this.method9883("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
             }

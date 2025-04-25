@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.Iterator;
 import org.json.JSONException;
+import totalcross.json.JSONObject;
+
 import java.util.Enumeration;
 import java.util.Properties;
 
@@ -30,7 +32,7 @@ public class Class7672
     public static Properties method24355(final JSONObject JSONObject) throws JSONException {
         final Properties properties = new Properties();
         if (JSONObject != null) {
-            final Iterator<String> method13272 = JSONObject.method13272();
+            final Iterator<String> method13272 = JSONObject.keys();
             while (method13272.hasNext()) {
                 final String key = method13272.next();
                 properties.put(key, JSONObject.getString(key));

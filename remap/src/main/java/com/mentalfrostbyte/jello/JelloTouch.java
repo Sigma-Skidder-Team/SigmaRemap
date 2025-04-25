@@ -21,6 +21,8 @@ import com.thizzer.jtouchbar.item.view.TouchBarButton;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import com.thizzer.jtouchbar.JTouchBar;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 public class JelloTouch
 {
@@ -105,7 +107,7 @@ public class JelloTouch
             if (class4407.method31229() == 0) {
                 continue;
             }
-            class4406.method486(class4407.method31227());
+            class4406.put(class4407.method31227());
         }
         JSONObject.put("keybinds", class4406);
         return JSONObject;
@@ -113,7 +115,7 @@ public class JelloTouch
     
     public void method21963(final JSONObject JSONObject) {
         if (JSONObject.has("keybinds")) {
-            final JSONArray method13263 = JSONObject.method13263("keybinds");
+            final JSONArray method13263 = JSONObject.getJSONArray("keybinds");
             for (int i = 0; i < method13263.length(); ++i) {
                 final Class8879 e = new Class8879(method13263.getJSONObject(i));
                 if (e.method31228()) {
@@ -139,10 +141,10 @@ public class JelloTouch
     
     @EventListener
     public void method21965(final Class5743 class5743) {
-        if (Minecraft.method5277().world == null && this.field27850) {
+        if (Minecraft.getInstance().world == null && this.field27850) {
             this.method21969();
         }
-        else if (Minecraft.method5277().world != null) {
+        else if (Minecraft.getInstance().world != null) {
             if (!this.field27850) {
                 this.method21967();
             }
@@ -168,7 +170,7 @@ public class JelloTouch
     public void method21967() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().window.getHandle()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             this.method21970();
@@ -177,7 +179,7 @@ public class JelloTouch
                 view.setStringValue(" Jello for Sigma 5.0   -   Open the keybind manager to add keybinds here!");
                 this.field27848.addItem(new TouchBarItem("Jello", view, true));
             }
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().window.getHandle()));
             this.field27850 = true;
         }
     }
@@ -206,13 +208,13 @@ public class JelloTouch
     public void method21969() {
         if (this.method21966()) {
             if (this.field27848 != null) {
-                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
+                this.field27848.hide(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().window.getHandle()));
             }
             (this.field27848 = new JTouchBar()).setCustomizationIdentifier("JelloTouch");
             final TouchBarTextField view = new TouchBarTextField();
             view.setStringValue(" Jello for Sigma 5.0   -   © SIGMA Prod");
             this.field27848.addItem(new TouchBarItem("Jello", view, true));
-            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.method5277().window.getHandle()));
+            this.field27848.show(GLFWNativeCocoa.glfwGetCocoaWindow(Minecraft.getInstance().window.getHandle()));
             this.field27850 = false;
         }
     }

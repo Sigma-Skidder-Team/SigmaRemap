@@ -27,7 +27,7 @@ public class AutoSprint extends Module
     @EventListener
     public void method10320(final Class5743 class5743) {
         if (this.isEnabled()) {
-            final Module field15743 = ((ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(BlockFly.class)).parentModule;
+            final Module field15743 = ((ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).parentModule;
             if (field15743 != null) {
                 if (field15743.isEnabled()) {
                     if (field15743 instanceof AACBlockFly) {
@@ -37,7 +37,7 @@ public class AutoSprint extends Module
                     }
                 }
             }
-            if (AutoSprint.mc.player.field2970 > 0.0f && !((BlockFly) Client.getInstance().method35189().getModuleByClass(BlockFly.class)).method10278()) {
+            if (AutoSprint.mc.player.field2970 > 0.0f && !((BlockFly) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).method10278()) {
                 AutoSprint.mc.player.method1816(true);
             }
             else {
@@ -51,7 +51,7 @@ public class AutoSprint extends Module
         if (this.isEnabled()) {
             if (AutoSprint.mc.player.field2970 > 0.0f) {
                 if (!AutoSprint.mc.player.method2756() || AutoSprint.mc.player.method2766().getItem() != Items.field31279) {
-                    if (!((BlockFly) Client.getInstance().method35189().getModuleByClass(BlockFly.class)).method10278()) {
+                    if (!((BlockFly) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).method10278()) {
                         class5735.field23300 = (float)((AutoSprint.mc.player.method2710(Class8107.field33408).method23940() + 0.029999999329447746 + 0.015f * Class7482.method23139()) / AutoSprint.mc.player.field3025.method21427() + 1.0) / 2.0f;
                     }
                 }

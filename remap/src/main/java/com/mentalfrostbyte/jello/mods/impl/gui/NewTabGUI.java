@@ -94,10 +94,10 @@ public class NewTabGUI extends Module
         if (!Client.getInstance().getGuimanager().method32146()) {
             return;
         }
-        if (Minecraft.method5277().gameSettings.field23466) {
+        if (Minecraft.getInstance().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             Class8707.method29896(this.field15806, this.field15807, this.field15808, this.field15809);
             if (this.field15819) {
                 Class8707.method29896(170, this.field15807, this.field15824, this.field15821);
@@ -111,10 +111,10 @@ public class NewTabGUI extends Module
         if (this.isEnabled()) {
             if (NewTabGUI.mc.player != null) {
                 if (NewTabGUI.mc.world != null) {
-                    if (Minecraft.method5277().gameSettings.field23466) {
+                    if (Minecraft.getInstance().gameSettings.field23466) {
                         return;
                     }
-                    if (!Minecraft.method5277().gameSettings.field23464) {
+                    if (!Minecraft.getInstance().gameSettings.field23464) {
                         this.field15809 = 5 * this.field15816 + this.field15817;
                         final float abs = Math.abs(this.method10390() - this.field15825);
                         this.field15825 += Math.min(abs, abs * 0.14f * this.field15818) * ((this.method10390() - this.field15825 < 0.0f) ? -1 : 1);
@@ -143,7 +143,7 @@ public class NewTabGUI extends Module
     
     private List<Module> method10391(final Category class8013) {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.getInstance().method35189().getModulesByCategory(class8013).iterator();
+        final Iterator<Module> iterator = Client.getInstance().moduleManager().getModulesByCategory(class8013).iterator();
         while (iterator.hasNext()) {
             list.add(iterator.next());
         }
@@ -382,10 +382,10 @@ public class NewTabGUI extends Module
         if (Client.getInstance().getGuimanager().method32146()) {
             return;
         }
-        if (Minecraft.method5277().gameSettings.field23466) {
+        if (Minecraft.getInstance().gameSettings.field23466) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             for (int i = 0; i < 3; ++i) {
                 this.field15801[i] = this.method10400(this.field15806 + this.field15808 / 3 * i, this.field15807, this.field15801[i]);
                 this.field15802[i] = this.method10400(this.field15806 + this.field15808 / 3 * i, this.field15807 + this.field15809, this.field15802[i]);

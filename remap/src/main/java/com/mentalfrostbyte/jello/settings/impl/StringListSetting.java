@@ -6,9 +6,9 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.CJsonUtils;
-import mapped.JSONArray;
+import totalcross.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,7 +36,7 @@ public class StringListSetting extends Setting<List<String>> {
         this.currentValue = new ArrayList();
         if (method26638 != null) {
             for (int i = 0; i < method26638.length(); ++i) {
-                ((List) this.currentValue).add(method26638.method459(i));
+                ((List) this.currentValue).add(method26638.getString(i));
             }
         }
         return JSONObject;

@@ -16,7 +16,7 @@ public class Class4920 extends Class4825
     public Class2315 field21054;
     
     public Class4920(final CustomGuiScreen customGuiScreen, final String s) {
-        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+        super(customGuiScreen, s, 0, 0, Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7695(), false);
         this.field21052 = new ArrayList<Class9096>();
         this.field21053 = new Class8338();
         this.field21054 = new Class2315();
@@ -39,8 +39,8 @@ public class Class4920 extends Class4825
     @Override
     public void draw(final float n) {
         this.method14228();
-        final int method7696 = Minecraft.method5277().window.method7696();
-        final int method7697 = Minecraft.method5277().window.method7697();
+        final int method7696 = Minecraft.getInstance().window.method7696();
+        final int method7697 = Minecraft.getInstance().window.method7697();
         final int n2 = (int)(method7696 / 4.0f);
         final boolean b = false;
         if (this.field21052.size() < n2) {

@@ -10,7 +10,7 @@ public class Class602 extends Class599
     private final Class5063 field3533;
     
     public Class602(final Class5063 field3533, final int n, final int n2, final int n3, final int n4, final int n5) {
-        super(Minecraft.method5277(), n, n2, n3, n4, n5);
+        super(Minecraft.getInstance(), n, n2, n3, n4, n5);
         this.field3533 = field3533;
     }
     

@@ -40,7 +40,7 @@ public class Class1823<T extends LivingEntity, M extends Class5845<T> & Class585
             class515.method22566(Vector3f.YP.rotationDegrees(180.0f));
             final boolean b = class514 == Class2226.field13697;
             class515.method22564((b ? -1 : 1) / 16.0f, 0.125, -0.625);
-            Minecraft.method5277().method5308().method35143(class511, class512, class513, b, class515, class516, n);
+            Minecraft.getInstance().method5308().method35143(class511, class512, class513, b, class515, class516, n);
             class515.method22568();
         }
     }

@@ -762,6 +762,6 @@ public class InvManagerUtil
     }
     
     static {
-        mc = Minecraft.method5277();
+        mc = Minecraft.getInstance();
     }
 }

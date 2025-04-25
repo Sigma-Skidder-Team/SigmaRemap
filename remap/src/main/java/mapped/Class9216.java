@@ -1302,7 +1302,7 @@ public class Class9216
     }
     
     private static void method33732(final Class7038 class7038, final Properties properties) throws IOException {
-        final File file = new File(Minecraft.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
+        final File file = new File(Minecraft.getInstance().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
         if (properties.isEmpty()) {
             file.delete();
         }
@@ -1339,7 +1339,7 @@ public class Class9216
     
     private static Properties method33734(final Class7038 class7038) throws IOException {
         final Class27 class7039 = new Class27();
-        final File file = new File(Minecraft.method5277().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
+        final File file = new File(Minecraft.getInstance().field4652, "shaderpacks/" + class7038.method21530() + ".txt");
         if (file.exists() && file.isFile() && file.canRead()) {
             final FileInputStream inStream = new FileInputStream(file);
             class7039.load(inStream);
@@ -1517,7 +1517,7 @@ public class Class9216
     public static void method33746(Minecraft method5277) {
         method33894();
         Class9216.field39031 = method5277;
-        method5277 = Minecraft.method5277();
+        method5277 = Minecraft.getInstance();
         Class9216.field39035 = GL.getCapabilities();
         Class9216.field39036 = GL11.glGetString(7938);
         Class9216.field39037 = GL11.glGetString(7936);
@@ -4686,8 +4686,8 @@ public class Class9216
         field39323 = new int[] { 9728, 9729 };
         Class9216.field39324 = null;
         Class9216.field39325 = false;
-        field39331 = new File(Minecraft.method5277().field4652, "shaderpacks");
-        Class9216.field39332 = new File(Minecraft.method5277().field4652, "optionsshaders.txt");
+        field39331 = new File(Minecraft.getInstance().field4652, "shaderpacks");
+        Class9216.field39332 = new File(Minecraft.getInstance().field4652, "optionsshaders.txt");
         Class9216.field39333 = null;
         Class9216.field39334 = null;
         Class9216.field39335 = null;

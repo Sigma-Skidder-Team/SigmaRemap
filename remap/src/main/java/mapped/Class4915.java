@@ -16,7 +16,7 @@ public class Class4915 extends Class4825
     
     public Class4915(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int field21024) {
         super(customGuiScreen, s, n, n2, 100, 100, false);
-        this.field21021 = Minecraft.method5277();
+        this.field21021 = Minecraft.getInstance();
         this.field21023 = new Class7617();
         this.field21022 = new Class5146(n3, n4);
         this.field20480 = n3 * field21024;

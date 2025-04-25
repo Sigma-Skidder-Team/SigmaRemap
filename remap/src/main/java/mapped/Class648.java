@@ -27,7 +27,7 @@ public abstract class Class648 extends Widget
                     }
                 }
             }
-            this.method3363(Minecraft.method5277().method5299());
+            this.method3363(Minecraft.getInstance().method5299());
             this.method3705();
             return true;
         }

@@ -25,7 +25,7 @@ public class Class7824 implements Class7823
     @Nullable
     @Override
     public Class1737 method25276(final Class6582 class6582) {
-        try (final Class1671 method19933 = Minecraft.method5277().method5291().method19933(this.field32041)) {
+        try (final Class1671 method19933 = Minecraft.getInstance().method5291().method19933(this.field32041)) {
             final byte[] b = new byte[65536];
             method19933.method5887().read(b);
             return new Class1741(class6582, b, this.field32042);

@@ -447,7 +447,7 @@ public class RealmsMainScreen extends RealmsScreen
     private void method15768(final RealmsServer class7437) {
         if (Realms.method25357().equals(class7437.field28681) || RealmsMainScreen.field21825) {
             this.method15770();
-            Minecraft.method5277().execute(() -> class7438.method5244(new RealmsConfigureWorldScreen(this, class7439.field28675).getProxy()));
+            Minecraft.getInstance().execute(() -> class7438.method5244(new RealmsConfigureWorldScreen(this, class7439.field28675).getProxy()));
         }
     }
     

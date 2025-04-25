@@ -61,7 +61,7 @@ public class Class1945 extends Class1944
                 if (t3 != null) {
                     if (!(t3 instanceof CancellationException)) {
                         if (!(t3 instanceof InterruptedException)) {
-                            Minecraft.method5277().method5238(CrashReport.makeCrashReport(t3, "Rendering chunk"));
+                            Minecraft.getInstance().method5238(CrashReport.makeCrashReport(t3, "Rendering chunk"));
                         }
                     }
                 }
@@ -90,7 +90,7 @@ public class Class1945 extends Class1944
             final Class6332[] array = { null };
             Class9144.method33366();
             final Random random = new Random();
-            final Class1658 method1156 = Minecraft.method5277().method5305();
+            final Class1658 method1156 = Minecraft.getInstance().method5305();
             for (final BlockPos class9010 : Class384.method1154(method1153, method1154)) {
                 final BlockState method1157 = method1155.getBlockState(class9010);
                 method1157.getBlock();

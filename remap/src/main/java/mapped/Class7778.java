@@ -145,7 +145,7 @@ public class Class7778
     public static void method24956(final Class1660 class1660, final Class6092 class1661, final int n, final float n2, final long n3) {
         if (Class9216.field39243 > 0) {
             if (--Class9216.field39232 <= 0) {
-                final Minecraft method5277 = Minecraft.method5277();
+                final Minecraft method5277 = Minecraft.getInstance();
                 method5277.method5327().method15300("shadow pass");
                 final Class1656 field4636 = method5277.worldRenderer;
                 Class9216.field39049 = true;

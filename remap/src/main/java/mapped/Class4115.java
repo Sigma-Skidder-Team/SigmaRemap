@@ -24,7 +24,7 @@ public class Class4115 implements Class4114
     
     public Class1666 method12365() {
         if (this.field18224 == null) {
-            final Class1663 method5290 = Minecraft.method5277().method5290();
+            final Class1663 method5290 = Minecraft.getInstance().method5290();
             this.field18224 = method5290.method5853(this.field18222);
             if (this.field18224 == null) {
                 this.field18224 = new Class1767(this.field18222);

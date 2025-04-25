@@ -10,7 +10,7 @@ public class Class5065 extends RealmsGuiEventListener
     private final Class576 field21715;
     
     public Class5065(final int n, final int n2, final int n3, final int n4, final int n5, final String s) {
-        this.field21715 = new Class576(Minecraft.method5277().fontRenderer, n2, n3, n4, n5, null, s);
+        this.field21715 = new Class576(Minecraft.getInstance().fontRenderer, n2, n3, n4, n5, null, s);
     }
     
     public String method15586() {

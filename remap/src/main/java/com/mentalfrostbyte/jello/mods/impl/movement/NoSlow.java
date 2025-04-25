@@ -30,7 +30,7 @@ public class NoSlow extends Module
     @EventListener
     private void method10156(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            final boolean method9898 = Client.getInstance().method35189().getModuleByClass(KillAura.class).method9898();
+            final boolean method9898 = Client.getInstance().moduleManager().getModuleByClass(KillAura.class).method9898();
             final boolean b = NoSlow.mc.player.getHeldItemMainhand() != null && NoSlow.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
             if (!updateWalkingEvent.method17046()) {
                 if (b) {

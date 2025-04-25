@@ -49,7 +49,7 @@ public class RegisterScreen extends Class4800
             this.field21079 = true;
             this.field21078.setEnabled(true);
         });
-        this.field21078.doThis((class4803, n) -> Minecraft.method5277().displayGuiScreen(new Class548()));
+        this.field21078.doThis((class4803, n) -> Minecraft.getInstance().displayGuiScreen(new Class548()));
     }
     
     public void method14779() {
@@ -126,7 +126,7 @@ public class RegisterScreen extends Class4800
             }
         }
         if (this.field21079) {
-            final String field32930 = Client.getInstance().getNetworkManager().method19347().username;
+            final String field32930 = Client.getInstance().getNetworkManager().getEncryptor().username;
             final String s = "Welcome back";
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;
@@ -175,7 +175,7 @@ public class RegisterScreen extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new Class548());
         }
     }
 }

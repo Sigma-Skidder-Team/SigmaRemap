@@ -26,6 +26,7 @@ import javax.sound.sampled.AudioFormat;
 import java.io.IOException;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
+import totalcross.json.JSONObject;
 
 import javax.sound.sampled.SourceDataLine;
 import java.util.ArrayList;
@@ -91,24 +92,24 @@ public class Class7643
     
     public void method24159() {
         final JSONObject JSONObject = new JSONObject();
-        JSONObject.method13298("volume", this.field30335);
-        JSONObject.method13295("spectrum", this.field30350);
-        JSONObject.method13298("repeat", this.field30351.field1232);
+        JSONObject.put("volume", this.field30335);
+        JSONObject.put("spectrum", this.field30350);
+        JSONObject.put("repeat", this.field30351.field1232);
         Client.getInstance().method35206().put("music", JSONObject);
     }
     
     private void method24160() {
         if (Client.getInstance().method35206().has("music")) {
-            final JSONObject method13264 = Client.getInstance().method35206().method13264("music");
+            final JSONObject method13264 = Client.getInstance().method35206().getJSONObject("music");
             if (method13264 != null) {
                 if (method13264.has("volume")) {
-                    this.field30335 = Math.max(0, Math.min(100, method13264.method13262("volume")));
+                    this.field30335 = Math.max(0, Math.min(100, method13264.getInt("volume")));
                 }
                 if (method13264.has("spectrum")) {
                     this.field30350 = method13264.getBoolean("spectrum");
                 }
                 if (method13264.has("repeat")) {
-                    this.field30351 = Class258.method897(method13264.method13262("repeat"));
+                    this.field30351 = Class258.method897(method13264.getInt("repeat"));
                 }
             }
         }
@@ -694,6 +695,6 @@ public class Class7643
     }
     
     static {
-        Class7643.field30332 = Minecraft.method5277();
+        Class7643.field30332 = Minecraft.getInstance();
     }
 }

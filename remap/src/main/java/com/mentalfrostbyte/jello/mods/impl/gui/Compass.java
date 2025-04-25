@@ -24,10 +24,10 @@ public class Compass extends Module
         if (!this.isEnabled() || Compass.mc.player == null) {
             return;
         }
-        if (!Minecraft.method5277().gameSettings.field23464) {
+        if (!Minecraft.getInstance().gameSettings.field23464) {
             final int index = 5;
             final int n = 60;
-            final int n2 = Minecraft.method5277().gameSettings.field23466 ? 60 : 0;
+            final int n2 = Minecraft.getInstance().gameSettings.field23466 ? 60 : 0;
             final ArrayList<Integer> method10807 = this.method10807((int)this.method10809(Compass.mc.player.rotationYaw), index);
             int intValue = method10807.get(index);
             if (intValue == 0) {

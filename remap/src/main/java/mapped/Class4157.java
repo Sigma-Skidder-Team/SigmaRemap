@@ -32,7 +32,7 @@ public class Class4157 extends Class4158<Class494>
             class495.method22564(0.0, -0.20000000298023224, 0.0);
             class495.method22566(Vector3f.XP.rotationDegrees(-30.0f));
             class495.method22565(n4, n4, n4);
-            Minecraft.method5277().method5306().method28706(method2510, 0.0, 0.0, 0.0, 0.0f, n, class495, class496, n2);
+            Minecraft.getInstance().method5306().method28706(method2510, 0.0, 0.0, 0.0, 0.0f, n, class495, class496, n2);
         }
         class495.method22568();
     }

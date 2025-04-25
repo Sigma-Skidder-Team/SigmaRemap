@@ -63,7 +63,7 @@ public class Class4916 extends Class4825
         else if (Math.abs(n2 - method25029) < 0.7) {
             this.field21030.changeDirection(Direction.FORWARDS);
         }
-        if (this.method14281() + this.method14291() < Minecraft.method5277().window.method7695() - 36 && this.method14281() + this.method14291() > 52) {
+        if (this.method14281() + this.method14291() < Minecraft.getInstance().window.method7695() - 36 && this.method14281() + this.method14291() > 52) {
             if (this.field21026 != null && this.field21028 == null) {
                 try {
                     final java.awt.image.BufferedImage method25030 = method14759(this.field21026.method35869());
@@ -118,7 +118,7 @@ public class Class4916 extends Class4825
         GL11.glScaled(1.0 + 0.1 * n, 1.0 + 0.1 * n, 0.0);
         GL11.glTranslatef((float)(-this.method14272() - 44), (float)(-this.method14274() - 44), 0.0f);
         if (this.field21027 == null) {
-            Minecraft.method5277().method5290().method5849(new ResourceLocation("textures/misc/unknown_server.png"));
+            Minecraft.getInstance().method5290().method5849(new ResourceLocation("textures/misc/unknown_server.png"));
             RenderUtil.method26907((float)(this.x + 12), (float)(this.y + 12), 64.0f, 64.0f, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, 64.0f, 64.0f);
         }
         else {

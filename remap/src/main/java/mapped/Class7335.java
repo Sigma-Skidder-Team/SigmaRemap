@@ -265,8 +265,8 @@ public class Class7335
                 }
             }
             if (this.field28334 <= 0L) {
-                if (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 67)) {
-                    if (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292)) {
+                if (Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 67)) {
+                    if (Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 292)) {
                         this.field28337 = true;
                         this.field28334 = Util.method27837();
                         this.field28335 = Util.method27837();
@@ -274,7 +274,7 @@ public class Class7335
                     }
                 }
             }
-            else if (!Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 67) || !Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292)) {
+            else if (!Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 67) || !Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 292)) {
                 this.field28334 = -1L;
             }
             final Screen field4700 = this.field28331.currentScreen;
@@ -375,9 +375,9 @@ public class Class7335
                     boolean b3 = false;
                     if (this.field28331.currentScreen == null) {
                         if (i == 256) {
-                            this.field28331.method5255(Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292));
+                            this.field28331.method5255(Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 292));
                         }
-                        b3 = (Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 292) && this.method22499(i));
+                        b3 = (Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 292) && this.method22499(i));
                         this.field28337 |= b3;
                         if (i == 290) {
                             this.field28331.gameSettings.field23464 = !this.field28331.gameSettings.field23464;

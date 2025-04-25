@@ -28,7 +28,7 @@ public class Class4907 extends Class4841
     private final List<Class8214> field20995;
     
     public Class4907(final CustomGuiScreen customGuiScreen, final String s, final boolean field20991, final String field20992, final Class7976... array) {
-        super(customGuiScreen, s, 0, 0, Minecraft.method5277().window.method7694(), Minecraft.method5277().window.method7695(), false);
+        super(customGuiScreen, s, 0, 0, Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7695(), false);
         this.field20990 = new Animation(285, 100);
         this.field20992 = 240;
         this.field20993 = 0;

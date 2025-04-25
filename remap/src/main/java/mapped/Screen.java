@@ -357,17 +357,17 @@ public abstract class Screen extends FocusableGui implements IRenderable
     
     public static boolean method3046() {
         if (!Minecraft.field4623) {
-            return Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 341) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 345);
+            return Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 341) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 345);
         }
-        return Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 343) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 347);
+        return Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 343) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 347);
     }
     
     public static boolean hasShiftDown() {
-        return Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 344);
+        return Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 340) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 344);
     }
     
     public static boolean method3048() {
-        return Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 342) || Class8341.method27798(Minecraft.method5277().method5332().getHandle(), 346);
+        return Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 342) || Class8341.method27798(Minecraft.getInstance().method5332().getHandle(), 346);
     }
     
     public static boolean method3049(final int n) {

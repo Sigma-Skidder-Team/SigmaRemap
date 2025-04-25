@@ -62,7 +62,7 @@ public class Class4940 extends Class4800
     
     public static ArrayList<Class8799> method14874() {
         final ArrayList list = new ArrayList();
-        final Iterator<Module> iterator = Client.getInstance().method35189().getModuleMap().values().iterator();
+        final Iterator<Module> iterator = Client.getInstance().moduleManager().getModuleMap().values().iterator();
         while (iterator.hasNext()) {
             list.add(new Class8799(iterator.next()));
         }
@@ -137,6 +137,6 @@ public class Class4940 extends Class4800
     }
     
     static {
-        Class4940.field21209 = Minecraft.method5277();
+        Class4940.field21209 = Minecraft.getInstance();
     }
 }

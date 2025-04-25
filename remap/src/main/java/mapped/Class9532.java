@@ -11,6 +11,8 @@ import java.io.OutputStream;
 
 import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
+import totalcross.json.JSONObject;
+
 import java.io.FileOutputStream;
 import java.io.File;
 

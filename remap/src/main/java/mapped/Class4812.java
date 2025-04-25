@@ -12,6 +12,7 @@ import java.io.IOException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
+import totalcross.json.JSONArray;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Iterator;

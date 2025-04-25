@@ -8,6 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.*;
+import totalcross.json.JSONObject;
 
 import java.util.Iterator;
 import java.util.Arrays;
@@ -69,7 +70,7 @@ public class StringSetting extends Setting<String> {
         if (n > this.field21518.size()) {
             return;
         }
-        if (this.field21519.contains(this.field21518.get(n)) && Minecraft.method5277() != null) {
+        if (this.field21519.contains(this.field21518.get(n)) && Minecraft.getInstance() != null) {
             Client.getInstance().getNotificationManager().send(new Notification("Premium", "Not yet available for free version"));
             return;
         }

@@ -53,7 +53,7 @@ public class ClientWorld extends World
         super(new WorldInfo(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((ClientWorld)class8515, n2), class8513, true);
         this.field10071 = Lists.newArrayList();
         this.field10072 = (Int2ObjectMap<Entity>)new Int2ObjectOpenHashMap();
-        this.field10075 = Minecraft.method5277();
+        this.field10075 = Minecraft.getInstance();
         this.field10076 = Lists.newArrayList();
         this.field10077 = this.rand.nextInt(12000);
         this.field10078 = new Class6516();
@@ -745,7 +745,7 @@ public class ClientWorld extends World
     }
     
     public int method6850(final BlockPos class354, final Class8895 class355) {
-        final int field23410 = Minecraft.method5277().gameSettings.field23410;
+        final int field23410 = Minecraft.getInstance().gameSettings.field23410;
         if (field23410 != 0) {
             final int n = (field23410 * 2 + 1) * (field23410 * 2 + 1);
             int n2 = 0;

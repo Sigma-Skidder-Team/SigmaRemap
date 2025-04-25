@@ -238,7 +238,7 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     public void method10287(final Class5717 class5717) {
-        if (Client.getInstance().method35189().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) {
+        if (Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) {
             return;
         }
         if (BlockFly.mc.timer.timerSpeed == 0.8038576f) {

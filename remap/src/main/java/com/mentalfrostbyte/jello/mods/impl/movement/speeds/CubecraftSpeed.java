@@ -44,7 +44,7 @@ public class CubecraftSpeed extends Module
     
     @EventListener
     public void method10569(final Class5717 class5717) {
-        if (!this.isEnabled() || Client.getInstance().method35189().getModuleByClass(BlockFly.class).isEnabled() || ColorUtils.method19112(CubecraftSpeed.mc.player)) {
+        if (!this.isEnabled() || Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled() || ColorUtils.method19112(CubecraftSpeed.mc.player)) {
             return;
         }
         final String method9887 = this.getStringSettingValueByName("Mode");
@@ -117,7 +117,7 @@ public class CubecraftSpeed extends Module
                         this.field15941 = 0;
                     }
                     this.field15943 = CubecraftSpeed.mc.player.posY;
-                    if (!Client.getInstance().method35189().getModuleByClass(Timer.class).isEnabled()) {
+                    if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
                         CubecraftSpeed.mc.timer.timerSpeed = 1.0f;
                         break;
                     }

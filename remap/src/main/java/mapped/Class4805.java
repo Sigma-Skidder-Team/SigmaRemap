@@ -6,6 +6,8 @@ package mapped;
 
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 public class Class4805 extends CustomGuiScreen
 {
@@ -20,11 +22,11 @@ public class Class4805 extends CustomGuiScreen
             GL11.glTexEnvi(8960, 8704, 260);
         }
         final String method13268 = class4804.getString("title");
-        final JSONArray method13269 = class4804.method13263("changes");
+        final JSONArray method13269 = class4804.getJSONArray("changes");
         this.addToList(new Class4834(this, "title", 0, n, 0, 0, ColorHelper.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;
         for (int i = 0; i < method13269.length(); ++i) {
-            this.addToList(new Class4834(this, "change" + i, 0, n, 0, 0, new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.method459(i), ClientFonts.JelloLight20));
+            this.addToList(new Class4834(this, "change" + i, 0, n, 0, 0, new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.getString(i), ClientFonts.JelloLight20));
             n += 22;
         }
         n += 75;

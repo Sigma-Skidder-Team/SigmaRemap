@@ -4,6 +4,8 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+
 import java.util.logging.Level;
 
 public class Class1109 implements Runnable
@@ -26,7 +28,7 @@ public class Class1109 implements Runnable
             final JSONArray JSONArray = new JSONArray();
             final Object[] field5985 = this.field5985;
             for (int length = field5985.length, i = 0; i < length; ++i) {
-                JSONArray.method486(field5985[i]);
+                JSONArray.put(field5985[i]);
             }
             final Class9041 class89 = new Class9041(3, JSONArray);
             class89.field38264 = this.field5986.field32320;

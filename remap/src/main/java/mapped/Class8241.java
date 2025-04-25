@@ -7,6 +7,8 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
 
 public class Class8241
 {
@@ -28,7 +30,7 @@ public class Class8241
     }
     
     public Class8241 method27288(final JSONObject JSONObject) throws org.json.JSONException {
-        this.field33838 = JSONObject.method13264("modConfig");
+        this.field33838 = JSONObject.getJSONObject("modConfig");
         this.field33839 = JSONObject.getString("name");
         return this;
     }
@@ -63,7 +65,7 @@ public class Class8241
                 catch (final JSONException class2382) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
-                for (final Module class2383 : Client.getInstance().method35189().getModuleMap().values()) {
+                for (final Module class2383 : Client.getInstance().moduleManager().getModuleMap().values()) {
                     if (class2383.getName().equals(method26640) && class2383.getCategoryBasedOnMode() != Category.GUI && class2383.getCategoryBasedOnMode() != Category.RENDER) {
                         method26639.put("enabled", "false");
                     }
@@ -91,14 +93,14 @@ public class Class8241
                 }
                 if (class4406.getName().equals(method26640)) {
                     if (class4406.getCategoryBasedOnMode() != Category.GUI && class4406.getCategoryBasedOnMode() != Category.RENDER) {
-                        method26638.method493(i, JSONObject);
+                        method26638.put(i, JSONObject);
                     }
                     b = true;
                 }
             }
         }
         if (!b) {
-            method26638.method486(JSONObject);
+            method26638.put(JSONObject);
         }
     }
     

@@ -66,8 +66,8 @@ public class Murderer extends Module
         }
         if (this.method9883("GUI")) {
             final TrueTypeFont field40313 = ClientFonts.JelloLight20;
-            final int method7694 = Minecraft.method5277().window.method7694();
-            final int method7695 = Minecraft.method5277().window.method7695();
+            final int method7694 = Minecraft.getInstance().window.method7694();
+            final int method7695 = Minecraft.getInstance().window.method7695();
             if (this.field15734) {
                 if (this.field15733 != null) {
                     this.field15734 = false;

@@ -81,6 +81,6 @@ public abstract class Class7814 implements Class7813
     }
     
     static {
-        field32015 = Minecraft.method5277();
+        field32015 = Minecraft.getInstance();
     }
 }

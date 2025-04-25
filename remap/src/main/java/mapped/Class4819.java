@@ -210,7 +210,7 @@ public class Class4819 extends Class4817 implements Class4820
         final int n = b;
         if (this.field20620 instanceof ModuleWithSettings) {
             final ModuleWithSettings class3247 = (ModuleWithSettings)this.field20620;
-            for (final Module key : class3247.field15742) {
+            for (final Module key : class3247.moduleArray) {
                 int a = 0;
                 final CustomGuiScreen value = new CustomGuiScreen(this, key.getName() + "SubView", 0, n, this.field20480, this.field20481 - b);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));

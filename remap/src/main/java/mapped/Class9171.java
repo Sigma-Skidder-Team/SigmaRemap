@@ -18,16 +18,16 @@ public class Class9171
     public static boolean field38852;
     
     public Class9171() {
-        this.field38851 = Minecraft.method5277();
+        this.field38851 = Minecraft.getInstance();
         Client.getInstance().getEventBus().register2(this);
     }
     
     @EventListener
     @Class6754
     public void method33483(final Class5732 class5732) {
-        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Fly.class);
-        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(Disabler.class);
-        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().method35189().getModuleByClass(LongJump.class);
+        final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Fly.class);
+        final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Disabler.class);
+        final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(LongJump.class);
         boolean field38852 = false;
         Label_0165: {
             Label_0054: {

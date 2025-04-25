@@ -99,13 +99,13 @@ public class Class5837
                     }
                 }
                 Client.getInstance().getEventBus().method21096();
-                for (final Module class7558 : Client.getInstance().method35189().getModuleMap().values()) {
+                for (final Module class7558 : Client.getInstance().moduleManager().getModuleMap().values()) {
                     final Iterator<Setting> iterator3 = class7558.method9899().values().iterator();
                     while (iterator3.hasNext()) {
                         iterator3.next().method15201();
                     }
                     if (class7558 instanceof ModuleWithSettings) {
-                        final Module[] field23933 = ((ModuleWithSettings)class7558).field15742;
+                        final Module[] field23933 = ((ModuleWithSettings)class7558).moduleArray;
                         for (int length2 = field23933.length, j = 0; j < length2; ++j) {
                             final Iterator<Setting> iterator4 = field23933[j].method9899().values().iterator();
                             while (iterator4.hasNext()) {
@@ -129,7 +129,7 @@ public class Class5837
                         if (!(class7558 instanceof ModuleWithSettings)) {
                             continue;
                         }
-                        final Module[] field23934 = ((ModuleWithSettings)class7558).field15742;
+                        final Module[] field23934 = ((ModuleWithSettings)class7558).moduleArray;
                         for (int length3 = field23934.length, k = 0; k < length3; ++k) {
                             Client.getInstance().getEventBus().unregister(field23934[k]);
                         }

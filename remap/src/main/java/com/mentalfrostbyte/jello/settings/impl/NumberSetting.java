@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
-import mapped.JSONObject;
+import totalcross.json.JSONObject;
 import mapped.CJsonUtils;
 
 public class NumberSetting<T extends Number> extends Setting<Float> {

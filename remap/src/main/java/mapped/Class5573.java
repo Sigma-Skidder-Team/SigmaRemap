@@ -69,7 +69,7 @@ public class Class5573 extends Class5509
     
     @Override
     public Class9559 method16814(final Class5901 class5901, final float field20284) {
-        final Class8551 method5306 = Minecraft.method5277().method5306();
+        final Class8551 method5306 = Minecraft.getInstance().method5306();
         Class4703 obj = method5306.method28719().get(Class838.class);
         if (!(obj instanceof Class4741)) {
             Config.warn("Not a PufferfishRenderer: " + obj);

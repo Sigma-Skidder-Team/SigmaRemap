@@ -2,13 +2,10 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package totalcross.json;
 
 public class JSONException extends RuntimeException
 {
-    private static String[] field14180;
-    private static final long field14181 = 0L;
-    
     public JSONException(final String message) {
         super(message);
     }

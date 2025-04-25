@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
+import totalcross.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class Class4934 extends Class4800
         list.add("Last Used");
         list.add("Use count");
         final ArrayList list2 = new ArrayList();
-        final Class9295 class9295 = new Class9295(Minecraft.method5277());
+        final Class9295 class9295 = new Class9295(Minecraft.getInstance());
         class9295.method34331();
         for (int method34336 = class9295.method34336(), i = 0; i < method34336; ++i) {
             final ServerData method34337 = class9295.method34333(i);
@@ -68,14 +69,14 @@ public class Class4934 extends Class4800
         }
         this.method14813();
         this.method14814();
-        this.addToList(this.field21139 = new Class4817(this, "alts", 0, 114, (int)(Minecraft.method5277().window.method7694() * this.field21143) - 4, Minecraft.method5277().window.method7695() - 119 - this.field21145));
-        this.addToList(this.field21140 = new Class4817(this, "altView", (int)(Minecraft.method5277().window.method7694() * this.field21143), 114, (int)(Minecraft.method5277().window.method7694() * this.field21144) - this.field21145, Minecraft.method5277().window.method7695() - 119 - this.field21145));
+        this.addToList(this.field21139 = new Class4817(this, "alts", 0, 114, (int)(Minecraft.getInstance().window.method7694() * this.field21143) - 4, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
+        this.addToList(this.field21140 = new Class4817(this, "altView", (int)(Minecraft.getInstance().window.method7694() * this.field21143), 114, (int)(Minecraft.getInstance().window.method7694() * this.field21144) - this.field21145, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
         this.field21139.setListening(false);
         this.field21140.setListening(false);
         this.field21139.method14394(false);
-        this.field21140.addToList(this.field21146 = new Class4837(this.field21140, "", (int)(Minecraft.method5277().window.method7694() * this.field21144 - (int)(Minecraft.method5277().window.method7694() * this.field21144)) / 2 - 10, Minecraft.method5277().window.method7695() / 12, (int)(Minecraft.method5277().window.method7694() * this.field21144), 350, "steve"));
-        this.field21140.addToList(this.field21147 = new Class4826(this.field21140, "info", (int)(Minecraft.method5277().window.method7694() * this.field21144 - (int)(Minecraft.method5277().window.method7694() * this.field21144)) / 2 - 10, this.method14825(), (int)(Minecraft.method5277().window.method7694() * this.field21144), 500));
-        final Class4894 class9296 = new Class4894(this, "drop", (int)(Minecraft.method5277().window.method7694() * this.field21143) - 220, 44, 200, 32, list, 0);
+        this.field21140.addToList(this.field21146 = new Class4837(this.field21140, "", (int)(Minecraft.getInstance().window.method7694() * this.field21144 - (int)(Minecraft.getInstance().window.method7694() * this.field21144)) / 2 - 10, Minecraft.getInstance().window.method7695() / 12, (int)(Minecraft.getInstance().window.method7694() * this.field21144), 350, "steve"));
+        this.field21140.addToList(this.field21147 = new Class4826(this.field21140, "info", (int)(Minecraft.getInstance().window.method7694() * this.field21144 - (int)(Minecraft.getInstance().window.method7694() * this.field21144)) / 2 - 10, this.method14825(), (int)(Minecraft.getInstance().window.method7694() * this.field21144), 500));
+        final Class4894 class9296 = new Class4894(this, "drop", (int)(Minecraft.getInstance().window.method7694() * this.field21143) - 220, 44, 200, 32, list, 0);
         class9296.method14681(list2, 1);
         class9296.method14694(2);
         this.addToList(class9296);
@@ -105,7 +106,7 @@ public class Class4934 extends Class4800
             }
             this.method14823(false);
         });
-        this.addToList(this.field21155 = new TextField(this, "textbox", (int)(Minecraft.method5277().window.method7694() * this.field21143), 44, 150, 32, TextField.field20670, "", "Search...", ClientFonts.JelloLight18));
+        this.addToList(this.field21155 = new TextField(this, "textbox", (int)(Minecraft.getInstance().window.method7694() * this.field21143), 44, 150, 32, TextField.field20670, "", "Search...", ClientFonts.JelloLight18));
         this.field21155.setFont(ClientFonts.JelloLight18);
         this.field21155.method14473(class4831 -> this.method14823(false));
         this.addToList(this.field21151 = new UIButton(this, "btnt", this.method14276() - 90, 43, 70, 30, ColorHelper.field25964, "Add +", ClientFonts.JelloLight25));
@@ -213,7 +214,7 @@ public class Class4934 extends Class4800
     @Override
     public void draw(final float n) {
         this.method14822();
-        RenderUtil.method26915((int)(Minecraft.method5277().window.method7694() * this.field21143), 114, (int)(Minecraft.method5277().window.method7694() * this.field21144) - this.field21145, Minecraft.method5277().window.method7695() - 119 - this.field21145, ClientColors.LIGHT_GREYISH_BLUE.color);
+        RenderUtil.method26915((int)(Minecraft.getInstance().window.method7694() * this.field21143), 114, (int)(Minecraft.getInstance().window.method7694() * this.field21144) - this.field21145, Minecraft.getInstance().window.method7695() - 119 - this.field21145, ClientColors.LIGHT_GREYISH_BLUE.color);
         this.method14816();
         this.method14818();
         this.method14817();
@@ -223,7 +224,7 @@ public class Class4934 extends Class4800
     private void method14815() {
         if (this.field21150 != this.field21139.method14392()) {
             try {
-                this.field21149 = BufferedImageUtil.getTexture("blur", BufferedImage.method20832(0, 0, (int)(Minecraft.method5277().window.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
+                this.field21149 = BufferedImageUtil.getTexture("blur", BufferedImage.method20832(0, 0, (int)(Minecraft.getInstance().window.method7694() * this.field21143) - 15, 114, 4, 40, -921102));
             }
             catch (final IOException ex) {
                 ex.printStackTrace();
@@ -232,7 +233,7 @@ public class Class4934 extends Class4800
         final float n = (this.field21150 < 25.0f) ? (this.field21150 / 25.0f) : 1.0f;
         GL11.glTexParameteri(3553, 10241, 9728);
         if (this.field21149 != null) {
-            RenderUtil.drawImage(0.0f, 0.0f, (float)((int)(Minecraft.method5277().window.method7694() * this.field21143) - 15), 114.0f, this.field21149, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.drawImage(0.0f, 0.0f, (float)((int)(Minecraft.getInstance().window.method7694() * this.field21143) - 15), 114.0f, this.field21149, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         }
         this.field21150 = (float)this.field21139.method14392();
     }
@@ -257,7 +258,7 @@ public class Class4934 extends Class4800
                         continue;
                     }
                     final Class4917 class4805 = (Class4917)class4804;
-                    if (class4804.method14274() <= Minecraft.method5277().window.method7695() && this.field21139.method14392() == 0) {
+                    if (class4804.method14274() <= Minecraft.getInstance().window.method7695() && this.field21139.method14392() == 0) {
                         if (method35858 > 0.2f) {
                             class4805.field21038.changeDirection(Direction.BACKWARDS);
                         }
@@ -334,7 +335,7 @@ public class Class4934 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.method5277().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new Class548());
         }
     }
     
@@ -365,6 +366,6 @@ public class Class4934 extends Class4800
     }
     
     public int method14825() {
-        return Minecraft.method5277().window.method7695() / 12 + 280 + Minecraft.method5277().window.method7695() / 12;
+        return Minecraft.getInstance().window.method7695() / 12 + 280 + Minecraft.getInstance().window.method7695() / 12;
     }
 }

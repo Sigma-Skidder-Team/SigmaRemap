@@ -109,12 +109,12 @@ public class Config
         method28818();
         Config.field36030 = Thread.currentThread();
         method28832();
-        Class9216.method33746(Minecraft.method5277());
+        Class9216.method33746(Minecraft.getInstance());
     }
     
     public static void method28818() {
         if (!Config.field36029) {
-            if (Minecraft.method5277().method5332() != null) {
+            if (Minecraft.getInstance().method5332() != null) {
                 Config.field36029 = true;
                 method28819();
                 method28835();
@@ -1592,7 +1592,7 @@ public class Config
         Config.field36025 = false;
         Config.field36026 = false;
         Config.field36027 = null;
-        Config.field36028 = Minecraft.method5277();
+        Config.field36028 = Minecraft.getInstance();
         Config.field36029 = false;
         Config.field36030 = null;
         Config.field36031 = 0;

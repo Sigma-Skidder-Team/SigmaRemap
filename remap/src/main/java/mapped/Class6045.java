@@ -22,7 +22,7 @@ public class Class6045 extends CacheLoader<GameProfile, Map<MinecraftProfileText
     
     public Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> load(final GameProfile gameProfile) throws Exception {
         try {
-            return Minecraft.method5277().method5301().getTextures(gameProfile, false);
+            return Minecraft.getInstance().method5301().getTextures(gameProfile, false);
         }
         catch (final Throwable t) {
             return Maps.newHashMap();

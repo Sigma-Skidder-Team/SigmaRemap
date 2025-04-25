@@ -2,9 +2,10 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.auth;
 
-import com.mentalfrostbyte.jello.auth.SerialNumberUtil;
+import totalcross.json.JSONException;
+import totalcross.json.JSONObject;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;

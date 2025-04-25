@@ -62,7 +62,7 @@ public class Aimbot extends ModuleWithSettings
                                         else if (!class400.method1850()) {
                                             if (class400 instanceof PlayerEntity) {
                                                 if (Class9011.method32262((PlayerEntity)class400)) {
-                                                    if (Client.getInstance().method35189().getModuleByClass(Teams.class).isEnabled()) {
+                                                    if (Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled()) {
                                                         iterator.remove();
                                                         continue;
                                                     }

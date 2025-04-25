@@ -17,7 +17,7 @@ public class DefaultFont extends TrueTypeFont
     
     public DefaultFont(final int size) {
         super(new Font("Arial", 0, size), false);
-        this.mc = Minecraft.method5277();
+        this.mc = Minecraft.getInstance();
         this.field29870 = size;
     }
     

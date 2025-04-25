@@ -4,6 +4,9 @@
 
 package mapped;
 
+import totalcross.json.JSONArray;
+import totalcross.json.JSONObject;
+
 import java.util.Iterator;
 import java.util.Collection;
 import java.util.ArrayList;
@@ -255,13 +258,13 @@ public class Class4960 extends Class4961
         for (int i = 0; i < method462; ++i) {
             Object method463;
             try {
-                method463 = JSONArray.method449(i);
+                method463 = JSONArray.get(i);
             }
             catch (final JSONException thrown) {
                 Class4960.field21268.log(Level.WARNING, "An error occured while retrieving data from JSONArray", thrown);
                 method463 = null;
             }
-            array[i] = (JSONObject.field19729.equals(method463) ? null : method463);
+            array[i] = (JSONObject.NULL.equals(method463) ? null : method463);
         }
         return array;
     }

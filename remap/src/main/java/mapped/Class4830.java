@@ -53,12 +53,12 @@ public class Class4830 extends Class4825
             if (this.field20665.method14306() && n == 257) {
                 this.field20665.setEnabled(false);
                 this.field20665.method14307(false);
-                if (Client.getInstance().method35189().getProfile().method32705(this.field20665.getTypedText())) {
+                if (Client.getInstance().moduleManager().getProfile().method32705(this.field20665.getTypedText())) {
                     return;
                 }
                 field20669.field33839 = this.field20665.getTypedText();
                 try {
-                    Client.getInstance().method35189().getProfile().method32706();
+                    Client.getInstance().moduleManager().getProfile().method32706();
                 }
                 catch (final IOException ex) {}
             }
@@ -85,17 +85,17 @@ public class Class4830 extends Class4825
             if (n != 1) {
                 this.field20662.changeDirection(Direction.FORWARDS);
                 if (this.field20662.calcPercent() == 0.0f) {
-                    Client.getInstance().method35189().getProfile().method32708(this.field20664);
+                    Client.getInstance().moduleManager().getProfile().method32708(this.field20664);
                     Client.getInstance().method35196().method32830("switch");
                     this.getParent().getParent().getParent().runThisOnDimensionUpdate(() -> class4805.method14640());
-                    for (final Module class4804 : Client.getInstance().method35189().getModuleMap().values()) {
+                    for (final Module class4804 : Client.getInstance().moduleManager().getModuleMap().values()) {
                         if (!(class4804 instanceof PremiumModule)) {
                             continue;
                         }
                         if (Client.getInstance().getNetworkManager().isPremium()) {
                             continue;
                         }
-                        class4804.method9908(false);
+                        class4804.setEnabled(false);
                     }
                 }
             }
@@ -112,7 +112,7 @@ public class Class4830 extends Class4825
             this.field20665.method14307(false);
             this.field20664.field33839 = this.field20665.getTypedText();
             try {
-                Client.getInstance().method35189().getProfile().method32706();
+                Client.getInstance().moduleManager().getProfile().method32706();
             }
             catch (final IOException ex) {}
         }
@@ -129,7 +129,7 @@ public class Class4830 extends Class4825
             if (!this.field20669) {
                 this.field20669 = true;
                 final Class4889 class4889 = (Class4889)this.getParent().getParent().getParent();
-                Client.getInstance().method35189().getProfile().method32701(this.field20664);
+                Client.getInstance().moduleManager().getProfile().method32701(this.field20664);
                 class4889.runThisOnDimensionUpdate(() -> class4890.method14640());
             }
         }
@@ -148,7 +148,7 @@ public class Class4830 extends Class4825
             RenderUtil.drawString(ClientFonts.JelloLight24, this.x + 20 - n2 * this.field20480, (float)(this.y + 18), this.field20664.field33839, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.9f * n));
         }
         this.field20665.method14293(Math.round(-n2 * this.field20480));
-        if (Client.getInstance().method35189().getProfile().method32707() == this.field20664) {
+        if (Client.getInstance().moduleManager().getProfile().method32707() == this.field20664) {
             RenderUtil.drawImage(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, ClientAssets.active, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0f - this.field20662.calcPercent()) * n));
         }
         super.draw(n);

@@ -7,6 +7,7 @@ package mapped;
 import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.auth.LicenseManager;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
@@ -23,6 +24,8 @@ import net.minecraft.entity.Entity;
 import org.apache.http.impl.client.HttpClients;
 import java.util.ArrayList;
 import org.apache.http.client.HttpClient;
+import totalcross.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.List;
@@ -35,12 +38,12 @@ public class CombatTracker
     private List<UUID> field38985;
     private HashMap<UUID, Class6538> field38986;
     private HttpClient field38987;
-    private NetworkManager2 field38988;
+    private LicenseManager field38988;
     private Class4960 field38989;
     public Class9194 field38990;
     
-    public CombatTracker(final NetworkManager2 field38988) {
-        this.field38982 = Minecraft.method5277();
+    public CombatTracker(final LicenseManager field38988) {
+        this.field38982 = Minecraft.getInstance();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
         Client.getInstance().getEventBus().register2(this);

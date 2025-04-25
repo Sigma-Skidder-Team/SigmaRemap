@@ -112,7 +112,7 @@ public class NoGroundCriticals extends Module
                     }
                 }
             }
-            final Module method21551 = Client.getInstance().method35189().getModuleByClass(Speed.class);
+            final Module method21551 = Client.getInstance().moduleManager().getModuleByClass(Speed.class);
             if (!method21551.isEnabled() || method21551.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel")) {
                 updateWalkingEvent.method17037(updateWalkingEvent.method17036() + n);
             }

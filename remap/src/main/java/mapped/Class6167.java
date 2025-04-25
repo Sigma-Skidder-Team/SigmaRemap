@@ -30,7 +30,7 @@ public class Class6167 extends Class6159
     
     public Class6167(final World class1847, final double n, final double n2, final double n3, final ItemStack class1848) {
         super(class1847, n, n2, n3, 0.0, 0.0, 0.0);
-        this.method18423(Minecraft.method5277().getItemRenderer().method6534(class1848, class1847, null).method18696());
+        this.method18423(Minecraft.getInstance().getItemRenderer().method6534(class1848, class1847, null).method18696());
         this.field24952 = 1.0f;
         this.field24930 /= 2.0f;
         this.field24924 = this.field24949.nextFloat() * 3.0f;

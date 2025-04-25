@@ -108,6 +108,6 @@ public class Class4930 extends Class4800
     }
     
     static {
-        Class4930.field21102 = Minecraft.method5277();
+        Class4930.field21102 = Minecraft.getInstance();
     }
 }

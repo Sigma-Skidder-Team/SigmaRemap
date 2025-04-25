@@ -70,7 +70,7 @@ public class Class7993
     private Class1846 method26156(final String s) {
         final String string = Class8337.method27789() + "/" + s;
         try {
-            return Class1846.method6637(new ByteArrayInputStream(Class6579.method19925(string, Minecraft.method5277().method5289())));
+            return Class1846.method6637(new ByteArrayInputStream(Class6579.method19925(string, Minecraft.getInstance().method5289())));
         }
         catch (final IOException ex) {
             Config.warn("Error loading item texture " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());
@@ -81,7 +81,7 @@ public class Class7993
     private Class7771 method26157(final String s) {
         final String string = Class8337.method27789() + "/" + s;
         try {
-            return Class6514.method19604((JsonObject)new JsonParser().parse(new String(Class6579.method19925(string, Minecraft.method5277().method5289()), "ASCII")));
+            return Class6514.method19604((JsonObject)new JsonParser().parse(new String(Class6579.method19925(string, Minecraft.getInstance().method5289()), "ASCII")));
         }
         catch (final Exception ex) {
             Config.warn("Error loading item model " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());

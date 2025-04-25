@@ -42,7 +42,7 @@ public class Class4899 extends Class4841
     public ArrayList<Module> method14713() {
         final ArrayList list = new ArrayList();
         if (this.field20955 != null && this.field20955.length() != 0) {
-            for (final Module e : Client.getInstance().method35189().getModuleMap().values()) {
+            for (final Module e : Client.getInstance().moduleManager().getModuleMap().values()) {
                 if (!this.method14715(this.field20955, e.getName())) {
                     continue;
                 }
@@ -61,7 +61,7 @@ public class Class4899 extends Class4841
             if (method14713.size() > 0) {
                 method14713.get(0).method9910();
             }
-            Minecraft.method5277().displayGuiScreen(null);
+            Minecraft.getInstance().displayGuiScreen(null);
         }
     }
     

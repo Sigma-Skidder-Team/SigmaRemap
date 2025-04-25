@@ -20,20 +20,20 @@ public class Realms
     private static final Class8098 field32144;
     
     public static boolean method25351() {
-        return Minecraft.method5277().gameSettings.field23429;
+        return Minecraft.getInstance().gameSettings.field23429;
     }
     
     public static Proxy method25352() {
-        return Minecraft.method5277().method5289();
+        return Minecraft.getInstance().method5289();
     }
     
     public static String method25353() {
-        final Class9212 method5287 = Minecraft.method5277().method5287();
+        final Class9212 method5287 = Minecraft.getInstance().method5287();
         return (method5287 != null) ? method5287.method33690() : null;
     }
     
     public static String method25354() {
-        final Class9212 method5287 = Minecraft.method5277().method5287();
+        final Class9212 method5287 = Minecraft.getInstance().method5287();
         return (method5287 != null) ? method5287.method33692() : null;
     }
     
@@ -42,27 +42,27 @@ public class Realms
     }
     
     public static String method25356() {
-        return Minecraft.method5277().method5287().method33690();
+        return Minecraft.getInstance().method5287().method33690();
     }
     
     public static String method25357() {
-        return Minecraft.method5277().method5287().method33691();
+        return Minecraft.getInstance().method5287().method33691();
     }
     
     public static String method25358() {
-        return Minecraft.method5277().method5287().method33692();
+        return Minecraft.getInstance().method5287().method33692();
     }
     
     public static String method25359(final String s) {
-        return Minecraft.method5277().method5301().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), (String)null), false).getName();
+        return Minecraft.getInstance().method5301().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), (String)null), false).getName();
     }
     
     public static <V> CompletableFuture<V> method25360(final Supplier<V> supplier) {
-        return Minecraft.method5277().method5377(supplier);
+        return Minecraft.getInstance().method5377(supplier);
     }
     
     public static void method25361(final Runnable runnable) {
-        Minecraft.method5277().execute(runnable);
+        Minecraft.getInstance().execute(runnable);
     }
     
     public static void setScreen(final RealmsScreen class5046) {
@@ -73,11 +73,11 @@ public class Realms
     }
     
     public static void method25363(final RealmsScreen class5046) {
-        Minecraft.method5277().displayGuiScreen(class5046.getProxy());
+        Minecraft.getInstance().displayGuiScreen(class5046.getProxy());
     }
     
     public static String method25364() {
-        return Minecraft.method5277().field4652.getAbsolutePath();
+        return Minecraft.getInstance().field4652.getAbsolutePath();
     }
     
     public static int method25365() {
@@ -97,23 +97,23 @@ public class Realms
     }
     
     public static void method25369(final boolean b) {
-        Minecraft.method5277().method5312(b);
+        Minecraft.getInstance().method5312(b);
     }
     
     public static CompletableFuture<?> method25370(final String s, final String s2) {
-        return Minecraft.method5277().method5293().method25742(s, s2);
+        return Minecraft.getInstance().method5293().method25742(s, s2);
     }
     
     public static void method25371() {
-        Minecraft.method5277().method5293().method25744();
+        Minecraft.getInstance().method5293().method25744();
     }
     
     public static boolean method25372() {
-        return Minecraft.method5277().gameSettings.field23424;
+        return Minecraft.getInstance().gameSettings.field23424;
     }
     
     public static boolean method25373() {
-        return Minecraft.method5277().currentScreen != null && Minecraft.method5277().currentScreen instanceof Class548;
+        return Minecraft.getInstance().currentScreen != null && Minecraft.getInstance().currentScreen instanceof Class548;
     }
     
     public static void method25374(final File file) {
@@ -134,7 +134,7 @@ public class Realms
     }
     
     public static void method25376(final String s) {
-        Minecraft.method5277().field4651.method22508(s);
+        Minecraft.getInstance().field4651.method22508(s);
     }
     
     public static String method25377() {
@@ -150,7 +150,7 @@ public class Realms
     }
     
     public static void method25380(final String s) {
-        Minecraft.method5277().method5290().method5849(new ResourceLocation(s));
+        Minecraft.getInstance().method5290().method5849(new ResourceLocation(s));
     }
     
     public static void narrateNow(final String s) {
