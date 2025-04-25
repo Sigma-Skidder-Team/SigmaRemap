@@ -2,16 +2,11 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
-
-import totalcross.json.JSONArray;
-import totalcross.json.JSONObject;
+package totalcross.json;
 
 public class CJsonUtils
 {
-    private static String[] field33370;
-    
-    public static boolean method26630(final JSONObject JSONObject, final String s, final boolean b) {
+    public static boolean getBooleanOrDefault(final JSONObject JSONObject, final String s, final boolean b) {
         try {
             return JSONObject.getBoolean(s);
         }
@@ -20,7 +15,7 @@ public class CJsonUtils
         }
     }
     
-    public static byte method26631(final JSONObject JSONObject, final String s, final byte b) {
+    public static byte getByteOrDefault(final JSONObject JSONObject, final String s, final byte b) {
         try {
             return (byte) JSONObject.getInt(s);
         }
@@ -29,7 +24,7 @@ public class CJsonUtils
         }
     }
     
-    public static int method26632(final JSONObject JSONObject, final String s, final int n) {
+    public static int getIntOrDefault(final JSONObject JSONObject, final String s, final int n) {
         try {
             return JSONObject.getInt(s);
         }
@@ -38,7 +33,7 @@ public class CJsonUtils
         }
     }
     
-    public static long method26633(final JSONObject JSONObject, final String s, final long n) {
+    public static long getLongOrDefault(final JSONObject JSONObject, final String s, final long n) {
         try {
             return JSONObject.getLong(s);
         }
@@ -47,7 +42,7 @@ public class CJsonUtils
         }
     }
     
-    public static float method26634(final JSONObject JSONObject, final String s, final float n) {
+    public static float getFloatOrDefault(final JSONObject JSONObject, final String s, final float n) {
         try {
             return (float) JSONObject.getDouble(s);
         }
@@ -56,7 +51,7 @@ public class CJsonUtils
         }
     }
     
-    public static double method26635(final JSONObject JSONObject, final String s, final double n) {
+    public static double getDoubleOrDefault(final JSONObject JSONObject, final String s, final double n) {
         try {
             return JSONObject.getDouble(s);
         }
@@ -65,7 +60,7 @@ public class CJsonUtils
         }
     }
     
-    public static String method26636(final JSONObject JSONObject, final String s, final String s2) {
+    public static String getStringOrDefault(final JSONObject JSONObject, final String s, final String s2) {
         try {
             return JSONObject.getString(s);
         }
@@ -74,7 +69,7 @@ public class CJsonUtils
         }
     }
     
-    public static JSONObject method26637(final JSONObject JSONObject, final String s) {
+    public static JSONObject getJSONObjectOrNull(final JSONObject JSONObject, final String s) {
         try {
             return JSONObject.getJSONObject(s);
         }

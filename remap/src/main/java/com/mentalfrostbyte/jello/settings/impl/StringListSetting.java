@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import totalcross.json.JSONObject;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 
 import java.util.ArrayList;

@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.mods.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -90,7 +91,7 @@ public class ModuleWithSettings extends Module
     
     @Override
     public JSONObject method9895(final JSONObject JSONObject) {
-        final JSONObject method26637 = CJsonUtils.method26637(JSONObject, "sub-options");
+        final JSONObject method26637 = CJsonUtils.getJSONObjectOrNull(JSONObject, "sub-options");
         if (method26637 != null) {
             for (final Module class4406 : this.moduleArray) {
                 final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(method26637, class4406.getName());
@@ -99,7 +100,7 @@ public class ModuleWithSettings extends Module
                         final JSONObject method26639 = method26638.getJSONObject(j);
                         Object method26640 = null;
                         try {
-                            method26640 = CJsonUtils.method26636(method26639, "name", null);
+                            method26640 = CJsonUtils.getStringOrDefault(method26639, "name", null);
                         }
                         catch (final JSONException class4407) {}
                         for (final Setting class4408 : class4406.field15525.values()) {

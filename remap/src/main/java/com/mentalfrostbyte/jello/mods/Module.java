@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.BezierSetting;
 import mapped.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -158,7 +159,7 @@ public abstract class Module
                 final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = CJsonUtils.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.getStringOrDefault(method26639, "name", null);
                 }
                 catch (final JSONException class4408) {}
                 for (final Setting class4409 : this.field15525.values()) {

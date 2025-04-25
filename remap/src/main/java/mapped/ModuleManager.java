@@ -19,6 +19,7 @@ import com.mentalfrostbyte.jello.mods.impl.player.*;
 import com.mentalfrostbyte.jello.mods.impl.render.*;
 import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.mods.impl.world.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -199,7 +200,7 @@ public class ModuleManager
                 final JSONObject method26639 = array.getJSONObject(i);
                 Object moduleObject = null;
                 try {
-                    moduleObject = CJsonUtils.method26636(method26639, "name", null);
+                    moduleObject = CJsonUtils.getStringOrDefault(method26639, "name", null);
                 }
                 catch (final JSONException class4407) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");

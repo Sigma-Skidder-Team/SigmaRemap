@@ -8,6 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
 import slick2d.TrueTypeFont;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -578,11 +579,11 @@ public class CustomGuiScreen implements Class4925
     
     public void method14203(final JSONObject JSONObject) {
         if (this.method14310()) {
-            this.x = CJsonUtils.method26632(JSONObject, "x", this.x);
-            this.y = CJsonUtils.method26632(JSONObject, "y", this.y);
+            this.x = CJsonUtils.getIntOrDefault(JSONObject, "x", this.x);
+            this.y = CJsonUtils.getIntOrDefault(JSONObject, "y", this.y);
             if (this.method14312()) {
-                this.field20480 = CJsonUtils.method26632(JSONObject, "width", this.field20480);
-                this.field20481 = CJsonUtils.method26632(JSONObject, "height", this.field20481);
+                this.field20480 = CJsonUtils.getIntOrDefault(JSONObject, "width", this.field20480);
+                this.field20481 = CJsonUtils.getIntOrDefault(JSONObject, "height", this.field20481);
             }
             final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "children");
             JSONObject.keySet().iterator();
@@ -590,8 +591,8 @@ public class CustomGuiScreen implements Class4925
                 final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
                 for (int i = 0; i < method26638.length(); ++i) {
                     final JSONObject method26639 = method26638.getJSONObject(i);
-                    final String method26640 = CJsonUtils.method26636(method26639, "id", null);
-                    final int method26641 = CJsonUtils.method26632(method26639, "index", -1);
+                    final String method26640 = CJsonUtils.getStringOrDefault(method26639, "id", null);
+                    final int method26641 = CJsonUtils.getIntOrDefault(method26639, "index", -1);
                     for (final CustomGuiScreen class4406 : list) {
                         if (!class4406.method14266().equals(method26640)) {
                             continue;

@@ -7,6 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -60,7 +61,7 @@ public class Class8241
                 final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = CJsonUtils.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.getStringOrDefault(method26639, "name", null);
                 }
                 catch (final JSONException class2382) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");
@@ -86,7 +87,7 @@ public class Class8241
                 final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = CJsonUtils.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.getStringOrDefault(method26639, "name", null);
                 }
                 catch (final JSONException class4408) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");
@@ -115,7 +116,7 @@ public class Class8241
                 final JSONObject method26639 = method26638.getJSONObject(i);
                 Object method26640 = null;
                 try {
-                    method26640 = CJsonUtils.method26636(method26639, "name", null);
+                    method26640 = CJsonUtils.getStringOrDefault(method26639, "name", null);
                 }
                 catch (final JSONException class3169) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");

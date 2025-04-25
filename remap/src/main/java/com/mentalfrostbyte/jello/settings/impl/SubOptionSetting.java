@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import totalcross.json.JSONObject;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
 
 import java.util.Iterator;
@@ -32,7 +32,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
         if (method26638 != null) {
             for (int i = 0; i < method26638.length(); ++i) {
                 final JSONObject method26639 = method26638.getJSONObject(i);
-                final String method26640 = CJsonUtils.method26636(JSONObject, "name", null);
+                final String method26640 = CJsonUtils.getStringOrDefault(JSONObject, "name", null);
                 for (final Setting class4406 : this.method15224()) {
                     if (!class4406.method15204().equals(method26640)) {
                         continue;
@@ -42,7 +42,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
                 }
             }
         }
-        this.currentValue = Boolean.valueOf(CJsonUtils.method26630(JSONObject, "value", this.method15203()));
+        this.currentValue = Boolean.valueOf(CJsonUtils.getBooleanOrDefault(JSONObject, "value", this.method15203()));
         return JSONObject;
     }
 

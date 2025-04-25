@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.settings.impl;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import totalcross.json.JSONObject;
-import mapped.CJsonUtils;
+import totalcross.json.CJsonUtils;
 
 public class TextInputSetting extends Setting<String> {
     public TextInputSetting(final String s, final String s2, final String s3) {
@@ -16,7 +16,7 @@ public class TextInputSetting extends Setting<String> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = CJsonUtils.method26636(JSONObject, "value", this.method15203());
+        this.currentValue = CJsonUtils.getStringOrDefault(JSONObject, "value", this.method15203());
         return JSONObject;
     }
 }

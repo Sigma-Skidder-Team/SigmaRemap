@@ -8,6 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.Type;
 import mapped.*;
+import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class BooleanSetting extends Setting<Boolean> {
@@ -51,7 +52,7 @@ public class BooleanSetting extends Setting<Boolean> {
 
     @Override
     public JSONObject method15186(final JSONObject JSONObject) {
-        this.currentValue = Boolean.valueOf(CJsonUtils.method26630(JSONObject, "value", this.method15203()));
+        this.currentValue = Boolean.valueOf(CJsonUtils.getBooleanOrDefault(JSONObject, "value", this.method15203()));
         return JSONObject;
     }
 }
