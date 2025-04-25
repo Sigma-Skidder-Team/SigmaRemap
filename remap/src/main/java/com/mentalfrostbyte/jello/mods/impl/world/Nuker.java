@@ -47,7 +47,7 @@ public class Nuker extends Module
                     final float[] method30919 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
                     updateWalkingEvent.method17043(method30919[0]);
                     updateWalkingEvent.method17041(method30919[1]);
-                    Client.getInstance().getEventBus().method21097(new Class5752(0, false, this.field15977));
+                    Client.getInstance().getEventBus().post(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
@@ -61,7 +61,7 @@ public class Nuker extends Module
                     final float[] method30920 = Class8845.method30919(this.field15977.getX(), this.field15977.getZ(), this.field15977.getY());
                     updateWalkingEvent.method17043(method30920[0]);
                     updateWalkingEvent.method17041(method30920[1]);
-                    Client.getInstance().getEventBus().method21097(new Class5752(0, false, this.field15977));
+                    Client.getInstance().getEventBus().post(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
                     if (!this.method9883("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);

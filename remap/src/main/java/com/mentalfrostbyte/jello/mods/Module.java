@@ -278,7 +278,7 @@ public abstract class Module
                 if (!(this instanceof ModuleWithSettings)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                         if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
-                            Client.getInstance().method35196().method32830("deactivate");
+                            Client.getInstance().getAudioManager().method32830("deactivate");
                         }
                     }
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
@@ -293,7 +293,7 @@ public abstract class Module
                 Client.getInstance().getEventBus().register(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                     if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
-                        Client.getInstance().method35196().method32830("activate");
+                        Client.getInstance().getAudioManager().method32830("activate");
                     }
                 }
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {

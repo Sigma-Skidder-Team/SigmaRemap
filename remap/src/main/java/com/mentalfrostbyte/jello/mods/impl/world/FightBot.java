@@ -43,7 +43,7 @@ public class FightBot extends PremiumModule
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = (Entity)iterator.next();
-            if (class399 instanceof PlayerEntity && !Client.getInstance().method35191().method31751(class399)) {
+            if (class399 instanceof PlayerEntity && !Client.getInstance().getBotManager().method31751(class399)) {
                 continue;
             }
             iterator.remove();

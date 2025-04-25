@@ -24,7 +24,7 @@ public class BoxOutlineESP extends Module
     }
     
     @EventListener
-    private void method9932(final Class5739 class5739) {
+    private void method9932(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -53,7 +53,7 @@ public class BoxOutlineESP extends Module
             BoxOutlineESP.mc.world.field10072.forEach((p0, class399) -> {
                 final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
-                if (!Client.getInstance().method35191().method31751(class399)) {
+                if (!Client.getInstance().getBotManager().method31751(class399)) {
                     if (!(!b)) {
                         if (!(!b2)) {
                             if (class399 != BoxOutlineESP.mc.player) {
@@ -80,7 +80,7 @@ public class BoxOutlineESP extends Module
     
     private void method9934(final boolean b) {
         for (final Entity class399 : BoxOutlineESP.mc.world.method6806()) {
-            if (!Client.getInstance().method35191().method31751(class399)) {
+            if (!Client.getInstance().getBotManager().method31751(class399)) {
                 final boolean b2 = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
                 final boolean b3 = ColorUtils.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");
                 final boolean b4 = ColorUtils.method19174(class399) == Class2068.field11840 && this.method9914().method9883("Show Passives");

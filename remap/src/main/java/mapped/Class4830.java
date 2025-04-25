@@ -86,7 +86,7 @@ public class Class4830 extends Class4825
                 this.field20662.changeDirection(Direction.FORWARDS);
                 if (this.field20662.calcPercent() == 0.0f) {
                     Client.getInstance().moduleManager().getProfile().method32708(this.field20664);
-                    Client.getInstance().method35196().method32830("switch");
+                    Client.getInstance().getAudioManager().method32830("switch");
                     this.getParent().getParent().getParent().runThisOnDimensionUpdate(() -> class4805.method14640());
                     for (final Module class4804 : Client.getInstance().moduleManager().getModuleMap().values()) {
                         if (!(class4804 instanceof PremiumModule)) {

@@ -10,20 +10,19 @@ import java.net.URISyntaxException;
 import java.net.URI;
 import java.util.HashMap;
 
-public class Class959 extends Class956
-{
-    private Class5837 field5102;
-    
-    public Class959(final Class5837 field5102, final String str, final HashMap<String, String> hashMap) throws URISyntaxException {
+public class Class959 extends Class956 {
+    private AgoraManager field5102;
+
+    public Class959(final AgoraManager field5102, final String str, final HashMap<String, String> hashMap) throws URISyntaxException {
         super(new URI(str), hashMap);
         this.field5102 = field5102;
     }
-    
+
     @Override
     public void method5480(final Class6089 class6089) {
         this.field5102.method17550();
     }
-    
+
     @Override
     public void method5481(final String s) {
         final JSONObject JSONObject = new JSONObject(s);
@@ -40,12 +39,12 @@ public class Class959 extends Class956
             }
         }
     }
-    
+
     @Override
     public void method5482(final int n, final String s, final boolean b) {
         this.field5102.method17551();
     }
-    
+
     @Override
     public void method5483(final Exception ex) {
         ex.printStackTrace();

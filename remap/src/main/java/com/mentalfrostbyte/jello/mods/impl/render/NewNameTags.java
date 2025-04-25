@@ -85,7 +85,7 @@ public class NewNameTags extends Module
                 if (class5744.method1823()) {
                     continue;
                 }
-                if (Client.getInstance().method35191().method31751(class5744)) {
+                if (Client.getInstance().getBotManager().method31751(class5744)) {
                     continue;
                 }
                 this.field15783.add(class5744);
@@ -187,7 +187,7 @@ public class NewNameTags extends Module
     }
     
     @EventListener
-    public void method10333(final Class5739 class5739) {
+    public void method10333(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             final boolean method9883 = this.method9883("Magnify");
@@ -355,8 +355,8 @@ public class NewNameTags extends Module
             GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
             GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
             int n8 = this.field15786;
-            if (!Client.getInstance().method35190().method29878(class399)) {
-                if (Client.getInstance().method35190().method29880(class399)) {
+            if (!Client.getInstance().getFriendManager().method29878(class399)) {
+                if (Client.getInstance().getFriendManager().method29880(class399)) {
                     n8 = ColorUtils.applyAlpha(-6750208, 0.5f);
                 }
             }
@@ -385,7 +385,7 @@ public class NewNameTags extends Module
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final Class6538 method9890 = Client.getInstance().getNetworkManager().combatTracker.method33657(class399);
+            final Class6538 method9890 = Client.getInstance().getNetworkManager().IRCManager.method33657(class399);
             if (method9890 != null) {
                 RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
             }

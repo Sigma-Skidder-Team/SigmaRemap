@@ -25,7 +25,7 @@ public class Class5146
         if (this.field22148.method33124(this.field22149)) {
             this.method16075();
             this.field22148.method33120();
-            Client.getInstance().method35196().method32830("pop");
+            Client.getInstance().getAudioManager().method32830("pop");
         }
         if (this.field22148.method33122() || this.method16069()) {
             this.method16071();

@@ -69,7 +69,7 @@ public class Class533 extends Screen
             this.minecraft.world.method6751();
         }
         this.minecraft.method5265(new Class729(new Class2259("menu.savingLevel", new Object[0])));
-        this.minecraft.displayGuiScreen(new Class548());
+        this.minecraft.displayGuiScreen(new MainMenu());
     }
     
     @Override

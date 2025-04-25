@@ -655,7 +655,7 @@ public class InvManagerUtil
         final ItemStack method27643 = class2134.field3009.method10879(n2, n3, class2133, class2134);
         Label_0097: {
             if (method27641 != null) {
-                if (Class9367.field40167.method25613() <= Class7906.field32460.method25613() || b) {
+                if (ViaManager.field40167.method25613() <= Class7906.field32460.method25613() || b) {
                     if (class2133 != Class2133.field12439) {
                         break Label_0097;
                     }

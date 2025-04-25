@@ -31,14 +31,14 @@ public class Class3335 extends Module
     }
     
     @EventListener
-    public void method10551(final Class5739 class5739) {
+    public void method10551(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             this.method10556();
         }
     }
     
     @EventListener
-    public void method10552(final Class5734 class5734) {
+    public void method10552(final Custom2DRenderEvent custom2DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }

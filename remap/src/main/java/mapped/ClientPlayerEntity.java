@@ -153,7 +153,7 @@ public class ClientPlayerEntity extends Class754
     
     public void method4113() {
         final UpdateWalkingEvent updateWalkingEvent = new UpdateWalkingEvent(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
-        Client.getInstance().getEventBus().method21097(updateWalkingEvent);
+        Client.getInstance().getEventBus().post(updateWalkingEvent);
         if (!updateWalkingEvent.isCancelled()) {
             final boolean method1815 = this.method1815();
             if (method1815 != this.field4081) {
@@ -198,7 +198,7 @@ public class ClientPlayerEntity extends Class754
                     }
                     else if (n7 == 0) {
                         if (!b) {
-                            if (this.field4079 != this.onGround || Class9367.field40167 == Class7906.field32452) {
+                            if (this.field4079 != this.onGround || ViaManager.field40167 == Class7906.field32452) {
                                 this.field4069.method17292(new Class4353(method1821));
                             }
                         }
@@ -233,7 +233,7 @@ public class ClientPlayerEntity extends Class754
                 iterator.next().run();
             }
             updateWalkingEvent.method17031();
-            Client.getInstance().getEventBus().method21097(updateWalkingEvent);
+            Client.getInstance().getEventBus().post(updateWalkingEvent);
         }
     }
     
@@ -633,7 +633,7 @@ public class ClientPlayerEntity extends Class754
         if (this.method2756()) {
             if (!this.isPassenger()) {
                 final Class5728 class5728 = new Class5728(0.2f);
-                Client.getInstance().getEventBus().method21097(class5728);
+                Client.getInstance().getEventBus().post(class5728);
                 if (!class5728.isCancelled()) {
                     final Class6093 field24729 = this.field4085;
                     field24729.field24721 *= class5728.method17003();

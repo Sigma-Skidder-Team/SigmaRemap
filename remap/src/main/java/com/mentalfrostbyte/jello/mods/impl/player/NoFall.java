@@ -196,7 +196,7 @@ public class NoFall extends Module
                 if (NoFall.mc.player.fallDistance > 3.0f) {
                     this.field16112 = true;
                 }
-                if (this.field16112 && Client.getInstance().playerTracker().method29228() == 0 && NoFall.mc.player.onGround) {
+                if (this.field16112 && Client.getInstance().getTickManager().method29228() == 0 && NoFall.mc.player.onGround) {
                     updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 11.0);
                     this.field16112 = false;
                     break;

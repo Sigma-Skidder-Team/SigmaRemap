@@ -10,22 +10,22 @@ import com.mentalfrostbyte.Client;
 import org.apache.commons.io.IOUtils;
 import java.io.OutputStream;
 
-public class Class6659 implements Logger
+public class CustomLogger implements Logger
 {
-    public OutputStream field26314;
-    public OutputStream field26315;
-    public OutputStream field26316;
+    public OutputStream info;
+    public OutputStream warn;
+    public OutputStream error;
     
-    public Class6659(final OutputStream field26314, final OutputStream field26315, final OutputStream field26316) {
-        this.field26314 = field26314;
-        this.field26315 = field26315;
-        this.field26316 = field26316;
+    public CustomLogger(final OutputStream info, final OutputStream warn, final OutputStream error) {
+        this.info = info;
+        this.warn = warn;
+        this.error = error;
     }
     
     @Override
     public void info(final String str) {
         try {
-            IOUtils.write("Jello: INFO - " + str + "\n", this.field26314);
+            IOUtils.write("Jello: INFO - " + str + "\n", this.info);
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -35,7 +35,7 @@ public class Class6659 implements Logger
     @Override
     public void warn(final String str) {
         try {
-            IOUtils.write("Jello: WARNING - " + str + "\n", this.field26315);
+            IOUtils.write("Jello: WARNING - " + str + "\n", this.warn);
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -45,7 +45,7 @@ public class Class6659 implements Logger
     @Override
     public void error(final String str) {
         try {
-            IOUtils.write("Jello: ERROR - " + str + "\n", this.field26316);
+            IOUtils.write("Jello: ERROR - " + str + "\n", this.error);
         }
         catch (final IOException ex) {
             ex.printStackTrace();

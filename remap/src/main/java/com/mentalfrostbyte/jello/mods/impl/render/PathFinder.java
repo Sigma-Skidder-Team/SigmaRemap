@@ -56,8 +56,8 @@ public class PathFinder extends Module
             return;
         }
         ColorUtils.method19106("calc");
-        if (Client.getInstance().method35205().method26559()) {
-            Client.getInstance().method35205().method26555();
+        if (Client.getInstance().getMovementManager().method26559()) {
+            Client.getInstance().getMovementManager().method26555();
             return;
         }
         try {
@@ -68,7 +68,7 @@ public class PathFinder extends Module
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
                 final Entity class5751 = (Entity)iterator.next();
-                if (!(class5751 instanceof PlayerEntity) || Client.getInstance().method35191().method31751(class5751)) {
+                if (!(class5751 instanceof PlayerEntity) || Client.getInstance().getBotManager().method31751(class5751)) {
                     iterator.remove();
                 }
             }
@@ -88,7 +88,7 @@ public class PathFinder extends Module
             class5752.field27267 = true;
             class5752.field27268 = true;
             this.field15879 = class5749.method35017(class5752);
-            Client.getInstance().method35205().method26556(this.field15879);
+            Client.getInstance().getMovementManager().method26556(this.field15879);
             ColorUtils.method19106("calc" + this.field15879.size());
         }
         catch (final Exception ex) {

@@ -36,8 +36,8 @@ public class JelloTouch
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();
         Client.getInstance().getEventBus().register2(this);
-        if (Class9532.field41028) {
-            this.field27849.add(new Class8879(344, Class722.class));
+        if (ConfigJsonUtil.field41028) {
+            this.field27849.add(new Class8879(344, ClickGuiHolder.class));
         }
     }
     

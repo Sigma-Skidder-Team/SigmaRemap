@@ -306,7 +306,7 @@ public class Class5853<T extends LivingEntity> extends Class5844<T> implements C
             this.field23999.field25183 = MathHelper.method35700(this.field24003, this.field23999.field25183, 0.3f * MathHelper.cos(n * 0.33333334f + 3.1415927f));
             this.field23998.field25183 = MathHelper.method35700(this.field24003, this.field23998.field25183, 0.3f * MathHelper.cos(n * 0.33333334f));
         }
-        if (t instanceof Entity && Class8491.field34858.contains(t)) {
+        if (t instanceof Entity && RotationManager.field34858.contains(t)) {
             this.field23996.field25183 = this.field23996.field25183 * 0.5f - 0.9424778f;
             this.field23996.field25184 = -0.5235988f;
         }

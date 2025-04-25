@@ -30,8 +30,8 @@ public class Class8004
                     }
                     case 2: {
                         try {
-                            final Screen class8880 = (Screen)class8879.method31233().getDeclaredConstructor(ITextComponent.class).newInstance(new StringTextComponent(Class9000.field37983.get(class8879.method31233())));
-                            if (!Client.getInstance().getGuimanager().method32158(class8880)) {
+                            final Screen class8880 = (Screen)class8879.method31233().getDeclaredConstructor(ITextComponent.class).newInstance(new StringTextComponent(ScreenManager.field37983.get(class8879.method31233())));
+                            if (!Client.getInstance().getScreenManager().method32158(class8880)) {
                                 continue;
                             }
                             Class8004.field32966.displayGuiScreen(class8880);
@@ -47,7 +47,7 @@ public class Class8004
     }
     
     public static void method26200(final int n) {
-        Client.getInstance().getEventBus().method21097(new Class5715(n));
+        Client.getInstance().getEventBus().post(new Class5715(n));
     }
     
     static {

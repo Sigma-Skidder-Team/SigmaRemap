@@ -120,7 +120,7 @@ public class HypixelSpeed extends Module
                                             if (this.field15951 != 3) {
                                                 if (this.field15951 == 4) {
                                                     if (Math.abs(class5717.method16974()) < 0.1) {
-                                                        if (Class9367.method34762() == Class7906.field32452.method25613()) {
+                                                        if (ViaManager.method34762() == Class7906.field32452.method25613()) {
                                                             class5717.method16975(0.0300011120129438);
                                                         }
                                                     }

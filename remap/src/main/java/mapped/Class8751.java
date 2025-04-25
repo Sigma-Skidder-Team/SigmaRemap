@@ -30,7 +30,7 @@ public class Class8751 implements Class8750
     }
     
     public static int method30256() {
-        return Class9367.method34762();
+        return ViaManager.method34762();
     }
     
     @Override

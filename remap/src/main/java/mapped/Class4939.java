@@ -33,15 +33,15 @@ public class Class4939 extends Class4800
         this.addToList(class4878 = new Class4876(this, "pb3", n5 + n2 + 9, n3 + n6 + 9, n2, n4, ClientAssets.jello));
         class4876.doThis((class4803, n) -> {
             Client.getInstance().setupClient(ClientMode.NOADDONS);
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         });
         class4878.doThis((class4803, n) -> {
             Client.getInstance().setupClient(ClientMode.JELLO);
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         });
         class4877.doThis((class4803, n) -> {
             Client.getInstance().setupClient(ClientMode.CLASSIC);
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         });
         final CustomGuiScreen class4879 = new CustomGuiScreen(this, "socialbtns", (this.method14276() - 174) / 2, this.method14278() - 70, 174, 34);
         final Class4914 class4880;
@@ -101,7 +101,7 @@ public class Class4939 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }
     

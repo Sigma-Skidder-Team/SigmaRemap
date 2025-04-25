@@ -10,6 +10,6 @@ public class Class6494 extends Class6493
     
     @Override
     public int method19535(final Class6108 class6108) throws Exception {
-        return Class9367.method34762();
+        return ViaManager.method34762();
     }
 }

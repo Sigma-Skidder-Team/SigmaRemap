@@ -30,7 +30,7 @@ public class Class4808 extends Class4807
         this.addToList(class4805 = new Class4886(this, "exit", this.method14276() - 47, 18));
         class4805.doThis((class4803, n) -> {
             if (this.field20528 == null) {
-                ((Class4799)this.getParent()).method14197();
+                ((ClassicClickGui)this.getParent()).method14197();
                 return;
             }
             this.field20528.method14435();
@@ -71,7 +71,7 @@ public class Class4808 extends Class4807
                 if (!customGuiScreen.method14236(this.method14320(), this.method14321())) {
                     continue;
                 }
-                RenderUtil.drawString(Class9493.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883) customGuiScreen).field20878.getDesc(), -14540254);
+                RenderUtil.drawString(ClassicAssets.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883) customGuiScreen).field20878.getDesc(), -14540254);
                 RenderUtil.startScissor(5.0f, (float)(this.method14278() - 27), 12.0f, 24.0f);
                 RenderUtil.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
                 RenderUtil.endScissor();

@@ -227,7 +227,7 @@ public class Class689 extends AbstractGui
         final Object o = (method5291 instanceof Class1849) ? ((Class1849)method5291).method6919() : LongSets.EMPTY_SET;
         String str = Class9528.method35579().getName();
         if (!this.field3792.method5284()) {
-            str = Class7906.method25609(Class9367.method34762()).method25614();
+            str = Class7906.method25609(ViaManager.method34762()).method25614();
         }
         final ArrayList arrayList = Lists.newArrayList((Object[])new String[] { "Minecraft " + Class9528.method35579().getName() + " (" + str + "/" + Class7932.method25729() + ("release".equalsIgnoreCase(this.field3792.method5236()) ? "" : ("/" + this.field3792.method5236())) + ")", this.field3792.field4707, s, this.field3792.worldRenderer.method5704(), this.field3792.worldRenderer.method5706(), "P: " + this.field3792.field4640.method6488() + ". T: " + this.field3792.world.method6816(), this.field3792.world.method6726() });
         final String method5292 = this.method3833();

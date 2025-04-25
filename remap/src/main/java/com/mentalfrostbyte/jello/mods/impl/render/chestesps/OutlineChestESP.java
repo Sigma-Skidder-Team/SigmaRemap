@@ -16,7 +16,7 @@ public class OutlineChestESP extends Module
     }
     
     @EventListener
-    private void method10422(final Class5739 class5739) {
+    private void method10422(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }

@@ -19,95 +19,92 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.io.File;
 
-public class Client
-{
-    public static final String field40678 = "Jello";
-    public static final String field40679 = "5.0.0b6";
-    public static final String field40680 = "Sigma Production";
+public class Client {
+    public static final String title = "Jello";
+    public static final String version = "5.0.0b6";
+    public static final String prod = "Sigma Production";
     public static final boolean field40681 = false;
-    private static Client field40682;
+    private static Client instance;
     private static Minecraft mc;
-    private final File field40684;
+    private final File file;
     private JSONObject config;
-    private boolean field40686;
-    private Logger field40687;
-    private Class8678 field40688;
-    private Class6883 field40689;
+    private boolean thing = true;
+    private Logger logger;
+    private TrustManager trustManager;
+    private EventBus eventBus;
     private ModuleManager moduleManager;
-    private Class9070 field40691;
-    private Class9000 guiManager;
-    private Class8706 field40693;
-    private Class8949 field40694;
-    private Class8491 field40695;
-    private Class7643 field40696;
-    private Class8617 field40697;
-    private Class7861 field40698;
-    private Class8707 field40699;
-    private CombatTracker field40700;
-    private LicenseManager field40701;
-    private Class5837 field40702;
-    private Class9086 field40703;
-    private Class7951 field40704;
-    private Class8434 field40705;
-    private Class7658 field40706;
-    private Class8088 field40707;
-    private Class9367 field40708;
+    private CommandManager commandManager;
+    private ScreenManager screenManager;
+    private FriendManager friendManager;
+    private BotManager botManager;
+    private RotationManager rotationManager;
+    private MusicManager musicManager;
+    private TickManager tickManager;
+    private AltManager altManager;
+    private BlurManager blurManager;
+    private IRCManager IRCManager;
+    private LicenseManager licenseManager;
+    private AgoraManager agoraManager;
+    private AudioManager audioManager;
+    private NotificationManager notificationManager;
+    private TimeManager timeManager;
+    private WaypointManager waypointManager;
+    private MovementManager movementManager;
+    private ViaManager viaManager;
     private ClientMode clientMode;
     public static ArrayList<Texture> textureList;
-    public static boolean field40711;
-    
+    public static boolean renderHand;
+
     public static Client getInstance() {
-        return (Client.field40682 != null) ? Client.field40682 : (Client.field40682 = new Client());
+        return (Client.instance != null) ? Client.instance : (Client.instance = new Client());
     }
-    
-    public static Logger method35174() {
+
+    public static Logger getLogger2() {
         return getInstance().getLogger();
     }
-    
+
     private Client() {
-        this.field40684 = new File("sigma5");
-        this.field40686 = true;
+        this.file = new File("sigma5");
+        this.thing = true;
         this.clientMode = ClientMode.INDETERMINATE;
     }
-    
+
     public void method35175() {
         System.currentTimeMillis();
-        Class9220.method34003();
-        (this.field40687 = new Class6659(System.out, System.out, System.err)).info("Initializing...");
+        AESFixer.enableUnlimitedAESKeyStrength();
+        (this.logger = new CustomLogger(System.out, System.out, System.err)).info("Initializing...");
         try {
-            if (!this.field40684.exists()) {
-                this.field40684.mkdirs();
+            if (!this.file.exists()) {
+                this.file.mkdirs();
             }
-            this.config = Class9532.method35586(new File(this.field40684 + "/config.json"));
-        }
-        catch (final IOException ex) {
+            this.config = ConfigJsonUtil.method35586(new File(this.file + "/config.json"));
+        } catch (final IOException ex) {
             ex.printStackTrace();
         }
-        this.field40688 = Class8678.method29718();
-        this.field40689 = new Class6883();
-        (this.field40691 = new Class9070()).method32666();
+        this.trustManager = TrustManager.method29718();
+        this.eventBus = new EventBus();
+        (this.commandManager = new CommandManager()).method32666();
         ClientAssets.decryptTextures();
-        (this.field40701 = new LicenseManager()).method19338();
-        (this.field40702 = new Class5837()).method17548();
-        this.guiManager = new Class9000();
-        (this.field40693 = new Class8706()).method29876();
-        (this.field40694 = new Class8949()).method31750();
-        (this.field40695 = new Class8491()).method28365();
-        (this.field40697 = new Class8617()).method29223();
-        (this.field40705 = new Class8434()).method28160();
-        (this.field40696 = new Class7643()).method24158();
-        (this.field40703 = new Class9086()).method32831();
-        (this.field40704 = new Class7951()).method25783();
-        (this.field40698 = new Class7861()).method25457();
-        (this.field40706 = new Class7658()).method24261();
-        (this.field40699 = new Class8707()).method29895();
-        (this.field40707 = new Class8088()).method26554();
-        GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), (CharSequence)"Sigma 5.0");
+        (this.licenseManager = new LicenseManager()).init();
+        (this.agoraManager = new AgoraManager()).method17548();
+        this.screenManager = new ScreenManager();
+        (this.friendManager = new FriendManager()).method29876();
+        (this.botManager = new BotManager()).method31750();
+        (this.rotationManager = new RotationManager()).method28365();
+        (this.tickManager = new TickManager()).method29223();
+        (this.timeManager = new TimeManager()).init();
+        (this.musicManager = new MusicManager()).method24158();
+        (this.audioManager = new AudioManager()).method32831();
+        (this.notificationManager = new NotificationManager()).method25783();
+        (this.altManager = new AltManager()).method25457();
+        (this.waypointManager = new WaypointManager()).method24261();
+        (this.blurManager = new BlurManager()).method29895();
+        (this.movementManager = new MovementManager()).method26554();
+        GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), (CharSequence) "Sigma 5.0");
         System.currentTimeMillis();
-        this.method35177();
-        this.field40687.info("Initialized.");
+        this.logger.info("Initialized.");
     }
-    
+
     public void initRPC() {
         final DiscordRPC instance = DiscordRPC.INSTANCE;
         final String s = "693493612754763907";
@@ -131,58 +128,50 @@ public class Client
                         discordRichPresence2.smallImageText = "Premium";
                         discordRPC.Discord_UpdatePresence(discordRichPresence2);
                     }
-                    else {
-                        continue;
-                    }
+                } catch (final InterruptedException ex) {
                 }
-                catch (final InterruptedException ex) {}
             }
         }, "RPC-Callback-Handler").start();
     }
-    
-    public void method35177() {
-    }
-    
-    public void method35178() {
-        this.field40687.info("Shutting down...");
+
+    public void shutdown() {
+        this.logger.info("Shutting down...");
         try {
-            if (this.guiManager != null) {
-                this.guiManager.method32142(this.config);
+            if (this.screenManager != null) {
+                this.screenManager.method32142(this.config);
             }
             if (this.moduleManager != null) {
                 this.moduleManager.saveModProfiles(this.config);
             }
             final Class5736 class5736 = new Class5736(this.config);
-            if (this.field40689 != null) {
-                this.field40689.method21097(class5736);
+            if (this.eventBus != null) {
+                this.eventBus.post(class5736);
             }
-            Class9532.method35585(class5736.method17022(), new File(this.field40684 + "/config.json"));
-        }
-        catch (final IOException ex) {
-            this.field40687.error("Unable to shutdown correctly. Config may be corrupt?");
+            ConfigJsonUtil.saveJSONToFile(class5736.method17022(), new File(this.file + "/config.json"));
+        } catch (final IOException ex) {
+            this.logger.error("Unable to shutdown correctly. Config may be corrupt?");
             ex.printStackTrace();
         }
-        this.field40687.info("Done.");
+        this.logger.info("Done.");
     }
-    
+
     public void method35179() {
         try {
-            Class9532.method35585(this.config, new File(this.field40684 + "/config.json"));
-        }
-        catch (final IOException ex) {
+            ConfigJsonUtil.saveJSONToFile(this.config, new File(this.file + "/config.json"));
+        } catch (final IOException ex) {
             ex.printStackTrace();
         }
     }
-    
+
     public void method35180() {
-        this.guiManager.method32134();
+        this.screenManager.method32134();
     }
-    
-    public void method35181() {
+
+    public void hookCustom2DRenderEvent() {
         GL11.glPushMatrix();
-        final double n = Client.mc.window.getGuiScaleFactor() / (float)Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
+        final double n = Client.mc.window.getGuiScaleFactor() / (float) Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
         GL11.glScaled(n, n, n);
-        GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, (double)Class9000.field37993);
+        GL11.glScaled((double) ScreenManager.guiScale, (double) ScreenManager.guiScale, (double) ScreenManager.guiScale);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0f, 0.0f, 1000.0f);
@@ -192,7 +181,7 @@ public class Client
         GL11.glDisable(2896);
         RenderSystem.method30015(Class2050.field11693, Class2135.field12460, Class2050.field11686, Class2135.field12464);
         ClientAssets.gingerbread.bind();
-        getInstance().getEventBus().method21097(new Class5734());
+        getInstance().getEventBus().post(new Custom2DRenderEvent());
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.method30028();
         RenderSystem.disableDepthTest();
@@ -200,12 +189,12 @@ public class Client
         RenderSystem.method30000(518, 0.1f);
         GL11.glPopMatrix();
     }
-    
+
     public void addTexture(final Texture e) {
         Client.textureList.add(e);
     }
-    
-    public void renderVisuals() {
+
+    public void hookHUD() {
         if (!Client.textureList.isEmpty()) {
             for (Texture texture : Client.textureList) {
                 texture.release();
@@ -213,33 +202,31 @@ public class Client
             Client.textureList.clear();
         }
         if (getInstance().getClientMode() != ClientMode.NOADDONS) {
-            final double n = Client.mc.window.getGuiScaleFactor() / (float)Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
+            final double n = Client.mc.window.getGuiScaleFactor() / (float) Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
             GL11.glScaled(n, n, 1.0);
-            GL11.glScaled((double)Class9000.field37993, (double)Class9000.field37993, 1.0);
+            GL11.glScaled((double) ScreenManager.guiScale, (double) ScreenManager.guiScale, 1.0);
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0f, 0.0f, 1000.0f);
-            this.guiManager.renderWatermark();
+            this.screenManager.renderWatermark();
             RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
             RenderSystem.enableAlphaTest();
             GL11.glAlphaFunc(518, 0.1f);
-            final Class1663 method5290 = Client.mc.method5290();
-            Client.mc.method5290();
-            method5290.method5849(Class1663.field9428);
+            Client.mc.method5290().method5849(Class1663.field9428);
         }
     }
-    
-    public void method35184() {
+
+    public void hookCustom3DRenderEvent() {
         if (Client.mc != null) {
             if (Client.mc.world != null) {
                 if (Client.mc.player != null) {
-                    if (!Client.field40711) {
+                    if (!Client.renderHand) {
                         GL11.glTranslatef(0.0f, 0.0f, 0.0f);
                         RenderSystem.disableDepthTest();
                         RenderSystem.method30010(false);
                         GL11.glDisable(2896);
-                        this.field40689.method21097(new Class5739());
+                        this.eventBus.post(new Custom3DRenderEvent());
                         RenderSystem.enableDepthTest();
                         RenderSystem.method30010(true);
                         final Class1663 method5290 = Client.mc.method5290();
@@ -250,133 +237,123 @@ public class Client
             }
         }
     }
-    
-    public boolean method35185() {
-        return this.field40686;
-    }
-    
-    public void method35186(final boolean field40686) {
-        this.field40686 = field40686;
-    }
-    
+
     public Logger getLogger() {
-        return this.field40687;
+        return this.logger;
     }
-    
-    public Class6883 getEventBus() {
-        return this.field40689;
+
+    public EventBus getEventBus() {
+        return this.eventBus;
     }
-    
+
     public ModuleManager moduleManager() {
         return this.moduleManager;
     }
-    
-    public Class8706 method35190() {
-        return this.field40693;
+
+    public FriendManager getFriendManager() {
+        return this.friendManager;
     }
-    
-    public Class8949 method35191() {
-        return this.field40694;
+
+    public BotManager getBotManager() {
+        return this.botManager;
     }
-    
-    public Class8491 method35192() {
-        return this.field40695;
+
+    public RotationManager getRotationManager() {
+        return this.rotationManager;
     }
-    
-    public Class9000 getGuimanager() {
-        return this.guiManager;
+
+    public ScreenManager getScreenManager() {
+        return this.screenManager;
     }
-    
-    public Class8617 playerTracker() {
-        return this.field40697;
+
+    public TickManager getTickManager() {
+        return this.tickManager;
     }
-    
-    public Class8434 method35195() {
-        return this.field40705;
+
+    public TimeManager getTimeManager() {
+        return this.timeManager;
     }
-    
-    public Class9086 method35196() {
-        return this.field40703;
+
+    public AudioManager getAudioManager() {
+        return this.audioManager;
     }
-    
-    public Class7951 getNotificationManager() {
-        return this.field40704;
+
+    public NotificationManager getNotificationManager() {
+        return this.notificationManager;
     }
-    
-    public Class7861 method35198() {
-        return this.field40698;
+
+    public AltManager getAltManager() {
+        return this.altManager;
     }
-    
-    public Class7643 method35199() {
-        return this.field40696;
+
+    public MusicManager getMusicManager() {
+        return this.musicManager;
     }
-    
-    public Class7658 method35200() {
-        return this.field40706;
+
+    public WaypointManager getWaypointManager() {
+        return this.waypointManager;
     }
-    
+
     public LicenseManager getNetworkManager() {
-        return this.field40701;
+        return this.licenseManager;
     }
-    
-    public Class8678 method35202() {
-        return this.field40688;
+
+    public TrustManager getTrustManager() {
+        return this.trustManager;
     }
-    
-    public Class5837 method35203() {
-        return this.field40702;
+
+    public AgoraManager getAgoraManager() {
+        return this.agoraManager;
     }
-    
-    public Class9070 method35204() {
-        return this.field40691;
+
+    public CommandManager getCommandManager() {
+        return this.commandManager;
     }
-    
-    public Class8088 method35205() {
-        return this.field40707;
+
+    public MovementManager getMovementManager() {
+        return this.movementManager;
     }
-    
-    public JSONObject method35206() {
+
+    public JSONObject getConfig() {
         return this.config;
     }
-    
-    public void method35207() {
+
+    public void resetConfig() {
         this.config = new JSONObject();
     }
-    
-    public File method35208() {
-        return this.field40684;
+
+    public File getFile() {
+        return this.file;
     }
-    
+
     public ClientMode getClientMode() {
         return this.clientMode;
     }
-    
-    public void setupClient(final ClientMode bruh) {
-        this.clientMode = bruh;
-        if (bruh != ClientMode.CLASSIC) {
-            if (bruh == ClientMode.JELLO) {
+
+    public void setupClient(final ClientMode mode) {
+        this.clientMode = mode;
+        if (mode != ClientMode.CLASSIC) {
+            if (mode == ClientMode.JELLO) {
                 this.initRPC();
                 GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Classic Sigma 5.0");
             }
-        }
-        else {
-            Class9493.method35323();
-            getInstance().getGuimanager().method33452();
+        } else {
+            ClassicAssets.initClassicAssets();
+            getInstance().getScreenManager().putClassicScreens();
             GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Jello for Sigma 5.0");
         }
         if (this.moduleManager == null) {
             if (ModuleSettingInitializr.thread != null) {
                 (this.moduleManager = new ModuleManager()).register(this.clientMode);
                 this.moduleManager.loadModProfiles(this.config);
-                this.moduleManager.method21547();
             }
         }
         System.gc();
     }
-    
+
     static {
         Client.mc = Minecraft.getInstance();
-        Client.textureList = new ArrayList<Texture>();
-        Client.field40711 = false;
+        Client.textureList = new ArrayList<>();
+        Client.renderHand = false;
     }
 }

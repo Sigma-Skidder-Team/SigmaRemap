@@ -80,7 +80,7 @@ public class BowAimbot extends Module
             if (class399 == BowAimbot.mc.player) {
                 iterator.remove();
             }
-            else if (Client.getInstance().method35190().method29878(class399)) {
+            else if (Client.getInstance().getFriendManager().method29878(class399)) {
                 iterator.remove();
             }
             else if (!(class399 instanceof LivingEntity)) {
@@ -101,7 +101,7 @@ public class BowAimbot extends Module
             else if (!this.method9883("Players") && class399 instanceof PlayerEntity) {
                 iterator.remove();
             }
-            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
+            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
                 iterator.remove();
             }
             else if (!this.method9883("Invisible") && class399.method1823()) {

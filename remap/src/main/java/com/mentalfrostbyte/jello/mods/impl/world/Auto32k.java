@@ -100,7 +100,7 @@ public class Auto32k extends Module
     }
     
     @EventListener
-    private void method9982(final Class5739 class5739) {
+    private void method9982(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }

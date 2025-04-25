@@ -13,12 +13,12 @@ public class Class4933 extends Class4800
     public Class4832 field21129;
     public Class4909 field21130;
     public Class4909 field21131;
-    public Class7861 field21132;
+    public AltManager field21132;
     private String field21133;
     
     public Class4933(final Class7971 class7971) {
         super("Alt Manager");
-        this.field21132 = Client.getInstance().method35198();
+        this.field21132 = Client.getInstance().getAltManager();
         this.field21133 = "§7Waiting...";
         this.setListening(false);
         final int n = 400;
@@ -43,12 +43,12 @@ public class Class4933 extends Class4800
             class7971.method25893(this.field21129.getTypedText());
             this.field21133 = "Edited!";
         });
-        this.field21131.doThis((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4936()));
+        this.field21131.doThis((class4803, n) -> Client.getInstance().getScreenManager().method32156(new Class4936()));
     }
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.PALE_RED.color, 0.1f));
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95f));
         RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
@@ -60,7 +60,7 @@ public class Class4933 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Client.getInstance().getGuimanager().method32156(new Class4936());
+            Client.getInstance().getScreenManager().method32156(new Class4936());
         }
     }
 }

@@ -622,7 +622,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void onDisconnect(final ITextComponent class2250) {
         this.field23808.method5264();
         if (this.field23807 == null) {
-            this.field23808.displayGuiScreen(new Class735(new Class720(new Class548()), "disconnect.lost", class2250));
+            this.field23808.displayGuiScreen(new Class735(new Class720(new MainMenu()), "disconnect.lost", class2250));
         }
         else if (!(this.field23807 instanceof RealmsScreenProxy)) {
             this.field23808.displayGuiScreen(new Class735(this.field23807, "disconnect.lost", class2250));

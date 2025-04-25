@@ -12,7 +12,7 @@ public class Class734 extends Screen
     
     @Override
     public void init() {
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.toTitle", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class548())));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.toTitle", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new MainMenu())));
         this.addButton(new Class654(this.width / 2 - 155 + 160, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("menu.quit", new Object[0]), class654 -> this.minecraft.method5253()));
     }
     

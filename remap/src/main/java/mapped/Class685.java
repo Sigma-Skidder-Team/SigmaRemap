@@ -259,12 +259,12 @@ public class Class685 extends AbstractGui
                 final Class9290 class9290 = (method3816 == null) ? method3815.method19644(1) : method3816;
                 if (class9290 != null) {
                     final Class5726 class9291 = new Class5726(true);
-                    Client.getInstance().getEventBus().method21097(class9291);
+                    Client.getInstance().getEventBus().post(class9291);
                     if (class9291.isCancelled()) {
                         return;
                     }
                     this.method3789(class9290);
-                    Client.getInstance().getEventBus().method21097(new Class5726(false));
+                    Client.getInstance().getEventBus().post(new Class5726(false));
                 }
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();

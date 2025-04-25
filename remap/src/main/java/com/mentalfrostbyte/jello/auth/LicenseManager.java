@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.auth;
 
 import com.mentalfrostbyte.Client;
 import mapped.CaptchaChecker;
-import mapped.CombatTracker;
+import mapped.IRCManager;
 import mapped.PremiumChecker;
 import org.apache.commons.io.FileUtils;
 
@@ -43,7 +43,7 @@ public class LicenseManager
     public String token;
     public static boolean premium;
     public static boolean field25696;
-    public CombatTracker combatTracker;
+    public IRCManager IRCManager;
     
     public LicenseManager() {
         this.mainURL = "https://jelloprg.sigmaclient.info/";
@@ -55,12 +55,12 @@ public class LicenseManager
         this.httpClient = (HttpClient)HttpClients.createDefault();
     }
     
-    public void method19338() {
+    public void init() {
         Client.getInstance().getEventBus().register2(this);
-        this.combatTracker = new CombatTracker(this);
+        this.IRCManager = new IRCManager(this);
     }
 
-    public String newAccount(String var1, String var2, CaptchaChecker var3) {
+    public String login(String var1, String var2, CaptchaChecker var3) {
         String error = "Unexpected error";
 
         try {
@@ -78,19 +78,19 @@ public class LicenseManager
             if (entity != null) {
                 String response_real;
                 try (InputStream inputStream = entity.getContent()) {
-                    String var13 = IOUtils.toString(inputStream, "UTF-8");
-                    CustomJSONObject customJsonObject = new CustomJSONObject(var13);
-                    if (customJsonObject.getBoolean("success")) {
-                        if (customJsonObject.has("premium")) {
-                            new Thread(new PremiumChecker(customJsonObject.has("premium"))).start();
+                    String content = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+                    CustomJSONObject json = new CustomJSONObject(content);
+                    if (json.getBoolean("success")) {
+                        if (json.has("premium")) {
+                            new Thread(new PremiumChecker(json.has("premium"))).start();
                         }
 
-                        this.handleLoginResponse(customJsonObject);
+                        this.parse(json);
                         return null;
                     }
 
-                    if (customJsonObject.has("error")) {
-                        error = customJsonObject.getString("error");
+                    if (json.has("error")) {
+                        error = json.getString("error");
                     }
 
                     response_real = error;
@@ -106,7 +106,7 @@ public class LicenseManager
         return error;
     }
     
-    public void method30448(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
+    public void register(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
         if (s3 == null) {
             s3 = "";
         }
@@ -127,7 +127,7 @@ public class LicenseManager
                 try (final InputStream content = entity.getContent()) {
                     final CustomJSONObject json = new CustomJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
                     if (json.getBoolean("success")) {
-                        this.handleLoginResponse(json);
+                        this.parse(json);
                         return;
                     }
                     if (json.has("error")) {
@@ -142,12 +142,12 @@ public class LicenseManager
         }
     }
     
-    public String validateToken() {
+    public String validate() {
         new Thread(new PremiumChecker(true)).start();
         return "Cracked";
     }
     
-    public void loadLicense() {
+    public void load() {
         if (this.encryptor != null) {
             return;
         }
@@ -158,11 +158,11 @@ public class LicenseManager
                 if (this.encryptor.username == null || this.encryptor.username.isEmpty()) {
                     this.encryptor = null;
                 }
-                if (this.validateToken() != null) {
+                if (this.validate() != null) {
                     this.encryptor = null;
                 }
                 else {
-                    Client.method35174().setThreadName("Logged in!");
+                    Client.getLogger2().setThreadName("Logged in!");
                 }
             }
             catch (final IOException ex) {}
@@ -185,7 +185,7 @@ public class LicenseManager
                 try (final InputStream content = entity.getContent()) {
                     final CustomJSONObject class8774 = new CustomJSONObject(IOUtils.toString(content, "UTF-8"));
                     if (class8774.getBoolean("success")) {
-                        this.handleLoginResponse(class8774);
+                        this.parse(class8774);
                         return null;
                     }
                     if (class8774.has("error")) {
@@ -235,7 +235,7 @@ public class LicenseManager
         return null;
     }
     
-    public void handleLoginResponse(final totalcross.json.JSONObject JSONObject) {
+    public void parse(final totalcross.json.JSONObject JSONObject) {
         String username = null;
         String authToken = null;
         String agoraToken = null;

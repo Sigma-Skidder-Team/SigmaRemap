@@ -6,7 +6,7 @@ package mapped;
 
 import org.lwjgl.opengl.GL11;
 
-public class Class549 extends Class548
+public class Class549 extends MainMenu
 {
     @Override
     public void render(final int n, final int n2, final float n3) {

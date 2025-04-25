@@ -59,7 +59,7 @@ public class Class4910 extends Class4825
         final boolean b = this.method14308() && this.getParent().getParent().method14236(n, n2);
         this.field21010.changeDirection(b ? Direction.BACKWARDS : Direction.FORWARDS);
         if (b) {
-            Client.getInstance().getGuimanager().method32133(Class9000.field37990);
+            Client.getInstance().getScreenManager().method32133(ScreenManager.field37990);
         }
         super.method14200(n, n2);
     }

@@ -45,7 +45,7 @@ public class CubecraftFly extends Module
             this.method10182();
         }
         else {
-            this.field15694 = (Class9367.method34762() != Class7906.field32452.method25613() && !this.method9883("Damage"));
+            this.field15694 = (ViaManager.method34762() != Class7906.field32452.method25613() && !this.method9883("Damage"));
         }
     }
     
@@ -53,7 +53,7 @@ public class CubecraftFly extends Module
     public void onDisable() {
         this.field15697.method23934();
         this.field15697.method23933();
-        if (Class9367.method34762() != Class7906.field32452.method25613()) {
+        if (ViaManager.method34762() != Class7906.field32452.method25613()) {
             if (this.field15695 != 0) {
                 this.field15695 = -2;
             }
@@ -107,7 +107,7 @@ public class CubecraftFly extends Module
         if (CubecraftFly.mc.player.hurtResistantTime != 0 && !this.field15693) {
             this.field15693 = !this.field15693;
         }
-        if (Class9367.method34762() == Class7906.field32452.method25613()) {
+        if (ViaManager.method34762() == Class7906.field32452.method25613()) {
             if (this.field15695 >= 0 && CubecraftFly.field15696 == 1) {
                 double a = 0.0;
                 float field26532 = 1.0f;
@@ -299,7 +299,7 @@ public class CubecraftFly extends Module
             return;
         }
         updateWalkingEvent.method17033(true);
-        if (Class9367.method34762() == Class7906.field32452.method25613() && (CubecraftFly.field15696 == 0 || (CubecraftFly.field15696 == 1 && this.field15697.method23935() > 2000L)) && this.field15694) {
+        if (ViaManager.method34762() == Class7906.field32452.method25613() && (CubecraftFly.field15696 == 0 || (CubecraftFly.field15696 == 1 && this.field15697.method23935() > 2000L)) && this.field15694) {
             updateWalkingEvent.setCancelled(true);
         }
         updateWalkingEvent.method17045(true);
@@ -313,7 +313,7 @@ public class CubecraftFly extends Module
         final IPacket method16998 = class5723.method16998();
         if (method16998 instanceof Class4328) {
             final Class4328 class5724 = (Class4328)method16998;
-            if (Class9367.method34762() != Class7906.field32452.method25613()) {
+            if (ViaManager.method34762() != Class7906.field32452.method25613()) {
                 class5724.field19381 = CubecraftFly.mc.player.rotationPitch;
                 class5724.field19380 = CubecraftFly.mc.player.rotationYaw;
                 return;
@@ -349,7 +349,7 @@ public class CubecraftFly extends Module
         if (ColorUtils.method19150()) {
             return;
         }
-        if (Class9367.method34762() == Class7906.field32452.method25613()) {
+        if (ViaManager.method34762() == Class7906.field32452.method25613()) {
             this.field15698 = CubecraftFly.mc.player.posY;
             final double field2395 = CubecraftFly.mc.player.posX;
             final double field2396 = CubecraftFly.mc.player.posY;

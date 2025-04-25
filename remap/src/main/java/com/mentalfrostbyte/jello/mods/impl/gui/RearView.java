@@ -53,7 +53,7 @@ public class RearView extends PremiumModule
                 if (class5744.method1732(RearView.mc.player) < 12.0f) {
                     if (!this.method10623(class5744)) {
                         if (RearView.mc.player != class5744) {
-                            if (!Client.getInstance().method35191().method31751(class5744)) {
+                            if (!Client.getInstance().getBotManager().method31751(class5744)) {
                                 return b;
                             }
                         }
@@ -112,10 +112,10 @@ public class RearView extends PremiumModule
                 n5 *= (int) MathUtils.lerp(this.field15985.calcPercent(), 0.3, 0.88, 0.47, 1.0);
             }
             RenderUtil.method26913((float)(RearView.mc.window.method7694() - n4 - n2), (float)(RearView.mc.window.method7695() + n5), (float)n2, (float)(n3 - 1), 14.0f, this.field15985.calcPercent());
-            final int n6 = (int)(n2 * Class9000.field37993);
-            final int n7 = (int)(n3 * Class9000.field37993);
-            final int n8 = (int)(n4 * Class9000.field37993);
-            final int n9 = (int)(n5 * Class9000.field37993);
+            final int n6 = (int)(n2 * ScreenManager.guiScale);
+            final int n7 = (int)(n3 * ScreenManager.guiScale);
+            final int n8 = (int)(n4 * ScreenManager.guiScale);
+            final int n9 = (int)(n5 * ScreenManager.guiScale);
             RenderSystem.pushMatrix();
             this.method10626(RearView.field15986, n6, n7, RearView.mc.window.method7692() - n8 - n6, RearView.mc.window.method7693() + n9);
             RenderSystem.popMatrix();
@@ -126,7 +126,7 @@ public class RearView extends PremiumModule
             RenderSystem.method30057(5888);
             RenderSystem.method30058();
             RenderSystem.translatef(0.0f, 0.0f, -2000.0f);
-            GL11.glScaled(1.0 / RearView.mc.window.getGuiScaleFactor() * Class9000.field37993, 1.0 / RearView.mc.window.getGuiScaleFactor() * Class9000.field37993, 1.0);
+            GL11.glScaled(1.0 / RearView.mc.window.getGuiScaleFactor() * ScreenManager.guiScale, 1.0 / RearView.mc.window.getGuiScaleFactor() * ScreenManager.guiScale, 1.0);
             RearView.field15986.method18397();
             RearView.mc.method5234().method18395(true);
         }
@@ -197,12 +197,12 @@ public class RearView extends PremiumModule
             final double field2401 = RearView.mc.gameSettings.field23471;
             RearView.mc.gameSettings.field23471 = 114.0;
             RearView.mc.field4644.field9392 = false;
-            Client.field40711 = true;
+            Client.renderHand = true;
             final Class6153 field2402 = RearView.mc.worldRenderer.field9308;
             RearView.mc.worldRenderer.field9308 = null;
             RearView.mc.field4644.method5820(class5741.field23312, Util.method27838(), new MatrixStack());
             RearView.mc.worldRenderer.field9308 = field2402;
-            Client.field40711 = false;
+            Client.renderHand = false;
             RearView.mc.field4644.field9392 = true;
             RearView.mc.gameSettings.field23471 = field2401;
             RearView.mc.player.rotationYaw = field2399;

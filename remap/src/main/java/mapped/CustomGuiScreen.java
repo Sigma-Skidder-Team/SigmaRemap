@@ -176,7 +176,7 @@ public class CustomGuiScreen implements Class4925
         }
         catch (final ConcurrentModificationException ex) {
             ex.printStackTrace();
-            Client.method35174().error("FUCK! Why does this shit happen");
+            Client.getLogger2().error("FUCK! Why does this shit happen");
         }
         this.field20492 &= this.field20491;
         for (final Class6507 class6507 : this.method14269()) {

@@ -44,7 +44,7 @@ public class Class6697 extends Class6693
                 }
             }
         }
-        Class9070.method32674(() -> {
+        CommandManager.method32674(() -> {
             final NonNullList<ItemStack> class8324;
             final Object o = new Class443((ItemStack[])class8324.toArray((Object[])new ItemStack[0]));
             final Minecraft field26420 = Class6697.field26420;

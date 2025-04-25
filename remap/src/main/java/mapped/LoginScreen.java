@@ -79,9 +79,9 @@ public class LoginScreen extends Class4841 {
                 captchaChecker.setChallengeAnswer(this.inputCatcha.getTypedText());
             }
             Client.getInstance().getNetworkManager().resetLicense();
-            Client.getInstance().getNetworkManager().method30448(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), this.inputEmail.getTypedText(), captchaChecker);
+            Client.getInstance().getNetworkManager().register(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), this.inputEmail.getTypedText(), captchaChecker);
             final RegisterScreen var5 = (RegisterScreen) this.getParent();
-            final String s = Client.getInstance().getNetworkManager().newAccount(this.inputUsername.getTypedText());
+            final String s = Client.getInstance().getNetworkManager().login(this.inputUsername.getTypedText());
             if (s != null) {
                 var5.method14781("Error", s);
                 this.inputCatcha.setTypedText("");

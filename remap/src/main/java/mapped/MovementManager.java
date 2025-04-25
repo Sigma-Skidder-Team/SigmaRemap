@@ -17,8 +17,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class8088
-{
+public class MovementManager {
     private Minecraft field33313;
     private List<Class8733> field33314;
     public float field33315;
@@ -26,8 +25,8 @@ public class Class8088
     private BlockPos field33317;
     private boolean field33318;
     public Class2049 field33319;
-    
-    public Class8088() {
+
+    public MovementManager() {
         this.field33313 = Minecraft.getInstance();
         this.field33314 = new ArrayList<Class8733>();
         this.field33315 = -999.0f;
@@ -35,11 +34,11 @@ public class Class8088
         this.field33318 = false;
         this.field33319 = Class2049.field11676;
     }
-    
+
     public void method26554() {
         Client.getInstance().getEventBus().register2(this);
     }
-    
+
     public void method26555() {
         this.field33314.clear();
         this.field33315 = -999.0f;
@@ -47,37 +46,37 @@ public class Class8088
         Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).method9907(false);
         Client.getInstance().moduleManager().getModuleByClass(Fly.class).method9907(false);
     }
-    
+
     public void method26556(final List<Class8733> field33314) {
         this.method26555();
         this.method26557(false);
         this.field33314 = field33314;
         this.field33319 = Class2049.field11676;
     }
-    
+
     public void method26557(final boolean field33318) {
         this.field33318 = field33318;
     }
-    
+
     public boolean method26558() {
         return this.field33318;
     }
-    
+
     public boolean method26559() {
         return this.field33314 != null && !this.field33314.isEmpty();
     }
-    
+
     private boolean method26560() {
         return this.method26559() && !this.method26558();
     }
-    
+
     public float method26561() {
         if (this.method26560()) {
             return this.field33315;
         }
         return -999.0f;
     }
-    
+
     @EventListener
     private void method26562(final Class5742 class5742) {
         if (!this.method26560()) {
@@ -123,12 +122,13 @@ public class Class8088
         final float field33315 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
         final double n6 = Math.min(method16745 * 0.75, Class7482.method23137()) * 0.8999999761581421;
         this.field33315 = field33315;
-        if (class5743.field36684.method30692().add(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.player.method1894().add(0, -this.field33313.player.method1894().getY(), 0)) && this.field33313.player.fallDistance > 0.0f) {}
+        if (class5743.field36684.method30692().add(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.player.method1894().add(0, -this.field33313.player.method1894().getY(), 0)) && this.field33313.player.fallDistance > 0.0f) {
+        }
         final double cos = Math.cos(Math.toRadians(this.field33313.player.rotationYaw - field33315));
         final double sin = Math.sin(Math.toRadians(this.field33313.player.rotationYaw - field33315));
         final double min = Math.min(1.0 / Math.abs(cos), 1.0 / Math.abs(sin));
-        this.field33313.player.field2970 = (float)(cos * min);
-        this.field33313.player.field2968 = (float)(sin * min);
+        this.field33313.player.field2970 = (float) (cos * min);
+        this.field33313.player.field2968 = (float) (sin * min);
         final double n7 = Math.cos(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final double n8 = Math.sin(Math.toRadians(field33315 + 90.0f)) * sqrt;
         final boolean method16747 = Class8353.method27876();
@@ -189,7 +189,7 @@ public class Class8088
             this.method26555();
         }
     }
-    
+
     public boolean method26563(final BlockPos class354) {
         final float n = class354.getX() + 0.5f;
         final float n2 = class354.getZ() + 0.5f;
@@ -211,7 +211,7 @@ public class Class8088
         }
         return false;
     }
-    
+
     @EventListener
     private void method26564(final UpdateWalkingEvent updateWalkingEvent) {
         if (!updateWalkingEvent.method17046()) {
@@ -221,7 +221,8 @@ public class Class8088
             final ArrayList list = new ArrayList();
             final Class8733 class5745 = this.field33314.get(this.field33314.size() - 1);
             if (this.field33316 != -999.0f) {
-                if (class5745.field36691 == Class2049.field11679) {}
+                if (class5745.field36691 == Class2049.field11679) {
+                }
             }
             final Iterator<Long> iterator = class5745.field36693.iterator();
             while (iterator.hasNext()) {
@@ -240,23 +241,21 @@ public class Class8088
             Class4609.method13675(list);
             if (list.isEmpty()) {
                 this.field33317 = null;
-            }
-            else if (this.field33317 != null) {
+            } else if (this.field33317 != null) {
                 if (this.field33313.world.getBlockState(this.field33317).method21706() || Math.sqrt(this.field33313.player.method1733(this.field33317.getX() + 0.5, this.field33317.getY() + 0.5, this.field33317.getZ() + 0.5)) > 6.0) {
-                    this.field33317 = (BlockPos)list.get(0);
+                    this.field33317 = (BlockPos) list.get(0);
                 }
                 final float[] method1130 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 updateWalkingEvent.method17043(method1130[0]);
                 updateWalkingEvent.method17041(method1130[1]);
                 this.field33313.player.method2707(Class316.field1877);
                 this.field33313.playerController.method27314(this.field33317, Class4609.method13710(this.field33317));
-            }
-            else {
-                this.field33317 = (BlockPos)list.get(0);
+            } else {
+                this.field33317 = (BlockPos) list.get(0);
                 final float[] method1131 = Class4609.method13672(this.field33317, Class4609.method13710(this.field33317));
                 updateWalkingEvent.method17043(method1131[0]);
                 updateWalkingEvent.method17041(method1131[1]);
-                Client.getInstance().getEventBus().method21097(new Class5752(0, false, this.field33317));
+                Client.getInstance().getEventBus().post(new Class5752(0, false, this.field33317));
             }
             if (class5745.field36691 != Class2049.field11679) {
                 this.field33316 = updateWalkingEvent.method17040();
@@ -264,7 +263,7 @@ public class Class8088
             }
         }
     }
-    
+
     @EventListener
     public void method26565(final Class5738 class5738) {
         if (this.method26560() && this.field33313.player.onGround) {
@@ -273,16 +272,16 @@ public class Class8088
             }
         }
     }
-    
+
     public Class2049 method26566() {
         if (this.field33314.size() <= 1) {
             return Class2049.field11676;
         }
         return this.field33314.get(this.field33314.size() - 2).field36691;
     }
-    
+
     @EventListener
-    public void method26567(final Class5739 class5739) {
+    public void method26567(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.method26560()) {
             return;
         }
@@ -324,7 +323,7 @@ public class Class8088
             }
         }
     }
-    
+
     public void method26568(final double n, final double n2, final double n3, final String s) {
         GL11.glBlendFunc(770, 771);
         GL11.glEnable(3042);
@@ -342,8 +341,8 @@ public class Class8088
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
-        GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
+        RenderUtil.method26876((float) (-field40314.getWidth(s) / 2 - 10), 0.0f, (float) (field40314.getWidth(s) / 2 + 10), (float) (field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
+        GL11.glTranslated((double) (-field40314.getWidth(s) / 2), 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();

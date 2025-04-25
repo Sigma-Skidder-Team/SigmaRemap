@@ -102,9 +102,9 @@ public class Waypoints extends Module
     }
     
     @EventListener
-    public void method10008(final Class5739 class5739) {
+    public void method10008(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
-            for (final Class8124 class5740 : this.method10007(Client.getInstance().method35200().method24262())) {
+            for (final Class8124 class5740 : this.method10007(Client.getInstance().getWaypointManager().method24262())) {
                 final BlockPos class5741 = new BlockPos(class5740.field33469 - ((class5740.field33469 <= 0) ? 1 : 0), class5740.field33472, class5740.field33470 - ((class5740.field33470 <= 0) ? 1 : 0));
                 if (Math.sqrt(Class8591.method29092(class5741)) <= 300.0) {
                     if (Waypoints.mc.world.method6965(class5741) != null) {

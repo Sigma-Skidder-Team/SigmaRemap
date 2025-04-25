@@ -31,7 +31,7 @@ public class Class6706 extends Class6693
                         break;
                     }
                     if (Pattern.compile("[a-zA-Z0-9_]{2,16}").matcher(array[1].method26314()).matches()) {
-                        if (!Client.getInstance().method35190().method29882(array[1].method26314())) {
+                        if (!Client.getInstance().getFriendManager().method29882(array[1].method26314())) {
                             class6428.method19104("\"" + array[1].method26314() + "\" is already your friend.");
                         }
                         else {
@@ -48,7 +48,7 @@ public class Class6706 extends Class6693
                         class6428.method19104("Usage : .friend remove <name>");
                         break;
                     }
-                    if (!Client.getInstance().method35190().method29886(array[1].method26314())) {
+                    if (!Client.getInstance().getFriendManager().method29886(array[1].method26314())) {
                         class6428.method19104("\"" + array[1].method26314() + "\" is not your friend :(.");
                     }
                     else {
@@ -57,7 +57,7 @@ public class Class6706 extends Class6693
                     break;
                 }
                 case "list": {
-                    final List<String> method29884 = Client.getInstance().method35190().method29884();
+                    final List<String> method29884 = Client.getInstance().getFriendManager().method29884();
                     if (method29884.isEmpty()) {
                         class6428.method19104("You have no friends :(");
                         break;
@@ -76,7 +76,7 @@ public class Class6706 extends Class6693
                     break;
                 }
                 case "clear": {
-                    if (Client.getInstance().method35190().method29888()) {
+                    if (Client.getInstance().getFriendManager().method29888()) {
                         class6428.method19104("Cleared all your friends.");
                         break;
                     }

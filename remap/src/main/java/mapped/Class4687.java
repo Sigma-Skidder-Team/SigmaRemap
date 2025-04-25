@@ -9,9 +9,9 @@ import com.mentalfrostbyte.jello.ClientAssets;
 
 public class Class4687 implements Class4659
 {
-    public final /* synthetic */ CombatTracker field20237;
+    public final /* synthetic */ IRCManager field20237;
     
-    public Class4687(final CombatTracker field20237) {
+    public Class4687(final IRCManager field20237) {
         this.field20237 = field20237;
     }
     

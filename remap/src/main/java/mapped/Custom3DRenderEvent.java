@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5739 implements Class5730
+public class Custom3DRenderEvent implements Class5730
 {
     private static String[] field23308;
 }

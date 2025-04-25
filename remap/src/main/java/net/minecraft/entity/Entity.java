@@ -405,7 +405,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public void method1671(final Class2160 class2160, Vec3d class2161) {
         if (Minecraft.getInstance().player != null && Minecraft.getInstance().player.method1920() != null && Minecraft.getInstance().player.method1920().getEntityId() == this.getEntityId()) {
             final Class5718 class2162 = new Class5718(class2161.x, class2161.y, class2161.z);
-            Client.getInstance().getEventBus().method21097(class2162);
+            Client.getInstance().getEventBus().post(class2162);
             if (class2162.isCancelled()) {
                 return;
             }

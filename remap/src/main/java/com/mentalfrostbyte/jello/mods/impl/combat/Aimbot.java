@@ -38,7 +38,7 @@ public class Aimbot extends ModuleWithSettings
         while (iterator.hasNext()) {
             final Entity class400 = iterator.next();
             if (class400 != Aimbot.mc.player) {
-                if (!Client.getInstance().method35190().method29878(class400)) {
+                if (!Client.getInstance().getFriendManager().method29878(class400)) {
                     if (class400 instanceof LivingEntity) {
                         if (((LivingEntity)class400).method2664() != 0.0f) {
                             if (Aimbot.mc.player.method1732(class400) <= n) {
@@ -47,7 +47,7 @@ public class Aimbot extends ModuleWithSettings
                                         if (!this.method9883("Players") && class400 instanceof PlayerEntity) {
                                             iterator.remove();
                                         }
-                                        else if (class400 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class400)) {
+                                        else if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class400)) {
                                             iterator.remove();
                                         }
                                         else if (!this.method9883("Invisible") && class400.method1823()) {

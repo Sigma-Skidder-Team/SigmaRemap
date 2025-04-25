@@ -28,14 +28,14 @@ public class SkeletonESP extends Module
     }
     
     @EventListener
-    public void method10560(final Class5739 class5739) {
+    public void method10560(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             return;
         }
     }
     
-    private void method10561(final Class5739 class5739, final PlayerEntity class5740) {
-        final Color color = new Color(Client.getInstance().method35190().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(SkeletonESP.mc.player.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
+    private void method10561(final Custom3DRenderEvent custom3DRenderEvent, final PlayerEntity class5740) {
+        final Color color = new Color(Client.getInstance().getFriendManager().method29879(class5740.getName().getFormattedText()) ? -8401409 : (class5740.getName().getFormattedText().equalsIgnoreCase(SkeletonESP.mc.player.getName().getFormattedText()) ? -6684775 : new Color(16775672).getRGB()));
         if (!class5740.method1823()) {
             final float[][] array = SkeletonESP.field15939.get(class5740);
             if (array != null) {
@@ -45,7 +45,7 @@ public class SkeletonESP extends Module
                             GL11.glPushMatrix();
                             GL11.glLineWidth(2.0f);
                             GL11.glColor4f((float)(color.getRed() / 255), (float)(color.getGreen() / 255), (float)(color.getBlue() / 255), 1.0f);
-                            final Class9407 method10562 = this.method10562(class5739, class5740);
+                            final Class9407 method10562 = this.method10562(custom3DRenderEvent, class5740);
                             GL11.glTranslated(method10562.method34993() - SkeletonESP.mc.method5306().field35906.method18161().x, method10562.method34994() - SkeletonESP.mc.method5306().field35906.method18161().y, method10562.method34995() - SkeletonESP.mc.method5306().field35906.method18161().z);
                             final float n = class5740.field2952 + (class5740.field2951 - class5740.field2952) * SkeletonESP.mc.method5314();
                             GL11.glRotatef(-n, 0.0f, 1.0f, 0.0f);
@@ -168,7 +168,7 @@ public class SkeletonESP extends Module
         }
     }
     
-    private Class9407 method10562(final Class5739 class5739, final PlayerEntity class5740) {
+    private Class9407 method10562(final Custom3DRenderEvent custom3DRenderEvent, final PlayerEntity class5740) {
         final float method5314 = SkeletonESP.mc.method5314();
         return new Class9407(class5740.lastTickPosX + (class5740.posX - class5740.lastTickPosX) * method5314, class5740.lastTickPosY + (class5740.posY - class5740.lastTickPosY) * method5314, class5740.lastTickPosZ + (class5740.posZ - class5740.lastTickPosZ) * method5314);
     }

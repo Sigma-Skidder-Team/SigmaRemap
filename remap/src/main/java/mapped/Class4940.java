@@ -66,7 +66,7 @@ public class Class4940 extends Class4800
         while (iterator.hasNext()) {
             list.add(new Class8799(iterator.next()));
         }
-        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator2 = Class9000.field37983.entrySet().iterator();
+        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator2 = ScreenManager.field37983.entrySet().iterator();
         while (iterator2.hasNext()) {
             list.add(new Class8799(((Map.Entry<Class, V>)iterator2.next()).getKey()));
         }

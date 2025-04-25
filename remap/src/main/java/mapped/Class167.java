@@ -25,7 +25,7 @@ public class Class167 implements Predicate<Entity>
                 if (class399.method1768()) {
                     if (class399.method1732(AutoCrystal.method10663().field4684) <= 9.0f) {
                         if (!(class399 instanceof ClientPlayerEntity)) {
-                            if (!Client.getInstance().method35190().method29878(class399)) {
+                            if (!Client.getInstance().getFriendManager().method29878(class399)) {
                                 return true;
                             }
                         }

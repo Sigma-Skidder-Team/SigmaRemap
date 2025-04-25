@@ -27,7 +27,7 @@ public class NameTags extends Module
     }
     
     @EventListener
-    public void method10324(final Class5734 class5734) {
+    public void method10324(final Custom2DRenderEvent custom2DRenderEvent) {
         if (this.isEnabled()) {
             final int n = 20;
             final int n2 = 32;
@@ -36,14 +36,14 @@ public class NameTags extends Module
                 if (!class5735.method1823()) {
                     final Vec2f class5736 = (Vec2f)entry.getValue();
                     final String method8459 = class5735.getName().getUnformattedComponentText();
-                    final int n3 = Class9493.field40813.getWidth(method8459) + 8;
+                    final int n3 = ClassicAssets.field40813.getWidth(method8459) + 8;
                     final int round = Math.round(class5736.x);
                     final int round2 = Math.round(class5736.y);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float)(-n3 / 2), (float)(-n), 0.0f);
                     RenderUtil.method26874((float)round, (float)round2, (float)n3, 20.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                    RenderUtil.drawString(Class9493.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
+                    RenderUtil.drawString(ClassicAssets.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                    RenderUtil.drawString(ClassicAssets.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
                     GL11.glPopMatrix();
                     final List<ItemStack> method8460 = InvManagerUtil.method29374(class5735);
                     if (method8460.size() == 0) {
@@ -91,7 +91,7 @@ public class NameTags extends Module
     }
     
     @EventListener
-    public void method10325(final Class5739 class5739) {
+    public void method10325(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             this.field15776.clear();
             for (final Entity class5740 : NameTags.mc.world.method6806()) {

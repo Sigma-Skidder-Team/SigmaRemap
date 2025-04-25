@@ -26,7 +26,7 @@ public class PremiumModule extends Module
         }
         if (this.enabled != enabled) {
             Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
-            Client.getInstance().method35196().method32830("error");
+            Client.getInstance().getAudioManager().method32830("error");
         }
     }
     
@@ -39,7 +39,7 @@ public class PremiumModule extends Module
         if (this.enabled != b) {
             if (b) {
                 Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
-                Client.getInstance().method35196().method32830("error");
+                Client.getInstance().getAudioManager().method32830("error");
             }
         }
     }
@@ -52,7 +52,7 @@ public class PremiumModule extends Module
         }
         if (this.isEnabled() != enabled) {
             Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
-            Client.getInstance().method35196().method32830("error");
+            Client.getInstance().getAudioManager().method32830("error");
         }
     }
 }

@@ -26,7 +26,7 @@ public class Class4822 extends Class4817
     
     public Class4822(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Module field20634) {
         super(customGuiScreen, s, n, n2, n3, n4);
-        this.field20496 = Class9493.field40807;
+        this.field20496 = ClassicAssets.field40807;
         this.field20635 = new Animation(150, 150);
         this.field20636 = new HashMap<Module, CustomGuiScreen>();
         this.field20634 = field20634;

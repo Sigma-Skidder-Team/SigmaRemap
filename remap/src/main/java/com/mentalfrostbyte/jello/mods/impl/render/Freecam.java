@@ -79,7 +79,7 @@ public class Freecam extends Module
     }
     
     @EventListener
-    public void method10499(final Class5739 class5739) {
+    public void method10499(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             Freecam.field15901.method1685();
             Freecam.field15901.boundingBox = new AxisAlignedBB(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);

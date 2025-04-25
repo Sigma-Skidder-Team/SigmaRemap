@@ -22,7 +22,7 @@ public class Class8799
     
     public String method30702() {
         if (this.field36994 == null) {
-            return Class9000.field37983.get(this.field36995);
+            return ScreenManager.field37983.get(this.field36995);
         }
         return this.field36994.getName();
     }

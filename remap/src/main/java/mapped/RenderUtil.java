@@ -84,10 +84,10 @@ public class RenderUtil
     
     public static void method26871(int n, int n2, int n3, int n4, final boolean b) {
         if (!b) {
-            n *= (int)Class9000.field37993;
-            n2 *= (int)Class9000.field37993;
-            n3 *= (int)Class9000.field37993;
-            n4 *= (int)Class9000.field37993;
+            n *= (int) ScreenManager.guiScale;
+            n2 *= (int) ScreenManager.guiScale;
+            n3 *= (int) ScreenManager.guiScale;
+            n4 *= (int) ScreenManager.guiScale;
         }
         else {
             final float[] method26866 = method26866(n, n2);
@@ -390,7 +390,7 @@ public class RenderUtil
         RenderSystem.method30068(n6, n7, n8, n5);
         GL11.glEnable(2832);
         GL11.glEnable(3042);
-        GL11.glPointSize(n3 * Class9000.field37993);
+        GL11.glPointSize(n3 * ScreenManager.guiScale);
         GL11.glBegin(0);
         GL11.glVertex2f(n, n2);
         GL11.glEnd();
@@ -439,7 +439,7 @@ public class RenderUtil
         final float n9 = (n3 & 0xFF) / 255.0f;
         GL11.glPushMatrix();
         boolean b2 = false;
-        if (Class9000.field37993 == 2.0) {
+        if (ScreenManager.guiScale == 2.0) {
             if (class7524 == ClientFonts.JelloLight20) {
                 class7524 = ClientFonts.JelloLight40;
             }
@@ -472,10 +472,10 @@ public class RenderUtil
                 final int n10 = (int)method26866[0];
                 final int n11 = (int)method26866[1];
                 GL11.glTranslatef(n, n2, 0.0f);
-                GL11.glScalef(1.0f / Class9000.field37993, 1.0f / Class9000.field37993, 1.0f / Class9000.field37993);
+                GL11.glScalef(1.0f / ScreenManager.guiScale, 1.0f / ScreenManager.guiScale, 1.0f / ScreenManager.guiScale);
                 GL11.glTranslatef(-n, -n2, 0.0f);
-                n4 *= (int)Class9000.field37993;
-                n5 *= (int)Class9000.field37993;
+                n4 *= (int) ScreenManager.guiScale;
+                n5 *= (int) ScreenManager.guiScale;
             }
         }
         RenderSystem.enableBlend();
@@ -782,7 +782,7 @@ public class RenderUtil
             GL11.glEnable(3042);
             GL11.glDisable(3553);
             GL11.glDisable(2896);
-            GL11.glLineWidth(1.8f * Class9000.field37993);
+            GL11.glLineWidth(1.8f * ScreenManager.guiScale);
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(2848);
             GL11.glBegin(7);
@@ -871,7 +871,7 @@ public class RenderUtil
             GL11.glEnable(3042);
             GL11.glDisable(3553);
             GL11.glDisable(2896);
-            GL11.glLineWidth(1.8f * Class9000.field37993);
+            GL11.glLineWidth(1.8f * ScreenManager.guiScale);
             GL11.glBlendFunc(770, 771);
             GL11.glEnable(2848);
             GL11.glBegin(0);
@@ -1125,7 +1125,7 @@ public class RenderUtil
         method26876(n, n2 + n5, n + n3, n2 + n4 - n5, n6);
         method26876(n + n5, n2, n + n3 - n5, n2 + n5, n6);
         method26876(n + n5, n2 + n4 - n5, n + n3 - n5, n2 + n4, n6);
-        final float n7 = n5 * Class9000.field37993;
+        final float n7 = n5 * ScreenManager.guiScale;
         method26868(n, n2, n + n5, n2 + n5);
         method26886(n + n5, n2 + n5, n5, n6);
         endScissor();
@@ -1231,8 +1231,8 @@ public class RenderUtil
     }
     
     public static java.awt.Color method26930(int n, int n2, final java.awt.Color color) {
-        n *= (int)Class9000.field37993;
-        n2 *= (int)Class9000.field37993;
+        n *= (int) ScreenManager.guiScale;
+        n2 *= (int) ScreenManager.guiScale;
         final ByteBuffer allocateDirect = ByteBuffer.allocateDirect(3);
         GL11.glPixelStorei(3317, 1);
         GL11.glReadPixels(n, Minecraft.getInstance().window.method7693() - n2, 1, 1, 6407, 5120, allocateDirect);
@@ -1250,7 +1250,7 @@ public class RenderUtil
         if (!ColorUtils.method19167((float)n, (float)n2, (float)n3, floatBuffer2, floatBuffer3, intBuffer, floatBuffer)) {
             return null;
         }
-        return new double[] { floatBuffer.get(0) / Class9000.field37993, (RenderUtil.field33582.field4667.field24887 - floatBuffer.get(1)) / Class9000.field37993, floatBuffer.get(2) };
+        return new double[] { floatBuffer.get(0) / ScreenManager.guiScale, (RenderUtil.field33582.field4667.field24887 - floatBuffer.get(1)) / ScreenManager.guiScale, floatBuffer.get(2) };
     }
     
     static {

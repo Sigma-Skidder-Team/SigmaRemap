@@ -30,13 +30,13 @@ public class MusicParticles extends PremiumModule
     @EventListener
     private void method10683(final Class5740 class5740) {
         if (this.isEnabled() && MusicParticles.mc.player != null) {
-            if (Client.getInstance().method35199().method24184()) {
-                if (Client.getInstance().method35199().visualizerData.size() != 0) {
+            if (Client.getInstance().getMusicManager().method24184()) {
+                if (Client.getInstance().getMusicManager().visualizerData.size() != 0) {
                     final float min = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - this.field16021) / 1.810361E7f));
                     double max = 0.0;
                     final int n = 4750;
                     for (int i = 0; i < 3; ++i) {
-                        max = Math.max(max, Math.sqrt(Client.getInstance().method35199().field30354.get(i)) - 1000.0);
+                        max = Math.max(max, Math.sqrt(Client.getInstance().getMusicManager().field30354.get(i)) - 1000.0);
                     }
                     final float n2 = (0.7f + (float)(max / (n - 1000)) * 8.14f) * min;
                     int n3 = 0;

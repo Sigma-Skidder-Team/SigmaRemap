@@ -29,7 +29,7 @@ public class AutoLog extends Module
                             final boolean method9883 = this.method9883("One Time Use");
                             AutoLog.mc.world.method6751();
                             AutoLog.mc.method5264();
-                            AutoLog.mc.displayGuiScreen(new Class735(new Class720(new Class548()), "disconnect.lost", new StringTextComponent("AutoLog disconnected you. " + (method9883 ? "The mod now disabled for you to reconnect." : "Disable it in a singleplayer world to reconnect."))));
+                            AutoLog.mc.displayGuiScreen(new Class735(new Class720(new MainMenu()), "disconnect.lost", new StringTextComponent("AutoLog disconnected you. " + (method9883 ? "The mod now disabled for you to reconnect." : "Disable it in a singleplayer world to reconnect."))));
                         }
                     }
                 }

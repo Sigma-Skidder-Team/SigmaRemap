@@ -67,7 +67,7 @@ public class InvMove extends Module
                     }
                 }
             }
-            if (InvMove.mc.currentScreen instanceof Class516 || Client.getInstance().playerTracker().focusGameTicks() <= 1) {
+            if (InvMove.mc.currentScreen instanceof Class516 || Client.getInstance().getTickManager().focusGameTicks() <= 1) {
                 if (InvMove.mc.currentScreen instanceof ChatScreen) {
                     return;
                 }
@@ -80,7 +80,7 @@ public class InvMove extends Module
                 if (InvMove.mc.currentScreen instanceof Class525 && ((Class525) InvMove.mc.currentScreen).method3018() == 5) {
                     return;
                 }
-                if (Client.getInstance().getGuimanager().method32154() != null && Client.getInstance().getGuimanager().method32154().method14230()) {
+                if (Client.getInstance().getScreenManager().method32154() != null && Client.getInstance().getScreenManager().method32154().method14230()) {
                     final Class350[] field23460 = Minecraft.getInstance().gameSettings.field23460;
                     for (int length = field23460.length, i = 0; i < length; ++i) {
                         field23460[i].field2162 = false;

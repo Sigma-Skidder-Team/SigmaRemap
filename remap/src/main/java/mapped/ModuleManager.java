@@ -21,6 +21,7 @@ import com.mentalfrostbyte.jello.mods.impl.render.ActiveMods;
 import com.mentalfrostbyte.jello.mods.impl.world.*;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONArray;
+import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 
 import java.io.IOException;
@@ -253,10 +254,6 @@ public class ModuleManager
         }
         JSONObject.put("mods", class4406);
         return JSONObject;
-    }
-    
-    public void method21547() {
-
     }
     
     public void loadModProfiles(final JSONObject JSONObject) {

@@ -20,7 +20,7 @@ public class Class6481 extends Class6480
     @Override
     public Class7562 method19507(final Class6108 class6108) {
         final Minecraft method5277 = Minecraft.getInstance();
-        final ItemStack class6109 = Class464.method2352(Class8491.field34859) ? method5277.player.inventory.field2739.get(Class8491.field34859) : ItemStack.EMPTY;
+        final ItemStack class6109 = Class464.method2352(RotationManager.field34859) ? method5277.player.inventory.field2739.get(RotationManager.field34859) : ItemStack.EMPTY;
         final Item method5278 = class6109.getItem();
         if (method5278 != null) {
             final Class7562 class6110 = new Class7562((short) Item.method11696(method5278), (byte)class6109.field34176, (short)class6109.method27632(), this.method19508(class6109.method27657()));

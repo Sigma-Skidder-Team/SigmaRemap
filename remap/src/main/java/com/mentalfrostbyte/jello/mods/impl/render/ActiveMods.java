@@ -45,8 +45,8 @@ public class ActiveMods extends Module
     
     private void method10487() {
         this.field15896.clear();
-        this.field15897 = Class9493.field40812;
-        this.field15898 = Class9493.field40813;
+        this.field15897 = ClassicAssets.field40812;
+        this.field15898 = ClassicAssets.field40813;
         this.field15896 = new TreeMap<Module, Animation>(new Class4462(this));
     }
     

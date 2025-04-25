@@ -7,9 +7,9 @@ package mapped;
 import java.lang.reflect.Field;
 import javax.crypto.Cipher;
 
-public class Class9220
+public class AESFixer
 {
-    public static void method34003() {
+    public static void enableUnlimitedAESKeyStrength() {
         try {
             if (Cipher.getMaxAllowedKeyLength("AES") < 256) {
                 final Field declaredField = Class.forName("javax.crypto.JceSecurity").getDeclaredField("isRestricted");

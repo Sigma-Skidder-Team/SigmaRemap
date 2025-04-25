@@ -121,7 +121,7 @@ public class InfiniteAura extends Module
     }
     
     @EventListener
-    public void method10093(final Class5739 class5739) {
+    public void method10093(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             if (this.field15649 != null) {
                 if (this.field15649.size() != 0) {
@@ -164,7 +164,7 @@ public class InfiniteAura extends Module
         while (iterator2.hasNext()) {
             final Entity method26798 = ((Class8131)iterator2.next()).method26798();
             if (method26798 != InfiniteAura.mc.player) {
-                if (!Client.getInstance().method35190().method29878(method26798)) {
+                if (!Client.getInstance().getFriendManager().method29878(method26798)) {
                     if (method26798 instanceof LivingEntity) {
                         if (((LivingEntity)method26798).method2664() != 0.0f) {
                             if (InfiniteAura.mc.player.method1732(method26798) <= n) {
@@ -173,7 +173,7 @@ public class InfiniteAura extends Module
                                         if (!this.method9883("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().method35191().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.method9883("Invisible") && method26798.method1823()) {
@@ -248,7 +248,7 @@ public class InfiniteAura extends Module
     public boolean method9898() {
         if (this.isEnabled()) {
             if (this.method10095()) {
-                if (Client.getInstance().playerTracker().method29229()) {
+                if (Client.getInstance().getTickManager().method29229()) {
                     return true;
                 }
             }

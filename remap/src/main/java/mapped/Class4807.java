@@ -29,7 +29,7 @@ public class Class4807 extends CustomGuiScreen
         else {
             RenderUtil.method26925((float)this.x, (float)this.y, (float)(this.field20480 - 1), (float)(this.field20481 - 1), 3.0f, ColorUtils.applyAlpha(-2500135, 0.9f));
         }
-        final TrueTypeFont class7524 = this.field20474.equals("Sigma") ? Class9493.field40805 : Class9493.field40806;
+        final TrueTypeFont class7524 = this.field20474.equals("Sigma") ? ClassicAssets.field40805 : ClassicAssets.field40806;
         if (!this.field20474.equals("Sigma")) {
             RenderUtil.drawString(class7524, this.x + (this.method14276() - class7524.getWidth(this.field20474)) / 2.0f, (float)(this.y + 18), this.field20474, -16777216);
         }

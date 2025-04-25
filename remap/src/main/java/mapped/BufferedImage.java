@@ -89,11 +89,11 @@ public class BufferedImage
     
     public static java.awt.image.BufferedImage method20830(int n, int n2, int n3, int n4, int n5, final int n6, final int n7, final boolean b) {
         final int n8 = 4;
-        n2 *= (int)Class9000.field37993;
-        n *= (int)Class9000.field37993;
-        n3 *= (int)Class9000.field37993;
-        n4 *= (int)Class9000.field37993;
-        n5 *= (int)Class9000.field37993;
+        n2 *= (int) ScreenManager.guiScale;
+        n *= (int) ScreenManager.guiScale;
+        n3 *= (int) ScreenManager.guiScale;
+        n4 *= (int) ScreenManager.guiScale;
+        n5 *= (int) ScreenManager.guiScale;
         n2 = Minecraft.getInstance().window.method7693() - n2 - n4;
         if (n5 <= 0) {
             n5 = 1;

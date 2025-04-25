@@ -12,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.Random;
 
-public class Class548 extends Screen
+public class MainMenu extends Screen
 {
     public static final Class8065 field3300;
     private static final ResourceLocation field3301;
@@ -31,13 +31,13 @@ public class Class548 extends Screen
     private long field3314;
     private Screen field3315;
     
-    public Class548() {
+    public MainMenu() {
         this(false);
     }
     
-    public Class548(final boolean field3313) {
+    public MainMenu(final boolean field3313) {
         super(new Class2259("narrator.screen.title", new Object[0]));
-        this.field3312 = new Class9472(Class548.field3300);
+        this.field3312 = new Class9472(MainMenu.field3300);
         this.field3313 = field3313;
         this.field3303 = (new Random().nextFloat() < 1.0E-4);
     }
@@ -54,7 +54,7 @@ public class Class548 extends Screen
     }
     
     public static CompletableFuture<Void> method3215(final Class1663 class1663, final Executor executor) {
-        return CompletableFuture.allOf(class1663.method5855(Class548.field3306, executor), class1663.method5855(Class548.field3307, executor), class1663.method5855(Class548.field3301, executor), Class548.field3300.method26462(class1663, executor));
+        return CompletableFuture.allOf(class1663.method5855(MainMenu.field3306, executor), class1663.method5855(MainMenu.field3307, executor), class1663.method5855(MainMenu.field3301, executor), MainMenu.field3300.method26462(class1663, executor));
     }
     
     @Override
@@ -89,7 +89,7 @@ public class Class548 extends Screen
         this.addButton(new Class679(this.width / 2 - 124, n + 72 + 12, 20, 20, 0, 106, 20, Class654.field3421, 256, 256, class654 -> this.minecraft.displayGuiScreen(new Class704(this, this.minecraft.gameSettings, this.minecraft.method5295())), Class8822.method30773("narrator.button.language", new Object[0])));
         this.addButton(new Class654(this.width / 2 - 100, n + 72 + 12, 98, 20, Class8822.method30773("menu.options", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class550(this, this.minecraft.gameSettings))));
         this.addButton(new Class654(this.width / 2 + 2, n + 72 + 12, 98, 20, Class8822.method30773("menu.quit", new Object[0]), class654 -> this.minecraft.method5253()));
-        this.addButton(new Class679(this.width / 2 + 104, n + 72 + 12, 20, 20, 0, 0, 20, Class548.field3302, 32, 64, class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.minecraft.gameSettings)), Class8822.method30773("narrator.button.accessibility", new Object[0])));
+        this.addButton(new Class679(this.width / 2 + 104, n + 72 + 12, 20, 20, 0, 0, 20, MainMenu.field3302, 32, 64, class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.minecraft.gameSettings)), Class8822.method30773("narrator.button.accessibility", new Object[0])));
         this.minecraft.method5312(false);
         if (this.minecraft.gameSettings.field23424) {
             if (!this.field3308) {
@@ -154,7 +154,7 @@ public class Class548 extends Screen
         AbstractGui.fill(0, 0, this.width, this.height, -1);
         this.field3312.method35257(n3, MathHelper.clamp(n4, 0.0f, 1.0f));
         final int n5 = this.width / 2 - 137;
-        this.minecraft.method5290().method5849(Class548.field3301);
+        this.minecraft.method5290().method5849(MainMenu.field3301);
         RenderSystem.enableBlend();
         RenderSystem.method30013(Class2050.field11693, Class2135.field12460);
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, this.field3313 ? ((float) MathHelper.ceil(MathHelper.clamp(n4, 0.0f, 1.0f))) : 1.0f);
@@ -162,7 +162,7 @@ public class Class548 extends Screen
         final float n6 = this.field3313 ? MathHelper.clamp(n4 - 1.0f, 0.0f, 1.0f) : 1.0f;
         final int n7 = MathHelper.ceil(n6 * 255.0f) << 24;
         if ((n7 & 0xFC000000) != 0x0) {
-            this.minecraft.method5290().method5849(Class548.field3306);
+            this.minecraft.method5290().method5849(MainMenu.field3306);
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, n6);
             if (!this.field3303) {
                 this.blit(n5 + 0, 30, 0, 0, 155, 44);
@@ -175,7 +175,7 @@ public class Class548 extends Screen
                 this.blit(n5 + 99 + 26 + 3, 30, 99, 0, 26, 44);
                 this.blit(n5 + 155, 30, 0, 45, 155, 44);
             }
-            this.minecraft.method5290().method5849(Class548.field3307);
+            this.minecraft.method5290().method5849(MainMenu.field3307);
             AbstractGui.blit(n5 + 88, 67, 0.0f, 0.0f, 98, 14, 128, 16);
             if (Class9570.field41309.method22605()) {
                 this.field3304 = Class9570.method35817(Class9570.field41309, this, this.minecraft.fontRenderer, this.width, this.height);

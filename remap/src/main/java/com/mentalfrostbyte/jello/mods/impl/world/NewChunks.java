@@ -38,7 +38,7 @@ public class NewChunks extends Module
     }
     
     @EventListener
-    private void method10464(final Class5739 class5739) {
+    private void method10464(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             final Iterator<ChunkPos> iterator = this.field15876.iterator();
             while (iterator.hasNext()) {

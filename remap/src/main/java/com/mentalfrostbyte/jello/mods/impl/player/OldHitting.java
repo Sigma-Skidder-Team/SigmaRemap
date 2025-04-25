@@ -30,7 +30,7 @@ public class OldHitting extends Module
     @EventListener
     @Class6757
     private void method10435(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
         if (updateWalkingEvent.method17046()) {
@@ -81,12 +81,12 @@ public class OldHitting extends Module
                 field15857 = true;
             }
             if (!(OldHitting.field15857 = field15857)) {
-                if (Class8491.field34858.contains(OldHitting.mc.player)) {
-                    Class8491.field34858.remove(OldHitting.mc.player);
+                if (RotationManager.field34858.contains(OldHitting.mc.player)) {
+                    RotationManager.field34858.remove(OldHitting.mc.player);
                 }
             }
-            else if (!Class8491.field34858.contains(OldHitting.mc.player)) {
-                Class8491.field34858.add(OldHitting.mc.player);
+            else if (!RotationManager.field34858.contains(OldHitting.mc.player)) {
+                RotationManager.field34858.add(OldHitting.mc.player);
             }
             if (OldHitting.field15857 && !this.field15858) {
                 this.field15858 = !this.field15858;
@@ -105,7 +105,7 @@ public class OldHitting extends Module
     @EventListener
     @Class6759
     private void method10436(final Class5723 class5723) {
-        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
         if (OldHitting.mc.player != null) {
@@ -125,7 +125,7 @@ public class OldHitting extends Module
     @EventListener
     @Class6759
     private void method10437(final Class5716 class5716) {
-        if (!this.isEnabled() && Class9367.field40167 != Class7906.field32452) {
+        if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
         final float method16964 = class5716.method16964();

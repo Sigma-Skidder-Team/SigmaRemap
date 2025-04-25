@@ -81,7 +81,7 @@ public class Class8974
     }
     
     public boolean method31864() {
-        if (Math.sqrt(this.method31868()) <= Minecraft.getInstance().gameSettings.field23382 * 16 && Client.getInstance().method35192().method28375()) {
+        if (Math.sqrt(this.method31868()) <= Minecraft.getInstance().gameSettings.field23382 * 16 && Client.getInstance().getRotationManager().method28375()) {
             return true;
         }
         if (this.method31868() > 576.0) {

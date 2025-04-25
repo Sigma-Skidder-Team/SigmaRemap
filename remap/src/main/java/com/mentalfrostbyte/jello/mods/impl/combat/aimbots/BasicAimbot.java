@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.combat.Aimbot;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
-import mapped.Class5739;
+import mapped.Custom3DRenderEvent;
 import mapped.Class8845;
 import mapped.EventListener;
 import net.minecraft.entity.Entity;
@@ -21,7 +21,7 @@ public class BasicAimbot extends Module
     }
     
     @EventListener
-    private void method9918(final Class5739 class5739) {
+    private void method9918(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             final Entity method10266 = ((Aimbot)this.method9914()).method10266(this.getNumberSettingValueByName("Range"));
             if (method10266 != null) {

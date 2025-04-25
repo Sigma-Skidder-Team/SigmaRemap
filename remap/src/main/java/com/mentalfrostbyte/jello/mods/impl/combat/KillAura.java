@@ -287,7 +287,7 @@ public class KillAura extends Module
     }
     
     @EventListener
-    public void method10747(final Class5739 class5739) {
+    public void method10747(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             if (this.field16062 != null) {
                 final Iterator<Map.Entry<Entity, Animation>> iterator = this.field16073.entrySet().iterator();
@@ -659,7 +659,7 @@ public class KillAura extends Module
                                     if (this.field16054 + 1 < this.field16062.size()) {
                                         if (method9888.equals("Switch")) {
                                             if (KillAura.field16061 != null) {
-                                                if (!Client.getInstance().method35190().method29880(this.field16062.get(this.field16054).method26798())) {
+                                                if (!Client.getInstance().getFriendManager().method29880(this.field16062.get(this.field16054).method26798())) {
                                                     ++this.field16054;
                                                 }
                                             }

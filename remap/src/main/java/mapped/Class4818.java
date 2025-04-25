@@ -42,7 +42,7 @@ public class Class4818 extends Class4817
             this.addToList(class353);
             class353.doThis((class4820, n) -> ((Class4843)class4818.method14267()).field20752.method14718(class353.field20764.getX(), class353.field20764.getZ()));
             class353.method14516(class4848 -> {
-                Client.getInstance().method35200().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
+                Client.getInstance().getWaypointManager().method24266(new Class8124(class353.field20763, class353.field20764.getX(), class353.field20764.getZ(), class353.field20765));
                 class4847.field20610.method14246(class353);
                 this.field20615.remove(class4848);
             });
@@ -92,12 +92,12 @@ public class Class4818 extends Class4817
             }
             if (!field20619.method14386()) {
                 if (this.field20617.getDirection() == Direction.BACKWARDS) {
-                    Client.getInstance().method35200().method24262().clear();
+                    Client.getInstance().getWaypointManager().method24262().clear();
                     for (final Class4846 class4847 : this.field20615) {
-                        Client.getInstance().method35200().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
+                        Client.getInstance().getWaypointManager().method24262().add(new Class8124(class4847.field20763, class4847.field20764.getX(), class4847.field20764.getZ(), class4847.field20765));
                     }
-                    Collections.reverse(Client.getInstance().method35200().method24262());
-                    Client.getInstance().method35200().method24264();
+                    Collections.reverse(Client.getInstance().getWaypointManager().method24262());
+                    Client.getInstance().getWaypointManager().method24264();
                 }
             }
             this.field20617.changeDirection(Direction.FORWARDS);

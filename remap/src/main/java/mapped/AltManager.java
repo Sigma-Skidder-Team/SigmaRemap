@@ -15,16 +15,16 @@ import java.util.Iterator;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Class7861
+public class AltManager
 {
     public ArrayList<Class7971> field32296;
     public File field32297;
     private String field32298;
     private Class8327 field32299;
     
-    public Class7861() {
+    public AltManager() {
         this.field32296 = new ArrayList<Class7971>();
-        this.field32297 = new File(Client.getInstance().method35208() + "/alts.json");
+        this.field32297 = new File(Client.getInstance().getFile() + "/alts.json");
         this.field32299 = new Class8327();
         this.method25468();
     }
@@ -116,7 +116,7 @@ public class Class7861
         final JSONObject class89 = new JSONObject();
         class89.put("alts", JSONArray);
         try {
-            Class9532.method35585(class89, new File(Client.getInstance().method35208() + "/alts.json"));
+            ConfigJsonUtil.saveJSONToFile(class89, new File(Client.getInstance().getFile() + "/alts.json"));
         }
         catch (final JSONException | IOException ex) {
             Client.getInstance().getLogger().error(((Throwable)ex).getMessage());
@@ -125,7 +125,7 @@ public class Class7861
     
     private void method25468() {
         try {
-            final JSONObject method35586 = Class9532.method35586(this.field32297);
+            final JSONObject method35586 = ConfigJsonUtil.method35586(this.field32297);
             if (!method35586.has("alts")) {
                 method35586.put("alts", new JSONArray());
             }

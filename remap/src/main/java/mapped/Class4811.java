@@ -77,13 +77,13 @@ public class Class4811 extends CustomGuiScreen
         });
         this.field20577.doThis((class4803, n) -> {
             if (this.field20580++ > 8) {
-                Client.getInstance().getGuimanager().method32156(new Class4928());
+                Client.getInstance().getScreenManager().method32156(new Class4928());
             }
         });
     }
     
     public void method14348() {
-        new Class5052().method15490(new Class548());
+        new Class5052().method15490(new MainMenu());
         this.method14349();
     }
     
@@ -93,7 +93,7 @@ public class Class4811 extends CustomGuiScreen
         final Texture field32160 = ClientAssets.logo_large;
         final int method24918 = field32160.getImageWidth();
         final int method24919 = field32160.getImageHeight();
-        if (Class9000.field37993 > 1.0f) {
+        if (ScreenManager.guiScale > 1.0f) {
             final Texture field32161 = ClientAssets.logo_large2x;
         }
         RenderUtil.drawImage((float)(this.method14276() / 2 - method24918 / 2), (float)(this.method14278() / 2 - method24919), (float)method24918, (float)method24919, ClientAssets.logo_large, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
@@ -108,7 +108,7 @@ public class Class4811 extends CustomGuiScreen
     }
     
     public void method14349() {
-        Client.getInstance().method35196().method32830("clicksound");
+        Client.getInstance().getAudioManager().method32830("clicksound");
     }
     
     public void method14350(final Screen class527) {
@@ -117,7 +117,7 @@ public class Class4811 extends CustomGuiScreen
     }
     
     public void method14351(final Class4800 class4800) {
-        Client.getInstance().getGuimanager().method32156(class4800);
+        Client.getInstance().getScreenManager().method32156(class4800);
         this.method14349();
     }
     

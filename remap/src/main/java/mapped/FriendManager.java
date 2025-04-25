@@ -11,37 +11,35 @@ import totalcross.json.JSONArray;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 
-public class Class8706
-{
+public class FriendManager {
     public List<String> field36582;
     public List<String> field36583;
     public int field36584;
     private Minecraft field36585;
-    
-    public Class8706() {
+
+    public FriendManager() {
         this.field36582 = new CopyOnWriteArrayList<String>();
         this.field36583 = new CopyOnWriteArrayList<String>();
         this.field36584 = 0;
         this.field36585 = Minecraft.getInstance();
     }
-    
+
     public void method29876() {
         Client.getInstance().getEventBus().register2(this);
         this.method29892();
     }
-    
+
     @EventListener
     private void method29877(final Class5752 class5752) {
         if (class5752.method17061() == this.field36585.gameSettings.field23447.field2161.field32860) {
             if (this.field36585.field4690 != null) {
                 if (this.field36585.field4690.getName() != null) {
-                    final Class9070 method35204 = Client.getInstance().method35204();
+                    final CommandManager method35204 = Client.getInstance().getCommandManager();
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
                         this.method29886(this.field36585.field4690.getName().getUnformattedComponentText());
                         Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is no longer your friend.");
-                    }
-                    else {
+                    } else {
                         this.method29882(this.field36585.field4690.getName().getUnformattedComponentText());
                         Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is now your friend.");
                     }
@@ -50,23 +48,23 @@ public class Class8706
             }
         }
     }
-    
+
     public boolean method29878(final Entity class399) {
         return this.field36582.contains(class399.getName().getUnformattedComponentText().toLowerCase());
     }
-    
+
     public boolean method29879(final String s) {
         return this.field36582.contains(s.toLowerCase());
     }
-    
+
     public boolean method29880(final Entity class399) {
         return this.field36583.contains(class399.getName().getUnformattedComponentText().toLowerCase());
     }
-    
+
     public boolean method29881(final String s) {
         return this.field36583.contains(s.toLowerCase());
     }
-    
+
     public boolean method29882(final String s) {
         if (this.method29879(s)) {
             return false;
@@ -75,7 +73,7 @@ public class Class8706
         this.method29890();
         return true;
     }
-    
+
     public boolean method29883(final String s) {
         if (this.method29881(s)) {
             return false;
@@ -84,15 +82,15 @@ public class Class8706
         this.method29891();
         return true;
     }
-    
+
     public List<String> method29884() {
         return this.field36582;
     }
-    
+
     public List<String> method29885() {
         return this.field36583;
     }
-    
+
     public boolean method29886(final String s) {
         final boolean remove = this.field36582.remove(s.toLowerCase());
         if (remove) {
@@ -100,7 +98,7 @@ public class Class8706
         }
         return remove;
     }
-    
+
     public boolean method29887(final String s) {
         final boolean remove = this.field36583.remove(s.toLowerCase());
         if (remove) {
@@ -108,7 +106,7 @@ public class Class8706
         }
         return remove;
     }
-    
+
     public boolean method29888() {
         if (!this.field36582.isEmpty()) {
             this.field36582.clear();
@@ -117,7 +115,7 @@ public class Class8706
         }
         return false;
     }
-    
+
     public boolean method29889() {
         if (!this.field36583.isEmpty()) {
             this.field36583.clear();
@@ -126,26 +124,26 @@ public class Class8706
         }
         return false;
     }
-    
+
     public void method29890() {
-        Client.getInstance().method35206().put("friends", this.field36582);
+        Client.getInstance().getConfig().put("friends", this.field36582);
     }
-    
+
     public void method29891() {
-        Client.getInstance().method35206().put("enemies", this.field36583);
+        Client.getInstance().getConfig().put("enemies", this.field36583);
     }
-    
+
     private void method29892() {
-        if (Client.getInstance().method35206().has("friends")) {
-            final JSONArray method13263 = Client.getInstance().method35206().getJSONArray("friends");
+        if (Client.getInstance().getConfig().has("friends")) {
+            final JSONArray method13263 = Client.getInstance().getConfig().getJSONArray("friends");
             if (method13263 != null) {
-                method13263.forEach(o -> this.field36582.add((String)o));
+                method13263.forEach(o -> this.field36582.add((String) o));
             }
         }
-        if (Client.getInstance().method35206().has("enemies")) {
-            final JSONArray method13264 = Client.getInstance().method35206().getJSONArray("enemies");
+        if (Client.getInstance().getConfig().has("enemies")) {
+            final JSONArray method13264 = Client.getInstance().getConfig().getJSONArray("enemies");
             if (method13264 != null) {
-                method13264.forEach(o2 -> this.field36583.add((String)o2));
+                method13264.forEach(o2 -> this.field36583.add((String) o2));
             }
         }
     }

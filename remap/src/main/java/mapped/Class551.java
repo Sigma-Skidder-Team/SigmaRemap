@@ -54,14 +54,14 @@ public class Class551 extends Screen
             }
             if (!method5283) {
                 if (!method5284) {
-                    this.minecraft.displayGuiScreen(new Class720(new Class548()));
+                    this.minecraft.displayGuiScreen(new Class720(new MainMenu()));
                 }
                 else {
-                    new Class5052().method15490(new Class548());
+                    new Class5052().method15490(new MainMenu());
                 }
             }
             else {
-                this.minecraft.displayGuiScreen(new Class548());
+                this.minecraft.displayGuiScreen(new MainMenu());
             }
         }));
         if (!this.minecraft.method5283()) {

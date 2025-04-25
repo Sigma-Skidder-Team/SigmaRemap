@@ -30,7 +30,7 @@ public class Projectiles extends Module
     }
     
     @EventListener
-    public void method10109(final Class5739 class5739) {
+    public void method10109(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -70,7 +70,7 @@ public class Projectiles extends Module
                     GL11.glVertex3d(class5740.method30683() - Projectiles.mc.field4644.method5833().method18161().getX() - n10, class5740.method30684() - Projectiles.mc.field4644.method5833().method18161().getY() - n12, class5740.method30685() - Projectiles.mc.field4644.method5833().method18161().getZ() - n11);
                 }
                 GL11.glEnd();
-                GL11.glLineWidth(2.0f * Class9000.field37993);
+                GL11.glLineWidth(2.0f * ScreenManager.guiScale);
                 GL11.glColor4d(1.0, 1.0, 1.0, 0.75);
                 GL11.glBegin(3);
                 for (int j = 0; j < method873.size(); ++j) {

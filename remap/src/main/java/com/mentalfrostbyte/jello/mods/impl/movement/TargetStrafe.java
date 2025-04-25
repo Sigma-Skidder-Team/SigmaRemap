@@ -33,7 +33,7 @@ public class TargetStrafe extends Module
     }
     
     @EventListener
-    public void method10227(final Class5739 class5739) {
+    public void method10227(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             Entity class5740 = null;
             if ((Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {

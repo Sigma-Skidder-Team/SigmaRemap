@@ -38,7 +38,7 @@ public class JelloEdit extends Module
         super(Category.WORLD, "JelloEdit", "Client side world edit");
         this.field15548 = true;
         this.field15550 = new ArrayList<String>();
-        final File file = new File(Client.getInstance().method35208() + "/shematics");
+        final File file = new File(Client.getInstance().getFile() + "/shematics");
         if (file.exists()) {
             this.field15550 = new ArrayList<String>(Arrays.asList(file.list()));
             for (int i = 0; i < this.field15550.size(); ++i) {
@@ -70,7 +70,7 @@ public class JelloEdit extends Module
     
     @Override
     public void onEnable() {
-        final File file = new File(Client.getInstance().method35208() + "/shematics/" + (String)this.method9882("Shematics"));
+        final File file = new File(Client.getInstance().getFile() + "/shematics/" + (String)this.method9882("Shematics"));
         if (!file.exists()) {
             ColorUtils.method19106("Schematic does not exist");
             this.method9910();
@@ -88,7 +88,7 @@ public class JelloEdit extends Module
     }
     
     @EventListener
-    private void method9969(final Class5739 class5739) {
+    private void method9969(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             GL11.glAlphaFunc(516, 0.0f);
             for (final Class8951 class5740 : this.field15542.method25323()) {

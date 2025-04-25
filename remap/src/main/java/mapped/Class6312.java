@@ -55,7 +55,7 @@ public class Class6312
             if (b2) {
                 if (b4) {
                     if (this.field25239 > 0) {
-                        this.field25237 += Client.getInstance().playerTracker().method29226();
+                        this.field25237 += Client.getInstance().getTickManager().method29226();
                     }
                 }
             }

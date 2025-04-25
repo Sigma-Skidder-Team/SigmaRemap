@@ -1167,7 +1167,7 @@ public class Class9570
         Class9570.field41398 = new Class7363("net.minecraftforge.fml.client.gui.screen.ModListScreen");
         Class9570.field41399 = new Class7362(Class9570.field41398, new Class[] { Screen.class });
         Class9570.field41400 = new Class7363("net.minecraftforge.client.gui.NotificationModUpdateScreen");
-        Class9570.field41401 = new Class7361(Class9570.field41400, "init", new Class[] { Class548.class, Class654.class });
+        Class9570.field41401 = new Class7361(Class9570.field41400, "init", new Class[] { MainMenu.class, Class654.class });
         Class9570.field41402 = new Class7363("net.minecraftforge.event.entity.PlaySoundAtEntityEvent");
         Class9570.field41403 = new Class7361(Class9570.field41402, "getSound");
         Class9570.field41404 = new Class7361(Class9570.field41402, "getCategory");
@@ -1199,7 +1199,7 @@ public class Class9570
         Class9570.field41430 = new Class7364(Class9570.field41429, DataParameter.class);
         Class9570.field41431 = new Class7363(Class4794.class);
         Class9570.field41432 = new Class7364(Class9570.field41431, Class5898.class);
-        Class9570.field41433 = new Class7363(Class548.class);
+        Class9570.field41433 = new Class7363(MainMenu.class);
         Class9570.field41434 = new Class7364(Class9570.field41433, String.class);
         Class9570.field41435 = new Class7363(Class8822.class);
         Class9570.field41436 = new Class7364(Class9570.field41435, Class8271.class);

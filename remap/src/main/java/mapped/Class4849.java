@@ -47,13 +47,13 @@ public class Class4849 extends Class4841
         class4804.method14251();
         this.addToList(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
         int n6 = 10;
-        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
+        final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = ScreenManager.field37983.entrySet().iterator();
         while (iterator.hasNext()) {
             final Class8799 class4805 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
             final Class4868 class4806;
             this.field20780.addToList(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.02f), -986896).method19734(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
             class4806.doThis((class4869, n) -> {
-                final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = Class9000.field37983.entrySet().iterator();
+                final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = ScreenManager.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
                     final Class8799 field20781 = new Class8799(((Map.Entry<Class<? extends Screen>, V>)iterator.next()).getKey());
                     if (field20781.method30702().equals(class4806.method14266()) && !this.field20783) {

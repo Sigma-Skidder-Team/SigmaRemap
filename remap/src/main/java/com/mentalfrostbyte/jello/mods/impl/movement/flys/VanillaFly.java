@@ -74,7 +74,7 @@ public class VanillaFly extends Module
             if (this.field15874 > 0) {
                 if (this.field15874 % 30 == 0) {
                     if (!ColorUtils.method19160(VanillaFly.mc.player, 0.01f)) {
-                        if (Class9367.method34762() != Class7906.field32452.method25613()) {
+                        if (ViaManager.method34762() != Class7906.field32452.method25613()) {
                             updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 0.04);
                         }
                         else {

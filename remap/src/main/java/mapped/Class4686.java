@@ -7,9 +7,9 @@ package mapped;
 public class Class4686 implements Class4659
 {
     private static String[] field20235;
-    public final /* synthetic */ CombatTracker field20236;
+    public final /* synthetic */ IRCManager field20236;
     
-    public Class4686(final CombatTracker field20236) {
+    public Class4686(final IRCManager field20236) {
         this.field20236 = field20236;
     }
     

@@ -113,7 +113,7 @@ public class Realms
     }
     
     public static boolean method25373() {
-        return Minecraft.getInstance().currentScreen != null && Minecraft.getInstance().currentScreen instanceof Class548;
+        return Minecraft.getInstance().currentScreen != null && Minecraft.getInstance().currentScreen instanceof MainMenu;
     }
     
     public static void method25374(final File file) {

@@ -10,34 +10,33 @@ import net.minecraft.entity.Entity;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 
-public class Class8949
-{
+public class BotManager {
     private static String[] field37637;
     public Class7814 field37638;
     public List<Entity> field37639;
-    
-    public Class8949() {
+
+    public BotManager() {
         this.field37639 = new CopyOnWriteArrayList<Entity>();
     }
-    
+
     public void method31750() {
         Client.getInstance().getEventBus().register2(this);
     }
-    
+
     public boolean method31751(final Entity class399) {
         return this.field37639.contains(class399);
     }
-    
+
     public void method31752() {
         this.field37639.clear();
     }
-    
+
     @EventListener
     @Class6763
     private void method31753(final Class5732 class5732) {
         this.field37639.clear();
     }
-    
+
     @EventListener
     @Class6763
     private void method31754(final Class5743 class5743) {
@@ -51,8 +50,7 @@ public class Class8949
                         continue;
                     }
                     this.field37639.remove(class5744);
-                }
-                else {
+                } else {
                     if (this.field37639.contains(class5744)) {
                         continue;
                     }

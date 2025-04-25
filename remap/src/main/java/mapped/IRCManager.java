@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.UUID;
 import java.util.List;
 
-public class CombatTracker
+public class IRCManager
 {
     private Minecraft field38982;
     private String field38983;
@@ -42,7 +42,7 @@ public class CombatTracker
     private Class4960 field38989;
     public Class9194 field38990;
     
-    public CombatTracker(final LicenseManager field38988) {
+    public IRCManager(final LicenseManager field38988) {
         this.field38982 = Minecraft.getInstance();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
@@ -53,7 +53,7 @@ public class CombatTracker
     }
     
     public static void method33654() {
-        Client.getInstance().getNetworkManager().loadLicense();
+        Client.getInstance().getNetworkManager().load();
     }
     
     public HashMap<UUID, Class6538> method33655() {
@@ -79,7 +79,7 @@ public class CombatTracker
         while (iterator.hasNext()) {
             final Class754 class5744 = iterator.next();
             if (!this.field38985.contains(class5744.method1865())) {
-                if (!Client.getInstance().method35191().method31751(class5744)) {
+                if (!Client.getInstance().getBotManager().method31751(class5744)) {
                     if (!class5744.getName().getUnformattedComponentText().equals("")) {
                         continue;
                     }
@@ -134,7 +134,7 @@ public class CombatTracker
     private void method33661(final Class5723 class5723) {
         if (class5723.method16998() instanceof Class4367) {
             final Class4367 class5724 = (Class4367)class5723.method16998();
-            Client.method35174().info("Connecting...");
+            Client.getLogger2().info("Connecting...");
             try {
                 this.field38989 = Class6593.method20037("http://localhost:3000");
             }
@@ -163,7 +163,7 @@ public class CombatTracker
         final String method33693 = this.field38982.field4642.method33693();
         ((YggdrasilMinecraftSessionService)new YggdrasilAuthenticationService(Proxy.NO_PROXY, method33693).createMinecraftSessionService()).joinServer(gameProfile, method33693, s);
         Client.getInstance();
-        Client.method35174().info("Jello Connect: successfully reached out mojangs servers " + s);
+        Client.getLogger2().info("Jello Connect: successfully reached out mojangs servers " + s);
         System.out.println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + s + "&username=" + this.field38982.field4642.method33692());
     }
     

@@ -85,8 +85,8 @@ public class Class7482
     
     public static float[] method23145(float n, float n2) {
         float n3 = Class7482.field28903.player.rotationYaw + 90.0f;
-        if (Client.getInstance().method35205().method26561() != -999.0f) {
-            n3 = Client.getInstance().method35205().method26561() + 90.0f;
+        if (Client.getInstance().getMovementManager().method26561() != -999.0f) {
+            n3 = Client.getInstance().getMovementManager().method26561() + 90.0f;
         }
         if (n != 0.0f) {
             if (n2 < 1.0f) {
@@ -108,8 +108,8 @@ public class Class7482
                 n = 1.0f;
             }
         }
-        if (Client.getInstance().method35205().method26559()) {
-            if (!Client.getInstance().method35205().method26558()) {
+        if (Client.getInstance().getMovementManager().method26559()) {
+            if (!Client.getInstance().getMovementManager().method26558()) {
                 n = 1.0f;
             }
         }

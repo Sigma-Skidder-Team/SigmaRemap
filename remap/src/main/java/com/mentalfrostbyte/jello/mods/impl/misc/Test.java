@@ -243,13 +243,13 @@ public class Test extends Module
         while (iterator.hasNext()) {
             final Entity class399 = iterator.next();
             if (class399 != Test.mc.player) {
-                if (!Client.getInstance().method35190().method29878(class399)) {
+                if (!Client.getInstance().getFriendManager().method29878(class399)) {
                     if (class399 instanceof LivingEntity) {
                         if (((LivingEntity)class399).method2664() != 0.0f) {
                             if (Test.mc.player.method1732(class399) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class399)) {
                                     if (!(class399 instanceof Class857) && !(class399 instanceof PlayerEntity)) {
-                                        if (class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
+                                        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class399)) {
@@ -307,13 +307,13 @@ public class Test extends Module
         while (iterator.hasNext()) {
             final Entity class400 = iterator.next();
             if (class400 != Test.mc.player) {
-                if (!Client.getInstance().method35190().method29878(class400)) {
+                if (!Client.getInstance().getFriendManager().method29878(class400)) {
                     if (class400 instanceof LivingEntity) {
                         if (((LivingEntity)class400).method2664() != 0.0f) {
                             if (Test.mc.player.method1732(class400) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (class400 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class400)) {
+                                        if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class400)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class400)) {

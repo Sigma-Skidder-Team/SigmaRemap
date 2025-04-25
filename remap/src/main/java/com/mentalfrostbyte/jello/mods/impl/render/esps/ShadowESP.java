@@ -28,7 +28,7 @@ public class ShadowESP extends Module
     }
     
     @EventListener
-    private void method10719(final Class5739 class5739) {
+    private void method10719(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -158,7 +158,7 @@ public class ShadowESP extends Module
     }
     
     private boolean method10725(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !class399.method1823() && !Client.getInstance().method35191().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !class399.method1823() && !Client.getInstance().getBotManager().method31751(class399);
     }
     
     private void method10726() {

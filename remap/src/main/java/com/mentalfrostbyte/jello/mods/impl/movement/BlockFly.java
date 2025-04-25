@@ -363,8 +363,8 @@ public class BlockFly extends ModuleWithSettings {
     public void method10290(final int n, final int n2, float n3) {
         n3 = (float) (0.5 + 0.5 * n3);
         GL11.glAlphaFunc(518, 0.1f);
-        RenderUtil.drawString(Class9493.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n3 * 0.3f));
-        RenderUtil.drawString(Class9493.field40815, (float) (n + 10), (float) (n2 + 4), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3 * 0.8f));
+        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n3 * 0.3f));
+        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 4), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3 * 0.8f));
         GL11.glAlphaFunc(519, 0.0f);
     }
 

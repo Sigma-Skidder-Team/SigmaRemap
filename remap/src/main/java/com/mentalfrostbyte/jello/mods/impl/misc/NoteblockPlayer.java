@@ -38,7 +38,7 @@ public class NoteblockPlayer extends PremiumModule
         this.field16035 = new ArrayList<String>();
         this.field16036 = new ArrayList<Class9486>();
         this.field16037 = new ArrayList<BlockPos>();
-        final File file = new File(Client.getInstance().method35208() + "/nbs");
+        final File file = new File(Client.getInstance().getFile() + "/nbs");
         if (file.exists()) {
             this.field16035 = new ArrayList<String>(Arrays.asList(file.list()));
             for (int i = 0; i < this.field16035.size(); ++i) {
@@ -156,7 +156,7 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     @EventListener
-    private void method10708(final Class5739 class5739) {
+    private void method10708(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -280,7 +280,7 @@ public class NoteblockPlayer extends PremiumModule
                 }
             }
             else {
-                this.field16034 = Class9377.method34814(new File(Client.getInstance().method35208() + "/nbs/" + this.getStringSettingValueByName("Song")));
+                this.field16034 = Class9377.method34814(new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song")));
                 if (this.field16034 == null) {
                     ColorUtils.method19106("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method9909(false);

@@ -22,7 +22,7 @@ public class BlockUtils
     
     public static boolean shouldSideBeRendered(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
         final EventRenderBlocks event = new EventRenderBlocks(class7096);
-        Client.getInstance().getEventBus().method21097(event);
+        Client.getInstance().getEventBus().post(event);
         if (event.method16987()) {
             return true;
         }

@@ -15,12 +15,12 @@ public class Class4938 extends Class4800
     public Class4909 field21201;
     public Class4909 field21202;
     public Class4909 field21203;
-    public Class7861 field21204;
+    public AltManager field21204;
     private String field21205;
     
     public Class4938() {
         super("Alt Manager");
-        this.field21204 = Client.getInstance().method35198();
+        this.field21204 = Client.getInstance().getAltManager();
         this.field21205 = "§7Idle...";
         this.setListening(false);
         final int n = 400;
@@ -50,7 +50,7 @@ public class Class4938 extends Class4800
                 }
             }).start();
         });
-        this.field21202.doThis((class4803, n) -> Client.getInstance().getGuimanager().method32156(new Class4936()));
+        this.field21202.doThis((class4803, n) -> Client.getInstance().getScreenManager().method32156(new Class4936()));
         this.field21203.doThis((class4803, n) -> {
             String glfwGetClipboardString = "";
             try {
@@ -69,7 +69,7 @@ public class Class4938 extends Class4800
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.PALE_RED.color, 0.1f));
         RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95f));
         RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 38.0f, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
@@ -81,7 +81,7 @@ public class Class4938 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Client.getInstance().getGuimanager().method32156(new Class4936());
+            Client.getInstance().getScreenManager().method32156(new Class4936());
         }
     }
 }

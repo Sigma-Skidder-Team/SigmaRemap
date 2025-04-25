@@ -142,7 +142,7 @@ public class AutoSoup extends Module
     private void method10223() {
         int field2743 = -1;
         for (int i = 36; i < 45; ++i) {
-            if (AutoSoup.mc.player.container.getSlot(i).method20053().getItem() == Items.field31301 && Client.getInstance().method35195().method28162(i) > 100L) {
+            if (AutoSoup.mc.player.container.getSlot(i).method20053().getItem() == Items.field31301 && Client.getInstance().getTimeManager().method28162(i) > 100L) {
                 field2743 = i - 36;
                 break;
             }

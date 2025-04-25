@@ -25,7 +25,7 @@ public class UglyClickGUICategoryIcon extends Class4841
         RenderUtil.drawImage((float)(this.x + (this.field20480 - 64) / 2), (float)(this.y + 10), 64.0f, 64.0f, this.method14308() ? this.field20796 : this.field20795, ClientColors.LIGHT_GREYISH_BLUE.color);
         final int n2 = this.method14276() / 2 + this.x;
         final int n3 = this.method14278() / 2 + this.y;
-        RenderUtil.drawString(Class9493.field40806, (float)(this.x + (this.method14276() - Class9493.field40806.getWidth(this.field20495)) / 2), (float)(this.y + this.method14278() - 50), this.field20495, this.method14308() ? -319475 : -14869219);
+        RenderUtil.drawString(ClassicAssets.field40806, (float)(this.x + (this.method14276() - ClassicAssets.field40806.getWidth(this.field20495)) / 2), (float)(this.y + this.method14278() - 50), this.field20495, this.method14308() ? -319475 : -14869219);
         super.draw(n);
     }
 }

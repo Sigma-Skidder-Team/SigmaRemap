@@ -646,9 +646,9 @@ public class ColorUtils
     }
     
     public static void method19165(final Entity class399, final boolean b) {
-        final boolean equals = Class9367.field40167.equals(Class7906.field32452);
+        final boolean equals = ViaManager.field40167.equals(Class7906.field32452);
         final Class5750 class400 = new Class5750(class399, true);
-        Client.getInstance().getEventBus().method21097(class400);
+        Client.getInstance().getEventBus().post(class400);
         if (!class400.isCancelled()) {
             if (equals) {
                 if (b) {
@@ -697,7 +697,7 @@ public class ColorUtils
                 }
             }
             class400.method17060();
-            Client.getInstance().getEventBus().method21097(class400);
+            Client.getInstance().getEventBus().post(class400);
         }
     }
     
@@ -752,7 +752,7 @@ public class ColorUtils
     
     public static void method19169() {
         if (ColorUtils.field25541.method5303() instanceof PlayerEntity) {
-            if (Client.getInstance().getGuimanager().method32144()) {
+            if (Client.getInstance().getScreenManager().method32144()) {
                 if (ColorUtils.field25541.field4644.field9406 != null) {
                     ColorUtils.field25541.field4644.field9406.close();
                 }
@@ -917,7 +917,7 @@ public class ColorUtils
         if (class399 == ColorUtils.field25541.player || class399 == Blink.field15771) {
             return false;
         }
-        if (Client.getInstance().method35190().method29878(class399)) {
+        if (Client.getInstance().getFriendManager().method29878(class399)) {
             return false;
         }
         if (!(class399 instanceof LivingEntity)) {
@@ -935,7 +935,7 @@ public class ColorUtils
         if (!b && class399 instanceof PlayerEntity) {
             return false;
         }
-        if (class399 instanceof PlayerEntity && Client.getInstance().method35191().method31751(class399)) {
+        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
             return false;
         }
         if (!b3 && class399.method1823()) {

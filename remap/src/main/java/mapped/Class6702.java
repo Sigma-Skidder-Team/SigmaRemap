@@ -106,11 +106,11 @@ public class Class6702 extends Class6693
     
     public void method20357(final String str) {
         Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
-        final File file = new File(Client.getInstance().method35208() + "/configs/");
+        final File file = new File(Client.getInstance().getFile() + "/configs/");
         if (!file.exists()) {
             file.mkdirs();
         }
-        final File file2 = new File(Client.getInstance().method35208() + "/configs/" + str + ".config");
+        final File file2 = new File(Client.getInstance().getFile() + "/configs/" + str + ".config");
         if (!file2.exists()) {
             try {
                 file2.createNewFile();

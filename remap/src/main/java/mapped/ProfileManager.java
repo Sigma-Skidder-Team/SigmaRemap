@@ -71,7 +71,7 @@ public class ProfileManager
     }
     
     public void method32704(String s) throws IOException {
-        final File file = new File(Client.getInstance().method35208() + "/profiles/");
+        final File file = new File(Client.getInstance().getFile() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
         }
@@ -110,7 +110,7 @@ public class ProfileManager
     
     public void method32706() throws IOException {
         this.field38429.field33838 = Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
-        final File file = new File(Client.getInstance().method35208() + "/profiles/");
+        final File file = new File(Client.getInstance().getFile() + "/profiles/");
         if (!file.exists()) {
             file.mkdirs();
         }
@@ -119,7 +119,7 @@ public class ProfileManager
             listFiles[i].delete();
         }
         for (final Class8241 class8241 : this.field38428) {
-            final File file2 = new File(Client.getInstance().method35208() + "/profiles/" + class8241.field33839 + ".profile");
+            final File file2 = new File(Client.getInstance().getFile() + "/profiles/" + class8241.field33839 + ".profile");
             if (!file2.exists()) {
                 file2.createNewFile();
             }
@@ -137,13 +137,13 @@ public class ProfileManager
         if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             this.field38429.field33838 = Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
             this.field38429 = field38429;
-            Client.getInstance().method35206().put("profile", field38429.field33839);
+            Client.getInstance().getConfig().put("profile", field38429.field33839);
             Client.getInstance().moduleManager().load(field38429.field33838);
             Client.getInstance().method35179();
             return;
         }
         this.field38429.field33838 = field38429.method27290();
-        Client.getInstance().method35206().put("profile", "Classic");
+        Client.getInstance().getConfig().put("profile", "Classic");
         Client.getInstance().moduleManager().load(field38429.field33838);
         Client.getInstance().method35179();
     }

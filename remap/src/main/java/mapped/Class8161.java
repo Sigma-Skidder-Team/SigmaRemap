@@ -38,12 +38,12 @@ public class Class8161
     }
     
     private void method26952(final long n, int n2, final int n3, final int n4) {
-        if (Client.getInstance().getGuimanager().method32154() == null) {
+        if (Client.getInstance().getScreenManager().method32154() == null) {
             if (this.field33604.currentScreen == null) {
                 if (n3 != 1 && n3 != 2) {
                     if (n3 == 0) {
                         final Class5715 class5715 = new Class5715(n2);
-                        Client.getInstance().getEventBus().method21097(class5715);
+                        Client.getInstance().getEventBus().post(class5715);
                         if (class5715.isCancelled()) {
                             return;
                         }
@@ -54,7 +54,7 @@ public class Class8161
                         Class8004.method26199(n2);
                     }
                     final Class5752 class5716 = new Class5752(n2, n3 == 2, null);
-                    Client.getInstance().getEventBus().method21097(class5716);
+                    Client.getInstance().getEventBus().post(class5716);
                     if (class5716.isCancelled()) {
                         return;
                     }
@@ -141,16 +141,16 @@ public class Class8161
             }
             return;
         }
-        Client.getInstance().getGuimanager().method32130(n2, n3);
+        Client.getInstance().getScreenManager().method32130(n2, n3);
     }
     
     private void method26953(final long n, final double n2, final double d) {
-        if (Client.getInstance().getGuimanager().method32154() != null) {
-            Client.getInstance().getGuimanager().method32129(n2, d);
+        if (Client.getInstance().getScreenManager().method32154() != null) {
+            Client.getInstance().getScreenManager().method32129(n2, d);
             return;
         }
         final Class5720 class5720 = new Class5720(d);
-        Client.getInstance().getEventBus().method21097(class5720);
+        Client.getInstance().getEventBus().post(class5720);
         if (!class5720.isCancelled()) {
             if (n == Minecraft.getInstance().method5332().getHandle()) {
                 final double d2 = (this.field33604.gameSettings.field23423 ? Math.signum(d) : d) * this.field33604.gameSettings.field23411;

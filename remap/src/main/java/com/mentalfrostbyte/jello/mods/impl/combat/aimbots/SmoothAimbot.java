@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.combat.Aimbot;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
-import mapped.Class5739;
+import mapped.Custom3DRenderEvent;
 import mapped.ClientPlayerEntity;
 import mapped.EventListener;
 import mapped.Minecraft;
@@ -26,7 +26,7 @@ public class SmoothAimbot extends Module
     }
     
     @EventListener
-    private void method10835(final Class5739 class5739) {
+    private void method10835(final Custom3DRenderEvent custom3DRenderEvent) {
         if (!this.isEnabled()) {
             return;
         }

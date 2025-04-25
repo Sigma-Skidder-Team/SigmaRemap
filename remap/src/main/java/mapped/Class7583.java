@@ -72,7 +72,7 @@ public class Class7583 extends AbstractSpliterator<VoxelShape>
             VoxelShape class7702 = method34791.getCollisionShape(this.field30087, this.field30084, this.field30085);
             if (this.field30082 instanceof PlayerEntity) {
                 final Class5753 class7703 = new Class5753(this.field30084, class7702);
-                Client.getInstance().getEventBus().method21097(class7703);
+                Client.getInstance().getEventBus().post(class7703);
                 class7702 = class7703.method17065();
                 if (class7703.isCancelled()) {
                     return false;

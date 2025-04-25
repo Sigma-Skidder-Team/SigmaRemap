@@ -45,7 +45,7 @@ public class ShulkerInfo extends Module
     }
     
     @EventListener
-    public void method9924(final Class5739 class5739) {
+    public void method9924(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             RenderSystem.method30084(33986, 240.0f, 240.0f);
             for (final Entity class5740 : ColorUtils.method19138()) {
@@ -154,7 +154,7 @@ public class ShulkerInfo extends Module
                             final int n = 1;
                             final int n2 = 12;
                             ClientFonts.JelloLight25.getHeight();
-                            this.method9929((int)(ShulkerInfo.mc.field4650.method26959() * Class9000.field37993 - 9 * (round + n) - n2 * 3), (int)(ShulkerInfo.mc.field4650.method26960() * Class9000.field37993 - 33.0), method20054, method20053.method27664().getUnformattedComponentText(), true);
+                            this.method9929((int)(ShulkerInfo.mc.field4650.method26959() * ScreenManager.guiScale - 9 * (round + n) - n2 * 3), (int)(ShulkerInfo.mc.field4650.method26960() * ScreenManager.guiScale - 33.0), method20054, method20053.method27664().getUnformattedComponentText(), true);
                             GL11.glPopMatrix();
                             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
                             RenderSystem.method30028();

@@ -20,7 +20,7 @@ public class Class8221
     public Class8221(final int field33771) {
         this.field33772 = false;
         this.field33774 = new Animation(300, 300);
-        this.field33770 = Class9493.field40813;
+        this.field33770 = ClassicAssets.field40813;
         this.field33771 = field33771;
     }
     

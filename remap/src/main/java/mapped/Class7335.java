@@ -236,15 +236,15 @@ public class Class7335
     
     public void method22503(final long n, final int i, final int j, final int k, final int l) {
         if (n == this.field28331.method5332().getHandle()) {
-            if (Client.getInstance().getGuimanager().method32154() != null) {
-                Client.getInstance().getGuimanager().method32127(i, k);
+            if (Client.getInstance().getScreenManager().method32154() != null) {
+                Client.getInstance().getScreenManager().method32127(i, k);
                 return;
             }
             if (this.field28331.currentScreen != null) {
                 if (this.field28331.currentScreen instanceof ChatScreen) {
                     if (i == 258) {
                         final Class5752 class5752 = new Class5752(i, k == 2, null);
-                        Client.getInstance().getEventBus().method21097(class5752);
+                        Client.getInstance().getEventBus().post(class5752);
                         if (class5752.isCancelled()) {
                             return;
                         }
@@ -259,7 +259,7 @@ public class Class7335
             else {
                 Class8004.method26199(i);
                 final Class5752 class5753 = new Class5752(i, k == 2, null);
-                Client.getInstance().getEventBus().method21097(class5753);
+                Client.getInstance().getEventBus().post(class5753);
                 if (class5753.isCancelled()) {
                     return;
                 }

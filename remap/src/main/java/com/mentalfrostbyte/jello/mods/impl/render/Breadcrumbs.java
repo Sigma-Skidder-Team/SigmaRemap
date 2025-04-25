@@ -56,7 +56,7 @@ public class Breadcrumbs extends Module
     }
     
     @EventListener
-    public void method10419(final Class5739 class5739) {
+    public void method10419(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             final Vec3d class5740 = new Vec3d(Breadcrumbs.mc.player.lastTickPosX - (Breadcrumbs.mc.player.lastTickPosX - Breadcrumbs.mc.player.posX) * Breadcrumbs.mc.method5314(), Breadcrumbs.mc.player.lastTickPosY - (Breadcrumbs.mc.player.lastTickPosY - Breadcrumbs.mc.player.posY) * Breadcrumbs.mc.method5314(), Breadcrumbs.mc.player.lastTickPosZ - (Breadcrumbs.mc.player.lastTickPosZ - Breadcrumbs.mc.player.posZ) * Breadcrumbs.mc.method5314());
             GL11.glBlendFunc(770, 771);

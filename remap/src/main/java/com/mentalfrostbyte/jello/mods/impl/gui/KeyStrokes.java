@@ -59,13 +59,13 @@ public class KeyStrokes extends Module
         }
         if (!Minecraft.getInstance().gameSettings.field23464) {
             this.field15539 = class5740.method17028();
-            if (Client.getInstance().getGuimanager().method32146()) {
+            if (Client.getInstance().getScreenManager().method32146()) {
                 for (final Class2090 class5741 : Class2090.values()) {
                     final Class8883 method8208 = class5741.method8208();
                     final Class8883 method8209 = class5741.method8209();
                     RenderUtil.method26870(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, this.field15538 + method8208.field37368 + method8209.field37368, this.field15539 + method8208.field37369 + method8209.field37369);
-                    Class8707.method29896(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, method8209.field37368, method8209.field37369);
-                    Class8707.method29899();
+                    BlurManager.method29896(this.field15538 + method8208.field37368, this.field15539 + method8208.field37369, method8209.field37368, method8209.field37369);
+                    BlurManager.method29899();
                     RenderUtil.endScissor();
                 }
             }
@@ -74,7 +74,7 @@ public class KeyStrokes extends Module
                 final Class8883 method8211 = class5742.method8209();
                 float n = 1.0f;
                 float n2 = 1.0f;
-                if (Client.getInstance().getGuimanager().method32146()) {
+                if (Client.getInstance().getScreenManager().method32146()) {
                     n2 = 0.5f;
                     n = 0.5f;
                 }
@@ -116,7 +116,7 @@ public class KeyStrokes extends Module
                 }
                 final float method8215 = class5743.field38782.calcPercent();
                 int n5 = ColorUtils.applyAlpha(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
-                if (Client.getInstance().getGuimanager().method32146()) {
+                if (Client.getInstance().getScreenManager().method32146()) {
                     n5 = ColorUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 }
                 RenderUtil.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);

@@ -76,7 +76,7 @@ public class Class4928 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }
 }

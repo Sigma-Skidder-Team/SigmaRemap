@@ -14,7 +14,7 @@ public class Class721 extends Class720
     private Widget field3944;
     
     public Class721() {
-        super(new Class548());
+        super(new MainMenu());
     }
     
     public Class721(final Screen class527) {
@@ -24,13 +24,13 @@ public class Class721 extends Class720
     @Override
     public void init() {
         super.init();
-        this.field3944 = this.addButton(new Class6470("jello.portaloption", 0.0, (double)(this.method3963().size() - 1), 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> Class9367.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.minecraft.gameSettings, this.width / 2 + 40, 7, 114));
+        this.field3944 = this.addButton(new Class6470("jello.portaloption", 0.0, (double)(this.method3963().size() - 1), 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> ViaManager.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.minecraft.gameSettings, this.width / 2 + 40, 7, 114));
     }
     
     @Override
     public void render(final int n, final int n2, final float n3) {
         super.render(n, n2, n3);
-        RenderUtil.method26870(0, 0, Minecraft.getInstance().window.method7694(), (int)(30.0 * Minecraft.getInstance().window.getGuiScaleFactor() / Class9000.field37993));
+        RenderUtil.method26870(0, 0, Minecraft.getInstance().window.method7694(), (int)(30.0 * Minecraft.getInstance().window.getGuiScaleFactor() / ScreenManager.guiScale));
         this.renderBackground();
         RenderUtil.endScissor();
         this.field3944.render(n, n2, n3);
@@ -41,7 +41,7 @@ public class Class721 extends Class720
     private int method3962() {
         Class721.field3943 = 0;
         for (final Class7906 class7906 : this.method3963()) {
-            if (this.method3964(Class721.field3943).equals(Class9367.field40167)) {
+            if (this.method3964(Class721.field3943).equals(ViaManager.field40167)) {
                 break;
             }
             ++Class721.field3943;

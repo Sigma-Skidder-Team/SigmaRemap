@@ -47,7 +47,7 @@ public class AGCSpeed extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (Client.getInstance().playerTracker().method29228() > 25) {
+        if (Client.getInstance().getTickManager().method29228() > 25) {
             this.field15591 = 0;
         }
         if (this.field15591 >= 0) {

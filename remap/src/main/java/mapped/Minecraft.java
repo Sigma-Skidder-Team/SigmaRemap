@@ -295,10 +295,10 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.window.method7671();
         this.method5248();
         if (field37233 != null) {
-            this.displayGuiScreen(new Class694(new Class548(), this, field37233, field37234));
+            this.displayGuiScreen(new Class694(new MainMenu(), this, field37233, field37234));
         }
         else {
-            this.displayGuiScreen(new Class548(true));
+            this.displayGuiScreen(new MainMenu(true));
         }
         Class567.method3306(this);
         this.method5245(new Class568(this, this.field4661.method19929(Util.method27841(), this, Minecraft.field4626, (List<Class1727>)this.field4663.method7611().stream().map((Function<? super Class1922, ?>)Class1921::method7620).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())), optional -> Util.method27855(optional, this::method5230, () -> {
@@ -539,7 +539,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
             this.currentScreen.removed();
         }
         if (field4700 == null && this.world == null) {
-            field4700 = new Class548();
+            field4700 = new MainMenu();
         }
         else if (field4700 == null && this.player.method2664() <= 0.0f) {
             if (this.player.method4128()) {
@@ -549,12 +549,12 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 this.player.method2842();
             }
         }
-        if (field4700 instanceof Class548 || field4700 instanceof Class720) {
+        if (field4700 instanceof MainMenu || field4700 instanceof Class720) {
             this.gameSettings.field23466 = false;
             this.field4647.method3807().method3760(true);
         }
         this.currentScreen = field4700;
-        Client.getInstance().getGuimanager().method32155();
+        Client.getInstance().getScreenManager().method32155();
         if (field4700 != null) {
             this.field4650.method26964();
             Class350.method1054();
@@ -729,7 +729,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.window.method7688(this.window.method7687(this.gameSettings.field23473, this.method5240()));
         if (this.currentScreen != null) {
             this.currentScreen.method2970(this, this.window.method7696(), this.window.method7697());
-            Client.getInstance().getGuimanager().method32153();
+            Client.getInstance().getScreenManager().method32153();
         }
         this.method5234().method18387(this.window.method7692(), this.window.method7693(), Minecraft.field4623);
         this.field4644.method5806(this.window.method7692(), this.window.method7693());
@@ -868,7 +868,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     public void method5253() {
         if (this.field4704) {
-            Client.getInstance().method35178();
+            Client.getInstance().shutdown();
         }
         this.field4704 = false;
     }
@@ -913,7 +913,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     private void method5257() {
         final Class5748 class5748 = new Class5748(Class1958.field10671);
-        Client.getInstance().getEventBus().method21097(class5748);
+        Client.getInstance().getEventBus().post(class5748);
         if (class5748.isCancelled()) {
             return;
         }
@@ -928,12 +928,12 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 Class5714 class5749 = null;
                 if (this.field4691.getType() == RayTraceResult.Type.ENTITY) {
                     class5749 = new Class5750(((EntityRayTraceResult)this.field4691).getEntity(), true);
-                    Client.getInstance().getEventBus().method21097(class5749);
+                    Client.getInstance().getEventBus().post(class5749);
                     if (class5749.isCancelled()) {
                         return;
                     }
                 }
-                final boolean equals = Class9367.field40167.equals(Class7906.field32452);
+                final boolean equals = ViaManager.field40167.equals(Class7906.field32452);
                 if (equals) {
                     this.player.method2707(Class316.field1877);
                 }
@@ -942,7 +942,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                         this.playerController.method27321(this.player, ((EntityRayTraceResult)this.field4691).getEntity());
                         if (class5749 != null) {
                             ((Class5750)class5749).method17060();
-                            Client.getInstance().getEventBus().method21097(class5749);
+                            Client.getInstance().getEventBus().post(class5749);
                             break;
                         }
                         break;
@@ -972,7 +972,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     private void method5258() {
         final Class5748 class5748 = new Class5748(Class1958.field10672);
-        Client.getInstance().getEventBus().method21097(class5748);
+        Client.getInstance().getEventBus().post(class5748);
         if (class5748.isCancelled()) {
             return;
         }
@@ -1024,7 +1024,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                     if (!method2715.method27620()) {
                         final Class2201 method2719 = this.playerController.method27320(this.player, this.world, class5749);
                         if (method2719.method8374()) {
-                            if (method2719.method8375() && Class9367.method34762() > Class7906.field32452.method25613()) {
+                            if (method2719.method8375() && ViaManager.method34762() > Class7906.field32452.method25613()) {
                                 this.player.method2707(class5749);
                             }
                             this.field4644.field9384.method35156(class5749);
@@ -1212,7 +1212,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         if (this.player.method2756()) {
             if (!this.gameSettings.field23445.method1056() && !this.gameSettings.field23445.method1056()) {
                 final Class5751 class5751 = new Class5751();
-                Client.getInstance().getEventBus().method21097(class5751);
+                Client.getInstance().getEventBus().post(class5751);
                 if (!class5751.isCancelled()) {
                     this.playerController.method27329(this.player);
                 }
@@ -1303,7 +1303,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         class731.method4036(new Class2259("connect.joining", new Object[0]));
         this.method5266(class731);
         this.method5267(this.world = field4683);
-        Client.getInstance().getEventBus().method21097(new Class5732());
+        Client.getInstance().getEventBus().post(new Class5732());
         if (!this.field4688) {
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString());
             final MinecraftSessionService minecraftSessionService = ((AuthenticationService)yggdrasilAuthenticationService).createMinecraftSessionService();
@@ -1385,7 +1385,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     private void method5273() {
         final Class5748 class5748 = new Class5748(Class1958.field10673);
-        Client.getInstance().getEventBus().method21097(class5748);
+        Client.getInstance().getEventBus().post(class5748);
         if (class5748.isCancelled()) {
             return;
         }

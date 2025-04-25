@@ -28,7 +28,7 @@ public class Class4833 extends Class4825
     private Class4817 field20695;
     private Class4817 field20696;
     private CustomGuiScreen field20697;
-    private Class7643 field20698;
+    private MusicManager field20698;
     public static Map<String, Class9175> field20699;
     public static String field20700;
     public static Class9175 field20701;
@@ -57,7 +57,7 @@ public class Class4833 extends Class4825
         this.field20691 = 64;
         this.field20692 = 94;
         this.field20693 = "Music Player";
-        this.field20698 = Client.getInstance().method35199();
+        this.field20698 = Client.getInstance().getMusicManager();
         this.field20715 = 0.0f;
         this.field20716 = 0.0f;
         this.field20717 = new Animation(80, 150, Direction.FORWARDS);

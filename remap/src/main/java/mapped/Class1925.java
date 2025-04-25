@@ -92,7 +92,7 @@ public final class Class1925 implements AutoCloseable
         if (Config.method28926()) {
             GLFW.glfwWindowHint(135181, Config.method28925());
         }
-        Class9000.method32149();
+        ScreenManager.method32149();
         GLFW.glfwWindowHint(139265, 196609);
         GLFW.glfwWindowHint(139275, 221185);
         GLFW.glfwWindowHint(139266, 2);
@@ -295,7 +295,7 @@ public final class Class1925 implements AutoCloseable
     private void method7676(final long n, final int field10490, final int field10491) {
         this.field10490 = field10490;
         this.field10491 = field10491;
-        Client.getInstance().getGuimanager().method32153();
+        Client.getInstance().getScreenManager().method32153();
     }
     
     private void method7677(final long n, final boolean b) {

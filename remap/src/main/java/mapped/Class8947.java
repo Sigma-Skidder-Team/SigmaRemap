@@ -14,7 +14,7 @@ public class Class8947 implements Class8948<ClientPlayerEntity>
 {
     public int method31738(final ClientPlayerEntity clientPlayerEntity) {
         if (clientPlayerEntity != null) {
-            return Class9367.method34761();
+            return ViaManager.method34761();
         }
         throw new NullPointerException("player is marked non-null but is null");
     }
@@ -22,7 +22,7 @@ public class Class8947 implements Class8948<ClientPlayerEntity>
     @Override
     public int method31739(final UUID uuid) {
         if (uuid != null) {
-            return Class9367.method34761();
+            return ViaManager.method34761();
         }
         throw new NullPointerException("uuid is marked non-null but is null");
     }

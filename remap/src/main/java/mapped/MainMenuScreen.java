@@ -14,8 +14,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainMenuScreen extends Class4800
-{
+public class MainMenuScreen extends Class4800 {
     public static long field21087;
     private int field21088;
     private int field21089;
@@ -31,7 +30,7 @@ public class MainMenuScreen extends Class4800
     public static float field21099;
     public Class4907 field21100;
     public Class4907 field21101;
-    
+
     public MainMenuScreen() {
         super("Main Screen");
         this.field21088 = 0;
@@ -61,7 +60,7 @@ public class MainMenuScreen extends Class4800
         this.field21093.method14305(false);
         this.field21093.method14303(true);
     }
-    
+
     public void goOut() {
         this.field21094.changeDirection(Direction.FORWARDS);
         this.field21092.method14305(false);
@@ -69,19 +68,19 @@ public class MainMenuScreen extends Class4800
         this.field21093.method14301(false);
         this.field21093.method14303(true);
     }
-    
+
     public void method14791() {
         this.field21094.changeDirection(Direction.BACKWARDS);
         this.field21092.method14305(true);
     }
-    
+
     public void method14792() {
         this.field21094.changeDirection(Direction.BACKWARDS);
         this.field21093.method14305(true);
         this.field21093.method14301(true);
         this.field21093.method14303(false);
     }
-    
+
     @Override
     public void method14200(final int n, final int n2) {
         final Iterator<Class4804> iterator = this.field21098.iterator();
@@ -90,7 +89,7 @@ public class MainMenuScreen extends Class4800
         }
         super.method14200(n, n2);
     }
-    
+
     @Override
     public void draw(final float n) {
         float n2 = Class8468.method28270(this.field21094.calcPercent(), 0.0f, 1.0f, 1.0f);
@@ -103,41 +102,40 @@ public class MainMenuScreen extends Class4800
         MainMenuScreen.field21099 = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - MainMenuScreen.field21087) / 1.810361E7f / 2.0f));
         MainMenuScreen.field21087 = System.nanoTime();
         final int field21089 = -this.method14320();
-        final float n4 = this.method14321() / (float)this.method14276() * -114.0f;
+        final float n4 = this.method14321() / (float) this.method14276() * -114.0f;
         if (this.field21090) {
-            this.field21088 = (int)n4;
+            this.field21088 = (int) n4;
             this.field21089 = field21089;
             this.field21090 = false;
         }
         final float n5 = n4 - this.field21088;
-        final float n6 = (float)(field21089 - this.field21089);
+        final float n6 = (float) (field21089 - this.field21089);
         if (Minecraft.getInstance().field4701 == null) {
             this.field21095.changeDirection(Direction.BACKWARDS);
             this.field21096.changeDirection(Direction.BACKWARDS);
             final float n7 = 0.5f - this.field21089 / (float) Minecraft.getInstance().window.method7694() * -1.0f;
             final float n8 = 1.0f - this.field21095.calcPercent();
             final float n9 = 1.0f - this.field21096.calcPercent();
-            if (Client.getInstance().method35185()) {}
             final float n10 = this.method14276() / 1920.0f;
-            final int n11 = (int)(600.0f * n10);
-            final int n12 = (int)(450.0f * n10);
+            final int n11 = (int) (600.0f * n10);
+            final int n12 = (int) (450.0f * n10);
             final int n13 = 0;
-            RenderUtil.method26905(this.field21089 - n11 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n11), (float)(this.method14278() + 114), ClientAssets.background);
-            RenderUtil.method26905(this.field21089 - n12 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n12), (float)(this.method14278() + 114), ClientAssets.middle);
+            RenderUtil.method26905(this.field21089 - n11 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n11), (float) (this.method14278() + 114), ClientAssets.background);
+            RenderUtil.method26905(this.field21089 - n12 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n12), (float) (this.method14278() + 114), ClientAssets.middle);
             for (final CustomGuiScreen customGuiScreen : this.field21098) {
                 GL11.glPushMatrix();
                 customGuiScreen.draw(n);
                 GL11.glPopMatrix();
             }
-            RenderUtil.method26905(this.field21089 - n13 * n7, (float)this.field21088, (float)(this.method14276() * 2 + n13), (float)(this.method14278() + 114), ClientAssets.foreground);
+            RenderUtil.method26905(this.field21089 - n13 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n13), (float) (this.method14278() + 114), ClientAssets.foreground);
             final Texture field21090 = ClientAssets.logo_large;
             field21090.getImageWidth();
             field21090.getImageHeight();
-            if (Class9000.field37993 > 1.0f) {
+            if (ScreenManager.guiScale > 1.0f) {
                 final Texture field21091 = ClientAssets.logo_large2x;
             }
-            RenderUtil.method26900((float)this.field21089, (float)(this.field21088 - 50), (float)(this.method14276() * 2), (float)(this.method14278() + 200), MainMenuScreen.field21097, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2), false);
-            RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n2 * 0.3f));
+            RenderUtil.method26900((float) this.field21089, (float) (this.field21088 - 50), (float) (this.method14276() * 2), (float) (this.method14278() + 200), MainMenuScreen.field21097, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2), false);
+            RenderUtil.method26874(0.0f, 0.0f, (float) this.method14276(), (float) this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n2 * 0.3f));
             for (final CustomGuiScreen class4804 : this.method14250()) {
                 if (!class4804.method14296()) {
                     continue;
@@ -147,17 +145,13 @@ public class MainMenuScreen extends Class4800
                     if (n2 > 0.0f) {
                         class4804.draw(n);
                     }
-                }
-                else {
+                } else {
                     class4804.draw(n * (1.0f - n2));
                 }
                 GL11.glPopMatrix();
             }
             if (n9 > 0.0f) {
-                if (Client.getInstance().method35185()) {
-                    Class568.method3314(n8, 1.0f);
-                    Client.getInstance().method35186(false);
-                }
+                Class568.method3314(n8, 1.0f);
             }
             MainMenuScreen.field21099 *= 0.7f;
             MainMenuScreen.field21099 = Math.min(MainMenuScreen.field21099, 1.0f);
@@ -170,22 +164,22 @@ public class MainMenuScreen extends Class4800
                     }
                 }
                 if (n4 != this.field21088) {
-                    this.field21088 += (int)(n5 * MainMenuScreen.field21099);
+                    this.field21088 += (int) (n5 * MainMenuScreen.field21099);
                 }
                 if (field21089 != this.field21089) {
-                    this.field21089 += (int)(n6 * MainMenuScreen.field21099);
+                    this.field21089 += (int) (n6 * MainMenuScreen.field21099);
                 }
             }
             return;
         }
         if (n4 != this.field21088) {
-            this.field21088 += (int)(n5 * MainMenuScreen.field21099);
+            this.field21088 += (int) (n5 * MainMenuScreen.field21099);
         }
         if (field21089 != this.field21089) {
-            this.field21089 += (int)(n6 * MainMenuScreen.field21099);
+            this.field21089 += (int) (n6 * MainMenuScreen.field21099);
         }
     }
-    
+
     @Override
     public void method14204(final int n) {
         super.method14204(n);
@@ -193,7 +187,7 @@ public class MainMenuScreen extends Class4800
             this.goOut();
         }
     }
-    
+
     public void method14793() {
         if (this.field21100 == null) {
             this.runThisOnDimensionUpdate(() -> {
@@ -201,7 +195,7 @@ public class MainMenuScreen extends Class4800
                 list.add(new Class7976(Class294.field1678, "Agora", 45));
                 list.add(new Class7976(Class294.field1675, "Agora is not yet available...", 35));
                 list.add(new Class7976(Class294.field1677, "Ok", 55));
-                final Class4907 field21100 = new Class4907(this, "music", true, "Dependencies.", (Class7976[])list.toArray(new Class7976[0]));
+                final Class4907 field21100 = new Class4907(this, "music", true, "Dependencies.", (Class7976[]) list.toArray(new Class7976[0]));
                 this.method14242(this.field21100 = field21100);
                 this.field21100.method14745(class4841 -> new Thread(() -> {
                     try {
@@ -210,8 +204,7 @@ public class MainMenuScreen extends Class4800
                             this.method14245(this.field21100);
                             this.field21100 = null;
                         });
-                    }
-                    catch (final InterruptedException ex) {
+                    } catch (final InterruptedException ex) {
                         ex.printStackTrace();
                     }
                 }).start());
@@ -219,7 +212,7 @@ public class MainMenuScreen extends Class4800
             });
         }
     }
-    
+
     public void method14794() {
         if (this.field21101 == null) {
             this.runThisOnDimensionUpdate(() -> {
@@ -227,7 +220,7 @@ public class MainMenuScreen extends Class4800
                 list.add(new Class7976(Class294.field1678, "Logout", 45));
                 list.add(new Class7976(Class294.field1675, "Are you sure?", 35));
                 list.add(new Class7976(Class294.field1677, "Yes", 55));
-                final Class4907 field21101 = new Class4907(this, "music", true, "Dependencies.", (Class7976[])list.toArray(new Class7976[0]));
+                final Class4907 field21101 = new Class4907(this, "music", true, "Dependencies.", (Class7976[]) list.toArray(new Class7976[0]));
                 this.method14242(this.field21101 = field21101);
                 this.field21101.method14745(class4841 -> new Thread(() -> {
                     try {
@@ -236,8 +229,7 @@ public class MainMenuScreen extends Class4800
                             this.method14245(this.field21101);
                             this.field21101 = null;
                         });
-                    }
-                    catch (final InterruptedException ex) {
+                    } catch (final InterruptedException ex) {
                         ex.printStackTrace();
                     }
                 }).start());
@@ -246,7 +238,7 @@ public class MainMenuScreen extends Class4800
             });
         }
     }
-    
+
     static {
         MainMenuScreen.field21087 = 0L;
     }

@@ -47,7 +47,7 @@ public class Class1590 implements Runnable
                     }
                 }
                 final Class5750 class7009 = new Class5750(class7008, true);
-                Client.getInstance().getEventBus().method21097(class7009);
+                Client.getInstance().getEventBus().post(class7009);
                 if (!class7009.isCancelled()) {
                     ColorUtils.method19165(class7008, !this.field8873.method9883("No swing"));
                 }

@@ -8,9 +8,6 @@ import java.security.KeyStoreException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import javax.net.ssl.HttpsURLConnection;
-import java.security.SecureRandom;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
 import java.security.KeyStore;
 import javax.net.ssl.TrustManagerFactory;
@@ -21,11 +18,11 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import javax.net.ssl.X509TrustManager;
 
-public class Class8678 implements X509TrustManager
+public class TrustManager implements X509TrustManager
 {
     private X509TrustManager field36477;
     
-    public Class8678(final X509TrustManager field36477) {
+    public TrustManager(final X509TrustManager field36477) {
         this.field36477 = field36477;
     }
     
@@ -63,22 +60,22 @@ public class Class8678 implements X509TrustManager
         return this.field36477.getAcceptedIssuers();
     }
     
-    public static Class8678 method29718() {
+    public static TrustManager method29718() {
         try {
             final TrustManagerFactory instance = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             instance.init((KeyStore)null);
             X509TrustManager x509TrustManager = null;
-            for (final TrustManager trustManager : instance.getTrustManagers()) {
+            for (final javax.net.ssl.TrustManager trustManager : instance.getTrustManagers()) {
                 if (trustManager instanceof X509TrustManager) {
                     x509TrustManager = (X509TrustManager)trustManager;
                     break;
                 }
             }
             final SSLContext instance2 = SSLContext.getInstance("SSL");
-            final Class8678 class8678 = new Class8678(x509TrustManager);
-            instance2.init(null, new Class8678[] { class8678 }, null);
+            final TrustManager trustManager = new TrustManager(x509TrustManager);
+            instance2.init(null, new TrustManager[] {trustManager}, null);
             HttpsURLConnection.setDefaultSSLSocketFactory(instance2.getSocketFactory());
-            return class8678;
+            return trustManager;
         }
         catch (final NoSuchAlgorithmException | KeyManagementException | KeyStoreException ex) {
             ((Throwable)ex).printStackTrace();

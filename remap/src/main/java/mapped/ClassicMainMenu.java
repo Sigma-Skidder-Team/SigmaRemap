@@ -12,7 +12,7 @@ import slick2d.TrueTypeFont;
 import java.util.Collections;
 import java.util.ArrayList;
 
-public class Class4937 extends Class4800
+public class ClassicMainMenu extends Class4800
 {
     public final Class4825 field21186;
     public final Class4825 field21187;
@@ -45,7 +45,7 @@ public class Class4937 extends Class4800
         return this.method14278() / 2 - 100;
     }
     
-    public Class4937() {
+    public ClassicMainMenu() {
         super("Main Screen");
         this.field21188 = 0;
         this.field21189 = 0;
@@ -55,7 +55,7 @@ public class Class4937 extends Class4800
         this.setListening(false);
         (this.field21192 = new Animation(175, 325)).changeDirection(Direction.BACKWARDS);
         this.field21193.changeDirection(Direction.FORWARDS);
-        final TrueTypeFont field40807 = Class9493.field40807;
+        final TrueTypeFont field40807 = ClassicAssets.field40807;
         final String s = "© Sigma Prod";
         final StringBuilder append = new StringBuilder().append("Sigma ");
         Client.getInstance();
@@ -71,7 +71,7 @@ public class Class4937 extends Class4800
         list.add("Tomygames");
         list.add("Omikron");
         Collections.shuffle(list);
-        this.addToList(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, colorHelper, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), Class9493.field40808));
+        this.addToList(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, colorHelper, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), ClassicAssets.field40808));
         this.addToList(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), string, field40807));
         this.addToList(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "Hello,", field40807));
         this.addToList(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "You are using the latest version", field40807));
@@ -85,7 +85,7 @@ public class Class4937 extends Class4800
     }
     
     public void method14862(final Class4800 class4800) {
-        Client.getInstance().getGuimanager().method32156(class4800);
+        Client.getInstance().getScreenManager().method32156(class4800);
         this.method14863();
     }
     
@@ -108,7 +108,7 @@ public class Class4937 extends Class4800
         this.method14228();
         GL11.glPushMatrix();
         GL11.glTranslated((double)(int)(-this.method14276() / 200 + this.field21196 / 200.0f), (double)((int)(-this.method14278() / 100 + this.field21197 / 100.0f) - round), 0.0);
-        RenderUtil.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), Class9493.field40801);
+        RenderUtil.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), ClassicAssets.field40801);
         GL11.glPopMatrix();
         this.field21195.method14295((int)(-this.method14276() / 40 + this.field21196 / 40.0f), (int)(-this.method14278() / 40 + this.field21197 / 40.0f) + round);
         this.field21194.method14295((int)(-this.method14276() / 12 + this.field21196 / 12.0f), (int)(-this.method14278() / 12 + this.field21197 / 12.0f));
@@ -116,6 +116,6 @@ public class Class4937 extends Class4800
     }
     
     static {
-        Class4937.field21198 = System.nanoTime();
+        ClassicMainMenu.field21198 = System.nanoTime();
     }
 }

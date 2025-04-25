@@ -133,7 +133,7 @@ public class AutoMiner extends Module
             }
             if (n2 == 0) {
                 if (AutoMiner.mc.player.onGround) {
-                    if (!Client.getInstance().method35205().method26559()) {
+                    if (!Client.getInstance().getMovementManager().method26559()) {
                         if (this.field16106 == null) {
                             this.method10821();
                             Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing...", ClientAssets.direction));
@@ -157,12 +157,12 @@ public class AutoMiner extends Module
                                         this.field16105.method35017(class5750);
                                         final List list3;
                                         if (list3.size() > 1) {
-                                            Client.getInstance().method35205().method26556(list3);
+                                            Client.getInstance().getMovementManager().method26556(list3);
                                             Client.getInstance().getNotificationManager();
                                             new Notification("AutoMiner", "Solved in " + list3.size() + " steps! (" + this.field16105.field40407 + ":" + n3 + ")", ClientAssets.direction);
                                             final Notification class5751;
                                             final Object o2;
-                                            ((Class7951)o2).send(class5751);
+                                            ((NotificationManager)o2).send(class5751);
                                             break;
                                         }
                                         else {
@@ -180,7 +180,7 @@ public class AutoMiner extends Module
                                         new Notification("AutoMiner", "Could not fin any safe path. (" + list2.size() + ")", ClientAssets.direction);
                                         final Notification class5752;
                                         final Object o3;
-                                        ((Class7951)o3).send(class5752);
+                                        ((NotificationManager)o3).send(class5752);
                                         Thread.sleep(1000L);
                                     }
                                 }
@@ -253,7 +253,7 @@ public class AutoMiner extends Module
         this.field16106 = null;
         this.field16103.clear();
         this.field16104.clear();
-        Client.getInstance().method35205().method26555();
+        Client.getInstance().getMovementManager().method26555();
         Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Scanning Terrain..."));
     }
     
@@ -265,7 +265,7 @@ public class AutoMiner extends Module
         this.field16106 = null;
         this.field16103.clear();
         this.field16104.clear();
-        Client.getInstance().method35205().method26555();
+        Client.getInstance().getMovementManager().method26555();
     }
     
     private void method10822() {
@@ -301,7 +301,7 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10824(final Class5739 class5739) {
+    public void method10824(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             this.method10826();
         }

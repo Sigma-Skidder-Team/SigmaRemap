@@ -31,7 +31,7 @@ public class Cubecraft2Fly extends PremiumModule
             this.field16025 = true;
         }
         if (ColorUtils.method19148()) {
-            if (Class9367.method34762() == Class7906.field32452.method25613()) {
+            if (ViaManager.method34762() == Class7906.field32452.method25613()) {
                 Client.getInstance().getNotificationManager().send(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
             }
         }

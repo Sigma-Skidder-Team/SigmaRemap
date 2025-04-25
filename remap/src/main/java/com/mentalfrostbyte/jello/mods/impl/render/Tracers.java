@@ -21,7 +21,7 @@ public class Tracers extends Module
     }
     
     @EventListener
-    public void method10023(final Class5739 class5739) {
+    public void method10023(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             GL11.glBlendFunc(770, 771);
             GL11.glAlphaFunc(519, 0.0f);
@@ -29,7 +29,7 @@ public class Tracers extends Module
             GL11.glEnable(2848);
             GL11.glDisable(3553);
             GL11.glDisable(2929);
-            GL11.glLineWidth(2.0f * Class9000.field37993);
+            GL11.glLineWidth(2.0f * ScreenManager.guiScale);
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
             for (final Entity class5740 : ColorUtils.method19108()) {
@@ -45,7 +45,7 @@ public class Tracers extends Module
                 if (class5740.ticksExisted <= 30) {
                     continue;
                 }
-                if (Client.getInstance().method35191().method31751(class5740)) {
+                if (Client.getInstance().getBotManager().method31751(class5740)) {
                     continue;
                 }
                 this.method10024(class5740);

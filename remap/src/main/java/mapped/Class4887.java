@@ -78,7 +78,7 @@ public class Class4887 extends Class4841
                 captchaChecker.setChallengeAnswer(this.field20890.getTypedText());
             }
             Client.getInstance().getNetworkManager().resetLicense();
-            Client.getInstance().getNetworkManager().newAccount(this.field20888.getTypedText(), this.field20889.getTypedText(), captchaChecker);
+            Client.getInstance().getNetworkManager().login(this.field20888.getTypedText(), this.field20889.getTypedText(), captchaChecker);
             final String s = "asd";
             if (s != null) {
                 ((RegisterScreen)this.getParent()).method14781("Error", s);

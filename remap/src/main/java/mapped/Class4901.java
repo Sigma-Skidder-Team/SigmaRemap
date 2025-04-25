@@ -123,7 +123,7 @@ public class Class4901 extends Class4841
                     }
                 }
             }
-            this.field20966 = Client.getInstance().method35200().method24276(field20970, this.field20961 * 2);
+            this.field20966 = Client.getInstance().getWaypointManager().method24276(field20970, this.field20961 * 2);
         }
         Label_0211: {
             if (this.field20966 != null) {
@@ -156,7 +156,7 @@ public class Class4901 extends Class4841
         GL11.glTranslated(-n6, n7, 0.0);
         RenderUtil.method26903((float)(this.x + n2), (float)(this.y + n3), (float)max, (float)max, this.field20966.field30451, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)this.field20966.field30449, (float)this.field20966.field30450, true, false);
         GL11.glPopMatrix();
-        for (final Class8124 class7861 : Client.getInstance().method35200().method24262()) {
+        for (final Class8124 class7861 : Client.getInstance().getWaypointManager().method24262()) {
             final float n8 = this.field20960.field32290 * 16 - this.field20963 * 16.0f;
             final float n9 = this.field20960.field32291 * 16 - this.field20962 * 16.0f;
             final float n10 = class7861.field33469 - n8 + 1.0f;

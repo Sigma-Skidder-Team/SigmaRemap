@@ -83,7 +83,7 @@ public class Class4801 extends Class4800
     }
     
     public boolean method14208() {
-        if (Client.getInstance().method35199().method24199() && Client.getInstance().method35199().method24200()) {
+        if (Client.getInstance().getMusicManager().method24199() && Client.getInstance().getMusicManager().method24200()) {
             return false;
         }
         if (this.field20469 == null) {
@@ -91,20 +91,20 @@ public class Class4801 extends Class4800
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, "Music", 40));
                 list.add(new Class7976(Class294.field1675, "Jello Music requires:", 20));
-                if (!Client.getInstance().method35199().method24199()) {
+                if (!Client.getInstance().getMusicManager().method24199()) {
                     list.add(new Class7976(Class294.field1675, "- Python 2.7.17", 30));
                 }
-                if (!Client.getInstance().method35199().method24200()) {
+                if (!Client.getInstance().getMusicManager().method24200()) {
                     list.add(new Class7976(Class294.field1675, "- Visual C++ 2010 x86", 30));
                 }
                 list.add(new Class7976(Class294.field1677, "Download", 55));
                 final Class4907 field20469 = new Class4907(this, "music", true, "Dependencies.", (Class7976[])list.toArray(new Class7976[0]));
                 this.method14242(this.field20469 = field20469);
                 this.field20469.method14516(class4841 -> {
-                    if (!Client.getInstance().method35199().method24199()) {
+                    if (!Client.getInstance().getMusicManager().method24199()) {
                         Util.method27845().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                     }
-                    if (!Client.getInstance().method35199().method24200()) {
+                    if (!Client.getInstance().getMusicManager().method24200()) {
                         Util.method27845().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                     }
                 });
@@ -229,7 +229,7 @@ public class Class4801 extends Class4800
     @Override
     public void method14204(final int n) {
         super.method14204(n);
-        final int method21959 = Client.getInstance().moduleManager().getJelloTouch().method21959(Class722.class);
+        final int method21959 = Client.getInstance().moduleManager().getJelloTouch().method21959(ClickGuiHolder.class);
         if (n != 256) {
             if (n != method21959) {
                 return;

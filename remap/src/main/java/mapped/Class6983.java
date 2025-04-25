@@ -21,7 +21,7 @@ public class Class6983 extends Class6977
     @Override
     public Set<Class9488> method21398(final BlockPos class354, final Class7096 class355, final Class7614 class356) {
         final HashSet set = new HashSet();
-        if (Class9367.method34762() == Class7906.field32452.method25613() && this.field27275.method5282() != null) {
+        if (ViaManager.method34762() == Class7906.field32452.method25613() && this.field27275.method5282() != null) {
             set.add(new Class9488(class354, new Class7096(Blocks.AIR, (ImmutableMap<IProperty<?>, Comparable<?>>)ImmutableMap.builder().build())));
             return set;
         }

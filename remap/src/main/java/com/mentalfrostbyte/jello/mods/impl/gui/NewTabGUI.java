@@ -91,16 +91,16 @@ public class NewTabGUI extends Module
         if (!this.isEnabled() || NewTabGUI.mc.player == null) {
             return;
         }
-        if (!Client.getInstance().getGuimanager().method32146()) {
+        if (!Client.getInstance().getScreenManager().method32146()) {
             return;
         }
         if (Minecraft.getInstance().gameSettings.field23466) {
             return;
         }
         if (!Minecraft.getInstance().gameSettings.field23464) {
-            Class8707.method29896(this.field15806, this.field15807, this.field15808, this.field15809);
+            BlurManager.method29896(this.field15806, this.field15807, this.field15808, this.field15809);
             if (this.field15819) {
-                Class8707.method29896(170, this.field15807, this.field15824, this.field15821);
+                BlurManager.method29896(170, this.field15807, this.field15824, this.field15821);
             }
         }
     }
@@ -258,7 +258,7 @@ public class NewTabGUI extends Module
             if (class8479.field34795 == b) {
                 final float method35858 = class8479.field34796.calcPercent();
                 int n10 = ColorUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
-                if (Client.getInstance().getGuimanager().method32146()) {
+                if (Client.getInstance().getScreenManager().method32146()) {
                     n10 = ColorUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
                 }
                 RenderUtil.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
@@ -284,7 +284,7 @@ public class NewTabGUI extends Module
     }
     
     @EventListener
-    private void method10396(final Class5739 class5739) {
+    private void method10396(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled() && NewTabGUI.mc.player != null) {
             this.method10399();
             final float n = 6.0f;
@@ -358,7 +358,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10398(final int n, final int n2, final int n3, final int n4, final Color[] array, final Color[] array2, final Color[] array3, final float n5) {
-        final boolean method32146 = Client.getInstance().getGuimanager().method32146();
+        final boolean method32146 = Client.getInstance().getScreenManager().method32146();
         int n6 = ColorUtils.method19110(array).getRGB();
         int n7 = ColorUtils.method19110(array3).getRGB();
         if (array2 != null) {
@@ -371,7 +371,7 @@ public class NewTabGUI extends Module
         }
         else {
             RenderUtil.startScissor((float)n, (float)n2, (float)n3, (float)n4);
-            Class8707.method29899();
+            BlurManager.method29899();
             RenderUtil.endScissor();
             RenderUtil.method26876((float)n, (float)n2, (float)(n + n3), (float)(n2 + n4), this.field15831);
         }
@@ -379,7 +379,7 @@ public class NewTabGUI extends Module
     }
     
     private void method10399() {
-        if (Client.getInstance().getGuimanager().method32146()) {
+        if (Client.getInstance().getScreenManager().method32146()) {
             return;
         }
         if (Minecraft.getInstance().gameSettings.field23466) {

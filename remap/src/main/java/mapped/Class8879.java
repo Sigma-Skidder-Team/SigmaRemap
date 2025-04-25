@@ -48,7 +48,7 @@ public class Class8879
                     }
                 }
                 case "screen": {
-                    final Class<? extends Screen> method13269 = Client.getInstance().getGuimanager().method32151(JSONObject.getString("target"));
+                    final Class<? extends Screen> method13269 = Client.getInstance().getScreenManager().method32151(JSONObject.getString("target"));
                     if (method13269 != null) {
                         this.field37348 = method13269;
                         break;
@@ -69,7 +69,7 @@ public class Class8879
             }
             case 2: {
                 JSONObject.put("type", "screen");
-                JSONObject.put("target", Client.getInstance().getGuimanager().method32152((Class<? extends Screen>)this.field37348));
+                JSONObject.put("target", Client.getInstance().getScreenManager().method32152((Class<? extends Screen>)this.field37348));
                 break;
             }
         }

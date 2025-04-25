@@ -32,20 +32,20 @@ public class AntiBot extends Module
     
     @Override
     public void onDisable() {
-        Client.getInstance().method35191().field37638 = null;
-        Client.getInstance().method35191().field37639.clear();
+        Client.getInstance().getBotManager().field37638 = null;
+        Client.getInstance().getBotManager().field37639.clear();
     }
     
     private void method10302() {
-        Client.getInstance().method35191().field37639.clear();
+        Client.getInstance().getBotManager().field37639.clear();
         final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "Advanced": {
-                Client.getInstance().method35191().field37638 = new Class7816();
+                Client.getInstance().getBotManager().field37638 = new Class7816();
                 break;
             }
             case "Hypixel": {
-                Client.getInstance().method35191().field37638 = new Class7815();
+                Client.getInstance().getBotManager().field37638 = new Class7815();
                 break;
             }
         }

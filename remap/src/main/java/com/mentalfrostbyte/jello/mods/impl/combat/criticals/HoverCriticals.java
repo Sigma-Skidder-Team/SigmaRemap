@@ -38,7 +38,7 @@ public class HoverCriticals extends Module
         if (this.isEnabled() && updateWalkingEvent.method17046()) {
             final boolean b = HoverCriticals.mc.field4691 != null && HoverCriticals.mc.field4691.getType() == RayTraceResult.Type.BLOCK;
             final boolean b2 = HoverCriticals.mc.playerController.method27337() || (HoverCriticals.mc.gameSettings.field23446.method1056() && b);
-            if (Client.getInstance().playerTracker().method29228() > 0 && !b2) {
+            if (Client.getInstance().getTickManager().method29228() > 0 && !b2) {
                 this.field15895 -= 1.0E-14;
                 if (this.field15895 < 0.0 || Step.field15758 == 0) {
                     this.field15895 = 1.0E-11;

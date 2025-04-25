@@ -13,11 +13,11 @@ public class Class4838 extends Class4825
     public Class4817 field20741;
     public TextField field20742;
     private ArrayList<Class8681> field20743;
-    private Class7643 field20744;
+    private MusicManager field20744;
     
     public Class4838(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
         super(customGuiScreen, s, n, n2, n3, n4, ColorHelper.field25964, s2, false);
-        this.field20744 = Client.getInstance().method35199();
+        this.field20744 = Client.getInstance().getMusicManager();
         this.addToList(this.field20741 = new Class4817(this, "albumView", 0, 0, n3, n4, ColorHelper.field25964, "View"));
         this.addToList(this.field20742 = new TextField(this, "searchInput", 30, 14, n3 - 60, 70, TextField.field20671, "", "Search..."));
         this.field20742.method14301(true);

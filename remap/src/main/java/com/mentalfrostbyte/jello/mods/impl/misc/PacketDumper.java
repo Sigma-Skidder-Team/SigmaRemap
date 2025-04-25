@@ -21,7 +21,7 @@ public class PacketDumper extends Module
     public PacketDumper() {
         super(Category.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
         try {
-            final File file = new File(Client.getInstance().method35208() + "/latest_packets.txt");
+            final File file = new File(Client.getInstance().getFile() + "/latest_packets.txt");
             if (!file.exists()) {
                 file.createNewFile();
             }

@@ -202,7 +202,7 @@ public class Class720 extends Screen
     private void method3949(final ServerData class9575) {
         if (class9575.field41613 != null) {
             if (class9575.field41613.contains("hypixel.net")) {
-                Class9367.field40167 = Class9367.field40168;
+                ViaManager.field40167 = ViaManager.field40168;
             }
         }
         ColorUtils.method19176(class9575);

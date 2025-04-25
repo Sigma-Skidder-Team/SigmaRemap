@@ -26,7 +26,7 @@ public class Class4936 extends Class4800
     private float field21175;
     private float field21176;
     private int field21177;
-    public Class7861 field21178;
+    public AltManager field21178;
     private Texture field21179;
     private float field21180;
     private Class225 field21181;
@@ -42,7 +42,7 @@ public class Class4936 extends Class4800
         this.field21175 = 0.65f;
         this.field21176 = 1.0f - this.field21175;
         this.field21177 = 30;
-        this.field21178 = Client.getInstance().method35198();
+        this.field21178 = Client.getInstance().getAltManager();
         this.field21181 = Class225.field793;
         this.field21182 = false;
         this.field21185 = "§7Idle...";
@@ -143,7 +143,7 @@ public class Class4936 extends Class4800
     }
     
     private void method14850() {
-        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), Class9493.field40801);
+        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
         RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.23f));
     }
     
@@ -151,7 +151,7 @@ public class Class4936 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Minecraft.getInstance().displayGuiScreen(new Class548());
+            Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }
     

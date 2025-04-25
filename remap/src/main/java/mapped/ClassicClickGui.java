@@ -8,16 +8,16 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.UglyClickGUICategory;
 import totalcross.json.JSONObject;
 
-public class Class4799 extends Class4800
+public class ClassicClickGui extends Class4800
 {
     private static Minecraft field20454;
     private static Animation field20455;
     private static boolean field20456;
     private Class4807 field20457;
     
-    public Class4799() {
+    public ClassicClickGui() {
         super("ClassicScreen");
-        Class4799.field20455 = new Animation(250, 200, Direction.BACKWARDS);
+        ClassicClickGui.field20455 = new Animation(250, 200, Direction.BACKWARDS);
         this.method14199();
         ColorUtils.method19169();
     }
@@ -50,7 +50,7 @@ public class Class4799 extends Class4800
     
     @Override
     public int method14201() {
-        final Minecraft field20454 = Class4799.field20454;
+        final Minecraft field20454 = ClassicClickGui.field20454;
         return Minecraft.method5338();
     }
     
@@ -69,18 +69,18 @@ public class Class4799 extends Class4800
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 256) {
-            Class4799.field20454.displayGuiScreen(null);
+            ClassicClickGui.field20454.displayGuiScreen(null);
         }
     }
     
     @Override
     public void draw(final float n) {
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, Class4799.field20455.calcPercent() * 0.35f));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, ClassicClickGui.field20455.calcPercent() * 0.35f));
         super.draw(n);
     }
     
     static {
-        Class4799.field20454 = Minecraft.getInstance();
-        Class4799.field20456 = true;
+        ClassicClickGui.field20454 = Minecraft.getInstance();
+        ClassicClickGui.field20456 = true;
     }
 }
