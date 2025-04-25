@@ -61,20 +61,19 @@ public class Class1914 implements AutoCloseable
     @Nullable
     public CompoundNBT method7557(final ChunkPos class7859) throws IOException {
         final CompletableFuture<CompoundNBT> method7560 = this.method7560(p1 -> () -> {
-            final Class7312 class7861 = this.field10411.get(class7860);
+            final Class7312 class7861 = this.field10411.get(class7859);
             if (class7861 != null) {
-                completableFuture2.complete(Class7312.method22428(class7861));
+                method7560.complete(class7861.field28296);
             }
             else {
                 try {
-                    completableFuture2.complete(this.field10410.method7176(class7860));
+                    method7560.complete(this.field10410.method7176(class7859));
                 }
                 catch (final Exception ex2) {
-                    Class1914.field10406.warn("Failed to read chunk {}", (Object)class7860, (Object)ex2);
-                    completableFuture2.completeExceptionally(ex2);
+                    Class1914.field10406.warn("Failed to read chunk {}", (Object)class7859, (Object)ex2);
+                    method7560.completeExceptionally(ex2);
                 }
             }
-            return;
         });
         try {
             return method7560.join();
@@ -84,7 +83,7 @@ public class Class1914 implements AutoCloseable
                 throw (IOException)ex.getCause();
             }
         }
-        throw;
+        return null;
     }
     
     private CompletableFuture<Void> method7558() {
@@ -95,7 +94,7 @@ public class Class1914 implements AutoCloseable
     }
     
     public CompletableFuture<Void> method7559() {
-        return this.method7560(p0 -> () -> CompletableFuture.allOf((CompletableFuture<?>[])this.field10411.values().stream().map(class7312 -> Class7312.method22429(class7312)).toArray(CompletableFuture[]::new)).whenComplete((p1, p2) -> completableFuture2.complete(null)));
+        return this.method7560(p0 -> () -> CompletableFuture.allOf((CompletableFuture<?>[])this.field10411.values().stream().map(class7312 -> class7312.field28295).toArray(CompletableFuture[]::new)).whenComplete((p1, p2) -> completableFuture2.complete(null)));
     }
     
     private <T> CompletableFuture<T> method7560(final Function<CompletableFuture<T>, Runnable> function) {
@@ -144,12 +143,12 @@ public class Class1914 implements AutoCloseable
     
     private void method7565(final ChunkPos class7859, final Class7312 class7860) {
         try {
-            this.field10410.method7177(class7859, Class7312.method22428(class7860));
-            Class7312.method22429(class7860).complete(null);
+            this.field10410.method7177(class7859, class7860.field28295);
+            class7860.field28296.complete(null);
         }
         catch (final Exception ex) {
             Class1914.field10406.error("Failed to store chunk {}", (Object)class7859, (Object)ex);
-            Class7312.method22429(class7860).completeExceptionally(ex);
+            class7860.field28296.completeExceptionally(ex);
         }
     }
     
@@ -186,7 +185,6 @@ public class Class1914 implements AutoCloseable
                     throw (IOException)ex.getCause();
                 }
             }
-            throw;
         }
     }
     

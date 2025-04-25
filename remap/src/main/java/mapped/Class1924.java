@@ -311,7 +311,6 @@ public class Class1924 implements AutoCloseable
                         this.field10469.close();
                     }
                 }
-                throw;
             }
         }
     }
