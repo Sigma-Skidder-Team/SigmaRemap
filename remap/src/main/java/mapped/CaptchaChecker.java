@@ -33,12 +33,13 @@ public class CaptchaChecker
                     final URL input = new URL("https://jelloprg.sigmaclient.info/captcha/" + field36881 + ".png");
                     this.field36886 = ImageIO.read(input);
                 }
-                catch (final IOException ex) {}
+                catch (final IOException ignored) {}
             }).start();
         }
     }
-    
-    public void finalize() throws Throwable {
+
+    @Override
+    protected void finalize() throws Throwable {
         try {
             if (this.field36887 != null) {
                 Client.getInstance().addTexture(this.field36887);
