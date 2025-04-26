@@ -4,6 +4,8 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+
 import java.io.EOFException;
 import java.io.IOException;
 
@@ -16,13 +18,13 @@ public final class Class7812 implements Class7811
     private static final int field32007 = 4;
     private static final int field32008 = 5;
     private static final int field32009 = 6;
-    public final Class2309 field32010;
-    public final Class8904 field32011;
+    public final OkHttpClient field32010;
+    public final StreamAllocation field32011;
     public final Class1681 field32012;
     public final Class1679 field32013;
     public int field32014;
     
-    public Class7812(final Class2309 field32010, final Class8904 field32011, final Class1681 field32012, final Class1679 field32013) {
+    public Class7812(final OkHttpClient field32010, final StreamAllocation field32011, final Class1681 field32012, final Class1679 field32013) {
         this.field32014 = 0;
         this.field32010 = field32010;
         this.field32011 = field32011;
@@ -31,8 +33,8 @@ public final class Class7812 implements Class7811
     }
     
     @Override
-    public Class1676 method25220(final Class8596 class8596, final long n) {
-        if ("chunked".equalsIgnoreCase(class8596.method29112("Transfer-Encoding"))) {
+    public Class1676 method25220(final Request request, final long n) {
+        if ("chunked".equalsIgnoreCase(request.method29112("Transfer-Encoding"))) {
             return this.method25233();
         }
         if (n == -1L) {
@@ -50,21 +52,21 @@ public final class Class7812 implements Class7811
     }
     
     @Override
-    public void method25221(final Class8596 class8596) throws IOException {
-        this.method25231(class8596.method29111(), Class7621.method23956(class8596, this.field32011.method31371().method15329().method23002().type()));
+    public void method25221(final Request request) throws IOException {
+        this.method25231(request.method29111(), Class7621.method23956(request, this.field32011.method31371().method15329().method23002().type()));
     }
     
     @Override
-    public Class1760 method25227(final Class1753 class1753) throws IOException {
+    public Class1760 method25227(final Response class1753) throws IOException {
         return new Class1761(class1753.method6195(), Class8753.method30275(this.method25229(class1753)));
     }
     
-    private Class1682 method25229(final Class1753 class1753) throws IOException {
+    private Class1682 method25229(final Response class1753) throws IOException {
         if (!Class9558.method35763(class1753)) {
             return this.method25235(0L);
         }
         if ("chunked".equalsIgnoreCase(class1753.method6193("Transfer-Encoding"))) {
-            return this.method25236(class1753.method6186().method29109());
+            return this.method25236(class1753.method6186().url());
         }
         final long method35751 = Class9558.method35751(class1753);
         if (method35751 == -1L) {

@@ -27,7 +27,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import java.util.UUID;
 import org.apache.http.client.HttpClient;
-import xd.CustomJSONObject;
+import xd.PremiumJSONObject;
 
 public class LicenseManager
 {
@@ -79,7 +79,7 @@ public class LicenseManager
                 String response_real;
                 try (InputStream inputStream = entity.getContent()) {
                     String content = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
-                    CustomJSONObject json = new CustomJSONObject(content);
+                    PremiumJSONObject json = new PremiumJSONObject(content);
                     if (json.getBoolean("success")) {
                         if (json.has("premium")) {
                             new Thread(new PremiumChecker(json.has("premium"))).start();
@@ -125,7 +125,7 @@ public class LicenseManager
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final CustomJSONObject json = new CustomJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    final PremiumJSONObject json = new PremiumJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
                     if (json.getBoolean("success")) {
                         this.parse(json);
                         return;
@@ -183,7 +183,7 @@ public class LicenseManager
             final HttpEntity entity = this.httpClient.execute((HttpUriRequest)httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final CustomJSONObject class8774 = new CustomJSONObject(IOUtils.toString(content, "UTF-8"));
+                    final PremiumJSONObject class8774 = new PremiumJSONObject(IOUtils.toString(content, "UTF-8"));
                     if (class8774.getBoolean("success")) {
                         this.parse(class8774);
                         return null;
@@ -214,13 +214,13 @@ public class LicenseManager
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final CustomJSONObject customJsonObject = new CustomJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
-                    if (customJsonObject.getBoolean("success")) {
-                        final String uid = customJsonObject.getString("uid");
+                    final PremiumJSONObject premiumJsonObject = new PremiumJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
+                    if (premiumJsonObject.getBoolean("success")) {
+                        final String uid = premiumJsonObject.getString("uid");
                         boolean completed = false;
 
-                        if (customJsonObject.has("captcha")) {
-                            completed = customJsonObject.getBoolean("captcha");
+                        if (premiumJsonObject.has("captcha")) {
+                            completed = premiumJsonObject.getBoolean("captcha");
                         }
                         this.captcha = new CaptchaChecker(uid, completed);
                         return this.captcha;

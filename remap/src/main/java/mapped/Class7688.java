@@ -4,15 +4,17 @@
 
 package mapped;
 
+import org.java_websocket.client.DnsResolver;
+
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.net.InetAddress;
 import java.util.List;
 
-public final class Class7688 implements Class7687
+public final class Class7688 implements DnsResolver
 {
     @Override
-    public List<InetAddress> method24408(final String host) throws UnknownHostException {
+    public List<InetAddress> resolve(final String host) throws UnknownHostException {
         if (host != null) {
             return Arrays.asList(InetAddress.getAllByName(host));
         }

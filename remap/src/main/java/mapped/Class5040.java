@@ -4,12 +4,13 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+
 import java.net.SocketTimeoutException;
 import java.net.SocketException;
 import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.SSLPeerUnverifiedException;
-import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import javax.net.ssl.SSLSocket;
 import java.net.ConnectException;
@@ -37,12 +38,12 @@ public final class Class5040 extends Class5041 implements Class5039
     public boolean field21591;
     public int field21592;
     public int field21593;
-    public final List<Reference<Class8904>> field21594;
+    public final List<Reference<StreamAllocation>> field21594;
     public long field21595;
     
     public Class5040(final Class8015 field21582, final Class7465 field21583) {
         this.field21593 = 1;
-        this.field21594 = new ArrayList<Reference<Class8904>>();
+        this.field21594 = new ArrayList<Reference<StreamAllocation>>();
         this.field21595 = Long.MAX_VALUE;
         this.field21582 = field21582;
         this.field21583 = field21583;
@@ -112,14 +113,14 @@ public final class Class5040 extends Class5041 implements Class5039
     }
     
     private void method15335(final int n, final int n2, final int n3) throws IOException {
-        Class8596 class8596 = this.method15340();
-        final Class8846 method29109 = class8596.method29109();
+        Request request = this.method15340();
+        final Class8846 method29109 = request.url();
         int n4 = 0;
         final int i = 21;
         while (++n4 <= i) {
             this.method15336(n, n2);
-            class8596 = this.method15339(n2, n3, class8596, method29109);
-            if (class8596 == null) {
+            request = this.method15339(n2, n3, request, method29109);
+            if (request == null) {
                 return;
             }
             Class7690.method24433(this.field21584);
@@ -211,7 +212,7 @@ public final class Class5040 extends Class5041 implements Class5039
         }
     }
     
-    private Class8596 method15339(final int n, final int n2, Class8596 method15158, final Class8846 class8846) throws IOException {
+    private Request method15339(final int n, final int n2, Request method15158, final Class8846 class8846) throws IOException {
         final String string = "CONNECT " + Class7690.method24442(class8846, true) + " HTTP/1.1";
         while (true) {
             final Class7812 class8847 = new Class7812(null, null, this.field21589, this.field21590);
@@ -219,7 +220,7 @@ public final class Class5040 extends Class5041 implements Class5039
             this.field21590.method5921().method26297(n2, TimeUnit.MILLISECONDS);
             class8847.method25231(method15158.method29111(), string);
             class8847.method25223();
-            final Class1753 method15159 = class8847.method25224(false).method33595(method15158).method33612();
+            final Response method15159 = class8847.method25224(false).method33595(method15158).method33612();
             long method15160 = Class9558.method35751(method15159);
             if (method15160 == -1L) {
                 method15160 = 0L;
@@ -251,7 +252,7 @@ public final class Class5040 extends Class5041 implements Class5039
         }
     }
     
-    private Class8596 method15340() {
+    private Request method15340() {
         return new Class8896().method31309(this.field21583.method23001().method18889()).method31312("Host", Class7690.method24442(this.field21583.method23001().method18889(), true)).method31312("Proxy-Connection", "Keep-Alive").method31312("User-Agent", Class8286.method27533()).method31326();
     }
     
@@ -299,18 +300,18 @@ public final class Class5040 extends Class5041 implements Class5039
         return class8846.method30937() == this.field21583.method23001().method18889().method30937() && (class8846.method30936().equals(this.field21583.method23001().method18889().method30936()) || (this.field21586 != null && Class9314.field40001.verify(class8846.method30936(), this.field21586.method30466().get(0))));
     }
     
-    public Class7811 method15343(final Class2309 class2309, final Class8904 class2310) throws SocketException {
+    public Class7811 method15343(final OkHttpClient okHttpClient, final StreamAllocation class2310) throws SocketException {
         if (this.field21588 == null) {
-            this.field21585.setSoTimeout(class2309.method9390());
-            this.field21589.method5921().method26297(class2309.method9390(), TimeUnit.MILLISECONDS);
-            this.field21590.method5921().method26297(class2309.method9391(), TimeUnit.MILLISECONDS);
-            return new Class7812(class2309, class2310, this.field21589, this.field21590);
+            this.field21585.setSoTimeout(okHttpClient.method9390());
+            this.field21589.method5921().method26297(okHttpClient.method9390(), TimeUnit.MILLISECONDS);
+            this.field21590.method5921().method26297(okHttpClient.method9391(), TimeUnit.MILLISECONDS);
+            return new Class7812(okHttpClient, class2310, this.field21589, this.field21590);
         }
-        return new Class7810(class2309, class2310, this.field21588);
+        return new Class7810(okHttpClient, class2310, this.field21588);
     }
     
-    public Class1669 method15344(final Class8904 class8904) {
-        return new Class1670(this, true, this.field21589, this.field21590, class8904);
+    public Class1669 method15344(final StreamAllocation streamAllocation) {
+        return new Class1670(this, true, this.field21589, this.field21590, streamAllocation);
     }
     
     @Override

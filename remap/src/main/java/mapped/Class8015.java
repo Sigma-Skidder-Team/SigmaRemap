@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.SynchronousQueue;
 import java.util.List;
@@ -62,7 +61,7 @@ public final class Class8015
     }
     
     @Nullable
-    public Class5040 method26264(final Class6353 class6353, final Class8904 class6354, final Class7465 class6355) {
+    public Class5040 method26264(final Class6353 class6353, final StreamAllocation class6354, final Class7465 class6355) {
         if (!Class8015.field33020 && !Thread.holdsLock(this)) {
             throw new AssertionError();
         }
@@ -77,7 +76,7 @@ public final class Class8015
     }
     
     @Nullable
-    public Socket method26265(final Class6353 class6353, final Class8904 class6354) {
+    public Socket method26265(final Class6353 class6353, final StreamAllocation class6354) {
         if (!Class8015.field33020 && !Thread.holdsLock(this)) {
             throw new AssertionError();
         }
@@ -177,7 +176,7 @@ public final class Class8015
     }
     
     private int method26270(final Class5040 class5040, final long n) {
-        final List<Reference<Class8904>> field21594 = class5040.field21594;
+        final List<Reference<StreamAllocation>> field21594 = class5040.field21594;
         int i = 0;
         while (i < field21594.size()) {
             final Reference reference = field21594.get(i);

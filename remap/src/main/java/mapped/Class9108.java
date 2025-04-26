@@ -10,8 +10,8 @@ import java.util.Date;
 public class Class9108
 {
     public final long field38576;
-    public final Class8596 field38577;
-    public final Class1753 field38578;
+    public final Request field38577;
+    public final Response field38578;
     private Date field38579;
     private String field38580;
     private Date field38581;
@@ -22,7 +22,7 @@ public class Class9108
     private String field38586;
     private int field38587;
     
-    public Class9108(final long field38576, final Class8596 field38577, final Class1753 field38578) {
+    public Class9108(final long field38576, final Request field38577, final Response field38578) {
         this.field38587 = -1;
         this.field38576 = field38576;
         this.field38577 = field38577;
@@ -146,7 +146,7 @@ public class Class9108
             final long n = this.field38583.getTime() - ((this.field38579 == null) ? this.field38585 : this.field38579.getTime());
             return (n <= 0L) ? 0L : n;
         }
-        if (this.field38581 != null && this.field38578.method6186().method29109().method30947() == null) {
+        if (this.field38581 != null && this.field38578.method6186().url().method30947() == null) {
             final long n2 = ((this.field38579 == null) ? this.field38584 : this.field38579.getTime()) - this.field38581.getTime();
             return (n2 <= 0L) ? 0L : (n2 / 10L);
         }
@@ -162,7 +162,7 @@ public class Class9108
         return this.field38578.method6204().method20284() == -1 && this.field38583 == null;
     }
     
-    private static boolean method32942(final Class8596 class8596) {
-        return class8596.method29112("If-Modified-Since") != null || class8596.method29112("If-None-Match") != null;
+    private static boolean method32942(final Request request) {
+        return request.method29112("If-Modified-Since") != null || request.method29112("If-None-Match") != null;
     }
 }

@@ -69,8 +69,8 @@ public final class Class7722
         }
     }
     
-    public Class7722(final Class1753 class1753) {
-        this.field30715 = class1753.method6186().method29109().toString();
+    public Class7722(final Response class1753) {
+        this.field30715 = class1753.method6186().url().toString();
         this.field30716 = Class9558.method35759(class1753);
         this.field30717 = class1753.method6186().method29110();
         this.field30718 = class1753.method6187();
@@ -144,10 +144,10 @@ public final class Class7722
         }
     }
     
-    public boolean method24656(final Class8596 class8596, final Class1753 class8597) {
-        if (this.field30715.equals(class8596.method29109().toString())) {
-            if (this.field30717.equals(class8596.method29110())) {
-                if (Class9558.method35754(class8597, this.field30716, class8596)) {
+    public boolean method24656(final Request request, final Response class8597) {
+        if (this.field30715.equals(request.url().toString())) {
+            if (this.field30717.equals(request.method29110())) {
+                if (Class9558.method35754(class8597, this.field30716, request)) {
                     return true;
                 }
             }
@@ -155,7 +155,7 @@ public final class Class7722
         return false;
     }
     
-    public Class1753 method24657(final Class1668 class1668) {
+    public Response method24657(final Class1668 class1668) {
         return new Class9189().method33595(new Class8896().method31310(this.field30715).method31324(this.field30717, null).method31315(this.field30716).method31326()).method33596(this.field30718).method33597(this.field30719).method33598(this.field30720).method33603(this.field30721).method33604(new Class1763(class1668, this.field30721.method21360("Content-Type"), this.field30721.method21360("Content-Length"))).method33599(this.field30722).method33610(this.field30723).method33611(this.field30724).method33612();
     }
     

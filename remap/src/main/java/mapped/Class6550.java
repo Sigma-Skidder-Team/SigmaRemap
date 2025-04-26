@@ -4,11 +4,12 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.io.IOException;
-import java.net.SocketAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.List;
@@ -151,6 +152,6 @@ public class Class6550
     
     static {
         field26027 = method19852();
-        field26030 = Logger.getLogger(Class2309.class.getName());
+        field26030 = Logger.getLogger(OkHttpClient.class.getName());
     }
 }

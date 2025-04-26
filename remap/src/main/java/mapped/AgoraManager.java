@@ -36,7 +36,7 @@ public class AgoraManager {
         final String replaceAll = Client.getInstance().getNetworkManager().getToken().replaceAll("-", "");
         try {
             (this.field23930 = new Class959(this, "wss://wsprg.sigmaclient.info/ws/agora/" + replaceAll, neaders)).method5487(HttpsURLConnection.getDefaultSSLSocketFactory());
-            this.field23930.method5453();
+            this.field23930.connect();
         } catch (final URISyntaxException exc) {
             exc.printStackTrace();
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.Iterator;
@@ -45,7 +47,7 @@ public class Class4968 extends Class4961
     private static boolean field21399;
     private static Class2311 field21400;
     private static Class2310 field21401;
-    private static Class2309 field21402;
+    private static OkHttpClient field21402;
     private boolean field21403;
     private boolean field21404;
     private boolean field21405;
@@ -130,13 +132,13 @@ public class Class4968 extends Class4961
         this.field21425 = ((class7659.field30436 == null) ? Class4968.field21400 : class7659.field30436);
         if (this.field21426 == null) {
             if (Class4968.field21402 == null) {
-                Class4968.field21402 = new Class2309();
+                Class4968.field21402 = new OkHttpClient();
             }
             this.field21426 = Class4968.field21402;
         }
         if (this.field21425 == null) {
             if (Class4968.field21402 == null) {
-                Class4968.field21402 = new Class2309();
+                Class4968.field21402 = new OkHttpClient();
             }
             this.field21425 = Class4968.field21402;
         }

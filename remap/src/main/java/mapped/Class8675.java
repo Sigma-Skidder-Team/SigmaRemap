@@ -16,22 +16,22 @@ public class Class8675 implements Class8674
     }
     
     @Override
-    public Class1753 method29705(final Class8596 class8596) throws IOException {
-        return this.field36476.method6075(class8596);
+    public Response method29705(final Request request) throws IOException {
+        return this.field36476.method6075(request);
     }
     
     @Override
-    public Class6050 method29706(final Class1753 class1753) throws IOException {
+    public Class6050 method29706(final Response class1753) throws IOException {
         return this.field36476.method6076(class1753);
     }
     
     @Override
-    public void method29707(final Class8596 class8596) throws IOException {
-        this.field36476.method6077(class8596);
+    public void method29707(final Request request) throws IOException {
+        this.field36476.method6077(request);
     }
     
     @Override
-    public void method29708(final Class1753 class1753, final Class1753 class1754) {
+    public void method29708(final Response class1753, final Response class1754) {
         this.field36476.method6078(class1753, class1754);
     }
     

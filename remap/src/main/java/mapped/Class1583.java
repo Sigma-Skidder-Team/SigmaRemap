@@ -5,10 +5,9 @@
 package mapped;
 
 import java.util.List;
-import java.io.Closeable;
 import java.io.IOException;
 
-public class Class1583 extends Class1574 implements Class1584
+public class Class1583 extends NamedRunnable implements Class1584
 {
     public final Class1736 field8846;
     public final /* synthetic */ Class1758 field8847;
@@ -20,7 +19,7 @@ public class Class1583 extends Class1574 implements Class1584
     }
     
     @Override
-    public void method5660() {
+    public void execute() {
         Class2082 class2082 = Class2082.field12041;
         Class2082 class2083 = Class2082.field12041;
         try {

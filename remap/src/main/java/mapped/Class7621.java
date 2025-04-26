@@ -11,22 +11,22 @@ public final class Class7621
     private Class7621() {
     }
     
-    public static String method23956(final Class8596 class8596, final Proxy.Type type) {
+    public static String method23956(final Request request, final Proxy.Type type) {
         final StringBuilder sb = new StringBuilder();
-        sb.append(class8596.method29110());
+        sb.append(request.method29110());
         sb.append(' ');
-        if (!method23957(class8596, type)) {
-            sb.append(method23958(class8596.method29109()));
+        if (!method23957(request, type)) {
+            sb.append(method23958(request.url()));
         }
         else {
-            sb.append(class8596.method29109());
+            sb.append(request.url());
         }
         sb.append(" HTTP/1.1");
         return sb.toString();
     }
     
-    private static boolean method23957(final Class8596 class8596, final Proxy.Type type) {
-        return !class8596.method29118() && type == Proxy.Type.HTTP;
+    private static boolean method23957(final Request request, final Proxy.Type type) {
+        return !request.method29118() && type == Proxy.Type.HTTP;
     }
     
     public static String method23958(final Class8846 class8846) {

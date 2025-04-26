@@ -4,6 +4,9 @@
 
 package mapped;
 
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+
 import java.util.Collections;
 import java.io.Closeable;
 import java.io.IOException;
@@ -21,11 +24,11 @@ public final class Class7479 implements Class7481, Class7480
     private static final List<Class190> field28878;
     private static final long field28879 = 16777216L;
     private static final long field28880 = 60000L;
-    private final Class8596 field28881;
+    private final Request field28881;
     public final Class9345 field28882;
     private final Random field28883;
     private final String field28884;
-    private Class2305 field28885;
+    private Call field28885;
     private final Runnable field28886;
     private Class8939 field28887;
     private Class8625 field28888;
@@ -43,7 +46,7 @@ public final class Class7479 implements Class7481, Class7480
     public int field28900;
     public static final /* synthetic */ boolean field28901;
     
-    public Class7479(final Class8596 field28881, final Class9345 field28882, final Random field28883) {
+    public Class7479(final Request field28881, final Class9345 field28882, final Random field28883) {
         this.field28891 = new ArrayDeque<Class1929>();
         this.field28892 = new ArrayDeque<Object>();
         this.field28896 = -1;
@@ -61,7 +64,7 @@ public final class Class7479 implements Class7481, Class7480
     }
     
     @Override
-    public Class8596 method23109() {
+    public Request method23109() {
         return this.field28881;
     }
     
@@ -72,17 +75,17 @@ public final class Class7479 implements Class7481, Class7480
     
     @Override
     public void method23111() {
-        this.field28885.method9346();
+        this.field28885.cancel();
     }
     
-    public void method23112(Class2309 method33531) {
+    public void method23112(OkHttpClient method33531) {
         method33531 = method33531.method9417().method33523(Class7479.field28878).method33531();
         final int method33532 = method33531.method9392();
-        final Class8596 method33533 = this.field28881.method29116().method31312("Upgrade", "websocket").method31312("Connection", "Upgrade").method31312("Sec-WebSocket-Key", this.field28884).method31312("Sec-WebSocket-Version", "13").method31326();
-        (this.field28885 = Class9013.field38043.method32277(method33531, method33533)).method9345(new Class6393(this, method33533, method33532));
+        final Request method33533 = this.field28881.method29116().method31312("Upgrade", "websocket").method31312("Connection", "Upgrade").method31312("Sec-WebSocket-Key", this.field28884).method31312("Sec-WebSocket-Version", "13").method31326();
+        (this.field28885 = Class9013.field38043.method32277(method33531, method33533)).enqueue(new Class6393(this, method33533, method33532));
     }
     
-    public void method23113(final Class1753 class1753) throws ProtocolException {
+    public void method23113(final Response class1753) throws ProtocolException {
         if (class1753.method6188() != 101) {
             throw new ProtocolException("Expected HTTP 101 response but was '" + class1753.method6188() + " " + class1753.method6190() + "'");
         }
@@ -359,7 +362,7 @@ public final class Class7479 implements Class7481, Class7480
         }
     }
     
-    public void method23135(final Exception ex, final Class1753 class1753) {
+    public void method23135(final Exception ex, final Response class1753) {
         final Class1669 field28890;
         synchronized (this) {
             if (this.field28898) {

@@ -4,7 +4,9 @@
 
 package mapped;
 
+import okhttp3.Call;
+
 public interface Class2310
 {
-    Class2305 method9415(final Class8596 p0);
+    Call method9415(final Request p0);
 }

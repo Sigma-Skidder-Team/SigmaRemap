@@ -6,16 +6,16 @@ package mapped;
 
 public class Class9189
 {
-    public Class8596 field38932;
+    public Request field38932;
     public Class190 field38933;
     public int field38934;
     public String field38935;
     public Class8772 field38936;
     public Class8640 field38937;
     public Class1760 field38938;
-    public Class1753 field38939;
-    public Class1753 field38940;
-    public Class1753 field38941;
+    public Response field38939;
+    public Response field38940;
+    public Response field38941;
     public long field38942;
     public long field38943;
     
@@ -24,7 +24,7 @@ public class Class9189
         this.field38937 = new Class8640();
     }
     
-    public Class9189(final Class1753 class1753) {
+    public Class9189(final Response class1753) {
         this.field38934 = -1;
         this.field38932 = class1753.field9740;
         this.field38933 = class1753.field9741;
@@ -40,7 +40,7 @@ public class Class9189
         this.field38943 = class1753.field9751;
     }
     
-    public Class9189 method33595(final Class8596 field38932) {
+    public Class9189 method33595(final Request field38932) {
         this.field38932 = field38932;
         return this;
     }
@@ -90,7 +90,7 @@ public class Class9189
         return this;
     }
     
-    public Class9189 method33605(final Class1753 field38939) {
+    public Class9189 method33605(final Response field38939) {
         if (field38939 != null) {
             this.method33607("networkResponse", field38939);
         }
@@ -98,7 +98,7 @@ public class Class9189
         return this;
     }
     
-    public Class9189 method33606(final Class1753 field38940) {
+    public Class9189 method33606(final Response field38940) {
         if (field38940 != null) {
             this.method33607("cacheResponse", field38940);
         }
@@ -106,7 +106,7 @@ public class Class9189
         return this;
     }
     
-    private void method33607(final String s, final Class1753 class1753) {
+    private void method33607(final String s, final Response class1753) {
         if (class1753.field9746 != null) {
             throw new IllegalArgumentException(s + ".body != null");
         }
@@ -122,7 +122,7 @@ public class Class9189
         throw new IllegalArgumentException(s + ".priorResponse != null");
     }
     
-    public Class9189 method33608(final Class1753 field38941) {
+    public Class9189 method33608(final Response field38941) {
         if (field38941 != null) {
             this.method33609(field38941);
         }
@@ -130,7 +130,7 @@ public class Class9189
         return this;
     }
     
-    private void method33609(final Class1753 class1753) {
+    private void method33609(final Response class1753) {
         if (class1753.field9746 == null) {
             return;
         }
@@ -147,7 +147,7 @@ public class Class9189
         return this;
     }
     
-    public Class1753 method33612() {
+    public Response method33612() {
         if (this.field38932 == null) {
             throw new IllegalStateException("request == null");
         }
@@ -158,7 +158,7 @@ public class Class9189
             throw new IllegalStateException("code < 0: " + this.field38934);
         }
         if (this.field38935 != null) {
-            return new Class1753(this);
+            return new Response(this);
         }
         throw new IllegalStateException("message == null");
     }

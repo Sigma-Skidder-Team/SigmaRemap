@@ -11,7 +11,6 @@ import java.util.Comparator;
 import java.util.TreeSet;
 import java.util.Collections;
 import java.util.Set;
-import java.util.Iterator;
 import java.util.regex.Pattern;
 
 public final class Class9558
@@ -23,7 +22,7 @@ public final class Class9558
     private Class9558() {
     }
     
-    public static long method35751(final Class1753 class1753) {
+    public static long method35751(final Response class1753) {
         return method35752(class1753.method6195());
     }
     
@@ -43,7 +42,7 @@ public final class Class9558
         }
     }
     
-    public static boolean method35754(final Class1753 class1753, final Class6957 class1754, final Class8596 class1755) {
+    public static boolean method35754(final Response class1753, final Class6957 class1754, final Request class1755) {
         for (final String s : method35757(class1753)) {
             if (Class7690.method24431(class1754.values(s), class1755.method29113(s))) {
                 continue;
@@ -53,7 +52,7 @@ public final class Class9558
         return true;
     }
     
-    public static boolean method35755(final Class1753 class1753) {
+    public static boolean method35755(final Response class1753) {
         return method35756(class1753.method6195());
     }
     
@@ -61,7 +60,7 @@ public final class Class9558
         return method35758(class6957).contains("*");
     }
     
-    private static Set<String> method35757(final Class1753 class1753) {
+    private static Set<String> method35757(final Response class1753) {
         return method35758(class1753.method6195());
     }
     
@@ -82,7 +81,7 @@ public final class Class9558
         return (Set<String>)emptySet;
     }
     
-    public static Class6957 method35759(final Class1753 class1753) {
+    public static Class6957 method35759(final Response class1753) {
         return method35760(class1753.method6200().method6186().method29111(), class1753.method6195());
     }
     
@@ -132,7 +131,7 @@ public final class Class9558
         }
     }
     
-    public static boolean method35763(final Class1753 class1753) {
+    public static boolean method35763(final Response class1753) {
         if (!class1753.method6186().method29110().equals("HEAD")) {
             final int method6188 = class1753.method6188();
             if (method6188 < 100 || method6188 >= 200) {

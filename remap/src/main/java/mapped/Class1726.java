@@ -39,8 +39,8 @@ public final class Class1726 implements Closeable, Flushable
     }
     
     @Nullable
-    public Class1753 method6075(final Class8596 class8596) {
-        final String method6074 = method6074(class8596.method29109());
+    public Response method6075(final Request request) {
+        final String method6074 = method6074(request.url());
         Class1668 method6075;
         try {
             method6075 = this.field9653.method5902(method6074);
@@ -59,8 +59,8 @@ public final class Class1726 implements Closeable, Flushable
             Class7690.method24432(method6075);
             return null;
         }
-        final Class1753 method6076 = class8597.method24657(method6075);
-        if (!class8597.method24656(class8596, method6076)) {
+        final Response method6076 = class8597.method24657(method6075);
+        if (!class8597.method24656(request, method6076)) {
             Class7690.method24432(method6076.method6197());
             return null;
         }
@@ -68,7 +68,7 @@ public final class Class1726 implements Closeable, Flushable
     }
     
     @Nullable
-    public Class6050 method6076(final Class1753 class1753) {
+    public Class6050 method6076(final Response class1753) {
         final String method29110 = class1753.method6186().method29110();
         if (Class8196.method27142(class1753.method6186().method29110())) {
             try {
@@ -86,7 +86,7 @@ public final class Class1726 implements Closeable, Flushable
         final Class7722 class1754 = new Class7722(class1753);
         Class9541 method29111 = null;
         try {
-            method29111 = this.field9653.method5903(method6074(class1753.method6186().method29109()));
+            method29111 = this.field9653.method5903(method6074(class1753.method6186().url()));
             if (method29111 == null) {
                 return null;
             }
@@ -99,11 +99,11 @@ public final class Class1726 implements Closeable, Flushable
         }
     }
     
-    public void method6077(final Class8596 class8596) throws IOException {
-        this.field9653.method5911(method6074(class8596.method29109()));
+    public void method6077(final Request request) throws IOException {
+        this.field9653.method5911(method6074(request.url()));
     }
     
-    public void method6078(final Class1753 class1753, final Class1753 class1754) {
+    public void method6078(final Response class1753, final Response class1754) {
         final Class7722 class1755 = new Class7722(class1754);
         final Class1668 field9813 = ((Class1763)class1753.method6197()).field9813;
         Class9541 method5882 = null;

@@ -4,12 +4,14 @@
 
 package mapped;
 
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -30,14 +32,14 @@ public class Class4962 extends Class4961
     private String field21306;
     private Object field21307;
     private Class2310 field21308;
-    private Class1753 field21309;
-    private Class2305 field21310;
+    private Response field21309;
+    private Call field21310;
     
     public Class4962(final Class9266 class9266) {
         this.field21305 = ((class9266.field39738 == null) ? "GET" : class9266.field39738);
         this.field21306 = class9266.field39737;
         this.field21307 = class9266.field39739;
-        this.field21308 = ((class9266.field39740 == null) ? new Class2309() : class9266.field39740);
+        this.field21308 = ((class9266.field39740 == null) ? new OkHttpClient() : class9266.field39740);
     }
     
     public void method14984() {
@@ -74,7 +76,7 @@ public class Class4962 extends Class4961
         else {
             class8897 = Class7173.method21945(Class4962.field21303, (byte[])this.field21307);
         }
-        (this.field21310 = this.field21308.method9415(class8896.method31309(Class8846.method30960(this.field21306)).method31324(this.field21305, class8897).method31326())).method9345(new Class6395(this, this));
+        (this.field21310 = this.field21308.method9415(class8896.method31309(Class8846.method30960(this.field21306)).method31324(this.field21305, class8897).method31326())).enqueue(new Class6395(this, this));
     }
     
     private void method14985() {

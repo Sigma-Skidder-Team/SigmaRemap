@@ -9,9 +9,9 @@ import java.io.IOException;
 
 public interface Class8711
 {
-    Class8596 method29905();
+    Request method29905();
     
-    Class1753 method29906(final Class8596 p0) throws IOException;
+    Response proceed(final Request p0) throws IOException;
     
     @Nullable
     Class5039 method29907();

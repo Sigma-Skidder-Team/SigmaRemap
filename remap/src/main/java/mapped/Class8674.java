@@ -8,13 +8,13 @@ import java.io.IOException;
 
 public interface Class8674
 {
-    Class1753 method29705(final Class8596 p0) throws IOException;
+    Response method29705(final Request p0) throws IOException;
     
-    Class6050 method29706(final Class1753 p0) throws IOException;
+    Class6050 method29706(final Response p0) throws IOException;
     
-    void method29707(final Class8596 p0) throws IOException;
+    void method29707(final Request p0) throws IOException;
     
-    void method29708(final Class1753 p0, final Class1753 p1);
+    void method29708(final Response p0, final Response p1);
     
     void method29709();
     

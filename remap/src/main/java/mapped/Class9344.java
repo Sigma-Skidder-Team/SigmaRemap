@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.Map;
-
 public class Class9344 extends Class9345
 {
     private static String[] field40117;
@@ -18,7 +16,7 @@ public class Class9344 extends Class9345
     }
     
     @Override
-    public void method34634(final Class7481 class7481, final Class1753 class7482) {
+    public void method34634(final Class7481 class7481, final Response class7482) {
         Class934.method5435(new Class981(this, class7482.method6195().method21367()));
     }
     
@@ -42,7 +40,7 @@ public class Class9344 extends Class9345
     }
     
     @Override
-    public void method34638(final Class7481 class7481, final Throwable t, final Class1753 class7482) {
+    public void method34638(final Class7481 class7481, final Throwable t, final Response class7482) {
         if (t instanceof Exception) {
             Class934.method5435(new Class1031(this, t));
         }

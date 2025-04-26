@@ -4,6 +4,8 @@
 
 package mapped;
 
+import org.java_websocket.client.DnsResolver;
+
 import javax.annotation.Nullable;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
@@ -15,7 +17,7 @@ import javax.net.SocketFactory;
 public final class Class6353
 {
     public final Class8846 field25405;
-    public final Class7687 field25406;
+    public final DnsResolver field25406;
     public final SocketFactory field25407;
     public final Class4972 field25408;
     public final List<Class190> field25409;
@@ -26,7 +28,7 @@ public final class Class6353
     public final HostnameVerifier field25414;
     public final Class8645 field25415;
     
-    public Class6353(final String s, final int n, final Class7687 field25406, final SocketFactory field25407, final SSLSocketFactory field25408, final HostnameVerifier field25409, final Class8645 field25410, final Class4972 field25411, final Proxy field25412, final List<Class190> list, final List<Class8248> list2, final ProxySelector field25413) {
+    public Class6353(final String s, final int n, final DnsResolver field25406, final SocketFactory field25407, final SSLSocketFactory field25408, final HostnameVerifier field25409, final Class8645 field25410, final Class4972 field25411, final Proxy field25412, final List<Class190> list, final List<Class8248> list2, final ProxySelector field25413) {
         this.field25405 = new Class9085().method32786((field25408 == null) ? "http" : "https").method32791(s).method32792(n).method32815();
         if (field25406 == null) {
             throw new NullPointerException("dns == null");
@@ -63,7 +65,7 @@ public final class Class6353
         return this.field25405;
     }
     
-    public Class7687 method18890() {
+    public DnsResolver method18890() {
         return this.field25406;
     }
     

@@ -19,12 +19,12 @@ public class Class8896
         this.field37404 = new Class8640();
     }
     
-    public Class8896(final Class8596 class8596) {
-        this.field37402 = class8596.field36099;
-        this.field37403 = class8596.field36100;
-        this.field37405 = class8596.field36102;
-        this.field37406 = class8596.field36103;
-        this.field37404 = class8596.field36101.method21366();
+    public Class8896(final Request request) {
+        this.field37402 = request.field36099;
+        this.field37403 = request.field36100;
+        this.field37405 = request.field36102;
+        this.field37406 = request.field36103;
+        this.field37404 = request.field36101.method21366();
     }
     
     public Class8896 method31309(final Class8846 field37402) {
@@ -144,9 +144,9 @@ public class Class8896
         return this;
     }
     
-    public Class8596 method31326() {
+    public Request method31326() {
         if (this.field37402 != null) {
-            return new Class8596(this);
+            return new Request(this);
         }
         throw new IllegalStateException("url == null");
     }

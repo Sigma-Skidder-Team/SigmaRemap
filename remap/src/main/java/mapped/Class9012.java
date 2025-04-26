@@ -4,6 +4,10 @@
 
 package mapped;
 
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.RealCall;
+
 import java.net.UnknownHostException;
 import java.net.MalformedURLException;
 import javax.net.ssl.SSLSocket;
@@ -34,7 +38,7 @@ public final class Class9012 extends Class9013
     }
     
     @Override
-    public Class5040 method32268(final Class8015 class8015, final Class6353 class8016, final Class8904 class8017, final Class7465 class8018) {
+    public Class5040 method32268(final Class8015 class8015, final Class6353 class8016, final StreamAllocation class8017, final Class7465 class8018) {
         return class8015.method26264(class8016, class8017, class8018);
     }
     
@@ -44,7 +48,7 @@ public final class Class9012 extends Class9013
     }
     
     @Override
-    public Socket method32270(final Class8015 class8015, final Class6353 class8016, final Class8904 class8017) {
+    public Socket method32270(final Class8015 class8015, final Class6353 class8016, final StreamAllocation class8017) {
         return class8015.method26265(class8016, class8017);
     }
     
@@ -74,12 +78,12 @@ public final class Class9012 extends Class9013
     }
     
     @Override
-    public Class8904 method32276(final Class2305 class2305) {
-        return ((Class2306)class2305).method9350();
+    public StreamAllocation method32276(final Call call) {
+        return ((RealCall) call).method9350();
     }
     
     @Override
-    public Class2305 method32277(final Class2309 class2309, final Class8596 class2310) {
-        return new Class2306(class2309, class2310, true);
+    public Call method32277(final OkHttpClient okHttpClient, final Request class2310) {
+        return new RealCall(okHttpClient, class2310, true);
     }
 }

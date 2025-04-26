@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class1579 extends Class1574
+public class Class1579 extends NamedRunnable
 {
     private static String[] field8829;
     public final /* synthetic */ int field8830;
@@ -19,7 +19,7 @@ public class Class1579 extends Class1574
     }
     
     @Override
-    public void method5660() {
+    public void execute() {
         this.field8832.field9785.method23704(this.field8830, this.field8831);
         synchronized (this.field8832) {
             this.field8832.field9796.remove(this.field8830);

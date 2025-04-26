@@ -66,7 +66,7 @@ public class Class1687 extends Class1685
         }
         if (this.field9534 == 0L) {
             this.field9535 = false;
-            Class9558.method35762(this.field9530.field32010.method9395(), this.field9533, this.field9530.method25232());
+            Class9558.method35762(this.field9530.field32010.cookieJar(), this.field9533, this.field9530.method25232());
             this.method6041(true);
         }
     }

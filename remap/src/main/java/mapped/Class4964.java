@@ -6,6 +6,8 @@ package mapped;
 
 import java.util.HashMap;
 import io.socket.utf8.UTF8Exception;
+import okhttp3.OkHttpClient;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +30,7 @@ public class Class4964 extends Class4963
     public void method15006() {
         final TreeMap treeMap = new TreeMap((Comparator<? super K>)String.CASE_INSENSITIVE_ORDER);
         this.method14942("requestHeaders", treeMap);
-        final Class2311 class2311 = (this.field21329 == null) ? new Class2309() : this.field21329;
+        final Class2311 class2311 = (this.field21329 == null) ? new OkHttpClient() : this.field21329;
         final Class8896 method31310 = new Class8896().method31310(this.method15008());
         for (final Map.Entry<K, List> entry : treeMap.entrySet()) {
             final Iterator iterator2 = entry.getValue().iterator();

@@ -5,7 +5,6 @@
 package mapped;
 
 import java.net.UnknownHostException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -293,7 +292,7 @@ public final class Class8846
         return this.field37196;
     }
     
-    public String method30956() {
+    public String redact() {
         return this.method30959("/...").method32787("").method32789("").method32815().toString();
     }
     

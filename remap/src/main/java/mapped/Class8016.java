@@ -6,15 +6,15 @@ package mapped;
 
 public final class Class8016
 {
-    public final Class8596 field33021;
-    public final Class1753 field33022;
+    public final Request field33021;
+    public final Response field33022;
     
-    public Class8016(final Class8596 field33021, final Class1753 field33022) {
+    public Class8016(final Request field33021, final Response field33022) {
         this.field33021 = field33021;
         this.field33022 = field33022;
     }
     
-    public static boolean method26271(final Class1753 class1753, final Class8596 class1754) {
+    public static boolean method26271(final Response class1753, final Request class1754) {
         switch (class1753.method6188()) {
             case 200:
             case 203:

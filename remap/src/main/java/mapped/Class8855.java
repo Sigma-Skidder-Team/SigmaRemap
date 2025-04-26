@@ -4,6 +4,8 @@
 
 package mapped;
 
+import okhttp3.Call;
+
 public final class Class8855 implements Class8856
 {
     private static String[] field37237;
@@ -14,7 +16,7 @@ public final class Class8855 implements Class8856
     }
     
     @Override
-    public Class8648 method31009(final Class2305 class2305) {
+    public Class8648 method31009(final Call call) {
         return this.field37238;
     }
 }

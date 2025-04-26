@@ -4,6 +4,8 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+
 import java.net.ProtocolException;
 import java.util.Locale;
 import java.util.ArrayList;
@@ -23,26 +25,26 @@ public final class Class7810 implements Class7811
     private static final Class1929 field31995;
     private static final List<Class1929> field31996;
     private static final List<Class1929> field31997;
-    private final Class2309 field31998;
-    public final Class8904 field31999;
+    private final OkHttpClient field31998;
+    public final StreamAllocation field31999;
     private final Class1758 field32000;
     private Class8082 field32001;
     
-    public Class7810(final Class2309 field31998, final Class8904 field31999, final Class1758 field32000) {
+    public Class7810(final OkHttpClient field31998, final StreamAllocation field31999, final Class1758 field32000) {
         this.field31998 = field31998;
         this.field31999 = field31999;
         this.field32000 = field32000;
     }
     
     @Override
-    public Class1676 method25220(final Class8596 class8596, final long n) {
+    public Class1676 method25220(final Request request, final long n) {
         return this.field32001.method26528();
     }
     
     @Override
-    public void method25221(final Class8596 class8596) throws IOException {
+    public void method25221(final Request request) throws IOException {
         if (this.field32001 == null) {
-            this.field32001 = this.field32000.method6240(method25225(class8596), class8596.method29114() != null);
+            this.field32001 = this.field32000.method6240(method25225(request), request.method29114() != null);
             this.field32001.method26525().method26297(this.field31998.method9390(), TimeUnit.MILLISECONDS);
             this.field32001.method26526().method26297(this.field31998.method9391(), TimeUnit.MILLISECONDS);
         }
@@ -67,16 +69,16 @@ public final class Class7810 implements Class7811
         return method25226;
     }
     
-    public static List<Class8975> method25225(final Class8596 class8596) {
-        final Class6957 method29111 = class8596.method29111();
+    public static List<Class8975> method25225(final Request request) {
+        final Class6957 method29111 = request.method29111();
         final ArrayList list = new ArrayList(method29111.method21362() + 4);
-        list.add((Object)new Class8975(Class8975.field37836, class8596.method29110()));
-        list.add((Object)new Class8975(Class8975.field37837, Class7621.method23958(class8596.method29109())));
-        final String method29112 = class8596.method29112("Host");
+        list.add((Object)new Class8975(Class8975.field37836, request.method29110()));
+        list.add((Object)new Class8975(Class8975.field37837, Class7621.method23958(request.url())));
+        final String method29112 = request.method29112("Host");
         if (method29112 != null) {
             list.add((Object)new Class8975(Class8975.field37839, method29112));
         }
-        list.add((Object)new Class8975(Class8975.field37838, class8596.method29109().method30930()));
+        list.add((Object)new Class8975(Class8975.field37838, request.url().method30930()));
         for (int i = 0; i < method29111.method21362(); ++i) {
             final Class1929 method29113 = Class1929.method7741(method29111.method21363(i).toLowerCase(Locale.US));
             if (!Class7810.field31996.contains(method29113)) {
@@ -117,7 +119,7 @@ public final class Class7810 implements Class7811
     }
     
     @Override
-    public Class1760 method25227(final Class1753 class1753) throws IOException {
+    public Class1760 method25227(final Response class1753) throws IOException {
         return new Class1761(class1753.method6195(), Class8753.method30275(new Class1695(this, this.field32001.method26527())));
     }
     

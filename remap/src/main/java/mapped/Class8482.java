@@ -22,7 +22,7 @@ public final class Class8482
         this.field34808 = field34808;
     }
     
-    public static Class8482 method28316(final Class1753 class1753) {
+    public static Class8482 method28316(final Response class1753) {
         return new Class8482(class1753.method6187(), class1753.method6188(), class1753.method6190());
     }
     

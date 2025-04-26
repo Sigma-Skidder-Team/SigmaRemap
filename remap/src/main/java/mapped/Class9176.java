@@ -4,6 +4,9 @@
 
 package mapped;
 
+import okhttp3.OkHttpClient;
+import org.java_websocket.client.DnsResolver;
+
 import java.util.Collections;
 import javax.net.ssl.X509TrustManager;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +40,7 @@ public final class Class9176
     public Class4972 field38884;
     public Class4972 field38885;
     public Class8015 field38886;
-    public Class7687 field38887;
+    public DnsResolver field38887;
     public boolean field38888;
     public boolean field38889;
     public boolean field38890;
@@ -50,8 +53,8 @@ public final class Class9176
         this.field38872 = new ArrayList<Class6814>();
         this.field38873 = new ArrayList<Class6814>();
         this.field38868 = new Class8993();
-        this.field38870 = Class2309.field14002;
-        this.field38871 = Class2309.field14003;
+        this.field38870 = OkHttpClient.field14002;
+        this.field38871 = OkHttpClient.field14003;
         this.field38874 = Class8648.method29415(Class8648.field36304);
         this.field38875 = ProxySelector.getDefault();
         this.field38876 = Class7536.field29918;
@@ -61,7 +64,7 @@ public final class Class9176
         this.field38884 = Class4972.field21434;
         this.field38885 = Class4972.field21434;
         this.field38886 = new Class8015();
-        this.field38887 = Class7687.field30530;
+        this.field38887 = DnsResolver.field30530;
         this.field38888 = true;
         this.field38889 = true;
         this.field38890 = true;
@@ -71,36 +74,36 @@ public final class Class9176
         this.field38894 = 0;
     }
     
-    public Class9176(final Class2309 class2309) {
+    public Class9176(final OkHttpClient okHttpClient) {
         this.field38872 = new ArrayList<Class6814>();
         this.field38873 = new ArrayList<Class6814>();
-        this.field38868 = class2309.field14004;
-        this.field38869 = class2309.field14005;
-        this.field38870 = class2309.field14006;
-        this.field38871 = class2309.field14007;
-        this.field38872.addAll(class2309.field14008);
-        this.field38873.addAll(class2309.field14009);
-        this.field38874 = class2309.field14010;
-        this.field38875 = class2309.field14011;
-        this.field38876 = class2309.field14012;
-        this.field38878 = class2309.field14014;
-        this.field38877 = class2309.field14013;
-        this.field38879 = class2309.field14015;
-        this.field38880 = class2309.field14016;
-        this.field38881 = class2309.field14017;
-        this.field38882 = class2309.field14018;
-        this.field38883 = class2309.field14019;
-        this.field38884 = class2309.field14020;
-        this.field38885 = class2309.field14021;
-        this.field38886 = class2309.field14022;
-        this.field38887 = class2309.field14023;
-        this.field38888 = class2309.field14024;
-        this.field38889 = class2309.field14025;
-        this.field38890 = class2309.field14026;
-        this.field38891 = class2309.field14027;
-        this.field38892 = class2309.field14028;
-        this.field38893 = class2309.field14029;
-        this.field38894 = class2309.field14030;
+        this.field38868 = okHttpClient.field14004;
+        this.field38869 = okHttpClient.field14005;
+        this.field38870 = okHttpClient.field14006;
+        this.field38871 = okHttpClient.field14007;
+        this.field38872.addAll(okHttpClient.field14008);
+        this.field38873.addAll(okHttpClient.field14009);
+        this.field38874 = okHttpClient.field14010;
+        this.field38875 = okHttpClient.field14011;
+        this.field38876 = okHttpClient.field14012;
+        this.field38878 = okHttpClient.field14014;
+        this.field38877 = okHttpClient.field14013;
+        this.field38879 = okHttpClient.field14015;
+        this.field38880 = okHttpClient.field14016;
+        this.field38881 = okHttpClient.field14017;
+        this.field38882 = okHttpClient.field14018;
+        this.field38883 = okHttpClient.field14019;
+        this.field38884 = okHttpClient.field14020;
+        this.field38885 = okHttpClient.field14021;
+        this.field38886 = okHttpClient.field14022;
+        this.field38887 = okHttpClient.field14023;
+        this.field38888 = okHttpClient.field14024;
+        this.field38889 = okHttpClient.field14025;
+        this.field38890 = okHttpClient.field14026;
+        this.field38891 = okHttpClient.field14027;
+        this.field38892 = okHttpClient.field14028;
+        this.field38893 = okHttpClient.field14029;
+        this.field38894 = okHttpClient.field14030;
     }
     
     public Class9176 method33500(final long n, final TimeUnit timeUnit) {
@@ -169,7 +172,7 @@ public final class Class9176
         return this;
     }
     
-    public Class9176 method33510(final Class7687 field38887) {
+    public Class9176 method33510(final DnsResolver field38887) {
         if (field38887 != null) {
             this.field38887 = field38887;
             return this;
@@ -329,7 +332,7 @@ public final class Class9176
         throw new NullPointerException("eventListenerFactory == null");
     }
     
-    public Class2309 method33531() {
-        return new Class2309(this);
+    public OkHttpClient method33531() {
+        return new OkHttpClient(this);
     }
 }

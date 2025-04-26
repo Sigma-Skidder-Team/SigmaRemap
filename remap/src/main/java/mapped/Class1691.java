@@ -14,9 +14,9 @@ public class Class1691 implements Class1682
     public final /* synthetic */ Class1681 field9550;
     public final /* synthetic */ Class6050 field9551;
     public final /* synthetic */ Class1679 field9552;
-    public final /* synthetic */ Class6815 field9553;
+    public final /* synthetic */ CacheInterceptor field9553;
     
-    public Class1691(final Class6815 field9553, final Class1681 field9554, final Class6050 field9555, final Class1679 field9556) {
+    public Class1691(final CacheInterceptor field9553, final Class1681 field9554, final Class6050 field9555, final Class1679 field9556) {
         this.field9553 = field9553;
         this.field9550 = field9554;
         this.field9551 = field9555;

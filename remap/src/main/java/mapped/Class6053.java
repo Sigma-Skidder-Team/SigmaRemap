@@ -5,23 +5,27 @@
 package mapped;
 
 import org.java_websocket.exceptions.InvalidDataException;
+import org.java_websocket.extensions.DefaultExtension;
+import org.java_websocket.framing.ControlFrame;
+import org.java_websocket.framing.DataFrame;
+import org.java_websocket.framing.Framedata;
 
-public abstract class Class6053 extends Class6052
+public abstract class Class6053 extends DefaultExtension
 {
     @Override
-    public void method17985(final Class2776 class2776) throws InvalidDataException {
-        if (class2776 instanceof Class2770 && (class2776.method9806() || class2776.method9807())) {
-            throw new Class2322("bad rsv RSV1: " + class2776.method9805() + " RSV2: " + class2776.method9806() + " RSV3: " + class2776.method9807());
+    public void isFrameValid(final Framedata framedata) throws InvalidDataException {
+        if (framedata instanceof DataFrame && (framedata.isRSV2() || framedata.isRSV3())) {
+            throw new InvalidFrameException("bad rsv RSV1: " + framedata.isRSV1() + " RSV2: " + framedata.isRSV2() + " RSV3: " + framedata.isRSV3());
         }
-        if (class2776 instanceof Class2772) {
-            if (!class2776.method9805()) {
-                if (!class2776.method9806()) {
-                    if (!class2776.method9807()) {
+        if (framedata instanceof ControlFrame) {
+            if (!framedata.isRSV1()) {
+                if (!framedata.isRSV2()) {
+                    if (!framedata.isRSV3()) {
                         return;
                     }
                 }
             }
-            throw new Class2322("bad rsv RSV1: " + class2776.method9805() + " RSV2: " + class2776.method9806() + " RSV3: " + class2776.method9807());
+            throw new InvalidFrameException("bad rsv RSV1: " + framedata.isRSV1() + " RSV2: " + framedata.isRSV2() + " RSV3: " + framedata.isRSV3());
         }
     }
 }

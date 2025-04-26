@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class7481
 {
-    Class8596 method23109();
+    Request method23109();
     
     long method23110();
     

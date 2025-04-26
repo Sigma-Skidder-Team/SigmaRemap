@@ -1,16 +1,16 @@
-// 
-// Decompiled by Procyon v0.6.0
-// 
-
 package mapped;
 
+import org.java_websocket.WebSocket;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.framing.PingFrame;
+import org.java_websocket.handshake.ServerHandshake;
 import totalcross.json.JSONObject;
 
 import java.net.URISyntaxException;
 import java.net.URI;
 import java.util.HashMap;
 
-public class Class959 extends Class956 {
+public class Class959 extends WebSocketClient {
     private AgoraManager field5102;
 
     public Class959(final AgoraManager field5102, final String str, final HashMap<String, String> hashMap) throws URISyntaxException {
@@ -19,12 +19,12 @@ public class Class959 extends Class956 {
     }
 
     @Override
-    public void method5480(final Class6089 class6089) {
+    public void onOpen(final ServerHandshake serverHandshake) {
         this.field5102.method17550();
     }
 
     @Override
-    public void method5481(final String s) {
+    public void onMessage(final String s) {
         final JSONObject JSONObject = new JSONObject(s);
         if (JSONObject.has("action")) {
             switch (JSONObject.getInt("action")) {
@@ -41,13 +41,18 @@ public class Class959 extends Class956 {
     }
 
     @Override
-    public void method5482(final int n, final String s, final boolean b) {
+    public void onClose(final int n, final String s, final boolean b) {
         this.field5102.method17551();
     }
 
     @Override
-    public void method5483(final Exception ex) {
+    public void onError(final Exception ex) {
         ex.printStackTrace();
         this.field5102.method17551();
+    }
+
+    @Override
+    public PingFrame onPreparePing(WebSocket conn) {
+        return null;
     }
 }

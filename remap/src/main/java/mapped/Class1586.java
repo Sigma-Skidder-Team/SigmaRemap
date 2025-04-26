@@ -7,7 +7,7 @@ package mapped;
 import java.io.IOException;
 import java.util.List;
 
-public class Class1586 extends Class1574
+public class Class1586 extends NamedRunnable
 {
     private static String[] field8852;
     public final /* synthetic */ int field8853;
@@ -22,7 +22,7 @@ public class Class1586 extends Class1574
     }
     
     @Override
-    public void method5660() {
+    public void execute() {
         final boolean method23701 = this.field8855.field9785.method23701(this.field8853, this.field8854);
         try {
             if (method23701) {

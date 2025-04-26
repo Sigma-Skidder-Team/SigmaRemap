@@ -4,12 +4,13 @@
 
 package mapped;
 
-import java.util.Collection;
+import okhttp3.Call;
+import okhttp3.RealCall;
+
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
@@ -23,25 +24,25 @@ public final class Class8993
     private int field37943;
     private Runnable field37944;
     private ExecutorService field37945;
-    private final Deque<Class1577> field37946;
-    private final Deque<Class1577> field37947;
-    private final Deque<Class2306> field37948;
+    private final Deque<RealCall.AsyncCall> field37946;
+    private final Deque<RealCall.AsyncCall> field37947;
+    private final Deque<RealCall> field37948;
     
     public Class8993(final ExecutorService field37945) {
         this.field37942 = 64;
         this.field37943 = 5;
-        this.field37946 = new ArrayDeque<Class1577>();
-        this.field37947 = new ArrayDeque<Class1577>();
-        this.field37948 = new ArrayDeque<Class2306>();
+        this.field37946 = new ArrayDeque<RealCall.AsyncCall>();
+        this.field37947 = new ArrayDeque<RealCall.AsyncCall>();
+        this.field37948 = new ArrayDeque<RealCall>();
         this.field37945 = field37945;
     }
     
     public Class8993() {
         this.field37942 = 64;
         this.field37943 = 5;
-        this.field37946 = new ArrayDeque<Class1577>();
-        this.field37947 = new ArrayDeque<Class1577>();
-        this.field37948 = new ArrayDeque<Class2306>();
+        this.field37946 = new ArrayDeque<RealCall.AsyncCall>();
+        this.field37947 = new ArrayDeque<RealCall.AsyncCall>();
+        this.field37948 = new ArrayDeque<RealCall>();
     }
     
     public synchronized ExecutorService method32083() {
@@ -81,28 +82,28 @@ public final class Class8993
         this.field37944 = field37944;
     }
     
-    public synchronized void method32089(final Class1577 class1577) {
-        if (this.field37947.size() < this.field37942 && this.method32092(class1577) < this.field37943) {
-            this.field37947.add(class1577);
-            this.method32083().execute(class1577);
+    public synchronized void enqueue(final RealCall.AsyncCall asyncCall) {
+        if (this.field37947.size() < this.field37942 && this.method32092(asyncCall) < this.field37943) {
+            this.field37947.add(asyncCall);
+            this.method32083().execute(asyncCall);
         }
         else {
-            this.field37946.add(class1577);
+            this.field37946.add(asyncCall);
         }
     }
     
     public synchronized void method32090() {
-        final Iterator<Class1577> iterator = this.field37946.iterator();
+        final Iterator<RealCall.AsyncCall> iterator = this.field37946.iterator();
         while (iterator.hasNext()) {
-            iterator.next().method5663().method9346();
+            iterator.next().get().cancel();
         }
-        final Iterator<Class1577> iterator2 = this.field37947.iterator();
+        final Iterator<RealCall.AsyncCall> iterator2 = this.field37947.iterator();
         while (iterator2.hasNext()) {
-            iterator2.next().method5663().method9346();
+            iterator2.next().get().cancel();
         }
-        final Iterator<Class2306> iterator3 = this.field37948.iterator();
+        final Iterator<RealCall> iterator3 = this.field37948.iterator();
         while (iterator3.hasNext()) {
-            iterator3.next().method9346();
+            iterator3.next().cancel();
         }
     }
     
@@ -111,13 +112,13 @@ public final class Class8993
             return;
         }
         if (!this.field37946.isEmpty()) {
-            final Iterator<Class1577> iterator = this.field37946.iterator();
+            final Iterator<RealCall.AsyncCall> iterator = this.field37946.iterator();
             while (iterator.hasNext()) {
-                final Class1577 class1577 = iterator.next();
-                if (this.method32092(class1577) < this.field37943) {
+                final RealCall.AsyncCall asyncCall = iterator.next();
+                if (this.method32092(asyncCall) < this.field37943) {
                     iterator.remove();
-                    this.field37947.add(class1577);
-                    this.method32083().execute(class1577);
+                    this.field37947.add(asyncCall);
+                    this.method32083().execute(asyncCall);
                 }
                 if (this.field37947.size() < this.field37942) {
                     continue;
@@ -126,11 +127,11 @@ public final class Class8993
         }
     }
     
-    private int method32092(final Class1577 class1577) {
+    private int method32092(final RealCall.AsyncCall asyncCall) {
         int n = 0;
-        final Iterator<Class1577> iterator = this.field37947.iterator();
+        final Iterator<RealCall.AsyncCall> iterator = this.field37947.iterator();
         while (iterator.hasNext()) {
-            if (!iterator.next().method5661().equals(class1577.method5661())) {
+            if (!iterator.next().host().equals(asyncCall.host())) {
                 continue;
             }
             ++n;
@@ -138,16 +139,16 @@ public final class Class8993
         return n;
     }
     
-    public synchronized void method32093(final Class2306 class2306) {
-        this.field37948.add(class2306);
+    public synchronized void executed(final RealCall realCall) {
+        this.field37948.add(realCall);
     }
     
-    public void method32094(final Class1577 class1577) {
-        this.method32096(this.field37947, class1577, true);
+    public void method32094(final RealCall.AsyncCall asyncCall) {
+        this.method32096(this.field37947, asyncCall, true);
     }
     
-    public void method32095(final Class2306 class2306) {
-        this.method32096(this.field37948, class2306, false);
+    public void finished(final RealCall realCall) {
+        this.method32096(this.field37948, realCall, false);
     }
     
     private <T> void method32096(final Deque<T> deque, final T t, final boolean b) {
@@ -168,23 +169,23 @@ public final class Class8993
         }
     }
     
-    public synchronized List<Class2305> method32097() {
+    public synchronized List<Call> method32097() {
         final ArrayList list = new ArrayList();
-        final Iterator<Class1577> iterator = this.field37946.iterator();
+        final Iterator<RealCall.AsyncCall> iterator = this.field37946.iterator();
         while (iterator.hasNext()) {
-            list.add(iterator.next().method5663());
+            list.add(iterator.next().get());
         }
-        return (List<Class2305>)Collections.unmodifiableList((List<?>)list);
+        return (List<Call>)Collections.unmodifiableList((List<?>)list);
     }
     
-    public synchronized List<Class2305> method32098() {
+    public synchronized List<Call> method32098() {
         final ArrayList list = new ArrayList();
         list.addAll(this.field37948);
-        final Iterator<Class1577> iterator = this.field37947.iterator();
+        final Iterator<RealCall.AsyncCall> iterator = this.field37947.iterator();
         while (iterator.hasNext()) {
-            list.add(iterator.next().method5663());
+            list.add(iterator.next().get());
         }
-        return (List<Class2305>)Collections.unmodifiableList((List<?>)list);
+        return (List<Call>)Collections.unmodifiableList((List<?>)list);
     }
     
     public synchronized int method32099() {
