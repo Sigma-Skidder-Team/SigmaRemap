@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 import java.util.Arrays;

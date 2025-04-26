@@ -4,17 +4,17 @@
 
 package mapped;
 
-import slick2d.Color;
-import slick2d.Font;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
 
 public class Class9361
 {
     public static void method34711(final Font class7523, final String s, final int n, final int n2) {
-        method34716(class7523, s, 1, n, n2, 0, Color.field14355);
+        method34716(class7523, s, 1, n, n2, 0, Color.white);
     }
     
     public static void method34712(final Font class7523, final String s, final int n, final int n2, final int n3) {
-        method34716(class7523, s, 2, n, n2, n3, Color.field14355);
+        method34716(class7523, s, 2, n, n2, n3, Color.white);
     }
     
     public static void method34713(final Font class7523, final String s, final int n, final int n2, final int n3, final Color class7524) {
@@ -22,7 +22,7 @@ public class Class9361
     }
     
     public static void method34714(final Font class7523, final String s, final int n, final int n2, final int n3) {
-        method34716(class7523, s, 3, n, n2, n3, Color.field14355);
+        method34716(class7523, s, 3, n, n2, n3, Color.white);
     }
     
     public static void method34715(final Font class7523, final String s, final int n, final int n2, final int n3, final Color class7524) {

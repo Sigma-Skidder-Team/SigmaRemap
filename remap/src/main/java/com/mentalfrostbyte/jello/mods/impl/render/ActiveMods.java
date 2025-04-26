@@ -12,8 +12,8 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
-import slick2d.Color;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Map;
 import java.util.TreeMap;

@@ -4,27 +4,29 @@
 
 package mapped;
 
-import slick2d.Renderer;
+import org.newdawn.slick.opengl.renderer.LineStripRenderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 public final class Class6044
 {
     private static String[] field24591;
     private static SGL field24592;
-    private static Class6020 field24593;
+    private static LineStripRenderer field24593;
     
     public static final void method17966(final Class2400 class2400) {
         final Texture method24927 = Class7777.method24927();
         Class7777.method24930();
         final float[] method24928 = class2400.method9536();
-        Class6044.field24593.method17932();
+        Class6044.field24593.start();
         for (int i = 0; i < method24928.length; i += 2) {
-            Class6044.field24593.method17934(method24928[i], method24928[i + 1]);
+            Class6044.field24593.vertex(method24928[i], method24928[i + 1]);
         }
         if (class2400.method9554()) {
-            Class6044.field24593.method17934(method24928[0], method24928[1]);
+            Class6044.field24593.vertex(method24928[0], method24928[1]);
         }
-        Class6044.field24593.method17933();
+        Class6044.field24593.end();
         if (method24927 != null) {
             method24927.bind();
         }
@@ -49,7 +51,7 @@ public final class Class6044
             final Class2412 method9539 = class2401.method23073(class2400, method9536[0], method9536[1]);
             Class6044.field24592.glVertex2f(method9536[0] + method9539.field14278, method9536[1] + method9539.field14279);
         }
-        Class6044.field24592.method19253();
+        Class6044.field24592.glEnd();
         if (method9537 != null) {
             method9537.bind();
         }
@@ -91,7 +93,7 @@ public final class Class6044
                 }
             }
         }
-        Class6044.field24592.method19253();
+        Class6044.field24592.glEnd();
     }
     
     public static final void method17971(final Class2400 class2400, final Class7764 class2401) {
@@ -180,6 +182,6 @@ public final class Class6044
     
     static {
         Class6044.field24592 = Renderer.get();
-        Class6044.field24593 = Renderer.method25331();
+        Class6044.field24593 = Renderer.getLineStripRenderer();
     }
 }

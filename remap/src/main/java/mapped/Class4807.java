@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class Class4807 extends CustomGuiScreen
 {

@@ -17,7 +17,7 @@ import net.minecraft.world.chunk.Chunk;
 import org.lwjgl.BufferUtils;
 import java.io.IOException;
 import org.lwjgl.opengl.GL11;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 import java.util.ArrayList;

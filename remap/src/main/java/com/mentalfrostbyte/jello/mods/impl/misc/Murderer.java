@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import slick2d.Texture;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.io.IOException;
 

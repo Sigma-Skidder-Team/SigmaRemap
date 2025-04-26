@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 public class Class7396
 {
@@ -65,6 +65,6 @@ public class Class7396
     }
     
     public static void method22725(final Color color) {
-        GL11.glColor4d((double)(color.method9770() / 255.0f), (double)(color.method9771() / 255.0f), (double)(color.method9772() / 255.0f), (double)(color.method9773() / 255.0f));
+        GL11.glColor4d((double)(color.getRed() / 255.0f), (double)(color.getGreen() / 255.0f), (double)(color.getBlue() / 255.0f), (double)(color.getAlpha() / 255.0f));
     }
 }

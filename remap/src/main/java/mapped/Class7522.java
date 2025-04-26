@@ -14,9 +14,10 @@ import java.util.Map;
 import java.awt.font.TextAttribute;
 import java.util.ArrayList;
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
-import slick2d.Font;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 import java.io.IOException;
@@ -271,7 +272,7 @@ public class Class7522 implements Font
         }
         this.field29841.clear();
         if (this.field29854 != -1) {
-            Class7522.field29831.method19290(this.field29854, this.field29857.size());
+            Class7522.field29831.glDeleteLists(this.field29854, this.field29857.size());
             this.field29854 = -1;
         }
         this.field29842.clear();
@@ -299,7 +300,7 @@ public class Class7522 implements Font
             if (this.field29853) {
                 if (this.field29842.isEmpty()) {
                     if (this.field29854 == -1) {
-                        this.field29854 = Class7522.field29831.method19283(200);
+                        this.field29854 = Class7522.field29831.glGenLists(200);
                         if (this.field29854 == 0) {
                             this.field29854 = -1;
                             this.field29853 = false;
@@ -322,9 +323,9 @@ public class Class7522 implements Font
                     }
                     else {
                         if (!class2428.field37621) {
-                            Class7522.field29831.method19274(n, n2, 0.0f);
-                            Class7522.field29831.method19260(class2428.field37622);
-                            Class7522.field29831.method19274(-n, -n2, 0.0f);
+                            Class7522.field29831.glTranslatef(n, n2, 0.0f);
+                            Class7522.field29831.glCallList(class2428.field37622);
+                            Class7522.field29831.glTranslatef(-n, -n2, 0.0f);
                             return class2428;
                         }
                         class2428.field37621 = false;
@@ -332,9 +333,9 @@ public class Class7522 implements Font
                     this.field29857.put(substring, class2428);
                 }
             }
-            Class7522.field29831.method19274(n, n2, 0.0f);
+            Class7522.field29831.glTranslatef(n, n2, 0.0f);
             if (class2428 != null) {
-                Class7522.field29831.method19276(class2428.field37622, 4865);
+                Class7522.field29831.glNewList(class2428.field37622, 4865);
             }
             final char[] charArray = s.substring(0, n3).toCharArray();
             final GlyphVector layoutGlyphVector = this.field29834.layoutGlyphVector(Class9498.field40860, charArray, 0, charArray.length, 0);
@@ -372,7 +373,7 @@ public class Class7522 implements Font
                         final Texture method23505 = class2430.method24852();
                         if (class2429 != null) {
                             if (class2429 != method23505) {
-                                Class7522.field29831.method19253();
+                                Class7522.field29831.glEnd();
                                 class2429 = null;
                             }
                         }
@@ -397,15 +398,15 @@ public class Class7522 implements Font
                 }
             }
             if (class2429 != null) {
-                Class7522.field29831.method19253();
+                Class7522.field29831.glEnd();
             }
             if (class2428 != null) {
-                Class7522.field29831.method19275();
+                Class7522.field29831.glEndList();
                 if (!this.field29842.isEmpty()) {
                     class2428.field37621 = true;
                 }
             }
-            Class7522.field29831.method19274(-n, -n2, 0.0f);
+            Class7522.field29831.glTranslatef(-n, -n2, 0.0f);
             if (class2428 == null) {
                 class2428 = new Class8941();
             }
@@ -423,7 +424,7 @@ public class Class7522 implements Font
     
     @Override
     public void drawString(final float x, final float y, final String text) {
-        this.drawString(x, y, text, Color.field14355);
+        this.drawString(x, y, text, Color.white);
     }
     
     @Override

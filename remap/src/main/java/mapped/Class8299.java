@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.util.Properties;
 

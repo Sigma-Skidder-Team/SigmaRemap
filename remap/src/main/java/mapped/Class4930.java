@@ -5,6 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import slick2d.Texture;
 
 import java.io.IOException;
@@ -82,7 +83,7 @@ public class Class4930 extends Class4800
         final int field21110 = this.field21110;
         try {
             if (this.field21113) {
-                this.field21114 = BufferedImageUtil.getTexture("blur", BufferedImage.method20836(BufferedImage.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
+                this.field21114 = BufferedImageUtil.getTexture("blur", ImageUtil.method20836(ImageUtil.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
             }
         }
         catch (final IOException ex) {

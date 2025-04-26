@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.util.ArrayList;
 
@@ -236,7 +236,7 @@ public class Class7762 implements Class7763
     }
     
     public void method24777(final float n, final float n2, final float n3, final float n4) {
-        this.method24778(n, n2, n3, n4, Color.field14355);
+        this.method24778(n, n2, n3, n4, Color.white);
     }
     
     public void method24778(final float n, final float n2, final float n3, final float n4, final Color color) {
@@ -281,7 +281,7 @@ public class Class7762 implements Class7763
     }
     
     public void method24782(final float n, final float n2, final float n3, final float n4) {
-        this.method24783(n, n2, n3, n4, Color.field14355);
+        this.method24783(n, n2, n3, n4, Color.white);
     }
     
     public void method24783(final float n, final float n2, final float n3, final float n4, final Color color) {

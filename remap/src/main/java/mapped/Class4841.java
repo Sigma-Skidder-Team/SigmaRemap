@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 import java.util.ArrayList;

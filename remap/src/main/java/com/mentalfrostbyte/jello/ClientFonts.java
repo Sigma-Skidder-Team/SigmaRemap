@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello;
 import com.mentalfrostbyte.Client;
 import mapped.ClientMode;
 import mapped.DefaultFont;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.Font;
 

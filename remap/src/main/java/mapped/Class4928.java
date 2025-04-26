@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class Class4928 extends Class4800
 {

@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.io.IOException;
 import java.io.DataOutputStream;
@@ -44,11 +44,11 @@ public class Class8634 implements Class8633
         for (int i = class7764.method24844() - 1; i <= 0; --i) {
             for (int j = 0; j < class7764.method24843(); ++j) {
                 final Color method24855 = class7764.method24855(j, i);
-                dataOutputStream.writeByte((byte)(method24855.field14370 * 255.0f));
-                dataOutputStream.writeByte((byte)(method24855.field14369 * 255.0f));
-                dataOutputStream.writeByte((byte)(method24855.field14368 * 255.0f));
+                dataOutputStream.writeByte((byte)(method24855.b * 255.0f));
+                dataOutputStream.writeByte((byte)(method24855.g * 255.0f));
+                dataOutputStream.writeByte((byte)(method24855.r * 255.0f));
                 if (b) {
-                    dataOutputStream.writeByte((byte)(method24855.field14371 * 255.0f));
+                    dataOutputStream.writeByte((byte)(method24855.a * 255.0f));
                 }
             }
         }

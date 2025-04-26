@@ -8,7 +8,8 @@ import java.util.Iterator;
 import java.nio.ByteOrder;
 import java.nio.ByteBuffer;
 import org.lwjgl.BufferUtils;
-import slick2d.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 import java.io.BufferedInputStream;
@@ -68,7 +69,7 @@ public class Class7649
     
     public static int method24221() {
         final IntBuffer method24233 = method24233(1);
-        Class7649.field30374.method19295(method24233);
+        Class7649.field30374.glGenTextures(method24233);
         return method24233.get(0);
     }
     
@@ -119,7 +120,7 @@ public class Class7649
             }
         }
         try {
-            Class7649.field30374.method19296();
+            Class7649.field30374.glGetError();
         }
         catch (final NullPointerException ex) {
             throw new RuntimeException("Image based resources must be loaded as part of init() or the game loop. They cannot be loaded before initialisation.");
@@ -140,7 +141,7 @@ public class Class7649
         final ByteBuffer method28388 = method28387.method16492(new BufferedInputStream(in), b, array);
         final int method28389 = method24221();
         final Class7777 class7777 = new Class7777(s, n, method28389);
-        Class7649.field30374.method19258(n, method28389);
+        Class7649.field30374.glBindTexture(n, method28389);
         final int method28390 = method28387.method16484();
         final int method28391 = method28387.method16481();
         final boolean b2 = method28387.method16480() == 32;
@@ -149,7 +150,7 @@ public class Class7649
         class7777.getTextureWidth();
         class7777.getTextureHeight();
         final IntBuffer intBuffer = BufferUtils.createIntBuffer(16);
-        Class7649.field30374.method19285(3379, intBuffer);
+        Class7649.field30374.glGetInteger(3379, intBuffer);
         intBuffer.get(0);
         final int n4 = b2 ? 6408 : 6407;
         final int n5 = b2 ? 4 : 3;
@@ -161,11 +162,11 @@ public class Class7649
         }
         final SGL field30374 = Class7649.field30374;
         final SGL field30375 = Class7649.field30374;
-        field30374.method19289(n, 10241, n3);
+        field30374.glTexParameteri(n, 10241, n3);
         final SGL field30376 = Class7649.field30374;
         final SGL field30377 = Class7649.field30374;
-        field30376.method19289(n, 10240, n2);
-        Class7649.field30374.method19297(n, 0, this.field30378, method24232(method28390), method24232(method28391), 0, n4, 5121, method28388);
+        field30376.glTexParameteri(n, 10240, n2);
+        Class7649.field30374.glTexImage2D(n, 0, this.field30378, method24232(method28390), method24232(method28391), 0, n4, 5121, method28388);
         return class7777;
     }
     
@@ -182,7 +183,7 @@ public class Class7649
         final ByteBuffer method16485 = obj.method16485();
         final int method16486 = method24221();
         final Class7777 class7777 = new Class7777("generated:" + obj, n2, method16486);
-        Class7649.field30374.method19258(n2, method16486);
+        Class7649.field30374.glBindTexture(n2, method16486);
         final int method16487 = obj.method16484();
         final int method16488 = obj.method16481();
         final boolean b = obj.method16480() == 32;
@@ -196,15 +197,15 @@ public class Class7649
         class7777.method24932(method16488);
         class7777.method24929(b);
         final IntBuffer intBuffer = BufferUtils.createIntBuffer(16);
-        Class7649.field30374.method19285(3379, intBuffer);
+        Class7649.field30374.glGetInteger(3379, intBuffer);
         final int value = intBuffer.get(0);
         if (method16489 <= value && method16490 <= value) {
             if (this.field30380) {
                 class7777.method24940(n3, n4, n, n, method16485);
             }
-            Class7649.field30374.method19289(n2, 10241, n);
-            Class7649.field30374.method19289(n2, 10240, n);
-            Class7649.field30374.method19297(n2, 0, this.field30378, method24232(method16487), method24232(method16488), 0, n3, 5121, method16485);
+            Class7649.field30374.glTexParameteri(n2, 10241, n);
+            Class7649.field30374.glTexParameteri(n2, 10240, n);
+            Class7649.field30374.glTexImage2D(n2, 0, this.field30378, method24232(method16487), method24232(method16488), 0, n3, 5121, method16485);
             return class7777;
         }
         throw new IOException("Attempt to allocate a texture to big for the current hardware");
@@ -236,10 +237,10 @@ public class Class7649
     public int method24235(final Class7777 class7777, final int n, final int n2, final int n3, final int n4, final ByteBuffer byteBuffer) {
         final int n5 = 3553;
         final int method24221 = method24221();
-        Class7649.field30374.method19258(n5, method24221);
-        Class7649.field30374.method19289(n5, 10241, n3);
-        Class7649.field30374.method19289(n5, 10240, n4);
-        Class7649.field30374.method19297(n5, 0, this.field30378, class7777.getTextureWidth(), class7777.getTextureHeight(), 0, n, 5121, byteBuffer);
+        Class7649.field30374.glBindTexture(n5, method24221);
+        Class7649.field30374.glTexParameteri(n5, 10241, n3);
+        Class7649.field30374.glTexParameteri(n5, 10240, n4);
+        Class7649.field30374.glTexImage2D(n5, 0, this.field30378, class7777.getTextureWidth(), class7777.getTextureHeight(), 0, n, 5121, byteBuffer);
         return method24221;
     }
     

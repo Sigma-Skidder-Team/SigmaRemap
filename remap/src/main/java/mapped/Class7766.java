@@ -9,8 +9,9 @@ import java.nio.ByteBuffer;
 import org.newdawn.slick.SlickException;
 import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
-import slick2d.Color;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 public class Class7766 extends Class7764
@@ -25,7 +26,7 @@ public class Class7766 extends Class7764
     
     public static final int method24864() {
         final IntBuffer intBuffer = BufferUtils.createIntBuffer(16);
-        Class7766.field31755.method19285(3379, intBuffer);
+        Class7766.field31755.glGetInteger(3379, intBuffer);
         return intBuffer.get(0);
     }
     
@@ -136,8 +137,8 @@ public class Class7766 extends Class7764
     public void method24778(final float n, final float n2, final float n3, final float n4, final Color color) {
         final float n5 = n3 / this.field31760;
         final float n6 = n4 / this.field31761;
-        Class7766.field31755.method19274(n, n2, 0.0f);
-        Class7766.field31755.method19271(n5, n6, 1.0f);
+        Class7766.field31755.glTranslatef(n, n2, 0.0f);
+        Class7766.field31755.glScalef(n5, n6, 1.0f);
         float n7 = 0.0f;
         for (int i = 0; i < this.field31758; ++i) {
             float n8 = 0.0f;
@@ -150,8 +151,8 @@ public class Class7766 extends Class7764
                 }
             }
         }
-        Class7766.field31755.method19271(1.0f / n5, 1.0f / n6, 1.0f);
-        Class7766.field31755.method19274(-n, -n2, 0.0f);
+        Class7766.field31755.glScalef(1.0f / n5, 1.0f / n6, 1.0f);
+        Class7766.field31755.glTranslatef(-n, -n2, 0.0f);
     }
     
     @Override
@@ -166,17 +167,17 @@ public class Class7766 extends Class7764
     
     @Override
     public void method24777(final float n, final float n2, final float n3, final float n4) {
-        this.method24778(n, n2, n3, n4, Color.field14355);
+        this.method24778(n, n2, n3, n4, Color.white);
     }
     
     @Override
     public void method24821(final float n, final float n2, final float n3) {
-        this.method24822(n, n2, n3, Color.field14355);
+        this.method24822(n, n2, n3, Color.white);
     }
     
     @Override
     public void method24775(final float n, final float n2) {
-        this.method24776(n, n2, Color.field14355);
+        this.method24776(n, n2, Color.white);
     }
     
     @Override
@@ -207,8 +208,8 @@ public class Class7766 extends Class7764
     public void method24825(final float n, final float n2, final float n3, final float n4) {
         final float n5 = n3 / this.field31760;
         final float n6 = n4 / this.field31761;
-        Class7766.field31755.method19274(n, n2, 0.0f);
-        Class7766.field31755.method19271(n5, n6, 1.0f);
+        Class7766.field31755.glTranslatef(n, n2, 0.0f);
+        Class7766.field31755.glScalef(n5, n6, 1.0f);
         float n7 = 0.0f;
         for (int i = 0; i < this.field31758; ++i) {
             float n8 = 0.0f;
@@ -221,8 +222,8 @@ public class Class7766 extends Class7764
                 }
             }
         }
-        Class7766.field31755.method19271(1.0f / n5, 1.0f / n6, 1.0f);
-        Class7766.field31755.method19274(-n, -n2, 0.0f);
+        Class7766.field31755.glScalef(1.0f / n5, 1.0f / n6, 1.0f);
+        Class7766.field31755.glTranslatef(-n, -n2, 0.0f);
     }
     
     @Override

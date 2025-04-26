@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 
@@ -76,7 +77,7 @@ public class Class4847 extends Class4841
         final int n2 = 8;
         try {
             if (this.field20770) {
-                final java.awt.image.BufferedImage method20833 = BufferedImage.method20833(this.method14280(), this.method14281(), this.field20480, this.field20481, 3, 10, true);
+                final java.awt.image.BufferedImage method20833 = ImageUtil.method20833(this.method14280(), this.method14281(), this.field20480, this.field20481, 3, 10, true);
                 this.field20767 = ColorUtils.method19110(new Color(method20833.getRGB(6, 7)), new Color(method20833.getRGB(6, 22))).getRGB();
                 this.field20767 = ColorUtils.method19121(this.field20767, 0.25f);
                 if (this.field20771 != null) {

@@ -12,9 +12,9 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.BufferUtils;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 import slick2d.Texture;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.Rectangle;
 import java.math.BigDecimal;

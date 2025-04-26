@@ -20,7 +20,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class ShulkerInfo extends Module
 {

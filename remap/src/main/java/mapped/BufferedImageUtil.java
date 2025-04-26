@@ -6,7 +6,7 @@ package mapped;
 
 import java.nio.ByteBuffer;
 import org.lwjgl.opengl.GL11;
-import slick2d.Renderer;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 import java.io.IOException;
@@ -28,8 +28,8 @@ public class BufferedImageUtil
         final Class5338 class5338 = new Class5338();
         final int method24221 = Class7649.method24221();
         final Class7777 class5339 = new Class7777(s, n, method24221);
-        Renderer.get().method19265(3553);
-        Renderer.get().method19258(n, method24221);
+        Renderer.get().glEnable(3553);
+        Renderer.get().glBindTexture(n, method24221);
         class5339.method24933(bufferedImage.getWidth());
         class5339.method24932(bufferedImage.getHeight());
         int n5;
@@ -44,15 +44,15 @@ public class BufferedImageUtil
         class5339.method24935(class5338.method16483());
         class5339.method24929(class5338.method16480() == 32);
         if (n == 3553) {
-            Renderer.get().method19289(n, 10241, n3);
-            Renderer.get().method19289(n, 10240, n4);
-            if (!Renderer.get().method19299()) {
-                Renderer.get().method19289(3553, 10242, 10496);
-                Renderer.get().method19289(3553, 10243, 10496);
+            Renderer.get().glTexParameteri(n, 10241, n3);
+            Renderer.get().glTexParameteri(n, 10240, n4);
+            if (!Renderer.get().canTextureMirrorClamp()) {
+                Renderer.get().glTexParameteri(3553, 10242, 10496);
+                Renderer.get().glTexParameteri(3553, 10243, 10496);
             }
             else {
-                Renderer.get().method19289(3553, 10242, 34627);
-                Renderer.get().method19289(3553, 10243, 34627);
+                Renderer.get().glTexParameteri(3553, 10242, 34627);
+                Renderer.get().glTexParameteri(3553, 10243, 34627);
             }
         }
         GL11.glPixelStorei(3312, 0);
@@ -61,7 +61,7 @@ public class BufferedImageUtil
         GL11.glPixelStorei(3315, 0);
         GL11.glPixelStorei(3316, 0);
         GL11.glPixelStorei(3317, 4);
-        Renderer.get().method19297(n, 0, n2, class5339.getTextureWidth(), class5339.getTextureHeight(), 0, n5, 5121, method24222);
+        Renderer.get().glTexImage2D(n, 0, n2, class5339.getTextureWidth(), class5339.getTextureHeight(), 0, n5, 5121, method24222);
         return class5339;
     }
     

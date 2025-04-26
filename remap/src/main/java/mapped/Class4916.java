@@ -11,6 +11,7 @@ import java.io.ByteArrayInputStream;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import org.apache.commons.codec.binary.Base64;
 import java.util.Date;
 import org.lwjgl.opengl.GL11;
@@ -69,7 +70,7 @@ public class Class4916 extends Class4825
                     final java.awt.image.BufferedImage method25030 = method14759(this.field21026.method35869());
                     if (method25030 != null) {
                         this.field21027 = BufferedImageUtil.getTexture("servericon", method25030);
-                        this.field21028 = BufferedImageUtil.getTexture("servericon", BufferedImage.method20826(BufferedImage.method20836(method14760(method25030, 2.5, 2.5), 0.0f, 1.1f, 0.0f), 25));
+                        this.field21028 = BufferedImageUtil.getTexture("servericon", ImageUtil.applyBlur(ImageUtil.method20836(method14760(method25030, 2.5, 2.5), 0.0f, 1.1f, 0.0f), 25));
                     }
                 }
                 catch (final IOException ex) {

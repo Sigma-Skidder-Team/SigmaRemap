@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 public class Class7470 implements Class7471
 {
@@ -108,13 +108,13 @@ public class Class7470 implements Class7471
             }
             final float n11 = 1.0f - n10;
             final Color color = new Color(1, 1, 1, 1);
-            color.field14368 = n10 * this.field28858.field14368 + n11 * this.field28857.field14368;
-            color.field14370 = n10 * this.field28858.field14370 + n11 * this.field28857.field14370;
-            color.field14369 = n10 * this.field28858.field14369 + n11 * this.field28857.field14369;
-            color.field14371 = n10 * this.field28858.field14371 + n11 * this.field28857.field14371;
+            color.r = n10 * this.field28858.r + n11 * this.field28857.r;
+            color.b = n10 * this.field28858.b + n11 * this.field28857.b;
+            color.g = n10 * this.field28858.g + n11 * this.field28857.g;
+            color.a = n10 * this.field28858.a + n11 * this.field28857.a;
             return color;
         }
-        return Color.field14360;
+        return Color.black;
     }
     
     @Override

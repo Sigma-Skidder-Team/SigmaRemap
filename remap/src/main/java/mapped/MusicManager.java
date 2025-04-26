@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.WinReg;
 
@@ -434,7 +435,7 @@ public class MusicManager {
         try {
             this.isThumbnailProcessing = true;
             final java.awt.image.BufferedImage read = ImageIO.read(new URL(class8681.field36488));
-            this.thumbnailImage = BufferedImage.method20826(read, 15);
+            this.thumbnailImage = ImageUtil.applyBlur(read, 15);
             this.thumbnailImage = this.thumbnailImage.getSubimage(0, (int) (this.thumbnailImage.getHeight() * 0.75f), this.thumbnailImage.getWidth(), (int) (this.thumbnailImage.getHeight() * 0.2f));
             this.songTitle = class8681.field36487;
             if (read.getHeight() != read.getWidth()) {

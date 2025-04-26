@@ -5,7 +5,8 @@
 package mapped;
 
 import org.lwjgl.BufferUtils;
-import slick2d.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 import slick2d.Texture;
 
 import java.nio.ByteOrder;
@@ -64,7 +65,7 @@ public class Class7777 implements Texture
     
     public static void method24930() {
         Class7777.field31839 = null;
-        Class7777.field31838.method19264(3553);
+        Class7777.field31838.glDisable(3553);
     }
     
     public static void method24931() {
@@ -75,8 +76,8 @@ public class Class7777 implements Texture
     public void bind() {
         if (Class7777.field31839 != this) {
             Class7777.field31839 = this;
-            Class7777.field31838.method19265(3553);
-            Class7777.field31838.method19258(this.field31840, this.field31841);
+            Class7777.field31838.glEnable(3553);
+            Class7777.field31838.glBindTexture(this.field31840, this.field31841);
         }
     }
     
@@ -147,7 +148,7 @@ public class Class7777 implements Texture
         final IntBuffer method24939 = this.method24939(1);
         method24939.put(this.field31841);
         method24939.flip();
-        Class7777.field31838.method19282(method24939);
+        Class7777.field31838.glDeleteTextures(method24939);
         if (Class7777.field31839 == this) {
             method24930();
         }
@@ -178,7 +179,7 @@ public class Class7777 implements Texture
     public byte[] getTextureData() {
         final ByteBuffer byteBuffer = BufferUtils.createByteBuffer((this.hasAlpha() ? 4 : 3) * this.field31844 * this.field31845);
         this.bind();
-        Class7777.field31838.method19286(3553, 0, this.hasAlpha() ? 6408 : 6407, 5121, byteBuffer);
+        Class7777.field31838.glGetTexImage(3553, 0, this.hasAlpha() ? 6408 : 6407, 5121, byteBuffer);
         final byte[] dst = new byte[byteBuffer.limit()];
         byteBuffer.get(dst);
         byteBuffer.clear();
@@ -188,8 +189,8 @@ public class Class7777 implements Texture
     @Override
     public void setTextureFilter(final int textureFilter) {
         this.bind();
-        Class7777.field31838.method19289(this.field31840, 10241, textureFilter);
-        Class7777.field31838.method19289(this.field31840, 10240, textureFilter);
+        Class7777.field31838.glTexParameteri(this.field31840, 10241, textureFilter);
+        Class7777.field31838.glTexParameteri(this.field31840, 10240, textureFilter);
     }
     
     public void method24940(final int n, final int n2, final int n3, final int n4, final ByteBuffer byteBuffer) {

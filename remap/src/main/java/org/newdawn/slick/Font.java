@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package slick2d;
+package org.newdawn.slick;
 
 public interface Font
 {

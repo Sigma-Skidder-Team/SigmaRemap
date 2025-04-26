@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class Class4869 extends Class4868 implements Class4870
 {

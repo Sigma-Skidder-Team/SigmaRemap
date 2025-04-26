@@ -5,8 +5,9 @@
 package mapped;
 
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
@@ -177,19 +178,19 @@ public class Class8014
             }
         }
         if (this.field33010) {
-            this.field32994.method19274(n, n2, 0.0f);
+            this.field32994.glTranslatef(n, n2, 0.0f);
             if (this.field33003 == 1) {
-                this.field32994.method19259(770, 1);
+                this.field32994.glBlendFunc(770, 1);
             }
             if (this.method26235()) {
-                this.field32994.method19265(2832);
+                this.field32994.glEnable(2832);
                 Class7777.method24930();
             }
             for (int i = 0; i < this.field33001.size(); ++i) {
                 final Class7394 key = this.field33001.get(i);
                 if (key.method22699()) {
                     if (key.method22702()) {
-                        this.field32994.method19259(770, 1);
+                        this.field32994.glBlendFunc(770, 1);
                     }
                     final Class8441 class8441 = this.field32999.get(key);
                     Class7764 class8442 = key.method22703();
@@ -212,18 +213,18 @@ public class Class8014
                         }
                     }
                     if (key.method22702()) {
-                        this.field32994.method19259(770, 771);
+                        this.field32994.glBlendFunc(770, 771);
                     }
                 }
             }
             if (this.method26235()) {
-                this.field32994.method19264(2832);
+                this.field32994.glDisable(2832);
             }
             if (this.field33003 == 1) {
-                this.field32994.method19259(770, 771);
+                this.field32994.glBlendFunc(770, 771);
             }
-            Color.field14355.bind();
-            this.field32994.method19274(-n, -n2, 0.0f);
+            Color.white.bind();
+            this.field32994.glTranslatef(-n, -n2, 0.0f);
         }
     }
     

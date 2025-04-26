@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
@@ -94,8 +94,8 @@ public class Class7395 implements Class7394
         this.field28502 = field28502;
         this.field28513 = (int)this.field28498.method35543();
         this.field28510 = (int)this.field28490.method35543();
-        this.field28491.add(new Class8757(this, 0.0f, Color.field14355));
-        this.field28491.add(new Class8757(this, 1.0f, Color.field14357));
+        this.field28491.add(new Class8757(this, 0.0f, Color.white));
+        this.field28491.add(new Class8757(this, 1.0f, Color.red));
         final ArrayList list = new ArrayList();
         list.add(new Class2412(0.0f, 0.0f));
         list.add(new Class2412(1.0f, 255.0f));
@@ -222,7 +222,7 @@ public class Class7395 implements Class7394
                     method26253.method30487(this.field28504);
                 }
                 final Class8757 class2325 = this.field28491.get(0);
-                method26253.method30502(class2325.field36777.field14368, class2325.field36777.field14369, class2325.field36777.field14370, this.field28492.method22084(0.0f) / 255.0f);
+                method26253.method30502(class2325.field36777.r, class2325.field36777.g, class2325.field36777.b, this.field28492.method22084(0.0f) / 255.0f);
                 method26253.method30495(this.field28499);
                 method26253.method30513(this.field28500);
                 if (this.field28498.method35544()) {
@@ -260,9 +260,9 @@ public class Class7395 implements Class7394
             }
         }
         if (field36777 != null) {
-            final float n6 = field36777.field14368 * n4 + field36778.field14368 * n5;
-            final float n7 = field36777.field14369 * n4 + field36778.field14369 * n5;
-            final float n8 = field36777.field14370 * n4 + field36778.field14370 * n5;
+            final float n6 = field36777.r * n4 + field36778.r * n5;
+            final float n7 = field36777.g * n4 + field36778.g * n5;
+            final float n8 = field36777.b * n4 + field36778.b * n5;
             float n9;
             if (!this.field28494.method22087()) {
                 n9 = this.field28492.method22084(0.0f) / 255.0f * n2 + this.field28493.method22084(0.0f) / 255.0f * n3;

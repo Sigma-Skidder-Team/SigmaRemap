@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.ClientFonts;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.ArrayList;
 import java.util.List;

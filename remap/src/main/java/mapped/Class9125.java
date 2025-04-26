@@ -16,7 +16,7 @@ import java.io.OutputStream;
 import java.io.FileOutputStream;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
@@ -289,9 +289,9 @@ public class Class9125
             final Class8757 class7396 = field28491.get(i);
             final Element element3 = document.createElement("step");
             element3.setAttribute("offset", "" + class7396.field36776);
-            element3.setAttribute("r", "" + class7396.field36777.field14368);
-            element3.setAttribute("g", "" + class7396.field36777.field14369);
-            element3.setAttribute("b", "" + class7396.field36777.field14370);
+            element3.setAttribute("r", "" + class7396.field36777.r);
+            element3.setAttribute("g", "" + class7396.field36777.g);
+            element3.setAttribute("b", "" + class7396.field36777.b);
             element2.appendChild(element3);
         }
         element.appendChild(element2);

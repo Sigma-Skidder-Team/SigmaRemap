@@ -4,8 +4,8 @@
 
 package mapped;
 
-import slick2d.Color;
-import slick2d.Font;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
 
 import java.io.UnsupportedEncodingException;
 
@@ -30,7 +30,7 @@ public class Class7527 implements Font
     
     @Override
     public void drawString(final float x, final float y, final String text) {
-        this.drawString(x, y, text, Color.field14355);
+        this.drawString(x, y, text, Color.white);
     }
     
     @Override

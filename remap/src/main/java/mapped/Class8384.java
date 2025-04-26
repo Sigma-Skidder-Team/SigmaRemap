@@ -4,8 +4,9 @@
 
 package mapped;
 
-import slick2d.Color;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 public class Class8384
 {
@@ -20,12 +21,12 @@ public class Class8384
     
     public void method27940(final Class8519 class8519) {
         if (this.field34366 == -1) {
-            this.field34366 = Class8384.field34364.method19283(1);
-            Class8384.field34364.method19276(this.field34366, 4864);
+            this.field34366 = Class8384.field34364.glGenLists(1);
+            Class8384.field34364.glNewList(this.field34366, 4864);
             method27941(class8519, this.field34365);
-            Class8384.field34364.method19275();
+            Class8384.field34364.glEndList();
         }
-        Class8384.field34364.method19260(this.field34366);
+        Class8384.field34364.glCallList(this.field34366);
         Class7777.method24930();
     }
     
@@ -54,7 +55,7 @@ public class Class8384
                     else {
                         class8521 = new Class8376(method17533, class8520.method17530(i).method23754(), method17532);
                     }
-                    Color.field14355.bind();
+                    Color.white.bind();
                     Class6044.method17977(method17533, method17532.method16275(), class8521);
                 }
             }

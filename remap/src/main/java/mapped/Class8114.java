@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 public class Class8114
 {
@@ -17,7 +17,7 @@ public class Class8114
     private float field33447;
     
     public Class8114(final Class7764 field33442, final int field33443, final int field33444) {
-        this.field33445 = Color.field14355;
+        this.field33445 = Color.white;
         this.field33442 = field33442;
         this.field33443 = field33443;
         this.field33444 = field33444;

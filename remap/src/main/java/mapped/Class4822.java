@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 import java.util.HashMap;

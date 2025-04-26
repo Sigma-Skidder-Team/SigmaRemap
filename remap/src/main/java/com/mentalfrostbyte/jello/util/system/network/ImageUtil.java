@@ -2,21 +2,25 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.util.system.network;
 
 import java.awt.geom.AffineTransform;
 import java.awt.Color;
 import java.nio.ByteBuffer;
+
+import mapped.ClientColors;
+import mapped.Minecraft;
+import mapped.ScreenManager;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.BufferUtils;
 import java.awt.image.Kernel;
 import java.awt.image.ConvolveOp;
 
-public class BufferedImage
+public class ImageUtil
 {
     private static String[] field26745;
     
-    public static java.awt.image.BufferedImage method20826(final java.awt.image.BufferedImage bufferedImage, final int n) {
+    public static java.awt.image.BufferedImage applyBlur(final java.awt.image.BufferedImage bufferedImage, final int n) {
         if (bufferedImage == null) {
             return bufferedImage;
         }
@@ -25,12 +29,12 @@ public class BufferedImage
         }
         if (bufferedImage.getHeight() > n + n) {
             final ConvolveOp convolveOp = new ConvolveOp(method20829((float)n));
-            return method20828(convolveOp.filter(method20828(convolveOp.filter(bufferedImage, null)), null)).getSubimage(n, n, bufferedImage.getWidth() - n - n, bufferedImage.getHeight() - n - n);
+            return applyEdgeWrap(convolveOp.filter(applyEdgeWrap(convolveOp.filter(bufferedImage, null)), null)).getSubimage(n, n, bufferedImage.getWidth() - n - n, bufferedImage.getHeight() - n - n);
         }
         return bufferedImage;
     }
     
-    public static java.awt.image.BufferedImage method20827(final java.awt.image.BufferedImage bufferedImage, final int n) {
+    public static java.awt.image.BufferedImage applyGaussianBlur(final java.awt.image.BufferedImage bufferedImage, final int n) {
         if (bufferedImage != null) {
             final ConvolveOp convolveOp = new ConvolveOp(method20829((float)n), 1, null);
             final int width = bufferedImage.getWidth();
@@ -41,12 +45,12 @@ public class BufferedImage
                     bufferedImage2.setRGB(i + n, j + n / 2, bufferedImage.getRGB(i, j));
                 }
             }
-            return method20828(convolveOp.filter(method20828(convolveOp.filter(bufferedImage2, null)), null)).getSubimage(n, n, bufferedImage2.getWidth() - n - n, bufferedImage2.getHeight() - n - n);
+            return applyEdgeWrap(convolveOp.filter(applyEdgeWrap(convolveOp.filter(bufferedImage2, null)), null)).getSubimage(n, n, bufferedImage2.getWidth() - n - n, bufferedImage2.getHeight() - n - n);
         }
         return bufferedImage;
     }
     
-    public static java.awt.image.BufferedImage method20828(final java.awt.image.BufferedImage bufferedImage) {
+    public static java.awt.image.BufferedImage applyEdgeWrap(final java.awt.image.BufferedImage bufferedImage) {
         final int width = bufferedImage.getWidth();
         final int height = bufferedImage.getHeight();
         final java.awt.image.BufferedImage bufferedImage2 = new java.awt.image.BufferedImage(height, width, bufferedImage.getType());
@@ -115,9 +119,9 @@ public class BufferedImage
             return bufferedImage;
         }
         if (!b) {
-            return method20826(method20834(bufferedImage, n6, n7), n6);
+            return applyBlur(method20834(bufferedImage, n6, n7), n6);
         }
-        return method20826(method20835(bufferedImage, n6), n6);
+        return applyBlur(method20835(bufferedImage, n6), n6);
     }
     
     public static java.awt.image.BufferedImage method20831(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {

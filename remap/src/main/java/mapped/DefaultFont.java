@@ -5,8 +5,8 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.Color;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.Font;
 
@@ -59,12 +59,12 @@ public class DefaultFont extends TrueTypeFont
         GL11.glScalef((float)this.field29870, (float)this.field29870, 0.0f);
         GL11.glTranslatef(-x / this.field29870, -y / this.field29870 + 1.0f, 0.0f);
         this.mc.method5290().method5849(this.mc.fontRenderer.field10031.field10459);
-        this.mc.fontRenderer.method6610(text, x, y, new java.awt.Color(color.field14368, color.field14369, color.field14370, color.field14371).getRGB());
+        this.mc.fontRenderer.method6610(text, x, y, new java.awt.Color(color.r, color.g, color.b, color.a).getRGB());
         GL11.glPopMatrix();
     }
     
     @Override
     public void drawString(final float x, final float y, final String text) {
-        this.drawString(x, y, text, Color.field14355);
+        this.drawString(x, y, text, Color.white);
     }
 }

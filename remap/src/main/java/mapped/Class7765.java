@@ -7,7 +7,7 @@ package mapped;
 import java.io.InputStream;
 import java.io.IOException;
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 import slick2d.Texture;
 
 import java.net.URL;

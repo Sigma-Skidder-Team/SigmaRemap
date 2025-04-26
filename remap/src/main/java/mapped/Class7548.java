@@ -7,7 +7,7 @@ package mapped;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.util.HashMap;
 

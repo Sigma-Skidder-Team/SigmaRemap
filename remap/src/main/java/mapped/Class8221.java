@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.mods.impl.gui.TabGUI;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class Class8221
 {

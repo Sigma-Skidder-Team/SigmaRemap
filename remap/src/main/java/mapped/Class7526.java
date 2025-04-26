@@ -15,9 +15,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InputStream;
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
-import slick2d.Font;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.Font;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 import java.util.LinkedHashMap;
 
@@ -88,7 +89,7 @@ public class Class7526 implements Font
     
     private void method23540(final InputStream inputStream) throws SlickException {
         if (this.field29875) {
-            this.field29879 = Class7526.field29872.method19283(200);
+            this.field29879 = Class7526.field29872.glGenLists(200);
             if (this.field29879 == 0) {
                 this.field29875 = false;
             }
@@ -197,7 +198,7 @@ public class Class7526 implements Font
     
     @Override
     public void drawString(final float x, final float y, final String text) {
-        this.drawString(x, y, text, Color.field14355);
+        this.drawString(x, y, text, Color.white);
     }
     
     @Override
@@ -209,7 +210,7 @@ public class Class7526 implements Font
     public void drawString(final float x, final float y, final String text, final Color color, final int startIndex, final int endIndex) {
         this.field29876.method24811();
         color.bind();
-        Class7526.field29872.method19274(x, y, 0.0f);
+        Class7526.field29872.glTranslatef(x, y, 0.0f);
         Label_0219: {
             if (this.field29875) {
                 if (startIndex == 0) {
@@ -227,19 +228,19 @@ public class Class7526 implements Font
                                 value.field29981 = this.field29879 + size;
                             }
                             this.field29882.put(text, value);
-                            Class7526.field29872.method19276(value.field29981, 4865);
+                            Class7526.field29872.glNewList(value.field29981, 4865);
                             this.method23542(text, startIndex, endIndex);
-                            Class7526.field29872.method19275();
+                            Class7526.field29872.glEndList();
                             break Label_0219;
                         }
-                        Class7526.field29872.method19260(class2428.field29981);
+                        Class7526.field29872.glCallList(class2428.field29981);
                         break Label_0219;
                     }
                 }
             }
             this.method23542(text, startIndex, endIndex);
         }
-        Class7526.field29872.method19274(-x, -y, 0.0f);
+        Class7526.field29872.glTranslatef(-x, -y, 0.0f);
     }
     
     private void method23542(final String s, final int n, final int n2) {
@@ -272,7 +273,7 @@ public class Class7526 implements Font
                 n4 += this.getLineHeight();
             }
         }
-        Class7526.field29872.method19253();
+        Class7526.field29872.glEnd();
     }
     
     public int method23543(final String key) {

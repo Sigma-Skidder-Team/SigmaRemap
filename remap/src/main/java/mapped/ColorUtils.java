@@ -41,7 +41,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.commons.codec.binary.Base64;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 

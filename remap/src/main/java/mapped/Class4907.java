@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import slick2d.Texture;
 
 import java.io.IOException;
@@ -212,7 +213,7 @@ public class Class4907 extends Class4841
                 if (this.field20989 != null) {
                     this.field20989.release();
                 }
-                this.field20989 = BufferedImageUtil.getTexture("blur", BufferedImage.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
+                this.field20989 = BufferedImageUtil.getTexture("blur", ImageUtil.method20830(0, 0, this.method14276(), this.method14278(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.color, true));
             }
             catch (final IOException ex) {
                 Client.getInstance().getLogger().error(ex.getMessage());

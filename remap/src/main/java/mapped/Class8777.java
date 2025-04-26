@@ -4,8 +4,9 @@
 
 package mapped;
 
-import slick2d.Color;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 public class Class8777
 {
@@ -31,7 +32,7 @@ public class Class8777
     
     public Class8777(final Class8014 field36905) {
         this.field36901 = 10.0f;
-        this.field36902 = Color.field14355;
+        this.field36902 = Color.white;
         this.field36909 = 1;
         this.field36910 = false;
         this.field36911 = 1.0f;
@@ -82,24 +83,24 @@ public class Class8777
                 this.field36907.method24816((float)(int)(this.field36897 - this.field36901 / 2.0f), (float)(int)(this.field36898 - this.field36901 / 2.0f), (float)(int)this.field36901, (float)(int)this.field36901);
             }
             else {
-                Class8777.field36893.method19269();
-                Class8777.field36893.method19274(this.field36897, this.field36898, 0.0f);
+                Class8777.field36893.glPushMatrix();
+                Class8777.field36893.glTranslatef(this.field36897, this.field36898, 0.0f);
                 if (this.field36910) {
-                    Class8777.field36893.method19270((float)(Math.atan2(this.field36898, this.field36897) * 180.0 / 3.141592653589793), 0.0f, 0.0f, 1.0f);
+                    Class8777.field36893.glRotatef((float)(Math.atan2(this.field36898, this.field36897) * 180.0 / 3.141592653589793), 0.0f, 0.0f, 1.0f);
                 }
-                Class8777.field36893.method19271(1.0f, this.field36911, 1.0f);
+                Class8777.field36893.glScalef(1.0f, this.field36911, 1.0f);
                 this.field36907.method24778((float)(int)(-(this.field36901 / 2.0f)), (float)(int)(-(this.field36901 / 2.0f)), (float)(int)this.field36901, (float)(int)this.field36901, this.field36902);
-                Class8777.field36893.method19268();
+                Class8777.field36893.glPopMatrix();
             }
         }
         else {
             Class7777.method24930();
-            Class8777.field36893.method19265(2832);
-            Class8777.field36893.method19267(this.field36901 / 2.0f);
+            Class8777.field36893.glEnable(2832);
+            Class8777.field36893.glPointSize(this.field36901 / 2.0f);
             this.field36902.bind();
             Class8777.field36893.glBegin(0);
             Class8777.field36893.glVertex2f(this.field36897, this.field36898);
-            Class8777.field36893.method19253();
+            Class8777.field36893.glEnd();
         }
     }
     
@@ -163,11 +164,11 @@ public class Class8777
     }
     
     public void method30502(final float field14368, final float field14369, final float field14370, final float field14371) {
-        if (this.field36902 != Color.field14355) {
-            this.field36902.field14368 = field14368;
-            this.field36902.field14369 = field14369;
-            this.field36902.field14370 = field14370;
-            this.field36902.field14371 = field14371;
+        if (this.field36902 != Color.white) {
+            this.field36902.r = field14368;
+            this.field36902.g = field14369;
+            this.field36902.b = field14370;
+            this.field36902.a = field14371;
         }
         else {
             this.field36902 = new Color(field14368, field14369, field14370, field14371);
@@ -202,31 +203,31 @@ public class Class8777
     }
     
     public void method30508(final float n, final float n2, final float n3, final float n4) {
-        if (this.field36902 == Color.field14355) {
+        if (this.field36902 == Color.white) {
             this.field36902 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
         final Color field36902 = this.field36902;
-        field36902.field14368 += n;
+        field36902.r += n;
         final Color field36903 = this.field36902;
-        field36903.field14369 += n2;
+        field36903.g += n2;
         final Color field36904 = this.field36902;
-        field36904.field14370 += n3;
+        field36904.b += n3;
         final Color field36905 = this.field36902;
-        field36905.field14371 += n4;
+        field36905.a += n4;
     }
     
     public void method30509(final int n, final int n2, final int n3, final int n4) {
-        if (this.field36902 == Color.field14355) {
+        if (this.field36902 == Color.white) {
             this.field36902 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
         final Color field36902 = this.field36902;
-        field36902.field14368 += n / 255.0f;
+        field36902.r += n / 255.0f;
         final Color field36903 = this.field36902;
-        field36903.field14369 += n2 / 255.0f;
+        field36903.g += n2 / 255.0f;
         final Color field36904 = this.field36902;
-        field36904.field14370 += n3 / 255.0f;
+        field36904.b += n3 / 255.0f;
         final Color field36905 = this.field36902;
-        field36905.field14371 += n4 / 255.0f;
+        field36905.a += n4 / 255.0f;
     }
     
     public void method30510(final float n, final float n2) {

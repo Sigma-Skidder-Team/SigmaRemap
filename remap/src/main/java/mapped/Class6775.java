@@ -4,7 +4,8 @@
 
 package mapped;
 
-import slick2d.Renderer;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 public class Class6775
 {
@@ -22,18 +23,18 @@ public class Class6775
         if (this.field26608 != -1) {
             throw new RuntimeException("Attempt to build the display list more than once in CachedRender");
         }
-        this.field26608 = Class6775.field26606.method19283(1);
+        this.field26608 = Class6775.field26606.glGenLists(1);
         Class8093.method26586();
-        Class6775.field26606.method19276(this.field26608, 4864);
+        Class6775.field26606.glNewList(this.field26608, 4864);
         this.field26607.run();
-        Class6775.field26606.method19275();
+        Class6775.field26606.glEndList();
         Class8093.method26587();
     }
     
     public void method20682() {
         if (this.field26608 != -1) {
             Class8093.method26586();
-            Class6775.field26606.method19260(this.field26608);
+            Class6775.field26606.glCallList(this.field26608);
             Class8093.method26587();
             return;
         }
@@ -41,7 +42,7 @@ public class Class6775
     }
     
     public void method20683() {
-        Class6775.field26606.method19290(this.field26608, 1);
+        Class6775.field26606.glDeleteLists(this.field26608, 1);
         this.field26608 = -1;
     }
     

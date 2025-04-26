@@ -7,8 +7,9 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import slick2d.Texture;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -139,7 +140,7 @@ public class Class4910 extends Class4825
                     if (this.field21009 != null) {
                         this.field21009.release();
                     }
-                    this.field21009 = BufferedImageUtil.getTexture("picture", BufferedImage.method20826(this.field21006, 14));
+                    this.field21009 = BufferedImageUtil.getTexture("picture", ImageUtil.applyBlur(this.field21006, 14));
                 }
                 catch (final IOException ex2) {
                     ex2.printStackTrace();

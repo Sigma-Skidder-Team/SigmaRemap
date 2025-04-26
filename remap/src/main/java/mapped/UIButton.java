@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
-import slick2d.TrueTypeFont;
+import org.newdawn.slick.TrueTypeFont;
 
 public class UIButton extends Class4841
 {

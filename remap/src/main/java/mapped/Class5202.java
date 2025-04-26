@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.util.ArrayList;
 
@@ -60,7 +60,7 @@ public class Class5202
             for (int i = 0; i < 128; ++i) {
                 final Color method16287 = this.method16287(i / 128.0f);
                 for (int j = 0; j < 16; ++j) {
-                    class5335.method16486(i, j, method16287.method9774(), method16287.method9775(), method16287.method9776(), method16287.method9777());
+                    class5335.method16486(i, j, method16287.getRedByte(), method16287.getGreenByte(), method16287.getBlueByte(), method16287.getAlphaByte());
                 }
             }
             this.field22209 = class5335.method16487();
@@ -129,14 +129,14 @@ public class Class5202
                     n -= class5592.field22822;
                     final float n3 = n / n2;
                     final Color class5594 = new Color(1, 1, 1, 1);
-                    class5594.field14371 = class5592.field22823.field14371 * (1.0f - n3) + class5593.field22823.field14371 * n3;
-                    class5594.field14368 = class5592.field22823.field14368 * (1.0f - n3) + class5593.field22823.field14368 * n3;
-                    class5594.field14369 = class5592.field22823.field14369 * (1.0f - n3) + class5593.field22823.field14369 * n3;
-                    class5594.field14370 = class5592.field22823.field14370 * (1.0f - n3) + class5593.field22823.field14370 * n3;
+                    class5594.a = class5592.field22823.a * (1.0f - n3) + class5593.field22823.a * n3;
+                    class5594.r = class5592.field22823.r * (1.0f - n3) + class5593.field22823.r * n3;
+                    class5594.g = class5592.field22823.g * (1.0f - n3) + class5593.field22823.g * n3;
+                    class5594.b = class5592.field22823.b * (1.0f - n3) + class5593.field22823.b * n3;
                     return class5594;
                 }
             }
-            return Color.field14360;
+            return Color.black;
         }
         return this.field22203.get(this.field22203.size() - 1).field22823;
     }

@@ -9,7 +9,7 @@ import org.w3c.dom.NodeList;
 import java.util.Properties;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Element;
-import slick2d.Color;
+import org.newdawn.slick.Color;
 
 import java.util.HashMap;
 

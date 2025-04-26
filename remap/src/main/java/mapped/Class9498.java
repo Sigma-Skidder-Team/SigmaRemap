@@ -10,8 +10,9 @@ import java.awt.image.WritableRaster;
 import java.awt.AlphaComposite;
 import java.util.Iterator;
 import org.newdawn.slick.SlickException;
-import slick2d.Color;
-import slick2d.Renderer;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.opengl.renderer.SGL;
+import org.newdawn.slick.opengl.renderer.Renderer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,7 +82,7 @@ public class Class9498
                 }
             }
         }
-        Color.field14355.bind();
+        Color.white.bind();
         this.field40864.method24811();
         int n2 = 0;
         final Iterator method35368 = this.method35365(list);
@@ -141,7 +142,7 @@ public class Class9498
             raster.getDataElements(0, i, w, 1, array);
             Class9498.field40857.put(array);
         }
-        Class9498.field40854.method19298(3553, 0, this.field40865, this.field40866, w, n, 32993, 5121, Class9498.field40856);
+        Class9498.field40854.glTexSubImage2D(3553, 0, this.field40865, this.field40866, w, n, 32993, 5121, Class9498.field40856);
         Class9498.field40857.clear();
         class8274.method27508(this.field40864.method24836(this.field40865, this.field40866, w, n));
     }
