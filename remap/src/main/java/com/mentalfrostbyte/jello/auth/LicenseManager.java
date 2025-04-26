@@ -287,10 +287,6 @@ public class LicenseManager
         return this.session;
     }
     
-    public String getUsername() {
-        return "User";
-    }
-    
     public String getToken() {
         return this.token;
     }
