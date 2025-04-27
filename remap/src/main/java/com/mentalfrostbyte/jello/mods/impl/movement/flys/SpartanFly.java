@@ -55,7 +55,7 @@ public class SpartanFly extends Module
     }
     
     @EventListener
-    public void method10577(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10577(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (updateWalkingEvent.isPre()) {
                 if (this.getBooleanValueFromSettingName("Ground Spoof")) {

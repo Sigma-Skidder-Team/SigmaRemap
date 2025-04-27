@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.render;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.Class5746;
+import mapped.EventRenderFire;
 import mapped.EventListener;
 
 public class LowFire extends Module
@@ -16,9 +16,9 @@ public class LowFire extends Module
     }
     
     @EventListener
-    public void method10802(final Class5746 class5746) {
+    public void method10802(final EventRenderFire eventRenderFire) {
         if (this.isEnabled()) {
-            class5746.method17053(0.14f);
+            eventRenderFire.method17053(0.14f);
         }
     }
 }

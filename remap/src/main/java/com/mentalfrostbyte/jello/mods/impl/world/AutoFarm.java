@@ -18,7 +18,7 @@ public class AutoFarm extends Module
     }
     
     @EventListener
-    public void method10345(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10345(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }

@@ -34,7 +34,7 @@ public class RearView extends PremiumModule
     }
     
     @EventListener
-    public void method10622(final EventPlayerTick eventPlayerTick) {
+    public void method10622(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

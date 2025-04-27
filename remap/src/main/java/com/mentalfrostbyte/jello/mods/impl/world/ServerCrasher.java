@@ -10,8 +10,6 @@ import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 
-import java.util.AbstractList;
-
 public class ServerCrasher extends PremiumModule
 {
     private int field15991;
@@ -27,7 +25,7 @@ public class ServerCrasher extends PremiumModule
     }
     
     @EventListener
-    private void method10629(final EventPlayerTick eventPlayerTick) {
+    private void method10629(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

@@ -21,14 +21,14 @@ public class NoSlow extends Module
     }
     
     @EventListener
-    private void method10155(final Class5728 class5728) {
+    private void method10155(final EventSlowDown eventSlowDown) {
         if (this.isEnabled()) {
-            class5728.setCancelled(true);
+            eventSlowDown.setCancelled(true);
         }
     }
     
     @EventListener
-    private void method10156(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10156(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             final boolean method9898 = Client.getInstance().moduleManager().getModuleByClass(KillAura.class).method9898();
             final boolean b = NoSlow.mc.player.getHeldItemMainhand() != null && NoSlow.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;

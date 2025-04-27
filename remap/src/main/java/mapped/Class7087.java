@@ -7,10 +7,10 @@ package mapped;
 public class Class7087 implements Class7088
 {
     private static String[] field27599;
-    public final /* synthetic */ Class4967 field27600;
-    public final /* synthetic */ Class4967 field27601;
+    public final /* synthetic */ Manager field27600;
+    public final /* synthetic */ Manager field27601;
     
-    public Class7087(final Class4967 field27601, final Class4967 field27602) {
+    public Class7087(final Manager field27601, final Manager field27602) {
         this.field27601 = field27601;
         this.field27600 = field27602;
     }
@@ -27,7 +27,7 @@ public class Class7087 implements Class7088
                 this.field27600.field21375.method15113((String)o);
             }
         }
-        Class4967.method15092(this.field27600, false);
-        Class4967.method15093(this.field27600);
+        Manager.method15092(this.field27600, false);
+        Manager.method15093(this.field27600);
     }
 }

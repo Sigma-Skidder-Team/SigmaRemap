@@ -23,7 +23,7 @@ public class Class9324
         final PacketBuffer class1851 = new PacketBuffer(Unpooled.buffer());
         class1851.method29495(class1850);
         class1851.writeInt(n);
-        class1851.method29514(s);
+        class1851.writeString(s);
         class1851.writeInt(n2);
         method34543(class1849, class1851, Class4376.field19604);
     }

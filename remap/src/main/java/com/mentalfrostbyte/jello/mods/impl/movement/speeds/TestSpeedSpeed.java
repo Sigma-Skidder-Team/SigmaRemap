@@ -32,7 +32,7 @@ public class TestSpeedSpeed extends Module
     }
     
     @EventListener
-    public void method10141(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10141(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player != null) {
                 if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
@@ -101,11 +101,11 @@ public class TestSpeedSpeed extends Module
     }
     
     @EventListener
-    private void method10144(final Class5723 class5723) {
+    private void method10144(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (TestSpeedSpeed.mc.player != null) {
-                if (class5723.method16998() instanceof Class4273) {
-                    if (((Class4273)class5723.method16998()).method12822() != TestSpeedSpeed.mc.player.getEntityId()) {}
+                if (eventReceivePacket.getPacket() instanceof Class4273) {
+                    if (((Class4273) eventReceivePacket.getPacket()).method12822() != TestSpeedSpeed.mc.player.getEntityId()) {}
                 }
             }
         }

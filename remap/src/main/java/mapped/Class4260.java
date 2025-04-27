@@ -49,7 +49,7 @@ public class Class4260 implements IPacket<IClientPlayNetHandler>
             if (this.field19115 == Class344.field2122) {
                 this.field19116 = class8654.readVarInt();
                 this.field19117 = class8654.readInt();
-                this.field19119 = class8654.method29497();
+                this.field19119 = class8654.readTextComponent();
             }
         }
         else {
@@ -65,7 +65,7 @@ public class Class4260 implements IPacket<IClientPlayNetHandler>
             if (this.field19115 == Class344.field2122) {
                 class8654.writeVarInt(this.field19116);
                 class8654.writeInt(this.field19117);
-                class8654.method29498(this.field19119);
+                class8654.writeTextComponent(this.field19119);
             }
         }
         else {

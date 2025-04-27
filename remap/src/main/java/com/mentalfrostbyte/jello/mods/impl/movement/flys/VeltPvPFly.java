@@ -103,7 +103,7 @@ public class VeltPvPFly extends Module
     }
     
     @EventListener
-    public void method10384(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10384(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15795;
             if (this.field15795 != 2) {
@@ -126,22 +126,22 @@ public class VeltPvPFly extends Module
     }
     
     @EventListener
-    public void method10385(final Class5723 class5723) {
+    public void method10385(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (!(method16998 instanceof Class4328)) {
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (!(method16998 instanceof SPlayerPositionLookPacket)) {
                 if (method16998 instanceof Class4378) {
                     final String method16999 = ((Class4378)method16998).method13164().getFormattedText();
                     if (this.field15796 > 0) {
                         if (method16999.contains("Now leaving: §") || method16999.contains("Now entering: §")) {
                             --this.field15796;
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                         }
                     }
                 }
             }
             else {
-                final Class4328 class5724 = (Class4328)method16998;
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                 if (this.field15795 >= 1) {
                     this.field15795 = -1;
                 }

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 
-public class Class5729 extends Class5725
+public class Class5729 extends CancellableEvent
 {
     private static String[] field23284;
     private float field23285;

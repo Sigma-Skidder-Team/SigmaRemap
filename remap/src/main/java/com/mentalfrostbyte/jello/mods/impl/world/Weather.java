@@ -43,7 +43,7 @@ public class Weather extends Module
     }
     
     @EventListener
-    private void method10619(final EventPlayerTick eventPlayerTick) {
+    private void method10619(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (!this.getBooleanValueFromSettingName("Disable rain")) {
                 if (this.field15984) {
@@ -71,11 +71,11 @@ public class Weather extends Module
     }
     
     @EventListener
-    private void method10620(final Class5723 class5723) {
+    private void method10620(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (!(class5723.method16998() instanceof Class4345)) {
-                if (class5723.method16998() instanceof Class4306) {
-                    final Class4306 class5724 = (Class4306)class5723.method16998();
+            if (!(eventReceivePacket.getPacket() instanceof Class4345)) {
+                if (eventReceivePacket.getPacket() instanceof Class4306) {
+                    final Class4306 class5724 = (Class4306) eventReceivePacket.getPacket();
                     if (class5724.method12948() == 7) {
                         if (class5724.method12949() != 1.0f) {
                             if (class5724.method12949() == 0.0f) {
@@ -89,14 +89,14 @@ public class Weather extends Module
                             this.field15983 = class5724.method12949();
                         }
                         else {
-                            class5723.method16999(new Class4306(class5724.method12948(), 0.0f));
+                            eventReceivePacket.setPacket(new Class4306(class5724.method12948(), 0.0f));
                             this.field15983 = 0.0f;
                         }
                     }
                 }
             }
             else if (this.getBooleanValueFromSettingName("Custom time")) {
-                class5723.method16999(new Class4345(-(long)this.getNumberSettingValueByName("Time"), -(long)this.getNumberSettingValueByName("Time"), true));
+                eventReceivePacket.setPacket(new Class4345(-(long)this.getNumberSettingValueByName("Time"), -(long)this.getNumberSettingValueByName("Time"), true));
             }
         }
     }

@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.world;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 
 public class Timer extends Module
@@ -18,7 +18,7 @@ public class Timer extends Module
     }
     
     @EventListener
-    private void method10344(final EventPlayerTick eventPlayerTick) {
+    private void method10344(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             Timer.mc.timer.timerSpeed = this.getNumberSettingValueByName("Timer");
         }

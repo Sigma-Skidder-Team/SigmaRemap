@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.ColorUtils;
 import mapped.EventListener;
 import net.minecraft.entity.Entity;
@@ -19,7 +19,7 @@ public class NickNameDetector extends Module
     }
     
     @EventListener
-    private void method10838(final EventPlayerTick eventPlayerTick) {
+    private void method10838(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             for (final Entity class5744 : ColorUtils.method19108()) {
                 if (Client.getInstance().getBotManager().method31751(class5744)) {

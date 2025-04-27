@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import org.apache.logging.log4j.LogManager;
 import java.util.Optional;
@@ -90,7 +89,7 @@ public abstract class Class6765
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
         final Class8878 method2850 = method2848.method6765();
         class3643.method17469(new Class4383(class3642.getEntityId(), class3642.field3041.method26482(), WorldInfo.byHashing(method2849.getSeed()), method2849.method29568(), method2848.dimension.getType(), this.method20609(), method2849.method29570(), this.field26574, method2850.method31216(Class8878.field37329), !method2850.method31216(Class8878.field37340)));
-        class3643.method17469(new Class4376(Class4376.field19590, new PacketBuffer(Unpooled.buffer()).method29514(this.method20576().method1490())));
+        class3643.method17469(new Class4376(Class4376.field19590, new PacketBuffer(Unpooled.buffer()).writeString(this.method20576().method1490())));
         class3643.method17469(new Class4315(method2849.method29597(), method2849.method29599()));
         class3643.method17469(new Class4300(class3642.field3025));
         class3643.method17469(new Class4388(class3642.inventory.field2743));

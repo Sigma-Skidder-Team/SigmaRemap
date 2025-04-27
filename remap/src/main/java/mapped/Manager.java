@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.TimerTask;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.Map;
@@ -20,7 +19,7 @@ import java.util.Date;
 import java.util.Set;
 import java.util.logging.Logger;
 
-public class Class4967 extends Class4961
+public class Manager extends Class4961
 {
     private static final Logger field21341;
     public static final String field21342 = "open";
@@ -61,19 +60,19 @@ public class Class4967 extends Class4961
     private final Class6747 field21377;
     public ConcurrentHashMap<String, Class4960> field21378;
     
-    public Class4967() {
+    public Manager() {
         this(null, null);
     }
     
-    public Class4967(final URI uri) {
+    public Manager(final URI uri) {
         this(uri, null);
     }
     
-    public Class4967(final Class7660 class7660) {
+    public Manager(final Class7660 class7660) {
         this(null, class7660);
     }
     
-    public Class4967(final URI field21371, Class7660 field21372) {
+    public Manager(final URI field21371, Class7660 field21372) {
         this.field21369 = new HashSet<Class4960>();
         if (field21372 == null) {
             field21372 = new Class7660();
@@ -82,10 +81,10 @@ public class Class4967 extends Class4961
             field21372.field30428 = "/socket.io";
         }
         if (field21372.field30436 == null) {
-            field21372.field30436 = Class4967.field21356;
+            field21372.field30436 = Manager.field21356;
         }
         if (field21372.field30437 == null) {
-            field21372.field30437 = Class4967.field21357;
+            field21372.field30437 = Manager.field21357;
         }
         this.field21374 = field21372;
         this.field21378 = new ConcurrentHashMap<String, Class4960>();
@@ -127,7 +126,7 @@ public class Class4967 extends Class4961
         return this.field21359;
     }
     
-    public Class4967 method15042(final boolean field21359) {
+    public Manager method15042(final boolean field21359) {
         this.field21359 = field21359;
         return this;
     }
@@ -136,7 +135,7 @@ public class Class4967 extends Class4961
         return this.field21363;
     }
     
-    public Class4967 method15044(final int field21363) {
+    public Manager method15044(final int field21363) {
         this.field21363 = field21363;
         return this;
     }
@@ -145,7 +144,7 @@ public class Class4967 extends Class4961
         return this.field21364;
     }
     
-    public Class4967 method15046(final long field21364) {
+    public Manager method15046(final long field21364) {
         this.field21364 = field21364;
         if (this.field21367 != null) {
             this.field21367.method26360(field21364);
@@ -157,7 +156,7 @@ public class Class4967 extends Class4961
         return this.field21366;
     }
     
-    public Class4967 method15048(final double field21366) {
+    public Manager method15048(final double field21366) {
         this.field21366 = field21366;
         if (this.field21367 != null) {
             this.field21367.method26363(field21366);
@@ -169,7 +168,7 @@ public class Class4967 extends Class4961
         return this.field21365;
     }
     
-    public Class4967 method15050(final long field21365) {
+    public Manager method15050(final long field21365) {
         this.field21365 = field21365;
         if (this.field21367 != null) {
             this.field21367.method26361(field21365);
@@ -181,7 +180,7 @@ public class Class4967 extends Class4961
         return this.field21368;
     }
     
-    public Class4967 method15052(final long field21368) {
+    public Manager method15052(final long field21368) {
         this.field21368 = field21368;
         return this;
     }
@@ -196,17 +195,17 @@ public class Class4967 extends Class4961
         }
     }
     
-    public Class4967 method15054() {
+    public Manager method15054() {
         return this.method15055(null);
     }
     
-    public Class4967 method15055(final Class8332 class8332) {
+    public Manager method15055(final Class8332 class8332) {
         Class934.method5435(new Class1040(this, class8332));
         return this;
     }
     
     private void method15056() {
-        Class4967.field21341.fine("open");
+        Manager.field21341.fine("open");
         this.method15068();
         this.field21358 = Class1978.field10966;
         this.method14942("open");
@@ -241,7 +240,7 @@ public class Class4967 extends Class4961
     }
     
     private void method15062(final Exception thrown) {
-        Class4967.field21341.log(Level.FINE, "error", thrown);
+        Manager.field21341.log(Level.FINE, "error", thrown);
         this.method15038("error", thrown);
     }
     
@@ -274,8 +273,8 @@ public class Class4967 extends Class4961
     }
     
     public void method15066(final Class9041 class9041) {
-        if (Class4967.field21341.isLoggable(Level.FINE)) {
-            Class4967.field21341.fine(String.format("writing packet %s", class9041));
+        if (Manager.field21341.isLoggable(Level.FINE)) {
+            Manager.field21341.fine(String.format("writing packet %s", class9041));
         }
         if (class9041.field38268 != null) {
             if (!class9041.field38268.isEmpty()) {
@@ -302,7 +301,7 @@ public class Class4967 extends Class4961
     }
     
     private void method15068() {
-        Class4967.field21341.fine("cleanup");
+        Manager.field21341.fine("cleanup");
         Class4248 class4248;
         while ((class4248 = this.field21373.poll()) != null) {
             class4248.method12753();
@@ -315,7 +314,7 @@ public class Class4967 extends Class4961
     }
     
     public void method15069() {
-        Class4967.field21341.fine("disconnect");
+        Manager.field21341.fine("disconnect");
         this.field21360 = true;
         this.field21361 = false;
         if (this.field21358 != Class1978.field10966) {
@@ -329,7 +328,7 @@ public class Class4967 extends Class4961
     }
     
     private void method15070(final String s) {
-        Class4967.field21341.fine("onclose");
+        Manager.field21341.fine("onclose");
         this.method15068();
         this.field21367.method26359();
         this.field21358 = Class1978.field10964;
@@ -345,14 +344,14 @@ public class Class4967 extends Class4961
         if (!this.field21361 && !this.field21360) {
             if (this.field21367.method26364() < this.field21363) {
                 final long method26358 = this.field21367.method26358();
-                Class4967.field21341.fine(String.format("will wait %dms before reconnect attempt", method26358));
+                Manager.field21341.fine(String.format("will wait %dms before reconnect attempt", method26358));
                 this.field21361 = true;
                 final Timer timer = new Timer();
                 timer.schedule(new Class1620(this, this), method26358);
                 this.field21373.add(new Class4250(this, timer));
             }
             else {
-                Class4967.field21341.fine("reconnect failed");
+                Manager.field21341.fine("reconnect failed");
                 this.field21367.method26359();
                 this.method15038("reconnect_failed");
                 this.field21361 = false;
@@ -369,6 +368,6 @@ public class Class4967 extends Class4961
     }
     
     static {
-        field21341 = Logger.getLogger(Class4967.class.getName());
+        field21341 = Logger.getLogger(Manager.class.getName());
     }
 }

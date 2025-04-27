@@ -6,15 +6,15 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4322 implements IPacket<Class5807>
+public class SEnableCompressionPacket implements IPacket<IClientLoginNetHandler>
 {
     private static String[] field19363;
     private int field19364;
     
-    public Class4322() {
+    public SEnableCompressionPacket() {
     }
     
-    public Class4322(final int field19364) {
+    public SEnableCompressionPacket(final int field19364) {
         this.field19364 = field19364;
     }
     
@@ -28,8 +28,8 @@ public class Class4322 implements IPacket<Class5807>
         class8654.writeVarInt(this.field19364);
     }
     
-    public void method12841(final Class5807 class5807) {
-        class5807.method17407(this);
+    public void method12841(final IClientLoginNetHandler IClientLoginNetHandler) {
+        IClientLoginNetHandler.handleEnableCompression(this);
     }
     
     public int method12986() {

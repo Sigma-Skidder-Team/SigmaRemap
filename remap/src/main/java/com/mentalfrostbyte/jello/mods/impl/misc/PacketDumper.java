@@ -86,9 +86,9 @@ public class PacketDumper extends Module
     }
     
     @EventListener
-    private void method10237(final Class5723 class5723) {
+    private void method10237(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            this.method10235(class5723.method16998(), false);
+            this.method10235(eventReceivePacket.getPacket(), false);
         }
     }
     

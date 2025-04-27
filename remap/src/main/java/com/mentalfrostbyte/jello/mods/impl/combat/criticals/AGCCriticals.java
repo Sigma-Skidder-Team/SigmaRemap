@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.UpdateWalkingEvent;
+import mapped.UpdateWalkingEventI;
 import mapped.HigherPriority;
 import mapped.EventListener;
 
@@ -25,7 +25,7 @@ public class AGCCriticals extends Module
     
     @EventListener
     @HigherPriority
-    private void method9880(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method9880(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (!AGCCriticals.mc.player.onGround) {
                 this.field15513 = 0;

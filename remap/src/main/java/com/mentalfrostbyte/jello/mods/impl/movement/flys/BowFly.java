@@ -34,7 +34,7 @@ public class BowFly extends Module
     }
     
     @EventListener
-    public void method10304(final EventStopUseItem eventStopUseItem) {
+    public void method10304(final EventStopUseItemI eventStopUseItem) {
         if (this.isEnabled()) {
             if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
                 if (this.field15760 >= 1) {
@@ -71,7 +71,7 @@ public class BowFly extends Module
     }
     
     @EventListener
-    public void method10306(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10306(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }

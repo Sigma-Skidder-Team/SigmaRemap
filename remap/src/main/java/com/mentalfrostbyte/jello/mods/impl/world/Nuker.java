@@ -33,7 +33,7 @@ public class Nuker extends Module
     }
     
     @EventListener
-    private void method10609(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10609(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             this.field15978 = this.method10612(this.getNumberSettingValueByName("Range") / 2.0f);
             if (this.field15978.isEmpty()) {

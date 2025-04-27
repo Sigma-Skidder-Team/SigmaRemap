@@ -31,7 +31,7 @@ public class Class4270 implements IPacket<Class5813>
         this.field19152 = class8654.method29494();
         this.field19153 = class8654.method29516();
         this.field19154 = class8654.method29516();
-        this.field19155 = class8654.method29513(32767);
+        this.field19155 = class8654.readString(32767);
     }
     
     @Override
@@ -39,7 +39,7 @@ public class Class4270 implements IPacket<Class5813>
         class8654.method29495(this.field19152);
         class8654.method29517(this.field19153);
         class8654.method29517(this.field19154);
-        class8654.method29514(this.field19155);
+        class8654.writeString(this.field19155);
     }
     
     public void method12756(final Class5813 class5813) {

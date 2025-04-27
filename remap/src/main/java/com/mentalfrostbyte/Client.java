@@ -5,7 +5,8 @@
 package com.mentalfrostbyte;
 
 import com.mentalfrostbyte.jello.ClientAssets;
-import com.mentalfrostbyte.jello.auth.LicenseManager;
+import com.mentalfrostbyte.jello.auth.AgoraManager;
+import com.mentalfrostbyte.jello.auth.NetworkManager;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
 import club.minnced.discord.rpc.DiscordRichPresence;
@@ -43,7 +44,7 @@ public class Client {
     private AltManager altManager;
     private BlurManager blurManager;
     private IRCManager IRCManager;
-    private LicenseManager licenseManager;
+    private NetworkManager networkManager;
     private AgoraManager agoraManager;
     private AudioManager audioManager;
     private NotificationManager notificationManager;
@@ -85,8 +86,8 @@ public class Client {
         this.eventBus = new EventBus();
         (this.commandManager = new CommandManager()).method32666();
         ClientAssets.decryptTextures();
-        (this.licenseManager = new LicenseManager()).init();
-        (this.agoraManager = new AgoraManager()).method17548();
+        (this.networkManager = new NetworkManager()).init();
+        (this.agoraManager = new AgoraManager()).connect();
         this.screenManager = new ScreenManager();
         (this.friendManager = new FriendManager()).method29876();
         (this.botManager = new BotManager()).method31750();
@@ -294,8 +295,8 @@ public class Client {
         return this.waypointManager;
     }
 
-    public LicenseManager getNetworkManager() {
-        return this.licenseManager;
+    public NetworkManager getNetworkManager() {
+        return this.networkManager;
     }
 
     public TrustManager getTrustManager() {

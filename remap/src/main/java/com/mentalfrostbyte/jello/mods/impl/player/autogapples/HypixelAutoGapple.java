@@ -32,7 +32,7 @@ public class HypixelAutoGapple extends PremiumModule
     }
     
     @EventListener
-    public void method10697(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10697(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (updateWalkingEvent.isPre()) {
                 if (!(HypixelAutoGapple.mc.currentScreen instanceof Class726)) {

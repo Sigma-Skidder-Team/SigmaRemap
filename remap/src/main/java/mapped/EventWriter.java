@@ -6,7 +6,7 @@ package mapped;
 
 import totalcross.json.JSONObject;
 
-public class EventWriter implements CancellableEvent
+public class EventWriter implements IEvent
 {
     private static String[] field23301;
     private final JSONObject field23302;

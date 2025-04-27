@@ -6,8 +6,7 @@ package mapped;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import com.mojang.brigadier.Message;
+
 import com.mojang.brigadier.suggestion.Suggestion;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.context.StringRange;
@@ -35,7 +34,7 @@ public class Class4337 implements IPacket<IClientPlayNetHandler>
         final int method29502 = class8654.readVarInt();
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(method29502);
         for (int i = 0; i < method29502; ++i) {
-            arrayListWithCapacity.add(new Suggestion(between, class8654.method29513(32767), class8654.readBoolean() ? class8654.method29497() : null));
+            arrayListWithCapacity.add(new Suggestion(between, class8654.readString(32767), class8654.readBoolean() ? class8654.readTextComponent() : null));
         }
         this.field19420 = new Suggestions(between, arrayListWithCapacity);
     }
@@ -47,12 +46,12 @@ public class Class4337 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19420.getRange().getLength());
         class8654.writeVarInt(this.field19420.getList().size());
         for (final Suggestion suggestion : this.field19420.getList()) {
-            class8654.method29514(suggestion.getText());
+            class8654.writeString(suggestion.getText());
             class8654.writeBoolean(suggestion.getTooltip() != null);
             if (suggestion.getTooltip() == null) {
                 continue;
             }
-            class8654.method29498(Class9479.method35300(suggestion.getTooltip()));
+            class8654.writeTextComponent(Class9479.method35300(suggestion.getTooltip()));
         }
     }
     

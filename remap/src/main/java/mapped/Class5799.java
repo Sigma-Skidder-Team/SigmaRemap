@@ -32,7 +32,6 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.io.File;
 
-import com.mojang.brigadier.tree.RootCommandNode;
 import java.util.Iterator;
 import io.netty.buffer.Unpooled;
 import com.google.common.collect.Maps;
@@ -120,7 +119,7 @@ public class Class5799 implements IClientPlayNetHandler
         this.field23808.player.method4127(class4383.method13184());
         this.field23808.playerController.method27309(class4383.method13179());
         this.field23808.gameSettings.method17124();
-        this.field23805.method11174(new Class4326(Class4326.field19371, new PacketBuffer(Unpooled.buffer()).method29514(Class7932.method25729())));
+        this.field23805.method11174(new Class4326(Class4326.field19371, new PacketBuffer(Unpooled.buffer()).writeString(Class7932.method25729())));
         this.field23808.method5328().method25567();
     }
     
@@ -493,67 +492,67 @@ public class Class5799 implements IClientPlayNetHandler
     }
     
     @Override
-    public void method17285(final Class4328 class4328) {
-        Class8663.method29632((IPacket<Class5799>)class4328, this, this.field23808);
+    public void method17285(final SPlayerPositionLookPacket SPlayerPositionLookPacket) {
+        Class8663.method29632((IPacket<Class5799>) SPlayerPositionLookPacket, this, this.field23808);
         final ClientPlayerEntity field4684 = this.field23808.player;
         final Vec3d method1935 = field4684.getMotion();
-        final boolean contains = class4328.method12998().contains(Class2143.field12617);
-        final boolean contains2 = class4328.method12998().contains(Class2143.field12618);
-        final boolean contains3 = class4328.method12998().contains(Class2143.field12619);
+        final boolean contains = SPlayerPositionLookPacket.method12998().contains(Class2143.field12617);
+        final boolean contains2 = SPlayerPositionLookPacket.method12998().contains(Class2143.field12618);
+        final boolean contains3 = SPlayerPositionLookPacket.method12998().contains(Class2143.field12619);
         double method1936;
         double method1937;
         if (!contains) {
             method1936 = 0.0;
-            method1937 = class4328.method12992();
+            method1937 = SPlayerPositionLookPacket.method12992();
             field4684.lastTickPosX = method1937;
         }
         else {
             method1936 = method1935.getX();
-            method1937 = field4684.getPosX() + class4328.method12992();
+            method1937 = field4684.getPosX() + SPlayerPositionLookPacket.method12992();
             final ClientPlayerEntity class4329 = field4684;
-            class4329.lastTickPosX += class4328.method12992();
+            class4329.lastTickPosX += SPlayerPositionLookPacket.method12992();
         }
         double method1938;
         double method1939;
         if (!contains2) {
             method1938 = 0.0;
-            method1939 = class4328.method12993();
+            method1939 = SPlayerPositionLookPacket.method12993();
             field4684.lastTickPosY = method1939;
         }
         else {
             method1938 = method1935.getY();
-            method1939 = field4684.getPosY() + class4328.method12993();
+            method1939 = field4684.getPosY() + SPlayerPositionLookPacket.method12993();
             final ClientPlayerEntity class4330 = field4684;
-            class4330.lastTickPosY += class4328.method12993();
+            class4330.lastTickPosY += SPlayerPositionLookPacket.method12993();
         }
         double method1940;
         double method1941;
         if (!contains3) {
             method1940 = 0.0;
-            method1941 = class4328.method12994();
+            method1941 = SPlayerPositionLookPacket.method12994();
             field4684.lastTickPosZ = method1941;
         }
         else {
             method1940 = method1935.getZ();
-            method1941 = field4684.getPosZ() + class4328.method12994();
+            method1941 = field4684.getPosZ() + SPlayerPositionLookPacket.method12994();
             final ClientPlayerEntity class4331 = field4684;
-            class4331.lastTickPosZ += class4328.method12994();
+            class4331.lastTickPosZ += SPlayerPositionLookPacket.method12994();
         }
         field4684.method1948(method1937, method1939, method1941);
         field4684.prevPosX = method1937;
         field4684.prevPosY = method1939;
         field4684.prevPosZ = method1941;
         field4684.setMotion(method1936, method1938, method1940);
-        float method1942 = class4328.method12995();
-        float method1943 = class4328.method12996();
-        if (class4328.method12998().contains(Class2143.field12621)) {
+        float method1942 = SPlayerPositionLookPacket.method12995();
+        float method1943 = SPlayerPositionLookPacket.method12996();
+        if (SPlayerPositionLookPacket.method12998().contains(Class2143.field12621)) {
             method1943 += field4684.rotationPitch;
         }
-        if (class4328.method12998().contains(Class2143.field12620)) {
+        if (SPlayerPositionLookPacket.method12998().contains(Class2143.field12620)) {
             method1942 += field4684.rotationYaw;
         }
         field4684.method1728(method1937, method1939, method1941, method1942, method1943);
-        this.field23805.method11174(new Class4348(class4328.method12997()));
+        this.field23805.method11174(new Class4348(SPlayerPositionLookPacket.method12997()));
         this.field23805.method11174(new Class4355(field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), field4684.rotationYaw, field4684.rotationPitch, false));
         if (!this.field23810) {
             this.field23810 = true;
@@ -614,8 +613,8 @@ public class Class5799 implements IClientPlayNetHandler
     }
     
     @Override
-    public void method17290(final Class4262 class4262) {
-        this.field23805.method11181(class4262.method12793());
+    public void handleDisconnect(final SDisconnectPacket SDisconnectPacket) {
+        this.field23805.method11181(SDisconnectPacket.getReason());
     }
     
     @Override
@@ -1643,7 +1642,7 @@ public class Class5799 implements IClientPlayNetHandler
         try {
             method13159 = class4376.method13159();
             if (Class4376.field19590.equals(method13158)) {
-                this.field23808.player.method4119(method13159.method29513(32767));
+                this.field23808.player.method4119(method13159.readString(32767));
             }
             else if (Class4376.field19591.equals(method13158)) {
                 this.field23808.field4645.field28207.method18271(method13159.readInt(), Class9468.method35231(method13159), method13159.readFloat());
@@ -1700,7 +1699,7 @@ public class Class5799 implements IClientPlayNetHandler
                 final int int6 = method13159.readInt();
                 final ArrayList arrayList5 = Lists.newArrayList();
                 for (int n = 0; n < int6; ++n) {
-                    arrayList5.add(new Class7472(method13162, method13159.readInt(), method13159.method29513(255), method13159.readBoolean()));
+                    arrayList5.add(new Class7472(method13162, method13159.readInt(), method13159.readString(255), method13159.readBoolean()));
                 }
                 this.field23808.field4645.field28222.method18313(int5, arrayList5);
             }

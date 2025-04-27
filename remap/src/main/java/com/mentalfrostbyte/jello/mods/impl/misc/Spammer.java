@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.ColorUtils;
 import mapped.EventListener;
 
@@ -23,7 +23,7 @@ public class Spammer extends Module
     }
     
     @EventListener
-    public void method10465(final EventPlayerTick eventPlayerTick) {
+    public void method10465(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             ++this.field15877;
             if (this.field15877 > this.getNumberSettingValueByName("Messages delay") * 20.0f) {

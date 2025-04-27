@@ -8,10 +8,10 @@ import java.util.LinkedList;
 
 public class Class37 extends LinkedList<Class4248>
 {
-    public final /* synthetic */ Class4967 field92;
+    public final /* synthetic */ Manager field92;
     public final /* synthetic */ Class4960 field93;
     
-    public Class37(final Class4960 field93, final Class4967 field94) {
+    public Class37(final Class4960 field93, final Manager field94) {
         this.field93 = field93;
         this.field92 = field94;
         this.add(Class8415.method28106(this.field92, "open", new Class4696(this)));

@@ -31,7 +31,7 @@ public class TickManager {
     }
 
     @EventListener
-    private void method29224(final EventPlayerTick eventPlayerTick) {
+    private void method29224(final EventPlayerTickI eventPlayerTick) {
         ++this.field36156;
         ++this.field36157;
         ++this.field36158;
@@ -51,8 +51,8 @@ public class TickManager {
     }
 
     @EventListener
-    private void method29225(final Class5723 class5723) {
-        if (class5723.method16998() instanceof Class4396) {
+    private void method29225(final EventReceivePacket eventReceivePacket) {
+        if (eventReceivePacket.getPacket() instanceof Class4396) {
             this.field36161 = Math.min(1.05f, Math.max(0.0f, 15000.0f / (System.currentTimeMillis() - this.field36160)));
             this.field36160 = System.currentTimeMillis();
         }

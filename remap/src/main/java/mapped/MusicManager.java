@@ -214,7 +214,7 @@ public class MusicManager {
     }
 
     @EventListener
-    private void method24164(final EventPlayerTick eventPlayerTick) {
+    private void method24164(final EventPlayerTickI eventPlayerTick) {
         if (!this.playing) {
             this.visualizerData.clear();
             this.field30354.clear();

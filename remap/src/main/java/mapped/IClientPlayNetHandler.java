@@ -56,7 +56,7 @@ public interface IClientPlayNetHandler extends INetHandler
     
     void method17355(final Class4376 p0);
     
-    void method17290(final Class4262 p0);
+    void handleDisconnect(final SDisconnectPacket p0);
     
     void method17302(final Class4264 p0);
     
@@ -80,7 +80,7 @@ public interface IClientPlayNetHandler extends INetHandler
     
     void handleEntityMovement(final SEntityPacket p0);
     
-    void method17285(final Class4328 p0);
+    void method17285(final SPlayerPositionLookPacket p0);
     
     void method17360(final Class4278 p0);
     

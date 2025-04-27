@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.auth.LicenseManager;
+import com.mentalfrostbyte.jello.auth.NetworkManager;
 
 public class PremiumChecker implements Runnable
 {
@@ -27,7 +27,7 @@ public class PremiumChecker implements Runnable
                     break;
                 }
             }
-            LicenseManager.premium = this.field8286;
+            NetworkManager.premium = this.field8286;
             break;
         }
     }

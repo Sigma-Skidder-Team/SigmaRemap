@@ -54,7 +54,7 @@ public class HawkFly extends Module { //Hawk tuah
     }
 
     @EventListener
-    public void method9988(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method9988(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15576;
             if (this.field15576 == 1) {
@@ -66,19 +66,19 @@ public class HawkFly extends Module { //Hawk tuah
     }
 
     @EventListener
-    public void method9989(final Class5723 class5723) {
+    public void method9989(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (method16998 instanceof Class4328) {
-                final Class4328 class5724 = (Class4328) method16998;
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (method16998 instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket) method16998;
                 if (this.field15576 >= 1) {
                     this.field15576 = -1;
                 }
                 this.field15577 = class5724.field19377;
                 this.field15578 = class5724.field19378;
                 this.field15579 = class5724.field19379;
-                class5724.field19380 = HawkFly.mc.player.rotationYaw;
-                class5724.field19381 = HawkFly.mc.player.rotationPitch;
+                class5724.yaw = HawkFly.mc.player.rotationYaw;
+                class5724.pitch = HawkFly.mc.player.rotationPitch;
             }
         }
     }

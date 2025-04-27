@@ -30,7 +30,7 @@ public class Class4386 implements IPacket<Class5813>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19652 = class8654.method29513(16);
+        this.field19652 = class8654.readString(16);
         this.field19653 = class8654.readByte();
         this.field19654 = class8654.method29499(Class2047.class);
         this.field19655 = class8654.readBoolean();
@@ -40,7 +40,7 @@ public class Class4386 implements IPacket<Class5813>
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(this.field19652);
+        class8654.writeString(this.field19652);
         class8654.writeByte(this.field19653);
         class8654.method29500(this.field19654);
         class8654.writeBoolean(this.field19655);

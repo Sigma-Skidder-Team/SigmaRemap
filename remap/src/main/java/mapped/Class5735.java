@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5735 implements CancellableEvent
+public class Class5735 implements IEvent
 {
     private static String[] field23299;
     public float field23300;

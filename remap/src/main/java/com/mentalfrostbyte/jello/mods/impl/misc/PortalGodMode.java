@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class4348;
-import mapped.Class5723;
+import mapped.EventReceivePacket;
 import mapped.EventListener;
 
 public class PortalGodMode extends Module
@@ -17,10 +17,10 @@ public class PortalGodMode extends Module
     }
     
     @EventListener
-    private void method10002(final Class5723 class5723) {
+    private void method10002(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4348) {
-                class5723.setCancelled(true);
+            if (eventReceivePacket.getPacket() instanceof Class4348) {
+                eventReceivePacket.setCancelled(true);
             }
         }
     }

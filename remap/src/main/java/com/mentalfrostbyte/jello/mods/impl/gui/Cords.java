@@ -21,7 +21,7 @@ public class Cords extends Module
     }
     
     @EventListener
-    private void method10528(final EventPlayerTick eventPlayerTick) {
+    private void method10528(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (ColorUtils.method19135() > this.field15924) {
                 if (Cords.mc.player.ticksExisted % 3 == 0) {

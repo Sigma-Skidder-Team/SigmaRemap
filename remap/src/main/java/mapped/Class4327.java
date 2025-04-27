@@ -5,7 +5,7 @@
 package mapped;
 
 import java.io.IOException;
-import java.util.UUID;
+
 import com.mojang.authlib.GameProfile;
 
 public class Class4327 implements IPacket<Class5802>
@@ -22,12 +22,12 @@ public class Class4327 implements IPacket<Class5802>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19375 = new GameProfile(null, class8654.method29513(16));
+        this.field19375 = new GameProfile(null, class8654.readString(16));
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(this.field19375.getName());
+        class8654.writeString(this.field19375.getName());
     }
     
     public void method12990(final Class5802 class5802) {

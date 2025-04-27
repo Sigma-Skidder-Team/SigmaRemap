@@ -52,12 +52,12 @@ public class Class4360 implements IPacket<Class5813>
         this.field19526 = class8654.method29494();
         this.field19527 = class8654.method29499(Class2146.class);
         this.field19528 = class8654.method29499(Class102.class);
-        this.field19529 = class8654.method29513(32767);
+        this.field19529 = class8654.readString(32767);
         this.field19530 = new BlockPos(MathHelper.method35651(class8654.readByte(), -32, 32), MathHelper.method35651(class8654.readByte(), -32, 32), MathHelper.method35651(class8654.readByte(), -32, 32));
         this.field19531 = new BlockPos(MathHelper.method35651(class8654.readByte(), 0, 32), MathHelper.method35651(class8654.readByte(), 0, 32), MathHelper.method35651(class8654.readByte(), 0, 32));
         this.field19532 = class8654.method29499(Class2181.class);
         this.field19533 = class8654.method29499(Class2052.class);
-        this.field19534 = class8654.method29513(12);
+        this.field19534 = class8654.readString(12);
         this.field19538 = MathHelper.clamp(class8654.readFloat(), 0.0f, 1.0f);
         this.field19539 = class8654.method29502();
         class8654.readByte();
@@ -122,7 +122,7 @@ public class Class4360 implements IPacket<Class5813>
         class8654.method29495(this.field19526);
         class8654.method29500(this.field19527);
         class8654.method29500(this.field19528);
-        class8654.method29514(this.field19529);
+        class8654.writeString(this.field19529);
         class8654.writeByte(this.field19530.getX());
         class8654.writeByte(this.field19530.getY());
         class8654.writeByte(this.field19530.getZ());
@@ -131,7 +131,7 @@ public class Class4360 implements IPacket<Class5813>
         class8654.writeByte(this.field19531.getZ());
         class8654.method29500(this.field19532);
         class8654.method29500(this.field19533);
-        class8654.method29514(this.field19534);
+        class8654.writeString(this.field19534);
         class8654.writeFloat(this.field19538);
         class8654.method29506(this.field19539);
         int n = 0;

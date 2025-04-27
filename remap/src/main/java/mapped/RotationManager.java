@@ -47,7 +47,7 @@ public class RotationManager {
     }
 
     @EventListener
-    public void method28366(final EventStopUseItem eventStopUseItem) {
+    public void method28366(final EventStopUseItemI eventStopUseItem) {
         if (ViaManager.method34762() == Class7906.field32452.method25613()) {
             if (this.field34856.player.method2768() <= 1) {
                 eventStopUseItem.setCancelled(true);
@@ -116,7 +116,7 @@ public class RotationManager {
 
     @EventListener
     @HighestPriority
-    public void method28371(final EventPlayerTick eventPlayerTick) {
+    public void method28371(final EventPlayerTickI eventPlayerTick) {
         if (!this.method28375()) {
             return;
         }
@@ -175,13 +175,13 @@ public class RotationManager {
 
     @EventListener
     @HighestPriority
-    public void method28373(final Class5723 class5723) {
+    public void method28373(final EventReceivePacket eventReceivePacket) {
         if (!Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() && ViaManager.method34762() != Class7906.field32452.method25613()) {
             if (!RotationManager.field34858.isEmpty()) {
                 RotationManager.field34858.clear();
             }
-        } else if (class5723.method16998() instanceof Class4402) {
-            final Class4402 class5724 = (Class4402) class5723.method16998();
+        } else if (eventReceivePacket.getPacket() instanceof Class4402) {
+            final Class4402 class5724 = (Class4402) eventReceivePacket.getPacket();
             if (class5724.method13249() == Class2215.field13601) {
                 if (class5724.method13247() != null) {
                     if (Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() || ViaManager.method34762() == Class7906.field32452.method25613()) {
@@ -195,56 +195,56 @@ public class RotationManager {
                                     RotationManager.field34858.add(method6742);
                                 }
                             }
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                         }
                     }
                 }
             }
         }
         if (this.method28375()) {
-            Class8090.method26583(class5723, this.field34860);
-            if (!(class5723.method16998() instanceof Class4388)) {
-                if (class5723.method16998() instanceof Class4288 && ColorUtils.method19147()) {
-                    class5723.setCancelled(true);
-                } else if (!(class5723.method16998() instanceof Class4289)) {
-                    if (class5723.method16998() instanceof Class4379 && this.field34856.player != null) {
-                        final Class4379 class5725 = (Class4379) class5723.method16998();
-                    } else if (!(class5723.method16998() instanceof Class4332)) {
-                        if (class5723.method16998() instanceof Class4301) {
-                            final Class4301 class5726 = (Class4301) class5723.method16998();
+            Class8090.method26583(eventReceivePacket, this.field34860);
+            if (!(eventReceivePacket.getPacket() instanceof Class4388)) {
+                if (eventReceivePacket.getPacket() instanceof Class4288 && ColorUtils.method19147()) {
+                    eventReceivePacket.setCancelled(true);
+                } else if (!(eventReceivePacket.getPacket() instanceof Class4289)) {
+                    if (eventReceivePacket.getPacket() instanceof Class4379 && this.field34856.player != null) {
+                        final Class4379 class5725 = (Class4379) eventReceivePacket.getPacket();
+                    } else if (!(eventReceivePacket.getPacket() instanceof Class4332)) {
+                        if (eventReceivePacket.getPacket() instanceof Class4301) {
+                            final Class4301 class5726 = (Class4301) eventReceivePacket.getPacket();
                             if (class5726.method12932() != Class1994.field11169) {
                                 if (this.field34862 != null && class5726.method12932() == Class1994.field11170) {
                                     if (this.field34862.compareTo(class5726.method12931()) != 0) {
-                                        class5723.setCancelled(true);
+                                        eventReceivePacket.setCancelled(true);
                                     } else {
                                         this.field34862 = null;
                                     }
                                 } else if (this.field34862 != null) {
                                     if (this.field34862.compareTo(class5726.method12931()) != 0) {
-                                        class5723.setCancelled(true);
+                                        eventReceivePacket.setCancelled(true);
                                     }
                                 }
                             } else if (this.field34862 != null) {
-                                class5723.setCancelled(true);
+                                eventReceivePacket.setCancelled(true);
                             } else {
                                 this.field34862 = class5726.method12931();
                             }
                         }
                     } else {
-                        final Class4332 class5727 = (Class4332) class5723.method16998();
+                        final Class4332 class5727 = (Class4332) eventReceivePacket.getPacket();
                     }
                 } else {
-                    final Class4289 class5728 = (Class4289) class5723.method16998();
+                    final Class4289 class5728 = (Class4289) eventReceivePacket.getPacket();
                     if (this.field34856.world.getEntityByID(class5728.method12878()) != null) {
                         if (class5728.method12879() == 3) {
                             if (ViaManager.method34762() == Class7906.field32452.method25613()) {
-                                class5723.setCancelled(true);
+                                eventReceivePacket.setCancelled(true);
                             }
                         }
                     }
                 }
             } else {
-                final int method6743 = ((Class4388) class5723.method16998()).method13205();
+                final int method6743 = ((Class4388) eventReceivePacket.getPacket()).method13205();
                 if (Class464.method2352(method6743)) {
                     RotationManager.field34859 = method6743;
                 }
@@ -343,22 +343,22 @@ public class RotationManager {
             }
         }
         if (class5729.method17011() != 1.0f) {
-            if (UpdateWalkingEvent.field23324 - this.field34856.player.field2953 == 0.0f) {
+            if (UpdateWalkingEventI.field23324 - this.field34856.player.field2953 == 0.0f) {
                 if (this.field34864) {
-                    class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, class5729.method17016().field2951));
-                    class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, class5729.method17016().field2953));
-                    class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEvent.field23327, class5729.method17016().rotationPitch));
+                    class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEventI.field23326, class5729.method17016().field2951));
+                    class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEventI.field23326, class5729.method17016().field2953));
+                    class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEventI.field23327, class5729.method17016().rotationPitch));
                     class5729.method17014(class5729.method17008() - class5729.method17007());
-                    class5729.method17016().prevRotationPitch = UpdateWalkingEvent.field23327;
-                    class5729.method17016().prevRotationYaw = UpdateWalkingEvent.field23326;
-                    class5729.method17016().field2954 = UpdateWalkingEvent.field23326;
-                    class5729.method17016().field2952 = UpdateWalkingEvent.field23326;
+                    class5729.method17016().prevRotationPitch = UpdateWalkingEventI.field23327;
+                    class5729.method17016().prevRotationYaw = UpdateWalkingEventI.field23326;
+                    class5729.method17016().field2954 = UpdateWalkingEventI.field23326;
+                    class5729.method17016().field2952 = UpdateWalkingEventI.field23326;
                     this.field34864 = !this.field34864;
                 }
             } else {
-                class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, UpdateWalkingEvent.field23324));
-                class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEvent.field23326, UpdateWalkingEvent.field23324));
-                class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEvent.field23327, UpdateWalkingEvent.field23325));
+                class5729.method17012(MathHelper.method35706(class5729.method17011(), UpdateWalkingEventI.field23326, UpdateWalkingEventI.field23324));
+                class5729.method17013(MathHelper.method35706(class5729.method17011(), UpdateWalkingEventI.field23326, UpdateWalkingEventI.field23324));
+                class5729.method17015(MathHelper.method35700(class5729.method17011(), UpdateWalkingEventI.field23327, UpdateWalkingEventI.field23325));
                 class5729.method17014(class5729.method17008() - class5729.method17007());
                 this.field34864 = true;
             }

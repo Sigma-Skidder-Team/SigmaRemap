@@ -21,7 +21,7 @@ public class BlockUtils
     private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Class9554>> field26584;
     
     public static boolean shouldSideBeRendered(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099, final Class9145 class7100) {
-        final EventRenderBlocks event = new EventRenderBlocks(class7096);
+        final EventRenderBlocksI event = new EventRenderBlocksI(class7096);
         Client.getInstance().getEventBus().post(event);
         if (event.method16987()) {
             return true;

@@ -152,7 +152,7 @@ public class ClientPlayerEntity extends Class754
     }
     
     public void method4113() {
-        final UpdateWalkingEvent updateWalkingEvent = new UpdateWalkingEvent(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
+        final UpdateWalkingEventI updateWalkingEvent = new UpdateWalkingEventI(this.posX, this.getBoundingBox().minY, this.posZ, this.rotationPitch, this.rotationYaw, this.onGround);
         Client.getInstance().getEventBus().post(updateWalkingEvent);
         if (!updateWalkingEvent.isCancelled()) {
             final boolean method1815 = this.method1815();
@@ -630,13 +630,13 @@ public class ClientPlayerEntity extends Class754
         this.field4086.method5319().method32917(this.field4085);
         if (this.method2756()) {
             if (!this.isPassenger()) {
-                final Class5728 class5728 = new Class5728(0.2f);
-                Client.getInstance().getEventBus().post(class5728);
-                if (!class5728.isCancelled()) {
+                final EventSlowDown eventSlowDown = new EventSlowDown(0.2f);
+                Client.getInstance().getEventBus().post(eventSlowDown);
+                if (!eventSlowDown.isCancelled()) {
                     final Class6093 field24729 = this.field4085;
-                    field24729.field24721 *= class5728.method17003();
+                    field24729.field24721 *= eventSlowDown.getSlowDown();
                     final Class6093 field24730 = this.field4085;
-                    field24730.field24722 *= class5728.method17003();
+                    field24730.field24722 *= eventSlowDown.getSlowDown();
                     this.field4087 = 0;
                 }
             }

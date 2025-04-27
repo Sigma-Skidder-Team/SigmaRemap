@@ -28,13 +28,13 @@ public class Class4378 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19614 = class8654.method29497();
+        this.field19614 = class8654.readTextComponent();
         this.field19615 = Class285.method933(class8654.readByte());
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29498(this.field19614);
+        class8654.writeTextComponent(this.field19614);
         class8654.writeByte(this.field19615.method932());
     }
     

@@ -42,17 +42,17 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10815(final Class5723 class5723) {
+    public void method10815(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4271) {
-                this.method10816(AutoMiner.mc.world.method6685(((Class4271)class5723.method16998()).method12818()).method7019());
+            if (eventReceivePacket.getPacket() instanceof Class4271) {
+                this.method10816(AutoMiner.mc.world.method6685(((Class4271) eventReceivePacket.getPacket()).method12818()).method7019());
             }
-            if (class5723.method16998() instanceof Class4312) {
-                this.method10816(((Class4312)class5723.method16998()).field19330);
+            if (eventReceivePacket.getPacket() instanceof Class4312) {
+                this.method10816(((Class4312) eventReceivePacket.getPacket()).field19330);
             }
-            if (class5723.method16998() instanceof Class4298) {
+            if (eventReceivePacket.getPacket() instanceof Class4298) {
                 if (Minecraft.getInstance().world != null) {
-                    final Class4298 class5724 = (Class4298)class5723.method16998();
+                    final Class4298 class5724 = (Class4298) eventReceivePacket.getPacket();
                     this.method10816(new ChunkPos(class5724.method12909(), class5724.method12910()));
                 }
             }
@@ -96,7 +96,7 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10819(final EventPlayerTick eventPlayerTick) {
+    public void method10819(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

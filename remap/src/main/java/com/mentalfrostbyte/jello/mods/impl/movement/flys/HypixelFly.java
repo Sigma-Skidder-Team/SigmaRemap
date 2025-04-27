@@ -99,7 +99,7 @@ public class HypixelFly extends Module {
     }
 
     @EventListener
-    public void method10771(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10771(final UpdateWalkingEventI updateWalkingEvent) {
         if (updateWalkingEvent.isPre()) {
             if (!ColorUtils.method19160(HypixelFly.mc.player, 1.0E-5f)) {
                 Label_0031:
@@ -337,10 +337,10 @@ public class HypixelFly extends Module {
     }
 
     @EventListener
-    public void method10773(final Class5723 class5723) {
+    public void method10773(final EventReceivePacket eventReceivePacket) {
         if (HypixelFly.mc.method5269() != null) {
-            if (class5723.method16998() instanceof Class4328) {
-                this.field16075 = ((Class4328) class5723.method16998()).field19378;
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
+                this.field16075 = ((SPlayerPositionLookPacket) eventReceivePacket.getPacket()).field19378;
                 this.field16080 = true;
             }
         }

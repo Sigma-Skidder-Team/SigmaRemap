@@ -21,7 +21,6 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.TreeMap;
-import java.util.function.Predicate;
 import java.util.List;
 import java.util.HashMap;
 
@@ -41,7 +40,7 @@ public class AutoCrystal extends PremiumModule
     }
     
     @EventListener
-    private void method10650(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10650(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || AutoCrystal.mc.world == null) {
             return;
         }
@@ -174,7 +173,7 @@ public class AutoCrystal extends PremiumModule
         return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(n, n, n), Class9170.field38850.and(new Class165(this, n)));
     }
     
-    private void method10659(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10659(final UpdateWalkingEventI updateWalkingEvent) {
         final List<Entity> method10658 = this.method10658();
         if (method10658.size() != 0) {
             if (!this.field16010.containsKey(method10658.get(0))) {
@@ -210,7 +209,7 @@ public class AutoCrystal extends PremiumModule
         }
     }
     
-    private void method10661(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10661(final UpdateWalkingEventI updateWalkingEvent) {
         this.field16011 = null;
         this.field16012 = null;
         final List<Entity> method10653 = this.method10653();

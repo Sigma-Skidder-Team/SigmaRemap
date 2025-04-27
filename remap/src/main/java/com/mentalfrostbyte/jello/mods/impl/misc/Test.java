@@ -8,7 +8,6 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.*;
-import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -77,7 +76,7 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10776(final EventPlayerTick eventPlayerTick) {
+    public void method10776(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
         }
     }
@@ -89,13 +88,13 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10778(final EventStopUseItem eventStopUseItem) {
+    public void method10778(final EventStopUseItemI eventStopUseItem) {
         if (this.isEnabled()) {
         }
     }
     
     @EventListener
-    public void method10779(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10779(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             final Entity method10786 = this.method10786(3.3f);
             if (this.method10786(8.0f) != null) {
@@ -211,13 +210,13 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10784(final Class5723 class5723) {
-        final IPacket method16998 = class5723.method16998();
+    public void method10784(final EventReceivePacket eventReceivePacket) {
+        final IPacket method16998 = eventReceivePacket.getPacket();
         if (this.isEnabled()) {
             if (!(method16998 instanceof Class4396)) {
                 if (!(method16998 instanceof Class4393)) {
-                    if (method16998 instanceof Class4328) {
-                        final Class4328 class5724 = (Class4328)method16998;
+                    if (method16998 instanceof SPlayerPositionLookPacket) {
+                        final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                     }
                 }
                 else {
@@ -227,7 +226,7 @@ public class Test extends Module
             else {
                 final Class4396 class5726 = (Class4396)method16998;
             }
-            if (new ArrayList(Arrays.asList(Class4396.class, Class4393.class, Class4328.class, Class4402.class, Class4278.class, Class4312.class, Class4378.class, Class4364.class, Class4273.class)).contains(((Class4396)method16998).getClass())) {}
+            if (new ArrayList(Arrays.asList(Class4396.class, Class4393.class, SPlayerPositionLookPacket.class, Class4402.class, Class4278.class, Class4312.class, Class4378.class, Class4364.class, Class4273.class)).contains(((Class4396)method16998).getClass())) {}
             if (!(method16998 instanceof Class4301)) {}
         }
     }

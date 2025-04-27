@@ -40,7 +40,7 @@ public class AAC4Criticals extends Module
     
     @EventListener
     @HigherPriority
-    private void method9941(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method9941(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled()) {
             AAC4Criticals.field15534 = 0;
             return;

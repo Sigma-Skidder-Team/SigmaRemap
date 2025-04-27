@@ -4,8 +4,7 @@
 
 package mapped;
 
-public class Class5738 extends Class5737
-{
+public class Class5738 implements IEvent {
     private static String[] field23305;
     public boolean field23306;
     public Class2228 field23307;

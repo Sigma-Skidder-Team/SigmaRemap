@@ -15,7 +15,7 @@ public class FullBlockPhase extends Module
     }
     
     @EventListener
-    private void method10830(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10830(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && method10834()) {
             updateWalkingEvent.method17033(true);
         }

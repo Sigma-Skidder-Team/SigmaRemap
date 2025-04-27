@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class4301;
 import mapped.Class4400;
-import mapped.Class5723;
+import mapped.EventReceivePacket;
 import mapped.EventListener;
 
 public class NoServerInfo extends Module
@@ -18,15 +18,15 @@ public class NoServerInfo extends Module
     }
     
     @EventListener
-    private void method10582(final Class5723 class5723) {
+    private void method10582(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4301) {
-                final Class4301 class5724 = (Class4301)class5723.method16998();
-                class5723.setCancelled(true);
+            if (eventReceivePacket.getPacket() instanceof Class4301) {
+                final Class4301 class5724 = (Class4301) eventReceivePacket.getPacket();
+                eventReceivePacket.setCancelled(true);
             }
-            if (class5723.method16998() instanceof Class4400) {
-                final Class4400 class5725 = (Class4400)class5723.method16998();
-                class5723.setCancelled(true);
+            if (eventReceivePacket.getPacket() instanceof Class4400) {
+                final Class4400 class5725 = (Class4400) eventReceivePacket.getPacket();
+                eventReceivePacket.setCancelled(true);
             }
         }
     }

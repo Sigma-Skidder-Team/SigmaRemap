@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class2068;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.ColorUtils;
 import mapped.EventListener;
 import net.minecraft.entity.Entity;
@@ -22,7 +22,7 @@ public class VanillaESP extends Module
     }
     
     @EventListener
-    public void method9992(final EventPlayerTick eventPlayerTick) {
+    public void method9992(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             for (final Entity class5744 : VanillaESP.mc.world.method6806()) {
                 if (!Client.getInstance().getBotManager().method31751(class5744)) {

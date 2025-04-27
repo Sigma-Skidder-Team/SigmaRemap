@@ -28,20 +28,20 @@ public class Class4400 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19713 = class8654.method29513(16);
+        this.field19713 = class8654.readString(16);
         this.field19716 = class8654.readByte();
         if (this.field19716 == 0 || this.field19716 == 2) {
-            this.field19714 = class8654.method29497();
+            this.field19714 = class8654.readTextComponent();
             this.field19715 = class8654.method29499(Class263.class);
         }
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(this.field19713);
+        class8654.writeString(this.field19713);
         class8654.writeByte(this.field19716);
         if (this.field19716 == 0 || this.field19716 == 2) {
-            class8654.method29498(this.field19714);
+            class8654.writeTextComponent(this.field19714);
             class8654.method29500(this.field19715);
         }
     }

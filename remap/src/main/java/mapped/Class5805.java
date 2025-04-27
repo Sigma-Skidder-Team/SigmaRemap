@@ -23,13 +23,13 @@ public class Class5805 implements Class5804
                 this.field23834.method11171(Class2208.field13457);
                 if (class4398.method13236() > Class9528.method35579().getProtocolVersion()) {
                     final Class2259 class4399 = new Class2259("multiplayer.disconnect.outdated_server", Class9528.method35579().getName());
-                    this.field23834.method11174(new Class4277(class4399));
+                    this.field23834.method11174(new SDisconnectLoginPacket(class4399));
                     this.field23834.method11181(class4399);
                     break;
                 }
                 if (class4398.method13236() < Class9528.method35579().getProtocolVersion()) {
                     final Class2259 class4400 = new Class2259("multiplayer.disconnect.outdated_client", Class9528.method35579().getName());
-                    this.field23834.method11174(new Class4277(class4400));
+                    this.field23834.method11174(new SDisconnectLoginPacket(class4400));
                     this.field23834.method11181(class4400);
                     break;
                 }

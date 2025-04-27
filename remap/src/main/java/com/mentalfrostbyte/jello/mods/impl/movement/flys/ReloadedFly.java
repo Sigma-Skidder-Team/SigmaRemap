@@ -92,7 +92,7 @@ public class ReloadedFly extends Module {
     }
 
     @EventListener
-    public void method9996(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method9996(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15585;
             if (this.field15585 != 2) {
@@ -114,17 +114,17 @@ public class ReloadedFly extends Module {
     }
 
     @EventListener
-    public void method9997(final Class5723 class5723) {
+    public void method9997(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (method16998 instanceof Class4328) {
-                final Class4328 class5724 = (Class4328) method16998;
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (method16998 instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket) method16998;
                 if (this.field15585 >= 1) {
                     this.field15585 = -1;
                 }
                 this.field15586 = class5724.field19378;
-                class5724.field19380 = ReloadedFly.mc.player.rotationYaw;
-                class5724.field19381 = ReloadedFly.mc.player.rotationPitch;
+                class5724.yaw = ReloadedFly.mc.player.rotationYaw;
+                class5724.pitch = ReloadedFly.mc.player.rotationPitch;
             }
         }
     }

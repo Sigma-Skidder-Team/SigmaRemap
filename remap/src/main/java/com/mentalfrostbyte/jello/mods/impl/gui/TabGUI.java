@@ -14,7 +14,6 @@ import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -180,7 +179,7 @@ public class TabGUI extends Module
     }
     
     @EventListener
-    private void method10065(final EventPlayerTick eventPlayerTick) {
+    private void method10065(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.field15641 <= 0) {
                 TabGUI.field15637.changeDirection(Direction.FORWARDS);

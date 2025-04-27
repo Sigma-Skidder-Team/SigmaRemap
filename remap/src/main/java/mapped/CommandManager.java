@@ -91,7 +91,7 @@ public class CommandManager {
     }
 
     @EventListener
-    private void method32673(final EventPlayerTick eventPlayerTick) {
+    private void method32673(final EventPlayerTickI eventPlayerTick) {
         final Iterator<Runnable> iterator = CommandManager.field38415.iterator();
         while (iterator.hasNext()) {
             iterator.next().run();

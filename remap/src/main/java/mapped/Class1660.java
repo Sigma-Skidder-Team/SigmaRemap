@@ -401,7 +401,7 @@ public class Class1660 implements AutoCloseable, Class1657
                 return;
             }
             this.field9396.method1417();
-            final Class5746 class7353 = new Class5746();
+            final EventRenderFire class7353 = new EventRenderFire();
             Client.getInstance().getEventBus().post(class7353);
             if (this.field9380.gameSettings.field23465 == 0) {
                 if (!b4) {

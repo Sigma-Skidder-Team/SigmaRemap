@@ -28,7 +28,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    public void method10030(final EventPlayerTick eventPlayerTick) {
+    public void method10030(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             ElytraFly.mc.gameSettings.field23440.field2162 = false;
             if (ElytraFly.mc.player.getMotion().y < 0.08 && !ElytraFly.mc.player.onGround) {
@@ -94,11 +94,11 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    private void method10032(final Class5723 class5723) {
+    private void method10032(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (ElytraFly.mc.player != null) {
-                if (class5723.method16998() instanceof Class4273) {
-                    final Class4273 class5724 = (Class4273)class5723.method16998();
+                if (eventReceivePacket.getPacket() instanceof Class4273) {
+                    final Class4273 class5724 = (Class4273) eventReceivePacket.getPacket();
                     final Entity method6741 = ElytraFly.mc.world.getEntityByID(class5724.method12822());
                     if (method6741 instanceof Class406) {
                         final Class406 class5725 = (Class406)method6741;
@@ -117,7 +117,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    private void method10033(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10033(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             final int field15613 = 65;
             if (this.field15613 != field15613 - 1) {

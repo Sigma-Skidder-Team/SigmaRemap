@@ -31,7 +31,7 @@ public class Class4347 implements IPacket<IClientPlayNetHandler>
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19472 = class8654.readVarInt();
         for (int int1 = class8654.readInt(), i = 0; i < int1; ++i) {
-            final String method29513 = class8654.method29513(64);
+            final String method29513 = class8654.readString(64);
             final double double1 = class8654.readDouble();
             final ArrayList arrayList = Lists.newArrayList();
             for (int method29514 = class8654.readVarInt(), j = 0; j < method29514; ++j) {
@@ -46,7 +46,7 @@ public class Class4347 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19472);
         class8654.writeInt(this.field19473.size());
         for (final Class8494 class8655 : this.field19473) {
-            class8654.method29514(class8655.method28383());
+            class8654.writeString(class8655.method28383());
             class8654.writeDouble(class8655.method28384());
             class8654.writeVarInt(class8655.method28385().size());
             for (final Class7919 class8656 : class8655.method28385()) {

@@ -48,7 +48,7 @@ public class InvMove extends Module
     }
     
     @EventListener
-    private void method9980(final EventPlayerTick eventPlayerTick) {
+    private void method9980(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("AACP")) {
                 final boolean b = !(InvMove.mc.currentScreen instanceof Class518) || !(InvMove.mc.currentScreen instanceof Class726);

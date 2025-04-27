@@ -69,7 +69,7 @@ public class Jesus extends Module
     }
     
     @EventListener
-    public void method10427(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10427(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
                 if (updateWalkingEvent.isPre()) {

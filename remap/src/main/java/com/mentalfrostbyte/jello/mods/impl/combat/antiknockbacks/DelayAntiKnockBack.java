@@ -28,11 +28,11 @@ public class DelayAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10518(final Class5723 class5723) {
+    private void method10518(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (DelayAntiKnockBack.mc.player != null) {
-                if (class5723.method16998() instanceof Class4273) {
-                    final Class4273 class5724 = (Class4273)class5723.method16998();
+                if (eventReceivePacket.getPacket() instanceof Class4273) {
+                    final Class4273 class5724 = (Class4273) eventReceivePacket.getPacket();
                     final List<Entity> method6739 = DelayAntiKnockBack.mc.world.method6739((Class<? extends Entity>) PlayerEntity.class, DelayAntiKnockBack.mc.player.getBoundingBox().intersect(14.0), class5725 -> {
                         if (class5725.method1732(DelayAntiKnockBack.mc.player) < 6.0f) {
                             if (DelayAntiKnockBack.mc.player != class5725) {
@@ -46,7 +46,7 @@ public class DelayAntiKnockBack extends Module
                     if (class5724.method12822() == DelayAntiKnockBack.mc.player.getEntityId()) {
                         if (method6739.size() > 0) {
                             this.field15922.add(class5724);
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                             if (this.field15923 == 0) {
                                 this.field15923 = (int)this.getNumberSettingValueByName("Delay");
                             }
@@ -67,7 +67,7 @@ public class DelayAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10520(final EventPlayerTick eventPlayerTick) {
+    private void method10520(final EventPlayerTickI eventPlayerTick) {
         if (this.field15923 != 0) {
             if (this.field15923 > 0) {
                 --this.field15923;

@@ -6,7 +6,6 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.misc.gameplays.*;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
@@ -58,7 +57,7 @@ public class GamePlay extends ModuleWithSettings
     }
     
     @EventListener
-    private void method10293(final EventPlayerTick eventPlayerTick) {
+    private void method10293(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

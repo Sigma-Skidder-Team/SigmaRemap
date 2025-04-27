@@ -55,7 +55,7 @@ public class AutoMLG extends PremiumModule
     
     @EventListener
     @LowerPriority
-    private void method10647(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10647(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && AutoMLG.mc.playerController.method27330()) {
             if (updateWalkingEvent.isPre()) {
                 if (AutoMLG.field16007 >= 0) {

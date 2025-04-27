@@ -28,7 +28,7 @@ public class Class6700 extends Class6693
             throw new Class2332("Invalid distance \"" + array[0].method26314() + "\"");
         }
         final float n = (float)Math.toRadians(Class6700.field26420.player.rotationYaw + 90.0f);
-        Class6700.field26420.method5269().method17285(new Class4328(Class6700.field26420.player.posX + MathHelper.cos(n) * array[0].method26311(), Class6700.field26420.player.posY, Class6700.field26420.player.posZ + MathHelper.sin(n) * array[0].method26311(), Class6700.field26420.player.rotationYaw, Class6700.field26420.player.rotationPitch, Collections.emptySet(), 0));
+        Class6700.field26420.method5269().method17285(new SPlayerPositionLookPacket(Class6700.field26420.player.posX + MathHelper.cos(n) * array[0].method26311(), Class6700.field26420.player.posY, Class6700.field26420.player.posZ + MathHelper.sin(n) * array[0].method26311(), Class6700.field26420.player.rotationYaw, Class6700.field26420.player.rotationPitch, Collections.emptySet(), 0));
         class6428.method19104("Successfully HClip'd");
     }
 }

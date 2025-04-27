@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.Class4036;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 import mapped.Minecraft;
 
@@ -20,7 +20,7 @@ public class FastPlace extends Module
     }
     
     @EventListener
-    private void method10040(final EventPlayerTick eventPlayerTick) {
+    private void method10040(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

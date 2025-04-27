@@ -77,7 +77,7 @@ public class NoFall extends Module
     }
     
     @EventListener
-    private void method10829(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10829(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || NoFall.mc.player == null) {
             return;
         }

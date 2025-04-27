@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 
-public class Class5752 extends Class5714
+public class Class5752 extends CancellableEvent2
 {
     private static String[] field23345;
     private final int field23346;

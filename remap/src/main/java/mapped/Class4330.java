@@ -48,12 +48,12 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
             ITextComponent class8656 = null;
             switch (Class6018.field24495[this.field19387.ordinal()]) {
                 case 1: {
-                    gameProfile = new GameProfile(class8654.method29504(), class8654.method29513(16));
+                    gameProfile = new GameProfile(class8654.method29504(), class8654.readString(16));
                     for (int method29502 = class8654.readVarInt(), j = 0; j < method29502; ++j) {
-                        final String method29503 = class8654.method29513(32767);
-                        final String method29504 = class8654.method29513(32767);
+                        final String method29503 = class8654.readString(32767);
+                        final String method29504 = class8654.readString(32767);
                         if (class8654.readBoolean()) {
-                            gameProfile.getProperties().put((Object)method29503, (Object)new Property(method29503, method29504, class8654.method29513(32767)));
+                            gameProfile.getProperties().put((Object)method29503, (Object)new Property(method29503, method29504, class8654.readString(32767)));
                         }
                         else {
                             gameProfile.getProperties().put((Object)method29503, (Object)new Property(method29503, method29504));
@@ -62,7 +62,7 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                     class8655 = Class101.method592(class8654.readVarInt());
                     n = class8654.readVarInt();
                     if (class8654.readBoolean()) {
-                        class8656 = class8654.method29497();
+                        class8656 = class8654.readTextComponent();
                         break;
                     }
                     break;
@@ -80,7 +80,7 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                 case 4: {
                     gameProfile = new GameProfile(class8654.method29504(), null);
                     if (class8654.readBoolean()) {
-                        class8656 = class8654.method29497();
+                        class8656 = class8654.readTextComponent();
                         break;
                     }
                     break;
@@ -102,14 +102,14 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
             switch (Class6018.field24495[this.field19387.ordinal()]) {
                 case 1: {
                     class8654.method29503(class8655.method13869().getId());
-                    class8654.method29514(class8655.method13869().getName());
+                    class8654.writeString(class8655.method13869().getName());
                     class8654.writeVarInt(class8655.method13869().getProperties().size());
                     for (final Property property : class8655.method13869().getProperties().values()) {
-                        class8654.method29514(property.getName());
-                        class8654.method29514(property.getValue());
+                        class8654.writeString(property.getName());
+                        class8654.writeString(property.getValue());
                         if (property.hasSignature()) {
                             class8654.writeBoolean(true);
-                            class8654.method29514(property.getSignature());
+                            class8654.writeString(property.getSignature());
                         }
                         else {
                             class8654.writeBoolean(false);
@@ -122,7 +122,7 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                         continue;
                     }
                     class8654.writeBoolean(true);
-                    class8654.method29498(class8655.method13872());
+                    class8654.writeTextComponent(class8655.method13872());
                     continue;
                 }
                 case 2: {
@@ -142,7 +142,7 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                         continue;
                     }
                     class8654.writeBoolean(true);
-                    class8654.method29498(class8655.method13872());
+                    class8654.writeTextComponent(class8655.method13872());
                     continue;
                 }
                 case 5: {

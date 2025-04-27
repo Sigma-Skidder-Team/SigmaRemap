@@ -52,10 +52,10 @@ public class SpartanClickTP extends Module
     }
     
     @EventListener
-    public void method10367(final Class5723 class5723) {
+    public void method10367(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
-                final Class4328 class5724 = (Class4328)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket) eventReceivePacket.getPacket();
                 if (class5724.field19377 == this.field15792.getX() + 0.5) {
                     if (class5724.field19378 == this.field15792.getY() + 1) {
                         if (class5724.field19379 == this.field15792.getZ() + 0.5) {

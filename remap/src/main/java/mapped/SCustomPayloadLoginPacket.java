@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-public class Class4299 implements IPacket<Class5807>
+public class SCustomPayloadLoginPacket implements IPacket<IClientLoginNetHandler>
 {
     private int field19276;
     private ResourceLocation field19277;
@@ -31,8 +31,8 @@ public class Class4299 implements IPacket<Class5807>
         class8654.writeBytes(this.field19278.copy());
     }
     
-    public void method12841(final Class5807 class5807) {
-        class5807.method17408(this);
+    public void method12841(final IClientLoginNetHandler IClientLoginNetHandler) {
+        IClientLoginNetHandler.handleCustomPayloadLogin(this);
     }
     
     public int method12916() {

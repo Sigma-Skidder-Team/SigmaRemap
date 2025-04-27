@@ -15,7 +15,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -53,7 +52,7 @@ public class ChestStealer extends Module
     }
     
     @EventListener
-    public void method10251(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10251(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }

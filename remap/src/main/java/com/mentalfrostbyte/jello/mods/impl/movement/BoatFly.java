@@ -21,7 +21,7 @@ public class BoatFly extends PremiumModule
     }
     
     @EventListener
-    public void method10641(final EventPlayerTick eventPlayerTick) {
+    public void method10641(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

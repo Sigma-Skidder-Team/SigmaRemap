@@ -7,7 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class5721 extends Class5714
+public class Class5721 extends CancellableEvent2
 {
     private static String[] field23268;
     private IPacket field23269;

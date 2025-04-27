@@ -7,26 +7,26 @@ package mapped;
 import java.io.IOException;
 import java.util.Set;
 
-public class Class4328 implements IPacket<IClientPlayNetHandler>
+public class SPlayerPositionLookPacket implements IPacket<IClientPlayNetHandler>
 {
     private static String[] field19376;
     public double field19377;
     public double field19378;
     public double field19379;
-    public float field19380;
-    public float field19381;
+    public float yaw;
+    public float pitch;
     private Set<Class2143> field19382;
     private int field19383;
     
-    public Class4328() {
+    public SPlayerPositionLookPacket() {
     }
     
-    public Class4328(final double field19377, final double field19378, final double field19379, final float field19380, final float field19381, final Set<Class2143> field19382, final int field19383) {
+    public SPlayerPositionLookPacket(final double field19377, final double field19378, final double field19379, final float yaw, final float pitch, final Set<Class2143> field19382, final int field19383) {
         this.field19377 = field19377;
         this.field19378 = field19378;
         this.field19379 = field19379;
-        this.field19380 = field19380;
-        this.field19381 = field19381;
+        this.yaw = yaw;
+        this.pitch = pitch;
         this.field19382 = field19382;
         this.field19383 = field19383;
     }
@@ -36,8 +36,8 @@ public class Class4328 implements IPacket<IClientPlayNetHandler>
         this.field19377 = class8654.readDouble();
         this.field19378 = class8654.readDouble();
         this.field19379 = class8654.readDouble();
-        this.field19380 = class8654.readFloat();
-        this.field19381 = class8654.readFloat();
+        this.yaw = class8654.readFloat();
+        this.pitch = class8654.readFloat();
         this.field19382 = Class2143.method8307(class8654.readUnsignedByte());
         this.field19383 = class8654.readVarInt();
     }
@@ -47,8 +47,8 @@ public class Class4328 implements IPacket<IClientPlayNetHandler>
         class8654.writeDouble(this.field19377);
         class8654.writeDouble(this.field19378);
         class8654.writeDouble(this.field19379);
-        class8654.writeFloat(this.field19380);
-        class8654.writeFloat(this.field19381);
+        class8654.writeFloat(this.yaw);
+        class8654.writeFloat(this.pitch);
         class8654.writeByte(Class2143.method8308(this.field19382));
         class8654.writeVarInt(this.field19383);
     }
@@ -70,11 +70,11 @@ public class Class4328 implements IPacket<IClientPlayNetHandler>
     }
     
     public float method12995() {
-        return this.field19380;
+        return this.yaw;
     }
     
     public float method12996() {
-        return this.field19381;
+        return this.pitch;
     }
     
     public int method12997() {

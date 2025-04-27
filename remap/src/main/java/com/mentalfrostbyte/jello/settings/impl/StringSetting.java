@@ -44,7 +44,7 @@ public class StringSetting extends Setting<String> {
     }
 
     @Override
-    public void method15201() {
+    public void syncState() {
         this.field21519.clear();
     }
 

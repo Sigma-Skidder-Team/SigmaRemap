@@ -44,7 +44,7 @@ public class Unstuck extends Module
     }
     
     @EventListener
-    public void method10544(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10544(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
@@ -68,17 +68,17 @@ public class Unstuck extends Module
     }
     
     @EventListener
-    public void method10545(final Class5723 class5723) {
+    public void method10545(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled()) {
             return;
         }
         if (Unstuck.mc.player != null) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 if (!ColorUtils.method19160(Unstuck.mc.player, 0.3f)) {
                     if (Unstuck.mc.player.ticksExisted > 10) {
                         ++this.field15927;
                         if (this.field15927 > this.getNumberSettingValueByName("Flags")) {
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                         }
                     }
                 }

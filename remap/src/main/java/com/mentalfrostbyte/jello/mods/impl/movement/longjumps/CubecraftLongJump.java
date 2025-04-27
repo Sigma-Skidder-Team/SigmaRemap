@@ -32,7 +32,7 @@ public class CubecraftLongJump extends Module
     }
     
     @EventListener
-    public void method10016(final EventPlayerTick eventPlayerTick) {
+    public void method10016(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled() && CubecraftLongJump.mc.player != null) {
             if (!ColorUtils.method19160(CubecraftLongJump.mc.player, 0.001f)) {
                 ++this.field15596;

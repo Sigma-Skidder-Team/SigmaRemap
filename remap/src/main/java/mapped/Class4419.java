@@ -18,12 +18,12 @@ public final class Class4419 implements Class4410<Optional<ITextComponent>>
         }
         else {
             class8654.writeBoolean(true);
-            class8654.method29498(optional.get());
+            class8654.writeTextComponent(optional.get());
         }
     }
     
     public Optional<ITextComponent> method13343(final PacketBuffer class8654) {
-        return class8654.readBoolean() ? Optional.of(class8654.method29497()) : Optional.empty();
+        return class8654.readBoolean() ? Optional.of(class8654.readTextComponent()) : Optional.empty();
     }
     
     public Optional<ITextComponent> method13344(final Optional<ITextComponent> optional) {

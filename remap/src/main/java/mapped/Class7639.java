@@ -15,7 +15,6 @@ import java.net.SocketAddress;
 import java.io.IOException;
 import java.io.Serializable;
 import io.netty.channel.EventLoopGroup;
-import io.netty.channel.ChannelHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.epoll.EpollServerSocketChannel;
@@ -106,7 +105,7 @@ public class Class7639
                         final Exception ex;
                         Class7639.field30276.warn("Failed to handle packet for {}", class3641.method11180(), ex);
                         final StringTextComponent class3642 = new StringTextComponent("Internal server error");
-                        class3641.method11175(new Class4262(class3642), (GenericFutureListener<? extends Future<? super Void>>)(future -> class3641.method11181(class3642)));
+                        class3641.method11175(new SDisconnectPacket(class3642), (GenericFutureListener<? extends Future<? super Void>>)(future -> class3641.method11181(class3642)));
                         class3641.method11191();
                     }
                     else {

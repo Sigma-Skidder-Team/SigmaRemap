@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.render;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.BlockThing;
-import mapped.EventRenderBlocks;
+import mapped.EventRenderBlocksI;
 import mapped.EventListener;
 
 public class XRay extends Module
@@ -30,7 +30,7 @@ public class XRay extends Module
     }
     
     @EventListener
-    public void onRenderBlocks(final EventRenderBlocks eventRenderBlocks) {
+    public void onRenderBlocks(final EventRenderBlocksI eventRenderBlocks) {
         if (this.isEnabled()) {
             if (!(eventRenderBlocks.getBlockState().getBlock() instanceof BlockThing)) {
                 eventRenderBlocks.setCancelled(true);

@@ -84,7 +84,7 @@ public class AGCFly extends Module
     }
     
     @EventListener
-    public void method10082(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10082(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15643;
             if (this.field15643 != ((this.field15644 != 3) ? this.field15644 : 1)) {
@@ -109,16 +109,16 @@ public class AGCFly extends Module
     }
     
     @EventListener
-    public void method10083(final Class5723 class5723) {
+    public void method10083(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (method16998 instanceof Class4328) {
-                final Class4328 class5724 = (Class4328)method16998;
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (method16998 instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                 if (this.field15643 >= ((this.field15644 != 3) ? this.field15644 : 1)) {
                     this.field15643 = -1;
                 }
-                class5724.field19380 = AGCFly.mc.player.rotationYaw;
-                class5724.field19381 = AGCFly.mc.player.rotationPitch;
+                class5724.yaw = AGCFly.mc.player.rotationYaw;
+                class5724.pitch = AGCFly.mc.player.rotationPitch;
             }
         }
     }

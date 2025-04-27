@@ -66,7 +66,7 @@ public class Class5803 implements Class5802
     public void method17392(final ITextComponent class2250) {
         try {
             Class5803.field23822.info("Disconnecting {}: {}", this.method17394(), class2250.getString());
-            this.field23826.method11174(new Class4277(class2250));
+            this.field23826.method11174(new SDisconnectLoginPacket(class2250));
             this.field23826.method11181(class2250);
         }
         catch (final Exception ex) {
@@ -83,10 +83,10 @@ public class Class5803 implements Class5802
             this.field23827 = Class2055.field11732;
             if (this.field23825.method1562() >= 0) {
                 if (!this.field23826.method11182()) {
-                    this.field23826.method11175(new Class4322(this.field23825.method1562()), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23826.method11192(this.field23825.method1562())));
+                    this.field23826.method11175(new SEnableCompressionPacket(this.field23825.method1562()), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23826.method11192(this.field23825.method1562())));
                 }
             }
-            this.field23826.method11174(new Class4367(this.field23829));
+            this.field23826.method11174(new SLoginSuccessPacket(this.field23829));
             if (this.field23825.method1537().method20624(this.field23829.getId()) == null) {
                 this.field23825.method1537().method20577(this.field23826, this.field23825.method1537().method20582(this.field23829));
             }
@@ -115,7 +115,7 @@ public class Class5803 implements Class5802
         this.field23829 = class4327.method12991();
         if (this.field23825.method1518() && !this.field23826.method11182()) {
             this.field23827 = Class2055.field11727;
-            this.field23826.method11174(new Class4309("", this.field23825.method1495().getPublic(), this.field23824));
+            this.field23826.method11174(new SEncryptionRequestPacket("", this.field23825.method1495().getPublic(), this.field23824));
         }
         else {
             this.field23827 = Class2055.field11730;

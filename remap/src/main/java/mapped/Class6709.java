@@ -25,7 +25,7 @@ public class Class6709 extends Class6693
         if (array[0].method26310() != Class1954.field10637) {
             throw new Class2332("Invalid vertical distance \"" + array[0].method26314() + "\"");
         }
-        Class6709.field26420.method5269().method17285(new Class4328(Class6709.field26420.player.posX, Class6709.field26420.player.posY + array[0].method26311(), Class6709.field26420.player.posZ, Class6709.field26420.player.rotationYaw, Class6709.field26420.player.rotationPitch, Collections.emptySet(), (int)(2.147483647E9 * Math.random())));
+        Class6709.field26420.method5269().method17285(new SPlayerPositionLookPacket(Class6709.field26420.player.posX, Class6709.field26420.player.posY + array[0].method26311(), Class6709.field26420.player.posZ, Class6709.field26420.player.rotationYaw, Class6709.field26420.player.rotationPitch, Collections.emptySet(), (int)(2.147483647E9 * Math.random())));
         class6428.method19104("VClip'd to position " + (Class6709.field26420.player.posY + array[0].method26311()));
     }
 }

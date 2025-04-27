@@ -20,6 +20,6 @@ public class Class8074
     }
     
     @EventListener
-    private void method26495(final EventPlayerTick eventPlayerTick) {
+    private void method26495(final EventPlayerTickI eventPlayerTick) {
     }
 }

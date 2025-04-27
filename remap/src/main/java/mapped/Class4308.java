@@ -29,14 +29,14 @@ public class Class4308 implements IPacket<IClientPlayNetHandler>
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19314 = class8654.readVarInt();
         this.field19315 = class8654.readVarInt();
-        this.field19316 = class8654.method29497();
+        this.field19316 = class8654.readTextComponent();
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeVarInt(this.field19314);
         class8654.writeVarInt(this.field19315);
-        class8654.method29498(this.field19316);
+        class8654.writeTextComponent(this.field19316);
     }
     
     public void method12764(final IClientPlayNetHandler class5800) {

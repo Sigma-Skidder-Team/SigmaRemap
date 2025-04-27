@@ -83,16 +83,16 @@ public class Class4290 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19235 = class8654.method29513(16);
+        this.field19235 = class8654.readString(16);
         this.field19243 = class8654.readByte();
         if (this.field19243 == 0 || this.field19243 == 2) {
-            this.field19236 = class8654.method29497();
+            this.field19236 = class8654.readTextComponent();
             this.field19244 = class8654.readByte();
-            this.field19239 = class8654.method29513(40);
-            this.field19240 = class8654.method29513(40);
+            this.field19239 = class8654.readString(40);
+            this.field19240 = class8654.readString(40);
             this.field19241 = class8654.method29499(TextFormatting.class);
-            this.field19237 = class8654.method29497();
-            this.field19238 = class8654.method29497();
+            this.field19237 = class8654.readTextComponent();
+            this.field19238 = class8654.readTextComponent();
         }
         if (this.field19243 != 0) {
             if (this.field19243 != 3) {
@@ -102,22 +102,22 @@ public class Class4290 implements IPacket<IClientPlayNetHandler>
             }
         }
         for (int method29501 = class8654.readVarInt(), i = 0; i < method29501; ++i) {
-            this.field19242.add(class8654.method29513(40));
+            this.field19242.add(class8654.readString(40));
         }
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(this.field19235);
+        class8654.writeString(this.field19235);
         class8654.writeByte(this.field19243);
         if (this.field19243 == 0 || this.field19243 == 2) {
-            class8654.method29498(this.field19236);
+            class8654.writeTextComponent(this.field19236);
             class8654.writeByte(this.field19244);
-            class8654.method29514(this.field19239);
-            class8654.method29514(this.field19240);
+            class8654.writeString(this.field19239);
+            class8654.writeString(this.field19240);
             class8654.method29500(this.field19241);
-            class8654.method29498(this.field19237);
-            class8654.method29498(this.field19238);
+            class8654.writeTextComponent(this.field19237);
+            class8654.writeTextComponent(this.field19238);
         }
         if (this.field19243 != 0) {
             if (this.field19243 != 3) {
@@ -129,7 +129,7 @@ public class Class4290 implements IPacket<IClientPlayNetHandler>
         class8654.writeVarInt(this.field19242.size());
         final Iterator<String> iterator = this.field19242.iterator();
         while (iterator.hasNext()) {
-            class8654.method29514(iterator.next());
+            class8654.writeString(iterator.next());
         }
     }
     

@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Map;
 
 public class EventBus {
-    public final Map<Class<? extends CancellableEvent>, EventHandler[]> handlersByEvent;
-    public final Map<Class<? extends Module>, Map<Class<? extends CancellableEvent>, List<EventHandler>>> moduleHandlers;
+    public final Map<Class<? extends IEvent>, EventHandler[]> handlersByEvent;
+    public final Map<Class<? extends Module>, Map<Class<? extends IEvent>, List<EventHandler>>> moduleHandlers;
     public int registrationCount;
     public long initTimestamp;
 
@@ -32,7 +32,7 @@ public class EventBus {
     public boolean isValidEventHandler(Method method) {
         return method.isAnnotationPresent(EventListener.class)
                 && method.getParameterCount() == 1
-                && CancellableEvent.class.isAssignableFrom(method.getParameterTypes()[0]);
+                && IEvent.class.isAssignableFrom(method.getParameterTypes()[0]);
     }
 
     public EventHandler[] sortHandlersByPriority(EventHandler[] handlers) {
@@ -87,10 +87,10 @@ public class EventBus {
     }
 
     public void register(Module module) {
-        Map<Class<? extends CancellableEvent>, List<EventHandler>> moduleMap = moduleHandlers.get(module.getClass());
+        Map<Class<? extends IEvent>, List<EventHandler>> moduleMap = moduleHandlers.get(module.getClass());
         if (moduleMap != null) {
-            for (Map.Entry<Class<? extends CancellableEvent>, List<EventHandler>> entry : moduleMap.entrySet()) {
-                Class<? extends CancellableEvent> eventClass = entry.getKey();
+            for (Map.Entry<Class<? extends IEvent>, List<EventHandler>> entry : moduleMap.entrySet()) {
+                Class<? extends IEvent> eventClass = entry.getKey();
                 LinkedHashSet<EventHandler> combined = new LinkedHashSet<>(entry.getValue());
                 combined.addAll(Arrays.asList(handlersByEvent.getOrDefault(eventClass, new EventHandler[0])));
                 handlersByEvent.put(eventClass, sortHandlersByPriority(combined.toArray(new EventHandler[0])));
@@ -99,10 +99,10 @@ public class EventBus {
     }
 
     public void unregister(Module module) {
-        Map<Class<? extends CancellableEvent>, List<EventHandler>> moduleMap = moduleHandlers.get(module.getClass());
+        Map<Class<? extends IEvent>, List<EventHandler>> moduleMap = moduleHandlers.get(module.getClass());
         if (moduleMap != null) {
-            for (Map.Entry<Class<? extends CancellableEvent>, List<EventHandler>> entry : moduleMap.entrySet()) {
-                Class<? extends CancellableEvent> eventClass = entry.getKey();
+            for (Map.Entry<Class<? extends IEvent>, List<EventHandler>> entry : moduleMap.entrySet()) {
+                Class<? extends IEvent> eventClass = entry.getKey();
                 LinkedHashSet<EventHandler> set = new LinkedHashSet<>(Arrays.asList(
                         handlersByEvent.getOrDefault(eventClass, new EventHandler[0])
                 ));
@@ -125,7 +125,7 @@ public class EventBus {
 
                     EventHandler[] existing = handlersByEvent.get(eventType);
                     if (existing == null) {
-                        handlersByEvent.put((Class<? extends CancellableEvent>) eventType, existing = new EventHandler[0]);
+                        handlersByEvent.put((Class<? extends IEvent>) eventType, existing = new EventHandler[0]);
                     }
 
                     EventHandler handler = new EventHandler(instance, clazz, method, priority);
@@ -133,16 +133,16 @@ public class EventBus {
                         if (!Module.class.isAssignableFrom(clazz) || method.isAnnotationPresent(Class6754.class)) {
                             EventHandler[] newHandlers = Arrays.copyOf(existing, existing.length + 1);
                             newHandlers[newHandlers.length - 1] = handler;
-                            handlersByEvent.put((Class<? extends CancellableEvent>) eventType, sortHandlersByPriority(newHandlers));
+                            handlersByEvent.put((Class<? extends IEvent>) eventType, sortHandlersByPriority(newHandlers));
                         } else if (!handler.isFromNCPPhase()) {
-                            Map<Class<? extends CancellableEvent>, List<EventHandler>> map = moduleHandlers
+                            Map<Class<? extends IEvent>, List<EventHandler>> map = moduleHandlers
                                     .getOrDefault(clazz, new HashMap<>());
                             List<EventHandler> list = map.get(eventType);
                             if (list == null) {
-                                map.put((Class<? extends CancellableEvent>) eventType, list = new ArrayList<>());
+                                map.put((Class<? extends IEvent>) eventType, list = new ArrayList<>());
                             }
                             list.add(handler);
-                            map.put((Class<? extends CancellableEvent>) eventType, list);
+                            map.put((Class<? extends IEvent>) eventType, list);
                             moduleHandlers.put((Class<? extends Module>) clazz, map);
                         } else {
                             DeferredEventRegistry.pendingRegistrations.add(instance);
@@ -163,7 +163,7 @@ public class EventBus {
         }
     }
 
-    public void post(CancellableEvent event) {
+    public void post(IEvent event) {
         if (event == null) return;
         EventHandler[] array = handlersByEvent.get(event.getClass());
         if (array == null) return;

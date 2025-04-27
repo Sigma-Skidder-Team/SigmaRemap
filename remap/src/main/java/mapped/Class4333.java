@@ -49,7 +49,7 @@ public class Class4333 implements IPacket<IClientPlayNetHandler>
         this.field19402 = class8654.readBoolean();
         this.field19403 = new Class9323[class8654.readVarInt()];
         for (int i = 0; i < this.field19403.length; ++i) {
-            this.field19403[i] = new Class9323(class8654.method29499(Class2095.class), class8654.readByte(), class8654.readByte(), (byte)(class8654.readByte() & 0xF), class8654.readBoolean() ? class8654.method29497() : null);
+            this.field19403[i] = new Class9323(class8654.method29499(Class2095.class), class8654.readByte(), class8654.readByte(), (byte)(class8654.readByte() & 0xF), class8654.readBoolean() ? class8654.readTextComponent() : null);
         }
         this.field19406 = class8654.readUnsignedByte();
         if (this.field19406 > 0) {
@@ -77,7 +77,7 @@ public class Class4333 implements IPacket<IClientPlayNetHandler>
             }
             else {
                 class8654.writeBoolean(true);
-                class8654.method29498(class8655.method34528());
+                class8654.writeTextComponent(class8655.method34528());
             }
         }
         class8654.writeByte(this.field19406);

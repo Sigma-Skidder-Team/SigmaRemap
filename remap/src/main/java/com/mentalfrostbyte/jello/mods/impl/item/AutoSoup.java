@@ -43,7 +43,7 @@ public class AutoSoup extends Module
     }
     
     @EventListener
-    private void method10219(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10219(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15721;
             ++this.field15724;

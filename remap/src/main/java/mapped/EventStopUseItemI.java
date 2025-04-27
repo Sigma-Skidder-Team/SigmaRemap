@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class EventStopUseItem extends Class5714
+public class EventStopUseItemI extends CancellableEvent2
 {
     private static String[] field23344;
 }

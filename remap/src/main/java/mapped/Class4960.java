@@ -8,7 +8,6 @@ import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 import java.util.Iterator;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -41,14 +40,14 @@ public class Class4960 extends Class4961
     private volatile boolean field21285;
     private int field21286;
     private final String field21287;
-    private final Class4967 field21288;
+    private final Manager field21288;
     private String field21289;
     private final Map<Integer, Class7873> field21290;
     private Queue<Class4248> field21291;
     private final Queue<List<Object>> field21292;
     private final Queue<Class9041<JSONArray>> field21293;
     
-    public Class4960(final Class4967 field21288, final String field21289, final Class7660 class7660) {
+    public Class4960(final Manager field21288, final String field21289, final Class7660 class7660) {
         this.field21290 = new HashMap<Integer, Class7873>();
         this.field21292 = new LinkedList<List<Object>>();
         this.field21293 = new LinkedList<Class9041<JSONArray>>();
@@ -240,7 +239,7 @@ public class Class4960 extends Class4961
         return this.method14955();
     }
     
-    public Class4967 method14957() {
+    public Manager method14957() {
         return this.field21288;
     }
     

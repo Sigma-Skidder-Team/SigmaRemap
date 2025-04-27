@@ -27,9 +27,9 @@ public class JartexGamePlay extends Module
     }
     
     @EventListener
-    private void method10300(final Class5723 class5723) {
+    private void method10300(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && JartexGamePlay.mc.player != null) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4378) {
                 final Class4378 class5724 = (Class4378)method16998;
                 final String string = class5724.method13164().getString();

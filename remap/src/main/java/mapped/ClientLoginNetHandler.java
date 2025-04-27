@@ -20,7 +20,7 @@ import com.mojang.authlib.GameProfile;
 import java.util.function.Consumer;
 import org.apache.logging.log4j.Logger;
 
-public class Class5808 implements Class5807
+public class ClientLoginNetHandler implements IClientLoginNetHandler
 {
     private static final Logger field23838;
     private final Minecraft field23839;
@@ -29,7 +29,7 @@ public class Class5808 implements Class5807
     private final NetworkManager field23842;
     private GameProfile field23843;
     
-    public Class5808(final NetworkManager field23842, final Minecraft field23843, final Screen field23844, final Consumer<ITextComponent> field23845) {
+    public ClientLoginNetHandler(final NetworkManager field23842, final Minecraft field23843, final Screen field23844, final Consumer<ITextComponent> field23845) {
         this.field23842 = field23842;
         this.field23839 = field23843;
         this.field23840 = field23844;
@@ -37,18 +37,18 @@ public class Class5808 implements Class5807
     }
     
     @Override
-    public void method17404(final Class4309 class4309) {
+    public void handleEncryptionRequest(final SEncryptionRequestPacket SEncryptionRequestPacket) {
         final SecretKey method34697 = Class9359.method34697();
-        final PublicKey method34698 = class4309.method12955();
-        new BigInteger(Class9359.method34699(class4309.method12954(), method34698, method34697)).toString(16);
-        final Class4341 class4310 = new Class4341(method34697, method34698, class4309.method12956());
+        final PublicKey method34698 = SEncryptionRequestPacket.method12955();
+        new BigInteger(Class9359.method34699(SEncryptionRequestPacket.method12954(), method34698, method34697)).toString(16);
+        final Class4341 class4310 = new Class4341(method34697, method34698, SEncryptionRequestPacket.method12956());
         this.field23841.accept(new Class2259("connect.authorizing"));
         Class7676.field30475.submit(() -> {
             this.method17409(s);
             final ITextComponent class4312;
             if (class4312 != null) {
                 if (this.field23839.method5282() != null && this.field23839.method5282().method35871()) {
-                    Class5808.field23838.warn(class4312.getString());
+                    ClientLoginNetHandler.field23838.warn(class4312.getString());
                 }
                 else {
                     this.field23842.method11181(class4312);
@@ -82,9 +82,9 @@ public class Class5808 implements Class5807
     }
     
     @Override
-    public void method17405(final Class4367 class4367) {
+    public void handleLoginSuccess(final SLoginSuccessPacket SLoginSuccessPacket) {
         this.field23841.accept(new Class2259("connect.joining"));
-        this.field23843 = class4367.method13133();
+        this.field23843 = SLoginSuccessPacket.method13133();
         this.field23842.method11171(Class2208.field13455);
         this.field23842.method11173(new Class5799(this.field23839, this.field23840, this.field23842, this.field23843));
     }
@@ -105,21 +105,21 @@ public class Class5808 implements Class5807
     }
     
     @Override
-    public void method17406(final Class4277 class4277) {
-        this.field23842.method11181(class4277.method12842());
+    public void handleDisconnect(final SDisconnectLoginPacket SDisconnectLoginPacket) {
+        this.field23842.method11181(SDisconnectLoginPacket.getReason());
     }
     
     @Override
-    public void method17407(final Class4322 class4322) {
+    public void handleEnableCompression(final SEnableCompressionPacket SEnableCompressionPacket) {
         if (!this.field23842.method11182()) {
-            this.field23842.method11192(class4322.method12986());
+            this.field23842.method11192(SEnableCompressionPacket.method12986());
         }
     }
     
     @Override
-    public void method17408(final Class4299 class4299) {
+    public void handleCustomPayloadLogin(final SCustomPayloadLoginPacket SCustomPayloadLoginPacket) {
         this.field23841.accept(new Class2259("connect.negotiating"));
-        this.field23842.method11174(new Class4390(class4299.method12916(), null));
+        this.field23842.method11174(new Class4390(SCustomPayloadLoginPacket.method12916(), null));
     }
     
     static {

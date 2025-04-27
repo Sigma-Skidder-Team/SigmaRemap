@@ -27,7 +27,7 @@ public class YPortSpeed extends Module
     }
     
     @EventListener
-    public void method10596(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10596(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (YPortSpeed.mc.player != null) {
                 if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
@@ -188,9 +188,9 @@ public class YPortSpeed extends Module
     }
     
     @EventListener
-    private void method10600(final Class5723 class5723) {
+    private void method10600(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15962 = 0.0;
             }
         }

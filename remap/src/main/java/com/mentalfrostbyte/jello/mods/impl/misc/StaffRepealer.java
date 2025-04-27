@@ -21,7 +21,7 @@ public class StaffRepealer extends Module
     }
     
     @EventListener
-    private void method10812(final EventPlayerTick eventPlayerTick) {
+    private void method10812(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -31,14 +31,14 @@ public class StaffRepealer extends Module
     }
     
     @EventListener
-    private void method10813(final Class5723 class5726) {
+    private void method10813(final EventReceivePacket class5726) {
         if (this.isEnabled()) {
-            if (class5726.method16998() instanceof SEntityPacket) {
-                final SEntityPacket class5724 = (SEntityPacket)class5726.method16998();
+            if (class5726.getPacket() instanceof SEntityPacket) {
+                final SEntityPacket class5724 = (SEntityPacket)class5726.getPacket();
             }
-            if (class5726.method16998() instanceof Class4330) {
+            if (class5726.getPacket() instanceof Class4330) {
                 new Thread(() -> {
-                    final Object o = class5726.method16998();
+                    final Object o = class5726.getPacket();
                     try {
                         Thread.sleep(2000L);
                     }

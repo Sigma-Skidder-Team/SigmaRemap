@@ -173,7 +173,7 @@ public class Auto32k extends Module
     }
     
     @EventListener
-    private void method9984(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method9984(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -219,20 +219,20 @@ public class Auto32k extends Module
     }
     
     @EventListener
-    private void method9985(final Class5723 class5723) {
+    private void method9985(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4308) {
-                this.field15574 = (Class4308)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4308) {
+                this.field15574 = (Class4308) eventReceivePacket.getPacket();
                 if (this.isEnabled()) {
                     if (this.field15574.method12952() == Class8471.field34770) {
-                        class5723.setCancelled(true);
+                        eventReceivePacket.setCancelled(true);
                     }
                 }
                 this.field15572 = this.field15574.method12951();
                 this.field15575 = false;
             }
-            if (class5723.method16998() instanceof Class4272) {
-                final Class4272 class5724 = (Class4272)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4272) {
+                final Class4272 class5724 = (Class4272) eventReceivePacket.getPacket();
                 final int method12820 = class5724.method12820();
                 final ItemStack method12821 = class5724.method12821();
                 final int method12822 = class5724.method12819();
@@ -240,7 +240,7 @@ public class Auto32k extends Module
                     if (method12820 == 0) {
                         if (method12821.getItem() != Items.AIR) {
                             if (!this.field15575) {
-                                class5723.setCancelled(true);
+                                eventReceivePacket.setCancelled(true);
                                 final Class5799 method12823 = Auto32k.mc.method5269();
                                 final int n = method12822;
                                 final int n2 = method12820;
@@ -269,7 +269,7 @@ public class Auto32k extends Module
                     }
                 }
             }
-            if (class5723.method16998() instanceof Class4284) {
+            if (eventReceivePacket.getPacket() instanceof Class4284) {
                 this.method9909(false);
             }
         }

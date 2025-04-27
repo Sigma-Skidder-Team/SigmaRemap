@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.TrueTypeFont;
 
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -40,28 +39,28 @@ public class Waypoints extends Module
     }
     
     @EventListener
-    public void method10006(final Class5723 class5723) {
+    public void method10006(final EventReceivePacket eventReceivePacket) {
         if (Waypoints.mc.world != null) {
-            if (!(class5723.method16998() instanceof Class4325)) {
-                if (!(class5723.method16998() instanceof Class4339)) {
-                    if (!(class5723.method16998() instanceof Class4276)) {
-                        if (class5723.method16998() instanceof Class4361) {
-                            final Class4361 class5724 = (Class4361)class5723.method16998();
+            if (!(eventReceivePacket.getPacket() instanceof Class4325)) {
+                if (!(eventReceivePacket.getPacket() instanceof Class4339)) {
+                    if (!(eventReceivePacket.getPacket() instanceof Class4276)) {
+                        if (eventReceivePacket.getPacket() instanceof Class4361) {
+                            final Class4361 class5724 = (Class4361) eventReceivePacket.getPacket();
                             this.field15594.remove(class5724.method13116());
                         }
                     }
                     else {
-                        final Class4276 class5725 = (Class4276)class5723.method16998();
+                        final Class4276 class5725 = (Class4276) eventReceivePacket.getPacket();
                         this.field15594.remove(class5725.method12830());
                     }
                 }
                 else {
-                    final Class4339 class5726 = (Class4339)class5723.method16998();
+                    final Class4339 class5726 = (Class4339) eventReceivePacket.getPacket();
                     this.field15594.remove(class5726.method13024());
                 }
             }
             else {
-                final int[] method12989 = ((Class4325)class5723.method16998()).method12989();
+                final int[] method12989 = ((Class4325) eventReceivePacket.getPacket()).method12989();
                 for (int length = method12989.length, i = 0; i < length; ++i) {
                     final Entity method12990 = Waypoints.mc.world.getEntityByID(method12989[i]);
                     if (method12990 != null) {

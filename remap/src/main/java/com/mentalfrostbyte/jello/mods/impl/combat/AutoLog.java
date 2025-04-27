@@ -20,7 +20,7 @@ public class AutoLog extends Module
     }
     
     @EventListener
-    public void method10769(final EventPlayerTick eventPlayerTick) {
+    public void method10769(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (AutoLog.mc.player.ticksExisted > 10) {
                 if (AutoLog.mc.method5285() == null) {

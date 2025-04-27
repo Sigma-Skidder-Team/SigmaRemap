@@ -75,11 +75,11 @@ public class LegitSpeed extends Module
     }
     
     @EventListener
-    private void method10450(final Class5723 class5723) {
+    private void method10450(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (LegitSpeed.mc.player != null) {
-                if (class5723.method16998() instanceof Class4273) {
-                    final Class4273 class5724 = (Class4273)class5723.method16998();
+                if (eventReceivePacket.getPacket() instanceof Class4273) {
+                    final Class4273 class5724 = (Class4273) eventReceivePacket.getPacket();
                     if (class5724.method12822() == LegitSpeed.mc.player.getEntityId()) {
                         this.field15860 += class5724.field19165 / 8000.0f;
                         this.field15861 += class5724.field19167 / 8000.0f;

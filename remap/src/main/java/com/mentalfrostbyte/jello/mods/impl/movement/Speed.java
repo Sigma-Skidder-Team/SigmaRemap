@@ -6,7 +6,6 @@ package com.mentalfrostbyte.jello.mods.impl.movement;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.movement.speeds.*;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
@@ -23,13 +22,13 @@ public class Speed extends ModuleWithSettings
     }
     
     @EventListener
-    public void method10267(final EventPlayerTick eventPlayerTick) {
+    public void method10267(final EventPlayerTickI eventPlayerTick) {
         ++Speed.field15748;
     }
     
     @EventListener
-    public void method10268(final Class5723 class5723) {
-        if (class5723.method16998() instanceof Class4328) {
+    public void method10268(final EventReceivePacket eventReceivePacket) {
+        if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
             if (Speed.mc.player != null) {
                 Speed.field15748 = 0;
                 if (this.getBooleanValueFromSettingName("Lag back checker")) {

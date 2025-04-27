@@ -29,7 +29,7 @@ public class OldHitting extends Module
     
     @EventListener
     @HigherPriority
-    private void method10435(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10435(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
@@ -102,17 +102,17 @@ public class OldHitting extends Module
     
     @EventListener
     @LowerPriority
-    private void method10436(final Class5723 class5723) {
+    private void method10436(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
         if (OldHitting.mc.player != null) {
-            if (class5723.method16998() instanceof Class4402) {
-                final Class4402 class5724 = (Class4402)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4402) {
+                final Class4402 class5724 = (Class4402) eventReceivePacket.getPacket();
                 if (class5724.method13247() != null) {
                     if (class5724.method13248() == OldHitting.mc.player.getEntityId()) {
                         if (class5724.method13247().getItem() instanceof Class4100) {
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                         }
                     }
                 }

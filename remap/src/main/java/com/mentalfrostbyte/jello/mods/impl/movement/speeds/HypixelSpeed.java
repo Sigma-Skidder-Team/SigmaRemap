@@ -47,7 +47,7 @@ public class HypixelSpeed extends Module
     }
     
     @EventListener
-    public void method10588(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10588(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (HypixelSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
@@ -213,9 +213,9 @@ public class HypixelSpeed extends Module
     }
     
     @EventListener
-    public void method10591(final Class5723 class5723) {
+    public void method10591(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15954 = 0.0;
                 ++this.field15953;
             }

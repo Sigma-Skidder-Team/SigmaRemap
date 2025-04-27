@@ -87,7 +87,7 @@ public class LibreCraftFly extends Module
     }
     
     @EventListener
-    public void method10736(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10736(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field16046;
             if (this.field16046 != 2) {
@@ -108,17 +108,17 @@ public class LibreCraftFly extends Module
     }
     
     @EventListener
-    public void method10737(final Class5723 class5723) {
+    public void method10737(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (LibreCraftFly.mc.player != null) {
-                if (method16998 instanceof Class4328) {
-                    final Class4328 class5724 = (Class4328)method16998;
+                if (method16998 instanceof SPlayerPositionLookPacket) {
+                    final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                     if (this.field16046 >= 1) {
                         this.field16046 = -1;
                     }
-                    class5724.field19380 = LibreCraftFly.mc.player.rotationYaw;
-                    class5724.field19381 = LibreCraftFly.mc.player.rotationPitch;
+                    class5724.yaw = LibreCraftFly.mc.player.rotationYaw;
+                    class5724.pitch = LibreCraftFly.mc.player.rotationPitch;
                 }
             }
         }

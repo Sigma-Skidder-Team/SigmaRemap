@@ -46,7 +46,7 @@ public class Class757 extends ClientPlayerEntity
     
     @Override
     public void method1659() {
-        final EventPlayerTick eventPlayerTick = new EventPlayerTick();
+        final EventPlayerTickI eventPlayerTick = new EventPlayerTickI();
         if (ModuleSettingInitializr.field8977) {
             try {
                 if (this.ticksExisted % 150 == 0) {

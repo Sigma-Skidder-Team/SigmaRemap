@@ -44,7 +44,7 @@ public class AutoTools extends Module
     }
     
     @EventListener
-    private void method10310(final EventPlayerTick eventPlayerTick) {
+    private void method10310(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (AutoTools.mc.player != null) {
                 if (AutoTools.mc.gameSettings.field23446.method1056()) {

@@ -72,9 +72,9 @@ public class AACBlockFly extends Module
     }
     
     @EventListener
-    public void method10099(final Class5723 class5723) {
+    public void method10099(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15655 = 0;
             }
         }
@@ -217,7 +217,7 @@ public class AACBlockFly extends Module
     
     @EventListener
     @LowestPriority
-    private void method10106(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10106(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (!updateWalkingEvent.isPre()) {
                 if (MovementUtil.isMoving()) {

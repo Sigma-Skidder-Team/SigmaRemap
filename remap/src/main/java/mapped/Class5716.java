@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 
-public class Class5716 extends Class5714
+public class Class5716 extends CancellableEvent2
 {
     private static String[] field23249;
     private final boolean field23250;

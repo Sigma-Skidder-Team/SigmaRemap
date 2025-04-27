@@ -29,14 +29,14 @@ public class Class4401 implements IPacket<Class5813>
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19718 = class8654.readVarInt();
-        this.field19719 = class8654.method29513(32767);
+        this.field19719 = class8654.readString(32767);
         this.field19720 = class8654.readBoolean();
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.writeVarInt(this.field19718);
-        class8654.method29514(this.field19719);
+        class8654.writeString(this.field19719);
         class8654.writeBoolean(this.field19720);
     }
     

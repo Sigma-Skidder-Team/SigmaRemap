@@ -161,7 +161,7 @@ public class Class5814 implements Class5813
     }
     
     public void method17463(final ITextComponent class2250) {
-        this.field23855.method11175(new Class4262(class2250), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23855.method11181(class2250)));
+        this.field23855.method11175(new SDisconnectPacket(class2250), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23855.method11181(class2250)));
         this.field23855.method11191();
         this.field23856.method5380(this.field23855::method11193);
     }
@@ -752,7 +752,7 @@ public class Class5814 implements Class5813
         }
         this.field23880 = this.field23858;
         this.field23857.method1728(n, n2, n3, n4, n5);
-        this.field23857.field3039.method17469(new Class4328(n - n6, n2 - n7, n3 - n8, n4 - n9, n5 - n10, set, this.field23879));
+        this.field23857.field3039.method17469(new SPlayerPositionLookPacket(n - n6, n2 - n7, n3 - n8, n4 - n9, n5 - n10, set, this.field23879));
     }
     
     @Override

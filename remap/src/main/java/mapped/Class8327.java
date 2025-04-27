@@ -22,10 +22,10 @@ public class Class8327
     }
     
     @EventListener
-    private void method27711(final Class5723 class5723) {
+    private void method27711(final EventReceivePacket eventReceivePacket) {
         if (this.field34199.method5282() != null) {
-            if (class5723.method16998() instanceof Class4378) {
-                if (new ArrayList(Arrays.asList("§cYou are permanently banned from MinemenClub. §r", "§cYour connection to the server §r§c§leu-practice§r§c has been prevented due to you being associated to a blacklisted player.§r", "§cYou are blacklisted from MinemenClub. §r")).contains(((Class4378)class5723.method16998()).method13164().getFormattedText())) {
+            if (eventReceivePacket.getPacket() instanceof Class4378) {
+                if (new ArrayList(Arrays.asList("§cYou are permanently banned from MinemenClub. §r", "§cYour connection to the server §r§c§leu-practice§r§c has been prevented due to you being associated to a blacklisted player.§r", "§cYou are blacklisted from MinemenClub. §r")).contains(((Class4378) eventReceivePacket.getPacket()).method13164().getFormattedText())) {
                     final Class7971 method25462 = Client.getInstance().getAltManager().method25462();
                     if (method25462 != null) {
                         method25462.method25895(new Class8848(this.field34199.method5282().field41613, new Date(Long.MAX_VALUE)));
@@ -34,9 +34,9 @@ public class Class8327
                     }
                 }
             }
-            if (!(class5723.method16998() instanceof Class4277)) {
-                if (!(class5723.method16998() instanceof Class4262)) {
-                    if (class5723.method16998() instanceof Class4367) {
+            if (!(eventReceivePacket.getPacket() instanceof SDisconnectLoginPacket)) {
+                if (!(eventReceivePacket.getPacket() instanceof SDisconnectPacket)) {
+                    if (eventReceivePacket.getPacket() instanceof SLoginSuccessPacket) {
                         final long currentTimeMillis = System.currentTimeMillis();
                         if (this.field34199.method5282() == null) {
                             return;
@@ -51,7 +51,7 @@ public class Class8327
                     }
                 }
                 else {
-                    final long method25464 = this.method27712(((Class4262)class5723.method16998()).method12793().getFormattedText());
+                    final long method25464 = this.method27712(((SDisconnectPacket) eventReceivePacket.getPacket()).getReason().getFormattedText());
                     if (method25464 == 0L) {
                         return;
                     }
@@ -65,7 +65,7 @@ public class Class8327
                 }
             }
             else {
-                final long method25466 = this.method27712(((Class4277)class5723.method16998()).method12842().getFormattedText());
+                final long method25466 = this.method27712(((SDisconnectLoginPacket) eventReceivePacket.getPacket()).getReason().getFormattedText());
                 if (method25466 == 0L) {
                     return;
                 }

@@ -104,7 +104,7 @@ public class HypixelBlockFly extends Module
     
     @EventListener
     @LowerPriority
-    public void method10209(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10209(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && this.field15715.method10281() != 0) {
             if (!updateWalkingEvent.isPre()) {
                 if (this.field15709 != 999.0f) {

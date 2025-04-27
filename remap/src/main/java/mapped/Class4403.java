@@ -4,8 +4,6 @@
 
 package mapped;
 
-import com.google.gson.TypeAdapterFactory;
-import java.lang.reflect.Type;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import com.google.gson.Gson;
@@ -27,12 +25,12 @@ public class Class4403 implements IPacket<Class5811>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19727 = Class9583.method35929(Class4403.field19726, class8654.method29513(32767), Class7787.class);
+        this.field19727 = Class9583.method35929(Class4403.field19726, class8654.readString(32767), Class7787.class);
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(Class4403.field19726.toJson(this.field19727));
+        class8654.writeString(Class4403.field19726.toJson(this.field19727));
     }
     
     public void method12826(final Class5811 class5811) {

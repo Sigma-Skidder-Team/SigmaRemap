@@ -34,7 +34,7 @@ public class NCPSpeed extends Module
     }
     
     @EventListener
-    public void method10412(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10412(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (NCPSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {

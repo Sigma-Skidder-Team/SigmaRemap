@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.player;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 
 public class AutoRespawn extends Module
@@ -19,7 +19,7 @@ public class AutoRespawn extends Module
     }
     
     @EventListener
-    public void method9974(final EventPlayerTick eventPlayerTick) {
+    public void method9974(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (!AutoRespawn.mc.player.isAlive()) {
                 AutoRespawn.mc.player.method2842();

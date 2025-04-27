@@ -24,7 +24,7 @@ public class Class6097 implements IRecipeSerializer<Class3664>
     public Class3664 method18184(final ResourceLocation class1932, final PacketBuffer class1933) {
         final int method29501 = class1933.readVarInt();
         final int method29502 = class1933.readVarInt();
-        final String method29503 = class1933.method29513(32767);
+        final String method29503 = class1933.readString(32767);
         final NonNullList<Ingredient> method29504 = NonNullList.withSize(method29501 * method29502, Ingredient.field374);
         for (int i = 0; i < method29504.size(); ++i) {
             method29504.set(i, Ingredient.method621(class1933));
@@ -35,7 +35,7 @@ public class Class6097 implements IRecipeSerializer<Class3664>
     public void method18185(final PacketBuffer class8654, final Class3664 class8655) {
         class8654.writeVarInt(Class3664.method11317(class8655));
         class8654.writeVarInt(Class3664.method11318(class8655));
-        class8654.method29514(Class3664.method11319(class8655));
+        class8654.writeString(Class3664.method11319(class8655));
         final Iterator iterator = Class3664.method11320(class8655).iterator();
         while (iterator.hasNext()) {
             ((Ingredient)iterator.next()).method614(class8654);

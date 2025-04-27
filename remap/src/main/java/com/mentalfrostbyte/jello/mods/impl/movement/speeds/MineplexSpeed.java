@@ -131,9 +131,9 @@ public class MineplexSpeed extends Module
     }
     
     @EventListener
-    public void method10152(final Class5723 class5723) {
+    public void method10152(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && MineplexSpeed.mc.player != null) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15676 = 0;
                 this.field15678 = 0.0;
             }

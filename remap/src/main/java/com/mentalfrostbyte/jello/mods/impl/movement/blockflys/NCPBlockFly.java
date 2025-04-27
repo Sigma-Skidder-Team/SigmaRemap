@@ -137,7 +137,7 @@ public class NCPBlockFly extends Module
     
     @EventListener
     @LowerPriority
-    public void method10047(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10047(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && this.field15628.method10281() != 0) {
             if (!updateWalkingEvent.isPre()) {
                 this.field15628.method10282();

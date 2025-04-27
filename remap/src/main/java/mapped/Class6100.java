@@ -4,7 +4,6 @@
 
 package mapped;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -30,11 +29,11 @@ public class Class6100<T extends Class3685> implements IRecipeSerializer<T>
     }
     
     public T method18195(final ResourceLocation class1932, final PacketBuffer class1933) {
-        return this.field24755.method34696(class1932, class1933.method29513(32767), Ingredient.method621(class1933), class1933.method29511());
+        return this.field24755.method34696(class1932, class1933.readString(32767), Ingredient.method621(class1933), class1933.method29511());
     }
     
     public void method18196(final PacketBuffer class8654, final T t) {
-        class8654.method29514(t.field16990);
+        class8654.writeString(t.field16990);
         t.field16985.method614(class8654);
         class8654.method29509(t.field16986);
     }

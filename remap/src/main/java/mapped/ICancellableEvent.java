@@ -4,9 +4,9 @@
 
 package mapped;
 
-public interface Class5724
+public interface ICancellableEvent
 {
-    boolean setCancelled(final boolean p0);
+    boolean setCancelled(final boolean cancelled);
     
     boolean isCancelled();
 }

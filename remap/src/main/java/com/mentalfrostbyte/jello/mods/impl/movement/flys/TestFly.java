@@ -75,7 +75,7 @@ public class TestFly extends Module
     }
     
     @EventListener
-    public void method10019(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10019(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15598;
             if (this.field15598 != 3) {
@@ -96,11 +96,11 @@ public class TestFly extends Module
     }
     
     @EventListener
-    public void method10020(final Class5723 class5723) {
+    public void method10020(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (method16998 instanceof Class4328) {
-                final Class4328 class5724 = (Class4328)method16998;
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (method16998 instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                 if (this.field15598 >= 1) {
                     this.field15598 = -1;
                 }
@@ -109,8 +109,8 @@ public class TestFly extends Module
                 this.field15600 = class5724.field19377;
                 this.field15601 = class5724.field19378;
                 this.field15602 = class5724.field19379;
-                class5724.field19380 = TestFly.mc.player.rotationYaw;
-                class5724.field19381 = TestFly.mc.player.rotationPitch;
+                class5724.yaw = TestFly.mc.player.rotationYaw;
+                class5724.pitch = TestFly.mc.player.rotationPitch;
             }
         }
     }

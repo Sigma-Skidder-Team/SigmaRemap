@@ -234,7 +234,7 @@ public class Freecam extends Module
     }
     
     @EventListener
-    public void method10504(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10504(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             updateWalkingEvent.method17043(this.field15908 % 360.0f);
             updateWalkingEvent.method17041(this.field15909);
@@ -262,23 +262,23 @@ public class Freecam extends Module
     }
     
     @EventListener
-    private void method10505(final Class5723 class5723) {
+    private void method10505(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled()) {
             return;
         }
         if (Freecam.mc.player != null) {
-            if (class5723.method16998() instanceof Class4328) {
-                final Class4328 class5724 = (Class4328)class5723.method16998();
-                this.field15908 = class5724.field19380;
-                this.field15909 = class5724.field19381;
-                class5724.field19380 = Freecam.mc.player.rotationYaw;
-                class5724.field19381 = Freecam.mc.player.rotationPitch;
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket) eventReceivePacket.getPacket();
+                this.field15908 = class5724.yaw;
+                this.field15909 = class5724.pitch;
+                class5724.yaw = Freecam.mc.player.rotationYaw;
+                class5724.pitch = Freecam.mc.player.rotationPitch;
                 final double field19377 = class5724.field19377;
                 final double field19378 = class5724.field19378;
                 final double field19379 = class5724.field19379;
                 final float field19380 = PlayerEntity.field2997.field34097;
                 Freecam.mc.player.method1889(new AxisAlignedBB(field19377 - field19380, field19378, field19379 - field19380, field19377 + field19380, field19378 + PlayerEntity.field2997.field34098, field19379 + field19380));
-                class5723.setCancelled(true);
+                eventReceivePacket.setCancelled(true);
                 Freecam.field15901.setMotion(0.0, 0.0, 0.0);
             }
         }
@@ -299,9 +299,9 @@ public class Freecam extends Module
     }
     
     @EventListener
-    private void method10507(final Class5746 class5746) {
+    private void method10507(final EventRenderFire eventRenderFire) {
         if (this.isEnabled()) {
-            class5746.setCancelled(true);
+            eventRenderFire.setCancelled(true);
         }
     }
     

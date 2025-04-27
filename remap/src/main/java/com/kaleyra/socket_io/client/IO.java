@@ -2,7 +2,9 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.kaleyra.socket_io.client;
+
+import mapped.*;
 
 import java.net.URL;
 import java.util.logging.Level;
@@ -11,21 +13,21 @@ import java.net.URISyntaxException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-public class Class6593
+public class IO
 {
-    private static final Logger field26153;
-    private static final ConcurrentHashMap<String, Class4967> field26154;
+    private static final Logger logger;
+    private static final ConcurrentHashMap<String, Manager> managers;
     public static int field26155;
     
     public static void method20035(final Class2311 field21356) {
-        Class4967.field21356 = field21356;
+        Manager.field21356 = field21356;
     }
     
     public static void method20036(final Class2310 field21357) {
-        Class4967.field21357 = field21357;
+        Manager.field21357 = field21357;
     }
     
-    private Class6593() {
+    private IO() {
     }
     
     public static Class4960 method20037(final String s) throws URISyntaxException {
@@ -54,22 +56,22 @@ public class Class6593
         }
         final String method35255 = Class9471.method35256(method35254);
         final String path = method35254.getPath();
-        final boolean b = Class6593.field26154.containsKey(method35255) && Class6593.field26154.get(method35255).field21378.containsKey(path);
-        Class4967 class7662;
+        final boolean b = IO.managers.containsKey(method35255) && IO.managers.get(method35255).field21378.containsKey(path);
+        Manager class7662;
         if (class7661.field30424 || class7661.field30425 || b) {
-            if (Class6593.field26153.isLoggable(Level.FINE)) {
-                Class6593.field26153.fine(String.format("ignoring socket cache for %s", uri2));
+            if (IO.logger.isLoggable(Level.FINE)) {
+                IO.logger.fine(String.format("ignoring socket cache for %s", uri2));
             }
-            class7662 = new Class4967(uri2, class7661);
+            class7662 = new Manager(uri2, class7661);
         }
         else {
-            if (!Class6593.field26154.containsKey(method35255)) {
-                if (Class6593.field26153.isLoggable(Level.FINE)) {
-                    Class6593.field26153.fine(String.format("new io instance for %s", uri2));
+            if (!IO.managers.containsKey(method35255)) {
+                if (IO.logger.isLoggable(Level.FINE)) {
+                    IO.logger.fine(String.format("new io instance for %s", uri2));
                 }
-                Class6593.field26154.putIfAbsent(method35255, new Class4967(uri2, class7661));
+                IO.managers.putIfAbsent(method35255, new Manager(uri2, class7661));
             }
-            class7662 = Class6593.field26154.get(method35255);
+            class7662 = IO.managers.get(method35255);
         }
         final String query = method35254.getQuery();
         if (query != null && (class7661.field30412 == null || class7661.field30412.isEmpty())) {
@@ -79,8 +81,8 @@ public class Class6593
     }
     
     static {
-        field26153 = Logger.getLogger(Class6593.class.getName());
-        field26154 = new ConcurrentHashMap<String, Class4967>();
-        Class6593.field26155 = 4;
+        logger = Logger.getLogger(IO.class.getName());
+        managers = new ConcurrentHashMap<String, Manager>();
+        IO.field26155 = 4;
     }
 }

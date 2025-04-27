@@ -69,7 +69,7 @@ public class MiniMap extends Module
     }
     
     @EventListener
-    private void method10405(final EventPlayerTick eventPlayerTick) {
+    private void method10405(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (MiniMap.mc.player != null) {
                 if (MiniMap.mc.world != null) {

@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.movement.spiders;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.movement.Spider;
-import mapped.UpdateWalkingEvent;
+import mapped.UpdateWalkingEventI;
 import mapped.Class5753;
 import mapped.EventListener;
 
@@ -18,7 +18,7 @@ public class SpartanSpider extends Module
     }
     
     @EventListener
-    private void method10523(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10523(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }

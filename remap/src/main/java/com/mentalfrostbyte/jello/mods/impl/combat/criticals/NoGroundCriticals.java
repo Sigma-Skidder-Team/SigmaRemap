@@ -59,7 +59,7 @@ public class NoGroundCriticals extends Module
     
     @EventListener
     @HigherPriority
-    private void method10471(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10471(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }

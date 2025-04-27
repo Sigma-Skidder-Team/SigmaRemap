@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Custom3DRenderEvent implements CancellableEvent
+public class Custom3DRenderEvent implements IEvent
 {
     private static String[] field23308;
 }

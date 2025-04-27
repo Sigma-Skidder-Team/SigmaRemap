@@ -29,7 +29,7 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10036(final EventStopUseItem eventStopUseItem) {
+    public void method10036(final EventStopUseItemI eventStopUseItem) {
         if (this.isEnabled()) {
             if (this.field15614 >= 0) {
                 eventStopUseItem.setCancelled(true);
@@ -55,7 +55,7 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10038(final EventPlayerTick eventPlayerTick) {
+    public void method10038(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -100,9 +100,9 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10039(final Class5723 class5723) {
+    public void method10039(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && this.field15614 > 1) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4268) {
                 final Class4268 class5724 = (Class4268)method16998;
                 if (class5724.method12811() == BaicAutoGapple.mc.player.getEntityId()) {

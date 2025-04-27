@@ -35,7 +35,7 @@ public class Class4359 implements IPacket<IClientPlayNetHandler>
         this.field19521 = DimensionType.method1274(class8654.readInt());
         this.field19522 = class8654.readLong();
         this.field19523 = Class101.method592(class8654.readUnsignedByte());
-        this.field19524 = Class9505.method35410(class8654.method29513(16));
+        this.field19524 = Class9505.method35410(class8654.readString(16));
         if (this.field19524 == null) {
             this.field19524 = Class9505.field40892;
         }
@@ -46,7 +46,7 @@ public class Class4359 implements IPacket<IClientPlayNetHandler>
         class8654.writeInt(this.field19521.method1270());
         class8654.writeLong(this.field19522);
         class8654.writeByte(this.field19523.method585());
-        class8654.method29514(this.field19524.method35398());
+        class8654.writeString(this.field19524.method35398());
     }
     
     public DimensionType method13097() {

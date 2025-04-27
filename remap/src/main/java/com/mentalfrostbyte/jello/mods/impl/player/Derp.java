@@ -28,7 +28,7 @@ public class Derp extends Module
     }
     
     @EventListener
-    public void method10456(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10456(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }

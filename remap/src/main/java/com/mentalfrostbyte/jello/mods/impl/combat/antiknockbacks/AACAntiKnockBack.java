@@ -72,9 +72,9 @@ public class AACAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10594(final Class5723 class5723) {
+    private void method10594(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && AACAntiKnockBack.mc.player != null) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4273) {
                 if (this.method10595()) {
                     AACAntiKnockBack.field15956 = 0;
@@ -89,7 +89,7 @@ public class AACAntiKnockBack extends Module
                     }
                 }
             }
-            if (class5723.method16998() instanceof Class4394) {
+            if (eventReceivePacket.getPacket() instanceof Class4394) {
                 final Class4394 class5725 = (Class4394)method16998;
             }
         }

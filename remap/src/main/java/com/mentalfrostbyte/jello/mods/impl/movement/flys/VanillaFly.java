@@ -66,7 +66,7 @@ public class VanillaFly extends Module
     }
     
     @EventListener
-    public void method10459(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10459(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }

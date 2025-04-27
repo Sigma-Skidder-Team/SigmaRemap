@@ -112,7 +112,7 @@ public class Class9316
         final float method22704 = MathHelper.method35700(method22702, method22699, n);
         final float method22705 = MathHelper.method35700(method22702, method22700, n2);
         final float method22706 = MathHelper.method35700(method22702, method22701, n2);
-        final Class5746 class871 = new Class5746(0.9f);
+        final EventRenderFire class871 = new EventRenderFire(0.9f);
         Client.getInstance().getEventBus().post(class871);
         for (int i = 0; i < 2; ++i) {
             class870.method22567();

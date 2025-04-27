@@ -31,9 +31,9 @@ public class MineplexGamePlay extends Module
     }
     
     @EventListener
-    private void method9975(final Class5723 class5723) {
+    private void method9975(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && MineplexGamePlay.mc.player != null) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();
                 final String lowerCase = MineplexGamePlay.mc.player.getName().getFormattedText().toLowerCase();
@@ -61,7 +61,7 @@ public class MineplexGamePlay extends Module
     }
     
     @EventListener
-    private void method9977(final EventPlayerTick eventPlayerTick) {
+    private void method9977(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("AutoGG")) {
                 if (this.field15566.getElapsedTime() > 5000L) {

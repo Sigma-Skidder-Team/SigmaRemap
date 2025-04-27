@@ -24,9 +24,9 @@ public class HoverCriticals extends Module
     }
     
     @EventListener
-    public void method10483(final Class5723 class5723) {
+    public void method10483(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15895 = 1.0E-11;
             }
         }
@@ -34,7 +34,7 @@ public class HoverCriticals extends Module
     
     @EventListener
     @HigherPriority
-    private void method10484(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10484(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             final boolean b = HoverCriticals.mc.field4691 != null && HoverCriticals.mc.field4691.getType() == RayTraceResult.Type.BLOCK;
             final boolean b2 = HoverCriticals.mc.playerController.method27337() || (HoverCriticals.mc.gameSettings.field23446.method1056() && b);

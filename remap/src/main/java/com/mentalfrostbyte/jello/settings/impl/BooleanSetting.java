@@ -25,7 +25,7 @@ public class BooleanSetting extends Setting<Boolean> {
     }
 
     @Override
-    public void method15201() {
+    public void syncState() {
         this.field21516 = false;
     }
 

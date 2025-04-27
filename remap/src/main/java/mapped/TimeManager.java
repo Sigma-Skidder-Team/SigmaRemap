@@ -24,9 +24,9 @@ public class TimeManager {
     }
 
     @EventListener
-    private void method28161(final Class5723 class5723) {
-        if (class5723.method16998() instanceof Class4272) {
-            final Class4272 class5724 = (Class4272) class5723.method16998();
+    private void method28161(final EventReceivePacket eventReceivePacket) {
+        if (eventReceivePacket.getPacket() instanceof Class4272) {
+            final Class4272 class5724 = (Class4272) eventReceivePacket.getPacket();
             if (class5724.method12819() != 0) {
                 return;
             }

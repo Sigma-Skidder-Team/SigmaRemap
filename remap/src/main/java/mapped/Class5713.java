@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5713 extends Class5714
+public class Class5713 extends CancellableEvent2
 {
     private static String[] field23244;
 }

@@ -106,9 +106,9 @@ public class MineplexHighJump extends Module
     }
     
     @EventListener
-    public void method10203(final Class5723 class5723) {
+    public void method10203(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.method9914().toggle();
             }
         }

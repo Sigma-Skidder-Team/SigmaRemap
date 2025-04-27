@@ -78,9 +78,9 @@ public class EntitySpeed extends Module
     }
     
     @EventListener
-    public void method10313(final Class5723 class5723) {
+    public void method10313(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (!(class5723.method16998() instanceof Class4263)) {}
+            if (!(eventReceivePacket.getPacket() instanceof Class4263)) {}
         }
     }
     

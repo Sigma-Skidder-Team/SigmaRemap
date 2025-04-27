@@ -53,7 +53,7 @@ public class InfiniteAura extends Module
     
     @EventListener
     @LowerPriority
-    public void method10091(final EventPlayerTick eventPlayerTick) {
+    public void method10091(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

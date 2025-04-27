@@ -39,7 +39,7 @@ public class BotManager {
 
     @EventListener
     @HighestPriority
-    private void method31754(final EventPlayerTick eventPlayerTick) {
+    private void method31754(final EventPlayerTickI eventPlayerTick) {
         if (this.field37638 != null) {
             for (final PlayerEntity class5744 : ColorUtils.method19108()) {
                 if (!this.field37638.method25239(class5744)) {

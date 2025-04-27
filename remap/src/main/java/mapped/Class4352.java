@@ -47,7 +47,7 @@ public class Class4352 implements IPacket<IClientPlayNetHandler>
                     }
                 }
             }
-            this.field19494 = class8654.method29497();
+            this.field19494 = class8654.readTextComponent();
         }
         if (this.field19493 == Class2019.field11517) {
             this.field19495 = class8654.readInt();
@@ -67,7 +67,7 @@ public class Class4352 implements IPacket<IClientPlayNetHandler>
                     }
                 }
             }
-            class8654.method29498(this.field19494);
+            class8654.writeTextComponent(this.field19494);
         }
         if (this.field19493 == Class2019.field11517) {
             class8654.writeInt(this.field19495);

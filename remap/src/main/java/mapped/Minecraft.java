@@ -4,10 +4,7 @@
 
 package mapped;
 
-import java.util.AbstractList;
-
 import com.mentalfrostbyte.Client;
-import com.mojang.authlib.AuthenticationService;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -17,7 +14,6 @@ import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.function.Supplier;
-import com.google.common.collect.Multimap;
 import java.util.regex.Matcher;
 import java.util.Base64;
 import java.util.regex.Pattern;
@@ -34,7 +30,6 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.stream.Stream;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -924,7 +919,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
                 }
             }
             else if (!this.player.method4134()) {
-                Class5714 class5749 = null;
+                CancellableEvent2 class5749 = null;
                 if (this.field4691.getType() == RayTraceResult.Type.ENTITY) {
                     class5749 = new Class5750(((EntityRayTraceResult)this.field4691).getEntity(), true);
                     Client.getInstance().getEventBus().post(class5749);
@@ -1210,7 +1205,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         }
         if (this.player.method2756()) {
             if (!this.gameSettings.field23445.method1056() && !this.gameSettings.field23445.method1056()) {
-                final EventStopUseItem eventStopUseItem = new EventStopUseItem();
+                final EventStopUseItemI eventStopUseItem = new EventStopUseItemI();
                 Client.getInstance().getEventBus().post(eventStopUseItem);
                 if (!eventStopUseItem.isCancelled()) {
                     this.playerController.method27329(this.player);
@@ -1291,7 +1286,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         }
         final SocketAddress method25791 = this.integratedServer.method1541().method24061();
         final NetworkManager method25792 = NetworkManager.method11184(method25791);
-        method25792.method11173(new Class5808(method25792, this, null, p0 -> {}));
+        method25792.method11173(new ClientLoginNetHandler(method25792, this, null, p0 -> {}));
         method25792.method11174(new Class4398(method25791.toString(), 0, Class2208.field13457));
         method25792.method11174(new Class4327(this.method5287().method33694()));
         this.field4687 = method25792;

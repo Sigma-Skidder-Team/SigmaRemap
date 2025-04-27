@@ -48,7 +48,7 @@ public class AutoArmor extends Module
     
     @EventListener
     @HigherPriority
-    public void method10601(final EventPlayerTick eventPlayerTick) {
+    public void method10601(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

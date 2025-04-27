@@ -90,7 +90,7 @@ public class AntiVoid extends Module
     }
     
     @EventListener
-    private void method10135(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10135(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (updateWalkingEvent.isPre()) {
                 if (this.field15664 != 0) {
@@ -101,9 +101,9 @@ public class AntiVoid extends Module
     }
     
     @EventListener
-    private void method10136(final Class5723 class5723) {
+    private void method10136(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && this.field15664 != 0) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15664 = 0;
                 this.field15663 = 4;
             }

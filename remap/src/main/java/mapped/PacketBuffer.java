@@ -17,11 +17,10 @@ import io.netty.buffer.ByteBufAllocator;
 import java.util.Date;
 import java.nio.charset.StandardCharsets;
 import javax.annotation.Nullable;
-import java.io.DataInput;
+
 import io.netty.buffer.ByteBufInputStream;
 import java.io.IOException;
 import io.netty.handler.codec.EncoderException;
-import java.io.DataOutput;
 import io.netty.buffer.ByteBufOutputStream;
 import java.util.UUID;
 import io.netty.handler.codec.DecoderException;
@@ -139,11 +138,11 @@ public class PacketBuffer extends ByteBuf
         return Class353.method1092(this.readLong());
     }
     
-    public ITextComponent method29497() {
-        return Class5953.method17871(this.method29513(262144));
+    public ITextComponent readTextComponent() {
+        return Class5953.method17871(this.readString(262144));
     }
     
-    public PacketBuffer method29498(final ITextComponent class2250) {
+    public PacketBuffer writeTextComponent(final ITextComponent class2250) {
         return this.method29515(Class5953.method17869(class2250), 262144);
     }
     
@@ -283,10 +282,10 @@ public class PacketBuffer extends ByteBuf
     }
     
     public String method29512() {
-        return this.method29513(32767);
+        return this.readString(32767);
     }
     
-    public String method29513(final int i) {
+    public String readString(final int i) {
         final int method29501 = this.readVarInt();
         if (method29501 > i * 4) {
             throw new DecoderException("The received encoded string buffer length is longer than maximum allowed (" + method29501 + " > " + i * 4 + ")");
@@ -302,7 +301,7 @@ public class PacketBuffer extends ByteBuf
         throw new DecoderException("The received string length is longer than maximum allowed (" + method29501 + " > " + i + ")");
     }
     
-    public PacketBuffer method29514(final String s) {
+    public PacketBuffer writeString(final String s) {
         return this.method29515(s, 32767);
     }
     
@@ -317,11 +316,11 @@ public class PacketBuffer extends ByteBuf
     }
     
     public ResourceLocation method29516() {
-        return new ResourceLocation(this.method29513(32767));
+        return new ResourceLocation(this.readString(32767));
     }
     
     public PacketBuffer method29517(final ResourceLocation class1932) {
-        this.method29514(class1932.toString());
+        this.writeString(class1932.toString());
         return this;
     }
     

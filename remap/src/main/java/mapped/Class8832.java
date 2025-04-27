@@ -52,7 +52,7 @@ public class Class8832
     public static Map<String, Class8832> method30842(final PacketBuffer class8654) {
         final HashMap hashMap = Maps.newHashMap();
         for (int method29501 = class8654.readVarInt(), i = 0; i < method29501; ++i) {
-            hashMap.put(class8654.method29513(32767), method30840(class8654));
+            hashMap.put(class8654.readString(32767), method30840(class8654));
         }
         return hashMap;
     }
@@ -60,7 +60,7 @@ public class Class8832
     public static void method30843(final Map<String, Class8832> map, final PacketBuffer class8654) {
         class8654.writeVarInt(map.size());
         for (final Map.Entry<String, V> entry : map.entrySet()) {
-            class8654.method29514(entry.getKey());
+            class8654.writeString(entry.getKey());
             ((Class8832)entry.getValue()).method30838(class8654);
         }
     }

@@ -94,7 +94,7 @@ public class Class348 implements Comparable<Class348>
     public void method1035(final PacketBuffer class8654) {
         class8654.writeVarInt(this.field2147.size());
         for (final Map.Entry<String, V> entry : this.field2147.entrySet()) {
-            class8654.method29514(entry.getKey());
+            class8654.writeString(entry.getKey());
             ((Class8000)entry.getValue()).method26171(class8654);
         }
     }
@@ -102,7 +102,7 @@ public class Class348 implements Comparable<Class348>
     public static Class348 method1036(final PacketBuffer class8654) {
         final Class348 class8655 = new Class348();
         for (int method29501 = class8654.readVarInt(), i = 0; i < method29501; ++i) {
-            class8655.field2147.put(class8654.method29513(32767), Class8000.method26173(class8654));
+            class8655.field2147.put(class8654.readString(32767), Class8000.method26173(class8654));
         }
         return class8655;
     }

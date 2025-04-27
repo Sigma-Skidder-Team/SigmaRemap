@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.util.math.Vec3d;
 
-public class Class5717 extends Class5714
+public class Class5717 extends CancellableEvent2
 {
     private static String[] field23257;
     public Vec3d field23258;

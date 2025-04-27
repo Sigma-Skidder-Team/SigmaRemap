@@ -55,7 +55,7 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     @EventListener
-    private void method10704(final EventPlayerTick eventPlayerTick) {
+    private void method10704(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -211,13 +211,13 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     @EventListener
-    private void method10711(final Class5723 class5723) {
+    private void method10711(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled()) {
             return;
         }
         if (this.field16036 != null) {
-            if (class5723.method16998() instanceof Class4282) {
-                final Class4282 class5724 = (Class4282)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4282) {
+                final Class4282 class5724 = (Class4282) eventReceivePacket.getPacket();
                 for (int i = 0; i < this.field16036.size(); ++i) {
                     final Class9486 class5725 = this.field16036.get(i);
                     if (class5725.field40773.equals(new BlockPos(class5724.method12865(), class5724.method12866(), class5724.method12867()))) {
@@ -226,8 +226,8 @@ public class NoteblockPlayer extends PremiumModule
                     }
                 }
             }
-            if (class5723.method16998() instanceof Class4342) {
-                final Class4342 class5726 = (Class4342)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4342) {
+                final Class4342 class5726 = (Class4342) eventReceivePacket.getPacket();
                 for (int j = 0; j < this.field16036.size(); ++j) {
                     final Class9486 class5727 = this.field16036.get(j);
                     if (class5727.field40773.equals(new BlockPos(class5726.method13040(), class5726.method13041(), class5726.method13042()))) {

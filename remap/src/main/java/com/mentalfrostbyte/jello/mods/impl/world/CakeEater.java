@@ -37,11 +37,11 @@ public class CakeEater extends Module
     }
     
     @EventListener
-    private void method10145(final Class5723 class5723) {
+    private void method10145(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4378) {
-                if (((Class4378)class5723.method16998()).method13164().getFormattedText().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
-                    class5723.setCancelled(true);
+            if (eventReceivePacket.getPacket() instanceof Class4378) {
+                if (((Class4378) eventReceivePacket.getPacket()).method13164().getFormattedText().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
+                    eventReceivePacket.setCancelled(true);
                 }
             }
         }
@@ -49,7 +49,7 @@ public class CakeEater extends Module
     
     @EventListener
     @HigherPriority
-    private void method10146(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10146(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }

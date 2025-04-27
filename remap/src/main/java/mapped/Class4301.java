@@ -43,7 +43,7 @@ public class Class4301 implements IPacket<IClientPlayNetHandler>
         this.field19288 = class8654.method29499(Class1994.class);
         switch (Class8716.field36625[this.field19288.ordinal()]) {
             case 1: {
-                this.field19289 = class8654.method29497();
+                this.field19289 = class8654.readTextComponent();
                 this.field19290 = class8654.readFloat();
                 this.field19291 = class8654.method29499(Class2200.class);
                 this.field19292 = class8654.method29499(Class342.class);
@@ -55,7 +55,7 @@ public class Class4301 implements IPacket<IClientPlayNetHandler>
                 break;
             }
             case 4: {
-                this.field19289 = class8654.method29497();
+                this.field19289 = class8654.readTextComponent();
                 break;
             }
             case 5: {
@@ -133,7 +133,7 @@ public class Class4301 implements IPacket<IClientPlayNetHandler>
         class8654.method29500(this.field19288);
         switch (Class8716.field36625[this.field19288.ordinal()]) {
             case 1: {
-                class8654.method29498(this.field19289);
+                class8654.writeTextComponent(this.field19289);
                 class8654.writeFloat(this.field19290);
                 class8654.method29500(this.field19291);
                 class8654.method29500(this.field19292);
@@ -145,7 +145,7 @@ public class Class4301 implements IPacket<IClientPlayNetHandler>
                 break;
             }
             case 4: {
-                class8654.method29498(this.field19289);
+                class8654.writeTextComponent(this.field19289);
                 break;
             }
             case 5: {

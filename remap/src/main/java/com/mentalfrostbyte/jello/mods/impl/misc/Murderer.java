@@ -31,10 +31,10 @@ public class Murderer extends Module
     }
     
     @EventListener
-    private void method10247(final Class5723 class5723) throws IOException {
+    private void method10247(final EventReceivePacket eventReceivePacket) throws IOException {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4402) {
-                final Class4402 class5724 = (Class4402)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4402) {
+                final Class4402 class5724 = (Class4402) eventReceivePacket.getPacket();
                 if (class5724.method13247().getItem() instanceof SwordItem) {
                     if (Murderer.mc.world.getEntityByID(class5724.method13248()) instanceof PlayerEntity) {
                         final Entity method6741 = Murderer.mc.world.getEntityByID(class5724.method13248());
@@ -50,7 +50,7 @@ public class Murderer extends Module
                     }
                 }
             }
-            if (class5723.method16998() instanceof Class4359) {
+            if (eventReceivePacket.getPacket() instanceof Class4359) {
                 this.field15735 = false;
             }
         }

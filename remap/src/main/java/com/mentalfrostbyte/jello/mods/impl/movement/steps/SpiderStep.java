@@ -61,7 +61,7 @@ public class SpiderStep extends Module
     }
     
     @EventListener
-    private void method10363(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10363(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (SpiderStep.mc.player != null) {
                 if (updateWalkingEvent.isPre()) {

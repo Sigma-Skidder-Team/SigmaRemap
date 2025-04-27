@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.Class4353;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 
 public class Regen extends Module
@@ -21,7 +21,7 @@ public class Regen extends Module
     }
     
     @EventListener
-    private void method10527(final EventPlayerTick eventPlayerTick) {
+    private void method10527(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (!Regen.mc.player.field3025.field27304) {
                 if (Regen.mc.player.method2877().method33491() > 17) {

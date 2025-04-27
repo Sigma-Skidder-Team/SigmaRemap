@@ -5,7 +5,6 @@
 package com.mentalfrostbyte.jello.mods.impl.movement;
 
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.movement.phases.UnfullPhase;
 import com.mentalfrostbyte.jello.mods.impl.movement.phases.NCPPhase;
@@ -20,10 +19,10 @@ public class Phase extends ModuleWithSettings
     }
     
     @EventListener
-    private void method10265(final Class5746 class5746) {
+    private void method10265(final EventRenderFire eventRenderFire) {
         if (this.isEnabled()) {
-            class5746.method17053(0.0f);
-            class5746.setCancelled(true);
+            eventRenderFire.method17053(0.0f);
+            eventRenderFire.setCancelled(true);
         }
     }
 }

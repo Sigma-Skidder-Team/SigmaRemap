@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class4378;
-import mapped.Class5723;
+import mapped.EventReceivePacket;
 import mapped.EventListener;
 
 public class ChatCleaner extends Module
@@ -17,11 +17,11 @@ public class ChatCleaner extends Module
     }
     
     @EventListener
-    private void method10509(final Class5723 class5723) {
+    private void method10509(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4378) {
-                if (this.method10511(this.method10510(((Class4378)class5723.method16998()).method13164().getString()))) {
-                    class5723.setCancelled(true);
+            if (eventReceivePacket.getPacket() instanceof Class4378) {
+                if (this.method10511(this.method10510(((Class4378) eventReceivePacket.getPacket()).method13164().getString()))) {
+                    eventReceivePacket.setCancelled(true);
                 }
             }
         }

@@ -23,7 +23,7 @@ public class Class4265 implements IPacket<Class5813>
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
         this.field19135 = class8654.readVarInt();
-        this.field19136 = class8654.method29513(32500);
+        this.field19136 = class8654.readString(32500);
     }
     
     @Override

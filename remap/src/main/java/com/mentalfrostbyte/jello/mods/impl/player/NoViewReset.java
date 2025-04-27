@@ -6,8 +6,8 @@ package com.mentalfrostbyte.jello.mods.impl.player;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.Class4328;
-import mapped.Class5723;
+import mapped.SPlayerPositionLookPacket;
+import mapped.EventReceivePacket;
 import mapped.EventListener;
 
 public class NoViewReset extends Module
@@ -17,7 +17,7 @@ public class NoViewReset extends Module
     }
     
     @EventListener
-    private void method10803(final Class5723 class5723) {
+    private void onReceivePacket(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled()) {
             return;
         }
@@ -25,14 +25,12 @@ public class NoViewReset extends Module
             return;
         }
         if (NoViewReset.mc.player.ticksExisted >= 10) {
-            if (NoViewReset.mc.player != null) {
-                if (class5723.method16998() instanceof Class4328) {
-                    final Class4328 class5724 = (Class4328)class5723.method16998();
-                    NoViewReset.mc.player.prevRotationYaw = class5724.field19380;
-                    NoViewReset.mc.player.prevRotationPitch = class5724.field19381;
-                    class5724.field19380 = NoViewReset.mc.player.rotationYaw;
-                    class5724.field19381 = NoViewReset.mc.player.rotationPitch;
-                }
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket positionLookPacket = (SPlayerPositionLookPacket) eventReceivePacket.getPacket();
+                NoViewReset.mc.player.prevRotationYaw = positionLookPacket.yaw;
+                NoViewReset.mc.player.prevRotationPitch = positionLookPacket.pitch;
+                positionLookPacket.yaw = NoViewReset.mc.player.rotationYaw;
+                positionLookPacket.pitch = NoViewReset.mc.player.rotationPitch;
             }
         }
     }

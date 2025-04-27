@@ -31,11 +31,11 @@ public class HypixelGamePlay extends Module
     }
     
     @EventListener
-    private void method10161(final Class5723 class5723) {
+    private void method10161(final EventReceivePacket eventReceivePacket) {
         if (HypixelGamePlay.mc.player == null) {
             return;
         }
-        final IPacket method16998 = class5723.method16998();
+        final IPacket method16998 = eventReceivePacket.getPacket();
         if (method16998 instanceof Class4378) {
             final Class4378 class5724 = (Class4378)method16998;
             final String replaceAll = class5724.method13164().getUnformattedComponentText().replaceAll("§.", "");

@@ -19,7 +19,7 @@ public class FastBow extends Module
     }
     
     @EventListener
-    private void method10472(final EventPlayerTick eventPlayerTick) {
+    private void method10472(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (FastBow.mc.player.getHeldItemMainhand() != null) {
                 if (FastBow.mc.player.getHeldItemMainhand().getItem() instanceof Class4087) {

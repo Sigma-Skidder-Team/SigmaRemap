@@ -74,7 +74,7 @@ public abstract class Setting<T>
         }
     }
     
-    public void method15201() {
+    public void syncState() {
     }
     
     public boolean getValue() {

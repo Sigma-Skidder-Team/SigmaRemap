@@ -4,13 +4,13 @@
 
 package mapped;
 
-public class EventRenderBlocks extends Class5714
+public class EventRenderBlocksI extends CancellableEvent2
 {
     private static String[] field23263;
     private final BlockState field23264;
     private boolean field23265;
     
-    public EventRenderBlocks(final BlockState field23264) {
+    public EventRenderBlocksI(final BlockState field23264) {
         this.field23265 = false;
         this.field23264 = field23264;
     }

@@ -213,7 +213,7 @@ public class MovementManager {
     }
 
     @EventListener
-    private void method26564(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method26564(final UpdateWalkingEventI updateWalkingEvent) {
         if (!updateWalkingEvent.isPre()) {
             return;
         }

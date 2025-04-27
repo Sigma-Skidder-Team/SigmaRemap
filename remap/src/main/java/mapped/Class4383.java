@@ -47,7 +47,7 @@ public class Class4383 implements IPacket<IClientPlayNetHandler>
         this.field19634 = DimensionType.method1274(class8654.readInt());
         this.field19631 = class8654.readLong();
         this.field19635 = class8654.readUnsignedByte();
-        this.field19636 = Class9505.method35410(class8654.method29513(16));
+        this.field19636 = Class9505.method35410(class8654.readString(16));
         if (this.field19636 == null) {
             this.field19636 = Class9505.field40892;
         }
@@ -67,7 +67,7 @@ public class Class4383 implements IPacket<IClientPlayNetHandler>
         class8654.writeInt(this.field19634.method1270());
         class8654.writeLong(this.field19631);
         class8654.writeByte(this.field19635);
-        class8654.method29514(this.field19636.method35398());
+        class8654.writeString(this.field19636.method35398());
         class8654.writeVarInt(this.field19637);
         class8654.writeBoolean(this.field19638);
         class8654.writeBoolean(this.field19639);

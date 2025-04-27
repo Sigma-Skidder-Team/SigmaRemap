@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.movement.flys;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 
 public class JetpackFly extends Module
@@ -16,7 +16,7 @@ public class JetpackFly extends Module
     }
     
     @EventListener
-    public void method10550(final EventPlayerTick eventPlayerTick) {
+    public void method10550(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (JetpackFly.mc.player.field2967) {
                 JetpackFly.mc.player.method2725();

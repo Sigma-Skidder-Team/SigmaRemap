@@ -25,7 +25,7 @@ public class AutoSprint extends Module
     }
     
     @EventListener
-    public void method10320(final EventPlayerTick eventPlayerTick) {
+    public void method10320(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             final Module field15743 = ((ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).parentModule;
             if (field15743 != null) {

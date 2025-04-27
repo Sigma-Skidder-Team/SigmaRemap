@@ -19,7 +19,7 @@ public class SpartanAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10495(final EventPlayerTick eventPlayerTick) {
+    private void method10495(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.field15900 < 10) {
                 ++this.field15900;
@@ -31,11 +31,11 @@ public class SpartanAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10496(final Class5723 class5723) {
+    private void method10496(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (SpartanAntiKnockBack.mc.player != null) {
-                if (class5723.method16998() instanceof Class4273) {
-                    if (((Class4273)class5723.method16998()).method12822() == SpartanAntiKnockBack.mc.player.getEntityId()) {
+                if (eventReceivePacket.getPacket() instanceof Class4273) {
+                    if (((Class4273) eventReceivePacket.getPacket()).method12822() == SpartanAntiKnockBack.mc.player.getEntityId()) {
                         this.field15900 = 0;
                     }
                 }

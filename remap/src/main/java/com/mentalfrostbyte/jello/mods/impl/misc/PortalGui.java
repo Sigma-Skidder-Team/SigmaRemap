@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTick;
+import mapped.EventPlayerTickI;
 import mapped.EventListener;
 
 public class PortalGui extends Module
@@ -16,7 +16,7 @@ public class PortalGui extends Module
     }
     
     @EventListener
-    private void method10159(final EventPlayerTick eventPlayerTick) {
+    private void method10159(final EventPlayerTickI eventPlayerTick) {
         if (this.isEnabled()) {
             PortalGui.mc.player.inPortal = false;
         }

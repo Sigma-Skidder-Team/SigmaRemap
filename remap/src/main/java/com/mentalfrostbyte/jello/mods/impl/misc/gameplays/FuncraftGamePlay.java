@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.misc.GamePlay;
 import mapped.Class4378;
-import mapped.Class5723;
+import mapped.EventReceivePacket;
 import mapped.EventListener;
 import mapped.IPacket;
 
@@ -26,9 +26,9 @@ public class FuncraftGamePlay extends Module
     }
     
     @EventListener
-    private void method10133(final Class5723 class5723) {
+    private void method10133(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && FuncraftGamePlay.mc.player != null) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4378) {
                 final String string = ((Class4378)method16998).method13164().getString();
                 final String lowerCase = FuncraftGamePlay.mc.player.getName().getFormattedText().toLowerCase();

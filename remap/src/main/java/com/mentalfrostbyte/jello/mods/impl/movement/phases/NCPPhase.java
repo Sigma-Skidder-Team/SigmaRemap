@@ -35,7 +35,7 @@ public class NCPPhase extends PremiumModule
     }
     
     @EventListener
-    private void method10698(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10698(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (NCPPhase.mc.gameSettings.field23440.method1056()) {
                 final double field2395 = NCPPhase.mc.player.posX;
@@ -118,13 +118,13 @@ public class NCPPhase extends PremiumModule
     }
     
     @EventListener
-    private void method10701(final Class5723 class5723) {
+    private void method10701(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (method16998 instanceof Class4328) {
-                final Class4328 class5724 = (Class4328)method16998;
-                class5724.field19380 = NCPPhase.mc.player.rotationYaw;
-                class5724.field19381 = NCPPhase.mc.player.rotationPitch;
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (method16998 instanceof SPlayerPositionLookPacket) {
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
+                class5724.yaw = NCPPhase.mc.player.rotationYaw;
+                class5724.pitch = NCPPhase.mc.player.rotationPitch;
                 this.field16030 = true;
             }
         }

@@ -36,7 +36,7 @@ public class Class7816 extends Class7814
     }
     
     @EventListener
-    private void method25251(final EventPlayerTick eventPlayerTick) {
+    private void method25251(final EventPlayerTickI eventPlayerTick) {
         if (Class7816.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
         }
@@ -72,13 +72,13 @@ public class Class7816 extends Class7814
     }
     
     @EventListener
-    private void method25252(final Class5723 class5723) {
+    private void method25252(final EventReceivePacket eventReceivePacket) {
         if (Class7816.field32015.player != null && this.field32022 != null) {
             if (Class7816.field32015.player.ticksExisted < 10) {
                 this.field32022.clear();
             }
-            if (class5723.method16998() instanceof Class4372) {
-                final Class4372 class5724 = (Class4372)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4372) {
+                final Class4372 class5724 = (Class4372) eventReceivePacket.getPacket();
                 if (!(class5724.getEntity(Class7816.field32015.world) instanceof PlayerEntity)) {
                     return;
                 }

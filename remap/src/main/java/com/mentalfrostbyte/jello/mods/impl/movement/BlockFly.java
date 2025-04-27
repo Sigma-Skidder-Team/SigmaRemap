@@ -8,7 +8,6 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.movement.blockflys.AACBlockFly;
 import com.mentalfrostbyte.jello.mods.impl.movement.blockflys.HypixelBlockFly;
@@ -323,7 +322,7 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     @EventListener
-    public void method10288(final EventPlayerTick eventPlayerTick) {
+    public void method10288(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

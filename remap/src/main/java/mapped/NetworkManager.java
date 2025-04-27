@@ -12,7 +12,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import javax.annotation.Nullable;
 import javax.crypto.SecretKey;
 import java.io.Serializable;
-import io.netty.channel.ChannelHandler;
+
 import io.netty.channel.EventLoopGroup;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -107,7 +107,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
                     }
                     else {
                         NetworkManager.field16890.debug("Failed to sent packet", obj);
-                        this.method11175(new Class4262(class2259), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.method11181(class2259)));
+                        this.method11175(new SDisconnectPacket(class2259), (GenericFutureListener<? extends Future<? super Void>>)(future -> this.method11181(class2259)));
                         this.method11191();
                     }
                 }
@@ -124,13 +124,13 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     
     public void channelRead0(final ChannelHandlerContext channelHandlerContext, final IPacket<?> class4252) throws Exception {
         if (this.field16899.isOpen()) {
-            final Class5723 class4253 = new Class5723(class4252);
+            final EventReceivePacket class4253 = new EventReceivePacket(class4252);
             Client.getInstance().getEventBus().post(class4253);
             if (class4253.isCancelled()) {
                 return;
             }
             try {
-                method11172((IPacket<INetHandler>)class4253.method16998(), this.field16901);
+                method11172((IPacket<INetHandler>)class4253.getPacket(), this.field16901);
             }
             catch (final Class2382 class4254) {}
             ++this.field16905;

@@ -5,7 +5,6 @@
 package com.mentalfrostbyte.jello.mods.impl.movement;
 
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.movement.steps.SpiderStep;
 import com.mentalfrostbyte.jello.mods.impl.movement.steps.AACStep;
@@ -41,7 +40,7 @@ public class Step extends ModuleWithSettings
     
     @EventListener
     @Class6754
-    private void method10298(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10298(final UpdateWalkingEventI updateWalkingEvent) {
         if (updateWalkingEvent.isPre()) {
             ++Step.field15758;
         }

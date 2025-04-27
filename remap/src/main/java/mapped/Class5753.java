@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.VoxelShape;
 
-public class Class5753 extends Class5714
+public class Class5753 extends CancellableEvent2
 {
     private static String[] field23349;
     private BlockPos field23350;

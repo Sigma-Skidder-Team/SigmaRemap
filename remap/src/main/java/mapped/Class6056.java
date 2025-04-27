@@ -12,7 +12,6 @@ import com.google.gson.JsonDeserializationContext;
 import java.util.Arrays;
 import java.util.Iterator;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -181,7 +180,7 @@ public class Class6056
             class8654.writeVarInt(array.length);
             final String[] array2 = array;
             for (int length2 = array2.length, j = 0; j < length2; ++j) {
-                class8654.method29514(array2[j]);
+                class8654.writeString(array2[j]);
             }
         }
     }
@@ -251,7 +250,7 @@ public class Class6056
         for (int i = 0; i < array.length; ++i) {
             array[i] = new String[class8654.readVarInt()];
             for (int j = 0; j < array[i].length; ++j) {
-                array[i][j] = class8654.method29513(32767);
+                array[i][j] = class8654.readString(32767);
             }
         }
         return new Class6056(class8655, class8656, Class9032.field38193, method30842, array);

@@ -53,7 +53,7 @@ public class InvManager extends PremiumModule
     }
     
     @EventListener
-    public void method10666(final EventPlayerTick eventPlayerTick) {
+    public void method10666(final EventPlayerTickI eventPlayerTick) {
         if (!this.field16017.isRunning()) {
             this.field16017.start();
         }

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 
-public class Class5749 extends Class5714
+public class Class5749 extends CancellableEvent2
 {
     private static String[] field23339;
     private final Entity field23340;

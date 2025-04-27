@@ -129,7 +129,7 @@ public class KillAura extends Module
     }
     
     @EventListener
-    public void onTick2(final EventPlayerTick eventPlayerTick) {
+    public void onTick2(final EventPlayerTickI eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -147,7 +147,7 @@ public class KillAura extends Module
     }
     
     @EventListener
-    public void onStopUseItem(final EventStopUseItem eventStopUseItem) {
+    public void onStopUseItem(final EventStopUseItemI eventStopUseItem) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")) {
                 if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem || this.field16055 != KillAura.mc.player.inventory.field2743) {
@@ -165,7 +165,7 @@ public class KillAura extends Module
     
     @EventListener
     @LowestPriority
-    public void onUpdateWalking(final UpdateWalkingEvent updateWalkingEvent) {
+    public void onUpdateWalking(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || KillAura.mc.player == null) {
             return;
         }
@@ -412,7 +412,7 @@ public class KillAura extends Module
         return this.isEnabled() && this.method10750();
     }
     
-    public void method10751(final UpdateWalkingEvent updateWalkingEvent, final boolean b, final boolean b2) {
+    public void method10751(final UpdateWalkingEventI updateWalkingEvent, final boolean b, final boolean b2) {
         double n = b ? 1.0E-14 : 0.0;
         boolean b3 = true;
         Label_0077: {

@@ -105,7 +105,7 @@ public class ViperMCFly extends Module
     }
     
     @EventListener
-    public void method10059(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10059(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15632;
             if (this.field15632 != 2) {
@@ -129,29 +129,29 @@ public class ViperMCFly extends Module
     }
     
     @EventListener
-    public void method10060(final Class5723 class5723) {
+    public void method10060(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            final IPacket method16998 = class5723.method16998();
-            if (!(method16998 instanceof Class4328)) {
+            final IPacket method16998 = eventReceivePacket.getPacket();
+            if (!(method16998 instanceof SPlayerPositionLookPacket)) {
                 if (method16998 instanceof Class4378) {
                     final String method16999 = ((Class4378)method16998).method13164().getFormattedText();
                     if (this.field15633 > 0) {
                         if (method16999.contains("Now leaving: §") || method16999.contains("Now entering: §")) {
                             --this.field15633;
-                            class5723.setCancelled(true);
+                            eventReceivePacket.setCancelled(true);
                         }
                     }
                 }
             }
             else {
-                final Class4328 class5724 = (Class4328)method16998;
+                final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
                 if (this.field15632 >= 1) {
                     this.field15632 = -1;
                 }
                 this.field15635 = this.field15634;
                 this.field15634 = class5724.field19378;
-                class5724.field19380 = ViperMCFly.mc.player.rotationYaw;
-                class5724.field19381 = ViperMCFly.mc.player.rotationPitch;
+                class5724.yaw = ViperMCFly.mc.player.rotationYaw;
+                class5724.pitch = ViperMCFly.mc.player.rotationPitch;
             }
         }
     }

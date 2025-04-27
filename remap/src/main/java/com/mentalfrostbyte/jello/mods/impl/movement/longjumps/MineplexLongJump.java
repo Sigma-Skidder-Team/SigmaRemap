@@ -36,7 +36,7 @@ public class MineplexLongJump extends Module
     }
     
     @EventListener
-    public void method10729(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10729(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled()) {
             if (updateWalkingEvent.isPre()) {
                 if (this.field16042 >= 0) {
@@ -138,9 +138,9 @@ public class MineplexLongJump extends Module
     }
     
     @EventListener
-    public void method10732(final Class5723 class5723) {
+    public void method10732(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled() && MineplexLongJump.mc.player != null) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field16042 = -1;
                 this.field16043 = 0;
             }

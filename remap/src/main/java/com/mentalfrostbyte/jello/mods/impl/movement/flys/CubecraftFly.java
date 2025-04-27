@@ -284,7 +284,7 @@ public class CubecraftFly extends Module {
     }
 
     @EventListener
-    public void method10179(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10179(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !this.field15694) {
             return;
         }
@@ -296,23 +296,23 @@ public class CubecraftFly extends Module {
     }
 
     @EventListener
-    public void method10180(final Class5723 class5723) {
+    public void method10180(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled() || CubecraftFly.mc.world == null || CubecraftFly.mc.method5269() == null) {
             return;
         }
-        final IPacket method16998 = class5723.method16998();
-        if (method16998 instanceof Class4328) {
-            final Class4328 class5724 = (Class4328) method16998;
+        final IPacket method16998 = eventReceivePacket.getPacket();
+        if (method16998 instanceof SPlayerPositionLookPacket) {
+            final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket) method16998;
             if (ViaManager.method34762() != Class7906.field32452.method25613()) {
-                class5724.field19381 = CubecraftFly.mc.player.rotationPitch;
-                class5724.field19380 = CubecraftFly.mc.player.rotationYaw;
+                class5724.pitch = CubecraftFly.mc.player.rotationPitch;
+                class5724.yaw = CubecraftFly.mc.player.rotationYaw;
                 return;
             }
             if (CubecraftFly.field15696 == 0) {
                 this.timer.reset();
                 this.timer.start();
-                class5723.setCancelled(true);
-                CubecraftFly.mc.method5269().method17292(new Class4355(class5724.field19377, class5724.field19378, class5724.field19379, class5724.field19380, class5724.field19381, this.getBooleanValueFromSettingName("Damage")));
+                eventReceivePacket.setCancelled(true);
+                CubecraftFly.mc.method5269().method17292(new Class4355(class5724.field19377, class5724.field19378, class5724.field19379, class5724.yaw, class5724.pitch, this.getBooleanValueFromSettingName("Damage")));
             }
             ++CubecraftFly.field15696;
         }

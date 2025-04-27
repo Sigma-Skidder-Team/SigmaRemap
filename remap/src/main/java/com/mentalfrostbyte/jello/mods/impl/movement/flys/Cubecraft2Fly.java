@@ -127,7 +127,7 @@ public class Cubecraft2Fly extends PremiumModule
     }
     
     @EventListener
-    public void method10695(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10695(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.field16023 == -3) {
             updateWalkingEvent.setCancelled(true);
         }
@@ -146,15 +146,15 @@ public class Cubecraft2Fly extends PremiumModule
     }
     
     @EventListener
-    public void method10696(final Class5723 class5723) {
+    public void method10696(final EventReceivePacket eventReceivePacket) {
         if (!this.isEnabled() && this.field16023 >= 0) {
             return;
         }
-        final IPacket method16998 = class5723.method16998();
-        if (method16998 instanceof Class4328) {
-            final Class4328 class5724 = (Class4328)method16998;
-            class5724.field19380 = Cubecraft2Fly.mc.player.rotationYaw;
-            class5724.field19381 = Cubecraft2Fly.mc.player.rotationPitch;
+        final IPacket method16998 = eventReceivePacket.getPacket();
+        if (method16998 instanceof SPlayerPositionLookPacket) {
+            final SPlayerPositionLookPacket class5724 = (SPlayerPositionLookPacket)method16998;
+            class5724.yaw = Cubecraft2Fly.mc.player.rotationYaw;
+            class5724.pitch = Cubecraft2Fly.mc.player.rotationPitch;
             if (this.field16023 != -3) {
                 this.field16023 = 0;
             }

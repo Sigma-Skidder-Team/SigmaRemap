@@ -115,8 +115,8 @@ public class Class7339
     }
     
     public void method22539(final PacketBuffer class8654) {
-        class8654.method29498(this.field28342);
-        class8654.method29498(this.field28343);
+        class8654.writeTextComponent(this.field28342);
+        class8654.writeTextComponent(this.field28343);
         class8654.method29509(this.field28344);
         class8654.method29500(this.field28346);
         int n = 0;
@@ -138,8 +138,8 @@ public class Class7339
     }
     
     public static Class7339 method22540(final PacketBuffer class8654) {
-        final ITextComponent method29497 = class8654.method29497();
-        final ITextComponent method29498 = class8654.method29497();
+        final ITextComponent method29497 = class8654.readTextComponent();
+        final ITextComponent method29498 = class8654.readTextComponent();
         final ItemStack method29499 = class8654.method29511();
         final Class1993 class8655 = class8654.method29499(Class1993.class);
         class8654.readInt();

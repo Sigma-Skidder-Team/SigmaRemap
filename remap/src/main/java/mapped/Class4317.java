@@ -23,12 +23,12 @@ public class Class4317 implements IPacket<Class5813>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19346 = class8654.method29513(256);
+        this.field19346 = class8654.readString(256);
     }
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(this.field19346);
+        class8654.writeString(this.field19346);
     }
     
     public void method12756(final Class5813 class5813) {

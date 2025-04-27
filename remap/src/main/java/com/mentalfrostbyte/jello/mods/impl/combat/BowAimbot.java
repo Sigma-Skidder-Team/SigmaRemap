@@ -43,7 +43,7 @@ public class BowAimbot extends Module
     }
     
     @EventListener
-    private void method10191(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10191(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (!(BowAimbot.mc.player.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();

@@ -28,7 +28,7 @@ public class Class4344 implements IPacket<Class5813>
         this.field19460 = class8654.method29494();
         this.field19461 = new String[4];
         for (int i = 0; i < 4; ++i) {
-            this.field19461[i] = class8654.method29513(384);
+            this.field19461[i] = class8654.readString(384);
         }
     }
     
@@ -36,7 +36,7 @@ public class Class4344 implements IPacket<Class5813>
     public void writePacketData(final PacketBuffer class8654) throws IOException {
         class8654.method29495(this.field19460);
         for (int i = 0; i < 4; ++i) {
-            class8654.method29514(this.field19461[i]);
+            class8654.writeString(this.field19461[i]);
         }
     }
     

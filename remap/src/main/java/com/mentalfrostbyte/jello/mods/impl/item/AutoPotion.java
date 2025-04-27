@@ -43,7 +43,7 @@ public class AutoPotion extends Module
     
     @EventListener
     @LowestPriority
-    private void method10613(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10613(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
@@ -187,7 +187,7 @@ public class AutoPotion extends Module
         return n;
     }
     
-    public void method10618(final UpdateWalkingEvent updateWalkingEvent, final int n, final int n2) {
+    public void method10618(final UpdateWalkingEventI updateWalkingEvent, final int n, final int n2) {
         final int method10616 = this.method10616(n2);
         if (method10616 != -1) {
             if (method10616 < 36) {

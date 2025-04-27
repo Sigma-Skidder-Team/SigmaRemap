@@ -26,7 +26,7 @@ public class AntiVanish extends Module
     }
     
     @EventListener
-    private void method10512(final UpdateWalkingEvent updateWalkingEvent) {
+    private void method10512(final UpdateWalkingEventI updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
         }
@@ -65,11 +65,11 @@ public class AntiVanish extends Module
     }
     
     @EventListener
-    private void method10513(final Class5723 class5723) {
+    private void method10513(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
             if (AntiVanish.mc.method5269() != null) {
-                if (class5723.method16998() instanceof Class4330) {
-                    final Class4330 class5724 = (Class4330)class5723.method16998();
+                if (eventReceivePacket.getPacket() instanceof Class4330) {
+                    final Class4330 class5724 = (Class4330) eventReceivePacket.getPacket();
                     if (class5724.method13002() == Class2156.field12805) {
                         for (final Class4646 class5725 : class5724.method13001()) {
                             if (AntiVanish.mc.method5269().method17371(class5725.method13869().getId()) != null) {

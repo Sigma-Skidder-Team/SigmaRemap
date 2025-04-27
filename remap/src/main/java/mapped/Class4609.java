@@ -372,7 +372,7 @@ public class Class4609
         return Class4609.field20075.world.rayTraceBlocks(new RayTraceContext(class5487, new Vec3d(Class4609.field20075.player.field4074 + n3 * method27315, Class4609.field20075.player.field4075 + n4 * method27315 + Class4609.field20075.player.method1892(), Class4609.field20075.player.field4076 + n5 * method27315), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, Class4609.field20075.method5303()));
     }
     
-    public static BlockRayTraceResult method13698(float n, float n2, float method27315, final UpdateWalkingEvent updateWalkingEvent) {
+    public static BlockRayTraceResult method13698(float n, float n2, float method27315, final UpdateWalkingEventI updateWalkingEvent) {
         final Vec3d class5745 = new Vec3d(updateWalkingEvent.method17034(), Class4609.field20075.player.method1892() + updateWalkingEvent.method17036(), updateWalkingEvent.method17038());
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);

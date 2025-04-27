@@ -25,10 +25,10 @@ public class NewChunks extends Module
     }
     
     @EventListener
-    private void method10463(final Class5723 class5723) {
+    private void method10463(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4298) {
-                final Class4298 class5724 = (Class4298)class5723.method16998();
+            if (eventReceivePacket.getPacket() instanceof Class4298) {
+                final Class4298 class5724 = (Class4298) eventReceivePacket.getPacket();
                 final ChunkPos e = new ChunkPos(class5724.method12909(), class5724.method12910());
                 if (!class5724.method12912()) {
                     this.field15876.add(e);

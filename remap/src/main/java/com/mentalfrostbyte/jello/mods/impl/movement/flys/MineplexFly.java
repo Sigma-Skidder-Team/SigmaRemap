@@ -53,7 +53,7 @@ public class MineplexFly extends PremiumModule
     }
     
     @EventListener
-    public void method10630(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method10630(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
             updateWalkingEvent.method17033(true);
         }
@@ -186,9 +186,9 @@ public class MineplexFly extends PremiumModule
     }
     
     @EventListener
-    public void method10635(final Class5723 class5723) {
+    public void method10635(final EventReceivePacket eventReceivePacket) {
         if (this.isEnabled()) {
-            if (class5723.method16998() instanceof Class4328) {
+            if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field15999 = true;
                 Client.getInstance().getNotificationManager().send(new Notification("Mineplex fly", "Please try again"));
             }

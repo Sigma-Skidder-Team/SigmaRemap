@@ -58,7 +58,7 @@ public class Class9171
     
     @EventListener
     @Class6754
-    public void method33484(final UpdateWalkingEvent updateWalkingEvent) {
+    public void method33484(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.field38851.method5282() != null && Class9171.field38852) {
             final Class6999 class5745 = new Class6999();
             class5745.field27302 = true;
@@ -72,16 +72,16 @@ public class Class9171
     
     @EventListener
     @Class6754
-    public void method33485(final Class5723 class5723) {
+    public void method33485(final EventReceivePacket eventReceivePacket) {
         if (this.field38851.method5282() != null && Class9171.field38852) {
-            final IPacket method16998 = class5723.method16998();
+            final IPacket method16998 = eventReceivePacket.getPacket();
             if (method16998 instanceof Class4396) {
-                class5723.method16999(new Class4396(Integer.MIN_VALUE + new Random().nextInt(100)));
+                eventReceivePacket.setPacket(new Class4396(Integer.MIN_VALUE + new Random().nextInt(100)));
             }
             if (method16998 instanceof Class4393) {
                 final Class4393 class5724 = (Class4393)method16998;
                 if (class5724.method13209() < 0) {
-                    class5723.method16999(new Class4393(Integer.MAX_VALUE, class5724.method13209(), false));
+                    eventReceivePacket.setPacket(new Class4393(Integer.MAX_VALUE, class5724.method13209(), false));
                 }
             }
         }

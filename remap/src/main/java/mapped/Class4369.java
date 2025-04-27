@@ -95,9 +95,9 @@ public class Class4369 implements IPacket<IClientPlayNetHandler>
     private ArgumentBuilder<Class7491, ?> method13137(final PacketBuffer class8654, final byte b) {
         final int n = b & 0x3;
         if (n != 2) {
-            return (n != 1) ? null : LiteralArgumentBuilder.literal(class8654.method29513(32767));
+            return (n != 1) ? null : LiteralArgumentBuilder.literal(class8654.readString(32767));
         }
-        final String method29513 = class8654.method29513(32767);
+        final String method29513 = class8654.readString(32767);
         final ArgumentType<?> method29514 = Class8381.method27935(class8654);
         if (method29514 != null) {
             final RequiredArgumentBuilder argument = RequiredArgumentBuilder.argument(method29513, (ArgumentType)method29514);
@@ -146,12 +146,12 @@ public class Class4369 implements IPacket<IClientPlayNetHandler>
         }
         if (!(obj instanceof ArgumentCommandNode)) {
             if (obj instanceof LiteralCommandNode) {
-                class8654.method29514(((LiteralCommandNode)obj).getLiteral());
+                class8654.writeString(((LiteralCommandNode)obj).getLiteral());
             }
         }
         else {
             final ArgumentCommandNode argumentCommandNode = (ArgumentCommandNode)obj;
-            class8654.method29514(argumentCommandNode.getName());
+            class8654.writeString(argumentCommandNode.getName());
             Class8381.method27934(class8654, argumentCommandNode.getType());
             if (argumentCommandNode.getCustomSuggestions() != null) {
                 class8654.method29517(Class8533.method28626((SuggestionProvider<Class7491>)argumentCommandNode.getCustomSuggestions()));

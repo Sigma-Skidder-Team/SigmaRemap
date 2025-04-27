@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class EventPlayerTick extends Class5714
+public class EventPlayerTickI extends CancellableEvent2
 {
     private static String[] field23315;
 }
