@@ -16,20 +16,26 @@ import java.nio.file.Files;
 import java.io.File;
 import java.io.InputStream;
 import java.io.IOException;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpEntity;
+
 import java.util.List;
+
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.message.BasicNameValuePair;
+
 import java.util.ArrayList;
+
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
+
 import java.util.UUID;
+
 import org.apache.http.client.HttpClient;
 
-public class NetworkManager
-{
+public class NetworkManager {
     public HttpClient httpClient;
     public CaptchaChecker captcha;
     public Encryptor encryptor;
@@ -42,7 +48,7 @@ public class NetworkManager
     public String token;
     public static boolean premium = false;
     public IRCManager irc;
-    
+
     public NetworkManager() {
         this.mainURL = "https://jelloprg.sigmaclient.info/";
         this.loginUrl = this.mainURL + "/login";
@@ -52,7 +58,7 @@ public class NetworkManager
         this.token = UUID.randomUUID().toString().replaceAll("-", "");
         this.httpClient = HttpClients.createDefault();
     }
-    
+
     public void init() {
         Client.getInstance().getEventBus().registerInstance(this);
         this.irc = new IRCManager();
@@ -97,13 +103,13 @@ public class NetworkManager
                 return response_real;
             }
         } catch (IOException exc) {
-            error = exc .getMessage();
+            error = exc.getMessage();
             exc.printStackTrace();
         }
 
         return error;
     }
-    
+
     public void register(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
         if (s3 == null) {
             s3 = "";
@@ -133,18 +139,17 @@ public class NetworkManager
                     }
                 }
             }
-        }
-        catch (final IOException ex) {
+        } catch (final IOException ex) {
             s4 = ex.getMessage();
             ex.printStackTrace();
         }
     }
-    
+
     public String validate() {
         new Thread(new PremiumChecker(true)).start();
         return "Cracked";
     }
-    
+
     public void loadLicense() {
         if (this.encryptor != null) {
             return;
@@ -158,15 +163,14 @@ public class NetworkManager
                 }
                 if (this.validate() != null) {
                     this.encryptor = null;
-                }
-                else {
+                } else {
                     Client.getLogger2().setThreadName("Logged in!");
                 }
+            } catch (final IOException ex) {
             }
-            catch (final IOException ex) {}
         }
     }
-    
+
     public String redeemPremium(final String s, final CaptchaChecker captchaChecker) {
         String s2 = "Unexpected error";
         try {
@@ -192,14 +196,13 @@ public class NetworkManager
                     return s2;
                 }
             }
-        }
-        catch (final IOException ex) {
+        } catch (final IOException ex) {
             s2 = ex.getMessage();
             ex.printStackTrace();
         }
         return s2;
     }
-    
+
     public CaptchaChecker getChallengeResponse() {
         if (this.captcha != null && this.captcha.isCompleted()) {
             return this.captcha;
@@ -226,13 +229,12 @@ public class NetworkManager
                     return null;
                 }
             }
-        }
-        catch (final IOException ex) {
+        } catch (final IOException ex) {
             ex.printStackTrace();
         }
         return null;
     }
-    
+
     public void parse(final totalcross.json.JSONObject JSONObject) {
         String username = null;
         String authToken = null;
@@ -250,27 +252,26 @@ public class NetworkManager
             try {
                 this.encryptor = new Encryptor(username, authToken, agoraToken);
                 FileUtils.writeByteArrayToFile(new File("jello/jello.lic"), this.encryptor.encrypt());
+            } catch (final IOException ex) {
             }
-            catch (final IOException ex) {}
         }
         if (JSONObject.has("session")) {
             this.setSession(JSONObject.getString("session"));
         }
     }
-    
+
     public void setSession(final String session) {
         if (!session.equals("error")) {
             this.session = session;
-        }
-        else {
+        } else {
             this.session = null;
         }
     }
-    
+
     public Encryptor getEncryptor() {
         return this.encryptor;
     }
-    
+
     public void resetLicense() {
         this.session = null;
         this.encryptor = null;
@@ -280,15 +281,15 @@ public class NetworkManager
             file.delete();
         }
     }
-    
+
     public String getSession() {
         return this.session;
     }
-    
+
     public String getToken() {
         return this.token;
     }
-    
+
     public boolean isPremium() {
         return premium;
     }
