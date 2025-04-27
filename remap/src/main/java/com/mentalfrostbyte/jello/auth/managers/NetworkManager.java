@@ -41,7 +41,7 @@ public class NetworkManager
     public String session;
     public String token;
     public static boolean premium = false;
-    public IRCManager IRCManager;
+    public IRCManager irc;
     
     public NetworkManager() {
         this.mainURL = "https://jelloprg.sigmaclient.info/";
@@ -55,7 +55,7 @@ public class NetworkManager
     
     public void init() {
         Client.getInstance().getEventBus().registerInstance(this);
-        this.IRCManager = new IRCManager(this);
+        this.irc = new IRCManager();
     }
 
     public String login(String var1, String var2, CaptchaChecker var3) {

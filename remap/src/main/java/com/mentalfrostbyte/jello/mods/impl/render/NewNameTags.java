@@ -377,7 +377,7 @@ public class NewNameTags extends Module {
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final PlayerInfo playerInfo = Client.getInstance().getNetworkManager().IRCManager.getPlayerInfo(entity);
+            final PlayerInfo playerInfo = Client.getInstance().getNetworkManager().irc.getPlayerInfo(entity);
             if (playerInfo != null) {
                 RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, playerInfo.username, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
