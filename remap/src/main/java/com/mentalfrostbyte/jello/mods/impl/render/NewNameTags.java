@@ -60,15 +60,6 @@ public class NewNameTags extends Module {
         if (this.isEnabled()) {
             if (!(this.field15784 = this.getBooleanValueFromSettingName("Furnaces"))) {
                 this.field15778.clear();
-            } else {
-                final Iterator<Map.Entry<BlockPos, Class6312>> iterator = this.field15778.entrySet().iterator();
-                while (iterator.hasNext()) {
-                    final Map.Entry<BlockPos, V> entry = (Map.Entry<BlockPos, V>) iterator.next();
-                    if (!(NewNameTags.mc.world.getBlockState(entry.getKey()).method21696() instanceof Class3951)) {
-                        iterator.remove();
-                    }
-                    ((Class6312) entry.getValue()).method18687();
-                }
             }
             this.field15783.clear();
             for (final Entity class5744 : Class4609.method13679(ColorUtils.method19108())) {
@@ -95,12 +86,6 @@ public class NewNameTags extends Module {
     @EventListener
     private void method10330(final Class5721 class5721) {
         if (this.isEnabled()) {
-            if (class5721.method16990() instanceof Class4329) {
-                final Class4329 class5722 = (Class4329) class5721.method16990();
-                if (NewNameTags.mc.world.getBlockState(class5722.method13000().getPos()).method21696() instanceof Class3951) {
-                    this.field15779 = class5722.method13000().getPos();
-                }
-            }
             if (class5721.method16990() instanceof Class4256) {
                 final Class6312 method10332 = this.method10332(((Class4256) class5721.method16990()).method12773());
                 if (method10332 == null) {
@@ -174,12 +159,6 @@ public class NewNameTags extends Module {
     }
 
     private Class6312 method10332(final int n) {
-        for (final Map.Entry<K, Class6312> entry : this.field15778.entrySet()) {
-            if (entry.getValue().field25235 != n) {
-                continue;
-            }
-            return entry.getValue();
-        }
         return null;
     }
 
@@ -196,13 +175,6 @@ public class NewNameTags extends Module {
                 this.method10336(Class8591.method29093(class5740).field38854, Class8591.method29093(class5740).field38855 + class5740.method1931(), Class8591.method29093(class5740).field38856, class5740, n, null);
                 class5740.method1650().set(Entity.CUSTOM_NAME_VISIBLE, false);
             }
-            for (final Map.Entry<BlockPos, V> entry : this.field15778.entrySet()) {
-                float n2 = 1.0f;
-                if (method9883) {
-                    n2 = (float) Math.max(0.800000011920929, Math.sqrt(Class8591.method29092(entry.getKey()) / 30.0));
-                }
-                this.method10335(entry.getKey(), (Class6312) entry.getValue(), n2);
-            }
             if (this.getBooleanValueFromSettingName("Mob Owners")) {
                 for (final Entity class5741 : NewNameTags.mc.world.method6806()) {
                     if (class5741 != NewNameTags.mc.player) {
@@ -217,17 +189,6 @@ public class NewNameTags extends Module {
                     }
                     if (!this.field15785.containsKey(uuid)) {
                         this.field15785.put(uuid, null);
-                        new Thread(() -> {
-                            try {
-                                ColorUtils.method19130(key.toString());
-                                final List list;
-                                if (list != null && !list.isEmpty()) {
-                                    this.field15785.put(key, list.get(list.size() - 1));
-                                }
-                            } catch (final Exception ex) {
-                                ex.printStackTrace();
-                            }
-                        }).start();
                     }
                     if (this.field15785.get(uuid) == null) {
                         continue;
@@ -264,9 +225,6 @@ public class NewNameTags extends Module {
 
     public void method10335(final BlockPos class354, final Class6312 class355, final float n) {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
-        if (class355.field25240 != null) {
-            class355.field25240.field34176 + " " + class355.field25240.method27664();
-        }
         final float n2 = (float) (class354.getX() - NewNameTags.mc.field4644.method5833().method18161().getX() + 0.5);
         final float n3 = (float) (class354.getY() - NewNameTags.mc.field4644.method5833().method18161().getY() + 1.0);
         final float n4 = (float) (class354.getZ() - NewNameTags.mc.field4644.method5833().method18161().getZ() + 0.5);

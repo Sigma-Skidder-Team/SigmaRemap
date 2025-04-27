@@ -99,7 +99,17 @@ public class Class23 extends Class11
     public final Byte method180(final long n) {
         return Class8601.field36113.getByte(this.field34 + n);
     }
-    
+
+    @Override
+    public Object method120(long p0) {
+        return null;
+    }
+
+    @Override
+    public Object method122(long p0) {
+        return null;
+    }
+
     @Override
     public final boolean method123(final long n) {
         if (this.field34 != 0L) {
@@ -181,7 +191,12 @@ public class Class23 extends Class11
         }
         return this.field65[0];
     }
-    
+
+    @Override
+    public Object method139() {
+        return null;
+    }
+
     @Override
     public final boolean[] method141(final boolean[] array, final long n, final long n2, final long n3) {
         if (n >= 0L && n < this.field30) {
@@ -851,7 +866,6 @@ public class Class23 extends Class11
                 for (long n5 = 0L; n5 < this.field30; ++n5) {
                     class24.method159(n5, (byte)(this.method125(n5) & class23.method125(n5)));
                 }
-                goto Label_0264;
             }
             catch (final ExecutionException ex2) {
                 for (long n6 = 0L; n6 < this.field30; ++n6) {
@@ -887,7 +901,6 @@ public class Class23 extends Class11
                 for (long n5 = 0L; n5 < this.field30; ++n5) {
                     class24.method159(n5, (byte)(this.method125(n5) | class23.method125(n5)));
                 }
-                goto Label_0264;
             }
             catch (final ExecutionException ex2) {
                 for (long n6 = 0L; n6 < this.field30; ++n6) {
@@ -923,7 +936,6 @@ public class Class23 extends Class11
                 for (long n5 = 0L; n5 < this.field30; ++n5) {
                     class24.method159(n5, (byte)(this.method125(n5) ^ class23.method125(n5)));
                 }
-                goto Label_0264;
             }
             catch (final ExecutionException ex2) {
                 for (long n6 = 0L; n6 < this.field30; ++n6) {
@@ -956,7 +968,6 @@ public class Class23 extends Class11
                 for (long n5 = 0L; n5 < this.field30; ++n5) {
                     class23.method159(n5, (byte)(1 - this.method125(n5)));
                 }
-                goto Label_0222;
             }
             catch (final ExecutionException ex2) {
                 for (long n6 = 0L; n6 < this.field30; ++n6) {

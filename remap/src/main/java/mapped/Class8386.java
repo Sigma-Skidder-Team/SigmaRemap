@@ -18,26 +18,12 @@ public class Class8386 extends MessageToByteEncoder<IPacket<?>>
 {
     private static final Logger field34377;
     private static final Marker field34378;
-    private final Class2060 field34379;
-    
+
     public Class8386(final Class2060 field34379) {
-        this.field34379 = field34379;
     }
     
     public void encode(final ChannelHandlerContext channelHandlerContext, final IPacket<?> obj, final ByteBuf byteBuf) throws Exception {
-        final Class2208 class2208 = (Class2208)channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get();
-        if (class2208 == null) {
-            throw new RuntimeException("ConnectionProtocol unknown: " + obj);
-        }
-        final Integer method8387 = class2208.method8387(this.field34379, obj);
-        if (Class8386.field34377.isDebugEnabled()) {
-            Class8386.field34377.debug(Class8386.field34378, "OUT: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), method8387, obj.getClass().getName());
-        }
-        if (method8387 == null) {
-            throw new IOException("Can't serialize unregistered packet");
-        }
         final PacketBuffer class2209 = new PacketBuffer(byteBuf);
-        class2209.writeVarInt(method8387);
         try {
             obj.writePacketData(class2209);
             return;
@@ -48,7 +34,6 @@ public class Class8386 extends MessageToByteEncoder<IPacket<?>>
                 throw new Class6577(t);
             }
         }
-        throw
     }
     
     static {

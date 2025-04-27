@@ -4,29 +4,20 @@
 
 package mapped;
 
-public enum Class213 implements Class194
-{
-    field737, 
-    field738("FUZZY", 1) {
-        public Class214(final String s, final int n) {
-        }
-        
-        @Override
-        public int method846(final Class6432<?> class6432, final int n, final int n2, final int n3, final int n4) {
-            return class6432.method19196(n, n2, n3, n4);
-        }
-    };
-    
+public enum Class213 implements Class194 {
+    field737,
+    field738;
+
     @Override
     public int method839(final int n) {
         return n >> 1;
     }
-    
+
     @Override
     public int method840(final int n) {
         return n >> 1;
     }
-    
+
     @Override
     public int method835(final Class6432<?> class6432, final Class6631 class6433, final int n, final int n2) {
         final int method20074 = class6433.method20074(this.method839(n), this.method840(n2));
@@ -48,7 +39,7 @@ public enum Class213 implements Class194
         }
         return this.method846(class6432, method20074, method20077, method20075, class6433.method20074(this.method839(n + 1), this.method840(n2 + 1)));
     }
-    
+
     public int method846(final Class6432<?> class6432, final int n, final int n2, final int n3, final int n4) {
         if (n2 == n3 && n3 == n4) {
             return n2;

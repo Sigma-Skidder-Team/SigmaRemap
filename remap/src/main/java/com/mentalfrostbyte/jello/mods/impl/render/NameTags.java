@@ -31,61 +31,6 @@ public class NameTags extends Module
         if (this.isEnabled()) {
             final int n = 20;
             final int n2 = 32;
-            for (final Map.Entry<PlayerEntity, V> entry : this.field15776.entrySet()) {
-                final PlayerEntity class5735 = entry.getKey();
-                if (!class5735.method1823()) {
-                    final Vec2f class5736 = (Vec2f)entry.getValue();
-                    final String method8459 = class5735.getName().getUnformattedComponentText();
-                    final int n3 = ClassicAssets.field40813.getWidth(method8459) + 8;
-                    final int round = Math.round(class5736.x);
-                    final int round2 = Math.round(class5736.y);
-                    GL11.glPushMatrix();
-                    GL11.glTranslatef((float)(-n3 / 2), (float)(-n), 0.0f);
-                    RenderUtil.method26874((float)round, (float)round2, (float)n3, 20.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                    RenderUtil.drawString(ClassicAssets.field40813, (float)(round + 3), (float)round2, method8459, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                    RenderUtil.drawString(ClassicAssets.field40813, (float)(round + 3), (float)(round2 - 1), method8459, ClientColors.LIGHT_GREYISH_BLUE.color);
-                    GL11.glPopMatrix();
-                    final List<ItemStack> method8460 = InvManagerUtil.method29374(class5735);
-                    if (method8460.size() == 0) {
-                        continue;
-                    }
-                    final int n4 = n2 * method8460.size();
-                    GL11.glPushMatrix();
-                    GL11.glTranslatef((float)(-n4 / 2), (float)(-n - n2 - 2), 0.0f);
-                    for (int i = 0; i < method8460.size(); ++i) {
-                        final ItemStack class5737 = method8460.get(i);
-                        final ListNBT method8461 = class5737.method27662();
-                        final int n5 = round2 - Math.max(0, method8461.size() - 4) * 8 - 2;
-                        for (int j = 0; j < method8461.size(); ++j) {
-                            Registry.field209.method506(ResourceLocation.method7795(method8461.method346(j).getString("id"))).ifPresent(class5739 -> {
-                                class5739.method18599(1).getUnformattedComponentText();
-                                final String s;
-                                "§f" + s.substring(0, Math.min(2, s.length()));
-                                int method8462 = 0;
-                                if (class5738.method315("lvl")) {
-                                    method8462 = class5738.method319("lvl");
-                                }
-                                String str = null;
-                                if (method8462 <= 3) {
-                                    if (method8462 > 2) {
-                                        str = "§6";
-                                    }
-                                }
-                                else {
-                                    str = "§c";
-                                }
-                                final String str2;
-                                str2 + str + method8462;
-                            });
-                        }
-                        final int n6 = class5737.method27631() ? (class5737.method27634() - class5737.method27632()) : class5737.method27634();
-                        if (n6 / (float)class5737.method27634() >= 0.2f) {
-                            if (n6 / (float)class5737.method27634() >= 0.5f) {}
-                        }
-                    }
-                    GL11.glPopMatrix();
-                }
-            }
         }
     }
     

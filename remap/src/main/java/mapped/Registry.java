@@ -171,12 +171,11 @@ public abstract class Registry<T> implements Class89<T>
                 Registry.field202.error("Registry '{}' was empty after loading", Registry.field204.getKey(class91));
                 if (Class9528.field41021) {
                     new IllegalStateException("Registry: '" + Registry.field204.getKey(class91) + "' is empty, not allowed, fix me!");
-                    throw
                 }
             }
             if (class91 instanceof Class93) {
                 ((Class93)class91).method560();
-                final ResourceLocation obj;
+                final ResourceLocation obj = null;
                 Validate.notNull(class91.getOrDefault(obj), "Missing default of DefaultedMappedRegistry: " + obj);
             }
         });

@@ -4,16 +4,13 @@
 
 package mapped;
 
-import java.util.Comparator;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import com.google.common.collect.ImmutableList;
 import java.util.stream.Stream;
 import java.util.function.Consumer;
-import java.util.Map;
-import java.util.List;
 
 public class Class8752
 {
@@ -34,10 +31,10 @@ public class Class8752
     private static final Class6332 field36748;
     private static final Class6332 field36749;
     public static final Class3687 field36750;
-    public static final List<Class3687> field36751;
-    public static final Map<Class8289, Class3687> field36752;
-    public static final Class3687[] field36753;
-    public static final Class3687 field36754;
+    public static final List<Class3687> field36751 = Collections.emptyList();
+    public static final Map<Class8289, Class3687> field36752 = Collections.emptyMap();
+    public static final Class3687[] field36753 = new Class3687[0];
+    public static final Class3687 field36754 = null;
     public static final Class3687 field36755;
     public static final Class3687 field36756;
     public static final Class3687 field36757;
@@ -131,7 +128,7 @@ public class Class8752
     }
     
     private static Class3687 method30271(final Class180 class180, final Class3687 class181, final Class3687 class182, final Class3687 class183) {
-        switch (Class8694.field36538[class180.ordinal()]) {
+        switch (class180.ordinal()) {
             case 1: {
                 return class182;
             }
@@ -162,24 +159,6 @@ public class Class8752
         field36748 = Class6332.method18773(Class1774.field9853);
         field36749 = Class6332.method18771(Class1774.field9853);
         field36750 = new Class3687(Class8752.field36734, new ResourceLocation("entity/shulker/shulker"));
-        field36751 = Stream.of(new String[] { "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" }).map(str -> {
-            new(mapped.Class3687.class)();
-            final ResourceLocation field36764 = Class8752.field36734;
-            new ResourceLocation("entity/shulker/shulker_" + str);
-            final ResourceLocation class1932;
-            new Class3687(field36764, class1932);
-            return;
-        }).collect((Collector<? super Object, Object, List<Class3687>>)ImmutableList.toImmutableList());
-        field36752 = Class8289.method27556().collect(Collectors.toMap(Function.identity(), (Function<? super Class8289, ? extends Class3687>)Class8752::method30268));
-        field36753 = Arrays.stream(Class181.values()).sorted(Comparator.comparingInt(Class181::method813)).map(class1933 -> {
-            new(mapped.Class3687.class)();
-            final ResourceLocation field36765 = Class8752.field36735;
-            new ResourceLocation("entity/bed/" + class1933.method814());
-            final ResourceLocation class1934;
-            new Class3687(field36765, class1934);
-            return;
-        }).toArray(Class3687[]::new);
-        field36754 = method30269("trapped");
         field36755 = method30269("trapped_left");
         field36756 = method30269("trapped_right");
         field36757 = method30269("christmas");

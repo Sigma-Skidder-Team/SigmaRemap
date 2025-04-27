@@ -43,54 +43,35 @@ public class Class7235
         field28047 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap -> {
             enumMap.put(Direction.SOUTH, TransformationMatrix.identity());
             final Direction field28049 = Direction.EAST;
-            new(TransformationMatrix.class)();
             final Vector3f class9138 = null;
             new Quaternion(new Vector3f(0.0f, 1.0f, 0.0f), 90.0f, true);
             final Quaternion class9139;
-            new TransformationMatrix(class9138, class9139, null, null);
             final TransformationMatrix value;
-            enumMap.put(field28049, value);
             final Direction field28050 = Direction.WEST;
-            new(TransformationMatrix.class)();
             final Vector3f class9140 = null;
             new Quaternion(new Vector3f(0.0f, 1.0f, 0.0f), -90.0f, true);
             final Quaternion class9141;
-            new TransformationMatrix(class9140, class9141, null, null);
             final TransformationMatrix value2;
-            enumMap.put(field28050, value2);
             final Direction field28051 = Direction.NORTH;
-            new(TransformationMatrix.class)();
             final Vector3f class9142 = null;
             new Quaternion(new Vector3f(0.0f, 1.0f, 0.0f), 180.0f, true);
             final Quaternion class9143;
-            new TransformationMatrix(class9142, class9143, null, null);
             final TransformationMatrix value3;
-            enumMap.put(field28051, value3);
             final Direction field28052 = Direction.UP;
-            new(TransformationMatrix.class)();
             final Vector3f class9144 = null;
             new Quaternion(new Vector3f(1.0f, 0.0f, 0.0f), -90.0f, true);
             final Quaternion class9145;
-            new TransformationMatrix(class9144, class9145, null, null);
             final TransformationMatrix value4;
-            enumMap.put(field28052, value4);
             final Direction field28053 = Direction.DOWN;
-            new(TransformationMatrix.class)();
             final Vector3f class9146 = null;
             new Quaternion(new Vector3f(1.0f, 0.0f, 0.0f), 90.0f, true);
             final Quaternion class9147;
-            new TransformationMatrix(class9146, class9147, null, null);
             final TransformationMatrix value5;
-            enumMap.put(field28053, value5);
         });
         field28048 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap2 -> {
             Direction.values();
             final Direction[] array;
             int i = 0;
-            for (int length = array.length; i < length; ++i) {
-                final Direction class9148 = array[i];
-                enumMap2.put(class9148, Class7235.field28047.get(class9148).method34324());
-            }
         });
     }
 }

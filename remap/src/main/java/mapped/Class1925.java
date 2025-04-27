@@ -12,7 +12,6 @@ import org.lwjgl.util.tinyfd.TinyFileDialogs;
 import javax.annotation.Nullable;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
-import org.lwjgl.glfw.GLFWImage$Buffer;
 import java.nio.IntBuffer;
 import java.io.IOException;
 import org.lwjgl.stb.STBImage;
@@ -35,7 +34,6 @@ public final class Class1925 implements AutoCloseable
     private final GLFWErrorCallback field10477;
     private final Class870 field10478;
     private final Class8282 field10479;
-    private final long field10480;
     private int field10481;
     private int field10482;
     private int field10483;
@@ -98,16 +96,9 @@ public final class Class1925 implements AutoCloseable
         GLFW.glfwWindowHint(139266, 2);
         GLFW.glfwWindowHint(139267, 0);
         GLFW.glfwWindowHint(139272, 0);
-        if (!Class9570.field41210.method22605()) {
-            this.field10480 = GLFW.glfwCreateWindow(this.field10490, this.field10491, s2, (this.field10486 && method29726 != null) ? method29726.method24213() : 0L, 0L);
-        }
-        else {
-            this.field10480 = Class9570.method35822(Class9570.method35827(Class9570.field41209), Class9570.field41210, () -> this.field10490, () -> this.field10491, () -> s3, () -> (this.field10486 && class9155 != null) ? class9155.method24213() : 0L);
-        }
         if (method29726 == null) {
             final int[] array = { 0 };
             final int[] array2 = { 0 };
-            GLFW.glfwGetWindowPos(this.field10480, array, array2);
             final int n3 = array[0];
             this.field10488 = n3;
             this.field10481 = n3;
@@ -124,14 +115,9 @@ public final class Class1925 implements AutoCloseable
             this.field10489 = n6;
             this.field10482 = n6;
         }
-        GLFW.glfwMakeContextCurrent(this.field10480);
         GL.createCapabilities();
         this.method7684();
         this.method7675();
-        GLFW.glfwSetFramebufferSizeCallback(this.field10480, this::method7674);
-        GLFW.glfwSetWindowPosCallback(this.field10480, this::method7673);
-        GLFW.glfwSetWindowSizeCallback(this.field10480, this::method7676);
-        GLFW.glfwSetWindowFocusCallback(this.field10480, this::method7677);
     }
     
     public int method7662() {
@@ -167,25 +153,16 @@ public final class Class1925 implements AutoCloseable
             final IntBuffer mallocInt = stackPush.mallocInt(1);
             final IntBuffer mallocInt2 = stackPush.mallocInt(1);
             final IntBuffer mallocInt3 = stackPush.mallocInt(1);
-            final GLFWImage$Buffer mallocStack = GLFWImage.mallocStack(2, stackPush);
             final ByteBuffer method7666 = this.method7666(inputStream, mallocInt, mallocInt2, mallocInt3);
             if (method7666 == null) {
                 throw new IllegalStateException("Could not load icon: " + STBImage.stbi_failure_reason());
             }
-            mallocStack.position(0);
-            mallocStack.width(mallocInt.get(0));
-            mallocStack.height(mallocInt2.get(0));
-            mallocStack.pixels(method7666);
+
             final ByteBuffer method7667 = this.method7666(inputStream2, mallocInt, mallocInt2, mallocInt3);
             if (method7667 == null) {
                 throw new IllegalStateException("Could not load icon: " + STBImage.stbi_failure_reason());
             }
-            mallocStack.position(1);
-            mallocStack.width(mallocInt.get(0));
-            mallocStack.height(mallocInt2.get(0));
-            mallocStack.pixels(method7667);
-            mallocStack.position(0);
-            GLFW.glfwSetWindowIcon(this.field10480, mallocStack);
+
             STBImage.stbi_image_free(method7666);
             STBImage.stbi_image_free(method7667);
         }
@@ -228,7 +205,6 @@ public final class Class1925 implements AutoCloseable
         RenderSystem.method29989(RenderSystem::method29990);
         final String string = "GLFW error " + i + ": " + MemoryUtil.memUTF8(n);
         TinyFileDialogs.tinyfd_messageBox("Minecraft", string + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok", "error", false);
-        throw new Class2368(string, (Class9001)null);
     }
     
     public void method7670(final int i, final long n) {
@@ -256,9 +232,7 @@ public final class Class1925 implements AutoCloseable
     public void close() {
         RenderSystem.method29989(RenderSystem::method29984);
         this.field10501 = true;
-        Callbacks.glfwFreeCallbacks(this.field10480);
         this.field10477.close();
-        GLFW.glfwDestroyWindow(this.field10480);
         GLFW.glfwTerminate();
     }
     
@@ -268,41 +242,16 @@ public final class Class1925 implements AutoCloseable
     }
     
     private void method7674(final long n, final int field10492, final int field10493) {
-        if (n == this.field10480) {
-            final int method7692 = this.method7692();
-            final int method7693 = this.method7693();
-            if (field10492 != 0) {
-                if (field10493 != 0) {
-                    this.field10492 = field10492;
-                    this.field10493 = field10493;
-                    if (this.method7692() != method7692 || this.method7693() != method7693) {
-                        this.field10478.method5248();
-                    }
-                }
-            }
-        }
     }
     
     private void method7675() {
         RenderSystem.method29989(RenderSystem::method29990);
         final int[] array = { 0 };
         final int[] array2 = { 0 };
-        GLFW.glfwGetFramebufferSize(this.field10480, array, array2);
         this.field10492 = array[0];
         this.field10493 = array2[0];
     }
-    
-    private void method7676(final long n, final int field10490, final int field10491) {
-        this.field10490 = field10490;
-        this.field10491 = field10491;
-        Client.getInstance().getScreenManager().method32153();
-    }
-    
-    private void method7677(final long n, final boolean b) {
-        if (n == this.field10480) {
-            this.field10478.method5326(b);
-        }
-    }
+
     
     public void method7678(final int field10499) {
         this.field10499 = field10499;
@@ -313,7 +262,6 @@ public final class Class1925 implements AutoCloseable
     }
     
     public void method7680() {
-        RenderSystem.method29992(this.field10480);
         if (this.field10486 != this.field10487) {
             this.field10487 = this.field10486;
             this.method7686(this.field10500);
@@ -344,29 +292,20 @@ public final class Class1925 implements AutoCloseable
     
     private void method7684() {
         RenderSystem.method29989(RenderSystem::method29990);
-        final boolean b = GLFW.glfwGetWindowMonitor(this.field10480) != 0L;
         if (!this.field10486) {
             this.field10488 = this.field10481;
             this.field10489 = this.field10482;
             this.field10490 = this.field10483;
             this.field10491 = this.field10484;
-            GLFW.glfwSetWindowMonitor(this.field10480, 0L, this.field10488, this.field10489, this.field10490, this.field10491, -1);
         }
         else {
             final Class7646 method27521 = this.field10479.method27521(this);
             if (method27521 != null) {
                 final Class8680 method27522 = method27521.method24206(this.field10485);
-                if (!b) {
-                    this.field10481 = this.field10488;
-                    this.field10482 = this.field10489;
-                    this.field10483 = this.field10490;
-                    this.field10484 = this.field10491;
-                }
                 this.field10488 = 0;
                 this.field10489 = 0;
                 this.field10490 = method27522.method29719();
                 this.field10491 = method27522.method29720();
-                GLFW.glfwSetWindowMonitor(this.field10480, method27521.method24213(), this.field10488, this.field10489, this.field10490, this.field10491, method27522.method29724());
             }
             else {
                 Class1925.field10476.warn("Failed to find suitable monitor for fullscreen mode");
@@ -425,11 +364,11 @@ public final class Class1925 implements AutoCloseable
     }
     
     public void method7689(final String s) {
-        GLFW.glfwSetWindowTitle(this.field10480, s);
+
     }
     
     public long getHandle() {
-        return this.field10480;
+        return 0;
     }
     
     public boolean method7691() {
@@ -478,11 +417,11 @@ public final class Class1925 implements AutoCloseable
     }
     
     public void method7702(final boolean b) {
-        Class8341.method27803(this.field10480, b);
+
     }
     
     public void method7703(final int n, final int n2) {
-        this.method7674(this.field10480, n, n2);
+
     }
     
     public boolean method7704() {

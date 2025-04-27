@@ -25,7 +25,7 @@ public interface Class3689
     
     String method11338();
     
-    default void method11346(final Gson gson, final Class8842 class8842, final JsonElement jsonElement, final Path path) throws IOException {
+    static void method11346(final Gson gson, final Class8842 class8842, final JsonElement jsonElement, final Path path) throws IOException {
         final String json = gson.toJson(jsonElement);
         final String string = Class3689.field16998.hashUnencodedChars(json).toString();
         if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path)) {

@@ -5,9 +5,8 @@
 package mapped;
 
 import org.apache.logging.log4j.LogManager;
-import com.mojang.datafixers.util.Pair;
 import com.mojang.datafixers.types.templates.TaggedChoice$TaggedChoiceType;
-import com.mojang.datafixers.OpticFinder;
+
 import java.util.Iterator;
 import java.util.List;
 import it.unimi.dsi.fastutil.ints.IntSet;
@@ -40,7 +39,7 @@ public class Class8166 extends DataFix
         DSL.fieldFinder("TileEntities", fieldType);
         final Type type = this.getInputSchema().getType(Class9451.field40613);
         if (type.findField("Level").type().findField("Sections").type() instanceof List$ListType) {
-            return TypeRewriteRule.seq(new Class8481(this.getOutputSchema(), "AddTrappedChestFix", Class9451.field40621).makeRule(), this.fixTypeEverywhereTyped("Trapped Chest fix", type, typed -> {
+            return TypeRewriteRule.seq(new Class8481(this.getOutputSchema(), "AddTrappedChestFix").makeRule(), this.fixTypeEverywhereTyped("Trapped Chest fix", type, typed -> {
                 final List$ListType list$ListType;
                 DSL.typeFinder(list$ListType.getElement());
                 return typed.updateTyped(opticFinder, typed2 -> {

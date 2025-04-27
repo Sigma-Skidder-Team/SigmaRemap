@@ -8,48 +8,26 @@ import java.util.Iterator;
 
 public enum Class2130
 {
-    field12433("GRANT", 0, "grant") {
-        public Class2132(final String s, final int n, final String s2) {
-        }
-        
+    field12433("") {
         @Override
-        public boolean method8285(final Class513 class513, final Class8863 class514) {
-            final Class348 method21470 = class513.method2957().method21470(class514);
-            if (!method21470.method1031()) {
-                final Iterator<String> iterator = method21470.method1041().iterator();
-                while (iterator.hasNext()) {
-                    class513.method2957().method21464(class514, iterator.next());
-                }
-                return true;
-            }
+        public boolean method8285(Class513 p0, Class8863 p1) {
             return false;
         }
-        
+
         @Override
-        public boolean method8286(final Class513 class513, final Class8863 class514, final String s) {
-            return class513.method2957().method21464(class514, s);
-        }
-    }, 
-    field12434("REVOKE", 1, "revoke") {
-        public Class2131(final String s, final int n, final String s2) {
-        }
-        
-        @Override
-        public boolean method8285(final Class513 class513, final Class8863 class514) {
-            final Class348 method21470 = class513.method2957().method21470(class514);
-            if (method21470.method1032()) {
-                final Iterator<String> iterator = method21470.method1042().iterator();
-                while (iterator.hasNext()) {
-                    class513.method2957().method21465(class514, iterator.next());
-                }
-                return true;
-            }
+        public boolean method8286(Class513 p0, Class8863 p1, String p2) {
             return false;
         }
-        
+    },
+    field12434("") {
         @Override
-        public boolean method8286(final Class513 class513, final Class8863 class514, final String s) {
-            return class513.method2957().method21465(class514, s);
+        public boolean method8285(Class513 p0, Class8863 p1) {
+            return false;
+        }
+
+        @Override
+        public boolean method8286(Class513 p0, Class8863 p1, String p2) {
+            return false;
         }
     };
     
@@ -58,7 +36,7 @@ public enum Class2130
     Class2130(final String str) {
         this.field12435 = "commands.advancement." + str;
     }
-    
+
     public int method8284(final Class513 class513, final Iterable<Class8863> iterable) {
         int n = 0;
         final Iterator<Class8863> iterator = iterable.iterator();

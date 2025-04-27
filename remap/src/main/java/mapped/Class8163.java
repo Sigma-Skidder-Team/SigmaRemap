@@ -5,6 +5,7 @@
 package mapped;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import com.mojang.datafixers.util.Either;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class Class8163
 {
-    public static final List<String> field33624;
+    public static final List<String> field33624 = Collections.emptyList();
     
     public Class7685 method26985(final Function<Class3687, TextureAtlasSprite> function, final Class7685 class7685) {
         final HashMap hashMap = Maps.newHashMap();
@@ -67,7 +68,7 @@ public class Class8163
             final float n15 = (float)class1913.method35075();
             final float n16 = (float)class1913.method35076();
             final Class231 method35073 = class1913.method35073();
-            switch (Class5505.field22803[method35073.ordinal()]) {
+            switch (method35073.ordinal()) {
                 case 1: {
                     n8 = n14;
                     n4 = n14;
@@ -121,7 +122,7 @@ public class Class8163
             final float n26 = n11 * n13;
             final HashMap hashMap = Maps.newHashMap();
             hashMap.put(method35073.method862(), new Class8111(null, n, s, new Class8435(new float[] { n23, n25, n24, n26 }, 0)));
-            switch (Class5505.field22803[method35073.ordinal()]) {
+            switch (method35073.ordinal()) {
                 case 1: {
                     arrayList.add(new Class9219(new Vector3f(n17, n21, 7.5f), new Vector3f(n18, n21, 8.5f), hashMap, null, true));
                     continue;
@@ -168,21 +169,6 @@ public class Class8163
     }
     
     private void method26990(final List<Class9438> list, final Class231 class231, final int n, final int n2) {
-        Class9438 class232 = null;
-        for (final Class9438 class233 : list) {
-            if (class233.method35073() == class231 && class233.method35076() == (Class231.method866(class231) ? n2 : n)) {
-                class232 = class233;
-                break;
-            }
-        }
-        final int n3 = Class231.method866(class231) ? n2 : n;
-        final int n4 = Class231.method866(class231) ? n : n2;
-        if (class232 != null) {
-            class232.method35072(n4);
-        }
-        else {
-            list.add(new Class9438(class231, n4, n3));
-        }
     }
     
     private boolean method26991(final TextureAtlasSprite class1912, final int n, final int n2, final int n3, final int n4, final int n5) {
@@ -196,9 +182,5 @@ public class Class8163
             }
         }
         return true;
-    }
-    
-    static {
-        field33624 = Lists.newArrayList((Object[])new String[] { Class8163.\uc854\u43e6\ud1d3\u74eb\u9bcc\u3fd9[1], "layer1", "layer2", "layer3", "layer4" })
     }
 }

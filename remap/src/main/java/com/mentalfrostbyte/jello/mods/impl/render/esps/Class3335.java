@@ -80,7 +80,6 @@ public class Class3335 extends Module
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
                             RenderSystem.pushMatrix();
                             RenderSystem.method30063(2.0f, 2.0f, 2.0f);
-                            (int) Class6029.method17958(method9885 * 5.0f, 1.0) + "HP";
                             RenderSystem.popMatrix();
                         }
                     }

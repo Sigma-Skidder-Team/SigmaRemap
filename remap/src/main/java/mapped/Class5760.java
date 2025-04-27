@@ -35,10 +35,10 @@ import org.apache.logging.log4j.Logger;
 
 public class Class5760
 {
-    private static final Logger field23377;
-    private static final Gson field23378;
-    private static final Type field23379;
-    private static final Splitter field23380;
+    private static final Logger field23377 = null;
+    private static final Gson field23378 = null;
+    private static final Type field23379 = null;
+    private static final Splitter field23380 = null;
     public double field23381;
     public int field23382;
     public int field23383;
@@ -218,9 +218,9 @@ public class Class5760
     public static final int field23557 = 2;
     public static final String field23558 = "Default";
     public static final double field23559 = 4.0571431;
-    private static final int[] field23560;
-    private static final int[] field23561;
-    private static final String[] field23562;
+    private static final int[] field23560 = null;
+    private static final int[] field23561 = null;
+    private static final String[] field23562 = null;
     public Class350 field23563;
     private final File field23564;
     
@@ -237,7 +237,7 @@ public class Class5760
         this.field23390 = 1.0;
         this.field23391 = 0.5;
         this.field23395 = true;
-        this.field23396 = Sets.newHashSet((Object[])Class189.values());
+        this.field23396 = Sets.newHashSet();
         this.field23397 = Class2226.field13698;
         this.field23400 = true;
         this.field23401 = 1.0;
@@ -422,8 +422,6 @@ public class Class5760
                 reader.lines().forEach(s2 -> {
                     try {
                         Class5760.field23380.split(s2).iterator();
-                        final Iterator iterator2;
-                        class55.method306(iterator2.next(), iterator2.next());
                     }
                     catch (final Exception ex3) {
                         Class5760.field23377.warn("Skipping bad option: {}", s2);
@@ -744,7 +742,7 @@ public class Class5760
             printWriter.println("fancyGraphics:" + this.field23385);
             printWriter.println("ao:" + this.field23386.method8039());
             printWriter.println("biomeBlendRadius:" + this.field23410);
-            switch (Class8555.field35933[this.field23384.ordinal()]) {
+            switch (this.field23384.ordinal()) {
                 case 1: {
                     printWriter.println("renderClouds:true");
                     break;
@@ -2288,15 +2286,5 @@ public class Class5760
             }
         }
         class1920.method7608(linkedHashSet);
-    }
-    
-    static {
-        field23377 = LogManager.getLogger();
-        field23378 = new Gson();
-        field23379 = new Class8361();
-        field23380 = Splitter.on(':').limit(2);
-        field23560 = new int[] { 0, 1, 4, 2 };
-        field23561 = new int[] { 3, 1, 2 };
-        field23562 = new String[] { Class5760.\u4407\u74eb\uc854\u772f\u6c62\u309d[218], "options.graphics.fast", "options.graphics.fancy" }
     }
 }

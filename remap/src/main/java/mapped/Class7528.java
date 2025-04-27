@@ -180,18 +180,6 @@ public class Class7528
     public static Class9319[] method23555(final Properties properties, final Class5601[] array) {
         final String prefix = "profile.";
         final ArrayList list = new ArrayList();
-        for (final String key : properties.keySet()) {
-            if (!key.startsWith(prefix)) {
-                continue;
-            }
-            final String substring = key.substring(prefix.length());
-            properties.getProperty(key);
-            final Class9319 method23559 = method23559(substring, properties, new HashSet<String>(), array);
-            if (method23559 == null) {
-                continue;
-            }
-            list.add(method23559);
-        }
         if (list.size() > 0) {
             return (Class9319[])list.toArray(new Class9319[list.size()]);
         }
@@ -201,20 +189,6 @@ public class Class7528
     public static Map<String, Class326> method23556(final Properties properties, final Class5601[] array) {
         final Pattern compile = Pattern.compile("program\\.([^.]+)\\.enabled");
         final HashMap hashMap = new HashMap();
-        for (final String str : properties.keySet()) {
-            final Matcher matcher = compile.matcher(str);
-            if (!matcher.matches()) {
-                continue;
-            }
-            final String group = matcher.group(1);
-            final Class326 method23557 = method23557(properties.getProperty(str).trim(), array);
-            if (method23557 != null) {
-                hashMap.put(group, method23557);
-            }
-            else {
-                Class8885.method31270("Error parsing program condition: " + str);
-            }
-        }
         return hashMap;
     }
     
@@ -222,7 +196,7 @@ public class Class7528
         try {
             return new Class7186(new Class5105(array)).method22031(s);
         }
-        catch (final Class2327 class2327) {
+        catch (final Exception class2327) {
             Class8885.method31271(class2327.getClass().getName() + ": " + class2327.getMessage());
             return null;
         }
@@ -415,13 +389,6 @@ public class Class7528
                 if (offset >= 0) {
                     if (set.size() > 0) {
                         final StringBuilder sb = new StringBuilder();
-                        for (final Class8573 class7039 : set) {
-                            sb.append("#define ");
-                            sb.append(class7039.method29024());
-                            sb.append(" ");
-                            sb.append(class7039.method29025());
-                            sb.append("\n");
-                        }
                         final String string = sb.toString();
                         final StringBuilder sb2 = new StringBuilder(new String(array));
                         sb2.insert(offset, string);
@@ -512,38 +479,8 @@ public class Class7528
     public static Class6891 method23565(final Properties properties) {
         final String s = "uniform";
         final String anObject = "variable";
-        s + ".";
-        anObject + ".";
         final HashMap hashMap = new HashMap();
         final ArrayList list = new ArrayList();
-        for (final String key : properties.keySet()) {
-            final String[] method28937 = Config.method28937(key, ".");
-            if (method28937.length != 3) {
-                continue;
-            }
-            final String str = method28937[0];
-            final String s2 = method28937[1];
-            final String s3 = method28937[2];
-            final String trim = properties.getProperty(key).trim();
-            if (!hashMap.containsKey(s3)) {
-                if (!str.equals(s) && !str.equals(anObject)) {
-                    continue;
-                }
-                Class8885.method31272("Custom " + str + ": " + s3);
-                final Class8541 method28938 = method23566(str, s3, s2, trim, hashMap);
-                if (method28938 == null) {
-                    continue;
-                }
-                hashMap.put(s3, method28938.method28654());
-                if (str.equals(anObject)) {
-                    continue;
-                }
-                list.add(method28938);
-            }
-            else {
-                Class8885.method31271("Expression already defined: " + s3);
-            }
-        }
         if (list.size() > 0) {
             return new Class6891((Class8541[])list.toArray(new Class8541[list.size()]), hashMap);
         }
@@ -564,11 +501,10 @@ public class Class7528
                 return null;
             }
             return new Class8541(str2, method8250, method23567(method8251));
+        } catch (Exception e) {
+
         }
-        catch (final Class2327 class2327) {
-            Class8885.method31271(class2327.getClass().getName() + ": " + class2327.getMessage());
-            return null;
-        }
+        return null;
     }
     
     private static Class327 method23567(final Class327 class327) {
@@ -579,28 +515,7 @@ public class Class7528
     }
     
     public static void method23568(final Properties properties) {
-        for (final String key : properties.keySet()) {
-            final String[] method28937 = Config.method28937(key, ".");
-            if (method28937.length != 2) {
-                continue;
-            }
-            final String s = method28937[0];
-            final String str = method28937[1];
-            if (!s.equals("alphaTest")) {
-                continue;
-            }
-            final Class9023 method28938 = Class9216.method33900(str);
-            if (method28938 != null) {
-                final Class6684 method28939 = method23569(properties.getProperty(key).trim());
-                if (method28939 == null) {
-                    continue;
-                }
-                method28938.method32347(method28939);
-            }
-            else {
-                Class8885.method31270("Invalid program name: " + str);
-            }
-        }
+
     }
     
     private static Class6684 method23569(final String str) {
@@ -629,28 +544,7 @@ public class Class7528
     }
     
     public static void method23570(final Properties properties) {
-        for (final String key : properties.keySet()) {
-            final String[] method28937 = Config.method28937(key, ".");
-            if (method28937.length != 2) {
-                continue;
-            }
-            final String s = method28937[0];
-            final String str = method28937[1];
-            if (!s.equals("blend")) {
-                continue;
-            }
-            final Class9023 method28938 = Class9216.method33900(str);
-            if (method28938 != null) {
-                final Class9075 method28939 = method23571(properties.getProperty(key).trim());
-                if (method28939 == null) {
-                    continue;
-                }
-                method28938.method32348(method28939);
-            }
-            else {
-                Class8885.method31270("Invalid program name: " + str);
-            }
-        }
+
     }
     
     private static Class9075 method23571(final String str) {
@@ -691,28 +585,7 @@ public class Class7528
     }
     
     public static void method23572(final Properties properties) {
-        for (final String key : properties.keySet()) {
-            final String[] method28937 = Config.method28937(key, ".");
-            if (method28937.length != 2) {
-                continue;
-            }
-            final String s = method28937[0];
-            final String str = method28937[1];
-            if (!s.equals("scale")) {
-                continue;
-            }
-            final Class9023 method28938 = Class9216.method33900(str);
-            if (method28938 != null) {
-                final Class9529 method28939 = method23573(properties.getProperty(key).trim());
-                if (method28939 == null) {
-                    continue;
-                }
-                method28938.method32349(method28939);
-            }
-            else {
-                Class8885.method31270("Invalid program name: " + str);
-            }
-        }
+
     }
     
     private static Class9529 method23573(final String s) {
@@ -740,39 +613,7 @@ public class Class7528
     }
     
     public static void method23574(final Properties properties) {
-        for (final String key : properties.keySet()) {
-            final String[] method28937 = Config.method28937(key, ".");
-            if (method28937.length != 3) {
-                continue;
-            }
-            final String s = method28937[0];
-            final String str = method28937[1];
-            final String str2 = method28937[2];
-            if (!s.equals("flip")) {
-                continue;
-            }
-            final Class9023 method28938 = Class9216.method33900(str);
-            if (method28938 != null) {
-                final Boolean[] method28939 = method28938.method32339();
-                final int method28940 = Class9216.method33783(str2);
-                if (method28940 >= 0 && method28940 < method28939.length) {
-                    final String trim = properties.getProperty(key).trim();
-                    final Boolean method28941 = Config.method28936(trim, null);
-                    if (method28941 != null) {
-                        method28939[method28940] = method28941;
-                    }
-                    else {
-                        Class8885.method31270("Invalid boolean value: " + trim);
-                    }
-                }
-                else {
-                    Class8885.method31270("Invalid buffer name: " + str2);
-                }
-            }
-            else {
-                Class8885.method31270("Invalid program name: " + str);
-            }
-        }
+
     }
     
     private static Map<String, Integer> method23575() {

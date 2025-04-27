@@ -38,7 +38,7 @@ public class Class7093 extends Class7094
     }
     
     static {
-        field27604 = new String[] { "default", "fast", "fancy", Class7093.\u9e69\uc10a\u3b79\u387d\uca70\u0c32[1] }
+        field27604 = new String[] { "default", "fast", "fancy" };
         field27605 = new String[] { "Default", "Fast", "Fancy", "OFF" };
     }
 }

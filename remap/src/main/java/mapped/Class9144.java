@@ -15,7 +15,6 @@ import java.util.List;
 
 public class Class9144
 {
-    private final Class7860 field38729;
     private static final ThreadLocal<Class7533> field38730;
     private static float field38731;
     private static boolean field38732;
@@ -27,7 +26,6 @@ public class Class9144
         for (final Class8754 class1862 : list) {
             this.method33361(class1856, class1857, class1858, class1862.method30291(), class1862.method30294(), array, set);
             class1861.method35062(class1856, class1857, class1858, class1862.method30294(), array, set);
-            this.method33351(class1856, class1857, class1858, class1860, class1859.getLast(), class1862, Class9436.method35065(class1861)[0], Class9436.method35065(class1861)[1], Class9436.method35065(class1861)[2], Class9436.method35065(class1861)[3], Class9436.method35066(class1861)[0], Class9436.method35066(class1861)[1], Class9436.method35066(class1861)[2], Class9436.method35066(class1861)[3], n);
         }
     }
     
@@ -39,12 +37,6 @@ public class Class9144
             n10 = 1.0f;
             n11 = 1.0f;
             n12 = 1.0f;
-        }
-        else {
-            final int method25441 = this.field38729.method25441(class1857, class1856, class1858, class1861.method30293());
-            n10 = (method25441 >> 16 & 0xFF) / 255.0f;
-            n11 = (method25441 >> 8 & 0xFF) / 255.0f;
-            n12 = (method25441 & 0xFF) / 255.0f;
         }
         class1859.method12443(class1860, class1861, new float[] { n, n2, n3, n4 }, n10, n11, n12, new int[] { n5, n6, n7, n8 }, n9, true);
     }
@@ -166,26 +158,13 @@ public class Class9144
     }
     
     private void method33360(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final Class4150 class1859, final Class8996 class1860, final Class8754 class1861, final float n, final float n2, final float n3, final float n4, final int n5, final int n6, final int n7, final int n8, final int n9, final Class9145 class1862) {
-        final int method30336 = Class8763.method30336(class1861, class1857, class1856, class1858, class1862);
         float n10;
         float n11;
         float n12;
-        if (!class1861.method30292() && method30336 == -1) {
+        if (!class1861.method30292()) {
             n10 = 1.0f;
             n11 = 1.0f;
             n12 = 1.0f;
-        }
-        else {
-            final int n13 = (method30336 == -1) ? this.field38729.method25441(class1857, class1856, class1858, class1861.method30293()) : method30336;
-            n10 = (n13 >> 16 & 0xFF) / 255.0f;
-            n11 = (n13 >> 8 & 0xFF) / 255.0f;
-            n12 = (n13 & 0xFF) / 255.0f;
-        }
-        if (class1861.method30299()) {
-            final float method30337 = Class6225.method18523(class1861.method30294());
-            n10 *= method30337;
-            n11 *= method30337;
-            n12 *= method30337;
         }
         class1859.method12443(class1860, class1861, class1859.method12421(n, n2, n3, n4), n10, n11, n12, class1859.method12422(n5, n6, n7, n8), n9, true);
     }

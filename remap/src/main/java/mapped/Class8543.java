@@ -57,7 +57,6 @@ public class Class8543
         RenderSystem.method29989(RenderSystem::method29990);
         Class1925.method7664((n, s) -> {
             new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", n, s));
-            throw
         });
         final ArrayList arrayList = Lists.newArrayList();
         final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback((i, l) -> arrayList.add(String.format("GLFW error during init: [0x%X]%s", i, l)));

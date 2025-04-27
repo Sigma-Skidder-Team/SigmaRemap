@@ -24,13 +24,6 @@ public class Class8098
     public void method26600(final String s) {
         if (this.field33334.updateAndGet(class7062 -> {
             Class7061 class7063 = null;
-            if (class7062 != null && s2.equals(class7062.field27473)) {
-                class7063 = class7062;
-            }
-            else {
-                new(mapped.Class7061.class)();
-                new Class7061(s2, RateLimiter.create(this.field33333));
-            }
             return class7063;
         }).field27474.tryAcquire(1)) {
             NarratorChatListener.field32404.method25555(Class285.field1573, new StringTextComponent(s));

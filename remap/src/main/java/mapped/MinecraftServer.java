@@ -421,7 +421,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             try {
                 class1849.method6879(null, b2, class1849.field10092 && !b3);
             }
-            catch (final Class2337 class1850) {
+            catch (final Exception class1850) {
                 MinecraftServer.field2292.warn(class1850.getMessage());
             }
             b4 = true;
@@ -586,7 +586,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
                 this.method1468();
             }
         }
-        throw
     }
     
     private boolean method1457() {
@@ -723,7 +722,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         this.field2300.method15300("levels");
         for (final Class1849 class1849 : this.method1482()) {
             if (class1849.dimension.getType() == DimensionType.field2223 || this.method1471()) {
-                this.field2300.method15298(() -> class1850.method6764().method29549() + " " + Registry.field226.getKey(class1850.field10063.method20487()));
                 if (this.field2312 % 20 == 0) {
                     this.field2300.startSection("timeSync");
                     this.field2309.method20587(new Class4345(class1849.method6754(), class1849.method6755(), class1849.method6765().method31216(Class8878.field37324)), class1849.dimension.getType());
@@ -774,7 +772,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         final OptionSpecBuilder accepts6 = optionParser.accepts("eraseCache");
         final AbstractOptionSpec forHelp = optionParser.accepts("help").forHelp();
         final ArgumentAcceptingOptionSpec withRequiredArg = optionParser.accepts("singleplayer").withRequiredArg();
-        final ArgumentAcceptingOptionSpec defaultsTo = optionParser.accepts("universe").withRequiredArg().defaultsTo((Object)".", (Object[])new String[0]);
+        final ArgumentAcceptingOptionSpec defaultsTo = optionParser.accepts("universe").withRequiredArg().defaultsTo(".");
         final ArgumentAcceptingOptionSpec withRequiredArg2 = optionParser.accepts("world").withRequiredArg();
         final ArgumentAcceptingOptionSpec defaultsTo2 = optionParser.accepts("port").withRequiredArg().ofType((Class)Integer.class).defaultsTo(-1, new Integer[0]);
         final ArgumentAcceptingOptionSpec withRequiredArg3 = optionParser.accepts("serverId").withRequiredArg();
@@ -805,7 +803,7 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             final YggdrasilAuthenticationService yggdrasilAuthenticationService = new YggdrasilAuthenticationService(Proxy.NO_PROXY, UUID.randomUUID().toString());
             final MinecraftSessionService minecraftSessionService = yggdrasilAuthenticationService.createMinecraftSessionService();
             final GameProfileRepository profileRepository = yggdrasilAuthenticationService.createProfileRepository();
-            final Class395 class7796 = new Class395(new File(s), class7794, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, new Class8608(profileRepository, new File(s, MinecraftServer.field2293.getName())), Class6460::new, Optional.ofNullable(parse.valueOf(withRequiredArg2)).orElse(class7794.method25121().field39779));
+            final Class395 class7796 = new Class395(new File(s), class7794, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, new Class8608(profileRepository, new File(s, MinecraftServer.field2293.getName())), (Class6906) Class6460::new, (String) Optional.ofNullable(parse.valueOf(withRequiredArg2)).orElse(class7794.method25121().field39779));
             class7796.method1499((String)parse.valueOf(withRequiredArg));
             class7796.method1497((int)parse.valueOf(defaultsTo2));
             class7796.method1510(parse.has(accepts3));
@@ -907,20 +905,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         class7689.method24417().addDetail("Data Packs", () -> {
             final StringBuilder sb = new StringBuilder();
             this.field2348.method7611().iterator();
-            final Iterator iterator;
-            while (iterator.hasNext()) {
-                final Class1921 class7690 = iterator.next();
-                if (sb.length() > 0) {
-                    sb.append(", ");
-                }
-                sb.append(class7690.method7621());
-                if (class7690.method7619().method8043()) {
-                    continue;
-                }
-                else {
-                    sb.append(" (incompatible)");
-                }
-            }
             return sb.toString();
         });
         if (this.field2366 != null) {
@@ -1305,7 +1289,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         }
         this.field2348.method7608(arrayList);
         final ArrayList arrayList2 = Lists.newArrayList();
-        this.field2348.method7611().forEach(class8663 -> list.add(class8663.method7620()));
         final CompletableFuture<Class315> method19928 = this.field2347.method19928(this.field2365, this, arrayList2, MinecraftServer.field2294);
         this.method5384(method19928::isDone);
         try {
@@ -1316,12 +1299,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
         }
         class8660.method29609().clear();
         class8660.method29608().clear();
-        this.field2348.method7611().forEach(class8665 -> class8664.method29609().add(class8665.method7621()));
-        this.field2348.method7609().forEach(class8667 -> {
-            if (!this.field2348.method7611().contains(class8667)) {
-                class8666.method29608().add(class8667.method7621());
-            }
-        });
     }
     
     public void method1570(final Class7492 class7492) {
@@ -1329,12 +1306,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
             final Class6765 method1537 = class7492.method23255().method1537();
             final Class8010 method1538 = method1537.method20601();
             if (method1538.method26203()) {
-                for (final Class513 class7493 : Lists.newArrayList((Iterable)method1537.method20623())) {
-                    if (method1538.method26226(class7493.method2844())) {
-                        continue;
-                    }
-                    class7493.field3039.method17463(new Class2259("multiplayer.disconnect.not_whitelisted"));
-                }
             }
         }
     }
@@ -1445,12 +1416,6 @@ public abstract class MinecraftServer extends Class871<Class1634> implements Cla
     
     public void method1593(final Path path) throws IOException {
         final Path resolve = path.resolve("levels");
-        for (final Map.Entry<DimensionType, V> entry : this.field2308.entrySet()) {
-            final ResourceLocation method1276 = DimensionType.method1276(entry.getKey());
-            final Path resolve2 = resolve.resolve(method1276.method7798()).resolve(method1276.method7797());
-            Files.createDirectories(resolve2, new FileAttribute[0]);
-            ((Class1849)entry.getValue()).method6930(resolve2);
-        }
         this.method1596(path.resolve("gamerules.txt"));
         this.method1597(path.resolve("classpath.txt"));
         this.method1595(path.resolve("example_crash.txt"));

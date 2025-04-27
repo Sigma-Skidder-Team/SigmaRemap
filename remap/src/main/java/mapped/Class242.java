@@ -6,143 +6,88 @@ package mapped;
 
 public enum Class242
 {
-    field1190("ALL", 0) {
-        public Class248(final String s, final int n) {
-        }
-        
+    field1190 {
         @Override
-        public boolean method894(final Item class3820) {
-            for (final Class242 class3821 : Class242.values()) {
-                if (class3821 != Class242.field1190 && class3821.method894(class3820)) {
-                    return true;
-                }
-            }
+        public boolean method894(Item p0) {
             return false;
         }
-    }, 
-    field1191("ARMOR", 1) {
-        public Class256(final String s, final int n) {
-        }
-        
+    },
+    field1191 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4055;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1192("ARMOR_FEET", 2) {
-        public Class246(final String s, final int n) {
-        }
-        
+    },
+    field1192 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13602;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1193("ARMOR_LEGS", 3) {
-        public Class245(final String s, final int n) {
-        }
-        
+    },
+    field1193 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13603;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1194("ARMOR_CHEST", 4) {
-        public Class250(final String s, final int n) {
-        }
-        
+    },
+    field1194 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13604;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1195("ARMOR_HEAD", 5) {
-        public Class253(final String s, final int n) {
-        }
-        
+    },
+    field1195 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4055 && ((Class4055)class3820).method12257() == Class2215.field13605;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1196("WEAPON", 6) {
-        public Class251(final String s, final int n) {
-        }
-        
+    },
+    field1196 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof SwordItem;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1197("DIGGER", 7) {
-        public Class244(final String s, final int n) {
-        }
-        
+    },
+    field1197 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4072;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1198("FISHING_ROD", 8) {
-        public Class254(final String s, final int n) {
-        }
-        
+    },
+    field1198 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4047;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1199("TRIDENT", 9) {
-        public Class252(final String s, final int n) {
-        }
-        
+    },
+    field1199 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4102;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1200("BREAKABLE", 10) {
-        public Class247(final String s, final int n) {
-        }
-        
+    },
+    field1200 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820.method11710();
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1201("BOW", 11) {
-        public Class249(final String s, final int n) {
-        }
-        
+    },
+    field1201 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4087;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1202("WEARABLE", 12) {
-        public Class243(final String s, final int n) {
-        }
-        
+    },
+    field1202 {
         @Override
-        public boolean method894(final Item class3820) {
-            final Block method11776 = Block.method11776(class3820);
-            if (!(class3820 instanceof Class4055)) {
-                if (!(class3820 instanceof Class4080)) {
-                    if (!(method11776 instanceof Class3932)) {
-                        return method11776 instanceof Class3901;
-                    }
-                }
-            }
-            return true;
+        public boolean method894(Item p0) {
+            return false;
         }
-    }, 
-    field1203("CROSSBOW", 13) {
-        public Class255(final String s, final int n) {
-        }
-        
+    },
+    field1203 {
         @Override
-        public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4086;
+        public boolean method894(Item p0) {
+            return false;
         }
     };
     

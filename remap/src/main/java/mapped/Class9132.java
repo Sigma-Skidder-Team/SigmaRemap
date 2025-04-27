@@ -66,7 +66,6 @@ public class Class9132
                     if (++n2 > 10) {
                         break;
                     }
-                    goto Label_0352;
                 }
                 catch (final IOException ex2) {
                     ex2.printStackTrace();

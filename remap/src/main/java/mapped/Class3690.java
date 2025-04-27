@@ -40,35 +40,6 @@ public class Class3690 implements Class3689
     @Override
     public void method11337(final Class8842 class8842) {
         this.field17001.method22099();
-        final HashMap hashMap = Maps.newHashMap();
-        this.field17002.forEach(pair -> ((Supplier)pair.getFirst()).get().accept((obj, class8844) -> {
-            if (map.put(obj, class8844.method14903((Class8212)pair2.getSecond()).method14906()) != null) {
-                new IllegalStateException("Duplicate loot table " + obj);
-                throw
-            }
-        }));
-        final Class7790 class8843 = new Class7790(Class7104.field27718, p0 -> null, hashMap::get);
-        final UnmodifiableIterator iterator = Sets.difference((Set)Class9020.method32317(), hashMap.keySet()).iterator();
-        while (iterator.hasNext()) {
-            class8843.method25014("Missing built-in table: " + iterator.next());
-        }
-        hashMap.forEach((class8847, class8848) -> Class1782.method6403(class8846, class8847, class8848));
-        final Multimap<String, String> method25020 = class8843.method25020();
-        if (method25020.isEmpty()) {
-            hashMap.forEach((class8850, class8851) -> {
-                method11347(path, class8850);
-                try {
-                    final Path path2;
-                    Class3689.method11346(Class3690.field17000, class8849, Class1782.method6404(class8851), path2);
-                }
-                catch (final IOException ex2) {
-                    final Path path2;
-                    Class3690.field16999.error("Couldn't save loot table {}", path2, ex2);
-                }
-            });
-            return;
-        }
-        method25020.forEach((str, str2) -> Class3690.field16999.warn("Found validation problem in " + str + ": " + str2));
         throw new IllegalStateException("Failed to validate loot tables, see logs");
     }
     

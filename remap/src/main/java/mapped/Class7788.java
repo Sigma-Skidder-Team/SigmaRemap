@@ -104,7 +104,7 @@ public class Class7788
             Class9053.method32560(this.field31875);
         }
         this.field31875.findAmbiguities((commandNode, commandNode2, commandNode3, collection) -> Class7788.field31874.warn("Ambiguity between arguments {} and {} with inputs: {}", this.field31875.getPath(commandNode2), this.field31875.getPath(commandNode3), collection));
-        this.field31875.setConsumer((commandContext, b, n) -> commandContext.getSource().method23260(commandContext, b, n));
+        this.field31875.setConsumer((commandContext, aasd, n) -> commandContext.getSource().method23260(commandContext, aasd, n));
     }
     
     public int method24998(final Class7492 class7492, final String str) {
@@ -113,67 +113,7 @@ public class Class7788
             stringReader.skip();
         }
         class7492.method23255().method1590().startSection(str);
-        try {
-            return this.field31875.execute(stringReader, (Object)class7492);
-        }
-        catch (final Class2379 class7493) {
-            class7492.method23259(class7493.method9506());
-            return 0;
-        }
-        catch (final CommandSyntaxException ex) {
-            class7492.method23259(Class9479.method35300(ex.getRawMessage()));
-            if (ex.getInput() != null && ex.getCursor() >= 0) {
-                final int min = Math.min(ex.getInput().length(), ex.getCursor());
-                final ITextComponent method8467 = new StringTextComponent("").applyTextStyle(TextFormatting.GRAY).applyTextStyle(class7496 -> class7496.method30419(new Class9485(Class2075.field11974, s2)));
-                if (min > 10) {
-                    method8467.appendText("...");
-                }
-                method8467.appendText(ex.getInput().substring(Math.max(0, min - 10), min));
-                if (min < ex.getInput().length()) {
-                    method8467.appendSibling(new StringTextComponent(ex.getInput().substring(min)).applyTextStyles(TextFormatting.RED, TextFormatting.UNDERLINE));
-                }
-                method8467.appendSibling(new Class2259("command.context.here").applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC));
-                class7492.method23259(method8467);
-            }
-            return 0;
-            final Exception ex2;
-            Class7788.field31874.error("Command exception: {}", str, ex2);
-            final StackTraceElement[] stackTrace = ex2.getStackTrace();
-            int n = 0;
-            while (true) {
-                iftrue(Label_0499:)(n >= Math.min(stackTrace.length, 3));
-                Block_15: {
-                    break Block_15;
-                    {
-                        class7492.method23259(new Class2259("command.failed").applyTextStyle(class7498 -> class7498.method30420(new HoverEvent(HoverEvent.Action.field10697, class7497))));
-                    }
-                    iftrue(Label_0585:)(!Class9528.field41021);
-                    class7492.method23259(new StringTextComponent(Util.method27860(ex2)));
-                    Class7788.field31874.error("'" + str + "' threw an exception", ex2);
-                    return 0;
-                }
-                final ITextComponent class7494;
-                class7494.appendText("\n\n").appendText(stackTrace[n].getMethodName()).appendText("\n ").appendText(stackTrace[n].getFileName()).appendText(":").appendText(String.valueOf(stackTrace[n].getLineNumber()));
-                ++n;
-                continue;
-            }
-            {
-                return 0;
-            }
-            String s = ex2.getMessage();
-            Label_0371: {
-                break Label_0371;
-                s = ex2.getClass().getName();
-            }
-            new StringTextComponent(s);
-            final ITextComponent class7495;
-            final ITextComponent class7494 = class7495;
-            iftrue(Label_0499:)(!Class7788.field31874.isDebugEnabled());
-        }
-        catch (final Exception ex3) {}
-        finally {
-            class7492.method23255().method1590().endSection();
-        }
+        return 0;
     }
     
     public void method24999(final Class513 class513) {
@@ -223,13 +163,7 @@ public class Class7788
     
     public static Predicate<String> method25003(final Class9351 class9351) {
         return s -> {
-            try {
-                class9352.method34666(new StringReader(s));
-                return true;
-            }
-            catch (final CommandSyntaxException ex) {
-                return false;
-            }
+            return true;
         };
     }
     

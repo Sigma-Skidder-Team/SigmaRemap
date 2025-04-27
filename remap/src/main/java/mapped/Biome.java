@@ -67,44 +67,6 @@ public abstract class Biome
             class29.defaultReturnValue(Float.NaN);
             return class29;
         }));
-        if (Class8927.method31473(obj) != null) {
-            if (Class8927.method31474(obj) != null) {
-                if (Class8927.method31475(obj) != null) {
-                    if (Class8927.method31476(obj) != null) {
-                        if (Class8927.method31477(obj) != null) {
-                            if (Class8927.method31478(obj) != null) {
-                                if (Class8927.method31479(obj) != null) {
-                                    if (Class8927.method31480(obj) != null) {
-                                        if (Class8927.method31481(obj) != null) {
-                                            this.field15452 = Class8927.method31473(obj);
-                                            this.field15454 = Class8927.method31474(obj);
-                                            this.field15453 = Class8927.method31475(obj);
-                                            this.field15444 = Class8927.method31476(obj);
-                                            this.field15445 = Class8927.method31477(obj);
-                                            this.field15446 = Class8927.method31478(obj);
-                                            this.field15447 = Class8927.method31479(obj);
-                                            this.field15448 = Class8927.method31480(obj);
-                                            this.field15449 = Class8927.method31481(obj);
-                                            this.field15450 = this.method9837();
-                                            this.field15451 = Class8927.method31482(obj);
-                                            final Class2108[] values = Class2108.values();
-                                            for (int length = values.length, i = 0; i < length; ++i) {
-                                                this.field15456.put(values[i], Lists.newArrayList());
-                                            }
-                                            final Class1976[] values2 = Class1976.values();
-                                            for (int length2 = values2.length, j = 0; j < length2; ++j) {
-                                                this.field15459.put(values2[j], Lists.newArrayList());
-                                            }
-                                            return;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
         throw new IllegalStateException("You are missing parameters to build a proper biome for " + this.getClass().getSimpleName() + "\n" + obj);
     }
     
@@ -172,29 +134,7 @@ public abstract class Biome
             if (class1853.getY() >= 0) {
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
-                        final Class7096 method6701 = class1852.getBlockState(class1853);
-                        if (class1852.getFluidState(class1853).getFluid() == Class7558.field29976) {
-                            if (method6701.method21696() instanceof Class3859) {
-                                if (!b) {
-                                    return true;
-                                }
-                                boolean b2 = false;
-                                Label_0185: {
-                                    if (class1852.method6967(class1853.method1145())) {
-                                        if (class1852.method6967(class1853.method1147())) {
-                                            if (class1852.method6967(class1853.method1141())) {
-                                                if (class1852.method6967(class1853.method1143())) {
-                                                    b2 = true;
-                                                    break Label_0185;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    b2 = false;
-                                }
-                                return !b2;
-                            }
-                        }
+
                     }
                 }
             }
@@ -264,7 +204,6 @@ public abstract class Biome
             }
             catch (final Exception ex) {
                 final CrashReport method24421 = CrashReport.makeCrashReport(ex, "Feature placement");
-                method24421.makeCategory("Feature").addDetail("Id", Registry.field215.getKey(class2113.field35804)).addDetail("Description", () -> class2114.field35804.toString());
                 throw new ReportedException(method24421);
             }
             ++n2;
@@ -277,11 +216,6 @@ public abstract class Biome
     
     public int method9859() {
         return Class8861.method31025(MathHelper.clamp(this.method9867(), 0.0f, 1.0f), MathHelper.clamp(this.method9863(), 0.0f, 1.0f));
-    }
-    
-    public void method9860(final Random random, final IChunk class1860, final int n, final int n2, final int n3, final double n4, final Class7096 class1861, final Class7096 class1862, final int n5, final long n6) {
-        this.field15452.method27603(n6);
-        this.field15452.method27602(random, class1860, this, n, n2, n3, n4, class1861, class1862, n5, n6);
     }
     
     public Class2081 method9861() {

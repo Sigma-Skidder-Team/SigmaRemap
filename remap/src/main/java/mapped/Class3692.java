@@ -38,18 +38,6 @@ public class Class3692 implements Class3689
         final Path method22099 = this.field17007.method22099();
         this.method11358(class8844 -> {
             Sets.newHashSet();
-            if (set.add(class8844.method17155())) {
-                this.method11356(class8843, class8844.method17154(), path.resolve("data/" + class8844.method17155().method7798() + "/recipes/" + class8844.method17155().method7797() + ".json"));
-                class8844.method17157();
-                final JsonObject jsonObject;
-                if (jsonObject != null) {
-                    this.method11357(class8843, jsonObject, path.resolve("data/" + class8844.method17155().method7798() + "/advancements/" + class8844.method17158().method7797() + ".json"));
-                }
-            }
-            else {
-                new IllegalStateException("Duplicate recipe " + class8844.method17155());
-                throw
-            }
         });
         this.method11357(class8842, Class6056.method18001().method18009("impossible", new Class4242()).method18015(), method22099.resolve("data/minecraft/advancements/recipes/root.json"));
     }

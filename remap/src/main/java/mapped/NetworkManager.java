@@ -45,10 +45,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     private static final Logger field16890;
     public static final Marker field16891;
     public static final Marker field16892;
-    public static final AttributeKey<Class2208> field16893;
-    public static final Class8656<NioEventLoopGroup> field16894;
-    public static final Class8656<EpollEventLoopGroup> field16895;
-    public static final Class8656<DefaultEventLoopGroup> field16896;
+    public static final AttributeKey<?> field16893;
+    public static final Class8656<NioEventLoopGroup> field16894 = null;
+    public static final Class8656<EpollEventLoopGroup> field16895 = null;
+    public static final Class8656<DefaultEventLoopGroup> field16896 = null;
     private final Class2060 field16897;
     private final Queue<Class8043> field16898;
     private Channel field16899;
@@ -74,19 +74,6 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
         super.channelActive(channelHandlerContext);
         this.field16899 = channelHandlerContext.channel();
         this.field16900 = this.field16899.remoteAddress();
-        try {
-            this.method11171(Class2208.field13454);
-            this.field16911 = new ViaManager(this.field16899);
-        }
-        catch (final Throwable t) {
-            NetworkManager.field16890.fatal(t);
-        }
-    }
-    
-    public void method11171(final Class2208 class2208) {
-        this.field16899.attr((AttributeKey) NetworkManager.field16893).set(class2208);
-        this.field16899.config().setAutoRead(true);
-        NetworkManager.field16890.debug("Enabled auto read");
     }
     
     public void channelInactive(final ChannelHandlerContext channelHandlerContext) throws Exception {
@@ -178,47 +165,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     }
     
     private void method11177(final IPacket<?> class4252, final GenericFutureListener<? extends Future<? super Void>> genericFutureListener) {
-        final Class2208 method8391 = Class2208.method8391(class4252);
-        final Class2208 class4253 = (Class2208)this.field16899.attr((AttributeKey) NetworkManager.field16893).get();
         ++this.field16906;
-        if (class4253 != method8391) {
-            NetworkManager.field16890.debug("Disabled auto read");
-            this.field16899.config().setAutoRead(false);
-        }
-        if (!this.field16899.eventLoop().inEventLoop()) {
-            this.field16899.eventLoop().execute(() -> {
-                if (class4254 != class4255) {
-                    this.method11171(class4254);
-                }
-                this.field16899.writeAndFlush((Object)class4256);
-                final ChannelFuture channelFuture;
-                if (genericFutureListener2 != null) {
-                    channelFuture.addListener(genericFutureListener2);
-                }
-                channelFuture.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
-            });
-        }
-        else {
-            if (method8391 != class4253) {
-                this.method11171(method8391);
-            }
-            final ChannelFuture writeAndFlush = this.field16899.writeAndFlush(class4252);
-            if (genericFutureListener != null) {
-                writeAndFlush.addListener(genericFutureListener);
-            }
-            writeAndFlush.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
-        }
     }
     
     private void method11178() {
-        if (this.field16899 != null && this.field16899.isOpen()) {
-            synchronized (this.field16898) {
-                Class8043 class8043;
-                while ((class8043 = this.field16898.poll()) != null) {
-                    this.method11177(Class8043.method26385(class8043), (GenericFutureListener<? extends Future<? super Void>>)Class8043.method26386(class8043));
-                }
-            }
-        }
     }
     
     public void method11179() {
@@ -371,17 +321,5 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
         field16891 = MarkerManager.getMarker("NETWORK");
         field16892 = MarkerManager.getMarker("NETWORK_PACKETS", NetworkManager.field16891);
         field16893 = AttributeKey.valueOf("protocol");
-        field16894 = new Class8656<NioEventLoopGroup>(() -> {
-            new NioEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Client IO #%d").setDaemon(true).build());
-            return;
-        });
-        field16895 = new Class8656<EpollEventLoopGroup>(() -> {
-            new EpollEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Epoll Client IO #%d").setDaemon(true).build());
-            return;
-        });
-        field16896 = new Class8656<DefaultEventLoopGroup>(() -> {
-            new DefaultEventLoopGroup(0, new ThreadFactoryBuilder().setNameFormat("Netty Local Client IO #%d").setDaemon(true).build());
-            return;
-        });
     }
 }
