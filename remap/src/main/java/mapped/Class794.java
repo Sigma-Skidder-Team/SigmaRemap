@@ -144,7 +144,7 @@ public abstract class Class794 extends Class789
     
     public void method4487(final PlayerEntity playerEntity) {
         this.method4481(true);
-        this.method4486(playerEntity.method1865());
+        this.method4486(playerEntity.getUniqueID());
         if (playerEntity instanceof Class513) {
             Class7770.field31798.method13773((Class513) playerEntity, this);
         }

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import io.socket.parser.Packet;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -19,10 +20,10 @@ public class Class5255
     private static final String field22285 = "num";
     private static final Logger field22286;
     
-    public static Class7845 method16358(final Class9041 field32127) {
+    public static Class7845 method16358(final Packet field32127) {
         final ArrayList list = new ArrayList();
-        field32127.field38266 = method16359(field32127.field38266, list);
-        field32127.field38267 = list.size();
+        field32127.data = method16359(field32127.data, list);
+        field32127.attachments = list.size();
         final Class7845 class7845 = new Class7845();
         class7845.field32127 = field32127;
         class7845.field32128 = (byte[][])list.toArray(new byte[list.size()][]);
@@ -79,10 +80,10 @@ public class Class5255
         return o;
     }
     
-    public static Class9041 method16360(final Class9041 class9041, final byte[][] array) {
-        class9041.field38266 = method16361(class9041.field38266, array);
-        class9041.field38267 = -1;
-        return class9041;
+    public static Packet method16360(final Packet packet, final byte[][] array) {
+        packet.data = method16361(packet.data, array);
+        packet.attachments = -1;
+        return packet;
     }
     
     private static Object method16361(final Object o, final byte[][] array) {

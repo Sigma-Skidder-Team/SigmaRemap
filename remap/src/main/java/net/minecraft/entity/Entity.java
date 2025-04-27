@@ -1242,7 +1242,7 @@ public abstract class Entity implements INameable, ICommandSource {
             class51.putInt("Dimension", this.dimension.method1270());
             class51.putBoolean("Invulnerable", this.invulnerable);
             class51.putInt("PortalCooldown", this.timeUntilPortal);
-            class51.putUniqueId("UUID", this.method1865());
+            class51.putUniqueId("UUID", this.getUniqueID());
             final ITextComponent method1936 = this.getCustomName();
             if (method1936 != null) {
                 class51.putString("CustomName", Class5953.method17869(method1936));
@@ -2066,7 +2066,7 @@ public abstract class Entity implements INameable, ICommandSource {
         this.cachedUniqueIdString = this.entityUniqueID.toString();
     }
 
-    public UUID method1865() {
+    public UUID getUniqueID() {
         return this.entityUniqueID;
     }
 

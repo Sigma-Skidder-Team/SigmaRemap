@@ -4,9 +4,10 @@
 
 package mapped;
 
+import io.socket.emitter.Emitter;
 import totalcross.json.JSONObject;
 
-public class Class4660 implements Class4659
+public class Class4660 implements Emitter.Listener
 {
     public final /* synthetic */ IRCManager field20166;
     
@@ -15,7 +16,7 @@ public class Class4660 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         final JSONObject JSONObject = (JSONObject)array[0];
         if (JSONObject.has("messageId")) {
             final JSONObject class4406 = new JSONObject();

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class4248
+public interface Handle
 {
-    void method12753();
+    void destroy();
 }

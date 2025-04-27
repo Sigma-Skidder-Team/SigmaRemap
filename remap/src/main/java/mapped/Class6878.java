@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.HashSet;
 import java.util.Collection;
@@ -38,7 +37,7 @@ public class Class6878 extends Class6879
     @Override
     public void method21049(final Class513 class513) {
         super.method21049(class513);
-        this.field26948.add(class513.method1865());
+        this.field26948.add(class513.getUniqueID());
     }
     
     public void method21050(final UUID uuid) {
@@ -48,7 +47,7 @@ public class Class6878 extends Class6879
     @Override
     public void method21051(final Class513 class513) {
         super.method21051(class513);
-        this.field26948.remove(class513.method1865());
+        this.field26948.remove(class513.getUniqueID());
     }
     
     @Override
@@ -92,7 +91,7 @@ public class Class6878 extends Class6879
             int n = 0;
             final Iterator<Class513> iterator2 = collection.iterator();
             while (iterator2.hasNext()) {
-                if (!iterator2.next().method1865().equals(obj)) {
+                if (!iterator2.next().getUniqueID().equals(obj)) {
                     continue;
                 }
                 n = 1;
@@ -107,7 +106,7 @@ public class Class6878 extends Class6879
             int n2 = 0;
             final Iterator<UUID> iterator4 = this.field26948.iterator();
             while (iterator4.hasNext()) {
-                if (!class513.method1865().equals(iterator4.next())) {
+                if (!class513.getUniqueID().equals(iterator4.next())) {
                     continue;
                 }
                 n2 = 1;
@@ -120,7 +119,7 @@ public class Class6878 extends Class6879
         }
         for (final UUID obj2 : hashSet) {
             for (final Class513 class514 : this.method21074()) {
-                if (!class514.method1865().equals(obj2)) {
+                if (!class514.getUniqueID().equals(obj2)) {
                     continue;
                 }
                 this.method21051(class514);
@@ -173,7 +172,7 @@ public class Class6878 extends Class6879
     }
     
     public void method21061(final Class513 class513) {
-        if (this.field26948.contains(class513.method1865())) {
+        if (this.field26948.contains(class513.getUniqueID())) {
             this.method21049(class513);
         }
     }

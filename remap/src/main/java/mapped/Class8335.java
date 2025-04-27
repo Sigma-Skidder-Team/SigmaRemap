@@ -76,7 +76,7 @@ public class Class8335
                         for (int i = 0; i < 2; ++i) {
                             this.method27775(class355, 4);
                         }
-                        this.field34223.method6764().method29616(class355.method1865());
+                        this.field34223.method6764().method29616(class355.getUniqueID());
                         class355.method4841(48000);
                         class355.method4844(class354);
                         class355.method4198(class354, 16);

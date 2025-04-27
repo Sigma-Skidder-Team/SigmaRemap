@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 import java.util.TimerTask;
 
 public class Class1620 extends TimerTask
@@ -19,6 +21,6 @@ public class Class1620 extends TimerTask
     
     @Override
     public void run() {
-        Class934.method5435(new Class1368(this));
+        EventThread.exec(new Class1368(this));
     }
 }

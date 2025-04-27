@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.List;
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -323,7 +322,7 @@ public abstract class Class759 extends LivingEntity
                 }
             }
             else {
-                class58.putUniqueId("UUID", this.field4127.method1865());
+                class58.putUniqueId("UUID", this.field4127.getUniqueID());
             }
             class51.put("Leash", class58);
         }

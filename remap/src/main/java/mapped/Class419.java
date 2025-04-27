@@ -189,6 +189,6 @@ public abstract class Class419 extends Entity
     
     @Override
     public IPacket<?> method1932() {
-        return new Class4339(this.getEntityId(), this.method1865(), this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationPitch, this.rotationYaw, this.getType(), (this.field2527 != null) ? this.field2527.getEntityId() : 0, new Vec3d(this.field2530, this.field2531, this.field2532));
+        return new Class4339(this.getEntityId(), this.getUniqueID(), this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationPitch, this.rotationYaw, this.getType(), (this.field2527 != null) ? this.field2527.getEntityId() : 0, new Vec3d(this.field2530, this.field2531, this.field2532));
     }
 }

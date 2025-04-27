@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Socket;
+import io.socket.parser.Packet;
 import totalcross.json.JSONArray;
 
 import java.util.logging.Level;
@@ -22,17 +24,17 @@ public class Class1109 implements Runnable
     public void run() {
         if (!this.field5986.field32319[0]) {
             this.field5986.field32319[0] = true;
-            if (Class4960.method14969().isLoggable(Level.FINE)) {
-                Class4960.method14969().fine(String.format("sending ack %s", (this.field5985.length == 0) ? null : this.field5985));
+            if (Socket.method14969().isLoggable(Level.FINE)) {
+                Socket.method14969().fine(String.format("sending ack %s", (this.field5985.length == 0) ? null : this.field5985));
             }
             final JSONArray JSONArray = new JSONArray();
             final Object[] field5985 = this.field5985;
             for (int length = field5985.length, i = 0; i < length; ++i) {
                 JSONArray.put(field5985[i]);
             }
-            final Class9041 class89 = new Class9041(3, JSONArray);
-            class89.field38264 = this.field5986.field32320;
-            Class4960.method14972(this.field5986.field32321, class89);
+            final Packet class89 = new Packet(3, JSONArray);
+            class89.id = this.field5986.field32320;
+            Socket.method14972(this.field5986.field32321, class89);
         }
     }
 }

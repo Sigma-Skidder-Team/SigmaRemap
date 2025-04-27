@@ -10,9 +10,9 @@ public final class Class7367 implements ThreadFactory
 {
     @Override
     public Thread newThread(final Runnable runnable) {
-        Class934.method5437(new Class934(runnable));
-        Class934.method5438().setName("EventThread");
-        Class934.method5438().setDaemon(Thread.currentThread().isDaemon());
-        return Class934.method5438();
+        EventThread.method5437(new EventThread(runnable));
+        EventThread.method5438().setName("EventThread");
+        EventThread.method5438().setDaemon(Thread.currentThread().isDaemon());
+        return EventThread.method5438();
     }
 }

@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class4678 implements Class4659
+import io.socket.client.Manager;
+import io.socket.emitter.Emitter;
+
+public class Class4678 implements Emitter.Listener
 {
     private static String[] field20215;
     public final /* synthetic */ Manager field20216;
@@ -14,7 +17,7 @@ public class Class4678 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         Manager.method15086(this.field20216);
     }
 }

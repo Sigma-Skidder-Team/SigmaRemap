@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4690 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4690 implements Emitter.Listener
 {
     public final /* synthetic */ int[] field20245;
     public final /* synthetic */ Runnable field20246;
@@ -17,7 +19,7 @@ public class Class4690 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         Class4965.method15024().fine("pre-pause polling complete");
         final int[] field20245 = this.field20245;
         final int n = 0;

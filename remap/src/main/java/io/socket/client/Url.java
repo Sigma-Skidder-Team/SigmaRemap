@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package io.socket.client;
 
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
@@ -10,29 +10,29 @@ import java.net.URI;
 import java.net.URL;
 import java.util.regex.Pattern;
 
-public class Class9471
+public class Url
 {
     private static Pattern field40727;
     private static Pattern field40728;
     
-    private Class9471() {
+    private Url() {
     }
     
     public static URL method35253(final String str) throws URISyntaxException {
-        return method35254(new URI(str));
+        return parse(new URI(str));
     }
     
-    public static URL method35254(final URI uri) {
+    public static URL parse(final URI uri) {
         String scheme = uri.getScheme();
         if (scheme == null || !scheme.matches("^https?|wss?$")) {
             scheme = "https";
         }
         int port = uri.getPort();
         if (port == -1) {
-            if (Class9471.field40727.matcher(scheme).matches()) {
+            if (Url.field40727.matcher(scheme).matches()) {
                 port = 80;
             }
-            else if (Class9471.field40728.matcher(scheme).matches()) {
+            else if (Url.field40728.matcher(scheme).matches()) {
                 port = 443;
             }
         }
@@ -59,8 +59,8 @@ public class Class9471
         final String protocol = url.getProtocol();
         int port = url.getPort();
         if (port == -1) {
-            if (!Class9471.field40727.matcher(protocol).matches()) {
-                if (Class9471.field40728.matcher(protocol).matches()) {
+            if (!Url.field40727.matcher(protocol).matches()) {
+                if (Url.field40728.matcher(protocol).matches()) {
                     port = 443;
                 }
             }
@@ -72,7 +72,7 @@ public class Class9471
     }
     
     static {
-        Class9471.field40727 = Pattern.compile("^http|ws$");
-        Class9471.field40728 = Pattern.compile("^(http|ws)s$");
+        Url.field40727 = Pattern.compile("^http|ws$");
+        Url.field40728 = Pattern.compile("^(http|ws)s$");
     }
 }

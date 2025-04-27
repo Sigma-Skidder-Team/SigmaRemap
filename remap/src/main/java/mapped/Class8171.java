@@ -4,14 +4,16 @@
 
 package mapped;
 
+import io.socket.parser.Packet;
+
 import java.util.logging.Logger;
 
 public final class Class8171 implements Class8170
 {
     private static final Logger field33662;
     
-    private static Class9041<String> method27012() {
-        return new Class9041<String>(4, "parser error");
+    private static Packet<String> method27012() {
+        return new Packet<String>(4, "parser error");
     }
     
     private Class8171() {

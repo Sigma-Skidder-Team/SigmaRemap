@@ -664,7 +664,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     }
     
     public boolean method4751(final PlayerEntity playerEntity) {
-        this.method4717(playerEntity.method1865());
+        this.method4717(playerEntity.getUniqueID());
         this.method4719(true);
         if (playerEntity instanceof Class513) {
             Class7770.field31798.method13773((Class513) playerEntity, this);

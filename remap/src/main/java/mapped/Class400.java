@@ -138,7 +138,7 @@ public class Class400 extends Entity implements Class401
     public void method1761(final CompoundNBT class51) {
         if (this.field2466 != null) {
             final CompoundNBT class52 = new CompoundNBT();
-            class52.putUniqueId("OwnerUUID", this.field2466.method1865());
+            class52.putUniqueId("OwnerUUID", this.field2466.getUniqueID());
             class51.put("Owner", class52);
         }
     }
@@ -148,7 +148,7 @@ public class Class400 extends Entity implements Class401
             if (this.field2467.hasUniqueId("OwnerUUID")) {
                 final UUID method301 = this.field2467.getUniqueId("OwnerUUID");
                 for (final Class815 field2466 : this.world.method7128((Class<? extends Class815>)Class815.class, this.getBoundingBox().intersect(15.0))) {
-                    if (!field2466.method1865().equals(method301)) {
+                    if (!field2466.getUniqueID().equals(method301)) {
                         continue;
                     }
                     this.field2466 = field2466;

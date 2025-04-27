@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class4675 implements Class4659
+import io.socket.client.Manager;
+import io.socket.emitter.Emitter;
+
+public class Class4675 implements Emitter.Listener
 {
     private static String[] field20208;
     public final /* synthetic */ Manager field20209;
@@ -14,7 +17,7 @@ public class Class4675 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         final Object o = array[0];
         if (!(o instanceof String)) {
             if (o instanceof byte[]) {

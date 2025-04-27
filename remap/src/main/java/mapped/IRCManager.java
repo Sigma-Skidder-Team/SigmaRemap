@@ -6,7 +6,7 @@ package mapped;
 
 import java.io.IOException;
 
-import com.kaleyra.socket_io.client.IO;
+import io.socket.client.IO;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.auth.NetworkManager;
 import com.mojang.authlib.exceptions.AuthenticationException;
@@ -24,6 +24,7 @@ import java.net.URISyntaxException;
 import java.util.Iterator;
 
 import com.google.gson.JsonArray;
+import io.socket.client.Socket;
 import net.minecraft.entity.Entity;
 
 import java.util.ArrayList;
@@ -36,9 +37,9 @@ import java.util.List;
 
 public class IRCManager {
     private final Minecraft mc = Minecraft.getInstance();
-    private final List<UUID> field38985 = new ArrayList<UUID>();
-    private final HashMap<UUID, Class6538> field38986 = new HashMap<UUID, Class6538>();
-    private Class4960 field38989;
+    private final List<UUID> field38985 = new ArrayList<>();
+    private final HashMap<UUID, Class6538> field38986 = new HashMap<>();
+    private Socket socket;
     public Class9194 field38990;
 
     public IRCManager(final NetworkManager field38988) {
@@ -55,11 +56,11 @@ public class IRCManager {
     }
 
     public boolean method33656(final Entity class399) {
-        return class399 != null && this.field38986.containsKey(class399.method1865());
+        return class399 != null && this.field38986.containsKey(class399.getUniqueID());
     }
 
-    public Class6538 method33657(final Entity class399) {
-        return this.field38986.get(class399.method1865());
+    public Class6538 method33657(final Entity entity) {
+        return this.field38986.get(entity.getUniqueID());
     }
 
     @EventListener
@@ -72,7 +73,7 @@ public class IRCManager {
         final Iterator<Class754> iterator = method6840.iterator();
         while (iterator.hasNext()) {
             final Class754 class5744 = iterator.next();
-            if (!this.field38985.contains(class5744.method1865())) {
+            if (!this.field38985.contains(class5744.getUniqueID())) {
                 if (!Client.getInstance().getBotManager().method31751(class5744)) {
                     if (!class5744.getName().getUnformattedComponentText().equals("")) {
                         continue;
@@ -88,11 +89,11 @@ public class IRCManager {
             while (iterator2.hasNext() && n++ < 70) {
                 final Entity class5745 = iterator2.next();
                 jsonArray.add(class5745.getName().getUnformattedComponentText());
-                this.field38985.add(class5745.method1865());
+                this.field38985.add(class5745.getUniqueID());
             }
-            if (this.field38989 != null) {
-                if (this.field38989.method14958()) {
-                    this.field38989.method14942("fetch", jsonArray);
+            if (this.socket != null) {
+                if (this.socket.method14958()) {
+                    this.socket.emit("fetch", jsonArray);
                 }
             }
         }
@@ -119,8 +120,8 @@ public class IRCManager {
         final JSONObject JSONObject = new JSONObject();
         JSONObject.put("target", s);
         JSONObject.put("message", s2);
-        if (this.field38989 != null) {
-            this.field38989.method14942("message", JSONObject);
+        if (this.socket != null) {
+            this.socket.emit("message", JSONObject);
         }
     }
 
@@ -130,12 +131,12 @@ public class IRCManager {
             final SLoginSuccessPacket class5724 = (SLoginSuccessPacket) event.getPacket();
             Client.getLogger2().info("Connecting...");
             try {
-                this.field38989 = IO.method20037("http://localhost:3000");
+                this.socket = IO.socket("http://localhost:3000");
             } catch (final URISyntaxException ex) {
                 ex.printStackTrace();
             }
-            this.field38989.method14976("connect", new Class4663(this)).method14976("login-successful", new Class4679(this)).method14976("jello-user", new Class4686(this)).method14976("chat-message", new Class4660(this)).method14976("disconnect", new Class4687(this));
-            this.field38989.method14940();
+            this.socket.on("connect", new Class4663(this)).on("login-successful", new Class4679(this)).on("jello-user", new Class4686(this)).on("chat-message", new Class4660(this)).on("disconnect", new Class4687(this));
+            this.socket.connect();
         }
     }
 

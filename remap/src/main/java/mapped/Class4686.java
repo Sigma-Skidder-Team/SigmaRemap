@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4686 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4686 implements Emitter.Listener
 {
     private static String[] field20235;
     public final /* synthetic */ IRCManager field20236;
@@ -14,7 +16,7 @@ public class Class4686 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         System.out.println(array[0]);
     }
 }

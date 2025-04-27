@@ -4,13 +4,15 @@
 
 package mapped;
 
-public class Class7661 extends Class7660
+import io.socket.client.Manager;
+
+public class Options extends Manager.Options
 {
     private static String[] field30423;
-    public boolean field30424;
+    public boolean forceNew;
     public boolean field30425;
     
-    public Class7661() {
+    public Options() {
         this.field30425 = true;
     }
 }

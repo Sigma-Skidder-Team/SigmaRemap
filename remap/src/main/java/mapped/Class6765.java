@@ -110,7 +110,7 @@ public abstract class Class6765
         this.method20619(class3644.applyTextStyle(TextFormatting.YELLOW));
         class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.rotationYaw, class3642.rotationPitch);
         this.field26563.add(class3642);
-        this.field26564.put(class3642.method1865(), class3642);
+        this.field26564.put(class3642.getUniqueID(), class3642);
         this.method20586(new Class4330(Class2156.field12803, class3642));
         for (int i = 0; i < this.field26563.size(); ++i) {
             class3642.field3039.method17469(new Class4330(Class2156.field12803, this.field26563.get(i)));
@@ -131,9 +131,9 @@ public abstract class Class6765
                 final Entity method2852 = EntityType.method23378(method2851.getCompound("Entity"), method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
                     final UUID method2853 = method2851.getUniqueId("Attach");
-                    if (!method2852.method1865().equals(method2853)) {
+                    if (!method2852.getUniqueID().equals(method2853)) {
                         for (final Entity class3645 : method2852.method1911()) {
-                            if (!class3645.method1865().equals(method2853)) {
+                            if (!class3645.getUniqueID().equals(method2853)) {
                                 continue;
                             }
                             class3642.method1780(class3645, true);
@@ -199,11 +199,11 @@ public abstract class Class6765
     
     public void method20572(final Class513 class513) {
         this.field26571.method29396(class513);
-        final Class7473 class514 = this.field26569.get(class513.method1865());
+        final Class7473 class514 = this.field26569.get(class513.getUniqueID());
         if (class514 != null) {
             class514.method23074();
         }
-        final Class7012 class515 = this.field26570.get(class513.method1865());
+        final Class7012 class515 = this.field26570.get(class513.getUniqueID());
         if (class515 != null) {
             class515.method21463();
         }
@@ -231,7 +231,7 @@ public abstract class Class6765
         class513.method2957().method21457();
         this.field26563.remove(class513);
         this.field26562.method1584().method28268(class513);
-        final UUID method2942 = class513.method1865();
+        final UUID method2942 = class513.getUniqueID();
         if (this.field26564.get(method2942) == class513) {
             this.field26564.remove(method2942);
             this.field26569.remove(method2942);
@@ -269,7 +269,7 @@ public abstract class Class6765
         final ArrayList arrayList = Lists.newArrayList();
         for (int i = 0; i < this.field26563.size(); ++i) {
             final Class513 class513 = this.field26563.get(i);
-            if (class513.method1865().equals(method2893)) {
+            if (class513.getUniqueID().equals(method2893)) {
                 arrayList.add(class513);
             }
         }
@@ -342,7 +342,7 @@ public abstract class Class6765
         this.method20584(class515);
         method2856.method6892(class515);
         this.field26563.add(class515);
-        this.field26564.put(class515.method1865(), class515);
+        this.field26564.put(class515.getUniqueID(), class515);
         class515.method2919();
         class515.method2665(class515.method2664());
         return class515;
@@ -619,7 +619,7 @@ public abstract class Class6765
     }
     
     public Class7473 method20620(final PlayerEntity playerEntity) {
-        final UUID method1865 = playerEntity.method1865();
+        final UUID method1865 = playerEntity.getUniqueID();
         Class7473 class513 = (method1865 != null) ? this.field26569.get(method1865) : null;
         if (class513 == null) {
             final File file = new File(this.field26562.method1481(DimensionType.field2223).method6917().method29392(), "stats");
@@ -639,7 +639,7 @@ public abstract class Class6765
     }
     
     public Class7012 method20621(final Class513 class513) {
-        final UUID method1865 = class513.method1865();
+        final UUID method1865 = class513.getUniqueID();
         Class7012 class514 = this.field26570.get(method1865);
         if (class514 == null) {
             class514 = new Class7012(this.field26562, new File(new File(this.field26562.method1481(DimensionType.field2223).method6917().method29392(), "advancements"), method1865 + ".json"), class513);

@@ -63,7 +63,7 @@ public class Class509 extends Entity
     public void method1761(final CompoundNBT class51) {
         if (this.field2904 != null) {
             final BlockPos class52 = new BlockPos(this.field2904);
-            final CompoundNBT method34643 = Class9346.method34643(this.field2904.method1865());
+            final CompoundNBT method34643 = Class9346.method34643(this.field2904.getUniqueID());
             method34643.putInt("X", class52.getX());
             method34643.putInt("Y", class52.getY());
             method34643.putInt("Z", class52.getZ());
@@ -71,7 +71,7 @@ public class Class509 extends Entity
         }
         if (this.field2905 != null) {
             final BlockPos class53 = new BlockPos(this.field2905);
-            final CompoundNBT method34644 = Class9346.method34643(this.field2905.method1865());
+            final CompoundNBT method34644 = Class9346.method34643(this.field2905.getUniqueID());
             method34644.putInt("X", class53.getX());
             method34644.putInt("Y", class53.getY());
             method34644.putInt("Z", class53.getZ());
@@ -206,7 +206,7 @@ public class Class509 extends Entity
             if (this.field2905 == null) {
                 if (this.field2913 != null) {
                     for (final LivingEntity field2905 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, new AxisAlignedBB(this.field2914.add(-2, -2, -2), this.field2914.add(2, 2, 2)))) {
-                        if (!field2905.method1865().equals(this.field2913)) {
+                        if (!field2905.getUniqueID().equals(this.field2913)) {
                             continue;
                         }
                         this.field2905 = field2905;
@@ -218,7 +218,7 @@ public class Class509 extends Entity
             if (this.field2904 == null) {
                 if (this.field2911 != null) {
                     for (final LivingEntity field2906 : this.world.method7128((Class<? extends LivingEntity>) LivingEntity.class, new AxisAlignedBB(this.field2912.add(-2, -2, -2), this.field2912.add(2, 2, 2)))) {
-                        if (!field2906.method1865().equals(this.field2911)) {
+                        if (!field2906.getUniqueID().equals(this.field2911)) {
                             continue;
                         }
                         this.field2904 = field2906;

@@ -4,14 +4,16 @@
 
 package mapped;
 
+import io.socket.client.Socket;
+
 public class Class1247 implements Runnable
 {
     private static String[] field6784;
     public final /* synthetic */ String field6785;
     public final /* synthetic */ Object[] field6786;
-    public final /* synthetic */ Class4960 field6787;
+    public final /* synthetic */ Socket field6787;
     
-    public Class1247(final Class4960 field6787, final String field6788, final Object[] field6789) {
+    public Class1247(final Socket field6787, final String field6788, final Object[] field6789) {
         this.field6787 = field6787;
         this.field6785 = field6788;
         this.field6786 = field6789;
@@ -19,22 +21,22 @@ public class Class1247 implements Runnable
     
     @Override
     public void run() {
-        if (!Class4960.field21283.containsKey(this.field6785)) {
+        if (!Socket.RESERVED_EVENTS.containsKey(this.field6785)) {
             final int n = this.field6786.length - 1;
             Object[] field6786;
-            Class7873 class7873;
-            if (this.field6786.length > 0 && this.field6786[n] instanceof Class7873) {
+            Ack ack;
+            if (this.field6786.length > 0 && this.field6786[n] instanceof Ack) {
                 field6786 = new Object[n];
                 System.arraycopy(this.field6786, 0, field6786, 0, n);
-                class7873 = (Class7873)this.field6786[n];
+                ack = (Ack)this.field6786[n];
             }
             else {
                 field6786 = this.field6786;
-                class7873 = null;
+                ack = null;
             }
-            this.field6787.method14943(this.field6785, field6786, class7873);
+            this.field6787.emit(this.field6785, field6786, ack);
             return;
         }
-        Class4960.method14967(this.field6787, this.field6785, this.field6786);
+        Socket.method14967(this.field6787, this.field6785, this.field6786);
     }
 }

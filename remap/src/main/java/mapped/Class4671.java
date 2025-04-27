@@ -4,9 +4,11 @@
 
 package mapped;
 
+import io.socket.emitter.Emitter;
+
 import java.util.logging.Level;
 
-public class Class4671 implements Class4659
+public class Class4671 implements Emitter.Listener
 {
     public final /* synthetic */ Class4666 field20199;
     
@@ -15,7 +17,7 @@ public class Class4671 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         if (!this.field20199.field20183[0]) {
             final Class8437 class8437 = (Class8437)array[0];
             if ("pong".equals(class8437.field34678) && "probe".equals(class8437.field34679)) {

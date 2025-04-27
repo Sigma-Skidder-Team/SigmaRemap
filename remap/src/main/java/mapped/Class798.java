@@ -269,7 +269,7 @@ public class Class798 extends Class789 implements Class797
     public void method2636(final LivingEntity class511) {
         super.method2636(class511);
         if (class511 != null) {
-            this.field4261 = class511.method1865();
+            this.field4261 = class511.getUniqueID();
         }
     }
     

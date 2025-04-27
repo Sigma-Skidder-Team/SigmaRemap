@@ -266,7 +266,7 @@ public class Class6123 implements Class6113
     }
     
     private void method18338() {
-        Class7282.method22333(this.field24855.method5303(), 8).ifPresent(class399 -> this.field24859 = class399.method1865());
+        Class7282.method22333(this.field24855.method5303(), 8).ifPresent(class399 -> this.field24859 = class399.getUniqueID());
     }
     
     static {

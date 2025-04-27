@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class7873
+public interface Ack
 {
     void method25497(final Object... p0);
 }

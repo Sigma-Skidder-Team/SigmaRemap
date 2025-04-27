@@ -4,7 +4,6 @@
 
 package mapped;
 
-import com.mojang.brigadier.Message;
 import java.util.Locale;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.UUID;
@@ -27,7 +26,7 @@ public class Class5416 implements Class5414
     @Override
     public void method16525(final CompoundNBT class51) throws CommandSyntaxException {
         if (!(this.field22587 instanceof PlayerEntity)) {
-            final UUID method1865 = this.field22587.method1865();
+            final UUID method1865 = this.field22587.getUniqueID();
             this.field22587.method1757(class51);
             this.field22587.method1864(method1865);
             return;

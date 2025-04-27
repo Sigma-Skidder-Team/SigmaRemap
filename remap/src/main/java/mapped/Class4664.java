@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4664 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4664 implements Emitter.Listener
 {
     public final /* synthetic */ Class4968 field20177;
     public final /* synthetic */ Class4968 field20178;
@@ -15,7 +17,7 @@ public class Class4664 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         Class4968.method15139(this.field20177, "transport close");
     }
 }

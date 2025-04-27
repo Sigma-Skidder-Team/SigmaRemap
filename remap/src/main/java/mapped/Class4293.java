@@ -24,7 +24,7 @@ public class Class4293 implements IPacket<IClientPlayNetHandler>
     
     public Class4293(final Class861 class861) {
         this.field19252 = class861.getEntityId();
-        this.field19253 = class861.method1865();
+        this.field19253 = class861.getUniqueID();
         this.field19254 = class861.method5194();
         this.field19255 = class861.method1882();
         this.field19256 = Registry.field227.getId(class861.field4601);

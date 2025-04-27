@@ -64,11 +64,11 @@ public class Class9066
         }
         if (class796 instanceof Class754) {
             final Class754 class797 = (Class754)class796;
-            final UUID method1865 = class795.method1865();
+            final UUID method1865 = class795.getUniqueID();
             if (!b) {
                 final EntityDataManager method1866 = class795.method1650();
                 if (class797.field4065 != null) {
-                    if (Config.equals(class797.field4065.method1865(), method1865)) {
+                    if (Config.equals(class797.field4065.getUniqueID(), method1865)) {
                         final EntityDataManager method1867 = class797.field4065.method1650();
                         method1866.field38922 = method1867.field38922;
                         method1866.field38921 = method1867.field38921;
@@ -76,7 +76,7 @@ public class Class9066
                     }
                 }
                 if (class797.field4066 != null) {
-                    if (Config.equals(class797.field4066.method1865(), method1865)) {
+                    if (Config.equals(class797.field4066.getUniqueID(), method1865)) {
                         final EntityDataManager method1868 = class797.field4066.method1650();
                         method1866.field38922 = method1868.field38922;
                         method1866.field38921 = method1868.field38921;

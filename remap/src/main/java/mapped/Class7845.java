@@ -4,9 +4,11 @@
 
 package mapped;
 
+import io.socket.parser.Packet;
+
 public class Class7845
 {
     private static String[] field32126;
-    public Class9041 field32127;
+    public Packet field32127;
     public byte[][] field32128;
 }

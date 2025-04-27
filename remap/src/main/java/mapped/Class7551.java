@@ -4,7 +4,11 @@
 
 package mapped;
 
-public class Class7551 implements Class7550
+import io.socket.client.Manager;
+import io.socket.parser.Decoder;
+import io.socket.parser.Packet;
+
+public class Class7551 implements Decoder.Callback
 {
     private static String[] field29952;
     public final /* synthetic */ Manager field29953;
@@ -14,7 +18,7 @@ public class Class7551 implements Class7550
     }
     
     @Override
-    public void method23715(final Class9041 class9041) {
-        Manager.method15089(this.field29953, class9041);
+    public void call(final Packet packet) {
+        Manager.method15089(this.field29953, packet);
     }
 }

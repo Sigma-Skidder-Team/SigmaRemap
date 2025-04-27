@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4681 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4681 implements Emitter.Listener
 {
     private static String[] field20221;
     public final /* synthetic */ Class4968 field20222;
@@ -14,7 +16,7 @@ public class Class4681 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         Class4968.method15132(this.field20222, (array.length <= 0) ? 0L : ((long)array[0]));
     }
 }

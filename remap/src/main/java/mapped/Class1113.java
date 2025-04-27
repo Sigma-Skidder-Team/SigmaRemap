@@ -5,7 +5,6 @@
 package mapped;
 
 import java.util.logging.Level;
-import java.util.concurrent.ExecutorService;
 
 public final class Class1113 implements Runnable
 {
@@ -19,26 +18,26 @@ public final class Class1113 implements Runnable
     public void run() {
         try {
             this.field5999.run();
-            synchronized (Class934.class) {
-                Class934.method5440();
-                if (Class934.method5441() == 0) {
-                    Class934.method5442().shutdown();
-                    Class934.method5443(null);
-                    Class934.method5437(null);
+            synchronized (EventThread.class) {
+                EventThread.method5440();
+                if (EventThread.method5441() == 0) {
+                    EventThread.method5442().shutdown();
+                    EventThread.method5443(null);
+                    EventThread.method5437(null);
                 }
             }
         }
         catch (final Throwable thrown) {
-            Class934.method5439().log(Level.SEVERE, "Task threw exception", thrown);
+            EventThread.method5439().log(Level.SEVERE, "Task threw exception", thrown);
             throw thrown;
         }
         finally {
-            synchronized (Class934.class) {
-                Class934.method5440();
-                if (Class934.method5441() == 0) {
-                    Class934.method5442().shutdown();
-                    Class934.method5443(null);
-                    Class934.method5437(null);
+            synchronized (EventThread.class) {
+                EventThread.method5440();
+                if (EventThread.method5441() == 0) {
+                    EventThread.method5442().shutdown();
+                    EventThread.method5443(null);
+                    EventThread.method5437(null);
                 }
             }
         }

@@ -208,7 +208,7 @@ public interface Class1874
     default PlayerEntity method7143(final UUID uuid) {
         for (int i = 0; i < this.method6840().size(); ++i) {
             final PlayerEntity playerEntity = this.method6840().get(i);
-            if (uuid.equals(playerEntity.method1865())) {
+            if (uuid.equals(playerEntity.getUniqueID())) {
                 return playerEntity;
             }
         }

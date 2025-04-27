@@ -42,7 +42,7 @@ public abstract class Class414 extends Entity implements Class401
     public Class414(final EntityType<? extends Class414> class7499, final LivingEntity field2517, final World class7500) {
         this(class7499, field2517.getPosX(), field2517.method1944() - 0.10000000149011612, field2517.getPosZ(), class7500);
         this.field2517 = field2517;
-        this.field2518 = field2517.method1865();
+        this.field2518 = field2517.getUniqueID();
     }
     
     @Override

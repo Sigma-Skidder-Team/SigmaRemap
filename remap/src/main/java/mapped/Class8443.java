@@ -15,7 +15,7 @@ public class Class8443 implements Class8444
     
     @Override
     public int method28177() {
-        return (int)(this.field34700.method1865().getLeastSignificantBits() & 0x7FFFFFFFL);
+        return (int)(this.field34700.getUniqueID().getLeastSignificantBits() & 0x7FFFFFFFL);
     }
     
     @Override

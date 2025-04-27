@@ -9,23 +9,23 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.logging.Logger;
 
-public class Class934 extends Thread
+public class EventThread extends Thread
 {
-    private static final Logger field4921 = Logger.getLogger(Class934.class.getName());
+    private static final Logger field4921 = Logger.getLogger(EventThread.class.getName());
     private static final ThreadFactory field4922 = new Class7367();
-    private static Class934 field4923;
+    private static EventThread field4923;
     private static ExecutorService field4924;
     private static int field4925 = 0;
     
-    Class934(final Runnable task) {
+    EventThread(final Runnable task) {
         super(task);
     }
     
     public static boolean method5434() {
-        return currentThread() == Class934.field4923;
+        return currentThread() == EventThread.field4923;
     }
     
-    public static void method5435(final Runnable runnable) {
+    public static void exec(final Runnable runnable) {
         if (!method5434()) {
             method5436(runnable);
         }
@@ -36,12 +36,12 @@ public class Class934 extends Thread
     
     public static void method5436(final Runnable runnable) {
         final ExecutorService field4924;
-        synchronized (Class934.class) {
-            ++Class934.field4925;
-            if (Class934.field4924 == null) {
-                Class934.field4924 = Executors.newSingleThreadExecutor(Class934.field4922);
+        synchronized (EventThread.class) {
+            ++EventThread.field4925;
+            if (EventThread.field4924 == null) {
+                EventThread.field4924 = Executors.newSingleThreadExecutor(EventThread.field4922);
             }
-            field4924 = Class934.field4924;
+            field4924 = EventThread.field4924;
         }
         field4924.execute(new Class1113(runnable));
     }
@@ -50,7 +50,7 @@ public class Class934 extends Thread
         return field4921;
     }
 
-    public static /* synthetic */ Class934 method5438() {
+    public static /* synthetic */ EventThread method5438() {
         return field4923;
     }
 
@@ -71,8 +71,8 @@ public class Class934 extends Thread
         return field4924;
     }
 
-    public static /* synthetic */ Class934 method5437(Class934 class934) {
-        field4923 = class934;
+    public static /* synthetic */ EventThread method5437(EventThread eventThread) {
+        field4923 = eventThread;
         return field4923;
     }
 }

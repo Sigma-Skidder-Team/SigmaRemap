@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.IntNBT;
@@ -172,7 +170,7 @@ public class Class8619
         final List<Class852> method29240 = this.field36166.method6882();
         if (!method29240.isEmpty()) {
             final Class852 class852 = method29240.get(0);
-            this.field36175 = class852.method1865();
+            this.field36175 = class852.getUniqueID();
             Class8619.field36163.info("Found that there's a dragon still alive ({})", class852);
             this.field36173 = false;
             if (!method29239) {
@@ -195,7 +193,7 @@ public class Class8619
         final List<Class852> method6882 = this.field36166.method6882();
         if (!method6882.isEmpty()) {
             Class8619.field36163.debug("Haven't seen our dragon, but found another one to use.");
-            this.field36175 = method6882.get(0).method1865();
+            this.field36175 = method6882.get(0).getUniqueID();
         }
         else {
             Class8619.field36163.debug("Haven't seen the dragon, respawning it");
@@ -314,7 +312,7 @@ public class Class8619
     }
     
     public void method29244(final Class852 class852) {
-        if (class852.method1865().equals(this.field36175)) {
+        if (class852.getUniqueID().equals(this.field36175)) {
             this.field36165.method21064(0.0f);
             this.field36165.method21073(false);
             this.method29247(true);
@@ -359,12 +357,12 @@ public class Class8619
         class852.method5127().method33696(Class7193.field27948);
         class852.method1730(0.0, 128.0, 0.0, this.field36166.rand.nextFloat() * 360.0f, 0.0f);
         this.field36166.method6886(class852);
-        this.field36175 = class852.method1865();
+        this.field36175 = class852.getUniqueID();
         return class852;
     }
     
     public void method29249(final Class852 class852) {
-        if (class852.method1865().equals(this.field36175)) {
+        if (class852.getUniqueID().equals(this.field36175)) {
             this.field36165.method21064(class852.method2664() / class852.method2701());
             this.field36169 = 0;
             if (class852.hasCustomName()) {

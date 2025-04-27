@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 public class Class1368 implements Runnable
 {
     public final /* synthetic */ Class1620 field7513;

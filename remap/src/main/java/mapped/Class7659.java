@@ -13,7 +13,7 @@ public class Class7659 extends Class7662
     public boolean field30409;
     public boolean field30410;
     public String field30411;
-    public String field30412;
+    public String auth;
     public Map<String, Class7662> field30413;
     
     public Class7659() {
@@ -29,7 +29,7 @@ public class Class7659 extends Class7662
         class7659.field30432 = uri.getPort();
         final String rawQuery = uri.getRawQuery();
         if (rawQuery != null) {
-            class7659.field30412 = rawQuery;
+            class7659.auth = rawQuery;
         }
         return class7659;
     }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 public class Class8331 implements Class8332
 {
     public final /* synthetic */ Class1368 field34213;

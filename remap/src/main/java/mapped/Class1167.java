@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 public class Class1167 implements Runnable
 {
     public final /* synthetic */ Class1621 field6331;
@@ -15,7 +17,7 @@ public class Class1167 implements Runnable
     @Override
     public void run() {
         Manager.method15073().fine(String.format("connect attempt timed out after %d", this.field6331.field9051));
-        this.field6331.field9052.method12753();
+        this.field6331.field9052.destroy();
         this.field6331.field9053.method15125();
         this.field6331.field9053.method14942("error", new Class2346("timeout"));
         Manager.method15079(this.field6331.field9054, "connect_timeout", new Object[] { this.field6331.field9051 });

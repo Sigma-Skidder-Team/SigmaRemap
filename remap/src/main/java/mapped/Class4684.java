@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4684 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4684 implements Emitter.Listener
 {
     public final /* synthetic */ Class4966 field20228;
     public final /* synthetic */ Class4966 field20229;
@@ -15,7 +17,7 @@ public class Class4684 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         this.field20228.method14942("requestHeaders", array[0]);
     }
 }

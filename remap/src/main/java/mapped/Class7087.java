@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class7087 implements Class7088
+import io.socket.client.Manager;
+import io.socket.parser.Encoder;
+
+public class Class7087 implements Encoder.Callback
 {
     private static String[] field27599;
     public final /* synthetic */ Manager field27600;
@@ -16,15 +19,15 @@ public class Class7087 implements Class7088
     }
     
     @Override
-    public void method21669(final Object[] array) {
+    public void call(final Object[] array) {
         for (final Object o : array) {
             if (!(o instanceof String)) {
                 if (o instanceof byte[]) {
-                    this.field27600.field21375.method15115((byte[])o);
+                    this.field27600.engine.method15115((byte[])o);
                 }
             }
             else {
-                this.field27600.field21375.method15113((String)o);
+                this.field27600.engine.method15113((String)o);
             }
         }
         Manager.method15092(this.field27600, false);

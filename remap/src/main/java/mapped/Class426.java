@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
-
 import net.minecraft.entity.*;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -281,7 +279,7 @@ public class Class426 extends Entity
     
     public void method2097(final LivingEntity field2611) {
         this.field2611 = field2611;
-        this.field2612 = ((field2611 != null) ? field2611.method1865() : null);
+        this.field2612 = ((field2611 != null) ? field2611.getUniqueID() : null);
     }
     
     @Nullable

@@ -376,7 +376,7 @@ public class ColorUtils
     
     public static int method19135() {
         for (final Class9081 class9081 : ColorUtils.field25541.method5269().method17370()) {
-            if (class9081.method32719().getId().equals(ColorUtils.field25541.player.method1865()) && !ColorUtils.field25541.method5283()) {
+            if (class9081.method32719().getId().equals(ColorUtils.field25541.player.getUniqueID()) && !ColorUtils.field25541.method5283()) {
                 return class9081.method32722();
             }
         }

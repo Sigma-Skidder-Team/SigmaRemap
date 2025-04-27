@@ -102,7 +102,7 @@ public class Class5799 implements IClientPlayNetHandler
             this.field23808.player = this.field23808.playerController.method27306(this.field23809, new Class7474(), new Class6520(this.field23809.method6792()));
             this.field23808.player.rotationYaw = -180.0f;
             if (this.field23808.method5285() != null) {
-                this.field23808.method5285().method5680(this.field23808.player.method1865());
+                this.field23808.method5285().method5680(this.field23808.player.getUniqueID());
             }
         }
         this.field23808.field4645.method22330();

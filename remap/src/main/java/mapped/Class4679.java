@@ -9,9 +9,10 @@ import java.io.IOException;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mojang.authlib.exceptions.AuthenticationException;
+import io.socket.emitter.Emitter;
 import totalcross.json.JSONObject;
 
-public class Class4679 implements Class4659
+public class Class4679 implements Emitter.Listener
 {
     public final /* synthetic */ IRCManager field20217;
     
@@ -20,7 +21,7 @@ public class Class4679 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         final JSONObject x = (JSONObject)array[0];
         System.out.println(x);
         if (IRCManager.method33667(this.field20217).field4642 == null || IRCManager.method33667(this.field20217).field4642.method33694() == null) {

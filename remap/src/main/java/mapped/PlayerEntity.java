@@ -611,7 +611,7 @@ public abstract class PlayerEntity extends LivingEntity
             final Class427 class8322 = new Class427(this.world, this.getPosX(), this.method1944() - 0.30000001192092896, this.getPosZ(), class8321);
             class8322.method2117(40);
             if (b2) {
-                class8322.method2112(this.method1865());
+                class8322.method2112(this.getUniqueID());
             }
             if (!b) {
                 final float method35638 = MathHelper.sin(this.rotationPitch * 0.017453292f);

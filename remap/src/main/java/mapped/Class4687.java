@@ -6,8 +6,9 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
+import io.socket.emitter.Emitter;
 
-public class Class4687 implements Class4659
+public class Class4687 implements Emitter.Listener
 {
     public final /* synthetic */ IRCManager field20237;
     
@@ -16,7 +17,7 @@ public class Class4687 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         System.out.println("disconnect");
         Client.getInstance().getNotificationManager().send(new Notification("Jello connect", "Connexion Failed. Try relogging.", ClientAssets.gingerbread));
     }

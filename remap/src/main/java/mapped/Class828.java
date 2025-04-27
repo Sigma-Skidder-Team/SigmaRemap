@@ -32,7 +32,7 @@ public class Class828 extends Class827
     public void method2636(final LivingEntity class511) {
         super.method2636(class511);
         if (class511 != null) {
-            this.field4438 = class511.method1865();
+            this.field4438 = class511.getUniqueID();
         }
     }
     

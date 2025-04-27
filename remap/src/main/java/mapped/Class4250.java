@@ -4,9 +4,11 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 import java.util.Timer;
 
-public class Class4250 implements Class4248
+public class Class4250 implements Handle
 {
     private static String[] field19073;
     public final /* synthetic */ Timer field19074;
@@ -18,7 +20,7 @@ public class Class4250 implements Class4248
     }
     
     @Override
-    public void method12753() {
+    public void destroy() {
         this.field19074.cancel();
     }
 }

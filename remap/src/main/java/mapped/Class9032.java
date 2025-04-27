@@ -41,7 +41,7 @@ public class Class9032
                         continue;
                     }
                     method32884.method2115();
-                    method32884.method2110(class513.method1865());
+                    method32884.method2110(class513.getUniqueID());
                 }
                 else {
                     class513.world.method6706(null, class513.getPosX(), class513.getPosY(), class513.getPosZ(), Class8520.field35327, Class286.field1585, 0.2f, ((class513.method2633().nextFloat() - class513.method2633().nextFloat()) * 0.7f + 1.0f) * 2.0f);

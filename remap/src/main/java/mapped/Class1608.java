@@ -4,23 +4,26 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+import io.socket.client.Socket;
+
 public class Class1608 implements Runnable
 {
-    public final /* synthetic */ Class4960 field8979;
+    public final /* synthetic */ Socket field8979;
     
-    public Class1608(final Class4960 field8979) {
+    public Class1608(final Socket field8979) {
         this.field8979 = field8979;
     }
     
     @Override
     public void run() {
-        if (!Class4960.method14964(this.field8979)) {
-            Class4960.method14965(this.field8979);
-            Class4960.method14966(this.field8979).method15054();
-            if (Class1978.field10966 == Class4960.method14966(this.field8979).field21358) {
-                Class4960.method14961(this.field8979);
+        if (!Socket.method14964(this.field8979)) {
+            Socket.method14965(this.field8979);
+            Socket.method14966(this.field8979).method15054();
+            if (Manager.ReadyState.OPEN == Socket.method14966(this.field8979).field21358) {
+                Socket.method14961(this.field8979);
             }
-            this.field8979.method14942("connecting");
+            this.field8979.emit("connecting");
         }
     }
 }

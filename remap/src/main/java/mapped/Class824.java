@@ -14,8 +14,6 @@ import javax.annotation.Nullable;
 import java.util.Iterator;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
-import java.util.Collection;
-import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import java.util.function.BiPredicate;
 import com.google.common.collect.ImmutableList;
@@ -534,7 +532,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public int method4876(final PlayerEntity playerEntity) {
-        return this.field4406.method35241(playerEntity.method1865(), p0 -> true);
+        return this.field4406.method35241(playerEntity.getUniqueID(), p0 -> true);
     }
     
     private void method4877(final int n) {
@@ -809,20 +807,20 @@ public class Class824 extends Class819 implements Class831, Class825
             if (class8156 != Class8156.field33594) {
                 if (class8156 != Class8156.field33592) {
                     if (class8156 == Class8156.field33593) {
-                        this.field4406.method35242(class8157.method1865(), Class100.field285, 25);
+                        this.field4406.method35242(class8157.getUniqueID(), Class100.field285, 25);
                     }
                 }
                 else {
-                    this.field4406.method35242(class8157.method1865(), Class100.field286, 25);
+                    this.field4406.method35242(class8157.getUniqueID(), Class100.field286, 25);
                 }
             }
             else {
-                this.field4406.method35242(class8157.method1865(), Class100.field289, 2);
+                this.field4406.method35242(class8157.getUniqueID(), Class100.field289, 2);
             }
         }
         else {
-            this.field4406.method35242(class8157.method1865(), Class100.field288, 20);
-            this.field4406.method35242(class8157.method1865(), Class100.field287, 25);
+            this.field4406.method35242(class8157.getUniqueID(), Class100.field288, 20);
+            this.field4406.method35242(class8157.getUniqueID(), Class100.field287, 25);
         }
     }
     

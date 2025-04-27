@@ -23,14 +23,13 @@ import java.io.BufferedWriter;
 import java.io.Writer;
 import it.unimi.dsi.fastutil.objects.Object2IntMap$Entry;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.util.Optional;
 import java.util.Objects;
 import it.unimi.dsi.fastutil.longs.LongSets;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import javax.annotation.Nonnull;
-import java.util.function.BiFunction;
+
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import java.util.ArrayList;
@@ -760,9 +759,9 @@ public class Class1849 extends World
     }
     
     private void method6893(final Class513 class513) {
-        final Entity class514 = this.field10086.get(class513.method1865());
+        final Entity class514 = this.field10086.get(class513.getUniqueID());
         if (class514 != null) {
-            Class1849.field10083.warn("Force-added player with duplicate UUID {}", class513.method1865().toString());
+            Class1849.field10083.warn("Force-added player with duplicate UUID {}", class513.getUniqueID().toString());
             class514.detach();
             this.method6902((Class513)class514);
         }
@@ -801,9 +800,9 @@ public class Class1849 extends World
     }
     
     private boolean method6896(final Entity class399) {
-        final Entity class400 = this.field10086.get(class399.method1865());
+        final Entity class400 = this.field10086.get(class399.getUniqueID());
         if (class400 != null) {
-            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", EntityType.method23354(class400.getType()), class399.method1865().toString());
+            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", EntityType.method23354(class400.getType()), class399.getUniqueID().toString());
             return true;
         }
         return false;
@@ -833,7 +832,7 @@ public class Class1849 extends World
                 method5123[i].method1652();
             }
         }
-        this.field10086.remove(class399.method1865());
+        this.field10086.remove(class399.getUniqueID());
         this.method6904().method7444(class399);
         if (class399 instanceof Class513) {
             this.field10088.remove(class399);
@@ -852,7 +851,7 @@ public class Class1849 extends World
                     this.field10085.put(class400.getEntityId(), (Object)class400);
                 }
             }
-            this.field10086.put(class399.method1865(), class399);
+            this.field10086.put(class399.getUniqueID(), class399);
             this.method6904().method7445(class399);
             if (class399 instanceof Class759) {
                 this.field10098.add(((Class759)class399).method4150());
@@ -1238,7 +1237,7 @@ public class Class1849 extends World
         final Class8308 method22418 = Class8308.method27594().method22417("x").method22417("y").method22417("z").method22417("uuid").method22417("type").method22417("alive").method22417("display_name").method22417("custom_name").method22418(writer);
         for (final Entity class399 : iterable) {
             final ITextComponent method22419 = class399.getCustomName();
-            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.method1865(), Registry.field210.getKey(class399.getType()), class399.isAlive(), class399.getDisplayName().getString(), (method22419 == null) ? null : method22419.getString());
+            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.getUniqueID(), Registry.field210.getKey(class399.getType()), class399.isAlive(), class399.getDisplayName().getString(), (method22419 == null) ? null : method22419.getString());
         }
     }
     

@@ -52,11 +52,11 @@ public class Class4339 implements IPacket<IClientPlayNetHandler>
     }
     
     public Class4339(final Entity class399, final int n) {
-        this(class399.getEntityId(), class399.method1865(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.rotationPitch, class399.rotationYaw, class399.getType(), n, class399.getMotion());
+        this(class399.getEntityId(), class399.getUniqueID(), class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.rotationPitch, class399.rotationYaw, class399.getType(), n, class399.getMotion());
     }
     
     public Class4339(final Entity class399, final EntityType<?> class400, final int n, final BlockPos class401) {
-        this(class399.getEntityId(), class399.method1865(), class401.getX(), class401.getY(), class401.getZ(), class399.rotationPitch, class399.rotationYaw, class400, n, class399.getMotion());
+        this(class399.getEntityId(), class399.getUniqueID(), class401.getX(), class401.getY(), class401.getZ(), class399.rotationPitch, class399.rotationYaw, class400, n, class399.getMotion());
     }
     
     @Override

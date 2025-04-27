@@ -6,7 +6,6 @@ package mapped;
 
 import javax.annotation.Nullable;
 import com.mojang.datafixers.Dynamic;
-import com.mojang.datafixers.types.DynamicOps;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;
@@ -102,7 +101,7 @@ public class Class826 extends Class827 implements Class825
                 method2715.method27693(1);
             }
             if (!this.world.isRemote) {
-                this.method4914(playerEntity.method1865(), this.rand.nextInt(2401) + 3600);
+                this.method4914(playerEntity.getUniqueID(), this.rand.nextInt(2401) + 3600);
                 playerEntity.method2708(class513, true);
             }
             return true;

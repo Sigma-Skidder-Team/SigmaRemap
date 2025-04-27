@@ -29,7 +29,7 @@ public abstract class Class4965 extends Class4963
     }
     
     public void method15016(final Runnable runnable) {
-        Class934.method5435(new Class1189(this, runnable));
+        EventThread.exec(new Class1189(this, runnable));
     }
     
     private void method15017() {
@@ -85,7 +85,7 @@ public abstract class Class4965 extends Class4963
         }
         else {
             Class4965.field21334.fine("transport open - closing");
-            class4691.method13945();
+            class4691.call();
         }
     }
     

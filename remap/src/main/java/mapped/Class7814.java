@@ -72,7 +72,7 @@ public abstract class Class7814 implements Class7813
     
     public PlayerEntity method25250(final UUID obj) {
         for (final PlayerEntity playerEntity : this.method25248()) {
-            if (!playerEntity.method1865().equals(obj)) {
+            if (!playerEntity.getUniqueID().equals(obj)) {
                 continue;
             }
             return playerEntity;

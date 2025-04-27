@@ -4,7 +4,7 @@
 
 package mapped;
 
-public interface Class2311
+public interface Factory
 {
     Class7481 method9416(final Request p0, final Class9345 p1);
 }

@@ -65,8 +65,8 @@ public class Waypoints extends Module
                     final Entity method12990 = Waypoints.mc.world.getEntityByID(method12989[i]);
                     if (method12990 != null) {
                         if (method12990 instanceof PlayerEntity) {
-                            this.field15594.remove(method12990.method1865());
-                            this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.DARK_OLIVE.color));
+                            this.field15594.remove(method12990.getUniqueID());
+                            this.field15594.put(method12990.getUniqueID(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.DARK_OLIVE.color));
                         }
                     }
                 }

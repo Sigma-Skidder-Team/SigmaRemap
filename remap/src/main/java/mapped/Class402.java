@@ -498,7 +498,7 @@ public abstract class Class402 extends Entity implements Class401
     }
     
     public void method1972(final Entity class399) {
-        this.field2476 = ((class399 != null) ? class399.method1865() : null);
+        this.field2476 = ((class399 != null) ? class399.getUniqueID() : null);
         if (class399 instanceof PlayerEntity) {
             this.field2474 = (((PlayerEntity)class399).field3025.field27304 ? Class2151.field12784 : Class2151.field12783);
         }
@@ -518,7 +518,7 @@ public abstract class Class402 extends Entity implements Class401
                     Label_0122: {
                         if (this.field2474 != Class2151.field12783) {
                             if (this.field2474 != Class2151.field12784 || !playerEntity.field3025.field27304) {
-                                if (!this.method1987() || this.method1973().method1865() != playerEntity.method1865()) {
+                                if (!this.method1987() || this.method1973().getUniqueID() != playerEntity.getUniqueID()) {
                                     n = 0;
                                     break Label_0122;
                                 }

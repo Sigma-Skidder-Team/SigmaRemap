@@ -4,7 +4,10 @@
 
 package mapped;
 
-public class Class4699 implements Class4659
+import io.socket.client.Manager;
+import io.socket.emitter.Emitter;
+
+public class Class4699 implements Emitter.Listener
 {
     public final /* synthetic */ Manager field20267;
     public final /* synthetic */ Class1040 field20268;
@@ -15,11 +18,11 @@ public class Class4699 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         final Object o = (array.length <= 0) ? null : array[0];
         Manager.method15073().fine("connect_error");
         Manager.method15078(this.field20267);
-        this.field20267.field21358 = Class1978.field10964;
+        this.field20267.readyState = Manager.ReadyState.CLOSED;
         Manager.method15079(this.field20267, "connect_error", new Object[] { o });
         if (this.field20268.field5574 == null) {
             Manager.method15080(this.field20267);

@@ -37,7 +37,7 @@ public class Class805 extends Class804
     
     @Override
     public void onStruckByLightning(final LightningBoltEntity class422) {
-        final UUID method1865 = class422.method1865();
+        final UUID method1865 = class422.getUniqueID();
         if (!method1865.equals(this.field4330)) {
             this.method4707((this.method4708() != Class1983.field10981) ? Class1983.field10981 : Class1983.field10982);
             this.field4330 = method1865;

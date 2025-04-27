@@ -228,7 +228,7 @@ public class EntityType<T extends Entity>
                             }
                         }
                         final CompoundNBT method6680 = class1849.method1756(new CompoundNBT());
-                        final UUID method6681 = class1849.method1865();
+                        final UUID method6681 = class1849.getUniqueID();
                         method6680.merge(class1850.getCompound("EntityTag"));
                         class1849.method1864(method6681);
                         class1849.method1757(method6680);

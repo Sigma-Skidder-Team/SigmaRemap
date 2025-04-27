@@ -290,7 +290,7 @@ public class Class427 extends Entity
             final Item method2108 = method2107.getItem();
             final int method2109 = method2107.method27690();
             if (this.field2615 == 0) {
-                if (this.field2618 == null || this.field2618.equals(playerEntity.method1865())) {
+                if (this.field2618 == null || this.field2618.equals(playerEntity.getUniqueID())) {
                     if (playerEntity.inventory.method2362(method2107)) {
                         playerEntity.method2746(this, method2109);
                         if (method2107.method27620()) {

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import java.util.Collection;
@@ -42,7 +41,7 @@ public class Class9200
                         continue;
                     }
                     method774.method2115();
-                    method774.method2110(class7494.method1865());
+                    method774.method2110(class7494.getUniqueID());
                 }
             }
         }

@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.emitter.Emitter;
+
 public class Class8415
 {
     private static String[] field34550;
@@ -11,8 +13,8 @@ public class Class8415
     private Class8415() {
     }
     
-    public static Class4248 method28106(final Class4961 class4961, final String s, final Class4659 class4962) {
-        class4961.method14976(s, class4962);
-        return new Class4247(class4961, s, class4962);
+    public static Handle method28106(final Emitter emitter, final String s, final Emitter.Listener class4962) {
+        emitter.on(s, class4962);
+        return new Class4247(emitter, s, class4962);
     }
 }

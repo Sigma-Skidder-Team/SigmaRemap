@@ -4,7 +4,9 @@
 
 package mapped;
 
-public class Class4700 implements Class4659
+import io.socket.emitter.Emitter;
+
+public class Class4700 implements Emitter.Listener
 {
     private static String[] field20269;
     public final /* synthetic */ boolean[] field20270;
@@ -20,7 +22,7 @@ public class Class4700 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         if (!this.field20270[0]) {
             this.field20270[0] = true;
             this.field20271[0].run();

@@ -139,7 +139,7 @@ public abstract class Class789 extends Class788
     public void method4360(final PlayerEntity playerEntity) {
         this.field4202 = 600;
         if (playerEntity != null) {
-            this.field4203 = playerEntity.method1865();
+            this.field4203 = playerEntity.getUniqueID();
         }
         this.world.method6761(this, (byte)18);
     }

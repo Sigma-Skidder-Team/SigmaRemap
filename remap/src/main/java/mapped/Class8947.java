@@ -49,7 +49,7 @@ public class Class8947 implements Class8948<ClientPlayerEntity>
     
     public void method31743(final ClientPlayerEntity clientPlayerEntity, final ByteBuf byteBuf) throws IllegalArgumentException {
         System.out.println("sendRawPacket");
-        this.method31742(clientPlayerEntity.method1865(), byteBuf);
+        this.method31742(clientPlayerEntity.getUniqueID(), byteBuf);
     }
     
     @Override

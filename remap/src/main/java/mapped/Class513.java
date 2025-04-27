@@ -183,7 +183,7 @@ public class Class513 extends PlayerEntity implements Class514
                     final CompoundNBT class53 = new CompoundNBT();
                     final CompoundNBT class54 = new CompoundNBT();
                     method1915.method1755(class54);
-                    class53.putUniqueId("Attach", method1916.method1865());
+                    class53.putUniqueId("Attach", method1916.getUniqueID());
                     class53.put("Entity", class54);
                     class51.put("RootVehicle", class53);
                 }

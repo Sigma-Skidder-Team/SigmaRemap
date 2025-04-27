@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.function.Consumer;
@@ -406,7 +405,7 @@ public class Class8792
                             if (class776.ticksExisted <= 600) {
                                 continue;
                             }
-                            if (this.field36958.method6914(class776.method1865()) == null) {
+                            if (this.field36958.method6914(class776.getUniqueID()) == null) {
                                 hashSet.add(class776);
                             }
                             if (!this.field36958.method6922(class777)) {
@@ -609,7 +608,7 @@ public class Class8792
         final Set set = this.field36954.get(n);
         Object o = null;
         for (final Class776 class777 : set) {
-            if (!class777.method1865().equals(class776.method1865())) {
+            if (!class777.getUniqueID().equals(class776.getUniqueID())) {
                 continue;
             }
             o = class777;
@@ -752,7 +751,7 @@ public class Class8792
     }
     
     public void method30667(final Entity class399) {
-        this.field36955.add(class399.method1865());
+        this.field36955.add(class399.getUniqueID());
     }
     
     static {

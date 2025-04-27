@@ -54,7 +54,7 @@ public class Class492 extends TileEntity implements Class439
     public CompoundNBT method2180(final CompoundNBT class51) {
         super.method2180(class51);
         if (this.field2832 != null) {
-            class51.put("target_uuid", Class9346.method34643(this.field2832.method1865()));
+            class51.put("target_uuid", Class9346.method34643(this.field2832.getUniqueID()));
         }
         return class51;
     }
@@ -221,7 +221,7 @@ public class Class492 extends TileEntity implements Class439
     
     private void method2490() {
         if (this.field2833 != null) {
-            if (this.field2832 == null || !this.field2832.method1865().equals(this.field2833)) {
+            if (this.field2832 == null || !this.field2832.getUniqueID().equals(this.field2833)) {
                 this.field2832 = this.method2492();
                 if (this.field2832 == null) {
                     this.field2833 = null;
@@ -242,7 +242,7 @@ public class Class492 extends TileEntity implements Class439
     
     @Nullable
     private LivingEntity method2492() {
-        final List<Entity> method6739 = this.field2656.method6739(LivingEntity.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
+        final List<Entity> method6739 = this.field2656.method6739(LivingEntity.class, this.method2491(), class511 -> class511.getUniqueID().equals(this.field2833));
         return (method6739.size() != 1) ? null : ((LivingEntity)method6739.get(0));
     }
     

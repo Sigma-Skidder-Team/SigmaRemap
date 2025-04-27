@@ -62,7 +62,7 @@ public abstract class Class754 extends PlayerEntity
     @Nullable
     public Class9081 method4095() {
         if (this.field4056 == null) {
-            this.field4056 = Minecraft.getInstance().method5269().method17371(this.method1865());
+            this.field4056 = Minecraft.getInstance().method5269().method17371(this.getUniqueID());
         }
         return this.field4056;
     }
@@ -74,7 +74,7 @@ public abstract class Class754 extends PlayerEntity
     
     public ResourceLocation method4097() {
         final Class9081 method4095 = this.method4095();
-        return (method4095 != null) ? method4095.method32726() : Class7634.method24004(this.method1865());
+        return (method4095 != null) ? method4095.method32726() : Class7634.method24004(this.getUniqueID());
     }
     
     @Nullable
@@ -121,7 +121,7 @@ public abstract class Class754 extends PlayerEntity
     
     public String method4103() {
         final Class9081 method4095 = this.method4095();
-        return (method4095 != null) ? method4095.method32725() : Class7634.method24005(this.method1865());
+        return (method4095 != null) ? method4095.method32725() : Class7634.method24005(this.getUniqueID());
     }
     
     public float method4104() {

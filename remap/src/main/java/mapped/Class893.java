@@ -25,7 +25,7 @@ public class Class893 implements Runnable
                 }
             }
             if (0 == Class4968.method15135(this.field4832).size()) {
-                Class934.method5436(new Class1170(this, this.field4832));
+                EventThread.method5436(new Class1170(this, this.field4832));
                 return;
             }
             s = Class4968.method15135(this.field4832).get(0);

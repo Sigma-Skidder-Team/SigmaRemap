@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.*;
@@ -72,7 +71,7 @@ public class Class803 extends Class789
         this.field4114.method22062(4, new Class3448<Object>(this, PlayerEntity.class, 16.0f, 1.6, 1.4, class513 -> {
             final boolean b;
             if (Class803.field4317.test(class513)) {
-                if (!this.method4676(class513.method1865())) {
+                if (!this.method4676(class513.getUniqueID())) {
                     if (!this.method4658()) {
                         return b;
                     }
@@ -406,7 +405,7 @@ public class Class803 extends Class789
             if (!this.world.isRemote) {
                 final Class427 class8322 = new Class427(this.world, this.getPosX() + this.method1791().x, this.getPosY() + 1.0, this.getPosZ() + this.method1791().z, class8321);
                 class8322.method2117(40);
-                class8322.method2112(this.method1865());
+                class8322.method2112(this.getUniqueID());
                 this.method1695(Class8520.field35211, 1.0f, 1.0f);
                 this.world.method6886(class8322);
             }
@@ -485,7 +484,7 @@ public class Class803 extends Class789
     
     @Override
     public void method4350(final PlayerEntity playerEntity, final Class788 class513) {
-        ((Class803)class513).method4653(playerEntity.method1865());
+        ((Class803)class513).method4653(playerEntity.getUniqueID());
     }
     
     public boolean method4665() {

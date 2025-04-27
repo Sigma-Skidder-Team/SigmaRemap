@@ -42,7 +42,7 @@ public class Class507 extends Entity
     
     public void method2600(final LivingEntity field2895) {
         this.field2895 = field2895;
-        this.field2896 = ((field2895 != null) ? field2895.method1865() : null);
+        this.field2896 = ((field2895 != null) ? field2895.getUniqueID() : null);
     }
     
     @Nullable

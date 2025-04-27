@@ -233,7 +233,7 @@ public class IntegratedServer extends MinecraftServer
                 final Iterator iterator;
                 while (iterator.hasNext()) {
                     final Class513 class513 = iterator.next();
-                    if (class513.method1865().equals(this.field9274)) {
+                    if (class513.getUniqueID().equals(this.field9274)) {
                         continue;
                     }
                     else {

@@ -65,7 +65,7 @@ public class Class3477 extends Class3446
         if (!class8321.method27620()) {
             final Class427 class8322 = new Class427(this.field16385.world, this.field16385.getPosX(), this.field16385.method1944() - 0.30000001192092896, this.field16385.getPosZ(), class8321);
             class8322.method2117(40);
-            class8322.method2112(this.field16385.method1865());
+            class8322.method2112(this.field16385.getUniqueID());
             final float n = Class840.method5013(this.field16385).nextFloat() * 6.2831855f;
             final float n2 = 0.02f * Class840.method5014(this.field16385).nextFloat();
             class8322.setMotion(0.3f * -MathHelper.sin(this.field16385.rotationYaw * 0.017453292f) * MathHelper.cos(this.field16385.rotationPitch * 0.017453292f) + MathHelper.cos(n) * n2, 0.3f * MathHelper.sin(this.field16385.rotationPitch * 0.017453292f) * 1.5f, 0.3f * MathHelper.cos(this.field16385.rotationYaw * 0.017453292f) * MathHelper.cos(this.field16385.rotationPitch * 0.017453292f) + MathHelper.sin(n) * n2);

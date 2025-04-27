@@ -32,11 +32,11 @@ public class Class3590 extends Class3587
                 class804 = method4363;
             }
             else {
-                Class803.method4695(class803, method4362.method1865());
+                Class803.method4695(class803, method4362.getUniqueID());
             }
             if (method4363 != null) {
                 if (method4362 != method4363) {
-                    Class803.method4695(class803, method4363.method1865());
+                    Class803.method4695(class803, method4363.getUniqueID());
                 }
             }
             if (class804 != null) {

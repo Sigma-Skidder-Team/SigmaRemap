@@ -4,16 +4,18 @@
 
 package mapped;
 
+import io.socket.client.Socket;
+import io.socket.parser.Packet;
 import totalcross.json.JSONArray;
 
 public class Class952 implements Runnable
 {
     public final /* synthetic */ String field5039;
     public final /* synthetic */ Object[] field5040;
-    public final /* synthetic */ Class7873 field5041;
-    public final /* synthetic */ Class4960 field5042;
+    public final /* synthetic */ Ack field5041;
+    public final /* synthetic */ Socket field5042;
     
-    public Class952(final Class4960 field5042, final String field5043, final Object[] field5044, final Class7873 field5045) {
+    public Class952(final Socket field5042, final String field5043, final Object[] field5044, final Ack field5045) {
         this.field5042 = field5042;
         this.field5039 = field5043;
         this.field5040 = field5044;
@@ -30,17 +32,17 @@ public class Class952 implements Runnable
                 JSONArray.put(field5040[i]);
             }
         }
-        final Class9041 class89 = new Class9041(2, JSONArray);
+        final Packet class89 = new Packet(2, JSONArray);
         if (this.field5041 != null) {
-            Class4960.method14969().fine(String.format("emitting packet with ack id %d", Class4960.method14968(this.field5042)));
-            Class4960.method14970(this.field5042).put(Class4960.method14968(this.field5042), this.field5041);
-            class89.field38264 = Class4960.method14971(this.field5042);
+            Socket.method14969().fine(String.format("emitting packet with ack id %d", Socket.method14968(this.field5042)));
+            Socket.method14970(this.field5042).put(Socket.method14968(this.field5042), this.field5041);
+            class89.id = Socket.method14971(this.field5042);
         }
-        if (!Class4960.method14964(this.field5042)) {
-            Class4960.method14973(this.field5042).add(class89);
+        if (!Socket.method14964(this.field5042)) {
+            Socket.method14973(this.field5042).add(class89);
         }
         else {
-            Class4960.method14972(this.field5042, class89);
+            Socket.method14972(this.field5042, class89);
         }
     }
 }

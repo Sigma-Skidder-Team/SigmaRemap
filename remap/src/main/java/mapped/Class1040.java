@@ -4,6 +4,8 @@
 
 package mapped;
 
+import io.socket.client.Manager;
+
 import java.util.Timer;
 import java.util.logging.Level;
 
@@ -20,20 +22,20 @@ public class Class1040 implements Runnable
     @Override
     public void run() {
         if (Manager.method15073().isLoggable(Level.FINE)) {
-            Manager.method15073().fine(String.format("readyState %s", this.field5575.field21358));
+            Manager.method15073().fine(String.format("readyState %s", this.field5575.readyState));
         }
-        if (this.field5575.field21358 != Class1978.field10966 && this.field5575.field21358 != Class1978.field10965) {
+        if (this.field5575.readyState != Manager.ReadyState.OPEN && this.field5575.readyState != Manager.ReadyState.OPENING) {
             if (Manager.method15073().isLoggable(Level.FINE)) {
                 Manager.method15073().fine(String.format("opening %s", Manager.method15074(this.field5575)));
             }
-            this.field5575.field21375 = new Class4969(Manager.method15074(this.field5575), Manager.method15075(this.field5575));
-            final Class4968 field21375 = this.field5575.field21375;
+            this.field5575.engine = new Class4969(Manager.method15074(this.field5575), Manager.method15075(this.field5575));
+            final Class4968 field21375 = this.field5575.engine;
             final Manager field21376 = this.field5575;
-            this.field5575.field21358 = Class1978.field10965;
+            this.field5575.readyState = Manager.ReadyState.OPENING;
             Manager.method15076(this.field5575, false);
             field21375.method14976("transport", new Class4670(this, field21376));
-            final Class4248 method28106 = Class8415.method28106(field21375, "open", new Class4680(this, field21376));
-            final Class4248 method28107 = Class8415.method28106(field21375, "error", new Class4699(this, field21376));
+            final Handle method28106 = Class8415.method28106(field21375, "open", new Class4680(this, field21376));
+            final Handle method28107 = Class8415.method28106(field21375, "error", new Class4699(this, field21376));
             if (Manager.method15081(this.field5575) >= 0L) {
                 final long method28108 = Manager.method15081(this.field5575);
                 Manager.method15073().fine(String.format("connection attempt will timeout after %d", method28108));
@@ -43,7 +45,7 @@ public class Class1040 implements Runnable
             }
             Manager.method15082(this.field5575).add(method28106);
             Manager.method15082(this.field5575).add(method28107);
-            this.field5575.field21375.method15101();
+            this.field5575.engine.method15101();
         }
     }
 }

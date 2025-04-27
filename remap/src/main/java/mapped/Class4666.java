@@ -4,9 +4,11 @@
 
 package mapped;
 
+import io.socket.emitter.Emitter;
+
 import java.util.logging.Level;
 
-public class Class4666 implements Class4659
+public class Class4666 implements Emitter.Listener
 {
     public final /* synthetic */ boolean[] field20183;
     public final /* synthetic */ String field20184;
@@ -25,7 +27,7 @@ public class Class4666 implements Class4659
     }
     
     @Override
-    public void method13945(final Object... array) {
+    public void call(final Object... array) {
         if (!this.field20183[0]) {
             if (Class4968.method15143().isLoggable(Level.FINE)) {
                 Class4968.method15143().fine(String.format("probe transport '%s' opened", this.field20184));

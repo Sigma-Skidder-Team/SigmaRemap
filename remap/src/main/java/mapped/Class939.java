@@ -17,6 +17,6 @@ public class Class939 implements Runnable
     
     @Override
     public void run() {
-        Class934.method5435(new Class1068(this));
+        EventThread.exec(new Class1068(this));
     }
 }
