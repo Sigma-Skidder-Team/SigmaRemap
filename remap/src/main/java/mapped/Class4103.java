@@ -48,9 +48,7 @@ public class Class4103 extends Item
         final Block method21696 = class7096.getBlock();
         if (method21696 != Blocks.field29240) {
             if (method21696 != Blocks.REDSTONE_WIRE) {
-                if (method21696 != Blocks.field29411) {
-                    return false;
-                }
+                return method21696 == Blocks.field29411;
             }
         }
         return true;

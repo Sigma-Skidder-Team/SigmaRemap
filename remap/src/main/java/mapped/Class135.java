@@ -22,7 +22,7 @@ public class Class135 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27620()) {
-            final Optional<Class3684> method6378 = class8322.method23588().method6792().method6378(IRecipeType.field37844, new Class443(new ItemStack[] { class8321 }), class8322.method23588());
+            final Optional<Class3684> method6378 = class8322.method23588().method6792().method6378(IRecipeType.field37844, new Class443(class8321), class8322.method23588());
             if (method6378.isPresent()) {
                 final ItemStack method6379 = method6378.get().getRecipeOutput();
                 if (!method6379.method27620()) {
@@ -31,14 +31,14 @@ public class Class135 extends Class126
                     return method6380;
                 }
             }
-            Class135.field408.warn("Couldn't smelt {} because there is no smelting recipe", (Object)class8321);
+            Class135.field408.warn("Couldn't smelt {} because there is no smelting recipe", class8321);
             return class8321;
         }
         return class8321;
     }
     
     public static Class4943<?> method672() {
-        return Class126.method640((Function<Class122[], Class125>)Class135::new);
+        return Class126.method640(Class135::new);
     }
     
     static {

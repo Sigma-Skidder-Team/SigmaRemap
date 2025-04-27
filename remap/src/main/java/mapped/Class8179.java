@@ -6,6 +6,7 @@ package mapped;
 
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 
 public class Class8179 extends Class8178<Class8179>
 {
@@ -26,7 +27,7 @@ public class Class8179 extends Class8178<Class8179>
             this.field33685.setUseCaches(false);
             this.field33685.setRequestMethod("POST");
             final OutputStream outputStream = this.field33685.getOutputStream();
-            final OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-8");
+            final OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
             outputStreamWriter.write(this.field33688);
             outputStreamWriter.close();
             outputStream.flush();

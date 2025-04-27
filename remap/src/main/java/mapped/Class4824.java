@@ -13,10 +13,10 @@ import java.util.List;
 
 public class Class4824 extends Class4817
 {
-    private List<Class4868> field20638;
+    private final List<Class4868> field20638;
     private boolean field20639;
     private boolean field20640;
-    private float field20641;
+    private final float field20641;
     private int field20642;
     private int field20643;
     private static TrueTypeFont field20496;
@@ -63,7 +63,7 @@ public class Class4824 extends Class4817
         new Thread(() -> {
             final float n8;
             final Object o = new Date().getTime() + (int)n8;
-            final Object o2 = this.field20642 + 0;
+            final Object o2 = this.field20642;
             int n9 = 0;
             if (this.field20642 == 1) {
                 n9 += 30;

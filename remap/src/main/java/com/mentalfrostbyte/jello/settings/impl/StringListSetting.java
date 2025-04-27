@@ -26,7 +26,7 @@ public class StringListSetting extends Setting<List<String>> {
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
         JSONObject.put("name", this.method15204());
-        JSONObject.put("value", new JSONArray((Collection<?>) this.currentValue));
+        JSONObject.put("value", new JSONArray(this.currentValue));
         return JSONObject;
     }
 
@@ -36,7 +36,7 @@ public class StringListSetting extends Setting<List<String>> {
         this.currentValue = new ArrayList();
         if (method26638 != null) {
             for (int i = 0; i < method26638.length(); ++i) {
-                ((List) this.currentValue).add(method26638.getString(i));
+                this.currentValue.add(method26638.getString(i));
             }
         }
         return JSONObject;

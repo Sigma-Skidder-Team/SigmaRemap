@@ -54,8 +54,8 @@ public class BoxOutlineESP extends Module
                 final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                 if (!Client.getInstance().getBotManager().method31751(class399)) {
-                    if (!(!b)) {
-                        if (!(!b2)) {
+                    if (b) {
+                        if (b2) {
                             if (class399 != BoxOutlineESP.mc.player) {
                                 final double field38854 = Class8591.method29094(class399).field38854;
                                 final double field38855 = Class8591.method29094(class399).field38855;

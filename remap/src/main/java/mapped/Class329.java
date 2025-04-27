@@ -6,8 +6,8 @@ package mapped;
 
 public class Class329 implements Class328
 {
-    private Class305 field2044;
-    private Class327[] field2045;
+    private final Class305 field2044;
+    private final Class327[] field2045;
     private int field2046;
     
     public Class329(final Class305 field2044, final Class327[] field2045) {
@@ -42,6 +42,6 @@ public class Class329 implements Class328
     
     @Override
     public String toString() {
-        return "" + this.field2044 + "()";
+        return this.field2044 + "()";
     }
 }

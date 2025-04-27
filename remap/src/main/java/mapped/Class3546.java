@@ -27,7 +27,7 @@ public class Class3546 extends Class3545
     @Override
     public boolean method11013() {
         final AxisAlignedBB method18495 = this.field16611.getBoundingBox().grow(10.0, 8.0, 10.0);
-        final List<LivingEntity> method18496 = this.field16611.world.method7142((Class<? extends LivingEntity>)Class824.class, this.field16613, (LivingEntity)this.field16611, method18495);
+        final List<LivingEntity> method18496 = this.field16611.world.method7142(Class824.class, this.field16613, this.field16611, method18495);
         final List<PlayerEntity> method18497 = this.field16611.world.method7141(this.field16613, this.field16611, method18495);
         for (final Class824 class824 : method18496) {
             for (final PlayerEntity field16612 : method18497) {

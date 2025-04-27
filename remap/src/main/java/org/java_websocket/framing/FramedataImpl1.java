@@ -26,6 +26,8 @@
 package org.java_websocket.framing;
 
 import java.nio.ByteBuffer;
+import java.util.Objects;
+
 import org.java_websocket.enums.Opcode;
 import org.java_websocket.exceptions.InvalidDataException;
 import org.java_websocket.util.ByteBufferUtils;
@@ -42,7 +44,7 @@ public abstract class FramedataImpl1 implements Framedata {
     /**
      * Defines the interpretation of the "Payload data".
      */
-    private Opcode optcode;
+    private final Opcode optcode;
 
     /**
      * The unmasked "Payload data" which was sent in this frame
@@ -276,8 +278,7 @@ public abstract class FramedataImpl1 implements Framedata {
         if (optcode != that.optcode) {
             return false;
         }
-        return unmaskedpayload != null ? unmaskedpayload.equals(that.unmaskedpayload)
-                : that.unmaskedpayload == null;
+        return Objects.equals(unmaskedpayload, that.unmaskedpayload);
     }
 
     @Override

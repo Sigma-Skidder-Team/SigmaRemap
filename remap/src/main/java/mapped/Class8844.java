@@ -52,7 +52,7 @@ public class Class8844
     
     @Override
     public int hashCode() {
-        return ((1 * 59 + Float.floatToIntBits(this.method30903())) * 59 + Float.floatToIntBits(this.method30904())) * 59 + Float.floatToIntBits(this.method30905());
+        return ((59 + Float.floatToIntBits(this.method30903())) * 59 + Float.floatToIntBits(this.method30904())) * 59 + Float.floatToIntBits(this.method30905());
     }
     
     @Override

@@ -30,8 +30,8 @@ public class Class3937 extends Class3936
                 final CompoundNBT method6729 = class1851.method27657();
                 if (!method6729.contains("SkullOwner", 10)) {
                     if (method6729.contains("SkullOwner", 8)) {
-                        if (!StringUtils.isBlank((CharSequence)method6729.getString("SkullOwner"))) {
-                            method6728 = new GameProfile((UUID)null, method6729.getString("SkullOwner"));
+                        if (!StringUtils.isBlank(method6729.getString("SkullOwner"))) {
+                            method6728 = new GameProfile(null, method6729.getString("SkullOwner"));
                         }
                     }
                 }

@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public interface Class6423
 {
-    public static final Class6423 field25532 = (class5491, class5492) -> class5492;
+    Class6423 field25532 = (class5491, class5492) -> class5492;
     
     ItemStack method19090(final Class5491 p0, final ItemStack p1);
     

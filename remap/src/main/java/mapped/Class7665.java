@@ -40,14 +40,13 @@ public class Class7665
     }
     
     public ResourceLocation method24293(final MinecraftProfileTexture minecraftProfileTexture, final MinecraftProfileTexture$Type minecraftProfileTexture$Type, final Class7723 class7723) {
-        final String string = Hashing.sha1().hashUnencodedChars((CharSequence)minecraftProfileTexture.getHash()).toString();
+        final String string = Hashing.sha1().hashUnencodedChars(minecraftProfileTexture.getHash()).toString();
         final ResourceLocation class7724 = new ResourceLocation("skins/" + string);
         if (this.field30444.method5853(class7724) == null) {
             this.field30444.method5851(class7724, new Class1768(new File(new File(this.field30445, (string.length() <= 2) ? "xx" : string.substring(0, 2)), string), minecraftProfileTexture.getUrl(), Class7634.method24003(), minecraftProfileTexture$Type == MinecraftProfileTexture$Type.SKIN, () -> {
                 if (class7725 != null) {
                     class7725.method24658(minecraftProfileTexture$Type2, class7726, minecraftProfileTexture2);
                 }
-                return;
             }));
         }
         else if (class7723 != null) {
@@ -78,8 +77,8 @@ public class Class7665
                     catch (final InsecureTextureException ex2) {}
                 }
             }
-            Minecraft.getInstance().execute(() -> RenderSystem.method29991(() -> ImmutableList.of((Object)MinecraftProfileTexture$Type.SKIN, (Object)MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
-                if (!(!map2.containsKey(minecraftProfileTexture$Type))) {
+            Minecraft.getInstance().execute(() -> RenderSystem.method29991(() -> ImmutableList.of(MinecraftProfileTexture$Type.SKIN, MinecraftProfileTexture$Type.CAPE).forEach(minecraftProfileTexture$Type -> {
+                if (map2.containsKey(minecraftProfileTexture$Type)) {
                     this.method24293(map2.get(minecraftProfileTexture$Type), minecraftProfileTexture$Type, class7724);
                 }
             })));
@@ -87,6 +86,6 @@ public class Class7665
     }
     
     public Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> method24295(final GameProfile gameProfile) {
-        return (Map)this.field30447.getUnchecked((Object)gameProfile);
+        return this.field30447.getUnchecked(gameProfile);
     }
 }

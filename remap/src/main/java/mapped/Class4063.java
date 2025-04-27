@@ -54,7 +54,7 @@ public class Class4063 extends Item
         final CompoundNBT method27660 = class8321.method27660("Fireworks");
         if (method27660 != null) {
             if (method27660.contains("Flight", 99)) {
-                list.add(new Class2259("item.minecraft.firework_rocket.flight", new Object[0]).appendText(" ").appendText(String.valueOf(method27660.getByte("Flight"))).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("item.minecraft.firework_rocket.flight").appendText(" ").appendText(String.valueOf(method27660.getByte("Flight"))).applyTextStyle(TextFormatting.GRAY));
             }
             final ListNBT method27661 = method27660.getList("Explosions", 10);
             if (!method27661.isEmpty()) {

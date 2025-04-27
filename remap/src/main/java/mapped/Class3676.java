@@ -37,9 +37,7 @@ public class Class3676 extends Class3666
         }
         if (!field34174.method27620()) {
             if (field34174.method27656()) {
-                if (n > 0) {
-                    return true;
-                }
+                return n > 0;
             }
         }
         return false;

@@ -15,7 +15,7 @@ public class Class529 extends Screen
     private final Screen field3167;
     
     public Class529(final Screen field3167, final BooleanConsumer field3168, final ServerData field3169) {
-        super(new Class2259("selectServer.direct", new Object[0]));
+        super(new Class2259("selectServer.direct"));
         this.field3167 = field3167;
         this.field3164 = field3169;
         this.field3166 = field3168;
@@ -38,9 +38,9 @@ public class Class529 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3163 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 12, 200, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3058()));
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.field3166.accept(false)));
-        (this.field3165 = new Class576(this.font, this.width / 2 - 100, 116, 200, 20, Class8822.method30773("addServer.enterIp", new Object[0]))).method3397(128);
+        this.field3163 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96 + 12, 200, 20, Class8822.method30773("selectServer.select"), class654 -> this.method3058()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, Class8822.method30773("gui.cancel"), class654 -> this.field3166.accept(false)));
+        (this.field3165 = new Class576(this.font, this.width / 2 - 100, 116, 200, 20, Class8822.method30773("addServer.enterIp"))).method3397(128);
         this.field3165.method3395(true);
         this.field3165.method3377(this.minecraft.gameSettings.field23469);
         this.field3165.method3374(p0 -> this.method3059());
@@ -95,7 +95,7 @@ public class Class529 extends Screen
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
-        this.drawString(this.font, Class8822.method30773("addServer.enterIp", new Object[0]), this.width / 2 - 100, 100, 10526880);
+        this.drawString(this.font, Class8822.method30773("addServer.enterIp"), this.width / 2 - 100, 100, 10526880);
         this.field3165.render(n, n2, n3);
         super.render(n, n2, n3);
     }

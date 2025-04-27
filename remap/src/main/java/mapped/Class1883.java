@@ -34,7 +34,7 @@ public class Class1883 extends Class1882<Class364>
     
     public Class1883(final File file, final DataFixer dataFixer) {
         super(file, Class364::new, Class364::new, dataFixer, Class1959.field10684);
-        this.field10251 = (LongSet)new LongOpenHashSet();
+        this.field10251 = new LongOpenHashSet();
         this.field10250 = new Class1900(this);
     }
     
@@ -132,11 +132,11 @@ public class Class1883 extends Class1882<Class364>
     
     public void method7213(final ChunkPos class7859, final Class8199 class7860) {
         Util.method27855(this.method7180(Class353.method1090(class7859, class7860.method27159() >> 4).method1117()), class7861 -> class7861.method1181(biConsumer -> {
-            if (!(!method7214(class7862))) {
+            if (method7214(class7862)) {
                 this.method7215(class7862, class7863, biConsumer);
             }
         }), () -> {
-            if (!(!method7214(class7864))) {
+            if (method7214(class7864)) {
                 this.method7215(class7864, class7865, (Class364)this.method7182(class7865.method1117())::method1175);
             }
         });

@@ -83,7 +83,7 @@ public class Class491 extends TileEntity implements Class439
         if (!this.method2462()) {
             if (this.method2464()) {
                 if (this.field2818.getBlock() instanceof Class3836) {
-                    return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29247.getDefaultState()).with(Class3835.field17417, (this.field2818.getBlock() != Blocks.field29239) ? Class178.field507 : Class178.field508)).with((IProperty<Comparable>)Class3835.field17415, (Comparable)this.field2818.get((IProperty<V>)Class3836.field17415));
+                    return Blocks.field29247.getDefaultState().with(Class3835.field17417, (this.field2818.getBlock() != Blocks.field29239) ? Class178.field507 : Class178.field508).with((IProperty<Comparable>)Class3835.field17415, (Comparable)this.field2818.get((IProperty<V>)Class3836.field17415));
                 }
             }
         }
@@ -176,9 +176,7 @@ public class Class491 extends TileEntity implements Class439
                 if (class6222.getPosX() >= class6221.minX) {
                     if (class6222.getPosX() <= class6221.maxX) {
                         if (class6222.getPosZ() >= class6221.minZ) {
-                            if (class6222.getPosZ() <= class6221.maxZ) {
-                                return true;
-                            }
+                            return class6222.getPosZ() <= class6221.maxZ;
                         }
                     }
                 }
@@ -299,8 +297,8 @@ public class Class491 extends TileEntity implements Class439
                 if (this.field2656.getBlockState(this.field2657).method21696() == Blocks.MOVING_PISTON) {
                     BlockState method11786 = Block.method11786(this.field2818, this.field2656, this.field2657);
                     if (!method11786.method21706()) {
-                        if (((StateHolder<Object, Object>)method11786).method21771((IProperty<Comparable>)Class8970.field37747)) {
-                            if (((StateHolder<Object, Object>)method11786).get((IProperty<Boolean>)Class8970.field37747)) {
+                        if (method11786.method21771((IProperty<Comparable>)Class8970.field37747)) {
+                            if (method11786.get(Class8970.field37747)) {
                                 method11786 = ((StateHolder<Object, BlockState>)method11786).with((IProperty<Comparable>)Class8970.field37747, false);
                             }
                         }

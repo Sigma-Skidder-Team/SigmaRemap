@@ -23,7 +23,7 @@ public class OldHitting extends Module
     
     public OldHitting() {
         super(Category.PLAYER, "OldHitting", "Reverts to 1.7/1.8 hitting");
-        this.addSetting(new StringSetting("Animation", "Animation mode", 0, new String[] { "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down" }));
+        this.addSetting(new StringSetting("Animation", "Animation mode", 0, "Vanilla", "Tap", "Tap2", "Slide", "Slide2", "Scale", "Leaked", "Ninja", "Down"));
         this.method9915(true);
     }
     
@@ -81,9 +81,7 @@ public class OldHitting extends Module
                 field15857 = true;
             }
             if (!(OldHitting.field15857 = field15857)) {
-                if (RotationManager.field34858.contains(OldHitting.mc.player)) {
-                    RotationManager.field34858.remove(OldHitting.mc.player);
-                }
+                RotationManager.field34858.remove(OldHitting.mc.player);
             }
             else if (!RotationManager.field34858.contains(OldHitting.mc.player)) {
                 RotationManager.field34858.add(OldHitting.mc.player);

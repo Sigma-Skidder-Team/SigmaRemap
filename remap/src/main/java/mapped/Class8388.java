@@ -69,10 +69,10 @@ public class Class8388
     private Set<Direction> method27963(final int bitIndex) {
         final EnumSet<Direction> none = EnumSet.noneOf(Direction.class);
         final IntArrayFIFOQueue intArrayFIFOQueue = new IntArrayFIFOQueue(384);
-        ((IntPriorityQueue)intArrayFIFOQueue).enqueue(bitIndex);
+        intArrayFIFOQueue.enqueue(bitIndex);
         this.field34388.set(bitIndex, true);
-        while (!((IntPriorityQueue)intArrayFIFOQueue).isEmpty()) {
-            final int dequeueInt = ((IntPriorityQueue)intArrayFIFOQueue).dequeueInt();
+        while (!intArrayFIFOQueue.isEmpty()) {
+            final int dequeueInt = intArrayFIFOQueue.dequeueInt();
             this.method27964(dequeueInt, none);
             final Direction[] field34387 = Class8388.field34387;
             for (int length = field34387.length, i = 0; i < length; ++i) {
@@ -80,7 +80,7 @@ public class Class8388
                 if (method27965 >= 0) {
                     if (!this.field34388.get(method27965)) {
                         this.field34388.set(method27965, true);
-                        ((IntPriorityQueue)intArrayFIFOQueue).enqueue(method27965);
+                        intArrayFIFOQueue.enqueue(method27965);
                     }
                 }
             }

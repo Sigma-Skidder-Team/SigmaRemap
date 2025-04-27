@@ -30,7 +30,7 @@ public class Class5917 extends Class5901
         this.field24310 = new Class6300(64, 32, 12, 10).method18636(0.0f, -4.0f, -0.01f, 5.0f, 8.0f, 1.0f);
         this.field24311 = new Class6300(64, 32, 24, 10).method18636(0.0f, -4.0f, 0.0f, 5.0f, 8.0f, 0.005f);
         this.field24312 = new Class6300(64, 32, 24, 10).method18636(0.0f, -4.0f, 0.0f, 5.0f, 8.0f, 0.005f);
-        this.field24314 = (List<Class6300>)ImmutableList.of((Object)this.field24307, (Object)this.field24308, (Object)this.field24313, (Object)this.field24309, (Object)this.field24310, (Object)this.field24311, (Object)this.field24312);
+        this.field24314 = (List<Class6300>)ImmutableList.of(this.field24307, this.field24308, this.field24313, this.field24309, this.field24310, this.field24311, (Object)this.field24312);
         this.field24307.method18642(0.0f, 0.0f, -1.0f);
         this.field24308.method18642(0.0f, 0.0f, 1.0f);
         this.field24313.field25184 = 1.5707964f;

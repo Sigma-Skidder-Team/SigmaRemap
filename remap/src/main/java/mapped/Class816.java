@@ -77,9 +77,7 @@ public class Class816 extends Class815
     private boolean method4805() {
         if (!this.method4715()) {
             if (!this.method4807()) {
-                if (!this.method1913()) {
-                    return true;
-                }
+                return !this.method1913();
             }
         }
         return false;

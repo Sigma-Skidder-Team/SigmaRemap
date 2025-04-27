@@ -17,7 +17,7 @@ public class Class5198 extends Class5174
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40630, () -> DSL.optionalFields("Children", DSL.list(DSL.optionalFields("CA", Class9451.field40623.in(schema2), "CB", Class9451.field40623.in(schema2), "CC", Class9451.field40623.in(schema2), "CD", Class9451.field40623.in(schema2)))));
     }
 }

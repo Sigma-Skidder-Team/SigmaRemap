@@ -28,7 +28,7 @@ public class Class3548 extends Class3547
     @Override
     public void method11102(final Class759 class759, final LivingEntity class760) {
         if (class759 instanceof Class791) {
-            if (((Class791)class759).method4216()) {
+            if (class759.method4216()) {
                 class759.method4153(class760);
             }
         }

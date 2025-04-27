@@ -6,10 +6,10 @@ package mapped;
 
 public interface Class4191
 {
-    public static final int field18737 = 0;
-    public static final int field18738 = 11;
-    public static final int field18739 = 13;
-    public static final int field18740 = 14;
-    public static final int field18741 = 15;
-    public static final int field18742 = 5;
+    int field18737 = 0;
+    int field18738 = 11;
+    int field18739 = 13;
+    int field18740 = 14;
+    int field18741 = 15;
+    int field18742 = 5;
 }

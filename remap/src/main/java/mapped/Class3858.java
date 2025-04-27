@@ -66,9 +66,7 @@ public class Class3858 extends Block implements Class3857
         final IFluidState method6702 = class1851.getFluidState(class1852);
         if (class1851.getBlockState(class1852).getBlock() == Blocks.field29173) {
             if (method6702.getLevel() >= 8) {
-                if (method6702.isSource()) {
-                    return true;
-                }
+                return method6702.isSource();
             }
         }
         return false;
@@ -134,9 +132,7 @@ public class Class3858 extends Block implements Class3857
         final Block method21696 = class7097.getBlockState(class7098.method1139()).getBlock();
         if (method21696 != Blocks.BUBBLE_COLUMN) {
             if (method21696 != Blocks.MAGMA_BLOCK) {
-                if (method21696 != Blocks.field29339) {
-                    return false;
-                }
+                return method21696 == Blocks.field29339;
             }
         }
         return true;

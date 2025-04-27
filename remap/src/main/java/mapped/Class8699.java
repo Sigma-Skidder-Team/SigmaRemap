@@ -100,9 +100,9 @@ public class Class8699
             return null;
         }
         if (this.field36561.isEmpty()) {
-            Preconditions.checkNotNull((Object)this.field36557, (Object)"This packet does not have an input buffer.");
+            Preconditions.checkNotNull((Object)this.field36557, "This packet does not have an input buffer.");
             try {
-                return (T)obj.method16378(this.field36557);
+                return obj.method16378(this.field36557);
             }
             catch (final Exception ex) {
                 throw new Class2328(ex).method9449("Type", obj.method16382()).method9449("Packet ID", this.method29848()).method9449("Data", this.field36562);
@@ -213,7 +213,7 @@ public class Class8699
     }
     
     private ByteBuf method29832(final Class<? extends Class5207> obj, final boolean b, final Class2128 class2128) throws Exception {
-        final ArrayList list = new ArrayList((Collection<? extends E>)this.method29841().method18207(Class6651.class).method20211().method16337());
+        final ArrayList list = new ArrayList(this.method29841().method18207(Class6651.class).method20211().method16337());
         if (class2128 == Class2128.field12427) {
             Collections.reverse(list);
         }
@@ -240,7 +240,7 @@ public class Class8699
     
     public ChannelFuture method29834(final Class<? extends Class5207> clazz) throws Exception {
         if (this.method29840()) {
-            return this.method29841().method18220().newFailedFuture((Throwable)new Exception("Cancelled packet"));
+            return this.method29841().method18220().newFailedFuture(new Exception("Cancelled packet"));
         }
         return this.method29841().method18212(this.method29832(clazz, true, Class2128.field12427));
     }
@@ -266,7 +266,7 @@ public class Class8699
     
     public Class8699 method29838(final Class2128 class2128, final Class2044 class2129, final int n, final List<Class5207> list) throws Exception {
         for (int i = n; i < list.size(); ++i) {
-            ((Class5207)list.get(i)).method16318(class2128, class2129, this);
+            list.get(i).method16318(class2128, class2129, this);
             this.method29842();
         }
         return this;

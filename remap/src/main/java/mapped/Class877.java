@@ -67,7 +67,7 @@ public class Class877<T> implements Class875<T>, AutoCloseable, Runnable
         if (!this.method5397()) {
             return false;
         }
-        final Runnable runnable = (Runnable)this.field4729.method21856();
+        final Runnable runnable = this.field4729.method21856();
         if (runnable != null) {
             runnable.run();
             return true;
@@ -112,7 +112,7 @@ public class Class877<T> implements Class875<T>, AutoCloseable, Runnable
             executor.execute(class878);
         }
         catch (final RejectedExecutionException ex2) {
-            Class877.field4727.error("Cound not schedule mailbox", (Throwable)ex2);
+            Class877.field4727.error("Cound not schedule mailbox", ex2);
         }
     }
     

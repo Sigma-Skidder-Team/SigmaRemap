@@ -35,20 +35,18 @@ public abstract class Class4582<C extends Class5113> extends Class4574<C>
         final ChunkPos method13593 = this.method13593(class5508, random, n, n2, 0, 0);
         if (n == method13593.field32290) {
             if (n2 == method13593.field32291) {
-                if (class5508.method18877(class5509, this)) {
-                    return true;
-                }
+                return class5508.method18877(class5509, this);
             }
         }
         return false;
     }
     
     public int method13603(final Class6346<?> class6346) {
-        return ((Class7065)class6346.method18876()).method21572();
+        return class6346.method18876().method21572();
     }
     
     public int method13604(final Class6346<?> class6346) {
-        return ((Class7065)class6346.method18876()).method21573();
+        return class6346.method18876().method21573();
     }
     
     public abstract int method13605();

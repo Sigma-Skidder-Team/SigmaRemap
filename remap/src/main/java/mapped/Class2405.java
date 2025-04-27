@@ -7,11 +7,11 @@ package mapped;
 public class Class2405 extends Class2400
 {
     private static String[] field14251;
-    private Class2412 field14252;
-    private Class2412 field14253;
-    private Class2412 field14254;
-    private Class2412 field14255;
-    private int field14256;
+    private final Class2412 field14252;
+    private final Class2412 field14253;
+    private final Class2412 field14254;
+    private final Class2412 field14255;
+    private final int field14256;
     
     public Class2405(final Class2412 class2412, final Class2412 class2413, final Class2412 class2414, final Class2412 class2415) {
         this(class2412, class2413, class2414, class2415, 20);

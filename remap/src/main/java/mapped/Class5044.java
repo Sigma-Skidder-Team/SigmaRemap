@@ -7,7 +7,7 @@ package mapped;
 public class Class5044<E>
 {
     private static String[] field21604;
-    private E[] field21605;
+    private final E[] field21605;
     private int field21606;
     
     public Class5044(final int n) {

@@ -22,9 +22,7 @@ public class Class5468 extends Class5467
             if (method6927 != null) {
                 if (method6927.method30663()) {
                     if (!method6927.method30622()) {
-                        if (!method6927.method30623()) {
-                            return true;
-                        }
+                        return !method6927.method30623();
                     }
                 }
             }

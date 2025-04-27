@@ -22,7 +22,7 @@ public class Class5959 extends Class5960 implements JsonSerializer<Class7265>, J
         this.deserialize(asJsonObject, class7265, jsonDeserializationContext);
         class7265.method22222(asJsonObject.get("translate").getAsString());
         if (asJsonObject.has("with")) {
-            class7265.method22213(Arrays.asList((Class7266[])jsonDeserializationContext.deserialize(asJsonObject.get("with"), (Type)Class7266[].class)));
+            class7265.method22213(Arrays.asList(jsonDeserializationContext.deserialize(asJsonObject.get("with"), Class7266[].class)));
         }
         return class7265;
     }
@@ -32,8 +32,8 @@ public class Class5959 extends Class5960 implements JsonSerializer<Class7265>, J
         this.serialize(jsonObject, class7265, jsonSerializationContext);
         jsonObject.addProperty("translate", class7265.method22220());
         if (class7265.method22221() != null) {
-            jsonObject.add("with", jsonSerializationContext.serialize((Object)class7265.method22221()));
+            jsonObject.add("with", jsonSerializationContext.serialize(class7265.method22221()));
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

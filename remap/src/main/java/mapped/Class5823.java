@@ -37,7 +37,7 @@ public abstract class Class5823 extends Class5827
         class1851.setBlockState(class1853.add(n + 1, 0, n2), method17516, 4);
         class1851.setBlockState(class1853.add(n, 0, n2 + 1), method17516, 4);
         class1851.setBlockState(class1853.add(n + 1, 0, n2 + 1), method17516, 4);
-        if (!method17515.method28613(class1851, (Class6346)class1852, random, class1853.add(n, 0, n2))) {
+        if (!method17515.method28613(class1851, class1852, random, class1853.add(n, 0, n2))) {
             class1851.setBlockState(class1853.add(n, 0, n2), class1854, 4);
             class1851.setBlockState(class1853.add(n + 1, 0, n2), class1854, 4);
             class1851.setBlockState(class1853.add(n, 0, n2 + 1), class1854, 4);
@@ -52,9 +52,7 @@ public abstract class Class5823 extends Class5827
         if (method21696 == class7097.getBlockState(class7098.add(n, 0, n2)).getBlock()) {
             if (method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2)).getBlock()) {
                 if (method21696 == class7097.getBlockState(class7098.add(n, 0, n2 + 1)).getBlock()) {
-                    if (method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2 + 1)).getBlock()) {
-                        return true;
-                    }
+                    return method21696 == class7097.getBlockState(class7098.add(n + 1, 0, n2 + 1)).getBlock();
                 }
             }
         }

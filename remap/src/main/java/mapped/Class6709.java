@@ -10,7 +10,7 @@ import java.util.Collections;
 public class Class6709 extends Class6693
 {
     public Class6709() {
-        super("vclip", "Vertical clip through blocks", new String[] { "vc" });
+        super("vclip", "Vertical clip through blocks", "vc");
         this.method20351("offset");
     }
     

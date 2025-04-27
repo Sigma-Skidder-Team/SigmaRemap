@@ -32,9 +32,7 @@ public class Class3658 extends Class3643
         if (!this.method11261(class6108, class6109, Class222.field773)) {
             if (!this.method11261(class6108, class6109, Class222.field774)) {
                 if (!this.method11261(class6108, class6109, Class222.field771)) {
-                    if (!this.method11261(class6108, class6109, Class222.field772)) {
-                        return false;
-                    }
+                    return this.method11261(class6108, class6109, Class222.field772);
                 }
             }
         }

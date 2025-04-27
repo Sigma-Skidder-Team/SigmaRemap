@@ -9,13 +9,13 @@ import java.util.ArrayList;
 public class Class7290 implements Class7291, Class7292
 {
     private static String[] field28242;
-    private ArrayList field28243;
-    private Class6539 field28244;
-    private Class7449 field28245;
-    private int field28246;
-    private Class1928[][] field28247;
-    private boolean field28248;
-    private Class8054 field28249;
+    private final ArrayList field28243;
+    private final Class6539 field28244;
+    private final Class7449 field28245;
+    private final int field28246;
+    private final Class1928[][] field28247;
+    private final boolean field28248;
+    private final Class8054 field28249;
     private Class1928 field28250;
     private Class7916 field28251;
     private int field28252;

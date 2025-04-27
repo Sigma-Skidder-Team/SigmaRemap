@@ -33,10 +33,7 @@ public class Class4856 extends Class4841
             final int n3 = this.method14274() + ((this.field20497.method19737() != Class2056.field11738) ? 0 : ((this.field20497.method19737() != Class2056.field11737) ? (this.method14278() / 2) : this.method14278()));
             this.method14316().getWidth(this.getTypedText());
             final float n4 = this.field20805 * this.field20805 * this.field20805;
-            boolean b = false;
-            if (this.method14306()) {
-                b = true;
-            }
+            boolean b = this.method14306();
             if (b) {
                 RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(-11890462, 1.0f));
             }

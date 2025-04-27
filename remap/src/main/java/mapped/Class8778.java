@@ -48,7 +48,7 @@ public final class Class8778
     }
     
     public Class8778 method30519(final Class7266[] array, final Class1975 class1975) {
-        Preconditions.checkArgument(array.length != 0, (Object)"No components to append");
+        Preconditions.checkArgument(array.length != 0, "No components to append");
         final Class7266 field36912 = this.field36912;
         for (final Class7266 class1976 : array) {
             this.field36913.add(this.field36912);

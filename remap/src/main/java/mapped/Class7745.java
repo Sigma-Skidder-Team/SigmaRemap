@@ -25,7 +25,7 @@ public final class Class7745 extends Class7744
     
     @Override
     public List<Certificate> method24708(final List<Certificate> c, final String s) throws SSLPeerUnverifiedException {
-        final ArrayDeque arrayDeque = new ArrayDeque((Collection<? extends E>)c);
+        final ArrayDeque arrayDeque = new ArrayDeque(c);
         final ArrayList obj = new ArrayList();
         obj.add(arrayDeque.removeFirst());
         boolean b = false;

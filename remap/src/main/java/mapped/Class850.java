@@ -47,7 +47,7 @@ public class Class850 extends Class763
         this.field4114.method22062(10, new Class3494(this));
         this.field4114.method22062(11, new Class3454(this));
         this.field4115.method22062(1, new Class3557(this));
-        this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(2, new Class3547(this, new Class[0]));
         this.field4115.method22062(3, new Class3555<Object>(this, Class842.class, 10, true, false, Class850.field4523));
     }
     

@@ -24,9 +24,9 @@ public class Class4910 extends Class4825
     public boolean field21007;
     private Texture field21008;
     private Texture field21009;
-    private Animation field21010;
+    private final Animation field21010;
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         try {
             if (this.field21008 != null) {
                 Client.getInstance().addTexture(this.field21008);
@@ -112,9 +112,8 @@ public class Class4910 extends Class4825
                     }
                 }
                 catch (final NumberFormatException | IOException ex3) {
-                    ((Throwable)ex3).printStackTrace();
+                    ex3.printStackTrace();
                 }
-                return;
             }).start();
         }
         final float method35858 = this.field21010.calcPercent();

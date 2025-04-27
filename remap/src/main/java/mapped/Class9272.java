@@ -27,11 +27,11 @@ public class Class9272
     private final Int2IntMap field39758;
     
     public Class9272(final ImmutableList<Class7187> field39752) {
-        this.field39753 = (IntList)new IntArrayList();
+        this.field39753 = new IntArrayList();
         this.field39755 = -1;
         this.field39756 = -1;
         this.field39757 = -1;
-        this.field39758 = (Int2IntMap)new Int2IntArrayMap();
+        this.field39758 = new Int2IntArrayMap();
         this.field39752 = field39752;
         int n = 0;
         for (final Class7187 class7187 : field39752) {
@@ -84,7 +84,7 @@ public class Class9272
         }
         if (o != null && this.getClass() == o.getClass()) {
             final Class9272 class9272 = (Class9272)o;
-            return this.field39754 == class9272.field39754 && this.field39752.equals((Object)class9272.field39752);
+            return this.field39754 == class9272.field39754 && this.field39752.equals(class9272.field39752);
         }
         return false;
     }
@@ -99,7 +99,7 @@ public class Class9272
             final int method34194 = this.method34194();
             final ImmutableList<Class7187> method34195 = this.method34195();
             for (int i = 0; i < ((List)method34195).size(); ++i) {
-                ((List<Class7187>)method34195).get(i).method22054(n + this.field39753.getInt(i), method34194);
+                method34195.get(i).method22054(n + this.field39753.getInt(i), method34194);
             }
         }
         else {
@@ -110,8 +110,8 @@ public class Class9272
     public void method34197() {
         if (RenderSystem.method29984()) {
             final UnmodifiableIterator iterator = this.method34195().iterator();
-            while (((Iterator)iterator).hasNext()) {
-                ((Class7187)((Iterator)iterator).next()).method22055();
+            while (iterator.hasNext()) {
+                ((Class7187) iterator.next()).method22055();
             }
         }
         else {

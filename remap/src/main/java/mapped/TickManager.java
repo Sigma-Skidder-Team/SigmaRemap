@@ -14,7 +14,7 @@ public class TickManager {
     private boolean field36159;
     private long field36160;
     private float field36161;
-    private Minecraft field36162;
+    private final Minecraft field36162;
 
     public TickManager() {
         this.field36156 = 0;

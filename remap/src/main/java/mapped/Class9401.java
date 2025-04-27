@@ -31,10 +31,10 @@ public class Class9401
     public Class9401(final Dynamic<?> field40332) {
         this.field40330 = new Class95<Dynamic<?>>(32);
         this.field40334 = (Int2ObjectMap<IntList>)new Int2ObjectLinkedOpenHashMap();
-        this.field40335 = (IntList)new IntArrayList();
+        this.field40335 = new IntArrayList();
         this.field40337 = Sets.newIdentityHashSet();
         this.field40338 = new int[4096];
-        this.field40331 = (Dynamic<?>)field40332.emptyList();
+        this.field40331 = field40332.emptyList();
         this.field40332 = field40332;
         this.field40336 = field40332.get("Y").asInt(0);
         this.field40333 = field40332.get("Blocks").get().isPresent();
@@ -50,7 +50,7 @@ public class Class9401
     
     public void method34935(final int n, final Dynamic<?> dynamic) {
         if (this.field40337.add(dynamic)) {
-            this.field40331 = (Dynamic<?>)this.field40331.merge("%%FILTER_ME%%".equals(Class9251.method34109(dynamic)) ? Class9251.method34121() : dynamic);
+            this.field40331 = this.field40331.merge("%%FILTER_ME%%".equals(Class9251.method34109(dynamic)) ? Class9251.method34121() : dynamic);
         }
         this.field40338[n] = Class9251.method34111(this.field40330, dynamic);
     }
@@ -62,7 +62,7 @@ public class Class9401
             final Class9318 class9319 = this.field40332.get("Add").asByteBufferOpt().map(byteBuffer3 -> new Class9318(DataFixUtils.toArray(byteBuffer3))).orElseGet(Class9318::new);
             this.field40337.add((Dynamic<?>)Class9251.method34121());
             Class9251.method34111(this.field40330, (Dynamic<?>)Class9251.method34121());
-            this.field40331 = (Dynamic<?>)this.field40331.merge(Class9251.method34121());
+            this.field40331 = this.field40331.merge(Class9251.method34121());
             for (int i = 0; i < 4096; ++i) {
                 final int n2 = i & 0xF;
                 final int n3 = i >> 8 & 0xF;
@@ -99,7 +99,7 @@ public class Class9401
     public Dynamic<?> method34938() {
         final Dynamic<?> field40332 = this.field40332;
         if (this.field40333) {
-            final Dynamic set = field40332.set("Palette", (Dynamic)this.field40331);
+            final Dynamic set = field40332.set("Palette", this.field40331);
             final Class9217 class9217 = new Class9217(Math.max(4, DataFixUtils.ceillog2(this.field40337.size())), 4096);
             for (int i = 0; i < this.field40338.length; ++i) {
                 class9217.method33926(i, this.field40338[i]);

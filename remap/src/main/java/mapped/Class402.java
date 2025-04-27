@@ -5,11 +5,9 @@
 package mapped;
 
 import javax.annotation.Nullable;
-import java.util.Arrays;
+import java.util.*;
 
 import com.google.common.collect.Lists;
-import java.util.Iterator;
-import java.util.List;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.entity.*;
 import net.minecraft.item.ItemStack;
@@ -22,9 +20,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.World;
-
-import java.util.UUID;
-import java.util.Optional;
 
 public abstract class Class402 extends Entity implements Class401
 {
@@ -410,7 +405,7 @@ public abstract class Class402 extends Entity implements Class401
                         }
                         else if (!method21452.isAlive()) {
                             if (this.method1982()) {
-                                Class7770.field31807.method13831(class7010, Arrays.asList(method21452), 0);
+                                Class7770.field31807.method13831(class7010, Collections.singletonList(method21452), 0);
                             }
                         }
                     }
@@ -439,8 +434,8 @@ public abstract class Class402 extends Entity implements Class401
         return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().expand(this.getMotion()).intersect(1.0), class5489 -> {
             final boolean b;
             if (!class5489.isSpectator()) {
-                if (!(!class5489.isAlive())) {
-                    if (!(!class5489.method1749())) {
+                if (class5489.isAlive()) {
+                    if (class5489.method1749()) {
                         if (class5489 != this.method1973() || this.field2478 >= 5) {
                             if (this.field2482 == null || !this.field2482.contains(class5489.getEntityId())) {
                                 return b;

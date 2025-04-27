@@ -21,9 +21,9 @@ public class Class6689 implements Class6686
     private final float[][] field26406;
     private int field26407;
     private int[][][] field26408;
-    private int[][][] field26409;
+    private final int[][][] field26409;
     private int[][][] field26410;
-    private int[][][] field26411;
+    private final int[][][] field26411;
     
     public Class6689(final int field26398) {
         this.field26398 = field26398;

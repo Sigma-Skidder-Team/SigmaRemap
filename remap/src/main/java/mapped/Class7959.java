@@ -21,7 +21,7 @@ public class Class7959 implements Class7954
     public Class7959(final int field32699, final int field32700, final int field32701, final Map<Class7611, Item> field32702) {
         Registry.field239.method509().filter(class7611 -> !map.containsKey(class7611)).findAny().ifPresent(class7612 -> {
             new IllegalStateException("Missing trade for villager type: " + Registry.field239.getKey(class7612));
-            throw;
+            throw
         });
         this.field32698 = field32702;
         this.field32699 = field32699;

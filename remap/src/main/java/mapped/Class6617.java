@@ -44,6 +44,6 @@ public class Class6617 extends Class6601
     
     @Override
     public Pair<ResourceLocation, ResourceLocation> method20059() {
-        return (Pair<ResourceLocation, ResourceLocation>)Pair.of((Object)Class3427.field16192, (Object)Class3427.method10941()[this.field26193.getIndex()]);
+        return (Pair<ResourceLocation, ResourceLocation>)Pair.of((Object)Class3427.field16192, Class3427.method10941()[this.field26193.getIndex()]);
     }
 }

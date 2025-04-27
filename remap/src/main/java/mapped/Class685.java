@@ -82,11 +82,11 @@ public class Class685 extends AbstractGui
             this.field3780.put(values[i], Lists.newArrayList());
         }
         final NarratorChatListener field3754 = NarratorChatListener.field32404;
-        this.field3780.get(Class285.field1572).add((Object)new Class7893(field3753));
-        this.field3780.get(Class285.field1572).add((Object)field3754);
-        this.field3780.get(Class285.field1573).add((Object)new Class7893(field3753));
-        this.field3780.get(Class285.field1573).add((Object)field3754);
-        this.field3780.get(Class285.field1574).add((Object)new Class7896(field3753));
+        this.field3780.get(Class285.field1572).add(new Class7893(field3753));
+        this.field3780.get(Class285.field1572).add(field3754);
+        this.field3780.get(Class285.field1573).add(new Class7893(field3753));
+        this.field3780.get(Class285.field1573).add(field3754);
+        this.field3780.get(Class285.field1574).add(new Class7896(field3753));
         this.method3778();
     }
     
@@ -384,7 +384,7 @@ public class Class685 extends AbstractGui
         for (final Class1948 class1948 : Ordering.natural().reverse().sortedCopy((Iterable)method2651)) {
             final Class5328 class1951 = class1948.method7906();
             if (Class9570.field41350.method22605()) {
-                if (!Class9570.method35820(class1948, Class9570.field41350, new Object[0])) {
+                if (!Class9570.method35820(class1948, Class9570.field41350)) {
                     continue;
                 }
                 this.field3753.method5290().method5849(Class516.field3074);
@@ -587,7 +587,7 @@ public class Class685 extends AbstractGui
             s = Class8822.method30773("demo.remainingTime", Class8272.method27498((int)(120500L - this.field3753.world.method6754())));
         }
         else {
-            s = Class8822.method30773("demo.demoExpired", new Object[0]);
+            s = Class8822.method30773("demo.demoExpired");
         }
         this.method3809().drawStringWithShadow(s, (float)(this.field3778 - this.method3809().getStringWidth(s) - 10), 5.0f, 16777215);
         this.field3753.method5327().endSection();
@@ -602,7 +602,7 @@ public class Class685 extends AbstractGui
             arrayList = list;
         }
         else {
-            arrayList = Lists.newArrayList(Iterables.skip((Iterable)list, method34312.size() - 15));
+            arrayList = Lists.newArrayList(Iterables.skip(list, method34312.size() - 15));
         }
         final String method34313 = class9290.method34314().getFormattedText();
         int a;
@@ -689,7 +689,7 @@ public class Class685 extends AbstractGui
             }
             this.field3774 = method3791;
             final int field3775 = this.field3775;
-            this.field3752.setSeed(this.field3756 * 312871);
+            this.field3752.setSeed(this.field3756 * 312871L);
             final int method3793 = method3790.method2877().method33491();
             final Class7619 method3794 = method3790.method2710(Class8107.field33405);
             final int n = this.field3778 / 2 - 91;
@@ -840,7 +840,7 @@ public class Class685 extends AbstractGui
                     for (int j = 0; j < min; ++j) {
                         final int n6 = 0;
                         final int n7 = n3 - j * 8 - 9;
-                        this.blit(n7, n4, 52 + n6 * 9, 9, 9, 9);
+                        this.blit(n7, n4, 52, 9, 9, 9);
                         if (j * 2 + 1 + n5 < n) {
                             this.blit(n7, n4, 88, 9, 9, 9);
                         }

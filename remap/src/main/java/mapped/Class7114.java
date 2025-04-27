@@ -28,7 +28,7 @@ public class Class7114<T extends Enum<T> & IStringSerializable> extends Class711
         this.field27744 = Maps.newHashMap();
         this.field27743 = (ImmutableSet<T>)ImmutableSet.copyOf((Collection)collection);
         for (final Enum<T> & IStringSerializable enum1 : collection) {
-            final String method596 = ((T)enum1).getName();
+            final String method596 = enum1.getName();
             if (this.field27744.containsKey(method596)) {
                 throw new IllegalArgumentException("Multiple values have the same name '" + method596 + "'");
             }
@@ -38,7 +38,7 @@ public class Class7114<T extends Enum<T> & IStringSerializable> extends Class711
     
     @Override
     public Collection<T> getAllowedValues() {
-        return (Collection<T>)this.field27743;
+        return this.field27743;
     }
     
     @Override
@@ -57,7 +57,7 @@ public class Class7114<T extends Enum<T> & IStringSerializable> extends Class711
         }
         if (o instanceof Class7114 && super.equals(o)) {
             final Class7114 class7114 = (Class7114)o;
-            return this.field27743.equals((Object)class7114.field27743) && this.field27744.equals(class7114.field27744);
+            return this.field27743.equals(class7114.field27743) && this.field27744.equals(class7114.field27744);
         }
         return false;
     }
@@ -68,11 +68,11 @@ public class Class7114<T extends Enum<T> & IStringSerializable> extends Class711
     }
     
     public static <T extends Enum<T> & IStringSerializable> Class7114<T> method21837(final String s, final Class<T> clazz) {
-        return method21838(s, clazz, (Predicate<T>)Predicates.alwaysTrue());
+        return method21838(s, clazz, Predicates.alwaysTrue());
     }
     
     public static <T extends Enum<T> & IStringSerializable> Class7114<T> method21838(final String s, final Class<T> clazz, final Predicate<T> predicate) {
-        return method21840(s, clazz, (Collection<T>)Arrays.stream(clazz.getEnumConstants()).filter(predicate).collect((Collector<? super T, ?, Collection<T>>)Collectors.toList()));
+        return method21840(s, clazz, Arrays.stream(clazz.getEnumConstants()).filter(predicate).collect((Collector<? super T, ?, Collection<T>>)Collectors.toList()));
     }
     
     public static <T extends Enum<T> & IStringSerializable> Class7114<T> method21839(final String s, final Class<T> clazz, final T... array) {

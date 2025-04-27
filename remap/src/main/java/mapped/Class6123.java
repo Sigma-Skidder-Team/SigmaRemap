@@ -95,16 +95,14 @@ public class Class6123 implements Class6113
     private void method18323(final double n, final double n2, final double n3) {
         final BlockPos class354 = new BlockPos(n, n2, n3);
         this.field24857.forEach(class357 -> {
-            if (!(!class356.method1081(class357.method1114(), 60.0))) {
+            if (class356.method1081(class357.method1114(), 60.0)) {
                 method18324(class357);
             }
-            return;
         });
         this.field24858.values().forEach(class358 -> {
-            if (!(!this.method18335(class358))) {
+            if (this.method18335(class358)) {
                 this.method18329(class358, n4, n5, n6);
             }
-            return;
         });
         for (final BlockPos class355 : this.field24856.keySet()) {
             if (!class354.withinDistance(class355, 30.0)) {
@@ -113,13 +111,12 @@ public class Class6123 implements Class6113
             method18325(class355);
         }
         this.field24856.values().forEach(class360 -> {
-            if (!(!class359.method1081(class360.field27401, 30.0))) {
+            if (class359.method1081(class360.field27401, 30.0)) {
                 this.method18327(class360);
             }
-            return;
         });
         this.method18337().forEach((class362, list) -> {
-            if (!(!class361.method1081(class362, 30.0))) {
+            if (class361.method1081(class362, 30.0)) {
                 this.method18326(class362, list);
             }
         });
@@ -147,7 +144,7 @@ public class Class6123 implements Class6113
     private void method18327(final Class7018 class7018) {
         int n = 0;
         if (this.method18333(class7018).size() >= 4) {
-            method18330("" + this.method18333(class7018).size() + " ticket holders", class7018, n, -256);
+            method18330(this.method18333(class7018).size() + " ticket holders", class7018, n, -256);
         }
         else {
             method18330("" + this.method18333(class7018), class7018, n, -256);

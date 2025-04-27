@@ -21,7 +21,7 @@ public enum Class104 implements IStringSerializable
     
     private final String field321;
     
-    private Class104(final String field321) {
+    Class104(final String field321) {
         this.field321 = field321;
     }
     
@@ -34,9 +34,7 @@ public enum Class104 implements IStringSerializable
         if (this != Class104.field315) {
             if (this != Class104.field313) {
                 if (this != Class104.field316) {
-                    if (this != Class104.field314) {
-                        return false;
-                    }
+                    return this == Class104.field314;
                 }
             }
         }

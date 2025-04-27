@@ -86,7 +86,7 @@ public abstract class Class1868 implements Class1867
     }
     
     public boolean method7121(final Class4574<?> key) {
-        return this.field10192.computeIfAbsent(key, p0 -> this.field10194.stream().anyMatch(class4575 -> class4575.method9853((Class4574<Class5113>)class4574)));
+        return this.field10192.computeIfAbsent(key, p0 -> this.field10194.stream().anyMatch(class4575 -> class4575.method9853(class4574)));
     }
     
     public Set<BlockState> method7122() {

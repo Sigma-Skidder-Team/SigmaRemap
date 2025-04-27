@@ -23,10 +23,10 @@ public class Class973 implements Runnable
     @Override
     public void run() {
         if (this.field5185 == null) {
-            this.field5187.method18220().pipeline().fireChannelRead((Object)this.field5186);
+            this.field5187.method18220().pipeline().fireChannelRead(this.field5186);
         }
         else {
-            this.field5185.fireChannelRead((Object)this.field5186);
+            this.field5185.fireChannelRead(this.field5186);
         }
     }
 }

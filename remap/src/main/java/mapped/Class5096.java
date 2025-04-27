@@ -19,7 +19,7 @@ public class Class5096 implements Class5092<Class8637>
         final ArrayList arrayList = Lists.newArrayList();
         final int method35910 = Class9583.method35910(jsonObject, "frametime", 1);
         if (method35910 != 1) {
-            Validate.inclusiveBetween(1L, 2147483647L, (long)method35910, "Invalid default frame time");
+            Validate.inclusiveBetween(1L, 2147483647L, method35910, "Invalid default frame time");
         }
         if (jsonObject.has("frames")) {
             try {
@@ -32,16 +32,16 @@ public class Class5096 implements Class5092<Class8637>
                 }
             }
             catch (final ClassCastException ex) {
-                throw new JsonParseException("Invalid animation->frames: expected array, was " + jsonObject.get("frames"), (Throwable)ex);
+                throw new JsonParseException("Invalid animation->frames: expected array, was " + jsonObject.get("frames"), ex);
             }
         }
         final int method35913 = Class9583.method35910(jsonObject, "width", -1);
         final int method35914 = Class9583.method35910(jsonObject, "height", -1);
         if (method35913 != -1) {
-            Validate.inclusiveBetween(1L, 2147483647L, (long)method35913, "Invalid width");
+            Validate.inclusiveBetween(1L, 2147483647L, method35913, "Invalid width");
         }
         if (method35914 != -1) {
-            Validate.inclusiveBetween(1L, 2147483647L, (long)method35914, "Invalid height");
+            Validate.inclusiveBetween(1L, 2147483647L, method35914, "Invalid height");
         }
         return new Class8637(arrayList, method35913, method35914, method35910, Class9583.method35901(jsonObject, "interpolate", false));
     }
@@ -56,10 +56,10 @@ public class Class5096 implements Class5092<Class8637>
         final JsonObject method35913 = Class9583.method35913(jsonElement, "frames[" + n + "]");
         final int method35914 = Class9583.method35910(method35913, "time", -1);
         if (method35913.has("time")) {
-            Validate.inclusiveBetween(1L, 2147483647L, (long)method35914, "Invalid frame time");
+            Validate.inclusiveBetween(1L, 2147483647L, method35914, "Invalid frame time");
         }
         final int method35915 = Class9583.method35909(method35913, "index");
-        Validate.inclusiveBetween(0L, 2147483647L, (long)method35915, "Invalid frame index");
+        Validate.inclusiveBetween(0L, 2147483647L, method35915, "Invalid frame index");
         return new Class7272(method35915, method35914);
     }
     

@@ -53,9 +53,7 @@ public class Class2124 implements Class2123
             if (this.field12393.equals(class2124.field12393)) {
                 if (Objects.equals(this.field12394, class2124.field12394)) {
                     if (this.field12395 == class2124.field12395) {
-                        if (this.field12396 == class2124.field12396) {
-                            return true;
-                        }
+                        return this.field12396 == class2124.field12396;
                     }
                 }
             }

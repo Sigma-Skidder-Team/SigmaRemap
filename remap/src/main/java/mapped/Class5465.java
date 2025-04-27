@@ -16,7 +16,7 @@ public class Class5465 extends Class5419<Class824>
     private long field22730;
     
     public Class5465() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33812, (Object)Class1952.field10628, (Object)Class8233.field33805, (Object)Class1952.field10628), 350, 350);
+        super((Map)ImmutableMap.of(Class8233.field33812, Class1952.field10628, (Object)Class8233.field33805, (Object)Class1952.field10628), 350, 350);
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
@@ -85,9 +85,7 @@ public class Class5465 extends Class5419<Class824>
             final Class824 method2619 = this.method16694(class824);
             if (Class6793.method20786(method2618, Class8233.field33812, EntityType.field29042)) {
                 if (class824.method4873()) {
-                    if (method2619.method4873()) {
-                        return true;
-                    }
+                    return method2619.method4873();
                 }
             }
             return false;

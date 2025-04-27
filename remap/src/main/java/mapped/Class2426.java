@@ -176,9 +176,7 @@ public class Class2426 implements Class2422
         final float n23 = n11 * n20 - n12 * n19;
         if (n21 >= 0.0) {
             if (n23 >= 0.0) {
-                if (n22 >= 0.0) {
-                    return true;
-                }
+                return n22 >= 0.0;
             }
         }
         return false;

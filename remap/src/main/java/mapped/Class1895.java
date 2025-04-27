@@ -24,8 +24,8 @@ public class Class1895 extends Class1894
     public Class1895(final Class8730 field10297, final int n) {
         this.field10297 = field10297;
         super(field10297, n);
-        this.field10295 = Long2IntMaps.synchronize((Long2IntMap)new Long2IntOpenHashMap());
-        this.field10296 = (LongSet)new LongOpenHashSet();
+        this.field10295 = Long2IntMaps.synchronize(new Long2IntOpenHashMap());
+        this.field10296 = new LongOpenHashSet();
         this.field10294 = 0;
         this.field10295.defaultReturnValue(n + 2);
     }

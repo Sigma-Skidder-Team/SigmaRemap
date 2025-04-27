@@ -31,14 +31,14 @@ import java.util.HashMap;
 
 public class NewNameTags extends Module
 {
-    private HashMap<BlockPos, Class6312> field15778;
+    private final HashMap<BlockPos, Class6312> field15778;
     private BlockPos field15779;
     private static Class1780 field15780;
     private static HashMap<String, Texture> field15781;
     public static NewNameTags field15782;
-    private List<Entity> field15783;
+    private final List<Entity> field15783;
     private boolean field15784;
-    private HashMap<UUID, String> field15785;
+    private final HashMap<UUID, String> field15785;
     public int field15786;
     
     public NewNameTags() {
@@ -231,7 +231,6 @@ public class NewNameTags extends Module
                             catch (final Exception ex) {
                                 ex.printStackTrace();
                             }
-                            return;
                         }).start();
                     }
                     if (this.field15785.get(uuid) == null) {
@@ -270,7 +269,7 @@ public class NewNameTags extends Module
     public void method10335(final BlockPos class354, final Class6312 class355, final float n) {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         if (class355.field25240 != null) {
-            new StringBuilder().append(class355.field25240.field34176).append(" ").append(class355.field25240.method27664()).toString();
+            class355.field25240.field34176 + " " + class355.field25240.method27664();
         }
         final float n2 = (float)(class354.getX() - NewNameTags.mc.field4644.method5833().method18161().getX() + 0.5);
         final float n3 = (float)(class354.getY() - NewNameTags.mc.field4644.method5833().method18161().getY() + 1.0);
@@ -287,7 +286,7 @@ public class NewNameTags extends Module
         final int n5 = 14;
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0f);
-        GL11.glTranslated((double)n2, (double)(n3 + 0.6f - 0.33333334f * (1.0f - n)), (double)n4);
+        GL11.glTranslated(n2, n3 + 0.6f - 0.33333334f * (1.0f - n), n4);
         GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
         GL11.glPushMatrix();
@@ -303,7 +302,7 @@ public class NewNameTags extends Module
         }
         final int n7 = 51 + max + n5 * 2;
         final int n8 = 85 + n5 * 2;
-        GL11.glTranslated((double)(-n7 / 2), (double)(-n8 / 2), 0.0);
+        GL11.glTranslated(-n7 / 2, -n8 / 2, 0.0);
         RenderUtil.method26876(0.0f, 0.0f, (float)n7, (float)n8, this.field15786);
         RenderUtil.method26913(0.0f, 0.0f, (float)n7, (float)n8, 20.0f, 0.5f);
         RenderUtil.drawString(field40314, (float)n5, (float)(n5 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.color);
@@ -350,7 +349,7 @@ public class NewNameTags extends Module
             final float min = Math.min(((LivingEntity)class399).method2664() / ((LivingEntity)class399).method2701(), 1.0f);
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0f);
-            GL11.glTranslated((double)n5, (double)(n6 + 0.6f - 0.33333334f * (1.0f - n4)), (double)n7);
+            GL11.glTranslated(n5, n6 + 0.6f - 0.33333334f * (1.0f - n4), n7);
             GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
             GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
             GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
@@ -377,7 +376,7 @@ public class NewNameTags extends Module
             RenderUtil.method26876((float)(-n9 - 10), -25.0f, (float)(n9 + 10), (float)(field40314.getHeight() + 2), n8);
             RenderUtil.method26876((float)(-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity)class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float)(n9 + 10)), (float)(field40314.getHeight() + 2), method9888);
             GL11.glPushMatrix();
-            GL11.glTranslated((double)(-field40314.getWidth(method9887) / 2), 0.0, 0.0);
+            GL11.glTranslated(-field40314.getWidth(method9887) / 2, 0.0, 0.0);
             final int method9889 = ClientFonts.JelloLight14.getWidth("Health: 20.0");
             String str = "Health: ";
             if (method9889 > field40314.getWidth(method9887)) {

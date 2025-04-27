@@ -94,7 +94,7 @@ public class Class8995
         catch (final IOException ex) {}
         finally {
             if (method32108 != null) {
-                MemoryUtil.memFree((Buffer)method32108);
+                MemoryUtil.memFree(method32108);
             }
         }
         return null;

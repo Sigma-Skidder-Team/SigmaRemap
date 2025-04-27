@@ -82,10 +82,9 @@ public class Class6115 implements Class6113
     private void method18280() {
         final BlockPos method18162 = this.method18294().method18162();
         this.field24826.values().forEach(class355 -> {
-            if (!(!this.method18297(class355))) {
+            if (this.method18297(class355)) {
                 this.method18290(class355);
             }
-            return;
         });
         this.method18282();
         for (final BlockPos class354 : this.field24825.keySet()) {
@@ -96,14 +95,13 @@ public class Class6115 implements Class6113
         }
         this.field24825.values().forEach(class357 -> {
             this.method18281();
-            if (!(!class356.method1081(class357.field32146, 30.0))) {
+            if (class356.method1081(class357.field32146, 30.0)) {
                 final Set set = map.get(class357.field32146);
                 this.method18288(class357, (set != null) ? set : Sets.newHashSet());
             }
-            return;
         });
         this.method18299().forEach((class359, list) -> {
-            if (!(!class358.method1081(class359, 30.0))) {
+            if (class358.method1081(class359, 30.0)) {
                 this.method18286(class359, list);
             }
         });
@@ -124,7 +122,6 @@ public class Class6115 implements Class6113
                 map.put(class8665.field36437, set);
             }
             set.add(class8665.method29669());
-            return;
         });
         hashMap.entrySet().forEach(entry -> {
             final BlockPos class8666 = entry.getKey();
@@ -147,7 +144,7 @@ public class Class6115 implements Class6113
     
     private static String method18283(final Collection<UUID> collection) {
         if (!collection.isEmpty()) {
-            return (collection.size() <= 3) ? collection.stream().map((Function<? super UUID, ?>)Class8956::method31774).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).toString() : ("" + collection.size() + " bees");
+            return (collection.size() <= 3) ? collection.stream().map((Function<? super UUID, ?>)Class8956::method31774).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).toString() : (collection.size() + " bees");
         }
         return "-";
     }

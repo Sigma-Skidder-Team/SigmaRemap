@@ -27,13 +27,13 @@ public enum Class343
         return Class343.field2116.get(s);
     }
     
-    private Class343(final String field2117, final int field2118) {
+    Class343(final String field2117, final int field2118) {
         this.field2117 = field2117;
         this.field2118 = field2118;
     }
     
     public ITextComponent method1022() {
-        return new Class2259("team.collision." + this.field2117, new Object[0]);
+        return new Class2259("team.collision." + this.field2117);
     }
     
     static {

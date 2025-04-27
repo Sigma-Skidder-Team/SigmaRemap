@@ -77,7 +77,7 @@ public final class Class6885
     
     static {
         field26977 = Class1929.method7741("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
-        field26997 = new String[] { "DATA", Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[6], Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[8], "RST_STREAM", "SETTINGS", Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[7], "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION" };
+        field26997 = new String[] { "DATA", Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[6], Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[8], "RST_STREAM", "SETTINGS", Class6885.\u7a60\uc350\u9388\uff74\u63ae\u415c[7], "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION" }
         field26998 = new String[64];
         field26999 = new String[256];
         for (int i = 0; i < Class6885.field26999.length; ++i) {

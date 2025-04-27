@@ -17,14 +17,14 @@ public final class Class3160 extends Class3090
         Class9218.method33935(this);
         Class9218.method33937(this);
         Class9218.method33982(this);
-        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39537).method28610(Class7133.field27785.method21889((Object)new Class6927(10))));
+        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39537).method28610(Class7133.field27785.method21889(new Class6927(10))));
         Class9218.method33938(this);
         Class9218.method33939(this);
         Class9218.method33943(this);
         Class9218.method33975(this);
-        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889((Object)new Class6927(10))));
+        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889(new Class6927(10))));
         Class9218.method33983(this);
-        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889((Object)new Class6928(32))));
+        this.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889(new Class6928(32))));
         Class9218.method33996(this);
         Class9218.method33999(this);
         this.method9839(Class1976.field10949, new Class6828(EntityType.field29019, 12, 4, 4));

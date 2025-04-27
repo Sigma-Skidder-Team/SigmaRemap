@@ -28,8 +28,8 @@ public class ActiveMods extends Module
     public ActiveMods() {
         super(Category.RENDER, "ActiveMods", "Shows active mods");
         this.field15896 = new TreeMap<Module, Animation>();
-        this.addSetting(new StringSetting("Outline", "Outline", 0, new String[] { "All", "Left", "Right", "None" }));
-        this.addSetting(new StringSetting("Animation", "Animation", 0, new String[] { "Smooth", "Slide", "Both", "None" }));
+        this.addSetting(new StringSetting("Outline", "Outline", 0, "All", "Left", "Right", "None"));
+        this.addSetting(new StringSetting("Animation", "Animation", 0, "Smooth", "Slide", "Both", "None"));
         this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
     }
     
@@ -109,7 +109,7 @@ public class ActiveMods extends Module
                 RenderSystem.method30070();
                 RenderSystem.enableBlend();
                 if (method9887.equalsIgnoreCase("Slide") || method9887.equalsIgnoreCase("Both")) {
-                    GL11.glTranslated((double)(method9890 * Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f)), 0.0, 0.0);
+                    GL11.glTranslated(method9890 * Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f), 0.0, 0.0);
                 }
                 RenderUtil.method26868((float)(n2 - method9890 - 3), (float)(n + 1), (float)n2, n + n6 - Class7791.method25030(class5741.calcPercent(), 0.0f, 1.0f, 1.0f));
                 this.field15897.drawString((float)(n2 - method9890), (float)n, class5742.getFormattedName(), new Color(hsBtoRGB));

@@ -33,10 +33,10 @@ public class Class8134<T>
     
     public Class8134() {
         this.field33510 = Lists.newArrayList();
-        this.field33511 = (IntList)new IntArrayList();
-        this.field33512 = (IntList)new IntArrayList();
-        this.field33513 = (IntList)new IntArrayList();
-        this.field33514 = (IntList)new IntArrayList();
+        this.field33511 = new IntArrayList();
+        this.field33512 = new IntArrayList();
+        this.field33513 = new IntArrayList();
+        this.field33514 = new IntArrayList();
     }
     
     public void method26804(final T t, final String s) {
@@ -47,7 +47,7 @@ public class Class8134<T>
         for (int i = 0; i < s.length(); ++i) {
             this.field33513.add(size);
             this.field33514.add(i);
-            this.field33511.add((int)s.charAt(i));
+            this.field33511.add(s.charAt(i));
         }
         this.field33513.add(size);
         this.field33514.add(s.length());
@@ -82,7 +82,7 @@ public class Class8134<T>
                 array2[j] = array[j];
                 array3[j] = ((j + n >= size) ? -2 : array[j + n]);
             }
-            Arrays.quickSort(0, size, (IntComparator)class4451, swapper);
+            Arrays.quickSort(0, size, class4451, swapper);
             for (int k = 0; k < size; ++k) {
                 if (k > 0) {
                     if (array2[k] == array2[k - 1]) {
@@ -97,8 +97,8 @@ public class Class8134<T>
         }
         final IntList field33513 = this.field33513;
         final IntList field33514 = this.field33514;
-        this.field33513 = (IntList)new IntArrayList(field33513.size());
-        this.field33514 = (IntList)new IntArrayList(field33514.size());
+        this.field33513 = new IntArrayList(field33513.size());
+        this.field33514 = new IntArrayList(field33514.size());
         for (final int n2 : array4) {
             this.field33513.add(field33513.getInt(n2));
             this.field33514.add(field33514.getInt(n2));
@@ -110,7 +110,7 @@ public class Class8134<T>
     
     private void method26806() {
         for (int i = 0; i < this.field33513.size(); ++i) {
-            Class8134.field33509.debug("{} {}", (Object)i, (Object)this.method26807(i));
+            Class8134.field33509.debug("{} {}", i, this.method26807(i));
         }
         Class8134.field33509.debug("");
     }
@@ -160,7 +160,7 @@ public class Class8134<T>
             final int j = i + (n - i) / 2;
             final int method26808 = this.method26808(s, j);
             if (Class8134.field33507) {
-                Class8134.field33509.debug("comparing lower \"{}\" with {} \"{}\": {}", (Object)s, (Object)j, (Object)this.method26807(j), (Object)method26808);
+                Class8134.field33509.debug("comparing lower \"{}\" with {} \"{}\": {}", s, j, this.method26807(j), method26808);
             }
             if (method26808 <= 0) {
                 n = j;
@@ -176,7 +176,7 @@ public class Class8134<T>
                 final int k = i + (n3 - i) / 2;
                 final int method26809 = this.method26808(s, k);
                 if (Class8134.field33507) {
-                    Class8134.field33509.debug("comparing upper \"{}\" with {} \"{}\": {}", (Object)s, (Object)k, (Object)this.method26807(k), (Object)method26809);
+                    Class8134.field33509.debug("comparing upper \"{}\" with {} \"{}\": {}", s, k, this.method26807(k), method26809);
                 }
                 if (method26809 < 0) {
                     n3 = k;
@@ -188,16 +188,16 @@ public class Class8134<T>
             final int n4 = i;
             final IntOpenHashSet set = new IntOpenHashSet();
             for (int l = n2; l < n4; ++l) {
-                ((IntSet)set).add(this.field33513.getInt(l));
+                set.add(this.field33513.getInt(l));
             }
-            final int[] intArray = ((IntSet)set).toIntArray();
+            final int[] intArray = set.toIntArray();
             java.util.Arrays.sort(intArray);
             final LinkedHashSet linkedHashSet = Sets.newLinkedHashSet();
             final int[] array = intArray;
             for (int length = array.length, n5 = 0; n5 < length; ++n5) {
                 linkedHashSet.add(this.field33510.get(array[n5]));
             }
-            return Lists.newArrayList((Iterable)linkedHashSet);
+            return Lists.newArrayList(linkedHashSet);
         }
         return Collections.emptyList();
     }

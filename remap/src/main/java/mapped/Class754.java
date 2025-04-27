@@ -116,7 +116,7 @@ public abstract class Class754 extends PlayerEntity
     }
     
     public static ResourceLocation method4102(final String s) {
-        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
+        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(Class8272.method27499(s)));
     }
     
     public String method4103() {

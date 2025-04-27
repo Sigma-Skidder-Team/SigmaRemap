@@ -21,7 +21,7 @@ public abstract class Fluid
     private IFluidState field28130;
     
     public Fluid() {
-        final Class9500 class9500 = new Class9500((O)this);
+        final Class9500 class9500 = new Class9500(this);
         this.method22145(class9500);
         this.field28129 = class9500.method35380(Class7100::new);
         this.method22147(this.field28129.method32903());

@@ -21,9 +21,7 @@ public class Class486 extends Class443
         if (class8321.getItem() != Items.field31514) {
             if (class8321.getItem() != Items.field31283) {
                 if (class8321.getItem() != Items.field31285) {
-                    if (class8321.getItem() != Items.field31284) {
-                        return false;
-                    }
+                    return class8321.getItem() == Items.field31284;
                 }
             }
         }

@@ -39,7 +39,7 @@ public class Class8070 extends Class8071
             if (lng != 1L) {
                 if (lng == 5L) {
                     if (method6754 % 24000L == 22000L) {
-                        this.field33248.sendMessage(new Class2259("demo.day.warning", new Object[0]));
+                        this.field33248.sendMessage(new Class2259("demo.day.warning"));
                     }
                 }
             }
@@ -59,7 +59,7 @@ public class Class8070 extends Class8071
         }
         else if (lng <= 6L) {
             if (lng != 6L) {
-                this.field33248.sendMessage(new Class2259("demo.day." + lng, new Object[0]));
+                this.field33248.sendMessage(new Class2259("demo.day." + lng));
             }
             else {
                 this.field33248.field3039.method17469(new Class4306(5, 104.0f));
@@ -69,7 +69,7 @@ public class Class8070 extends Class8071
     
     private void method26477() {
         if (this.field33244 > 100) {
-            this.field33248.sendMessage(new Class2259("demo.reminder", new Object[0]));
+            this.field33248.sendMessage(new Class2259("demo.reminder"));
             this.field33244 = 0;
         }
     }

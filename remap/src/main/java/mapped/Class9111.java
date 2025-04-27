@@ -180,9 +180,9 @@ public class Class9111
         if (Class9570.field41216.method22619()) {
             final Object method18189 = Class9570.method35842(Class9570.field41216, class6092, f, Class9111.field38597, Class9111.field38598, Class9111.field38599);
             Class9570.method35841(method18189);
-            Class9111.field38597 = Class9570.method35823(method18189, Class9570.field41217, new Object[0]);
-            Class9111.field38598 = Class9570.method35823(method18189, Class9570.field41218, new Object[0]);
-            Class9111.field38599 = Class9570.method35823(method18189, Class9570.field41219, new Object[0]);
+            Class9111.field38597 = Class9570.method35823(method18189, Class9570.field41217);
+            Class9111.field38598 = Class9570.method35823(method18189, Class9570.field41218);
+            Class9111.field38599 = Class9570.method35823(method18189, Class9570.field41219);
         }
         Class9216.method33804(Class9111.field38597, Class9111.field38598, Class9111.field38599, 0.0f);
         RenderSystem.method30054(Class9111.field38597, Class9111.field38598, Class9111.field38599, 0.0f);

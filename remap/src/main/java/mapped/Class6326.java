@@ -17,7 +17,6 @@ public class Class6326 extends Class6322
             if (!b2) {
                 RenderSystem.method30049(b2, b2, b2, b2);
             }
-            return;
         }, () -> {
             if (!b3) {
                 RenderSystem.method30010(true);
@@ -25,7 +24,6 @@ public class Class6326 extends Class6322
             if (!b4) {
                 RenderSystem.method30049(true, true, true, true);
             }
-            return;
         });
         this.field25322 = field25322;
         this.field25323 = field25323;

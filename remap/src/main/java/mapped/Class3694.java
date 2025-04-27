@@ -88,7 +88,7 @@ public class Class3694 extends Class3693<Item>
                 arrayList.add(method11704);
             }
             else {
-                Class3694.field17013.warn("Itemless block copied to item tag: {}", (Object) Registry.BLOCK.getKey(class3833));
+                Class3694.field17013.warn("Itemless block copied to item tag: {}", Registry.BLOCK.getKey(class3833));
             }
         }
         return new Class6968<Item>(arrayList);

@@ -26,7 +26,7 @@ public interface Class7491
     Collection<String> method23205();
     
     default Collection<String> method23206() {
-        return (Collection<String>)Collections.emptyList();
+        return Collections.emptyList();
     }
     
     Collection<String> method23207();
@@ -73,7 +73,7 @@ public interface Class7491
     
     default <T> void method23218(final Iterable<T> iterable, final String s, final String s2, final Function<T, ResourceLocation> function, final Consumer<T> action) {
         if (!s.isEmpty()) {
-            final String commonPrefix = Strings.commonPrefix((CharSequence)s, (CharSequence)s2);
+            final String commonPrefix = Strings.commonPrefix(s, s2);
             if (!commonPrefix.isEmpty()) {
                 method23217(iterable, s.substring(commonPrefix.length()), function, action);
             }

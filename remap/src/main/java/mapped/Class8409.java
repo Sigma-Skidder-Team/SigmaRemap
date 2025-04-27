@@ -16,9 +16,9 @@ public class Class8409
     private final int field34528;
     private final int[] field34529;
     private final boolean field34530;
-    private int[][] field34531;
+    private final int[][] field34531;
     private IntBuffer[] field34532;
-    private Dimension[] field34533;
+    private final Dimension[] field34533;
     
     public Class8409(final String field34526, final int field34527, final int field34528, final int[] field34529, final boolean field34530) {
         this.field34526 = field34526;
@@ -74,7 +74,7 @@ public class Class8409
             if (n4 != 0) {
                 for (int j = 0; j < width; ++j) {
                     for (int k = 0; k < height; ++k) {
-                        array5[j + k * width] = method28067(array3[j * 2 + 0 + (k * 2 + 0) * n3], array3[j * 2 + 1 + (k * 2 + 0) * n3], array3[j * 2 + 1 + (k * 2 + 1) * n3], array3[j * 2 + 0 + (k * 2 + 1) * n3]);
+                        array5[j + k * width] = method28067(array3[j * 2 + (k * 2) * n3], array3[j * 2 + 1 + (k * 2) * n3], array3[j * 2 + 1 + (k * 2 + 1) * n3], array3[j * 2 + (k * 2 + 1) * n3]);
                     }
                 }
             }

@@ -15,7 +15,7 @@ import java.util.Map;
 @Deprecated
 public class Class6496
 {
-    private Map<Object, ArrayList<Class7966>> field25853;
+    private final Map<Object, ArrayList<Class7966>> field25853;
     
     public Class6496() {
         this.field25853 = new HashMap<Object, ArrayList<Class7966>>();
@@ -68,9 +68,7 @@ public class Class6496
                         }
                         final String string = s + " " + array[0];
                         final String[] array2 = new String[array.length - 1];
-                        for (int i = 1; i < array.length; ++i) {
-                            array2[i - 1] = array[i];
-                        }
+                        System.arraycopy(array, 1, array2, 0, array.length - 1);
                         class7966.method25811(string, array2);
                     }
                 }
@@ -92,9 +90,7 @@ public class Class6496
                     }
                     final String string2 = s + " " + array[0] + " " + array[1];
                     final String[] array3 = new String[array.length - 2];
-                    for (int j = 2; j < array.length; ++j) {
-                        array3[j - 2] = array[j];
-                    }
+                    System.arraycopy(array, 2, array3, 0, array.length - 2);
                     class7966.method25811(string2, array3);
                 }
             }
@@ -134,9 +130,7 @@ public class Class6496
                         else {
                             final String string = str + " " + array[0];
                             final String[] array2 = new String[array.length - 1];
-                            for (int i = 1; i < array.length; ++i) {
-                                array2[i - 1] = array[i];
-                            }
+                            System.arraycopy(array, 1, array2, 0, array.length - 1);
                             list.add(class7966.method25813(string, array2));
                         }
                     }
@@ -169,9 +163,7 @@ public class Class6496
                     else {
                         final String string2 = str + " " + array[0] + " " + array[1];
                         final String[] array3 = new String[array.length - 2];
-                        for (int j = 2; j < array.length; ++j) {
-                            array3[j - 2] = array[j];
-                        }
+                        System.arraycopy(array, 2, array3, 0, array.length - 2);
                         list.add(class7966.method25813(string2, array3));
                     }
                 }

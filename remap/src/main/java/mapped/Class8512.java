@@ -30,10 +30,9 @@ public class Class8512
         final Int2ObjectAVLTreeMap int2ObjectAVLTreeMap = new Int2ObjectAVLTreeMap();
         this.field34922.forEach(class9473 -> {
             final Class9473 class9474 = (Class9473)int2ObjectSortedMap.put(class9473.method35258(), (Object)class9473);
-            return;
         });
         this.field34922.clear();
-        this.field34922.addAll((Collection<? extends Class9473>)((Int2ObjectSortedMap)int2ObjectAVLTreeMap).values());
+        this.field34922.addAll((Collection<? extends Class9473>) int2ObjectAVLTreeMap.values());
         this.field34923 = 0;
     }
     

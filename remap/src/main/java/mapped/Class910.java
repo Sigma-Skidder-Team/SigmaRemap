@@ -7,6 +7,7 @@ package mapped;
 import java.io.EOFException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -125,6 +126,6 @@ public class Class910 extends Thread
     }
     
     static {
-        field4866 = Charset.forName("ASCII");
+        field4866 = StandardCharsets.US_ASCII;
     }
 }

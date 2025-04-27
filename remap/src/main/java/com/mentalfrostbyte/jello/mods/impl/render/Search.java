@@ -31,12 +31,12 @@ public class Search extends Module
         this.field15793 = new ArrayList<Class6731>();
         this.field15794 = new HashSet<ChunkPos>();
         final NumberSetting class4996;
-        this.addSetting(class4996 = new NumberSetting("Chunk Range", "Range at which search scans blocks", 5.0f, (Class<? extends T>)Float.class, 1.0f, 12.0f, 1.0f));
+        this.addSetting(class4996 = new NumberSetting("Chunk Range", "Range at which search scans blocks", 5.0f, Float.class, 1.0f, 12.0f, 1.0f));
         final BooleanSetting class4997;
         this.addSetting(class4997 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
         this.addSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.color, true));
         final StringListSetting class4998;
-        this.addSetting(class4998 = new StringListSetting("Blocks", "Blocks to render", true, new String[0]));
+        this.addSetting(class4998 = new StringListSetting("Blocks", "Blocks to render", true));
         class4998.method15195(class4997 -> this.field15793.clear());
         class4996.method15195(class4997 -> this.field15793.clear());
         class4997.method15195(class4997 -> this.field15793.clear());

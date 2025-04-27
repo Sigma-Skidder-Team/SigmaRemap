@@ -13,7 +13,7 @@ public enum Class178 implements IStringSerializable
     
     private final String field509;
     
-    private Class178(final String field509) {
+    Class178(final String field509) {
         this.field509 = field509;
     }
     

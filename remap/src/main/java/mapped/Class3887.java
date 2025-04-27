@@ -47,9 +47,7 @@ public class Class3887 extends Class3874
                                                                                 if (method21696 != Blocks.field29497) {
                                                                                     if (method21696 != Blocks.DIRT) {
                                                                                         if (method21696 != Blocks.COARSE_DIRT) {
-                                                                                            if (method21696 != Blocks.PODZOL) {
-                                                                                                return false;
-                                                                                            }
+                                                                                            return method21696 == Blocks.PODZOL;
                                                                                         }
                                                                                     }
                                                                                 }

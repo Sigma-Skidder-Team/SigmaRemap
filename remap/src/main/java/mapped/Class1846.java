@@ -71,7 +71,7 @@ public final class Class1846 implements AutoCloseable
         this.field10044 = field10044;
         this.field10045 = field10045;
         this.field10046 = field10046;
-        this.field10047 = field10043 * field10044 * field10042.method8430();
+        this.field10047 = (long) field10043 * field10044 * field10042.method8430();
     }
     
     @Override
@@ -92,7 +92,7 @@ public final class Class1846 implements AutoCloseable
             method32109 = method6640(class2235, method32108);
         }
         finally {
-            MemoryUtil.memFree((Buffer)method32108);
+            MemoryUtil.memFree(method32108);
             IOUtils.closeQuietly(inputStream);
         }
         return method32109;
@@ -190,7 +190,7 @@ public final class Class1846 implements AutoCloseable
                     if (i < this.field10043) {
                         if (j < this.field10044) {
                             this.method6643();
-                            return MemoryUtil.memGetInt(this.field10046 + (i + j * this.field10043) * 4);
+                            return MemoryUtil.memGetInt(this.field10046 + (i + (long) j * this.field10043) * 4);
                         }
                     }
                 }
@@ -207,7 +207,7 @@ public final class Class1846 implements AutoCloseable
                     if (i < this.field10043) {
                         if (j < this.field10044) {
                             this.method6643();
-                            MemoryUtil.memPutInt(this.field10046 + (i + j * this.field10043) * 4, n);
+                            MemoryUtil.memPutInt(this.field10046 + (i + (long) j * this.field10043) * 4, n);
                             return;
                         }
                     }
@@ -224,7 +224,7 @@ public final class Class1846 implements AutoCloseable
                 if (j >= 0) {
                     if (i < this.field10043) {
                         if (j < this.field10044) {
-                            return MemoryUtil.memGetByte(this.field10046 + ((i + j * this.field10043) * this.field10042.method8430() + this.field10042.method8437() / 8));
+                            return MemoryUtil.memGetByte(this.field10046 + ((i + (long) j * this.field10043) * this.field10042.method8430() + this.field10042.method8437() / 8));
                         }
                     }
                 }
@@ -347,7 +347,7 @@ public final class Class1846 implements AutoCloseable
                 if (l >= 0) {
                     if (l + j <= this.method6645()) {
                         if (this.field10042.method8430() == 1) {
-                            STBTruetype.nstbtt_MakeGlyphBitmapSubpixel(stbttFontinfo.address(), this.field10046 + k + l * this.method6644(), i, j, this.method6644(), n2, n3, n4, n5, n);
+                            STBTruetype.nstbtt_MakeGlyphBitmapSubpixel(stbttFontinfo.address(), this.field10046 + k + (long) l * this.method6644(), i, j, this.method6644(), n2, n3, n4, n5, n);
                             return;
                         }
                         throw new IllegalArgumentException("Can only write fonts into 1-component images.");
@@ -363,7 +363,7 @@ public final class Class1846 implements AutoCloseable
             throw new UnsupportedOperationException("Don't know how to write format " + this.field10042);
         }
         this.method6643();
-        try (final SeekableByteChannel byteChannel = Files.newByteChannel(path, Class1846.field10041, (FileAttribute<?>[])new FileAttribute[0])) {
+        try (final SeekableByteChannel byteChannel = Files.newByteChannel(path, Class1846.field10041, new FileAttribute[0])) {
             if (!this.method6661(byteChannel)) {
                 throw new IOException("Could not write image to the PNG file \"" + path.toAbsolutePath() + "\": " + STBImage.stbi_failure_reason());
             }
@@ -388,7 +388,7 @@ public final class Class1846 implements AutoCloseable
         try {
             final int min = Math.min(this.method6645(), Integer.MAX_VALUE / this.method6644() / this.field10042.method8430());
             if (min < this.method6645()) {
-                Class1846.field10040.warn("Dropping image height from {} to {} to fit the size into 32-bit signed int", (Object)this.method6645(), (Object)min);
+                Class1846.field10040.warn("Dropping image height from {} to {} to fit the size into 32-bit signed int", this.method6645(), min);
             }
             if (STBImageWrite.nstbi_write_png_to_func(class9091.address(), 0L, this.method6644(), min, this.field10042.method8430(), this.field10046, 0) == 0) {
                 return false;
@@ -410,7 +410,7 @@ public final class Class1846 implements AutoCloseable
             if (this.field10043 != class1846.field10043) {
                 final int min = Math.min(this.method6644(), class1846.method6644());
                 for (int min2 = Math.min(this.method6645(), class1846.method6645()), i = 0; i < min2; ++i) {
-                    MemoryUtil.memCopy(class1846.field10046 + i * class1846.method6644() * method8430, this.field10046 + i * this.method6644() * method8430, min * (long)method8430);
+                    MemoryUtil.memCopy(class1846.field10046 + (long) i * class1846.method6644() * method8430, this.field10046 + (long) i * this.method6644() * method8430, min * (long)method8430);
                 }
             }
             else {
@@ -446,9 +446,9 @@ public final class Class1846 implements AutoCloseable
             for (int i = 0; i < this.method6645() / 2; ++i) {
                 final int n2 = i * this.method6644() * method8430;
                 final int n3 = (this.method6645() - 1 - i) * this.method6644() * method8430;
-                MemoryUtil.memCopy(this.field10046 + n2, nmalloc, (long)n);
-                MemoryUtil.memCopy(this.field10046 + n3, this.field10046 + n2, (long)n);
-                MemoryUtil.memCopy(nmalloc, this.field10046 + n3, (long)n);
+                MemoryUtil.memCopy(this.field10046 + n2, nmalloc, n);
+                MemoryUtil.memCopy(this.field10046 + n3, this.field10046 + n2, n);
+                MemoryUtil.memCopy(nmalloc, this.field10046 + n3, n);
             }
         }
     }
@@ -457,7 +457,7 @@ public final class Class1846 implements AutoCloseable
         this.method6643();
         if (class1846.method6646() == this.field10042) {
             final int method8430 = this.field10042.method8430();
-            STBImageResize.nstbir_resize_uint8(this.field10046 + (n + n2 * this.method6644()) * method8430, n3, n4, this.method6644() * method8430, class1846.field10046, class1846.method6644(), class1846.method6645(), 0, method8430);
+            STBImageResize.nstbir_resize_uint8(this.field10046 + (n + (long) n2 * this.method6644()) * method8430, n3, n4, this.method6644() * method8430, class1846.field10046, class1846.method6644(), class1846.method6645(), 0, method8430);
             return;
         }
         throw new UnsupportedOperationException("resizeSubRectTo only works for images of the same format.");

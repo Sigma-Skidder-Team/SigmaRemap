@@ -44,7 +44,7 @@ public class Class8732
     
     public <T> Dynamic<T> method30165(final DynamicOps<T> dynamicOps) {
         final Object map = dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("input_predicate"), this.field36679.method18488((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("location_predicate"), this.field36680.method18488((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("output_state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field36681).getValue()));
-        return (Dynamic<T>)((this.field36682 != null) ? new Dynamic((DynamicOps)dynamicOps, dynamicOps.mergeInto(map, dynamicOps.createString("output_nbt"), new Dynamic((DynamicOps)Class8453.field34721, (Object)this.field36682).convert((DynamicOps)dynamicOps).getValue())) : new Dynamic((DynamicOps)dynamicOps, map));
+        return (Dynamic<T>)((this.field36682 != null) ? new Dynamic(dynamicOps, dynamicOps.mergeInto(map, dynamicOps.createString("output_nbt"), new Dynamic(Class8453.field34721, this.field36682).convert(dynamicOps).getValue())) : new Dynamic(dynamicOps, map));
     }
     
     public static <T> Class8732 method30166(final Dynamic<T> dynamic) {

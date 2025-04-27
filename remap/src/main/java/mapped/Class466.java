@@ -169,7 +169,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
                 }
             }
             else {
-                final IRecipe class8322 = (IRecipe)this.field2656.method6792().method6378(this.field2762, this, this.field2656).orElse(null);
+                final IRecipe class8322 = this.field2656.method6792().method6378(this.field2762, this, this.field2656).orElse(null);
                 if (!this.method2395()) {
                     if (this.method2396(class8322)) {
                         this.field2756 = this.method2398(class8321);
@@ -285,9 +285,7 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
             if (n == 1) {
                 final Item method27622 = class8321.getItem();
                 if (method27622 != Items.field31350) {
-                    if (method27622 != Items.field31349) {
-                        return false;
-                    }
+                    return method27622 == Items.field31349;
                 }
             }
         }
@@ -398,10 +396,9 @@ public abstract class Class466 extends Class460 implements Class441, Class469, C
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Map.Entry<ResourceLocation, Integer>> iterator = this.field2761.entrySet().iterator();
         while (iterator.hasNext()) {
-            playerEntity.world.method6792().method6382(((Map.Entry<ResourceLocation, V>)iterator.next()).getKey()).ifPresent(class514 -> {
+            playerEntity.world.method6792().method6382(iterator.next().getKey()).ifPresent(class514 -> {
                 list.add(class514);
                 method2405(class513, entry.getValue(), ((Class3680)class514).method11328());
-                return;
             });
         }
         playerEntity.method2862(arrayList);

@@ -37,7 +37,7 @@ public enum TextFormatting
     STRIKETHROUGH("STRIKETHROUGH", 'm', true),
     UNDERLINE("UNDERLINE", 'n', true),
     ITALIC("ITALIC", 'o', true),
-    RESET("RESET", 'r', -1, (Integer)null);
+    RESET("RESET", 'r', -1, null);
     
     private static final Map<String, TextFormatting> NAME_MAPPING;
     private static final Pattern FORMATTING_CODE_PATTERN;
@@ -52,15 +52,15 @@ public enum TextFormatting
         return s.toLowerCase(Locale.ROOT).replaceAll("[^a-z]", "");
     }
     
-    private TextFormatting(final String s2, final char c, final int n2, final Integer n3) {
+    TextFormatting(final String s2, final char c, final int n2, final Integer n3) {
         this(s2, c, false, n2, n3);
     }
     
-    private TextFormatting(final String s2, final char c, final boolean b) {
+    TextFormatting(final String s2, final char c, final boolean b) {
         this(s2, c, b, -1, null);
     }
     
-    private TextFormatting(final String field12333, final char c, final boolean field12334, final int field12335, final Integer field12336) {
+    TextFormatting(final String field12333, final char c, final boolean field12334, final int field12335, final Integer field12336) {
         this.name = field12333;
         this.formattingCode = c;
         this.fancyStyling = field12334;

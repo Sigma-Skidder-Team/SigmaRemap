@@ -7,7 +7,7 @@ package mapped;
 public class Class6938
 {
     private static String[] field27172;
-    private long field27173;
+    private final long field27173;
     
     public Class6938(final long n) {
         this.field27173 = System.currentTimeMillis() + n;

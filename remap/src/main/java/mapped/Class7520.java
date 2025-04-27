@@ -33,8 +33,8 @@ public class Class7520
     private World field29136;
     private final Class1656 field29137;
     private Vec3d field29138;
-    private int field29139;
-    private List<Class9226> field29140;
+    private final int field29139;
+    private final List<Class9226> field29140;
     public static final Class6332[] field29141;
     private static final boolean field29142;
     private static final boolean field29143;
@@ -69,14 +69,14 @@ public class Class7520
                 break Label_0279;
             }
             catch (final OutOfMemoryError outOfMemoryError) {
-                Class7520.field29127.warn("Allocated only {}/{} buffers", (Object)arrayListWithExpectedSize.size(), (Object)max2);
+                Class7520.field29127.warn("Allocated only {}/{} buffers", arrayListWithExpectedSize.size(), max2);
                 for (int min = Math.min(arrayListWithExpectedSize.size() * 2 / 3, arrayListWithExpectedSize.size() - 1), j = 0; j < min; ++j) {
                     arrayListWithExpectedSize.remove(arrayListWithExpectedSize.size() - 1);
                 }
             }
             System.gc();
         }
-        this.field29129 = Queues.newArrayDeque((Iterable)arrayListWithExpectedSize);
+        this.field29129 = Queues.newArrayDeque(arrayListWithExpectedSize);
         this.field29132 = this.field29129.size();
         this.field29139 = this.field29132;
         this.field29135 = field29138;
@@ -194,7 +194,7 @@ public class Class7520
     }
     
     public void method23467() {
-        this.field29129.addAll((Collection<?>)this.field29140);
+        this.field29129.addAll(this.field29140);
         this.field29140.clear();
     }
     

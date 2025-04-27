@@ -16,7 +16,7 @@ public final class Class1900 extends Class1896
     public Class1900(final Class1883 field10323) {
         this.field10323 = field10323;
         super(7, 16, 256);
-        (this.field10322 = (Long2ByteMap)new Long2ByteOpenHashMap()).defaultReturnValue((byte)7);
+        (this.field10322 = new Long2ByteOpenHashMap()).defaultReturnValue((byte)7);
     }
     
     @Override

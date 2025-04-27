@@ -26,9 +26,9 @@ public class Class9483 extends DataFix
             DSL.fieldFinder("id", DSL.named(Class9451.field40628.typeName(), DSL.namespacedString()));
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
-                if (!(!Objects.equals(optional.get().getSecond(), "minecraft:bed"))) {
-                    final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+            if (optional.isPresent()) {
+                if (Objects.equals(optional.get().getSecond(), "minecraft:bed")) {
+                    final Dynamic dynamic = typed.get(DSL.remainderFinder());
                     if (dynamic.get("Damage").asInt(0) == 0) {
                         return typed.set(DSL.remainderFinder(), (Object)dynamic.set("Damage", dynamic.createShort((short)14)));
                     }

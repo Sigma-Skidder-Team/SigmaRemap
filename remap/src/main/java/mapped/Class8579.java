@@ -33,10 +33,10 @@ public class Class8579 extends DataFix
                 return Pair.of((Object)entry.getKey(), (Object)entry.getValue());
             }
             else {
-                Integer.parseInt(((Dynamic)entry.getValue()).asString(""));
+                Integer.parseInt(entry.getValue().asString(""));
                 final int n;
                 if (n >= 0) {
-                    return Pair.of((Object)entry.getKey(), (Object)((Dynamic)entry.getValue()).createString((String)Class8579.field36062.getOrDefault(n, (Object)"key.unknown")));
+                    return Pair.of((Object)entry.getKey(), (Object)((Dynamic)entry.getValue()).createString(Class8579.field36062.getOrDefault(n, (Object)"key.unknown")));
                 }
                 else {
                     final int n2;

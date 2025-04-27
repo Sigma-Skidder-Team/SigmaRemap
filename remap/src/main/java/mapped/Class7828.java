@@ -121,7 +121,7 @@ public class Class7828
     }
     
     public List<Class3746> method25295() {
-        return Collections.unmodifiableList((List<? extends Class3746>)this.field32052);
+        return Collections.unmodifiableList(this.field32052);
     }
     
     static {

@@ -189,6 +189,6 @@ public abstract class Class5601
     
     @Override
     public String toString() {
-        return "" + this.field22952 + ", value: " + this.field22954 + ", valueDefault: " + this.field22956 + ", paths: " + Config.method28888(this.field22957);
+        return this.field22952 + ", value: " + this.field22954 + ", valueDefault: " + this.field22956 + ", paths: " + Config.method28888(this.field22957);
     }
 }

@@ -16,7 +16,7 @@ public class Class7259 extends Class7258
     
     @Override
     public int getLevel(final IFluidState IFluidState) {
-        return IFluidState.get((IProperty<Integer>)Class7259.field28133);
+        return IFluidState.get(Class7259.field28133);
     }
     
     @Override

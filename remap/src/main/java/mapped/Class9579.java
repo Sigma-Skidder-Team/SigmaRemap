@@ -7,9 +7,9 @@ package mapped;
 public class Class9579
 {
     private static String[] field41739;
-    private float field41740;
-    private float field41741;
-    private float[] field41742;
+    private final float field41740;
+    private final float field41741;
+    private final float[] field41742;
     public final /* synthetic */ Class2425 field41743;
     
     public Class9579(final Class2425 field41743, final float field41744, final float field41745) {

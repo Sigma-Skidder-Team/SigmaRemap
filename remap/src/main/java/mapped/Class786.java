@@ -37,7 +37,7 @@ public class Class786 extends Class785
         this.field4114.method22062(7, new Class3628(this, PlayerEntity.class, 6.0f));
         this.field4114.method22062(8, new Class3503(this));
         this.field4115.method22062(1, new Class3546(this));
-        this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(2, new Class3547(this, new Class[0]));
         this.field4115.method22062(3, new Class3555<Object>(this, Class759.class, 5, false, false, class511 -> class511 instanceof IMob && !(class511 instanceof Class765)));
     }
     

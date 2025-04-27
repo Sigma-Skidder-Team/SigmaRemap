@@ -20,8 +20,8 @@ public class Class6149 extends Class6132
     
     @Override
     public Typed<?> method18357(final Typed<?> typed) {
-        final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
-        return (Typed<?>)typed.set(DSL.remainderFinder(), (Object)dynamic.remove("Profession").remove("Career").remove("CareerLevel").set("VillagerData", dynamic.createMap((Map)ImmutableMap.of((Object)dynamic.createString("type"), (Object)dynamic.createString("minecraft:plains"), (Object)dynamic.createString("profession"), (Object)dynamic.createString(method18383(dynamic.get("Profession").asInt(0), dynamic.get("Career").asInt(0))), (Object)dynamic.createString("level"), DataFixUtils.orElse(dynamic.get("CareerLevel").get(), (Object)dynamic.createInt(1))))));
+        final Dynamic dynamic = typed.get(DSL.remainderFinder());
+        return typed.set(DSL.remainderFinder(), (Object)dynamic.remove("Profession").remove("Career").remove("CareerLevel").set("VillagerData", dynamic.createMap(ImmutableMap.of(dynamic.createString("type"), dynamic.createString("minecraft:plains"), dynamic.createString("profession"), dynamic.createString(method18383(dynamic.get("Profession").asInt(0), dynamic.get("Career").asInt(0))), (Object)dynamic.createString("level"), DataFixUtils.orElse(dynamic.get("CareerLevel").get(), (Object)dynamic.createInt(1))))));
     }
     
     private static String method18383(final int n, final int n2) {

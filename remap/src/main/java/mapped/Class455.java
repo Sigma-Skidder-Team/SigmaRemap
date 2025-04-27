@@ -76,7 +76,7 @@ public class Class455 extends Class456 implements Class453, Class439
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.hopper", new Object[0]);
+        return new Class2259("container.hopper");
     }
     
     @Override
@@ -96,7 +96,7 @@ public class Class455 extends Class456 implements Class453, Class439
     private boolean method2294(final Supplier<Boolean> supplier) {
         if (this.field2656 != null && !this.field2656.isRemote) {
             if (!this.method2314()) {
-                if (this.method2194().get((IProperty<Boolean>)Class3959.field17882)) {
+                if (this.method2194().get(Class3959.field17882)) {
                     boolean method2296 = false;
                     if (!this.method2156()) {
                         method2296 = this.method2296();
@@ -131,7 +131,7 @@ public class Class455 extends Class456 implements Class453, Class439
         if (method2307 == null) {
             return false;
         }
-        final Direction method2308 = this.method2194().get((IProperty<Direction>)Class3959.field17881).getOpposite();
+        final Direction method2308 = this.method2194().get(Class3959.field17881).getOpposite();
         if (!this.method2298(method2307, method2308)) {
             for (int i = 0; i < this.getSizeInventory(); ++i) {
                 if (!this.getStackInSlot(i).method27620()) {
@@ -273,7 +273,7 @@ public class Class455 extends Class456 implements Class453, Class439
     
     @Nullable
     private IInventory method2307() {
-        return method2310(this.method2186(), this.field2657.method1149(this.method2194().get((IProperty<Direction>)Class3959.field17881)));
+        return method2310(this.method2186(), this.field2657.method1149(this.method2194().get(Class3959.field17881)));
     }
     
     @Nullable

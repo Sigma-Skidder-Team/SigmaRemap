@@ -35,7 +35,7 @@ public class Class5812 implements Class5811
                 this.field23852.field41615 = method13250.method24990().getFormattedText();
             }
             if (method13250.method24994() == null) {
-                this.field23852.field41618 = Class8822.method30773("multiplayer.status.old", new Object[0]);
+                this.field23852.field41618 = Class8822.method30773("multiplayer.status.old");
                 this.field23852.field41617 = 0;
             }
             else {
@@ -46,7 +46,7 @@ public class Class5812 implements Class5811
                 this.field23852.field41614 = TextFormatting.DARK_GRAY + Class8822.method30773("multiplayer.status.unknown", new Object[0]);
             }
             else {
-                this.field23852.field41614 = TextFormatting.GRAY + "" + method13250.method24992().method28398() + "" + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method13250.method24992().method28397();
+                this.field23852.field41614 = TextFormatting.GRAY + "" + method13250.method24992().method28398() + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method13250.method24992().method28397();
                 if (ArrayUtils.isNotEmpty((Object[])method13250.method24992().method28399())) {
                     final StringBuilder sb = new StringBuilder();
                     for (final GameProfile gameProfile : method13250.method24992().method28399()) {
@@ -81,14 +81,14 @@ public class Class5812 implements Class5811
             this.field23848 = true;
         }
         else {
-            this.field23851.method11181(new Class2259("multiplayer.status.unrequested", new Object[0]));
+            this.field23851.method11181(new Class2259("multiplayer.status.unrequested"));
         }
     }
     
     @Override
     public void method17416(final Class4274 class4274) {
         this.field23852.field41616 = Util.method27837() - this.field23850;
-        this.field23851.method11181(new Class2259("multiplayer.status.finished", new Object[0]));
+        this.field23851.method11181(new Class2259("multiplayer.status.finished"));
     }
     
     @Override

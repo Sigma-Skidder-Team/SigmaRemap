@@ -73,9 +73,7 @@ public class Class2257 extends Class2255
             final Class2257 class2257 = (Class2257)o;
             if (Objects.equals(this.field13806, class2257.field13806)) {
                 if (Objects.equals(this.field13802, class2257.field13802)) {
-                    if (super.equals(o)) {
-                        return true;
-                    }
+                    return super.equals(o);
                 }
             }
             return false;

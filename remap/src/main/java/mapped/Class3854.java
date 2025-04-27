@@ -56,7 +56,7 @@ public class Class3854 extends Block implements Class3856
     
     @Override
     public boolean propagatesSkylightDown(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        return !class7096.get((IProperty<Boolean>)Class3854.field17469);
+        return !class7096.get(Class3854.field17469);
     }
     
     @Override
@@ -74,18 +74,18 @@ public class Class3854 extends Block implements Class3856
     }
     
     public int method11916(final BlockState class7096) {
-        return this.field17473.computeIntIfAbsent((Object)class7096, class7097 -> {
+        return this.field17473.computeIntIfAbsent(class7096, class7097 -> {
             int n = 0;
-            if (!(!class7097.get((IProperty<Boolean>)Class3854.field17465))) {
+            if (class7097.get(Class3854.field17465)) {
                 n |= method11915(Direction.NORTH);
             }
-            if (!(!class7097.get((IProperty<Boolean>)Class3854.field17466))) {
+            if (class7097.get(Class3854.field17466)) {
                 n |= method11915(Direction.EAST);
             }
-            if (!(!class7097.get((IProperty<Boolean>)Class3854.field17467))) {
+            if (class7097.get(Class3854.field17467)) {
                 n |= method11915(Direction.SOUTH);
             }
-            if (!(!class7097.get((IProperty<Boolean>)Class3854.field17468))) {
+            if (class7097.get(Class3854.field17468)) {
                 n |= method11915(Direction.WEST);
             }
             return n;
@@ -94,7 +94,7 @@ public class Class3854 extends Block implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3854.field17469) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3854.field17469) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
@@ -106,13 +106,13 @@ public class Class3854 extends Block implements Class3856
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
         switch (Class8247.field33879[class7097.ordinal()]) {
             case 1: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17467))).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17468))).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17465))).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17466));
+                return class7096.with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17467)).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17468)).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17465)).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17466));
             }
             case 2: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17466))).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17467))).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17468))).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17465));
+                return class7096.with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17466)).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17467)).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17468)).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17465));
             }
             case 3: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17468))).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17465))).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17466))).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17467));
+                return class7096.with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17468)).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17465)).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17466)).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17467));
             }
             default: {
                 return class7096;
@@ -124,10 +124,10 @@ public class Class3854 extends Block implements Class3856
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
         switch (Class8247.field33880[class7097.ordinal()]) {
             case 1: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17467))).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17465));
+                return class7096.with((IProperty<Comparable>)Class3854.field17465, (Comparable)class7096.get((IProperty<V>)Class3854.field17467)).with((IProperty<Comparable>)Class3854.field17467, (Comparable)class7096.get((IProperty<V>)Class3854.field17465));
             }
             case 2: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17468))).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17466));
+                return class7096.with((IProperty<Comparable>)Class3854.field17466, (Comparable)class7096.get((IProperty<V>)Class3854.field17468)).with((IProperty<Comparable>)Class3854.field17468, (Comparable)class7096.get((IProperty<V>)Class3854.field17466));
             }
             default: {
                 return super.method11791(class7096, class7097);

@@ -25,13 +25,13 @@ public class Class8546
     }
     
     private boolean method28690() {
-        try (final InputStream inputStream = Files.newInputStream(this.field35892, new OpenOption[0])) {
+        try (final InputStream inputStream = Files.newInputStream(this.field35892)) {
             final Properties properties = new Properties();
             properties.load(inputStream);
             return Boolean.parseBoolean(properties.getProperty("eula", "false"));
         }
         catch (final Exception ex) {
-            Class8546.field35891.warn("Failed to load {}", (Object)this.field35892);
+            Class8546.field35891.warn("Failed to load {}", this.field35892);
             this.method28692();
             return false;
         }
@@ -43,13 +43,13 @@ public class Class8546
     
     private void method28692() {
         if (!Class9528.field41021) {
-            try (final OutputStream outputStream = Files.newOutputStream(this.field35892, new OpenOption[0])) {
+            try (final OutputStream outputStream = Files.newOutputStream(this.field35892)) {
                 final Properties properties = new Properties();
                 properties.setProperty("eula", "false");
                 properties.store(outputStream, "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).");
             }
             catch (final Exception ex) {
-                Class8546.field35891.warn("Failed to save {}", (Object)this.field35892, (Object)ex);
+                Class8546.field35891.warn("Failed to save {}", this.field35892, ex);
             }
         }
     }

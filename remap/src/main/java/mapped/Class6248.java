@@ -36,7 +36,7 @@ public class Class6248 extends Class6227<Class129>
     
     public Class129 method18585(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {
         final String s = jsonObject.has("destination") ? Class9583.method35895(jsonObject, "destination") : "Buried_Treasure";
-        final String s2 = Class4535.field20023.containsKey((Object)s.toLowerCase(Locale.ROOT)) ? s : "Buried_Treasure";
+        final String s2 = Class4535.field20023.containsKey(s.toLowerCase(Locale.ROOT)) ? s : "Buried_Treasure";
         final String s3 = jsonObject.has("decoration") ? Class9583.method35895(jsonObject, "decoration") : "mansion";
         Class2095 class2095 = Class129.field389;
         try {

@@ -71,7 +71,7 @@ public class Class803 extends Class789
         this.field4114.method22062(3, new Class3590(this, 1.0));
         this.field4114.method22062(4, new Class3448<Object>(this, PlayerEntity.class, 16.0f, 1.6, 1.4, class513 -> {
             final boolean b;
-            if (!(!Class803.field4317.test(class513))) {
+            if (Class803.field4317.test(class513)) {
                 if (!this.method4676(class513.method1865())) {
                     if (!this.method4658()) {
                         return b;
@@ -156,9 +156,7 @@ public class Class803 extends Class789
         if (class8321.getItem().method11743()) {
             if (this.method4152() == null) {
                 if (this.onGround) {
-                    if (!this.method2783()) {
-                        return true;
-                    }
+                    return !this.method2783();
                 }
             }
         }
@@ -313,7 +311,7 @@ public class Class803 extends Class789
             if (uuid == null) {
                 continue;
             }
-            ((AbstractList<CompoundNBT>)class52).add(Class9346.method34643(uuid));
+            class52.add(Class9346.method34643(uuid));
         }
         class51.put("TrustedUUIDs", class52);
         class51.putBoolean("Sleeping", this.method2783());
@@ -395,9 +393,7 @@ public class Class803 extends Class789
         if (!method27623.method27620()) {
             if (this.field4325 > 0) {
                 if (method27622.method11743()) {
-                    if (!method27623.getItem().method11743()) {
-                        return true;
-                    }
+                    return !method27623.getItem().method11743();
                 }
             }
             return false;
@@ -560,9 +556,7 @@ public class Class803 extends Class789
     private boolean method4675() {
         if (!this.method2783()) {
             if (!this.method4654()) {
-                if (!this.method4656()) {
-                    return true;
-                }
+                return !this.method4656();
             }
         }
         return false;

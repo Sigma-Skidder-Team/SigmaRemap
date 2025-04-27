@@ -40,14 +40,9 @@ public class Class6655
             final Class8191 method20238 = this.method20238();
             final Class8191 method20239 = class6655.method20238();
             if (method20238 != null) {
-                if (!method20238.equals(method20239)) {
-                    return false;
-                }
+                return method20238.equals(method20239);
             }
-            else if (method20239 != null) {
-                return false;
-            }
-            return true;
+            else return method20239 == null;
         }
         return false;
     }
@@ -58,7 +53,7 @@ public class Class6655
     
     @Override
     public int hashCode() {
-        final int n = 1 * 59 + this.method20237();
+        final int n = 59 + this.method20237();
         final Class8191 method20238 = this.method20238();
         return n * 59 + ((method20238 != null) ? method20238.hashCode() : 43);
     }

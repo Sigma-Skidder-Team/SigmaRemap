@@ -9,7 +9,7 @@ public class Class3550 extends Class3547
     private static String[] field16614;
     
     public Class3550(final Class815 class815) {
-        super(class815, (Class<?>[])new Class[0]);
+        super(class815, new Class[0]);
     }
     
     @Override

@@ -133,6 +133,7 @@ public class Class5338 implements Class5337
                 for (int l = 0; l < 3; ++l) {
                     if (((data[k + l] >= 0) ? data[k + l] : (256 + data[k + l])) != array[l]) {
                         n = 0;
+                        break;
                     }
                 }
                 if (n != 0) {

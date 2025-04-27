@@ -20,8 +20,8 @@ public class Class6794
     private String field26708;
     private int field26709;
     private Proxy field26710;
-    private List<Class8821> field26711;
-    private List<Class8821> field26712;
+    private final List<Class8821> field26711;
+    private final List<Class8821> field26712;
     private Socket field26713;
     private InputStream field26714;
     private OutputStream field26715;
@@ -203,7 +203,7 @@ public class Class6794
     private void method20810(final Class8215 class8215) {
         final String method27219 = class8215.method27219("Connection");
         if (method27219 != null) {
-            if (!method27219.toLowerCase().equals("keep-alive")) {
+            if (!method27219.equalsIgnoreCase("keep-alive")) {
                 this.method20814(new EOFException("Connection not keep-alive"));
             }
         }
@@ -216,7 +216,7 @@ public class Class6794
                     if (method27222[0].equals("timeout")) {
                         final int method27223 = Config.method28933(method27222[1], -1);
                         if (method27223 > 0) {
-                            this.field26720 = method27223 * 1000;
+                            this.field26720 = method27223 * 1000L;
                         }
                     }
                     if (method27222[0].equals("max")) {

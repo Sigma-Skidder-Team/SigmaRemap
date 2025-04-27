@@ -8,10 +8,10 @@ public class Class707 extends Class703
 {
     private static final Class6469[] field3880;
     private Widget field3881;
-    private Class8297 field3882;
+    private final Class8297 field3882;
     
     public Class707(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("options.chat.title", new Object[0]));
+        super(class527, class528, new Class2259("options.chat.title"));
         this.field3882 = new Class8297(this, new Class7298());
     }
     
@@ -26,7 +26,7 @@ public class Class707 extends Class703
             }
             ++n;
         }
-        this.addButton(new Class654(this.width / 2 - 100, -12 + this.height / 6 + 24 * (n + 1) / 2, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 100, -12 + this.height / 6 + 24 * (n + 1) / 2, 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override

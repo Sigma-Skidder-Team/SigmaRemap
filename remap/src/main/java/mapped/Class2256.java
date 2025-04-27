@@ -65,9 +65,7 @@ public class Class2256 extends Class2255
             final Class2256 class2256 = (Class2256)o;
             if (Objects.equals(this.field13804, class2256.field13804)) {
                 if (Objects.equals(this.field13802, class2256.field13802)) {
-                    if (super.equals(o)) {
-                        return true;
-                    }
+                    return super.equals(o);
                 }
             }
             return false;

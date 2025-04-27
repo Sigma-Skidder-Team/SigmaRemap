@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class Class9147
 {
     private static String[] field38767;
-    private Class9407 field38768;
-    private Class9407 field38769;
+    private final Class9407 field38768;
+    private final Class9407 field38769;
     private ArrayList<Class9407> field38770;
-    private ArrayList<Class9035> field38771;
-    private ArrayList<Class9035> field38772;
-    private double field38773;
-    private boolean field38774;
+    private final ArrayList<Class9035> field38771;
+    private final ArrayList<Class9035> field38772;
+    private final double field38773;
+    private final boolean field38774;
     private static Minecraft field38775;
     private static Class9407[] field38776;
     
@@ -189,7 +189,7 @@ public class Class9147
                     }
                 }
                 if (this.field38773 == 0.0 || e.method34998(this.field38769) > this.field38773) {
-                    final ArrayList list = new ArrayList((Collection<? extends E>)class9035.method32469());
+                    final ArrayList list = new ArrayList(class9035.method32469());
                     list.add(e);
                     this.field38772.add(new Class9035(e, class9035, list, e.method34998(this.field38769), n, n2));
                     return false;
@@ -200,7 +200,7 @@ public class Class9147
             return true;
         }
         if (method33408.method32471() > n) {
-            final ArrayList list2 = new ArrayList((Collection<? extends E>)class9035.method32469());
+            final ArrayList list2 = new ArrayList(class9035.method32469());
             list2.add(e);
             method33408.method32472(e);
             method33408.method32473(class9035);

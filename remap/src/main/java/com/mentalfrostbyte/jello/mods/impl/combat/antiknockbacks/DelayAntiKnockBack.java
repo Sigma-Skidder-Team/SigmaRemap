@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DelayAntiKnockBack extends Module
 {
-    private List<Class4273> field15922;
+    private final List<Class4273> field15922;
     public int field15923;
     
     public DelayAntiKnockBack() {

@@ -37,9 +37,7 @@ public class Class3929 extends Class3854
         final boolean b3 = method21696 instanceof Class3898 && Class3898.method11983(class7096, class7097);
         if (Block.method11792(method21696) || !b) {
             if (!b2) {
-                if (!b3) {
-                    return false;
-                }
+                return b3;
             }
         }
         return true;
@@ -71,7 +69,7 @@ public class Class3929 extends Class3854
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3929.field17469)) {
+        if (class7096.get(Class3929.field17469)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return (class7097.getAxis().getPlane() != Plane.HORIZONTAL) ? super.method11789(class7096, class7097, class7098, class7099, class7100, class7101) : ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3929.field17470.get(class7097), this.method12039(class7098, class7098.isSolidSide(class7099, class7101, class7097.getOpposite()), class7097.getOpposite()));

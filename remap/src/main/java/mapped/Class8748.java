@@ -78,7 +78,7 @@ public class Class8748
                         }
                         final Class74 class7572 = new Class74("");
                         final short shortValue = ((Number)((Class74)class7571).method419("id").method374()).shortValue();
-                        String string = (String)Class9526.field41009.get((Object)shortValue);
+                        String string = Class9526.field41009.get(shortValue);
                         if (string == null) {
                             string = "viaversion:legacy/" + shortValue;
                         }
@@ -98,7 +98,7 @@ public class Class8748
                         }
                         final Class74 class7576 = new Class74("");
                         final short shortValue2 = ((Number)((Class74)class7575).method419("id").method374()).shortValue();
-                        String string2 = (String)Class9526.field41009.get((Object)shortValue2);
+                        String string2 = Class9526.field41009.get(shortValue2);
                         if (string2 == null) {
                             string2 = "viaversion:legacy/" + shortValue2;
                         }
@@ -184,7 +184,7 @@ public class Class8748
                     class7562.method23747(method23743 = null);
                 }
             }
-            if (!Class9526.field41005.containsKey((Object)method23744)) {
+            if (!Class9526.field41005.containsKey(method23744)) {
                 if (!method30247(class7562.method23740())) {
                     if (class7562.method23740() != 358) {
                         if (method23743 == null) {
@@ -196,7 +196,7 @@ public class Class8748
                 if (class7562.method23740() == 31 && class7562.method23742() == 0) {
                     method23744 = 512;
                 }
-                else if (!Class9526.field41005.containsKey((Object)(method23744 & 0xFFFFFFF0))) {
+                else if (!Class9526.field41005.containsKey(method23744 & 0xFFFFFFF0)) {
                     if (!Class8563.method28792().method23296() || Class8563.method28794().method33559()) {
                         Class8563.method28793().method34742().warning("Failed to get 1.13 item for " + class7562.method23740());
                     }
@@ -206,7 +206,7 @@ public class Class8748
                     method23744 &= 0xFFFFFFF0;
                 }
             }
-            class7562.method23744(((Integer)Class9526.field41005.get((Object)method23744)).shortValue());
+            class7562.method23744(Class9526.field41005.get(method23744).shortValue());
             class7562.method23746((short)0);
         }
     }
@@ -274,7 +274,7 @@ public class Class8748
                 }
             }
             if (n == null) {
-                final Integer n2 = (Integer)Class9526.field41005.inverse().get((Object)class7562.method23740());
+                final Integer n2 = Class9526.field41005.inverse().get(class7562.method23740());
                 if (n2 != null) {
                     final Optional<String> method23744 = Class9126.method33113(n2);
                     if (!method23744.isPresent()) {
@@ -287,7 +287,7 @@ public class Class8748
                         }
                         if (!method23743.method418("EntityTag")) {
                             final Class74 class7563 = new Class74("EntityTag");
-                            class7563.method420(new Class71("id", (String)method23744.get()));
+                            class7563.method420(new Class71("id", method23744.get()));
                             method23743.method420(class7563);
                         }
                     }
@@ -354,7 +354,7 @@ public class Class8748
                         }
                         final Class74 class7574 = new Class74("");
                         final String s = (String)((Class74)class7573).method419("id").method374();
-                        Short value = (Short)Class9526.field41009.inverse().get((Object)s);
+                        Short value = Class9526.field41009.inverse().get(s);
                         if (value == null) {
                             if (s.startsWith("viaversion:legacy/")) {
                                 value = Short.valueOf(s.substring(18));
@@ -376,7 +376,7 @@ public class Class8748
                         }
                         final Class74 class7578 = new Class74("");
                         final String s2 = (String)((Class74)class7577).method419("id").method374();
-                        Short value2 = (Short)Class9526.field41009.inverse().get((Object)s2);
+                        Short value2 = Class9526.field41009.inverse().get(s2);
                         if (value2 == null) {
                             if (s2.startsWith("viaversion:legacy/")) {
                                 value2 = Short.valueOf(s2.substring(18));
@@ -507,9 +507,7 @@ public class Class8748
                                     if (n != 359) {
                                         if (n != 398) {
                                             if (n != 442) {
-                                                if (n != 443) {
-                                                    return false;
-                                                }
+                                                return n == 443;
                                             }
                                         }
                                     }

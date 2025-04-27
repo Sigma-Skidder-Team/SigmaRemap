@@ -39,7 +39,7 @@ public class Class1950 implements Comparable<Class1950>
     @Override
     public int compareTo(final Class1950 class1950) {
         final double n = this.field10624 - class1950.field10624;
-        return (n >= 0.0) ? ((n <= 0.0) ? false : true) : -1;
+        return (n >= 0.0) ? (!(n <= 0.0)) : -1;
     }
     
     public void method7930(final byte[] field10625) {

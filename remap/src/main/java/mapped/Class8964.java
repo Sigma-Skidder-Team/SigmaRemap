@@ -13,7 +13,7 @@ import java.util.List;
 public class Class8964
 {
     private static String[] field37669;
-    private Class9272 field37670;
+    private final Class9272 field37670;
     
     public Class8964(final Class9272 field37670) {
         this.field37670 = field37670;
@@ -26,8 +26,8 @@ public class Class8964
     public List<Class5594> method31803() {
         final ArrayList arrayList = Lists.newArrayList();
         final UnmodifiableIterator iterator = this.field37670.method34195().iterator();
-        while (((Iterator)iterator).hasNext()) {
-            arrayList.add(new Class5594((Class7187)((Iterator)iterator).next()));
+        while (iterator.hasNext()) {
+            arrayList.add(new Class5594((Class7187) iterator.next()));
         }
         return arrayList;
     }

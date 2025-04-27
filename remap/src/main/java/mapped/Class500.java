@@ -146,7 +146,7 @@ public class Class500 extends TileEntity
     
     public boolean method2551() {
         final BlockState method6701 = this.field2656.getBlockState(this.getPos());
-        return method6701.getBlock() instanceof Class3953 && method6701.get((IProperty<Boolean>)Class3953.field17854);
+        return method6701.getBlock() instanceof Class3953 && method6701.get(Class3953.field17854);
     }
     
     @Override

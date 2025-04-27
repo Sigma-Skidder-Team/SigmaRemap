@@ -31,7 +31,7 @@ public class Class4111 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.emptyMap());
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.emptyMap());
     }
     
     static {

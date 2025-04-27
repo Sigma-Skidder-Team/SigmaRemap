@@ -43,7 +43,7 @@ public class Class8605 implements ArgumentType<ResourceLocation>
     static {
         field36122 = Arrays.asList("minecraft:pig", "cow");
         field36123 = new DynamicCommandExceptionType(o -> {
-            new Class2259("entity.notFound", new Object[] { o });
+            new Class2259("entity.notFound", o);
             return;
         });
     }

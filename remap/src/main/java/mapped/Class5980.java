@@ -36,6 +36,6 @@ public class Class5980 implements JsonDeserializer<Class9320>, JsonSerializer<Cl
         if (!ArrayUtils.isEmpty((Object[])Class9320.method34520(class9320))) {
             jsonObject.add("functions", jsonSerializationContext.serialize((Object)Class9320.method34520(class9320)));
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

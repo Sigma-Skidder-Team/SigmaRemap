@@ -195,7 +195,7 @@ public class Class857 extends LivingEntity
             if (!class53.method27620()) {
                 class53.method27627(e);
             }
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         class51.put("ArmorItems", class52);
         final ListNBT class54 = new ListNBT();
@@ -204,7 +204,7 @@ public class Class857 extends LivingEntity
             if (!class55.method27620()) {
                 class55.method27627(e2);
             }
-            ((AbstractList<CompoundNBT>)class54).add(e2);
+            class54.add(e2);
         }
         class51.put("HandItems", class54);
         class51.putBoolean("Invisible", this.method1823());

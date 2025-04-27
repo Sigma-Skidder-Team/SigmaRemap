@@ -19,21 +19,21 @@ public class Class9140
             Class8563.method28794().method33558().method34742().severe("Error: could not find Entity type " + i + " with metadata: " + list);
             return null;
         }
-        final Class2137 class2137 = (Class2137)method8292.get();
+        final Class2137 class2137 = method8292.get();
         try {
             if (class2137.method8294(Class2137.field12536)) {
                 final Optional<Class7276> method8293 = method33333(list, 12);
-                if (method8293.isPresent() && ((byte)((Class7276)method8293.get()).method22296() & 0x4) == 0x4) {
+                if (method8293.isPresent() && ((byte) method8293.get().method22296() & 0x4) == 0x4) {
                     return Class2137.field12537;
                 }
             }
             if (class2137.method8294(Class2137.field12515)) {
                 final Optional<Class7276> method8294 = method33333(list, 12);
                 if (method8294.isPresent()) {
-                    if ((int)((Class7276)method8294.get()).method22296() == 1) {
+                    if ((int) method8294.get().method22296() == 1) {
                         return Class2137.field12516;
                     }
-                    if ((int)((Class7276)method8294.get()).method22296() == 2) {
+                    if ((int) method8294.get().method22296() == 2) {
                         return Class2137.field12517;
                     }
                 }
@@ -41,7 +41,7 @@ public class Class9140
             if (class2137.method8294(Class2137.field12520)) {
                 final Optional<Class7276> method8295 = method33333(list, 13);
                 if (method8295.isPresent()) {
-                    final int intValue = (int)((Class7276)method8295.get()).method22296();
+                    final int intValue = (int) method8295.get().method22296();
                     if (intValue > 0 && intValue < 6) {
                         list.add(new Class7276(16, Class1968.field10759, intValue - 1));
                         return Class2137.field12522;
@@ -54,19 +54,19 @@ public class Class9140
             if (class2137.method8294(Class2137.field12550)) {
                 final Optional<Class7276> method8296 = method33333(list, 14);
                 if (method8296.isPresent()) {
-                    if ((int)((Class7276)method8296.get()).method22296() == 0) {
+                    if ((int) method8296.get().method22296() == 0) {
                         return Class2137.field12550;
                     }
-                    if ((int)((Class7276)method8296.get()).method22296() == 1) {
+                    if ((int) method8296.get().method22296() == 1) {
                         return Class2137.field12554;
                     }
-                    if ((int)((Class7276)method8296.get()).method22296() == 2) {
+                    if ((int) method8296.get().method22296() == 2) {
                         return Class2137.field12555;
                     }
-                    if ((int)((Class7276)method8296.get()).method22296() == 3) {
+                    if ((int) method8296.get().method22296() == 3) {
                         return Class2137.field12552;
                     }
-                    if ((int)((Class7276)method8296.get()).method22296() == 4) {
+                    if ((int) method8296.get().method22296() == 4) {
                         return Class2137.field12551;
                     }
                 }
@@ -146,8 +146,8 @@ public class Class9140
                 if (obj.method22294() != 0 || !method22296.isPresent() || !method22297.isPresent() || !method22298.isPresent()) {
                     continue;
                 }
-                final Class7276 class2139 = (Class7276)method22296.get();
-                if (((byte)obj.method22296() & 0x20) != 0x20 || ((byte)class2139.method22296() & 0x1) != 0x1 || ((String)((Class7276)method22297.get()).method22296()).length() == 0 || !(boolean)((Class7276)method22298.get()).method22296()) {
+                final Class7276 class2139 = method22296.get();
+                if (((byte)obj.method22296() & 0x20) != 0x20 || ((byte)class2139.method22296() & 0x1) != 0x1 || ((String) method22297.get().method22296()).length() == 0 || !(boolean) method22298.get().method22296()) {
                     continue;
                 }
                 final Class6642 class2140 = class2138.method18207(Class6642.class);
@@ -187,6 +187,6 @@ public class Class9140
             }
             return (Optional<Class7276>)Optional.of((Object)class7276);
         }
-        return (Optional<Class7276>)Optional.absent();
+        return Optional.absent();
     }
 }

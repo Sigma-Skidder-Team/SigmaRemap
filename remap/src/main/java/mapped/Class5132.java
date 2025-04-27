@@ -21,7 +21,7 @@ public class Class5132 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("probability"), dynamicOps.createDouble(this.field22105), dynamicOps.createString("type"), dynamicOps.createString(this.field22106.method7954()))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("probability"), dynamicOps.createDouble(this.field22105), dynamicOps.createString("type"), dynamicOps.createString(this.field22106.method7954()))));
     }
     
     public static <T> Class5132 method16041(final Dynamic<T> dynamic) {

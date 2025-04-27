@@ -13,7 +13,7 @@ public class Class4945 implements Class4946<Class4945>, Class4944<Class4945>
     private final List<Class122> field21230;
     private final List<Class125> field21231;
     private Class5770 field21232;
-    private Class5772 field21233;
+    private final Class5772 field21233;
     
     public Class4945() {
         this.field21229 = Lists.newArrayList();

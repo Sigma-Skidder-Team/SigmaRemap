@@ -22,7 +22,7 @@ public enum Class2074
     private final String field11968;
     private final List<Class3090> field11969;
     
-    private Class2074(final int field11967, final String field11968, final Class3090[] a) {
+    Class2074(final int field11967, final String field11968, final Class3090[] a) {
         this.field11967 = field11967;
         this.field11968 = field11968;
         this.field11969 = Arrays.asList(a);

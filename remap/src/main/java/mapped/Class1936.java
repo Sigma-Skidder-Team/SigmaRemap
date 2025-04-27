@@ -39,7 +39,7 @@ public class Class1936 extends Class1935
     }
     
     public Class1936(final String s, final Class<?> clazz, final Class<?>... array) {
-        this(s, clazz, null, (String)null, array);
+        this(s, clazz, null, null, array);
     }
     
     @Override
@@ -107,7 +107,7 @@ public class Class1936 extends Class1935
     public Object method7827(final Object o) {
         try {
             if (this.field10563 != null) {
-                return this.field10563.invoke(o, new Object[0]);
+                return this.field10563.invoke(o);
             }
             if (this.field10565 != null) {
                 return this.field10565.get(o);
@@ -186,7 +186,7 @@ public class Class1936 extends Class1935
                 }
             }
             if (this.field10561 != null) {
-                this.field10563 = this.method7832(field10560, this.field10561, (Class<?>[])new Class[0]);
+                this.field10563 = this.method7832(field10560, this.field10561, new Class[0]);
             }
             if (this.field10562 != null) {
                 this.field10568 = false;
@@ -211,6 +211,7 @@ public class Class1936 extends Class1935
                         for (int j = 0; j < parameterTypes.length; ++j) {
                             if (!parameterTypes[j].isAssignableFrom(array[j])) {
                                 n = 0;
+                                break;
                             }
                         }
                         if (n != 0) {
@@ -249,9 +250,7 @@ public class Class1936 extends Class1935
     public boolean method7825() {
         if (this.field10563 == null) {
             if (this.field10565 == null) {
-                if (this.field10567 == null || !this.field10567.method7825()) {
-                    return false;
-                }
+                return this.field10567 != null && this.field10567.method7825();
             }
         }
         return true;
@@ -261,9 +260,7 @@ public class Class1936 extends Class1935
     public boolean method7824() {
         if (this.field10564 == null) {
             if (this.field10565 == null) {
-                if (this.field10567 == null || !this.field10567.method7824()) {
-                    return false;
-                }
+                return this.field10567 != null && this.field10567.method7824();
             }
         }
         return true;

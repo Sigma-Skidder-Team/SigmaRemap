@@ -21,11 +21,11 @@ public class Class4064 extends Item
     
     @Override
     public Class9355<ItemStack> method11695(final World class1847, final PlayerEntity class1848, final Class316 class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.getBoundingBox().intersect(2.0), class1851 -> {
+        final List<Entity> method6739 = class1847.method6739(Class426.class, class1848.getBoundingBox().intersect(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {
-                if (!(!class1851.isAlive())) {
-                    if (!(!(class1851.method2098() instanceof Class852))) {
+                if (class1851.isAlive()) {
+                    if (class1851.method2098() instanceof Class852) {
                         return b;
                     }
                 }

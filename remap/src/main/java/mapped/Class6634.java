@@ -45,7 +45,7 @@ public class Class6634 extends Class6635 implements Class6640
         this.field26234 = new ConcurrentHashMap<Integer, Class8254>();
         this.field26235 = Sets.newConcurrentHashSet();
         this.field26236 = Sets.newConcurrentHashSet();
-        this.field26237 = (Cache<Class8322, Integer>)CacheBuilder.newBuilder().maximumSize(10L).expireAfterAccess(250L, TimeUnit.MILLISECONDS).build();
+        this.field26237 = CacheBuilder.newBuilder().maximumSize(10L).expireAfterAccess(250L, TimeUnit.MILLISECONDS).build();
         this.field26238 = false;
         this.field26239 = false;
         this.field26240 = -1;

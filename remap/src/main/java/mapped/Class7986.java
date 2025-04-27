@@ -17,9 +17,9 @@ import java.util.Deque;
 public class Class7986
 {
     private boolean field32862;
-    private Deque<Boolean> field32863;
-    private Deque<Boolean> field32864;
-    private Map<String, String> field32865;
+    private final Deque<Boolean> field32863;
+    private final Deque<Boolean> field32864;
+    private final Map<String, String> field32865;
     private static final Pattern field32866;
     private static final Pattern field32867;
     private static final Pattern field32868;

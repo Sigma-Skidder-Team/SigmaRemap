@@ -101,10 +101,10 @@ public class Class6904
                 method21254(method22665, jsonObject);
             }
             catch (final IOException ex) {
-                Config.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.method28850(ex.getClass().getName() + ": " + ex.getMessage());
             }
             catch (final JsonParseException ex2) {
-                Config.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
+                Config.method28850(ex2.getClass().getName() + ": " + ex2.getMessage());
             }
             catch (final Exception ex3) {
                 ex3.printStackTrace();
@@ -117,10 +117,10 @@ public class Class6904
             if (entry.getKey().equals("id")) {
                 continue;
             }
-            if (jsonObject2.has((String)entry.getKey())) {
+            if (jsonObject2.has(entry.getKey())) {
                 continue;
             }
-            jsonObject2.add((String)entry.getKey(), (JsonElement)entry.getValue());
+            jsonObject2.add(entry.getKey(), (JsonElement)entry.getValue());
         }
     }
     

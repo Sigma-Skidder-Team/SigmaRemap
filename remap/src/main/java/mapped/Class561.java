@@ -22,25 +22,25 @@ public class Class561 extends Screen
     private Class576 field3349;
     
     public Class561(final Class696 field3344) {
-        super(new Class2259("createWorld.customize.presets.title", new Object[0]));
+        super(new Class2259("createWorld.customize.presets.title"));
         this.field3344 = field3344;
     }
     
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3345 = Class8822.method30773("createWorld.customize.presets.share", new Object[0]);
-        this.field3346 = Class8822.method30773("createWorld.customize.presets.list", new Object[0]);
+        this.field3345 = Class8822.method30773("createWorld.customize.presets.share");
+        this.field3346 = Class8822.method30773("createWorld.customize.presets.list");
         (this.field3349 = new Class576(this.font, 50, 40, this.width - 100, 20, this.field3345)).method3397(1230);
         this.field3349.method3377(this.field3344.method3883());
         this.children.add(this.field3349);
         this.field3347 = new Class611(this);
         this.children.add(this.field3347);
-        this.field3348 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select", new Object[0]), class654 -> {
+        this.field3348 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("createWorld.customize.presets.select"), class654 -> {
             this.field3344.method3885(this.field3349.method3378());
             this.minecraft.displayGuiScreen(this.field3344);
         }));
-        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3344)));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel"), class654 -> this.minecraft.displayGuiScreen(this.field3344)));
         this.method3272(this.field3347.method3530() != null);
     }
     
@@ -106,14 +106,14 @@ public class Class561 extends Screen
     
     static {
         field3343 = Lists.newArrayList();
-        method3273(Class8822.method30773("createWorld.customize.preset.classic_flat", new Object[0]), Blocks.GRASS_BLOCK, Class7102.field27633, Arrays.asList("village"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(2, Blocks.DIRT), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.tunnelers_dream", new Object[0]), Blocks.STONE, Class7102.field27635, Arrays.asList("biome_1", "dungeon", "decoration", "stronghold", "mineshaft"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(5, Blocks.DIRT), new Class9127(230, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.water_world", new Object[0]), Items.field31350, Class7102.field27656, Arrays.asList("biome_1", "oceanmonument"), new Class9127(90, Blocks.field29173), new Class9127(5, Blocks.field29175), new Class9127(5, Blocks.DIRT), new Class9127(5, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.overworld", new Object[0]), Blocks.field29241, Class7102.field27633, Arrays.asList("village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon", "lake", "lava_lake", "pillager_outpost"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(59, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.snowy_kingdom", new Object[0]), Blocks.field29329, Class7102.field27644, Arrays.asList("village", "biome_1"), new Class9127(1, Blocks.field29329), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(59, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.bottomless_pit", new Object[0]), Items.field31307, Class7102.field27633, Arrays.asList("village", "biome_1"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(2, Blocks.COBBLESTONE));
-        method3273(Class8822.method30773("createWorld.customize.preset.desert", new Object[0]), Blocks.field29175, Class7102.field27634, Arrays.asList("village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon"), new Class9127(8, Blocks.field29175), new Class9127(52, Blocks.field29217), new Class9127(3, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.redstone_ready", new Object[0]), Items.field31354, Class7102.field27634, Collections.emptyList(), new Class9127(52, Blocks.field29217), new Class9127(3, Blocks.STONE), new Class9127(1, Blocks.field29172));
-        method3273(Class8822.method30773("createWorld.customize.preset.the_void", new Object[0]), Blocks.field29517, Class7102.field27683, Arrays.asList("decoration"), new Class9127(1, Blocks.AIR));
+        method3273(Class8822.method30773("createWorld.customize.preset.classic_flat"), Blocks.GRASS_BLOCK, Class7102.field27633, Collections.singletonList("village"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(2, Blocks.DIRT), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.tunnelers_dream"), Blocks.STONE, Class7102.field27635, Arrays.asList("biome_1", "dungeon", "decoration", "stronghold", "mineshaft"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(5, Blocks.DIRT), new Class9127(230, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.water_world"), Items.field31350, Class7102.field27656, Arrays.asList("biome_1", "oceanmonument"), new Class9127(90, Blocks.field29173), new Class9127(5, Blocks.field29175), new Class9127(5, Blocks.DIRT), new Class9127(5, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.overworld"), Blocks.field29241, Class7102.field27633, Arrays.asList("village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon", "lake", "lava_lake", "pillager_outpost"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(59, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.snowy_kingdom"), Blocks.field29329, Class7102.field27644, Arrays.asList("village", "biome_1"), new Class9127(1, Blocks.field29329), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(59, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.bottomless_pit"), Items.field31307, Class7102.field27633, Arrays.asList("village", "biome_1"), new Class9127(1, Blocks.GRASS_BLOCK), new Class9127(3, Blocks.DIRT), new Class9127(2, Blocks.COBBLESTONE));
+        method3273(Class8822.method30773("createWorld.customize.preset.desert"), Blocks.field29175, Class7102.field27634, Arrays.asList("village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon"), new Class9127(8, Blocks.field29175), new Class9127(52, Blocks.field29217), new Class9127(3, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.redstone_ready"), Items.field31354, Class7102.field27634, Collections.emptyList(), new Class9127(52, Blocks.field29217), new Class9127(3, Blocks.STONE), new Class9127(1, Blocks.field29172));
+        method3273(Class8822.method30773("createWorld.customize.preset.the_void"), Blocks.field29517, Class7102.field27683, Collections.singletonList("decoration"), new Class9127(1, Blocks.AIR));
     }
 }

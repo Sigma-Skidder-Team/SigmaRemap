@@ -24,7 +24,7 @@ public class Class9112
     public int field38608;
     public int field38609;
     public Class8974[] field38610;
-    private Map<ChunkPos, Class8871[]> field38611;
+    private final Map<ChunkPos, Class8871[]> field38611;
     
     public Class9112(final Class7520 class7520, final World field38606, final int n, final Class1656 field38607) {
         this.field38611 = new HashMap<ChunkPos, Class8871[]>();

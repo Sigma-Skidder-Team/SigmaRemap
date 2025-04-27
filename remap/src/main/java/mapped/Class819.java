@@ -149,7 +149,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
         for (int i = 0; i < this.field4391.getSizeInventory(); ++i) {
             final ItemStack method4826 = this.field4391.getStackInSlot(i);
             if (!method4826.method27620()) {
-                ((AbstractList<CompoundNBT>)class52).add(method4826.method27627(new CompoundNBT()));
+                class52.add(method4826.method27627(new CompoundNBT()));
             }
         }
         class51.put("Inventory", class52);

@@ -22,9 +22,7 @@ public class Class9115
         if (!this.field38617.isEmpty()) {
             if (!class8321.method27620()) {
                 if (class8321.method27667()) {
-                    if (this.field38617.equals(class8321.method27664().getString())) {
-                        return true;
-                    }
+                    return this.field38617.equals(class8321.method27664().getString());
                 }
             }
             return false;

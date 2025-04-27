@@ -32,7 +32,7 @@ public class Class5966 implements JsonDeserializer<Class7686>
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator iterator = jsonArray.iterator();
         while (iterator.hasNext()) {
-            arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), (Type)Class8997.class));
+            arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), Class8997.class));
         }
         return arrayList;
     }

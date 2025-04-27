@@ -20,7 +20,7 @@ public class Class6098<T extends Class3680> implements IRecipeSerializer<T>
     }
     
     public T method18186(final ResourceLocation class1932, final JsonObject jsonObject) {
-        return this.field24754.method27913(class1932, Class9583.method35896(jsonObject, "group", ""), Ingredient.method622((JsonElement)(Class9583.method35891(jsonObject, "ingredient") ? Class9583.method35917(jsonObject, "ingredient") : Class9583.method35914(jsonObject, "ingredient"))), new ItemStack(Registry.field211.method506(new ResourceLocation(Class9583.method35895(jsonObject, "result"))).orElseThrow(() -> {
+        return this.field24754.method27913(class1932, Class9583.method35896(jsonObject, "group", ""), Ingredient.method622(Class9583.method35891(jsonObject, "ingredient") ? Class9583.method35917(jsonObject, "ingredient") : Class9583.method35914(jsonObject, "ingredient")), new ItemStack(Registry.field211.method506(new ResourceLocation(Class9583.method35895(jsonObject, "result"))).orElseThrow(() -> {
             new IllegalStateException("Item: " + str + " does not exist");
             return;
         })), Class9583.method35904(jsonObject, "experience", 0.0f), Class9583.method35910(jsonObject, "cookingtime", this.field24753));

@@ -40,7 +40,7 @@ public class Class7340
     }
     
     public static Class5484 method22548(final String s, final String s2, final String[][] array, final String s3) {
-        return new Class5483(s, s2.toString(), array, s2, s3);
+        return new Class5483(s, s2, array, s2, s3);
     }
     
     public static String toString(final Color color) {

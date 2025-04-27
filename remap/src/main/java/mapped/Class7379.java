@@ -13,7 +13,7 @@ import java.io.File;
 public class Class7379 implements Class7378
 {
     private static String[] field28433;
-    private File field28434;
+    private final File field28434;
     
     public Class7379(final File field28434) {
         this.field28434 = field28434;

@@ -8,5 +8,5 @@ public enum Class1953
 {
     field10632, 
     field10633, 
-    field10634;
+    field10634
 }

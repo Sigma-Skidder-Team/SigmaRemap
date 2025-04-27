@@ -23,14 +23,14 @@ public class Class8007 extends Class8006<GameProfile, Class6025>
     }
     
     public boolean method26219(final GameProfile gameProfile) {
-        return ((Class8006<GameProfile, V>)this).method26213(gameProfile);
+        return this.method26213(gameProfile);
     }
     
     @Override
     public String[] method26210() {
-        final String[] array = new String[((Class8006<K, Class6025>)this).method26216().size()];
+        final String[] array = new String[this.method26216().size()];
         int n = 0;
-        final Iterator<Class6025> iterator = ((Class8006<K, Class6025>)this).method26216().iterator();
+        final Iterator<Class6025> iterator = this.method26216().iterator();
         while (iterator.hasNext()) {
             array[n++] = iterator.next().method17942().getName();
         }

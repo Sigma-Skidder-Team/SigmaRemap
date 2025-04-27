@@ -101,7 +101,7 @@ public class Class6585
     }
     
     private void method19949(final World class1847, final BlockPos class1848, final BlockPos class1849) {
-        final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>) Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof PlayerEntity));
+        final List<Entity> method6739 = class1847.method6739(Entity.class, new AxisAlignedBB(class1848, class1849), class1853 -> !(class1853 instanceof PlayerEntity));
         this.field26125.clear();
         for (final Entity class1850 : method6739) {
             final Vec3d class1851 = new Vec3d(class1850.getPosX() - class1848.getX(), class1850.getPosY() - class1848.getY(), class1850.getPosZ() - class1848.getZ());
@@ -343,9 +343,9 @@ public class Class6585
             final CompoundNBT field30512 = class1857.field30512;
             final Vec3d method1136 = method19963(class1857.field30510, class1853, class1854, class1855).add(class1852.getX(), class1852.getY(), class1852.getZ());
             final ListNBT class1858 = new ListNBT();
-            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.x));
-            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.y));
-            ((AbstractList<DoubleNBT>)class1858).add(DoubleNBT.method277(method1136.z));
+            class1858.add(DoubleNBT.method277(method1136.x));
+            class1858.add(DoubleNBT.method277(method1136.y));
+            class1858.add(DoubleNBT.method277(method1136.z));
             field30512.put("Pos", class1858);
             field30512.remove("UUIDMost");
             field30512.remove("UUIDLeast");
@@ -561,7 +561,7 @@ public class Class6585
                 if (class54.field38250 != null) {
                     e.put("nbt", class54.field38250);
                 }
-                ((AbstractList<CompoundNBT>)class53).add(e);
+                class53.add(e);
                 for (int k = 1; k < this.field26124.size(); ++k) {
                     ((Class2249)arrayList.get(k)).method8454(this.field26124.get(k).get(j).field38249, method8452);
                 }
@@ -573,9 +573,9 @@ public class Class6585
                     final ListNBT e2 = new ListNBT();
                     final Iterator<BlockState> iterator2 = class56.iterator();
                     while (iterator2.hasNext()) {
-                        ((AbstractList<CompoundNBT>)e2).add(Class9346.method34649(iterator2.next()));
+                        e2.add(Class9346.method34649(iterator2.next()));
                     }
-                    ((AbstractList<ListNBT>)class55).add(e2);
+                    class55.add(e2);
                 }
                 class51.put("palettes", class55);
             }
@@ -583,7 +583,7 @@ public class Class6585
                 final ListNBT class57 = new ListNBT();
                 final Iterator<BlockState> iterator3 = class52.iterator();
                 while (iterator3.hasNext()) {
-                    ((AbstractList<CompoundNBT>)class57).add(Class9346.method34649(iterator3.next()));
+                    class57.add(Class9346.method34649(iterator3.next()));
                 }
                 class51.put("palette", class57);
             }
@@ -600,7 +600,7 @@ public class Class6585
             if (class59.field30512 != null) {
                 e3.put("nbt", class59.field30512);
             }
-            ((AbstractList<CompoundNBT>)class58).add(e3);
+            class58.add(e3);
         }
         class51.put("entities", class58);
         class51.put("size", this.method19971(this.field26126.getX(), this.field26126.getY(), this.field26126.getZ()));
@@ -663,7 +663,7 @@ public class Class6585
     private ListNBT method19971(final int... array) {
         final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
-            ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(array[i]));
+            class52.add(IntNBT.valueOf(array[i]));
         }
         return class52;
     }
@@ -671,7 +671,7 @@ public class Class6585
     private ListNBT method19972(final double... array) {
         final ListNBT class52 = new ListNBT();
         for (int length = array.length, i = 0; i < length; ++i) {
-            ((AbstractList<DoubleNBT>)class52).add(DoubleNBT.method277(array[i]));
+            class52.add(DoubleNBT.method277(array[i]));
         }
         return class52;
     }

@@ -21,9 +21,7 @@ public class Class7330 implements Class7326
             if (!Class8123.method26745(class8123)[Direction.EAST.getIndex()]) {
                 if (!Class8123.method26745(class8123)[Direction.NORTH.getIndex()]) {
                     if (!Class8123.method26745(class8123)[Direction.SOUTH.getIndex()]) {
-                        if (!Class8123.method26745(class8123)[Direction.UP.getIndex()]) {
-                            return true;
-                        }
+                        return !Class8123.method26745(class8123)[Direction.UP.getIndex()];
                     }
                 }
             }

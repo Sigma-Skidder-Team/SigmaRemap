@@ -36,7 +36,7 @@ public final class Class1736 implements Closeable
             }
         }
         else if (!this.method6136(true, class1584)) {
-            throw Class6885.method21140("Required SETTINGS preface not received", new Object[0]);
+            throw Class6885.method21140("Required SETTINGS preface not received");
         }
     }
     
@@ -117,7 +117,7 @@ public final class Class1736 implements Closeable
             class1584.method5665(b2, n, -1, this.method6138(method6149, n2, b, n));
             return;
         }
-        throw Class6885.method21140("PROTOCOL_ERROR: TYPE_HEADERS streamId == 0", new Object[0]);
+        throw Class6885.method21140("PROTOCOL_ERROR: TYPE_HEADERS streamId == 0");
     }
     
     private List<Class8975> method6138(final int n, final short field9569, final byte field9570, final int field9571) throws IOException {
@@ -133,7 +133,7 @@ public final class Class1736 implements Closeable
     
     private void method6139(final Class1584 class1584, int method6149, final byte b, final int n) throws IOException {
         if (n == 0) {
-            throw Class6885.method21140("PROTOCOL_ERROR: TYPE_DATA streamId == 0", new Object[0]);
+            throw Class6885.method21140("PROTOCOL_ERROR: TYPE_DATA streamId == 0");
         }
         final boolean b2 = (b & 0x1) != 0x0;
         if ((b & 0x20) == 0x0) {
@@ -143,7 +143,7 @@ public final class Class1736 implements Closeable
             this.field9687.method5995(n2);
             return;
         }
-        throw Class6885.method21140("PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA", new Object[0]);
+        throw Class6885.method21140("PROTOCOL_ERROR: FLAG_COMPRESSED without SETTINGS_COMPRESS_DATA");
     }
     
     private void method6140(final Class1584 class1584, final int i, final byte b, final int n) throws IOException {
@@ -154,7 +154,7 @@ public final class Class1736 implements Closeable
             this.method6141(class1584, n);
             return;
         }
-        throw Class6885.method21140("TYPE_PRIORITY streamId == 0", new Object[0]);
+        throw Class6885.method21140("TYPE_PRIORITY streamId == 0");
     }
     
     private void method6141(final Class1584 class1584, final int n) throws IOException {
@@ -166,7 +166,7 @@ public final class Class1736 implements Closeable
             throw Class6885.method21140("TYPE_RST_STREAM length: %d != 4", i);
         }
         if (n == 0) {
-            throw Class6885.method21140("TYPE_RST_STREAM streamId == 0", new Object[0]);
+            throw Class6885.method21140("TYPE_RST_STREAM streamId == 0");
         }
         final int method5967 = this.field9687.method5967();
         final Class2082 method5968 = Class2082.method8204(method5967);
@@ -179,11 +179,11 @@ public final class Class1736 implements Closeable
     
     private void method6143(final Class1584 class1584, final int i, final byte b, final int n) throws IOException {
         if (n != 0) {
-            throw Class6885.method21140("TYPE_SETTINGS streamId != 0", new Object[0]);
+            throw Class6885.method21140("TYPE_SETTINGS streamId != 0");
         }
         if ((b & 0x1) != 0x0) {
             if (i != 0) {
-                throw Class6885.method21140("FRAME_SIZE_ERROR ack frame should be empty!", new Object[0]);
+                throw Class6885.method21140("FRAME_SIZE_ERROR ack frame should be empty!");
             }
             class1584.method5669();
         }
@@ -198,7 +198,7 @@ public final class Class1736 implements Closeable
                 switch (method5966) {
                     case 2: {
                         if (method5967 != 0 && method5967 != 1) {
-                            throw Class6885.method21140("PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1", new Object[0]);
+                            throw Class6885.method21140("PROTOCOL_ERROR SETTINGS_ENABLE_PUSH != 0 or 1");
                         }
                         break;
                     }
@@ -209,7 +209,7 @@ public final class Class1736 implements Closeable
                     case 4: {
                         method5966 = 7;
                         if (method5967 < 0) {
-                            throw Class6885.method21140("PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1", new Object[0]);
+                            throw Class6885.method21140("PROTOCOL_ERROR SETTINGS_INITIAL_WINDOW_SIZE > 2^31 - 1");
                         }
                         break;
                     }
@@ -235,7 +235,7 @@ public final class Class1736 implements Closeable
             class1584.method5674(n, n3, this.method6138(method6149, n2, b, n));
             return;
         }
-        throw Class6885.method21140("PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0", new Object[0]);
+        throw Class6885.method21140("PROTOCOL_ERROR: TYPE_PUSH_PROMISE streamId == 0");
     }
     
     private void method6145(final Class1584 class1584, final int i, final byte b, final int n) throws IOException {
@@ -246,7 +246,7 @@ public final class Class1736 implements Closeable
             class1584.method5670((b & 0x1) != 0x0, this.field9687.method5967(), this.field9687.method5967());
             return;
         }
-        throw Class6885.method21140("TYPE_PING streamId != 0", new Object[0]);
+        throw Class6885.method21140("TYPE_PING streamId != 0");
     }
     
     private void method6146(final Class1584 class1584, final int i, final byte b, final int n) throws IOException {
@@ -254,7 +254,7 @@ public final class Class1736 implements Closeable
             throw Class6885.method21140("TYPE_GOAWAY length < 8: %s", i);
         }
         if (n != 0) {
-            throw Class6885.method21140("TYPE_GOAWAY streamId != 0", new Object[0]);
+            throw Class6885.method21140("TYPE_GOAWAY streamId != 0");
         }
         final int method5967 = this.field9687.method5967();
         final int method5968 = this.field9687.method5967();

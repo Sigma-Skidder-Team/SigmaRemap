@@ -17,7 +17,7 @@ public class Class4837 extends Class4825
     public static ColorHelper field20733;
     public String field20734;
     private PlayerEntity field20735;
-    private Minecraft field20736;
+    private final Minecraft field20736;
     private static ClientWorld field20737;
     public Class7971 field20738;
     private Class1773 field20739;

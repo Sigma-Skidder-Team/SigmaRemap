@@ -54,7 +54,7 @@ public abstract class VoxelShape
     }
     
     public VoxelShape withOffset(final double n, final double n2, final double n3) {
-        return this.isEmpty() ? VoxelShapes.empty() : new VoxelShapeArray(this.part, (DoubleList)new Class87(this.getValues(Direction.Axis.X), n), (DoubleList)new Class87(this.getValues(Direction.Axis.Y), n2), (DoubleList)new Class87(this.getValues(Direction.Axis.Z), n3));
+        return this.isEmpty() ? VoxelShapes.empty() : new VoxelShapeArray(this.part, new Class87(this.getValues(Direction.Axis.X), n), new Class87(this.getValues(Direction.Axis.Y), n2), new Class87(this.getValues(Direction.Axis.Z), n3));
     }
     
     public VoxelShape simplify() {

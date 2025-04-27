@@ -86,7 +86,7 @@ public class Class57 extends ArrayList<Class9017>
         final CompoundNBT class51 = new CompoundNBT();
         final ListNBT class52 = new ListNBT();
         for (int i = 0; i < this.size(); ++i) {
-            ((AbstractList<CompoundNBT>)class52).add(this.get(i).method32301());
+            class52.add(this.get(i).method32301());
         }
         class51.put("Recipes", class52);
         return class51;

@@ -23,7 +23,7 @@ public enum Class2018
     
     private final int field11512;
     
-    private Class2018(final Direction class179, final boolean b) {
+    Class2018(final Direction class179, final boolean b) {
         this.field11512 = class179.getIndex() + (b ? Direction.values().length : 0);
     }
 }

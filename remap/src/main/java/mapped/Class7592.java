@@ -30,9 +30,7 @@ public class Class7592 extends Class7591
         }
         if (this.field30114 != null) {
             final Optional<T> method21774 = class7099.parseValue(this.field30114);
-            if (!method21774.isPresent() || method21772.compareTo(method21774.get()) > 0) {
-                return false;
-            }
+            return method21774.isPresent() && method21772.compareTo(method21774.get()) <= 0;
         }
         return true;
     }
@@ -46,6 +44,6 @@ public class Class7592 extends Class7591
         if (this.field30114 != null) {
             jsonObject.addProperty("max", this.field30114);
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

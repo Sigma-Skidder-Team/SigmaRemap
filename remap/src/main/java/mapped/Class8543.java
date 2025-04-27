@@ -57,7 +57,7 @@ public class Class8543
         RenderSystem.method29989(RenderSystem::method29990);
         Class1925.method7664((n, s) -> {
             new IllegalStateException(String.format("GLFW error before init: [0x%X]%s", n, s));
-            throw;
+            throw
         });
         final ArrayList arrayList = Lists.newArrayList();
         final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback((i, l) -> arrayList.add(String.format("GLFW error during init: [0x%X]%s", i, l)));
@@ -65,12 +65,12 @@ public class Class8543
             final LongSupplier longSupplier = () -> (long)(GLFW.glfwGetTime() * 1.0E9);
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
-                Class8543.field35881.error("GLFW error collected during initialization: {}", (Object)iterator.next());
+                Class8543.field35881.error("GLFW error collected during initialization: {}", iterator.next());
             }
-            RenderSystem.method30081((GLFWErrorCallbackI)glfwSetErrorCallback);
+            RenderSystem.method30081(glfwSetErrorCallback);
             return longSupplier;
         }
-        throw new IllegalStateException("Failed to initialize GLFW, errors: " + Joiner.on(",").join((Iterable)arrayList));
+        throw new IllegalStateException("Failed to initialize GLFW, errors: " + Joiner.on(",").join(arrayList));
     }
     
     public static void method28666(final GLFWErrorCallbackI glfwErrorCallbackI) {

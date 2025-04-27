@@ -19,6 +19,6 @@ public class Class6853 extends Class6851<LivingEntity>
     
     @Override
     public Set<Class8233<?>> method20953() {
-        return (Set<Class8233<?>>)ImmutableSet.of();
+        return ImmutableSet.of();
     }
 }

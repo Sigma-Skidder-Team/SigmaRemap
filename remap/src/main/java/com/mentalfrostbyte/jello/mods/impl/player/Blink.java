@@ -15,7 +15,7 @@ import java.util.List;
 public class Blink extends Module
 {
     public static Class755 field15771;
-    private List<IPacket<?>> field15772;
+    private final List<IPacket<?>> field15772;
     private Vec3d field15773;
     public float field15774;
     public float field15775;

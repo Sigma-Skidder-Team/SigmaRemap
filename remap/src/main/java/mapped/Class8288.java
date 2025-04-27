@@ -125,7 +125,7 @@ public class Class8288
             }
             for (int l = 0; l < this.field34081.length; ++l) {
                 if (this.field34081[l] != null) {
-                    Class8288.field34077.warn("Discarding update data for section {} for chunk ({} {})", (Object)l, (Object)method1298.field32290, (Object)method1298.field32291);
+                    Class8288.field34077.warn("Discarding update data for section {} for chunk ({} {})", l, method1298.field32290, method1298.field32291);
                 }
                 this.field34081[l] = null;
             }

@@ -26,7 +26,7 @@ public class Class9496
         final int n = array.length / 4;
         for (int i = 0; i < 4; ++i) {
             final int n2 = i * n;
-            final float intBitsToFloat = Float.intBitsToFloat(array[n2 + 0]);
+            final float intBitsToFloat = Float.intBitsToFloat(array[n2]);
             final float intBitsToFloat2 = Float.intBitsToFloat(array[n2 + 1]);
             final float intBitsToFloat3 = Float.intBitsToFloat(array[n2 + 2]);
             if (this.field40844 > intBitsToFloat) {

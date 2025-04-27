@@ -9,7 +9,7 @@ public class Class6890 extends Class6889
     private static String[] field27022;
     private final Class3788 field27023;
     private final Class3761 field27024;
-    private Class2237 field27025;
+    private final Class2237 field27025;
     
     public Class6890(final Class3746 class3746, final Class9131 class3747) {
         super(class3746, class3747);

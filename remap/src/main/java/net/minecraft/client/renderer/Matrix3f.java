@@ -105,7 +105,7 @@ public final class Matrix3f
 
     private static Pair<Float, Float> qrGivensQuat(float p_226112_0_, float p_226112_1_)
     {
-        float f = (float)Math.hypot((double)p_226112_0_, (double)p_226112_1_);
+        float f = (float)Math.hypot(p_226112_0_, p_226112_1_);
         float f1 = f > 1.0E-6F ? p_226112_1_ : 0.0F;
         float f2 = Math.abs(p_226112_0_) + Math.max(f, 1.0E-6F);
 
@@ -278,7 +278,7 @@ public final class Matrix3f
         f = f * f15;
         matrix3f3.mul(matrix3f2);
         f = 1.0F / f;
-        quaternion.multiply((float)Math.sqrt((double)f));
+        quaternion.multiply((float)Math.sqrt(f));
         Vector3f vector3f = new Vector3f(matrix3f3.m00 * f, matrix3f3.m11 * f, matrix3f3.m22 * f);
         return Triple.of(quaternion, vector3f, quaternion1);
     }
@@ -329,27 +329,26 @@ public final class Matrix3f
 
     public String toString()
     {
-        StringBuilder stringbuilder = new StringBuilder();
-        stringbuilder.append("Matrix3f:\n");
-        stringbuilder.append(this.m00);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m01);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m02);
-        stringbuilder.append("\n");
-        stringbuilder.append(this.m10);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m11);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m12);
-        stringbuilder.append("\n");
-        stringbuilder.append(this.m20);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m21);
-        stringbuilder.append(" ");
-        stringbuilder.append(this.m22);
-        stringbuilder.append("\n");
-        return stringbuilder.toString();
+        String stringbuilder = "Matrix3f:\n" +
+                this.m00 +
+                " " +
+                this.m01 +
+                " " +
+                this.m02 +
+                "\n" +
+                this.m10 +
+                " " +
+                this.m11 +
+                " " +
+                this.m12 +
+                "\n" +
+                this.m20 +
+                " " +
+                this.m21 +
+                " " +
+                this.m22 +
+                "\n";
+        return stringbuilder;
     }
     
     public void setIdentity() {

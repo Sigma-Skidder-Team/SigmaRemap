@@ -133,12 +133,12 @@ public enum Class2006
     
     private static final HashMap<Short, Class2006> field11391;
     private static final HashMap<Short, Class2006> field11392;
-    private Class2044 field11393;
-    private Class2128 field11394;
-    private int field11395;
+    private final Class2044 field11393;
+    private final Class2128 field11394;
+    private final int field11395;
     private int field11396;
     
-    private Class2006(final Class2044 field11393, final Class2128 field11394, final int n) {
+    Class2006(final Class2044 field11393, final Class2128 field11394, final int n) {
         this.field11396 = -1;
         this.field11393 = field11393;
         this.field11394 = field11394;
@@ -146,7 +146,7 @@ public enum Class2006
         this.field11396 = n;
     }
     
-    private Class2006(final Class2044 field11393, final Class2128 field11394, final int field11395, final int field11396) {
+    Class2006(final Class2044 field11393, final Class2128 field11394, final int field11395, final int field11396) {
         this.field11396 = -1;
         this.field11393 = field11393;
         this.field11394 = field11394;

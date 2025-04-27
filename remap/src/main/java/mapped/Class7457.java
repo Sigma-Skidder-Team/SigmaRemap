@@ -64,7 +64,7 @@ public final class Class7457
     }
     
     private static String method22965(final int codePoint, final boolean b) throws UTF8Exception {
-        return new StringBuilder().append(Character.toChars(codePoint)).toString();
+        return String.valueOf(Character.toChars(codePoint));
     }
     
     private static char[] method22966(final int n, final int n2) {
@@ -144,7 +144,7 @@ public final class Class7457
         final int size = list.size();
         final int[] array = new int[size];
         for (int i = 0; i < size; ++i) {
-            array[i] = (int)list.get(i);
+            array[i] = list.get(i);
         }
         return array;
     }

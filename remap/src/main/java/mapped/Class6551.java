@@ -47,8 +47,7 @@ public class Class6551 extends Class6550
             goto Label_0031;
         }
         catch (final SecurityException cause2) {
-            final IOException ex = new IOException("Exception in connect");
-            ex.initCause(cause2);
+            final IOException ex = new IOException("Exception in connect", cause2);
             throw ex;
         }
     }
@@ -129,7 +128,7 @@ public class Class6551 extends Class6550
     public boolean method19847(final String s) {
         try {
             final Class<?> forName = Class.forName("android.security.NetworkSecurityPolicy");
-            return (boolean)forName.getMethod("isCleartextTrafficPermitted", String.class).invoke(forName.getMethod("getInstance", (Class[])new Class[0]).invoke(null, new Object[0]), s);
+            return (boolean)forName.getMethod("isCleartextTrafficPermitted", String.class).invoke(forName.getMethod("getInstance", new Class[0]).invoke(null), s);
         }
         catch (final ClassNotFoundException | NoSuchMethodException ex) {
             return super.method19847(s);
@@ -159,14 +158,14 @@ public class Class6551 extends Class6550
             catch (final ClassNotFoundException ex) {
                 clazz = Class.forName("org.apache.harmony.xnet.provider.jsse.SSLParametersImpl");
             }
-            final Class7539<Socket> class7539 = new Class7539<Socket>(null, "setUseSessionTickets", new Class[] { Boolean.TYPE });
-            final Class7539<Socket> class7540 = new Class7539<Socket>(null, "setHostname", new Class[] { String.class });
+            final Class7539<Socket> class7539 = new Class7539<Socket>(null, "setUseSessionTickets", Boolean.TYPE);
+            final Class7539<Socket> class7540 = new Class7539<Socket>(null, "setHostname", String.class);
             Class7539<Socket> class7541 = null;
             Class7539<Socket> class7542 = null;
             try {
                 Class.forName("android.net.Network");
-                class7541 = new Class7539<Socket>(byte[].class, "getAlpnSelectedProtocol", new Class[0]);
-                class7542 = new Class7539<Socket>(null, "setAlpnProtocols", new Class[] { byte[].class });
+                class7541 = new Class7539<Socket>(byte[].class, "getAlpnSelectedProtocol");
+                class7542 = new Class7539<Socket>(null, "setAlpnProtocols", byte[].class);
             }
             catch (final ClassNotFoundException ex2) {}
             return new Class6551(clazz, class7539, class7540, class7541, class7542);

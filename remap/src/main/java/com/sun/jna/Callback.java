@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface Callback
 {
-    public static final String METHOD_NAME = "callback";
-    public static final List<String> FORBIDDEN_NAMES = Collections.unmodifiableList((List<? extends String>)Arrays.asList("hashCode", "equals", "toString"));
+    String METHOD_NAME = "callback";
+    List<String> FORBIDDEN_NAMES = Collections.unmodifiableList(Arrays.asList("hashCode", "equals", "toString"));
 }

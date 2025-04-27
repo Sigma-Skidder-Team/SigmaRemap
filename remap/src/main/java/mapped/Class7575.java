@@ -63,14 +63,14 @@ public class Class7575 extends Class7574<Class9474>
             sb.append(class9474.method35260());
             sb.append("; value=");
             if (!(class9474.method35261() instanceof Class7574)) {
-                sb.append(class9474.toString());
+                sb.append(class9474);
             }
             else {
                 sb.append(System.identityHashCode(class9474.method35261()));
             }
             sb.append(" }");
         }
-        return "<" + this.getClass().getName() + " (tag=" + this.method23845() + ", values=" + sb.toString() + ")>";
+        return "<" + this.getClass().getName() + " (tag=" + this.method23845() + ", values=" + sb + ")>";
     }
     
     public void method23843(final boolean field30046) {

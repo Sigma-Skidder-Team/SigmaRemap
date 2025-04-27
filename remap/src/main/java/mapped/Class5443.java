@@ -26,7 +26,7 @@ public class Class5443 extends Class5419<LivingEntity>
     }
     
     public Class5443(final Predicate<LivingEntity> field22659, final float n) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33810, Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
         this.field22659 = field22659;
         this.field22660 = n * n;
     }

@@ -25,9 +25,9 @@ public final class Class8188 extends Class8187
     
     @Override
     public boolean method27101() {
-        this.field33699 = (IntSet)new IntOpenHashSet();
-        this.field33700 = (IntSet)new IntOpenHashSet();
-        this.field33701 = (Int2IntMap)new Int2IntOpenHashMap();
+        this.field33699 = new IntOpenHashSet();
+        this.field33700 = new IntOpenHashSet();
+        this.field33701 = new Int2IntOpenHashMap();
         for (int i = 0; i < this.field33696.size(); ++i) {
             final Dynamic dynamic = this.field33696.get(i);
             final String string = dynamic.get("Name").asString("");

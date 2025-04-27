@@ -765,7 +765,7 @@ public class CallbackReference extends WeakReference<Callback>
         return this.trampoline;
     }
     
-    public void finalize() {
+    protected void finalize() {
         this.dispose();
     }
     

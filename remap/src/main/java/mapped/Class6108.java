@@ -75,15 +75,15 @@ public class Class6108
             final ChannelHandlerContext method28340 = Class8485.method28340(Class8563.method28794().method33560().method30253(), this.method18220().pipeline());
             if (b) {
                 if (method28340 != null) {
-                    method28340.fireChannelRead((Object)buffer);
+                    method28340.fireChannelRead(buffer);
                 }
                 else {
-                    this.method18220().pipeline().fireChannelRead((Object)buffer);
+                    this.method18220().pipeline().fireChannelRead(buffer);
                 }
             }
             else {
                 try {
-                    this.field24771.eventLoop().submit((Runnable)new Class973(this, method28340, buffer));
+                    this.field24771.eventLoop().submit(new Class973(this, method28340, buffer));
                 }
                 catch (final Throwable t) {
                     buffer.release();
@@ -97,7 +97,7 @@ public class Class6108
     }
     
     public ChannelFuture method18212(final ByteBuf byteBuf) {
-        return this.field24771.pipeline().context(this.field24771.pipeline().get(Class8563.method28794().method33560().method30252())).writeAndFlush((Object)byteBuf);
+        return this.field24771.pipeline().context(this.field24771.pipeline().get(Class8563.method28794().method33560().method30252())).writeAndFlush(byteBuf);
     }
     
     public void method18213(final ByteBuf byteBuf) {
@@ -162,10 +162,10 @@ public class Class6108
     public void method18218(final ByteBuf byteBuf, final boolean b) {
         final ChannelHandler value = this.field24771.pipeline().get(Class8563.method28794().method33560().method30252());
         if (!b) {
-            this.field24771.eventLoop().submit((Runnable)new Class1227(this, value, byteBuf));
+            this.field24771.eventLoop().submit(new Class1227(this, value, byteBuf));
         }
         else {
-            this.field24771.pipeline().context(value).writeAndFlush((Object)byteBuf);
+            this.field24771.pipeline().context(value).writeAndFlush(byteBuf);
         }
     }
     
@@ -340,14 +340,9 @@ public class Class6108
                     final ReadWriteLock method18226 = this.method18232();
                     final ReadWriteLock method18227 = class6108.method18232();
                     if (method18226 != null) {
-                        if (!method18226.equals(method18227)) {
-                            return false;
-                        }
+                        return method18226.equals(method18227);
                     }
-                    else if (method18227 != null) {
-                        return false;
-                    }
-                    return true;
+                    else return method18227 == null;
                 }
                 return false;
             }

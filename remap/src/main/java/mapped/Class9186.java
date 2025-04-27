@@ -42,7 +42,7 @@ public final class Class9186
         }));
         final boolean boolean1 = field38925.get("convertedFromAlphaFormat").asBoolean(false);
         field38925.get("Sections").asStreamOpt().ifPresent(stream2 -> stream2.forEach(dynamic2 -> {
-            final Class9401 class9402 = new Class9401((Dynamic<?>)dynamic2);
+            final Class9401 class9402 = new Class9401(dynamic2);
             this.field38923 = class9402.method34936(this.field38923);
             this.field38924[class9402.field40336] = class9402;
         }));
@@ -193,7 +193,7 @@ public final class Class9186
                                         key = value + method34124;
                                     }
                                     else {
-                                        key = value + String.valueOf(method34123.get("Rot").asInt(0));
+                                        key = value + method34123.get("Rot").asInt(0);
                                     }
                                     method34123.remove("SkullType");
                                     method34123.remove("facing");
@@ -237,7 +237,7 @@ public final class Class9186
                         case 176:
                         case 177: {
                             final IntListIterator iterator12 = ((IntList)entry.getValue()).iterator();
-                            while (((Iterator)iterator12).hasNext()) {
+                            while (iterator12.hasNext()) {
                                 final int n12 = (int)((Iterator)iterator12).next() | n;
                                 final Dynamic<?> method34126 = this.method33581(n12);
                                 final Dynamic<?> method34127 = this.method33586(n12);
@@ -263,12 +263,12 @@ public final class Class9186
     
     @Nullable
     private Dynamic<?> method33581(final int n) {
-        return (Dynamic<?>)this.field38928.get(n);
+        return this.field38928.get(n);
     }
     
     @Nullable
     private Dynamic<?> method33582(final int n) {
-        return (Dynamic<?>)this.field38928.remove(n);
+        return this.field38928.remove(n);
     }
     
     public static int method33583(final int n, final Class2109 class2109) {
@@ -311,7 +311,7 @@ public final class Class9186
     public Dynamic<?> method33586(final int n) {
         if (n >= 0 && n <= 65535) {
             final Class9401 method33585 = this.method33585(n);
-            return (Dynamic<?>)((method33585 != null) ? method33585.method34934(n & 0xFFF) : Class9251.method34121());
+            return (method33585 != null) ? method33585.method34934(n & 0xFFF) : Class9251.method34121();
         }
         return (Dynamic<?>)Class9251.method34121();
     }
@@ -329,7 +329,7 @@ public final class Class9186
         Dynamic dynamic3 = dynamic.emptyList();
         for (final Class9401 class9401 : this.field38924) {
             if (class9401 != null) {
-                dynamic3 = dynamic3.merge((Dynamic)class9401.method34938());
+                dynamic3 = dynamic3.merge(class9401.method34938());
                 dynamic2 = dynamic2.set(String.valueOf(class9401.field40336), dynamic2.createIntList(Arrays.stream(Class9401.method34942(class9401).toIntArray())));
             }
         }

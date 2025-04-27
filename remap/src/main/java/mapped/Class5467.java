@@ -20,7 +20,7 @@ public class Class5467 extends Class5419<LivingEntity>
     private Optional<BlockPos> field22738;
     
     public Class5467(final int field22736, final float field22737, final int field22738) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10629, (Object)Class8233.field33800, (Object)Class1952.field10630, (Object)Class8233.field33820, (Object)Class1952.field10630));
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10629, Class8233.field33800, Class1952.field10630, (Object)Class8233.field33820, (Object)Class1952.field10630));
         this.field22738 = Optional.empty();
         this.field22736 = field22736;
         this.field22735 = field22737;

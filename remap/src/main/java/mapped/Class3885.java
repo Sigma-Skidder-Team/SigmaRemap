@@ -25,7 +25,7 @@ public class Class3885 extends Class3874
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class3885.field17546[class7096.get((IProperty<Integer>)Class3885.field17545)];
+        return Class3885.field17546[class7096.get(Class3885.field17545)];
     }
     
     @Override
@@ -35,7 +35,7 @@ public class Class3885 extends Class3874
     
     @Override
     public void method11822(BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        final int intValue = class7096.get((IProperty<Integer>)Class3885.field17545);
+        final int intValue = class7096.get(Class3885.field17545);
         if (intValue < 3) {
             if (random.nextInt(10) == 0) {
                 class7096 = (BlockState)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3885.field17545, intValue + 1);

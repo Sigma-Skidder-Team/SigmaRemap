@@ -41,7 +41,7 @@ public class Class769 extends Class770 implements Class768
         this.field4114.method22062(8, new Class3514(this, 0.6));
         this.field4114.method22062(9, new Class3628(this, PlayerEntity.class, 3.0f, 1.0f));
         this.field4114.method22062(10, new Class3628(this, Class759.class, 8.0f));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class776.class }).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[] { Class776.class }).method11100(new Class[0]));
         this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true).method11099(300));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false).method11099(300));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, false).method11099(300));

@@ -58,7 +58,7 @@ public class Class4034 extends Item
             final CompoundNBT e = new CompoundNBT();
             e.putString("id", String.valueOf(method12226));
             e.putShort("lvl", (short)class8322.field26819);
-            ((AbstractList<CompoundNBT>)method12225).add(e);
+            method12225.add(e);
         }
         class8321.method27658().put("StoredEnchantments", method12225);
     }

@@ -116,16 +116,14 @@ public class RealmsMainScreen extends RealmsScreen
                 else {
                     this.method15766();
                 }
-                return;
-            }), new Class7836(new char[] { '9', '8', '7', '4', '5', '6' }, () -> {
+        }), new Class7836(new char[] { '9', '8', '7', '4', '5', '6' }, () -> {
                 if (!RealmsClient.field40930.equals(Class2223.field13687)) {
                     this.method15765();
                 }
                 else {
                     this.method15766();
                 }
-                return;
-            }) });
+        }) });
         RealmsMainScreen.field21857 = null;
         if (RealmsMainScreen.field21857 == null) {
             this.field21861 = new ReentrantLock();
@@ -203,9 +201,7 @@ public class RealmsMainScreen extends RealmsScreen
     private boolean method15749() {
         if (!this.method15745() || this.field21847) {
             if (this.method15746()) {
-                if (this.field21846) {
-                    return true;
-                }
+                return this.field21846;
             }
         }
         return false;
@@ -214,9 +210,7 @@ public class RealmsMainScreen extends RealmsScreen
     private boolean method15750(final RealmsServer class7437) {
         if (class7437 != null) {
             if (!class7437.field28684) {
-                if (class7437.state == RealmsServer.Status.OPEN) {
-                    return true;
-                }
+                return class7437.state == RealmsServer.Status.OPEN;
             }
         }
         return false;
@@ -225,9 +219,7 @@ public class RealmsMainScreen extends RealmsScreen
     private boolean method15751(final RealmsServer class7437) {
         if (class7437 != null) {
             if (class7437.field28684) {
-                if (this.method15783(class7437)) {
-                    return true;
-                }
+                return this.method15783(class7437);
             }
         }
         return false;
@@ -284,11 +276,11 @@ public class RealmsMainScreen extends RealmsScreen
                     }
                     this.field21840 = method32594;
                     if (this.method15744()) {
-                        ((Class5056<Class629>)this.field21832).method15511(new Class629(this));
+                        this.field21832.method15511(new Class629(this));
                     }
                     final Iterator<RealmsServer> iterator2 = this.field21840.iterator();
                     while (iterator2.hasNext()) {
-                        ((Class5056<Class626>)this.field21832).method15511(new Class626(this, iterator2.next()));
+                        this.field21832.method15511(new Class626(this, iterator2.next()));
                     }
                     if (!RealmsMainScreen.field21858) {
                         if (b2) {
@@ -588,9 +580,7 @@ public class RealmsMainScreen extends RealmsScreen
         if (n >= method15777 - 5) {
             if (n <= method15777 + 315) {
                 if (n2 >= method15778 - 5) {
-                    if (n2 <= method15778 + 171) {
-                        return false;
-                    }
+                    return !(n2 <= method15778 + 171);
                 }
             }
         }
@@ -706,9 +696,7 @@ public class RealmsMainScreen extends RealmsScreen
         if (n3 <= n) {
             if (n <= n4) {
                 if (n5 <= n2) {
-                    if (n2 <= n6) {
-                        return true;
-                    }
+                    return n2 <= n6;
                 }
             }
         }
@@ -746,9 +734,7 @@ public class RealmsMainScreen extends RealmsScreen
     private boolean method15784(final RealmsServer class7437) {
         if (class7437.field28681 != null) {
             if (class7437.field28681.equals(Realms.method25357())) {
-                if (!class7437.field28684) {
-                    return true;
-                }
+                return !class7437.field28684;
             }
         }
         return false;
@@ -1027,7 +1013,7 @@ public class RealmsMainScreen extends RealmsScreen
     
     static {
         field21824 = LogManager.getLogger();
-        RealmsMainScreen.field21828 = (List<ResourceLocation>)ImmutableList.of();
+        RealmsMainScreen.field21828 = ImmutableList.of();
         field21829 = new Class9057();
         RealmsMainScreen.field21830 = -1;
     }

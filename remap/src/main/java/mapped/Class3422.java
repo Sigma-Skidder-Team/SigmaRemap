@@ -138,7 +138,7 @@ public class Class3422 extends Class3418
                 class513 = method20053.method27641();
                 if (n != 1) {
                     if (n != 0) {
-                        if (!this.field16172.method6792().method6378(IRecipeType.field37848, new Class443(new ItemStack[] { method20053 }), this.field16172).isPresent()) {
+                        if (!this.field16172.method6792().method6378(IRecipeType.field37848, new Class443(method20053), this.field16172).isPresent()) {
                             if (n >= 2 && n < 29) {
                                 if (!this.method10888(method20053, 29, 38, false)) {
                                     return ItemStack.EMPTY;

@@ -98,14 +98,9 @@ public class Class7562
             final Class74 method23743 = this.method23743();
             final Class74 method23744 = class7562.method23743();
             if (method23743 != null) {
-                if (!method23743.equals(method23744)) {
-                    return false;
-                }
+                return method23743.equals(method23744);
             }
-            else if (method23744 != null) {
-                return false;
-            }
-            return true;
+            else return method23744 == null;
         }
         return false;
     }
@@ -116,7 +111,7 @@ public class Class7562
     
     @Override
     public int hashCode() {
-        final int n = ((1 * 59 + this.method23740()) * 59 + this.method23741()) * 59 + this.method23742();
+        final int n = ((59 + this.method23740()) * 59 + this.method23741()) * 59 + this.method23742();
         final Class74 method23743 = this.method23743();
         return n * 59 + ((method23743 != null) ? method23743.hashCode() : 43);
     }

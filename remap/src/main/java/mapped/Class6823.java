@@ -132,12 +132,12 @@ public class Class6823
         else {
             final CommandDispatcher<Class7491> method3380 = this.field26791.player.field4069.method17375();
             if (this.field26804 == null) {
-                this.field26804 = (ParseResults<Class7491>)method3380.parse(stringReader, (Object)this.field26791.player.field4069.method17269());
+                this.field26804 = method3380.parse(stringReader, (Object)this.field26791.player.field4069.method17269());
             }
             if (method3379 >= (this.field26796 ? stringReader.getCursor() : 1)) {
                 if (this.field26806 == null || !this.field26808) {
-                    (this.field26805 = method3380.getCompletionSuggestions((ParseResults)this.field26804, method3379)).thenRun(() -> {
-                        if (!(!this.field26805.isDone())) {
+                    (this.field26805 = method3380.getCompletionSuggestions(this.field26804, method3379)).thenRun(() -> {
+                        if (this.field26805.isDone()) {
                             this.method20892();
                         }
                     });
@@ -195,7 +195,7 @@ public class Class6823
     
     private void method20893(final TextFormatting obj) {
         final SuggestionContext suggestionContext = this.field26804.getContext().findSuggestionContext(this.field26793.method3399());
-        final Map smartUsage = this.field26791.player.field4069.method17375().getSmartUsage(suggestionContext.parent, (Object)this.field26791.player.field4069.method17269());
+        final Map smartUsage = this.field26791.player.field4069.method17375().getSmartUsage(suggestionContext.parent, this.field26791.player.field4069.method17269());
         final ArrayList arrayList = Lists.newArrayList();
         int max = 0;
         for (final Map.Entry<K, String> entry : smartUsage.entrySet()) {

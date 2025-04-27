@@ -9,12 +9,12 @@ import java.util.ArrayList;
 
 public class Class5831
 {
-    private ArrayList field23914;
-    private HashMap field23915;
-    private HashMap field23916;
-    private HashMap field23917;
-    private float field23918;
-    private float field23919;
+    private final ArrayList field23914;
+    private final HashMap field23915;
+    private final HashMap field23916;
+    private final HashMap field23917;
+    private final float field23918;
+    private final float field23919;
     
     public Class5831(final float field23918, final float field23919) {
         this.field23914 = new ArrayList();

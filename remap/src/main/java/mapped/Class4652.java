@@ -293,7 +293,7 @@ public class Class4652 extends Class4651
                 ++class6772.field26600;
             }
         }
-        return (method13920 != Class257.field1206 && method13920 != Class257.field1207) ? method13919 : method13919;
+        return method13919;
     }
     
     @Override

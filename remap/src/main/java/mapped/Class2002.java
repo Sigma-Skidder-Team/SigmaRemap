@@ -39,7 +39,7 @@ public enum Class2002
         return field11219;
     }
     
-    private Class2002(final int field11236, final String field11237, final boolean field11238) {
+    Class2002(final int field11236, final String field11237, final boolean field11238) {
         this.field11236 = field11236;
         this.field11237 = field11237;
         this.field11238 = field11238;

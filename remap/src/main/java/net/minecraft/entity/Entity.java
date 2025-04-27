@@ -600,8 +600,8 @@ public abstract class Entity implements INameable, ICommandSource {
 
         if (this.stepHeight > 0.0F && flag3 && (flag || flag2))
         {
-            Vec3d vec3d1 = collideBoundingBoxHeuristically(this, new Vec3d(vec.x, (double)this.stepHeight, vec.z), axisalignedbb, this.world, iselectioncontext, reuseablestream);
-            Vec3d vec3d2 = collideBoundingBoxHeuristically(this, new Vec3d(0.0D, (double)this.stepHeight, 0.0D), axisalignedbb.expand(vec.x, 0.0D, vec.z), this.world, iselectioncontext, reuseablestream);
+            Vec3d vec3d1 = collideBoundingBoxHeuristically(this, new Vec3d(vec.x, this.stepHeight, vec.z), axisalignedbb, this.world, iselectioncontext, reuseablestream);
+            Vec3d vec3d2 = collideBoundingBoxHeuristically(this, new Vec3d(0.0D, this.stepHeight, 0.0D), axisalignedbb.expand(vec.x, 0.0D, vec.z), this.world, iselectioncontext, reuseablestream);
 
             if (vec3d2.y < (double)this.stepHeight)
             {
@@ -867,9 +867,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public boolean method1710() {
         if (!this.method1706()) {
             if (!this.method1707()) {
-                if (!this.method1708()) {
-                    return false;
-                }
+                return this.method1708();
             }
         }
         return true;
@@ -1662,9 +1660,7 @@ public abstract class Entity implements INameable, ICommandSource {
                 if (!b) {
                     return false;
                 }
-                if (!this.method1829(0)) {
-                    return false;
-                }
+                return this.method1829(0);
             }
             return true;
         }
@@ -1930,9 +1926,7 @@ public abstract class Entity implements INameable, ICommandSource {
     public boolean method1849(final DamageSource class7929) {
         if (this.invulnerable) {
             if (class7929 != DamageSource.field32574) {
-                if (!class7929.method25725()) {
-                    return true;
-                }
+                return !class7929.method25725();
             }
         }
         return false;

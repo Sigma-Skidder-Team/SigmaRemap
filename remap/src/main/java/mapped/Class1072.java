@@ -33,7 +33,7 @@ public class Class1072 implements Runnable
             final long method1564 = Util.method27837();
             final long n = method1564 - method1563;
             if (n > this.field5769) {
-                Class1072.field5767.fatal("A single server tick took {} seconds (should be max {})", (Object)String.format(Locale.ROOT, "%.2f", n / 1000.0f), (Object)String.format(Locale.ROOT, "%.2f", 0.05f));
+                Class1072.field5767.fatal("A single server tick took {} seconds (should be max {})", String.format(Locale.ROOT, "%.2f", n / 1000.0f), String.format(Locale.ROOT, "%.2f", 0.05f));
                 Class1072.field5767.fatal("Considering it to be crashed, server will forcibly shutdown.");
                 final ThreadInfo[] dumpAllThreads = ManagementFactory.getThreadMXBean().dumpAllThreads(true, true);
                 final StringBuilder sb = new StringBuilder();
@@ -50,7 +50,7 @@ public class Class1072 implements Runnable
                 class7689.makeCategory("Thread Dump").addDetail("Threads", sb);
                 final File file = new File(new File(this.field5768.method1466(), "crash-reports"), "crash-" + new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new Date()) + "-server.txt");
                 if (class7689.method24416(file)) {
-                    Class1072.field5767.error("This crash report has been saved to: {}", (Object)file.getAbsolutePath());
+                    Class1072.field5767.error("This crash report has been saved to: {}", file.getAbsolutePath());
                 }
                 else {
                     Class1072.field5767.error("We were unable to save this crash report to disk.");

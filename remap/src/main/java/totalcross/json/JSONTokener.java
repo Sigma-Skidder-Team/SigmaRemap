@@ -42,8 +42,9 @@ public class JSONTokener {
     //private ByteArrayStream  reader;
     private boolean usePrevious;
 
-    private int idx, len;
-    private String source;
+    private int idx;
+    private final int len;
+    private final String source;
 
     /**
      * Construct a JSONTokener from a Reader.
@@ -414,7 +415,7 @@ public class JSONTokener {
      * @return A JSONException object, suitable for throwing
      */
     public JSONException syntaxError(String message) {
-        return new JSONException(message + this.toString());
+        return new JSONException(message + this);
     }
 
     /**

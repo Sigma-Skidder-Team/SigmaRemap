@@ -5,6 +5,7 @@
 package mapped;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public final class Class7632
 {
@@ -12,7 +13,7 @@ public final class Class7632
     }
     
     public static String method23986(final String s, final String s2) {
-        return method23987(s, s2, Charset.forName("ISO-8859-1"));
+        return method23987(s, s2, StandardCharsets.ISO_8859_1);
     }
     
     public static String method23987(final String str, final String str2, final Charset charset) {

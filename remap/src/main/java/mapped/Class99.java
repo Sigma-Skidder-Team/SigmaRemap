@@ -21,7 +21,7 @@ public enum Class99
     private final int field282;
     private static final Class99[] field283;
     
-    private Class99(final int field279, final int field280, final int field281, final int field282) {
+    Class99(final int field279, final int field280, final int field281, final int field282) {
         this.field279 = field279;
         this.field280 = field280;
         this.field281 = field281;

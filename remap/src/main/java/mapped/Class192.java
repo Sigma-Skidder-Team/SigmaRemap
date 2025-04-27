@@ -157,9 +157,7 @@ public enum Class192 implements Class193
                 if (n != Class192.field641) {
                     if (n != Class192.field638) {
                         if (n != Class192.field654) {
-                            if (!Class7983.method26038(n)) {
-                                return false;
-                            }
+                            return Class7983.method26038(n);
                         }
                     }
                 }
@@ -174,9 +172,7 @@ public enum Class192 implements Class193
                 if (n != Class192.field644) {
                     if (n != Class192.field645) {
                         if (n != Class192.field646) {
-                            if (n != Class192.field647) {
-                                return false;
-                            }
+                            return n == Class192.field647;
                         }
                     }
                 }

@@ -74,7 +74,7 @@ public class Class6774
                 e.putByteArray("Data", class6826.method22321());
                 e.putByteArray("SkyLight", class6827.method22321());
                 e.putByteArray("BlockLight", class6828.method22321());
-                ((AbstractList<CompoundNBT>)class6825).add(e);
+                class6825.add(e);
             }
         }
         class6823.put("Sections", class6825);

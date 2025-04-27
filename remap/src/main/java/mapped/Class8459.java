@@ -45,14 +45,14 @@ public class Class8459 extends DataFix
                 set = dynamic.set("Facing", dynamic.createByte((byte)n));
             }
         }
-        return (Dynamic<?>)set;
+        return set;
     }
     
     public TypeRewriteRule makeRule() {
         DSL.namedChoice("Painting", this.getInputSchema().getChoiceType(Class9451.field40626, "Painting"));
         DSL.namedChoice("ItemFrame", this.getInputSchema().getChoiceType(Class9451.field40626, "ItemFrame"));
         final Type type = this.getInputSchema().getType(Class9451.field40626);
-        return TypeRewriteRule.seq(this.fixTypeEverywhereTyped("EntityPaintingFix", type, typed -> typed.updateTyped(opticFinder, type2, typed2 -> typed2.update(DSL.remainderFinder(), dynamic -> this.method28232((Dynamic<?>)dynamic, true, false)))), this.fixTypeEverywhereTyped("EntityItemFrameFix", type, typed3 -> typed3.updateTyped(opticFinder2, type3, typed4 -> typed4.update(DSL.remainderFinder(), dynamic2 -> this.method28232((Dynamic<?>)dynamic2, false, true)))));
+        return TypeRewriteRule.seq(this.fixTypeEverywhereTyped("EntityPaintingFix", type, typed -> typed.updateTyped(opticFinder, type2, typed2 -> typed2.update(DSL.remainderFinder(), dynamic -> this.method28232(dynamic, true, false)))), this.fixTypeEverywhereTyped("EntityItemFrameFix", type, typed3 -> typed3.updateTyped(opticFinder2, type3, typed4 -> typed4.update(DSL.remainderFinder(), dynamic2 -> this.method28232(dynamic2, false, true)))));
     }
     
     static {

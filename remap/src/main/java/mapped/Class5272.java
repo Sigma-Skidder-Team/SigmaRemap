@@ -17,7 +17,7 @@ public class Class5272 extends Class5260<Double> implements Class5264<Double>
     }
     
     public void method16410(final ByteBuf byteBuf, final Double n) {
-        byteBuf.writeDouble((double)n);
+        byteBuf.writeDouble(n);
     }
     
     public Double method16411(final Object o) {

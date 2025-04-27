@@ -60,9 +60,7 @@ public class Style
                             if (this.field36858 == null) {
                                 if (this.field36864 == null) {
                                     if (this.field36865 == null) {
-                                        if (this.field36866 == null) {
-                                            return true;
-                                        }
+                                        return this.field36866 == null;
                                     }
                                 }
                             }
@@ -204,13 +202,9 @@ public class Style
                                         return false;
                                     }
                                     if (this.method30412() == null) {
-                                        if (class8768.method30412() == null) {
-                                            return true;
-                                        }
+                                        return class8768.method30412() == null;
                                     }
-                                    else if (this.method30412().equals(class8768.method30412())) {
-                                        return true;
-                                    }
+                                    else return this.method30412().equals(class8768.method30412());
                                 }
                             }
                         }

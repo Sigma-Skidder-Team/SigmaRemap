@@ -40,10 +40,10 @@ public class Class7821 extends DataFix
             final String value = String.valueOf(i);
             final Optional value2 = remove.get(value).get();
             if (value2.isPresent()) {
-                hashMap.put(remove.createInt(i), remove.createMap((Map)ImmutableMap.of((Object)remove.createString("Records"), (Object)value2.get())));
+                hashMap.put(remove.createInt(i), remove.createMap((Map)ImmutableMap.of((Object)remove.createString("Records"), value2.get())));
                 remove = remove.remove(value);
             }
         }
-        return (Dynamic<T>)remove.set("Sections", remove.createMap((Map)hashMap));
+        return remove.set("Sections", remove.createMap(hashMap));
     }
 }

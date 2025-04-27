@@ -31,7 +31,7 @@ public class Class5991 implements JsonDeserializer<Class8426>, JsonSerializer<Cl
         final UUID id = class8426.method28143().getId();
         jsonObject.addProperty("uuid", (id != null) ? id.toString() : "");
         jsonObject.addProperty("expiresOn", Class8608.field36124.format(class8426.method28144()));
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public Class8426 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {

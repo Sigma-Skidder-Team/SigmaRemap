@@ -17,12 +17,12 @@ public class Class6404 implements Class6423
     public final ItemStack method19090(final Class5491 class5491, final ItemStack class5492) {
         final ItemStack method19087 = this.method19087(class5491, class5492);
         this.method19088(class5491);
-        this.method19092(class5491, class5491.method16765().get((IProperty<Direction>)Class3955.field17859));
+        this.method19092(class5491, class5491.method16765().get(Class3955.field17859));
         return method19087;
     }
     
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
-        method19091(class5491.method16763(), class5492.method27621(1), 6, class5491.method16765().get((IProperty<Direction>)Class3955.field17859), Class3955.method12072(class5491));
+        method19091(class5491.method16763(), class5492.method27621(1), 6, class5491.method16765().get(Class3955.field17859), Class3955.method12072(class5491));
         return class5492;
     }
     

@@ -12,5 +12,5 @@ public enum Pose
     field1666, 
     field1667, 
     field1668, 
-    field1669;
+    field1669
 }

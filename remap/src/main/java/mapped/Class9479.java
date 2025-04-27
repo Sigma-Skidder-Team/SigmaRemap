@@ -60,7 +60,7 @@ public class Class9479
             arrayList.sort(Comparable::compareTo);
             return method35298(arrayList, (Function<Object, ITextComponent>)function);
         }
-        return function.apply((T)collection.iterator().next());
+        return function.apply(collection.iterator().next());
     }
     
     public static <T> ITextComponent method35298(final Collection<T> collection, final Function<T, ITextComponent> function) {

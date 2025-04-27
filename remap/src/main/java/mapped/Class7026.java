@@ -22,9 +22,9 @@ public class Class7026 extends Class7020<Class152>
     public void method21497(final JsonObject jsonObject, final Class152 class152, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject2 = new JsonObject();
         for (final Map.Entry<String, V> entry : Class152.method734(class152).entrySet()) {
-            jsonObject2.add((String)entry.getKey(), jsonSerializationContext.serialize((Object)entry.getValue()));
+            jsonObject2.add(entry.getKey(), jsonSerializationContext.serialize(entry.getValue()));
         }
-        jsonObject.add("scores", (JsonElement)jsonObject2);
+        jsonObject.add("scores", jsonObject2);
         jsonObject.add("entity", jsonSerializationContext.serialize((Object)Class152.method735(class152)));
     }
     

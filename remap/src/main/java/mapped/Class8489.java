@@ -138,10 +138,10 @@ public class Class8489
                 final StackTraceElement[] stackTrace = ex.getStackTrace();
                 ex.setStackTrace((stackTrace.length <= 2) ? stackTrace : Arrays.copyOfRange(stackTrace, 2, stackTrace.length));
                 if (n2 != 33356) {
-                    Class8489.field34836.info(format, (Throwable)ex);
+                    Class8489.field34836.info(format, ex);
                 }
                 else {
-                    Class8489.field34836.error(format, (Throwable)ex);
+                    Class8489.field34836.error(format, ex);
                 }
                 if (Config.method29013()) {
                     if (Class9419.method35020("ShowGlErrorDebug", 10000L)) {
@@ -170,9 +170,9 @@ public class Class8489
                         GL11.glEnable(33346);
                     }
                     for (int i = 0; i < Class8489.field34844.size(); ++i) {
-                        ARBDebugOutput.glDebugMessageControlARB(4352, 4352, (int)Class8489.field34844.get(i), (int[])null, i < n);
+                        ARBDebugOutput.glDebugMessageControlARB(4352, 4352, Class8489.field34844.get(i), (int[])null, i < n);
                     }
-                    ARBDebugOutput.glDebugMessageCallbackARB((GLDebugMessageARBCallbackI)Class8543.method28675((GLDebugMessageARBCallbackI)GLDebugMessageARBCallback.create(Class8489::method28351), (Consumer<GLDebugMessageARBCallbackI>)Class7308::method22415), 0L);
+                    ARBDebugOutput.glDebugMessageCallbackARB(Class8543.method28675(GLDebugMessageARBCallback.create(Class8489::method28351), (Consumer<GLDebugMessageARBCallbackI>)Class7308::method22415), 0L);
                 }
             }
             else {
@@ -181,9 +181,9 @@ public class Class8489
                     GL11.glEnable(33346);
                 }
                 for (int j = 0; j < Class8489.field34843.size(); ++j) {
-                    KHRDebug.glDebugMessageControl(4352, 4352, (int)Class8489.field34843.get(j), (int[])null, j < n);
+                    KHRDebug.glDebugMessageControl(4352, 4352, Class8489.field34843.get(j), (int[])null, j < n);
                 }
-                KHRDebug.glDebugMessageCallback((GLDebugMessageCallbackI)Class8543.method28675((GLDebugMessageCallbackI)GLDebugMessageCallback.create(Class8489::method28351), (Consumer<GLDebugMessageCallbackI>)Class7308::method22415), 0L);
+                KHRDebug.glDebugMessageCallback(Class8543.method28675(GLDebugMessageCallback.create(Class8489::method28351), (Consumer<GLDebugMessageCallbackI>)Class7308::method22415), 0L);
             }
         }
     }
@@ -196,8 +196,8 @@ public class Class8489
         field34840 = Joiner.on('\n');
         field34841 = Joiner.on("; ");
         field34842 = Maps.newHashMap();
-        field34843 = (List)ImmutableList.of((Object)37190, (Object)37191, (Object)37192, (Object)33387);
-        field34844 = (List)ImmutableList.of((Object)37190, (Object)37191, (Object)37192);
+        field34843 = (List)ImmutableList.of(37190, 37191, 37192, (Object)33387);
+        field34844 = (List)ImmutableList.of(37190, 37191, (Object)37192);
         field34845 = Maps.newHashMap();
         method28352(256, "GL11.GL_ACCUM");
         method28352(257, "GL11.GL_LOAD");

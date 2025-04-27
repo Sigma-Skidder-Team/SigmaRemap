@@ -36,14 +36,9 @@ public class Class7517 implements Class7518
             final ResourceBundle method23448 = this.method23448();
             final ResourceBundle method23449 = class7517.method23448();
             if (method23448 != null) {
-                if (!method23448.equals(method23449)) {
-                    return false;
-                }
+                return method23448.equals(method23449);
             }
-            else if (method23449 != null) {
-                return false;
-            }
-            return true;
+            else return method23449 == null;
         }
         return false;
     }

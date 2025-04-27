@@ -8,10 +8,10 @@ import java.util.Properties;
 
 public class Class9103
 {
-    private ResourceLocation field38550;
+    private final ResourceLocation field38550;
     private int field38551;
     private int field38552;
-    private boolean field38553;
+    private final boolean field38553;
     private static final int field38554 = 2;
     private static final int field38555 = 0;
     private static final int field38556 = 1;

@@ -100,7 +100,7 @@ public class Class4030 extends Block
         if (method6701.method21696() != this) {
             return super.method11846(class7074);
         }
-        return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class4030.field18124, Math.min(8, ((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class4030.field18124) + 1));
+        return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class4030.field18124, Math.min(8, ((StateHolder<Object, Class7096>)method6701).get(Class4030.field18124) + 1));
     }
     
     @Override

@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.io.InputStream;
 import java.io.IOException;
@@ -79,7 +80,7 @@ public class Class8337
             outputStream.write(b);
             outputStream.flush();
             outputStream.close();
-            final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), "ASCII"));
+            final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), StandardCharsets.US_ASCII));
             final StringBuffer sb = new StringBuffer();
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -105,7 +106,7 @@ public class Class8337
                 }
             }
             catch (final Exception ex) {
-                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn(ex.getClass().getName() + ": " + ex.getMessage());
             }
             if (Class8337.field34230 == null) {
                 Class8337.field34230 = "http://s.optifine.net";

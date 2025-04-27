@@ -44,7 +44,7 @@ public class Class9383
                     this.field40266.close();
                 }
                 catch (final IOException ex) {
-                    Class9383.field40262.error("Failed to close audio stream", (Throwable)ex);
+                    Class9383.field40262.error("Failed to close audio stream", ex);
                 }
                 this.method34887();
                 this.field40266 = null;
@@ -94,7 +94,7 @@ public class Class9383
     }
     
     public void method34877(final boolean b) {
-        AL10.alSourcei(this.field40263, 4103, (int)(b ? 1 : 0));
+        AL10.alSourcei(this.field40263, 4103, b ? 1 : 0);
     }
     
     public void method34878(final float n) {
@@ -113,7 +113,7 @@ public class Class9383
     }
     
     public void method34881(final boolean b) {
-        AL10.alSourcei(this.field40263, 514, (int)(b ? 1 : 0));
+        AL10.alSourcei(this.field40263, 514, b ? 1 : 0);
     }
     
     public void method34882(final Class6598 class6598) {
@@ -141,7 +141,7 @@ public class Class9383
                 }
             }
             catch (final IOException ex) {
-                Class9383.field40262.error("Failed to read from audio stream", (Throwable)ex);
+                Class9383.field40262.error("Failed to read from audio stream", ex);
             }
         }
     }

@@ -14,8 +14,8 @@ public class Class5270 extends Class5260<Long> implements Class5264<Long>
     
     public void method16388(final ByteBuf byteBuf, Long value) {
         do {
-            int n = (int)((long)value & 0x7FL);
-            value = (long)value >>> 7;
+            int n = (int)(value & 0x7FL);
+            value = value >>> 7;
             if (value != 0L) {
                 n |= 0x80;
             }
@@ -28,7 +28,7 @@ public class Class5270 extends Class5260<Long> implements Class5264<Long>
         int n = 0;
         while (true) {
             final byte byte1 = byteBuf.readByte();
-            l |= (byte1 & 0x7F) << n++ * 7;
+            l |= (long) (byte1 & 0x7F) << n++ * 7;
             if (n > 10) {
                 throw new RuntimeException("VarLong too big");
             }

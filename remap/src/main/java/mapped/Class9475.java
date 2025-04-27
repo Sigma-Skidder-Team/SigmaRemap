@@ -49,7 +49,7 @@ public class Class9475
     }
     
     public static boolean method35264(final float n, final float n2) {
-        return (n == n && n2 == n2) ? equals(n, n2, 1) : (!(n != n ^ n2 != n2));
+        return (n == n && n2 == n2) ? equals(n, n2, 1) : ((n != n) == (n2 != n2));
     }
     
     public static boolean equals(final float n, final float n2, final float n3) {
@@ -82,16 +82,14 @@ public class Class9475
         }
         if (b) {
             if (!Float.isNaN(v)) {
-                if (!Float.isNaN(v2)) {
-                    return true;
-                }
+                return !Float.isNaN(v2);
             }
         }
         return false;
     }
     
     public static boolean method35266(final float n, final float n2, final int n3) {
-        return (n == n && n2 == n2) ? equals(n, n2, n3) : (!(n != n ^ n2 != n2));
+        return (n == n && n2 == n2) ? equals(n, n2, n3) : ((n != n) == (n2 != n2));
     }
     
     public static boolean equals(final double n, final double n2) {
@@ -99,7 +97,7 @@ public class Class9475
     }
     
     public static boolean method35267(final double n, final double n2) {
-        return (n == n && n2 == n2) ? equals(n, n2, 1) : (!(n != n ^ n2 != n2));
+        return (n == n && n2 == n2) ? equals(n, n2, 1) : ((n != n) == (n2 != n2));
     }
     
     public static boolean equals(final double n, final double n2, final double n3) {
@@ -136,16 +134,14 @@ public class Class9475
         }
         if (b) {
             if (!Double.isNaN(v)) {
-                if (!Double.isNaN(v2)) {
-                    return true;
-                }
+                return !Double.isNaN(v2);
             }
         }
         return false;
     }
     
     public static boolean method35270(final double n, final double n2, final int n3) {
-        return (n == n && n2 == n2) ? equals(n, n2, n3) : (!(n != n ^ n2 != n2));
+        return (n == n && n2 == n2) ? equals(n, n2, n3) : ((n != n) == (n2 != n2));
     }
     
     public static double method35271(final double n, final int n2) {
@@ -246,7 +242,7 @@ public class Class9475
                 break;
             }
             default: {
-                throw new Class2374(Class2189.field13110, new Object[] { i, "ROUND_CEILING", 2, "ROUND_DOWN", 1, "ROUND_FLOOR", 3, "ROUND_HALF_DOWN", 5, "ROUND_HALF_EVEN", 6, "ROUND_HALF_UP", 4, "ROUND_UNNECESSARY", 7, "ROUND_UP", 0 });
+                throw new Class2374(Class2189.field13110, i, "ROUND_CEILING", 2, "ROUND_DOWN", 1, "ROUND_FLOOR", 3, "ROUND_HALF_DOWN", 5, "ROUND_HALF_EVEN", 6, "ROUND_HALF_UP", 4, "ROUND_UNNECESSARY", 7, "ROUND_UP", 0);
             }
         }
         return n;

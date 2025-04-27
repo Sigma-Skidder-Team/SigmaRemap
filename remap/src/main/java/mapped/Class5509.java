@@ -10,17 +10,17 @@ import java.util.ArrayList;
 
 public abstract class Class5509
 {
-    private Class8651<EntityType, Class5412> field22809;
-    private String field22810;
-    private float field22811;
-    private String[] field22812;
+    private final Class8651<EntityType, Class5412> field22809;
+    private final String field22810;
+    private final float field22811;
+    private final String[] field22812;
     
     public Class5509(final EntityType class7499, final String s, final float n) {
-        this((Class8651<EntityType, Class5412>)Class8651.method29438(class7499), s, n, null);
+        this(Class8651.method29438(class7499), s, n, null);
     }
     
     public Class5509(final EntityType class7499, final String s, final float n, final String[] array) {
-        this((Class8651<EntityType, Class5412>)Class8651.method29438(class7499), s, n, array);
+        this(Class8651.method29438(class7499), s, n, array);
     }
     
     public Class5509(final Class5412 class5412, final String s, final float n) {

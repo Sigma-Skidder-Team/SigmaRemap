@@ -103,8 +103,8 @@ public class Class7788
             Class9156.method33414(this.field31875);
             Class9053.method32560(this.field31875);
         }
-        this.field31875.findAmbiguities((commandNode, commandNode2, commandNode3, collection) -> Class7788.field31874.warn("Ambiguity between arguments {} and {} with inputs: {}", (Object)this.field31875.getPath(commandNode2), (Object)this.field31875.getPath(commandNode3), (Object)collection));
-        this.field31875.setConsumer((commandContext, b, n) -> ((Class7492)commandContext.getSource()).method23260((CommandContext<Class7492>)commandContext, b, n));
+        this.field31875.findAmbiguities((commandNode, commandNode2, commandNode3, collection) -> Class7788.field31874.warn("Ambiguity between arguments {} and {} with inputs: {}", this.field31875.getPath(commandNode2), this.field31875.getPath(commandNode3), collection));
+        this.field31875.setConsumer((commandContext, b, n) -> commandContext.getSource().method23260(commandContext, b, n));
     }
     
     public int method24998(final Class7492 class7492, final String str) {
@@ -132,24 +132,24 @@ public class Class7788
                 if (min < ex.getInput().length()) {
                     method8467.appendSibling(new StringTextComponent(ex.getInput().substring(min)).applyTextStyles(TextFormatting.RED, TextFormatting.UNDERLINE));
                 }
-                method8467.appendSibling(new Class2259("command.context.here", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC));
+                method8467.appendSibling(new Class2259("command.context.here").applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC));
                 class7492.method23259(method8467);
             }
             return 0;
             final Exception ex2;
-            Class7788.field31874.error("Command exception: {}", (Object)str, (Object)ex2);
+            Class7788.field31874.error("Command exception: {}", str, ex2);
             final StackTraceElement[] stackTrace = ex2.getStackTrace();
             int n = 0;
             while (true) {
                 iftrue(Label_0499:)(n >= Math.min(stackTrace.length, 3));
                 Block_15: {
                     break Block_15;
-                    Label_0499: {
-                        class7492.method23259(new Class2259("command.failed", new Object[0]).applyTextStyle(class7498 -> class7498.method30420(new HoverEvent(HoverEvent.Action.field10697, class7497))));
+                    {
+                        class7492.method23259(new Class2259("command.failed").applyTextStyle(class7498 -> class7498.method30420(new HoverEvent(HoverEvent.Action.field10697, class7497))));
                     }
                     iftrue(Label_0585:)(!Class9528.field41021);
                     class7492.method23259(new StringTextComponent(Util.method27860(ex2)));
-                    Class7788.field31874.error("'" + str + "' threw an exception", (Throwable)ex2);
+                    Class7788.field31874.error("'" + str + "' threw an exception", ex2);
                     return 0;
                 }
                 final ITextComponent class7494;
@@ -157,7 +157,7 @@ public class Class7788
                 ++n;
                 continue;
             }
-            Label_0585: {
+            {
                 return 0;
             }
             String s = ex2.getMessage();
@@ -180,13 +180,13 @@ public class Class7788
         final HashMap hashMap = Maps.newHashMap();
         final RootCommandNode rootCommandNode = new RootCommandNode();
         hashMap.put(this.field31875.getRoot(), rootCommandNode);
-        this.method25000((CommandNode<Class7492>)this.field31875.getRoot(), (CommandNode<Class7491>)rootCommandNode, class513.method1924(), hashMap);
+        this.method25000(this.field31875.getRoot(), (CommandNode<Class7491>)rootCommandNode, class513.method1924(), hashMap);
         class513.field3039.method17469(new Class4369((RootCommandNode<Class7491>)rootCommandNode));
     }
     
     private void method25000(final CommandNode<Class7492> commandNode, final CommandNode<Class7491> commandNode2, final Class7492 class7492, final Map<CommandNode<Class7492>, CommandNode<Class7491>> map) {
         for (final CommandNode commandNode3 : commandNode.getChildren()) {
-            if (!commandNode3.canUse((Object)class7492)) {
+            if (!commandNode3.canUse(class7492)) {
                 continue;
             }
             final ArgumentBuilder builder = commandNode3.createBuilder();
@@ -197,11 +197,11 @@ public class Class7788
             if (builder instanceof RequiredArgumentBuilder) {
                 final RequiredArgumentBuilder requiredArgumentBuilder = (RequiredArgumentBuilder)builder;
                 if (requiredArgumentBuilder.getSuggestionsProvider() != null) {
-                    requiredArgumentBuilder.suggests((SuggestionProvider)Class8533.method28627((SuggestionProvider<Class7491>)requiredArgumentBuilder.getSuggestionsProvider()));
+                    requiredArgumentBuilder.suggests(Class8533.method28627((SuggestionProvider<Class7491>)requiredArgumentBuilder.getSuggestionsProvider()));
                 }
             }
             if (builder.getRedirect() != null) {
-                builder.redirect((CommandNode)map.get(builder.getRedirect()));
+                builder.redirect(map.get(builder.getRedirect()));
             }
             final CommandNode build = builder.build();
             map.put((CommandNode<Class7492>)commandNode3, (CommandNode<Class7491>)build);
@@ -214,7 +214,7 @@ public class Class7788
     }
     
     public static LiteralArgumentBuilder<Class7492> method25001(final String s) {
-        return (LiteralArgumentBuilder<Class7492>)LiteralArgumentBuilder.literal(s);
+        return LiteralArgumentBuilder.literal(s);
     }
     
     public static <T> RequiredArgumentBuilder<Class7492, T> method25002(final String s, final ArgumentType<T> argumentType) {

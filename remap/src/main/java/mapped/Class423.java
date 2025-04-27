@@ -771,7 +771,7 @@ public class Class423 extends Entity
     @Override
     public Entity method1907() {
         final List<Entity> method1908 = this.method1908();
-        return method1908.isEmpty() ? null : ((Entity)method1908.get(0));
+        return method1908.isEmpty() ? null : method1908.get(0);
     }
     
     public void method2066(final boolean field2559, final boolean field2560, final boolean field2561, final boolean field2562) {

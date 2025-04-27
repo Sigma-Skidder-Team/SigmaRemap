@@ -11,8 +11,8 @@ import java.nio.ByteBuffer;
 public class Class4116 implements Class4114
 {
     private static String[] field18228;
-    private Class347 field18229;
-    private int field18230;
+    private final Class347 field18229;
+    private final int field18230;
     private int field18231;
     
     public Class4116(final Class347 field18229, final Class2110 class2110, final int n, final int n2, final int n3, final Class2010 class2111, final Class2127 class2112, final ByteBuffer byteBuffer, final int field18230) {

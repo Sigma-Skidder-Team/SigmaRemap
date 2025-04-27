@@ -52,7 +52,7 @@ public class Class6743
             }
             final Class1931 class1932 = new Class1931(method20531);
             if (class1931.compareTo(class1932) < 0) {
-                return "There is a newer version available: " + class1932.toString() + ", you're on: " + class1931.toString();
+                return "There is a newer version available: " + class1932 + ", you're on: " + class1931;
             }
             if (!b || class1931.compareTo(class1932) == 0) {
                 return null;

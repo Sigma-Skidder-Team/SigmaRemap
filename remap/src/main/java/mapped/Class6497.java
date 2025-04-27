@@ -32,13 +32,13 @@ public class Class6497 extends DataFix
             type.findField("tag");
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
-                if (!(!Objects.equals(optional.get().getSecond(), "minecraft:potion"))) {
-                    Dynamic set = (Dynamic)typed.get(DSL.remainderFinder());
+            if (optional.isPresent()) {
+                if (Objects.equals(optional.get().getSecond(), "minecraft:potion")) {
+                    Dynamic set = typed.get(DSL.remainderFinder());
                     typed.getOptionalTyped(opticFinder2);
                     set.get("Damage").asShort((short)0);
                     final Optional optional2;
-                    if (!(!optional2.isPresent())) {
+                    if (optional2.isPresent()) {
                         final Dynamic dynamic = (Dynamic)optional2.get().get(DSL.remainderFinder());
                         final int n;
                         Typed set2 = null;
@@ -52,7 +52,7 @@ public class Class6497 extends DataFix
                         if (n != 0) {
                             set = set.set("Damage", set.createShort((short)0));
                         }
-                        return set2.set(DSL.remainderFinder(), (Object)set);
+                        return set2.set(DSL.remainderFinder(), set);
                     }
                 }
             }

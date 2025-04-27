@@ -23,7 +23,7 @@ public class AACSpeed extends Module
     public AACSpeed() {
         super(Category.MOVEMENT, "AAC", "Speed for AAC");
         this.field15691 = 0.0;
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "Fast1", "Fast2" }).setPremiumMode("Fast2"));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Fast1", "Fast2").setPremiumMode("Fast2"));
         this.addSetting(new BooleanSetting("Fluid Fix", "Makes your jump fluid.", true));
         this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps for you.", true));
     }

@@ -12,7 +12,7 @@ import mapped.*;
 public class Cubecraft2Fly extends PremiumModule
 {
     private int field16023;
-    private TimerUtil field16024;
+    private final TimerUtil field16024;
     private boolean field16025;
     
     public Cubecraft2Fly() {

@@ -279,8 +279,8 @@ public abstract class Class776 extends Class777
         field4171 = (class427 -> {
             final boolean b;
             if (!class427.method2118()) {
-                if (!(!class427.isAlive())) {
-                    if (!(!ItemStack.method27643(class427.method2107(), Class8792.method30651()))) {
+                if (class427.isAlive()) {
+                    if (ItemStack.method27643(class427.method2107(), Class8792.method30651())) {
                         return b;
                     }
                 }

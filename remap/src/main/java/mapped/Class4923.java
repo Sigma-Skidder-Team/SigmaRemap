@@ -10,8 +10,8 @@ public class Class4923 extends Class4825
 {
     private static String[] field20591;
     public Class8592 field21058;
-    private int field21059;
-    private int field21060;
+    private final int field21059;
+    private final int field21060;
     
     public Class4923(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Class8592 field21058) {
         super(customGuiScreen, s, n, n2, n3, n4, false);

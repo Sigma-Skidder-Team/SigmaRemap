@@ -23,8 +23,8 @@ import io.netty.channel.ChannelHandlerContext;
 public class Class7127 implements ChannelHandlerContext
 {
     private static String[] field27773;
-    private ChannelHandlerContext field27774;
-    private Class9153 field27775;
+    private final ChannelHandlerContext field27774;
+    private final Class9153 field27775;
     
     public Class7127(final ChannelHandlerContext field27774, final Class9153 field27775) {
         this.field27774 = field27774;
@@ -53,47 +53,47 @@ public class Class7127 implements ChannelHandlerContext
     
     public ChannelHandlerContext fireChannelRegistered() {
         this.field27774.fireChannelRegistered();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelUnregistered() {
         this.field27774.fireChannelUnregistered();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelActive() {
         this.field27774.fireChannelActive();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelInactive() {
         this.field27774.fireChannelInactive();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireExceptionCaught(final Throwable t) {
         this.field27774.fireExceptionCaught(t);
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireUserEventTriggered(final Object o) {
         this.field27774.fireUserEventTriggered(o);
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelRead(final Object o) {
         this.field27774.fireChannelRead(o);
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelReadComplete() {
         this.field27774.fireChannelReadComplete();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelHandlerContext fireChannelWritabilityChanged() {
         this.field27774.fireChannelWritabilityChanged();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelFuture bind(final SocketAddress socketAddress) {
@@ -146,7 +146,7 @@ public class Class7127 implements ChannelHandlerContext
     
     public ChannelHandlerContext read() {
         this.field27774.read();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelFuture write(final Object o) {
@@ -173,7 +173,7 @@ public class Class7127 implements ChannelHandlerContext
                 this.field27775.method33413(this.field27774, ex);
             }
             catch (final Exception ex2) {
-                this.field27774.fireExceptionCaught((Throwable)ex2);
+                this.field27774.fireExceptionCaught(ex2);
             }
             return true;
         }
@@ -181,7 +181,7 @@ public class Class7127 implements ChannelHandlerContext
     
     public ChannelHandlerContext flush() {
         this.field27774.flush();
-        return (ChannelHandlerContext)this;
+        return this;
     }
     
     public ChannelFuture writeAndFlush(final Object o, final ChannelPromise channelPromise) {

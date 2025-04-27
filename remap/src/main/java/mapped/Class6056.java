@@ -144,9 +144,9 @@ public class Class6056
         jsonObject.add("rewards", this.field24615.method32434());
         final JsonObject jsonObject2 = new JsonObject();
         for (final Map.Entry<String, V> entry : this.field24616.entrySet()) {
-            jsonObject2.add((String)entry.getKey(), ((Class8832)entry.getValue()).method30845());
+            jsonObject2.add(entry.getKey(), ((Class8832)entry.getValue()).method30845());
         }
-        jsonObject.add("criteria", (JsonElement)jsonObject2);
+        jsonObject.add("criteria", jsonObject2);
         final JsonArray jsonArray = new JsonArray();
         for (final String[] array : this.field24617) {
             final JsonArray jsonArray2 = new JsonArray();
@@ -154,9 +154,9 @@ public class Class6056
             for (int length2 = array2.length, j = 0; j < length2; ++j) {
                 jsonArray2.add(array2[j]);
             }
-            jsonArray.add((JsonElement)jsonArray2);
+            jsonArray.add(jsonArray2);
         }
-        jsonObject.add("requirements", (JsonElement)jsonArray);
+        jsonObject.add("requirements", jsonArray);
         return jsonObject;
     }
     
@@ -228,7 +228,7 @@ public class Class6056
                 int n2 = 0;
                 final String[][] array5 = array;
                 for (int length3 = array5.length, n3 = 0; n3 < length3; ++n3) {
-                    if (ArrayUtils.contains((Object[])array5[n3], (Object)str2)) {
+                    if (ArrayUtils.contains(array5[n3], str2)) {
                         n2 = 1;
                         break;
                     }

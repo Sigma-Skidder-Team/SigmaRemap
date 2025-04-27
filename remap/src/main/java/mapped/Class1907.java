@@ -99,7 +99,7 @@ public class Class1907 extends AbstractChunkProvider
             }
             else {
                 if (class1873 == null) {
-                    Class1907.field10341.warn("Ignoring chunk since we don't have complete data: {}, {}", (Object)n, (Object)n2);
+                    Class1907.field10341.warn("Ignoring chunk since we don't have complete data: {}, {}", n, n2);
                     return null;
                 }
                 class1876 = new Class1863(this.field10345, new ChunkPos(n, n2), class1873);
@@ -118,7 +118,7 @@ public class Class1907 extends AbstractChunkProvider
             }
             return class1876;
         }
-        Class1907.field10341.warn("Ignoring chunk since it's not in the view range: {}, {}", (Object)n, (Object)n2);
+        Class1907.field10341.warn("Ignoring chunk since it's not in the view range: {}, {}", n, n2);
         return null;
     }
     

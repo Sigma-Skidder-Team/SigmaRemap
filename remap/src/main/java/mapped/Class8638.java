@@ -33,7 +33,7 @@ public class Class8638
             list = null;
         }
         else {
-            list = Streams.stream((Iterable)method35918).map(jsonElement -> Class9583.method35894(jsonElement, "texture")).map((Function<? super Object, ?>) ResourceLocation::new).collect((Collector<? super Object, Object, List<ResourceLocation>>)ImmutableList.toImmutableList());
+            list = Streams.stream((Iterable)method35918).map(jsonElement -> Class9583.method35894(jsonElement, "texture")).map((Function<? super Object, ?>) ResourceLocation::new).collect(ImmutableList.toImmutableList());
         }
         return new Class8638(list);
     }

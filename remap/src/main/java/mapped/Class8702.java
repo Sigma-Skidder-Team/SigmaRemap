@@ -30,6 +30,6 @@ public class Class8702 extends DataFix
     }
     
     private static <T> Dynamic<T> method29855(final Dynamic<T> dynamic) {
-        return (Dynamic<T>)dynamic.update("Sections", dynamic2 -> dynamic2.updateMapValues(pair -> pair.mapSecond(dynamic3 -> dynamic3.remove("Valid"))));
+        return dynamic.update("Sections", dynamic2 -> dynamic2.updateMapValues(pair -> pair.mapSecond(dynamic3 -> dynamic3.remove("Valid"))));
     }
 }

@@ -51,8 +51,8 @@ public class Class9495
     
     public Class9495(final String s, final Class7952 class7952, final WorldInfo class7953, final boolean field40829) {
         this.field40833 = true;
-        this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize((Object2FloatMap)new Object2FloatOpenCustomHashMap((Hash$Strategy) Util.method27852()));
-        this.field40840 = new Class2259("optimizeWorld.stage.counting", new Object[0]);
+        this.field40839 = (Object2FloatMap<DimensionType>)Object2FloatMaps.synchronize(new Object2FloatOpenCustomHashMap((Hash$Strategy) Util.method27852()));
+        this.field40840 = new Class2259("optimizeWorld.stage.counting");
         this.field40828 = class7953.method29549();
         this.field40829 = field40829;
         (this.field40830 = class7952.method25787(s, null)).method29395(class7953);
@@ -60,9 +60,8 @@ public class Class9495
         this.field40832 = this.field40830.method29392();
         (this.field40831 = Class9495.field40827.newThread(this::method35336)).setUncaughtExceptionHandler((p0, t2) -> {
             Class9495.field40826.error("Error upgrading world", t2);
-            this.field40840 = new Class2259("optimizeWorld.stage.failed", new Object[0]);
+            this.field40840 = new Class2259("optimizeWorld.stage.failed");
             this.field40834 = true;
-            return;
         });
         this.field40831.start();
     }
@@ -96,13 +95,13 @@ public class Class9495
             }
             final ImmutableMap build2 = builder2.build();
             final long method29394 = Util.method27837();
-            this.field40840 = new Class2259("optimizeWorld.stage.upgrading", new Object[0]);
+            this.field40840 = new Class2259("optimizeWorld.stage.upgrading");
             while (this.field40833) {
                 boolean b = false;
                 float field40835 = 0.0f;
                 for (final DimensionType class385 : DimensionType.method1269()) {
-                    final ListIterator listIterator = (ListIterator)build.get((Object)class385);
-                    final Class387 class386 = (Class387)build2.get((Object)class385);
+                    final ListIterator listIterator = (ListIterator)build.get(class385);
+                    final Class387 class386 = (Class387)build2.get(class385);
                     if (listIterator.hasNext()) {
                         final ChunkPos class387 = listIterator.next();
                         boolean b2 = false;
@@ -114,7 +113,7 @@ public class Class9495
                                 final CompoundNBT method29398 = method29397.getCompound("Level");
                                 final ChunkPos class388 = new ChunkPos(method29398.getInt("xPos"), method29398.getInt("zPos"));
                                 if (!class388.equals(class387)) {
-                                    Class9495.field40826.warn("Chunk {} has invalid position {}", (Object)class387, (Object)class388);
+                                    Class9495.field40826.warn("Chunk {} has invalid position {}", class387, class388);
                                 }
                                 boolean b3 = method29396 < Class9528.method35579().getWorldVersion();
                                 if (this.field40829) {
@@ -136,7 +135,7 @@ public class Class9495
                             goto Label_0560;
                         }
                         catch (final IOException ex) {
-                            Class9495.field40826.error("Error upgrading chunk {}", (Object)class387, (Object)ex);
+                            Class9495.field40826.error("Error upgrading chunk {}", class387, ex);
                         }
                         if (b2) {
                             ++this.field40837;
@@ -155,17 +154,17 @@ public class Class9495
                     this.field40833 = false;
                 }
             }
-            this.field40840 = new Class2259("optimizeWorld.stage.finished", new Object[0]);
+            this.field40840 = new Class2259("optimizeWorld.stage.finished");
             for (final Class387 class390 : build2.values()) {
                 try {
                     class390.close();
                 }
                 catch (final IOException ex2) {
-                    Class9495.field40826.error("Error upgrading chunk", (Throwable)ex2);
+                    Class9495.field40826.error("Error upgrading chunk", ex2);
                 }
             }
             this.field40842.method27214();
-            Class9495.field40826.info("World optimizaton finished after {} ms", (Object)(Util.method27837() - method29394));
+            Class9495.field40826.info("World optimizaton finished after {} ms", Util.method27837() - method29394);
             this.field40834 = true;
         }
     }
@@ -174,7 +173,7 @@ public class Class9495
         final File file = new File(class383.method1272(this.field40832), "region");
         final File[] listFiles = file.listFiles((p0, s) -> s.endsWith(".mca"));
         if (listFiles == null) {
-            return (List<ChunkPos>)ImmutableList.of();
+            return ImmutableList.of();
         }
         final ArrayList arrayList = Lists.newArrayList();
         for (final File file2 : listFiles) {
@@ -203,7 +202,7 @@ public class Class9495
     }
     
     public float method35339(final DimensionType class383) {
-        return this.field40839.getFloat((Object)class383);
+        return this.field40839.getFloat(class383);
     }
     
     public float method35340() {

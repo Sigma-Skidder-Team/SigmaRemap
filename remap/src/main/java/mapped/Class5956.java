@@ -37,8 +37,8 @@ public class Class5956 implements JsonDeserializer<Class8499>, JsonSerializer<Cl
     
     public JsonElement serialize(final Class8499 class8499, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("max", (Number)class8499.method28397());
-        jsonObject.addProperty("online", (Number)class8499.method28398());
+        jsonObject.addProperty("max", class8499.method28397());
+        jsonObject.addProperty("online", class8499.method28398());
         if (class8499.method28399() != null) {
             if (class8499.method28399().length > 0) {
                 final JsonArray jsonArray = new JsonArray();
@@ -47,11 +47,11 @@ public class Class5956 implements JsonDeserializer<Class8499>, JsonSerializer<Cl
                     final UUID id = class8499.method28399()[i].getId();
                     jsonObject2.addProperty("id", (id != null) ? id.toString() : "");
                     jsonObject2.addProperty("name", class8499.method28399()[i].getName());
-                    jsonArray.add((JsonElement)jsonObject2);
+                    jsonArray.add(jsonObject2);
                 }
-                jsonObject.add("sample", (JsonElement)jsonArray);
+                jsonObject.add("sample", jsonArray);
             }
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

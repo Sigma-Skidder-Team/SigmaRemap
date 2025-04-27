@@ -25,9 +25,9 @@ public class Class6240 extends Class6227<Class127>
         final JsonArray jsonArray = new JsonArray();
         final Iterator iterator = Class127.method641(class127).iterator();
         while (iterator.hasNext()) {
-            jsonArray.add((JsonElement)((Class7376)iterator.next()).method22642(jsonSerializationContext));
+            jsonArray.add(((Class7376)iterator.next()).method22642(jsonSerializationContext));
         }
-        jsonObject.add("modifiers", (JsonElement)jsonArray);
+        jsonObject.add("modifiers", jsonArray);
     }
     
     public Class127 method18570(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {

@@ -14,5 +14,5 @@ public enum Class287
     field1596, 
     field1597, 
     field1598, 
-    field1599;
+    field1599
 }

@@ -54,7 +54,7 @@ public class Class7017<T>
     public static final Class7017<String> field27396;
     public static final Class7017<String> field27397;
     public static final Class7017<String> field27398;
-    private String field27399;
+    private final String field27399;
     
     private Class7017(final String field27399) {
         this.field27399 = field27399;

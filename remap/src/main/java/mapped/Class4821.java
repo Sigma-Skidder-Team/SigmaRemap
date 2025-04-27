@@ -15,7 +15,7 @@ import java.util.List;
 public class Class4821 extends Class4817 implements Class4820
 {
     public final Category field20629;
-    private List<Class4868> field20630;
+    private final List<Class4868> field20630;
     private boolean field20631;
     private boolean field20632;
     private float field20633;

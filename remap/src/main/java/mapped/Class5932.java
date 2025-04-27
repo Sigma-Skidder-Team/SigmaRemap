@@ -38,7 +38,7 @@ public class Class5932<T extends Class793> extends Class5839<T>
     
     @Override
     public Iterable<Class6300> method17560() {
-        return Iterables.concat((Iterable)super.method17560(), (Iterable)ImmutableList.of((Object)this.field24402));
+        return Iterables.concat((Iterable)super.method17560(), ImmutableList.of((Object)this.field24402));
     }
     
     public void method17804(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {

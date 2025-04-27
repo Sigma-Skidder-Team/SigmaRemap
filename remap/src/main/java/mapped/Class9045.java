@@ -29,7 +29,7 @@ public class Class9045 extends DataFix
     }
     
     private static <T> Stream<Dynamic<T>> method32526(final Stream<Dynamic<T>> stream) {
-        return stream.map(dynamic -> DataFixUtils.orElse((Optional)dynamic.asString().map(Class9045::method32527).map(dynamic::createString), (Object)dynamic));
+        return stream.map(dynamic -> DataFixUtils.orElse(dynamic.asString().map(Class9045::method32527).map(dynamic::createString), (Object)dynamic));
     }
     
     private static String method32527(final String s) {

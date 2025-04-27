@@ -85,7 +85,7 @@ public abstract class Class4965 extends Class4963
         }
         else {
             Class4965.field21334.fine("transport open - closing");
-            class4691.method13945(new Object[0]);
+            class4691.method13945();
         }
     }
     

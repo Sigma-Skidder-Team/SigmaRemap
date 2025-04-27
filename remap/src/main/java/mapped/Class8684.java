@@ -47,19 +47,19 @@ public abstract class Class8684<T extends Number>
     
     public JsonElement method29745() {
         if (this.method29744()) {
-            return (JsonElement)JsonNull.INSTANCE;
+            return JsonNull.INSTANCE;
         }
         if (this.field36497 != null && this.field36497.equals(this.field36498)) {
-            return (JsonElement)new JsonPrimitive((Number)this.field36497);
+            return new JsonPrimitive(this.field36497);
         }
         final JsonObject jsonObject = new JsonObject();
         if (this.field36497 != null) {
-            jsonObject.addProperty("min", (Number)this.field36497);
+            jsonObject.addProperty("min", this.field36497);
         }
         if (this.field36498 != null) {
-            jsonObject.addProperty("max", (Number)this.field36498);
+            jsonObject.addProperty("max", this.field36498);
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public static <T extends Number, R extends Class8684<T>> R method29746(final JsonElement jsonElement, final R r, final BiFunction<JsonElement, String, T> biFunction, final Class9321<T, R> class9321) {
@@ -68,7 +68,7 @@ public abstract class Class8684<T extends Number>
         }
         if (!Class9583.method35889(jsonElement)) {
             final JsonObject method35913 = Class9583.method35913(jsonElement, "value");
-            return class9321.method34521((T)(method35913.has("min") ? ((T)biFunction.apply(method35913.get("min"), "min")) : null), (T)(method35913.has("max") ? ((T)biFunction.apply(method35913.get("max"), "max")) : null));
+            return class9321.method34521(method35913.has("min") ? biFunction.apply(method35913.get("min"), "min") : null, method35913.has("max") ? biFunction.apply(method35913.get("max"), "max") : null);
         }
         final Number n = biFunction.apply(jsonElement, "value");
         return class9321.method34521((T)n, (T)n);
@@ -76,25 +76,25 @@ public abstract class Class8684<T extends Number>
     
     public static <T extends Number, R extends Class8684<T>> R method29747(final StringReader stringReader, final Class8561<T, R> class8561, final Function<String, T> function, final Supplier<DynamicCommandExceptionType> supplier, final Function<T, T> function2) throws CommandSyntaxException {
         if (!stringReader.canRead()) {
-            throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+            throw Class8684.field36495.createWithContext(stringReader);
         }
         final int cursor = stringReader.getCursor();
         try {
-            final Number n = method29750((T)method29748(stringReader, (Function<String, T>)function, supplier), function2);
+            final Number n = method29750(method29748(stringReader, function, supplier), function2);
             Number n2;
             if (stringReader.canRead(2) && stringReader.peek() == '.' && stringReader.peek(1) == '.') {
                 stringReader.skip();
                 stringReader.skip();
-                n2 = method29750((T)method29748(stringReader, (Function<String, T>)function, supplier), function2);
+                n2 = method29750(method29748(stringReader, function, supplier), function2);
                 if (n == null && n2 == null) {
-                    throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+                    throw Class8684.field36495.createWithContext(stringReader);
                 }
             }
             else {
                 n2 = n;
             }
             if (n == null && n2 == null) {
-                throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+                throw Class8684.field36495.createWithContext(stringReader);
             }
             return class8561.method28779(stringReader, (T)n, (T)n2);
         }
@@ -118,7 +118,7 @@ public abstract class Class8684<T extends Number>
             return function.apply(substring);
         }
         catch (final NumberFormatException ex) {
-            throw supplier.get().createWithContext((ImmutableStringReader)stringReader, (Object)substring);
+            throw supplier.get().createWithContext(stringReader, substring);
         }
     }
     
@@ -138,7 +138,7 @@ public abstract class Class8684<T extends Number>
     }
     
     static {
-        field36495 = new SimpleCommandExceptionType((Message)new Class2259("argument.range.empty", new Object[0]));
-        field36496 = new SimpleCommandExceptionType((Message)new Class2259("argument.range.swapped", new Object[0]));
+        field36495 = new SimpleCommandExceptionType(new Class2259("argument.range.empty", new Object[0]));
+        field36496 = new SimpleCommandExceptionType(new Class2259("argument.range.swapped", new Object[0]));
     }
 }

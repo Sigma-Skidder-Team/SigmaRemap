@@ -65,12 +65,12 @@ public final class Ingredient implements Predicate<ItemStack>
     public IntList method613() {
         if (this.field377 == null) {
             this.method612();
-            this.field377 = (IntList)new IntArrayList(this.field376.length);
+            this.field377 = new IntArrayList(this.field376.length);
             final ItemStack[] field376 = this.field376;
             for (int length = field376.length, i = 0; i < length; ++i) {
                 this.field377.add(Class5024.method15245(field376[i]));
             }
-            this.field377.sort((Comparator)IntComparators.NATURAL_COMPARATOR);
+            this.field377.sort(IntComparators.NATURAL_COMPARATOR);
         }
         return this.field377;
     }
@@ -88,19 +88,17 @@ public final class Ingredient implements Predicate<ItemStack>
             final JsonArray jsonArray = new JsonArray();
             final Class7452[] field375 = this.field375;
             for (int length = field375.length, i = 0; i < length; ++i) {
-                jsonArray.add((JsonElement)field375[i].method22939());
+                jsonArray.add(field375[i].method22939());
             }
-            return (JsonElement)jsonArray;
+            return jsonArray;
         }
-        return (JsonElement)this.field375[0].method22939();
+        return this.field375[0].method22939();
     }
     
     public boolean method616() {
         if (this.field375.length == 0) {
             if (this.field376 == null || this.field376.length == 0) {
-                if (this.field377 == null || this.field377.isEmpty()) {
-                    return true;
-                }
+                return this.field377 == null || this.field377.isEmpty();
             }
         }
         return false;
@@ -127,7 +125,7 @@ public final class Ingredient implements Predicate<ItemStack>
     }
     
     public static Ingredient method621(final PacketBuffer class8654) {
-        return method617((Stream<? extends Class7452>)Stream.generate(() -> new Class7453(class8655.method29511(), null)).limit(class8654.readVarInt()));
+        return method617(Stream.generate(() -> new Class7453(class8655.method29511(), null)).limit(class8654.readVarInt()));
     }
     
     public static Ingredient method622(final JsonElement jsonElement) {
@@ -142,7 +140,7 @@ public final class Ingredient implements Predicate<ItemStack>
         }
         final JsonArray asJsonArray = jsonElement.getAsJsonArray();
         if (asJsonArray.size() != 0) {
-            return method617((Stream<? extends Class7452>)StreamSupport.stream((Spliterator<Object>)asJsonArray.spliterator(), false).map(jsonElement2 -> method623(Class9583.method35913(jsonElement2, "item"))));
+            return method617(StreamSupport.stream((Spliterator<Object>)asJsonArray.spliterator(), false).map(jsonElement2 -> method623(Class9583.method35913(jsonElement2, "item"))));
         }
         throw new JsonSyntaxException("Item array cannot be empty, at least one item must be defined");
     }

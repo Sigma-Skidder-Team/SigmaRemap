@@ -35,9 +35,7 @@ public class Class5460 extends Class5419<Class824>
                 if (class1850.isAlive()) {
                     if (class1851.isAlive()) {
                         if (!class1850.method2625()) {
-                            if (class1850.method1734(class1851) <= 17.0) {
-                                return true;
-                            }
+                            return class1850.method1734(class1851) <= 17.0;
                         }
                     }
                 }
@@ -50,9 +48,7 @@ public class Class5460 extends Class5419<Class824>
     public boolean method16560(final Class1849 class1849, final Class824 class1850, final long n) {
         if (this.method16559(class1849, class1850)) {
             if (this.field22717 > 0) {
-                if (class1850.method2618().method1198(Class8233.field33811).isPresent()) {
-                    return true;
-                }
+                return class1850.method2618().method1198(Class8233.field33811).isPresent();
             }
         }
         return false;

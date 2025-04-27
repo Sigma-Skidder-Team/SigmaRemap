@@ -13,7 +13,7 @@ public class Class5424 extends Class5419<Class824>
     private final float field22611;
     
     public Class5424(final float field22611) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10630, (Object)Class8233.field33810, (Object)Class1952.field10630), Integer.MAX_VALUE);
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10630, (Object)Class8233.field33810, (Object)Class1952.field10630), Integer.MAX_VALUE);
         this.field22611 = field22611;
     }
     
@@ -24,9 +24,7 @@ public class Class5424 extends Class5419<Class824>
                 if (!class1850.method1706()) {
                     if (!class1850.velocityChanged) {
                         if (class1850.method1734(method4823) <= 16.0) {
-                            if (method4823.field3009 != null) {
-                                return true;
-                            }
+                            return method4823.field3009 != null;
                         }
                     }
                 }

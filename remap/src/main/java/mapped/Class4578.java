@@ -52,7 +52,7 @@ public class Class4578 extends Class4574<Class5122>
     }
     
     private static int method13601(final int n, final int n2, final Class6346<?> class6346) {
-        final Class2052 class6347 = Class2052.values()[new Random(n + n2 * 10387313).nextInt(Class2052.values().length)];
+        final Class2052 class6347 = Class2052.values()[new Random(n + n2 * 10387313L).nextInt(Class2052.values().length)];
         int n3 = 5;
         int n4 = 5;
         if (class6347 != Class2052.field11708) {

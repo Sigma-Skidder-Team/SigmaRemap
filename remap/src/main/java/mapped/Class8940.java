@@ -35,7 +35,7 @@ public class Class8940
         jsonObject.add("duration", this.field37617.method29745());
         jsonObject.addProperty("ambient", this.field37618);
         jsonObject.addProperty("visible", this.field37619);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public static Class8940 method31710(final JsonObject jsonObject) {

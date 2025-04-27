@@ -100,12 +100,12 @@ public class Class9447
     private static final String[] field40600;
     private static final String[] field40601;
     private static final String field40602 = "xxx";
-    private long field40603;
-    private int field40604;
-    private int field40605;
+    private final long field40603;
+    private final int field40604;
+    private final int field40605;
     private int field40606;
     private int field40607;
-    private byte[] field40608;
+    private final byte[] field40608;
     
     public Class9447(final DataInputStream dataInputStream) throws IOException {
         this.field40604 = dataInputStream.readInt();

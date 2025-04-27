@@ -26,7 +26,7 @@ public abstract class Class1891
             for (int i = 0; i < n; ++i) {
                 this.field10283[i] = new Class2267(this, n2, 0.5f, n2);
             }
-            (this.field10284 = (Long2ByteMap)new Class35(this, n3, 0.5f, n3)).defaultReturnValue((byte)(-1));
+            (this.field10284 = new Class35(this, n3, 0.5f, n3)).defaultReturnValue((byte)(-1));
             this.field10285 = n;
             return;
         }
@@ -66,7 +66,7 @@ public abstract class Class1891
     public void method7317(final LongPredicate longPredicate) {
         final LongArrayList list = new LongArrayList();
         this.field10284.keySet().forEach(n2 -> {
-            if (!(!longPredicate2.test(n2))) {
+            if (longPredicate2.test(n2)) {
                 list2.add(n2);
             }
             return;

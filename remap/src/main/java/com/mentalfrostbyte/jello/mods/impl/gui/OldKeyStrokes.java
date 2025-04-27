@@ -17,14 +17,12 @@ public class OldKeyStrokes extends Module
     @EventListener
     private void method10534(final Class5740 class5740) {
         if (this.isEnabled() && OldKeyStrokes.mc.player != null) {
-            return;
         }
     }
     
     @EventListener
     private void method10535(final Class5752 class5752) {
         if (this.isEnabled() && OldKeyStrokes.mc.player != null) {
-            return;
         }
     }
     

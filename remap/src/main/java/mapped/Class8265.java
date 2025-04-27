@@ -9,9 +9,9 @@ import net.minecraft.world.dimension.DimensionType;
 public class Class8265
 {
     private static String[] field33933;
-    private Class9432 field33934;
-    private Class9432 field33935;
-    private Class9432 field33936;
+    private final Class9432 field33934;
+    private final Class9432 field33935;
+    private final Class9432 field33936;
     private int[] field33937;
     private int[] field33938;
     private int[] field33939;

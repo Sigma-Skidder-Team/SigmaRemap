@@ -14,7 +14,7 @@ public class Class550 extends Screen
     private Class2113 field3321;
     
     public Class550(final Screen field3317, final Class5760 field3318) {
-        super(new Class2259("options.title", new Object[0]));
+        super(new Class2259("options.title"));
         this.field3317 = field3317;
         this.field3318 = field3318;
     }
@@ -43,7 +43,7 @@ public class Class550 extends Screen
             }));
             if (this.minecraft.method5284() && !this.minecraft.world.method6764().method29568()) {
                 this.field3319.method3365(this.field3319.method3364() - 20);
-                (this.field3320 = this.addButton(new Class667(this.field3319.field3426 + this.field3319.method3364(), this.field3319.field3427, class654 -> this.minecraft.displayGuiScreen(new Class546(this::method3232, new Class2259("difficulty.lock.title", new Object[0]), new Class2259("difficulty.lock.question", new Object[] { new Class2259("options.difficulty." + this.minecraft.world.method6764().method29597().method8239(), new Object[0]) })))))).method3732(this.minecraft.world.method6764().method29599());
+                (this.field3320 = this.addButton(new Class667(this.field3319.field3426 + this.field3319.method3364(), this.field3319.field3427, class654 -> this.minecraft.displayGuiScreen(new Class546(this::method3232, new Class2259("difficulty.lock.title"), new Class2259("difficulty.lock.question", new Class2259("options.difficulty." + this.minecraft.world.method6764().method29597().method8239()))))))).method3732(this.minecraft.world.method6764().method29599());
                 this.field3320.field3431 = !this.field3320.method3731();
                 this.field3319.field3431 = !this.field3320.method3731();
             }
@@ -51,19 +51,19 @@ public class Class550 extends Screen
                 this.field3319.field3431 = false;
             }
         }
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 48 - 6, 150, 20, Class8822.method30773("options.skinCustomisation", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class708(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 48 - 6, 150, 20, Class8822.method30773("options.sounds", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class709(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 72 - 6, 150, 20, Class8822.method30773("options.video", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class700(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 72 - 6, 150, 20, Class8822.method30773("options.controls", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class705(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 96 - 6, 150, 20, Class8822.method30773("options.language", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class704(this, this.field3318, this.minecraft.method5295()))));
-        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 96 - 6, 150, 20, Class8822.method30773("options.chat.title", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class707(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 120 - 6, 150, 20, Class8822.method30773("options.resourcepack", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class711(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 120 - 6, 150, 20, Class8822.method30773("options.accessibility.title", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.field3318))));
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 168, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3317)));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 48 - 6, 150, 20, Class8822.method30773("options.skinCustomisation"), class654 -> this.minecraft.displayGuiScreen(new Class708(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 48 - 6, 150, 20, Class8822.method30773("options.sounds"), class654 -> this.minecraft.displayGuiScreen(new Class709(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 72 - 6, 150, 20, Class8822.method30773("options.video"), class654 -> this.minecraft.displayGuiScreen(new Class700(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 72 - 6, 150, 20, Class8822.method30773("options.controls"), class654 -> this.minecraft.displayGuiScreen(new Class705(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 96 - 6, 150, 20, Class8822.method30773("options.language"), class654 -> this.minecraft.displayGuiScreen(new Class704(this, this.field3318, this.minecraft.method5295()))));
+        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 96 - 6, 150, 20, Class8822.method30773("options.chat.title"), class654 -> this.minecraft.displayGuiScreen(new Class707(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 6 + 120 - 6, 150, 20, Class8822.method30773("options.resourcepack"), class654 -> this.minecraft.displayGuiScreen(new Class711(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 + 5, this.height / 6 + 120 - 6, 150, 20, Class8822.method30773("options.accessibility.title"), class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.field3318))));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 168, 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3317)));
     }
     
     public String method3231(final Class2113 class2113) {
-        return new Class2259("options.difficulty", new Object[0]).appendText(": ").appendSibling(class2113.method8236()).getFormattedText();
+        return new Class2259("options.difficulty").appendText(": ").appendSibling(class2113.method8236()).getFormattedText();
     }
     
     private void method3232(final boolean b) {

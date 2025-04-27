@@ -212,7 +212,6 @@ public class AACBlockFly extends Module
             return;
         }
         if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
-            return;
         }
     }
     

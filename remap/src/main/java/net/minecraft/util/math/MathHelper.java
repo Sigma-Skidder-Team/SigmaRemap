@@ -311,7 +311,7 @@ public class MathHelper
     }
     
     public static long method35689(final int n, final int n2, final int n3) {
-        final long n4 = (long)(n * 3129871) ^ n3 * 116129781L ^ (long)n2;
+        final long n4 = (long)(n * 3129871L) ^ n3 * 116129781L ^ (long)n2;
         return n4 * n4 * 42317861L + n4 * 11L >> 16;
     }
     
@@ -531,7 +531,6 @@ public class MathHelper
                 array[k] = (float)Math.sin(k * 3.141592653589793 * 2.0 / 65536.0);
                 ++k;
             }
-            return;
         });
         field41107 = new Random();
         field41108 = new int[] { 0, 1, 28, 2, 29, 14, 24, 3, 30, 22, 20, 15, 25, 17, 4, 8, 31, 27, 13, 23, 21, 19, 16, 7, 26, 12, 18, 6, 11, 5, 10, 9 };

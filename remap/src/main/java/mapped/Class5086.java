@@ -281,7 +281,7 @@ public class Class5086 extends RealmsScreen
                             }
                         }
                         catch (final RetryCallException class9514) {
-                            Thread.sleep(class9514.field_224985_e * 1000);
+                            Thread.sleep(class9514.field_224985_e * 1000L);
                             ++i;
                             continue;
                         }
@@ -363,7 +363,6 @@ public class Class5086 extends RealmsScreen
                                     else {
                                         this.field21946 = RealmsScreen.method15439("mco.upload.failed", class9520.field40461);
                                     }
-                                    return;
                                 });
                                 while (!class9515.method23871()) {
                                     if (this.field21949) {
@@ -498,7 +497,7 @@ public class Class5086 extends RealmsScreen
         File file2;
         try {
             final File tempFile = File.createTempFile("realms-upload-file", ".tar.gz");
-            tarArchiveOutputStream = new TarArchiveOutputStream((OutputStream)new GZIPOutputStream(new FileOutputStream(tempFile)));
+            tarArchiveOutputStream = new TarArchiveOutputStream(new GZIPOutputStream(new FileOutputStream(tempFile)));
             tarArchiveOutputStream.setLongFileMode(3);
             this.method15925(tarArchiveOutputStream, file.getAbsolutePath(), "world", true);
             tarArchiveOutputStream.finish();
@@ -516,7 +515,7 @@ public class Class5086 extends RealmsScreen
         if (!this.field21949) {
             final File file = new File(pathname);
             final String str2 = b ? str : (str + file.getName());
-            tarArchiveOutputStream.putArchiveEntry((ArchiveEntry)new TarArchiveEntry(file, str2));
+            tarArchiveOutputStream.putArchiveEntry(new TarArchiveEntry(file, str2));
             if (!file.isFile()) {
                 tarArchiveOutputStream.closeArchiveEntry();
                 final File[] listFiles = file.listFiles();
@@ -528,7 +527,7 @@ public class Class5086 extends RealmsScreen
                 }
             }
             else {
-                IOUtils.copy((InputStream)new FileInputStream(file), (OutputStream)tarArchiveOutputStream);
+                IOUtils.copy(new FileInputStream(file), tarArchiveOutputStream);
                 tarArchiveOutputStream.closeArchiveEntry();
             }
         }
@@ -536,7 +535,7 @@ public class Class5086 extends RealmsScreen
     
     static {
         field21939 = LogManager.getLogger();
-        field21956 = new String[] { Class5086.\u88ec\u7544\u7a2c\ub23a\u3a84\u7834[10], ".", ". .", ". . ." };
+        field21956 = new String[] { Class5086.\u88ec\u7544\u7a2c\ub23a\u3a84\u7834[10], ".", ". .", ". . ." }
         field21961 = new ReentrantLock();
     }
 }

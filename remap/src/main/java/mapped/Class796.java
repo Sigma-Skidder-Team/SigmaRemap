@@ -152,7 +152,7 @@ public class Class796 extends Class795 implements Class797
         if (class1848.isAlive()) {
             if (!class1848.method1696()) {
                 if (class1847.rand.nextInt(50) == 0) {
-                    final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.getBoundingBox().intersect(20.0), (Predicate<? super Entity>)Class796.field4248);
+                    final List<Entity> method6739 = class1847.method6739(Class759.class, class1848.getBoundingBox().intersect(20.0), (Predicate<? super Entity>)Class796.field4248);
                     if (!method6739.isEmpty()) {
                         final Class759 class1849 = method6739.get(class1847.rand.nextInt(method6739.size()));
                         if (!class1849.method1696()) {
@@ -230,10 +230,7 @@ public class Class796 extends Class795 implements Class797
                 }
             }
         }
-        if (class7500.method6993(class7502, 0) > 8) {
-            return true;
-        }
-        return false;
+        return class7500.method6993(class7502, 0) > 8;
     }
     
     @Override

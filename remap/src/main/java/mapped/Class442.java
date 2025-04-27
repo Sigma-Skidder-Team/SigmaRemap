@@ -17,7 +17,7 @@ public class Class442 extends Class443 implements Class441
     private boolean field2677;
     
     public Class442(final BlockState field2674, final Class1851 field2675, final BlockPos field2676, final ItemStack class8321) {
-        super(new ItemStack[] { class8321 });
+        super(class8321);
         this.field2674 = field2674;
         this.field2675 = field2675;
         this.field2676 = field2676;
@@ -42,9 +42,7 @@ public class Class442 extends Class443 implements Class441
     public boolean method2250(final int n, final ItemStack class8321, final Direction class8322) {
         if (!this.field2677) {
             if (class8322 == Direction.DOWN) {
-                if (class8321.getItem() == Items.field31400) {
-                    return true;
-                }
+                return class8321.getItem() == Items.field31400;
             }
         }
         return false;

@@ -31,11 +31,6 @@ public class Class3583 extends Class3574
     public void method11016() {
         super.method11016();
         ++this.field16708;
-        if (this.field16708 >= 5 && this.field16686 < 10) {
-            this.field16707.method4213(true);
-        }
-        else {
-            this.field16707.method4213(false);
-        }
+        this.field16707.method4213(this.field16708 >= 5 && this.field16686 < 10);
     }
 }

@@ -23,7 +23,7 @@ public class Class9083
     private final Collection<Class7373> field38459;
     private final int field38460;
     private final Collection<Class7059> field38461;
-    private Object2LongMap<Runnable> field38462;
+    private final Object2LongMap<Runnable> field38462;
     private long field38463;
     private long field38464;
     private boolean field38465;

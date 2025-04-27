@@ -299,7 +299,7 @@ public class Class802 extends Class789
     }
     
     private Class181 method4640(final Class789 class789, final Class789 class790) {
-        return this.world.method6792().method6378(IRecipeType.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.getCraftingResult(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>)Class3829.class::cast).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
+        return this.world.method6792().method6378(IRecipeType.field37843, method4641(((Class802)class789).method4634(), ((Class802)class790).method4634()), this.world).map(class792 -> class792.getCraftingResult(class791)).map((Function<? super Object, ?>) ItemStack::getItem).filter(Class3829.class::isInstance).map((Function<? super Object, ?>) o -> o).map((Function<? super Object, ? extends Class181>)Class3829::method11767).orElseGet(() -> this.world.rand.nextBoolean() ? class793 : class794);
     }
     
     private static Class473 method4641(final Class181 class181, final Class181 class182) {
@@ -333,7 +333,6 @@ public class Class802 extends Class789
             enumMap.put(Class181.field550, Blocks.GREEN_WOOL);
             enumMap.put(Class181.field551, Blocks.RED_WOOL);
             enumMap.put(Class181.field552, Blocks.BLACK_WOOL);
-            return;
         });
         field4307 = Maps.newEnumMap((Map)Arrays.stream(Class181.values()).collect(Collectors.toMap(class181 -> class181, (Function<? super Class181, ?>)Class802::method4629)));
     }

@@ -43,7 +43,7 @@ public class MineplexSpeed extends Module
         this.field15676 = 0;
         this.field15675 = 0;
         this.field15677 = -1;
-        this.field15678 = this.getNumberSettingValueByName("OnGround Speed") * 1.0f / 4.0f;
+        this.field15678 = this.getNumberSettingValueByName("OnGround Speed") / 4.0f;
     }
     
     @EventListener

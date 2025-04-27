@@ -28,17 +28,17 @@ public class Class3838 extends Class3834
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3838.field17415, class7097.method8142(class7096.get((IProperty<Direction>)Class3838.field17415)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3838.field17415, class7097.method8142(class7096.get(Class3838.field17415)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3838.field17415)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3838.field17415)));
     }
     
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (!class7096.get((IProperty<Boolean>)Class3838.field17451)) {
+        if (!class7096.get(Class3838.field17451)) {
             class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3838.field17451, true), 2);
             class7097.method6907().method21345(class7098, this, 2);
         }
@@ -51,7 +51,7 @@ public class Class3838 extends Class3834
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         if (class7096.get((IProperty<Comparable>)Class3838.field17415) == class7097) {
-            if (!class7096.get((IProperty<Boolean>)Class3838.field17451)) {
+            if (!class7096.get(Class3838.field17451)) {
                 this.method11896(class7099, class7100);
             }
         }
@@ -67,7 +67,7 @@ public class Class3838 extends Class3834
     }
     
     public void method11897(final World class1847, final BlockPos class1848, final BlockState class1849) {
-        final Direction class1850 = class1849.get((IProperty<Direction>)Class3838.field17415);
+        final Direction class1850 = class1849.get(Class3838.field17415);
         final BlockPos method1149 = class1848.method1149(class1850.getOpposite());
         class1847.method6698(method1149, this, class1848);
         class1847.method6697(method1149, this, class1850);
@@ -85,14 +85,14 @@ public class Class3838 extends Class3834
     
     @Override
     public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
-        return (class7096.get((IProperty<Boolean>)Class3838.field17451) && class7096.get((IProperty<Comparable>)Class3838.field17415) == class7099) ? 15 : 0;
+        return (class7096.get(Class3838.field17451) && class7096.get((IProperty<Comparable>)Class3838.field17415) == class7099) ? 15 : 0;
     }
     
     @Override
     public void onBlockAdded(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             if (!class7097.isRemote()) {
-                if (class7096.get((IProperty<Boolean>)Class3838.field17451)) {
+                if (class7096.get(Class3838.field17451)) {
                     if (!class7097.method6833().method21340(class7098, this)) {
                         final BlockState class7100 = ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3838.field17451, false);
                         class7097.setBlockState(class7098, class7100, 18);
@@ -107,7 +107,7 @@ public class Class3838 extends Class3834
     public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (class7096.getBlock() != class7099.getBlock()) {
             if (!class7097.isRemote) {
-                if (class7096.get((IProperty<Boolean>)Class3838.field17451)) {
+                if (class7096.get(Class3838.field17451)) {
                     if (class7097.method6833().method21340(class7098, this)) {
                         this.method11897(class7097, class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3838.field17451, false));
                     }

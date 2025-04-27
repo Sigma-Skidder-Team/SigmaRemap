@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Class7653<T>
 {
     private static String[] field30387;
-    private ArrayList<T> field30388;
+    private final ArrayList<T> field30388;
     
     public Class7653(final int initialCapacity) {
         this.field30388 = new ArrayList<T>(initialCapacity);

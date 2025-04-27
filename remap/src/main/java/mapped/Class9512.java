@@ -27,11 +27,11 @@ public class Class9512
     
     private Class9512() {
         this.field40926 = Lists.newArrayList();
-        (this.field40927 = Maps.newHashMap()).put(' ', (Predicate<Class7990>)Predicates.alwaysTrue());
+        (this.field40927 = Maps.newHashMap()).put(' ', Predicates.alwaysTrue());
     }
     
     public Class9512 method35438(final String... array) {
-        if (ArrayUtils.isEmpty((Object[])array) || StringUtils.isEmpty((CharSequence)array[0])) {
+        if (ArrayUtils.isEmpty(array) || StringUtils.isEmpty(array[0])) {
             throw new IllegalArgumentException("Empty pattern for aisle");
         }
         if (this.field40926.isEmpty()) {
@@ -92,7 +92,7 @@ public class Class9512
         if (arrayList.isEmpty()) {
             return;
         }
-        throw new IllegalStateException("Predicates for character(s) " + Class9512.field40925.join((Iterable)arrayList) + " are missing");
+        throw new IllegalStateException("Predicates for character(s) " + Class9512.field40925.join(arrayList) + " are missing");
     }
     
     static {

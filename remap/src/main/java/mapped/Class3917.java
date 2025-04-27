@@ -30,7 +30,7 @@ public class Class3917 extends Block implements Class3856
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        switch (Class9074.field38422[class7096.get((IProperty<Direction>)Class3917.field17752).ordinal()]) {
+        switch (Class9074.field38422[class7096.get(Class3917.field17752).ordinal()]) {
             case 1: {
                 return Class3917.field17757;
             }
@@ -53,16 +53,16 @@ public class Class3917 extends Block implements Class3856
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        final Direction class7099 = class7096.get((IProperty<Direction>)Class3917.field17752);
+        final Direction class7099 = class7096.get(Class3917.field17752);
         return this.method12029(class7097, class7098.method1149(class7099.getOpposite()), class7099);
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3917.field17752) && !class7096.method21752(class7099, class7100)) {
+        if (class7097.getOpposite() == class7096.get(Class3917.field17752) && !class7096.method21752(class7099, class7100)) {
             return Blocks.AIR.getDefaultState();
         }
-        if (class7096.get((IProperty<Boolean>)Class3917.field17753)) {
+        if (class7096.get(Class3917.field17753)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
@@ -74,7 +74,7 @@ public class Class3917 extends Block implements Class3856
         if (!class7074.method21641()) {
             final BlockState method6701 = class7074.method21654().getBlockState(class7074.method21639().method1149(class7074.method21648().getOpposite()));
             if (method6701.getBlock() == this) {
-                if (((StateHolder<Object, Object>)method6701).get((IProperty<Comparable>)Class3917.field17752) == class7074.method21648()) {
+                if (method6701.get((IProperty<Comparable>)Class3917.field17752) == class7074.method21648()) {
                     return null;
                 }
             }
@@ -96,12 +96,12 @@ public class Class3917 extends Block implements Class3856
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3917.field17752, class7097.method8142(class7096.get((IProperty<Direction>)Class3917.field17752)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3917.field17752, class7097.method8142(class7096.get(Class3917.field17752)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3917.field17752)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3917.field17752)));
     }
     
     @Override
@@ -111,7 +111,7 @@ public class Class3917 extends Block implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3917.field17753) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3917.field17753) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     static {

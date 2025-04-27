@@ -36,6 +36,6 @@ public class Class139 extends Class126
     }
     
     public static Class4943<?> method685() {
-        return Class126.method640((Function<Class122[], Class125>)Class139::new);
+        return Class126.method640(Class139::new);
     }
 }

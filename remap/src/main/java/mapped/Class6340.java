@@ -19,7 +19,6 @@ public class Class6340 extends Class6322
             final Class1663 class1933;
             class1933.method5849(class1932);
             class1933.method5860().method5868(b, b2);
-            return;
         }, () -> {});
         this.field25354 = Optional.of(value);
         this.field25355 = field25355;
@@ -42,9 +41,7 @@ public class Class6340 extends Class6322
             final Class6340 class6340 = (Class6340)o;
             if (this.field25354.equals(class6340.field25354)) {
                 if (this.field25355 == class6340.field25355) {
-                    if (this.field25356 == class6340.field25356) {
-                        return true;
-                    }
+                    return this.field25356 == class6340.field25356;
                 }
             }
             return false;

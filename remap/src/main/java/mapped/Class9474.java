@@ -6,8 +6,8 @@ package mapped;
 
 public final class Class9474
 {
-    private Class7576 field40736;
-    private Class7576 field40737;
+    private final Class7576 field40736;
+    private final Class7576 field40737;
     
     public Class9474(final Class7576 field40736, final Class7576 field40737) {
         if (field40736 != null && field40737 != null) {

@@ -23,7 +23,7 @@ public class InvManager extends PremiumModule
     public static int field16014;
     public static int field16015;
     public static int field16016;
-    private TimerUtil field16017;
+    private final TimerUtil field16017;
     private boolean field16018;
     private boolean field16019;
     public ArrayList<Integer> field16020;
@@ -32,14 +32,14 @@ public class InvManager extends PremiumModule
         super("InvManager", "Drops all useless items from your inventory", Category.ITEM);
         this.field16017 = new TimerUtil();
         this.field16020 = new ArrayList<Integer>();
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "OpenInv", "FakeInv" }));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "OpenInv", "FakeInv"));
         this.addSetting(new NumberSetting("Delay", "Inventory clicks delay", 0.3f, Float.class, 0.01f, 1.0f, 0.01f));
         this.addSetting(new NumberSetting("Block Cap", "Maximum blocks.", 150.0f, Float.class, 0.0f, 256.0f, 10.0f));
-        this.addSetting(new StringSetting("Clean Type", "Clean type", 0, new String[] { "Skywars", "All" }));
+        this.addSetting(new StringSetting("Clean Type", "Clean type", 0, "Skywars", "All"));
         this.addSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
         this.addSetting(new BooleanSetting("Cleaner", "Cleans your inventory.", true));
         this.addSetting(new BooleanSetting("Sword", "Keeps only sword as weapon.", true));
-        this.addSetting(new StringSetting("Tools", "How tools are handled.", 0, new String[] { "Keep", "Organize", "Throw" }));
+        this.addSetting(new StringSetting("Tools", "How tools are handled.", 0, "Keep", "Organize", "Throw"));
         this.addSetting(new BooleanSetting("Archery", "Cleans bows and arrows.", true));
         this.addSetting(new BooleanSetting("Food", "Cleans food. Keeps Golden Apples.", false));
         this.addSetting(new BooleanSetting("Heads", "Cleans Heads.", false));
@@ -189,7 +189,7 @@ public class InvManager extends PremiumModule
         float n = 0.0f;
         final Item method27622 = class8321.getItem();
         if (method27622 instanceof Class4072) {
-            n += ((Class4072)method27622).method11709();
+            n += method27622.method11709();
         }
         if (method27622 instanceof SwordItem) {
             n += ((SwordItem)method27622).method12281();
@@ -307,9 +307,7 @@ public class InvManager extends PremiumModule
                                                                                                                                     if (!(method27622 instanceof Class4064)) {
                                                                                                                                         if (method27622 != Items.field31371) {
                                                                                                                                             if (method27622 != Items.field31308) {
-                                                                                                                                                if (!method27622.method11715().getFormattedText().toLowerCase().contains("piston")) {
-                                                                                                                                                    return false;
-                                                                                                                                                }
+                                                                                                                                                return method27622.method11715().getFormattedText().toLowerCase().contains("piston");
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }

@@ -37,7 +37,6 @@ public class Class6618 extends Class6601
                 class514.method6886(new Class508(class514, class515.getX(), class515.getY() + 0.5, class515.getZ() + 0.5, n));
             }
             class514.method6955(1042, class515, 0);
-            return;
         });
         Class3440.method10994(this.field26196).method2160(0, ItemStack.EMPTY);
         Class3440.method10994(this.field26196).method2160(1, ItemStack.EMPTY);
@@ -45,7 +44,7 @@ public class Class6618 extends Class6601
     }
     
     private int method20067(final World class1847) {
-        final int n = 0 + this.method20068(Class3440.method10994(this.field26196).method2157(0)) + this.method20068(Class3440.method10994(this.field26196).method2157(1));
+        final int n = this.method20068(Class3440.method10994(this.field26196).method2157(0)) + this.method20068(Class3440.method10994(this.field26196).method2157(1));
         if (n <= 0) {
             return 0;
         }

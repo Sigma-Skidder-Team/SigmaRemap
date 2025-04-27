@@ -279,7 +279,7 @@ public class Class8424
         final float intBitsToFloat2 = Float.intBitsToFloat(array[n7 + 4 + 1]);
         double method7520 = class1912.method7520(intBitsToFloat);
         double method7521 = class1912.method7521(intBitsToFloat2);
-        float intBitsToFloat3 = Float.intBitsToFloat(array[n7 + 0]);
+        float intBitsToFloat3 = Float.intBitsToFloat(array[n7]);
         float intBitsToFloat4 = Float.intBitsToFloat(array[n7 + 1]);
         float intBitsToFloat5 = Float.intBitsToFloat(array[n7 + 2]);
         float n8 = 0.0f;
@@ -375,7 +375,7 @@ public class Class8424
         }
         array[n7 + 4] = Float.floatToRawIntBits(class1913.method7499(method7520));
         array[n7 + 4 + 1] = Float.floatToRawIntBits(class1913.method7502(method7521));
-        array[n7 + 0] = Float.floatToRawIntBits(intBitsToFloat3);
+        array[n7] = Float.floatToRawIntBits(intBitsToFloat3);
         array[n7 + 1] = Float.floatToRawIntBits(intBitsToFloat4);
         array[n7 + 2] = Float.floatToRawIntBits(intBitsToFloat5);
     }

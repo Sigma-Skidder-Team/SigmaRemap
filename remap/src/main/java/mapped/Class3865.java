@@ -39,7 +39,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     
     public Class3865(final Properties class9288, final Supplier<Class5412<? extends Class475>> supplier) {
         super(class9288, supplier);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3865.field17497, Direction.NORTH)).with(Class3865.field17498, Class180.field530)).with((IProperty<Comparable>)Class3865.field17499, false));
+        this.method11877(((StateHolder<O, BlockState>) ((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3865.field17497, Direction.NORTH).with(Class3865.field17498, Class180.field530)).with((IProperty<Comparable>)Class3865.field17499, false));
     }
     
     public static Class2083 method11932(final BlockState class7096) {
@@ -57,7 +57,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3865.field17499)) {
+        if (class7096.get(Class3865.field17499)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         if (class7098.getBlock() == this && class7097.getAxis().isHorizontal()) {
@@ -73,7 +73,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
             }
         }
         else if (method11933(class7096) == class7097) {
-            return ((StateHolder<O, BlockState>)class7096).with(Class3865.field17498, Class180.field530);
+            return class7096.with(Class3865.field17498, Class180.field530);
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
@@ -100,7 +100,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     public static Direction method11933(final BlockState class7096) {
-        final Direction class7097 = class7096.get((IProperty<Direction>)Class3865.field17497);
+        final Direction class7097 = class7096.get(Class3865.field17497);
         return (class7096.get(Class3865.field17498) != Class180.field531) ? class7097.method784() : class7097.rotateY();
     }
     
@@ -134,18 +134,18 @@ public class Class3865 extends Class3864<Class475> implements Class3856
                 }
             }
         }
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, method782)).with(Class3865.field17498, class7075)).with((IProperty<Comparable>)Class3865.field17499, method783.getFluid() == Class7558.field29976);
+        return (BlockState)((StateHolder<Object, Object>) ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3865.field17497, method782).with(Class3865.field17498, class7075)).with((IProperty<Comparable>)Class3865.field17499, method783.getFluid() == Class7558.field29976);
     }
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3865.field17499) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3865.field17499) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Nullable
     private Direction method11934(final Class7074 class7074, final Direction class7075) {
         final BlockState method6701 = class7074.method21654().getBlockState(class7074.method21639().method1149(class7075));
-        return (method6701.getBlock() == this && method6701.get(Class3865.field17498) == Class180.field530) ? method6701.get((IProperty<Direction>)Class3865.field17497) : null;
+        return (method6701.getBlock() == this && method6701.get(Class3865.field17498) == Class180.field530) ? method6701.get(Class3865.field17497) : null;
     }
     
     @Override
@@ -229,7 +229,7 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     }
     
     private static boolean method11940(final Class1851 class1851, final BlockPos class1852) {
-        final List<Entity> method7128 = class1851.method7128((Class<? extends Entity>)Class800.class, new AxisAlignedBB(class1852.getX(), class1852.getY() + 1, class1852.getZ(), class1852.getX() + 1, class1852.getY() + 2, class1852.getZ() + 1));
+        final List<Entity> method7128 = class1851.method7128(Class800.class, new AxisAlignedBB(class1852.getX(), class1852.getY() + 1, class1852.getZ(), class1852.getX() + 1, class1852.getY() + 2, class1852.getZ() + 1));
         if (!method7128.isEmpty()) {
             final Iterator iterator = method7128.iterator();
             while (iterator.hasNext()) {
@@ -254,12 +254,12 @@ public class Class3865 extends Class3864<Class475> implements Class3856
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3865.field17497, class7097.method8142(class7096.get((IProperty<Direction>)Class3865.field17497)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3865.field17497, class7097.method8142(class7096.get(Class3865.field17497)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3865.field17497)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3865.field17497)));
     }
     
     @Override

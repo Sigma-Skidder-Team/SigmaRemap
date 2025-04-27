@@ -42,7 +42,7 @@ public class Class8109
         if (alGetError == 0) {
             return false;
         }
-        Class8109.field33420.error("{}: {}", (Object)s, (Object)method26649(alGetError));
+        Class8109.field33420.error("{}: {}", s, method26649(alGetError));
         return true;
     }
     
@@ -74,7 +74,7 @@ public class Class8109
         if (alcGetError == 0) {
             return false;
         }
-        Class8109.field33420.error("{}{}: {}", (Object)s, (Object)l, (Object)method26651(alcGetError));
+        Class8109.field33420.error("{}{}: {}", s, l, method26651(alcGetError));
         return true;
     }
     

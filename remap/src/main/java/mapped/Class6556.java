@@ -33,7 +33,7 @@ public class Class6556
     }
     
     public <T> Dynamic<T> method19872(final DynamicOps<T> dynamicOps) {
-        return Util.method27858("Target", this.field26044, (com.mojang.datafixers.Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Type"), dynamicOps.createString(this.field26045.field290), dynamicOps.createString("Value"), dynamicOps.createInt(this.field26046)))));
+        return Util.method27858("Target", this.field26044, (com.mojang.datafixers.Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("Type"), dynamicOps.createString(this.field26045.field290), dynamicOps.createString("Value"), dynamicOps.createInt(this.field26046)))));
     }
     
     public static Optional<Class6556> method19873(final Dynamic<?> dynamic) {

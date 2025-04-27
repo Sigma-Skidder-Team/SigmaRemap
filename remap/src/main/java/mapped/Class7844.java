@@ -39,7 +39,7 @@ public class Class7844
         class1927.method7720().method34569(class1927);
         Class8933.method31535(class1927.method7722());
         if (Class8933.method31525(class1927.method7722(), 35714) == 0) {
-            Class7844.field32125.warn("Error encountered when linking program containing VS {} and FS {}. Log output:", (Object)class1927.method7720().method34571(), (Object)class1927.method7721().method34571());
+            Class7844.field32125.warn("Error encountered when linking program containing VS {} and FS {}. Log output:", class1927.method7720().method34571(), class1927.method7721().method34571());
             Class7844.field32125.warn(Class8933.method31569(class1927.method7722(), 32768));
         }
     }

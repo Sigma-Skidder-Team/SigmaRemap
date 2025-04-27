@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public class Class8651<L, R>
 {
-    private Optional<L> field36315;
-    private Optional<R> field36316;
+    private final Optional<L> field36315;
+    private final Optional<R> field36316;
     
     private Class8651(final Optional<L> field36315, final Optional<R> field36316) {
         this.field36315 = field36315;
@@ -35,6 +35,6 @@ public class Class8651<L, R>
     }
     
     public static <L, R> Class8651 method29439(final R value) {
-        return new Class8651(Optional.empty(), (Optional<R>)Optional.of(value));
+        return new Class8651(Optional.empty(), Optional.of(value));
     }
 }

@@ -69,7 +69,7 @@ public class Class3909 extends Class3910 implements Class3872
                         continue;
                     }
                     final Class8530<?, ?> field22060 = ((Class5114)method1142.get(0).field35805).field22060;
-                    method1141 = ((Class4572)field22060.field35804).method13583(random, method1139, (FC)field22060.field35805);
+                    method1141 = ((Class4572)field22060.field35804).method13583(random, method1139, field22060.field35805);
                 }
                 if (!method1141.method21752(class1849, method1139)) {
                     continue;

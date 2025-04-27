@@ -33,7 +33,7 @@ public class Class6966<T> implements Class6967<T>
     @Override
     public void method21379(final Collection<T> collection) {
         if (this.field27247 != null) {
-            collection.addAll((Collection<? extends T>)this.field27247.method25616());
+            collection.addAll(this.field27247.method25616());
             return;
         }
         throw Util.pauseDevMode(new IllegalStateException("Cannot build unresolved tag entry"));

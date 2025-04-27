@@ -64,7 +64,7 @@ public class Class8947 implements Class8948<ClientPlayerEntity>
     
     @Override
     public SortedSet<Integer> method31746() {
-        final TreeSet set = new TreeSet((SortedSet<E>)Class8626.method29276());
+        final TreeSet set = new TreeSet(Class8626.method29276());
         set.removeAll(Class8563.method28793().method34756().method23293());
         return set;
     }

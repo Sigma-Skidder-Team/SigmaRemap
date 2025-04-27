@@ -17,7 +17,7 @@ public class Class9169
             optional = Class2184.method8349(i);
         }
         if (optional.isPresent()) {
-            return (Class1974)optional.get();
+            return optional.get();
         }
         Class8563.method28793().method34742().severe("Could not find type id " + i + " isObject=" + b);
         return Class1974.field10859;

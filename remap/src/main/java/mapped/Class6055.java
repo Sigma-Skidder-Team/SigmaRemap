@@ -100,14 +100,9 @@ public class Class6055
             final List<String> method17997 = this.method17994();
             final List<String> method17998 = class6055.method17994();
             if (method17997 != null) {
-                if (!method17997.equals(method17998)) {
-                    return false;
-                }
+                return method17997.equals(method17998);
             }
-            else if (method17998 != null) {
-                return false;
-            }
-            return true;
+            else return method17998 == null;
         }
         return false;
     }
@@ -118,7 +113,7 @@ public class Class6055
     
     @Override
     public int hashCode() {
-        final int n = 1 * 59 + (this.method17990() ? 79 : 97);
+        final int n = 59 + (this.method17990() ? 79 : 97);
         final String method17991 = this.method17991();
         final int n2 = n * 59 + ((method17991 != null) ? method17991.hashCode() : 43);
         final String method17992 = this.method17992();

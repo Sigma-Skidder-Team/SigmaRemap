@@ -26,7 +26,7 @@ public class Class4916 extends Class4825
     public Texture field21027;
     public Texture field21028;
     private java.awt.image.BufferedImage field21029;
-    private Animation field21030;
+    private final Animation field21030;
     
     public Class4916(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Class8848 field21025) {
         super(customGuiScreen, s, n, n2, n3, n4, false);
@@ -39,7 +39,7 @@ public class Class4916 extends Class4825
         this.field21030 = new Animation(200, 200, Direction.FORWARDS);
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         try {
             if (this.field21028 != null) {
                 Client.getInstance().addTexture(this.field21028);
@@ -145,7 +145,7 @@ public class Class4916 extends Class4825
         GL11.glTranslatef((float)(this.method14272() + 76), (float)(this.method14274() + 44), 0.0f);
         GL11.glScaled(1.0 - 0.1 * n2, 1.0 - 0.1 * n2, 0.0);
         GL11.glTranslatef((float)(-this.method14272() - 76), (float)(-this.method14274() - 44), 0.0f);
-        RenderUtil.drawString(ClientFonts.JelloMedium25, (float)(this.x + 94), (float)(this.y + 16), this.field21026.field41612.equals("Minecraft Server") ? (this.field21026.field41613.substring(0, 1).toUpperCase() + this.field21026.field41613.substring(1, this.field21026.field41613.length())) : this.field21026.field41612, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f));
+        RenderUtil.drawString(ClientFonts.JelloMedium25, (float)(this.x + 94), (float)(this.y + 16), this.field21026.field41612.equals("Minecraft Server") ? (this.field21026.field41613.substring(0, 1).toUpperCase() + this.field21026.field41613.substring(1)) : this.field21026.field41612, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f));
         final int n3 = 94;
         final int n4 = 46;
         if (this.field21025.method30981().getTime() != 9223372036854775806L) {

@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 public class Class8298 extends Class8299
 {
     private static String[] field34108;
-    private Element field34109;
+    private final Element field34109;
     
     public Class8298(final String s, final Element field34109) {
         super(s);

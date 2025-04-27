@@ -7,10 +7,10 @@ package mapped;
 public class Class7036 extends Class7037
 {
     private static String[] field27406;
-    private short[] field27407;
-    private int[] field27408;
-    private int field27409;
-    private int field27410;
+    private final short[] field27407;
+    private final int[] field27408;
+    private final int field27409;
+    private final int field27410;
     
     public Class7036(final int field27410, final int field27411) {
         this.field27407 = new short[2304];

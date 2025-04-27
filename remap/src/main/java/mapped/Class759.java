@@ -283,7 +283,7 @@ public abstract class Class759 extends LivingEntity
             if (!class53.method27620()) {
                 class53.method27627(e);
             }
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         class51.put("ArmorItems", class52);
         final ListNBT class54 = new ListNBT();
@@ -292,19 +292,19 @@ public abstract class Class759 extends LivingEntity
             if (!class55.method27620()) {
                 class55.method27627(e2);
             }
-            ((AbstractList<CompoundNBT>)class54).add(e2);
+            class54.add(e2);
         }
         class51.put("HandItems", class54);
         final ListNBT class56 = new ListNBT();
         final float[] field4121 = this.field4121;
         for (int length = field4121.length, i = 0; i < length; ++i) {
-            ((AbstractList<FloatNBT>)class56).add(FloatNBT.method281(field4121[i]));
+            class56.add(FloatNBT.method281(field4121[i]));
         }
         class51.put("ArmorDropChances", class56);
         final ListNBT class57 = new ListNBT();
         final float[] field4122 = this.field4119;
         for (int length2 = field4122.length, j = 0; j < length2; ++j) {
-            ((AbstractList<FloatNBT>)class57).add(FloatNBT.method281(field4122[j]));
+            class57.add(FloatNBT.method281(field4122[j]));
         }
         class51.put("HandDropChances", class57);
         if (this.field4127 == null) {
@@ -932,12 +932,7 @@ public abstract class Class759 extends LivingEntity
     @Nullable
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
         this.method2710(Class8107.field33406).method23946(new Class7919("Random spawn bonus", this.rand.nextGaussian() * 0.05, Class2157.field12810));
-        if (this.rand.nextFloat() >= 0.05f) {
-            this.method4212(false);
-        }
-        else {
-            this.method4212(true);
-        }
+        this.method4212(!(this.rand.nextFloat() >= 0.05f));
         return class1854;
     }
     
@@ -1192,9 +1187,7 @@ public abstract class Class759 extends LivingEntity
         final Class2215 method4185 = method4185(class2216);
         if (method4185 != class2215) {
             if (method4185 != Class2215.field13600 || class2215 != Class2215.field13601) {
-                if (method4185 != Class2215.field13601 || class2215 != Class2215.field13600) {
-                    return false;
-                }
+                return method4185 == Class2215.field13601 && class2215 == Class2215.field13600;
             }
         }
         return true;
@@ -1294,9 +1287,7 @@ public abstract class Class759 extends LivingEntity
                 final BlockPos class354 = (this.method1920() instanceof Class423) ? new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ()).method1137() : new BlockPos(this.getPosX(), (double)Math.round(this.getPosY()), this.getPosZ());
                 if (method1726 > 0.5f) {
                     if (this.rand.nextFloat() * 30.0f < (method1726 - 0.4f) * 2.0f) {
-                        if (this.world.method6994(class354)) {
-                            return true;
-                        }
+                        return this.world.method6994(class354);
                     }
                 }
             }

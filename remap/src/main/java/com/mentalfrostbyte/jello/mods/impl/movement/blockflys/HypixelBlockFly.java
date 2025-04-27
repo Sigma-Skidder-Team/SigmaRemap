@@ -40,7 +40,7 @@ public class HypixelBlockFly extends Module
         this.field15715 = null;
         this.field15717 = false;
         this.field15719 = 0;
-        this.addSetting(new StringSetting("Speed Mode", "Speed mode", 0, new String[] { "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak" }));
+        this.addSetting(new StringSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
     }
     
     @Override

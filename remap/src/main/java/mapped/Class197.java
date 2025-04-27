@@ -44,7 +44,7 @@ public enum Class197 implements Class198, Class196
         final int method20074 = class6434.method20074(this.method839(n + 1), this.method840(n2 + 1));
         final int method20075 = class6435.method20074(this.method839(n + 1), this.method840(n2 + 1));
         if (method20074 > 255) {
-            Class197.field657.debug("old! {}", (Object)method20074);
+            Class197.field657.debug("old! {}", method20074);
         }
         final int n3 = (method20075 - 2) % 29;
         if (!Class7983.method26039(method20074)) {
@@ -172,13 +172,13 @@ public enum Class197 implements Class198, Class196
             }
             if (n4 != method20074) {
                 int n5 = 0;
-                if (Class7983.method26037(class6434.method20074(this.method839(n + 1), this.method840(n2 + 0)), method20074)) {
+                if (Class7983.method26037(class6434.method20074(this.method839(n + 1), this.method840(n2)), method20074)) {
                     ++n5;
                 }
                 if (Class7983.method26037(class6434.method20074(this.method839(n + 2), this.method840(n2 + 1)), method20074)) {
                     ++n5;
                 }
-                if (Class7983.method26037(class6434.method20074(this.method839(n + 0), this.method840(n2 + 1)), method20074)) {
+                if (Class7983.method26037(class6434.method20074(this.method839(n), this.method840(n2 + 1)), method20074)) {
                     ++n5;
                 }
                 if (Class7983.method26037(class6434.method20074(this.method839(n + 1), this.method840(n2 + 2)), method20074)) {

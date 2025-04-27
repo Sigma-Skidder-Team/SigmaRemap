@@ -25,14 +25,14 @@ public class Class8115
     private final List<NetworkManager> field33450;
     
     public Class8115() {
-        this.field33450 = Collections.synchronizedList((List<NetworkManager>)Lists.newArrayList());
+        this.field33450 = Collections.synchronizedList(Lists.newArrayList());
     }
     
     public void method26694(final ServerData class9575) throws UnknownHostException {
         final Class7872 method25494 = Class7872.method25494(class9575.field41613);
         final NetworkManager method25495 = NetworkManager.method11183(InetAddress.getByName(method25494.method25492()), method25494.method25493(), false);
         this.field33450.add(method25495);
-        class9575.field41615 = Class8822.method30773("multiplayer.status.pinging", new Object[0]);
+        class9575.field41615 = Class8822.method30773("multiplayer.status.pinging");
         class9575.field41616 = -1L;
         class9575.field41620 = null;
         method25495.method11173(new Class5812(this, method25495, class9575));
@@ -41,13 +41,13 @@ public class Class8115
             method25495.method11174(new Class4392());
         }
         catch (final Throwable t) {
-            Class8115.field33449.error((Object)t);
+            Class8115.field33449.error(t);
         }
     }
     
     private void method26695(final ServerData class9575) {
         final Class7872 method25494 = Class7872.method25494(class9575.field41613);
-        ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field16894.method29528())).handler((ChannelHandler)new Class6819(this, method25494, class9575))).channel((Class)NioSocketChannel.class)).connect(method25494.method25492(), method25494.method25493());
+        new Bootstrap().group(NetworkManager.field16894.method29528()).handler(new Class6819(this, method25494, class9575)).channel(NioSocketChannel.class).connect(method25494.method25492(), method25494.method25493());
     }
     
     public void method26696() {
@@ -73,7 +73,7 @@ public class Class8115
                 final NetworkManager class3641 = iterator.next();
                 if (class3641.method11187()) {
                     iterator.remove();
-                    class3641.method11181(new Class2259("multiplayer.status.cancelled", new Object[0]));
+                    class3641.method11181(new Class2259("multiplayer.status.cancelled"));
                 }
             }
         }

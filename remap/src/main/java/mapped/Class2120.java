@@ -31,7 +31,7 @@ public enum Class2120
     public final String field12363;
     private final ToIntFunction<Class513> field12364;
     
-    private Class2120(final String field12363, final BiConsumer<Class513, Integer> field12364, final BiPredicate<Class513, Integer> field12365, final ToIntFunction<Class513> field12366) {
+    Class2120(final String field12363, final BiConsumer<Class513, Integer> field12364, final BiPredicate<Class513, Integer> field12365, final ToIntFunction<Class513> field12366) {
         this.field12361 = field12364;
         this.field12363 = field12363;
         this.field12362 = field12365;

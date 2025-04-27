@@ -20,7 +20,7 @@ public class Class534 extends Screen
     private Class654 field3189;
     
     public Class534(final Class539 field3185, final CompoundNBT field3186) {
-        super(new Class2259("createWorld.customize.buffet.title", new Object[0]));
+        super(new Class2259("createWorld.customize.buffet.title"));
         this.field3185 = field3185;
         this.field3186 = field3186;
     }
@@ -28,20 +28,20 @@ public class Class534 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.addButton(new Class654((this.width - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]), class654 -> {
+        this.addButton(new Class654((this.width - 200) / 2, 40, 200, 20, Class8822.method30773("createWorld.customize.buffet.generatortype") + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188))), class654 -> {
             ++this.field3188;
             if (this.field3188 >= Class534.field3184.size()) {
                 this.field3188 = 0;
             }
-            class654.method3367(Class8822.method30773("createWorld.customize.buffet.generatortype", new Object[0]) + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188)), new Object[0]));
+            class654.method3367(Class8822.method30773("createWorld.customize.buffet.generatortype") + " " + Class8822.method30773(Util.method27836("generator", Class534.field3184.get(this.field3188))));
         }));
         this.field3187 = new Class621(this, null);
         this.children.add(this.field3187);
-        this.field3189 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.field3189 = this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done"), class654 -> {
             this.field3185.field3231 = this.method3082();
             this.minecraft.displayGuiScreen(this.field3185);
         }));
-        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3185)));
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel"), class654 -> this.minecraft.displayGuiScreen(this.field3185)));
         this.method3081();
         this.method3083();
     }
@@ -81,7 +81,7 @@ public class Class534 extends Screen
         class52.putString("type", Registry.field223.getKey(Class7768.field31769).toString());
         final CompoundNBT class53 = new CompoundNBT();
         final ListNBT class54 = new ListNBT();
-        ((AbstractList<StringNBT>)class54).add(StringNBT.method290(Class642.method3685(this.field3187.method3530()).toString()));
+        class54.add(StringNBT.method290(Class642.method3685(this.field3187.method3530()).toString()));
         class53.put("biomes", class54);
         class52.put("options", class53);
         final CompoundNBT class55 = new CompoundNBT();
@@ -104,8 +104,8 @@ public class Class534 extends Screen
         this.renderDirtBackground(0);
         this.field3187.render(n, n2, n3);
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 8, 16777215);
-        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.generator", new Object[0]), this.width / 2, 30, 10526880);
-        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.biome", new Object[0]), this.width / 2, 68, 10526880);
+        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.generator"), this.width / 2, 30, 10526880);
+        this.drawCenteredString(this.font, Class8822.method30773("createWorld.customize.buffet.biome"), this.width / 2, 68, 10526880);
         super.render(n, n2, n3);
     }
     

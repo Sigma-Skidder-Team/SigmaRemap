@@ -27,7 +27,7 @@ public class ChatScreen extends Screen
     public void init() {
         this.minecraft.field4651.method22505(true);
         this.field3191 = this.minecraft.field4647.method3807().method3765().size();
-        (this.field3192 = new Class578(this, this.font, 4, this.height - 12, this.width - 4, 12, Class8822.method30773("chat.editBox", new Object[0]))).method3397(256);
+        (this.field3192 = new Class578(this, this.font, 4, this.height - 12, this.width - 4, 12, Class8822.method30773("chat.editBox"))).method3397(256);
         this.field3192.method3401(false);
         this.field3192.method3377(this.field3193);
         this.field3192.method3374(this::method3089);

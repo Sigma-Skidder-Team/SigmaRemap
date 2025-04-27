@@ -22,12 +22,12 @@ public final class Class7544 implements Class7545
     private final Class8028 field29931;
     private boolean field29932;
     private int field29933;
-    private List<Class5233> field29934;
+    private final List<Class5233> field29934;
     private int field29935;
     private int field29936;
-    private Class7653<Integer> field29937;
+    private final Class7653<Integer> field29937;
     private boolean field29938;
-    private Map<Integer, Class8130> field29939;
+    private final Map<Integer, Class8130> field29939;
     
     public Class7544(final Class8028 field29931) {
         this.field29932 = false;
@@ -494,9 +494,7 @@ public final class Class7544 implements Class7545
     private boolean method23669() {
         if (this.field29931.method26331() == 0) {
             if ("---".equals(this.field29931.method26326(3))) {
-                if (Class6942.field27190.method21321(this.field29931.method26325(3))) {
-                    return true;
-                }
+                return Class6942.field27190.method21321(this.field29931.method26325(3));
             }
         }
         return false;
@@ -505,9 +503,7 @@ public final class Class7544 implements Class7545
     private boolean method23670() {
         if (this.field29931.method26331() == 0) {
             if ("...".equals(this.field29931.method26326(3))) {
-                if (Class6942.field27190.method21321(this.field29931.method26325(3))) {
-                    return true;
-                }
+                return Class6942.field27190.method21321(this.field29931.method26325(3));
             }
         }
         return false;
@@ -533,9 +529,7 @@ public final class Class7544 implements Class7545
                     return true;
                 }
                 if (this.field29933 == 0) {
-                    if ("?:".indexOf(method26324) != -1) {
-                        return true;
-                    }
+                    return "?:".indexOf(method26324) != -1;
                 }
             }
             return false;
@@ -1132,7 +1126,7 @@ public final class Class7544 implements Class7545
                 final String method26330 = this.method23700();
                 if (method26330.length() == 0) {
                     if (!"\n".equals(method26328)) {
-                        return method26328 + (Object)obj;
+                        return method26328 + obj;
                     }
                     if (obj.length() != 0) {
                         return obj.toString();

@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
 import java.nio.charset.Charset;
 
@@ -43,7 +44,7 @@ public class Class7971
     private String field32790;
     private ArrayList<Class8848> field32791;
     private long field32792;
-    private long field32793;
+    private final long field32793;
     private int field32794;
     private BufferedImage field32795;
     private BufferedImage field32796;
@@ -215,7 +216,7 @@ public class Class7971
         return ClientAssets.skin;
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         try {
             if (this.field32797 != null) {
                 Client.getInstance().addTexture(this.field32797);
@@ -293,10 +294,10 @@ public class Class7971
         JSONObject.put("dateAdded", this.field32793);
         if (this.field32795 != null) {
             final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            final Base64OutputStream output = new Base64OutputStream((OutputStream)byteArrayOutputStream);
+            final Base64OutputStream output = new Base64OutputStream(byteArrayOutputStream);
             String string = "";
             try {
-                ImageIO.write(this.field32795, "png", (OutputStream)output);
+                ImageIO.write(this.field32795, "png", output);
                 string = byteArrayOutputStream.toString("UTF-8");
             }
             catch (final IOException ex) {
@@ -317,11 +318,11 @@ public class Class7971
     }
     
     public static String method25906(final String s) {
-        return new String(Base64.encodeBase64(s.getBytes()), Charset.forName("UTF-8"));
+        return new String(Base64.encodeBase64(s.getBytes()), StandardCharsets.UTF_8);
     }
     
     public static String method25907(final String s) {
-        return new String(Base64.decodeBase64(s.getBytes()), Charset.forName("UTF-8"));
+        return new String(Base64.decodeBase64(s.getBytes()), StandardCharsets.UTF_8);
     }
     
     public int method25908() {

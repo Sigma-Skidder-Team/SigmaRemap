@@ -17,7 +17,7 @@ public class Class8606 extends Schema
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(true, Class9451.field40629, () -> DSL.optionalFields("SpawnPotentials", DSL.list(DSL.fields("Entity", Class9451.field40625.in(schema2))), "SpawnData", Class9451.field40625.in(schema2)));
     }
 }

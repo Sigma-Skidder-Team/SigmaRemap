@@ -25,8 +25,8 @@ public class Class4174 extends Class4158<Class493>
         final float method2504 = class493.method2504(n);
         final BlockState method2505 = class493.method2194();
         final boolean b = method2505.getBlock() instanceof Class3933;
-        final Direction class496 = b ? method2505.get((IProperty<Direction>)Class3933.field17814) : null;
-        method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.get((IProperty<Integer>)Class3936.field17819)), ((Class3932)method2505.getBlock()).method12050(), class493.method2505(), method2504, class494, class495, n2);
+        final Direction class496 = b ? method2505.get(Class3933.field17814) : null;
+        method12498(class496, 22.5f * (b ? ((2 + class496.getHorizontalIndex()) * 4) : method2505.get(Class3936.field17819)), ((Class3932)method2505.getBlock()).method12050(), class493.method2505(), method2504, class494, class495, n2);
     }
     
     public static void method12498(final Direction class179, final float n, final Class299 class180, final GameProfile gameProfile, final float n2, final MatrixStack class181, final IRenderTypeBuffer class182, final int n3) {
@@ -83,7 +83,6 @@ public class Class4174 extends Class4158<Class493>
             hashMap.put(Class298.field1714, class5920);
             hashMap.put(Class298.field1715, value);
             hashMap.put(Class298.field1716, value2);
-            return;
         });
         field18592 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put(Class298.field1711, new ResourceLocation("textures/entity/skeleton/skeleton.png"));

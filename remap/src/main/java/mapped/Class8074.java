@@ -9,7 +9,7 @@ import com.mentalfrostbyte.Client;
 public class Class8074
 {
     private static String[] field33263;
-    private Minecraft field33264;
+    private final Minecraft field33264;
     
     public Class8074() {
         this.field33264 = Minecraft.getInstance();

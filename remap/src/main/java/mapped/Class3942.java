@@ -166,7 +166,7 @@ public class Class3942 extends Class3841
                     list.add(method27662);
                 }
                 if (n2 - n > 0) {
-                    list.add(new Class2259("container.shulkerBox.more", new Object[] { n2 - n }).applyTextStyle(TextFormatting.ITALIC));
+                    list.add(new Class2259("container.shulkerBox.more", n2 - n).applyTextStyle(TextFormatting.ITALIC));
                 }
             }
         }

@@ -177,9 +177,7 @@ public class Class9017
         if (this.method32303(class8321, this.method32281())) {
             if (class8321.method27690() >= this.method32281().method27690()) {
                 if (this.method32303(class8322, this.field38048)) {
-                    if (class8322.method27690() >= this.field38048.method27690()) {
-                        return true;
-                    }
+                    return class8322.method27690() >= this.field38048.method27690();
                 }
             }
         }
@@ -199,9 +197,7 @@ public class Class9017
                 if (!method27641.method27656()) {
                     return false;
                 }
-                if (!Class9346.method34642(class8322.method27657(), method27641.method27657(), false)) {
-                    return false;
-                }
+                return Class9346.method34642(class8322.method27657(), method27641.method27657(), false);
             }
             return true;
         }

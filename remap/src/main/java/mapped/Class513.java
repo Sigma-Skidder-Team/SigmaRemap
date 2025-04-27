@@ -108,7 +108,7 @@ public class Class513 extends PlayerEntity implements Class514
             if (method6759 <= 1) {
                 max = 1;
             }
-            final long n = max * 2 + 1;
+            final long n = max * 2L + 1;
             final long n2 = n * n;
             final int bound = (n2 <= 2147483647L) ? ((int)n2) : Integer.MAX_VALUE;
             final int method6760 = this.method2916(bound);
@@ -358,8 +358,8 @@ public class Class513 extends PlayerEntity implements Class514
             final ITextComponent method35595 = this.method2699().method35595();
             this.field3039.method17470(new Class4260(this.method2699(), Class344.field2122, method35595), (GenericFutureListener<? extends Future<? super Void>>)(future -> {
                 if (!future.isSuccess()) {
-                    final Class2259 class2251 = new Class2259("death.attack.message_too_long", new Object[] { new StringTextComponent(method35595.getStringTruncated(256)).applyTextStyle(TextFormatting.YELLOW) });
-                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", new Object[] { this.getDisplayName() }).applyTextStyle(class2253 -> class2253.method30420(new HoverEvent(HoverEvent.Action.field10697, class2252)))));
+                    final Class2259 class2251 = new Class2259("death.attack.message_too_long", new StringTextComponent(method35595.getStringTruncated(256)).applyTextStyle(TextFormatting.YELLOW));
+                    this.field3039.method17469(new Class4260(this.method2699(), Class344.field2122, new Class2259("death.attack.even_more_magic", this.getDisplayName()).applyTextStyle(class2253 -> class2253.method30420(new HoverEvent(HoverEvent.Action.field10697, class2252)))));
                 }
             }));
             final Team method35596 = this.getTeam();
@@ -548,7 +548,7 @@ public class Class513 extends PlayerEntity implements Class514
             for (int i = -2; i <= 2; ++i) {
                 for (int j = -2; j <= 2; ++j) {
                     for (int k = -1; k < 3; ++k) {
-                        method1482.method6692(new BlockPos(method1489 + j * 1 + i * 0, n2 + k, method1490 + j * 0 - i * 1), (k < 0) ? Blocks.OBSIDIAN.getDefaultState() : Blocks.AIR.getDefaultState());
+                        method1482.method6692(new BlockPos(method1489 + j + 0, n2 + k, method1490 + 0 - i), (k < 0) ? Blocks.OBSIDIAN.getDefaultState() : Blocks.AIR.getDefaultState());
                     }
                 }
             }
@@ -616,7 +616,7 @@ public class Class513 extends PlayerEntity implements Class514
     
     @Override
     public Either<Class2048, Class315> method2845(final BlockPos class354) {
-        return (Either<Class2048, Class315>)super.method2845(class354).ifRight(p0 -> {
+        return super.method2845(class354).ifRight(p0 -> {
             this.method2857(Class8276.field34044);
             Class7770.field31791.method13827(this);
         });
@@ -662,9 +662,7 @@ public class Class513 extends PlayerEntity implements Class514
     public boolean method1849(final DamageSource class7929) {
         if (!super.method1849(class7929)) {
             if (!this.method2955()) {
-                if (!this.field3025.field27301 || class7929 != DamageSource.field32577) {
-                    return false;
-                }
+                return this.field3025.field27301 && class7929 == DamageSource.field32577;
             }
         }
         return true;
@@ -715,7 +713,7 @@ public class Class513 extends PlayerEntity implements Class514
             return OptionalInt.of(this.field3068);
         }
         if (this.isSpectator()) {
-            this.method2853(new Class2259("container.spectatorCantOpen", new Object[0]).applyTextStyle(TextFormatting.RED), true);
+            this.method2853(new Class2259("container.spectatorCantOpen").applyTextStyle(TextFormatting.RED), true);
         }
         return OptionalInt.empty();
     }
@@ -1022,7 +1020,7 @@ public class Class513 extends PlayerEntity implements Class514
         this.field3039.method17470(new Class4378(class2250, class2251), (GenericFutureListener<? extends Future<? super Void>>)(future -> {
             if (!future.isSuccess()) {
                 if (class2251 == Class285.field1574 || class2251 == Class285.field1573) {
-                    this.field3039.method17469(new Class4378(new Class2259("multiplayer.message_not_delivered", new Object[] { new StringTextComponent(class2250.getStringTruncated(256)).applyTextStyle(TextFormatting.YELLOW) }).applyTextStyle(TextFormatting.RED), Class285.field1573));
+                    this.field3039.method17469(new Class4378(new Class2259("multiplayer.message_not_delivered", new StringTextComponent(class2250.getStringTruncated(256)).applyTextStyle(TextFormatting.YELLOW)).applyTextStyle(TextFormatting.RED), Class285.field1573));
                 }
             }
         }));
@@ -1072,7 +1070,7 @@ public class Class513 extends PlayerEntity implements Class514
             this.field3042.add(class399.getEntityId());
         }
         else {
-            this.field3039.method17469(new Class4325(new int[] { class399.getEntityId() }));
+            this.field3039.method17469(new Class4325(class399.getEntityId()));
         }
     }
     

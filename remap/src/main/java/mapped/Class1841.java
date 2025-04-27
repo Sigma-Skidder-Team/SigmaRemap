@@ -27,7 +27,7 @@ public class Class1841 extends Class1799<Class815, Class5899<Class815>>
         else {
             field10024 = Class1841.field10023[method4792.method813()];
         }
-        ((Class1799<T, Class5899<Class815>>)this).method6559().method17569(this.field10025);
+        this.method6559().method17569(this.field10025);
         this.field10025.method17638(class7353, n2, n3, n5, n6, n7);
         this.field10025.method17564(class7351, class7352.method25214(Class6332.method18770(field10024)), n, Class1904.field10335, 1.0f, 1.0f, 1.0f, 1.0f);
     }

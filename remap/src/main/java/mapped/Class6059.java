@@ -44,7 +44,7 @@ public class Class6059<T> implements Class6058<T>
     
     @Override
     public boolean method18027(final T t) {
-        return ArrayUtils.contains((Object[])this.field24626, (Object)t);
+        return ArrayUtils.contains(this.field24626, t);
     }
     
     @Nullable

@@ -33,21 +33,21 @@ public class Class8122 extends DataFix
             opticFinder4.type().findField("BlockEntityTag");
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
-                if (!(!Objects.equals(optional.get().getSecond(), "minecraft:shulker_box"))) {
+            if (optional.isPresent()) {
+                if (Objects.equals(optional.get().getSecond(), "minecraft:shulker_box")) {
                     typed.getOptionalTyped(opticFinder2);
                     final Optional optional2;
-                    if (!(!optional2.isPresent())) {
+                    if (optional2.isPresent()) {
                         final Typed typed2 = optional2.get();
                         typed2.getOptionalTyped(opticFinder3);
                         final Optional optional3;
-                        if (!(!optional3.isPresent())) {
+                        if (optional3.isPresent()) {
                             final Typed typed3 = optional3.get();
                             final Dynamic dynamic = (Dynamic)typed3.get(DSL.remainderFinder());
                             dynamic.get("Color").asInt(0);
                             dynamic.remove("Color");
                             final int n;
-                            return typed.set(opticFinder2, typed2.set(opticFinder3, typed3.set(DSL.remainderFinder(), (Object)dynamic))).set(opticFinder, (Object)Pair.of((Object)Class9451.field40628.typeName(), (Object)Class8122.field33460[n % 16]));
+                            return typed.set(opticFinder2, typed2.set(opticFinder3, typed3.set(DSL.remainderFinder(), dynamic))).set(opticFinder, (Object)Pair.of((Object)Class9451.field40628.typeName(), (Object)Class8122.field33460[n % 16]));
                         }
                     }
                 }

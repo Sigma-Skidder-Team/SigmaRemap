@@ -25,20 +25,20 @@ public class Class4057 extends Item
     }
     
     public static void method12262(final CompoundNBT class51, final List<ITextComponent> list) {
-        list.add(new Class2259("item.minecraft.firework_star.shape." + Class2141.method8302(class51.getByte("Type")).method8301(), new Object[0]).applyTextStyle(TextFormatting.GRAY));
+        list.add(new Class2259("item.minecraft.firework_star.shape." + Class2141.method8302(class51.getByte("Type")).method8301()).applyTextStyle(TextFormatting.GRAY));
         final int[] method325 = class51.getIntArray("Colors");
         if (method325.length > 0) {
             list.add(method12263(new StringTextComponent("").applyTextStyle(TextFormatting.GRAY), method325));
         }
         final int[] method326 = class51.getIntArray("FadeColors");
         if (method326.length > 0) {
-            list.add(method12263(new Class2259("item.minecraft.firework_star.fade_to", new Object[0]).appendText(" ").applyTextStyle(TextFormatting.GRAY), method326));
+            list.add(method12263(new Class2259("item.minecraft.firework_star.fade_to").appendText(" ").applyTextStyle(TextFormatting.GRAY), method326));
         }
         if (class51.getBoolean("Trail")) {
-            list.add(new Class2259("item.minecraft.firework_star.trail", new Object[0]).applyTextStyle(TextFormatting.GRAY));
+            list.add(new Class2259("item.minecraft.firework_star.trail").applyTextStyle(TextFormatting.GRAY));
         }
         if (class51.getBoolean("Flicker")) {
-            list.add(new Class2259("item.minecraft.firework_star.flicker", new Object[0]).applyTextStyle(TextFormatting.GRAY));
+            list.add(new Class2259("item.minecraft.firework_star.flicker").applyTextStyle(TextFormatting.GRAY));
         }
     }
     
@@ -54,6 +54,6 @@ public class Class4057 extends Item
     
     private static ITextComponent method12264(final int n) {
         final Class181 method821 = Class181.method821(n);
-        return (method821 != null) ? new Class2259("item.minecraft.firework_star." + method821.method814(), new Object[0]) : new Class2259("item.minecraft.firework_star.custom_color", new Object[0]);
+        return (method821 != null) ? new Class2259("item.minecraft.firework_star." + method821.method814()) : new Class2259("item.minecraft.firework_star.custom_color");
     }
 }

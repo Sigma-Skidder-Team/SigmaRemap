@@ -885,7 +885,7 @@ public class Class2296 implements Serializable, Cloneable
             n7 -= 3;
             array3[n2 + 3] = (array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7 + 1];
             n7 -= 3;
-            array3[n2 + 0] = (array3[n2 + 0] - array[n7 + 1] * array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7 + 0];
+            array3[n2] = (array3[n2] - array[n7 + 1] * array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7];
         }
     }
     
@@ -1269,10 +1269,7 @@ public class Class2296 implements Serializable, Cloneable
     }
     
     public boolean method9115(final Class2296 class2296, final float n) {
-        boolean b = true;
-        if (Math.abs(this.field13935 - class2296.field13935) > n) {
-            b = false;
-        }
+        boolean b = !(Math.abs(this.field13935 - class2296.field13935) > n);
         if (Math.abs(this.field13936 - class2296.field13936) > n) {
             b = false;
         }
@@ -1302,7 +1299,7 @@ public class Class2296 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * 1L + Class9427.method35030(this.field13935)) + Class9427.method35030(this.field13936)) + Class9427.method35030(this.field13937)) + Class9427.method35030(this.field13938)) + Class9427.method35030(this.field13939)) + Class9427.method35030(this.field13940)) + Class9427.method35030(this.field13941)) + Class9427.method35030(this.field13942)) + Class9427.method35030(this.field13943);
+        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L + Class9427.method35030(this.field13935)) + Class9427.method35030(this.field13936)) + Class9427.method35030(this.field13937)) + Class9427.method35030(this.field13938)) + Class9427.method35030(this.field13939)) + Class9427.method35030(this.field13940)) + Class9427.method35030(this.field13941)) + Class9427.method35030(this.field13942)) + Class9427.method35030(this.field13943);
         return (int)(n ^ n >> 32);
     }
     

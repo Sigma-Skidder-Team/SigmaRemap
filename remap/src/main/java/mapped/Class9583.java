@@ -213,7 +213,7 @@ public class Class9583
         if (jsonElement == null) {
             throw new JsonSyntaxException("Missing " + str);
         }
-        return (T)jsonDeserializationContext.deserialize(jsonElement, (Type)clazz);
+        return jsonDeserializationContext.deserialize(jsonElement, clazz);
     }
     
     public static <T> T method35920(final JsonObject jsonObject, final String str, final JsonDeserializationContext jsonDeserializationContext, final Class<? extends T> clazz) {
@@ -261,7 +261,7 @@ public class Class9583
             return (T)gson.getAdapter((Class)clazz).read(jsonReader);
         }
         catch (final IOException ex) {
-            throw new JsonParseException((Throwable)ex);
+            throw new JsonParseException(ex);
         }
     }
     
@@ -273,7 +273,7 @@ public class Class9583
             return (T)gson.getAdapter(TypeToken.get(type)).read(jsonReader);
         }
         catch (final IOException ex) {
-            throw new JsonParseException((Throwable)ex);
+            throw new JsonParseException(ex);
         }
     }
     

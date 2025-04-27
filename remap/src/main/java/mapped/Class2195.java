@@ -21,7 +21,7 @@ public enum Class2195
     private static final List<Class2195> field13362;
     private final float field13363;
     
-    private Class2195(final float field13363) {
+    Class2195(final float field13363) {
         this.field13363 = field13363;
     }
     

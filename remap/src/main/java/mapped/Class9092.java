@@ -162,7 +162,7 @@ public class Class9092
     
     public List<Class9038> method32865(final List<List<Class9038>> list, final BlockPos class354) {
         final int size = list.size();
-        return (List<Class9038>)((size <= 0) ? Collections.emptyList() : list.get(this.method32858(class354).nextInt(size)));
+        return (size <= 0) ? Collections.emptyList() : list.get(this.method32858(class354).nextInt(size));
     }
     
     @Nullable

@@ -23,7 +23,7 @@ public class Class6226 extends Class6227<Class130>
         final JsonObject jsonObject2 = new JsonObject();
         Class130.method659(class130).method15236(jsonObject2, jsonSerializationContext);
         if (jsonObject2.size() > 0) {
-            jsonObject.add("parameters", (JsonElement)jsonObject2);
+            jsonObject.add("parameters", jsonObject2);
         }
     }
     

@@ -27,7 +27,7 @@ public class Class3998 extends Block
     
     public Class3998(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3998.field18018, Direction.Axis.X));
+        this.method11877(this.field17406.method32903().with(Class3998.field18018, Direction.Axis.X));
     }
     
     @Override
@@ -142,10 +142,10 @@ public class Class3998 extends Block
             case 2: {
                 switch (Class9275.field39763[class7096.get(Class3998.field18018).ordinal()]) {
                     case 1: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Direction.Axis.X);
+                        return class7096.with(Class3998.field18018, Direction.Axis.X);
                     }
                     case 2: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class3998.field18018, Direction.Axis.Z);
+                        return class7096.with(Class3998.field18018, Direction.Axis.Z);
                     }
                     default: {
                         return class7096;

@@ -68,7 +68,7 @@ public class Class5853<T extends LivingEntity> extends Class5844<T> implements C
     
     @Override
     public Iterable<Class6300> method17560() {
-        return (Iterable<Class6300>)ImmutableList.of((Object)this.field23995, (Object)this.field23996, (Object)this.field23997, (Object)this.field23998, (Object)this.field23999, (Object)this.field23994);
+        return (Iterable<Class6300>)ImmutableList.of(this.field23995, this.field23996, this.field23997, this.field23998, this.field23999, (Object)this.field23994);
     }
     
     public void method17579(final T t, final float n, final float n2, final float n3) {

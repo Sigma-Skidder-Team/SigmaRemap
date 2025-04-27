@@ -30,7 +30,7 @@ public class Class5010 extends Class5009
     
     @Override
     public boolean method15227(final Class7671 class7671, final String[] array) {
-        final TreeMap treeMap = new TreeMap((Comparator<? super K>)new Class4457(this));
+        final TreeMap treeMap = new TreeMap(new Class4457(this));
         for (final Class7671 class7672 : Class8563.method28793().method34751()) {
             final Class7906 method34752 = Class7906.method25609(Class8563.method28791().method31739(class7672.method24352()));
             if (!treeMap.containsKey(method34752)) {

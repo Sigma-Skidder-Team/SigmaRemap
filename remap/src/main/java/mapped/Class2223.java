@@ -13,7 +13,7 @@ public enum Class2223
     public String field13688;
     public String field13689;
     
-    private Class2223(final String field13688, final String field13689) {
+    Class2223(final String field13688, final String field13689) {
         this.field13688 = field13688;
         this.field13689 = field13689;
     }

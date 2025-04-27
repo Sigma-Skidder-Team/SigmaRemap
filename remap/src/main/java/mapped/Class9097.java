@@ -24,8 +24,8 @@ public class Class9097 extends DataFix
     
     public TypeRewriteRule makeRule() {
         return this.fixTypeEverywhereTyped("OptionsKeyTranslationFix", this.getInputSchema().getType(Class9451.field40615), typed -> typed.update(DSL.remainderFinder(), other -> other.getMapValues().map(map -> dynamic.createMap((Map)map.entrySet().stream().map(entry -> {
-            if (!(!entry.getKey().asString("").startsWith("key_"))) {
-                ((Dynamic)entry.getValue()).asString("");
+            if (entry.getKey().asString("").startsWith("key_")) {
+                entry.getValue().asString("");
                 final String s;
                 if (!s.startsWith("key.mouse")) {
                     if (!s.startsWith("scancode.")) {

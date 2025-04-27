@@ -44,7 +44,7 @@ public class Class4908 extends Class4825
         RenderSystem.method30067(Matrix4f.method20755(20.0, (float)(Minecraft.getInstance().window.method7692() / Minecraft.getInstance().window.method7693()), 0.5f, 1.0f));
         RenderSystem.method30057(5888);
         RenderSystem.method30058();
-        GL11.glRotated(1.0 * Math.abs(max * max2), max2, max, 0.0);
+        GL11.glRotated(Math.abs(max * max2), max2, max, 0.0);
         GL11.glTranslatef((float)(-this.x - this.field20480 / 2), (float)(-this.y - this.field20481 / 2), 0.0f);
         GL11.glDisable(2929);
         RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientColors.PALE_YELLOW.color);

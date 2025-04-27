@@ -26,7 +26,7 @@ public final class Class8249
     }
     
     public void method27353(final long n, final Class513 class513) {
-        this.field33890.removeBoolean((Object)class513);
+        this.field33890.removeBoolean(class513);
     }
     
     public void method27354(final Class513 class513) {
@@ -38,11 +38,11 @@ public final class Class8249
     }
     
     public boolean method27356(final Class513 class513) {
-        return this.field33890.getOrDefault((Object)class513, true);
+        return this.field33890.getOrDefault(class513, true);
     }
     
     public boolean method27357(final Class513 class513) {
-        return this.field33890.getBoolean((Object)class513);
+        return this.field33890.getBoolean(class513);
     }
     
     public void method27358(final long n, final long n2, final Class513 class513) {

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MathUtils
 {
-    private double field37251;
+    private final double field37251;
     public static final double field37252 = 0.10000000149011612;
     
     public MathUtils(final double field37251) {
@@ -17,7 +17,7 @@ public class MathUtils
             this.field37251 = field37251;
             return;
         }
-        throw new AssertionError((Object)"Smoothness must be between 0 and 1 (both non-inclusive)");
+        throw new AssertionError("Smoothness must be between 0 and 1 (both non-inclusive)");
     }
     
     public MathUtils() {
@@ -58,7 +58,7 @@ public class MathUtils
     
     public List<Class7202> method31032(final List<Class7202> list) {
         if (list == null) {
-            throw new AssertionError((Object)"Provided list had no reference");
+            throw new AssertionError("Provided list had no reference");
         }
         if (list.size() >= 3) {
             final Class7202 class7202 = list.get(0);

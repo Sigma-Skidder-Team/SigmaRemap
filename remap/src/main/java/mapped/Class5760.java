@@ -222,7 +222,7 @@ public class Class5760
     private static final int[] field23561;
     private static final String[] field23562;
     public Class350 field23563;
-    private File field23564;
+    private final File field23564;
     
     public Class5760(final Minecraft field23461, final File file) {
         this.field23381 = 0.5;
@@ -289,7 +289,7 @@ public class Class5760
         this.field23457 = new Class350[] { new Class350("key.hotbar.1", 49, "key.categories.inventory"), new Class350("key.hotbar.2", 50, "key.categories.inventory"), new Class350("key.hotbar.3", 51, "key.categories.inventory"), new Class350("key.hotbar.4", 52, "key.categories.inventory"), new Class350("key.hotbar.5", 53, "key.categories.inventory"), new Class350("key.hotbar.6", 54, "key.categories.inventory"), new Class350("key.hotbar.7", 55, "key.categories.inventory"), new Class350("key.hotbar.8", 56, "key.categories.inventory"), new Class350("key.hotbar.9", 57, "key.categories.inventory") };
         this.field23458 = new Class350("key.saveToolbarActivator", 67, "key.categories.creative");
         this.field23459 = new Class350("key.loadToolbarActivator", 88, "key.categories.creative");
-        this.field23460 = (Class350[])ArrayUtils.addAll((Object[])new Class350[] { this.field23446, this.field23445, this.field23435, this.field23436, this.field23437, this.field23438, this.field23439, this.field23440, this.field23441, this.field23444, this.field23442, this.field23448, this.field23449, this.field23447, this.field23450, this.field23451, this.field23452, this.field23453, this.field23454, this.field23455, this.field23443, this.field23458, this.field23459, this.field23456 }, (Object[])this.field23457);
+        this.field23460 = (Class350[])ArrayUtils.addAll(new Class350[] { this.field23446, this.field23445, this.field23435, this.field23436, this.field23437, this.field23438, this.field23439, this.field23440, this.field23441, this.field23444, this.field23442, this.field23448, this.field23449, this.field23447, this.field23450, this.field23451, this.field23452, this.field23453, this.field23454, this.field23455, this.field23443, this.field23458, this.field23459, this.field23456 }, (Object[])this.field23457);
         this.field23463 = Class2113.field12292;
         this.field23469 = "";
         this.field23471 = 70.0;
@@ -388,7 +388,7 @@ public class Class5760
         this.field23564 = new File(file, "optionsof.txt");
         this.field23383 = (int)Class6469.field25712.method19473();
         this.field23563 = new Class350("of.key.zoom", 67, "key.categories.misc");
-        Class9079.method32717(this.field23460 = (Class350[])ArrayUtils.add((Object[])this.field23460, (Object)this.field23563), new Class350[] { this.field23563 });
+        Class9079.method32717(this.field23460 = (Class350[])ArrayUtils.add(this.field23460, (Object)this.field23563), new Class350[] { this.field23563 });
         this.field23382 = 8;
         this.method17118();
         Config.method28816(this);
@@ -421,14 +421,13 @@ public class Class5760
             try (final BufferedReader reader = Files.newReader(this.field23462, Charsets.UTF_8)) {
                 reader.lines().forEach(s2 -> {
                     try {
-                        Class5760.field23380.split((CharSequence)s2).iterator();
+                        Class5760.field23380.split(s2).iterator();
                         final Iterator iterator2;
                         class55.method306(iterator2.next(), iterator2.next());
                     }
                     catch (final Exception ex3) {
-                        Class5760.field23377.warn("Skipping bad option: {}", (Object)s2);
+                        Class5760.field23377.warn("Skipping bad option: {}", s2);
                     }
-                    return;
                 });
             }
             final CompoundNBT method17119 = this.method17119(class51);
@@ -562,13 +561,13 @@ public class Class5760
                         this.field23408 = Class323.method996(Integer.parseInt(method17120));
                     }
                     if ("resourcePacks".equals(s)) {
-                        this.field23387 = (List<String>)Class9583.method35927(Class5760.field23378, method17120, Class5760.field23379);
+                        this.field23387 = Class9583.method35927(Class5760.field23378, method17120, Class5760.field23379);
                         if (this.field23387 == null) {
                             this.field23387 = Lists.newArrayList();
                         }
                     }
                     if ("incompatibleResourcePacks".equals(s)) {
-                        this.field23388 = (List<String>)Class9583.method35927(Class5760.field23378, method17120, Class5760.field23379);
+                        this.field23388 = Class9583.method35927(Class5760.field23378, method17120, Class5760.field23379);
                         if (this.field23388 == null) {
                             this.field23388 = Lists.newArrayList();
                         }
@@ -679,14 +678,14 @@ public class Class5760
                     }
                 }
                 catch (final Exception ex) {
-                    Class5760.field23377.warn("Skipping bad option: {}:{}", (Object)s, (Object)method17120);
+                    Class5760.field23377.warn("Skipping bad option: {}:{}", s, method17120);
                     ex.printStackTrace();
                 }
             }
             Class350.method1055();
         }
         catch (final Exception ex2) {
-            Class5760.field23377.error("Failed to load options", (Throwable)ex2);
+            Class5760.field23377.error("Failed to load options", ex2);
         }
         this.method17134();
     }
@@ -709,7 +708,7 @@ public class Class5760
     
     public void method17121() {
         if (Class9570.field41187.method22605()) {
-            if (Class9570.method35812(Class9570.field41187, new Object[0])) {
+            if (Class9570.method35812(Class9570.field41187)) {
                 return;
             }
         }
@@ -759,8 +758,8 @@ public class Class5760
                     break;
                 }
             }
-            printWriter.println("resourcePacks:" + Class5760.field23378.toJson((Object)this.field23387));
-            printWriter.println("incompatibleResourcePacks:" + Class5760.field23378.toJson((Object)this.field23388));
+            printWriter.println("resourcePacks:" + Class5760.field23378.toJson(this.field23387));
+            printWriter.println("incompatibleResourcePacks:" + Class5760.field23378.toJson(this.field23388));
             printWriter.println("lastServer:" + this.field23469);
             printWriter.println("lang:" + this.field23476);
             printWriter.println("chatVisibility:" + this.field23389.method8132());
@@ -793,7 +792,7 @@ public class Class5760
             for (final Class350 class350 : this.field23460) {
                 if (Class9570.field41347.method22605()) {
                     final String string = "key_" + class350.method1060() + ":" + class350.method1070();
-                    final Object method35826 = Class9570.method35826(class350, Class9570.field41347, new Object[0]);
+                    final Object method35826 = Class9570.method35826(class350, Class9570.field41347);
                     printWriter.println((method35826 != Class9570.method35827(Class9570.field41375)) ? (string + ":" + method35826) : string);
                 }
                 else {
@@ -808,7 +807,7 @@ public class Class5760
             }
         }
         catch (final Exception ex) {
-            Class5760.field23377.error("Failed to save options", (Throwable)ex);
+            Class5760.field23377.error("Failed to save options", ex);
         }
         this.method17135();
         this.method17124();
@@ -1261,24 +1260,24 @@ public class Class5760
     }
     
     public String method17133(final Class6469 class6469) {
-        String str = Class8822.method30773(class6469.method19366(), new Object[0]) + ": ";
+        String str = Class8822.method30773(class6469.method19366()) + ": ";
         if (str == null) {
             str = class6469.method19366();
         }
         if (class6469 == Class6469.field25717) {
             final int i = (int)Class6469.field25717.method19476(this);
-            String str2 = Class8822.method30773("of.options.renderDistance.tiny", new Object[0]);
+            String str2 = Class8822.method30773("of.options.renderDistance.tiny");
             int n = 2;
             if (i >= 4) {
-                str2 = Class8822.method30773("of.options.renderDistance.short", new Object[0]);
+                str2 = Class8822.method30773("of.options.renderDistance.short");
                 n = 4;
             }
             if (i >= 8) {
-                str2 = Class8822.method30773("of.options.renderDistance.normal", new Object[0]);
+                str2 = Class8822.method30773("of.options.renderDistance.normal");
                 n = 8;
             }
             if (i >= 16) {
-                str2 = Class8822.method30773("of.options.renderDistance.far", new Object[0]);
+                str2 = Class8822.method30773("of.options.renderDistance.far");
                 n = 16;
             }
             if (i >= 32) {
@@ -1298,7 +1297,7 @@ public class Class5760
             if (n2 > 0) {
                 string = str2 + "+";
             }
-            return str + i + " " + string + "";
+            return str + i + " " + string;
         }
         if (class6469 == Class6469.field25750) {
             switch (this.field23477) {
@@ -1664,7 +1663,7 @@ public class Class5760
                                         if (method19476 == 0.0) {
                                             return str + Class4647.method13876("of.options.framerateLimit.vsync");
                                         }
-                                        return (method19476 == Class6469.field25712.method19473()) ? (str + Class8822.method30773("options.framerateLimit.max", new Object[0])) : (str + (int)method19476 + " fps");
+                                        return (method19476 == Class6469.field25712.method19473()) ? (str + Class8822.method30773("options.framerateLimit.max")) : (str + (int)method19476 + " fps");
                                     }
                                     else if (class6469 == Class6469.field25820) {
                                         if (this.field23528 == 3) {
@@ -1681,7 +1680,7 @@ public class Class5760
                                         }
                                         if (class6469 instanceof Class6470) {
                                             final double method19477 = ((Class6470)class6469).method19476(this);
-                                            return (method19477 == 0.0) ? (str + Class8822.method30773("options.off", new Object[0])) : (str + (int)(method19477 * 100.0) + "%");
+                                            return (method19477 == 0.0) ? (str + Class8822.method30773("options.off")) : (str + (int)(method19477 * 100.0) + "%");
                                         }
                                         return null;
                                     }
@@ -2239,7 +2238,7 @@ public class Class5760
         if (n < 0 || n >= array.length) {
             n = 0;
         }
-        return Class8822.method30773(array[n], new Object[0]);
+        return Class8822.method30773(array[n]);
     }
     
     private void method17145() {
@@ -2273,15 +2272,15 @@ public class Class5760
                 class1921 = class1920.method7612("file/" + str);
             }
             if (class1921 == null) {
-                Class5760.field23377.warn("Removed resource pack {} from options because it doesn't seem to exist anymore", (Object)str);
+                Class5760.field23377.warn("Removed resource pack {} from options because it doesn't seem to exist anymore", str);
                 iterator.remove();
             }
             else if (!class1921.method7619().method8043() && !this.field23388.contains(str)) {
-                Class5760.field23377.warn("Removed resource pack {} from options because it is no longer compatible", (Object)str);
+                Class5760.field23377.warn("Removed resource pack {} from options because it is no longer compatible", str);
                 iterator.remove();
             }
             else if (class1921.method7619().method8043() && this.field23388.contains(str)) {
-                Class5760.field23377.info("Removed resource pack {} from incompatibility list because it's now compatible", (Object)str);
+                Class5760.field23377.info("Removed resource pack {} from incompatibility list because it's now compatible", str);
                 this.field23388.remove(str);
             }
             else {
@@ -2298,6 +2297,6 @@ public class Class5760
         field23380 = Splitter.on(':').limit(2);
         field23560 = new int[] { 0, 1, 4, 2 };
         field23561 = new int[] { 3, 1, 2 };
-        field23562 = new String[] { Class5760.\u4407\u74eb\uc854\u772f\u6c62\u309d[218], "options.graphics.fast", "options.graphics.fancy" };
+        field23562 = new String[] { Class5760.\u4407\u74eb\uc854\u772f\u6c62\u309d[218], "options.graphics.fast", "options.graphics.fancy" }
     }
 }

@@ -18,7 +18,7 @@ public abstract class Class5033 extends Class5035
     
     @Override
     public Pair<String, Typed<?>> method15324(final String s, final Typed<?> typed) {
-        final Pair<String, Dynamic<?>> method15323 = this.method15323(s, (Dynamic<?>)typed.getOrCreate(DSL.remainderFinder()));
+        final Pair<String, Dynamic<?>> method15323 = this.method15323(s, typed.getOrCreate(DSL.remainderFinder()));
         return (Pair<String, Typed<?>>)Pair.of(method15323.getFirst(), (Object)typed.set(DSL.remainderFinder(), method15323.getSecond()));
     }
     

@@ -31,11 +31,11 @@ public class Class119 implements Predicate<Class7990>
             if (method26066 == null) {
                 return false;
             }
-            final Comparable comparable = (Comparable)method26066.parseValue((String)entry.getValue()).orElse((Object)null);
+            final Comparable comparable = method26066.parseValue((String)entry.getValue()).orElse(null);
             if (comparable == null) {
                 return false;
             }
-            if (((StateHolder<Object, Object>)method26065).get(method26066) == comparable) {
+            if (method26065.get(method26066) == comparable) {
                 continue;
             }
             return false;

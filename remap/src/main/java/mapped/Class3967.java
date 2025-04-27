@@ -66,7 +66,7 @@ public class Class3967 extends Block
     public int method12104(final BlockState class7096) {
         int n = 0;
         for (int i = 0; i < Class3967.field17920.length; ++i) {
-            if (class7096.get((IProperty<Boolean>)Class3967.field17927.get(Class3967.field17920[i]))) {
+            if (class7096.get(Class3967.field17927.get(Class3967.field17920[i]))) {
                 n |= 1 << i;
             }
         }

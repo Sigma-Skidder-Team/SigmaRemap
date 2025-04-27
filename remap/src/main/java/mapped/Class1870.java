@@ -64,6 +64,6 @@ public class Class1870 extends Class1868
     }
     
     static {
-        field10200 = (Set)ImmutableSet.of((Object)Class7102.field27641, (Object)Class7102.field27674, (Object)Class7102.field27673, (Object)Class7102.field27672, (Object)Class7102.field27675);
+        field10200 = (Set)ImmutableSet.of(Class7102.field27641, Class7102.field27674, Class7102.field27673, Class7102.field27672, (Object)Class7102.field27675);
     }
 }

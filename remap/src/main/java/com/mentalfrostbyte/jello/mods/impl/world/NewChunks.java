@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class NewChunks extends Module
 {
-    private ArrayList<ChunkPos> field15875;
-    private ArrayList<ChunkPos> field15876;
+    private final ArrayList<ChunkPos> field15875;
+    private final ArrayList<ChunkPos> field15876;
     
     public NewChunks() {
         super(Category.WORLD, "NewChunks", "Detects new chunks on non vanilla servers");

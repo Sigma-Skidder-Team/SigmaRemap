@@ -13,7 +13,7 @@ public class Class7002 implements Class7003
     private static String[] field27313;
     private long field27314;
     private long field27315;
-    private Object2LongOpenHashMap<String> field27316;
+    private final Object2LongOpenHashMap<String> field27316;
     
     private Class7002() {
         this.field27316 = (Object2LongOpenHashMap<String>)new Object2LongOpenHashMap();

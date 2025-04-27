@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface Class7536
 {
-    public static final Class7536 field29918 = new Class7537();
+    Class7536 field29918 = new Class7537();
     
     void method23616(final Class8846 p0, final List<Class8713> p1);
     

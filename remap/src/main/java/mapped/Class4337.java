@@ -35,9 +35,9 @@ public class Class4337 implements IPacket<IClientPlayNetHandler>
         final int method29502 = class8654.readVarInt();
         final ArrayList arrayListWithCapacity = Lists.newArrayListWithCapacity(method29502);
         for (int i = 0; i < method29502; ++i) {
-            arrayListWithCapacity.add(new Suggestion(between, class8654.method29513(32767), (Message)(class8654.readBoolean() ? class8654.method29497() : null)));
+            arrayListWithCapacity.add(new Suggestion(between, class8654.method29513(32767), class8654.readBoolean() ? class8654.method29497() : null));
         }
-        this.field19420 = new Suggestions(between, (List)arrayListWithCapacity);
+        this.field19420 = new Suggestions(between, arrayListWithCapacity);
     }
     
     @Override

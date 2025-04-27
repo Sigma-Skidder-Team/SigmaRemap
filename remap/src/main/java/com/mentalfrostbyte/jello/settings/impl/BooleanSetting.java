@@ -45,9 +45,9 @@ public class BooleanSetting extends Setting<Boolean> {
 
     public Boolean method15208() {
         if (!this.field21516) {
-            return (Boolean) this.currentValue;
+            return this.currentValue;
         }
-        return (Boolean) this.value;
+        return this.value;
     }
 
     @Override

@@ -37,7 +37,7 @@ public class Class5961 extends Class5960 implements JsonSerializer<Class7269>, J
         jsonObject2.addProperty("name", class7269.method22267());
         jsonObject2.addProperty("objective", class7269.method22268());
         jsonObject2.addProperty("value", class7269.method22269());
-        jsonObject.add("score", (JsonElement)jsonObject2);
-        return (JsonElement)jsonObject;
+        jsonObject.add("score", jsonObject2);
+        return jsonObject;
     }
 }

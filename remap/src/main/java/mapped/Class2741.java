@@ -33,7 +33,7 @@ public class Class2741 extends Class2466
             if (method19536 != null) {
                 final Iterator<Class7803<Integer, Class5207>> iterator = method19536.iterator();
                 while (iterator.hasNext()) {
-                    method19537.method16334(((Class7803<X, Class5207>)iterator.next()).method25204());
+                    method19537.method16334(iterator.next().method25204());
                 }
                 class8699.method29821(Class5260.field22312, 0, method19535);
             }

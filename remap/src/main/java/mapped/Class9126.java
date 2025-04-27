@@ -17,21 +17,21 @@ public class Class9126
     }
     
     public static int method33112(final String s) {
-        if (Class9126.field38680.containsKey((Object)s)) {
-            return 0x17F0000 | ((int)Class9126.field38680.get((Object)s) & 0xFFFF);
+        if (Class9126.field38680.containsKey(s)) {
+            return 0x17F0000 | (Class9126.field38680.get(s) & 0xFFFF);
         }
         return -1;
     }
     
     public static Optional<String> method33113(final int n) {
         if (n >> 16 == 383) {
-            return (Optional<String>)Optional.fromNullable(Class9126.field38680.inverse().get((Object)(n & 0xFFFF)));
+            return Optional.fromNullable(Class9126.field38680.inverse().get(n & 0xFFFF));
         }
-        return (Optional<String>)Optional.absent();
+        return Optional.absent();
     }
     
     static {
-        field38680 = (BiMap)HashBiMap.create();
+        field38680 = HashBiMap.create();
         method33111("minecraft:bat");
         method33111("minecraft:blaze");
         method33111("minecraft:cave_spider");

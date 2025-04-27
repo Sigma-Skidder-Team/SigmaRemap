@@ -48,7 +48,7 @@ public class Class8282
     @Nullable
     public Class7646 method27520(final long n) {
         RenderSystem.method29989(RenderSystem::method29990);
-        return (Class7646)this.field34070.get(n);
+        return this.field34070.get(n);
     }
     
     @Nullable
@@ -87,7 +87,7 @@ public class Class8282
     
     public void method27523() {
         RenderSystem.method29989(RenderSystem::method29984);
-        final GLFWMonitorCallback glfwSetMonitorCallback = GLFW.glfwSetMonitorCallback((GLFWMonitorCallbackI)null);
+        final GLFWMonitorCallback glfwSetMonitorCallback = GLFW.glfwSetMonitorCallback(null);
         if (glfwSetMonitorCallback != null) {
             glfwSetMonitorCallback.free();
         }

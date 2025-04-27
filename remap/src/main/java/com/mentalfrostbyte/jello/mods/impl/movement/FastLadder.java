@@ -18,7 +18,7 @@ public class FastLadder extends Module
     public FastLadder() {
         super(Category.MOVEMENT, "FastLadder", "Allows you to climp ladders faster");
         this.addSetting(new NumberSetting("Motion", "Climbing motion", 0.35f, Float.class, 0.2f, 1.0f, 0.05f));
-        this.addSetting(new StringSetting("Down mode", "The way you will go down on ladders", 0, new String[] { "None", "OnSneak", "Always" }));
+        this.addSetting(new StringSetting("Down mode", "The way you will go down on ladders", 0, "None", "OnSneak", "Always"));
     }
     
     @EventListener

@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.commands.CommandException;
 public class Class6694 extends Class6693
 {
     public Class6694() {
-        super("damage", "Damages you", new String[] { "dmg" });
+        super("damage", "Damages you", "dmg");
         this.method20351("hearts");
     }
     

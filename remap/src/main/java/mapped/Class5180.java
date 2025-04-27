@@ -17,7 +17,7 @@ public class Class5180 extends Class5174
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40613, () -> DSL.fields("Level", DSL.optionalFields("Entities", DSL.list(Class9451.field40625.in(schema2)), "TileEntities", DSL.list(Class9451.field40621.in(schema2)), "TileTicks", DSL.list(DSL.fields("i", Class9451.field40627.in(schema2))), "Sections", DSL.list(DSL.optionalFields("Palette", DSL.list(Class9451.field40623.in(schema2)))))));
     }
 }

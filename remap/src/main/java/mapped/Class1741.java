@@ -75,7 +75,7 @@ public class Class1741 implements Class1737
             return Class1846.method6638(Class2235.field13729, method19933.method5887());
         }
         catch (final IOException ex) {
-            Class1741.field9707.error("Couldn't load texture {}", (Object)class1932, (Object)ex);
+            Class1741.field9707.error("Couldn't load texture {}", class1932, ex);
             return null;
         }
     }

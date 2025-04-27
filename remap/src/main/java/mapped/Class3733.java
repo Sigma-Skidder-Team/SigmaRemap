@@ -5,6 +5,7 @@
 package mapped;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class Class3733 extends Class3703
 {
@@ -23,7 +24,7 @@ public class Class3733 extends Class3703
         else {
             super.method11381(class9131);
             this.field17128 = Class8805.method30719(class9131.method33137(2));
-            this.field17129 = new String(class9131.method33142((int)this.method11491(class9131), 0), "UTF-8");
+            this.field17129 = new String(class9131.method33142((int)this.method11491(class9131), 0), StandardCharsets.UTF_8);
         }
     }
     

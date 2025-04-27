@@ -62,7 +62,7 @@ public class Class4647
             if (s.charAt(0) == '#') {
                 continue;
             }
-            final String[] array = (String[])Iterables.toArray(Class4647.field20117.split((CharSequence)s), (Class)String.class);
+            final String[] array = Iterables.toArray(Class4647.field20117.split(s), String.class);
             if (array == null) {
                 continue;
             }
@@ -74,32 +74,32 @@ public class Class4647
     }
     
     public static String method13876(final String s) {
-        return Class8822.method30773(s, new Object[0]);
+        return Class8822.method30773(s);
     }
     
     public static String method13877(final String anObject, final String s) {
-        final String method30773 = Class8822.method30773(anObject, new Object[0]);
+        final String method30773 = Class8822.method30773(anObject);
         return (method30773 != null && !method30773.equals(anObject)) ? method30773 : s;
     }
     
     public static String method13878() {
-        return Class8822.method30773("options.on", new Object[0]);
+        return Class8822.method30773("options.on");
     }
     
     public static String method13879() {
-        return Class8822.method30773("options.off", new Object[0]);
+        return Class8822.method30773("options.off");
     }
     
     public static String method13880() {
-        return Class8822.method30773("options.graphics.fast", new Object[0]);
+        return Class8822.method30773("options.graphics.fast");
     }
     
     public static String method13881() {
-        return Class8822.method30773("options.graphics.fancy", new Object[0]);
+        return Class8822.method30773("options.graphics.fancy");
     }
     
     public static String method13882() {
-        return Class8822.method30773("generator.default", new Object[0]);
+        return Class8822.method30773("generator.default");
     }
     
     static {

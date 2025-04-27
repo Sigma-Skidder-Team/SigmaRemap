@@ -9,5 +9,5 @@ public enum Class2121
     field12366, 
     field12367, 
     field12368, 
-    field12369;
+    field12369
 }

@@ -40,11 +40,11 @@ public class Class8676 extends DataFix
             DSL.fieldFinder("TileTicks", type3.findFieldType("TileTicks"));
             return typed.updateTyped(opticFinder, type2, typed2 -> {
                 typed2.getOptionalTyped(opticFinder2).map(Typed::write).flatMap(Dynamic::asStreamOpt);
-                final Dynamic dynamic = (Dynamic)typed2.get(DSL.remainderFinder());
-                final boolean b = dynamic.get("TerrainPopulated").asBoolean((boolean)(0 != 0)) && (!dynamic.get("LightPopulated").asNumber().isPresent() || dynamic.get("LightPopulated").asBoolean((boolean)(0 != 0)));
+                final Dynamic dynamic = typed2.get(DSL.remainderFinder());
+                final boolean b = dynamic.get("TerrainPopulated").asBoolean(0 != 0) && (!dynamic.get("LightPopulated").asNumber().isPresent() || dynamic.get("LightPopulated").asBoolean(0 != 0));
                 dynamic.set("Status", dynamic.createString(b ? "mobs_spawned" : "empty"));
                 final Dynamic dynamic2;
-                dynamic2.set("hasLegacyStructureData", dynamic2.createBoolean((boolean)(1 != 0)));
+                dynamic2.set("hasLegacyStructureData", dynamic2.createBoolean(1 != 0));
                 Dynamic write;
                 if (!b) {
                     final Dynamic dynamic3;
@@ -54,7 +54,7 @@ public class Class8676 extends DataFix
                     Dynamic dynamic3 = null;
                     dynamic3.get("Biomes").asByteBufferOpt();
                     final Optional optional;
-                    if (!(!optional.isPresent())) {
+                    if (optional.isPresent()) {
                         final ByteBuffer byteBuffer = optional.get();
                         int[] array;
                         int i = 0;
@@ -67,7 +67,7 @@ public class Class8676 extends DataFix
                     }
                     final List list = IntStream.range(0, 16).mapToObj(p1 -> dynamic4.createList((Stream)Stream.empty())).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList());
                     final Optional optional2;
-                    if (!(!optional2.isPresent())) {
+                    if (optional2.isPresent()) {
                         optional2.get().forEach(dynamic6 -> {
                             dynamic6.get("x").asInt(0);
                             dynamic6.get("y").asInt(0);
@@ -76,7 +76,7 @@ public class Class8676 extends DataFix
                             list2.set(n2 >> 4, list2.get(n2 >> 4).merge(dynamic5.createShort(method29711(n3, n2, dynamic6.get("z").asInt(0)))));
                             return;
                         });
-                        dynamic3 = dynamic3.set("ToBeTicked", dynamic3.createList((Stream)list.stream()));
+                        dynamic3 = dynamic3.set("ToBeTicked", dynamic3.createList(list.stream()));
                     }
                     write = typed2.set(DSL.remainderFinder(), (Object)dynamic3).write();
                 }

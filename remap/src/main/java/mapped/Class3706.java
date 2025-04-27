@@ -20,7 +20,7 @@ public class Class3706 extends Class3703
     private double field17050;
     private double field17051;
     private double field17052;
-    private double[] field17053;
+    private final double[] field17053;
     
     public Class3706() {
         super("Track Header Box");

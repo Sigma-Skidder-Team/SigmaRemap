@@ -21,7 +21,7 @@ public final class Class9227
     public Object method34029(final String s) {
         if (this.field39572 != null) {
             try {
-                final Object invoke = this.field39572.invoke(null, new Object[0]);
+                final Object invoke = this.field39572.invoke(null);
                 this.field39573.invoke(invoke, s);
                 return invoke;
             }
@@ -34,7 +34,7 @@ public final class Class9227
         boolean b = false;
         if (obj != null) {
             try {
-                this.field39574.invoke(obj, new Object[0]);
+                this.field39574.invoke(obj);
                 b = true;
             }
             catch (final Exception ex) {}
@@ -48,9 +48,9 @@ public final class Class9227
         Method method3;
         try {
             final Class<?> forName = Class.forName("dalvik.system.CloseGuard");
-            method = forName.getMethod("get", (Class[])new Class[0]);
+            method = forName.getMethod("get", new Class[0]);
             method2 = forName.getMethod("open", String.class);
-            method3 = forName.getMethod("warnIfOpen", (Class[])new Class[0]);
+            method3 = forName.getMethod("warnIfOpen", new Class[0]);
         }
         catch (final Exception ex) {
             method = null;

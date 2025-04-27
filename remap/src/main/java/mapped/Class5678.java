@@ -15,7 +15,7 @@ public class Class5678 extends Class5611
     
     @Override
     public void method16922() {
-        this.method16925(Realms.method25379("mco.news", new Object[0]));
+        this.method16925(Realms.method25379("mco.news"));
     }
     
     @Override

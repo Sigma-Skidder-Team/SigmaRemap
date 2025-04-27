@@ -7,8 +7,8 @@ package mapped;
 public class Class2425 implements Class2422
 {
     private static final float field14338 = 1.0E-10f;
-    private Class8031 field14339;
-    private Class8031 field14340;
+    private final Class8031 field14339;
+    private final Class8031 field14340;
     private boolean field14341;
     
     public Class2425() {
@@ -84,9 +84,7 @@ public class Class2425 implements Class2422
         final float n23 = n11 * n20 - n12 * n19;
         if (n21 >= 0.0f) {
             if (n23 >= 0.0f) {
-                if (n22 >= 0.0f) {
-                    return true;
-                }
+                return n22 >= 0.0f;
             }
         }
         return false;

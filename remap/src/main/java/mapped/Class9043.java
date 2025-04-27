@@ -84,7 +84,7 @@ public class Class9043
             throw Class6886.field27004.create();
         }
         if (method32511.size() <= 1) {
-            return (Entity)method32511.get(0);
+            return method32511.get(0);
         }
         throw Class6886.field27001.create();
     }
@@ -132,7 +132,7 @@ public class Class9043
             list.addAll(class1849.method6881(this.field38281, predicate));
         }
         else {
-            list.addAll((Collection<? extends Entity>)class1849.method6738(this.field38281, this.field38276.offset(class1850), predicate));
+            list.addAll(class1849.method6738(this.field38281, this.field38276.offset(class1850), predicate));
         }
     }
     

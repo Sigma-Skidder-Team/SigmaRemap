@@ -42,9 +42,9 @@ public class Class6481 extends Class6480
         final ByteBuf wrappedBuffer = Unpooled.wrappedBuffer(new byte[2048]);
         wrappedBuffer.resetWriterIndex();
         try {
-            Class8097.method26597(class51, (DataOutput)new ByteBufOutputStream(wrappedBuffer));
+            Class8097.method26597(class51, new ByteBufOutputStream(wrappedBuffer));
             wrappedBuffer.writeByte(0);
-            return (Class74)Class8089.method26578((InputStream)new ByteBufInputStream(wrappedBuffer), false);
+            return (Class74)Class8089.method26578(new ByteBufInputStream(wrappedBuffer), false);
         }
         catch (final IOException ex) {
             ex.printStackTrace();

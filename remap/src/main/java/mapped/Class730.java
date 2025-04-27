@@ -17,7 +17,7 @@ public class Class730 extends Screen
     private Class7343 field3984;
     
     public Class730(final Class497 field3981) {
-        super(new Class2259("sign.edit", new Object[0]));
+        super(new Class2259("sign.edit"));
         this.field3980 = new Class5902();
         this.field3981 = field3981;
     }
@@ -25,7 +25,7 @@ public class Class730 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method4031()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120, 200, 20, Class8822.method30773("gui.done"), class654 -> this.method4031()));
         this.field3981.method2524(false);
         this.field3984 = new Class7343(this.minecraft, () -> this.field3981.method2520(this.field3983).getString(), s -> this.field3981.method2521(this.field3983, new StringTextComponent(s)), 90);
     }
@@ -114,7 +114,7 @@ public class Class730 extends Screen
         final String[] array = new String[4];
         for (int i = 0; i < array.length; ++i) {
             array[i] = this.field3981.method2522(i, class7353 -> {
-                Class8936.method31697(class7353, 90, this.minecraft.fontRenderer, (boolean)(0 != 0), (boolean)(1 != 0));
+                Class8936.method31697(class7353, 90, this.minecraft.fontRenderer, 0 != 0, 1 != 0);
                 final List list;
                 return list.isEmpty() ? "" : list.get(0).method8461();
             });

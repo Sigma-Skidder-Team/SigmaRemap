@@ -79,15 +79,14 @@ public class Util
                 return class904;
             }, (thread, cause) -> {
                 pauseDevMode(cause);
-                if (!(!(cause instanceof CompletionException))) {
+                if (cause instanceof CompletionException) {
                     cause = cause.getCause();
                 }
-                if (!(!(cause instanceof ReportedException))) {
+                if (cause instanceof ReportedException) {
                     Class9280.method34259(((ReportedException)cause).method9500().method24414());
                     System.exit(-1);
                 }
                 Util.field34269.error(String.format("Caught exception in thread %s", thread), cause);
-                return;
             }, true);
         }
         else {
@@ -218,13 +217,12 @@ public class Util
                     completableFuture2.completeExceptionally(ex);
                 }
             });
-            return;
         });
-        return (CompletableFuture<List<V>>)CompletableFuture.allOf((CompletableFuture<?>[])cfs).applyToEither((CompletionStage<? extends Void>)other, p1 -> list4);
+        return CompletableFuture.allOf(cfs).applyToEither((CompletionStage<? extends Void>)other, p1 -> list4);
     }
     
     public static <T> Stream<T> method27854(final Optional<? extends T> optional) {
-        return (Stream<T>)(optional.isPresent() ? Stream.of(optional.get()) : Stream.empty());
+        return optional.isPresent() ? Stream.of(optional.get()) : Stream.empty();
     }
     
     public static <T> Optional<T> method27855(final Optional<T> optional, final Consumer<T> consumer, final Runnable runnable) {
@@ -246,12 +244,12 @@ public class Util
     }
     
     public static <T> Dynamic<T> method27858(final String s, final UUID uuid, final Dynamic<T> dynamic) {
-        return (Dynamic<T>)dynamic.set(s + "Most", dynamic.createLong(uuid.getMostSignificantBits())).set(s + "Least", dynamic.createLong(uuid.getLeastSignificantBits()));
+        return dynamic.set(s + "Most", dynamic.createLong(uuid.getMostSignificantBits())).set(s + "Least", dynamic.createLong(uuid.getLeastSignificantBits()));
     }
     
     public static <T extends Throwable> T pauseDevMode(final T t) {
         if (Class9528.field41021) {
-            Util.field34269.error("Trying to throw a fatal exception, pausing in IDE", (Throwable)t);
+            Util.field34269.error("Trying to throw a fatal exception, pausing in IDE", t);
             try {
                 while (true) {
                     Thread.sleep(1000L);

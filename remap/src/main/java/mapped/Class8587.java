@@ -35,14 +35,14 @@ public class Class8587<T>
     public Class8587(final String field36082, final int field36083) {
         this.field36080 = IntStream.range(0, Class8587.field36079).mapToObj(p0 -> new Long2ObjectLinkedOpenHashMap()).collect((Collector<? super Object, ?, List<Long2ObjectLinkedOpenHashMap<List<Optional<T>>>>>)Collectors.toList());
         this.field36081 = Class8587.field36079;
-        this.field36083 = (LongSet)new LongOpenHashSet();
+        this.field36083 = new LongOpenHashSet();
         this.field36082 = field36082;
         this.field36084 = field36083;
     }
     
     public void method29074(final int n, final ChunkPos class7859, final int b) {
         if (n < Class8587.field36079) {
-            final List list = (List)this.field36080.get(n).remove(class7859.method25422());
+            final List list = this.field36080.get(n).remove(class7859.method25422());
             if (n == this.field36081) {
                 while (this.field36081 < Class8587.field36079) {
                     if (!this.field36080.get(this.field36081).isEmpty()) {
@@ -53,7 +53,7 @@ public class Class8587<T>
             }
             if (list != null) {
                 if (!list.isEmpty()) {
-                    ((List)this.field36080.get(b).computeIfAbsent(class7859.method25422(), p0 -> Lists.newArrayList())).addAll(list);
+                    this.field36080.get(b).computeIfAbsent(class7859.method25422(), p0 -> Lists.newArrayList()).addAll(list);
                     this.field36081 = Math.min(this.field36081, b);
                 }
             }
@@ -61,7 +61,7 @@ public class Class8587<T>
     }
     
     public void method29075(final Optional<T> optional, final long n, final int b) {
-        ((List)this.field36080.get(b).computeIfAbsent(n, p0 -> Lists.newArrayList())).add(optional);
+        this.field36080.get(b).computeIfAbsent(n, p0 -> Lists.newArrayList()).add(optional);
         this.field36081 = Math.min(this.field36081, b);
     }
     
@@ -104,7 +104,7 @@ public class Class8587<T>
             while (this.field36081 < Class8587.field36079 && this.field36080.get(this.field36081).isEmpty()) {
                 ++this.field36081;
             }
-            return list.stream().map(optional -> optional.map(Either::left).orElseGet(() -> Either.right((Object)this.method29077(n))));
+            return list.stream().map(optional -> optional.map(Either::left).orElseGet(() -> Either.right(this.method29077(n))));
         }
         return null;
     }
@@ -116,7 +116,7 @@ public class Class8587<T>
     
     @VisibleForTesting
     public LongSet method29079() {
-        return (LongSet)new LongOpenHashSet((LongCollection)this.field36083);
+        return new LongOpenHashSet(this.field36083);
     }
     
     static {

@@ -102,12 +102,12 @@ public abstract class Class4469 extends Class4473
     
     public void method13417(final Class1851 class1851, final MutableBoundingBox class1852, final int n, final int n2, final boolean b) {
         if (!b) {
-            this.method13444(class1851, class1852, n + 0, 0, n2 + 0, n + 8 - 1, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
+            this.method13444(class1851, class1852, n, 0, n2, n + 8 - 1, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
         }
         else {
-            this.method13444(class1851, class1852, n + 0, 0, n2 + 0, n + 2, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
-            this.method13444(class1851, class1852, n + 5, 0, n2 + 0, n + 8 - 1, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
-            this.method13444(class1851, class1852, n + 3, 0, n2 + 0, n + 4, 0, n2 + 2, Class4469.field19829, Class4469.field19829, false);
+            this.method13444(class1851, class1852, n, 0, n2, n + 2, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
+            this.method13444(class1851, class1852, n + 5, 0, n2, n + 8 - 1, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
+            this.method13444(class1851, class1852, n + 3, 0, n2, n + 4, 0, n2 + 2, Class4469.field19829, Class4469.field19829, false);
             this.method13444(class1851, class1852, n + 3, 0, n2 + 5, n + 4, 0, n2 + 8 - 1, Class4469.field19829, Class4469.field19829, false);
             this.method13444(class1851, class1852, n + 3, 0, n2 + 2, n + 4, 0, n2 + 2, Class4469.field19830, Class4469.field19830, false);
             this.method13444(class1851, class1852, n + 3, 0, n2 + 5, n + 4, 0, n2 + 5, Class4469.field19830, Class4469.field19830, false);
@@ -158,7 +158,7 @@ public abstract class Class4469 extends Class4473
         field19832 = Class4469.field19830;
         field19833 = Blocks.field29528.getDefaultState();
         field19834 = Blocks.field29173.getDefaultState();
-        field19835 = (Set)ImmutableSet.builder().add((Object) Blocks.field29330).add((Object) Blocks.field29548).add((Object) Blocks.BLUE_ICE).add((Object)Class4469.field19834.getBlock()).build();
+        field19835 = (Set)ImmutableSet.builder().add(Blocks.field29330).add(Blocks.field29548).add(Blocks.BLUE_ICE).add(Class4469.field19834.getBlock()).build();
         field19836 = method13414(2, 0, 0);
         field19837 = method13414(2, 2, 0);
         field19838 = method13414(0, 1, 0);

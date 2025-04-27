@@ -25,9 +25,7 @@ public class Class7728 extends Class7727
     public boolean method24670() {
         if (!this.field30739.method4665()) {
             if (!this.field30739.method1814()) {
-                if (!this.field30739.method4670() & !this.field30739.method4656()) {
-                    return true;
-                }
+                return !this.field30739.method4670() & !this.field30739.method4656();
             }
         }
         return false;

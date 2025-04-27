@@ -192,9 +192,7 @@ public class AxisAlignedBB
                 if (this.minY < n5) {
                     if (this.maxY > n2) {
                         if (this.minZ < n6) {
-                            if (this.maxZ > n3) {
-                                return true;
-                            }
+                            return this.maxZ > n3;
                         }
                     }
                 }
@@ -217,9 +215,7 @@ public class AxisAlignedBB
                 if (n2 >= this.minY) {
                     if (n2 < this.maxY) {
                         if (n3 >= this.minZ) {
-                            if (n3 < this.maxZ) {
-                                return true;
-                            }
+                            return n3 < this.maxZ;
                         }
                     }
                 }
@@ -340,9 +336,7 @@ public class AxisAlignedBB
                 if (!Double.isNaN(this.minZ)) {
                     if (!Double.isNaN(this.maxX)) {
                         if (!Double.isNaN(this.maxY)) {
-                            if (!Double.isNaN(this.maxZ)) {
-                                return false;
-                            }
+                            return Double.isNaN(this.maxZ);
                         }
                     }
                 }

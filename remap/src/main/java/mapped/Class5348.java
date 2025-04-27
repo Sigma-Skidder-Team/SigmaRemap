@@ -65,7 +65,7 @@ public class Class5348 implements Class5346
         final double method16514 = method16514(stringReader, cursor);
         if (!stringReader.canRead() || stringReader.peek() != ' ') {
             stringReader.setCursor(cursor);
-            throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7555.field29960.createWithContext(stringReader);
         }
         stringReader.skip();
         final double method16515 = method16514(stringReader, cursor);
@@ -74,19 +74,19 @@ public class Class5348 implements Class5346
             return new Class5348(method16514, method16515, method16514(stringReader, cursor));
         }
         stringReader.setCursor(cursor);
-        throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7555.field29960.createWithContext(stringReader);
     }
     
     private static double method16514(final StringReader stringReader, final int cursor) throws CommandSyntaxException {
         if (!stringReader.canRead()) {
-            throw Class7629.field30215.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7629.field30215.createWithContext(stringReader);
         }
         if (stringReader.peek() == '^') {
             stringReader.skip();
             return (stringReader.canRead() && stringReader.peek() != ' ') ? stringReader.readDouble() : 0.0;
         }
         stringReader.setCursor(cursor);
-        throw Class7555.field29961.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7555.field29961.createWithContext(stringReader);
     }
     
     @Override
@@ -98,9 +98,7 @@ public class Class5348 implements Class5346
             final Class5348 class5348 = (Class5348)o;
             if (this.field22420 == class5348.field22420) {
                 if (this.field22421 == class5348.field22421) {
-                    if (this.field22422 == class5348.field22422) {
-                        return true;
-                    }
+                    return this.field22422 == class5348.field22422;
                 }
             }
             return false;

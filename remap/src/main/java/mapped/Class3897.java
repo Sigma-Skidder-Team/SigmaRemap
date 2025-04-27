@@ -24,7 +24,7 @@ public class Class3897 extends Class3895
     @Override
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         if (class7099.field3025.field27305) {
-            class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3897.field17583), 3);
+            class7097.setBlockState(class7098, class7096.method21768((IProperty<Comparable>)Class3897.field17583), 3);
             return Class2201.field13400;
         }
         return Class2201.field13402;
@@ -32,7 +32,7 @@ public class Class3897 extends Class3895
     
     @Override
     public int method11977(final BlockState class7096) {
-        return class7096.get((IProperty<Integer>)Class3897.field17583) * 2;
+        return class7096.get(Class3897.field17583) * 2;
     }
     
     @Override
@@ -43,7 +43,7 @@ public class Class3897 extends Class3895
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (!class7099.isRemote() && class7097.getAxis() != class7096.get((IProperty<Direction>)Class3897.field17564).getAxis()) ? ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3897.field17582, this.method11967(class7099, class7100, class7096)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (!class7099.isRemote() && class7097.getAxis() != class7096.get(Class3897.field17564).getAxis()) ? ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3897.field17582, this.method11967(class7099, class7100, class7096)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
@@ -58,14 +58,14 @@ public class Class3897 extends Class3895
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.get((IProperty<Boolean>)Class3897.field17578)) {
-            final Direction class7099 = class7096.get((IProperty<Direction>)Class3897.field17564);
+        if (class7096.get(Class3897.field17578)) {
+            final Direction class7099 = class7096.get(Class3897.field17564);
             final double n = class7098.getX() + 0.5f + (random.nextFloat() - 0.5f) * 0.2;
             final double n2 = class7098.getY() + 0.4f + (random.nextFloat() - 0.5f) * 0.2;
             final double n3 = class7098.getZ() + 0.5f + (random.nextFloat() - 0.5f) * 0.2;
             float n4 = -5.0f;
             if (random.nextBoolean()) {
-                n4 = (float)(class7096.get((IProperty<Integer>)Class3897.field17583) * 2 - 1);
+                n4 = (float)(class7096.get(Class3897.field17583) * 2 - 1);
             }
             final float n5 = n4 / 16.0f;
             class7097.method6709(Class6912.field27101, n + n5 * class7099.getXOffset(), n2, n3 + n5 * class7099.getZOffset(), 0.0, 0.0, 0.0);

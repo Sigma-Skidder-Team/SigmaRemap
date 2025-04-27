@@ -16,7 +16,7 @@ public class Class2463 extends Class2449<Short, Integer>
     
     public Integer method9800(final Class8699 class8699, final Short n) throws Exception {
         if (class8699.method29818(Class5260.field22312, 0) != class8699.method29841().method18207(Class6634.class).method20110()) {
-            return (Integer)((n <= 0) ? n : (n + 1));
+            return (n <= 0) ? n : (n + 1);
         }
         return n + 2;
     }

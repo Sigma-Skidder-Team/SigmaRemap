@@ -34,7 +34,7 @@ public class Class5172
         field22193 = new ResourceLocation("igloo/top");
         field22194 = new ResourceLocation("igloo/middle");
         field22195 = new ResourceLocation("igloo/bottom");
-        field22196 = (Map)ImmutableMap.of((Object)Class5172.field22193, (Object)new BlockPos(3, 5, 5), (Object)Class5172.field22194, (Object)new BlockPos(1, 3, 1), (Object)Class5172.field22195, (Object)new BlockPos(3, 6, 7));
-        field22197 = (Map)ImmutableMap.of((Object)Class5172.field22193, (Object) BlockPos.ZERO, (Object)Class5172.field22194, (Object)new BlockPos(2, -3, 4), (Object)Class5172.field22195, (Object)new BlockPos(0, -3, -2));
+        field22196 = (Map)ImmutableMap.of(Class5172.field22193, new BlockPos(3, 5, 5), Class5172.field22194, new BlockPos(1, 3, 1), (Object)Class5172.field22195, (Object)new BlockPos(3, 6, 7));
+        field22197 = (Map)ImmutableMap.of(Class5172.field22193, BlockPos.ZERO, Class5172.field22194, new BlockPos(2, -3, 4), (Object)Class5172.field22195, (Object)new BlockPos(0, -3, -2));
     }
 }

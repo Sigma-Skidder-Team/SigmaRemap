@@ -24,6 +24,6 @@ public class Class5986 implements JsonDeserializer<Class5769>, JsonSerializer<Cl
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("n", (Number)Class5769.method17162(class5769));
         jsonObject.addProperty("p", (Number)Class5769.method17163(class5769));
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

@@ -29,9 +29,7 @@ public abstract class Class3531 extends Class3446
         final LivingEntity method4152 = this.field16562.method4152();
         if (method4152 != null) {
             if (method4152.isAlive()) {
-                if (this.field16560 > 0) {
-                    return true;
-                }
+                return this.field16560 > 0;
             }
         }
         return false;

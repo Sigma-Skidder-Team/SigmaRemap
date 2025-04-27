@@ -196,6 +196,7 @@ public class Class5340 implements Class5337
                     for (int n15 = 0; n15 < 3; ++n15) {
                         if (src[n13 + n15] != array[n15]) {
                             n14 = 0;
+                            break;
                         }
                     }
                     if (n14 != 0) {

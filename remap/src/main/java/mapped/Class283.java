@@ -75,7 +75,7 @@ public enum Class283
     public int field1562;
     public int field1563;
     
-    private Class283(final int field1558, final int field1559, final String field1560, final int field1561, final int field1562) {
+    Class283(final int field1558, final int field1559, final String field1560, final int field1561, final int field1562) {
         this.field1559 = 63;
         this.field1558 = field1558;
         this.field1559 = field1559;
@@ -85,7 +85,7 @@ public enum Class283
         this.field1562 = field1562;
     }
     
-    private Class283(final int field1558, final int field1559, final String s, final int n) {
+    Class283(final int field1558, final int field1559, final String s, final int n) {
         this.field1559 = 63;
         this.field1558 = field1558;
         this.field1559 = field1559;

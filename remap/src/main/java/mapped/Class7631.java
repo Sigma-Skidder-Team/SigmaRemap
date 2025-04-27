@@ -23,19 +23,19 @@ public class Class7631
     
     public static void method23983(final CommandDispatcher<Class7492> commandDispatcher) {
         commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("help").executes(commandContext -> {
-            final Map smartUsage = commandDispatcher.getSmartUsage((CommandNode)commandDispatcher.getRoot(), commandContext.getSource());
+            final Map smartUsage = commandDispatcher.getSmartUsage(commandDispatcher.getRoot(), commandContext.getSource());
             final Iterator iterator = smartUsage.values().iterator();
             while (iterator.hasNext()) {
-                ((Class7492)commandContext.getSource()).method23257(new StringTextComponent("/" + (String)iterator.next()), false);
+                commandContext.getSource().method23257(new StringTextComponent("/" + iterator.next()), false);
             }
             return smartUsage.size();
         })).then(Class7788.method25002("command", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.greedyString()).executes(commandContext -> {
             final ParseResults parse = commandDispatcher.parse(StringArgumentType.getString(commandContext, "command"), commandContext.getSource());
             if (!parse.getContext().getNodes().isEmpty()) {
-                final Map smartUsage = commandDispatcher.getSmartUsage(((ParsedCommandNode)Iterables.getLast((Iterable)parse.getContext().getNodes())).getNode(), commandContext.getSource());
+                final Map smartUsage = commandDispatcher.getSmartUsage(((ParsedCommandNode)Iterables.getLast(parse.getContext().getNodes())).getNode(), commandContext.getSource());
                 final Iterator iterator = smartUsage.values().iterator();
                 while (iterator.hasNext()) {
-                    ((Class7492)commandContext.getSource()).method23257(new StringTextComponent("/" + parse.getReader().getString() + " " + (String)iterator.next()), false);
+                    commandContext.getSource().method23257(new StringTextComponent("/" + parse.getReader().getString() + " " + iterator.next()), false);
                 }
                 return smartUsage.size();
             }
@@ -44,6 +44,6 @@ public class Class7631
     }
     
     static {
-        field30223 = new SimpleCommandExceptionType((Message)new Class2259("commands.help.failed", new Object[0]));
+        field30223 = new SimpleCommandExceptionType(new Class2259("commands.help.failed", new Object[0]));
     }
 }

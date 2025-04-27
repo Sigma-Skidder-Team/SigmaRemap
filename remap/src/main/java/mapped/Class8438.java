@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.mods.impl.exploit.disablers.PingSpoofDisabler;
 public class Class8438
 {
     private static String[] field34680;
-    private long field34681;
-    private IPacket<?> field34682;
+    private final long field34681;
+    private final IPacket<?> field34682;
     public final /* synthetic */ PingSpoofDisabler field34683;
     
     public Class8438(final PingSpoofDisabler field34683, final IPacket<?> field34684, final long n) {

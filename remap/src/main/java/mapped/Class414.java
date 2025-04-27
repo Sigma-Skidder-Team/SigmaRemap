@@ -118,7 +118,7 @@ public abstract class Class414 extends Entity implements Class401
         final RayTraceResult method18497 = Class7476.method23093(this, method18496, class400 -> {
             final boolean b;
             if (!class400.isSpectator()) {
-                if (!(!class400.method1749())) {
+                if (class400.method1749()) {
                     if (class400 != this.field2519) {
                         return b;
                     }

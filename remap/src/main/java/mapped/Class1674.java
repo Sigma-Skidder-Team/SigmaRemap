@@ -31,7 +31,7 @@ public class Class1674 implements Closeable
             final Class1846 method19934 = Class1846.method6637(method19933.method5887());
             Class9413 class6584 = null;
             try {
-                class6584 = method19933.method5888((Class5092<Class9413>)Class9413.field40388);
+                class6584 = method19933.method5888(Class9413.field40388);
             }
             catch (final RuntimeException ex) {
                 Class1767.method6299().warn("Failed reading metadata of: {}", (Object)class6583, (Object)ex);

@@ -16,7 +16,7 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 public class Class7126
 {
     public static void method21868() {
-        Class8381.method27930("brigadier:bool", (Class<ArgumentType>)BoolArgumentType.class, new Class6674<ArgumentType>((Supplier<ArgumentType>)BoolArgumentType::bool));
+        Class8381.method27930("brigadier:bool", (Class<ArgumentType>)BoolArgumentType.class, new Class6674<ArgumentType>(BoolArgumentType::bool));
         Class8381.method27930("brigadier:float", (Class<ArgumentType>)FloatArgumentType.class, (Class6672<ArgumentType>)new Class6678());
         Class8381.method27930("brigadier:double", (Class<ArgumentType>)DoubleArgumentType.class, (Class6672<ArgumentType>)new Class6675());
         Class8381.method27930("brigadier:integer", (Class<ArgumentType>)IntegerArgumentType.class, (Class6672<ArgumentType>)new Class6676());

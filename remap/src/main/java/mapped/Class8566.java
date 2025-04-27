@@ -32,13 +32,13 @@ public class Class8566
         final ArgumentAcceptingOptionSpec defaultsTo = optionParser.accepts("output", "Output folder").withRequiredArg().defaultsTo((Object)"generated", (Object[])new String[0]);
         final ArgumentAcceptingOptionSpec withRequiredArg = optionParser.accepts("input", "Input folder").withRequiredArg();
         final OptionSet parse = optionParser.parse(array);
-        if (!parse.has((OptionSpec)forHelp) && parse.hasOptions()) {
-            final Path value = Paths.get((String)((OptionSpec)defaultsTo).value(parse), new String[0]);
-            final boolean has = parse.has((OptionSpec)accepts6);
-            method28799(value, (Collection<Path>)parse.valuesOf((OptionSpec)withRequiredArg).stream().map(first -> Paths.get(first, new String[0])).collect(Collectors.toList()), has || parse.has((OptionSpec)accepts2), has || parse.has((OptionSpec)accepts), has || parse.has((OptionSpec)accepts3), has || parse.has((OptionSpec)accepts4), has || parse.has((OptionSpec)accepts5)).run();
+        if (!parse.has(forHelp) && parse.hasOptions()) {
+            final Path value = Paths.get((String) defaultsTo.value(parse));
+            final boolean has = parse.has(accepts6);
+            method28799(value, (Collection<Path>)parse.valuesOf(withRequiredArg).stream().map(first -> Paths.get(first, new String[0])).collect(Collectors.toList()), has || parse.has(accepts2), has || parse.has(accepts), has || parse.has(accepts3), has || parse.has(accepts4), has || parse.has(accepts5)).run();
         }
         else {
-            optionParser.printHelpOn((OutputStream)System.out);
+            optionParser.printHelpOn(System.out);
         }
     }
     

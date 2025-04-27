@@ -21,7 +21,7 @@ public class Class4907 extends Class4841
     public CustomGuiScreen field20987;
     public String field20988;
     public Texture field20989;
-    private Animation field20990;
+    private final Animation field20990;
     public boolean field20991;
     public int field20992;
     public int field20993;
@@ -115,7 +115,7 @@ public class Class4907 extends Class4841
                 if (!(customGuiScreen instanceof TextField)) {
                     continue;
                 }
-                ((TextField) customGuiScreen).setTypedText("");
+                customGuiScreen.setTypedText("");
                 ((TextField) customGuiScreen).method14469();
             }
         }
@@ -229,7 +229,7 @@ public class Class4907 extends Class4841
         this.method14301(b);
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         try {
             if (this.field20989 != null) {
                 Client.getInstance().addTexture(this.field20989);

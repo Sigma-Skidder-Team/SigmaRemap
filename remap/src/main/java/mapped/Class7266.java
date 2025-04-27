@@ -213,9 +213,7 @@ public abstract class Class7266
                             if (this.field28153 == null) {
                                 if (this.field28154 == null) {
                                     if (this.field28157 == null) {
-                                        if (this.field28156 == null) {
-                                            return false;
-                                        }
+                                        return this.field28156 != null;
                                     }
                                 }
                             }

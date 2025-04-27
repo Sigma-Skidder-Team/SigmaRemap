@@ -23,7 +23,7 @@ public class Jesus extends Module
     
     public Jesus() {
         super(Category.MOVEMENT, "Jesus", "Where's the scientific proof?");
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "Dolphin" }).setPremiumMode("Dolphin"));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Dolphin").setPremiumMode("Dolphin"));
         this.addSetting(new BooleanSetting("Swim up", "Automatically swim up", true));
     }
     
@@ -195,9 +195,7 @@ public class Jesus extends Module
     public boolean method9898() {
         if (this.isEnabled()) {
             if (method10433()) {
-                if (!this.method10431()) {
-                    return true;
-                }
+                return !this.method10431();
             }
         }
         return false;

@@ -24,7 +24,7 @@ public class Class171 implements Class170
     public JsonElement method770() {
         final JsonObject jsonObject = new JsonObject();
         this.field494.forEach((BiConsumer)jsonObject::addProperty);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     @Override

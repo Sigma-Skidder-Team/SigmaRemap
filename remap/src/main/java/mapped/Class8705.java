@@ -43,10 +43,10 @@ public class Class8705<C extends Class7065, T extends Class6346<C>> implements C
     }
     
     static {
-        field36574 = method29873("surface", (Class8704<Class7068, Class6345>)Class6345::new, Class7068::new, true);
-        field36575 = method29873("caves", (Class8704<Class7064, Class6344>)Class6344::new, Class7064::new, true);
-        field36576 = method29873("floating_islands", (Class8704<Class7069, Class6342>)Class6342::new, Class7069::new, true);
-        field36577 = method29873("debug", (Class8704<Class7066, Class6348>)Class6348::new, Class7066::new, false);
-        field36578 = method29873("flat", (Class8704<Class7067, Class6347>)Class6347::new, Class7067::new, false);
+        field36574 = method29873("surface", Class6345::new, Class7068::new, true);
+        field36575 = method29873("caves", Class6344::new, Class7064::new, true);
+        field36576 = method29873("floating_islands", Class6342::new, Class7069::new, true);
+        field36577 = method29873("debug", Class6348::new, Class7066::new, false);
+        field36578 = method29873("flat", Class6347::new, Class7067::new, false);
     }
 }

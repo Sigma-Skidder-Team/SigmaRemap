@@ -31,7 +31,7 @@ public final class Class8664
     private int field36414;
     private boolean field36415;
     private boolean field36416;
-    private double[] field36417;
+    private final double[] field36417;
     private boolean field36418;
     private int field36419;
     private int field36420;
@@ -405,7 +405,7 @@ public final class Class8664
         if (!this.field36418) {
             return Class8664.field36430[this.field36410][this.field36405 - 1][this.field36407];
         }
-        return Integer.toString(this.method29661() / 1000) + " kb/s";
+        return this.method29661() / 1000 + " kb/s";
     }
     
     public int method29661() {

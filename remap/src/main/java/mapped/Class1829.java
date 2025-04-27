@@ -20,7 +20,7 @@ public class Class1829 extends Class1799<Class808, Class5928<Class808>>
         final ItemStack method4769 = class7353.method4769();
         if (method4769.getItem() instanceof Class4051) {
             final Class4051 class7354 = (Class4051)method4769.getItem();
-            ((Class1799<T, Class5928<Class808>>)this).method6559().method17569(this.field10010);
+            this.method6559().method17569(this.field10010);
             this.field10010.method17802(class7353, n2, n3, n4);
             this.field10010.method17801(class7353, n2, n3, n5, n6, n7);
             float n8;

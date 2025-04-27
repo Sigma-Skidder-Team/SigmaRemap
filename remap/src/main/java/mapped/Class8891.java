@@ -7,7 +7,7 @@ package mapped;
 public class Class8891
 {
     private static String[] field37393;
-    private int field37394;
+    private final int field37394;
     private int field37395;
     
     public Class8891(final int n) {

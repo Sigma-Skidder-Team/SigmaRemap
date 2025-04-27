@@ -25,7 +25,7 @@ public class Class568 extends Class566
     private int field3386;
     private int field3387;
     private int field3388;
-    private boolean field3389;
+    private final boolean field3389;
     public static Texture field3390;
     public static Texture field3391;
     public static Texture field3392;
@@ -118,7 +118,7 @@ public class Class568 extends Class566
         final int n7 = 80;
         if (n == 1.0f) {
             RenderUtil.method26925((float)n5, (float)(round + n4 + n7), (float)n3, 20.0f, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f * n));
-            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 1.0f * n));
+            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n));
         }
         RenderUtil.method26925((float)(n5 + 2), (float)(round + n4 + n7 + 2), (float)(int)((n3 - 4) * min), 16.0f, 8.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
         GL11.glPopMatrix();

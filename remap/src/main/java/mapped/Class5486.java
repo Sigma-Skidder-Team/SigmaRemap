@@ -29,13 +29,13 @@ public class Class5486 extends DataFix
         if (!string.isPresent()) {
             final Optional string2 = dynamic2.get("LocName").asString();
             if (string2.isPresent()) {
-                dynamic2 = dynamic2.set("Name", dynamic2.createString(Class5953.method17869(new Class2259((String)string2.get(), new Object[0])))).remove("LocName");
+                dynamic2 = dynamic2.set("Name", dynamic2.createString(Class5953.method17869(new Class2259((String)string2.get())))).remove("LocName");
             }
         }
         else {
             dynamic2 = dynamic2.set("Name", dynamic2.createString(Class5953.method17869(new StringTextComponent((String)string.get()))));
         }
-        return (Dynamic<?>)dynamic.set("display", dynamic2);
+        return dynamic.set("display", dynamic2);
     }
     
     public TypeRewriteRule makeRule() {

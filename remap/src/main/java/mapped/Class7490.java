@@ -44,7 +44,7 @@ public class Class7490 implements Class7491
     
     @Override
     public Collection<String> method23206() {
-        return (Collection<String>)((this.field28923.field4691 != null && this.field28923.field4691.getType() == RayTraceResult.Type.ENTITY) ? Collections.singleton(((EntityRayTraceResult)this.field28923.field4691).getEntity().method1866()) : Collections.emptyList());
+        return (this.field28923.field4691 != null && this.field28923.field4691.getType() == RayTraceResult.Type.ENTITY) ? Collections.singleton(((EntityRayTraceResult)this.field28923.field4691).getEntity().method1866()) : Collections.emptyList();
     }
     
     @Override

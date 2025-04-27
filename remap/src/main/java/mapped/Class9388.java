@@ -119,8 +119,8 @@ public class Class9388
                     final CompoundNBT method27626 = class8321.method27657();
                     if (!method27626.contains("SkullOwner", 10)) {
                         if (method27626.contains("SkullOwner", 8)) {
-                            if (!StringUtils.isBlank((CharSequence)method27626.getString("SkullOwner"))) {
-                                gameProfile = Class493.method2508(new GameProfile((UUID)null, method27626.getString("SkullOwner")));
+                            if (!StringUtils.isBlank(method27626.getString("SkullOwner"))) {
+                                gameProfile = Class493.method2508(new GameProfile(null, method27626.getString("SkullOwner")));
                                 method27626.remove("SkullOwner");
                                 method27626.put("SkullOwner", Class9346.method34641(new CompoundNBT(), gameProfile));
                             }
@@ -137,7 +137,7 @@ public class Class9388
     
     static {
         field40280 = Arrays.stream(Class181.values()).sorted(Comparator.comparingInt(Class181::method813)).map((Function<? super Class181, ?>)Class440::new).toArray(Class440[]::new);
-        field40281 = new Class440((Class181)null);
+        field40281 = new Class440(null);
         field40282 = new Class9388();
     }
 }

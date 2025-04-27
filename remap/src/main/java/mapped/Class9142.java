@@ -29,7 +29,7 @@ public class Class9142
             final CompoundNBT e = new CompoundNBT();
             e.putString("Pattern", Class230.method861((Class230)pair.getLeft()));
             e.putInt("Color", ((Class181)pair.getRight()).method813());
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }

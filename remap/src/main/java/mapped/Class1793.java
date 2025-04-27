@@ -141,7 +141,7 @@ public class Class1793 implements Class1662
     @Override
     public CompletableFuture<Void> method5785(final Class7885 class7885, final Class6582 class7886, final IProfiler class7887, final IProfiler class7888, final Executor executor, final Executor executor2) {
         Maps.newConcurrentMap();
-        return CompletableFuture.allOf((CompletableFuture<?>[]) Registry.field222.method507().stream().map(p3 -> CompletableFuture.runAsync(() -> this.method6475(class7889, class7890, map), executor3)).toArray(CompletableFuture[]::new)).thenApplyAsync(p3 -> {
+        return CompletableFuture.allOf(Registry.field222.method507().stream().map(p3 -> CompletableFuture.runAsync(() -> this.method6475(class7889, class7890, map), executor3)).toArray(CompletableFuture[]::new)).thenApplyAsync(p3 -> {
             class7891.method15295();
             class7891.method15297("stitching");
             this.field9931.method6332(class7892, map2.values().stream().flatMap((Function<? super Object, ? extends Stream<? extends ResourceLocation>>)Collection::stream), class7891, 0);
@@ -156,7 +156,7 @@ public class Class1793 implements Class1662
             class7894.method15300("bindSpriteSets");
             map3.forEach((class7897, list) -> {
                 this.field9931.method6338(Class1913.method7551());
-                this.field9930.get(class7897).method25211((List<TextureAtlasSprite>)(list.isEmpty() ? ImmutableList.of((Object)class7896) : list.stream().map(this.field9931::method6338).collect(ImmutableList.toImmutableList())));
+                this.field9930.get(class7897).method25211((List<TextureAtlasSprite>)(list.isEmpty() ? ImmutableList.of(class7896) : list.stream().map(this.field9931::method6338).collect(ImmutableList.toImmutableList())));
                 return;
             });
             class7894.method15299();
@@ -214,7 +214,7 @@ public class Class1793 implements Class1662
     
     @Nullable
     private <T extends IParticleData> Class6173 method6479(final T t, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        final Class5350 class5350 = this.field9928.get(Registry.field222.getKey((Class6907<? extends IParticleData>)t.method21272()));
+        final Class5350 class5350 = this.field9928.get(Registry.field222.getKey(t.method21272()));
         return (class5350 != null) ? class5350.method16516(t, this.field9923, n, n2, n3, n4, n5, n6) : null;
     }
     
@@ -231,7 +231,6 @@ public class Class1793 implements Class1662
             this.field9923.method6796().startSection(class6179.toString());
             this.method6482(queue2);
             this.field9923.method6796().endSection();
-            return;
         });
         if (!this.field9925.isEmpty()) {
             final ArrayList arrayList = Lists.newArrayList();
@@ -308,7 +307,6 @@ public class Class1793 implements Class1662
             RenderSystem.method30118();
             RenderSystem.enableDepthTest();
             RenderSystem.method30019();
-            return;
         };
         RenderSystem.pushMatrix();
         RenderSystem.method30067(class7351.getLast().getMatrix());
@@ -454,6 +452,6 @@ public class Class1793 implements Class1662
     }
     
     static {
-        field9922 = (List)ImmutableList.of((Object)Class6451.field25658, (Object)Class6451.field25659, (Object)Class6451.field25661, (Object)Class6451.field25660, (Object)Class6451.field25662);
+        field9922 = (List)ImmutableList.of(Class6451.field25658, Class6451.field25659, Class6451.field25661, Class6451.field25660, (Object)Class6451.field25662);
     }
 }

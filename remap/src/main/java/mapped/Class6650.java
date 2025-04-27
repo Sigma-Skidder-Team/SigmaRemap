@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Class6650 extends Class6635
 {
-    private ClientPlayerEntity field26285;
-    private String field26286;
+    private final ClientPlayerEntity field26285;
+    private final String field26286;
     private List<UUID> field26287;
     private static Method field26288;
     private static Class<?> field26289;
@@ -36,13 +36,13 @@ public class Class6650 extends Class6635
                 return null;
             }
             try {
-                final Object method29120 = Class8597.method29120(Class6650.field26290.invoke(this.field26285, new Object[0]), "getSessionHandler");
+                final Object method29120 = Class8597.method29120(Class6650.field26290.invoke(this.field26285), "getSessionHandler");
                 if (Class6650.field26289.isInstance(method29120)) {
                     this.field26287 = (List)Class6650.field26288.invoke(method29120, new Object[0]);
                 }
             }
             catch (final NoSuchMethodException | InvocationTargetException | IllegalAccessException ex) {
-                ((Throwable)ex).printStackTrace();
+                ex.printStackTrace();
             }
         }
         return this.field26287;
@@ -51,11 +51,11 @@ public class Class6650 extends Class6635
     static {
         try {
             Class6650.field26289 = Class.forName("com.velocitypowered.proxy.connection.client.ClientPlaySessionHandler");
-            Class6650.field26288 = Class6650.field26289.getDeclaredMethod("getServerBossBars", (Class<?>[])new Class[0]);
-            Class6650.field26290 = Class.forName("com.velocitypowered.proxy.connection.client.ConnectedPlayer").getDeclaredMethod("getMinecraftConnection", (Class<?>[])new Class[0]);
+            Class6650.field26288 = Class6650.field26289.getDeclaredMethod("getServerBossBars", new Class[0]);
+            Class6650.field26290 = Class.forName("com.velocitypowered.proxy.connection.client.ConnectedPlayer").getDeclaredMethod("getMinecraftConnection", new Class[0]);
         }
         catch (final NoSuchMethodException | ClassNotFoundException ex) {
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
 }

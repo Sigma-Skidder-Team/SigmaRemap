@@ -27,6 +27,6 @@ public class Class6798 implements IChunkLoadingError
     
     @Override
     public String toString() {
-        return "Unloaded " + new ChunkPos(this.field26733 + this.field26734 % (this.field26735 * 2 + 1), this.field26736 + this.field26734 / (this.field26735 * 2 + 1)) + " " + this.field26737.right().get().toString();
+        return "Unloaded " + new ChunkPos(this.field26733 + this.field26734 % (this.field26735 * 2 + 1), this.field26736 + this.field26734 / (this.field26735 * 2 + 1)) + " " + this.field26737.right().get();
     }
 }

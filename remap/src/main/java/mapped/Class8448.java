@@ -32,7 +32,7 @@ public class Class8448 extends SimpleFileVisitor<Path>
     @Override
     public FileVisitResult visitFile(final Path path, final BasicFileAttributes basicFileAttributes) throws IOException {
         this.field34707.putNextEntry(new ZipEntry(this.field34705.resolve(this.field34706.relativize(path)).toString().replace('\\', '/')));
-        Files.asByteSource(path.toFile()).copyTo((OutputStream)this.field34707);
+        Files.asByteSource(path.toFile()).copyTo(this.field34707);
         this.field34707.closeEntry();
         return FileVisitResult.CONTINUE;
     }

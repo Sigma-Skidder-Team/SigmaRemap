@@ -23,7 +23,7 @@ public class Class5425 extends Class5419<LivingEntity>
     private static String[] field22612;
     
     public Class5425() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33813, (Object)Class1952.field10628, (Object)Class8233.field33814, (Object)Class1952.field10628, (Object)Class8233.field33815, (Object)Class1952.field10630));
+        super((Map)ImmutableMap.of(Class8233.field33813, Class1952.field10628, Class8233.field33814, Class1952.field10628, (Object)Class8233.field33815, (Object)Class1952.field10630));
     }
     
     @Override
@@ -44,15 +44,15 @@ public class Class5425 extends Class5419<LivingEntity>
             list2.indexOf(class1854);
             class1852.method6701(class1854).method21696();
             final Class3969 class1855;
-            if (!(!Class7188.field27885.method25618(class1855))) {
-                if (!(!(class1855 instanceof Class3969))) {
+            if (Class7188.field27885.method25618(class1855)) {
+                if (class1855 instanceof Class3969) {
                     final int n3;
                     final boolean b = n3 >= n2;
                     class1855.method12110(class1852, class1854, b);
                     Class363.method1167(class1852.method6789().method20487(), class1854);
                     if (!class1853.method1198(Class8233.field33815).isPresent() && b) {
                         final Class363 class1856;
-                        class1853.method1196(Class8233.field33815, Sets.newHashSet((Object[])new Class363[] { class1856 }));
+                        class1853.method1196(Class8233.field33815, Sets.newHashSet(new Class363[] { class1856 }));
                     }
                     else {
                         class1853.method1198(Class8233.field33815).ifPresent(set2 -> {
@@ -66,7 +66,6 @@ public class Class5425 extends Class5419<LivingEntity>
                     }
                 }
             }
-            return;
         });
         method16574(class1849, list, n, class1850, class1851);
     }

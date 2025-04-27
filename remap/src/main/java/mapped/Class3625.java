@@ -48,9 +48,7 @@ public class Class3625 extends Class3446
     public boolean method11017() {
         if (!this.field16840.method4715()) {
             if (!this.field16840.method4150().method24731()) {
-                if (this.field16840.isBeingRidden()) {
-                    return true;
-                }
+                return this.field16840.isBeingRidden();
             }
         }
         return false;

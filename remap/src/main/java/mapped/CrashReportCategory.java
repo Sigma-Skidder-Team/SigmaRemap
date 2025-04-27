@@ -96,7 +96,7 @@ public class CrashReportCategory
                 if (stackTraceElement2.getClassName().equals(stackTraceElement.getClassName())) {
                     if (stackTraceElement2.getFileName().equals(stackTraceElement.getFileName())) {
                         if (stackTraceElement2.getMethodName().equals(stackTraceElement.getMethodName())) {
-                            if (obj != null != this.field22216.length > 1) {
+                            if (obj == null == this.field22216.length > 1) {
                                 return false;
                             }
                             if (obj != null && !this.field22216[1].equals(obj)) {

@@ -47,7 +47,7 @@ public class Class4804 extends CustomGuiScreen
         this.y = Math.round(this.field20516);
         if (this.field20515 + this.field20480 >= 0.0f) {
             if (this.field20515 > Minecraft.getInstance().window.method7694()) {
-                this.field20515 = (float)(0 - this.field20480);
+                this.field20515 = (float)(-this.field20480);
             }
         }
         else {
@@ -55,7 +55,7 @@ public class Class4804 extends CustomGuiScreen
         }
         if (this.field20516 + this.field20481 >= 0.0f) {
             if (this.field20516 > Minecraft.getInstance().window.method7695()) {
-                this.field20516 = (float)(0 - this.field20481);
+                this.field20516 = (float)(-this.field20481);
             }
         }
         else {

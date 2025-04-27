@@ -1,7 +1,7 @@
 package org.newdawn.slick.opengl.renderer;
 
 public class DefaultLineStripRenderer implements LineStripRenderer {
-    private SGL GL = Renderer.get();
+    private final SGL GL = Renderer.get();
 
     @Override
     public void end() {

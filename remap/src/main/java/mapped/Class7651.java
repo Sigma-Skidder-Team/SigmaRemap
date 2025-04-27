@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public class Class7651
@@ -29,7 +30,7 @@ public class Class7651
                 return;
             }
             final String s = "http://optifine.net/crashReport";
-            final byte[] bytes = method24237(class7689).getBytes("ASCII");
+            final byte[] bytes = method24237(class7689).getBytes(StandardCharsets.US_ASCII);
             final Class8889 class7691 = new Class8889();
             final HashMap hashMap = new HashMap();
             hashMap.put("OF-Version", Config.method28814());
@@ -45,13 +46,12 @@ public class Class7651
     }
     
     private static String method24237(final CrashReport class7689) {
-        final StringBuffer sb = new StringBuffer();
-        sb.append("OptiFineVersion: " + Config.method28814() + "\n");
-        sb.append("Summary: " + method24238(class7689) + "\n");
-        sb.append("\n");
-        sb.append(class7689.method24414());
-        sb.append("\n");
-        return sb.toString();
+        String sb = "OptiFineVersion: " + Config.method28814() + "\n" +
+                "Summary: " + method24238(class7689) + "\n" +
+                "\n" +
+                class7689.method24414() +
+                "\n";
+        return sb;
     }
     
     private static String method24238(final CrashReport class7689) {
@@ -77,10 +77,10 @@ public class Class7651
             class5204.addDetail("Antialiasing", "" + Config.method28925());
             class5204.addDetail("Multitexture", "" + Config.method28928());
         }
-        class5204.addDetail("Shaders", "" + Class9216.method33891());
-        class5204.addDetail("OpenGlVersion", "" + Config.field36018);
-        class5204.addDetail("OpenGlRenderer", "" + Config.field36019);
-        class5204.addDetail("OpenGlVendor", "" + Config.field36020);
+        class5204.addDetail("Shaders", Class9216.method33891());
+        class5204.addDetail("OpenGlVersion", Config.field36018);
+        class5204.addDetail("OpenGlRenderer", Config.field36019);
+        class5204.addDetail("OpenGlVendor", Config.field36020);
         class5204.addDetail("CpuCount", "" + Config.method28969());
     }
 }

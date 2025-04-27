@@ -55,7 +55,7 @@ public class Class9298
         this.field39878 = Class9298.field39874;
         this.field39879 = Class9298.field39874;
         this.field39880 = Class9298.field39874;
-        this.field39881 = CompletableFuture.completedFuture((IChunk)null);
+        this.field39881 = CompletableFuture.completedFuture(null);
         this.field39886 = new short[64];
         this.field39885 = field39885;
         this.field39892 = field39886;
@@ -292,7 +292,7 @@ public class Class9298
             if (!method34368) {
                 final CompletableFuture<Either<Chunk, IChunkLoadingError>> field39878 = this.field39878;
                 this.field39878 = Class9298.field39874;
-                this.method34355((CompletableFuture<? extends Either<? extends IChunk, IChunkLoadingError>>)field39878.thenApply(either -> either.ifLeft((Consumer)class389::method1359)));
+                this.method34355(field39878.thenApply(either -> either.ifLeft((Consumer)class389::method1359)));
             }
         }
         final boolean method34369 = method34365.method8321(Class2152.field12788);

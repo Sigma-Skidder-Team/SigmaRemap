@@ -21,7 +21,7 @@ public class Class8866
 {
     private float[] field37266;
     public final int field37267 = 3;
-    private Module field37268;
+    private final Module field37268;
     public Minecraft field37269;
     public boolean field37270;
     
@@ -59,9 +59,7 @@ public class Class8866
     public boolean method31132() {
         if (!this.field37268.getStringSettingValueByName("Autoblock Mode").equals("None")) {
             if (this.field37269.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
-                if (!this.isBlocking()) {
-                    return true;
-                }
+                return !this.isBlocking();
             }
         }
         return false;

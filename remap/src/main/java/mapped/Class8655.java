@@ -28,7 +28,7 @@ public class Class8655
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            System.err.println("error while decoding: " + ex.toString());
+            System.err.println("error while decoding: " + ex);
         }
     }
     
@@ -91,9 +91,7 @@ public class Class8655
         if (audioFormat.getSampleRate() == class9157.method33418()) {
             if (audioFormat.getChannels() == class9157.method33419()) {
                 if (audioFormat.getSampleSizeInBits() == class9157.method33420()) {
-                    if (audioFormat.isBigEndian() == class9157.method33424()) {
-                        return false;
-                    }
+                    return audioFormat.isBigEndian() != class9157.method33424();
                 }
             }
         }

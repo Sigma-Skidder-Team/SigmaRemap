@@ -460,7 +460,7 @@ public final class Class1680 implements Class1681, Class1679, Cloneable
                     return i;
                 }
                 catch (final EOFException detailMessage) {
-                    throw new AssertionError((Object)detailMessage);
+                    throw new AssertionError(detailMessage);
                 }
             }
         }
@@ -505,7 +505,7 @@ public final class Class1680 implements Class1681, Class1679, Cloneable
             return this.method5983(this.field9512, Class9476.field40748);
         }
         catch (final EOFException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     
@@ -520,7 +520,7 @@ public final class Class1680 implements Class1681, Class1679, Cloneable
             return this.method5983(this.field9512, charset);
         }
         catch (final EOFException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     
@@ -687,7 +687,7 @@ public final class Class1680 implements Class1681, Class1679, Cloneable
             return this.method5990(this.field9512);
         }
         catch (final EOFException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     
@@ -742,7 +742,7 @@ public final class Class1680 implements Class1681, Class1679, Cloneable
             this.method5995(this.field9512);
         }
         catch (final EOFException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     

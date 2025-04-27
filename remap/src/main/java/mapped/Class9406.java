@@ -20,7 +20,7 @@ public class Class9406
     private final Class9049 field40367;
     private final Entity field40368;
     private final int field40369;
-    private Class353 field40370;
+    private final Class353 field40370;
     private final Set<Class513> field40371;
     public final /* synthetic */ Class388 field40372;
     

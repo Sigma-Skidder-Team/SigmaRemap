@@ -20,6 +20,6 @@ public abstract class Class4107
     public abstract <T> Dynamic<T> method12352(final DynamicOps<T> p0);
     
     public <T> Dynamic<T> method12355(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.mergeInto(this.method12352((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("processor_type"), dynamicOps.createString(Registry.field233.getKey(this.method12351()).toString())));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.mergeInto(this.method12352((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("processor_type"), dynamicOps.createString(Registry.field233.getKey(this.method12351()).toString())));
     }
 }

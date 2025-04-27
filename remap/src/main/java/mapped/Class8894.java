@@ -25,7 +25,7 @@ public class Class8894 implements ArgumentType<String>
         final String unquotedString = stringReader.readUnquotedString();
         if (!Class8972.method31856(unquotedString)) {
             final StringTextComponent class2260 = new StringTextComponent("No such test class: " + unquotedString);
-            throw new CommandSyntaxException((CommandExceptionType)new SimpleCommandExceptionType((Message)class2260), (Message)class2260);
+            throw new CommandSyntaxException(new SimpleCommandExceptionType(class2260), class2260);
         }
         return unquotedString;
     }

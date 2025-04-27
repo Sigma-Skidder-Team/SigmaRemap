@@ -54,7 +54,7 @@ public class Class8608
         this.field36129 = field36129;
         this.field36131 = field36130;
         final GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.registerTypeHierarchyAdapter((Class)Class8426.class, (Object)new Class5991(this, null));
+        gsonBuilder.registerTypeHierarchyAdapter(Class8426.class, new Class5991(this, null));
         this.field36130 = gsonBuilder.create();
         this.method29198();
     }
@@ -62,10 +62,10 @@ public class Class8608
     private static GameProfile method29190(final GameProfileRepository gameProfileRepository, final String s) {
         final GameProfile[] array = { null };
         final Class9148 class9148 = new Class9148(array);
-        gameProfileRepository.findProfilesByNames(new String[] { s }, Agent.MINECRAFT, (ProfileLookupCallback)class9148);
+        gameProfileRepository.findProfilesByNames(new String[] { s }, Agent.MINECRAFT, class9148);
         if (!method29192()) {
             if (array[0] == null) {
-                ((ProfileLookupCallback)class9148).onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile((UUID)null, s)), s));
+                class9148.onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile(null, s)), s));
             }
         }
         return array[0];
@@ -155,7 +155,7 @@ public class Class8608
             this.field36127.clear();
             this.field36128.clear();
             if (list != null) {
-                for (final Class8426 class8426 : Lists.reverse((List)list)) {
+                for (final Class8426 class8426 : Lists.reverse(list)) {
                     if (class8426 != null) {
                         this.method29194(class8426.method28143(), class8426.method28144());
                     }
@@ -170,7 +170,7 @@ public class Class8608
     }
     
     public void method29199() {
-        final String json = this.field36130.toJson((Object)this.method29200(1000));
+        final String json = this.field36130.toJson(this.method29200(1000));
         Writer writer = null;
         try {
             writer = Files.newWriter(this.field36131, StandardCharsets.UTF_8);

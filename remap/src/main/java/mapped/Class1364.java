@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.io.BufferedInputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
+
 import org.apache.logging.log4j.Logger;
 
 public class Class1364 extends Class1361
@@ -89,7 +91,7 @@ public class Class1364 extends Class1361
         catch (final SocketTimeoutException ex2) {}
         catch (final IOException ex3) {}
         catch (final Exception ex4) {
-            Class1364.field7459.error("Exception whilst parsing RCON input", (Throwable)ex4);
+            Class1364.field7459.error("Exception whilst parsing RCON input", ex4);
         }
         finally {
             this.method5657();
@@ -99,7 +101,7 @@ public class Class1364 extends Class1361
     private void method5654(final int i, final int j, final String s) throws IOException {
         final ByteArrayOutputStream out = new ByteArrayOutputStream(1248);
         final DataOutputStream dataOutputStream = new DataOutputStream(out);
-        final byte[] bytes = s.getBytes("UTF-8");
+        final byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
         dataOutputStream.writeInt(Integer.reverseBytes(bytes.length + 10));
         dataOutputStream.writeInt(Integer.reverseBytes(i));
         dataOutputStream.writeInt(Integer.reverseBytes(j));

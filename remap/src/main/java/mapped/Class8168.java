@@ -22,7 +22,7 @@ public class Class8168
     private static final SimpleCommandExceptionType field33650;
     
     public static void method27005(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("op").requires(class7492 -> class7492.method23210(3))).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8740.method30191()).suggests((commandContext, suggestionsBuilder) -> Class7491.method23227(((Class7492)commandContext.getSource()).method23255().method1537().method20623().stream().filter(class6766 -> !class6765.method20597(class6766.method2844())).map(class6767 -> class6767.method2844().getName()), suggestionsBuilder)).executes(commandContext -> method27006((Class7492)commandContext.getSource(), Class8740.method30190((CommandContext<Class7492>)commandContext, "targets")))));
+        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("op").requires(class7492 -> class7492.method23210(3))).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8740.method30191()).suggests((commandContext, suggestionsBuilder) -> Class7491.method23227(commandContext.getSource().method23255().method1537().method20623().stream().filter(class6766 -> !class6765.method20597(class6766.method2844())).map(class6767 -> class6767.method2844().getName()), suggestionsBuilder)).executes(commandContext -> method27006(commandContext.getSource(), Class8740.method30190(commandContext, "targets")))));
     }
     
     private static int method27006(final Class7492 class7492, final Collection<GameProfile> collection) throws CommandSyntaxException {
@@ -34,7 +34,7 @@ public class Class8168
             }
             method1537.method20593(gameProfile);
             ++n;
-            class7492.method23257(new Class2259("commands.op.success", new Object[] { collection.iterator().next().getName() }), true);
+            class7492.method23257(new Class2259("commands.op.success", collection.iterator().next().getName()), true);
         }
         if (n != 0) {
             return n;
@@ -43,6 +43,6 @@ public class Class8168
     }
     
     static {
-        field33650 = new SimpleCommandExceptionType((Message)new Class2259("commands.op.failed", new Object[0]));
+        field33650 = new SimpleCommandExceptionType(new Class2259("commands.op.failed", new Object[0]));
     }
 }

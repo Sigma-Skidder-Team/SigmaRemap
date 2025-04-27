@@ -14,8 +14,8 @@ public class Class9425
     private final List<Class9167> field40427;
     private Item field40428;
     private Class7909<Item> field40429;
-    private Class8685 field40430;
-    private Class8685 field40431;
+    private final Class8685 field40430;
+    private final Class8685 field40431;
     private Class8061 field40432;
     private Class7103 field40433;
     

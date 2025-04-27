@@ -13,64 +13,64 @@ public enum Class289
     field1608("biome_precipitation"), 
     field1609("temperature"), 
     field1610("rainfall"), 
-    field1611((Class5147)Class9216.field39161), 
-    field1612((Class5147)Class9216.field39162), 
-    field1613((Class5147)Class9216.field39163), 
-    field1614((Class5147)Class9216.field39164), 
-    field1615((Class5147)Class9216.field39169), 
-    field1616((Class5147)Class9216.field39170), 
-    field1617((Class5147)Class9216.field39171), 
-    field1618((Class5147)Class9216.field39172), 
-    field1619((Class5147)Class9216.field39173), 
-    field1620((Class5147)Class9216.field39174), 
-    field1621((Class5147)Class9216.field39175), 
-    field1622((Class5147)Class9216.field39176), 
-    field1623((Class5147)Class9216.field39177), 
-    field1624((Class5147)Class9216.field39178), 
-    field1625((Class5147)Class9216.field39179), 
-    field1626((Class5147)Class9216.field39180), 
-    field1627((Class5147)Class9216.field39181), 
-    field1628((Class5147)Class9216.field39182), 
-    field1629((Class5147)Class9216.field39199), 
-    field1630((Class5147)Class9216.field39200), 
-    field1631((Class5147)Class9216.field39201, new String[] { "x", "y" }), 
-    field1632((Class5147)Class9216.field39203, new String[] { "x", "y" }), 
-    field1633((Class5147)Class9216.field39204), 
-    field1634((Class5147)Class9216.field39205), 
-    field1635((Class5147)Class9216.field39206), 
-    field1636((Class5147)Class9216.field39207), 
-    field1637((Class5147)Class9216.field39208), 
-    field1638((Class5147)Class9216.field39209), 
-    field1639((Class5147)Class9216.field39210), 
-    field1640((Class5147)Class9216.field39211, new String[] { "x", "y" }), 
-    field1641((Class5147)Class9216.field39188, new String[] { "x", "y", "z" }), 
-    field1642((Class5147)Class9216.field39187, new String[] { "x", "y", "z" }), 
-    field1643((Class5147)Class9216.field39183, new String[] { "x", "y", "z" }), 
-    field1644((Class5147)Class9216.field39184, new String[] { "x", "y", "z" }), 
-    field1645((Class5147)Class9216.field39185, new String[] { "x", "y", "z" }), 
-    field1646((Class5147)Class9216.field39186, new String[] { "x", "y", "z" }), 
-    field1647((Class5147)Class9216.field39168, new String[] { "r", "g", "b" }), 
-    field1648((Class5147)Class9216.field39192, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1649((Class5147)Class9216.field39193, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1650((Class5147)Class9216.field39191, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1651((Class5147)Class9216.field39189, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1652((Class5147)Class9216.field39190, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1653((Class5147)Class9216.field39194, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1654((Class5147)Class9216.field39195, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1655((Class5147)Class9216.field39196, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1656((Class5147)Class9216.field39197, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }), 
-    field1657((Class5147)Class9216.field39198, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" });
+    field1611(Class9216.field39161),
+    field1612(Class9216.field39162),
+    field1613(Class9216.field39163),
+    field1614(Class9216.field39164),
+    field1615(Class9216.field39169),
+    field1616(Class9216.field39170),
+    field1617(Class9216.field39171),
+    field1618(Class9216.field39172),
+    field1619(Class9216.field39173),
+    field1620(Class9216.field39174),
+    field1621(Class9216.field39175),
+    field1622(Class9216.field39176),
+    field1623(Class9216.field39177),
+    field1624(Class9216.field39178),
+    field1625(Class9216.field39179),
+    field1626(Class9216.field39180),
+    field1627(Class9216.field39181),
+    field1628(Class9216.field39182),
+    field1629(Class9216.field39199),
+    field1630(Class9216.field39200),
+    field1631(Class9216.field39201, new String[] { "x", "y" }),
+    field1632(Class9216.field39203, new String[] { "x", "y" }),
+    field1633(Class9216.field39204),
+    field1634(Class9216.field39205),
+    field1635(Class9216.field39206),
+    field1636(Class9216.field39207),
+    field1637(Class9216.field39208),
+    field1638(Class9216.field39209),
+    field1639(Class9216.field39210),
+    field1640(Class9216.field39211, new String[] { "x", "y" }),
+    field1641(Class9216.field39188, new String[] { "x", "y", "z" }),
+    field1642(Class9216.field39187, new String[] { "x", "y", "z" }),
+    field1643(Class9216.field39183, new String[] { "x", "y", "z" }),
+    field1644(Class9216.field39184, new String[] { "x", "y", "z" }),
+    field1645(Class9216.field39185, new String[] { "x", "y", "z" }),
+    field1646(Class9216.field39186, new String[] { "x", "y", "z" }),
+    field1647(Class9216.field39168, new String[] { "r", "g", "b" }),
+    field1648(Class9216.field39192, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1649(Class9216.field39193, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1650(Class9216.field39191, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1651(Class9216.field39189, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1652(Class9216.field39190, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1653(Class9216.field39194, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1654(Class9216.field39195, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1655(Class9216.field39196, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1656(Class9216.field39197, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" }),
+    field1657(Class9216.field39198, new String[] { "0", "1", "2", "3" }, new String[] { "0", "1", "2", "3" });
     
-    private String field1658;
+    private final String field1658;
     private Class5147 field1659;
     private String[] field1660;
     private String[] field1661;
     
-    private Class289(final String field1658) {
+    Class289(final String field1658) {
         this.field1658 = field1658;
     }
     
-    private Class289(final Class5147 field1659) {
+    Class289(final Class5147 field1659) {
         this.field1658 = field1659.method16081();
         this.field1659 = field1659;
         if (method942(field1659, Class5154.class, Class5153.class)) {
@@ -79,7 +79,7 @@ public enum Class289
         throw new IllegalArgumentException("Invalid uniform type for enum: " + this + ", uniform: " + field1659.getClass().getName());
     }
     
-    private Class289(final Class5147 field1659, final String[] field1660) {
+    Class289(final Class5147 field1659, final String[] field1660) {
         this.field1658 = field1659.method16081();
         this.field1659 = field1659;
         this.field1660 = field1660;
@@ -89,7 +89,7 @@ public enum Class289
         throw new IllegalArgumentException("Invalid uniform type for enum: " + this + ", uniform: " + field1659.getClass().getName());
     }
     
-    private Class289(final Class5147 field1659, final String[] field1660, final String[] field1661) {
+    Class289(final Class5147 field1659, final String[] field1660, final String[] field1661) {
         this.field1658 = field1659.method16081();
         this.field1659 = field1659;
         this.field1660 = field1660;

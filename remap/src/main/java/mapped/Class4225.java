@@ -36,6 +36,6 @@ public class Class4225 extends Class4211
         if (this.field19023 != null) {
             jsonObject.addProperty("to", DimensionType.method1276(this.field19023).toString());
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

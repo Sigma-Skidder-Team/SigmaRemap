@@ -94,7 +94,7 @@ public abstract class Class7352
             if (!(method22573 instanceof Class7577) || !((Class7577)method22573).method23857()) {
                 class8545 = Class227.field801;
             }
-            list.add((Class7577)method22573);
+            list.add(method22573);
         }
         if (class8543 == Class227.field802) {
             if (this.field28376 == Class227.field802) {

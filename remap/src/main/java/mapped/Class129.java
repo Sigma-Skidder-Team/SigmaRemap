@@ -47,7 +47,7 @@ public class Class129 extends Class126
                     final ItemStack method23590 = Class4094.method12326(method23588, method23589.getX(), method23589.getZ(), this.field392, true, true);
                     Class4094.method12335(method23588, method23590);
                     Class6356.method18917(method23590, method23589, "+", this.field391);
-                    method23590.method27665(new Class2259("filled_map." + this.field390.toLowerCase(Locale.ROOT), new Object[0]));
+                    method23590.method27665(new Class2259("filled_map." + this.field390.toLowerCase(Locale.ROOT)));
                     return method23590;
                 }
             }

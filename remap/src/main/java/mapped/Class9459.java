@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Class9459
 {
     private static String[] field40667;
-    private ArrayList field40668;
+    private final ArrayList field40668;
     
     public Class9459() {
         this.field40668 = new ArrayList();

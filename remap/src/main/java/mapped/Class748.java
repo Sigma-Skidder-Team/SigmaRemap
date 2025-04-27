@@ -34,7 +34,7 @@ public class Class748 extends Class516<Class3436>
     @Override
     public void tick() {
         super.tick();
-        final int method10959 = ((Class3436)this.field3077).method10959();
+        final int method10959 = this.field3077.method10959();
         if (this.field4044) {
             if (method10959 >= 0) {
                 this.field4044 = false;
@@ -84,13 +84,13 @@ public class Class748 extends Class516<Class3436>
                 }
             }
         }
-        this.field4043.field3431 = (((Class3436)this.field3077).method10963() && this.field4045 != null);
+        this.field4043.field3431 = (this.field3077.method10963() && this.field4045 != null);
     }
     
     @Override
     public void method2973(final int n, final int n2) {
-        this.drawCenteredString(this.font, Class8822.method30773("block.minecraft.beacon.primary", new Object[0]), 62, 10, 14737632);
-        this.drawCenteredString(this.font, Class8822.method30773("block.minecraft.beacon.secondary", new Object[0]), 169, 10, 14737632);
+        this.drawCenteredString(this.font, Class8822.method30773("block.minecraft.beacon.primary"), 62, 10, 14737632);
+        this.drawCenteredString(this.font, Class8822.method30773("block.minecraft.beacon.secondary"), 169, 10, 14737632);
         for (final Widget class573 : this.buttons) {
             if (!class573.method3360()) {
                 continue;

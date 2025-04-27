@@ -54,7 +54,7 @@ public final class Class1913 extends TextureAtlasSprite
         final int n6 = -524040;
         for (int i = 0; i < n2; ++i) {
             for (int j = 0; j < n; ++j) {
-                if (!(i < n4 ^ j < n3)) {
+                if (i < n4 == j < n3) {
                     class1846.method6648(j, i, n5);
                 }
                 else {
@@ -73,7 +73,7 @@ public final class Class1913 extends TextureAtlasSprite
             while (i < 16) {
                 int j = 0;
                 while (j < 16) {
-                    if (!(i < 8 ^ j < 8)) {
+                    if (i < 8 == j < 8) {
                         class1846.method6648(j, i, -16777216);
                     }
                     else {

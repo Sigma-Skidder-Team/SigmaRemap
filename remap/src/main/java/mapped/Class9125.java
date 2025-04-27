@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import javax.xml.transform.Transformer;
 import org.w3c.dom.Document;
@@ -115,7 +116,7 @@ public class Class9125
                 }
                 element.appendChild(method33106(document, (Class7395)method26241));
             }
-            final StreamResult streamResult = new StreamResult(new OutputStreamWriter(out, "utf-8"));
+            final StreamResult streamResult = new StreamResult(new OutputStreamWriter(out, StandardCharsets.UTF_8));
             final DOMSource domSource = new DOMSource(document);
             final Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.setOutputProperty("indent", "yes");
@@ -178,7 +179,7 @@ public class Class9125
         try {
             final Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             document.appendChild(method33106(document, class7395));
-            final StreamResult streamResult = new StreamResult(new OutputStreamWriter(out, "utf-8"));
+            final StreamResult streamResult = new StreamResult(new OutputStreamWriter(out, StandardCharsets.UTF_8));
             final DOMSource domSource = new DOMSource(document);
             final Transformer transformer = TransformerFactory.newInstance().newTransformer();
             transformer.setOutputProperty("indent", "yes");

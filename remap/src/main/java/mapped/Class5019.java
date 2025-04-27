@@ -25,7 +25,7 @@ public final class Class5019 implements Class5020
     
     @Override
     public void method15236(final JsonObject jsonObject, final JsonSerializationContext jsonSerializationContext) {
-        jsonObject.addProperty("bonusMultiplier", (Number)this.field21526);
+        jsonObject.addProperty("bonusMultiplier", this.field21526);
     }
     
     public static Class5020 method15237(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {

@@ -184,7 +184,7 @@ public class Pointer
     
     public void write(final long bOff, final Pointer[] buf, final int index, final int length) {
         for (int i = 0; i < length; ++i) {
-            this.setPointer(bOff + i * Pointer.SIZE, buf[index + i]);
+            this.setPointer(bOff + (long) i * Pointer.SIZE, buf[index + i]);
         }
     }
     

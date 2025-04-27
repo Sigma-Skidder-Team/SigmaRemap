@@ -31,11 +31,11 @@ public class Class6231 extends Class6227<Class136>
                 if (method503 == null) {
                     throw new IllegalArgumentException("Don't know how to serialize mob effect " + obj);
                 }
-                jsonObject2.add("type", (JsonElement)new JsonPrimitive(method503.toString()));
+                jsonObject2.add("type", new JsonPrimitive(method503.toString()));
                 jsonObject2.add("duration", jsonSerializationContext.serialize(Class136.method674(class136).get(obj)));
-                jsonArray.add((JsonElement)jsonObject2);
+                jsonArray.add(jsonObject2);
             }
-            jsonObject.add("effects", (JsonElement)jsonArray);
+            jsonObject.add("effects", jsonArray);
         }
     }
     

@@ -76,12 +76,11 @@ public final class Quaternion
     
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Quaternion[").append(this.getW()).append(" + ");
-        sb.append(this.getX()).append("i + ");
-        sb.append(this.getY()).append("j + ");
-        sb.append(this.getZ()).append("k]");
-        return sb.toString();
+        String sb = "Quaternion[" + this.getW() + " + " +
+                this.getX() + "i + " +
+                this.getY() + "j + " +
+                this.getZ() + "k]";
+        return sb;
     }
     
     public float getX() {

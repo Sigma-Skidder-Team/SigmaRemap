@@ -41,7 +41,6 @@ public class Streaming extends Module
     @EventListener
     public void method10403(final Class5729 class5729) {
         if (this.isEnabled()) {
-            return;
         }
     }
 }

@@ -11,5 +11,5 @@ public enum Class298 implements Class299
     field1713, 
     field1714, 
     field1715, 
-    field1716;
+    field1716
 }

@@ -10,5 +10,5 @@ public enum Class225
     field792, 
     field793, 
     field794, 
-    field795;
+    field795
 }

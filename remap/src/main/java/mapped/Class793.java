@@ -128,9 +128,7 @@ public class Class793 extends Class789
     public static boolean method4464(final EntityType<Class793> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7502.getY() < class7500.method6743() + 4) {
             if (class7500.getBlockState(class7502.method1139()).getBlock() == Blocks.field29175) {
-                if (class7500.method6993(class7502, 0) > 8) {
-                    return true;
-                }
+                return class7500.method6993(class7502, 0) > 8;
             }
         }
         return false;

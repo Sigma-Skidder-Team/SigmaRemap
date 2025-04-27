@@ -23,7 +23,7 @@ public class Class5130 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("biome_temp"), dynamicOps.createString(this.field22097.method7943()), dynamicOps.createString("large_probability"), dynamicOps.createFloat(this.field22098), dynamicOps.createString("cluster_probability"), dynamicOps.createFloat(this.field22099))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("biome_temp"), dynamicOps.createString(this.field22097.method7943()), dynamicOps.createString("large_probability"), dynamicOps.createFloat(this.field22098), dynamicOps.createString("cluster_probability"), dynamicOps.createFloat(this.field22099))));
     }
     
     public static <T> Class5130 method16038(final Dynamic<T> dynamic) {

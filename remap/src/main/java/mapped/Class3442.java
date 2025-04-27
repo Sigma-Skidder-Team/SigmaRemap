@@ -33,7 +33,6 @@ public class Class3442
             method11004((Object2ObjectLinkedOpenHashMap<Class6332, BufferBuilder>)object2ObjectLinkedOpenHashMap, Class6332.method18785());
             method11004((Object2ObjectLinkedOpenHashMap<Class6332, BufferBuilder>)object2ObjectLinkedOpenHashMap, Class6332.method18782());
             Class7637.field30247.forEach(class6332 -> method11004((Object2ObjectLinkedOpenHashMap<Class6332, BufferBuilder>)object2ObjectLinkedOpenHashMap2, class6332));
-            return;
         });
         this.field16263 = IRenderTypeBuffer.method25213(this.field16262, new BufferBuilder(256));
         this.field16264 = IRenderTypeBuffer.getImpl(new BufferBuilder(256));

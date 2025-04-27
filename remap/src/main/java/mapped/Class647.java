@@ -109,7 +109,7 @@ public class Class647 extends Widget
     public List<String> method3704(final Screen class527) {
         final List<String> method3030 = class527.getTooltipFromItem(this.method3701().get(this.field3672).getRecipeOutput());
         if (this.field3669.method35946(this.field3668.method19705(this.field3667)).size() > 1) {
-            method3030.add(Class8822.method30773("gui.recipebook.moreRecipes", new Object[0]));
+            method3030.add(Class8822.method30773("gui.recipebook.moreRecipes"));
         }
         return method3030;
     }

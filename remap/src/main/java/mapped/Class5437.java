@@ -16,7 +16,7 @@ public class Class5437 extends Class5419<LivingEntity>
     private static String[] field22644;
     
     public Class5437() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10630, (Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33802, (Object)Class1952.field10628, (Object)Class8233.field33805, (Object)Class1952.field10628, (Object)Class8233.field33811, (Object)Class1952.field10629));
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10630, Class8233.field33810, Class1952.field10630, Class8233.field33802, Class1952.field10628, Class8233.field33805, Class1952.field10628, (Object)Class8233.field33811, (Object)Class1952.field10629));
     }
     
     @Override
@@ -27,9 +27,7 @@ public class Class5437 extends Class5419<LivingEntity>
             if (method2619.isPresent()) {
                 if (Objects.equals(class1849.method6789().getType(), method2619.get().method1169())) {
                     if (method2619.get().method1170().withinDistance(class1850.method1934(), 4.0)) {
-                        if (method2618.method1198(Class8233.field33805).get().stream().anyMatch(class1851 -> EntityType.field29042.equals(class1851.getType()))) {
-                            return true;
-                        }
+                        return method2618.method1198(Class8233.field33805).get().stream().anyMatch(class1851 -> EntityType.field29042.equals(class1851.getType()));
                     }
                 }
             }

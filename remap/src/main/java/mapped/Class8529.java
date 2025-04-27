@@ -19,8 +19,8 @@ public class Class8529
                 jsonObject2.addProperty("color", "gray");
                 jsonObject2.addProperty("italic", Boolean.valueOf(true));
                 final JsonArray jsonArray = new JsonArray();
-                jsonArray.add((JsonElement)jsonObject2);
-                jsonObject.add("with", (JsonElement)jsonArray);
+                jsonArray.add(jsonObject2);
+                jsonObject.add("with", jsonArray);
             }
         }
     }

@@ -45,7 +45,7 @@ public abstract class Class615 extends Class608<Class632>
     
     static {
         field3586 = new ResourceLocation("textures/gui/resource_packs.png");
-        field3587 = new Class2259("resourcePack.incompatible", new Object[0]);
-        field3588 = new Class2259("resourcePack.incompatible.confirm.title", new Object[0]);
+        field3587 = new Class2259("resourcePack.incompatible");
+        field3588 = new Class2259("resourcePack.incompatible.confirm.title");
     }
 }

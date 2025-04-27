@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 public class Class6699 extends Class6693
 {
     public Class6699() {
-        super("killpotion", "Gives you a potion to kill creative players!", new String[0]);
+        super("killpotion", "Gives you a potion to kill creative players!");
     }
     
     @Override
@@ -26,7 +26,7 @@ public class Class6699 extends Class6693
             e.putInt("Duration", 2000);
             e.putInt("Id", 6);
             final ListNBT class6430 = new ListNBT();
-            ((AbstractList<CompoundNBT>)class6430).add(e);
+            class6430.add(e);
             class6429.method27676("CustomPotionEffects", class6430);
             Class6699.field26420.method5269().method17292(new Class4287(36 + InvManagerUtil.method29343(), class6429));
             class6428.method19104("Requested server a killpotion!");

@@ -7,7 +7,7 @@ package mapped;
 public class Class2333 extends Exception
 {
     private static String[] field14075;
-    private String field14076;
+    private final String field14076;
     
     public Class2333(final String field14076) {
         this.field14076 = field14076;

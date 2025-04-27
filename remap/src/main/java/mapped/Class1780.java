@@ -40,7 +40,7 @@ public class Class1780 extends Class1779
     
     public Class1780() {
         super(Class1780.field9883, "recipes");
-        this.field9884 = (Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.of();
+        this.field9884 = ImmutableMap.of();
     }
     
     public void method6377(final Map<ResourceLocation, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
@@ -53,11 +53,11 @@ public class Class1780 extends Class1779
                 ((ImmutableMap$Builder)hashMap.computeIfAbsent(method6385.getType(), p0 -> ImmutableMap.builder())).put((Object)class6584, (Object)method6385);
             }
             catch (final IllegalArgumentException | JsonParseException ex) {
-                Class1780.field9879.error("Parsing error loading recipe {}", (Object)class6584, (Object)ex);
+                Class1780.field9879.error("Parsing error loading recipe {}", class6584, ex);
             }
         }
         this.field9884 = (Map)hashMap.entrySet().stream().collect(ImmutableMap.toImmutableMap((Function)Map.Entry::getKey, entry2 -> entry2.getValue().build()));
-        Class1780.field9879.info("Loaded {} recipes", (Object)hashMap.size());
+        Class1780.field9879.info("Loaded {} recipes", hashMap.size());
     }
     
     public <C extends IInventory, T extends IRecipe<C>> Optional<T> method6378(final IRecipeType<T> class8976, final C c, final World class8977) {
@@ -85,7 +85,7 @@ public class Class1780 extends Class1779
     }
     
     public Optional<? extends IRecipe<?>> method6382(final ResourceLocation class1932) {
-        return (Optional<? extends IRecipe<?>>)this.field9884.values().stream().map(map -> map.get(class1933)).filter(Objects::nonNull).findFirst();
+        return this.field9884.values().stream().map(map -> map.get(class1933)).filter(Objects::nonNull).findFirst();
     }
     
     public Collection<IRecipe<?>> method6383() {
@@ -113,7 +113,7 @@ public class Class1780 extends Class1779
                 new IllegalStateException("Duplicate recipe ignored with ID " + class3662.getId());
             }
         });
-        this.field9884 = (Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.copyOf((Map)hashMap);
+        this.field9884 = (Map<IRecipeType<?>, Map<ResourceLocation, IRecipe<?>>>)ImmutableMap.copyOf(hashMap);
     }
     
     static {

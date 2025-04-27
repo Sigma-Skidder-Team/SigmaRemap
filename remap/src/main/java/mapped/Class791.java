@@ -211,7 +211,7 @@ public class Class791 extends Class789
         this.field4114.method22062(12, new Class3605(this));
         this.field4114.method22062(13, new Class3456(this, 1.25));
         this.field4114.method22062(14, new Class3517(this, 1.0));
-        this.field4115.method22062(1, new Class3548(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3548(this, new Class[0]).method11100(new Class[0]));
     }
     
     @Override
@@ -642,9 +642,7 @@ public class Class791 extends Class789
             if (!this.method4398()) {
                 if (!this.method4378()) {
                     if (!this.method4389()) {
-                        if (!this.method4374()) {
-                            return true;
-                        }
+                        return !this.method4374();
                     }
                 }
             }
@@ -665,7 +663,7 @@ public class Class791 extends Class789
             final Item class428;
             final boolean b;
             if (class428 == Blocks.BAMBOO.method11704() || class428 == Blocks.field29344.method11704()) {
-                if (!(!class427.isAlive())) {
+                if (class427.isAlive()) {
                     if (!class427.method2118()) {
                         return b;
                     }

@@ -112,7 +112,7 @@ public class IntegratedServer extends MinecraftServer
             super.method1469(booleanSupplier);
             final int max = Math.max(2, this.field9269.gameSettings.field23382 - 1);
             if (max != this.method1537().method20613()) {
-                IntegratedServer.field9268.info("Changing view distance to {}, from {}", (Object)max, (Object)this.method1537().method20613());
+                IntegratedServer.field9268.info("Changing view distance to {}, from {}", max, this.method1537().method20613());
                 this.method1537().method20622(max);
             }
         }
@@ -199,7 +199,7 @@ public class IntegratedServer extends MinecraftServer
     public boolean method1544(final Class101 class101, final boolean b, final int i) {
         try {
             this.method1541().method24060(null, i);
-            IntegratedServer.field9268.info("Started serving on {}", (Object)i);
+            IntegratedServer.field9268.info("Started serving on {}", i);
             this.field9272 = i;
             (this.field9273 = new Class917(this.method1532(), i + "")).start();
             this.method1537().method20614(class101);
@@ -240,7 +240,6 @@ public class IntegratedServer extends MinecraftServer
                         this.method1537().method20581(class513);
                     }
                 }
-                return;
             });
         }
         super.method1456(b);

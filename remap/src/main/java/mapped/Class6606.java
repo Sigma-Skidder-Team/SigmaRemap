@@ -27,9 +27,7 @@ public class Class6606 extends Class6601
     public boolean method20061(final PlayerEntity playerEntity) {
         if (playerEntity.field3025.field27304 || playerEntity.field3026 >= Class3441.method11001(this.field26184).method19832()) {
             if (Class3441.method11001(this.field26184).method19832() > 0) {
-                if (this.method20054()) {
-                    return true;
-                }
+                return this.method20054();
             }
         }
         return false;
@@ -59,7 +57,7 @@ public class Class6606 extends Class6601
             class515.getBlockState(class516);
             if (!class514.field3025.field27304) {
                 final BlockState class517;
-                if (!(!class517.method21755(Class7188.field27905))) {
+                if (class517.method21755(Class7188.field27905)) {
                     if (class514.method2633().nextFloat() < 0.12f) {
                         Class3990.method12139(class517);
                         final BlockState class518;
@@ -77,7 +75,6 @@ public class Class6606 extends Class6601
                 }
             }
             class515.method6955(1030, class516, 0);
-            return;
         });
         return class513;
     }

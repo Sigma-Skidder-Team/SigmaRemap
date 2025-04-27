@@ -14,7 +14,7 @@ public class Class8425
     public static void method28139(final float[] array, final float[] array2, final float[] array3) {
         for (int i = 0; i < 4; ++i) {
             for (int j = 0; j < 4; ++j) {
-                array[4 * i + j] = array2[4 * i + 0] * array3[0 + j] + array2[4 * i + 1] * array3[4 + j] + array2[4 * i + 2] * array3[8 + j] + array2[4 * i + 3] * array3[12 + j];
+                array[4 * i + j] = array2[4 * i] * array3[j] + array2[4 * i + 1] * array3[4 + j] + array2[4 * i + 2] * array3[8 + j] + array2[4 * i + 3] * array3[12 + j];
             }
         }
     }

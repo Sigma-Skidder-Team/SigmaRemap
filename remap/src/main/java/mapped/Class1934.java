@@ -77,16 +77,14 @@ public class Class1934 implements Comparable<Class1934>
     }
     
     public ITextComponent method7816() {
-        return Class8272.method27500(this.field10553) ? new Class2259("selectWorld.versionUnknown", new Object[0]) : new StringTextComponent(this.field10553);
+        return Class8272.method27500(this.field10553) ? new Class2259("selectWorld.versionUnknown") : new StringTextComponent(this.field10553);
     }
     
     public boolean method7817() {
         if (!this.method7818()) {
             if (Class9528.method35579().isStable() || this.field10555) {
                 if (!this.method7820()) {
-                    if (!this.method7819()) {
-                        return false;
-                    }
+                    return this.method7819();
                 }
             }
         }

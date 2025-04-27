@@ -12,9 +12,9 @@ public class Class4898 extends Class4841
 {
     public Animation field20949;
     private final int field20950;
-    private Class4817 field20951;
+    private final Class4817 field20951;
     public static Class8784 field20952;
-    private LoadingIndicator field20953;
+    private final LoadingIndicator field20953;
     
     public Class4898(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int field20950) {
         super(customGuiScreen, s, n, n2, n3, 0, ColorHelper.field25964, false);

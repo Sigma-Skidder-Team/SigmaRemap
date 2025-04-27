@@ -14,8 +14,8 @@ public class Class9319
 {
     private static String[] field40016;
     private String field40017;
-    private Map<String, String> field40018;
-    private Set<String> field40019;
+    private final Map<String, String> field40018;
+    private final Set<String> field40019;
     
     public Class9319(final String field40017) {
         this.field40017 = null;

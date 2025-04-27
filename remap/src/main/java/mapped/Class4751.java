@@ -13,7 +13,7 @@ public class Class4751 extends Class4748<Class830, Class5864<Class830>>
     
     public Class4751(final Class8551 class8551) {
         super(class8551, new Class5864(0.0f, 0.0f, 64, 64), new Class5864(0.5f, true), new Class5864(1.0f, true));
-        this.method13978((Class1799<Class830, Class5864<Class830>>)new Class1804((Class4778<Class827, Class5864<Class827>>)this));
+        this.method13978((Class1799<Class830, Class5864<Class830>>)new Class1804(this));
     }
     
     @Override

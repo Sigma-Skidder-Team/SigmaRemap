@@ -15,7 +15,7 @@ public abstract class Class6693
     private final String field26421;
     private final String field26422;
     private final String[] field26423;
-    private List<String> field26424;
+    private final List<String> field26424;
     
     public Class6693(final String field26421, final String field26422, final String... field26423) {
         this.field26424 = new ArrayList<String>();

@@ -116,7 +116,7 @@ public class Class350 implements Comparable<Class350>
     
     @Override
     public int compareTo(final Class350 class350) {
-        return this.field2160.equals(class350.field2160) ? Class8822.method30773(this.field2158, new Object[0]).compareTo(Class8822.method30773(class350.field2158, new Object[0])) : Class350.field2157.get(this.field2160).compareTo(Class350.field2157.get(class350.field2160));
+        return this.field2160.equals(class350.field2160) ? Class8822.method30773(this.field2158).compareTo(Class8822.method30773(class350.field2158)) : Class350.field2157.get(this.field2160).compareTo(Class350.field2157.get(class350.field2160));
     }
     
     public static Supplier<String> method1063(final String s) {
@@ -157,12 +157,12 @@ public class Class350 implements Comparable<Class350>
                 break;
             }
             case 3: {
-                final String method26050 = Class8822.method30773(method26048, new Object[0]);
+                final String method26050 = Class8822.method30773(method26048);
                 s = (Objects.equals(method26050, method26048) ? Class8822.method30773(Class2136.field12469.method8290(), method26049 + 1) : method26050);
                 break;
             }
         }
-        return (s == null) ? Class8822.method30773(method26048, new Object[0]) : s;
+        return (s == null) ? Class8822.method30773(method26048) : s;
     }
     
     public boolean method1069() {

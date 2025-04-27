@@ -165,37 +165,37 @@ public class Class9218
     }
     
     public static void method33935(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39445)).method28610(Class7133.field27812.method21889((Object)new Class6928(4))));
-        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39446)).method28610(Class7133.field27811.method21889((Object)new Class6928(80))));
+        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39445)).method28610(Class7133.field27812.method21889(new Class6928(4))));
+        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39446)).method28610(Class7133.field27811.method21889(new Class6928(80))));
     }
     
     public static void method33936(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39446)).method28610(Class7133.field27811.method21889((Object)new Class6928(80))));
+        class3090.method9849(Class2108.field12223, Class4535.field20002.method13527(new Class5141(Class9218.field39446)).method28610(Class7133.field27811.method21889(new Class6928(80))));
     }
     
     public static void method33937(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12224, Class4535.field19996.method13527(Class5113.field22059).method28610(Class7133.field27813.method21889((Object)new Class6928(8))));
+        class3090.method9849(Class2108.field12224, Class4535.field19996.method13527(Class5113.field22059).method28610(Class7133.field27813.method21889(new Class6928(8))));
     }
     
     public static void method33938(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39447, 33)).method28610(Class7133.field27795.method21889((Object)new Class6937(10, 0, 0, 256))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39448, 33)).method28610(Class7133.field27795.method21889((Object)new Class6937(8, 0, 0, 256))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39449, 33)).method28610(Class7133.field27795.method21889((Object)new Class6937(10, 0, 0, 80))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39450, 33)).method28610(Class7133.field27795.method21889((Object)new Class6937(10, 0, 0, 80))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39451, 33)).method28610(Class7133.field27795.method21889((Object)new Class6937(10, 0, 0, 80))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39447, 33)).method28610(Class7133.field27795.method21889(new Class6937(10, 0, 0, 256))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39448, 33)).method28610(Class7133.field27795.method21889(new Class6937(8, 0, 0, 256))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39449, 33)).method28610(Class7133.field27795.method21889(new Class6937(10, 0, 0, 80))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39450, 33)).method28610(Class7133.field27795.method21889(new Class6937(10, 0, 0, 80))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39451, 33)).method28610(Class7133.field27795.method21889(new Class6937(10, 0, 0, 80))));
     }
     
     public static void method33939(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39452, 17)).method28610(Class7133.field27795.method21889((Object)new Class6937(20, 0, 0, 128))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39453, 9)).method28610(Class7133.field27795.method21889((Object)new Class6937(20, 0, 0, 64))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39454, 9)).method28610(Class7133.field27795.method21889((Object)new Class6937(2, 0, 0, 32))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39455, 8)).method28610(Class7133.field27795.method21889((Object)new Class6937(8, 0, 0, 16))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39456, 8)).method28610(Class7133.field27795.method21889((Object)new Class6937(1, 0, 0, 16))));
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39457, 7)).method28610(Class7133.field27802.method21889((Object)new Class6929(1, 16, 16))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39452, 17)).method28610(Class7133.field27795.method21889(new Class6937(20, 0, 0, 128))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39453, 9)).method28610(Class7133.field27795.method21889(new Class6937(20, 0, 0, 64))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39454, 9)).method28610(Class7133.field27795.method21889(new Class6937(2, 0, 0, 32))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39455, 8)).method28610(Class7133.field27795.method21889(new Class6937(8, 0, 0, 16))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39456, 8)).method28610(Class7133.field27795.method21889(new Class6937(1, 0, 0, 16))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39457, 7)).method28610(Class7133.field27802.method21889(new Class6929(1, 16, 16))));
     }
     
     public static void method33940(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39454, 9)).method28610(Class7133.field27795.method21889((Object)new Class6937(20, 32, 32, 80))));
+        class3090.method9849(Class2108.field12226, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39454, 9)).method28610(Class7133.field27795.method21889(new Class6937(20, 32, 32, 80))));
     }
     
     public static void method33941(final Class3090 class3090) {
@@ -203,235 +203,235 @@ public class Class9218
     }
     
     public static void method33942(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12227, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39460, 9)).method28610(Class7133.field27795.method21889((Object)new Class6937(7, 0, 0, 64))));
+        class3090.method9849(Class2108.field12227, Class4535.field20003.method13527(new Class5133(Class2066.field11827, Class9218.field39460, 9)).method28610(Class7133.field27795.method21889(new Class6937(7, 0, 0, 64))));
     }
     
     public static void method33943(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39461, 7, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(3))));
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39448, 6, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39461, 7, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889(new Class6927(3))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39448, 6, 2, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39463 }))).method28610(Class7133.field27784.method21889(new Class6927(1))));
     }
     
     public static void method33944(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12226, Class4535.field20000.method13527(new Class5138(Class9218.field39462, 4, 1, Lists.newArrayList((Object[])new BlockState[] { Class9218.field39447, Class9218.field39462 }))).method28610(Class7133.field27784.method21889(new Class6927(1))));
     }
     
     public static void method33945(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12223, Class4535.field19999.method13527(new Class5139(Class9218.field39464, 0)).method28610(Class7133.field27807.method21889((Object)new Class6927(3))));
+        class3090.method9849(Class2108.field12223, Class4535.field19999.method13527(new Class5139(Class9218.field39464, 0)).method28610(Class7133.field27807.method21889(new Class6927(3))));
     }
     
     public static void method33946(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39539).method28610(Class7133.field27785.method21889((Object)new Class6927(7))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39539).method28610(Class7133.field27785.method21889(new Class6927(7))));
     }
     
     public static void method33947(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39529).method28610(Class7133.field27791.method21889((Object)new Class6928(12))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39529).method28610(Class7133.field27791.method21889(new Class6928(12))));
     }
     
     public static void method33948(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39529).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39529).method28610(Class7133.field27786.method21889(new Class6927(1))));
     }
     
     public static void method33949(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.0f)).method28610(Class7133.field27786.method21889((Object)new Class6927(16))));
+        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.0f)).method28610(Class7133.field27786.method21889(new Class6927(16))));
     }
     
     public static void method33950(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.2f)).method28610(Class7133.field27805.method21889((Object)new Class6931(160, 80.0, 0.3, HeightmapType.field11521))));
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.05f), (Object)Class4535.field19977.method13527(Class9218.field39513).method28611(0.15f), (Object)Class4535.field19979.method13527(Class9218.field39517).method28611(0.7f)), Class4535.field19982.method13527(Class9218.field39520))).method28610(Class7133.field27794.method21889((Object)new Class6934(30, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20014.method13527(new Class5117(0.2f)).method28610(Class7133.field27805.method21889(new Class6931(160, 80.0, 0.3, HeightmapType.field11521))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19976.method13527(Class9218.field39504).method28611(0.05f), Class4535.field19977.method13527(Class9218.field39513).method28611(0.15f), (Object)Class4535.field19979.method13527(Class9218.field39517).method28611(0.7f)), Class4535.field19982.method13527(Class9218.field39520))).method28610(Class7133.field27794.method21889(new Class6934(30, 0.1f, 1))));
     }
     
     public static void method33951(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33952(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889((Object)new Class6934(0, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889(new Class6934(0, 0.1f, 1))));
     }
     
     public static void method33953(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39501).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39501).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33954(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39501).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39506).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39508))).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19974.method13527(Class9218.field39501).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39506).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39508))).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33955(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39502).method28611(0.5f)), Class4535.field19974.method13527(Class9218.field39501))).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39502).method28611(0.5f)), Class4535.field19974.method13527(Class9218.field39501))).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33956(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19975.method13527(Class9218.field39499).method28611(0.8f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889((Object)new Class6934(1, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19975.method13527(Class9218.field39499).method28611(0.8f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889(new Class6934(1, 0.1f, 1))));
     }
     
     public static void method33957(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19975.method13527(Class9218.field39499).method28611(0.8f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889((Object)new Class6934(2, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19975.method13527(Class9218.field39499).method28611(0.8f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889(new Class6934(2, 0.1f, 1))));
     }
     
     public static void method33958(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39498).method28611(0.666f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889((Object)new Class6934(0, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19974.method13527(Class9218.field39498).method28611(0.666f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889(new Class6934(0, 0.1f, 1))));
     }
     
     public static void method33959(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39498).method28611(0.666f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889((Object)new Class6934(3, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19974.method13527(Class9218.field39498).method28611(0.666f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27794.method21889(new Class6934(3, 0.1f, 1))));
     }
     
     public static void method33960(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f), (Object)Class4535.field19977.method13527(Class9218.field39513).method28611(0.5f), (Object)Class4535.field19979.method13527(Class9218.field39517).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39495))).method28610(Class7133.field27794.method21889((Object)new Class6934(50, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f), Class4535.field19977.method13527(Class9218.field39513).method28611(0.5f), (Object)Class4535.field19979.method13527(Class9218.field39517).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39495))).method28610(Class7133.field27794.method21889(new Class6934(50, 0.1f, 1))));
     }
     
     public static void method33961(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f), (Object)Class4535.field19977.method13527(Class9218.field39513).method28611(0.5f)), Class4535.field19974.method13527(Class9218.field39495))).method28610(Class7133.field27794.method21889((Object)new Class6934(2, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f), (Object)Class4535.field19977.method13527(Class9218.field39513).method28611(0.5f)), Class4535.field19974.method13527(Class9218.field39495))).method28610(Class7133.field27794.method21889(new Class6934(2, 0.1f, 1))));
     }
     
     public static void method33962(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39494).method28610(Class7133.field27794.method21889((Object)new Class6934(5, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39494).method28610(Class7133.field27794.method21889(new Class6934(5, 0.1f, 1))));
     }
     
     public static void method33963(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39498).method28610(Class7133.field27794.method21889((Object)new Class6934(0, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39498).method28610(Class7133.field27794.method21889(new Class6934(0, 0.1f, 1))));
     }
     
     public static void method33964(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19980.method13527(Class9218.field39515).method28611(0.33333334f), (Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19980.method13527(Class9218.field39515).method28611(0.33333334f), (Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33965(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19980.method13527(Class9218.field39515).method28611(0.025641026f), (Object)Class4535.field19980.method13527(Class9218.field39516).method28611(0.30769232f), (Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889((Object)new Class6934(10, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19980.method13527(Class9218.field39515).method28611(0.025641026f), Class4535.field19980.method13527(Class9218.field39516).method28611(0.30769232f), (Object)Class4535.field19974.method13527(Class9218.field39497).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39498))).method28610(Class7133.field27794.method21889(new Class6934(10, 0.1f, 1))));
     }
     
     public static void method33966(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39520).method28610(Class7133.field27786.method21889((Object)new Class6927(25))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39520).method28610(Class7133.field27786.method21889(new Class6927(25))));
     }
     
     public static void method33967(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39538).method28610(Class7133.field27785.method21889((Object)new Class6927(7))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39538).method28610(Class7133.field27785.method21889(new Class6927(7))));
     }
     
     public static void method33968(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(5))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(5))));
     }
     
     public static void method33969(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(20))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(20))));
     }
     
     public static void method33970(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889((Object)new Class6927(20))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889(new Class6927(20))));
     }
     
     public static void method33971(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20017.method13527(new Class5121((List<Class8530<?, ?>>)ImmutableList.of((Object)Class4535.field19982.method13527(Class9218.field39534), (Object)Class4535.field19982.method13527(Class9218.field39535), (Object)Class4535.field19982.method13527(Class9218.field39536), (Object)Class4535.field19981.method13527(Class9218.field39521)), 0)).method28610(Class7133.field27785.method21889((Object)new Class6927(5))));
+        class3090.method9849(Class2108.field12228, Class4535.field20017.method13527(new Class5121((List<Class8530<?, ?>>)ImmutableList.of(Class4535.field19982.method13527(Class9218.field39534), Class4535.field19982.method13527(Class9218.field39535), Class4535.field19982.method13527(Class9218.field39536), (Object)Class4535.field19981.method13527(Class9218.field39521)), 0)).method28610(Class7133.field27785.method21889(new Class6927(5))));
     }
     
     public static void method33972(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(2))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(2))));
     }
     
     public static void method33973(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39503).method28610(Class7133.field27794.method21889((Object)new Class6934(2, 0.1f, 1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39522).method28610(Class7133.field27785.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(5))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39531).method28610(Class7133.field27786.method21889((Object)new Class6927(4))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889((Object)new Class6935(8, 0.25f))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889((Object)new Class6935(8, 0.125f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19974.method13527(Class9218.field39503).method28610(Class7133.field27794.method21889(new Class6934(2, 0.1f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39522).method28610(Class7133.field27785.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(5))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39531).method28610(Class7133.field27786.method21889(new Class6927(4))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889(new Class6935(8, 0.25f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889(new Class6935(8, 0.125f))));
     }
     
     public static void method33974(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20020.method13527(new Class5142(Class4535.field19990.method13527(Class9218.field39551), Class4535.field19991.method13527(Class9218.field39552))).method28610(Class7133.field27783.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889((Object)new Class6935(1, 0.25f))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889((Object)new Class6935(1, 0.125f))));
+        class3090.method9849(Class2108.field12228, Class4535.field20020.method13527(new Class5142(Class4535.field19990.method13527(Class9218.field39551), Class4535.field19991.method13527(Class9218.field39552))).method28610(Class7133.field27783.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889(new Class6935(1, 0.25f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889(new Class6935(1, 0.125f))));
     }
     
     public static void method33975(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39507).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39505))).method28610(Class7133.field27794.method21889((Object)new Class6934(0, 0.05f, 1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39524).method28610(Class7133.field27788.method21889((Object)new Class6930(-0.8, 15, 4))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27789.method21889((Object)new Class6930(-0.8, 5, 10))));
+        class3090.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19976.method13527(Class9218.field39507).method28611(0.33333334f)), Class4535.field19974.method13527(Class9218.field39505))).method28610(Class7133.field27794.method21889(new Class6934(0, 0.05f, 1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39524).method28610(Class7133.field27788.method21889(new Class6930(-0.8, 15, 4))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27789.method21889(new Class6930(-0.8, 5, 10))));
     }
     
     public static void method33976(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889((Object)new Class6927(2))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889(new Class6927(2))));
     }
     
     public static void method33977(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39519).method28610(Class7133.field27786.method21889((Object)new Class6927(7))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889((Object)new Class6935(3, 0.25f))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889((Object)new Class6935(3, 0.125f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39519).method28610(Class7133.field27786.method21889(new Class6927(7))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39526).method28610(Class7133.field27786.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889(new Class6935(3, 0.25f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889(new Class6935(3, 0.125f))));
     }
     
     public static void method33978(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39523).method28610(Class7133.field27785.method21889((Object)new Class6927(2))));
+        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39523).method28610(Class7133.field27785.method21889(new Class6927(2))));
     }
     
     public static void method33979(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39523).method28610(Class7133.field27785.method21889((Object)new Class6927(4))));
+        class3090.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39523).method28610(Class7133.field27785.method21889(new Class6927(4))));
     }
     
     public static void method33980(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39518).method28610(Class7133.field27786.method21889(new Class6927(1))));
     }
     
     public static void method33981(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39519).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889((Object)new Class6935(1, 0.25f))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889((Object)new Class6935(1, 0.125f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39519).method28610(Class7133.field27786.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27800.method21889(new Class6935(1, 0.25f))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27801.method21889(new Class6935(1, 0.125f))));
     }
     
     public static void method33982(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39538).method28610(Class7133.field27788.method21889((Object)new Class6930(-0.8, 0, 7))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39538).method28610(Class7133.field27788.method21889(new Class6930(-0.8, 0, 7))));
     }
     
     public static void method33983(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27791.method21889((Object)new Class6928(4))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27791.method21889((Object)new Class6928(8))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39533).method28610(Class7133.field27791.method21889(new Class6928(4))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39532).method28610(Class7133.field27791.method21889(new Class6928(8))));
     }
     
     public static void method33984(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889((Object)new Class6927(10))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889((Object)new Class6928(32))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889(new Class6927(10))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889(new Class6928(32))));
     }
     
     public static void method33985(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889((Object)new Class6927(13))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889((Object)new Class6928(32))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39540).method28610(Class7133.field27786.method21889((Object)new Class6927(5))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889(new Class6927(13))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889(new Class6928(32))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39540).method28610(Class7133.field27786.method21889(new Class6927(5))));
     }
     
     public static void method33986(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39527).method28610(Class7133.field27786.method21889((Object)new Class6927(1))));
-        class3090.method9849(Class2108.field12228, Class4535.field19995.method13527(Class5113.field22059).method28610(Class7133.field27787.method21889((Object)new Class6927(50))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39527).method28610(Class7133.field27786.method21889(new Class6927(1))));
+        class3090.method9849(Class2108.field12228, Class4535.field19995.method13527(Class5113.field22059).method28610(Class7133.field27787.method21889(new Class6927(50))));
     }
     
     public static void method33987(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889((Object)new Class6927(60))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889((Object)new Class6928(32))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39540).method28610(Class7133.field27786.method21889((Object)new Class6927(10))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889(new Class6927(60))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889(new Class6928(32))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39540).method28610(Class7133.field27786.method21889(new Class6927(10))));
     }
     
     public static void method33988(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889((Object)new Class6927(20))));
-        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889((Object)new Class6928(32))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39541).method28610(Class7133.field27786.method21889(new Class6927(20))));
+        class3090.method9849(Class2108.field12228, Class4535.field19982.method13527(Class9218.field39528).method28610(Class7133.field27791.method21889(new Class6928(32))));
     }
     
     public static void method33989(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12225, Class4535.field19988.method13527(Class5113.field22059).method28610(Class7133.field27790.method21889((Object)new Class6928(1000))));
-        class3090.method9849(Class2108.field12227, Class4535.field19989.method13527(Class5113.field22059).method28610(Class7133.field27792.method21889((Object)new Class6928(64))));
+        class3090.method9849(Class2108.field12225, Class4535.field19988.method13527(Class5113.field22059).method28610(Class7133.field27790.method21889(new Class6928(1000))));
+        class3090.method9849(Class2108.field12227, Class4535.field19989.method13527(Class5113.field22059).method28610(Class7133.field27792.method21889(new Class6928(64))));
     }
     
     public static void method33990(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12227, Class4535.field19989.method13527(Class5113.field22059).method28610(Class7133.field27792.method21889((Object)new Class6928(64))));
+        class3090.method9849(Class2108.field12227, Class4535.field19989.method13527(Class5113.field22059).method28610(Class7133.field27792.method21889(new Class6928(64))));
     }
     
     public static void method33991(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(120, 80.0, 0.0, HeightmapType.field11523))));
+        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889(new Class6931(120, 80.0, 0.0, HeightmapType.field11523))));
     }
     
     public static void method33992(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20013.method13527(new Class5135(Class9218.field39472, new BlockState[] { Class9218.field39458 }, new BlockState[] { Class9218.field39445 }, new BlockState[] { Class9218.field39445 })).method28610(Class7133.field27806.method21889((Object)new Class6933(Class2126.field12401, 0.1f))));
+        class3090.method9849(Class2108.field12228, Class4535.field20013.method13527(new Class5135(Class9218.field39472, new BlockState[] { Class9218.field39458 }, new BlockState[] { Class9218.field39445 }, new BlockState[] { Class9218.field39445 })).method28610(Class7133.field27806.method21889(new Class6933(Class2126.field12401, 0.1f))));
     }
     
     public static void method33993(final Class3090 class3090) {
@@ -443,21 +443,21 @@ public class Class9218
     }
     
     public static void method33995(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889((Object)new Class6931(80, 80.0, 0.0, HeightmapType.field11523))));
+        class3090.method9849(Class2108.field12228, Class4535.field20008.method13527(Class5113.field22059).method28610(Class7133.field27805.method21889(new Class6931(80, 80.0, 0.0, HeightmapType.field11523))));
     }
     
     public static void method33996(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12228, Class4535.field19984.method13527(Class9218.field39547).method28610(Class7133.field27796.method21889((Object)new Class6937(50, 8, 8, 256))));
-        class3090.method9849(Class2108.field12228, Class4535.field19984.method13527(Class9218.field39548).method28610(Class7133.field27797.method21889((Object)new Class6937(20, 8, 16, 256))));
+        class3090.method9849(Class2108.field12228, Class4535.field19984.method13527(Class9218.field39547).method28610(Class7133.field27796.method21889(new Class6937(50, 8, 8, 256))));
+        class3090.method9849(Class2108.field12228, Class4535.field19984.method13527(Class9218.field39548).method28610(Class7133.field27797.method21889(new Class6937(20, 8, 16, 256))));
     }
     
     public static void method33997(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12223, Class4535.field19998.method13527(new Class5141(Class9218.field39473)).method28610(Class7133.field27815.method21889((Object)new Class6928(16))));
-        class3090.method9849(Class2108.field12223, Class4535.field19998.method13527(new Class5141(Class9218.field39474)).method28610(Class7133.field27815.method21889((Object)new Class6928(200))));
+        class3090.method9849(Class2108.field12223, Class4535.field19998.method13527(new Class5141(Class9218.field39473)).method28610(Class7133.field27815.method21889(new Class6928(16))));
+        class3090.method9849(Class2108.field12223, Class4535.field19998.method13527(new Class5141(Class9218.field39474)).method28610(Class7133.field27815.method21889(new Class6928(200))));
     }
     
     public static void method33998(final Class3090 class3090) {
-        class3090.method9849(Class2108.field12225, Class4535.field19997.method13527(Class5113.field22059).method28610(Class7133.field27798.method21889((Object)new Class6937(20, 30, 32, 64))));
+        class3090.method9849(Class2108.field12225, Class4535.field19997.method13527(Class5113.field22059).method28610(Class7133.field27798.method21889(new Class6937(20, 30, 32, 64))));
     }
     
     public static void method33999(final Class3090 class3090) {
@@ -534,7 +534,7 @@ public class Class9218
         field39492 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29378.getDefaultState()).with((IProperty<Comparable>)Class4003.field18045, true)).with((IProperty<Comparable>)Class4003.field18046, false);
         field39493 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29380.getDefaultState()).with((IProperty<Comparable>)Class4003.field18045, false)).with((IProperty<Comparable>)Class4003.field18046, false);
         field39494 = new Class5099(new Class360(Class9218.field39433), new Class360(Class9218.field39434), new Class379(2, 0)).method15978(4).method15979(2).method15985(3).method15988().method15989();
-        field39495 = new Class5099(new Class360(Class9218.field39435), new Class360(Class9218.field39436), new Class379(2, 0)).method15978(4).method15979(8).method15985(3).method15977((List<Class367>)ImmutableList.of((Object)new Class369(0.2f), (Object)new Class371(), (Object)new Class370())).method15988().method15989();
+        field39495 = new Class5099(new Class360(Class9218.field39435), new Class360(Class9218.field39436), new Class379(2, 0)).method15978(4).method15979(8).method15985(3).method15977((List<Class367>)ImmutableList.of(new Class369(0.2f), new Class371(), (Object)new Class370())).method15988().method15989();
         field39496 = new Class5099(new Class360(Class9218.field39435), new Class360(Class9218.field39436), new Class379(2, 0)).method15978(4).method15979(8).method15985(3).method15988().method15989();
         field39497 = new Class5099(new Class360(Class9218.field39437), new Class360(Class9218.field39438), new Class381(1, 0)).method15978(7).method15979(4).method15983(1).method15985(3).method15986(1).method15988().method15989();
         field39498 = new Class5099(new Class360(Class9218.field39437), new Class360(Class9218.field39438), new Class382(2, 1)).method15978(6).method15979(3).method15981(1).method15982(1).method15984(2).method15988().method15989();
@@ -556,7 +556,7 @@ public class Class9218
         field39514 = new Class5101(new Class360(Class9218.field39443), new Class360(Class9218.field39444)).method15993(6).method15996();
         field39515 = new Class5101(new Class360(Class9218.field39437), new Class360(Class9218.field39438)).method15993(13).method15994(15).method15995(13).method15992((List<Class367>)ImmutableList.of((Object)new Class368(new Class360(Class9218.field39432)))).method15996();
         field39516 = new Class5101(new Class360(Class9218.field39437), new Class360(Class9218.field39438)).method15993(13).method15994(15).method15995(3).method15992((List<Class367>)ImmutableList.of((Object)new Class368(new Class360(Class9218.field39432)))).method15996();
-        field39517 = new Class5101(new Class360(Class9218.field39435), new Class360(Class9218.field39436)).method15993(10).method15994(20).method15992((List<Class367>)ImmutableList.of((Object)new Class371(), (Object)new Class370())).method15996();
+        field39517 = new Class5101(new Class360(Class9218.field39435), new Class360(Class9218.field39436)).method15993(10).method15994(20).method15992((List<Class367>)ImmutableList.of(new Class371(), (Object)new Class370())).method15996();
         field39518 = new Class9055(new Class360(Class9218.field39430), new Class375()).method32580(32).method32587();
         field39519 = new Class9055(new Class358().method1165(Class9218.field39430, 1).method1165(Class9218.field39431, 4), new Class375()).method32580(32).method32587();
         field39520 = new Class9055(new Class358().method1165(Class9218.field39430, 3).method1165(Class9218.field39431, 1), new Class375()).method32579((Set<BlockState>)ImmutableSet.of((Object)Class9218.field39432)).method32580(32).method32587();
@@ -586,8 +586,8 @@ public class Class9218
         field39544 = new Class5112(new Class360(Class9218.field39480));
         field39545 = new Class5112(new Class358().method1165(Class9218.field39481, 19).method1165(Class9218.field39487, 1));
         field39546 = new Class5112(new Class358().method1165(Class9218.field39474, 1).method1165(Class9218.field39473, 5));
-        field39547 = new Class5131(Class7558.field29976.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE));
-        field39548 = new Class5131(Class7558.field29978.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE));
+        field39547 = new Class5131(Class7558.field29976.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, (Object) Blocks.ANDESITE));
+        field39548 = new Class5131(Class7558.field29978.getDefaultState(), true, 4, 1, (Set<Block>)ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, (Object) Blocks.ANDESITE));
         field39549 = new Class5131(Class7558.field29978.getDefaultState(), false, 4, 1, (Set<Block>)ImmutableSet.of((Object) Blocks.field29338));
         field39550 = new Class5131(Class7558.field29978.getDefaultState(), false, 5, 0, (Set<Block>)ImmutableSet.of((Object) Blocks.field29338));
         field39551 = new Class5137(new Class360(Class9218.field39491), new Class360(Class9218.field39493), 2);

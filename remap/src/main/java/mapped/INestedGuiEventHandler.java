@@ -48,7 +48,7 @@ public interface INestedGuiEventHandler extends IGuiEventListener
     }
 
     default boolean mouseDragged(double p_mouseDragged_1_, double p_mouseDragged_3_, int p_mouseDragged_5_, double p_mouseDragged_6_, double p_mouseDragged_8_) {
-        return this.getFocused() != null && this.isDragging() && p_mouseDragged_5_ == 0 ? this.getFocused().mouseDragged(p_mouseDragged_1_, p_mouseDragged_3_, p_mouseDragged_5_, p_mouseDragged_6_, p_mouseDragged_8_) : false;
+        return this.getFocused() != null && this.isDragging() && p_mouseDragged_5_ == 0 && this.getFocused().mouseDragged(p_mouseDragged_1_, p_mouseDragged_3_, p_mouseDragged_5_, p_mouseDragged_6_, p_mouseDragged_8_);
     }
     
     boolean isDragging();
@@ -119,7 +119,7 @@ public interface INestedGuiEventHandler extends IGuiEventListener
                 }
             }
 
-            this.setFocused((IGuiEventListener) null);
+            this.setFocused(null);
             return false;
         }
     }

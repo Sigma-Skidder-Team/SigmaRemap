@@ -38,7 +38,7 @@ public class Class8071
     public void method26481(final Class101 field33249) {
         (this.field33249 = field33249).method588(this.field33248.field3025);
         this.field33248.method2882();
-        this.field33248.field3040.method1537().method20586(new Class4330(Class2156.field12804, new Class513[] { this.field33248 }));
+        this.field33248.field3040.method1537().method20586(new Class4330(Class2156.field12804, this.field33248));
         this.field33247.method6867();
     }
     

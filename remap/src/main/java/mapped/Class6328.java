@@ -14,13 +14,11 @@ public class Class6328 extends Class6322
                 RenderSystem.enableDepthTest();
                 RenderSystem.method30009(n);
             }
-            return;
         }, () -> {
             if (n2 != 519) {
                 RenderSystem.disableDepthTest();
                 RenderSystem.method30009(515);
             }
-            return;
         });
         this.field25325 = field25325;
     }

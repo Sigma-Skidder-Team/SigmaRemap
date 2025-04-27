@@ -191,9 +191,7 @@ public class MovementUtil
         if (!method1056) {
             if (!method1057) {
                 if (!method1058) {
-                    if (!method1059) {
-                        return false;
-                    }
+                    return method1059;
                 }
             }
         }

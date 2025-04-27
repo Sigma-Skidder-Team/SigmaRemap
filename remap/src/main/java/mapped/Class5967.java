@@ -26,7 +26,7 @@ public class Class5967 implements JsonDeserializer<Class122>, JsonSerializer<Cla
         catch (final IllegalArgumentException ex) {
             throw new JsonSyntaxException("Unknown condition '" + obj + "'");
         }
-        return (Class122)method35914.method21482(method35913, jsonDeserializationContext);
+        return method35914.method21482(method35913, jsonDeserializationContext);
     }
     
     public JsonElement serialize(final Class122 class122, final Type type, final JsonSerializationContext jsonSerializationContext) {
@@ -34,6 +34,6 @@ public class Class5967 implements JsonDeserializer<Class122>, JsonSerializer<Cla
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("condition", method22942.method21484().toString());
         method22942.method21483(jsonObject, class122, jsonSerializationContext);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

@@ -15,11 +15,11 @@ public class Class656 extends Class654
     
     @Override
     public String method3369() {
-        return Class8822.method30773("selectWorld.allowCommands", new Object[0]) + ' ' + Class8822.method30773((Class539.method3128(this.field3685) && !Class539.method3129(this.field3685)) ? "options.on" : "options.off", new Object[0]);
+        return Class8822.method30773("selectWorld.allowCommands", new Object[0]) + ' ' + Class8822.method30773((Class539.method3128(this.field3685) && !Class539.method3129(this.field3685)) ? "options.on" : "options.off");
     }
     
     @Override
     public String method3352() {
-        return super.method3352() + ". " + Class8822.method30773("selectWorld.allowCommands.info", new Object[0]);
+        return super.method3352() + ". " + Class8822.method30773("selectWorld.allowCommands.info");
     }
 }

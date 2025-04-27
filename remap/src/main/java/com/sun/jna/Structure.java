@@ -1113,7 +1113,7 @@ public abstract class Structure
     }
     
     public static List<String> createFieldsOrder(final String field) {
-        return Collections.unmodifiableList((List<? extends String>)Collections.singletonList(field));
+        return Collections.unmodifiableList(Collections.singletonList(field));
     }
     
     public static List<String> createFieldsOrder(final String... fields) {
@@ -1121,7 +1121,7 @@ public abstract class Structure
     }
     
     private static <T extends Comparable<T>> List<T> sort(final Collection<? extends T> c) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)c);
+        final ArrayList list = new ArrayList(c);
         Collections.sort((List<Comparable>)list);
         return list;
     }

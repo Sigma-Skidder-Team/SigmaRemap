@@ -16,14 +16,14 @@ public class Class4930 extends Class4800
     private static Minecraft field21102;
     private static float field21103;
     private float field21104;
-    private Class4900 field21105;
-    private Class4817 field21106;
-    private Class4844 field21107;
-    private int field21108;
+    private final Class4900 field21105;
+    private final Class4817 field21106;
+    private final Class4844 field21107;
+    private final int field21108;
     private int field21109;
-    private int field21110;
-    private int field21111;
-    private int field21112;
+    private final int field21110;
+    private final int field21111;
+    private final int field21112;
     public boolean field21113;
     private Texture field21114;
     

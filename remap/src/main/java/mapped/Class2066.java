@@ -32,13 +32,13 @@ public enum Class2066
             return false;
         }
     }), 
-    field11828("netherrack", (Predicate<Class7096>)new Class117(Blocks.field29338));
+    field11828("netherrack", new Class117(Blocks.field29338));
     
     private static final Map<String, Class2066> field11829;
     private final String field11830;
     private final Predicate<Class7096> field11831;
     
-    private Class2066(final String field11830, final Predicate<Class7096> field11831) {
+    Class2066(final String field11830, final Predicate<Class7096> field11831) {
         this.field11830 = field11830;
         this.field11831 = field11831;
     }

@@ -60,7 +60,7 @@ public class Class4847 extends Class4841
         }
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         try {
             if (this.field20771 != null) {
                 Client.getInstance().addTexture(this.field20771);

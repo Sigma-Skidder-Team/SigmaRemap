@@ -10,7 +10,7 @@ public class Class6442 implements Class6441
 {
     private static String[] field25570;
     private static final float[][] field25571;
-    private float[] field25572;
+    private final float[] field25572;
     private int field25573;
     private final int field25574;
     
@@ -95,7 +95,7 @@ public class Class6442 implements Class6441
             }
             final int field25574 = this.field25573;
             for (int l = 0; l < 64; ++l) {
-                array2[n2++] = this.field25572[field25574 + l + 0] * Class6442.field25569[l + 0] + this.field25572[field25574 + l + 192] * Class6442.field25569[l + 64] + this.field25572[field25574 + l + 256] * Class6442.field25569[l + 128] + this.field25572[field25574 + l + 448] * Class6442.field25569[l + 192] + this.field25572[field25574 + l + 512] * Class6442.field25569[l + 256] + this.field25572[field25574 + l + 704] * Class6442.field25569[l + 320] + this.field25572[field25574 + l + 768] * Class6442.field25569[l + 384] + this.field25572[field25574 + l + 960] * Class6442.field25569[l + 448] + this.field25572[field25574 + l + 1024] * Class6442.field25569[l + 512] + this.field25572[field25574 + l + 1216] * Class6442.field25569[l + 576];
+                array2[n2++] = this.field25572[field25574 + l] * Class6442.field25569[l] + this.field25572[field25574 + l + 192] * Class6442.field25569[l + 64] + this.field25572[field25574 + l + 256] * Class6442.field25569[l + 128] + this.field25572[field25574 + l + 448] * Class6442.field25569[l + 192] + this.field25572[field25574 + l + 512] * Class6442.field25569[l + 256] + this.field25572[field25574 + l + 704] * Class6442.field25569[l + 320] + this.field25572[field25574 + l + 768] * Class6442.field25569[l + 384] + this.field25572[field25574 + l + 960] * Class6442.field25569[l + 448] + this.field25572[field25574 + l + 1024] * Class6442.field25569[l + 512] + this.field25572[field25574 + l + 1216] * Class6442.field25569[l + 576];
             }
             this.field25573 -= 128;
             if (this.field25573 < 0) {

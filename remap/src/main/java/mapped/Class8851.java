@@ -61,7 +61,7 @@ public class Class8851
     public void method31006(final Consumer<Class5763> consumer, final ResourceLocation class1932) {
         this.method31007(class1932);
         this.field37226.method18003(new ResourceLocation("recipes/root")).method18009("has_the_recipe", new Class4219(class1932)).method18007(Class6467.method19355(class1932)).method18011(Class6526.field25976);
-        consumer.accept(new Class5768(class1932, (this.field37227 != null) ? this.field37227 : "", this.field37223, this.field37222, this.field37224, this.field37225, this.field37226, new ResourceLocation(class1932.method7798(), "recipes/" + this.field37222.method11737().method22110() + "/" + class1932.method7797()), (IRecipeSerializer<? extends Class3680>)this.field37228));
+        consumer.accept(new Class5768(class1932, (this.field37227 != null) ? this.field37227 : "", this.field37223, this.field37222, this.field37224, this.field37225, this.field37226, new ResourceLocation(class1932.method7798(), "recipes/" + this.field37222.method11737().method22110() + "/" + class1932.method7797()), this.field37228));
     }
     
     private void method31007(final ResourceLocation obj) {

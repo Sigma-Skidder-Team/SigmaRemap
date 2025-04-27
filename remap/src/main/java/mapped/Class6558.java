@@ -26,15 +26,15 @@ public class Class6558 implements Class6557
     private final Multimap<Object, Class988> field26049;
     
     public Class6558() {
-        this.field26049 = (Multimap<Object, Class988>)Multimaps.synchronizedMultimap((Multimap)Multimaps.newSetMultimap((Map)new IdentityHashMap(), HashSet::new));
+        this.field26049 = (Multimap<Object, Class988>)Multimaps.synchronizedMultimap((Multimap)Multimaps.newSetMultimap(new IdentityHashMap(), HashSet::new));
         this.field26047 = Executors.newCachedThreadPool(new ThreadFactoryBuilder().setDaemon(true).setNameFormat("Jello Portal Task Scheduler - #%d").build());
         this.field26048 = Executors.newSingleThreadScheduledExecutor(new ThreadFactoryBuilder().setDaemon(true).setNameFormat("Jello Portal Task Scheduler Timer").build());
     }
     
     @Override
     public Class7118 method19877(final Object o, final Runnable runnable) {
-        Preconditions.checkNotNull(o, (Object)"plugin");
-        Preconditions.checkNotNull((Object)runnable, (Object)"runnable");
+        Preconditions.checkNotNull(o, "plugin");
+        Preconditions.checkNotNull((Object)runnable, "runnable");
         return new Class7119(this, o, runnable, null);
     }
     

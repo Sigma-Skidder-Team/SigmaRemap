@@ -23,7 +23,7 @@ public class Class7170 extends Class7133<Class6934>
         if (random.nextFloat() < class1853.field27163) {
             field27162 += class1853.field27164;
         }
-        return (Stream<BlockPos>)IntStream.range(0, field27162).mapToObj(p3 -> {
+        return IntStream.range(0, field27162).mapToObj(p3 -> {
             final int n2 = random2.nextInt(16) + class1855.method1074();
             final int n3 = random2.nextInt(16) + class1855.method1076();
             return new BlockPos(n2, class1856.method6699(HeightmapType.field11525, n2, n3), n3);

@@ -12,7 +12,7 @@ public enum Class1983
     private final String field10983;
     private final BlockState field10984;
     
-    private Class1983(final String field10983, final BlockState field10984) {
+    Class1983(final String field10983, final BlockState field10984) {
         this.field10983 = field10983;
         this.field10984 = field10984;
     }

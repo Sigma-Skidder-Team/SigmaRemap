@@ -77,9 +77,7 @@ public class MineplexFly extends PremiumModule
             if (this.field15994 != -1) {
                 if (this.field15995 < this.getNumberSettingValueByName("Boost")) {
                     if (MineplexFly.mc.player.onGround || ColorUtils.method19160(MineplexFly.mc.player, 0.001f)) {
-                        if (!this.field15999) {
-                            return true;
-                        }
+                        return !this.field15999;
                     }
                 }
             }

@@ -9,7 +9,7 @@ import org.newdawn.slick.Color;
 public class Class7470 implements Class7471
 {
     private static String[] field28853;
-    private Class2412 field28854;
+    private final Class2412 field28854;
     private Class2412 field28855;
     private Class2412 field28856;
     private Color field28857;

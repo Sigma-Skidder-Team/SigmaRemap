@@ -50,20 +50,20 @@ public class Class8203
             break;
         }
         for (final Throwable t2 : list) {
-            Config.warn("" + t2.getClass().getName() + ": " + t2.getMessage());
+            Config.warn(t2.getClass().getName() + ": " + t2.getMessage());
         }
         return null;
     }
     
     private static LongSupplier method27176(final String[] array) throws Exception {
         if (array.length >= 2) {
-            Method method = Class.forName(array[0]).getMethod(array[1], (Class<?>[])new Class[0]);
+            Method method = Class.forName(array[0]).getMethod(array[1], new Class[0]);
             method.setAccessible(true);
             Object invoke = null;
             for (int i = 2; i < array.length; ++i) {
                 final String name = array[i];
-                invoke = method.invoke(invoke, new Object[0]);
-                method = invoke.getClass().getMethod(name, (Class<?>[])new Class[0]);
+                invoke = method.invoke(invoke);
+                method = invoke.getClass().getMethod(name, new Class[0]);
                 method.setAccessible(true);
             }
             return new Class7381(method, invoke);

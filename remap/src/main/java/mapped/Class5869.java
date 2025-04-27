@@ -55,7 +55,7 @@ public class Class5869 extends Class5846<Class796>
     
     @Override
     public Iterable<Class6300> method17570() {
-        return (Iterable<Class6300>)ImmutableList.of((Object)this.field24045, (Object)this.field24047, (Object)this.field24048, (Object)this.field24046, (Object)this.field24049, (Object)this.field24054, (Object)this.field24055);
+        return (Iterable<Class6300>)ImmutableList.of(this.field24045, this.field24047, this.field24048, this.field24046, this.field24049, this.field24054, (Object)this.field24055);
     }
     
     public void method17604(final Class796 class796, final float n, final float n2, final float n3, final float n4, final float n5) {

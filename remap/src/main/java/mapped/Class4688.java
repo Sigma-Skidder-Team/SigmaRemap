@@ -26,7 +26,7 @@ public class Class4688 implements Class4659
                 if (Class4968.method15143().isLoggable(Level.FINE)) {
                     Class4968.method15143().fine(String.format("'%s' works - aborting '%s'", class4963.field21319, this.field20238[0].field21319));
                 }
-                this.field20239.method13945(new Object[0]);
+                this.field20239.method13945();
             }
         }
     }

@@ -42,7 +42,7 @@ public class Class6431 implements Class6432<Class6632>
     
     @Override
     public int method19189(final int n) {
-        final int n2 = (int)Math.floorMod(this.field25552 >> 24, (long)n);
+        final int n2 = (int)Math.floorMod(this.field25552 >> 24, n);
         this.field25552 = Class9398.method34927(this.field25552, this.field25551);
         return n2;
     }

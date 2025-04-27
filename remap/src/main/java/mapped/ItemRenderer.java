@@ -321,10 +321,10 @@ public class ItemRenderer implements Class1657
     
     private void method6544(final BufferBuilder class4148, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
         class4148.begin(7, DefaultVertexFormats.POSITION_COLOR);
-        class4148.pos(n + 0, n2 + 0, 0.0).method12399(n5, n6, n7, n8).endVertex();
-        class4148.pos(n + 0, n2 + n4, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n, n2, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n, n2 + n4, 0.0).method12399(n5, n6, n7, n8).endVertex();
         class4148.pos(n + n3, n2 + n4, 0.0).method12399(n5, n6, n7, n8).endVertex();
-        class4148.pos(n + n3, n2 + 0, 0.0).method12399(n5, n6, n7, n8).endVertex();
+        class4148.pos(n + n3, n2, 0.0).method12399(n5, n6, n7, n8).endVertex();
         Tessellator.getInstance().draw();
     }
     

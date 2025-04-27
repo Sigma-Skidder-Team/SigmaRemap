@@ -13,7 +13,7 @@ public class Class6465 implements Class6464
         final Class340 method1018 = Class340.method1018(s);
         if (method1018 == null) {
             final Class338 method1019 = Class338.method1016(s);
-            return (method1019 == null) ? null : method1019;
+            return method1019;
         }
         return method1018;
     }

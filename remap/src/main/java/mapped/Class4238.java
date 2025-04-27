@@ -29,7 +29,7 @@ public class Class4238 extends Class4211
             int n = 0;
             final Iterator<? extends Entity> iterator = collection.iterator();
             while (iterator.hasNext()) {
-                if (!class514.method27015(class513, (Entity)iterator.next())) {
+                if (!class514.method27015(class513, iterator.next())) {
                     continue;
                 }
                 n = 1;
@@ -46,6 +46,6 @@ public class Class4238 extends Class4211
     public JsonElement method12682() {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.add("victims", Class8172.method27020(this.field19052));
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

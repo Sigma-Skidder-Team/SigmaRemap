@@ -935,7 +935,7 @@ public class Class7640
         double n27 = -(n26 - n24 - n25);
         final double n29;
         final double n28 = n29 = 0.0;
-        final double n30 = n7 * 1.0;
+        final double n30 = n7;
         final double n31 = n29 + n30;
         final double n32 = -(n31 - n29 - n30);
         final double n33 = n31;
@@ -944,7 +944,7 @@ public class Class7640
         final double n36 = n33 + n35;
         final double n37 = -(n36 - n33 - n35);
         final double n38 = n36;
-        final double n39 = n34 + n37 + (n8 * 1.0 + n7 * method24097 + n8 * method24097) - (n6 * n13 + n5 * n12 + n6 * n12);
+        final double n39 = n34 + n37 + (n8 + n7 * method24097 + n8 * method24097) - (n6 * n13 + n5 * n12 + n6 * n12);
         double n40 = n38 + n39;
         double n41 = -(n40 - n38 - n39);
         if (b) {
@@ -1816,7 +1816,7 @@ public class Class7640
         }
         final long doubleToRawLongBits = Double.doubleToRawLongBits(n);
         final long n2 = doubleToRawLongBits & Long.MIN_VALUE;
-        if (!(v < n ^ n2 == 0L)) {
+        if (v < n == (n2 == 0L)) {
             return Double.longBitsToDouble(n2 | (doubleToRawLongBits & Long.MAX_VALUE) - 1L);
         }
         return Double.longBitsToDouble(n2 | (doubleToRawLongBits & Long.MAX_VALUE) + 1L);
@@ -1837,7 +1837,7 @@ public class Class7640
         }
         final int floatToIntBits = Float.floatToIntBits(n);
         final int n2 = floatToIntBits & Integer.MIN_VALUE;
-        if (!(v < n ^ n2 == 0)) {
+        if (v < n == (n2 == 0)) {
             return Float.intBitsToFloat(n2 | (floatToIntBits & Integer.MAX_VALUE) - 1);
         }
         return Float.intBitsToFloat(n2 | (floatToIntBits & Integer.MAX_VALUE) + 1);
@@ -2011,41 +2011,41 @@ public class Class7640
         if (n >= -2147483648L && n <= 2147483647L) {
             return (int)n;
         }
-        throw new Class2376(Class2189.field13251, new Object[0]);
+        throw new Class2376(Class2189.field13251);
     }
     
     public static int method24139(final int i) throws MathArithmeticException {
         if (i != Integer.MAX_VALUE) {
             return i + 1;
         }
-        throw new Class2376(Class2189.field13253, new Object[] { i, 1 });
+        throw new Class2376(Class2189.field13253, i, 1);
     }
     
     public static long method24140(final long l) throws MathArithmeticException {
         if (l != Long.MAX_VALUE) {
             return l + 1L;
         }
-        throw new Class2376(Class2189.field13253, new Object[] { l, 1 });
+        throw new Class2376(Class2189.field13253, l, 1);
     }
     
     public static int method24141(final int i) throws MathArithmeticException {
         if (i != Integer.MIN_VALUE) {
             return i - 1;
         }
-        throw new Class2376(Class2189.field13254, new Object[] { i, 1 });
+        throw new Class2376(Class2189.field13254, i, 1);
     }
     
     public static long method24142(final long l) throws MathArithmeticException {
         if (l != Long.MIN_VALUE) {
             return l - 1L;
         }
-        throw new Class2376(Class2189.field13254, new Object[] { l, 1 });
+        throw new Class2376(Class2189.field13254, l, 1);
     }
     
     public static int method24143(final int i, final int j) throws MathArithmeticException {
         final int n = i + j;
         if ((i ^ j) >= 0 && (n ^ j) < 0) {
-            throw new Class2376(Class2189.field13253, new Object[] { i, j });
+            throw new Class2376(Class2189.field13253, i, j);
         }
         return n;
     }
@@ -2053,7 +2053,7 @@ public class Class7640
     public static long method24144(final long l, final long i) throws MathArithmeticException {
         final long n = l + i;
         if ((l ^ i) >= 0L && (n ^ i) < 0L) {
-            throw new Class2376(Class2189.field13253, new Object[] { l, i });
+            throw new Class2376(Class2189.field13253, l, i);
         }
         return n;
     }
@@ -2061,7 +2061,7 @@ public class Class7640
     public static int method24145(final int i, final int j) {
         final int n = i - j;
         if ((i ^ j) < 0 && (n ^ j) >= 0) {
-            throw new Class2376(Class2189.field13254, new Object[] { i, j });
+            throw new Class2376(Class2189.field13254, i, j);
         }
         return n;
     }
@@ -2069,7 +2069,7 @@ public class Class7640
     public static long method24146(final long l, final long i) {
         final long n = l - i;
         if ((l ^ i) < 0L && (n ^ i) >= 0L) {
-            throw new Class2376(Class2189.field13254, new Object[] { l, i });
+            throw new Class2376(Class2189.field13254, l, i);
         }
         return n;
     }
@@ -2077,52 +2077,52 @@ public class Class7640
     public static int method24147(final int i, final int j) {
         if (j > 0) {
             if (i > Integer.MAX_VALUE / j) {
-                throw new Class2376(Class2189.field13255, new Object[] { i, j });
+                throw new Class2376(Class2189.field13255, i, j);
             }
             if (i < Integer.MIN_VALUE / j) {
-                throw new Class2376(Class2189.field13255, new Object[] { i, j });
+                throw new Class2376(Class2189.field13255, i, j);
             }
         }
         if (j < -1) {
             if (i > Integer.MIN_VALUE / j) {
-                throw new Class2376(Class2189.field13255, new Object[] { i, j });
+                throw new Class2376(Class2189.field13255, i, j);
             }
             if (i < Integer.MAX_VALUE / j) {
-                throw new Class2376(Class2189.field13255, new Object[] { i, j });
+                throw new Class2376(Class2189.field13255, i, j);
             }
         }
         if (j != -1 || i != Integer.MIN_VALUE) {
             return i * j;
         }
-        throw new Class2376(Class2189.field13255, new Object[] { i, j });
+        throw new Class2376(Class2189.field13255, i, j);
     }
     
     public static long method24148(final long l, final long i) {
         if (i > 0L) {
             if (l > Long.MAX_VALUE / i) {
-                throw new Class2376(Class2189.field13255, new Object[] { l, i });
+                throw new Class2376(Class2189.field13255, l, i);
             }
             if (l < Long.MIN_VALUE / i) {
-                throw new Class2376(Class2189.field13255, new Object[] { l, i });
+                throw new Class2376(Class2189.field13255, l, i);
             }
         }
         if (i < -1L) {
             if (l > Long.MIN_VALUE / i) {
-                throw new Class2376(Class2189.field13255, new Object[] { l, i });
+                throw new Class2376(Class2189.field13255, l, i);
             }
             if (l < Long.MAX_VALUE / i) {
-                throw new Class2376(Class2189.field13255, new Object[] { l, i });
+                throw new Class2376(Class2189.field13255, l, i);
             }
         }
         if (i != -1L || l != Long.MIN_VALUE) {
             return l * i;
         }
-        throw new Class2376(Class2189.field13255, new Object[] { l, i });
+        throw new Class2376(Class2189.field13255, l, i);
     }
     
     public static int method24149(final int n, final int n2) throws MathArithmeticException {
         if (n2 == 0) {
-            throw new Class2376(Class2189.field13316, new Object[0]);
+            throw new Class2376(Class2189.field13316);
         }
         final int n3 = n % n2;
         if ((n ^ n2) < 0 && n3 != 0) {
@@ -2133,7 +2133,7 @@ public class Class7640
     
     public static long method24150(final long n, final long n2) throws MathArithmeticException {
         if (n2 == 0L) {
-            throw new Class2376(Class2189.field13316, new Object[0]);
+            throw new Class2376(Class2189.field13316);
         }
         final long n3 = n % n2;
         if ((n ^ n2) < 0L && n3 != 0L) {
@@ -2144,7 +2144,7 @@ public class Class7640
     
     public static int method24151(final int n, final int n2) throws MathArithmeticException {
         if (n2 == 0) {
-            throw new Class2376(Class2189.field13316, new Object[0]);
+            throw new Class2376(Class2189.field13316);
         }
         final int n3 = n % n2;
         if ((n ^ n2) < 0 && n3 != 0) {
@@ -2155,7 +2155,7 @@ public class Class7640
     
     public static long method24152(final long n, final long n2) {
         if (n2 == 0L) {
-            throw new Class2376(Class2189.field13316, new Object[0]);
+            throw new Class2376(Class2189.field13316);
         }
         final long n3 = n % n2;
         if ((n ^ n2) < 0L && n3 != 0L) {

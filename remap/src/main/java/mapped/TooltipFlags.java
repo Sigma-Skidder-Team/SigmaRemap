@@ -11,7 +11,7 @@ public enum TooltipFlags implements ITooltipFlag
     
     private final boolean field10974;
     
-    private TooltipFlags(final boolean field10974) {
+    TooltipFlags(final boolean field10974) {
         this.field10974 = field10974;
     }
     

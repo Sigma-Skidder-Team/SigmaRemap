@@ -9,9 +9,9 @@ import java.util.List;
 
 public class StringArray extends Memory implements Function$PostCallRead
 {
-    private String encoding;
-    private List<NativeString> natives;
-    private Object[] original;
+    private final String encoding;
+    private final List<NativeString> natives;
+    private final Object[] original;
     
     public StringArray(final String[] strings) {
         this(strings, false);

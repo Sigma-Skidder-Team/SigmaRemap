@@ -20,7 +20,7 @@ public class Class1608 implements Runnable
             if (Class1978.field10966 == Class4960.method14966(this.field8979).field21358) {
                 Class4960.method14961(this.field8979);
             }
-            this.field8979.method14942("connecting", new Object[0]);
+            this.field8979.method14942("connecting");
         }
     }
 }

@@ -355,7 +355,7 @@ public final class Class1758 implements Closeable
             }
             this.field9796.add(i);
         }
-        this.field9783.execute(new Class1586(this, "OkHttp %s Push Request[%s]", new Object[] { this.field9779, i }, i, (List)list));
+        this.field9783.execute(new Class1586(this, "OkHttp %s Push Request[%s]", new Object[] { this.field9779, i }, i, list));
     }
     
     public void method6260(final int i, final List<Class8975> list, final boolean b) {

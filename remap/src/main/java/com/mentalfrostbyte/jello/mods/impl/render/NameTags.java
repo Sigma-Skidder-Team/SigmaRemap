@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class NameTags extends Module
 {
-    private HashMap<PlayerEntity, Vec2f> field15776;
+    private final HashMap<PlayerEntity, Vec2f> field15776;
     public static NameTags field15777;
     
     public NameTags() {
@@ -60,9 +60,9 @@ public class NameTags extends Module
                             Registry.field209.method506(ResourceLocation.method7795(method8461.method346(j).getString("id"))).ifPresent(class5739 -> {
                                 class5739.method18599(1).getUnformattedComponentText();
                                 final String s;
-                                new StringBuilder().append("§f").append(s.substring(0, Math.min(2, s.length()))).toString();
+                                "§f" + s.substring(0, Math.min(2, s.length()));
                                 int method8462 = 0;
-                                if (!(!class5738.method315("lvl"))) {
+                                if (class5738.method315("lvl")) {
                                     method8462 = class5738.method319("lvl");
                                 }
                                 String str = null;
@@ -75,8 +75,7 @@ public class NameTags extends Module
                                     str = "§c";
                                 }
                                 final String str2;
-                                new StringBuilder().append(str2).append(str).append(method8462).toString();
-                                return;
+                                str2 + str + method8462;
                             });
                         }
                         final int n6 = class5737.method27631() ? (class5737.method27634() - class5737.method27632()) : class5737.method27634();

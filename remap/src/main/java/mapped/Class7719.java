@@ -36,7 +36,7 @@ public class Class7719<T extends INetHandler>
     
     @Nullable
     public Integer method24646(final Class<?> clazz) {
-        final int int1 = this.field30707.getInt((Object)clazz);
+        final int int1 = this.field30707.getInt(clazz);
         return (int1 != -1) ? Integer.valueOf(int1) : null;
     }
     

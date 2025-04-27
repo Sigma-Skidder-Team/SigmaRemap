@@ -150,9 +150,7 @@ public class InvManagerUtil
         if (b != 5 || !method29326(class4055)) {
             if (b != 6 || !method29327(class4055)) {
                 if (b != 7 || !method29328(class4055)) {
-                    if (b != 8 || !method29329(class4055)) {
-                        return false;
-                    }
+                    return b == 8 && method29329(class4055);
                 }
             }
         }

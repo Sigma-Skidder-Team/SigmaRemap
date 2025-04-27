@@ -33,7 +33,7 @@ public class Class8537
             this.field35827 = objectInputStream.readInt();
         }
         catch (final IOException | ClassNotFoundException ex) {
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
     
@@ -69,7 +69,7 @@ public class Class8537
             this.field35827 = objectInputStream.readInt();
         }
         catch (final IOException | ClassNotFoundException ex) {
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
     

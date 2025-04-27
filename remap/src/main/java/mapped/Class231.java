@@ -17,7 +17,7 @@ public enum Class231
     private final int field864;
     private final int field865;
     
-    private Class231(final Direction field863, final int field864, final int field865) {
+    Class231(final Direction field863, final int field864, final int field865) {
         this.field863 = field863;
         this.field864 = field864;
         this.field865 = field865;

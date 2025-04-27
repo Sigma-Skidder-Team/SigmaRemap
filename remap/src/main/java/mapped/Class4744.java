@@ -22,11 +22,11 @@ public class Class4744 extends Class4712<Class799, Class5922<Class799>>
     public void method14075(final Class799 class799, final float n, final float n2, final MatrixStack class800, final IRenderTypeBuffer class801, final int n3) {
         if (class799.method4592()) {
             final float n4 = class799.method1726() * class799.method4593(n2);
-            ((Class5922)this.field20301).method17791(n4, n4, n4);
+            this.field20301.method17791(n4, n4, n4);
         }
         super.method14006(class799, n, n2, class800, class801, n3);
         if (class799.method4592()) {
-            ((Class5922)this.field20301).method17791(1.0f, 1.0f, 1.0f);
+            this.field20301.method17791(1.0f, 1.0f, 1.0f);
         }
     }
     

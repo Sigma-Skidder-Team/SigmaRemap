@@ -15,7 +15,7 @@ import java.util.List;
 public class Class60 extends Class61 implements Iterable<Class61>
 {
     private Class<? extends Class61> field140;
-    private List<Class61> field141;
+    private final List<Class61> field141;
     
     public Class60(final String s) {
         super(s);

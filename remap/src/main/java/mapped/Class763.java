@@ -84,9 +84,7 @@ public abstract class Class763 extends Class787 implements IMob
     public static boolean method4230(final EntityType<? extends Class763> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (method4229(class7500, class7502, random)) {
-                if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {
-                    return true;
-                }
+                return Class759.method4178(class7499, class7500, class7501, class7502, random);
             }
         }
         return false;

@@ -14,7 +14,7 @@ public class Class5438 extends Class5419<Class824>
     private long field22646;
     
     public Class5438() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33801, (Object)Class1952.field10628, (Object)Class8233.field33810, (Object)Class1952.field10630));
+        super((Map)ImmutableMap.of(Class8233.field33801, Class1952.field10628, (Object)Class8233.field33810, (Object)Class1952.field10630));
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {

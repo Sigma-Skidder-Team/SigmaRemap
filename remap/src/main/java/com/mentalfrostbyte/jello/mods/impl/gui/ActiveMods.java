@@ -27,7 +27,7 @@ import java.util.List;
 
 public class ActiveMods extends Module
 {
-    private List<Module> field15890;
+    private final List<Module> field15890;
     public int field15891;
     public int field15892;
     public HashMap<Module, Animation> field15893;
@@ -39,7 +39,7 @@ public class ActiveMods extends Module
         this.field15891 = 0;
         this.field15893 = new HashMap<Module, Animation>();
         this.field15894 = ClientFonts.JelloLight20;
-        this.addSetting(new StringSetting("Size", "The font size", 0, new String[] { "Normal", "Small", "Tiny" }));
+        this.addSetting(new StringSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
         this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
         this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
         this.getSettingMap().get("Size").method15195(class4997 -> this.method10476());

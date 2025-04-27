@@ -28,7 +28,7 @@ public class Class1740 implements Class1737
     private final float field9706;
     
     public Class1740(final ByteBuffer field9699, final STBTTFontinfo field9700, final float n, final float field9701, final float n2, final float n3, final String s) {
-        this.field9702 = (CharSet)new CharArraySet();
+        this.field9702 = new CharArraySet();
         this.field9699 = field9699;
         this.field9700 = field9700;
         this.field9701 = field9701;
@@ -54,7 +54,7 @@ public class Class1740 implements Class1737
             final IntBuffer mallocInt2 = stackPush.mallocInt(1);
             final IntBuffer mallocInt3 = stackPush.mallocInt(1);
             final IntBuffer mallocInt4 = stackPush.mallocInt(1);
-            final int stbtt_FindGlyphIndex = STBTruetype.stbtt_FindGlyphIndex(this.field9700, (int)c);
+            final int stbtt_FindGlyphIndex = STBTruetype.stbtt_FindGlyphIndex(this.field9700, c);
             if (stbtt_FindGlyphIndex == 0) {
                 class2028 = null;
                 return class2028;
@@ -76,6 +76,6 @@ public class Class1740 implements Class1737
     @Override
     public void close() {
         this.field9700.free();
-        MemoryUtil.memFree((Buffer)this.field9699);
+        MemoryUtil.memFree(this.field9699);
     }
 }

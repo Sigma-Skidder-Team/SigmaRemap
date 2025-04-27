@@ -46,7 +46,7 @@ public class Class690 extends AbstractGui
         for (final Class7767<?> class7767 : this.field3806) {
             if (class7767 != null) {
                 if (clazz.isAssignableFrom(class7767.method24871().getClass())) {
-                    if (((Class6866)class7767.method24871()).method20982().equals(o)) {
+                    if (class7767.method24871().method20982().equals(o)) {
                         return (T)class7767.method24871();
                     }
                 }

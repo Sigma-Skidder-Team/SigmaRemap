@@ -14,5 +14,5 @@ public enum Type
     BUTTON,
     field11988,
     COLOR,
-    BEZIER;
+    BEZIER
 }

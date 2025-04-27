@@ -25,7 +25,7 @@ public class Class634 extends Class633
         this.field3622 = field3630;
         this.field3624 = field3631;
         this.field3623 = Minecraft.getInstance();
-        this.field3625 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3631.field41613) + "/icon");
+        this.field3625 = new ResourceLocation("servers/" + Hashing.sha1().hashUnencodedChars(field3631.field41613) + "/icon");
         this.field3627 = (Class1773)this.field3623.method5290().method5853(this.field3625);
     }
     
@@ -57,7 +57,7 @@ public class Class634 extends Class633
         this.field3623.fontRenderer.method6610(this.field3624.field41612, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
         final List<String> method6626 = this.field3623.fontRenderer.method6626(this.field3624.field41615, n4 - 32 - 2);
         for (int i = 0; i < Math.min(method6626.size(), 2); ++i) {
-            this.field3623.fontRenderer.method6610((String)method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
+            this.field3623.fontRenderer.method6610(method6626.get(i), (float)(n3 + 32 + 3), (float)(n2 + 12 + 9 * i), 8421504);
         }
         final String s = b4 ? (TextFormatting.DARK_RED + this.field3624.field41618) : this.field3624.field41614;
         final int method6627 = this.field3623.fontRenderer.getStringWidth(s);
@@ -99,7 +99,7 @@ public class Class634 extends Class633
                     s2 = this.field3624.field41620;
                 }
                 else {
-                    s3 = Class8822.method30773("multiplayer.status.no_connection", new Object[0]);
+                    s3 = Class8822.method30773("multiplayer.status.no_connection");
                 }
             }
             else {
@@ -108,12 +108,12 @@ public class Class634 extends Class633
                 if (n10 > 4) {
                     n10 = 8 - n10;
                 }
-                s3 = Class8822.method30773("multiplayer.status.pinging", new Object[0]);
+                s3 = Class8822.method30773("multiplayer.status.pinging");
             }
         }
         else {
             n10 = 5;
-            s3 = Class8822.method30773(b2 ? "multiplayer.status.client_out_of_date" : "multiplayer.status.server_out_of_date", new Object[0]);
+            s3 = Class8822.method30773(b2 ? "multiplayer.status.client_out_of_date" : "multiplayer.status.server_out_of_date");
             s2 = this.field3624.field41620;
         }
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
@@ -211,8 +211,8 @@ public class Class634 extends Class633
         else {
             try {
                 final Class1846 method35870 = Class1846.method6668(method35869);
-                Validate.validState(method35870.method6644() == 64, "Must be 64 pixels wide", new Object[0]);
-                Validate.validState(method35870.method6645() == 64, "Must be 64 pixels high", new Object[0]);
+                Validate.validState(method35870.method6644() == 64, "Must be 64 pixels wide");
+                Validate.validState(method35870.method6645() == 64, "Must be 64 pixels high");
                 if (this.field3627 == null) {
                     this.field3627 = new Class1773(method35870);
                 }

@@ -35,7 +35,7 @@ public class Class6518
         while (iterator.hasNext()) {
             this.method19669(iterator.next());
         }
-        Class6518.field25938.info("Forgot about advancement {}", (Object)class8863.method31042());
+        Class6518.field25938.info("Forgot about advancement {}", class8863.method31042());
         this.field25939.remove(class8863.method31042());
         if (class8863.method31035() != null) {
             this.field25941.remove(class8863);
@@ -58,13 +58,13 @@ public class Class6518
                 this.method19669(class1933);
             }
             else {
-                Class6518.field25938.warn("Told to remove advancement {} but I don't know what that is", (Object)class1932);
+                Class6518.field25938.warn("Told to remove advancement {} but I don't know what that is", class1932);
             }
         }
     }
     
     public void method19671(final Map<ResourceLocation, Class6056> map) {
-        final com.google.common.base.Function forMap = Functions.forMap((Map)this.field25939, (Object)null);
+        final com.google.common.base.Function forMap = Functions.forMap((Map)this.field25939, null);
         while (!map.isEmpty()) {
             int n = 0;
             final Iterator<Map.Entry<ResourceLocation, Class6056>> iterator = map.entrySet().iterator();
@@ -98,11 +98,11 @@ public class Class6518
                 continue;
             }
             for (final Map.Entry<Object, V> entry2 : map.entrySet()) {
-                Class6518.field25938.error("Couldn't load advancement {}: {}", entry2.getKey(), (Object)entry2.getValue());
+                Class6518.field25938.error("Couldn't load advancement {}: {}", entry2.getKey(), entry2.getValue());
             }
             break;
         }
-        Class6518.field25938.info("Loaded {} advancements", (Object)this.field25939.size());
+        Class6518.field25938.info("Loaded {} advancements", this.field25939.size());
     }
     
     public void method19672() {

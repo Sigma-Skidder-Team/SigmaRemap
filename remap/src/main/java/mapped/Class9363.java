@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Class9363
 {
-    private List<Class9023> field40157;
-    private Class9023 field40158;
+    private final List<Class9023> field40157;
+    private final Class9023 field40158;
     
     public Class9363() {
         this.field40157 = new ArrayList<Class9023>();

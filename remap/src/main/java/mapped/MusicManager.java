@@ -42,7 +42,7 @@ public class MusicManager {
     private Class9175 field30334;
     private int field30335;
     private long field30336;
-    private Thread field30337;
+    private final Thread field30337;
     public java.awt.image.BufferedImage scaledThumbnail;
     public String songTitle;
     private Texture notificationImage;
@@ -143,7 +143,6 @@ public class MusicManager {
                         }
                     }
                     if (this.field30354.isEmpty()) {
-                        return;
                     }
                 }
             }
@@ -195,9 +194,9 @@ public class MusicManager {
             }
             final float n7 = 1.0f + Math.round((float) (max / (n6 - 1000)) * 0.14f * 75.0f) / 75.0f;
             GL11.glPushMatrix();
-            GL11.glTranslated(60.0, (double) (MusicManager.field30332.window.method7695() - 55), 0.0);
+            GL11.glTranslated(60.0, MusicManager.field30332.window.method7695() - 55, 0.0);
             GL11.glScalef(n7, n7, 0.0f);
-            GL11.glTranslated(-60.0, (double) (-(MusicManager.field30332.window.method7695() - 55)), 0.0);
+            GL11.glTranslated(-60.0, -(MusicManager.field30332.window.method7695() - 55), 0.0);
             RenderUtil.method26905(10.0f, (float) (MusicManager.field30332.window.method7695() - 110), 100.0f, 100.0f, this.notificationImage);
             RenderUtil.method26913(10.0f, (float) (MusicManager.field30332.window.method7695() - 110), 100.0f, 100.0f, 14.0f, 0.3f);
             GL11.glPopMatrix();
@@ -313,7 +312,7 @@ public class MusicManager {
                             this.sourceDataLine.start();
                             this.field30336 = (long) class1751.method19499();
                             if (this.field30336 > 1300L) {
-                                ((Class1750) inputStream2).close();
+                                inputStream2.close();
                                 Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Music is too long."));
                             }
                             final Class4206 class1753 = new Class4206(class1752.method21178());
@@ -360,7 +359,7 @@ public class MusicManager {
                                 }
                             }
                             this.sourceDataLine.close();
-                            ((Class1750) inputStream2).close();
+                            inputStream2.close();
                         } else {
                             Thread.sleep(1000L);
                         }
@@ -449,7 +448,7 @@ public class MusicManager {
             }
             this.currentVideo = null;
         } catch (final NumberFormatException | IOException ex) {
-            ((Throwable) ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
 
@@ -553,7 +552,7 @@ public class MusicManager {
                 this.method24197();
             }
         } catch (final MalformedURLException ex) {
-            ColorUtils.method19106("URL E " + ex.toString());
+            ColorUtils.method19106("URL E " + ex);
             ex.printStackTrace();
         }
         return null;

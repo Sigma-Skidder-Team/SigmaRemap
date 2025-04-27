@@ -60,11 +60,11 @@ public class Class5700 extends Class5611
             if (!equals) {
                 if (!b) {
                     class7439 = Class2210.field13469;
-                    s2 = Realms.method25379("mco.configure.world.slot.tooltip", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip");
                 }
                 else if (!class7437.field28684) {
                     class7439 = Class2210.field13469;
-                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.minigame", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.minigame");
                 }
                 else {
                     class7439 = Class2210.field13468;
@@ -74,7 +74,7 @@ public class Class5700 extends Class5611
                 final boolean b2 = class7437.state == RealmsServer.Status.OPEN || class7437.state == RealmsServer.Status.CLOSED;
                 if (!class7437.field28684 && b2) {
                     class7439 = Class2210.field13470;
-                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.active", new Object[0]);
+                    s2 = Realms.method25379("mco.configure.world.slot.tooltip.active");
                 }
                 else {
                     class7439 = Class2210.field13468;

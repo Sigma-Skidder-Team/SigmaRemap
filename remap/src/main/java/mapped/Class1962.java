@@ -22,7 +22,7 @@ public enum Class1962
         return Class1962.field10710[class179.getIndex()];
     }
     
-    private Class1962(final Class8859[] field10711) {
+    Class1962(final Class8859[] field10711) {
         this.field10711 = field10711;
     }
     

@@ -49,7 +49,7 @@ public class Class8269
     }
     
     public static boolean method27468(final String s) {
-        return StringUtils.isEmpty((CharSequence)s);
+        return StringUtils.isEmpty(s);
     }
     
     public static long method27469(final double n) {

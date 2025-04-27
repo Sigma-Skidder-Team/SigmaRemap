@@ -33,14 +33,9 @@ public class Class9485
         final Class9485 class9485 = (Class9485)o;
         if (this.field40770 == class9485.field40770) {
             if (this.field40771 == null) {
-                if (class9485.field40771 != null) {
-                    return false;
-                }
+                return class9485.field40771 == null;
             }
-            else if (!this.field40771.equals(class9485.field40771)) {
-                return false;
-            }
-            return true;
+            else return this.field40771.equals(class9485.field40771);
         }
         return false;
     }

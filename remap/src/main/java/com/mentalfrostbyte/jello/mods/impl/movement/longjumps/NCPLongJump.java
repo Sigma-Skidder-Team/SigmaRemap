@@ -26,8 +26,8 @@ public class NCPLongJump extends Module
         super(Category.MOVEMENT, "NCP", "Longjump for NoCheatPlus.");
         this.addSetting(new NumberSetting("Boost", "Longjump boost", 3.0f, Float.class, 1.0f, 5.0f, 0.01f));
         this.addSetting(new NumberSetting("Duration", "Speed duration", 10.0f, Float.class, 7.0f, 200.0f, 1.0f));
-        this.addSetting(new StringSetting("Glide Mode", "The way you will glide", 1, new String[] { "None", "Basic", "High" }));
-        this.addSetting(new StringSetting("Speed Mode", "The way you will speed", 0, new String[] { "Basic", "Funcraft", "Hypixel" }));
+        this.addSetting(new StringSetting("Glide Mode", "The way you will glide", 1, "None", "Basic", "High"));
+        this.addSetting(new StringSetting("Speed Mode", "The way you will speed", 0, "Basic", "Funcraft", "Hypixel"));
     }
     
     @Override
@@ -171,7 +171,6 @@ public class NCPLongJump extends Module
     @EventListener
     public void method9921(final Class5738 class5738) {
         if (this.isEnabled() && this.getStringSettingValueByName("Glide Mode").equals("High")) {
-            return;
         }
     }
 }

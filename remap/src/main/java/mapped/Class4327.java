@@ -22,7 +22,7 @@ public class Class4327 implements IPacket<Class5802>
     
     @Override
     public void readPacketData(final PacketBuffer class8654) throws IOException {
-        this.field19375 = new GameProfile((UUID)null, class8654.method29513(16));
+        this.field19375 = new GameProfile(null, class8654.method29513(16));
     }
     
     @Override

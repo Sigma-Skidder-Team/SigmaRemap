@@ -205,9 +205,9 @@ public abstract class Class6586
         }
         if (b && clazz.isAssignableFrom(method23849) && !Modifier.isAbstract(method23849.getModifiers())) {
             try {
-                final Constructor declaredConstructor = method23849.getDeclaredConstructor((Class[])new Class[0]);
+                final Constructor declaredConstructor = method23849.getDeclaredConstructor(new Class[0]);
                 declaredConstructor.setAccessible(true);
-                return declaredConstructor.newInstance(new Object[0]);
+                return declaredConstructor.newInstance();
             }
             catch (final NoSuchMethodException ex) {
                 throw new InstantiationException("NoSuchMethodException:" + ex.getLocalizedMessage());

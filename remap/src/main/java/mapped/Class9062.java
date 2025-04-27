@@ -17,7 +17,7 @@ public class Class9062 extends Schema
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40612, () -> DSL.optionalFields("RootVehicle", DSL.optionalFields("Entity", Class9451.field40625.in(schema2)), "Inventory", DSL.list(Class9451.field40622.in(schema2)), "EnderItems", DSL.list(Class9451.field40622.in(schema2))));
         schema.registerType(true, Class9451.field40625, () -> DSL.optionalFields("Passengers", DSL.list(Class9451.field40625.in(schema3)), Class9451.field40626.in(schema3)));
     }

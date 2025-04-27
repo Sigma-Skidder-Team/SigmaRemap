@@ -42,7 +42,7 @@ public class Class7492 implements Class7491
     private final Vec2f field28939;
     
     public Class7492(final ICommandSource class397, final Vec3d class398, final Vec2f class399, final Class1849 class400, final int n, final String s, final ITextComponent class401, final MinecraftServer class402, final Entity class403) {
-        this(class397, class398, class399, class400, n, s, class401, class402, class403, false, (ResultConsumer<Class7492>)((commandContext, b, n) -> {}), Class2042.field11636);
+        this(class397, class398, class399, class400, n, s, class401, class402, class403, false, (commandContext, b, n) -> {}, Class2042.field11636);
     }
     
     public Class7492(final ICommandSource field28928, final Vec3d field28929, final Vec2f field28930, final Class1849 field28931, final int field28932, final String field28933, final ITextComponent field28934, final MinecraftServer field28935, final Entity field28936, final boolean field28937, final ResultConsumer<Class7492> field28938, final Class2042 field28939) {
@@ -77,7 +77,7 @@ public class Class7492 implements Class7491
     }
     
     public Class7492 method23239(final ResultConsumer<Class7492> resultConsumer, final BinaryOperator<ResultConsumer<Class7492>> binaryOperator) {
-        return this.method23238((ResultConsumer<Class7492>)binaryOperator.apply(this.field28937, resultConsumer));
+        return this.method23238(binaryOperator.apply(this.field28937, resultConsumer));
     }
     
     public Class7492 method23240() {
@@ -180,7 +180,7 @@ public class Class7492 implements Class7491
     }
     
     private void method23258(final ITextComponent class2250) {
-        final ITextComponent method8468 = new Class2259("chat.type.admin", new Object[] { this.method23247(), class2250 }).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC);
+        final ITextComponent method8468 = new Class2259("chat.type.admin", this.method23247(), class2250).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC);
         if (this.field28934.method1583().method31216(Class8878.field37328)) {
             for (final Class513 class2251 : this.field28934.method1537().method20623()) {
                 if (class2251 == this.field28928) {
@@ -209,7 +209,7 @@ public class Class7492 implements Class7491
     
     public void method23260(final CommandContext<Class7492> commandContext, final boolean b, final int n) {
         if (this.field28937 != null) {
-            this.field28937.onCommandComplete((CommandContext)commandContext, b, n);
+            this.field28937.onCommandComplete(commandContext, b, n);
         }
     }
     
@@ -239,7 +239,7 @@ public class Class7492 implements Class7491
     }
     
     static {
-        field28926 = new SimpleCommandExceptionType((Message)new Class2259("permissions.requires.player", new Object[0]));
-        field28927 = new SimpleCommandExceptionType((Message)new Class2259("permissions.requires.entity", new Object[0]));
+        field28926 = new SimpleCommandExceptionType(new Class2259("permissions.requires.player", new Object[0]));
+        field28927 = new SimpleCommandExceptionType(new Class2259("permissions.requires.entity", new Object[0]));
     }
 }

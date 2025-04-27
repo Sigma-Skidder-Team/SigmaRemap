@@ -13,7 +13,7 @@ public class Class5122 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.emptyMap());
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.emptyMap());
     }
     
     public static <T> Class5122 method16027(final Dynamic<T> dynamic) {

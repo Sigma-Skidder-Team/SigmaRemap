@@ -68,7 +68,7 @@ public class Class8341
     
     public static void method27803(final long n, final boolean b) {
         if (method27802()) {
-            GLFW.glfwSetInputMode(n, Class8341.field34247, (int)(b ? 1 : 0));
+            GLFW.glfwSetInputMode(n, Class8341.field34247, b ? 1 : 0);
         }
     }
     

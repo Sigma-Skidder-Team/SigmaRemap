@@ -18,13 +18,13 @@ public enum Class2012
     private final String field11445;
     private final Function<Class9106, ? extends Class7079> field11446;
     
-    private <T extends Class7079> Class2012(final String field11445, final Function<Class9106, T> field11446) {
+    <T extends Class7079> Class2012(final String field11445, final Function<Class9106, T> field11446) {
         this.field11445 = field11445;
         this.field11446 = field11446;
     }
     
     public Class7079 method8052(final Class9106 class9106) {
-        return (Class7079)this.field11446.apply(class9106);
+        return this.field11446.apply(class9106);
     }
     
     public String method8053() {

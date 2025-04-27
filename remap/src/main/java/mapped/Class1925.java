@@ -99,7 +99,7 @@ public final class Class1925 implements AutoCloseable
         GLFW.glfwWindowHint(139267, 0);
         GLFW.glfwWindowHint(139272, 0);
         if (!Class9570.field41210.method22605()) {
-            this.field10480 = GLFW.glfwCreateWindow(this.field10490, this.field10491, (CharSequence)s2, (this.field10486 && method29726 != null) ? method29726.method24213() : 0L, 0L);
+            this.field10480 = GLFW.glfwCreateWindow(this.field10490, this.field10491, s2, (this.field10486 && method29726 != null) ? method29726.method24213() : 0L, 0L);
         }
         else {
             this.field10480 = Class9570.method35822(Class9570.method35827(Class9570.field41209), Class9570.field41210, () -> this.field10490, () -> this.field10491, () -> s3, () -> (this.field10486 && class9155 != null) ? class9155.method24213() : 0L);
@@ -190,7 +190,7 @@ public final class Class1925 implements AutoCloseable
             STBImage.stbi_image_free(method7667);
         }
         catch (final IOException ex) {
-            Class1925.field10476.error("Couldn't set icon", (Throwable)ex);
+            Class1925.field10476.error("Couldn't set icon", ex);
         }
     }
     
@@ -206,7 +206,7 @@ public final class Class1925 implements AutoCloseable
         }
         finally {
             if (method32108 != null) {
-                MemoryUtil.memFree((Buffer)method32108);
+                MemoryUtil.memFree(method32108);
             }
         }
         return stbi_load_from_memory;
@@ -227,7 +227,7 @@ public final class Class1925 implements AutoCloseable
     private static void method7669(final int i, final long n) {
         RenderSystem.method29989(RenderSystem::method29990);
         final String string = "GLFW error " + i + ": " + MemoryUtil.memUTF8(n);
-        TinyFileDialogs.tinyfd_messageBox((CharSequence)"Minecraft", (CharSequence)(string + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions)."), (CharSequence)"ok", (CharSequence)"error", false);
+        TinyFileDialogs.tinyfd_messageBox("Minecraft", string + ".\n\nPlease make sure you have up-to-date drivers (see aka.ms/mcdriver for instructions).", "ok", "error", false);
         throw new Class2368(string, (Class9001)null);
     }
     
@@ -235,12 +235,12 @@ public final class Class1925 implements AutoCloseable
         RenderSystem.method29989(RenderSystem::method29984);
         final String memUTF8 = MemoryUtil.memUTF8(n);
         Class1925.field10476.error("########## GL ERROR ##########");
-        Class1925.field10476.error("@ {}", (Object)this.field10497);
-        Class1925.field10476.error("{}: {}", (Object)i, (Object)memUTF8);
+        Class1925.field10476.error("@ {}", this.field10497);
+        Class1925.field10476.error("{}: {}", i, memUTF8);
     }
     
     public void method7671() {
-        final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback((GLFWErrorCallbackI)this.field10477);
+        final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback(this.field10477);
         if (glfwSetErrorCallback != null) {
             glfwSetErrorCallback.free();
         }
@@ -249,7 +249,7 @@ public final class Class1925 implements AutoCloseable
     
     public void method7672(final boolean field10500) {
         RenderSystem.method29989(RenderSystem::method29985);
-        GLFW.glfwSwapInterval((int)((this.field10500 = field10500) ? 1 : 0));
+        GLFW.glfwSwapInterval((this.field10500 = field10500) ? 1 : 0);
     }
     
     @Override
@@ -388,7 +388,7 @@ public final class Class1925 implements AutoCloseable
             this.method7680();
         }
         catch (final Exception ex) {
-            Class1925.field10476.error("Couldn't toggle fullscreen", (Throwable)ex);
+            Class1925.field10476.error("Couldn't toggle fullscreen", ex);
         }
     }
     
@@ -425,7 +425,7 @@ public final class Class1925 implements AutoCloseable
     }
     
     public void method7689(final String s) {
-        GLFW.glfwSetWindowTitle(this.field10480, (CharSequence)s);
+        GLFW.glfwSetWindowTitle(this.field10480, s);
     }
     
     public long getHandle() {

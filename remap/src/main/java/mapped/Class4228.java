@@ -54,7 +54,7 @@ public class Class4228 extends Class4211
             jsonObject2.add("occupied", this.field19029.method29745());
             jsonObject2.add("full", this.field19030.method29745());
             jsonObject2.add("empty", this.field19031.method29745());
-            jsonObject.add("slots", (JsonElement)jsonObject2);
+            jsonObject.add("slots", jsonObject2);
         }
         if (this.field19032.length > 0) {
             final JsonArray jsonArray = new JsonArray();
@@ -62,9 +62,9 @@ public class Class4228 extends Class4211
             for (int length = field19032.length, i = 0; i < length; ++i) {
                 jsonArray.add(field19032[i].method34629());
             }
-            jsonObject.add("items", (JsonElement)jsonArray);
+            jsonObject.add("items", jsonArray);
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public boolean method12719(final Class464 class464) {

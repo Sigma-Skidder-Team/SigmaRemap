@@ -55,7 +55,7 @@ public class Class6820 extends Class6821
         if (class7619.method23939().method29980()) {
             this.field26772.add(class7619);
         }
-        final Iterator iterator = this.field26776.get((Object)class7619.method23939()).iterator();
+        final Iterator iterator = this.field26776.get(class7619.method23939()).iterator();
         while (iterator.hasNext()) {
             final Class7620 method20871 = this.method20871((Class8725)iterator.next());
             if (method20871 == null) {

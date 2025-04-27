@@ -18,8 +18,8 @@ public class Class2344 implements Class2343
     private Class8406 field14121;
     private int field14122;
     private int field14123;
-    private Class8408 field14124;
-    private Class2283 field14125;
+    private final Class8408 field14124;
+    private final Class2283 field14125;
     private boolean field14126;
     
     public Class2344() {

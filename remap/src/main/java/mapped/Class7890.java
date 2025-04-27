@@ -180,7 +180,7 @@ public class Class7890
         if (class4995.method15183() != null) {
             final int ordinal = class4995.method15183().ordinal();
             while (list.size() <= ordinal) {
-                list.add((List<?>)null);
+                list.add(null);
             }
             List list2 = list.get(ordinal);
             if (list2 == null) {
@@ -206,9 +206,7 @@ public class Class7890
         final Calendar instance = Calendar.getInstance();
         if (instance.get(2) + 1 == 12) {
             if (instance.get(5) >= 24) {
-                if (instance.get(5) <= 26) {
-                    return true;
-                }
+                return instance.get(5) <= 26;
             }
         }
         return false;

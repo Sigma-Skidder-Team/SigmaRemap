@@ -46,7 +46,7 @@ public abstract class Class6173
     public float field24956;
     public float field24957;
     public float field24958;
-    private Class384 field24959;
+    private final Class384 field24959;
     
     public Class6173(final World field24932, final double field24933, final double field24934, final double field24935) {
         this.field24942 = Class6173.field24931;
@@ -256,10 +256,7 @@ public abstract class Class6173
                 }
             }
             this.field24959.method1279(method35647, method35648, method35649);
-            if (!this.field24932.getBlockState(this.field24959).method21706()) {
-                return true;
-            }
-            return false;
+            return !this.field24932.getBlockState(this.field24959).method21706();
         }
         return true;
     }

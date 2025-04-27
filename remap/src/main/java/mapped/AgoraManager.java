@@ -85,10 +85,10 @@ public class AgoraManager {
                                 final Map<Class<? extends CancellableEvent>, List<EventHandler>> map = Client.getInstance().getEventBus().moduleHandlers.getOrDefault(key, new HashMap<Class<? extends CancellableEvent>, List<EventHandler>>());
                                 List<EventHandler> list = map.get(clazz);
                                 if (list == null) {
-                                    map.put((Class<? extends CancellableEvent>) clazz, (ArrayList) (list = new ArrayList<EventHandler>()));
+                                    map.put((Class<? extends CancellableEvent>) clazz, list = new ArrayList<EventHandler>());
                                 }
                                 list.add(eventHandler);
-                                map.put((Class<? extends CancellableEvent>) clazz, (ArrayList) list);
+                                map.put((Class<? extends CancellableEvent>) clazz, list);
                                 Client.getInstance().getEventBus().moduleHandlers.put((Class) key, map);
                             }
                         }

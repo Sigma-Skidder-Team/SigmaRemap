@@ -56,7 +56,7 @@ public class Class4516 extends Class4515
     public boolean method13421(final Class1851 class1851, final Class6346<?> class1852, final Random random, final MutableBoundingBox class1853, final ChunkPos class1854) {
         final Class9092 method32853 = new Class9092().method32845(this.field19922).method32844(Class2181.field12917).method32846(Class5172.method16139().get(this.field19921)).method32853(Class4106.field18207);
         final BlockPos class1855 = Class5172.method16138().get(this.field19921);
-        final BlockPos method32854 = this.field19920.add(Class6585.method19953(method32853, new BlockPos(3 - class1855.getX(), 0, 0 - class1855.getZ())));
+        final BlockPos method32854 = this.field19920.add(Class6585.method19953(method32853, new BlockPos(3 - class1855.getX(), 0, -class1855.getZ())));
         final int method32855 = class1851.method6699(HeightmapType.field11521, method32854.getX(), method32854.getZ());
         final BlockPos field19920 = this.field19920;
         this.field19920 = this.field19920.add(0, method32855 - 90 - 1, 0);

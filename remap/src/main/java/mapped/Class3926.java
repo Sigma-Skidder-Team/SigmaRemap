@@ -34,12 +34,12 @@ public class Class3926 extends Class3924
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3926.field17791, class7097.method8142(class7096.get((IProperty<Direction>)Class3926.field17791)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3926.field17791, class7097.method8142(class7096.get(Class3926.field17791)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3926.field17791)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3926.field17791)));
     }
     
     @Override
@@ -49,15 +49,15 @@ public class Class3926 extends Class3924
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3926.field17782)) {
+        if (class7096.get(Class3926.field17782)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
-        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3926.field17791) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : class7096;
+        return (class7097.getOpposite() == class7096.get(Class3926.field17791) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : class7096;
     }
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        final Direction class7099 = class7096.get((IProperty<Direction>)Class3926.field17791);
+        final Direction class7099 = class7096.get(Class3926.field17791);
         final BlockPos method1149 = class7098.method1149(class7099.getOpposite());
         return class7097.getBlockState(method1149).isSolidSide(class7097, method1149, class7099);
     }
@@ -81,6 +81,6 @@ public class Class3926 extends Class3924
     
     static {
         field17791 = Class3892.field17564;
-        field17792 = Maps.newEnumMap((Map)ImmutableMap.of((Object) Direction.NORTH, (Object) Block.method11778(0.0, 4.0, 5.0, 16.0, 12.0, 16.0), (Object) Direction.SOUTH, (Object) Block.method11778(0.0, 4.0, 0.0, 16.0, 12.0, 11.0), (Object) Direction.WEST, (Object) Block.method11778(5.0, 4.0, 0.0, 16.0, 12.0, 16.0), (Object) Direction.EAST, (Object) Block.method11778(0.0, 4.0, 0.0, 11.0, 12.0, 16.0)));
+        field17792 = Maps.newEnumMap((Map)ImmutableMap.of(Direction.NORTH, Block.method11778(0.0, 4.0, 5.0, 16.0, 12.0, 16.0), Direction.SOUTH, Block.method11778(0.0, 4.0, 0.0, 16.0, 12.0, 11.0), Direction.WEST, Block.method11778(5.0, 4.0, 0.0, 16.0, 12.0, 16.0), (Object) Direction.EAST, (Object) Block.method11778(0.0, 4.0, 0.0, 11.0, 12.0, 16.0)));
     }
 }

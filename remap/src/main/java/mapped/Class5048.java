@@ -36,14 +36,14 @@ public class Class5048 extends RealmsScreen
                         Realms.setScreen(class5050);
                     }).exceptionally(t2 -> {
                         Realms.method25371();
-                        Class5048.field21663.error((Object)t2);
+                        Class5048.field21663.error(t2);
                         Realms.setScreen(new RealmsGenericErrorScreen("Failed to download resource pack!", this.field21664));
                         return null;
                     });
                 }
                 catch (final Exception ex) {
                     Realms.method25371();
-                    Class5048.field21663.error((Object)ex);
+                    Class5048.field21663.error(ex);
                     Realms.setScreen(new RealmsGenericErrorScreen("Failed to download resource pack!", this.field21664));
                 }
             }

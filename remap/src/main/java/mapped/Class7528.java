@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.io.InputStreamReader;
 import java.io.CharArrayReader;
@@ -460,9 +461,7 @@ public class Class7528
             if (offset >= 0) {
                 if (str2.contains(Class7677.method24370())) {
                     final Class8573[] method23563 = method23563(str2, Class7677.method24371());
-                    for (int j = 0; j < method23563.length; ++j) {
-                        set.add(method23563[j]);
-                    }
+                    Collections.addAll(set, method23563);
                 }
             }
             if (Class9216.method33923()) {
@@ -495,7 +494,7 @@ public class Class7528
         ++i;
         final InputStream method21531 = class7038.method21531(str);
         if (method21531 != null) {
-            final BufferedReader method21532 = method23562(new BufferedReader(new InputStreamReader(method21531, "ASCII")), str, class7038, n, list, i);
+            final BufferedReader method21532 = method23562(new BufferedReader(new InputStreamReader(method21531, StandardCharsets.US_ASCII)), str, class7038, n, list, i);
             final CharArrayWriter charArrayWriter = new CharArrayWriter();
             while (true) {
                 final String line = method21532.readLine();
@@ -513,8 +512,8 @@ public class Class7528
     public static Class6891 method23565(final Properties properties) {
         final String s = "uniform";
         final String anObject = "variable";
-        new StringBuilder().append(s).append(".").toString();
-        new StringBuilder().append(anObject).append(".").toString();
+        s + ".";
+        anObject + ".";
         final HashMap hashMap = new HashMap();
         final ArrayList list = new ArrayList();
         for (final String key : properties.keySet()) {

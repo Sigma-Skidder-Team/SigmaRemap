@@ -33,7 +33,7 @@ public class Class461 extends Class460 implements Class441, Class439
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.brewing", new Object[0]);
+        return new Class2259("container.brewing");
     }
     
     @Override
@@ -220,10 +220,7 @@ public class Class461 extends Class460 implements Class441, Class439
                     }
                 }
             }
-            if (this.getStackInSlot(n).method27620()) {
-                return true;
-            }
-            return false;
+            return this.getStackInSlot(n).method27620();
         }
         return method27622 == Items.field31445;
     }

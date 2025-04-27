@@ -175,9 +175,7 @@ public class Class427 extends Entity
             if (this.field2615 != 32767) {
                 if (this.field2614 != -32768) {
                     if (this.field2614 < 6000) {
-                        if (method2107.method27690() < method2107.method27628()) {
-                            return true;
-                        }
+                        return method2107.method27690() < method2107.method27628();
                     }
                 }
             }
@@ -201,7 +199,7 @@ public class Class427 extends Entity
     }
     
     public static boolean method2103(final ItemStack class8321, final ItemStack class8322) {
-        return class8322.getItem() == class8321.getItem() && class8322.method27690() + class8321.method27690() <= class8322.method27628() && !(class8322.method27656() ^ class8321.method27656()) && (!class8322.method27656() || class8322.method27657().equals(class8321.method27657()));
+        return class8322.getItem() == class8321.getItem() && class8322.method27690() + class8321.method27690() <= class8322.method27628() && class8322.method27656() == class8321.method27656() && (!class8322.method27656() || class8322.method27657().equals(class8321.method27657()));
     }
     
     public static ItemStack method2104(final ItemStack class8321, final ItemStack class8322, final int b) {
@@ -309,7 +307,7 @@ public class Class427 extends Entity
     @Override
     public ITextComponent getName() {
         final ITextComponent method1873 = this.getCustomName();
-        return (method1873 == null) ? new Class2259(this.method2107().method27649(), new Object[0]) : method1873;
+        return (method1873 == null) ? new Class2259(this.method2107().method27649()) : method1873;
     }
     
     @Override

@@ -134,9 +134,7 @@ public abstract class Class1890<M extends Class7501<M>, S extends Class1897<M>> 
     public boolean method7306() {
         if (!this.method7323()) {
             if (!this.field10277.method7323()) {
-                if (!this.field10277.method7356()) {
-                    return false;
-                }
+                return this.field10277.method7356();
             }
         }
         return true;

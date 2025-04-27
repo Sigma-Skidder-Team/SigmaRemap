@@ -17,22 +17,22 @@ public class Class4936 extends Class4800
 {
     private int field21167;
     private float field21168;
-    private float field21169;
-    private boolean field21170;
+    private final float field21169;
+    private final boolean field21170;
     public UIButton field21171;
     private Class4823 field21172;
     private Class4907 field21173;
     private Class4907 field21174;
-    private float field21175;
-    private float field21176;
-    private int field21177;
+    private final float field21175;
+    private final float field21176;
+    private final int field21177;
     public AltManager field21178;
     private Texture field21179;
     private float field21180;
-    private Class225 field21181;
-    private boolean field21182;
-    private Class4832 field21183;
-    private Class4810 field21184;
+    private final Class225 field21181;
+    private final boolean field21182;
+    private final Class4832 field21183;
+    private final Class4810 field21184;
     private String field21185;
     
     public Class4936() {

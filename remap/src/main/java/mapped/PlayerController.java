@@ -385,7 +385,7 @@ public class PlayerController
     }
     
     public void method27340(final ClientWorld clientWorld, final BlockPos class1849, final BlockState class1850, final Class2003 class1851, final boolean b) {
-        final Class8104 class1852 = (Class8104)this.field33872.remove((Object)Pair.of((Object)class1849, (Object)class1851));
+        final Class8104 class1852 = this.field33872.remove((Object)Pair.of((Object)class1849, (Object)class1851));
         while (true) {
             Label_0023: {
                 if (class1852 == null) {
@@ -400,7 +400,7 @@ public class PlayerController
                     }
                 }
                 while (this.field33872.size() >= 50) {
-                    final Pair obj = (Pair)this.field33872.firstKey();
+                    final Pair obj = this.field33872.firstKey();
                     this.field33872.removeFirst();
                     PlayerController.field33862.error("Too many unacked block actions, dropping " + obj);
                 }

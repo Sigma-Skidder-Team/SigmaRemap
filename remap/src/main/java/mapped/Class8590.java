@@ -32,7 +32,7 @@ public class Class8590 implements ArgumentType<Integer>
     
     public Integer parse(final StringReader stringReader) throws CommandSyntaxException {
         final float float1 = stringReader.readFloat();
-        final int orDefault = Class8590.field36090.getOrDefault((Object)stringReader.readUnquotedString(), 0);
+        final int orDefault = Class8590.field36090.getOrDefault(stringReader.readUnquotedString(), 0);
         if (orDefault == 0) {
             throw Class8590.field36088.create();
         }
@@ -40,7 +40,7 @@ public class Class8590 implements ArgumentType<Integer>
         if (round >= 0) {
             return round;
         }
-        throw Class8590.field36089.create((Object)round);
+        throw Class8590.field36089.create(round);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -60,9 +60,9 @@ public class Class8590 implements ArgumentType<Integer>
     
     static {
         field36087 = Arrays.asList("0d", "0s", "0t", "0");
-        field36088 = new SimpleCommandExceptionType((Message)new Class2259("argument.time.invalid_unit", new Object[0]));
+        field36088 = new SimpleCommandExceptionType(new Class2259("argument.time.invalid_unit", new Object[0]));
         field36089 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.time.invalid_tick_count", new Object[] { o });
+            new Class2259("argument.time.invalid_tick_count", o);
             return;
         });
         (field36090 = (Object2IntMap)new Object2IntOpenHashMap()).put((Object)"d", 24000);

@@ -19,7 +19,7 @@ public class Class5461 extends Class5419<LivingEntity>
     private long field22719;
     
     public Class5461() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33800, (Object)Class1952.field10628, (Object)Class8233.field33825, (Object)Class1952.field10630));
+        super((Map)ImmutableMap.of(Class8233.field33800, Class1952.field10628, (Object)Class8233.field33825, (Object)Class1952.field10630));
     }
     
     @Override
@@ -39,9 +39,7 @@ public class Class5461 extends Class5419<LivingEntity>
         final BlockState method2620 = class1849.getBlockState(class1851.method1170());
         if (class1851.method1170().withinDistance(class1850.method1934(), 2.0)) {
             if (method2620.getBlock().method11785(Class7188.field27910)) {
-                if (!method2620.get((IProperty<Boolean>)Class3900.field17600)) {
-                    return true;
-                }
+                return !method2620.get(Class3900.field17600);
             }
         }
         return false;
@@ -54,9 +52,7 @@ public class Class5461 extends Class5419<LivingEntity>
             final BlockPos method1199 = method1198.get().method1170();
             if (class1850.method2618().method1209(Class7635.field30230)) {
                 if (class1850.getPosY() > method1199.getY() + 0.4) {
-                    if (method1199.withinDistance(class1850.method1934(), 1.14)) {
-                        return true;
-                    }
+                    return method1199.withinDistance(class1850.method1934(), 1.14);
                 }
             }
             return false;

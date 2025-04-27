@@ -38,7 +38,7 @@ public abstract class Class6257
         for (final Class2215 class512 : this.field25116) {
             final ItemStack method2718 = class511.method2718(class512);
             if (!method2718.method27620()) {
-                enumMap.put((Object)class512, method2718);
+                enumMap.put(class512, method2718);
             }
         }
         return enumMap;
@@ -92,7 +92,7 @@ public abstract class Class6257
     }
     
     public ITextComponent method18599(final int i) {
-        final Class2259 class2259 = new Class2259(this.method18598(), new Object[0]);
+        final Class2259 class2259 = new Class2259(this.method18598());
         if (!this.method18604()) {
             class2259.applyTextStyle(TextFormatting.GRAY);
         }
@@ -100,7 +100,7 @@ public abstract class Class6257
             class2259.applyTextStyle(TextFormatting.RED);
         }
         if (i != 1 || this.method18588() != 1) {
-            class2259.appendText(" ").appendSibling(new Class2259("enchantment.level." + i, new Object[0]));
+            class2259.appendText(" ").appendSibling(new Class2259("enchantment.level." + i));
         }
         return class2259;
     }

@@ -23,7 +23,7 @@ public class Class6711 extends DataFix
     public TypeRewriteRule makeRule() {
         final Type named = DSL.named(Class9451.field40632.typeName(), DSL.remainderType());
         if (Objects.equals(named, this.getInputSchema().getType(Class9451.field40632))) {
-            return this.fixTypeEverywhere("TeamDisplayNameFix", named, p0 -> pair -> pair.mapSecond(dynamic -> dynamic.update("DisplayName", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asString().map(s -> Class5953.method17869(new StringTextComponent(s))).map(dynamic2::createString), (Object)dynamic3))));
+            return this.fixTypeEverywhere("TeamDisplayNameFix", named, p0 -> pair -> pair.mapSecond(dynamic -> dynamic.update("DisplayName", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asString().map(s -> Class5953.method17869(new StringTextComponent(s))).map(dynamic2::createString), dynamic3))));
         }
         throw new IllegalStateException("Team type is not what was expected.");
     }

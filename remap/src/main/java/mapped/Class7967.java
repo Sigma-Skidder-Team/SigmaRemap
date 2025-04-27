@@ -12,8 +12,8 @@ import java.lang.reflect.Method;
 @Deprecated
 public class Class7967 extends Class7966
 {
-    private Method field32736;
-    private Object field32737;
+    private final Method field32736;
+    private final Object field32737;
     
     private static boolean method25815(final Method method) {
         for (final Class<?> clazz : method.getParameterTypes()) {
@@ -73,7 +73,7 @@ public class Class7967 extends Class7966
     public void method25811(final String s, final String... array) {
         try {
             if (array.length == 0) {
-                this.field32736.invoke(this.field32737, new Object[0]);
+                this.field32736.invoke(this.field32737);
             }
             else {
                 final Object[] args = new Object[array.length];
@@ -85,7 +85,7 @@ public class Class7967 extends Class7966
         }
         catch (final IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Client.getInstance().getLogger().error("Unable to invoke " + this.field32737.getClass().getName() + "::" + this.field32736.getName());
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
     

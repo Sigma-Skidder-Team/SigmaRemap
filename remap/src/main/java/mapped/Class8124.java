@@ -70,9 +70,7 @@ public class Class8124
             if (class8124.field33468.equals(this.field33468)) {
                 if (class8124.field33469 == this.field33469) {
                     if (class8124.field33470 == this.field33470) {
-                        if (class8124.field33471 == this.field33471) {
-                            return true;
-                        }
+                        return class8124.field33471 == this.field33471;
                     }
                 }
             }

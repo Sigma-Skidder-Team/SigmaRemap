@@ -524,12 +524,12 @@ public class TextureAtlasSprite implements AutoCloseable
         if (this.field10401.method19934(method6336)) {
             try (final Class1671 method6337 = this.field10401.method19933(method6336)) {
                 final Class8736 class1934 = new Class8736(method6336.toString(), this.field10401.method19933(method6336).method5887());
-                Class8637 field36232 = method6337.method5888((Class5092<Class8637>)Class8637.field36231);
+                Class8637 field36232 = method6337.method5888(Class8637.field36231);
                 if (field36232 == null) {
                     field36232 = Class8637.field36232;
                 }
                 final Pair<Integer, Integer> method6338 = field36232.method29301(class1934.field36713, class1934.field36714);
-                final Class9336 class1935 = new Class9336(class1932, (int)method6338.getFirst(), (int)method6338.getSecond(), field36232);
+                final Class9336 class1935 = new Class9336(class1932, method6338.getFirst(), method6338.getSecond(), field36232);
                 Class1846 method6339 = Class1846.method6637(method6337.method5887());
                 if (method6339.method6644() != this.method7495()) {
                     final Class1846 method6340 = Class8969.method31837(method6339, this.method7495());

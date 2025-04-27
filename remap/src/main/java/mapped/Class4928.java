@@ -37,7 +37,7 @@ public class Class4928 extends Class4800
         final float method24920 = Class7707.method24584((this.field21083 >= 0.5) ? ((float)(this.field21083 - 0.5) * 2.0f) : 0.0f, 0.0f, 1.0f, 1.0f);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.method14276() / 2), (float)(this.method14278() / 2), 0.0f);
-        GL11.glScaled((double)method24920, (double)method24920, 0.0);
+        GL11.glScaled(method24920, method24920, 0.0);
         GL11.glTranslatef((float)(-this.method14276() / 2), (float)(-this.method14278() / 2), 0.0f);
         final String s = "Jello by MF & Tomygames";
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;

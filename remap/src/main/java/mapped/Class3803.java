@@ -5,6 +5,7 @@
 package mapped;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class Class3803 extends Class3703
 {
@@ -19,7 +20,7 @@ public class Class3803 extends Class3703
         super.method11381(class9131);
         final byte[] bytes = new byte[(int)this.method11491(class9131)];
         class9131.method33138(bytes);
-        this.field17312 = new String(bytes, "UTF-8");
+        this.field17312 = new String(bytes, StandardCharsets.UTF_8);
     }
     
     public String method11649() {

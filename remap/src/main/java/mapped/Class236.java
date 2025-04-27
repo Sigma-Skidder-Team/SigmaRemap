@@ -12,5 +12,5 @@ public enum Class236
     field906, 
     field907, 
     field908, 
-    field909;
+    field909
 }

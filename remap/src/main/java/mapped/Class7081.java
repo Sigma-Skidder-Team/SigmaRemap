@@ -77,7 +77,7 @@ public class Class7081 implements Class7079
     }
     
     static {
-        field27580 = new Class2259("tutorial.craft_planks.title", new Object[0]);
-        field27581 = new Class2259("tutorial.craft_planks.description", new Object[0]);
+        field27580 = new Class2259("tutorial.craft_planks.title");
+        field27581 = new Class2259("tutorial.craft_planks.description");
     }
 }

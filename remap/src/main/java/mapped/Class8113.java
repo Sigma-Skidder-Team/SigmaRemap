@@ -191,7 +191,7 @@ public class Class8113
                     this.field33437 = new HttpGet(class7434.field28659);
                     HttpClientBuilder.create().setDefaultRequestConfig(this.field33439).build();
                     final CloseableHttpClient closeableHttpClient;
-                    closeableHttpClient.execute((HttpUriRequest)this.field33437);
+                    closeableHttpClient.execute(this.field33437);
                     final HttpResponse httpResponse;
                     class7435.field33323 = Long.parseLong(httpResponse.getFirstHeader("Content-Length").getValue());
                     if (httpResponse.getStatusLine().getStatusCode() == 200) {
@@ -199,7 +199,7 @@ public class Class8113
                         final Class7050 class7437 = new Class7050(this, s2.trim(), this.field33435, class7436, class7435, class7434, null);
                         final Class1719 class7438 = new Class1719(this, fileOutputStream);
                         class7438.method6070(class7437);
-                        IOUtils.copy(httpResponse.getEntity().getContent(), (OutputStream)class7438);
+                        IOUtils.copy(httpResponse.getEntity().getContent(), class7438);
                     }
                     else {
                         this.field33433 = true;
@@ -221,7 +221,7 @@ public class Class8113
                             try {
                                 this.field33435 = File.createTempFile("resources", ".tar.gz");
                                 this.field33437 = new HttpGet(class7434.field28660);
-                                closeableHttpClient.execute((HttpUriRequest)this.field33437);
+                                closeableHttpClient.execute(this.field33437);
                                 final HttpResponse httpResponse2;
                                 class7435.field33323 = Long.parseLong(httpResponse2.getFirstHeader("Content-Length").getValue());
                                 if (httpResponse2.getStatusLine().getStatusCode() != 200) {
@@ -234,7 +234,7 @@ public class Class8113
                                     final Class7048 class7439 = new Class7048(this, this.field33435, class7435, class7434, null);
                                     final Class1719 class7440 = new Class1719(this, fileOutputStream2);
                                     class7440.method6070(class7439);
-                                    IOUtils.copy(httpResponse2.getEntity().getContent(), (OutputStream)class7440);
+                                    IOUtils.copy(httpResponse2.getEntity().getContent(), class7440);
                                 }
                             }
                             catch (final Exception ex2) {
@@ -261,7 +261,6 @@ public class Class8113
                         }
                     }
                 }
-                return;
             })).setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8236(Class8113.field33430));
             this.field33438.start();
         }
@@ -307,7 +306,7 @@ public class Class8113
         for (int length = field37874.length, i = 0; i < length; ++i) {
             s = s.replace(field37874[i], '_');
         }
-        if (StringUtils.isEmpty((CharSequence)s)) {
+        if (StringUtils.isEmpty(s)) {
             s = "Realm";
         }
         s = method26672(s);
@@ -328,7 +327,7 @@ public class Class8113
             }
         }
         catch (final Exception ex) {
-            Class8113.field33430.error("Error getting level list", (Throwable)ex);
+            Class8113.field33430.error("Error getting level list", ex);
             this.field33433 = true;
             return;
         }
@@ -350,7 +349,7 @@ public class Class8113
         final File parent = new File(Realms.method25364(), "saves");
         try {
             parent.mkdir();
-            tarArchiveInputStream = new TarArchiveInputStream((InputStream)new GzipCompressorInputStream((InputStream)new BufferedInputStream(new FileInputStream(file))));
+            tarArchiveInputStream = new TarArchiveInputStream(new GzipCompressorInputStream(new BufferedInputStream(new FileInputStream(file))));
             for (TarArchiveEntry tarArchiveEntry = tarArchiveInputStream.getNextTarEntry(); tarArchiveEntry != null; tarArchiveEntry = tarArchiveInputStream.getNextTarEntry()) {
                 final File file2 = new File(parent, tarArchiveEntry.getName().replace("world", str));
                 if (tarArchiveEntry.isDirectory()) {
@@ -369,7 +368,7 @@ public class Class8113
             }
         }
         catch (final Exception ex2) {
-            Class8113.field33430.error("Error extracting world", (Throwable)ex2);
+            Class8113.field33430.error("Error extracting world", ex2);
             this.field33433 = true;
         }
         finally {

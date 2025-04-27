@@ -14,7 +14,7 @@ public class Class7771
     private ResourceLocation field31816;
     private Class1846 field31817;
     private Class1773 field31818;
-    private ResourceLocation field31819;
+    private final ResourceLocation field31819;
     public static final int field31820 = 0;
     public static final int field31821 = 1;
     public static final int field31822 = 2;

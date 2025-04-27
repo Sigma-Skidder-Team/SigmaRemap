@@ -12,5 +12,5 @@ public enum Class2080
     field12027, 
     field12028, 
     field12029, 
-    field12030;
+    field12030
 }

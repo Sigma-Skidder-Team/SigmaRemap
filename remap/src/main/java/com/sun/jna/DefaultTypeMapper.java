@@ -11,8 +11,8 @@ import java.util.List;
 
 public class DefaultTypeMapper implements TypeMapper
 {
-    private List<DefaultTypeMapper$Entry> toNativeConverters;
-    private List<DefaultTypeMapper$Entry> fromNativeConverters;
+    private final List<DefaultTypeMapper$Entry> toNativeConverters;
+    private final List<DefaultTypeMapper$Entry> fromNativeConverters;
     
     public DefaultTypeMapper() {
         this.toNativeConverters = new ArrayList<DefaultTypeMapper$Entry>();

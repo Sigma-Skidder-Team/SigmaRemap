@@ -23,7 +23,7 @@ public class InfiniteAura extends Module
     private int field15646;
     private boolean field15647;
     private float field15648;
-    private List<List<Class9407>> field15649;
+    private final List<List<Class9407>> field15649;
     
     public InfiniteAura() {
         super(Category.COMBAT, "InfiniteAura", "Basically infinite aura");
@@ -236,9 +236,7 @@ public class InfiniteAura extends Module
     public boolean method10095() {
         if (this.field15647) {
             if (Minecraft.getInstance().player.getHeldItemMainhand() != null) {
-                if (Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof SwordItem) {
-                    return true;
-                }
+                return Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof SwordItem;
             }
         }
         return false;
@@ -248,9 +246,7 @@ public class InfiniteAura extends Module
     public boolean method9898() {
         if (this.isEnabled()) {
             if (this.method10095()) {
-                if (Client.getInstance().getTickManager().method29229()) {
-                    return true;
-                }
+                return Client.getInstance().getTickManager().method29229();
             }
         }
         return false;

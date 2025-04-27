@@ -7,9 +7,9 @@ package mapped;
 public class Class8376 implements Class8375
 {
     private static String[] field34347;
-    private Class2412 field34348;
+    private final Class2412 field34348;
     private float field34349;
-    private Class5202 field34350;
+    private final Class5202 field34350;
     private Class2400 field34351;
     
     public Class8376(final Class2400 class2400, final Class7310 class2401, final Class5202 field34350) {

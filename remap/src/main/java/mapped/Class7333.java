@@ -81,7 +81,6 @@ public class Class7333
             else {
                 sb2.append(' ');
             }
-            return;
         });
         sb.append(']');
         return sb.toString();

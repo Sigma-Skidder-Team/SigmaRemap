@@ -38,72 +38,72 @@ public final class Platform
     private Platform() {
     }
     
-    public static final int getOSType() {
+    public static int getOSType() {
         return Platform.osType;
     }
     
-    public static final boolean isMac() {
+    public static boolean isMac() {
         return Platform.osType == 0;
     }
     
-    public static final boolean isAndroid() {
+    public static boolean isAndroid() {
         return Platform.osType == 8;
     }
     
-    public static final boolean isLinux() {
+    public static boolean isLinux() {
         return Platform.osType == 1;
     }
     
-    public static final boolean isAIX() {
+    public static boolean isAIX() {
         return Platform.osType == 7;
     }
     
     @Deprecated
-    public static final boolean isAix() {
+    public static boolean isAix() {
         return isAIX();
     }
     
-    public static final boolean isWindowsCE() {
+    public static boolean isWindowsCE() {
         return Platform.osType == 6;
     }
     
-    public static final boolean isWindows() {
+    public static boolean isWindows() {
         return Platform.osType == 2 || Platform.osType == 6;
     }
     
-    public static final boolean isSolaris() {
+    public static boolean isSolaris() {
         return Platform.osType == 3;
     }
     
-    public static final boolean isFreeBSD() {
+    public static boolean isFreeBSD() {
         return Platform.osType == 4;
     }
     
-    public static final boolean isOpenBSD() {
+    public static boolean isOpenBSD() {
         return Platform.osType == 5;
     }
     
-    public static final boolean isNetBSD() {
+    public static boolean isNetBSD() {
         return Platform.osType == 11;
     }
     
-    public static final boolean isGNU() {
+    public static boolean isGNU() {
         return Platform.osType == 9;
     }
     
-    public static final boolean iskFreeBSD() {
+    public static boolean iskFreeBSD() {
         return Platform.osType == 10;
     }
     
-    public static final boolean isX11() {
+    public static boolean isX11() {
         return !isWindows() && !isMac();
     }
     
-    public static final boolean hasRuntimeExec() {
+    public static boolean hasRuntimeExec() {
         return !isWindowsCE() || !"J9".equals(System.getProperty("java.vm.name"));
     }
     
-    public static final boolean is64Bit() {
+    public static boolean is64Bit() {
         final String property = System.getProperty("sun.arch.data.model", System.getProperty("com.ibm.vm.bitmode"));
         if (property != null) {
             return "64".equals(property);
@@ -111,19 +111,19 @@ public final class Platform
         return "x86-64".equals(Platform.ARCH) || "ia64".equals(Platform.ARCH) || "ppc64".equals(Platform.ARCH) || "ppc64le".equals(Platform.ARCH) || "sparcv9".equals(Platform.ARCH) || "amd64".equals(Platform.ARCH) || Native.POINTER_SIZE == 8;
     }
     
-    public static final boolean isIntel() {
+    public static boolean isIntel() {
         return Platform.ARCH.startsWith("x86");
     }
     
-    public static final boolean isPPC() {
+    public static boolean isPPC() {
         return Platform.ARCH.startsWith("ppc");
     }
     
-    public static final boolean isARM() {
+    public static boolean isARM() {
         return Platform.ARCH.startsWith("arm");
     }
     
-    public static final boolean isSPARC() {
+    public static boolean isSPARC() {
         return Platform.ARCH.startsWith("sparc");
     }
     
@@ -352,7 +352,7 @@ public final class Platform
     static {
         final String property = System.getProperty("os.name");
         if (property.startsWith("Linux")) {
-            if ("dalvik".equals(System.getProperty("java.vm.name").toLowerCase())) {
+            if ("dalvik".equalsIgnoreCase(System.getProperty("java.vm.name"))) {
                 osType = 8;
                 System.setProperty("jna.nounpack", "true");
             }

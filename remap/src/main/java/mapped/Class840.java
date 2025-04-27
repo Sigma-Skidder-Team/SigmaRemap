@@ -117,7 +117,7 @@ public class Class840 extends Class832
         this.field4114.method22062(8, new Class3477(this, null));
         this.field4114.method22062(8, new Class3603(this));
         this.field4114.method22062(9, new Class3448<Object>(this, Class844.class, 8.0f, 1.0, 1.0));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class844.class }).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[] { Class844.class }).method11100(new Class[0]));
     }
     
     @Override
@@ -265,9 +265,7 @@ public class Class840 extends Class832
         if (class7502.getY() > 45) {
             if (class7502.getY() < class7500.method6743()) {
                 if (class7500.method6959(class7502) != Class7102.field27631 || class7500.method6959(class7502) != Class7102.field27656) {
-                    if (class7500.getFluidState(class7502).isTagged(Class7324.field28319)) {
-                        return true;
-                    }
+                    return class7500.getFluidState(class7502).isTagged(Class7324.field28319);
                 }
             }
         }
@@ -334,8 +332,8 @@ public class Class840 extends Class832
         field4478 = (class427 -> {
             final boolean b;
             if (!class427.method2118()) {
-                if (!(!class427.isAlive())) {
-                    if (!(!class427.method1706())) {
+                if (class427.isAlive()) {
+                    if (class427.method1706()) {
                         return b;
                     }
                 }

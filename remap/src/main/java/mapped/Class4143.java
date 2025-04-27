@@ -23,6 +23,6 @@ public class Class4143 extends Class4139
     }
     
     static {
-        field18267 = (Map)ImmutableMap.builder().put((Object)"minecraft:puffer_fish_spawn_egg", (Object)"minecraft:pufferfish_spawn_egg").build();
+        field18267 = (Map)ImmutableMap.builder().put("minecraft:puffer_fish_spawn_egg", "minecraft:pufferfish_spawn_egg").build();
     }
 }

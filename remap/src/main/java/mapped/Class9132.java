@@ -81,9 +81,7 @@ public class Class9132
             return null;
         }
         final Class6741[][] array2 = new Class6741[n + 1][0];
-        for (int k = 0; k < array2.length; ++k) {
-            array2[k] = array[k];
-        }
+        System.arraycopy(array, 0, array2, 0, array2.length);
         return array2;
     }
     

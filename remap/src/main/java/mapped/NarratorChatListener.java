@@ -67,23 +67,23 @@ public class NarratorChatListener implements Class7894
     
     private void method25558(final boolean b, final String s) {
         if (Class9528.field41021) {
-            NarratorChatListener.field32403.debug("Narrating: {}", (Object)s);
+            NarratorChatListener.field32403.debug("Narrating: {}", s);
         }
         this.field32405.say(s, b);
     }
     
     public void method25559(final Class2051 class2051) {
         this.method25561();
-        this.field32405.say(new Class2259("options.narrator", new Object[0]).getString() + " : " + new Class2259(class2051.method8138(), new Object[0]).getString(), true);
+        this.field32405.say(new Class2259("options.narrator").getString() + " : " + new Class2259(class2051.method8138()).getString(), true);
         final Class690 method5318 = Minecraft.getInstance().method5318();
         if (!this.field32405.active()) {
-            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled", new Object[0]), new Class2259("options.narrator.notavailable", new Object[0]));
+            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled"), new Class2259("options.narrator.notavailable"));
         }
         else if (class2051 != Class2051.field11699) {
-            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.enabled", new Object[0]), new Class2259(class2051.method8138(), new Object[0]));
+            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.enabled"), new Class2259(class2051.method8138()));
         }
         else {
-            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled", new Object[0]), null);
+            Class6865.method20981(method5318, Class2174.field12897, new Class2259("narrator.toast.disabled"), null);
         }
     }
     

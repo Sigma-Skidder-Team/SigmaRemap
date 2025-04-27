@@ -22,9 +22,7 @@ public class Class6627 extends Class6601
     public boolean method20046(final ItemStack class8321) {
         if (class8321.getItem() == Items.field31353) {
             if (!this.method20054()) {
-                if (this.field26210.method4735()) {
-                    return true;
-                }
+                return this.field26210.method4735();
             }
         }
         return false;

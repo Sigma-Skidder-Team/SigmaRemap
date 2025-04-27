@@ -6,12 +6,12 @@ package mapped;
 
 public class Class701 extends Class698
 {
-    private Screen field3859;
-    private Class5760 field3860;
-    private Class8297 field3861;
+    private final Screen field3859;
+    private final Class5760 field3860;
+    private final Class8297 field3861;
     
     public Class701(final Screen field3859, final Class5760 field3860) {
-        super(new StringTextComponent(Class8822.method30773("of.options.otherTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.otherTitle")));
         this.field3861 = new Class8297(this, new Class7298());
         this.field3859 = field3859;
         this.field3860 = field3860;
@@ -30,8 +30,8 @@ public class Class701 extends Class698
                 ++i;
             }
         }
-        this.addButton(new Class673(210, this.width / 2 - 100, this.height / 6 + 168 + 11 - 44, Class8822.method30773("of.options.other.reset", new Object[0])));
-        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(210, this.width / 2 - 100, this.height / 6 + 168 + 11 - 44, Class8822.method30773("of.options.other.reset")));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done")));
     }
     
     @Override
@@ -46,7 +46,7 @@ public class Class701 extends Class698
                 }
                 if (class574.field3708 == 210) {
                     this.minecraft.gameSettings.method17121();
-                    this.minecraft.displayGuiScreen(new Class546(this::method3902, new StringTextComponent(Class8822.method30773("of.message.other.reset", new Object[0])), new StringTextComponent("")));
+                    this.minecraft.displayGuiScreen(new Class546(this::method3902, new StringTextComponent(Class8822.method30773("of.message.other.reset")), new StringTextComponent("")));
                 }
             }
         }

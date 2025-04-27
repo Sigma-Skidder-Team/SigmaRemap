@@ -19,7 +19,7 @@ public final class Class7705 extends VoxelShape
     
     @Override
     public DoubleList getValues(final Direction.Axis class111) {
-        return (DoubleList)new DoubleRangeList(this.part.getSize(class111));
+        return new DoubleRangeList(this.part.getSize(class111));
     }
     
     @Override

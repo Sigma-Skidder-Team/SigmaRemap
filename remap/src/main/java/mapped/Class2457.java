@@ -18,7 +18,7 @@ public final class Class2457 extends Class2449<List<Class7276>, List<Class7276>>
     }
     
     public List<Class7276> method9796(final Class8699 class8699, final List<Class7276> c) throws Exception {
-        final CopyOnWriteArrayList list = new CopyOnWriteArrayList((Collection<? extends E>)c);
+        final CopyOnWriteArrayList list = new CopyOnWriteArrayList(c);
         for (final Class7276 class8700 : list) {
             if (class8700.method22294() < 5) {
                 continue;

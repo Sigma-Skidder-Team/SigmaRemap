@@ -7,8 +7,8 @@ package mapped;
 public class Class7202
 {
     private static String[] field27981;
-    private double field27982;
-    private double field27983;
+    private final double field27982;
+    private final double field27983;
     
     public Class7202() {
         this.field27982 = 0.0;

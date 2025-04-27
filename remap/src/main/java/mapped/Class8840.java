@@ -34,7 +34,7 @@ public class Class8840
         for (final Map.Entry<ResourceLocation, V> entry : class4385.method13195().entrySet()) {
             final Class8863 method19675 = this.field37154.method19675(entry.getKey());
             if (method19675 == null) {
-                Class8840.field37152.warn("Server informed client about progress for unknown advancement {}", (Object)entry.getKey());
+                Class8840.field37152.warn("Server informed client about progress for unknown advancement {}", entry.getKey());
             }
             else {
                 final Class348 class4386 = (Class348)entry.getValue();

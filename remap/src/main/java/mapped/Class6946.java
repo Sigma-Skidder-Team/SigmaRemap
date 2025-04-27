@@ -23,9 +23,9 @@ public class Class6946 implements Class6943
             source.add(declaredFields[i].getType());
         }
         final ArrayList list = new ArrayList();
-        list.addAll(Arrays.asList((Class[])a));
+        list.addAll(Arrays.asList(a));
         list.add(clazz2);
-        list.addAll(Arrays.asList((Class[])a2));
+        list.addAll(Arrays.asList(a2));
         final int indexOfSubList = Collections.indexOfSubList(source, list);
         if (indexOfSubList >= 0) {
             if (Collections.indexOfSubList(source.subList(indexOfSubList + 1, source.size()), list) < 0) {

@@ -78,6 +78,6 @@ public final class Class85 implements IDoubleListMerger
     
     @Override
     public DoubleList func_212435_a() {
-        return (DoubleList)this.field193;
+        return this.field193;
     }
 }

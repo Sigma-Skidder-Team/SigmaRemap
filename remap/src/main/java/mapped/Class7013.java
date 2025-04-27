@@ -26,14 +26,14 @@ public class Class7013 extends DataFix
     }
     
     public static String method21475(final int n) {
-        return (String)Class7013.field27344.get(n);
+        return Class7013.field27344.get(n);
     }
     
     public TypeRewriteRule makeRule() {
         return this.fixTypeEverywhereTyped("ItemIdFix", this.getInputSchema().getType(Class9451.field40622), this.getOutputSchema().getType(Class9451.field40622), typed -> {
             DSL.fieldFinder("id", DSL.or(DSL.intType(), DSL.named(Class9451.field40628.typeName(), DSL.namespacedString())));
             DSL.named(Class9451.field40628.typeName(), DSL.namespacedString());
-            return typed.update(opticFinder, type, either -> either.map(n -> Pair.of((Object)Class9451.field40628.typeName(), (Object)method21475(n)), pair -> pair));
+            return typed.update(opticFinder, type, either -> either.map(n -> Pair.of((Object)Class9451.field40628.typeName(), method21475(n)), pair -> pair));
         });
     }
     

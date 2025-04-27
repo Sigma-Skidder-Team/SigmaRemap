@@ -53,7 +53,7 @@ public class RayTraceContext
 
         private final Predicate<IFluidState> fluidTest;
 
-        private FluidMode(final Predicate<IFluidState> test) {
+        FluidMode(final Predicate<IFluidState> test) {
             this.fluidTest = test;
         }
 
@@ -69,7 +69,7 @@ public class RayTraceContext
 
         private final IVoxelProvider provider;
 
-        private BlockMode(final IVoxelProvider provider) {
+        BlockMode(final IVoxelProvider provider) {
             this.provider = provider;
         }
 

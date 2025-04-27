@@ -26,8 +26,8 @@ public class Class6117 implements Class6113
     
     public void method18312(final BlockPos class354, final List<BlockPos> list, final List<Float> list2) {
         for (int i = 0; i < list.size(); ++i) {
-            this.field24831.put((BlockPos)list.get(i), class354);
-            this.field24832.put((BlockPos)list.get(i), list2.get(i));
+            this.field24831.put(list.get(i), class354);
+            this.field24832.put(list.get(i), list2.get(i));
         }
         this.field24833.add(class354);
     }

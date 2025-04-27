@@ -28,7 +28,7 @@ public enum Class185 implements IStringSerializable
     private final String field595;
     private final Class7795 field596;
     
-    private Class185(final String field595, final Class7795 field596) {
+    Class185(final String field595, final Class7795 field596) {
         this.field595 = field595;
         this.field596 = field596;
     }

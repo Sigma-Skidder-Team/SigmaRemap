@@ -26,7 +26,7 @@ public class Class5974 implements JsonDeserializer<Class125>, JsonSerializer<Cla
         catch (final IllegalArgumentException ex) {
             throw new JsonSyntaxException("Unknown function '" + obj + "'");
         }
-        return (Class125)method35914.method18540(method35913, jsonDeserializationContext);
+        return method35914.method18540(method35913, jsonDeserializationContext);
     }
     
     public JsonElement serialize(final Class125 class125, final Type type, final JsonSerializationContext jsonSerializationContext) {
@@ -34,6 +34,6 @@ public class Class5974 implements JsonDeserializer<Class125>, JsonSerializer<Cla
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("function", method22990.method18545().toString());
         method22990.method18537(jsonObject, class125, jsonSerializationContext);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

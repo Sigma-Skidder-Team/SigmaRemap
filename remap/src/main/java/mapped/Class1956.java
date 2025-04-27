@@ -30,7 +30,7 @@ public enum Class1956
     
     private final List<ItemStack> field10664;
     
-    private Class1956(final ItemStack[] array) {
+    Class1956(final ItemStack[] array) {
         this.field10664 = (List<ItemStack>)ImmutableList.copyOf((Object[])array);
     }
     

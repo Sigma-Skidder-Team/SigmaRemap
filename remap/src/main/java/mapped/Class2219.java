@@ -12,9 +12,9 @@ public enum Class2219
     field13628("deferred"), 
     field13629("composite");
     
-    private String field13630;
+    private final String field13630;
     
-    private Class2219(final String field13630) {
+    Class2219(final String field13630) {
         this.field13630 = field13630;
     }
     

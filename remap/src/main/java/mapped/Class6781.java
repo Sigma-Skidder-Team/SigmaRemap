@@ -19,7 +19,7 @@ public class Class6781 implements Class6782
     
     @Override
     public void method20737(final Class1794 class1794, final Class7492 class1795, final ArrayDeque<Class9234> arrayDeque, final int n) throws CommandSyntaxException {
-        class1794.method6506().execute(new ParseResults(this.field26682.getContext().withSource((Object)class1795), this.field26682.getReader(), this.field26682.getExceptions()));
+        class1794.method6506().execute(new ParseResults(this.field26682.getContext().withSource(class1795), this.field26682.getReader(), this.field26682.getExceptions()));
     }
     
     @Override

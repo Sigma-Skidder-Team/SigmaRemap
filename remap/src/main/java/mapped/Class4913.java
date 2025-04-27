@@ -82,7 +82,7 @@ public class Class4913 extends Class4825
         System.getProperty("line.separator");
         final String[] split = s.split("(?<=[^a-zA-Z0-9'])");
         final ArrayList list = new ArrayList();
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder();
         for (final String str : split) {
             if (this.method14754(str) == ClientColors.LIGHT_GREYISH_BLUE.color) {
                 sb.append(str);
@@ -90,7 +90,7 @@ public class Class4913 extends Class4825
             else {
                 list.add(sb.toString());
                 list.add(str);
-                sb = new StringBuilder("");
+                sb = new StringBuilder();
             }
         }
         list.add(sb.toString());

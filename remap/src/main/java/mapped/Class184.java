@@ -14,7 +14,7 @@ public enum Class184 implements IStringSerializable
     
     private final String field577;
     
-    private Class184(final String field577) {
+    Class184(final String field577) {
         this.field577 = field577;
     }
     

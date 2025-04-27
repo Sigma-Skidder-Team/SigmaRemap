@@ -38,7 +38,7 @@ public final class Class7122 implements Class7121<Class1414, Runnable>
     }
     
     public boolean method21860(final Class1414 class1414) {
-        this.field27762.get(class1414.method5658()).add((Object)class1414);
+        this.field27762.get(class1414.method5658()).add(class1414);
         return true;
     }
     

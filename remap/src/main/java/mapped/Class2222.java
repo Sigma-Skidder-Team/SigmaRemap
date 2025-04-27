@@ -29,7 +29,7 @@ public enum Class2222
     private String field13682;
     private String field13683;
     
-    private Class2222(final String field13681, final String field13682, final String field13683) {
+    Class2222(final String field13681, final String field13682, final String field13683) {
         this.field13681 = null;
         this.field13682 = null;
         this.field13683 = null;

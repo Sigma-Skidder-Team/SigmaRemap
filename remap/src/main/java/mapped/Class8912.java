@@ -97,7 +97,6 @@ public class Class8912
     private static Class8912 method31400(final Class8912 class8912) {
         class8912.field37482.forEach(class8914 -> {
             if (Class8912.field37460.put(class8914, class8913) == null) {
-                return;
             }
             else {
                 new IllegalStateException(String.format("%s is defined in too many tags", class8914));
@@ -119,9 +118,9 @@ public class Class8912
     static {
         field37457 = (class8912 -> Registry.field240.method509().map((Function<? super Object, ?>)Class9334::method34575).collect((Collector<? super Object, ?, Set<? super Object>>)Collectors.toSet()).contains(class8912));
         field37458 = (p0 -> true);
-        field37459 = ImmutableList.of((Object) Blocks.field29235, (Object) Blocks.field29236, (Object) Blocks.field29232, (Object) Blocks.field29233, (Object) Blocks.field29230, (Object) Blocks.field29228, (Object) Blocks.field29234, (Object) Blocks.field29224, (Object) Blocks.field29229, (Object) Blocks.field29226, (Object) Blocks.field29223, (Object) Blocks.field29222, (Object[])new Block[] { Blocks.field29227, Blocks.field29231, Blocks.field29221, Blocks.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
+        field37459 = ImmutableList.of(Blocks.field29235, Blocks.field29236, Blocks.field29232, Blocks.field29233, Blocks.field29230, Blocks.field29228, Blocks.field29234, Blocks.field29224, Blocks.field29229, Blocks.field29226, Blocks.field29223, Blocks.field29222, (Object[])new Block[] { Blocks.field29227, Blocks.field29231, Blocks.field29221, Blocks.field29225 }).stream().flatMap(class8913 -> class8913.method11876().method32902().stream()).filter(class8914 -> class8914.method21772(Class3900.field17599) == Class105.field323).collect((Collector<? super Object, Object, Set<BlockState>>)ImmutableSet.toImmutableSet());
         field37460 = Maps.newHashMap();
-        field37461 = method31399("unemployed", (Set<BlockState>)ImmutableSet.of(), 1, Class8912.field37457, 1);
+        field37461 = method31399("unemployed", ImmutableSet.of(), 1, Class8912.field37457, 1);
         field37462 = method31398("armorer", method31394(Blocks.BLAST_FURNACE), 1, 1);
         field37463 = method31398("butcher", method31394(Blocks.SMOKER), 1, 1);
         field37464 = method31398("cartographer", method31394(Blocks.CARTOGRAPHY_TABLE), 1, 1);
@@ -132,7 +131,7 @@ public class Class8912
         field37469 = method31398("leatherworker", method31394(Blocks.field29400), 1, 1);
         field37470 = method31398("librarian", method31394(Blocks.LECTERN), 1, 1);
         field37471 = method31398("mason", method31394(Blocks.STONECUTTER), 1, 1);
-        field37472 = method31398("nitwit", (Set<BlockState>)ImmutableSet.of(), 1, 1);
+        field37472 = method31398("nitwit", ImmutableSet.of(), 1, 1);
         field37473 = method31398("shepherd", method31394(Blocks.LOOM), 1, 1);
         field37474 = method31398("toolsmith", method31394(Blocks.SMITHING_TABLE), 1, 1);
         field37475 = method31398("weaponsmith", method31394(Blocks.GRINDSTONE), 1, 1);

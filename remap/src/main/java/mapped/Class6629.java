@@ -22,9 +22,7 @@ public class Class6629 extends Class6601
         if (method27622 != Items.field31514) {
             if (method27622 != Items.field31283) {
                 if (method27622 != Items.field31285) {
-                    if (method27622 != Items.field31284) {
-                        return false;
-                    }
+                    return method27622 == Items.field31284;
                 }
             }
         }

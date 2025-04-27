@@ -10,14 +10,14 @@ import com.mentalfrostbyte.jello.ClientFonts;
 
 public class Class4887 extends Class4841
 {
-    private Class4834 field20887;
-    private TextField field20888;
-    private TextField field20889;
-    private TextField field20890;
-    private UIButton field20891;
-    private UIButton field20892;
-    private UIButton field20893;
-    private LoadingIndicator field20894;
+    private final Class4834 field20887;
+    private final TextField field20888;
+    private final TextField field20889;
+    private final TextField field20890;
+    private final UIButton field20891;
+    private final UIButton field20892;
+    private final UIButton field20893;
+    private final LoadingIndicator field20894;
     public static int field20895;
     public static int field20896;
     

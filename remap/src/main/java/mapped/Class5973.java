@@ -23,7 +23,7 @@ public class Class5973 implements JsonDeserializer<Class8997>
 {
     public Class8997 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
-        return new Class8997(this.method17893(asJsonObject), (Class7683)jsonDeserializationContext.deserialize(asJsonObject.get("apply"), (Type)Class7683.class));
+        return new Class8997(this.method17893(asJsonObject), jsonDeserializationContext.deserialize(asJsonObject.get("apply"), Class7683.class));
     }
     
     private Class7410 method17893(final JsonObject jsonObject) {
@@ -40,12 +40,12 @@ public class Class5973 implements JsonDeserializer<Class8997>
             return new Class7413((Iterable<? extends Class7410>)entrySet.stream().map(Class5973::method17895).collect(Collectors.toList()));
         }
         if (jsonObject.has("OR")) {
-            return new Class7411((Iterable<? extends Class7410>)Streams.stream((Iterable)Class9583.method35917(jsonObject, "OR")).map(jsonElement -> method17894(jsonElement.getAsJsonObject())).collect((Collector<? super Object, ?, List<Object>>)Collectors.toList()));
+            return new Class7411((Iterable<? extends Class7410>)Streams.stream((Iterable)Class9583.method35917(jsonObject, "OR")).map(jsonElement -> method17894(jsonElement.getAsJsonObject())).collect(Collectors.toList()));
         }
         if (!jsonObject.has("AND")) {
             return method17895(entrySet.iterator().next());
         }
-        return new Class7413((Iterable<? extends Class7410>)Streams.stream((Iterable)Class9583.method35917(jsonObject, "AND")).map(jsonElement2 -> method17894(jsonElement2.getAsJsonObject())).collect((Collector<? super Object, ?, List<Object>>)Collectors.toList()));
+        return new Class7413((Iterable<? extends Class7410>)Streams.stream((Iterable)Class9583.method35917(jsonObject, "AND")).map(jsonElement2 -> method17894(jsonElement2.getAsJsonObject())).collect(Collectors.toList()));
     }
     
     private static Class7410 method17895(final Map.Entry<String, JsonElement> entry) {

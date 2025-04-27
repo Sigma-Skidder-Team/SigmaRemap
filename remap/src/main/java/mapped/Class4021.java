@@ -42,9 +42,7 @@ public class Class4021 extends Block
         final BlockState method6701 = class7097.getBlockState(class7098.method1137());
         if (method6701.getMaterial().method26439()) {
             if (!(method6701.getBlock() instanceof Class3898)) {
-                if (!(method6701.getBlock() instanceof Class3960)) {
-                    return false;
-                }
+                return method6701.getBlock() instanceof Class3960;
             }
         }
         return true;
@@ -68,7 +66,7 @@ public class Class4021 extends Block
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21752(class7097, class7098)) {
-            final int intValue = class7096.get((IProperty<Integer>)Class4021.field18105);
+            final int intValue = class7096.get(Class4021.field18105);
             if (!method12214(class7097, class7098) && !class7097.method6772(class7098.method1137())) {
                 if (intValue <= 0) {
                     if (!method12213(class7097, class7098)) {
@@ -112,9 +110,7 @@ public class Class4021 extends Block
         final Block method21696 = class1855.getBlockState(class1856.method1137()).getBlock();
         if (!(method21696 instanceof Class3878)) {
             if (!(method21696 instanceof Class3873)) {
-                if (!(method21696 instanceof Class3875)) {
-                    return false;
-                }
+                return method21696 instanceof Class3875;
             }
         }
         return true;

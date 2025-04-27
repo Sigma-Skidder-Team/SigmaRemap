@@ -267,9 +267,7 @@ public class Class792 extends Class789
     private boolean method4442(final Item class3820) {
         if (class3820 != Items.field31517) {
             if (class3820 != Items.field31522) {
-                if (class3820 != Blocks.DANDELION.method11704()) {
-                    return false;
-                }
+                return class3820 == Blocks.DANDELION.method11704();
             }
         }
         return true;
@@ -303,11 +301,11 @@ public class Class792 extends Class789
         if (i == 99) {
             this.method2710(Class8107.field33413).method23941(8.0);
             this.field4114.method22062(4, new Class3575(this));
-            this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
+            this.field4115.method22062(1, new Class3547(this, new Class[0]).method11100(new Class[0]));
             this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
             this.field4115.method22062(2, new Class3555<Object>(this, Class799.class, true));
             if (!this.hasCustomName()) {
-                this.method1872(new Class2259(Util.method27836("entity", Class792.field4229), new Object[0]));
+                this.method1872(new Class2259(Util.method27836("entity", Class792.field4229)));
             }
         }
         this.dataManager.set(Class792.field4228, i);
@@ -348,10 +346,7 @@ public class Class792 extends Class789
                 }
             }
         }
-        if (class7500.method6993(class7502, 0) > 8) {
-            return true;
-        }
-        return false;
+        return class7500.method6993(class7502, 0) > 8;
     }
     
     private boolean method4448() {

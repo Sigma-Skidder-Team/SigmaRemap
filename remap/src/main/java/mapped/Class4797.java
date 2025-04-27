@@ -27,9 +27,9 @@ public class Class4797 extends Class4703<Class508>
     public void method14191(final Class508 class508, final float n, final float n2, final MatrixStack class509, final IRenderTypeBuffer class510, final int n3) {
         class509.method22567();
         final int method2608 = class508.method2608();
-        final float n4 = (method2608 % 4 * 16 + 0) / 64.0f;
+        final float n4 = (method2608 % 4 * 16) / 64.0f;
         final float n5 = (method2608 % 4 * 16 + 16) / 64.0f;
-        final float n6 = (method2608 / 4 * 16 + 0) / 64.0f;
+        final float n6 = (method2608 / 4 * 16) / 64.0f;
         final float n7 = (method2608 / 4 * 16 + 16) / 64.0f;
         float method2609 = (class508.field2897 + n2) / 2.0f;
         if (Config.method28945()) {

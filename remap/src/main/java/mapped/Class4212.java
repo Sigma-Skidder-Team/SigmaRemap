@@ -32,6 +32,6 @@ public class Class4212 extends Class4211
         final JsonObject jsonObject = new JsonObject();
         jsonObject.add("item", this.field19005.method34629());
         jsonObject.add("villager", this.field19004.method27019());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

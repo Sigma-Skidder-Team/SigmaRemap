@@ -7,10 +7,10 @@ package mapped;
 public class Class8374 implements Class8375
 {
     private static String[] field34341;
-    private Class2412 field34342;
-    private Class2412 field34343;
-    private Class5202 field34344;
-    private Class2402 field34345;
+    private final Class2412 field34342;
+    private final Class2412 field34343;
+    private final Class5202 field34344;
+    private final Class2402 field34345;
     private Class2400 field34346;
     
     public Class8374(final Class2400 class2400, final Class7310 class2401, final Class5202 field34344) {

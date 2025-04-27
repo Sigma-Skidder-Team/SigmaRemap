@@ -12,7 +12,7 @@ public class Class5100
     private static String[] field22024;
     public final Class357 field22025;
     public final Class357 field22026;
-    private List<Class367> field22027;
+    private final List<Class367> field22027;
     private int field22028;
     
     public Class5100(final Class357 field22025, final Class357 field22026) {

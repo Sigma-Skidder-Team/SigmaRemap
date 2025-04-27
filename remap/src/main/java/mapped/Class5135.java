@@ -28,12 +28,12 @@ public class Class5135 implements Class5113
     }
     
     public Class5135(final BlockState class7096, final BlockState[] array, final BlockState[] array2, final BlockState[] array3) {
-        this(class7096, Lists.newArrayList((Object[])array), Lists.newArrayList((Object[])array2), Lists.newArrayList((Object[])array3));
+        this(class7096, Lists.newArrayList(array), Lists.newArrayList(array2), Lists.newArrayList(array3));
     }
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("to_place"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22111).getValue(), dynamicOps.createString("place_on"), dynamicOps.createList((Stream)this.field22112.stream().map(class7096 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class7096).getValue())), dynamicOps.createString("place_in"), dynamicOps.createList((Stream)this.field22113.stream().map(class7097 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps3, class7097).getValue())), dynamicOps.createString("place_under"), dynamicOps.createList((Stream)this.field22114.stream().map(class7098 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps4, class7098).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("to_place"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22111).getValue(), dynamicOps.createString("place_on"), dynamicOps.createList((Stream)this.field22112.stream().map(class7096 -> BlockState.serialize(dynamicOps2, class7096).getValue())), dynamicOps.createString("place_in"), dynamicOps.createList((Stream)this.field22113.stream().map(class7097 -> BlockState.serialize(dynamicOps3, class7097).getValue())), dynamicOps.createString("place_under"), dynamicOps.createList((Stream)this.field22114.stream().map(class7098 -> BlockState.serialize(dynamicOps4, class7098).getValue())))));
     }
     
     public static <T> Class5135 method16045(final Dynamic<T> dynamic) {

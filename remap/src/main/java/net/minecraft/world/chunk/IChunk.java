@@ -92,7 +92,7 @@ public interface IChunk extends IBlockReader, Class1861
     void method7028(final BlockPos p0);
     
     default void method7029(final BlockPos class354) {
-        LogManager.getLogger().warn("Trying to mark a block for PostProcessing @ {}, but this operation is not supported.", (Object)class354);
+        LogManager.getLogger().warn("Trying to mark a block for PostProcessing @ {}, but this operation is not supported.", class354);
     }
     
     ShortList[] method7030();
@@ -129,7 +129,7 @@ public interface IChunk extends IBlockReader, Class1861
     
     default ShortList method7042(final ShortList[] array, final int n) {
         if (array[n] == null) {
-            array[n] = (ShortList)new ShortArrayList();
+            array[n] = new ShortArrayList();
         }
         return array[n];
     }

@@ -28,7 +28,7 @@ public class Class3878 extends Class3874 implements Class3872
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return Class3878.field17530[class7096.get((IProperty<Integer>)this.method11952())];
+        return Class3878.field17530[class7096.get(this.method11952())];
     }
     
     @Override
@@ -45,7 +45,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     public int method11954(final BlockState class7096) {
-        return class7096.get((IProperty<Integer>)this.method11952());
+        return class7096.get(this.method11952());
     }
     
     public BlockState method11955(final int i) {
@@ -53,7 +53,7 @@ public class Class3878 extends Class3874 implements Class3872
     }
     
     public boolean method11956(final BlockState class7096) {
-        return class7096.get((IProperty<Integer>)this.method11952()) >= this.method11953();
+        return class7096.get(this.method11952()) >= this.method11953();
     }
     
     @Override
@@ -91,7 +91,7 @@ public class Class3878 extends Class3874 implements Class3872
                 final BlockState method1140 = class3834.getBlockState(method1139.add(i, 0, j));
                 if (method1140.getBlock() == Blocks.field29298) {
                     n2 = 1.0f;
-                    if (method1140.get((IProperty<Integer>)Class4021.field18105) > 0) {
+                    if (method1140.get(Class4021.field18105) > 0) {
                         n2 = 3.0f;
                     }
                 }
@@ -135,9 +135,7 @@ public class Class3878 extends Class3874 implements Class3872
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
         if (class7097.method6993(class7098, 0) >= 8 || class7097.method6994(class7098)) {
-            if (super.method11843(class7096, class7097, class7098)) {
-                return true;
-            }
+            return super.method11843(class7096, class7097, class7098);
         }
         return false;
     }

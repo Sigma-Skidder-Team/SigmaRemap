@@ -28,10 +28,10 @@ public class Class7629
     
     public static Class7629 method23979(final StringReader stringReader, final boolean b) throws CommandSyntaxException {
         if (stringReader.canRead() && stringReader.peek() == '^') {
-            throw Class7555.field29961.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7555.field29961.createWithContext(stringReader);
         }
         if (!stringReader.canRead()) {
-            throw Class7629.field30215.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7629.field30215.createWithContext(stringReader);
         }
         final boolean method23981 = method23981(stringReader);
         final int cursor = stringReader.getCursor();
@@ -52,7 +52,7 @@ public class Class7629
     
     public static Class7629 method23980(final StringReader stringReader) throws CommandSyntaxException {
         if (stringReader.canRead() && stringReader.peek() == '^') {
-            throw Class7555.field29961.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7555.field29961.createWithContext(stringReader);
         }
         if (stringReader.canRead()) {
             final boolean method23981 = method23981(stringReader);
@@ -65,7 +65,7 @@ public class Class7629
             }
             return new Class7629(method23981, n);
         }
-        throw Class7629.field30216.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7629.field30216.createWithContext(stringReader);
     }
     
     private static boolean method23981(final StringReader stringReader) {
@@ -104,7 +104,7 @@ public class Class7629
     }
     
     static {
-        field30215 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos.missing.double", new Object[0]));
-        field30216 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos.missing.int", new Object[0]));
+        field30215 = new SimpleCommandExceptionType(new Class2259("argument.pos.missing.double", new Object[0]));
+        field30216 = new SimpleCommandExceptionType(new Class2259("argument.pos.missing.int", new Object[0]));
     }
 }

@@ -6,8 +6,8 @@ package mapped;
 
 public class Class7577 extends Class7576
 {
-    private Class2031 field30054;
-    private String field30055;
+    private final Class2031 field30054;
+    private final String field30055;
     
     public Class7577(final Class8542 class8542, final String s, final Class2314 class8543, final Class2314 class8544, final Class2031 class8545) {
         this(class8542, true, s, class8543, class8544, class8545);

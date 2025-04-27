@@ -16,7 +16,7 @@ public class VClip extends Module
 {
     public Category field15535;
     public Module field15536;
-    private String field15537;
+    private final String field15537;
     
     public VClip() {
         super(Category.MOVEMENT, "VClip", "Climp Walls like spiders!");

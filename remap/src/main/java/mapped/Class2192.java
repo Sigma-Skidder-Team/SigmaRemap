@@ -28,14 +28,14 @@ public enum Class2192
     field13346(Direction.UP, Direction.WEST),
     field13347(Direction.UP, Direction.EAST);
     
-    private Direction field13348;
+    private final Direction field13348;
     private Direction field13349;
     
-    private Class2192(final Direction field13348) {
+    Class2192(final Direction field13348) {
         this.field13348 = field13348;
     }
     
-    private Class2192(final Direction field13348, final Direction field13349) {
+    Class2192(final Direction field13348, final Direction field13349) {
         this.field13348 = field13348;
         this.field13349 = field13349;
     }

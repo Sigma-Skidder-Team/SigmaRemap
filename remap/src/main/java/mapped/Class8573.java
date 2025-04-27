@@ -6,8 +6,8 @@ package mapped;
 
 public class Class8573
 {
-    private String field36047;
-    private String field36048;
+    private final String field36047;
+    private final String field36048;
     
     public Class8573(final String field36047, final String field36048) {
         this.field36047 = field36047;

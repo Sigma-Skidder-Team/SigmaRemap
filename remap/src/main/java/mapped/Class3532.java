@@ -39,7 +39,7 @@ public class Class3532 extends Class3531
         if (this.field16564.method1734(method4152) >= 9.0) {
             for (int i = 0; i < 16; ++i) {
                 final double n3 = 1.25 * (i + 1);
-                this.method11088(this.field16564.getPosX() + MathHelper.cos(n2) * n3, this.field16564.getPosZ() + MathHelper.sin(n2) * n3, min, n, n2, 1 * i);
+                this.method11088(this.field16564.getPosX() + MathHelper.cos(n2) * n3, this.field16564.getPosZ() + MathHelper.sin(n2) * n3, min, n, n2, i);
             }
         }
         else {

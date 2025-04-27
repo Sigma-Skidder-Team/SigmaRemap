@@ -37,23 +37,23 @@ public class Class9526
         Class8563.method28793().method34742().info("Loading 1.12.2 -> 1.13 block mapping...");
         Class9526.field41014 = new Class8497(method35560.getAsJsonObject("blocks"), method35561.getAsJsonObject("blocks"), null);
         Class8563.method28793().method34742().info("Loading 1.12.2 -> 1.13 item mapping...");
-        method35561((Map<Integer, Integer>)Class9526.field41005, method35560.getAsJsonObject("items"), method35561.getAsJsonObject("items"));
+        method35561(Class9526.field41005, method35560.getAsJsonObject("items"), method35561.getAsJsonObject("items"));
         Class8563.method28793().method34742().info("Loading new 1.13 tags...");
         method35565(Class9526.field41006, method35561.getAsJsonObject("block_tags"));
         method35565(Class9526.field41007, method35561.getAsJsonObject("item_tags"));
         method35565(Class9526.field41008, method35561.getAsJsonObject("fluid_tags"));
         Class8563.method28793().method34742().info("Loading 1.12.2 -> 1.13 enchantment mapping...");
-        method35566((Map<Short, String>)Class9526.field41009, method35560.getAsJsonObject("enchantments"));
+        method35566(Class9526.field41009, method35560.getAsJsonObject("enchantments"));
         Class9526.field41012 = new Class5834(method35560.getAsJsonObject("enchantments"), method35561.getAsJsonObject("enchantments"), null);
         Class8563.method28793().method34742().info("Loading 1.12.2 -> 1.13 sound mapping...");
         Class9526.field41013 = new Class8745(method35560.getAsJsonArray("sounds"), method35561.getAsJsonArray("sounds"), null);
         Class8563.method28793().method34742().info("Loading translation mapping");
         Class9526.field41010 = new HashMap<String, String>();
-        final Map map = (Map)Class8557.method28750().fromJson((Reader)new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("assets/viaversion/data/mapping-lang-1.12-1.13.json")), new Class7511().getType());
+        final Map map = Class8557.method28750().fromJson(new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("assets/viaversion/data/mapping-lang-1.12-1.13.json")), new Class7511().getType());
         try {
             String[] split;
             try (final InputStreamReader inputStreamReader = new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("mojang-translations/en_US.properties"), StandardCharsets.UTF_8)) {
-                split = CharStreams.toString((Readable)inputStreamReader).split("\n");
+                split = CharStreams.toString(inputStreamReader).split("\n");
             }
             for (final String s : split) {
                 if (!s.isEmpty()) {
@@ -82,7 +82,7 @@ public class Class9526
     public static JsonObject method35560(final String str) {
         final InputStreamReader inputStreamReader = new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("assets/viaversion/data/" + str));
         try {
-            return (JsonObject)Class8557.method28750().fromJson((Reader)inputStreamReader, (Class)JsonObject.class);
+            return (JsonObject)Class8557.method28750().fromJson(inputStreamReader, (Class)JsonObject.class);
         }
         finally {
             try {
@@ -184,11 +184,11 @@ public class Class9526
     }
     
     static {
-        Class9526.field41005 = (BiMap<Integer, Integer>)HashBiMap.create();
+        Class9526.field41005 = HashBiMap.create();
         Class9526.field41006 = new HashMap<String, Integer[]>();
         Class9526.field41007 = new HashMap<String, Integer[]>();
         Class9526.field41008 = new HashMap<String, Integer[]>();
-        Class9526.field41009 = (BiMap<Short, String>)HashBiMap.create();
+        Class9526.field41009 = HashBiMap.create();
         Class9526.field41010 = new HashMap<String, String>();
         Class9526.field41011 = new HashMap<String, String>();
     }

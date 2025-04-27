@@ -9,7 +9,7 @@ public final class Class4426 implements Class4410<IParticleData>
     private static String[] field19757;
     
     public void method13385(final PacketBuffer class8654, final IParticleData class8655) {
-        class8654.writeVarInt(Registry.field222.getId((Class6907<? extends IParticleData>)class8655.method21272()));
+        class8654.writeVarInt(Registry.field222.getId(class8655.method21272()));
         class8655.method21273(class8654);
     }
     

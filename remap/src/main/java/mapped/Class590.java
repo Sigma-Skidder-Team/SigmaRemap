@@ -97,19 +97,19 @@ public class Class590<C extends IInventory> implements Class587<Integer>
         }
         final int method10939 = this.method3462(b, method10937, method10936);
         final IntArrayList list = new IntArrayList();
-        if (this.field3491.method15250(class3662, (IntList)list, method10939)) {
+        if (this.field3491.method15250(class3662, list, method10939)) {
             int n = method10939;
-            final IntListIterator iterator = ((IntList)list).iterator();
-            while (((Iterator)iterator).hasNext()) {
+            final IntListIterator iterator = list.iterator();
+            while (iterator.hasNext()) {
                 final int method10940 = Class5024.method15253((int)((Iterator)iterator).next()).method27628();
                 if (method10940 >= n) {
                     continue;
                 }
                 n = method10940;
             }
-            if (this.field3491.method15250(class3662, (IntList)list, n)) {
+            if (this.field3491.method15250(class3662, list, n)) {
                 this.method3459();
-                this.method3455(this.field3493.method10938(), this.field3493.method10939(), this.field3493.method10937(), class3662, (Iterator<Integer>)((IntList)list).iterator(), n);
+                this.method3455(this.field3493.method10938(), this.field3493.method10939(), this.field3493.method10937(), class3662, list.iterator(), n);
             }
         }
     }

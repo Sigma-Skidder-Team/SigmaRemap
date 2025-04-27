@@ -9,8 +9,8 @@ import java.nio.CharBuffer;
 public class NativeString implements CharSequence, Comparable
 {
     public static final String WIDE_STRING = "--WIDE-STRING--";
-    private Pointer pointer;
-    private String encoding;
+    private final Pointer pointer;
+    private final String encoding;
     
     public NativeString(final String string) {
         this(string, Native.getDefaultStringEncoding());
@@ -30,7 +30,7 @@ public class NativeString implements CharSequence, Comparable
         }
         this.encoding = encoding;
         if ("--WIDE-STRING--".equals(this.encoding)) {
-            (this.pointer = new NativeString$StringMemory(this, (string.length() + 1) * Native.WCHAR_SIZE)).setWideString(0L, string);
+            (this.pointer = new NativeString$StringMemory(this, (long) (string.length() + 1) * Native.WCHAR_SIZE)).setWideString(0L, string);
         }
         else {
             final byte[] bytes = Native.getBytes(string, encoding);

@@ -58,9 +58,9 @@ public class Class5786 extends Class5784
                     if (n4 >= 0.0f) {
                         if (n4 < 10.0f) {
                             final Vec3d method1940 = this.field23764.method1741(1.0f);
-                            final double n5 = this.field23764.field4535.getPosX() - method1940.x * 1.0;
+                            final double n5 = this.field23764.field4535.getPosX() - method1940.x;
                             final double n6 = this.field23764.field4535.method1942(0.5) + 0.5;
-                            final double n7 = this.field23764.field4535.getPosZ() - method1940.z * 1.0;
+                            final double n7 = this.field23764.field4535.getPosZ() - method1940.z;
                             final double n8 = this.field23772.getPosX() - n5;
                             final double n9 = this.field23772.method1942(0.5) - n6;
                             final double n10 = this.field23772.getPosZ() - n7;

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class9100
 {
-    private Object[] field38545;
+    private final Object[] field38545;
     private int field38546;
     
     public Class9100(final Object[] array) {
@@ -64,7 +64,7 @@ public class Class9100
     }
     
     private static boolean method32893(final Object o, final Object obj) {
-        return o == obj || (o != null && obj != null && o.equals(obj));
+        return o == obj || (o != null && o.equals(obj));
     }
     
     private Object[] method32894() {

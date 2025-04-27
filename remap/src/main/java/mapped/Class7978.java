@@ -11,8 +11,8 @@ import java.util.concurrent.Future;
 
 public final class Class7978
 {
-    private int field32814;
-    private long field32815;
+    private final int field32814;
+    private final long field32815;
     private int field32816;
     private long field32817;
     private int[] field32818;
@@ -31,8 +31,8 @@ public final class Class7978
     private Class22 field32831;
     private float[] field32832;
     private Class22 field32833;
-    private Class2070 field32834;
-    private boolean field32835;
+    private final Class2070 field32834;
+    private final boolean field32835;
     private static final int[] field32836;
     private static final float field32837 = 3.1415927f;
     private static final float field32838 = 6.2831855f;
@@ -957,7 +957,7 @@ public final class Class7978
         }
     }
     
-    public final void method25952() {
+    public void method25952() {
         if (this.field32814 != 1) {
             final int n = 2 * this.field32814;
             final int n2 = 4 * this.field32814;
@@ -1034,7 +1034,7 @@ public final class Class7978
         }
     }
     
-    public final void method25953() {
+    public void method25953() {
         if (this.field32815 != 1L) {
             final long n = 2L * this.field32815;
             final long n2 = 4L * this.field32815;
@@ -1289,13 +1289,13 @@ public final class Class7978
         this.field32831.method169(0L, 1.0f);
         this.field32831.method169(1L, 0.0f);
         for (int n3 = 1; n3 < this.field32815; ++n3) {
-            n += 2 * n3 - 1;
+            n += 2L * n3 - 1;
             if (n >= 2L * this.field32815) {
                 n -= 2L * this.field32815;
             }
             final float n4 = n2 * n;
-            this.field32831.method169(2 * n3, (float)Class7640.method24103(n4));
-            this.field32831.method169(2 * n3 + 1, (float)Class7640.method24102(n4));
+            this.field32831.method169(2L * n3, (float)Class7640.method24103(n4));
+            this.field32831.method169(2L * n3 + 1, (float)Class7640.method24102(n4));
         }
         final float n5 = 1.0f / this.field32817;
         this.field32833.method169(0L, this.field32831.method135(0L) * n5);
@@ -4071,9 +4071,7 @@ public final class Class7978
             System.arraycopy(array2, n6, array, n5, n4);
         }
         else {
-            for (int i = 0; i < n4; ++i) {
-                array2[n6 + i] = array[n5 + i];
-            }
+            if (n4 >= 0) System.arraycopy(array, n5 + 0, array2, n6 + 0, n4);
             for (int j = 1; j < n2; ++j) {
                 final int n13 = j * n3 * n;
                 for (int k = 0; k < n3; ++k) {

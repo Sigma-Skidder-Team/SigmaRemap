@@ -90,7 +90,7 @@ public class Class6060<T> implements Class6058<T>
     
     public void method18035(final ListNBT class52) {
         for (int i = 0; i < this.method18034(); ++i) {
-            ((AbstractList<CompoundNBT>)class52).add(this.field24636.apply(this.field24633.method499(i)));
+            class52.add(this.field24636.apply(this.field24633.method499(i)));
         }
     }
 }

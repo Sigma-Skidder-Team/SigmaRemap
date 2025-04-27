@@ -42,7 +42,7 @@ public class Class7921
     }
     
     public List<Class9447> method25664() {
-        return Collections.unmodifiableList((List<? extends Class9447>)this.field32532);
+        return Collections.unmodifiableList(this.field32532);
     }
     
     public static int method25665(final DataInputStream dataInputStream) throws IOException {

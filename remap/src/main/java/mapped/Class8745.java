@@ -10,7 +10,7 @@ import com.google.gson.JsonArray;
 public class Class8745 implements Class8746
 {
     private static String[] field36728;
-    private short[] field36729;
+    private final short[] field36729;
     
     private Class8745(final JsonArray jsonArray, final JsonArray jsonArray2) {
         Arrays.fill(this.field36729 = new short[662], (short)(-1));

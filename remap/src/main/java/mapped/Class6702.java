@@ -25,7 +25,7 @@ public class Class6702 extends Class6693
     private final ArrayList<String> field26429;
     
     public Class6702() {
-        super("config", "Manage configs", new String[] { "configs", "profiles", "profile" });
+        super("config", "Manage configs", "configs", "profiles", "profile");
         this.field26428 = new ArrayList<String>(Arrays.asList("add", "create", "new", "save"));
         this.field26429 = new ArrayList<String>(Arrays.asList("remove", "delete", "del", "rem"));
         this.method20351("load/save/remove/list");
@@ -120,7 +120,7 @@ public class Class6702 extends Class6693
             }
         }
         try {
-            IOUtils.write(new JSONObject().toString(0), (OutputStream)new FileOutputStream(file2));
+            IOUtils.write(new JSONObject().toString(0), new FileOutputStream(file2));
         }
         catch (final JSONException | IOException ex2) {
             ((Throwable)ex2).printStackTrace();

@@ -40,11 +40,11 @@ public class Class6868 implements Class6866
                 }
             }
             else {
-                class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.clamp((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
+                class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015()), 30.0f, 11.0f, n2 | (MathHelper.method35642(MathHelper.clamp((1500L - n) / 300.0f, 0.0f, 1.0f) * 255.0f) << 24 | 0x4000000));
             }
         }
         else {
-            class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015(), new Object[0]), 30.0f, 7.0f, n2 | 0xFF000000);
+            class690.method3853().fontRenderer.method6610(Class8822.method30773("advancements.toast." + method31036.method22531().method8015()), 30.0f, 7.0f, n2 | 0xFF000000);
             class690.method3853().fontRenderer.method6610(method31036.method22527().getFormattedText(), 30.0f, 18.0f, -1);
         }
         if (!this.field26907) {

@@ -39,7 +39,7 @@ public class NonNullList<E> extends AbstractList<E>
 
     protected NonNullList()
     {
-        this(Lists.newArrayList(), (E)null);
+        this(Lists.newArrayList(), null);
     }
 
     protected NonNullList(List<E> p_i2453_1_, @Nullable E p_i2453_2_)

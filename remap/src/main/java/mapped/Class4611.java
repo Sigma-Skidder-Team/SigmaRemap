@@ -71,9 +71,9 @@ public abstract class Class4611<T extends Class4220> implements Class4640<T>
         final Set set = this.field20077.get(class7012);
         if (set != null) {
             if (!set.isEmpty()) {
-                final UnmodifiableIterator iterator = ImmutableSet.copyOf((Collection)set).iterator();
-                while (((Iterator)iterator).hasNext()) {
-                    ((Class8803)((Iterator)iterator).next()).method30716(class7012);
+                final UnmodifiableIterator iterator = ImmutableSet.copyOf(set).iterator();
+                while (iterator.hasNext()) {
+                    ((Class8803) iterator.next()).method30716(class7012);
                 }
             }
         }

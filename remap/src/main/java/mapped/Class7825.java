@@ -70,22 +70,22 @@ public class Class7825 implements Class7823
         STBTTFontinfo malloc = null;
         ByteBuffer method32108 = null;
         try (final Class1671 method32109 = class6582.method19933(new ResourceLocation(this.field32044.method7798(), "font/" + this.field32044.method7797()))) {
-            Class7825.field32043.debug("Loading font {}", (Object)this.field32044);
+            Class7825.field32043.debug("Loading font {}", this.field32044);
             malloc = STBTTFontinfo.malloc();
             method32108 = Class8995.method32108(method32109.method5887());
             method32108.flip();
-            Class7825.field32043.debug("Reading font {}", (Object)this.field32044);
+            Class7825.field32043.debug("Reading font {}", this.field32044);
             if (!STBTruetype.stbtt_InitFont(malloc, method32108)) {
                 throw new IOException("Invalid ttf");
             }
             return new Class1740(method32108, malloc, this.field32045, this.field32046, this.field32047, this.field32048, this.field32049);
         }
         catch (final Exception ex) {
-            Class7825.field32043.error("Couldn't load truetype font {}", (Object)this.field32044, (Object)ex);
+            Class7825.field32043.error("Couldn't load truetype font {}", this.field32044, ex);
             if (malloc != null) {
                 malloc.free();
             }
-            MemoryUtil.memFree((Buffer)method32108);
+            MemoryUtil.memFree(method32108);
             return null;
         }
     }

@@ -65,10 +65,10 @@ public class Class4476 extends Class4475
             this.method13444(class1851, class1853, 0, 4, 2, 0, 4, 7, class1856, class1856, false);
             this.method13444(class1851, class1853, 6, 4, 2, 6, 4, 7, class1857, class1857, false);
             this.method13444(class1851, class1853, 0, 4, 8, 6, 4, 8, class1858, class1858, false);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)class1855).with(Class3916.field17734, Class183.field571), 0, 4, 1, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)class1855).with(Class3916.field17734, Class183.field570), 6, 4, 1, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)class1858).with(Class3916.field17734, Class183.field570), 0, 4, 8, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)class1858).with(Class3916.field17734, Class183.field571), 6, 4, 8, class1853);
+            this.method13440(class1851, class1855.with(Class3916.field17734, Class183.field571), 0, 4, 1, class1853);
+            this.method13440(class1851, class1855.with(Class3916.field17734, Class183.field570), 6, 4, 1, class1853);
+            this.method13440(class1851, class1858.with(Class3916.field17734, Class183.field570), 0, 4, 8, class1853);
+            this.method13440(class1851, class1858.with(Class3916.field17734, Class183.field571), 6, 4, 8, class1853);
             for (int i = 2; i <= 7; i += 5) {
                 for (int j = 1; j <= 5; j += 4) {
                     this.method13449(class1851, Blocks.field29181.getDefaultState(), j, -1, i, class1853);

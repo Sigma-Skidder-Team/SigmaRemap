@@ -98,9 +98,7 @@ public class Class4791 extends Class4703<Class862>
         if (!Class9216.field39049) {
             if (!Config.field36033) {
                 final Entity method5303 = this.field20429.method5303();
-                if (class862.method1733(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4791.field20431) {
-                    return false;
-                }
+                return !(class862.method1733(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4791.field20431);
             }
             return true;
         }

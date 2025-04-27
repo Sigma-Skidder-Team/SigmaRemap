@@ -42,6 +42,6 @@ public final class Class8023 extends Class8019
                 return;
             }
         }
-        throw;
+        throw
     }
 }

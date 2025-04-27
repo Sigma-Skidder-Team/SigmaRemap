@@ -22,7 +22,7 @@ public class Class8418
     }
     
     public String method28108() {
-        return StringUtils.join((Iterable)this.field34563, "->");
+        return StringUtils.join(this.field34563, "->");
     }
     
     @Override

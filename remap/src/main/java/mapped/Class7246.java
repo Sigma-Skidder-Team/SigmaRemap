@@ -10,9 +10,9 @@ import java.util.Iterator;
 
 public class Class7246 implements Iterator<Class8974>
 {
-    private Class9112 field28091;
-    private Class7244 field28092;
-    private Class384 field28093;
+    private final Class9112 field28091;
+    private final Class7244 field28092;
+    private final Class384 field28093;
     
     public Class7246(final Class9112 field28091, final BlockPos class354, final BlockPos class355, final int n, final int n2) {
         this.field28093 = new Class384(0, 0, 0);

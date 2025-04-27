@@ -223,8 +223,8 @@ public class Class856 extends Class855
     
     private static boolean method5147() {
         final LocalDate now = LocalDate.now();
-        final int value = now.get(ChronoField.DAY_OF_MONTH);
-        final int value2 = now.get(ChronoField.MONTH_OF_YEAR);
+        final int value = now.getDayOfMonth();
+        final int value2 = now.getMonth();
         return (value2 == 10 && value >= 20) || (value2 == 11 && value <= 3);
     }
     

@@ -45,7 +45,7 @@ public class Class9058
         Config.method28847(s + "Length: " + array.length + ", step: " + i);
         for (int j = 0; j < 4; ++j) {
             final int n = j * i;
-            Config.method28847(s + j + " xyz: " + Float.intBitsToFloat(array[n + 0]) + "," + Float.intBitsToFloat(array[n + 1]) + "," + Float.intBitsToFloat(array[n + 2]) + " col: " + array[n + 3] + " u,v: " + Float.intBitsToFloat(array[n + 4]) + "," + Float.intBitsToFloat(array[n + 5]));
+            Config.method28847(s + j + " xyz: " + Float.intBitsToFloat(array[n]) + "," + Float.intBitsToFloat(array[n + 1]) + "," + Float.intBitsToFloat(array[n + 2]) + " col: " + array[n + 3] + " u,v: " + Float.intBitsToFloat(array[n + 4]) + "," + Float.intBitsToFloat(array[n + 5]));
         }
     }
     

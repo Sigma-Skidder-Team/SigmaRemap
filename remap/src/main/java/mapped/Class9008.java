@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.lang.reflect.Array;
+import java.util.Objects;
 
 public class Class9008
 {
@@ -28,9 +29,7 @@ public class Class9008
             final int length = array.length;
             final int[] array3 = new int[length + array2.length];
             System.arraycopy(array, 0, array3, 0, length);
-            for (int i = 0; i < array2.length; ++i) {
-                array3[i + length] = array2[i];
-            }
+            System.arraycopy(array2, 0, array3, 0 + length, array2.length);
             return array3;
         }
         throw new NullPointerException("The given array is NULL");
@@ -66,7 +65,7 @@ public class Class9008
     }
     
     public static Object[] method32236(final Object[] a, final Object o, final int n) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(a));
+        final ArrayList list = new ArrayList(Arrays.asList(a));
         list.add(n, o);
         return list.toArray((Object[])Array.newInstance(a.getClass().getComponentType(), list.size()));
     }
@@ -79,7 +78,7 @@ public class Class9008
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(b));
+                sb.append(b);
             }
             return sb.toString();
         }
@@ -98,7 +97,7 @@ public class Class9008
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(f));
+                sb.append(f);
             }
             return sb.toString();
         }
@@ -132,7 +131,7 @@ public class Class9008
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(j));
+                sb.append(j);
             }
             return sb.toString();
         }
@@ -167,7 +166,7 @@ public class Class9008
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(obj));
+                sb.append(obj);
             }
             return sb.toString();
         }
@@ -209,7 +208,7 @@ public class Class9008
     }
     
     public static boolean equals(final Object o, final Object obj) {
-        return o == obj || (o != null && o.equals(obj));
+        return Objects.equals(o, obj);
     }
     
     public static boolean method32249(final Object o, final Object[] array) {
@@ -225,7 +224,7 @@ public class Class9008
     }
     
     public static Object[] method32250(final Object[] a, final Object o) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(a));
+        final ArrayList list = new ArrayList(Arrays.asList(a));
         list.remove(o);
         return method32246(list, a.getClass().getComponentType());
     }

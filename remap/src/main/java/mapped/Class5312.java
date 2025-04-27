@@ -18,6 +18,6 @@ public class Class5312 extends Class5260<Class8322>
     }
     
     public void method16413(final ByteBuf byteBuf, final Class8322 class8322) {
-        byteBuf.writeLong(((long)class8322.method27704() & 0x3FFFFFFL) << 38 | ((long)class8322.method27705() & 0xFFFL) | ((long)class8322.method27706() & 0x3FFFFFFL) << 12);
+        byteBuf.writeLong((class8322.method27704() & 0x3FFFFFFL) << 38 | (class8322.method27705() & 0xFFFL) | (class8322.method27706() & 0x3FFFFFFL) << 12);
     }
 }

@@ -39,7 +39,7 @@ public class Class8057
     
     @Nullable
     public static Class8057 method26430(final int n) {
-        return (Class8057)Class8057.field33145.get(n);
+        return Class8057.field33145.get(n);
     }
     
     public static boolean method26431(final int n) {

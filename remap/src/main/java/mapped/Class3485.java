@@ -122,9 +122,7 @@ public class Class3485 extends Class3479
         if (method6687 != null) {
             if (method6687.getBlockState(class1853).getBlock() == this.field16414) {
                 if (method6687.getBlockState(class1853.method1137()).method21706()) {
-                    if (method6687.getBlockState(class1853.method1138(2)).method21706()) {
-                        return true;
-                    }
+                    return method6687.getBlockState(class1853.method1138(2)).method21706();
                 }
             }
             return false;

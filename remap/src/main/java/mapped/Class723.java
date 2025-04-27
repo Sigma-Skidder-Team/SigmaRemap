@@ -70,7 +70,7 @@ public class Class723 extends Screen
     }
     
     public void method3971() {
-        this.addButton(new Class654(this.width / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
+        this.addButton(new Class654(this.width / 2 - 100, 196, 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(null)));
     }
     
     public void method3972() {

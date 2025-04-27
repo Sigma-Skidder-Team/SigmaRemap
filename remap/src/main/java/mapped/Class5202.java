@@ -11,15 +11,15 @@ import java.util.ArrayList;
 public class Class5202
 {
     private static String[] field22201;
-    private String field22202;
-    private ArrayList field22203;
+    private final String field22202;
+    private final ArrayList field22203;
     private float field22204;
     private float field22205;
     private float field22206;
     private float field22207;
     private float field22208;
     private Class7764 field22209;
-    private boolean field22210;
+    private final boolean field22210;
     private Class7310 field22211;
     private String field22212;
     

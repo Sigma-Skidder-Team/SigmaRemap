@@ -29,7 +29,7 @@ public class Class9560
     }
     
     public static int method35774(final int n) {
-        final Integer n2 = (Integer)Class9262.field39729.get((Object)n);
+        final Integer n2 = Class9262.field39729.get(n);
         if (n2 != null) {
             return n2;
         }
@@ -38,7 +38,7 @@ public class Class9560
     }
     
     public static int method35775(final int i) {
-        final Integer n = (Integer)Class9262.field39729.inverse().get((Object)i);
+        final Integer n = Class9262.field39729.inverse().get(i);
         return (n == null) ? 1 : n;
     }
 }

@@ -55,7 +55,7 @@ public class Class458 extends Class456
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.dispenser", new Object[0]);
+        return new Class2259("container.dispenser");
     }
     
     @Override

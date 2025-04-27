@@ -30,7 +30,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
     
     @Override
     public Class8530<C, ? extends Class4574<C>> method13527(final C c) {
-        return new Class8530<C, Class4574<C>>((Class4574<C>)this, c);
+        return new Class8530<C, Class4574<C>>(this, c);
     }
     
     @Override
@@ -42,7 +42,7 @@ public abstract class Class4574<C extends Class5113> extends Class4535<C>
             final int n4 = n2 << 4;
             boolean b = false;
             final LongIterator iterator = class1851.method6798(n, n2).method7047(this.method13596()).iterator();
-            while (((Iterator)iterator).hasNext()) {
+            while (iterator.hasNext()) {
                 final ChunkPos class1854 = new ChunkPos((long)((Iterator)iterator).next());
                 final Class5936 method7045 = class1851.method6798(class1854.field32290, class1854.field32291).method7045(this.method13596());
                 if (method7045 == null) {

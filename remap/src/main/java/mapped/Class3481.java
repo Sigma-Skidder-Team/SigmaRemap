@@ -25,9 +25,7 @@ public class Class3481 extends Class3479
         if (this.field16403.method4480()) {
             if (!this.field16403.method4483()) {
                 if (!this.field16403.method4610()) {
-                    if (super.method11013()) {
-                        return true;
-                    }
+                    return super.method11013();
                 }
             }
         }

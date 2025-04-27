@@ -21,7 +21,7 @@ public enum Class2042
     private final String field11639;
     private final BiFunction<Vec3d, Entity, Vec3d> field11640;
     
-    private Class2042(final String field11639, final BiFunction<Vec3d, Entity, Vec3d> field11640) {
+    Class2042(final String field11639, final BiFunction<Vec3d, Entity, Vec3d> field11640) {
         this.field11639 = field11639;
         this.field11640 = field11640;
     }

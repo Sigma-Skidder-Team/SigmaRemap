@@ -15,7 +15,7 @@ public final class Class9333
     private StateContainer<Block, BlockState> field40059;
     
     public Class9333() {
-        this.field40058 = new GsonBuilder().registerTypeAdapter((Type)Class5593.class, (Object)new Class5976()).registerTypeAdapter((Type)Class2124.class, (Object)new Class5984()).registerTypeAdapter((Type)Class7683.class, (Object)new Class5987()).registerTypeAdapter((Type)Class7686.class, (Object)new Class5966(this)).registerTypeAdapter((Type)Class8997.class, (Object)new Class5973()).create();
+        this.field40058 = new GsonBuilder().registerTypeAdapter(Class5593.class, new Class5976()).registerTypeAdapter(Class2124.class, new Class5984()).registerTypeAdapter(Class7683.class, new Class5987()).registerTypeAdapter(Class7686.class, new Class5966(this)).registerTypeAdapter(Class8997.class, new Class5973()).create();
     }
     
     public StateContainer<Block, BlockState> method34573() {

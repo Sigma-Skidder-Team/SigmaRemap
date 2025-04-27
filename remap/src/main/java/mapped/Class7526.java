@@ -28,7 +28,7 @@ public class Class7526 implements Font
     private static final int field29873 = 200;
     private static final int field29874 = 255;
     private boolean field29875;
-    private Class7764 field29876;
+    private final Class7764 field29876;
     private Class8935[] field29877;
     private int field29878;
     private int field29879;

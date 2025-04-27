@@ -36,15 +36,15 @@ public final class Class6065 implements Class6063
     private boolean field24674;
     private boolean field24675;
     private boolean field24676;
-    private Boolean field24677;
-    private Boolean field24678;
-    private boolean field24679;
+    private final Boolean field24677;
+    private final Boolean field24678;
+    private final boolean field24679;
     private int field24680;
-    private int field24681;
+    private final int field24681;
     private int field24682;
-    private char[] field24683;
-    private boolean field24684;
-    private Map<String, String> field24685;
+    private final char[] field24683;
+    private final boolean field24684;
+    private final Map<String, String> field24685;
     private String field24686;
     private String field24687;
     private Class9420 field24688;
@@ -252,9 +252,7 @@ public final class Class6065 implements Class6063
     private boolean method18064() {
         if (this.field24666 instanceof Class6294) {
             if (!this.field24665.isEmpty()) {
-                if (this.field24665.peek() instanceof Class6290) {
-                    return true;
-                }
+                return this.field24665.peek() instanceof Class6290;
             }
         }
         return false;
@@ -263,9 +261,7 @@ public final class Class6065 implements Class6063
     private boolean method18065() {
         if (this.field24666 instanceof Class6295) {
             if (!this.field24665.isEmpty()) {
-                if (this.field24665.peek() instanceof Class6289) {
-                    return true;
-                }
+                return this.field24665.peek() instanceof Class6289;
             }
         }
         return false;
@@ -283,9 +279,7 @@ public final class Class6065 implements Class6063
         if (class6288.method18621() == null) {
             if (class6288.method18626() == null) {
                 if (class6288.method18629() != null) {
-                    if (class6288.method18628().length() == 0) {
-                        return true;
-                    }
+                    return class6288.method18628().length() == 0;
                 }
             }
         }
@@ -333,9 +327,7 @@ public final class Class6065 implements Class6063
                     }
                 }
                 if (!this.method18064()) {
-                    if (!this.method18065()) {
-                        return false;
-                    }
+                    return this.method18065();
                 }
             }
             return true;
@@ -529,7 +521,7 @@ public final class Class6065 implements Class6063
                 ++i;
             }
             if (beginIndex < i) {
-                sb.append(s.substring(beginIndex, i));
+                sb.append(s, beginIndex, i);
             }
             return sb.toString();
         }

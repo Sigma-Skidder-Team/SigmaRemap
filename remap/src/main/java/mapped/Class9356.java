@@ -59,7 +59,7 @@ public class Class9356
             int n = -1;
             float n2 = 1.0f;
             if (Class9570.field41250.method22605()) {
-                final Object method21794 = Class9570.method35826(class1859.getFluid(), Class9570.field41250, new Object[0]);
+                final Object method21794 = Class9570.method35826(class1859.getFluid(), Class9570.field41250);
                 if (method21794 != null && Class9570.field41257.method22605()) {
                     n = Class9570.method35821(method21794, Class9570.field41257, class1856, class1857);
                     n2 = (n >> 24 & 0xFF) / 255.0f;
@@ -142,9 +142,9 @@ public class Class9356
                     final float method21810 = MathHelper.method35700(n20, method21801, n19);
                     final float method21811 = MathHelper.method35700(n20, method21803, n19);
                     final int method21812 = this.method34684(class1856, class1857);
-                    final float n21 = 1.0f * n3;
-                    final float n22 = 1.0f * n4;
-                    final float n23 = 1.0f * n5;
+                    final float n21 = n3;
+                    final float n22 = n4;
+                    final float n23 = n5;
                     this.method34683(class1858, n6 + 0.0, n7 + method21795, n8 + 0.0, n21, n22, n23, n2, method21804, method21808, method21812);
                     this.method34683(class1858, n6 + 0.0, n7 + method21796, n8 + 1.0, n21, n22, n23, n2, method21805, method21809, method21812);
                     this.method34683(class1858, n6 + 1.0, n7 + method21797, n8 + 1.0, n21, n22, n23, n2, method21806, method21810, method21812);

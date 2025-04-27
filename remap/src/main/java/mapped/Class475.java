@@ -38,7 +38,7 @@ public class Class475 extends Class456 implements Class476, Class439
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.chest", new Object[0]);
+        return new Class2259("container.chest");
     }
     
     @Override

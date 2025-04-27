@@ -13,9 +13,7 @@ public class Class8397
         if (jsonElement instanceof JsonObject) {
             final JsonObject jsonObject = (JsonObject)jsonElement;
             if (jsonObject.has("translate")) {
-                if (jsonObject.get("translate").getAsString().equals("chat.type.achievement")) {
-                    return false;
-                }
+                return !jsonObject.get("translate").getAsString().equals("chat.type.achievement");
             }
         }
         return true;

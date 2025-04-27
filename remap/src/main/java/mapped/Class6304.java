@@ -44,7 +44,7 @@ public final class Class6304
         this.field25214 = field25214;
         this.field25215 = field25215;
         this.field25216 = field25216;
-        this.field25217 = (ImmutableList<Class6322>)ImmutableList.of((Object)this.field25201, (Object)this.field25202, (Object)this.field25203, (Object)this.field25204, (Object)this.field25205, (Object)this.field25206, (Object)this.field25207, (Object)this.field25208, (Object)this.field25209, (Object)this.field25210, (Object)this.field25211, (Object)this.field25212, (Object[])new Class6322[] { this.field25213, this.field25214, this.field25215 });
+        this.field25217 = (ImmutableList<Class6322>)ImmutableList.of(this.field25201, this.field25202, this.field25203, this.field25204, this.field25205, this.field25206, this.field25207, this.field25208, this.field25209, this.field25210, this.field25211, this.field25212, (Object[])new Class6322[] { this.field25213, this.field25214, this.field25215 });
     }
     
     @Override
@@ -54,7 +54,7 @@ public final class Class6304
         }
         if (o != null && this.getClass() == o.getClass()) {
             final Class6304 class6304 = (Class6304)o;
-            return this.field25216 == class6304.field25216 && this.field25217.equals((Object)class6304.field25217);
+            return this.field25216 == class6304.field25216 && this.field25217.equals(class6304.field25217);
         }
         return false;
     }

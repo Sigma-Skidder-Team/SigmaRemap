@@ -25,9 +25,7 @@ public class Class1247 implements Runnable
             Class7873 class7873;
             if (this.field6786.length > 0 && this.field6786[n] instanceof Class7873) {
                 field6786 = new Object[n];
-                for (int i = 0; i < n; ++i) {
-                    field6786[i] = this.field6786[i];
-                }
+                System.arraycopy(this.field6786, 0, field6786, 0, n);
                 class7873 = (Class7873)this.field6786[n];
             }
             else {

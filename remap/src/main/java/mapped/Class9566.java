@@ -153,14 +153,9 @@ public class Class9566
                 final Class7562 method35792 = this.method35796();
                 final Class7562 method35793 = class9566.method35796();
                 if (method35792 != null) {
-                    if (!method35792.equals(method35793)) {
-                        return false;
-                    }
+                    return method35792.equals(method35793);
                 }
-                else if (method35793 != null) {
-                    return false;
-                }
-                return true;
+                else return method35793 == null;
             }
             return false;
         }

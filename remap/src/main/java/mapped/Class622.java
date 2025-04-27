@@ -22,7 +22,7 @@ public class Class622 extends Class593<Class622>
     
     public static Class622 method3621(final Class5760 class5760, final int n, final Class6469 class5761, final Class6469 class5762) {
         final Widget method19362 = class5761.method19362(class5760, n / 2 - 155, 0, 150);
-        return (class5762 != null) ? new Class622((List<Widget>)ImmutableList.of((Object)method19362, (Object)class5762.method19362(class5760, n / 2 - 155 + 160, 0, 150))) : new Class622((List<Widget>)ImmutableList.of((Object)method19362));
+        return (class5762 != null) ? new Class622((List<Widget>)ImmutableList.of(method19362, (Object)class5762.method19362(class5760, n / 2 - 155 + 160, 0, 150))) : new Class622((List<Widget>)ImmutableList.of((Object)method19362));
     }
     
     @Override

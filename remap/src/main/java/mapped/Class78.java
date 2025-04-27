@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class Class78 implements Iterable<Class7576>
 {
     private static String[] field173;
-    private Iterator<Class7576> field174;
+    private final Iterator<Class7576> field174;
     
     public Class78(final Iterator<Class7576> field174) {
         this.field174 = field174;

@@ -20,7 +20,7 @@ public class Class8061
     }
     
     public Class8061(final Class1948... array) {
-        this((String)null, array);
+        this(null, array);
     }
     
     public Class8061(final String field33205, final Class1948... array) {
@@ -33,14 +33,14 @@ public class Class8061
     }
     
     public List<Class1948> method26449() {
-        return (List<Class1948>)this.field33206;
+        return this.field33206;
     }
     
     public boolean method26450() {
         if (!this.field33206.isEmpty()) {
             final UnmodifiableIterator iterator = this.field33206.iterator();
-            while (((Iterator)iterator).hasNext()) {
-                if (!((Class1948)((Iterator)iterator).next()).method7906().method16453()) {
+            while (iterator.hasNext()) {
+                if (!((Class1948) iterator.next()).method7906().method16453()) {
                     continue;
                 }
                 return true;

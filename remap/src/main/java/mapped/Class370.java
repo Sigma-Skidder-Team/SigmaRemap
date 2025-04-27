@@ -29,28 +29,28 @@ public class Class370 extends Class367
             if (random2.nextInt(4) == 0) {
                 class1855.method1145();
                 final BlockPos class1856;
-                if (!(!Class4592.method13609(class1853, class1856))) {
+                if (Class4592.method13609(class1853, class1856)) {
                     this.method1250(class1853, class1856, Class4006.field18057, set2, class1854);
                 }
             }
             if (random2.nextInt(4) == 0) {
                 class1855.method1147();
                 final BlockPos class1857;
-                if (!(!Class4592.method13609(class1853, class1857))) {
+                if (Class4592.method13609(class1853, class1857)) {
                     this.method1250(class1853, class1857, Class4006.field18059, set2, class1854);
                 }
             }
             if (random2.nextInt(4) == 0) {
                 class1855.method1141();
                 final BlockPos class1858;
-                if (!(!Class4592.method13609(class1853, class1858))) {
+                if (Class4592.method13609(class1853, class1858)) {
                     this.method1250(class1853, class1858, Class4006.field18058, set2, class1854);
                 }
             }
             if (random2.nextInt(4) == 0) {
                 class1855.method1143();
                 final BlockPos class1859;
-                if (!(!Class4592.method13609(class1853, class1859))) {
+                if (Class4592.method13609(class1853, class1859)) {
                     this.method1250(class1853, class1859, Class4006.field18056, set2, class1854);
                 }
             }
@@ -67,6 +67,6 @@ public class Class370 extends Class367
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field221.getKey(this.field2209).toString())))).getValue();
+        return (T)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field221.getKey(this.field2209).toString())))).getValue();
     }
 }

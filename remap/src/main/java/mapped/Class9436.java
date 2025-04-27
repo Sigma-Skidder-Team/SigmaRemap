@@ -14,7 +14,7 @@ public class Class9436
     private static String[] field40463;
     private final float[] field40464;
     private final int[] field40465;
-    private Class384 field40466;
+    private final Class384 field40466;
     
     public Class9436() {
         this(null);

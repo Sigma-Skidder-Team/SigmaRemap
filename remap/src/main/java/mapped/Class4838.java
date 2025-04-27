@@ -13,7 +13,7 @@ public class Class4838 extends Class4825
     public Class4817 field20741;
     public TextField field20742;
     private ArrayList<Class8681> field20743;
-    private MusicManager field20744;
+    private final MusicManager field20744;
     
     public Class4838(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String s2) {
         super(customGuiScreen, s, n, n2, n3, n4, ColorHelper.field25964, s2, false);
@@ -62,7 +62,6 @@ public class Class4838 extends Class4825
                             }
                         }
                     });
-                    return;
                 }).start();
             }
         }

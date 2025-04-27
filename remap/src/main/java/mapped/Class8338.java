@@ -8,8 +8,8 @@ public class Class8338
 {
     private static String[] field34233;
     private float field34234;
-    private Class2315 field34235;
-    private Class6057 field34236;
+    private final Class2315 field34235;
+    private final Class6057 field34236;
     private long field34237;
     private boolean field34238;
     private float field34239;

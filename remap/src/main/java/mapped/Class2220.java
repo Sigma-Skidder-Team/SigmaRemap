@@ -12,7 +12,7 @@ public enum Class2220
     
     private final boolean field13635;
     
-    private Class2220(final boolean field13635) {
+    Class2220(final boolean field13635) {
         this.field13635 = field13635;
     }
     

@@ -208,7 +208,7 @@ public abstract class AbstractWebSocket extends WebSocketAdapter {
             /**
              * Keep the connections in a separate list to not cause deadlocks
              */
-            private ArrayList<WebSocket> connections = new ArrayList<>();
+            private final ArrayList<WebSocket> connections = new ArrayList<>();
 
             @Override
             public void run() {

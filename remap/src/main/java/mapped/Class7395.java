@@ -332,7 +332,7 @@ public class Class7395 implements Class7394
             method33098 = Class9125.method33098(new ByteArrayInputStream(byteArrayOutputStream.toByteArray()));
         }
         catch (final IOException ex) {
-            Class8452.method28204("Slick: ConfigurableEmitter.duplicate(): caught exception " + ex.toString());
+            Class8452.method28204("Slick: ConfigurableEmitter.duplicate(): caught exception " + ex);
             return null;
         }
         return method33098;

@@ -359,7 +359,7 @@ public class Class8893
     
     public static String method31304(final double d) {
         if (d == d) {
-            return ((d < 0.0) ? "" : "+") + Double.toString(d) + "d,";
+            return ((d < 0.0) ? "" : "+") + d + "d,";
         }
         return "Double.NaN,";
     }

@@ -68,6 +68,6 @@ public class Class8802
     
     @Override
     public String toString() {
-        return "" + this.field36998 + ":" + Config.method28890(this.field36999);
+        return this.field36998 + ":" + Config.method28890(this.field36999);
     }
 }

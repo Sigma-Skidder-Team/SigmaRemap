@@ -36,6 +36,6 @@ public class Class6212 extends Class6213
     
     @Override
     public <T> Dynamic<T> method18487(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("block"), dynamicOps.createString(Registry.BLOCK.getKey(this.field25060).toString()), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field25061))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("block"), dynamicOps.createString(Registry.BLOCK.getKey(this.field25060).toString()), dynamicOps.createString("probability"), dynamicOps.createFloat(this.field25061))));
     }
 }

@@ -70,7 +70,7 @@ public class Class8141
         this.field33543.readLock().lock();
         int[] array;
         try {
-            array = (int[])this.field33542.get(method25423);
+            array = this.field33542.get(method25423);
         }
         finally {
             this.field33543.readLock().unlock();

@@ -16,7 +16,7 @@ public class Class5071 extends RealmsScreen
     private static final Logger field21750;
     private static int field21751;
     private final RealmsConfigureWorldScreen field21752;
-    private List<Backup> field21753;
+    private final List<Backup> field21753;
     private String field21754;
     private Class5057 field21755;
     private int field21756;
@@ -24,7 +24,7 @@ public class Class5071 extends RealmsScreen
     private Class5611 field21758;
     private Class5611 field21759;
     private Class5611 field21760;
-    private Boolean field21761;
+    private final Boolean field21761;
     private final RealmsServer field21762;
     private Class5066 field21763;
     

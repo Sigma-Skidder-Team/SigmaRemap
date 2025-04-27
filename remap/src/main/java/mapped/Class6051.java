@@ -11,8 +11,8 @@ public final class Class6051 implements Class6050
 {
     private static String[] field24601;
     private final Class9541 field24602;
-    private Class1676 field24603;
-    private Class1676 field24604;
+    private final Class1676 field24603;
+    private final Class1676 field24604;
     public boolean field24605;
     public final /* synthetic */ Class1726 field24606;
     

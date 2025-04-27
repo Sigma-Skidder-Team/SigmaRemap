@@ -29,7 +29,7 @@ public class Class8098
             }
             else {
                 new(mapped.Class7061.class)();
-                new Class7061(s2, RateLimiter.create((double)this.field33333));
+                new Class7061(s2, RateLimiter.create(this.field33333));
             }
             return class7063;
         }).field27474.tryAcquire(1)) {

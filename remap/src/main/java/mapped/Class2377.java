@@ -12,7 +12,7 @@ public class Class2377 extends Class2374
     private final Number field14174;
     
     public Class2377(final Class2190 class2190, final Number field14174, final Object... array) {
-        super(class2190, new Object[] { field14174, array });
+        super(class2190, field14174, array);
         this.field14174 = field14174;
     }
     

@@ -109,7 +109,7 @@ public class Structure$FFIType extends Structure
     }
     
     private void init(final Pointer[] els) {
-        (this.elements = new Memory(Pointer.SIZE * els.length)).write(0L, els, 0, els.length);
+        (this.elements = new Memory((long) Pointer.SIZE * els.length)).write(0L, els, 0, els.length);
         this.write();
     }
     

@@ -7,8 +7,8 @@ package mapped;
 public class Class7070
 {
     private static String[] field27529;
-    private Class7363 field27530;
-    private Class field27531;
+    private final Class7363 field27530;
+    private final Class field27531;
     private int field27532;
     private Class7364[] field27533;
     

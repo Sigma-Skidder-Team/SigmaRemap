@@ -15,7 +15,7 @@ public class Class668 extends Class654
     
     @Override
     public String method3369() {
-        return Class8822.method30773("selectWorld.gameMode", new Object[0]) + ": " + Class8822.method30773("selectWorld.gameMode." + Class1984.method7997(Class539.method3123(this.field3701)), new Object[0]);
+        return Class8822.method30773("selectWorld.gameMode") + ": " + Class8822.method30773("selectWorld.gameMode." + Class1984.method7997(Class539.method3123(this.field3701)));
     }
     
     @Override

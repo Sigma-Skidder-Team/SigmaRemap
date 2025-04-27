@@ -95,7 +95,7 @@ public class Class1884 implements AutoCloseable
             throw method19937;
         }
         finally {
-            IOUtils.closeQuietly((Closeable)method19933);
+            IOUtils.closeQuietly(method19933);
         }
     }
     

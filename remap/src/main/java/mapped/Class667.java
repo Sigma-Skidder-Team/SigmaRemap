@@ -9,12 +9,12 @@ public class Class667 extends Class654
     private boolean field3700;
     
     public Class667(final int n, final int n2, final Class6887 class6887) {
-        super(n, n2, 20, 20, Class8822.method30773("narrator.button.difficulty_lock", new Object[0]), class6887);
+        super(n, n2, 20, 20, Class8822.method30773("narrator.button.difficulty_lock"), class6887);
     }
     
     @Override
     public String method3352() {
-        return super.method3352() + ". " + (this.method3731() ? Class8822.method30773("narrator.button.difficulty_lock.locked", new Object[0]) : Class8822.method30773("narrator.button.difficulty_lock.unlocked", new Object[0]));
+        return super.method3352() + ". " + (this.method3731() ? Class8822.method30773("narrator.button.difficulty_lock.locked") : Class8822.method30773("narrator.button.difficulty_lock.unlocked"));
     }
     
     public boolean method3731() {

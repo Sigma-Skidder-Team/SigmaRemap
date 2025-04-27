@@ -79,10 +79,10 @@ public final class Class7273
     }
     
     public Collection<Field> method22292() {
-        return Collections.unmodifiableCollection((Collection<? extends Field>)this.field28174.values());
+        return Collections.unmodifiableCollection(this.field28174.values());
     }
     
     public Collection<Method> method22293() {
-        return Collections.unmodifiableCollection((Collection<? extends Method>)this.field28175.values());
+        return Collections.unmodifiableCollection(this.field28175.values());
     }
 }

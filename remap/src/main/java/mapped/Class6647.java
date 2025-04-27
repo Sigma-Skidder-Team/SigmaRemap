@@ -13,7 +13,7 @@ public class Class6647 extends Class6635
 {
     private static String[] field26279;
     private static final Set<Integer> field26280;
-    private Map<Class8322, Class6082> field26281;
+    private final Map<Class8322, Class6082> field26281;
     
     public Class6647(final Class6108 class6108) {
         super(class6108);

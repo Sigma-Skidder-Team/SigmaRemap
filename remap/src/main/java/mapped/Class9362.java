@@ -9,13 +9,13 @@ import java.util.Map;
 public class Class9362
 {
     private static String[] field40149;
-    private Map<String, String> field40150;
-    private String field40151;
-    private int field40152;
-    private String field40153;
-    private String field40154;
-    private String field40155;
-    private int field40156;
+    private final Map<String, String> field40150;
+    private final String field40151;
+    private final int field40152;
+    private final String field40153;
+    private final String field40154;
+    private final String field40155;
+    private final int field40156;
     
     public Class9362(final String field40151, final Map<String, String> field40152, final String field40153, final int field40154, final int field40155, final String field40156, final String field40157) {
         this.field40151 = field40151;

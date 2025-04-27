@@ -26,7 +26,7 @@ public class Class5457 extends Class5419<Class824>
     private long field22700;
     
     public Class5457(final int n) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10630, (Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33811, (Object)Class1952.field10630, (Object)Class8233.field33808, (Object)Class1952.field10628), n);
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10630, Class8233.field33810, Class1952.field10630, Class8233.field33811, Class1952.field10630, (Object)Class8233.field33808, (Object)Class1952.field10628), n);
         this.field22698 = 600;
     }
     

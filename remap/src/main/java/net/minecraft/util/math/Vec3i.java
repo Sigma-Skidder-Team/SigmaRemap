@@ -111,7 +111,7 @@ public class Vec3i implements Comparable<Vec3i>
 
     public boolean withinDistance(Vec3i p_218141_1_, double distance)
     {
-        return this.distanceSq((double)p_218141_1_.getX(), (double)p_218141_1_.getY(), (double)p_218141_1_.getZ(), false) < distance * distance;
+        return this.distanceSq(p_218141_1_.getX(), p_218141_1_.getY(), p_218141_1_.getZ(), false) < distance * distance;
     }
 
     public boolean withinDistance(IPosition p_218137_1_, double distance)
@@ -121,7 +121,7 @@ public class Vec3i implements Comparable<Vec3i>
 
     public double distanceSq(Vec3i to)
     {
-        return this.distanceSq((double)to.getX(), (double)to.getY(), (double)to.getZ(), true);
+        return this.distanceSq(to.getX(), to.getY(), to.getZ(), true);
     }
 
     public double distanceSq(IPosition p_218138_1_, boolean useCenter)
@@ -153,6 +153,6 @@ public class Vec3i implements Comparable<Vec3i>
 
     public String func_229422_x_()
     {
-        return "" + this.getX() + ", " + this.getY() + ", " + this.getZ();
+        return this.getX() + ", " + this.getY() + ", " + this.getZ();
     }
 }

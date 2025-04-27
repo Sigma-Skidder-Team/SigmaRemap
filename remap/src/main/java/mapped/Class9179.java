@@ -33,15 +33,15 @@ public class Class9179 implements ArgumentType<Class8279>
     }
     
     private static Class8263 method33538(final CommandContext<Class7492> commandContext, final ResourceLocation class1932) throws CommandSyntaxException {
-        return ((Class7492)commandContext.getSource()).method23255().method1567().method6502(class1932).orElseThrow(() -> Class9179.field38898.create((Object)class1933.toString()));
+        return commandContext.getSource().method23255().method1567().method6502(class1932).orElseThrow(() -> Class9179.field38898.create((Object)class1933.toString()));
     }
     
     private static Class7909<Class8263> method33539(final CommandContext<Class7492> commandContext, final ResourceLocation class1932) throws CommandSyntaxException {
-        final Class7909<Class8263> method18460 = ((Class7492)commandContext.getSource()).method23255().method1567().method6513().method18460(class1932);
+        final Class7909<Class8263> method18460 = commandContext.getSource().method23255().method1567().method6513().method18460(class1932);
         if (method18460 != null) {
             return method18460;
         }
-        throw Class9179.field38897.create((Object)class1932.toString());
+        throw Class9179.field38897.create(class1932.toString());
     }
     
     public static Collection<Class8263> method33540(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
@@ -59,11 +59,11 @@ public class Class9179 implements ArgumentType<Class8279>
     static {
         field38896 = Arrays.asList("foo", "foo:bar", "#foo");
         field38897 = new DynamicCommandExceptionType(o -> {
-            new Class2259("arguments.function.tag.unknown", new Object[] { o });
+            new Class2259("arguments.function.tag.unknown", o);
             return;
         });
         field38898 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("arguments.function.unknown", new Object[] { o3 });
+            new Class2259("arguments.function.unknown", o3);
             return;
         });
     }

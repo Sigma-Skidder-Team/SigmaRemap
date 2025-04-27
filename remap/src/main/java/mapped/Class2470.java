@@ -20,8 +20,8 @@ public class Class2470 extends Class2466
         final Class6647 class8701 = class8699.method29841().method18207(Class6647.class);
         final Class5282 class8702 = new Class5282(class8700);
         final Class5285 class8703 = new Class5285(class8700);
-        final Class6562 class8704 = class8699.method29822((Class5260<Class6562>)class8702);
-        class8699.method29823((Class5260<Class6562>)class8703, class8704);
+        final Class6562 class8704 = class8699.method29822(class8702);
+        class8699.method29823(class8703, class8704);
         for (int i = 0; i < class8704.method19889().length; ++i) {
             final Class7668 class8705 = class8704.method19889()[i];
             if (class8705 != null) {
@@ -52,7 +52,7 @@ public class Class2470 extends Class2466
                             for (int n5 = 0; n5 < 16; ++n5) {
                                 final int method24322 = class8705.method24322(n5, n3, n4);
                                 if (class8701.method20192(method24322)) {
-                                    class8701.method20190(new Class8322((long)(n5 + (class8704.method19885() << 4)), (long)(n3 + (i << 4)), (long)(n4 + (class8704.method19886() << 4))), method24322);
+                                    class8701.method20190(new Class8322((long)(n5 + ((long) class8704.method19885() << 4)), (long)(n3 + ((long) i << 4)), (long)(n4 + ((long) class8704.method19886() << 4))), method24322);
                                 }
                             }
                         }
@@ -64,7 +64,7 @@ public class Class2470 extends Class2466
                             for (int n8 = 0; n8 < 16; ++n8) {
                                 final int method24323 = class8705.method24322(n8, n6, n7);
                                 if (Class8881.method31259(method24323)) {
-                                    Class8881.method31253().method19530(class8699.method29841(), n8 + (class8704.method19885() << 4), n6 + (i << 4), n7 + (class8704.method19886() << 4), method24323);
+                                    Class8881.method31253().method19530(class8699.method29841(), n8 + ((long) class8704.method19885() << 4), n6 + ((long) i << 4), n7 + ((long) class8704.method19886() << 4), method24323);
                                 }
                             }
                         }

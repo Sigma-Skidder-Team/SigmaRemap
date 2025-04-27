@@ -28,10 +28,9 @@ public class Class7886 implements Class7885
         this.field32387.execute(() -> {
             final Object field32388 = this.field32388;
             Class8206.method27199(this.field32390).remove(class1662);
-            if (!(!Class8206.method27199(this.field32390).isEmpty())) {
+            if (Class8206.method27199(this.field32390).isEmpty()) {
                 this.field32390.field33736.complete(Class315.field1875);
             }
-            return;
         });
         return this.field32390.field33736.thenCombine((CompletionStage<?>)this.field32389, (p1, p2) -> o);
     }

@@ -65,6 +65,6 @@ public class Class4076 extends Class4071
     }
     
     static {
-        field18180 = Maps.newHashMap((Map)ImmutableMap.of((Object) Blocks.GRASS_BLOCK, (Object) Blocks.field29298.getDefaultState(), (Object) Blocks.GRASS_PATH, (Object) Blocks.field29298.getDefaultState(), (Object) Blocks.DIRT, (Object) Blocks.field29298.getDefaultState(), (Object) Blocks.COARSE_DIRT, (Object) Blocks.DIRT.getDefaultState()));
+        field18180 = Maps.newHashMap((Map)ImmutableMap.of(Blocks.GRASS_BLOCK, Blocks.field29298.getDefaultState(), Blocks.GRASS_PATH, Blocks.field29298.getDefaultState(), Blocks.DIRT, Blocks.field29298.getDefaultState(), (Object) Blocks.COARSE_DIRT, (Object) Blocks.DIRT.getDefaultState()));
     }
 }

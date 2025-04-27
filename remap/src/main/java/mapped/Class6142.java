@@ -17,7 +17,7 @@ public class Class6142 extends Class6132
     }
     
     private static Dynamic<?> method18367(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)dynamic.set("keepPacked", dynamic.createBoolean(true));
+        return dynamic.set("keepPacked", dynamic.createBoolean(true));
     }
     
     @Override

@@ -72,7 +72,7 @@ public class Class6476
     }
     
     public List<Class6889> method19491() {
-        return Collections.unmodifiableList((List<? extends Class6889>)this.field25834);
+        return Collections.unmodifiableList(this.field25834);
     }
     
     public List<Class6889> method19492(final Class2071 other) {
@@ -106,7 +106,7 @@ public class Class6476
     }
     
     public List<Class6915> method19496() {
-        return Collections.unmodifiableList((List<? extends Class6915>)this.field25836);
+        return Collections.unmodifiableList(this.field25836);
     }
     
     public Date method19497() {

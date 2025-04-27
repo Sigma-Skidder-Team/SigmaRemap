@@ -28,7 +28,7 @@ public class Class6764 extends Class6765
     
     @Override
     public ITextComponent method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
-        return (gameProfile.getName().equalsIgnoreCase(this.method20574().method1498()) && this.method20598(gameProfile.getName()) != null) ? new Class2259("multiplayer.disconnect.name_taken", new Object[0]) : super.method20573(socketAddress, gameProfile);
+        return (gameProfile.getName().equalsIgnoreCase(this.method20574().method1498()) && this.method20598(gameProfile.getName()) != null) ? new Class2259("multiplayer.disconnect.name_taken") : super.method20573(socketAddress, gameProfile);
     }
     
     public IntegratedServer method20574() {

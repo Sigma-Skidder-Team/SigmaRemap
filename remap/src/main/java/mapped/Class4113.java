@@ -12,7 +12,7 @@ public class Class4113 implements Class4114
 {
     private static String[] field18218;
     private int field18219;
-    private int field18220;
+    private final int field18220;
     
     public Class4113(final int n, final int n2) {
         this.field18219 = GL11.glGenTextures();

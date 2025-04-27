@@ -142,13 +142,13 @@ public class Class8787
     @Nullable
     private static CompoundNBT method30585(final Path path) {
         try {
-            return Class5704.method16938(IOUtils.toString((Reader)Files.newBufferedReader(path)));
+            return Class5704.method16938(IOUtils.toString(Files.newBufferedReader(path)));
         }
         catch (final IOException ex) {
             return null;
         }
         catch (final CommandSyntaxException cause) {
-            throw new RuntimeException("Error while trying to load structure " + path, (Throwable)cause);
+            throw new RuntimeException("Error while trying to load structure " + path, cause);
         }
     }
     

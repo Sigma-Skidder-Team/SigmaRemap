@@ -8,11 +8,11 @@ public enum Class227
 {
     field800(Boolean.TRUE), 
     field801(Boolean.FALSE), 
-    field802((Boolean)null);
+    field802(null);
     
-    private Boolean field803;
+    private final Boolean field803;
     
-    private Class227(final Boolean field803) {
+    Class227(final Boolean field803) {
         this.field803 = field803;
     }
     

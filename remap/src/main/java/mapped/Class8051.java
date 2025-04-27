@@ -177,7 +177,7 @@ public class Class8051
     }
     
     public void method26418(final String... array) {
-        this.field33137 = (String[])((array != null && array.length > 0) ? array : null);
+        this.field33137 = (array != null && array.length > 0) ? array : null;
     }
     
     public void method26419(final String... array) {
@@ -255,9 +255,9 @@ public class Class8051
     public Object method26423(final Class7576 class7576) {
         if (this.field33130 != null) {
             try {
-                final Constructor<?> declaredConstructor = this.field33130.getDeclaredConstructor((Class<?>[])new Class[0]);
+                final Constructor<?> declaredConstructor = this.field33130.getDeclaredConstructor(new Class[0]);
                 declaredConstructor.setAccessible(true);
-                return declaredConstructor.newInstance(new Object[0]);
+                return declaredConstructor.newInstance();
             }
             catch (final Exception ex) {
                 Class8051.field33128.fine(ex.getLocalizedMessage());

@@ -27,8 +27,8 @@ public enum Class305
     field1786(Class2212.field13483, "atan2", new Class2212[] { Class2212.field13483, Class2212.field13483 }), 
     field1787(Class2212.field13483, "torad", new Class2212[] { Class2212.field13483 }), 
     field1788(Class2212.field13483, "todeg", new Class2212[] { Class2212.field13483 }), 
-    field1789(Class2212.field13483, "min", (Class7693)new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483)), 
-    field1790(Class2212.field13483, "max", (Class7693)new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483)), 
+    field1789(Class2212.field13483, "min", new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483)),
+    field1790(Class2212.field13483, "max", new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483)),
     field1791(Class2212.field13483, "clamp", new Class2212[] { Class2212.field13483, Class2212.field13483, Class2212.field13483 }), 
     field1792(Class2212.field13483, "abs", new Class2212[] { Class2212.field13483 }), 
     field1793(Class2212.field13483, "floor", new Class2212[] { Class2212.field13483 }), 
@@ -43,7 +43,7 @@ public enum Class305
     field1802(Class2212.field13483, "sqrt", new Class2212[] { Class2212.field13483 }), 
     field1803(Class2212.field13483, "fmod", new Class2212[] { Class2212.field13483, Class2212.field13483 }), 
     field1804(Class2212.field13483, "time", new Class2212[0]), 
-    field1805(Class2212.field13483, "if", (Class7693)new Class7694().method24473(Class2212.field13485, Class2212.field13483).method24474(Class2212.field13485, Class2212.field13483).method24475(Class2212.field13483)), 
+    field1805(Class2212.field13483, "if", new Class7694().method24473(Class2212.field13485, Class2212.field13483).method24474(Class2212.field13485, Class2212.field13483).method24475(Class2212.field13483)),
     field1806(12, Class2212.field13485, "!", new Class2212[] { Class2212.field13485 }), 
     field1807(3, Class2212.field13485, "&&", new Class2212[] { Class2212.field13485, Class2212.field13485 }), 
     field1808(2, Class2212.field13485, "||", new Class2212[] { Class2212.field13485, Class2212.field13485 }), 
@@ -55,34 +55,34 @@ public enum Class305
     field1814(7, Class2212.field13485, "!=", new Class2212[] { Class2212.field13483, Class2212.field13483 }), 
     field1815(7, Class2212.field13485, "between", new Class2212[] { Class2212.field13483, Class2212.field13483, Class2212.field13483 }), 
     field1816(7, Class2212.field13485, "equals", new Class2212[] { Class2212.field13483, Class2212.field13483, Class2212.field13483 }), 
-    field1817(Class2212.field13485, "in", (Class7693)new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483).method24475(Class2212.field13483)), 
-    field1818(Class2212.field13483, "smooth", (Class7693)new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483).method24476(4)), 
+    field1817(Class2212.field13485, "in", new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483).method24475(Class2212.field13483)),
+    field1818(Class2212.field13483, "smooth", new Class7694().method24473(Class2212.field13483).method24474(Class2212.field13483).method24476(4)),
     field1819(Class2212.field13485, "true", new Class2212[0]), 
     field1820(Class2212.field13485, "false", new Class2212[0]), 
     field1821(Class2212.field13484, "vec2", new Class2212[] { Class2212.field13483, Class2212.field13483 }), 
     field1822(Class2212.field13484, "vec3", new Class2212[] { Class2212.field13483, Class2212.field13483, Class2212.field13483 }), 
     field1823(Class2212.field13484, "vec4", new Class2212[] { Class2212.field13483, Class2212.field13483, Class2212.field13483, Class2212.field13483 });
     
-    private int field1824;
-    private Class2212 field1825;
-    private String field1826;
-    private Class7693 field1827;
+    private final int field1824;
+    private final Class2212 field1825;
+    private final String field1826;
+    private final Class7693 field1827;
     public static Class305[] field1828;
     private static final Map<Integer, Float> field1829;
     
-    private Class305(final Class2212 class2212, final String s2, final Class2212[] array) {
+    Class305(final Class2212 class2212, final String s2, final Class2212[] array) {
         this(0, class2212, s2, array);
     }
     
-    private Class305(final int n2, final Class2212 class2212, final String s2, final Class2212[] array) {
+    Class305(final int n2, final Class2212 class2212, final String s2, final Class2212[] array) {
         this(n2, class2212, s2, new Class7695(array));
     }
     
-    private Class305(final Class2212 class2212, final String s2, final Class7693 class2213) {
+    Class305(final Class2212 class2212, final String s2, final Class7693 class2213) {
         this(0, class2212, s2, class2213);
     }
     
-    private Class305(final int field1824, final Class2212 field1825, final String field1826, final Class7693 field1827) {
+    Class305(final int field1824, final Class2212 field1825, final String field1826, final Class7693 field1827) {
         this.field1824 = field1824;
         this.field1825 = field1825;
         this.field1826 = field1826;

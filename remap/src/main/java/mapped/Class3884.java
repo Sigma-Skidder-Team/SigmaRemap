@@ -37,8 +37,8 @@ public class Class3884 extends Class3874 implements Class3872
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        if (class7096.get((IProperty<Integer>)Class3884.field17541) != 0) {
-            return (class7096.get((IProperty<Integer>)Class3884.field17541) >= 3) ? super.method11808(class7096, class7097, class7098, class7099) : Class3884.field17543;
+        if (class7096.get(Class3884.field17541) != 0) {
+            return (class7096.get(Class3884.field17541) >= 3) ? super.method11808(class7096, class7097, class7098, class7099) : Class3884.field17543;
         }
         return Class3884.field17542;
     }
@@ -46,7 +46,7 @@ public class Class3884 extends Class3874 implements Class3872
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         super.method11822(class7096, class7097, class7098, random);
-        final int intValue = class7096.get((IProperty<Integer>)Class3884.field17541);
+        final int intValue = class7096.get(Class3884.field17541);
         if (intValue < 3) {
             if (random.nextInt(5) == 0) {
                 if (class7097.method6993(class7098.method1137(), 0) >= 9) {
@@ -63,7 +63,7 @@ public class Class3884 extends Class3874 implements Class3872
                 if (class7099.getType() != EntityType.field28961) {
                     class7099.setMotionMultiplier(class7096, new Vec3d(0.800000011920929, 0.75, 0.800000011920929));
                     if (!class7097.isRemote) {
-                        if (class7096.get((IProperty<Integer>)Class3884.field17541) > 0) {
+                        if (class7096.get(Class3884.field17541) > 0) {
                             if (class7099.lastTickPosX != class7099.getPosX() || class7099.lastTickPosZ != class7099.getPosZ()) {
                                 final double abs = Math.abs(class7099.getPosX() - class7099.lastTickPosX);
                                 final double abs2 = Math.abs(class7099.getPosZ() - class7099.lastTickPosZ);
@@ -80,7 +80,7 @@ public class Class3884 extends Class3874 implements Class3872
     
     @Override
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
-        final int intValue = class7096.get((IProperty<Integer>)Class3884.field17541);
+        final int intValue = class7096.get(Class3884.field17541);
         final int n = (intValue == 3) ? 1 : 0;
         if (n == 0 && class7099.method2715(class7100).getItem() == Items.field31400) {
             return Class2201.field13402;
@@ -101,7 +101,7 @@ public class Class3884 extends Class3874 implements Class3872
     
     @Override
     public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
-        return class1857.get((IProperty<Integer>)Class3884.field17541) < 3;
+        return class1857.get(Class3884.field17541) < 3;
     }
     
     @Override
@@ -111,7 +111,7 @@ public class Class3884 extends Class3874 implements Class3872
     
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
-        class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).with((IProperty<Comparable>)Class3884.field17541, Math.min(3, class1851.get((IProperty<Integer>)Class3884.field17541) + 1)), 2);
+        class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).with((IProperty<Comparable>)Class3884.field17541, Math.min(3, class1851.get(Class3884.field17541) + 1)), 2);
     }
     
     static {

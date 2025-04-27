@@ -14,7 +14,7 @@ public class Class1583 extends NamedRunnable implements Class1584
     
     public Class1583(final Class1758 field8847, final Class1736 field8848) {
         this.field8847 = field8847;
-        super("OkHttp %s", new Object[] { field8847.field9779 });
+        super("OkHttp %s", field8847.field9779);
         this.field8846 = field8848;
     }
     
@@ -125,7 +125,7 @@ public class Class1583 extends NamedRunnable implements Class1584
                     array = this.field8847.field9778.values().toArray(new Class8082[this.field8847.field9778.size()]);
                 }
             }
-            Class1758.field9775.execute(new Class1575(this, "OkHttp %s settings", new Object[] { this.field8847.field9779 }));
+            Class1758.field9775.execute(new Class1575(this, "OkHttp %s settings", this.field8847.field9779));
         }
         if (array != null && n != 0L) {
             for (final Class8082 class8704 : array) {

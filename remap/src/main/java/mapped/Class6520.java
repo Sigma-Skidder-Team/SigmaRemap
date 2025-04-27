@@ -40,10 +40,10 @@ public class Class6520 extends Class6521
             final String method19687 = class3662.getGroup();
             Class9586 class3663;
             if (!method19687.isEmpty()) {
-                class3663 = (Class9586)((Table)create).get((Object)method19686, (Object)method19687);
+                class3663 = (Class9586) create.get(method19686, method19687);
                 if (class3663 == null) {
                     class3663 = this.method19684(method19686);
-                    ((Table)create).put((Object)method19686, (Object)method19687, (Object)class3663);
+                    create.put(method19686, method19687, class3663);
                 }
             }
             else {

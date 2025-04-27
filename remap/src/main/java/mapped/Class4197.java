@@ -528,12 +528,8 @@ public class Class4197 implements Class4198, Class4178, Class4204
             final int n = this.field18805[0];
             final int n2 = this.field18807[0];
             final int n3 = this.field18883[0];
-            for (int i = 0; i < n; ++i) {
-                array[i] = this.field18808[0][i];
-            }
-            for (int j = 0; j < n2; ++j) {
-                array2[j] = this.field18809[0][j];
-            }
+            if (n >= 0) System.arraycopy(this.field18808[0], 0, array, 0, n);
+            if (n2 >= 0) System.arraycopy(this.field18809[0], 0, array2, 0, n2);
             final int method12616;
             if ((method12616 = this.method12616(class8157, 0)) > 0) {
                 return method12616;
@@ -543,12 +539,8 @@ public class Class4197 implements Class4198, Class4178, Class4204
                 this.field18883[0] = n3;
                 this.field18805[0] = n;
                 this.field18807[0] = n2;
-                for (int k = 0; k < 6; ++k) {
-                    this.field18808[0][k] = array[k];
-                }
-                for (int l = 0; l < 3; ++l) {
-                    this.field18809[0][l] = array2[l];
-                }
+                System.arraycopy(array, 0, this.field18808[0], 0, 6);
+                System.arraycopy(array2, 0, this.field18809[0], 0, 3);
                 return method12617;
             }
             this.method12617(class8157, 0);
@@ -581,15 +573,12 @@ public class Class4197 implements Class4198, Class4178, Class4204
                 this.field18808[1][n4] = this.field18808[0][n4];
                 this.field18810[1][n4] = this.field18810[0][n4];
             }
-            for (int n5 = 0; n5 <= this.field18807[0]; ++n5) {
-                this.field18809[1][n5] = this.field18809[0][n5];
-            }
+            if (this.field18807[0] + 1 >= 0)
+                System.arraycopy(this.field18809[0], 0, this.field18809[1], 0, this.field18807[0] + 1);
             this.method12617(class8157, 0);
             this.method12617(class8157, 1);
             this.method12618(class8157, 0);
-            for (int n6 = 0; n6 < this.field18793; ++n6) {
-                this.field18825[1][n6] = this.field18825[0][n6];
-            }
+            if (this.field18793 >= 0) System.arraycopy(this.field18825[0], 0, this.field18825[1], 0, this.field18793);
             this.method12621(class8157, 0);
             this.method12622(class8157, 0);
             this.method12621(class8157, 1);
@@ -897,9 +886,7 @@ public class Class4197 implements Class4198, Class4178, Class4204
                 this.field18816[n][i] = this.field18815[n][i][this.field18805[n] - 1];
                 this.field18822[n][i] = this.field18819[n][i][this.field18807[n] - 1];
             }
-            for (int j = 0; j < 49; ++j) {
-                this.field18833[n][j] = this.field18832[n][j];
-            }
+            System.arraycopy(this.field18832[n], 0, this.field18833[n], 0, 49);
             this.field18878[n] = this.field18877[n];
             if (this.field18823[n] != this.field18805[n]) {
                 this.field18842[n] = -1;
@@ -999,12 +986,7 @@ public class Class4197 implements Class4198, Class4178, Class4204
                     }
                 }
             }
-            if (!b) {
-                this.field18784 = false;
-            }
-            else {
-                this.field18784 = true;
-            }
+            this.field18784 = b;
             this.field18785 += this.method12626(array, array3, 0, b2);
             if (!this.field18780) {
                 this.field18852[0].method19209(this, array3, array);
@@ -1054,12 +1036,7 @@ public class Class4197 implements Class4198, Class4178, Class4204
                     }
                 }
             }
-            if (!b) {
-                this.field18784 = false;
-            }
-            else {
-                this.field18784 = true;
-            }
+            this.field18784 = b;
             this.field18785 += this.method12626(array, array2, 0, b2);
             if (!this.field18780) {
                 this.field18852[0].method19209(this, array2, array);
@@ -1098,12 +1075,7 @@ public class Class4197 implements Class4198, Class4178, Class4204
                     }
                 }
             }
-            if (!b) {
-                this.field18784 = false;
-            }
-            else {
-                this.field18784 = true;
-            }
+            this.field18784 = b;
             if (this.field18852[1] == null) {
                 this.field18852[1] = new Class6442(this.field18780 ? 32 : 64);
             }

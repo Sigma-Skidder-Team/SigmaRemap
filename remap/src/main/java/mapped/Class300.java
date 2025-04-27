@@ -41,7 +41,7 @@ public enum Class300
     private final String field1745;
     private final String field1746;
     
-    private Class300(final char field1744, final String field1745) {
+    Class300(final char field1744, final String field1745) {
         this.field1744 = field1744;
         this.field1746 = field1745;
         this.field1745 = new String(new char[] { '§', field1744 });
@@ -81,7 +81,7 @@ public enum Class300
     }
     
     static {
-        field1742 = Pattern.compile("(?i)" + String.valueOf('§') + "[0-9A-FK-OR]");
+        field1742 = Pattern.compile("(?i)" + '§' + "[0-9A-FK-OR]");
         field1743 = new HashMap<Character, Class300>();
         for (final Class300 class300 : values()) {
             Class300.field1743.put(class300.field1744, class300);

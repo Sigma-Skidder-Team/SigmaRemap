@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Class2401 extends Class2400
 {
-    private ArrayList field14224;
+    private final ArrayList field14224;
     private float field14225;
     private Class2400 field14226;
     private Class2400 field14227;

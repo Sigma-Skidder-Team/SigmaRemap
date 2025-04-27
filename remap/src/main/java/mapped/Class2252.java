@@ -25,7 +25,7 @@ public class Class2252 extends TextComponent implements Class2253
             method25070 = new Class7793(new StringReader(field13794)).method25070();
         }
         catch (final CommandSyntaxException ex) {
-            Class2252.field13793.warn("Invalid selector component: {}", (Object)field13794, (Object)ex.getMessage());
+            Class2252.field13793.warn("Invalid selector component: {}", field13794, ex.getMessage());
         }
         this.field13795 = method25070;
     }

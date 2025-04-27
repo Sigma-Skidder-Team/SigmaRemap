@@ -25,7 +25,7 @@ public abstract class Class8150
         final String method35894 = Class9583.method35894(jsonElement, "type");
         if (!method35894.startsWith("#")) {
             return new Class8152(Registry.field210.method506(new ResourceLocation(method35894)).orElseThrow(() -> {
-                new JsonSyntaxException("Unknown entity type '" + obj + "', valid types are: " + Class8150.field33562.join((Iterable) Registry.field210.method507()));
+                new JsonSyntaxException("Unknown entity type '" + obj + "', valid types are: " + Class8150.field33562.join(Registry.field210.method507()));
                 return;
             }));
         }

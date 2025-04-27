@@ -46,7 +46,7 @@ public class Class8164 implements GameVersion
     }
     
     public static GameVersion method26992() {
-        return (GameVersion)new Class8164();
+        return new Class8164();
     }
     
     public String getId() {

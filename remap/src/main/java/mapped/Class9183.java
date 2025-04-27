@@ -11,12 +11,12 @@ import java.util.Map;
 public class Class9183
 {
     private final Map<UUID, Class6108> field38907;
-    private Class9366 field38908;
-    private Class8720 field38909;
+    private final Class9366 field38908;
+    private final Class8720 field38909;
     private boolean field38910;
-    private Class8750 field38911;
-    private Class6791 field38912;
-    private Class7091 field38913;
+    private final Class8750 field38911;
+    private final Class6791 field38912;
+    private final Class7091 field38913;
     
     public Class9183(final Class9366 field38908, final Class8750 field38909, final Class6791 field38910, final Class7091 field38911) {
         this.field38907 = new ConcurrentHashMap<UUID, Class6108>();

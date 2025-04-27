@@ -4,13 +4,10 @@
 
 package mapped;
 
-import java.util.Iterator;
-import java.util.ArrayList;
+import java.util.*;
+
 import com.google.common.collect.Lists;
-import java.util.List;
-import java.util.Arrays;
 import com.google.common.collect.Sets;
-import java.util.Set;
 
 public class Class6515 extends Class6516
 {
@@ -80,7 +77,7 @@ public class Class6515 extends Class6516
         if (!super.method19615(s, class6749)) {
             return false;
         }
-        this.field25927.method1537().method20586(new Class4290(class6749, Arrays.asList(s), 3));
+        this.field25927.method1537().method20586(new Class4290(class6749, Collections.singletonList(s), 3));
         this.method19624();
         return true;
     }
@@ -88,7 +85,7 @@ public class Class6515 extends Class6516
     @Override
     public void method19616(final String s, final Class6749 class6749) {
         super.method19616(s, class6749);
-        this.field25927.method1537().method20586(new Class4290(class6749, Arrays.asList(s), 4));
+        this.field25927.method1537().method20586(new Class4290(class6749, Collections.singletonList(s), 4));
         this.method19624();
     }
     

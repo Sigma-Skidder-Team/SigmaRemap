@@ -19,7 +19,7 @@ public class Class392 implements AutoCloseable
     private final Minecraft field2285;
     private boolean field2286;
     private boolean field2287;
-    private Vector3f field2288;
+    private final Vector3f field2288;
     
     public Class392(final Class1660 field2284, final Minecraft field2285) {
         this.field2286 = true;

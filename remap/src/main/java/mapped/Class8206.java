@@ -48,14 +48,12 @@ public class Class8206<S> implements Class8207
                     runnable2.run();
                     this.field33743.incrementAndGet();
                 });
-                return;
             }, p1 -> {
                 ++this.field33740;
                 executor4.execute(() -> {
                     runnable4.run();
                     ++this.field33741;
                 });
-                return;
             });
             arrayList.add(method35078);
             completableFuture2 = method35078;
@@ -70,7 +68,7 @@ public class Class8206<S> implements Class8207
     
     @Override
     public float method27189() {
-        return (this.field33743.get() * 2 + this.field33741 * 2 + (this.field33739 - this.field33738.size()) * 1) / (float)(this.field33742.get() * 2 + this.field33740 * 2 + this.field33739 * 1);
+        return (this.field33743.get() * 2 + this.field33741 * 2 + (this.field33739 - this.field33738.size())) / (float)(this.field33742.get() * 2 + this.field33740 * 2 + this.field33739);
     }
     
     @Override

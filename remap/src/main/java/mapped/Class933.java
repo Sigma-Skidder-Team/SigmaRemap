@@ -21,13 +21,13 @@ public class Class933 extends Thread
             final HttpURLConnection httpURLConnection = (HttpURLConnection)new URL("http://optifine.net/version/1.15.2/HD_U.txt").openConnection();
             if (Config.method28962().field23426) {
                 httpURLConnection.setRequestProperty("OF-MC-Version", "1.15.2");
-                httpURLConnection.setRequestProperty("OF-MC-Brand", "" + Class7932.method25729());
+                httpURLConnection.setRequestProperty("OF-MC-Brand", Class7932.method25729());
                 httpURLConnection.setRequestProperty("OF-Edition", "HD_U");
                 httpURLConnection.setRequestProperty("OF-Release", "G1_pre18");
-                httpURLConnection.setRequestProperty("OF-Java-Version", "" + System.getProperty("java.version"));
+                httpURLConnection.setRequestProperty("OF-Java-Version", System.getProperty("java.version"));
                 httpURLConnection.setRequestProperty("OF-CpuCount", "" + Config.method28969());
-                httpURLConnection.setRequestProperty("OF-OpenGL-Version", "" + Config.field36018);
-                httpURLConnection.setRequestProperty("OF-OpenGL-Vendor", "" + Config.field36020);
+                httpURLConnection.setRequestProperty("OF-OpenGL-Version", Config.field36018);
+                httpURLConnection.setRequestProperty("OF-OpenGL-Vendor", Config.field36020);
             }
             httpURLConnection.setDoInput(true);
             httpURLConnection.setDoOutput(false);

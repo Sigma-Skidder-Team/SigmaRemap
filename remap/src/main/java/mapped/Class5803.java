@@ -54,7 +54,7 @@ public class Class5803 implements Class5802
             this.method17393();
         }
         if (this.field23828++ == 600) {
-            this.method17392(new Class2259("multiplayer.disconnect.slow_login", new Object[0]));
+            this.method17392(new Class2259("multiplayer.disconnect.slow_login"));
         }
     }
     
@@ -65,12 +65,12 @@ public class Class5803 implements Class5802
     
     public void method17392(final ITextComponent class2250) {
         try {
-            Class5803.field23822.info("Disconnecting {}: {}", (Object)this.method17394(), (Object)class2250.getString());
+            Class5803.field23822.info("Disconnecting {}: {}", this.method17394(), class2250.getString());
             this.field23826.method11174(new Class4277(class2250));
             this.field23826.method11181(class2250);
         }
         catch (final Exception ex) {
-            Class5803.field23822.error("Error whilst disconnecting player", (Throwable)ex);
+            Class5803.field23822.error("Error whilst disconnecting player", ex);
         }
     }
     
@@ -102,7 +102,7 @@ public class Class5803 implements Class5802
     
     @Override
     public void onDisconnect(final ITextComponent class2250) {
-        Class5803.field23822.info("{} lost connection: {}", (Object)this.method17394(), (Object)class2250.getString());
+        Class5803.field23822.info("{} lost connection: {}", this.method17394(), class2250.getString());
     }
     
     public String method17394() {
@@ -111,7 +111,7 @@ public class Class5803 implements Class5802
     
     @Override
     public void method17388(final Class4327 class4327) {
-        Validate.validState(this.field23827 == Class2055.field11726, "Unexpected hello packet", new Object[0]);
+        Validate.validState(this.field23827 == Class2055.field11726, "Unexpected hello packet");
         this.field23829 = class4327.method12991();
         if (this.field23825.method1518() && !this.field23826.method11182()) {
             this.field23827 = Class2055.field11727;
@@ -124,7 +124,7 @@ public class Class5803 implements Class5802
     
     @Override
     public void method17389(final Class4341 class4341) {
-        Validate.validState(this.field23827 == Class2055.field11727, "Unexpected key packet", new Object[0]);
+        Validate.validState(this.field23827 == Class2055.field11727, "Unexpected key packet");
         final PrivateKey private1 = this.field23825.method1495().getPrivate();
         if (Arrays.equals(this.field23824, class4341.method13037(private1))) {
             this.field23831 = class4341.method13036(private1);
@@ -140,7 +140,7 @@ public class Class5803 implements Class5802
     
     @Override
     public void method17390(final Class4390 class4390) {
-        this.method17392(new Class2259("multiplayer.disconnect.unexpected_query_response", new Object[0]));
+        this.method17392(new Class2259("multiplayer.disconnect.unexpected_query_response"));
     }
     
     public GameProfile method17395(final GameProfile gameProfile) {

@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.mods.impl.exploit.disablers.ViperDisabler;
 public class Class8870
 {
     private static String[] field37285;
-    private long field37286;
-    private IPacket field37287;
+    private final long field37286;
+    private final IPacket field37287;
     public final /* synthetic */ ViperDisabler field37288;
     
     public Class8870(final ViperDisabler field37288, final IPacket<?> field37289, final long n) {

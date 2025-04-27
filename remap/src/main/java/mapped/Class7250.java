@@ -25,10 +25,10 @@ public class Class7250<T> extends AbstractIterator<T>
     
     public T computeNext() {
         while (this.field28111.hasNext() && this.field28112.hasNext()) {
-            final int compare = this.field28113.compare((T)this.field28111.peek(), (T)this.field28112.peek());
+            final int compare = this.field28113.compare(this.field28111.peek(), this.field28112.peek());
             if (compare == 0) {
                 this.field28112.next();
-                return (T)this.field28111.next();
+                return this.field28111.next();
             }
             if (compare >= 0) {
                 this.field28112.next();
@@ -37,6 +37,6 @@ public class Class7250<T> extends AbstractIterator<T>
                 this.field28111.next();
             }
         }
-        return (T)this.endOfData();
+        return this.endOfData();
     }
 }

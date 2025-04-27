@@ -12,9 +12,9 @@ public class Class4199 implements Class4198, Class4200
     private static final int[] field18919;
     private static final float[] field18920;
     private static final float field18921 = 1.0E-12f;
-    private float[][] field18922;
-    private float[][] field18923;
-    private float[][] field18924;
+    private final float[][] field18922;
+    private final float[][] field18923;
+    private final float[][] field18924;
     
     public Class4199() {
         this.field18922 = new float[5][49];

@@ -24,7 +24,7 @@ public class Class2521 extends Class2466
             if (jsonObject.has("favicon")) {
                 jsonObject.addProperty("favicon", jsonObject.get("favicon").getAsString().replace("\n", ""));
             }
-            class8699.method29821(Class5260.field22308, 0, Class8557.method28750().toJson((JsonElement)jsonObject));
+            class8699.method29821(Class5260.field22308, 0, Class8557.method28750().toJson(jsonObject));
         }
         catch (final JsonParseException ex) {
             ex.printStackTrace();

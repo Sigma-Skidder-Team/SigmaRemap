@@ -35,9 +35,7 @@ public class Class3616 extends Class3446
         final BlockPos method5003 = this.field16812.method5003();
         if (!new BlockPos(method5003.getX(), this.field16812.getPosY(), method5003.getZ()).withinDistance(this.field16812.method1934(), 4.0)) {
             if (!this.field16813) {
-                if (this.field16812.getAir() >= 100) {
-                    return true;
-                }
+                return this.field16812.getAir() >= 100;
             }
         }
         return false;

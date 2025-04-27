@@ -20,7 +20,7 @@ public class Class9019
     
     public void method32307(final String s, final int n) {
         Realms.method25369(true);
-        Realms.narrateNow(Realms.method25379("mco.connect.success", new Object[0]));
+        Realms.narrateNow(Realms.method25379("mco.connect.success"));
         new Class921(this, "Realms-connect-task", s, n).start();
     }
     
@@ -28,7 +28,7 @@ public class Class9019
         this.field38059 = true;
         if (this.field38060 != null) {
             if (this.field38060.method11187()) {
-                this.field38060.method11181(new Class2259("disconnect.genericReason", new Object[0]));
+                this.field38060.method11181(new Class2259("disconnect.genericReason"));
                 this.field38060.method11193();
             }
         }

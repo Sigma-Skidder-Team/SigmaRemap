@@ -9,8 +9,8 @@ import net.minecraft.util.math.Vec3d;
 public class Class5745 extends Class5714
 {
     private static String[] field23331;
-    private double field23332;
-    private Vec3d field23333;
+    private final double field23332;
+    private final Vec3d field23333;
     
     public Class5745(final double field23332, final Vec3d field23333) {
         this.field23332 = field23332;

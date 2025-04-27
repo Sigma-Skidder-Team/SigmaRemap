@@ -32,7 +32,7 @@ public class Class118 implements Predicate<Class7990>
             return false;
         }
         for (final IProperty class7991 : this.field367) {
-            if (((StateHolder<Object, Object>)method26065).get((IProperty<Comparable>)class7991) == this.field366.get((IProperty<Comparable>)class7991)) {
+            if (method26065.get((IProperty<Comparable>)class7991) == this.field366.get((IProperty<Comparable>)class7991)) {
                 continue;
             }
             return false;

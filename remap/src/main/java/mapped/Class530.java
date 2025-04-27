@@ -24,11 +24,11 @@ public class Class530 extends Screen
     
     public Class530(final Screen field3168) {
         super(NarratorChatListener.EMPTY);
-        this.field3169 = new Class2259("multiplayerWarning.header", new Object[0]).applyTextStyle(TextFormatting.BOLD);
-        this.field3170 = new Class2259("multiplayerWarning.message", new Object[0]);
-        this.field3171 = new Class2259("multiplayerWarning.check", new Object[0]);
-        this.field3172 = new Class2259("gui.proceed", new Object[0]);
-        this.field3173 = new Class2259("gui.back", new Object[0]);
+        this.field3169 = new Class2259("multiplayerWarning.header").applyTextStyle(TextFormatting.BOLD);
+        this.field3170 = new Class2259("multiplayerWarning.message");
+        this.field3171 = new Class2259("multiplayerWarning.check");
+        this.field3172 = new Class2259("gui.proceed");
+        this.field3173 = new Class2259("gui.back");
         this.field3175 = Lists.newArrayList();
         this.field3168 = field3168;
     }

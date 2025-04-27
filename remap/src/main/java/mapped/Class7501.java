@@ -25,7 +25,7 @@ public abstract class Class7501<M extends Class7501<M>>
     public abstract M method23390();
     
     public void method23394(final long n) {
-        this.field29076.put(n, (Object)((Class7281)this.field29076.get(n)).method22328());
+        this.field29076.put(n, (Object) this.field29076.get(n).method22328());
         this.method23399();
     }
     
@@ -42,7 +42,7 @@ public abstract class Class7501<M extends Class7501<M>>
                 }
             }
         }
-        final Class7281 class7281 = (Class7281)this.field29076.get(n);
+        final Class7281 class7281 = this.field29076.get(n);
         if (class7281 != null) {
             if (this.field29075) {
                 for (int j = 1; j > 0; --j) {
@@ -59,7 +59,7 @@ public abstract class Class7501<M extends Class7501<M>>
     
     @Nullable
     public Class7281 method23397(final long n) {
-        return (Class7281)this.field29076.remove(n);
+        return this.field29076.remove(n);
     }
     
     public void method23398(final long n, final Class7281 class7281) {

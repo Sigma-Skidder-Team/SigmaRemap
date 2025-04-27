@@ -18,20 +18,20 @@ public class Class702 extends Class698
     private Class673 field3866;
     
     public Class702(final Screen field3862) {
-        super(new StringTextComponent(Class8822.method30773("of.options.capeOF.title", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.capeOF.title")));
         this.field3862 = field3862;
     }
     
     @Override
     public void init() {
-        final int n = 0 + 2;
-        this.addButton(new Class673(210, this.width / 2 - 155, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.openEditor", new Object[0])));
-        this.addButton(new Class673(220, this.width / 2 - 155 + 160, this.height / 6 + 24 * (n >> 1), 150, 20, Class8822.method30773("of.options.capeOF.reloadCape", new Object[0])));
+        final int n = 2;
+        this.addButton(new Class673(210, this.width / 2 - 155, this.height / 6 + 24, 150, 20, Class8822.method30773("of.options.capeOF.openEditor")));
+        this.addButton(new Class673(220, this.width / 2 - 155 + 160, this.height / 6 + 24, 150, 20, Class8822.method30773("of.options.capeOF.reloadCape")));
         final int n2 = n + 6;
-        this.field3866 = new Class673(230, this.width / 2 - 100, this.height / 6 + 24 * (n2 >> 1), 200, 20, Class8822.method30773("of.options.capeOF.copyEditorLink", new Object[0]));
+        this.field3866 = new Class673(230, this.width / 2 - 100, this.height / 6 + 24 * (n2 >> 1), 200, 20, Class8822.method30773("of.options.capeOF.copyEditorLink"));
         this.field3866.field3432 = (this.field3865 != null);
         this.addButton(this.field3866);
-        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 24 * (n2 + 4 >> 1), Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 24 * (n2 + 4 >> 1), Class8822.method30773("gui.done")));
     }
     
     @Override
@@ -59,7 +59,7 @@ public class Class702 extends Class698
                         }
                     }
                     catch (final InvalidCredentialsException ex) {
-                        Config.method28996(Class8822.method30773("of.message.capeOF.error1", new Object[0]), Class8822.method30773("of.message.capeOF.error2", ex.getMessage()));
+                        Config.method28996(Class8822.method30773("of.message.capeOF.error1"), Class8822.method30773("of.message.capeOF.error2", ex.getMessage()));
                         Config.warn("Mojang authentication failed");
                         Config.warn(ex.getClass().getName() + ": " + ex.getMessage());
                     }

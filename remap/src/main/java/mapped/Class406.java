@@ -102,10 +102,9 @@ public class Class406 extends Entity implements Class407, Class401
                 this.dataManager.get(Class406.field2495).ifPresent(n2 -> {
                     this.world.getEntityByID(n2);
                     final LivingEntity class511;
-                    if (!(!(class511 instanceof LivingEntity))) {
+                    if (class511 instanceof LivingEntity) {
                         this.field2499 = class511;
                     }
-                    return;
                 });
             }
             if (this.field2499 != null) {
@@ -122,8 +121,8 @@ public class Class406 extends Entity implements Class407, Class401
         final RayTraceResult method1794 = Class7476.method23093(this, this.getBoundingBox().expand(method1793).intersect(1.0), class512 -> {
             final boolean b;
             if (!class512.isSpectator()) {
-                if (!(!class512.isAlive())) {
-                    if (!(!class512.method1749())) {
+                if (class512.isAlive()) {
+                    if (class512.method1749()) {
                         return b;
                     }
                 }

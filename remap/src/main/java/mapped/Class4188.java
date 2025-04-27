@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Class4188 extends Class4176 implements Class4178
 {
     private Class2094 field18730;
-    private boolean[] field18731;
+    private final boolean[] field18731;
     private boolean field18732;
     public Class4192 field18733;
     public Class4192 field18734;

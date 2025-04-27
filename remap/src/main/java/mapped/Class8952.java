@@ -102,7 +102,7 @@ public class Class8952
                 read = ImageIO.read(input);
             }
             finally {
-                IOUtils.closeQuietly((InputStream)input);
+                IOUtils.closeQuietly(input);
             }
             width = read.getWidth();
             height = read.getHeight();

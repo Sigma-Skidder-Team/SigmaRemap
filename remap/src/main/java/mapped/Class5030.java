@@ -33,7 +33,7 @@ public class Class5030 implements Class5027
     
     public Class5030(final long field21574, final IntSupplier field21575, final boolean field21576) {
         this.field21570 = Lists.newArrayList();
-        this.field21571 = (LongList)new LongArrayList();
+        this.field21571 = new LongArrayList();
         this.field21572 = Maps.newHashMap();
         this.field21576 = "";
         this.field21574 = field21574;
@@ -61,7 +61,7 @@ public class Class5030 implements Class5027
             this.endSection();
             this.field21577 = false;
             if (!this.field21576.isEmpty()) {
-                Class5030.field21569.error("Profiler tick ended before path was fully popped (remainder: '{}'). Mismatched push/pop?", new Supplier[] { () -> Class5756.method17107(this.field21576) });
+                Class5030.field21569.error("Profiler tick ended before path was fully popped (remainder: '{}'). Mismatched push/pop?", () -> Class5756.method17107(this.field21576));
             }
         }
         else {
@@ -81,7 +81,7 @@ public class Class5030 implements Class5027
             this.field21578 = null;
         }
         else {
-            Class5030.field21569.error("Cannot push '{}' to profiler if profiler tick hasn't started - missing startTick()?", (Object)str);
+            Class5030.field21569.error("Cannot push '{}' to profiler if profiler tick hasn't started - missing startTick()?", str);
         }
     }
     
@@ -103,7 +103,7 @@ public class Class5030 implements Class5027
                 Class7002.method21443(method27839, 1L);
                 if (this.field21579) {
                     if (n > Class5030.field21568) {
-                        Class5030.field21569.warn("Something's taking too long! '{}' took aprox {} ms", new Supplier[] { () -> Class5756.method17107(this.field21576), () -> n / 1000000.0 });
+                        Class5030.field21569.warn("Something's taking too long! '{}' took aprox {} ms", () -> Class5756.method17107(this.field21576), () -> n / 1000000.0);
                     }
                 }
                 this.field21576 = (this.field21570.isEmpty() ? "" : this.field21570.get(this.field21570.size() - 1));

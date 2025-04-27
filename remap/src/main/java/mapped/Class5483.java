@@ -50,7 +50,7 @@ public final class Class5483 extends Class5479
     public String toString() {
         for (int i = 0; i < this.field22763.length; ++i) {
             if (this.method16733(i).equals(this.field22750)) {
-                return this.field22763[i][0].toString();
+                return this.field22763[i][0];
             }
         }
         return "";

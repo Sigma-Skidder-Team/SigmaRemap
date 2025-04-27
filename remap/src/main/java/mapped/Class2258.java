@@ -46,9 +46,7 @@ public class Class2258 extends Class2255
             final Class2258 class2258 = (Class2258)o;
             if (Objects.equals(this.field13808, class2258.field13808)) {
                 if (Objects.equals(this.field13802, class2258.field13802)) {
-                    if (super.equals(o)) {
-                        return true;
-                    }
+                    return super.equals(o);
                 }
             }
             return false;

@@ -40,7 +40,7 @@ public abstract class Class4654
     }
     
     public Class6772 method13919(final int n, final int n2, final int n3) {
-        return (Class6772)this.field20142.computeIfAbsent(Class6772.method20666(n, n2, n3), p3 -> new Class6772(n4, n6, n7));
+        return this.field20142.computeIfAbsent(Class6772.method20666(n, n2, n3), p3 -> new Class6772(n4, n6, n7));
     }
     
     public abstract Class6772 method13902();

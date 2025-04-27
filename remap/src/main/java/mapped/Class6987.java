@@ -17,12 +17,12 @@ public class Class6987 implements Class6988, Class6991
     private final List<Class6991> field27280;
     
     public Class6987() {
-        this(Class6987.field27279.sortedCopy((Iterable) Minecraft.getInstance().method5269().method17370()));
+        this(Class6987.field27279.sortedCopy(Minecraft.getInstance().method5269().method17370()));
     }
     
     public Class6987(final Collection<Class9081> collection) {
         this.field27280 = Lists.newArrayList();
-        for (final Class9081 class9081 : Class6987.field27279.sortedCopy((Iterable)collection)) {
+        for (final Class9081 class9081 : Class6987.field27279.sortedCopy(collection)) {
             if (class9081.method32720() == Class101.field301) {
                 continue;
             }
@@ -37,7 +37,7 @@ public class Class6987 implements Class6988, Class6991
     
     @Override
     public ITextComponent method21401() {
-        return new Class2259("spectatorMenu.teleport.prompt", new Object[0]);
+        return new Class2259("spectatorMenu.teleport.prompt");
     }
     
     @Override
@@ -47,7 +47,7 @@ public class Class6987 implements Class6988, Class6991
     
     @Override
     public ITextComponent method21403() {
-        return new Class2259("spectatorMenu.teleport", new Object[0]);
+        return new Class2259("spectatorMenu.teleport");
     }
     
     @Override
@@ -62,6 +62,6 @@ public class Class6987 implements Class6988, Class6991
     }
     
     static {
-        field27279 = Ordering.from((class9081, class9082) -> ComparisonChain.start().compare((Comparable)class9081.method32719().getId(), (Comparable)class9082.method32719().getId()).result());
+        field27279 = Ordering.from((class9081, class9082) -> ComparisonChain.start().compare(class9081.method32719().getId(), class9082.method32719().getId()).result());
     }
 }

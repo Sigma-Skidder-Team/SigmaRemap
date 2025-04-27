@@ -11,7 +11,7 @@ public class Class2411 implements Serializable
 {
     private static String[] field14274;
     private static final long field14275 = 1L;
-    private ArrayList field14276;
+    private final ArrayList field14276;
     
     public Class2411() {
         this.field14276 = new ArrayList();

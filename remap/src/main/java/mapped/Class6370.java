@@ -42,7 +42,7 @@ public class Class6370 extends Class6369
     public void method19015(final Class7790 class7790) {
         super.method19015(class7790);
         for (int i = 0; i < this.field25475.length - 1; ++i) {
-            if (ArrayUtils.isEmpty((Object[])this.field25475[i].field25473)) {
+            if (ArrayUtils.isEmpty(this.field25475[i].field25473)) {
                 class7790.method25014("Unreachable entry!");
             }
         }

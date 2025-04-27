@@ -11,7 +11,7 @@ public class Class7889
     public static Class1989 method25541(final int i) {
         final Optional<Class1989> method8004 = Class1989.method8004(i);
         if (method8004.isPresent()) {
-            return (Class1989)method8004.get();
+            return method8004.get();
         }
         Class8563.method28793().method34742().severe("Could not find type id " + i);
         return Class1989.field10999;

@@ -10,7 +10,7 @@ public class Class6945 implements Class6943
 {
     private Class7363 field27199;
     private Class field27200;
-    private int field27201;
+    private final int field27201;
     
     public Class6945(final Class7363 class7363, final Class clazz) {
         this(class7363, clazz, 0);

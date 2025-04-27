@@ -171,7 +171,7 @@ public class Class525 extends Class517<Class3434>
                 this.field3077.method10879((class6601 != null) ? class6601.field26174 : n, n2, class6602, this.minecraft.player);
                 if (Class3418.method10890(n2) != 2) {
                     if (class6601 != null) {
-                        this.minecraft.playerController.method27327(this.field3077.getSlot(class6601.field26174).method20053(), class6601.field26174 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
+                        this.minecraft.playerController.method27327(this.field3077.getSlot(class6601.field26174).method20053(), class6601.field26174 - this.field3077.field16151.size() + 9 + 36);
                         final int n3 = 45 + n2;
                         if (class6602 != Class2133.field12439) {
                             if (class6602 == Class2133.field12441) {
@@ -184,7 +184,7 @@ public class Class525 extends Class517<Class3434>
                             }
                         }
                         else {
-                            this.minecraft.playerController.method27327(class6603, n3 - ((Class3434)this.field3077).field16151.size() + 9 + 36);
+                            this.minecraft.playerController.method27327(class6603, n3 - this.field3077.field16151.size() + 9 + 36);
                         }
                         this.minecraft.player.container.method10876();
                     }
@@ -247,7 +247,7 @@ public class Class525 extends Class517<Class3434>
         else {
             super.init();
             this.minecraft.field4651.method22505(true);
-            (this.field3127 = new Class576(this.font, this.field3079 + 82, this.field3080 + 6, 80, 9, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
+            (this.field3127 = new Class576(this.font, this.field3079 + 82, this.field3080 + 6, 80, 9, Class8822.method30773("itemGroup.search"))).method3397(50);
             this.field3127.method3401(false);
             this.field3127.method3410(false);
             this.field3127.method3402(16777215);
@@ -340,7 +340,7 @@ public class Class525 extends Class517<Class3434>
     }
     
     private void method3008() {
-        ((Class3434)this.field3077).field16225.clear();
+        this.field3077.field16225.clear();
         this.field3133.clear();
         String s = this.field3127.method3378();
         if (!s.isEmpty()) {
@@ -353,16 +353,16 @@ public class Class525 extends Class517<Class3434>
                 class8924 = this.minecraft.method5309(Class1659.field9376);
                 this.method3009(s);
             }
-            ((Class3434)this.field3077).field16225.addAll((Collection<?>)class8924.method31456(s.toLowerCase(Locale.ROOT)));
+            this.field3077.field16225.addAll((Collection<?>)class8924.method31456(s.toLowerCase(Locale.ROOT)));
         }
         else {
             final Iterator<Object> iterator = Registry.field211.iterator();
             while (iterator.hasNext()) {
-                iterator.next().method11735(Class7207.field27998, ((Class3434)this.field3077).field16225);
+                iterator.next().method11735(Class7207.field27998, this.field3077.field16225);
             }
         }
         this.field3125 = 0.0f;
-        ((Class3434)this.field3077).method10957(0.0f);
+        this.field3077.method10957(0.0f);
     }
     
     private void method3009(final String s3) {
@@ -388,7 +388,7 @@ public class Class525 extends Class517<Class3434>
         final Class7207 class7207 = Class7207.field27992[Class525.field3124];
         if (class7207.method22116()) {
             RenderSystem.disableBlend();
-            this.font.method6610(Class8822.method30773(class7207.method22111(), new Object[0]), 8.0f, 6.0f, 4210752);
+            this.font.method6610(Class8822.method30773(class7207.method22111()), 8.0f, 6.0f, 4210752);
         }
     }
     
@@ -432,9 +432,7 @@ public class Class525 extends Class517<Class3434>
     private boolean method3010() {
         if (Class525.field3124 != Class7207.field28005.method22108()) {
             if (Class7207.field27992[Class525.field3124].method22118()) {
-                if (((Class3434)this.field3077).method10958()) {
-                    return true;
-                }
+                return this.field3077.method10958();
             }
         }
         return false;
@@ -444,10 +442,10 @@ public class Class525 extends Class517<Class3434>
         final int field3124 = Class525.field3124;
         Class525.field3124 = class7207.method22108();
         this.field3092.clear();
-        ((Class3434)this.field3077).field16225.clear();
+        this.field3077.field16225.clear();
         if (class7207 != Class7207.field28004) {
             if (class7207 != Class7207.field27998) {
-                class7207.method22126(((Class3434)this.field3077).field16225);
+                class7207.method22126(this.field3077.field16225);
             }
         }
         else {
@@ -455,18 +453,18 @@ public class Class525 extends Class517<Class3434>
             for (int i = 0; i < 9; ++i) {
                 final Class2262 method5322 = method5321.method29483(i);
                 if (!method5322.isEmpty()) {
-                    ((Class3434)this.field3077).field16225.addAll((Collection<?>)method5322);
+                    this.field3077.field16225.addAll((Collection<?>)method5322);
                 }
                 else {
                     for (int j = 0; j < 9; ++j) {
                         if (j != i) {
-                            ((Class3434)this.field3077).field16225.add(ItemStack.EMPTY);
+                            this.field3077.field16225.add(ItemStack.EMPTY);
                         }
                         else {
                             final ItemStack e = new ItemStack(Items.field31369);
                             e.method27659("CustomCreativeLock");
-                            e.method27665(new Class2259("inventory.hotbarInfo", new Object[] { this.minecraft.gameSettings.field23458.method1068(), this.minecraft.gameSettings.field23457[i].method1068() }));
-                            ((Class3434)this.field3077).field16225.add(e);
+                            e.method27665(new Class2259("inventory.hotbarInfo", this.minecraft.gameSettings.field23458.method1068(), this.minecraft.gameSettings.field23457[i].method1068()));
+                            this.field3077.field16225.add(e);
                         }
                     }
                 }
@@ -474,17 +472,17 @@ public class Class525 extends Class517<Class3434>
         }
         if (class7207 != Class7207.field28005) {
             if (field3124 == Class7207.field28005.method22108()) {
-                ((Class3434)this.field3077).field16151.clear();
-                ((Class3434)this.field3077).field16151.addAll(this.field3128);
+                this.field3077.field16151.clear();
+                this.field3077.field16151.addAll(this.field3128);
                 this.field3128 = null;
             }
         }
         else {
             final Class3427 field3125 = this.minecraft.player.container;
             if (this.field3128 == null) {
-                this.field3128 = (List<Class6601>)ImmutableList.copyOf((Collection)((Class3434)this.field3077).field16151);
+                this.field3128 = (List<Class6601>)ImmutableList.copyOf((Collection) this.field3077.field16151);
             }
-            ((Class3434)this.field3077).field16151.clear();
+            this.field3077.field16151.clear();
             for (int k = 0; k < field3125.field16151.size(); ++k) {
                 int n4;
                 int n5;
@@ -515,10 +513,10 @@ public class Class525 extends Class517<Class3434>
                     n4 = 35;
                     n5 = 20;
                 }
-                ((Class3434)this.field3077).field16151.add(new Class6604(field3125.field16151.get(k), k, n4, n5));
+                this.field3077.field16151.add(new Class6604(field3125.field16151.get(k), k, n4, n5));
             }
             this.field3129 = new Class6601(Class525.field3123, 0, 173, 112);
-            ((Class3434)this.field3077).field16151.add(this.field3129);
+            this.field3077.field16151.add(this.field3129);
         }
         if (this.field3127 != null) {
             if (class7207 != Class7207.field27998) {
@@ -538,15 +536,15 @@ public class Class525 extends Class517<Class3434>
             }
         }
         this.field3125 = 0.0f;
-        ((Class3434)this.field3077).method10957(0.0f);
+        this.field3077.method10957(0.0f);
     }
     
     @Override
     public boolean mouseScrolled(final double n, final double n2, final double n3) {
         if (this.method3010()) {
-            this.field3125 -= (float)(n3 / ((((Class3434)this.field3077).field16225.size() + 9 - 1) / 9 - 5));
+            this.field3125 -= (float)(n3 / ((this.field3077.field16225.size() + 9 - 1) / 9 - 5));
             this.field3125 = MathHelper.clamp(this.field3125, 0.0f, 1.0f);
-            ((Class3434)this.field3077).method10957(this.field3125);
+            this.field3077.method10957(this.field3125);
             return true;
         }
         return false;
@@ -578,9 +576,7 @@ public class Class525 extends Class517<Class3434>
         if (n >= n3) {
             if (n2 >= n4) {
                 if (n < n5) {
-                    if (n2 < n6) {
-                        return true;
-                    }
+                    return n2 < n6;
                 }
             }
         }
@@ -595,7 +591,7 @@ public class Class525 extends Class517<Class3434>
         final int n6 = this.field3080 + 18;
         this.field3125 = ((float)n2 - n6 - 7.5f) / (n6 + 112 - n6 - 15.0f);
         this.field3125 = MathHelper.clamp(this.field3125, 0.0f, 1.0f);
-        ((Class3434)this.field3077).method10957(this.field3125);
+        this.field3077.method10957(this.field3125);
         return true;
     }
     
@@ -608,7 +604,7 @@ public class Class525 extends Class517<Class3434>
         if (this.field3129 != null) {
             if (Class525.field3124 == Class7207.field28005.method22108()) {
                 if (this.method2987(this.field3129.field26175, this.field3129.field26176, 16, 16, n, n2)) {
-                    this.renderTooltip(Class8822.method30773("inventory.binSlot", new Object[0]), n, n2);
+                    this.renderTooltip(Class8822.method30773("inventory.binSlot"), n, n2);
                 }
             }
         }
@@ -645,13 +641,12 @@ public class Class525 extends Class517<Class3434>
                 }
             }
             this.field3133.forEach((obj, class8325) -> {
-                if (!(!class8325.method25618(class8324))) {
+                if (class8325.method25618(class8324)) {
                     list.add(1, "" + TextFormatting.BOLD + TextFormatting.DARK_PURPLE + "#" + obj);
                 }
-                return;
             });
             if (method27670 != null) {
-                arrayListWithCapacity.add(1, "" + TextFormatting.BOLD + TextFormatting.BLUE + Class8822.method30773(method27670.method22111(), new Object[0]));
+                arrayListWithCapacity.add(1, "" + TextFormatting.BOLD + TextFormatting.BLUE + Class8822.method30773(method27670.method22111()));
             }
             for (int j = 0; j < arrayListWithCapacity.size(); ++j) {
                 if (j != 0) {
@@ -714,9 +709,7 @@ public class Class525 extends Class517<Class3434>
         if (n >= n3) {
             if (n <= n3 + 28) {
                 if (n2 >= n5) {
-                    if (n2 <= n5 + 32) {
-                        return true;
-                    }
+                    return n2 <= n5 + 32;
                 }
             }
         }
@@ -745,7 +738,7 @@ public class Class525 extends Class517<Class3434>
         if (!this.method2987(n3 + 3, n5 + 3, 23, 27, n, n2)) {
             return false;
         }
-        this.renderTooltip(Class8822.method30773(class7207.method22111(), new Object[0]), n, n2);
+        this.renderTooltip(Class8822.method30773(class7207.method22111()), n, n2);
         return true;
     }
     
@@ -800,15 +793,15 @@ public class Class525 extends Class517<Class3434>
         if (!b) {
             if (b2) {
                 for (int i = 0; i < Class464.method2346(); ++i) {
-                    method5322.set(i, (Object)field4684.inventory.getStackInSlot(i).method27641());
+                    method5322.set(i, field4684.inventory.getStackInSlot(i).method27641());
                 }
-                class869.field4647.method3805(new Class2259("inventory.hotbarSaved", new Object[] { class869.gameSettings.field23459.method1068(), class869.gameSettings.field23457[n].method1068() }), false);
+                class869.field4647.method3805(new Class2259("inventory.hotbarSaved", class869.gameSettings.field23459.method1068(), class869.gameSettings.field23457[n].method1068()), false);
                 method5321.method29482();
             }
         }
         else {
             for (int j = 0; j < Class464.method2346(); ++j) {
-                final ItemStack method5323 = ((ItemStack)method5322.get(j)).method27641();
+                final ItemStack method5323 = method5322.get(j).method27641();
                 field4684.inventory.method2160(j, method5323);
                 class869.playerController.method27327(method5323, 36 + j);
             }

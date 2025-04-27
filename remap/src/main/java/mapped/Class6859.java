@@ -23,7 +23,7 @@ public class Class6859 extends Class6851<LivingEntity>
     
     @Override
     public void method20955(final Class1849 class1849, final LivingEntity class1850) {
-        final List<Entity> method6739 = class1849.method6739((Class<? extends Entity>) LivingEntity.class, class1850.getBoundingBox().grow(16.0, 16.0, 16.0), class1852 -> class1852 != class1851 && class1852.isAlive());
+        final List<Entity> method6739 = class1849.method6739(LivingEntity.class, class1850.getBoundingBox().grow(16.0, 16.0, 16.0), class1852 -> class1852 != class1851 && class1852.isAlive());
         method6739.sort(Comparator.comparingDouble((ToDoubleFunction<? super Entity>)class1850::method1734));
         final Class365<?> method6740 = class1850.method2618();
         method6740.method1196(Class8233.field33804, (List<LivingEntity>)method6739);
@@ -32,7 +32,7 @@ public class Class6859 extends Class6851<LivingEntity>
     
     @Override
     public Set<Class8233<?>> method20953() {
-        return (Set<Class8233<?>>)ImmutableSet.of((Object)Class8233.field33804, (Object)Class8233.field33805);
+        return (Set<Class8233<?>>)ImmutableSet.of(Class8233.field33804, (Object)Class8233.field33805);
     }
     
     static {

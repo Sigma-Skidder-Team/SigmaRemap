@@ -11,7 +11,7 @@ public class Class3549 extends Class3547
     private static String[] field16621;
     
     public Class3549(final Class828 class828) {
-        super(class828, (Class<?>[])new Class[0]);
+        super(class828, new Class[0]);
         this.method11100(Class827.class);
     }
     

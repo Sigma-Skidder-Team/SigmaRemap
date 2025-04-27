@@ -43,7 +43,7 @@ public class CompoundNBT implements INBT
                 while ((b0 = CompoundNBT.readType(p_225649_1_, p_225649_3_)) != 0)
                 {
                     String s = CompoundNBT.readKey(p_225649_1_, p_225649_3_);
-                    p_225649_3_.read((long)(224 + 16 * s.length()));
+                    p_225649_3_.read(224 + 16L * s.length());
                     INBT inbt = CompoundNBT.func_229680_b_(NBTTypes.func_229710_a_(b0), s, p_225649_1_, p_225649_2_ + 1, p_225649_3_);
 
                     if (map.put(s, inbt) != null)
@@ -201,9 +201,7 @@ public class CompoundNBT implements INBT
                     if (i != 3) {
                         if (i != 4) {
                             if (i != 5) {
-                                if (i != 6) {
-                                    return false;
-                                }
+                                return i == 6;
                             }
                         }
                     }
@@ -236,7 +234,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return 0;
@@ -253,7 +250,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return 0;
@@ -270,7 +266,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return 0L;
@@ -287,7 +282,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return 0.0F;
@@ -304,7 +298,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return 0.0D;
@@ -321,7 +314,6 @@ public class CompoundNBT implements INBT
         }
         catch (ClassCastException var3)
         {
-            ;
         }
 
         return "";

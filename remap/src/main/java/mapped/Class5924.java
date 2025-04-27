@@ -119,7 +119,7 @@ public class Class5924<T extends Class798> extends Class5844<T>
     
     @Override
     public Iterable<Class6300> method17559() {
-        return (Iterable<Class6300>)ImmutableList.of();
+        return ImmutableList.of();
     }
     
     @Override

@@ -58,7 +58,7 @@ public class Class8850
                 if (Class8850.field37207.method29175() > 0) {
                     final List<Class9591> method29179 = Class8850.field37207.method29179();
                     for (int i = 0; i < method29179.size(); ++i) {
-                        ((Class9591)method29179.get(i)).method35962(class1656);
+                        method29179.get(i).method35962(class1656);
                     }
                 }
             }
@@ -250,7 +250,7 @@ public class Class8850
         if (class399 == Config.method28894().method5303() && !Config.method29004()) {
             return 0;
         }
-        if (class399 instanceof PlayerEntity && ((PlayerEntity)class399).isSpectator()) {
+        if (class399 instanceof PlayerEntity && class399.isSpectator()) {
             return 0;
         }
         if (class399.method1804()) {
@@ -269,7 +269,7 @@ public class Class8850
             return 15;
         }
         if (class399 instanceof Class849) {
-            return ((Class849)class399).method1804() ? 15 : 10;
+            return class399.method1804() ? 15 : 10;
         }
         if (class399 instanceof Class854) {
             return (((Class854)class399).field4558 <= 0.6) ? 8 : 13;
@@ -291,7 +291,7 @@ public class Class8850
         synchronized (Class8850.field37207) {
             final List<Class9591> method29179 = Class8850.field37207.method29179();
             for (int i = 0; i < method29179.size(); ++i) {
-                ((Class9591)method29179.get(i)).method35965(class1656);
+                method29179.get(i).method35965(class1656);
             }
             Class8850.field37207.method29177();
         }

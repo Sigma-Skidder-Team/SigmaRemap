@@ -13,7 +13,7 @@ import org.lwjgl.opengl.GL11;
 public class Cords extends Module
 {
     private int field15924;
-    private Animation field15925;
+    private final Animation field15925;
     
     public Cords() {
         super(Category.GUI, "Cords", "Displays coordinates");

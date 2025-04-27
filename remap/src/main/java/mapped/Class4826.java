@@ -16,7 +16,7 @@ public class Class4826 extends Class4825
 {
     private static String[] field20591;
     private Class7971 field20647;
-    private List<Class4916> field20648;
+    private final List<Class4916> field20648;
     private float field20649;
     
     public Class4826(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {

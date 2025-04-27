@@ -50,9 +50,9 @@ public class Class8451
                                     if (!jsonElement2.getAsJsonPrimitive().isString()) {
                                         continue;
                                     }
-                                    jsonArray.add((JsonElement)new JsonPrimitive(Class8451.field34714.matcher(jsonElement2.getAsString()).replaceAll("")));
+                                    jsonArray.add(new JsonPrimitive(Class8451.field34714.matcher(jsonElement2.getAsString()).replaceAll("")));
                                 }
-                                jsonObject2.add("value", (JsonElement)jsonArray);
+                                jsonObject2.add("value", jsonArray);
                             }
                         }
                     }

@@ -31,7 +31,7 @@ public abstract class Class4950<T extends Class4950<T>> implements Class4944<T>
     }
     
     public Class4951 method14917(final Class4950<?> class4950) {
-        return new Class4951((Class4950<?>[])new Class4950[] { this, class4950 });
+        return new Class4951(new Class4950[] { this, class4950 });
     }
     
     public abstract Class6368 method14912();

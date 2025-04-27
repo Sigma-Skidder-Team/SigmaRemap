@@ -19,7 +19,7 @@ public class Class8577 implements Class8576
     private final double field36060;
     
     public Class8577(final Class2317 class2317, final int n, final int endInclusive) {
-        this(class2317, (IntSortedSet)new IntRBTreeSet(IntStream.rangeClosed(-n, endInclusive).toArray()));
+        this(class2317, new IntRBTreeSet(IntStream.rangeClosed(-n, endInclusive).toArray()));
     }
     
     public Class8577(final Class2317 class2317, final IntSortedSet set) {

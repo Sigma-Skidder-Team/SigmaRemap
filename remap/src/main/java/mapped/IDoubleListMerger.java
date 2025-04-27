@@ -12,7 +12,7 @@ public interface IDoubleListMerger
     
     boolean forMergedIndexes(final IConsumer p0);
 
-    public interface IConsumer
+    interface IConsumer
     {
         boolean merge(int p_merge_1_, int p_merge_2_, int p_merge_3_);
     }

@@ -13,10 +13,10 @@ import java.util.List;
 
 public class Class4854 extends Class4841
 {
-    private List<String> field20797;
+    private final List<String> field20797;
     private Class4817 field20798;
-    private TextField field20799;
-    private boolean field20800;
+    private final TextField field20799;
+    private final boolean field20800;
     
     public Class4854(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final boolean field20800, final String... array) {
         super(customGuiScreen, s, n, n2, n3, n4, false);

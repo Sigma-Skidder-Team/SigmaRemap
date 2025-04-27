@@ -42,16 +42,14 @@ public class Class7930 extends DamageSource
     public ITextComponent method25690(final LivingEntity class511) {
         final ItemStack class512 = (this.field32594 instanceof LivingEntity) ? ((LivingEntity)this.field32594).getHeldItemMainhand() : ItemStack.EMPTY;
         final String string = "death.attack." + this.field32593;
-        return (!class512.method27620() && class512.method27667()) ? new Class2259(string + ".item", new Object[] { class511.getDisplayName(), this.field32594.getDisplayName(), class512.method27684() }) : new Class2259(string, new Object[] { class511.getDisplayName(), this.field32594.getDisplayName() });
+        return (!class512.method27620() && class512.method27667()) ? new Class2259(string + ".item", class511.getDisplayName(), this.field32594.getDisplayName(), class512.method27684()) : new Class2259(string, class511.getDisplayName(), this.field32594.getDisplayName());
     }
     
     @Override
     public boolean method25722() {
         if (this.field32594 != null) {
             if (this.field32594 instanceof LivingEntity) {
-                if (!(this.field32594 instanceof PlayerEntity)) {
-                    return true;
-                }
+                return !(this.field32594 instanceof PlayerEntity);
             }
         }
         return false;

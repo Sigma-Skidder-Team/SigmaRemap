@@ -14,12 +14,12 @@ import org.apache.logging.log4j.Logger;
 
 public interface Class4150 extends Class4152
 {
-    public static final Logger field18475 = LogManager.getLogger();
-    public static final ThreadLocal<Class9145> field18506 = ThreadLocal.withInitial(() -> {
+    Logger field18475 = LogManager.getLogger();
+    ThreadLocal<Class9145> field18506 = ThreadLocal.withInitial(() -> {
         new Class9145(Blocks.AIR.getDefaultState(), new BlockPos(0, 0, 0));
         return;
     });
-    public static final boolean field18507 = Class9570.field41282.method22623();
+    boolean field18507 = Class9570.field41282.method22623();
     
     default Class9145 method12414(final BlockState class7096, final BlockPos class7097) {
         final Class9145 class7098 = Class4150.field18506.get();
@@ -95,7 +95,7 @@ public interface Class4150 extends Class4152
         final int method12442 = DefaultVertexFormats.field39607.method34193();
         for (int n11 = array3.length / method12442, i = 0; i < n11; ++i) {
             final int n12 = i * method12442;
-            final float intBitsToFloat = Float.intBitsToFloat(array3[n12 + 0]);
+            final float intBitsToFloat = Float.intBitsToFloat(array3[n12]);
             final float intBitsToFloat2 = Float.intBitsToFloat(array3[n12 + 1]);
             final float intBitsToFloat3 = Float.intBitsToFloat(array3[n12 + 2]);
             final float n13 = method12438 ? 1.0f : array[i];

@@ -42,14 +42,14 @@ public class Class7203
         final Stopwatch started = Stopwatch.createStarted();
         final Stopwatch unstarted = Stopwatch.createUnstarted();
         for (final Class3689 class8843 : this.field27987) {
-            Class7203.field27984.info("Starting provider: {}", (Object)class8843.method11338());
+            Class7203.field27984.info("Starting provider: {}", class8843.method11338());
             unstarted.start();
             class8843.method11337(class8842);
             unstarted.stop();
-            Class7203.field27984.info("{} finished after {} ms", (Object)class8843.method11338(), (Object)unstarted.elapsed(TimeUnit.MILLISECONDS));
+            Class7203.field27984.info("{} finished after {} ms", class8843.method11338(), unstarted.elapsed(TimeUnit.MILLISECONDS));
             unstarted.reset();
         }
-        Class7203.field27984.info("All providers took: {} ms", (Object)started.elapsed(TimeUnit.MILLISECONDS));
+        Class7203.field27984.info("All providers took: {} ms", started.elapsed(TimeUnit.MILLISECONDS));
         class8842.method30883();
     }
     

@@ -12,10 +12,10 @@ import java.util.Comparator;
 public class Class4449 implements Comparator<ChunkPos>
 {
     private static String[] field19789;
-    private int field19790;
-    private int field19791;
-    private double field19792;
-    private double field19793;
+    private final int field19790;
+    private final int field19791;
+    private final double field19792;
+    private final double field19793;
     
     public Class4449(final int field19790, final int field19791, final double field19792, final double a) {
         this.field19790 = field19790;

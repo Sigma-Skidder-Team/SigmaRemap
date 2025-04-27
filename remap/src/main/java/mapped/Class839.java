@@ -197,9 +197,7 @@ public class Class839 extends Class832
     public boolean method5000() {
         if (this.field4471 == 0.0f) {
             if (this.field4472 == 0.0f) {
-                if (this.field4473 == 0.0f) {
-                    return false;
-                }
+                return this.field4473 != 0.0f;
             }
         }
         return true;

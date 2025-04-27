@@ -14,7 +14,7 @@ public class Class731 extends Screen implements Class732
     private String field3986;
     private int field3987;
     private boolean field3988;
-    private Class9103 field3989;
+    private final Class9103 field3989;
     
     public Class731() {
         super(NarratorChatListener.EMPTY);
@@ -36,7 +36,7 @@ public class Class731 extends Screen implements Class732
     @Override
     public void method4037(final ITextComponent class2250) {
         this.field3985 = class2250.getFormattedText();
-        this.method4038(new Class2259("progress.working", new Object[0]));
+        this.method4038(new Class2259("progress.working"));
     }
     
     @Override

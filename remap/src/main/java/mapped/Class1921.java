@@ -29,7 +29,7 @@ public class Class1921 implements AutoCloseable
     @Nullable
     public static <T extends Class1921> T method7615(final String s, final boolean b, final Supplier<Class1727> supplier, final Class6712<T> class6712, final Class2043 class6713) {
         try (final Class1727 class6714 = supplier.get()) {
-            Class8545 field10443 = class6714.method6101((Class5092<Class8545>)Class8545.field35888);
+            Class8545 field10443 = class6714.method6101(Class8545.field35888);
             if (b && field10443 == null) {
                 Class1921.field10442.error("Broken/missing pack.mcmeta detected, fudging it into existance. Please check that your launcher has downloaded all assets for the game correctly!");
                 field10443 = Class1921.field10443;
@@ -37,11 +37,11 @@ public class Class1921 implements AutoCloseable
             if (field10443 != null) {
                 return class6712.method20389(s, b, supplier, class6714, field10443, class6713);
             }
-            Class1921.field10442.warn("Couldn't find pack meta for pack {}", (Object)s);
+            Class1921.field10442.warn("Couldn't find pack meta for pack {}", s);
             return null;
         }
         catch (final IOException ex) {
-            Class1921.field10442.warn("Couldn't get pack info for: {}", (Object)ex.toString());
+            Class1921.field10442.warn("Couldn't get pack info for: {}", ex.toString());
         }
         return null;
     }
@@ -119,6 +119,6 @@ public class Class1921 implements AutoCloseable
     
     static {
         field10442 = LogManager.getLogger();
-        field10443 = new Class8545(new Class2259("resourcePack.broken_assets", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC), Class9528.method35579().getPackVersion());
+        field10443 = new Class8545(new Class2259("resourcePack.broken_assets").applyTextStyles(TextFormatting.RED, TextFormatting.ITALIC), Class9528.method35579().getPackVersion());
     }
 }

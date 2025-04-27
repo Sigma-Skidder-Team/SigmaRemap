@@ -25,9 +25,7 @@ public class Class3623 extends Class3617
             if (!this.field16834.method4201()) {
                 if (this.method11162()) {
                     if (Class798.method4562(this.field16834, Class798.method4561(this.field16834))) {
-                        if (!Class798.method4550(this.field16834, Class798.method4561(this.field16834), 2)) {
-                            return true;
-                        }
+                        return !Class798.method4550(this.field16834, Class798.method4561(this.field16834), 2);
                     }
                 }
             }

@@ -128,7 +128,7 @@ public class Class2413 implements Serializable
     }
     
     private void method9665(final ObjectOutputStream objectOutputStream) throws IOException {
-        objectOutputStream.writeInt(this.field14284.keySet().size());
+        objectOutputStream.writeInt(this.field14284.size());
         for (final String obj : this.field14284.keySet()) {
             objectOutputStream.writeObject(obj);
             final Object value = this.field14284.get(obj);

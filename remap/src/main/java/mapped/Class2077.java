@@ -50,7 +50,7 @@ public enum Class2077
         return field12004;
     }
     
-    private Class2077(final int field12005, final int field12006, final int[] field12007, final int[] field12008) {
+    Class2077(final int field12005, final int field12006, final int[] field12007, final int[] field12008) {
         this.field12005 = field12005;
         this.field12006 = field12006;
         this.field12007 = field12007;

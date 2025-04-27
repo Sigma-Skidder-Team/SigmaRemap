@@ -67,8 +67,8 @@ public class Class3433 extends Class3418
                         int k = 0;
                         while (k <= 1) {
                             if (j != 0 || k != 0) {
-                                if (!(!class448.method6961(class449.add(k, 0, j)))) {
-                                    if (!(!class448.method6961(class449.add(k, 1, j)))) {
+                                if (class448.method6961(class449.add(k, 0, j))) {
+                                    if (class448.method6961(class449.add(k, 1, j))) {
                                         if (class448.getBlockState(class449.add(k * 2, 0, j * 2)).method21696() == Blocks.BOOKSHELF) {
                                             ++n;
                                         }
@@ -161,7 +161,7 @@ public class Class3433 extends Class3418
                         class514.method2873(class513, n4);
                         final boolean b = class513.method27622() == Items.field31370;
                         ItemStack class518 = null;
-                        if (!(!b)) {
+                        if (b) {
                             class518 = new ItemStack(Items.field31534);
                             this.field16217.method2160(0, class518);
                         }
@@ -178,12 +178,12 @@ public class Class3433 extends Class3418
                         }
                         if (!class514.field3025.field27304) {
                             class515.method27693(n4);
-                            if (!(!class515.method27620())) {
+                            if (class515.method27620()) {
                                 this.field16217.method2160(1, ItemStack.EMPTY);
                             }
                         }
                         class514.method2857(Class8276.field34039);
-                        if (!(!(class514 instanceof Class513))) {
+                        if (class514 instanceof Class513) {
                             Class7770.field31783.method13730((Class513)class514, class518, n4);
                         }
                         this.field16217.method2161();
@@ -191,7 +191,6 @@ public class Class3433 extends Class3418
                         this.method10855(this.field16217);
                         class516.method6705(null, class517, Class8520.field35150, Class286.field1582, 1.0f, class516.rand.nextFloat() * 0.1f + 0.9f);
                     }
-                    return;
                 });
                 return true;
             }

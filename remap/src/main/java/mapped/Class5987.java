@@ -20,7 +20,7 @@ public class Class5987 implements JsonDeserializer<Class7683>
     public Class7683 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         final ArrayList arrayList = Lists.newArrayList();
         if (!jsonElement.isJsonArray()) {
-            arrayList.add(jsonDeserializationContext.deserialize(jsonElement, (Type)Class2124.class));
+            arrayList.add(jsonDeserializationContext.deserialize(jsonElement, Class2124.class));
         }
         else {
             final JsonArray asJsonArray = jsonElement.getAsJsonArray();
@@ -29,7 +29,7 @@ public class Class5987 implements JsonDeserializer<Class7683>
             }
             final Iterator iterator = asJsonArray.iterator();
             while (iterator.hasNext()) {
-                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), (Type)Class2124.class));
+                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), Class2124.class));
             }
         }
         return new Class7683(arrayList);

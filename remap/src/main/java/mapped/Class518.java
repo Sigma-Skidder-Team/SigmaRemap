@@ -19,7 +19,7 @@ public class Class518 extends Class517<Class3427> implements Class519
     private boolean field3110;
     
     public Class518(final PlayerEntity playerEntity) {
-        super(playerEntity.container, playerEntity.inventory, new Class2259("container.crafting", new Object[0]));
+        super(playerEntity.container, playerEntity.inventory, new Class2259("container.crafting"));
         this.field3107 = new Class581();
         this.passEvents = true;
     }
@@ -39,7 +39,7 @@ public class Class518 extends Class517<Class3427> implements Class519
         if (!this.minecraft.playerController.method27332()) {
             super.init();
             this.field3109 = (this.width < 379);
-            this.field3107.method3415(this.width, this.height, this.minecraft, this.field3109, (Class3426<?>)this.field3077);
+            this.field3107.method3415(this.width, this.height, this.minecraft, this.field3109, this.field3077);
             this.field3108 = true;
             this.field3079 = this.field3107.method3419(this.field3109, this.width, this.field3075);
             this.children.add(this.field3107);
@@ -134,9 +134,7 @@ public class Class518 extends Class517<Class3427> implements Class519
     @Override
     public boolean method2987(final int n, final int n2, final int n3, final int n4, final double n5, final double n6) {
         if (!this.field3109 || !this.field3107.method3421()) {
-            if (super.method2987(n, n2, n3, n4, n5, n6)) {
-                return true;
-            }
+            return super.method2987(n, n2, n3, n4, n5, n6);
         }
         return false;
     }

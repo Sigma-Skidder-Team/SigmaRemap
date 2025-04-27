@@ -65,9 +65,7 @@ public class Class6357 extends Class6354
                     if (class776.isAlive()) {
                         if (class776.method4288()) {
                             if (class776.method2640() <= 2400) {
-                                if (class776.world.method6789().getType() == class777.method30624().method6789().getType()) {
-                                    return true;
-                                }
+                                return class776.world.method6789().getType() == class777.method30624().method6789().getType();
                             }
                         }
                     }
@@ -159,7 +157,7 @@ public class Class6357 extends Class6354
         for (final Class8792 class53 : this.field25433.values()) {
             final CompoundNBT e = new CompoundNBT();
             class53.method30664(e);
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         class51.put("Raids", class52);
         return class51;

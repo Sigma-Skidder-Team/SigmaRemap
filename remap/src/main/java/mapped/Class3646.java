@@ -13,9 +13,9 @@ public class Class3646 extends Class3643
 {
     private static String[] field16918;
     private static final Class222[] field16919;
-    private int field16920;
-    private Set<Integer> field16921;
-    private Map<Class222, Integer> field16922;
+    private final int field16920;
+    private final Set<Integer> field16921;
+    private final Map<Class222, Integer> field16922;
     
     public Class3646(final String s) {
         this.field16921 = new HashSet<Integer>();

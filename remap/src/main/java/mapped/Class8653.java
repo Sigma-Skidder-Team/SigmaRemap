@@ -41,7 +41,7 @@ public class Class8653
             }
         }
         catch (final Exception ex) {
-            Class8653.field36323.error("Failed to load creative mode options", (Throwable)ex);
+            Class8653.field36323.error("Failed to load creative mode options", ex);
         }
     }
     
@@ -55,7 +55,7 @@ public class Class8653
             Class8097.method26593(class51, this.field36324);
         }
         catch (final Exception ex) {
-            Class8653.field36323.error("Failed to save creative mode options", (Throwable)ex);
+            Class8653.field36323.error("Failed to save creative mode options", ex);
         }
     }
     

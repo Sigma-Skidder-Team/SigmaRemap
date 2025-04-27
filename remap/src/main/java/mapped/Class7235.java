@@ -34,7 +34,7 @@ public class Class7235
         if (method778 != null) {
             return method22137(Class7235.field28048.get(key).method34323(method778).method34323(Class7235.field28047.get(method777)));
         }
-        Class7235.field28046.warn((String)supplier.get());
+        Class7235.field28046.warn(supplier.get());
         return new TransformationMatrix(null, null, new Vector3f(0.0f, 0.0f, 0.0f), null);
     }
     
@@ -82,7 +82,6 @@ public class Class7235
             new TransformationMatrix(class9146, class9147, null, null);
             final TransformationMatrix value5;
             enumMap.put(field28053, value5);
-            return;
         });
         field28048 = Util.method27851(Maps.newEnumMap((Class) Direction.class), enumMap2 -> {
             Direction.values();

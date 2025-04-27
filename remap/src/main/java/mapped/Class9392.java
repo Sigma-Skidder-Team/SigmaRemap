@@ -75,10 +75,10 @@ public class Class9392
                             }
                             case 4: {
                                 if (method999.method1003() == Class1972.field10833) {
-                                    class7276.method22299((int)method1000);
+                                    class7276.method22299(method1000);
                                 }
                                 if (method999.method1003() == Class1972.field10834) {
-                                    class7276.method22299((int)method1000);
+                                    class7276.method22299(method1000);
                                 }
                                 if (method999.method1003() == Class1972.field10835) {
                                     class7276.method22299(method1000);

@@ -26,7 +26,7 @@ public final class Class9170
     
     public static Predicate<Entity> method33474(final Entity class399) {
         final Team method1825 = class399.getTeam();
-        return (Predicate<Entity>)((((method1825 != null) ? method1825.method20558() : Class343.field2112) != Class343.field2113) ? Class9170.field38850.and(class403 -> {
+        return (((method1825 != null) ? method1825.method20558() : Class343.field2112) != Class343.field2113) ? Class9170.field38850.and(class403 -> {
             if (class403.method1750()) {
                 if (class400.field2391.field10067 && (class403 instanceof PlayerEntity && ((PlayerEntity)class403).method2843())) {
                     return false;
@@ -38,7 +38,7 @@ public final class Class9170
                     if (class404 != Class343.field2113) {
                         final boolean b = class401 != null && class401.method20565(class405);
                         if (class402 == Class343.field2115 || class404 == Class343.field2115) {
-                            if (!(!b)) {
+                            if (b) {
                                 return false;
                             }
                         }
@@ -52,7 +52,7 @@ public final class Class9170
             else {
                 return false;
             }
-        }) : Predicates.alwaysFalse());
+        }) : Predicates.alwaysFalse();
     }
     
     public static Predicate<Entity> method33475(final Entity class399) {
@@ -72,7 +72,7 @@ public final class Class9170
         field38846 = LivingEntity::isAlive;
         field38847 = (class399 -> {
             final boolean b;
-            if (!(!class399.isAlive())) {
+            if (class399.isAlive()) {
                 if (!class399.isBeingRidden()) {
                     if (!class399.isPassenger()) {
                         return b;

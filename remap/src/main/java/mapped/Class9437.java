@@ -48,7 +48,7 @@ public class Class9437 implements ArgumentType<DimensionType>
     static {
         field40467 = Stream.of(new DimensionType[] { DimensionType.field2223, DimensionType.field2224 }).map(class383 -> DimensionType.method1276(class383).toString()).collect((Collector<? super Object, ?, Collection<String>>)Collectors.toList());
         field40468 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.dimension.invalid", new Object[] { o });
+            new Class2259("argument.dimension.invalid", o);
             return;
         });
     }

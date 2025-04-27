@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.io.OutputStream;
 import java.io.IOException;
@@ -62,6 +63,6 @@ public class Class919 extends Thread
     }
     
     static {
-        Class919.field4895 = Charset.forName("ASCII");
+        Class919.field4895 = StandardCharsets.US_ASCII;
     }
 }

@@ -269,7 +269,6 @@ public class Class7969
             hashMap.put(Blocks.HONEY_BLOCK, value3);
             hashMap.put(Blocks.FROSTED_ICE, value3);
             hashMap.put(Blocks.BUBBLE_COLUMN, value3);
-            return;
         });
         field32748 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             Class6332.method18765();

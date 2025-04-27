@@ -31,7 +31,7 @@ public class Class8738 extends DataFix
             }
             final Optional streamOpt = dynamic.get("SpawnPotentials").asStreamOpt();
             if (streamOpt.isPresent()) {
-                dynamic = dynamic.set("SpawnPotentials", dynamic.createList((Stream)((Stream)streamOpt.get()).map(dynamic3 -> {
+                dynamic = dynamic.set("SpawnPotentials", dynamic.createList(((Stream)streamOpt.get()).map(dynamic3 -> {
                     dynamic3.get("Type").asString();
                     final Optional optional;
                     if (!optional.isPresent()) {
@@ -42,14 +42,14 @@ public class Class8738 extends DataFix
                     }
                 })));
             }
-            return (Dynamic<?>)dynamic;
+            return dynamic;
         }
-        return (Dynamic<?>)dynamic;
+        return dynamic;
     }
     
     public TypeRewriteRule makeRule() {
         return this.fixTypeEverywhereTyped("MobSpawnerEntityIdentifiersFix", this.getInputSchema().getType(Class9451.field40629), this.getOutputSchema().getType(Class9451.field40629), typed -> {
-            final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+            final Dynamic dynamic = typed.get(DSL.remainderFinder());
             type.readTyped((Dynamic)this.method30185((Dynamic<?>)dynamic.set("id", dynamic.createString("MobSpawner"))));
             final Pair pair;
             return ((Optional)pair.getSecond()).isPresent() ? ((Optional)pair.getSecond()).get() : typed;

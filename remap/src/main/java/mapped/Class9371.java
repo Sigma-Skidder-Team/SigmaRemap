@@ -12,8 +12,8 @@ import java.util.Map;
 public class Class9371
 {
     private static String[] field40186;
-    private Class8685 field40187;
-    private Class101 field40188;
+    private final Class8685 field40187;
+    private final Class101 field40188;
     private final Map<Class9455<?>, Class8685> field40189;
     private final Object2BooleanMap<ResourceLocation> field40190;
     private final Map<ResourceLocation, Class170> field40191;

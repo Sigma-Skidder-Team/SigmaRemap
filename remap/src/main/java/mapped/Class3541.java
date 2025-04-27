@@ -19,9 +19,7 @@ public class Class3541 extends Class3446
         if (this.field16591 < this.field16590.ticksExisted) {
             if (this.field16590.method4394()) {
                 if (this.field16590.method4414()) {
-                    if (Class791.method4418(this.field16590).nextInt(400) == 1) {
-                        return true;
-                    }
+                    return Class791.method4418(this.field16590).nextInt(400) == 1;
                 }
             }
         }

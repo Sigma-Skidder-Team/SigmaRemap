@@ -149,9 +149,7 @@ public abstract class Class599 extends FocusableGui implements IRenderable
         if (n2 >= this.field3515) {
             if (n2 <= this.field3516) {
                 if (n >= this.field3518) {
-                    if (n <= this.field3517) {
-                        return true;
-                    }
+                    return n <= this.field3517;
                 }
             }
         }
@@ -274,7 +272,7 @@ public abstract class Class599 extends FocusableGui implements IRenderable
         }
         if (method3495 != -1 && this.method3486(method3495, n3, n, n2)) {
             if (this.children().size() > method3495) {
-                this.setFocused((IGuiEventListener)this.children().get(method3495));
+                this.setFocused(this.children().get(method3495));
             }
             this.setDragging(true);
             return true;

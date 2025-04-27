@@ -45,6 +45,6 @@ public class Class5810 implements Class5809
     }
     
     static {
-        field23844 = new Class2259("multiplayer.status.request_handled", new Object[0]);
+        field23844 = new Class2259("multiplayer.status.request_handled");
     }
 }

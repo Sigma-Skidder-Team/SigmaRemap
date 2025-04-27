@@ -20,6 +20,6 @@ public class Class5958 implements JsonDeserializer<ResourceLocation>, JsonSerial
     }
     
     public JsonElement serialize(final ResourceLocation class1932, final Type type, final JsonSerializationContext jsonSerializationContext) {
-        return (JsonElement)new JsonPrimitive(class1932.toString());
+        return new JsonPrimitive(class1932.toString());
     }
 }

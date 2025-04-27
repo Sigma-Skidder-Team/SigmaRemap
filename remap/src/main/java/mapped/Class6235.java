@@ -24,7 +24,7 @@ public class Class6235 extends Class6227<Class137>
         jsonObject.addProperty("block", Registry.BLOCK.getKey(Class137.method678(class137)).toString());
         final JsonArray jsonArray = new JsonArray();
         Class137.method679(class137).forEach(class138 -> jsonArray2.add(class138.method21826()));
-        jsonObject.add("properties", (JsonElement)jsonArray);
+        jsonObject.add("properties", jsonArray);
     }
     
     public Class137 method18557(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {

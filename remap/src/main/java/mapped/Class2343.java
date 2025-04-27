@@ -6,7 +6,7 @@ package mapped;
 
 public interface Class2343 extends Class2342
 {
-    public static final int field14111 = 512;
-    public static final int field14112 = 513;
-    public static final int field14113 = 514;
+    int field14111 = 512;
+    int field14112 = 513;
+    int field14113 = 514;
 }

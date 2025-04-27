@@ -129,9 +129,7 @@ public enum Class242
             if (!(class3820 instanceof Class4055)) {
                 if (!(class3820 instanceof Class4080)) {
                     if (!(method11776 instanceof Class3932)) {
-                        if (!(method11776 instanceof Class3901)) {
-                            return false;
-                        }
+                        return method11776 instanceof Class3901;
                     }
                 }
             }

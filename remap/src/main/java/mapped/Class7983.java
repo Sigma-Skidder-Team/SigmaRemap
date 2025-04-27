@@ -30,12 +30,12 @@ public class Class7983
     
     public static <T extends Class6631, C extends Class6432<T>> Class7538<T> method26035(final Class9505 class9505, final Class7068 class9506, final LongFunction<C> longFunction) {
         final Class7538<Class6631> method836 = Class221.field769.method836((Class6432<Class6631>)longFunction.apply(2L), Class212.field735.method836((Class6432<Class6631>)longFunction.apply(70L), Class212.field735.method836((Class6432<Class6631>)longFunction.apply(50L), Class212.field735.method836((Class6432<Class6631>)longFunction.apply(2L), Class213.field737.method836((Class6432<Class6631>)longFunction.apply(2001L), Class212.field735.method836((Class6432<Class6631>)longFunction.apply(1L), Class213.field738.method836((Class6432<Class6631>)longFunction.apply(2000L), (Class7538<Class6631>)Class291.field1671.method944((Class6432<R>)longFunction.apply(1L)))))))));
-        final Class7538<R> method837 = method26034(2001L, Class213.field737, (Class7538<R>)Class293.field1673.method944((Class6432<T>)longFunction.apply(2L)), 6, longFunction);
-        final Class7538<R> method838 = method26034(1000L, Class213.field737, (Class7538<R>)Class218.field747.method836((Class6432<T>)longFunction.apply(4L), Class211.field732.method836((Class6432<T>)longFunction.apply(5L), Class212.field735.method836((Class6432<T>)longFunction.apply(4L), Class213.field737.method836((Class6432<T>)longFunction.apply(2003L), Class213.field737.method836((Class6432<T>)longFunction.apply(2002L), Class203.field711.method836((Class6432<T>)longFunction.apply(3L), Class217.field745.method836((Class6432<T>)longFunction.apply(2L), Class219.field749.method836((Class6432<T>)longFunction.apply(2L), Class212.field735.method836((Class6432<T>)longFunction.apply(3L), Class208.field722.method836((Class6432<T>)longFunction.apply(2L), (Class7538<T>)method836)))))))))), 0, longFunction);
+        final Class7538<R> method837 = method26034(2001L, Class213.field737, (Class7538<R>)Class293.field1673.method944(longFunction.apply(2L)), 6, longFunction);
+        final Class7538<R> method838 = method26034(1000L, Class213.field737, (Class7538<R>)Class218.field747.method836(longFunction.apply(4L), Class211.field732.method836(longFunction.apply(5L), Class212.field735.method836(longFunction.apply(4L), Class213.field737.method836(longFunction.apply(2003L), Class213.field737.method836(longFunction.apply(2002L), Class203.field711.method836(longFunction.apply(3L), Class217.field745.method836(longFunction.apply(2L), Class219.field749.method836(longFunction.apply(2L), Class212.field735.method836(longFunction.apply(3L), Class208.field722.method836(longFunction.apply(2L), (Class7538<T>)method836)))))))))), 0, longFunction);
         final int n = (class9505 != Class9505.field40894) ? class9506.method21616() : 6;
         final int method839 = class9506.method21617();
-        final Class7538<T> method840 = Class204.field713.method836((Class6432<T>)longFunction.apply(100L), (Class7538<T>)method26034(1000L, Class213.field737, method838, 0, longFunction));
-        final Class7538<R> method841 = Class197.field656.method842((Class6432<R>)longFunction.apply(1000L), (Class7538<R>)Class220.field751.method836((Class6432<R>)longFunction.apply(1000L), (Class7538<R>)method26034(1000L, Class213.field737, (Class7538<R>)Class210.field728.method836((Class6432<T>)longFunction.apply(1001L), new Class202(class9505, class9506.method21618()).method836((Class6432<T>)longFunction.apply(200L), (Class7538<T>)method838)), 2, longFunction)), (Class7538<R>)method26034(1000L, Class213.field737, (Class7538<R>)method840, 2, longFunction));
+        final Class7538<T> method840 = Class204.field713.method836(longFunction.apply(100L), (Class7538<T>)method26034(1000L, Class213.field737, method838, 0, longFunction));
+        final Class7538<R> method841 = Class197.field656.method842((Class6432<R>)longFunction.apply(1000L), (Class7538<R>)Class220.field751.method836((Class6432<R>)longFunction.apply(1000L), (Class7538<R>)method26034(1000L, Class213.field737, (Class7538<R>)Class210.field728.method836(longFunction.apply(1001L), new Class202(class9505, class9506.method21618()).method836(longFunction.apply(200L), (Class7538<T>)method838)), 2, longFunction)), (Class7538<R>)method26034(1000L, Class213.field737, (Class7538<R>)method840, 2, longFunction));
         final Class7538<R> method842 = Class215.field740.method836((Class6432<R>)longFunction.apply(1000L), Class216.field742.method836((Class6432<R>)longFunction.apply(1L), (Class7538<R>)method26034(1000L, Class213.field737, method26034(1000L, Class213.field737, (Class7538<R>)method840, 2, longFunction), method839, longFunction)));
         Class7538<Class6631> class9507 = Class209.field724.method836((Class6432<Class6631>)longFunction.apply(1001L), (Class7538<Class6631>)method841);
         for (int i = 0; i < n; ++i) {
@@ -86,9 +86,7 @@ public class Class7983
                                 if (n != Class7983.field32852) {
                                     if (n != Class7983.field32853) {
                                         if (n != Class7983.field32854) {
-                                            if (n != Class7983.field32855) {
-                                                return false;
-                                            }
+                                            return n == Class7983.field32855;
                                         }
                                     }
                                 }
@@ -106,9 +104,7 @@ public class Class7983
             if (n != Class7983.field32847) {
                 if (n != Class7983.field32848) {
                     if (n != Class7983.field32849) {
-                        if (n != Class7983.field32850) {
-                            return false;
-                        }
+                        return n == Class7983.field32850;
                     }
                 }
             }

@@ -36,7 +36,7 @@ public class Class175 implements Predicate<ItemStack>
             class8321.method27663(this.field503);
         }
         if (b && n > class8321.method27628()) {
-            throw Class175.field501.create((Object) Registry.field211.getKey(this.field502), (Object)class8321.method27628());
+            throw Class175.field501.create(Registry.field211.getKey(this.field502), class8321.method27628());
         }
         return class8321;
     }
@@ -50,6 +50,6 @@ public class Class175 implements Predicate<ItemStack>
     }
     
     static {
-        field501 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("arguments.item.overstacked", new Object[] { o, o2 }));
+        field501 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("arguments.item.overstacked", o, o2));
     }
 }

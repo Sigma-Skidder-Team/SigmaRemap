@@ -258,8 +258,8 @@ public class Library$Handler implements InvocationHandler
     
     static {
         try {
-            OBJECT_TOSTRING = Object.class.getMethod("toString", (Class<?>[])new Class[0]);
-            OBJECT_HASHCODE = Object.class.getMethod("hashCode", (Class<?>[])new Class[0]);
+            OBJECT_TOSTRING = Object.class.getMethod("toString", new Class[0]);
+            OBJECT_HASHCODE = Object.class.getMethod("hashCode", new Class[0]);
             OBJECT_EQUALS = Object.class.getMethod("equals", Object.class);
         }
         catch (final Exception ex) {

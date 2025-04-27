@@ -28,9 +28,7 @@ public class Class154 implements Class122
         final BlockState class7530 = class7529.method23579(Class6683.field26368);
         if (class7530 != null) {
             if (this.field452 == class7530.getBlock()) {
-                if (this.field453.method34689(class7530)) {
-                    return true;
-                }
+                return this.field453.method34689(class7530);
             }
         }
         return false;

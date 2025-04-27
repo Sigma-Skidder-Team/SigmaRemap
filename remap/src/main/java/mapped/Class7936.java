@@ -43,14 +43,9 @@ public final class Class7936
             final List<Class7518> method25738 = this.method25738();
             final List<Class7518> method25739 = class7936.method25738();
             if (method25738 != null) {
-                if (!method25738.equals(method25739)) {
-                    return false;
-                }
+                return method25738.equals(method25739);
             }
-            else if (method25739 != null) {
-                return false;
-            }
-            return true;
+            else return method25739 == null;
         }
         return false;
     }

@@ -63,7 +63,7 @@ public abstract class Class872<R extends Runnable> implements Class875<R>, Execu
     public CompletableFuture<Void> method5379(final Runnable runnable) {
         if (!this.method1560()) {
             runnable.run();
-            return CompletableFuture.completedFuture((Void)null);
+            return CompletableFuture.completedFuture(null);
         }
         return this.method5378(runnable);
     }
@@ -136,7 +136,7 @@ public abstract class Class872<R extends Runnable> implements Class875<R>, Execu
             r.run();
         }
         catch (final Exception ex) {
-            Class872.field4718.fatal("Error executing task on {}", (Object)this.method5376(), (Object)ex);
+            Class872.field4718.fatal("Error executing task on {}", this.method5376(), ex);
             if (ex.getCause() instanceof OutOfMemoryError) {
                 throw (OutOfMemoryError)ex.getCause();
             }

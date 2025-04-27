@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Class7571
 {
-    private ArrayList field30023;
+    private final ArrayList field30023;
     
     public Class7571() {
         this.field30023 = new ArrayList();

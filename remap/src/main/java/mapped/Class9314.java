@@ -42,7 +42,7 @@ public final class Class9314 implements HostnameVerifier
     private boolean method34470(final String s, final X509Certificate x509Certificate) {
         final List<String> method34473 = method34473(x509Certificate, 7);
         for (int i = 0; i < method34473.size(); ++i) {
-            if (s.equalsIgnoreCase((String)method34473.get(i))) {
+            if (s.equalsIgnoreCase(method34473.get(i))) {
                 return true;
             }
         }
@@ -55,7 +55,7 @@ public final class Class9314 implements HostnameVerifier
         final List<String> method34473 = method34473(x509Certificate, 2);
         for (int i = 0; i < method34473.size(); ++i) {
             n = 1;
-            if (this.method34474(lowerCase, (String)method34473.get(i))) {
+            if (this.method34474(lowerCase, method34473.get(i))) {
                 return true;
             }
         }
@@ -72,8 +72,8 @@ public final class Class9314 implements HostnameVerifier
         final List<String> method34473 = method34473(x509Certificate, 7);
         final List<String> method34474 = method34473(x509Certificate, 2);
         final ArrayList list = new ArrayList(method34473.size() + method34474.size());
-        list.addAll((Collection)method34473);
-        list.addAll((Collection)method34474);
+        list.addAll(method34473);
+        list.addAll(method34474);
         return (List<String>)list;
     }
     

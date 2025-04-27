@@ -43,7 +43,7 @@ public class Class9380
         }
         final Class4574 class6349 = Registry.field230.getOrDefault(new ResourceLocation(method323.toLowerCase(Locale.ROOT)));
         if (class6349 == null) {
-            Class9380.field40225.error("Unknown feature id: {}", (Object)method323);
+            Class9380.field40225.error("Unknown feature id: {}", method323);
             return null;
         }
         final int method324 = class6348.getInt("ChunkX");
@@ -58,21 +58,21 @@ public class Class9380
                 final String method330 = method329.getString("id");
                 final Class9520 class6351 = Registry.field231.getOrDefault(new ResourceLocation(method330.toLowerCase(Locale.ROOT)));
                 if (class6351 == null) {
-                    Class9380.field40225.error("Unknown structure piece id: {}", (Object)method330);
+                    Class9380.field40225.error("Unknown structure piece id: {}", method330);
                 }
                 else {
                     try {
                         method328.field24431.add(class6351.method35540(class6347, method329));
                     }
                     catch (final Exception ex) {
-                        Class9380.field40225.error("Exception loading structure piece with id {}", (Object)method330, (Object)ex);
+                        Class9380.field40225.error("Exception loading structure piece with id {}", method330, ex);
                     }
                 }
             }
             return method328;
         }
         catch (final Exception ex2) {
-            Class9380.field40225.error("Failed Start with id {}", (Object)method323, (Object)ex2);
+            Class9380.field40225.error("Failed Start with id {}", method323, ex2);
             return null;
         }
     }

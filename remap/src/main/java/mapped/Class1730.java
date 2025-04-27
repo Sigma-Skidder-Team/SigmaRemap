@@ -52,7 +52,7 @@ public class Class1730 implements Class1727
     
     @Override
     public Collection<ResourceLocation> method6098(final Class346 class346, final String s, final String s2, final int n, final Predicate<String> predicate) {
-        return (Collection<ResourceLocation>)Collections.emptyList();
+        return Collections.emptyList();
     }
     
     @Override

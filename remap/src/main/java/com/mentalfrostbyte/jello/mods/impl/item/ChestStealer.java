@@ -25,9 +25,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ChestStealer extends Module
 {
     public boolean field15737;
-    private ConcurrentHashMap<Class475, Boolean> field15738;
-    private TimerUtil field15739;
-    private TimerUtil field15740;
+    private final ConcurrentHashMap<Class475, Boolean> field15738;
+    private final TimerUtil field15739;
+    private final TimerUtil field15740;
     private Class475 field15741;
     
     public ChestStealer() {
@@ -175,11 +175,11 @@ public class ChestStealer extends Module
         final Class726 class5741 = (Class726) ChestStealer.mc.currentScreen;
         if (this.method10254(class5741)) {
             int n = 1;
-            for (final Class6601 class5742 : ((Class3438)class5741.field3077).field16151) {
+            for (final Class6601 class5742 : class5741.field3077.field16151) {
                 if (!class5742.method20054()) {
                     continue;
                 }
-                if (class5742.field26174 >= ((Class3438)class5741.field3077).method10973() * 9) {
+                if (class5742.field26174 >= class5741.field3077.method10973() * 9) {
                     continue;
                 }
                 if (this.method10255(class5742.method20053())) {
@@ -192,10 +192,10 @@ public class ChestStealer extends Module
                     this.field15737 = !this.field15737;
                 }
                 if (!this.getBooleanValueFromSettingName("Fix ViaVersion")) {
-                    InvManagerUtil.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player);
+                    InvManagerUtil.method29366(class5741.field3077.field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player);
                 }
                 else {
-                    InvManagerUtil.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player, true);
+                    InvManagerUtil.method29367(class5741.field3077.field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player, true);
                 }
                 this.field15739.reset();
                 n = 0;
@@ -227,7 +227,7 @@ public class ChestStealer extends Module
     }
     
     private boolean method10254(final Class726 class726) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList("menu", "selector", "game", "gui", "server", "inventory", "play", "teleporter", "shop", "melee", "armor", "block", "castle", "mini", "warp", "teleport", "user", "team", "tool", "sure", "trade", "cancel", "accept", "soul", "book", "recipe", "profile", "tele", "port", "map", "kit", "select", "lobby", "vault", "lock", "anticheat", "travel", "settings", "user", "preference", "compass", "cake", "wars", "buy", "upgrade", "ranged", "potions", "utility", "choose", "modalidades"));
+        final ArrayList list = new ArrayList(Arrays.asList("menu", "selector", "game", "gui", "server", "inventory", "play", "teleporter", "shop", "melee", "armor", "block", "castle", "mini", "warp", "teleport", "user", "team", "tool", "sure", "trade", "cancel", "accept", "soul", "book", "recipe", "profile", "tele", "port", "map", "kit", "select", "lobby", "vault", "lock", "anticheat", "travel", "settings", "user", "preference", "compass", "cake", "wars", "buy", "upgrade", "ranged", "potions", "utility", "choose", "modalidades"));
         final List<BlockPos> method13691 = Class4609.method13691(8.0f);
         final Iterator iterator = list.iterator();
         while (iterator.hasNext()) {
@@ -274,12 +274,10 @@ public class ChestStealer extends Module
         if (method27622 == Items.field31350 && Client.getInstance().moduleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
             return false;
         }
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(Items.field31375, Items.field31307, Items.field31337, Items.field31374, Items.field31306, Items.field31299, Items.field30896, Items.field31349, Items.field31351, Items.field31350, Items.field30929, Items.field31534, Items.field31510, Items.field31426, Items.field31019, Items.field30900, Items.field31576, Items.field31430, Items.field31429, Items.field31314, Items.field31357, Items.field31442, Items.field30835, Items.field31355, Items.field31376));
+        final ArrayList list = new ArrayList(Arrays.asList(Items.field31375, Items.field31307, Items.field31337, Items.field31374, Items.field31306, Items.field31299, Items.field30896, Items.field31349, Items.field31351, Items.field31350, Items.field30929, Items.field31534, Items.field31510, Items.field31426, Items.field31019, Items.field30900, Items.field31576, Items.field31430, Items.field31429, Items.field31314, Items.field31357, Items.field31442, Items.field30835, Items.field31355, Items.field31376));
         if (class8321 != null) {
             if (!list.contains(method27622)) {
-                if (!method27622.method11715().getFormattedText().toLowerCase().contains("seed")) {
-                    return false;
-                }
+                return method27622.method11715().getFormattedText().toLowerCase().contains("seed");
             }
         }
         return true;

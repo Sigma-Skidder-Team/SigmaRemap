@@ -25,13 +25,13 @@ public class Class5988 implements JsonDeserializer<Class348>, JsonSerializer<Cla
             if (!class349.method26167()) {
                 continue;
             }
-            jsonObject2.add((String)entry.getKey(), class349.method26172());
+            jsonObject2.add(entry.getKey(), class349.method26172());
         }
         if (!jsonObject2.entrySet().isEmpty()) {
-            jsonObject.add("criteria", (JsonElement)jsonObject2);
+            jsonObject.add("criteria", jsonObject2);
         }
         jsonObject.addProperty("done", Boolean.valueOf(class348.method1031()));
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public Class348 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {

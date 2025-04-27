@@ -802,7 +802,7 @@ public class Class9570
     
     public static boolean method35840(final Class7362 class7362, final Object... array) {
         final Object method35842 = method35842(class7362, array);
-        return method35842 != null && method35841(method35842);
+        return method35841(method35842);
     }
     
     public static boolean method35841(final Object o) {

@@ -6,7 +6,7 @@ package mapped;
 
 public class Class337 implements Class328
 {
-    private float field2062;
+    private final float field2062;
     
     public Class337(final float field2062) {
         this.field2062 = field2062;

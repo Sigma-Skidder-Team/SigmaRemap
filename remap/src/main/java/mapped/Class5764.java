@@ -37,7 +37,7 @@ public class Class5764 implements Class5763
         }
         jsonObject.add("ingredient", this.field23567.method615());
         jsonObject.addProperty("result", Registry.field211.getKey(this.field23568).toString());
-        jsonObject.addProperty("count", (Number)this.field23569);
+        jsonObject.addProperty("count", this.field23569);
     }
     
     @Override

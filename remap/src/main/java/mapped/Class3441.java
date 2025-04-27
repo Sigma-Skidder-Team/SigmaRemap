@@ -168,7 +168,7 @@ public class Class3441 extends Class3418
                     }
                 }
             }
-            if (StringUtils.isBlank((CharSequence)this.field16258)) {
+            if (StringUtils.isBlank(this.field16258)) {
                 if (method2157.method27667()) {
                     n3 = 1;
                     n += n3;
@@ -268,7 +268,7 @@ public class Class3441 extends Class3418
         this.field16258 = field16258;
         if (this.getSlot(2).method20054()) {
             final ItemStack method20053 = this.getSlot(2).method20053();
-            if (!StringUtils.isBlank((CharSequence)field16258)) {
+            if (!StringUtils.isBlank(field16258)) {
                 method20053.method27665(new StringTextComponent(this.field16258));
             }
             else {

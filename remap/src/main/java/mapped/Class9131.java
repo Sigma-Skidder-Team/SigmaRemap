@@ -130,7 +130,7 @@ public class Class9131
             System.arraycopy(method33142, 0, bytes, array.length, method33142.length);
             return new String(bytes, Charset.forName((n2 != 65279) ? "UTF-8" : "UTF-16"));
         }
-        return new String();
+        return "";
     }
     
     public byte[] method33142(final int n, final int n2) throws IOException {

@@ -45,7 +45,7 @@ public class Class7308
                 return clazz.isInstance(field28291.get(null)) ? lookup.unreflect(m) : null;
             }
             catch (final NoSuchMethodException | NoSuchFieldException | IllegalAccessException | ClassNotFoundException cause) {
-                throw new RuntimeException((Throwable)cause);
+                throw new RuntimeException(cause);
             }
         });
     }

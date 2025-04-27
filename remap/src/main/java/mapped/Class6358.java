@@ -13,12 +13,12 @@ public class Class6358 extends Class6354
     
     public Class6358() {
         super("chunks");
-        this.field25437 = (LongSet)new LongOpenHashSet();
+        this.field25437 = new LongOpenHashSet();
     }
     
     @Override
     public void method18901(final CompoundNBT class51) {
-        this.field25437 = (LongSet)new LongOpenHashSet(class51.method326("Forced"));
+        this.field25437 = new LongOpenHashSet(class51.method326("Forced"));
     }
     
     @Override

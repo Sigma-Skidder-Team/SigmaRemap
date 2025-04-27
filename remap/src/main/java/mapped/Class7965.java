@@ -11,15 +11,13 @@ import java.lang.reflect.Field;
 @Deprecated
 public class Class7965 extends Class7966
 {
-    private Field field32733;
-    private Object field32734;
+    private final Field field32733;
+    private final Object field32734;
     
     public static boolean method25809(final Field field) {
         if (field.getDeclaringClass().isAnnotationPresent(Class6756.class)) {
             if (field.getType().isPrimitive() || field.getType() == String.class) {
-                if (field.isAnnotationPresent(Class6751.class)) {
-                    return true;
-                }
+                return field.isAnnotationPresent(Class6751.class);
             }
             return false;
         }

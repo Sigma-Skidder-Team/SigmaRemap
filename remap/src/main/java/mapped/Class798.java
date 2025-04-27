@@ -79,7 +79,7 @@ public class Class798 extends Class789 implements Class797
         this.field4114.method22062(7, new Class3618(this, null));
         this.field4114.method22062(8, new Class3513(this));
         this.field4114.method22062(9, new Class3490(this));
-        this.field4115.method22062(1, new Class3552(this, this).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3552(this, this).method11100(new Class[0]));
         this.field4115.method22062(2, new Class3559(this));
     }
     
@@ -511,7 +511,7 @@ public class Class798 extends Class789 implements Class797
     
     @Override
     public float method2789(final Pose class290, final EntitySize class291) {
-        return this.method2625() ? (class291.field34098 * 0.5f) : (class291.field34098 * 0.5f);
+        return (class291.field34098 * 0.5f);
     }
     
     @Override

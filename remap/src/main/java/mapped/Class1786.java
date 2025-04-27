@@ -16,7 +16,7 @@ public class Class1786 extends Class1785
     
     @Override
     public Stream<ResourceLocation> method6439() {
-        return Stream.concat(Registry.field227.method507().stream(), (Stream<? extends ResourceLocation>)Stream.of(Class1786.field9903));
+        return Stream.concat(Registry.field227.method507().stream(), Stream.of(Class1786.field9903));
     }
     
     public TextureAtlasSprite method6444(final Class8539 class8539) {

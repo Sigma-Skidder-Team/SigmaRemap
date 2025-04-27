@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Class6648 extends Class6635
 {
-    private Map<Class7803<Integer, Integer>, Map<Class8322, Class74>> field26282;
+    private final Map<Class7803<Integer, Integer>, Map<Class8322, Class74>> field26282;
     private boolean field26283;
     
     public Class6648(final Class6108 class6108) {
@@ -29,7 +29,7 @@ public class Class6648 extends Class6635
             this.field26282.put(method20198, new ConcurrentHashMap<Class8322, Class74>());
         }
         final Map map = this.field26282.get(method20198);
-        if (map.containsKey(class8322) && ((Class74)map.get(class8322)).equals(class8323)) {
+        if (map.containsKey(class8322) && map.get(class8322).equals(class8323)) {
             return;
         }
         map.put(class8322, class8323);
@@ -42,7 +42,7 @@ public class Class6648 extends Class6635
     public Optional<Class74> method20199(final Class8322 class8322) {
         final Map map = this.field26282.get(this.method20198(class8322));
         if (map == null) {
-            return (Optional<Class74>)Optional.absent();
+            return Optional.absent();
         }
         final Class74 class8323 = (Class74)map.get(class8322);
         if (class8323 != null) {
@@ -52,7 +52,7 @@ public class Class6648 extends Class6635
             clone.method420(new Class72("conditionMet", (byte)0));
             return (Optional<Class74>)Optional.of((Object)clone);
         }
-        return (Optional<Class74>)Optional.absent();
+        return Optional.absent();
     }
     
     public void method20200() {

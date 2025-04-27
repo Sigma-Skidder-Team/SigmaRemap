@@ -37,6 +37,6 @@ public class Class4241 extends Class4211
         }
         jsonObject.add("item", this.field19058.method34629());
         jsonObject.add("num_bees_inside", this.field19059.method29745());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

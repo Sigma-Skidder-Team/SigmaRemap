@@ -29,16 +29,16 @@ public class MiniMap extends Module
 {
     public ByteBuffer field15832;
     public BufferedImage field15833;
-    private int field15834;
+    private final int field15834;
     private int field15835;
     private static float field15836;
-    private int field15837;
-    private int field15838;
-    private int field15839;
+    private final int field15837;
+    private final int field15838;
+    private final int field15839;
     private int field15840;
-    private int field15841;
+    private final int field15841;
     private BlockPos field15842;
-    private int field15843;
+    private final int field15843;
     public List<Class6824> field15844;
     private double field15845;
     private double field15846;

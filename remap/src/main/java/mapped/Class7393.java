@@ -9,7 +9,7 @@ public class Class7393 implements Class7394
     private static String[] field28470;
     private int field28471;
     private int field28472;
-    private int field28473;
+    private final int field28473;
     private int field28474;
     private float field28475;
     

@@ -36,7 +36,7 @@ public class MainMenu extends Screen
     }
     
     public MainMenu(final boolean field3313) {
-        super(new Class2259("narrator.screen.title", new Object[0]));
+        super(new Class2259("narrator.screen.title"));
         this.field3312 = new Class9472(MainMenu.field3300);
         this.field3313 = field3313;
         this.field3303 = (new Random().nextFloat() < 1.0E-4);
@@ -86,10 +86,10 @@ public class MainMenu extends Screen
         else {
             this.method3217(n, 24);
         }
-        this.addButton(new Class679(this.width / 2 - 124, n + 72 + 12, 20, 20, 0, 106, 20, Class654.field3421, 256, 256, class654 -> this.minecraft.displayGuiScreen(new Class704(this, this.minecraft.gameSettings, this.minecraft.method5295())), Class8822.method30773("narrator.button.language", new Object[0])));
-        this.addButton(new Class654(this.width / 2 - 100, n + 72 + 12, 98, 20, Class8822.method30773("menu.options", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class550(this, this.minecraft.gameSettings))));
-        this.addButton(new Class654(this.width / 2 + 2, n + 72 + 12, 98, 20, Class8822.method30773("menu.quit", new Object[0]), class654 -> this.minecraft.method5253()));
-        this.addButton(new Class679(this.width / 2 + 104, n + 72 + 12, 20, 20, 0, 0, 20, MainMenu.field3302, 32, 64, class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.minecraft.gameSettings)), Class8822.method30773("narrator.button.accessibility", new Object[0])));
+        this.addButton(new Class679(this.width / 2 - 124, n + 72 + 12, 20, 20, 0, 106, 20, Class654.field3421, 256, 256, class654 -> this.minecraft.displayGuiScreen(new Class704(this, this.minecraft.gameSettings, this.minecraft.method5295())), Class8822.method30773("narrator.button.language")));
+        this.addButton(new Class654(this.width / 2 - 100, n + 72 + 12, 98, 20, Class8822.method30773("menu.options"), class654 -> this.minecraft.displayGuiScreen(new Class550(this, this.minecraft.gameSettings))));
+        this.addButton(new Class654(this.width / 2 + 2, n + 72 + 12, 98, 20, Class8822.method30773("menu.quit"), class654 -> this.minecraft.method5253()));
+        this.addButton(new Class679(this.width / 2 + 104, n + 72 + 12, 20, 20, 0, 0, 20, MainMenu.field3302, 32, 64, class654 -> this.minecraft.displayGuiScreen(new Class710(this, this.minecraft.gameSettings)), Class8822.method30773("narrator.button.accessibility")));
         this.minecraft.method5312(false);
         if (this.minecraft.gameSettings.field23424) {
             if (!this.field3308) {
@@ -106,8 +106,8 @@ public class MainMenu extends Screen
     }
     
     private void method3216(final int n, final int n2) {
-        this.addButton(new Class654(this.width / 2 - 100, n, 200, 20, Class8822.method30773("menu.singleplayer", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class544(this))));
-        this.addButton(new Class654(this.width / 2 - 100, n + n2 * 1, 200, 20, Class8822.method30773("menu.multiplayer", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, n, 200, 20, Class8822.method30773("menu.singleplayer"), class654 -> this.minecraft.displayGuiScreen(new Class544(this))));
+        this.addButton(new Class654(this.width / 2 - 100, n + n2, 200, 20, Class8822.method30773("menu.multiplayer"), class654 -> {
             if (!this.minecraft.gameSettings.field23434) {
                 this.minecraft.displayGuiScreen(new Class530(this));
             }
@@ -115,7 +115,7 @@ public class MainMenu extends Screen
                 this.minecraft.displayGuiScreen(new Class720(this));
             }
         }));
-        this.addButton(new Class654(this.width / 2 - 100, n + n2 * 2, 200, 20, Class8822.method30773("menu.online", new Object[0]), class654 -> this.method3218()));
+        this.addButton(new Class654(this.width / 2 - 100, n + n2 * 2, 200, 20, Class8822.method30773("menu.online"), class654 -> this.method3218()));
         if (Class9570.field41399.method22619()) {
             if (this.buttons.size() > 0) {
                 final Widget class573 = this.buttons.get(this.buttons.size() - 1);
@@ -126,11 +126,11 @@ public class MainMenu extends Screen
     }
     
     private void method3217(final int n, final int n2) {
-        this.addButton(new Class654(this.width / 2 - 100, n, 200, 20, Class8822.method30773("menu.playdemo", new Object[0]), class654 -> this.minecraft.method5262("Demo_World", "Demo_World", MinecraftServer.field2295)));
-        this.field3305 = this.addButton(new Class654(this.width / 2 - 100, n + n2 * 1, 200, 20, Class8822.method30773("menu.resetdemo", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, n, 200, 20, Class8822.method30773("menu.playdemo"), class654 -> this.minecraft.method5262("Demo_World", "Demo_World", MinecraftServer.field2295)));
+        this.field3305 = this.addButton(new Class654(this.width / 2 - 100, n + n2, 200, 20, Class8822.method30773("menu.resetdemo"), class654 -> {
             final WorldInfo method25791 = this.minecraft.method5243().method25791("Demo_World");
             if (method25791 != null) {
-                this.minecraft.displayGuiScreen(new Class546(this::method3219, new Class2259("selectWorld.deleteQuestion", new Object[0]), new Class2259("selectWorld.deleteWarning", new Object[] { method25791.method29549() }), Class8822.method30773("selectWorld.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                this.minecraft.displayGuiScreen(new Class546(this::method3219, new Class2259("selectWorld.deleteQuestion"), new Class2259("selectWorld.deleteWarning", method25791.method29549()), Class8822.method30773("selectWorld.deleteButton"), Class8822.method30773("gui.cancel")));
             }
         }));
         if (this.minecraft.method5243().method25791("Demo_World") == null) {
@@ -165,11 +165,11 @@ public class MainMenu extends Screen
             this.minecraft.method5290().method5849(MainMenu.field3306);
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, n6);
             if (!this.field3303) {
-                this.blit(n5 + 0, 30, 0, 0, 155, 44);
+                this.blit(n5, 30, 0, 0, 155, 44);
                 this.blit(n5 + 155, 30, 0, 45, 155, 44);
             }
             else {
-                this.blit(n5 + 0, 30, 0, 0, 99, 44);
+                this.blit(n5, 30, 0, 0, 99, 44);
                 this.blit(n5 + 99, 30, 129, 0, 27, 44);
                 this.blit(n5 + 99 + 26, 30, 126, 0, 3, 44);
                 this.blit(n5 + 99 + 26 + 3, 30, 99, 0, 26, 44);
@@ -198,7 +198,7 @@ public class MainMenu extends Screen
                 str = string + " Demo";
             }
             if (this.minecraft.method5229()) {
-                str += Class8822.method30773("menu.modded", new Object[0]);
+                str += Class8822.method30773("menu.modded");
             }
             if (!Class9570.field41179.method22623()) {
                 this.drawString(this.font, str, 2, this.height - 10, 0xFFFFFF | n7);

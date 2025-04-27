@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 public class CallbackResultContext extends ToNativeContext
 {
-    private Method method;
+    private final Method method;
     
     public CallbackResultContext(final Method callbackMethod) {
         this.method = callbackMethod;

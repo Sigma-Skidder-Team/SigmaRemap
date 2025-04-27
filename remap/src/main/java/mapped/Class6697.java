@@ -12,7 +12,7 @@ import net.minecraft.util.NonNullList;
 public class Class6697 extends Class6693
 {
     public Class6697() {
-        super("peek", "Preview a shulker content without opening it", new String[] { "shulker" });
+        super("peek", "Preview a shulker content without opening it", "shulker");
     }
     
     @Override
@@ -67,11 +67,11 @@ public class Class6697 extends Class6693
                         final short method332 = method331.getShort("lvl");
                         final short method333 = method331.getShort("id");
                         if (Class9526.field41009 != null) {
-                            final String s = (String)Class9526.field41009.get((Object)method333);
+                            final String s = Class9526.field41009.get(method333);
                             final CompoundNBT e = new CompoundNBT();
                             e.putShort("lvl", method332);
                             e.putString("id", s);
-                            ((AbstractList<CompoundNBT>)class52).add(e);
+                            class52.add(e);
                         }
                     }
                     method329.put("Enchantments", class52);

@@ -26,6 +26,6 @@ public class Class5963 extends Class5960 implements JsonSerializer<Class7267>, J
         final JsonObject jsonObject = new JsonObject();
         this.serialize(jsonObject, class7267, jsonSerializationContext);
         jsonObject.addProperty("selector", class7267.method22262());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

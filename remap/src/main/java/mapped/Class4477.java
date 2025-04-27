@@ -115,9 +115,9 @@ public class Class4477 extends Class4475
             this.method13440(class1851, class1855, 4, 4, 5, class1853);
             this.method13440(class1851, class1856, 7, 4, 5, class1853);
             for (int l = 0; l < 4; ++l) {
-                this.method13440(class1851, class1857, 5, 0 - l, 6 + l, class1853);
-                this.method13440(class1851, class1857, 6, 0 - l, 6 + l, class1853);
-                this.method13443(class1851, class1853, 5, 0 - l, 7 + l, 6, 0 - l, 9 + l);
+                this.method13440(class1851, class1857, 5, -l, 6 + l, class1853);
+                this.method13440(class1851, class1857, 6, -l, 6 + l, class1853);
+                this.method13443(class1851, class1853, 5, -l, 7 + l, 6, -l, 9 + l);
             }
             this.method13443(class1851, class1853, 1, -3, 12, 10, -1, 13);
             this.method13443(class1851, class1853, 1, -3, 1, 3, -1, 13);
@@ -136,15 +136,15 @@ public class Class4477 extends Class4475
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29410.getDefaultState()).with((IProperty<Comparable>)Class3983.field17983, Direction.WEST)).with((IProperty<Comparable>)Class3983.field17985, true), 4, -3, 8, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29411.getDefaultState()).with((IProperty<Comparable>)Class3975.field17957, true)).with((IProperty<Comparable>)Class3975.field17959, true)).with((IProperty<Comparable>)Class3975.field17954, true), 2, -3, 8, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29411.getDefaultState()).with((IProperty<Comparable>)Class3975.field17957, true)).with((IProperty<Comparable>)Class3975.field17959, true)).with((IProperty<Comparable>)Class3975.field17954, true), 3, -3, 8, class1853);
-            final BlockState class1859 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18022, Class106.field328)).with(Class3999.field18024, Class106.field328);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18024, Class106.field328), 5, -3, 7, class1853);
+            final BlockState class1859 = Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18022, Class106.field328).with(Class3999.field18024, Class106.field328);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18024, Class106.field328), 5, -3, 7, class1853);
             this.method13440(class1851, class1859, 5, -3, 6, class1853);
             this.method13440(class1851, class1859, 5, -3, 5, class1853);
             this.method13440(class1851, class1859, 5, -3, 4, class1853);
             this.method13440(class1851, class1859, 5, -3, 3, class1853);
             this.method13440(class1851, class1859, 5, -3, 2, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18022, Class106.field328)).with(Class3999.field18025, Class106.field328), 5, -3, 1, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18023, Class106.field328), 4, -3, 1, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18022, Class106.field328).with(Class3999.field18025, Class106.field328), 5, -3, 1, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18023, Class106.field328), 4, -3, 1, class1853);
             this.method13440(class1851, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 3, -3, 1, class1853);
             if (!this.field19865) {
                 this.field19865 = this.method13453(class1851, class1853, random, 3, -2, 1, Direction.NORTH, Class9020.field38090);
@@ -155,11 +155,11 @@ public class Class4477 extends Class4475
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29411.getDefaultState()).with((IProperty<Comparable>)Class3975.field17956, true)).with((IProperty<Comparable>)Class3975.field17958, true)).with((IProperty<Comparable>)Class3975.field17954, true), 7, -3, 2, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29411.getDefaultState()).with((IProperty<Comparable>)Class3975.field17956, true)).with((IProperty<Comparable>)Class3975.field17958, true)).with((IProperty<Comparable>)Class3975.field17954, true), 7, -3, 3, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29411.getDefaultState()).with((IProperty<Comparable>)Class3975.field17956, true)).with((IProperty<Comparable>)Class3975.field17958, true)).with((IProperty<Comparable>)Class3975.field17954, true), 7, -3, 4, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18023, Class106.field328), 8, -3, 6, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18025, Class106.field328)).with(Class3999.field18024, Class106.field328), 9, -3, 6, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18022, Class106.field328)).with(Class3999.field18024, Class106.field327), 9, -3, 5, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18023, Class106.field328), 8, -3, 6, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18025, Class106.field328).with(Class3999.field18024, Class106.field328), 9, -3, 6, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18022, Class106.field328).with(Class3999.field18024, Class106.field327), 9, -3, 5, class1853);
             this.method13440(class1851, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 9, -3, 4, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18022, Class106.field328), 9, -2, 4, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18022, Class106.field328), 9, -2, 4, class1853);
             if (!this.field19866) {
                 this.field19866 = this.method13453(class1851, class1853, random, 9, -2, 3, Direction.WEST, Class9020.field38090);
             }
@@ -182,15 +182,15 @@ public class Class4477 extends Class4475
             this.method13440(class1851, Blocks.field29371.getDefaultState(), 8, -2, 11, class1853);
             this.method13440(class1851, Blocks.field29371.getDefaultState(), 9, -2, 11, class1853);
             this.method13440(class1851, Blocks.field29371.getDefaultState(), 10, -2, 11, class1853);
-            final BlockState class1860 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29316.getDefaultState()).with((IProperty<Comparable>)Class3904.field17564, Direction.NORTH)).with(Class3904.field17618, Class107.field333);
+            final BlockState class1860 = ((StateHolder<O, BlockState>) Blocks.field29316.getDefaultState()).with((IProperty<Comparable>)Class3904.field17564, Direction.NORTH).with(Class3904.field17618, Class107.field333);
             this.method13440(class1851, class1860, 8, -2, 12, class1853);
             this.method13440(class1851, class1860, 9, -2, 12, class1853);
             this.method13440(class1851, class1860, 10, -2, 12, class1853);
             this.method13445(class1851, class1853, 8, -3, 8, 8, -3, 10, false, random, Class4477.field19867);
             this.method13445(class1851, class1853, 10, -3, 8, 10, -3, 10, false, random, Class4477.field19867);
             this.method13440(class1851, Blocks.MOSSY_COBBLESTONE.getDefaultState(), 10, -2, 9, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18022, Class106.field328), 8, -2, 9, class1853);
-            this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.REDSTONE_WIRE.getDefaultState()).with(Class3999.field18024, Class106.field328), 8, -2, 10, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18022, Class106.field328), 8, -2, 9, class1853);
+            this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState().with(Class3999.field18024, Class106.field328), 8, -2, 10, class1853);
             this.method13440(class1851, Blocks.REDSTONE_WIRE.getDefaultState(), 10, -1, 9, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.field29239.getDefaultState()).with((IProperty<Comparable>)Class3836.field17415, Direction.UP), 9, -2, 8, class1853);
             this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.field29239.getDefaultState()).with((IProperty<Comparable>)Class3836.field17415, Direction.WEST), 10, -2, 8, class1853);

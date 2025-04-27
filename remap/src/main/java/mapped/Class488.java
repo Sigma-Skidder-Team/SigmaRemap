@@ -64,9 +64,9 @@ public class Class488 extends Class489 implements Class439
         ++this.field2802;
         if (!method2433) {
             if (!this.field2656.isRemote) {
-                final List<Entity> method2434 = this.field2656.method7128((Class<? extends Entity>) Entity.class, new AxisAlignedBB(this.getPos()));
+                final List<Entity> method2434 = this.field2656.method7128(Entity.class, new AxisAlignedBB(this.getPos()));
                 if (!method2434.isEmpty()) {
-                    this.method2437(((Entity)method2434.get(0)).method1915());
+                    this.method2437(method2434.get(0).method1915());
                 }
                 if (this.field2802 % 2400L == 0L) {
                     this.method2436();
@@ -145,7 +145,7 @@ public class Class488 extends Class489 implements Class439
     
     private BlockPos method2438() {
         final BlockPos method2440 = method2440(this.field2656, this.field2804, 5, false);
-        Class488.field2801.debug("Best exit position for portal at {} is {}", (Object)this.field2804, (Object)method2440);
+        Class488.field2801.debug("Best exit position for portal at {} is {}", this.field2804, method2440);
         return method2440.method1137();
     }
     
@@ -153,23 +153,23 @@ public class Class488 extends Class489 implements Class439
         final Vec3d method16738 = new Vec3d(this.getPos().getX(), 0.0, this.getPos().getZ()).normalize();
         Vec3d class1850 = method16738.scale(1024.0);
         for (int n = 16; method2441(class1849, class1850).method7012() > 0 && n-- > 0; class1850 = class1850.add(method16738.scale(-16.0))) {
-            Class488.field2801.debug("Skipping backwards past nonempty chunk at {}", (Object)class1850);
+            Class488.field2801.debug("Skipping backwards past nonempty chunk at {}", class1850);
         }
         for (int n2 = 16; method2441(class1849, class1850).method7012() == 0 && n2-- > 0; class1850 = class1850.add(method16738.scale(16.0))) {
-            Class488.field2801.debug("Skipping forward past empty chunk at {}", (Object)class1850);
+            Class488.field2801.debug("Skipping forward past empty chunk at {}", class1850);
         }
-        Class488.field2801.debug("Found chunk at {}", (Object)class1850);
+        Class488.field2801.debug("Found chunk at {}", class1850);
         this.field2804 = method2442(method2441(class1849, class1850));
         if (this.field2804 != null) {
-            Class488.field2801.debug("Found block at {}", (Object)this.field2804);
+            Class488.field2801.debug("Found block at {}", this.field2804);
         }
         else {
             this.field2804 = new BlockPos(class1850.x + 0.5, 75.0, class1850.z + 0.5);
-            Class488.field2801.debug("Failed to find suitable block, settling on {}", (Object)this.field2804);
-            Class4535.field20005.method13527(Class5113.field22059).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(this.field2804.toLong()), this.field2804);
+            Class488.field2801.debug("Failed to find suitable block, settling on {}", this.field2804);
+            Class4535.field20005.method13527(Class5113.field22059).method28613(class1849, class1849.method6904().method7438(), new Random(this.field2804.toLong()), this.field2804);
         }
         this.field2804 = method2440(class1849, this.field2804, 16, true);
-        Class488.field2801.debug("Creating portal at {}", (Object)this.field2804);
+        Class488.field2801.debug("Creating portal at {}", this.field2804);
         this.method2443(class1849, this.field2804 = this.field2804.method1138(10));
         this.method2161();
     }
@@ -233,7 +233,7 @@ public class Class488 extends Class489 implements Class439
     }
     
     private void method2443(final Class1849 class1849, final BlockPos class1850) {
-        Class4535.field20006.method13527(Class5116.method16014(this.getPos(), false)).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), class1850);
+        Class4535.field20006.method13527(Class5116.method16014(this.getPos(), false)).method28613(class1849, class1849.method6904().method7438(), new Random(), class1850);
     }
     
     @Override

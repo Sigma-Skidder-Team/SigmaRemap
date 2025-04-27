@@ -17,7 +17,7 @@ public class Class6143 extends Class6132
     }
     
     public Dynamic<?> method18368(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)dynamic.set("Facing", dynamic.createByte(method18369(dynamic.get("Facing").asByte((byte)0))));
+        return dynamic.set("Facing", dynamic.createByte(method18369(dynamic.get("Facing").asByte((byte)0))));
     }
     
     @Override

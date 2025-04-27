@@ -14,11 +14,11 @@ import java.util.List;
 
 public class Class4889 extends Class4841
 {
-    private List<Class4868> field20898;
+    private final List<Class4868> field20898;
     public final Animation field20899;
     public Class4817 field20900;
     public Class4898 field20901;
-    private List<Class4830> field20902;
+    private final List<Class4830> field20902;
     
     public Class4889(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2) {
         super(customGuiScreen, s, n - 250, n2 - 500, 250, 500, ColorHelper.field25964, false);

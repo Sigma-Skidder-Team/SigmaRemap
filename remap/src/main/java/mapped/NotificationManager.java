@@ -16,17 +16,17 @@ import java.util.List;
 public class NotificationManager {
     private static String[] field32653;
     public Minecraft field32654;
-    private List<Notification> field32655;
-    private int field32656;
+    private final List<Notification> field32655;
+    private final int field32656;
     private int field32657;
-    private int field32658;
-    private int field32659;
-    private int field32660;
-    private int field32661;
-    private int field32662;
-    private int field32663;
-    private TrueTypeFont field32664;
-    private TrueTypeFont field32665;
+    private final int field32658;
+    private final int field32659;
+    private final int field32660;
+    private final int field32661;
+    private final int field32662;
+    private final int field32663;
+    private final TrueTypeFont field32664;
+    private final TrueTypeFont field32665;
 
     public NotificationManager() {
         this.field32654 = Minecraft.getInstance();
@@ -122,7 +122,6 @@ public class NotificationManager {
     @EventListener
     private void method25781(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.field32654.player != null) {
-            return;
         }
     }
 

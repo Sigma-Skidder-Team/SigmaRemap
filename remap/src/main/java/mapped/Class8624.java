@@ -33,12 +33,12 @@ public class Class8624
                     if (array[this.field36192].field36194 == null) {
                         return false;
                     }
-                    this.field36190.redirect((CommandNode)array[this.field36192].field36194);
+                    this.field36190.redirect(array[this.field36192].field36194);
                 }
                 if ((this.field36191 & 0x4) != 0x0) {
                     this.field36190.executes(commandContext -> 0);
                 }
-                this.field36194 = (CommandNode<Class7491>)this.field36190.build();
+                this.field36194 = this.field36190.build();
             }
             else {
                 this.field36194 = (CommandNode<Class7491>)new RootCommandNode();
@@ -54,7 +54,7 @@ public class Class8624
         for (int length2 = field36194.length, j = 0; j < length2; ++j) {
             final CommandNode<Class7491> field36195 = array[field36194[j]].field36194;
             if (!(field36195 instanceof RootCommandNode)) {
-                this.field36194.addChild((CommandNode)field36195);
+                this.field36194.addChild(field36195);
             }
         }
         return true;

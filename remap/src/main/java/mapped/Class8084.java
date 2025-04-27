@@ -15,15 +15,15 @@ public final class Class8084
 {
     private final Class6063 field33292;
     private final Class8735 field33293;
-    private boolean field33294;
-    private boolean field33295;
+    private final boolean field33294;
+    private final boolean field33295;
     private Class2206 field33296;
-    private Map<String, String> field33297;
-    private Set<Class7576> field33298;
-    private Map<Class7576, String> field33299;
-    private Class7089 field33300;
+    private final Map<String, String> field33297;
+    private final Set<Class7576> field33298;
+    private final Map<Class7576, String> field33299;
+    private final Class7089 field33300;
     private Boolean field33301;
-    private Class8542 field33302;
+    private final Class8542 field33302;
     
     public Class8084(final Class6063 field33292, final Class8735 field33293, final Class7902 class7902, final Class8542 field33294) {
         this.field33292 = field33292;

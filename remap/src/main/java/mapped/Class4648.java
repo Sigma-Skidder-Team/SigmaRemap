@@ -56,7 +56,7 @@ public abstract class Class4648
         }
         catch (final Class2357 class2357) {
             final BlockPos method324 = this.method13896();
-            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", (Object)method323, (Object)this.method13895().dimension.getType(), (Object)method324.getX(), (Object)method324.getY(), (Object)method324.getZ());
+            Class4648.field20119.warn("Invalid entity id '{}' at spawner {}:[{},{},{}]", method323, this.method13895().dimension.getType(), method324.getX(), method324.getY(), method324.getZ());
             return null;
         }
     }
@@ -225,11 +225,11 @@ public abstract class Class4648
             if (!this.field20121.isEmpty()) {
                 final Iterator<Class6829> iterator = this.field20121.iterator();
                 while (iterator.hasNext()) {
-                    ((AbstractList<CompoundNBT>)class52).add(iterator.next().method20915());
+                    class52.add(iterator.next().method20915());
                 }
             }
             else {
-                ((AbstractList<CompoundNBT>)class52).add(this.field20122.method20915());
+                class52.add(this.field20122.method20915());
             }
             class51.put("SpawnPotentials", class52);
             return class51;

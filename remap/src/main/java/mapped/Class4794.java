@@ -114,7 +114,7 @@ public class Class4794 extends Class4703<Class852>
     }
     
     private static void method14183(final Class4150 class4150, final Matrix4f class4151, final float n, final float n2) {
-        class4150.pos(class4151, 0.0f, n, 1.0f * n2).method12399(255, 0, 255, 0).endVertex();
+        class4150.pos(class4151, 0.0f, n, n2).method12399(255, 0, 255, 0).endVertex();
     }
     
     public static void method14184(final float n, final float n2, final float n3, final float n4, final int n5, final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n6) {

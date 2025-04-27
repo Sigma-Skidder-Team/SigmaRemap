@@ -588,7 +588,7 @@ public class RenderSystem
                 }
             }
             RenderSystem.field36657 = Math.max(method31664, 1024);
-            RenderSystem.field36649.info("Failed to determine maximum texture size by probing, trying GL_MAX_TEXTURE_SIZE = {}", (Object) RenderSystem.field36657);
+            RenderSystem.field36649.info("Failed to determine maximum texture size by probing, trying GL_MAX_TEXTURE_SIZE = {}", RenderSystem.field36657);
         }
         return RenderSystem.field36657;
     }

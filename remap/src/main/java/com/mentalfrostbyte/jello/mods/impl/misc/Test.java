@@ -49,7 +49,7 @@ public class Test extends Module
         this.addSetting(new BooleanSetting("Test Checkbox", "A test checkbox", true).method15195(class4997 -> Client.getInstance().getLogger().info("Changed checkbox: " + class4997.method15198())));
         this.addSetting(new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f).method15195(class4997 -> Client.getInstance().getLogger().info("Changed slider: " + class4997.method15198())));
         this.addSetting(new ButtonSetting("Test Type", "A test type button", 0, new String[] { "hello", "goodbye" }).method15195(class4997 -> Client.getInstance().getLogger().info("Changed type: " + class4997.method15198())));
-        this.addSetting(new SubOptionSettingExtender("Test Suboptions", "A test suboption", false, new Setting[] { new BooleanSetting("Test Checkbox", "A test checkbox", true), new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f) }));
+        this.addSetting(new SubOptionSettingExtender("Test Suboptions", "A test suboption", false, new BooleanSetting("Test Checkbox", "A test checkbox", true), new NumberSetting("Test Slider", "A test slider", 0.5f, Float.class, 0.0f, 1.0f, 0.1f)));
     }
     
     @Override
@@ -73,28 +73,24 @@ public class Test extends Module
     @LowerPriority
     public void method10775(final Class5717 class5717) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
     @EventListener
     public void method10776(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
     @EventListener
     public void method10777(final Class5740 class5740) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
     @EventListener
     public void method10778(final EventStopUseItem eventStopUseItem) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
@@ -140,7 +136,6 @@ public class Test extends Module
     @LowestPriority
     public void method10781(final Class5752 class5752) {
         if (this.isEnabled()) {
-            return;
         }
     }
     

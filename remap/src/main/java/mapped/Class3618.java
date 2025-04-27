@@ -39,13 +39,13 @@ public class Class3618 extends Class3617
                     if (!(method1142 instanceof Class3878)) {
                         if (!(method1142 instanceof Class3873)) {
                             if (method1142 == Blocks.SWEET_BERRY_BUSH) {
-                                if (((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)Class3884.field17541) < 3) {
+                                if (method1141.get(Class3884.field17541) < 3) {
                                     n = 1;
                                     o = Class3884.field17541;
                                 }
                             }
                         }
-                        else if (((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)Class3873.field17516) < 7) {
+                        else if (method1141.get(Class3873.field17516) < 7) {
                             n = 1;
                             o = Class3873.field17516;
                         }
@@ -59,7 +59,7 @@ public class Class3618 extends Class3617
                     }
                     if (n != 0) {
                         this.field16814.world.method6955(2005, method1140, 0);
-                        this.field16814.world.method6692(method1140, ((StateHolder<Object, BlockState>)method1141).with((IProperty<Comparable>)o, ((StateHolder<Object, BlockState>)method1141).get((IProperty<Integer>)o) + 1));
+                        this.field16814.world.method6692(method1140, ((StateHolder<Object, BlockState>)method1141).with((IProperty<Comparable>)o, method1141.get((IProperty<Integer>)o) + 1));
                         Class798.method4572(this.field16814);
                     }
                 }

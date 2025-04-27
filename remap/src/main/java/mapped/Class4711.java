@@ -19,15 +19,15 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     
     public Class4711(final Class8551 class8551, final boolean b) {
         super(class8551, new Class5860(0.0f, b), 0.5f);
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1835((Class4778<LivingEntity, Class5853>)this, new Class5853(0.5f), new Class5853(1.0f)));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1835(this, new Class5853(0.5f), new Class5853(1.0f)));
         this.method13978(new Class1823<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1821<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1842(this));
         this.method13978(new Class1819(this));
         this.method13978(new Class1831<Class754, Class5860<Class754>>(this));
         this.method13978(new Class1801<Class754, Class5860<Class754>>(this));
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1817((Class4778<PlayerEntity, Class5860<PlayerEntity>>)this));
-        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1815((Class4778<LivingEntity, Class5860<LivingEntity>>)this));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1817(this));
+        this.method13978((Class1799<Class754, Class5860<Class754>>)new Class1815(this));
         this.method13978(new Class1822<Class754, Class5860<Class754>>(this));
     }
     
@@ -37,7 +37,7 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
     }
     
     public Vec3d method13994(final Class754 class754, final float n) {
-        return class754.method1814() ? new Vec3d(0.0, -0.125, 0.0) : super.method13955((T)class754, n);
+        return class754.method1814() ? new Vec3d(0.0, -0.125, 0.0) : super.method13955(class754, n);
     }
     
     private void method13995(final Class754 class754) {
@@ -136,20 +136,20 @@ public class Class4711 extends Class4710<Class754, Class5860<Class754>>
             final Class6516 method28716 = class754.method2890();
             final Class9290 method28717 = method28716.method19644(2);
             if (method28717 != null) {
-                super.method13958((T)class754, method28716.method19636(class754.method1867(), method28717).method23969() + " " + method28717.method34314().getFormattedText(), class755, class756, n);
+                super.method13958(class754, method28716.method19636(class754.method1867(), method28717).method23969() + " " + method28717.method34314().getFormattedText(), class755, class756, n);
                 class755.method22564(0.0, 0.25874999165534973, 0.0);
             }
         }
-        super.method13958((T)class754, s, class755, class756, n);
+        super.method13958(class754, s, class755, class756, n);
         class755.method22568();
     }
     
     public void method14000(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353) {
-        this.method14002(class7351, class7352, n, class7353, ((Class5860)this.field20301).field23996, ((Class5860)this.field20301).field24023);
+        this.method14002(class7351, class7352, n, class7353, this.field20301.field23996, this.field20301.field24023);
     }
     
     public void method14001(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353) {
-        this.method14002(class7351, class7352, n, class7353, ((Class5860)this.field20301).field23997, ((Class5860)this.field20301).field24022);
+        this.method14002(class7351, class7352, n, class7353, this.field20301.field23997, this.field20301.field24022);
     }
     
     private void method14002(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353, final Class6300 class7354, final Class6300 class7355) {

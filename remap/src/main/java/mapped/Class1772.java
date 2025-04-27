@@ -61,7 +61,7 @@ public class Class1772 extends Class1666
             }
         }
         catch (final IOException ex) {
-            Class1772.field9846.error("Couldn't load layered image", (Throwable)ex);
+            Class1772.field9846.error("Couldn't load layered image", ex);
         }
     }
     

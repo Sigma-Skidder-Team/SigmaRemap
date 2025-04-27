@@ -17,11 +17,9 @@ public class Class6321 extends Class6322
                 RenderSystem.enableAlphaTest();
                 RenderSystem.method30000(516, n);
             }
-            return;
         }, () -> {
             RenderSystem.disableAlphaTest();
             RenderSystem.method30118();
-            return;
         });
         this.field25273 = field25273;
     }

@@ -947,7 +947,7 @@ public class Class9216
     
     private static Class4114 method33716(final int n, final String s) {
         final Class8652 class8652 = new Class8652("Shaders");
-        final ArrayDeque arrayDeque = new ArrayDeque((Collection<? extends E>)Arrays.asList(Config.method28937(s, " ")));
+        final ArrayDeque arrayDeque = new ArrayDeque(Arrays.asList(Config.method28937(s, " ")));
         final String s2 = (String)arrayDeque.poll();
         final Class347 obj = (Class347)class8652.method29471((String)arrayDeque.poll(), Class347.values(), "texture type");
         if (obj == null) {
@@ -1025,7 +1025,7 @@ public class Class9216
         }
         catch (final IOException ex) {
             Class8885.method31271("Error loading raw texture: " + s2);
-            Class8885.method31271("" + ex.getClass().getName() + ": " + ex.getMessage());
+            Class8885.method31271(ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
     }
@@ -1049,7 +1049,7 @@ public class Class9216
         }
         catch (final IOException ex) {
             Class8885.method31271("Error loading texture: " + str);
-            Class8885.method31271("" + ex.getClass().getName() + ": " + ex.getMessage());
+            Class8885.method31271(ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
     }
@@ -1884,15 +1884,15 @@ public class Class9216
                     method33739("attach");
                 }
                 if (Class9216.field39116) {
-                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39110, (CharSequence)"mc_Entity");
+                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39110, "mc_Entity");
                     method33739("mc_Entity");
                 }
                 if (Class9216.field39117) {
-                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39111, (CharSequence)"mc_midTexCoord");
+                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39111, "mc_midTexCoord");
                     method33739("mc_midTexCoord");
                 }
                 if (Class9216.field39118) {
-                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39112, (CharSequence)"at_tangent");
+                    ARBVertexShader.glBindAttribLocationARB(glCreateProgramObjectARB, Class9216.field39112, "at_tangent");
                     method33739("at_tangent");
                 }
                 ARBShaderObjects.glLinkProgramARB(glCreateProgramObjectARB);
@@ -1992,7 +1992,7 @@ public class Class9216
         if (Class9216.field39370) {
             method33771(s, sb.toString());
         }
-        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, (CharSequence)sb);
+        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, sb);
         ARBShaderObjects.glCompileShaderARB(glCreateShaderObjectARB);
         if (GL32.glGetShaderi(glCreateShaderObjectARB, 35713) != 1) {
             Class8885.method31270("Error compiling vertex shader: " + s);
@@ -2060,7 +2060,7 @@ public class Class9216
         if (Class9216.field39370) {
             method33771(s, sb.toString());
         }
-        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, (CharSequence)sb);
+        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, sb);
         ARBShaderObjects.glCompileShaderARB(glCreateShaderObjectARB);
         if (GL32.glGetShaderi(glCreateShaderObjectARB, 35713) != 1) {
             Class8885.method31270("Error compiling geometry shader: " + s);
@@ -2352,7 +2352,7 @@ public class Class9216
         if (Class9216.field39370) {
             method33771(s, sb.toString());
         }
-        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, (CharSequence)sb);
+        ARBShaderObjects.glShaderSourceARB(glCreateShaderObjectARB, sb);
         ARBShaderObjects.glCompileShaderARB(glCreateShaderObjectARB);
         if (GL32.glGetShaderi(glCreateShaderObjectARB, 35713) != 1) {
             Class8885.method31270("Error compiling fragment shader: " + s);
@@ -2418,7 +2418,7 @@ public class Class9216
             return true;
         }
         for (int i = 0; i < list.size(); ++i) {
-            Class8885.method31272("File: " + (i + 1) + " = " + (String)list.get(i));
+            Class8885.method31272("File: " + (i + 1) + " = " + list.get(i));
         }
         Class8885.method31272("Shader info log: " + str + "\n" + Class9518.method35531(GL32.glGetShaderInfoLog(n, glGetShaderi), " \n\r\t"));
         return false;
@@ -3349,7 +3349,7 @@ public class Class9216
         GL32.glMatrixMode(5889);
         GL32.glLoadIdentity();
         if (Class9216.field39230) {
-            GL32.glOrtho((double)(-Class9216.field39229), (double)Class9216.field39229, (double)(-Class9216.field39229), (double)Class9216.field39229, 0.05000000074505806, 256.0);
+            GL32.glOrtho(-Class9216.field39229, Class9216.field39229, -Class9216.field39229, Class9216.field39229, 0.05000000074505806, 256.0);
         }
         else {
             Class8933.method31645(Matrix4f.method20755(Class9216.field39228, Class9216.field39224 / (float)Class9216.field39225, 0.05f, 256.0f));
@@ -3413,7 +3413,7 @@ public class Class9216
     }
     
     public static void method33810(final MatrixStack class7351) {
-        class7351.method22566(Vector3f.ZP.rotationDegrees(Class9216.field39375 * 1.0f));
+        class7351.method22566(Vector3f.ZP.rotationDegrees(Class9216.field39375));
         method33739("preCelestialRotate");
     }
     
@@ -4485,7 +4485,7 @@ public class Class9216
         Class9216.field39107 = false;
         Class9216.field39108 = true;
         Class9216.field39109 = 11;
-        Class9216.field39110 = Class9216.field39109 + 0;
+        Class9216.field39110 = Class9216.field39109;
         Class9216.field39111 = Class9216.field39109 + 1;
         Class9216.field39112 = Class9216.field39109 + 2;
         Class9216.field39113 = false;
@@ -4718,7 +4718,7 @@ public class Class9216
         Class9216.field39361 = null;
         Class9216.field39362 = null;
         Class9216.field39363 = null;
-        field39367 = new String[] { "gbuffers", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[85], "deferred" };
+        field39367 = new String[] { "gbuffers", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[85], "deferred" }
         field39370 = System.getProperty("shaders.debug.save", "false").equals("true");
         Class9216.field39371 = 0.5f;
         Class9216.field39372 = 0.6f;
@@ -4765,7 +4765,7 @@ public class Class9216
         field39417 = (IntBuffer)method33700(8).limit();
         field39418 = (IntBuffer)method33700(8).put(36064).position().limit(1);
         field39419 = new Class9339(Class9216.field39411, 8);
-        field39421 = new String[] { "R8", "RG8", "RGB8", "RGBA8", "R8_SNORM", "RG8_SNORM", "RGB8_SNORM", "RGBA8_SNORM", "R16", "RG16", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[249], "RGBA16", "R16_SNORM", "RG16_SNORM", "RGB16_SNORM", "RGBA16_SNORM", "R16F", "RG16F", "RGB16F", "RGBA16F", "R32F", "RG32F", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[247], Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[245], "R32I", "RG32I", "RGB32I", "RGBA32I", "R32UI", "RG32UI", "RGB32UI", "RGBA32UI", "R3_G3_B2", "RGB5_A1", "RGB10_A2", "R11F_G11F_B10F", "RGB9_E5" };
+        field39421 = new String[] { "R8", "RG8", "RGB8", "RGBA8", "R8_SNORM", "RG8_SNORM", "RGB8_SNORM", "RGBA8_SNORM", "R16", "RG16", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[249], "RGBA16", "R16_SNORM", "RG16_SNORM", "RGB16_SNORM", "RGBA16_SNORM", "R16F", "RG16F", "RGB16F", "RGBA16F", "R32F", "RG32F", Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[247], Class9216.\u3cd8\ua7b1\u5660\u76cc\u65ed\ua592[245], "R32I", "RG32I", "RGB32I", "RGBA32I", "R32UI", "RG32UI", "RGB32UI", "RGBA32UI", "R3_G3_B2", "RGB5_A1", "RGB10_A2", "R11F_G11F_B10F", "RGB9_E5" }
         field39422 = new int[] { 33321, 33323, 32849, 32856, 36756, 36757, 36758, 36759, 33322, 33324, 32852, 32859, 36760, 36761, 36762, 36763, 33325, 33327, 34843, 34842, 33326, 33328, 34837, 34836, 33333, 33339, 36227, 36226, 33334, 33340, 36209, 36208, 10768, 32855, 32857, 35898, 35901 };
         field39423 = Pattern.compile("\\s*([\\w:]+)\\s*=\\s*([-]?\\d+)\\s*");
         Class9216.field39424 = new int[32];

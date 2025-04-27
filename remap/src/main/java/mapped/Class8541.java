@@ -6,10 +6,10 @@ package mapped;
 
 public class Class8541
 {
-    private String field35859;
-    private Class2114 field35860;
-    private Class327 field35861;
-    private Class5147 field35862;
+    private final String field35859;
+    private final Class2114 field35860;
+    private final Class327 field35861;
+    private final Class5147 field35862;
     
     public Class8541(final String field35859, final Class2114 field35860, final Class327 field35861) {
         this.field35859 = field35859;

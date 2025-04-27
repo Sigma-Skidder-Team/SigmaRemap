@@ -19,7 +19,7 @@ public class Fullbright extends Module
     public Fullbright() {
         super(Category.RENDER, "Fullbright", "Makes you see in the dark");
         this.field15533 = 1.0f;
-        this.addSetting(new StringSetting("Type", "Fullbright type", 0, new String[] { "Normal" }));
+        this.addSetting(new StringSetting("Type", "Fullbright type", 0, "Normal"));
     }
     
     @Override

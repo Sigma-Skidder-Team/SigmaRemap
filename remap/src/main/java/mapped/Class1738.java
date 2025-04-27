@@ -15,8 +15,8 @@ public class Class1738 implements Class1737
     private static final Logger field9692;
     private final Class1846 field9693;
     private final Char2ObjectMap<Class2027> field9694;
-    private boolean field9695;
-    private float field9696;
+    private final boolean field9695;
+    private final float field9696;
     
     public Class1738(final Class1846 field9693, final Char2ObjectMap<Class2027> field9694) {
         this.field9695 = false;
@@ -33,7 +33,7 @@ public class Class1738 implements Class1737
     @Nullable
     @Override
     public Class2022 method6150(final char c) {
-        return (Class2022)this.field9694.get(c);
+        return this.field9694.get(c);
     }
     
     public boolean method6151() {

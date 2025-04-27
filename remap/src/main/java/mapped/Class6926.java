@@ -9,7 +9,7 @@ import com.mojang.datafixers.types.DynamicOps;
 
 public interface Class6926
 {
-    public static final Class6936 field27145 = new Class6936();
+    Class6936 field27145 = new Class6936();
     
      <T> Dynamic<T> method21299(final DynamicOps<T> p0);
 }

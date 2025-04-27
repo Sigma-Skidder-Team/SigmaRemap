@@ -32,8 +32,8 @@ public final class Class5021 implements Class5020
     
     @Override
     public void method15236(final JsonObject jsonObject, final JsonSerializationContext jsonSerializationContext) {
-        jsonObject.addProperty("extra", (Number)this.field21528);
-        jsonObject.addProperty("probability", (Number)this.field21529);
+        jsonObject.addProperty("extra", this.field21528);
+        jsonObject.addProperty("probability", this.field21529);
     }
     
     public static Class5020 method15239(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {

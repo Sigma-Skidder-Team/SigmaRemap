@@ -70,7 +70,7 @@ public class Class1914 implements AutoCloseable
                     method7560.complete(this.field10410.method7176(class7859));
                 }
                 catch (final Exception ex2) {
-                    Class1914.field10406.warn("Failed to read chunk {}", (Object)class7859, (Object)ex2);
+                    Class1914.field10406.warn("Failed to read chunk {}", class7859, ex2);
                     method7560.completeExceptionally(ex2);
                 }
             }
@@ -94,7 +94,7 @@ public class Class1914 implements AutoCloseable
     }
     
     public CompletableFuture<Void> method7559() {
-        return this.method7560(p0 -> () -> CompletableFuture.allOf((CompletableFuture<?>[])this.field10411.values().stream().map(class7312 -> class7312.field28295).toArray(CompletableFuture[]::new)).whenComplete((p1, p2) -> completableFuture2.complete(null)));
+        return this.method7560(p0 -> () -> CompletableFuture.allOf(this.field10411.values().stream().map(class7312 -> class7312.field28295).toArray(CompletableFuture[]::new)).whenComplete((p1, p2) -> completableFuture2.complete(null)));
     }
     
     private <T> CompletableFuture<T> method7560(final Function<CompletableFuture<T>, Runnable> function) {
@@ -147,7 +147,7 @@ public class Class1914 implements AutoCloseable
             class7860.field28296.complete(null);
         }
         catch (final Exception ex) {
-            Class1914.field10406.error("Failed to store chunk {}", (Object)class7859, (Object)ex);
+            Class1914.field10406.error("Failed to store chunk {}", class7859, ex);
             class7860.field28296.completeExceptionally(ex);
         }
     }
@@ -158,7 +158,7 @@ public class Class1914 implements AutoCloseable
             this.field10413.complete(null);
         }
         catch (final Exception ex) {
-            Class1914.field10406.error("Failed to close storage", (Throwable)ex);
+            Class1914.field10406.error("Failed to close storage", ex);
             this.field10413.completeExceptionally(ex);
         }
     }
@@ -178,7 +178,6 @@ public class Class1914 implements AutoCloseable
         if (this.field10408.compareAndSet(false, true)) {
             try {
                 this.method7558().join();
-                return;
             }
             catch (final CompletionException ex) {
                 if (ex.getCause() instanceof IOException) {

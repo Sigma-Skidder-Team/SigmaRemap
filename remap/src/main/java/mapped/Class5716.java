@@ -9,13 +9,13 @@ import net.minecraft.item.ItemStack;
 public class Class5716 extends Class5714
 {
     private static String[] field23249;
-    private boolean field23250;
+    private final boolean field23250;
     private boolean field23251;
-    private float field23252;
-    private float field23253;
-    private Class2226 field23254;
-    private ItemStack field23255;
-    private MatrixStack field23256;
+    private final float field23252;
+    private final float field23253;
+    private final Class2226 field23254;
+    private final ItemStack field23255;
+    private final MatrixStack field23256;
     
     public Class5716(final boolean field23250, final float field23251, final float field23252, final Class2226 field23253, final ItemStack field23254, final MatrixStack field23255) {
         this.field23250 = field23250;

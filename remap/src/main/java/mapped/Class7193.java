@@ -33,7 +33,7 @@ public class Class7193<T extends Class5783>
     
     public Class5783 method22075(final Class852 class852) {
         try {
-            return (Class5783)this.method22076().newInstance(class852);
+            return this.method22076().newInstance(class852);
         }
         catch (final Exception cause) {
             throw new Error(cause);

@@ -17,7 +17,7 @@ public class Class735 extends Screen
     private int field3995;
     
     public Class735(final Screen field3994, final String s, final ITextComponent field3995) {
-        super(new Class2259(s, new Object[0]));
+        super(new Class2259(s));
         this.field3994 = field3994;
         this.field3992 = field3995;
     }
@@ -31,7 +31,7 @@ public class Class735 extends Screen
     public void init() {
         this.field3993 = this.font.method6626(this.field3992.getFormattedText(), this.width - 50);
         this.field3995 = this.field3993.size() * 9;
-        this.addButton(new Class654(this.width / 2 - 100, Math.min(this.height / 2 + this.field3995 / 2 + 9, this.height - 30), 200, 20, Class8822.method30773("gui.toMenu", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3994)));
+        this.addButton(new Class654(this.width / 2 - 100, Math.min(this.height / 2 + this.field3995 / 2 + 9, this.height - 30), 200, 20, Class8822.method30773("gui.toMenu"), class654 -> this.minecraft.displayGuiScreen(this.field3994)));
     }
     
     @Override

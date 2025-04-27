@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public interface Class6661
 {
-    public static final long field26318 = -1L;
+    long field26318 = -1L;
     
     int method20244(final byte[] p0, final int p1, final int p2) throws IOException;
     

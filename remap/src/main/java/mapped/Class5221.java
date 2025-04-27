@@ -58,7 +58,7 @@ public class Class5221 extends Class5207
     @Override
     public void method16318(final Class2128 class2128, final Class2044 class2129, final Class8699 class2130) throws Exception {
         final int method29848 = class2130.method29848();
-        final ArrayList list = new ArrayList((Collection<? extends E>)this.field22237);
+        final ArrayList list = new ArrayList(this.field22237);
         if (class2128 == Class2128.field12427) {
             Collections.reverse(list);
         }

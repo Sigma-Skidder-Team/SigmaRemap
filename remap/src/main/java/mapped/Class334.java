@@ -6,7 +6,7 @@ package mapped;
 
 public class Class334 implements Class335, Class333
 {
-    private Class335 field2057;
+    private final Class335 field2057;
     private boolean field2058;
     private float[] field2059;
     

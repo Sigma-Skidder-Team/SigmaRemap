@@ -49,7 +49,7 @@ public class Class7561 extends DataFix
             if (value5.isPresent()) {
                 dynamic2 = dynamic2.remove("RAIN").set("MOTION_BLOCKING", (Dynamic)value5.get()).set("MOTION_BLOCKING_NO_LEAVES", (Dynamic)value5.get());
             }
-            return (Dynamic<?>)dynamic.set("Heightmaps", dynamic2);
+            return dynamic.set("Heightmaps", dynamic2);
         }
         return dynamic;
     }

@@ -44,7 +44,7 @@ public class Class6082
     
     @Override
     public int hashCode() {
-        return (1 * 59 + this.method18137()) * 59 + this.method18138();
+        return (59 + this.method18137()) * 59 + this.method18138();
     }
     
     @Override

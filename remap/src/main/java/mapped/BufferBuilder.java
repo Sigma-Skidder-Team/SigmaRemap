@@ -49,9 +49,9 @@ public class BufferBuilder extends Class4154 implements Class4149
     public BitSet field18498;
     private boolean field18499;
     private ByteBuffer field18500;
-    private Vector3f field18501;
-    private float[] field18502;
-    private int[] field18503;
+    private final Vector3f field18501;
+    private final float[] field18502;
+    private final int[] field18503;
     private IntBuffer field18504;
     private FloatBuffer field18505;
     
@@ -87,7 +87,7 @@ public class BufferBuilder extends Class4154 implements Class4149
         if (this.field18480 + n > this.field18476.capacity()) {
             final int capacity = this.field18476.capacity();
             final int i = capacity + method12384(n);
-            BufferBuilder.field18475.debug("Needed to grow BufferBuilder buffer: Old size {} bytes, new size {} bytes.", (Object)capacity, (Object)i);
+            BufferBuilder.field18475.debug("Needed to grow BufferBuilder buffer: Old size {} bytes, new size {} bytes.", capacity, i);
             final ByteBuffer method32715 = Class9078.method32715(i);
             this.field18476.position();
             method32715.put(this.field18476);
@@ -180,16 +180,16 @@ public class BufferBuilder extends Class4154 implements Class4149
     }
     
     private static float method12388(final FloatBuffer floatBuffer, final float n, final float n2, final float n3, final int n4, final int n5) {
-        final float value = floatBuffer.get(n5 + n4 * 0 + 0);
-        final float value2 = floatBuffer.get(n5 + n4 * 0 + 1);
-        final float value3 = floatBuffer.get(n5 + n4 * 0 + 2);
-        final float value4 = floatBuffer.get(n5 + n4 * 1 + 0);
-        final float value5 = floatBuffer.get(n5 + n4 * 1 + 1);
-        final float value6 = floatBuffer.get(n5 + n4 * 1 + 2);
-        final float value7 = floatBuffer.get(n5 + n4 * 2 + 0);
+        final float value = floatBuffer.get(n5);
+        final float value2 = floatBuffer.get(n5 + 0 + 1);
+        final float value3 = floatBuffer.get(n5 + 0 + 2);
+        final float value4 = floatBuffer.get(n5 + n4);
+        final float value5 = floatBuffer.get(n5 + n4 + 1);
+        final float value6 = floatBuffer.get(n5 + n4 + 2);
+        final float value7 = floatBuffer.get(n5 + n4 * 2);
         final float value8 = floatBuffer.get(n5 + n4 * 2 + 1);
         final float value9 = floatBuffer.get(n5 + n4 * 2 + 2);
-        final float value10 = floatBuffer.get(n5 + n4 * 3 + 0);
+        final float value10 = floatBuffer.get(n5 + n4 * 3);
         final float value11 = floatBuffer.get(n5 + n4 * 3 + 1);
         final float value12 = floatBuffer.get(n5 + n4 * 3 + 2);
         final float n6 = (value + value4 + value7 + value10) * 0.25f - n;
@@ -233,7 +233,7 @@ public class BufferBuilder extends Class4154 implements Class4149
             this.field18489 = true;
             this.field18485 = field18485;
             this.method12392(class9272);
-            this.field18483 = (Class7187)class9272.method34195().get(0);
+            this.field18483 = class9272.method34195().get(0);
             this.field18484 = 0;
             this.field18476.clear();
             if (Config.method28955()) {
@@ -337,7 +337,7 @@ public class BufferBuilder extends Class4154 implements Class4149
         final ImmutableList<Class7187> method34195 = this.field18486.method34195();
         this.field18484 = (this.field18484 + 1) % method34195.size();
         this.field18480 += this.field18483.method22052();
-        final Class7187 field18483 = (Class7187)method34195.get(this.field18484);
+        final Class7187 field18483 = method34195.get(this.field18484);
         this.field18483 = field18483;
         if (field18483.method22049() == Class2078.field12014) {
             this.method12398();
@@ -382,7 +382,7 @@ public class BufferBuilder extends Class4154 implements Class4149
                     this.method12395(26, (short)(n10 >> 16 & 0xFFFF));
                     n15 = 28;
                 }
-                this.method12395(n15 + 0, (short)(n11 & 0xFFFF));
+                this.method12395(n15, (short)(n11 & 0xFFFF));
                 this.method12395(n15 + 2, (short)(n11 >> 16 & 0xFFFF));
                 this.method12394(n15 + 4, Class4149.method12437(n12));
                 this.method12394(n15 + 5, Class4149.method12437(n13));

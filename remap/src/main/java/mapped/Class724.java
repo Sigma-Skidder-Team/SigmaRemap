@@ -44,8 +44,8 @@ public class Class724 extends Class723 implements Class725<Class3420>
             super.method3971();
         }
         else {
-            this.addButton(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
-            this.addButton(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book", new Object[0]), class654 -> this.method3984(3)));
+            this.addButton(new Class654(this.width / 2 - 100, 196, 98, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(null)));
+            this.addButton(new Class654(this.width / 2 + 2, 196, 98, 20, Class8822.method30773("lectern.take_book"), class654 -> this.method3984(3)));
         }
     }
     

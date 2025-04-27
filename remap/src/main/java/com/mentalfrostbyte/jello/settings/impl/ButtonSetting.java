@@ -10,7 +10,7 @@ import totalcross.json.JSONObject;
 import totalcross.json.CJsonUtils;
 
 public class ButtonSetting extends Setting<Integer> {
-    private String[] field21521;
+    private final String[] field21521;
 
     public ButtonSetting(final String s, final String s2, final Integer n, final String... field21521) {
         super(s, s2, Type.BUTTON, n);

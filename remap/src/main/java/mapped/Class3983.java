@@ -35,7 +35,7 @@ public class Class3983 extends Block
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        switch (Class8528.field35802[class7096.get((IProperty<Direction>)Class3983.field17983).ordinal()]) {
+        switch (Class8528.field35802[class7096.get(Class3983.field17983).ordinal()]) {
             default: {
                 return Class3983.field17989;
             }
@@ -53,14 +53,12 @@ public class Class3983 extends Block
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        final Direction class7099 = class7096.get((IProperty<Direction>)Class3983.field17983);
+        final Direction class7099 = class7096.get(Class3983.field17983);
         final BlockPos method1149 = class7098.method1149(class7099.getOpposite());
         final BlockState method1150 = class7097.getBlockState(method1149);
         if (class7099.getAxis().isHorizontal()) {
             if (method1150.isSolidSide(class7097, method1149, class7099)) {
-                if (!method1150.method21714()) {
-                    return true;
-                }
+                return !method1150.method21714();
             }
         }
         return false;
@@ -68,7 +66,7 @@ public class Class3983 extends Block
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097.getOpposite() == class7096.get((IProperty<Direction>)Class3983.field17983) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097.getOpposite() == class7096.get(Class3983.field17983) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Nullable
@@ -94,9 +92,9 @@ public class Class3983 extends Block
     }
     
     public void method12126(final World class1847, final BlockPos class1848, final BlockState class1849, final boolean b, final boolean b2, final int n, final BlockState class1850) {
-        final Direction class1851 = class1849.get((IProperty<Direction>)Class3983.field17983);
-        final boolean booleanValue = class1849.get((IProperty<Boolean>)Class3983.field17985);
-        final boolean booleanValue2 = class1849.get((IProperty<Boolean>)Class3983.field17984);
+        final Direction class1851 = class1849.get(Class3983.field17983);
+        final boolean booleanValue = class1849.get(Class3983.field17985);
+        final boolean booleanValue2 = class1849.get(Class3983.field17984);
         boolean b3 = !b;
         boolean b4 = false;
         int n2 = 0;
@@ -111,10 +109,10 @@ public class Class3983 extends Block
                 }
                 else {
                     if (i == n) {
-                        method6701 = (BlockState)MoreObjects.firstNonNull((Object)class1850, (Object)method6701);
+                        method6701 = (BlockState)MoreObjects.firstNonNull(class1850, (Object)method6701);
                     }
-                    final boolean b5 = !((StateHolder<Object, Object>)method6701).get((IProperty<Boolean>)Class3975.field17955);
-                    final boolean booleanValue3 = ((StateHolder<Object, Object>)method6701).get((IProperty<Boolean>)Class3975.field17953);
+                    final boolean b5 = !method6701.get(Class3975.field17955);
+                    final boolean booleanValue3 = method6701.get(Class3975.field17953);
                     b4 |= (b5 && booleanValue3);
                     array[i] = method6701;
                     if (i == n) {
@@ -125,7 +123,7 @@ public class Class3983 extends Block
                 ++i;
             }
             else {
-                if (((StateHolder<Object, Object>)method6701).get((IProperty<Comparable>)Class3983.field17983) != class1851.getOpposite()) {
+                if (method6701.get((IProperty<Comparable>)Class3983.field17983) != class1851.getOpposite()) {
                     break;
                 }
                 n2 = i;

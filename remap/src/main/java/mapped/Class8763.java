@@ -142,8 +142,8 @@ public class Class8763
             Class8763.field36815 = method30334(s + "melonstem.png", 8, 1);
             Class8763.field36817 = method30333(s, new String[] { "myceliumparticle.png", "myceliumparticlecolor.png" }, -1, -1);
             final Pair<Class8265[], Integer> method30321 = method30321();
-            Class8763.field36808 = (Class8265[])method30321.getLeft();
-            Class8763.field36809 = (int)method30321.getRight();
+            Class8763.field36808 = method30321.getLeft();
+            Class8763.field36809 = method30321.getRight();
             method30323("optifine/color.properties");
             Class8763.field36799 = method30325(new String[] { s + "custom/", s + "blocks/" }, Class8763.field36798, 256, 256);
             method30335();
@@ -168,7 +168,7 @@ public class Class8763
                 method30383("Expected values: " + Config.method28888(a));
                 return s2;
             }
-            method30382("" + str + "=" + property);
+            method30382(str + "=" + property);
             return property;
         }
         catch (final FileNotFoundException ex) {
@@ -226,9 +226,9 @@ public class Class8763
                     array3[k] = new Class8265(new Class9432(class7718), (method32779 == null) ? null : new Class9432(method32779), (method32780 == null) ? null : new Class9432(method32780));
                 }
             }
-            return (Pair<Class8265[], Integer>)new ImmutablePair((Object)array3, (Object)intValue);
+            return (Pair<Class8265[], Integer>)new ImmutablePair(array3, intValue);
         }
-        return (Pair<Class8265[], Integer>)new ImmutablePair((Object)null, (Object)0);
+        return (Pair<Class8265[], Integer>)new ImmutablePair(null, 0);
     }
     
     private static int method30322(final String s, final int n) {

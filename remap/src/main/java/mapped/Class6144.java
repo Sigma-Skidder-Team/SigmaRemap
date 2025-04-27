@@ -20,7 +20,7 @@ public class Class6144 extends Class6132
     }
     
     public Dynamic<?> method18370(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)dynamic.update("Base", dynamic2 -> dynamic2.createInt(15 - dynamic2.asInt(0))).update("Patterns", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asStreamOpt().map(stream -> stream.map(dynamic4 -> dynamic4.update("Color", dynamic5 -> dynamic5.createInt(15 - dynamic5.asInt(0))))).map(dynamic3::createList), (Object)dynamic3));
+        return dynamic.update("Base", dynamic2 -> dynamic2.createInt(15 - dynamic2.asInt(0))).update("Patterns", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asStreamOpt().map(stream -> stream.map(dynamic4 -> dynamic4.update("Color", dynamic5 -> dynamic5.createInt(15 - dynamic5.asInt(0))))).map(dynamic3::createList), (Object)dynamic3));
     }
     
     @Override

@@ -11,7 +11,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class Class6679 implements Class6672<StringArgumentType>
 {
     public void method20318(final StringArgumentType stringArgumentType, final PacketBuffer class8654) {
-        class8654.method29500((Enum<?>)stringArgumentType.getType());
+        class8654.method29500(stringArgumentType.getType());
     }
     
     public StringArgumentType method20319(final PacketBuffer class8654) {

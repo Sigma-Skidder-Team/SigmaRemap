@@ -67,7 +67,7 @@ public class Class9286 implements ArgumentType<Class9456>
     static {
         field39826 = Arrays.asList("foo", "foo.bar.baz", "minecraft:foo");
         field39827 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.criteria.invalid", new Object[] { o });
+            new Class2259("argument.criteria.invalid", o);
             return;
         });
     }

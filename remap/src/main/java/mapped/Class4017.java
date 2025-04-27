@@ -59,10 +59,7 @@ public abstract class Class4017 extends Block
     public void method11825(final Class7096 class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         if (!class7097.isRemote) {
             final Class104 class7101 = class7096.method21772(this.method12205());
-            boolean b2 = false;
-            if (!Block.method11812(class7097, class7098.method1139())) {
-                b2 = true;
-            }
+            boolean b2 = !Block.method11812(class7097, class7098.method1139());
             final BlockPos method1147 = class7098.method1147();
             if (class7101 == Class104.field313 && !Block.method11812(class7097, method1147)) {
                 b2 = true;

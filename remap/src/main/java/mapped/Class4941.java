@@ -14,7 +14,7 @@ public class Class4941 extends Class4800
     private boolean field21223;
     public static Animation field21224;
     private Texture field21225;
-    private Class4813 field21226;
+    private final Class4813 field21226;
     public static Screen field21227;
     
     public Class4941() {

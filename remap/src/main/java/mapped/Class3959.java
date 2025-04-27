@@ -41,7 +41,7 @@ public class Class3959 extends Class3841
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        switch (Class8077.field33268[class7096.get((IProperty<Direction>)Class3959.field17881).ordinal()]) {
+        switch (Class8077.field33268[class7096.get(Class3959.field17881).ordinal()]) {
             case 1: {
                 return Class3959.field17887;
             }
@@ -65,7 +65,7 @@ public class Class3959 extends Class3841
     
     @Override
     public VoxelShape method11811(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        switch (Class8077.field33268[class7096.get((IProperty<Direction>)Class3959.field17881).ordinal()]) {
+        switch (Class8077.field33268[class7096.get(Class3959.field17881).ordinal()]) {
             case 1: {
                 return Class3959.field17892;
             }
@@ -135,7 +135,7 @@ public class Class3959 extends Class3841
     
     private void method12079(final World class1847, final BlockPos class1848, final BlockState class1849) {
         final boolean b = !class1847.method6749(class1848);
-        if (b != class1849.get((IProperty<Boolean>)Class3959.field17882)) {
+        if (b != class1849.get(Class3959.field17882)) {
             class1847.setBlockState(class1848, (BlockState)((StateHolder<Object, Object>)class1849).with((IProperty<Comparable>)Class3959.field17882, b), 4);
         }
     }
@@ -169,12 +169,12 @@ public class Class3959 extends Class3841
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3959.field17881, class7097.method8142(class7096.get((IProperty<Direction>)Class3959.field17881)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3959.field17881, class7097.method8142(class7096.get(Class3959.field17881)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3959.field17881)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3959.field17881)));
     }
     
     @Override

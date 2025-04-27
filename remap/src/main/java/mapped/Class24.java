@@ -270,7 +270,7 @@ public class Class24 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * 1L + Class9427.method35031(this.field67)) + Class9427.method35031(this.field68)) + Class9427.method35031(this.field69)) + Class9427.method35031(this.field70);
+        final long n = 31L * (31L * (31L * (31L + Class9427.method35031(this.field67)) + Class9427.method35031(this.field68)) + Class9427.method35031(this.field69)) + Class9427.method35031(this.field70);
         return (int)(n ^ n >> 32);
     }
     

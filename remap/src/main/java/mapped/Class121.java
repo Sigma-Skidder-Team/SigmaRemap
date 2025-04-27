@@ -20,9 +20,7 @@ public class Class121 implements Predicate<LivingEntity>
     @Override
     public boolean test(final LivingEntity class511) {
         if (class511 instanceof PlayerEntity || class511 instanceof Class839) {
-            if (class511.method1734(this.field379) > 9.0) {
-                return true;
-            }
+            return class511.method1734(this.field379) > 9.0;
         }
         return false;
     }

@@ -22,14 +22,14 @@ public class Class5303 extends Class5260<Class74>
         final int readerIndex = byteBuf.readerIndex();
         if (byteBuf.readByte() != 0) {
             byteBuf.readerIndex(readerIndex);
-            return (Class74)Class8089.method26579((DataInput)new ByteBufInputStream(byteBuf));
+            return (Class74)Class8089.method26579(new ByteBufInputStream(byteBuf));
         }
         return null;
     }
     
     public void method16437(final ByteBuf byteBuf, final Class74 class74) throws Exception {
         if (class74 != null) {
-            Class8089.method26582((DataOutput)new ByteBufOutputStream(byteBuf), class74);
+            Class8089.method26582(new ByteBufOutputStream(byteBuf), class74);
         }
         else {
             byteBuf.writeByte(0);

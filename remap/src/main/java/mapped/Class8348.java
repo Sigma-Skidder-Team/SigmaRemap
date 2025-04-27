@@ -20,7 +20,7 @@ public class Class8348
     private static final DynamicCommandExceptionType field34265;
     
     public static void method27827(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("spectate").requires(class7492 -> class7492.method23210(2))).executes(commandContext -> method27828((Class7492)commandContext.getSource(), null, ((Class7492)commandContext.getSource()).method23253()))).then(((RequiredArgumentBuilder)Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method27828((Class7492)commandContext.getSource(), Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), ((Class7492)commandContext.getSource()).method23253()))).then(Class7788.method25002("player", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21149()).executes(commandContext -> method27828((Class7492)commandContext.getSource(), Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), Class6886.method21150((CommandContext<Class7492>)commandContext, "player"))))));
+        commandDispatcher.register((LiteralArgumentBuilder) ((LiteralArgumentBuilder)Class7788.method25001("spectate").requires(class7492 -> class7492.method23210(2))).executes(commandContext -> method27828((Class7492)commandContext.getSource(), null, ((Class7492)commandContext.getSource()).method23253())).then(((RequiredArgumentBuilder)Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method27828(commandContext.getSource(), Class6886.method21144(commandContext, "target"), commandContext.getSource().method23253()))).then(Class7788.method25002("player", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21149()).executes(commandContext -> method27828(commandContext.getSource(), Class6886.method21144(commandContext, "target"), Class6886.method21150(commandContext, "player"))))));
     }
     
     private static int method27828(final Class7492 class7492, final Entity class7493, final Class513 class7494) throws CommandSyntaxException {
@@ -30,20 +30,20 @@ public class Class8348
         if (class7494.field3041.method26482() == Class101.field301) {
             class7494.method2952(class7493);
             if (class7493 == null) {
-                class7492.method23257(new Class2259("commands.spectate.success.stopped", new Object[0]), false);
+                class7492.method23257(new Class2259("commands.spectate.success.stopped"), false);
             }
             else {
-                class7492.method23257(new Class2259("commands.spectate.success.started", new Object[] { class7493.getDisplayName() }), false);
+                class7492.method23257(new Class2259("commands.spectate.success.started", class7493.getDisplayName()), false);
             }
             return 1;
         }
-        throw Class8348.field34265.create((Object)class7494.getDisplayName());
+        throw Class8348.field34265.create(class7494.getDisplayName());
     }
     
     static {
-        field34264 = new SimpleCommandExceptionType((Message)new Class2259("commands.spectate.self", new Object[0]));
+        field34264 = new SimpleCommandExceptionType(new Class2259("commands.spectate.self", new Object[0]));
         field34265 = new DynamicCommandExceptionType(o -> {
-            new Class2259("commands.spectate.not_spectator", new Object[] { o });
+            new Class2259("commands.spectate.not_spectator", o);
             return;
         });
     }

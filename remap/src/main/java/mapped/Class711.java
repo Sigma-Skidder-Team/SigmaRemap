@@ -17,13 +17,13 @@ public class Class711 extends Class703
     private boolean field3887;
     
     public Class711(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("resourcePack.title", new Object[0]));
+        super(class527, class528, new Class2259("resourcePack.title"));
     }
     
     @Override
     public void init() {
-        this.addButton(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder", new Object[0]), class654 -> Util.method27845().method978(this.minecraft.method5294())));
-        this.addButton(new Class654(this.width / 2 + 4, this.height - 48, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder"), class654 -> Util.method27845().method978(this.minecraft.method5294())));
+        this.addButton(new Class654(this.width / 2 + 4, this.height - 48, 150, 20, Class8822.method30773("gui.done"), class654 -> {
             if (!this.field3887) {
                 this.minecraft.displayGuiScreen(this.field3868);
             }
@@ -64,7 +64,6 @@ public class Class711 extends Class703
             field3886.children().forEach(class632 -> {
                 this.field3886.children().add(class632);
                 class632.method3640(this.field3886);
-                return;
             });
         }
         this.children.add(this.field3886);
@@ -79,7 +78,7 @@ public class Class711 extends Class703
             while (iterator.hasNext()) {
                 this.field3885.method3590(new Class632(this.field3885, this, (Class1922)iterator.next()));
             }
-            final Iterator iterator2 = Lists.reverse((List)Lists.newArrayList((Iterable)method5292.method7611())).iterator();
+            final Iterator iterator2 = Lists.reverse(Lists.newArrayList((Iterable)method5292.method7611())).iterator();
             while (iterator2.hasNext()) {
                 this.field3886.method3590(new Class632(this.field3886, this, (Class1922)iterator2.next()));
             }
@@ -108,7 +107,7 @@ public class Class711 extends Class703
         this.field3885.render(n, n2, n3);
         this.field3886.render(n, n2, n3);
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 16, 16777215);
-        this.drawCenteredString(this.font, Class8822.method30773("resourcePack.folderInfo", new Object[0]), this.width / 2 - 77, this.height - 26, 8421504);
+        this.drawCenteredString(this.font, Class8822.method30773("resourcePack.folderInfo"), this.width / 2 - 77, this.height - 26, 8421504);
         super.render(n, n2, n3);
     }
     

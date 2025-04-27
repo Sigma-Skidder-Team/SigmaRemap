@@ -55,7 +55,7 @@ public class Class1910 implements AutoCloseable, Class1911
     
     public <T> Class875<Class7701<T>> method7466(final Class875<T> class875, final boolean b) {
         return this.field10365.method5391(p2 -> new Class1414(0, () -> {
-            this.method7472((Class875<Object>)class876);
+            this.method7472(class876);
             class877.method5386(Class875.method5392("chunk priority sorter around " + class876.method5376(), class879 -> this.method7470(class878, (Function<Class875<Class315>, Object>)Class7701.method24532(class879), Class7701.method24533(class879), Class7701.method24534(class879), b2)));
         })).join();
     }
@@ -70,7 +70,6 @@ public class Class1910 implements AutoCloseable, Class1911
             this.field10363.values().forEach(class7861 -> {
                 intSupplier2.getAsInt();
                 class7861.method29074(n3, class7860, n4);
-                return;
             });
             intConsumer2.accept(n2);
         }));
@@ -81,8 +80,8 @@ public class Class1910 implements AutoCloseable, Class1911
             this.method7472((Class875<T>)class876);
             final Class8587 class877;
             class877.method29076(n2, b2);
-            if (!(!this.field10364.remove(class876))) {
-                this.method7471(class877, (Class875<Object>)class876);
+            if (this.field10364.remove(class876)) {
+                this.method7471(class877, class876);
             }
             runnable2.run();
         }));
@@ -95,11 +94,11 @@ public class Class1910 implements AutoCloseable, Class1911
             final Class8587 class877;
             final int n3;
             class877.method29075(Optional.of(value), n2, n3);
-            if (!(!b2)) {
+            if (b2) {
                 class877.method29075(Optional.empty(), n2, n3);
             }
-            if (!(!this.field10364.remove(class876))) {
-                this.method7471(class877, (Class875<Object>)class876);
+            if (this.field10364.remove(class876)) {
+                this.method7471(class877, class876);
             }
         }));
     }
@@ -112,7 +111,7 @@ public class Class1910 implements AutoCloseable, Class1911
                 Util.method27853((List<? extends CompletableFuture<?>>)stream.map(either -> (CompletableFuture)either.map((Function)class8591::method5391, runnable -> {
                     runnable.run();
                     return CompletableFuture.completedFuture(Class315.field1875);
-                })).collect((Collector<? super Object, ?, List<? extends CompletableFuture<? extends V>>>)Collectors.toList())).thenAccept(p2 -> this.method7471(class8592, (Class875<Object>)class8593));
+                })).collect(Collectors.toList())).thenAccept(p2 -> this.method7471(class8592, class8593));
             }
             else {
                 this.field10364.add(class8590);
@@ -130,7 +129,7 @@ public class Class1910 implements AutoCloseable, Class1911
     
     @VisibleForTesting
     public String method7473() {
-        return this.field10363.entrySet().stream().map(entry -> entry.getKey().method5376() + "=[" + ((Class8587)entry.getValue()).method29079().stream().map(obj -> obj + ":" + new ChunkPos(obj)).collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + "]").collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + ", s=" + this.field10364.size();
+        return this.field10363.entrySet().stream().map(entry -> entry.getKey().method5376() + "=[" + entry.getValue().method29079().stream().map(obj -> obj + ":" + new ChunkPos(obj)).collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + "]").collect((Collector<? super Object, ?, String>)Collectors.joining(",")) + ", s=" + this.field10364.size();
     }
     
     @Override

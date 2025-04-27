@@ -17,8 +17,8 @@ public class Class2404 extends Class2403
     public static final int field14246 = 15;
     private static final int field14247 = 25;
     private float field14248;
-    private int field14249;
-    private int field14250;
+    private final int field14249;
+    private final int field14250;
     
     public Class2404(final float n, final float n2, final float n3, final float n4, final float n5) {
         this(n, n2, n3, n4, n5, 25);

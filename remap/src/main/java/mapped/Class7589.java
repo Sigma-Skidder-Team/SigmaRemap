@@ -28,7 +28,7 @@ public class Class7589
     private static final Dynamic4CommandExceptionType field30109;
     
     public static void method23873(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("spreadplayers").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25002("center", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8930.method31491()).then(Class7788.method25002("spreadDistance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).then(Class7788.method25002("maxRange", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(1.0f)).then(Class7788.method25002("respectTeams", (com.mojang.brigadier.arguments.ArgumentType<Object>)BoolArgumentType.bool()).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).executes(commandContext -> method23874((Class7492)commandContext.getSource(), Class8930.method31492((CommandContext<Class7492>)commandContext, "center"), FloatArgumentType.getFloat(commandContext, "spreadDistance"), FloatArgumentType.getFloat(commandContext, "maxRange"), BoolArgumentType.getBool(commandContext, "respectTeams"), Class6886.method21146((CommandContext<Class7492>)commandContext, "targets")))))))));
+        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("spreadplayers").requires(class7492 -> class7492.method23210(2))).then(Class7788.method25002("center", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8930.method31491()).then(Class7788.method25002("spreadDistance", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(0.0f)).then(Class7788.method25002("maxRange", (com.mojang.brigadier.arguments.ArgumentType<Object>)FloatArgumentType.floatArg(1.0f)).then(Class7788.method25002("respectTeams", (com.mojang.brigadier.arguments.ArgumentType<Object>)BoolArgumentType.bool()).then(Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).executes(commandContext -> method23874(commandContext.getSource(), Class8930.method31492(commandContext, "center"), FloatArgumentType.getFloat(commandContext, "spreadDistance"), FloatArgumentType.getFloat(commandContext, "maxRange"), BoolArgumentType.getBool(commandContext, "respectTeams"), Class6886.method21146(commandContext, "targets")))))))));
     }
     
     private static int method23874(final Class7492 class7492, final Vec2f class7493, final float n, final float n2, final boolean b, final Collection<? extends Entity> collection) throws CommandSyntaxException {
@@ -39,7 +39,7 @@ public class Class7589
         final double n6 = class7493.y + n2;
         final Class8296[] method23878 = method23878(random, b ? method23875(collection) : collection.size(), n3, n4, n5, n6);
         method23876(class7493, n, class7492.method23250(), random, n3, n4, n5, n6, method23878, b);
-        class7492.method23257(new Class2259("commands.spreadplayers.success." + (b ? "teams" : "entities"), new Object[] { method23878.length, class7493.x, class7493.y, String.format(Locale.ROOT, "%.2f", method23877(collection, class7492.method23250(), method23878, b)) }), true);
+        class7492.method23257(new Class2259("commands.spreadplayers.success." + (b ? "teams" : "entities"), method23878.length, class7493.x, class7493.y, String.format(Locale.ROOT, "%.2f", method23877(collection, class7492.method23250(), method23878, b))), true);
         return method23878.length;
     }
     
@@ -111,9 +111,9 @@ public class Class7589
             return;
         }
         if (!b) {
-            throw Class7589.field30109.create((Object)array.length, (Object)class9544.x, (Object)class9544.y, (Object)String.format(Locale.ROOT, "%.2f", min));
+            throw Class7589.field30109.create(array.length, class9544.x, class9544.y, String.format(Locale.ROOT, "%.2f", min));
         }
-        throw Class7589.field30108.create((Object)array.length, (Object)class9544.x, (Object)class9544.y, (Object)String.format(Locale.ROOT, "%.2f", min));
+        throw Class7589.field30108.create(array.length, class9544.x, class9544.y, String.format(Locale.ROOT, "%.2f", min));
     }
     
     private static double method23877(final Collection<? extends Entity> collection, final Class1849 class1849, final Class8296[] array, final boolean b) {
@@ -158,7 +158,7 @@ public class Class7589
     }
     
     static {
-        field30108 = new Dynamic4CommandExceptionType((o, o2, o3, o4) -> new Class2259("commands.spreadplayers.failed.teams", new Object[] { o, o2, o3, o4 }));
-        field30109 = new Dynamic4CommandExceptionType((o, o2, o3, o4) -> new Class2259("commands.spreadplayers.failed.entities", new Object[] { o, o2, o3, o4 }));
+        field30108 = new Dynamic4CommandExceptionType((o, o2, o3, o4) -> new Class2259("commands.spreadplayers.failed.teams", o, o2, o3, o4));
+        field30109 = new Dynamic4CommandExceptionType((o, o2, o3, o4) -> new Class2259("commands.spreadplayers.failed.entities", o, o2, o3, o4));
     }
 }

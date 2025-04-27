@@ -169,7 +169,7 @@ public class Class4086 extends Class4085
         }
         final CompoundNBT e = new CompoundNBT();
         class8322.method27627(e);
-        ((AbstractList<CompoundNBT>)method27659).add(e);
+        method27659.add(e);
         method27658.put("ChargedProjectiles", method27659);
     }
     
@@ -364,7 +364,7 @@ public class Class4086 extends Class4085
         if (method12296(class8321)) {
             if (!method12299.isEmpty()) {
                 final ItemStack class8324 = method12299.get(0);
-                list.add(new Class2259("item.minecraft.crossbow.projectile", new Object[0]).appendText(" ").appendSibling(class8324.method27684()));
+                list.add(new Class2259("item.minecraft.crossbow.projectile").appendText(" ").appendSibling(class8324.method27684()));
                 if (class8323.method7991()) {
                     if (class8324.getItem() == Items.field31532) {
                         final ArrayList arrayList = Lists.newArrayList();

@@ -144,7 +144,6 @@ public class KeyStrokes extends Module
     @EventListener
     private void method9952(final Class5748 class5748) {
         if (this.isEnabled() && KeyStrokes.mc.player != null) {
-            return;
         }
     }
 }

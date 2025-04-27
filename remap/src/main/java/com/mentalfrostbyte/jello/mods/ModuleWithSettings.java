@@ -22,7 +22,7 @@ public class ModuleWithSettings extends Module
 {
     public Module[] moduleArray;
     public Module parentModule;
-    private List<String> field15744;
+    private final List<String> field15744;
     public StringSetting field15745;
     private final List<Class8510> field15746;
     
@@ -36,7 +36,7 @@ public class ModuleWithSettings extends Module
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
         }
-        this.addSetting(this.field15745 = new StringSetting("Type", str + " mode", 0, (String[])this.field15744.toArray(new String[0])));
+        this.addSetting(this.field15745 = new StringSetting("Type", str + " mode", 0, this.field15744.toArray(new String[0])));
         this.field15745.method15195(class4997 -> this.method10258());
         this.method10258();
     }

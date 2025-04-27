@@ -23,7 +23,7 @@ public class Class5454 extends Class5419<Class787>
     private static String[] field22690;
     
     public Class5454() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33806, (Object)Class1952.field10628, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33811, (Object)Class1952.field10630));
+        super((Map)ImmutableMap.of(Class8233.field33806, Class1952.field10628, Class8233.field33809, Class1952.field10629, Class8233.field33810, Class1952.field10630, (Object)Class8233.field33811, (Object)Class1952.field10630));
     }
     
     public boolean method16553(final Class1849 class1849, final Class787 class1850) {
@@ -75,7 +75,6 @@ public class Class5454 extends Class5419<Class787>
         final HashMap hashMap = Maps.newHashMap();
         this.method16648(class787).stream().filter((Predicate<? super Object>)this::method16651).forEach(class788 -> {
             final Integer n = map.compute(this.method16649(class788), (p0, n2) -> (n2 != null) ? (n2 + 1) : 1);
-            return;
         });
         return hashMap;
     }

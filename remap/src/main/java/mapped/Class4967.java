@@ -48,17 +48,17 @@ public class Class4967 extends Class4961
     private long field21364;
     private long field21365;
     private double field21366;
-    private Class8035 field21367;
+    private final Class8035 field21367;
     private long field21368;
-    private Set<Class4960> field21369;
+    private final Set<Class4960> field21369;
     private Date field21370;
-    private URI field21371;
-    private List<Class9041> field21372;
-    private Queue<Class4248> field21373;
-    private Class7660 field21374;
+    private final URI field21371;
+    private final List<Class9041> field21372;
+    private final Queue<Class4248> field21373;
+    private final Class7660 field21374;
     public Class4968 field21375;
-    private Class7616 field21376;
-    private Class6747 field21377;
+    private final Class7616 field21376;
+    private final Class6747 field21377;
     public ConcurrentHashMap<String, Class4960> field21378;
     
     public Class4967() {
@@ -209,7 +209,7 @@ public class Class4967 extends Class4961
         Class4967.field21341.fine("open");
         this.method15068();
         this.field21358 = Class1978.field10966;
-        this.method14942("open", new Object[0]);
+        this.method14942("open");
         final Class4968 field21375 = this.field21375;
         this.field21373.add(Class8415.method28106(field21375, "data", new Class4675(this)));
         this.field21373.add(Class8415.method28106(field21375, "ping", new Class4692(this)));
@@ -221,7 +221,7 @@ public class Class4967 extends Class4961
     
     private void method15057() {
         this.field21370 = new Date();
-        this.method15038("ping", new Object[0]);
+        this.method15038("ping");
     }
     
     private void method15058() {
@@ -354,7 +354,7 @@ public class Class4967 extends Class4961
             else {
                 Class4967.field21341.fine("reconnect failed");
                 this.field21367.method26359();
-                this.method15038("reconnect_failed", new Object[0]);
+                this.method15038("reconnect_failed");
                 this.field21361 = false;
             }
         }

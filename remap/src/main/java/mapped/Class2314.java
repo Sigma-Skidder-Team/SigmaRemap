@@ -8,12 +8,12 @@ import java.io.Serializable;
 
 public final class Class2314 implements Serializable
 {
-    private String field14036;
-    private int field14037;
-    private int field14038;
-    private int field14039;
-    private int[] field14040;
-    private int field14041;
+    private final String field14036;
+    private final int field14037;
+    private final int field14038;
+    private final int field14039;
+    private final int[] field14040;
+    private final int field14041;
     
     private static int[] method9426(final char[] array) {
         final int[] array2 = new int[Character.codePointCount(array, 0, array.length)];
@@ -98,15 +98,14 @@ public final class Class2314 implements Serializable
     @Override
     public String toString() {
         final String method9429 = this.method9429();
-        final StringBuilder sb = new StringBuilder(" in ");
-        sb.append(this.field14036);
-        sb.append(", line ");
-        sb.append(this.field14038 + 1);
-        sb.append(", column ");
-        sb.append(this.field14039 + 1);
-        sb.append(":\n");
-        sb.append(method9429);
-        return sb.toString();
+        String sb = " in " + this.field14036 +
+                ", line " +
+                (this.field14038 + 1) +
+                ", column " +
+                (this.field14039 + 1) +
+                ":\n" +
+                method9429;
+        return sb;
     }
     
     public String method9430() {

@@ -14,12 +14,12 @@ import java.util.Map;
 
 public class NativeLibrary
 {
-    private long handle;
+    private final long handle;
     private final String libraryName;
     private final String libraryPath;
     private final Map<String, Function> functions;
     public final int callFlags;
-    private String encoding;
+    private final String encoding;
     public final Map<String, ?> options;
     private static final Map<String, Reference<NativeLibrary>> libraries;
     private static final Map<String, List<String>> searchPaths;
@@ -1298,7 +1298,7 @@ public class NativeLibrary
         return new File(this.libraryPath);
     }
     
-    public void finalize() {
+    protected void finalize() {
         this.dispose();
     }
     

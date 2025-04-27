@@ -17,6 +17,6 @@ public class Class6135 extends Class6132
     
     @Override
     public Typed<?> method18357(final Typed<?> typed) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> dynamic.remove("Color"));
+        return typed.update(DSL.remainderFinder(), dynamic -> dynamic.remove("Color"));
     }
 }

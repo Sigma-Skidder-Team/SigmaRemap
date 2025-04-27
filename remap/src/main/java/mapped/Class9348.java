@@ -48,14 +48,9 @@ public class Class9348
             final Object method34657 = this.method34656();
             final Object method34658 = class9348.method34656();
             if (method34657 != null) {
-                if (!method34657.equals(method34658)) {
-                    return false;
-                }
+                return method34657.equals(method34658);
             }
-            else if (method34658 != null) {
-                return false;
-            }
-            return true;
+            else return method34658 == null;
         }
         return false;
     }

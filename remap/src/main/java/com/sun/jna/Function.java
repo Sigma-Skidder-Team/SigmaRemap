@@ -1360,7 +1360,7 @@ public class Function extends Pointer
     }
     
     public String invokeString(final Object[] args, final boolean wide) {
-        final Object invoke = this.invoke((Class<?>)(wide ? WString.class : String.class), args);
+        final Object invoke = this.invoke(wide ? WString.class : String.class, args);
         return (invoke != null) ? invoke.toString() : null;
     }
     

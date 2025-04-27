@@ -112,7 +112,7 @@ public enum Class2213
     field13590("MSNV", "MPEG-4 for SonyPSP");
     
     private String field13591;
-    private String field13592;
+    private final String field13592;
     
     public static Class2213 method8394(final String s) {
         for (final Class2213 class2213 : values()) {
@@ -125,7 +125,7 @@ public enum Class2213
         return field13487;
     }
     
-    private Class2213(final String field13591, final String field13592) {
+    Class2213(final String field13591, final String field13592) {
         this.field13591 = field13591;
         this.field13592 = field13592;
     }

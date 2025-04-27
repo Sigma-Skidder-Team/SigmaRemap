@@ -98,7 +98,7 @@ public final class ItemStack
             return new ItemStack(class51);
         }
         catch (final RuntimeException ex) {
-            ItemStack.field34173.debug("Tried to load invalid item: {}", (Object)class51, (Object)ex);
+            ItemStack.field34173.debug("Tried to load invalid item: {}", class51, ex);
             return ItemStack.EMPTY;
         }
     }
@@ -345,9 +345,7 @@ public final class ItemStack
     public boolean method27656() {
         if (!this.field34180) {
             if (this.field34179 != null) {
-                if (!this.field34179.method331()) {
-                    return true;
-                }
+                return !this.field34179.method331();
             }
         }
         return false;
@@ -474,10 +472,10 @@ public final class ItemStack
                 final CompoundNBT method8471 = this.field34179.getCompound("display");
                 if (method8471.contains("color", 3)) {
                     if (class513.method7991()) {
-                        arrayList.add(new Class2259("item.color", new Object[] { String.format("#%06X", method8471.getInt("color")) }).applyTextStyle(TextFormatting.GRAY));
+                        arrayList.add(new Class2259("item.color", String.format("#%06X", method8471.getInt("color"))).applyTextStyle(TextFormatting.GRAY));
                     }
                     else {
-                        arrayList.add(new Class2259("item.dyed", new Object[0]).applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC));
+                        arrayList.add(new Class2259("item.dyed").applyTextStyles(TextFormatting.GRAY, TextFormatting.ITALIC));
                     }
                 }
                 if (method8471.getTagId("Lore") == 9) {
@@ -501,7 +499,7 @@ public final class ItemStack
             final Multimap<String, Class7919> method8475 = this.method27682(class514);
             if (!method8475.isEmpty() && (method8470 & 0x2) == 0x0) {
                 arrayList.add(new StringTextComponent(""));
-                arrayList.add(new Class2259("item.modifiers." + class514.method8404(), new Object[0]).applyTextStyle(TextFormatting.GRAY));
+                arrayList.add(new Class2259("item.modifiers." + class514.method8404()).applyTextStyle(TextFormatting.GRAY));
                 for (final Map.Entry<K, Class7919> entry : method8475.entries()) {
                     final Class7919 class515 = entry.getValue();
                     double method8476 = class515.method25638();
@@ -524,28 +522,28 @@ public final class ItemStack
                         n = method8476 * 100.0;
                     }
                     if (b) {
-                        arrayList.add(new StringTextComponent(" ").appendSibling(new Class2259("attribute.modifier.equals." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) })).applyTextStyle(TextFormatting.DARK_GREEN));
+                        arrayList.add(new StringTextComponent(" ").appendSibling(new Class2259("attribute.modifier.equals." + class515.method25637().method8322(), ItemStack.field34175.format(n), new Class2259("attribute.name." + entry.getKey()))).applyTextStyle(TextFormatting.DARK_GREEN));
                     }
                     else if (method8476 > 0.0) {
-                        arrayList.add(new Class2259("attribute.modifier.plus." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).applyTextStyle(TextFormatting.BLUE));
+                        arrayList.add(new Class2259("attribute.modifier.plus." + class515.method25637().method8322(), ItemStack.field34175.format(n), new Class2259("attribute.name." + entry.getKey())).applyTextStyle(TextFormatting.BLUE));
                     }
                     else {
                         if (method8476 >= 0.0) {
                             continue;
                         }
-                        arrayList.add(new Class2259("attribute.modifier.take." + class515.method25637().method8322(), new Object[] { ItemStack.field34175.format(n * -1.0), new Class2259("attribute.name." + (String)entry.getKey(), new Object[0]) }).applyTextStyle(TextFormatting.RED));
+                        arrayList.add(new Class2259("attribute.modifier.take." + class515.method25637().method8322(), ItemStack.field34175.format(n * -1.0), new Class2259("attribute.name." + entry.getKey())).applyTextStyle(TextFormatting.RED));
                     }
                 }
             }
         }
         if (this.method27656() && this.method27657().getBoolean("Unbreakable") && (method8470 & 0x4) == 0x0) {
-            arrayList.add(new Class2259("item.unbreakable", new Object[0]).applyTextStyle(TextFormatting.BLUE));
+            arrayList.add(new Class2259("item.unbreakable").applyTextStyle(TextFormatting.BLUE));
         }
         if (this.method27656() && this.field34179.contains("CanDestroy", 9) && (method8470 & 0x8) == 0x0) {
             final ListNBT method8477 = this.field34179.getList("CanDestroy", 8);
             if (!method8477.isEmpty()) {
                 arrayList.add(new StringTextComponent(""));
-                arrayList.add(new Class2259("item.canBreak", new Object[0]).applyTextStyle(TextFormatting.GRAY));
+                arrayList.add(new Class2259("item.canBreak").applyTextStyle(TextFormatting.GRAY));
                 for (int k = 0; k < method8477.size(); ++k) {
                     arrayList.addAll(method27670(method8477.method353(k)));
                 }
@@ -555,7 +553,7 @@ public final class ItemStack
             final ListNBT method8478 = this.field34179.getList("CanPlaceOn", 8);
             if (!method8478.isEmpty()) {
                 arrayList.add(new StringTextComponent(""));
-                arrayList.add(new Class2259("item.canPlace", new Object[0]).applyTextStyle(TextFormatting.GRAY));
+                arrayList.add(new Class2259("item.canPlace").applyTextStyle(TextFormatting.GRAY));
                 for (int l = 0; l < method8478.size(); ++l) {
                     arrayList.addAll(method27670(method8478.method353(l)));
                 }
@@ -563,11 +561,11 @@ public final class ItemStack
         }
         if (class513.method7991()) {
             if (this.method27631()) {
-                arrayList.add(new Class2259("item.durability", new Object[] { this.method27634() - this.method27632(), this.method27634() }));
+                arrayList.add(new Class2259("item.durability", this.method27634() - this.method27632(), this.method27634()));
             }
             arrayList.add(new StringTextComponent(Registry.field211.getKey(this.getItem()).toString()).applyTextStyle(TextFormatting.DARK_GRAY));
             if (this.method27656()) {
-                arrayList.add(new Class2259("item.nbt_tags", new Object[] { this.method27657().keySet().size() }).applyTextStyle(TextFormatting.DARK_GRAY));
+                arrayList.add(new Class2259("item.nbt_tags", this.method27657().keySet().size()).applyTextStyle(TextFormatting.DARK_GRAY));
             }
         }
         return arrayList;
@@ -624,7 +622,7 @@ public final class ItemStack
         final CompoundNBT e = new CompoundNBT();
         e.putString("id", String.valueOf(Registry.field209.getKey(class6257)));
         e.putShort("lvl", (byte)n);
-        ((AbstractList<CompoundNBT>)method328).add(e);
+        method328.add(e);
     }
     
     public boolean method27675() {
@@ -668,7 +666,7 @@ public final class ItemStack
                     if (!method329.contains("Slot", 8) || method329.getString("Slot").equals(class2215.method8404())) {
                         if (method330.method25635().getLeastSignificantBits() != 0L) {
                             if (method330.method25635().getMostSignificantBits() != 0L) {
-                                ((Multimap)o).put((Object)method329.getString("AttributeName"), (Object)method330);
+                                ((Multimap)o).put(method329.getString("AttributeName"), method330);
                             }
                         }
                     }
@@ -693,7 +691,7 @@ public final class ItemStack
         if (class7920 != null) {
             method329.putString("Slot", class7920.method8404());
         }
-        ((AbstractList<CompoundNBT>)method328).add(method329);
+        method328.add(method329);
     }
     
     public ITextComponent method27684() {

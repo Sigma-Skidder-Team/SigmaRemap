@@ -30,17 +30,17 @@ public abstract class Class541 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field3266 = this.addButton(new Class654(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method3160()));
-        this.field3267 = this.addButton(new Class654(this.width / 2 + 4, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.onClose()));
+        this.field3266 = this.addButton(new Class654(this.width / 2 - 4 - 150, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.done"), class654 -> this.method3160()));
+        this.field3267 = this.addButton(new Class654(this.width / 2 + 4, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.cancel"), class654 -> this.onClose()));
         this.field3268 = this.addButton(new Class654(this.width / 2 + 150 - 20, this.method3158(), 20, 20, "O", class654 -> {
             final Class865 method3157 = this.method3157();
             method3157.method5219(!method3157.method5220());
             this.method3159();
         }));
-        (this.field3264 = new Class577(this, this.font, this.width / 2 - 150, 50, 300, 20, Class8822.method30773("advMode.command", new Object[0]))).method3397(32500);
+        (this.field3264 = new Class577(this, this.font, this.width / 2 - 150, 50, 300, 20, Class8822.method30773("advMode.command"))).method3397(32500);
         this.field3264.method3374(this::method3162);
         this.children.add(this.field3264);
-        (this.field3265 = new Class576(this.font, this.width / 2 - 150, this.method3158(), 276, 20, Class8822.method30773("advMode.previousOutput", new Object[0]))).method3397(32500);
+        (this.field3265 = new Class576(this.font, this.width / 2 - 150, this.method3158(), 276, 20, Class8822.method30773("advMode.previousOutput"))).method3397(32500);
         this.field3265.method3405(false);
         this.field3265.method3377("-");
         this.children.add(this.field3265);
@@ -123,12 +123,12 @@ public abstract class Class541 extends Screen
     @Override
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.drawCenteredString(this.font, Class8822.method30773("advMode.setCommand", new Object[0]), this.width / 2, 20, 16777215);
-        this.drawString(this.font, Class8822.method30773("advMode.command", new Object[0]), this.width / 2 - 150, 40, 10526880);
+        this.drawCenteredString(this.font, Class8822.method30773("advMode.setCommand"), this.width / 2, 20, 16777215);
+        this.drawString(this.font, Class8822.method30773("advMode.command"), this.width / 2 - 150, 40, 10526880);
         this.field3264.render(n, n2, n3);
         final int n4 = 75;
         if (!this.field3265.method3378().isEmpty()) {
-            this.drawString(this.font, Class8822.method30773("advMode.previousOutput", new Object[0]), this.width / 2 - 150, n4 + (46 + this.method3158() - 135) + 4, 10526880);
+            this.drawString(this.font, Class8822.method30773("advMode.previousOutput"), this.width / 2 - 150, n4 + (46 + this.method3158() - 135) + 4, 10526880);
             this.field3265.render(n, n2, n3);
         }
         super.render(n, n2, n3);

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Class5341 implements Class5337
 {
-    private ArrayList field22396;
+    private final ArrayList field22396;
     private Class5337 field22397;
     
     public Class5341() {

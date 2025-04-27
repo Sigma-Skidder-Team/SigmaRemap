@@ -113,9 +113,7 @@ public class Class4036 extends Item
         final PlayerEntity method21652 = class7074.method21652();
         final ISelectionContext class7076 = (method21652 != null) ? ISelectionContext.forEntity(method21652) : ISelectionContext.dummy();
         if (!this.method12237() || class7075.method21752(class7074.method21654(), class7074.method21639())) {
-            if (class7074.method21654().method6974(class7075, class7074.method21639(), class7076)) {
-                return true;
-            }
+            return class7074.method21654().method6974(class7075, class7074.method21639(), class7076);
         }
         return false;
     }

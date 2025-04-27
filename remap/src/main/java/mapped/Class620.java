@@ -46,8 +46,8 @@ public class Class620 extends Class608<Class641>
                 this.field3599 = method5243.method25785();
             }
             catch (final Class2323 class2323) {
-                Class620.field3594.error("Couldn't load level list", (Throwable)class2323);
-                this.field3540.displayGuiScreen(new Class728(new Class2259("selectWorld.unable_to_load", new Object[0]), class2323.getMessage()));
+                Class620.field3594.error("Couldn't load level list", class2323);
+                this.field3540.displayGuiScreen(new Class728(new Class2259("selectWorld.unable_to_load"), class2323.getMessage()));
                 return;
             }
             Collections.sort(this.field3599);
@@ -79,7 +79,7 @@ public class Class620 extends Class608<Class641>
         super.method3531(class641);
         if (class641 != null) {
             final Class1934 method3684 = Class641.method3684(class641);
-            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { new Class2259("narrator.select.world", new Object[] { method3684.method7809(), new Date(method3684.method7812()), method3684.method7814() ? Class8822.method30773("gameMode.hardcore", new Object[0]) : Class8822.method30773("gameMode." + method3684.method7813().method586(), new Object[0]), method3684.method7815() ? Class8822.method30773("selectWorld.cheats", new Object[0]) : "", method3684.method7816() }) }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Class2259("narrator.select.world", method3684.method7809(), new Date(method3684.method7812()), method3684.method7814() ? Class8822.method30773("gameMode.hardcore") : Class8822.method30773("gameMode." + method3684.method7813().method586()), method3684.method7815() ? Class8822.method30773("selectWorld.cheats") : "", method3684.method7816())).getString());
         }
     }
     

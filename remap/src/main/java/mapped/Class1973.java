@@ -23,7 +23,7 @@ public enum Class1973
     private final Class2018[] field10856;
     private static final Class1973[] field10857;
     
-    private Class1973(final Direction[] field10851, final float n, final boolean field10852, final Class2018[] field10853, final Class2018[] field10854, final Class2018[] field10855, final Class2018[] field10856) {
+    Class1973(final Direction[] field10851, final float n, final boolean field10852, final Class2018[] field10853, final Class2018[] field10854, final Class2018[] field10855, final Class2018[] field10856) {
         this.field10851 = field10851;
         this.field10852 = field10852;
         this.field10853 = field10853;

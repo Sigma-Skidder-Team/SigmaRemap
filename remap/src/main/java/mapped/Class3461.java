@@ -46,9 +46,7 @@ public class Class3461 extends Class3446
     public boolean method11017() {
         if (this.field16319 != null) {
             if (!this.field16317.method4150().method24731()) {
-                if (this.field16317.method4150().method24714().equals(this.field16319)) {
-                    return true;
-                }
+                return this.field16317.method4150().method24714().equals(this.field16319);
             }
         }
         return false;

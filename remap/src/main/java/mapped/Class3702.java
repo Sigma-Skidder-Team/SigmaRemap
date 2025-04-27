@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class Class3702 extends Class3703
 {
-    private Map<Long, Long> field17024;
+    private final Map<Long, Long> field17024;
     
     public Class3702() {
         super("Progressive Download Information Box");

@@ -1921,9 +1921,9 @@ public class Class9133
         final long n6 = 4L * n3;
         if (n4 != 8L) {
             for (int n7 = 0; n7 < n3; ++n7) {
-                final long n8 = 4 * n7;
+                final long n8 = 4L * n7;
                 for (int i = 0; i < n7; ++i) {
-                    final long n9 = 4 * i + class15.method133(n3 + n7);
+                    final long n9 = 4L * i + class15.method133(n3 + n7);
                     final long n10 = n8 + class15.method133(n3 + i);
                     final long n11 = n2 + n9;
                     final long n12 = n2 + n10;
@@ -6926,9 +6926,9 @@ public class Class9133
         final long n6 = 4L * n3;
         if (n4 != 8L) {
             for (int n7 = 0; n7 < n3; ++n7) {
-                final long n8 = 4 * n7;
+                final long n8 = 4L * n7;
                 for (int i = 0; i < n7; ++i) {
-                    final long n9 = 4 * i + class15.method133(n3 + n7);
+                    final long n9 = 4L * i + class15.method133(n3 + n7);
                     final long n10 = n8 + class15.method133(n3 + i);
                     final long n11 = n2 + n9;
                     final long n12 = n2 + n10;

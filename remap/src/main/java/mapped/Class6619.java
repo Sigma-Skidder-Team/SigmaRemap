@@ -21,9 +21,7 @@ public class Class6619 extends Class6601
         final Item method27622 = class8321.getItem();
         if (method27622 != Items.field31369) {
             if (method27622 != Items.field31521) {
-                if (method27622 != Items.field30967) {
-                    return false;
-                }
+                return method27622 == Items.field30967;
             }
         }
         return true;

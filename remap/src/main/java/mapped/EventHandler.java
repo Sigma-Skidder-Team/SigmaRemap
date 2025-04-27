@@ -11,13 +11,13 @@ import java.lang.invoke.MethodHandle;
 import java.lang.reflect.Method;
 
 public class EventHandler {
-    private Object listenerInstance;
-    private Class<?> eventClass;
-    private Method handlerMethod;
-    private MethodInvoker invoker;
-    private MethodHandle methodHandle;
-    private EventPriority priority;
-    private boolean isFromNCPPhase;
+    private final Object listenerInstance;
+    private final Class<?> eventClass;
+    private final Method handlerMethod;
+    private final MethodInvoker invoker;
+    private final MethodHandle methodHandle;
+    private final EventPriority priority;
+    private final boolean isFromNCPPhase;
 
     public EventHandler(final Object listenerInstance, final Class<?> eventClass, final Method handlerMethod, final EventPriority priority) {
         this.listenerInstance = listenerInstance;

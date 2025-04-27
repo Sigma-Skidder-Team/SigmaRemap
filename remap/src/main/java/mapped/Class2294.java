@@ -168,7 +168,7 @@ public abstract class Class2294 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * 1L + this.field13928) + this.field13929) + this.field13930) + this.field13931;
+        final long n = 31L * (31L * (31L * (31L + this.field13928) + this.field13929) + this.field13930) + this.field13931;
         return (int)(n ^ n >> 32);
     }
     

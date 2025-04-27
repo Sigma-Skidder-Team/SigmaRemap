@@ -12,22 +12,22 @@ public class Class705 extends Class703
     private Class654 field3877;
     
     public Class705(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("controls.title", new Object[0]));
+        super(class527, class528, new Class2259("controls.title"));
     }
     
     @Override
     public void init() {
-        this.addButton(new Class654(this.width / 2 - 155, 18, 150, 20, Class8822.method30773("options.mouse_settings", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class706(this, this.field3869))));
+        this.addButton(new Class654(this.width / 2 - 155, 18, 150, 20, Class8822.method30773("options.mouse_settings"), class654 -> this.minecraft.displayGuiScreen(new Class706(this, this.field3869))));
         this.addButton(Class6469.field25730.method19362(this.field3869, this.width / 2 - 155 + 160, 18, 150));
         this.field3876 = new Class607(this, this.minecraft);
         this.children.add(this.field3876);
-        this.field3877 = this.addButton(new Class654(this.width / 2 - 155, this.height - 29, 150, 20, Class8822.method30773("controls.resetAll", new Object[0]), class654 -> {
+        this.field3877 = this.addButton(new Class654(this.width / 2 - 155, this.height - 29, 150, 20, Class8822.method30773("controls.resetAll"), class654 -> {
             for (final Class350 class655 : this.field3869.field23460) {
                 class655.method1062(class655.method1061());
             }
             Class350.method1055();
         }));
-        this.addButton(new Class654(this.width / 2 - 155 + 160, this.height - 29, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 155 + 160, this.height - 29, 150, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override

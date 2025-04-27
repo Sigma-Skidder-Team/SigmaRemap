@@ -18,7 +18,7 @@ public class Class8250
             System.class.getMethod("exit", Integer.TYPE).invoke(null, 0);
         }
         catch (final InvocationTargetException | IllegalAccessException | IllegalArgumentException | NoSuchMethodException | SecurityException ex) {
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
         }
     }
 }

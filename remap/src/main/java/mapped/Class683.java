@@ -266,9 +266,7 @@ public class Class683 extends AbstractGui
         if (n3 >= n5) {
             if (n3 <= n6) {
                 if (n4 >= n7) {
-                    if (n4 <= n8) {
-                        return true;
-                    }
+                    return n4 <= n8;
                 }
             }
         }

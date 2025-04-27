@@ -37,7 +37,7 @@ public class Class4012 extends Block
     
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
-        final int intValue = class7096.get((IProperty<Integer>)Class4012.field18081);
+        final int intValue = class7096.get(Class4012.field18081);
         final float n = class7098.getY() + (6.0f + 3 * intValue) / 16.0f;
         if (!class7097.isRemote) {
             if (class7099.method1804()) {
@@ -57,7 +57,7 @@ public class Class4012 extends Block
         if (method2715.method27620()) {
             return Class2201.field13402;
         }
-        final int intValue = class7096.get((IProperty<Integer>)Class4012.field18081);
+        final int intValue = class7096.get(Class4012.field18081);
         final Item method2716 = method2715.getItem();
         if (method2716 == Items.field31350) {
             if (intValue < 3) {
@@ -204,8 +204,8 @@ public class Class4012 extends Block
         if (class1847.rand.nextInt(20) == 1) {
             if (class1847.method6959(class1848).method9845(class1848) >= 0.15f) {
                 final BlockState method6701 = class1847.getBlockState(class1848);
-                if (((StateHolder<Object, BlockState>)method6701).get((IProperty<Integer>)Class4012.field18081) < 3) {
-                    class1847.setBlockState(class1848, ((StateHolder<Object, BlockState>)method6701).method21768((IProperty<Comparable>)Class4012.field18081), 2);
+                if (method6701.get(Class4012.field18081) < 3) {
+                    class1847.setBlockState(class1848, method6701.method21768((IProperty<Comparable>)Class4012.field18081), 2);
                 }
             }
         }
@@ -218,7 +218,7 @@ public class Class4012 extends Block
     
     @Override
     public int method11874(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        return class7096.get((IProperty<Integer>)Class4012.field18081);
+        return class7096.get(Class4012.field18081);
     }
     
     @Override

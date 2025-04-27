@@ -33,7 +33,7 @@ public class Class4899 extends Class4841
         final ArrayList<Module> method14713 = this.method14713();
         if (method14713.size() > 0) {
             if (this.method14715(this.field20955, method14713.get(0).getName())) {
-                RenderUtil.drawString(this.field20954.method14316(), (float)(this.x + 54), (float)(this.y + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length(), method14713.get(0).getName().length()) + (method14713.get(0).isEnabled() ? " - Enabled" : " - Disabled"), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f));
+                RenderUtil.drawString(this.field20954.method14316(), (float)(this.x + 54), (float)(this.y + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length()) + (method14713.get(0).isEnabled() ? " - Enabled" : " - Disabled"), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f));
             }
         }
         super.draw(n);

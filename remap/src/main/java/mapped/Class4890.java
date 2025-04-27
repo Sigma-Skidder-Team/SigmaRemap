@@ -130,7 +130,7 @@ public class Class4890 extends Class4841
     public <E extends Enum<E>> void method14653(final Class<E> clazz) {
         this.field20904.clear();
         for (final Enum<E> enum1 : clazz.getEnumConstants()) {
-            this.method14651(enum1.toString().substring(0, 1).toUpperCase() + enum1.toString().substring(1, enum1.toString().length()).toLowerCase(), enum1.ordinal());
+            this.method14651(enum1.toString().substring(0, 1).toUpperCase() + enum1.toString().substring(1).toLowerCase(), enum1.ordinal());
         }
     }
     
@@ -162,9 +162,7 @@ public class Class4890 extends Class4841
         if (n >= 0) {
             if (n <= this.method14276()) {
                 if (n2 >= 0) {
-                    if (n2 <= this.method14648()) {
-                        return true;
-                    }
+                    return n2 <= this.method14648();
                 }
             }
         }

@@ -556,9 +556,7 @@ public class Class9404
                 return false;
             }
             if (class8988.field37896 == 2) {
-                if (!Class9404.field40351) {
-                    return false;
-                }
+                return Class9404.field40351;
             }
         }
         return true;

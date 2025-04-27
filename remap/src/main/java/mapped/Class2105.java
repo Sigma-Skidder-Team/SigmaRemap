@@ -19,7 +19,7 @@ public enum Class2105
     private static final Map<String, Class2105> field12206;
     private final String field12207;
     
-    private Class2105(final String field12207) {
+    Class2105(final String field12207) {
         this.field12207 = field12207;
     }
     
@@ -29,6 +29,6 @@ public enum Class2105
     }
     
     static {
-        field12206 = Arrays.stream(values()).collect(Collectors.toMap(class2105 -> class2105.field12207, (Function<? super Class2105, ? extends Class2105>)Function.identity()));
+        field12206 = Arrays.stream(values()).collect(Collectors.toMap(class2105 -> class2105.field12207, Function.identity()));
     }
 }

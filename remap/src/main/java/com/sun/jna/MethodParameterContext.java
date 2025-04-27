@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 public class MethodParameterContext extends FunctionParameterContext
 {
-    private Method method;
+    private final Method method;
     
     public MethodParameterContext(final Function f, final Object[] args, final int index, final Method m) {
         super(f, args, index);

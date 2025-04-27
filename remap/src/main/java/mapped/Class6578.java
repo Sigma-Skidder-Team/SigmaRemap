@@ -27,7 +27,7 @@ public final class Class6578 implements ProfileLookupCallback
         this.field26100.method1556().method29193(gameProfile);
         final String[] array = this.field26101.get(gameProfile.getName().toLowerCase(Locale.ROOT));
         if (array != null) {
-            ((Class8006<K, Class6025>)this.field26102).method26206(new Class6025(gameProfile, (array.length <= 1) ? null : Class7450.method22936(array[1], null), (array.length <= 2) ? null : array[2], (array.length <= 3) ? null : Class7450.method22936(array[3], null), (array.length <= 4) ? null : array[4]));
+            this.field26102.method26206(new Class6025(gameProfile, (array.length <= 1) ? null : Class7450.method22936(array[1], null), (array.length <= 2) ? null : array[2], (array.length <= 3) ? null : Class7450.method22936(array[3], null), (array.length <= 4) ? null : array[4]));
             return;
         }
         Class7450.method22935().warn("Could not convert user banlist entry for {}", (Object)gameProfile.getName());

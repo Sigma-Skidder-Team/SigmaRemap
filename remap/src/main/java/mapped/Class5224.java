@@ -42,7 +42,7 @@ public class Class5224 extends Class5207
     private static String method16341(final String s) {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("text", s);
-        return Class8557.method28750().toJson((JsonElement)jsonObject);
+        return Class8557.method28750().toJson(jsonObject);
     }
     
     public static Class7562 method16342(final Class6108 class6108) {

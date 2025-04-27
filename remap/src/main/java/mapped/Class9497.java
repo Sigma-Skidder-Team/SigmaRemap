@@ -14,7 +14,7 @@ public class Class9497
 {
     public int field40850;
     public boolean field40851;
-    private Map[] field40852;
+    private final Map[] field40852;
     
     public Class9497(final String str) {
         this.field40850 = 1;

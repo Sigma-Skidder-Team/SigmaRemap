@@ -27,6 +27,6 @@ public class Class6141 extends Class6132
         if (!string.isPresent()) {
             return dynamic;
         }
-        return (Dynamic<?>)dynamic.set("CustomName", dynamic.createString(((String)string.get()).replace("\"translate\":\"block.minecraft.illager_banner\"", "\"translate\":\"block.minecraft.ominous_banner\"")));
+        return dynamic.set("CustomName", dynamic.createString(((String)string.get()).replace("\"translate\":\"block.minecraft.illager_banner\"", "\"translate\":\"block.minecraft.ominous_banner\"")));
     }
 }

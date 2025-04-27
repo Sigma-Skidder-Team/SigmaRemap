@@ -145,10 +145,10 @@ public class Class7464
                 final int[] method18694 = class6315.method30291();
                 final int[] array2 = method18694.clone();
                 final int n = method18694.length / 4;
-                System.arraycopy(method18694, 0 * n, array2, 3 * n, n);
-                System.arraycopy(method18694, 1 * n, array2, 2 * n, n);
-                System.arraycopy(method18694, 2 * n, array2, 1 * n, n);
-                System.arraycopy(method18694, 3 * n, array2, 0 * n, n);
+                System.arraycopy(method18694, 0, array2, 3 * n, n);
+                System.arraycopy(method18694, n, array2, 2 * n, n);
+                System.arraycopy(method18694, 2 * n, array2, n, n);
+                System.arraycopy(method18694, 3 * n, array2, 0, n);
                 System.arraycopy(array2, 0, method18694, 0, array2.length);
                 method18693.add(class6315);
             }

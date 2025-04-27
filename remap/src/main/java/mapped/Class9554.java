@@ -40,9 +40,7 @@ public final class Class9554
             final Class9554 class9554 = (Class9554)o;
             if (this.field41141 == class9554.field41141) {
                 if (this.field41142 == class9554.field41142) {
-                    if (this.field41143 == class9554.field41143) {
-                        return true;
-                    }
+                    return this.field41143 == class9554.field41143;
                 }
             }
             return false;

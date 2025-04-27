@@ -29,7 +29,7 @@ public class Class7881 extends DataFix
         float n;
         if (!number.isPresent()) {
             if (!number2.isPresent()) {
-                return (Dynamic<?>)remove;
+                return remove;
             }
             n = number2.get().floatValue();
         }
@@ -37,7 +37,7 @@ public class Class7881 extends DataFix
             n = number.get().floatValue();
             remove = remove.remove("HealF");
         }
-        return (Dynamic<?>)remove.set("Health", remove.createFloat(n));
+        return remove.set("Health", remove.createFloat(n));
     }
     
     public TypeRewriteRule makeRule() {

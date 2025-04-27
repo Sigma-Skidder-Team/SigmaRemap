@@ -15,6 +15,6 @@ public final class Class7502 extends Class7501<Class7502>
     }
     
     public Class7502 method23401() {
-        return new Class7502((Long2ObjectOpenHashMap<Class7281>)this.field29076.clone());
+        return new Class7502(this.field29076.clone());
     }
 }

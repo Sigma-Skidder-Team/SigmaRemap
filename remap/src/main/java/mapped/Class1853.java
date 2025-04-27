@@ -62,7 +62,7 @@ public interface Class1853 extends IBlockReader
     }
     
     default Stream<VoxelShape> method6980(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
-        return Streams.concat(new Stream[] { this.method6981(class399, class400), this.method6956(class399, class400, set) });
+        return Streams.concat(this.method6981(class399, class400), this.method6956(class399, class400, set));
     }
     
     default Stream<VoxelShape> method6981(final Entity class399, final AxisAlignedBB class400) {

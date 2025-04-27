@@ -53,9 +53,7 @@ public abstract class Class3479 extends Class3446
     public boolean method11017() {
         if (this.field16393 >= -this.field16394) {
             if (this.field16393 <= 1200) {
-                if (this.method11050(this.field16390.world, this.field16395)) {
-                    return true;
-                }
+                return this.method11050(this.field16390.world, this.field16395);
             }
         }
         return false;

@@ -234,7 +234,7 @@ public class Class689 extends AbstractGui
         if (method5292 != null) {
             arrayList.add(method5292);
         }
-        arrayList.add(DimensionType.method1276(this.field3792.world.dimension.getType()).toString() + " FC: " + Integer.toString(((LongSet)o).size()));
+        arrayList.add(DimensionType.method1276(this.field3792.world.dimension.getType()).toString() + " FC: " + ((LongSet) o).size());
         arrayList.add("");
         arrayList.add(String.format(Locale.ROOT, "XYZ: %.3f / %.5f / %.3f", this.field3792.method5303().getPosX(), this.field3792.method5303().getPosY(), this.field3792.method5303().getPosZ()));
         arrayList.add(String.format("Block: %d %d %d", class354.getX(), class354.getY(), class354.getZ()));
@@ -326,7 +326,7 @@ public class Class689 extends AbstractGui
     }
     
     private World method3834() {
-        return (World)DataFixUtils.orElse((Optional)Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.world.dimension.getType())), (Object)this.field3792.world);
+        return (World)DataFixUtils.orElse(Optional.ofNullable(this.field3792.method5285()).map(class1655 -> class1655.method1481(this.field3792.world.dimension.getType())), (Object)this.field3792.world);
     }
     
     @Nullable
@@ -376,8 +376,8 @@ public class Class689 extends AbstractGui
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Block");
                 arrayList.add(String.valueOf(Registry.BLOCK.getKey(method6701.getBlock())));
                 final UnmodifiableIterator iterator2 = method6701.getValues().entrySet().iterator();
-                while (((Iterator)iterator2).hasNext()) {
-                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>)((Iterator)iterator2).next()));
+                while (iterator2.hasNext()) {
+                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>) iterator2.next()));
                 }
                 Collection<ResourceLocation> method6702;
                 if (!Class9570.field41235.method22605()) {
@@ -397,8 +397,8 @@ public class Class689 extends AbstractGui
                 arrayList.add(TextFormatting.UNDERLINE + "Targeted Fluid");
                 arrayList.add(String.valueOf(Registry.FLUID.getKey(method6703.getFluid())));
                 final UnmodifiableIterator iterator4 = method6703.getValues().entrySet().iterator();
-                while (((Iterator)iterator4).hasNext()) {
-                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>)((Iterator)iterator4).next()));
+                while (iterator4.hasNext()) {
+                    arrayList.add(this.method3838((Map.Entry<IProperty<?>, Comparable<?>>) iterator4.next()));
                 }
                 Collection<ResourceLocation> method6704;
                 if (!Class9570.field41272.method22605()) {
@@ -535,7 +535,7 @@ public class Class689 extends AbstractGui
     }
     
     static {
-        field3791 = Util.method27851((EnumMap)new EnumMap(HeightmapType.class), enumMap -> {
+        field3791 = Util.method27851(new EnumMap(HeightmapType.class), enumMap -> {
             enumMap.put(HeightmapType.field11521, "SW");
             enumMap.put(HeightmapType.field11522, "S");
             enumMap.put(HeightmapType.field11523, "OW");

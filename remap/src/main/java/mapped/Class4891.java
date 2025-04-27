@@ -135,9 +135,7 @@ public class Class4891 extends Class4841
         if (n >= 0) {
             if (n <= this.method14276()) {
                 if (n2 >= 0) {
-                    if (n2 <= this.method14278() + this.method14662()) {
-                        return true;
-                    }
+                    return n2 <= this.method14278() + this.method14662();
                 }
             }
         }

@@ -25,7 +25,7 @@ public class Class9029
     public Class7765 field38178;
     public int field38179;
     public int field38180;
-    private HashMap field38181;
+    private final HashMap field38181;
     public int field38182;
     public int field38183;
     

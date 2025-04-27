@@ -7,5 +7,5 @@ package mapped;
 public enum Class1985
 {
     field10993, 
-    field10994;
+    field10994
 }

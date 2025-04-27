@@ -7,8 +7,8 @@ package mapped;
 public class Class7674
 {
     private static String[] field30469;
-    private long field30470;
-    private String field30471;
+    private final long field30470;
+    private final String field30471;
     
     public Class7674(final String field30471, final long n) {
         this.field30471 = field30471;

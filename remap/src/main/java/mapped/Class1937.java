@@ -11,7 +11,7 @@ import java.lang.reflect.Type;
 
 public abstract class Class1937 extends Class1935
 {
-    private Type field10569;
+    private final Type field10569;
     private boolean field10570;
     private Class<?>[] field10571;
     

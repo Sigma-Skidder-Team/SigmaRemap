@@ -16,7 +16,7 @@ public class Class8135
     private Boolean field33523;
     private Boolean field33524;
     private Class8172 field33525;
-    private Class8172 field33526;
+    private final Class8172 field33526;
     
     public Class8135() {
         this.field33525 = Class8172.field33663;

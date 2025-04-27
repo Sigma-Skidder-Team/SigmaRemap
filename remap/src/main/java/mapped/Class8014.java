@@ -24,7 +24,7 @@ public class Class8014
     public static final int field32995 = 1;
     public static final int field32996 = 2;
     private static final int field32997 = 100;
-    private ArrayList field32998;
+    private final ArrayList field32998;
     public HashMap field32999;
     public int field33000;
     public ArrayList field33001;
@@ -229,7 +229,7 @@ public class Class8014
     }
     
     private void method26250() {
-        AccessController.doPrivileged((PrivilegedAction<Object>)new Class2430(this));
+        AccessController.doPrivileged(new Class2430(this));
     }
     
     public void method26251(final int n) {

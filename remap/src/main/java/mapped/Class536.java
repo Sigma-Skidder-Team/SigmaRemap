@@ -13,7 +13,7 @@ public class Class536 extends ChatScreen
     @Override
     public void init() {
         super.init();
-        this.addButton(new Class654(this.width / 2 - 100, this.height - 40, 200, 20, Class8822.method30773("multiplayer.stopSleeping", new Object[0]), class654 -> this.method3093()));
+        this.addButton(new Class654(this.width / 2 - 100, this.height - 40, 200, 20, Class8822.method30773("multiplayer.stopSleeping"), class654 -> this.method3093()));
     }
     
     @Override

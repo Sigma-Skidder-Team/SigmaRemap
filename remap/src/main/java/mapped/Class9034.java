@@ -41,25 +41,25 @@ public class Class9034
     }
     
     public Class8472<Float> method32459(final String s, final float f) {
-        final Class8472 e = new Class8472(this, (T)f, s, (n, n2) -> GL20.glUniform1f((int)n, (float)n2));
+        final Class8472 e = new Class8472(this, f, s, (n, n2) -> GL20.glUniform1f((int)n, (float)n2));
         this.field38207.add(e);
         return e;
     }
     
     public Class8472<Integer> method32460(final String s, final int i) {
-        final Class8472 e = new Class8472(this, (T)i, s, (n, n2) -> GL20.glUniform1i((int)n, (int)n2));
+        final Class8472 e = new Class8472(this, i, s, (n, n2) -> GL20.glUniform1i((int)n, (int)n2));
         this.field38207.add(e);
         return e;
     }
     
     public Class8472<Vec2f> method32461(final String s, final Vec2f class9544) {
-        final Class8472 e = new Class8472(this, (T)class9544, s, (n, class9545) -> GL20.glUniform2f((int)n, class9545.field41091, class9545.field41092));
+        final Class8472 e = new Class8472(this, class9544, s, (n, class9545) -> GL20.glUniform2f((int)n, class9545.field41091, class9545.field41092));
         this.field38207.add(e);
         return e;
     }
     
     public Class8472<Boolean> method32462(final String s, final boolean b) {
-        final Class8472 e = new Class8472(this, (T)b, s, (n, b2) -> GL20.glUniform1i((int)n, (int)(((boolean)b2) ? 1 : 0)));
+        final Class8472 e = new Class8472(this, b, s, (n, b2) -> GL20.glUniform1i((int)n, ((boolean)b2) ? 1 : 0));
         this.field38207.add(e);
         return e;
     }

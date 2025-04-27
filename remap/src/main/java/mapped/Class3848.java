@@ -26,9 +26,7 @@ public class Class3848 extends Class3846
         if (!(class399 instanceof LivingEntity)) {
             if (!(class399 instanceof Class428)) {
                 if (!(class399 instanceof Class510)) {
-                    if (!(class399 instanceof Class423)) {
-                        return false;
-                    }
+                    return class399 instanceof Class423;
                 }
             }
         }

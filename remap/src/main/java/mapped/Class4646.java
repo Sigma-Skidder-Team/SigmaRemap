@@ -44,6 +44,6 @@ public class Class4646
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("latency", this.field20112).add("gameMode", (Object)this.field20113).add("profile", (Object)this.field20114).add("displayName", (Object)((this.field20115 != null) ? Class5953.method17869(this.field20115) : null)).toString();
+        return MoreObjects.toStringHelper(this).add("latency", this.field20112).add("gameMode", this.field20113).add("profile", this.field20114).add("displayName", (this.field20115 != null) ? Class5953.method17869(this.field20115) : null).toString();
     }
 }

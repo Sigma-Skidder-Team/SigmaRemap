@@ -15,6 +15,6 @@ public class Class580 extends Class576
     
     @Override
     public String method3352() {
-        return super.method3352() + ". " + Class8822.method30773("selectWorld.resultFolder", new Object[0]) + " " + Class539.method3122(this.field3461);
+        return super.method3352() + ". " + Class8822.method30773("selectWorld.resultFolder") + " " + Class539.method3122(this.field3461);
     }
 }

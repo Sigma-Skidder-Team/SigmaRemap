@@ -28,7 +28,7 @@ public class Class6215 extends Class6213
     
     @Override
     public <T> Dynamic<T> method18487(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.emptyMap());
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.emptyMap());
     }
     
     static {

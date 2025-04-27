@@ -24,12 +24,12 @@ public class Class9262
         Class8563.method28793().method34742().info("Loading 1.14.4 -> 1.15 block mapping...");
         Class9262.field39730 = new Class6744(method23405.getAsJsonObject("blocks"), method23406.getAsJsonObject("blocks"));
         Class8563.method28793().method34742().info("Loading 1.14.4 -> 1.15 item mapping...");
-        Class7504.method23406((Map<Integer, Integer>)Class9262.field39729, method23405.getAsJsonObject("items"), method23406.getAsJsonObject("items"));
+        Class7504.method23406(Class9262.field39729, method23405.getAsJsonObject("items"), method23406.getAsJsonObject("items"));
         Class8563.method28793().method34742().info("Loading 1.14.4 -> 1.15 sound mapping...");
         Class9262.field39732 = new Class6308(method23405.getAsJsonArray("sounds"), method23406.getAsJsonArray("sounds"), false);
     }
     
     static {
-        Class9262.field39729 = (BiMap<Integer, Integer>)HashBiMap.create();
+        Class9262.field39729 = HashBiMap.create();
     }
 }

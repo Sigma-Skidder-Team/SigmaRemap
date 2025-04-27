@@ -9,10 +9,10 @@ import java.util.Map;
 public class Class906 extends Thread
 {
     private static String[] field4857;
-    private String field4858;
-    private Map field4859;
-    private byte[] field4860;
-    private Class8890 field4861;
+    private final String field4858;
+    private final Map field4859;
+    private final byte[] field4860;
+    private final Class8890 field4861;
     
     public Class906(final String field4858, final Map field4859, final byte[] field4860, final Class8890 field4861) {
         this.field4858 = field4858;

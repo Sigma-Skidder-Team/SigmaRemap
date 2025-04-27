@@ -388,9 +388,7 @@ public class Class5598 implements Class5597, Class5595, Class5599
                 }
             }
             else {
-                for (int k = 0; k < 34; ++k) {
-                    this.field22901[0][k] = this.field22897[k];
-                }
+                System.arraycopy(this.field22897, 0, this.field22901[0], 0, 34);
             }
             if (!this.field22881) {
                 for (int l = 0; l < 34; ++l) {
@@ -398,9 +396,7 @@ public class Class5598 implements Class5597, Class5595, Class5599
                 }
             }
             else {
-                for (int n2 = 0; n2 < 34; ++n2) {
-                    this.field22902[0][n2] = this.field22898[n2];
-                }
+                System.arraycopy(this.field22898, 0, this.field22902[0], 0, 34);
             }
             if (!this.field22893) {
                 for (int n3 = 0; n3 < 17; ++n3) {
@@ -415,12 +411,8 @@ public class Class5598 implements Class5597, Class5595, Class5599
                 }
             }
         }
-        for (int n5 = 0; n5 < 34; ++n5) {
-            this.field22897[n5] = this.field22901[this.field22889 - 1][n5];
-        }
-        for (int n6 = 0; n6 < 34; ++n6) {
-            this.field22898[n6] = this.field22902[this.field22889 - 1][n6];
-        }
+        System.arraycopy(this.field22901[this.field22889 - 1], 0, this.field22897, 0, 34);
+        System.arraycopy(this.field22902[this.field22889 - 1], 0, this.field22898, 0, 34);
         for (int n7 = 0; n7 < 17; ++n7) {
             this.field22899[n7] = this.field22903[this.field22889 - 1][n7];
             this.field22900[n7] = this.field22904[this.field22889 - 1][n7];
@@ -564,9 +556,7 @@ public class Class5598 implements Class5597, Class5595, Class5599
                     array11[n15] = n14 * Class5598.field22834[n15];
                 }
                 field22921 = this.field22921;
-                for (int n16 = 0; n16 < 3; ++n16) {
-                    array5[n16] = this.field22922[n16];
-                }
+                System.arraycopy(this.field22922, 0, array5, 0, 3);
                 for (int n17 = this.field22890[0]; n17 < this.field22890[this.field22889]; ++n17) {
                     final float[] array12 = new float[2];
                     final float[] array13 = new float[2];
@@ -682,9 +672,7 @@ public class Class5598 implements Class5597, Class5595, Class5599
             }
         }
         this.field22921 = field22921;
-        for (int n23 = 0; n23 < 3; ++n23) {
-            this.field22922[n23] = array5[n23];
-        }
+        System.arraycopy(array5, 0, this.field22922, 0, 3);
     }
     
     private float method16855(final float[] array) {

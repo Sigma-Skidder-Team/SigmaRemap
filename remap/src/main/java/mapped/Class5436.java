@@ -20,7 +20,7 @@ public class Class5436 extends Class5419<Class824>
     private final int field22643;
     
     public Class5436(final Class8233<Class363> field22639, final float field22640, final int field22641, final int field22642, final int field22643) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33822, (Object)Class1952.field10630, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)field22639, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33822, Class1952.field10630, Class8233.field33809, Class1952.field10629, (Object)field22639, (Object)Class1952.field10628));
         this.field22639 = field22639;
         this.field22640 = field22640;
         this.field22641 = field22641;

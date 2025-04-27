@@ -90,7 +90,7 @@ public class Class6516
         final ArrayList arrayList = Lists.newArrayList();
         final Iterator<Map<Class9290, Class7628>> iterator = this.field25932.values().iterator();
         while (iterator.hasNext()) {
-            final Class7628 class9291 = ((Map<K, Class7628>)iterator.next()).get(class9290);
+            final Class7628 class9291 = iterator.next().get(class9290);
             if (class9291 == null) {
                 continue;
             }

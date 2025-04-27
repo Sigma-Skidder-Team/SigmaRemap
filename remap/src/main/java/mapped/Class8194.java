@@ -39,9 +39,7 @@ public final class Class8194 {
     public boolean method27128() {
         if (!this.method27136()) {
             if (!this.method27132()) {
-                if (!this.method27138()) {
-                    return false;
-                }
+                return this.method27138();
             }
         }
         return true;
@@ -122,7 +120,7 @@ public final class Class8194 {
                     throw new UnknownHostException(this.field33708.method18890() + " returned no addresses for " + str);
                 }
                 for (int j = 0; j < method24408.size(); ++j) {
-                    this.field33714.add(new InetSocketAddress((InetAddress) method24408.get(j), i));
+                    this.field33714.add(new InetSocketAddress(method24408.get(j), i));
                 }
             } else {
                 this.field33714.add(InetSocketAddress.createUnresolved(str, i));

@@ -9,7 +9,7 @@ import java.util.Collection;
 
 public interface Class6526
 {
-    public static final Class6526 field25975 = collection -> {
+    Class6526 field25975 = collection -> {
         final String[][] array = new String[collection.size()][];
         collection.iterator();
         final Iterator iterator;
@@ -23,7 +23,7 @@ public interface Class6526
         }
         return array;
     };
-    public static final Class6526 field25976 = collection3 -> new String[][] { collection3.toArray(new String[0]) };
+    Class6526 field25976 = collection3 -> new String[][] { collection3.toArray(new String[0]) };
     
     String[][] method19745(final Collection<String> p0);
 }

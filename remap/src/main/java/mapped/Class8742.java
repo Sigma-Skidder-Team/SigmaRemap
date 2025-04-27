@@ -51,7 +51,6 @@ public class Class8742
         for (int i = 0; i < class52.size(); ++i) {
             Registry.field209.method506(ResourceLocation.method7795(class52.method346(i).getString("id"))).ifPresent(class54 -> {
                 final Integer n = map.put(class54, class53.method319("lvl"));
-                return;
             });
         }
         return linkedHashMap;
@@ -68,7 +67,7 @@ public class Class8742
             final CompoundNBT e = new CompoundNBT();
             e.putString("id", String.valueOf(Registry.field209.getKey(class8323)));
             e.putShort("lvl", (short)intValue);
-            ((AbstractList<CompoundNBT>)class8322).add(e);
+            class8322.add(e);
             if (class8321.getItem() != Items.field31534) {
                 continue;
             }
@@ -93,7 +92,6 @@ public class Class8742
                     final int n2;
                     class7315.method346(n2).getInt("lvl");
                     class7313.method22427(class7314, n);
-                    return;
                 });
             }
         }

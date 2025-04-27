@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public interface Class7811
 {
-    public static final int field32002 = 100;
+    int field32002 = 100;
     
     Class1676 method25220(final Request p0, final long p1);
     

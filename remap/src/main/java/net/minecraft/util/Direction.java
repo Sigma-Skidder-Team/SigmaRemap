@@ -66,7 +66,7 @@ public enum Direction implements IStringSerializable
         throw new IllegalArgumentException("Duplicate keys");
     }, Long2ObjectOpenHashMap::new));
     
-    private Direction(final int index, final int opposite, final int horizontalIndex, final String name, final AxisDirection axisDirection, final Axis axis, final Vec3i directionVec) {
+    Direction(final int index, final int opposite, final int horizontalIndex, final String name, final AxisDirection axisDirection, final Axis axis, final Vec3i directionVec) {
         this.index = index;
         this.horizontalIndex = horizontalIndex;
         this.opposite = opposite;
@@ -366,7 +366,7 @@ public enum Direction implements IStringSerializable
         private static final Map<String, Axis> NAME_LOOKUP;
         private final String name;
 
-        private Axis(final String name) {
+        Axis(final String name) {
             this.name = name;
         }
 

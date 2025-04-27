@@ -14,7 +14,7 @@ public class Class6009 extends Class6002
     
     @Override
     public Object method17922(final Class7576 class7576) {
-        String s = this.field24483.method19986((Class7577)class7576).toString().replaceAll("_", "");
+        String s = this.field24483.method19986((Class7577)class7576).replaceAll("_", "");
         int n = 1;
         final char char1 = s.charAt(0);
         if (char1 != '-') {

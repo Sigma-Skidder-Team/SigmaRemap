@@ -32,7 +32,7 @@ public class Class4403 implements IPacket<Class5811>
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.method29514(Class4403.field19726.toJson((Object)this.field19727));
+        class8654.method29514(Class4403.field19726.toJson(this.field19727));
     }
     
     public void method12826(final Class5811 class5811) {
@@ -44,6 +44,6 @@ public class Class4403 implements IPacket<Class5811>
     }
     
     static {
-        field19726 = new GsonBuilder().registerTypeAdapter((Type)Class9315.class, (Object)new Class5954()).registerTypeAdapter((Type)Class8499.class, (Object)new Class5956()).registerTypeAdapter((Type)Class7787.class, (Object)new Class5978()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class) Style.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
+        field19726 = new GsonBuilder().registerTypeAdapter(Class9315.class, new Class5954()).registerTypeAdapter(Class8499.class, new Class5956()).registerTypeAdapter(Class7787.class, new Class5978()).registerTypeHierarchyAdapter(ITextComponent.class, new Class5953()).registerTypeHierarchyAdapter(Style.class, new Class5982()).registerTypeAdapterFactory(new Class8818()).create();
     }
 }

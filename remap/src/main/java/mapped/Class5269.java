@@ -17,7 +17,7 @@ public class Class5269 extends Class5260<Float> implements Class5264<Float>
     }
     
     public void method16404(final ByteBuf byteBuf, final Float n) {
-        byteBuf.writeFloat((float)n);
+        byteBuf.writeFloat(n);
     }
     
     public Float method16405(final Object o) {

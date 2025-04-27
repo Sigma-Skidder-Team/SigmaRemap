@@ -39,7 +39,7 @@ public class Class830 extends Class827 implements Class768
         this.field4114.method22062(5, new Class3482(this, 1.0));
         this.field4114.method22062(6, new Class3586(this, 1.0, this.world.method6743()));
         this.field4114.method22062(7, new Class3514(this, 1.0));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class830.class }).method11100(Class828.class));
+        this.field4115.method22062(1, new Class3547(this, new Class[] { Class830.class }).method11100(Class828.class));
         this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, 10, true, false, this::method4944));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
@@ -76,9 +76,7 @@ public class Class830 extends Class827 implements Class768
         if (method6959 != Class7102.field27639 && method6959 != Class7102.field27643) {
             if (random.nextInt(40) == 0) {
                 if (method4943(class7500, class7502)) {
-                    if (b2) {
-                        return true;
-                    }
+                    return b2;
                 }
             }
             return false;
@@ -212,9 +210,7 @@ public class Class830 extends Class827 implements Class768
         if (method24727 != null) {
             final BlockPos method24728 = method24727.method35232();
             if (method24728 != null) {
-                if (this.method1733(method24728.getX(), method24728.getY(), method24728.getZ()) < 4.0) {
-                    return true;
-                }
+                return this.method1733(method24728.getX(), method24728.getY(), method24728.getZ()) < 4.0;
             }
         }
         return false;

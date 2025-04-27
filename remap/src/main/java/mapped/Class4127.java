@@ -13,7 +13,7 @@ import java.util.LinkedHashMap;
 
 public class Class4127 implements Class4119
 {
-    private boolean field18248;
+    private final boolean field18248;
     public final /* synthetic */ Class6065 field18249;
     
     public Class4127(final Class6065 field18249, final boolean field18250) {

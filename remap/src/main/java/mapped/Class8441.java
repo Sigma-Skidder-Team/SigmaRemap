@@ -5,6 +5,7 @@
 package mapped;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Class8441
 {
@@ -25,8 +26,6 @@ public class Class8441
     
     public void method28176(final Class8014 class8014) {
         this.field34695.clear();
-        for (int i = 0; i < this.field34694.length; ++i) {
-            this.field34695.add(this.field34694[i]);
-        }
+        Collections.addAll(this.field34695, this.field34694);
     }
 }

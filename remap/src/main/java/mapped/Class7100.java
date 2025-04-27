@@ -16,6 +16,6 @@ public class Class7100 extends StateHolder<Fluid, IFluidState> implements IFluid
     
     @Override
     public Fluid getFluid() {
-        return (Fluid)this.object;
+        return this.object;
     }
 }

@@ -33,9 +33,7 @@ public class Class6387
             final Class6387 class6387 = (Class6387)o;
             if (Objects.equals(this.field25500, class6387.field25500)) {
                 if (Objects.equals(this.field25501, class6387.field25501)) {
-                    if (Objects.equals(this.field25502, class6387.field25502)) {
-                        return true;
-                    }
+                    return Objects.equals(this.field25502, class6387.field25502);
                 }
             }
             return false;

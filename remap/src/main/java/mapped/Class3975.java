@@ -40,7 +40,7 @@ public class Class3975 extends Block
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return class7096.get((IProperty<Boolean>)Class3975.field17954) ? Class3975.field17961 : Class3975.field17962;
+        return class7096.get(Class3975.field17954) ? Class3975.field17961 : Class3975.field17962;
     }
     
     @Override
@@ -96,7 +96,7 @@ public class Class3975 extends Block
                     ++j;
                 }
                 else {
-                    if (((StateHolder<Object, Object>)method1151).get((IProperty<Comparable>)Class3983.field17983) != class1850.getOpposite()) {
+                    if (method1151.get((IProperty<Comparable>)Class3983.field17983) != class1850.getOpposite()) {
                         break;
                     }
                     this.field17963.method12126(class1847, method1150, method1151, false, true, j, class1849);
@@ -109,7 +109,7 @@ public class Class3975 extends Block
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.isRemote) {
-            if (!class7096.get((IProperty<Boolean>)Class3975.field17953)) {
+            if (!class7096.get(Class3975.field17953)) {
                 this.method12116(class7097, class7098);
             }
         }
@@ -124,7 +124,7 @@ public class Class3975 extends Block
     
     private void method12116(final World class1847, final BlockPos class1848) {
         final BlockState method6701 = class1847.getBlockState(class1848);
-        final boolean booleanValue = ((StateHolder<Object, BlockState>)method6701).get((IProperty<Boolean>)Class3975.field17953);
+        final boolean booleanValue = method6701.get(Class3975.field17953);
         boolean b = false;
         final List<Entity> method6702 = class1847.method7127(null, method6701.getShape(class1847, class1848).getBoundingBox().offset(class1848));
         if (!method6702.isEmpty()) {
@@ -159,13 +159,13 @@ public class Class3975 extends Block
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
         switch (Class6849.field26872[class7097.ordinal()]) {
             case 1: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17958))).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17959))).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17956))).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17957));
+                return class7096.with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17958)).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17959)).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17956)).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17957));
             }
             case 2: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17957))).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17958))).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17959))).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17956));
+                return class7096.with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17957)).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17958)).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17959)).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17956));
             }
             case 3: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17959))).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17956))).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17957))).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17958));
+                return class7096.with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17959)).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17956)).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17957)).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17958));
             }
             default: {
                 return class7096;
@@ -177,10 +177,10 @@ public class Class3975 extends Block
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
         switch (Class6849.field26873[class7097.ordinal()]) {
             case 1: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17958))).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17956));
+                return class7096.with((IProperty<Comparable>)Class3975.field17956, (Comparable)class7096.get((IProperty<V>)Class3975.field17958)).with((IProperty<Comparable>)Class3975.field17958, (Comparable)class7096.get((IProperty<V>)Class3975.field17956));
             }
             case 2: {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17959))).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17957));
+                return class7096.with((IProperty<Comparable>)Class3975.field17957, (Comparable)class7096.get((IProperty<V>)Class3975.field17959)).with((IProperty<Comparable>)Class3975.field17959, (Comparable)class7096.get((IProperty<V>)Class3975.field17957));
             }
             default: {
                 return super.method11791(class7096, class7097);

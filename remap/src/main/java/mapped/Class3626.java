@@ -47,9 +47,7 @@ public class Class3626<T extends Class763 & Class768> extends Class3446
     @Override
     public boolean method11017() {
         if (this.method11013() || !this.field16846.method4150().method24731()) {
-            if (this.method11164()) {
-                return true;
-            }
+            return this.method11164();
         }
         return false;
     }

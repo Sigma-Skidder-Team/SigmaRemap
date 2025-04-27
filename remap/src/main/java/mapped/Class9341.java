@@ -65,7 +65,7 @@ public class Class9341
         builder.put(dynamicOps.createString("radius"), dynamicOps.createInt(this.field40103));
         builder.put(dynamicOps.createString("height"), dynamicOps.createInt(this.field40104));
         builder.put(dynamicOps.createString("guarded"), dynamicOps.createBoolean(this.field40105));
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     
     public static <T> Class9341 method34626(final Dynamic<T> dynamic) {

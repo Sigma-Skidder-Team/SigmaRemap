@@ -38,11 +38,10 @@ public class Class6107 implements INode
             class42.stream().filter(this.field24770).forEach(class43 -> {
                 list2.add(class43);
                 mutableBoolean2.setTrue();
-                return;
             });
             if (mutableBoolean.isFalse()) {
                 final CompoundNBT method333 = this.field24769.copy();
-                ((AbstractList<CompoundNBT>)class42).add(method333);
+                class42.add(method333);
                 list.add(method333);
             }
         }

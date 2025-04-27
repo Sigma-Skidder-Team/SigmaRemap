@@ -13,9 +13,9 @@ public class Class9323
 {
     private static String[] field40027;
     private final Class2095 field40028;
-    private byte field40029;
-    private byte field40030;
-    private byte field40031;
+    private final byte field40029;
+    private final byte field40030;
+    private final byte field40031;
     private final ITextComponent field40032;
     
     public Class9323(final Class2095 field40028, final byte field40029, final byte field40030, final byte field40031, final ITextComponent field40032) {

@@ -13,7 +13,7 @@ public class MineplexGamePlay extends Module
 {
     private GamePlay field15564;
     private boolean field15565;
-    private TimerUtil field15566;
+    private final TimerUtil field15566;
     
     public MineplexGamePlay() {
         super(Category.MISC, "Mineplex", "Gameplay for Mineplex");

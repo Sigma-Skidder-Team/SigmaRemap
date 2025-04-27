@@ -28,9 +28,9 @@ public class AutoSoup extends Module
         this.addSetting(new NumberSetting("Health", "Minimum health before eating soup", 13.0f, Float.class, 1.0f, 19.0f, 1.0f));
         this.addSetting(new NumberSetting("Refill delay", "Refill delay", 4.0f, Float.class, 0.0f, 8.0f, 1.0f));
         this.addSetting(new NumberSetting("Refill accuracy", "Refill accuracy", 100.0f, Float.class, 30.0f, 100.0f, 1.0f));
-        this.addSetting(new StringSetting("Refill mode", "Refill mode", 0, new String[] { "Basic", "FakeInv", "OpenInv" }));
-        this.addSetting(new StringSetting("Soup mode", "Soup Mode", 0, new String[] { "Instant", "Legit" }));
-        this.addSetting(new StringSetting("Bowls", "Bowls managing", 0, new String[] { "Drop", "Stack" }));
+        this.addSetting(new StringSetting("Refill mode", "Refill mode", 0, "Basic", "FakeInv", "OpenInv"));
+        this.addSetting(new StringSetting("Soup mode", "Soup Mode", 0, "Instant", "Legit"));
+        this.addSetting(new StringSetting("Bowls", "Bowls managing", 0, "Drop", "Stack"));
     }
     
     @Override

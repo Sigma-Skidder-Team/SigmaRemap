@@ -16,7 +16,7 @@ import net.optifine.expr.ParseException;
 
 public class Class7186
 {
-    private Class5106 field27870;
+    private final Class5106 field27870;
     
     public Class7186(final Class5106 field27870) {
         this.field27870 = field27870;

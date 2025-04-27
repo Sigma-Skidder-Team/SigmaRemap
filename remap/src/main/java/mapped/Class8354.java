@@ -109,9 +109,7 @@ public class Class8354
     private boolean method27880(final BlockPos class354) {
         if (!Class4017.method12200(this.field34282, class354)) {
             if (!Class4017.method12200(this.field34282, class354.method1137())) {
-                if (!Class4017.method12200(this.field34282, class354.method1139())) {
-                    return false;
-                }
+                return Class4017.method12200(this.field34282, class354.method1139());
             }
         }
         return true;

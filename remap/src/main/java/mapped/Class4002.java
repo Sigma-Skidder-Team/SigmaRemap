@@ -27,7 +27,7 @@ public class Class4002 extends Class4000
     
     @Override
     public int method12166(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class4002.field18038) ? 15 : 0;
+        return class7096.get(Class4002.field18038) ? 15 : 0;
     }
     
     @Override
@@ -65,7 +65,7 @@ public class Class4002 extends Class4000
                 break;
             }
             case 2: {
-                list = class1847.method7128((Class<? extends Entity>) LivingEntity.class, method18500);
+                list = class1847.method7128(LivingEntity.class, method18500);
                 break;
             }
             default: {

@@ -54,7 +54,7 @@ public class Class4608 extends Class4535<Class5133>
             final double method35702 = MathHelper.lerp(n10, n5, n6);
             final double method35703 = MathHelper.lerp(n10, n3, n4);
             final double n11 = ((MathHelper.sin(3.1415927f * n10) + 1.0f) * (random.nextDouble() * class1852.field22108 / 16.0) + 1.0) / 2.0;
-            array[i * 4 + 0] = method35701;
+            array[i * 4] = method35701;
             array[i * 4 + 1] = method35702;
             array[i * 4 + 2] = method35703;
             array[i * 4 + 3] = n11;
@@ -63,7 +63,7 @@ public class Class4608 extends Class4535<Class5133>
             if (array[j * 4 + 3] > 0.0) {
                 for (int k = j + 1; k < class1852.field22108; ++k) {
                     if (array[k * 4 + 3] > 0.0) {
-                        final double n12 = array[j * 4 + 0] - array[k * 4 + 0];
+                        final double n12 = array[j * 4] - array[k * 4];
                         final double n13 = array[j * 4 + 1] - array[k * 4 + 1];
                         final double n14 = array[j * 4 + 2] - array[k * 4 + 2];
                         final double n15 = array[j * 4 + 3] - array[k * 4 + 3];
@@ -82,7 +82,7 @@ public class Class4608 extends Class4535<Class5133>
         for (int l = 0; l < class1852.field22108; ++l) {
             final double n16 = array[l * 4 + 3];
             if (n16 >= 0.0) {
-                final double n17 = array[l * 4 + 0];
+                final double n17 = array[l * 4];
                 final double n18 = array[l * 4 + 1];
                 final double n19 = array[l * 4 + 2];
                 final int max = Math.max(MathHelper.floor(n17 - n16), b);

@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 public class Class6692 extends Class6693
 {
     public Class6692() {
-        super("enchant", "Enchants items in creative mode", new String[0]);
+        super("enchant", "Enchants items in creative mode");
     }
     
     @Override
@@ -38,6 +38,6 @@ public class Class6692 extends Class6693
             class6428.method19104("Requested server to apply " + array[0].method26314() + " " + array[1].method26313());
             return;
         }
-        throw new Class2332("Unknown enchant '" + array[0].method26314() + "");
+        throw new Class2332("Unknown enchant '" + array[0].method26314());
     }
 }

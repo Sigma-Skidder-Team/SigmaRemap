@@ -84,9 +84,7 @@ public final class Class8680
                     if (this.field36480 == class8680.field36480) {
                         if (this.field36481 == class8680.field36481) {
                             if (this.field36482 == class8680.field36482) {
-                                if (this.field36483 == class8680.field36483) {
-                                    return true;
-                                }
+                                return this.field36483 == class8680.field36483;
                             }
                         }
                     }

@@ -136,8 +136,8 @@ public class CrashReport
             string = out.toString();
         }
         finally {
-            IOUtils.closeQuietly((Writer)out);
-            IOUtils.closeQuietly((Writer)s);
+            IOUtils.closeQuietly(out);
+            IOUtils.closeQuietly(s);
         }
         return string;
     }
@@ -193,7 +193,7 @@ public class CrashReport
             return true;
         }
         catch (final Throwable t) {
-            CrashReport.field30531.error("Could not save crash report to {}", (Object)file, (Object)t);
+            CrashReport.field30531.error("Could not save crash report to {}", file, t);
             b = false;
         }
         finally {

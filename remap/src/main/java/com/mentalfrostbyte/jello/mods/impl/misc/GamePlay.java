@@ -22,13 +22,13 @@ import java.util.ArrayList;
 public class GamePlay extends ModuleWithSettings
 {
     private ArrayList<String> field15753;
-    private ArrayList<String> field15754;
+    private final ArrayList<String> field15754;
     private Class7674 field15755;
-    private TimerUtil field15756;
+    private final TimerUtil field15756;
     private int field15757;
     
     public GamePlay() {
-        super(Category.MISC, "GamePlay", "Manage your gameplay experience just for you.", new Module[] { new HypixelGamePlay(), new CubecraftGamePlay(), new MineplexGamePlay(), new FuncraftGamePlay(), new JartexGamePlay() });
+        super(Category.MISC, "GamePlay", "Manage your gameplay experience just for you.", new HypixelGamePlay(), new CubecraftGamePlay(), new MineplexGamePlay(), new FuncraftGamePlay(), new JartexGamePlay());
         this.field15753 = new ArrayList<String>();
         this.field15754 = new ArrayList<String>();
         this.addSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));

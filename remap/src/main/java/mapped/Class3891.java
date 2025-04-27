@@ -31,7 +31,7 @@ public class Class3891 extends Class3892 implements Class3872
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (class7097.rand.nextInt(5) == 0) {
-            final int intValue = class7096.get((IProperty<Integer>)Class3891.field17559);
+            final int intValue = class7096.get(Class3891.field17559);
             if (intValue < 2) {
                 class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3891.field17559, intValue + 1), 2);
             }
@@ -40,13 +40,13 @@ public class Class3891 extends Class3892 implements Class3872
     
     @Override
     public boolean method11843(final BlockState class7096, final Class1852 class7097, final BlockPos class7098) {
-        return class7097.getBlockState(class7098.method1149(class7096.get((IProperty<Direction>)Class3891.field17564))).getBlock().method11785(Class7188.field27898);
+        return class7097.getBlockState(class7098.method1149(class7096.get(Class3891.field17564))).getBlock().method11785(Class7188.field27898);
     }
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        final int intValue = class7096.get((IProperty<Integer>)Class3891.field17559);
-        switch (Class8486.field34829[class7096.get((IProperty<Direction>)Class3891.field17564).ordinal()]) {
+        final int intValue = class7096.get(Class3891.field17559);
+        switch (Class8486.field34829[class7096.get(Class3891.field17564).ordinal()]) {
             case 1: {
                 return Class3891.field17563[intValue];
             }
@@ -81,12 +81,12 @@ public class Class3891 extends Class3892 implements Class3872
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return (class7097 == class7096.get((IProperty<Direction>)Class3891.field17564) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return (class7097 == class7096.get(Class3891.field17564) && !class7096.method21752(class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     @Override
     public boolean method11945(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final boolean b) {
-        return class1857.get((IProperty<Integer>)Class3891.field17559) < 2;
+        return class1857.get(Class3891.field17559) < 2;
     }
     
     @Override
@@ -96,7 +96,7 @@ public class Class3891 extends Class3892 implements Class3872
     
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
-        class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).with((IProperty<Comparable>)Class3891.field17559, class1851.get((IProperty<Integer>)Class3891.field17559) + 1), 2);
+        class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).with((IProperty<Comparable>)Class3891.field17559, class1851.get(Class3891.field17559) + 1), 2);
     }
     
     @Override

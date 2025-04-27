@@ -96,10 +96,10 @@ public class Class697 extends Screen
                 this.field3839 = this.field3838.size() * 12;
             }
             catch (final Exception ex) {
-                Class697.field3146.error("Couldn't load credits", (Throwable)ex);
+                Class697.field3146.error("Couldn't load credits", ex);
             }
             finally {
-                IOUtils.closeQuietly((Closeable)method19933);
+                IOUtils.closeQuietly(method19933);
             }
         }
     }

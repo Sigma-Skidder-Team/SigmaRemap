@@ -200,9 +200,7 @@ public class Class7183
         if (this.field27861 >= class7183.field27861) {
             if (this.field27861 <= class7184.field27861) {
                 if (this.field27862 >= class7183.field27862) {
-                    if (this.field27862 <= class7184.field27862) {
-                        return true;
-                    }
+                    return this.field27862 <= class7184.field27862;
                 }
             }
         }
@@ -213,9 +211,7 @@ public class Class7183
         if (this.method21977() >= class7183.method21977()) {
             if (this.method21977() <= class7184.method21977()) {
                 if (this.method21981() >= class7183.method21981()) {
-                    if (this.method21981() <= class7184.method21981()) {
-                        return true;
-                    }
+                    return this.method21981() <= class7184.method21981();
                 }
             }
         }

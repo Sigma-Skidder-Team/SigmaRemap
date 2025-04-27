@@ -20,27 +20,27 @@ import java.net.URL;
 
 public class Class4833 extends Class4825
 {
-    private int field20689;
-    private int field20690;
-    private int field20691;
-    private int field20692;
+    private final int field20689;
+    private final int field20690;
+    private final int field20691;
+    private final int field20692;
     private String field20693;
     public static URL field20694;
-    private Class4817 field20695;
+    private final Class4817 field20695;
     private Class4817 field20696;
-    private CustomGuiScreen field20697;
-    private MusicManager field20698;
+    private final CustomGuiScreen field20697;
+    private final MusicManager field20698;
     public static Map<String, Class9175> field20699;
     public static String field20700;
     public static Class9175 field20701;
-    private Class4868 field20702;
-    private Class4868 field20703;
-    private Class4868 field20704;
-    private Class4868 field20705;
-    private Class4865 field20706;
+    private final Class4868 field20702;
+    private final Class4868 field20703;
+    private final Class4868 field20704;
+    private final Class4868 field20705;
+    private final Class4865 field20706;
     private int field20707;
     private Texture field20708;
-    private CustomGuiScreen field20709;
+    private final CustomGuiScreen field20709;
     public Class4838 field20710;
     public Class4842 field20711;
     public static Class9175[] field20712;
@@ -48,7 +48,7 @@ public class Class4833 extends Class4825
     public static long field20714;
     public float field20715;
     public float field20716;
-    private Animation field20717;
+    private final Animation field20717;
     public boolean field20718;
     
     public Class4833(final CustomGuiScreen customGuiScreen, final String s) {
@@ -97,7 +97,6 @@ public class Class4833 extends Class4825
                     }
                 }
                 this.runThisOnDimensionUpdate(new Class1136(this, class4806, class4807, class4808));
-                return;
             }));
             ((Thread)list.get(list.size() - 1)).start();
         }

@@ -44,10 +44,10 @@ public class Class364 implements IDynamicSerializable
         this.field2196 = field2196;
         try {
             this.field2197 = dynamic.get("Valid").asBoolean(false);
-            dynamic.get("Records").asStream().forEach(dynamic2 -> this.method1176(new Class377((Dynamic<T>)dynamic2, runnable)));
+            dynamic.get("Records").asStream().forEach(dynamic2 -> this.method1176(new Class377(dynamic2, runnable)));
         }
         catch (final Exception ex) {
-            Class364.field2193.error("Failed to load POI chunk", (Throwable)ex);
+            Class364.field2193.error("Failed to load POI chunk", ex);
             this.method1182();
             this.field2197 = false;
         }
@@ -59,7 +59,7 @@ public class Class364 implements IDynamicSerializable
     
     public void method1175(final BlockPos class354, final Class8912 class355) {
         if (this.method1176(new Class377(class354, class355, this.field2196))) {
-            Class364.field2193.debug("Added POI of type {} @ {}", new Supplier[] { () -> class355, () -> class354 });
+            Class364.field2193.debug("Added POI of type {} @ {}", () -> class355, () -> class354);
             this.field2196.run();
         }
     }
@@ -68,7 +68,7 @@ public class Class364 implements IDynamicSerializable
         final BlockPos method1259 = class377.method1259();
         final Class8912 method1260 = class377.method1260();
         final short method1261 = Class353.method1097(method1259);
-        final Class377 class378 = (Class377)this.field2194.get(method1261);
+        final Class377 class378 = this.field2194.get(method1261);
         if (class378 == null) {
             this.field2194.put(method1261, (Object)class377);
             this.field2195.computeIfAbsent(method1260, p0 -> Sets.newHashSet()).add(class377);
@@ -81,10 +81,10 @@ public class Class364 implements IDynamicSerializable
     }
     
     public void method1177(final BlockPos obj) {
-        final Class377 class377 = (Class377)this.field2194.remove(Class353.method1097(obj));
+        final Class377 class377 = this.field2194.remove(Class353.method1097(obj));
         if (class377 != null) {
             this.field2195.get(class377.method1260()).remove(class377);
-            Class364.field2193.debug("Removed POI of type {} @ {}", new Supplier[] { class377::method1260, class377::method1259 });
+            Class364.field2193.debug("Removed POI of type {} @ {}", class377::method1260, class377::method1259);
             this.field2196.run();
         }
         else {
@@ -93,7 +93,7 @@ public class Class364 implements IDynamicSerializable
     }
     
     public boolean method1178(final BlockPos obj) {
-        final Class377 class377 = (Class377)this.field2194.get(Class353.method1097(obj));
+        final Class377 class377 = this.field2194.get(Class353.method1097(obj));
         if (class377 != null) {
             final boolean method1256 = class377.method1256();
             this.field2196.run();
@@ -103,23 +103,23 @@ public class Class364 implements IDynamicSerializable
     }
     
     public boolean method1179(final BlockPos class354, final Predicate<Class8912> predicate) {
-        final Class377 class355 = (Class377)this.field2194.get(Class353.method1097(class354));
+        final Class377 class355 = this.field2194.get(Class353.method1097(class354));
         return class355 != null && predicate.test(class355.method1260());
     }
     
     public Optional<Class8912> method1180(final BlockPos class354) {
-        final Class377 class355 = (Class377)this.field2194.get(Class353.method1097(class354));
+        final Class377 class355 = this.field2194.get(Class353.method1097(class354));
         return (class355 == null) ? Optional.empty() : Optional.of(class355.method1260());
     }
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Records"), dynamicOps.createList((Stream)this.field2194.values().stream().map(class377 -> class377.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))), dynamicOps.createString("Valid"), dynamicOps.createBoolean(this.field2197)));
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Records"), dynamicOps.createList((Stream)this.field2194.values().stream().map(class377 -> class377.serialize(dynamicOps2))), dynamicOps.createString("Valid"), dynamicOps.createBoolean(this.field2197)));
     }
     
     public void method1181(final Consumer<BiConsumer<BlockPos, Class8912>> consumer) {
         if (!this.field2197) {
-            final Short2ObjectOpenHashMap short2ObjectOpenHashMap = new Short2ObjectOpenHashMap((Short2ObjectMap)this.field2194);
+            final Short2ObjectOpenHashMap short2ObjectOpenHashMap = new Short2ObjectOpenHashMap(this.field2194);
             this.method1182();
             consumer.accept((class354, p2) -> this.method1176((Class377)short2ObjectMap.computeIfAbsent(Class353.method1097(class354), p2 -> new Class377(class355, class356, this.field2196))));
             this.field2197 = true;

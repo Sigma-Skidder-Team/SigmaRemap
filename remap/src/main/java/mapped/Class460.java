@@ -66,7 +66,7 @@ public abstract class Class460 extends TileEntity implements IInventory, INamedC
     
     public static boolean method2336(final PlayerEntity playerEntity, final Class9115 class513, final ITextComponent class514) {
         if (!playerEntity.isSpectator() && !class513.method32976(playerEntity.getHeldItemMainhand())) {
-            playerEntity.method2853(new Class2259("container.isLocked", new Object[] { class514 }), true);
+            playerEntity.method2853(new Class2259("container.isLocked", class514), true);
             playerEntity.method2812(Class8520.field35066, Class286.field1582, 1.0f, 1.0f);
             return false;
         }

@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class StaffRepealer extends Module
 {
-    private HashMap<Integer, Integer> field16102;
+    private final HashMap<Integer, Integer> field16102;
     
     public StaffRepealer() {
         super(Category.MISC, "StaffRepealer", "Repeals hypixel's staff ban laws with a simple rage quit!");

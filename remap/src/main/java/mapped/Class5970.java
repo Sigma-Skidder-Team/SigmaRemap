@@ -79,7 +79,7 @@ public class Class5970 implements JsonDeserializer<Class9219>
     private Map<Direction, Class8111> method17886(final JsonDeserializationContext jsonDeserializationContext, final JsonObject jsonObject) {
         final EnumMap enumMap = Maps.newEnumMap((Class) Direction.class);
         for (final Map.Entry<String, V> entry : Class9583.method35914(jsonObject, "faces").entrySet()) {
-            enumMap.put((Object)this.method17887(entry.getKey()), jsonDeserializationContext.deserialize((JsonElement)entry.getValue(), (Type)Class8111.class));
+            enumMap.put(this.method17887(entry.getKey()), jsonDeserializationContext.deserialize((JsonElement)entry.getValue(), Class8111.class));
         }
         return enumMap;
     }

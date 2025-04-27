@@ -25,17 +25,17 @@ public class Class1898 extends Class1897<Class7500>
     
     public Class1898(final IChunkLightProvider class1908) {
         super(Class237.field911, class1908, new Class7500((Long2ObjectOpenHashMap<Class7281>)new Long2ObjectOpenHashMap(), new Long2IntOpenHashMap(), Integer.MAX_VALUE));
-        this.field10315 = (LongSet)new LongOpenHashSet();
-        this.field10316 = (LongSet)new LongOpenHashSet();
-        this.field10317 = (LongSet)new LongOpenHashSet();
-        this.field10318 = (LongSet)new LongOpenHashSet();
+        this.field10315 = new LongOpenHashSet();
+        this.field10316 = new LongOpenHashSet();
+        this.field10317 = new LongOpenHashSet();
+        this.field10318 = new LongOpenHashSet();
     }
     
     @Override
     public int method7351(long n) {
         long n2 = Class353.method1111(n);
         int method1100 = Class353.method1100(n2);
-        final Class7500 class7500 = (Class7500)this.field10305;
+        final Class7500 class7500 = this.field10305;
         final int value = Class7500.method23391(class7500).get(Class353.method1112(n2));
         if (value != Class7500.method23392(class7500) && method1100 < value) {
             Class7281 class7501 = this.method7349(class7500, n2);
@@ -138,7 +138,7 @@ public class Class1898 extends Class1897<Class7500>
     
     @Override
     public Class7281 method7354(final long n) {
-        final Class7281 class7281 = (Class7281)this.field10309.get(n);
+        final Class7281 class7281 = this.field10309.get(n);
         if (class7281 != null) {
             return class7281;
         }
@@ -165,7 +165,7 @@ public class Class1898 extends Class1897<Class7500>
                         if (method7302 == 1) {
                             this.method7355(class1890, longValue);
                             if (this.field10307.add(longValue)) {
-                                ((Class7500)this.field10306).method23394(longValue);
+                                this.field10306.method23394(longValue);
                             }
                             Arrays.fill(this.method7348(longValue, true).method22321(), (byte)(-1));
                             final int method7303 = Class353.method1098(Class353.method1099(longValue));

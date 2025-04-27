@@ -6,19 +6,20 @@ package mapped;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Class8040
 {
     private static String[] field33103;
-    private List<Class8754> field33104;
-    private List<BlockState> field33105;
-    private List<Class8754> field33106;
+    private final List<Class8754> field33104;
+    private final List<BlockState> field33105;
+    private final List<Class8754> field33106;
     
     public Class8040() {
         this.field33104 = new ArrayList<Class8754>();
         this.field33105 = new ArrayList<BlockState>();
-        this.field33106 = Arrays.asList(new Class8754[0]);
+        this.field33106 = Collections.emptyList();
     }
     
     public void method26376(final Class8754 class8754, final BlockState class8755) {

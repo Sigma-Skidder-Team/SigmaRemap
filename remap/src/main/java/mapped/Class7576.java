@@ -7,7 +7,7 @@ package mapped;
 public abstract class Class7576
 {
     private Class8542 field30047;
-    private Class2314 field30048;
+    private final Class2314 field30048;
     public Class2314 field30049;
     private Class<?> field30050;
     private boolean field30051;

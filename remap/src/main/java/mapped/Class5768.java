@@ -39,8 +39,8 @@ public class Class5768 implements Class5763
         }
         jsonObject.add("ingredient", this.field23593.method615());
         jsonObject.addProperty("result", Registry.field211.getKey(this.field23594).toString());
-        jsonObject.addProperty("experience", (Number)this.field23595);
-        jsonObject.addProperty("cookingtime", (Number)this.field23596);
+        jsonObject.addProperty("experience", this.field23595);
+        jsonObject.addProperty("cookingtime", this.field23596);
     }
     
     @Override

@@ -69,7 +69,7 @@ public class Class7822 implements Class7823
             final Char2ObjectOpenHashMap char2ObjectOpenHashMap = new Char2ObjectOpenHashMap();
             final Properties method19937 = Class9265.method34175(this.field32037);
             final Char2ObjectMap<Float> method19938 = Class9265.method34176(method19937);
-            final Float n4 = (Float)method19938.get(' ');
+            final Float n4 = method19938.get(' ');
             final boolean method19939 = Class9265.method34178(method19937, "blend", false);
             float method19940 = Class9265.method34177(method19937, "offsetBold", -1.0f);
             if (method19940 < 0.0f) {
@@ -81,14 +81,14 @@ public class Class7822 implements Class7823
                     final char char1 = s.charAt(j);
                     if (char1 != '\0' && char1 != ' ') {
                         float n5 = (float)this.method25277(method19934, n, n2, j, i);
-                        final Float n6 = (Float)method19938.get(char1);
+                        final Float n6 = method19938.get(char1);
                         if (n6 != null) {
                             n5 = n6 * (n / 8.0f);
                         }
-                        if (((Char2ObjectMap)char2ObjectOpenHashMap).put(char1, (Object)new Class2027(n3, method19934, j * n, i * n2, n, n2, (int)(0.5 + n5 * n3) + 1, this.field32040, null)) != null) {
+                        if (char2ObjectOpenHashMap.put(char1, new Class2027(n3, method19934, j * n, i * n2, n, n2, (int)(0.5 + n5 * n3) + 1, this.field32040, null)) != null) {
                             Class1738.method6153().warn("Codepoint '{}' declared multiple times in {}", (Object)Integer.toHexString(char1), (Object)this.field32037);
                         }
-                        Class2027.method8085((Class2027)((Char2ObjectMap)char2ObjectOpenHashMap).get(char1), method19940);
+                        Class2027.method8085((Class2027) char2ObjectOpenHashMap.get(char1), method19940);
                     }
                 }
             }

@@ -11,19 +11,19 @@ import java.util.concurrent.Future;
 
 public class Class9117
 {
-    private int field38622;
-    private long field38623;
-    private int field38624;
-    private long field38625;
-    private int field38626;
-    private long field38627;
-    private int field38628;
-    private long field38629;
-    private int field38630;
-    private long field38631;
-    private Class8673 field38632;
-    private Class8673 field38633;
-    private Class8673 field38634;
+    private final int field38622;
+    private final long field38623;
+    private final int field38624;
+    private final long field38625;
+    private final int field38626;
+    private final long field38627;
+    private final int field38628;
+    private final long field38629;
+    private final int field38630;
+    private final long field38631;
+    private final Class8673 field38632;
+    private final Class8673 field38633;
+    private final Class8673 field38634;
     private boolean field38635;
     private boolean field38636;
     

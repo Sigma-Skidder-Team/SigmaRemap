@@ -15,7 +15,7 @@ public class FastEat extends Module
 {
     public FastEat() {
         super(Category.PLAYER, "FastEat", "Allows you to eat faster");
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "Hypixel" }).setPremiumMode("Hypixel"));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Hypixel").setPremiumMode("Hypixel"));
         this.addSetting(new NumberSetting("Speed", "Eating speed.", 0.55f, Float.class, 0.0f, 1.0f, 0.01f));
     }
     

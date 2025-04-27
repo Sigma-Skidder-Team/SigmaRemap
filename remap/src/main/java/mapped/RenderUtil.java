@@ -8,6 +8,8 @@ import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.EXTFramebufferObject;
+
+import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.lwjgl.opengl.GL11;
@@ -36,7 +38,7 @@ public class RenderUtil
     }
     
     public static float method26862(final float f, final int newScale) {
-        return new BigDecimal(Float.toString(f)).setScale(newScale, 4).floatValue();
+        return new BigDecimal(Float.toString(f)).setScale(newScale, RoundingMode.HALF_UP).floatValue();
     }
     
     public static Rectangle method26863(final Rectangle rectangle, final float n, final float n2) {
@@ -687,10 +689,10 @@ public class RenderUtil
             GL11.glTexParameteri(3553, 10240, 9728);
             GL11.glGenTextures();
             GL11.glTexImage2D(3553, 0, 6407, (int)n4, (int)n5, 0, 6407, 5121, byteBuffer);
-            final float n10 = n4 / n4 * 1.0f;
-            final float n11 = n5 / n5 * 1.0f;
-            final float n12 = n2 / n4 * 1.0f;
-            final float n13 = n3 / n5 * 1.0f;
+            final float n10 = 1.0f;
+            final float n11 = 1.0f;
+            final float n12 = n2 / n4;
+            final float n13 = n3 / n5;
             GL11.glBegin(7);
             GL11.glTexCoord2f(n12 + (b ? n10 : 0.0f), n13 + (b2 ? n11 : 0.0f));
             GL11.glVertex2f(a, a2);
@@ -749,10 +751,10 @@ public class RenderUtil
         GL11.glPixelStorei(3316, 0);
         GL11.glPixelStorei(3317, 4);
         GL11.glGenTextures();
-        final float n10 = n4 / n4 * 1.0f;
-        final float n11 = n5 / n5 * 1.0f;
-        final float n12 = n2 / n4 * 1.0f;
-        final float n13 = n3 / n5 * 1.0f;
+        final float n10 = 1.0f;
+        final float n11 = 1.0f;
+        final float n12 = n2 / n4;
+        final float n13 = n3 / n5;
         GL11.glBegin(7);
         GL11.glTexCoord2f(n12, n13);
         GL11.glVertex2f(a, a2);

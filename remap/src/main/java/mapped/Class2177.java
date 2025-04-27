@@ -10,7 +10,7 @@ public enum Class2177 implements Class2178
     
     public ThreadLocal<double[]> field12909;
     
-    private Class2177() {
+    Class2177() {
         this.field12909 = ThreadLocal.withInitial(() -> new double[8]);
     }
     

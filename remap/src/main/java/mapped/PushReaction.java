@@ -10,5 +10,5 @@ public enum PushReaction
     DESTROY,
     BLOCK,
     IGNORE,
-    PUSH_ONLY;
+    PUSH_ONLY
 }

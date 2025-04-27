@@ -52,7 +52,7 @@ public class Class1916 extends Class1915
         if (n2 + this.field10419 > this.field10418) {
             n2 = this.field10418 - this.field10419;
         }
-        MemoryUtil.memCopy(this.field10416 + this.field10419, n, (long)n2);
+        MemoryUtil.memCopy(this.field10416 + this.field10419, n, n2);
         this.field10419 += n2;
         return n2;
     }

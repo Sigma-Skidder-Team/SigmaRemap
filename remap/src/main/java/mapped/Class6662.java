@@ -106,7 +106,7 @@ public class Class6662 implements ArgumentType<Class8356>
     
     static {
         field26319 = Arrays.asList(Class6662.\u11e9\u5a21\u756d\uc350\u2db3\u8be9[0], Class6662.\u11e9\u5a21\u756d\uc350\u2db3\u8be9[7], Class6662.\u11e9\u5a21\u756d\uc350\u2db3\u8be9[6]);
-        field26320 = new SimpleCommandExceptionType((Message)new Class2259("arguments.operation.invalid", new Object[0]));
-        field26321 = new SimpleCommandExceptionType((Message)new Class2259("arguments.operation.div0", new Object[0]));
+        field26320 = new SimpleCommandExceptionType(new Class2259("arguments.operation.invalid", new Object[0]));
+        field26321 = new SimpleCommandExceptionType(new Class2259("arguments.operation.div0", new Object[0]));
     }
 }

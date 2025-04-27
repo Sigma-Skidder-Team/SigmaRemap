@@ -41,6 +41,6 @@ public class Class3899 extends Class3892
     }
     
     static {
-        field17598 = new Class2259("container.loom", new Object[0]);
+        field17598 = new Class2259("container.loom");
     }
 }

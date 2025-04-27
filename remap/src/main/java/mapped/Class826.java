@@ -43,7 +43,7 @@ public class Class826 extends Class827 implements Class825
     @Override
     public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.put("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
+        class51.put("VillagerData", this.method4870().method28786(Class8453.field34721));
         if (this.field4421 != null) {
             class51.put("Offers", this.field4421);
         }
@@ -61,7 +61,7 @@ public class Class826 extends Class827 implements Class825
     public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         if (class51.contains("VillagerData", 10)) {
-            this.method4921(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.get("VillagerData"))));
+            this.method4921(new Class8562((Dynamic<?>)new Dynamic(Class8453.field34721, class51.get("VillagerData"))));
         }
         if (class51.contains("Offers", 10)) {
             this.field4421 = class51.getCompound("Offers");

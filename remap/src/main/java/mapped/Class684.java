@@ -43,10 +43,7 @@ public class Class684 extends AbstractGui
             final int method3773 = this.method3777();
             final int size = this.field3745.size();
             if (size > 0) {
-                boolean b = false;
-                if (this.method3770()) {
-                    b = true;
-                }
+                boolean b = this.method3770();
                 final double method3774 = this.method3774();
                 int method3775 = MathHelper.ceil(this.method3772() / method3774);
                 RenderSystem.pushMatrix();
@@ -71,7 +68,7 @@ public class Class684 extends AbstractGui
                                     method3775 = this.field3742.fontRenderer.getStringWidth(class8693.method29803().getFormattedText()) - 2;
                                 }
                                 if (this.field3742.gameSettings.field23528 != 3) {
-                                    AbstractGui.method3294(method3776, -2, n9 - 9, 0 + method3775 + 4, n9, n8 << 24);
+                                    AbstractGui.method3294(method3776, -2, n9 - 9, method3775 + 4, n9, n8 << 24);
                                 }
                                 final String method3777 = class8693.method29803().getFormattedText();
                                 RenderSystem.enableBlend();
@@ -128,7 +125,7 @@ public class Class684 extends AbstractGui
     
     public void method3762(final ITextComponent class2250, final int n) {
         this.method3763(class2250, n, this.field3742.field4647.method3808(), false);
-        Class684.field3741.info("[CHAT] {}", (Object)class2250.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n"));
+        Class684.field3741.info("[CHAT] {}", class2250.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n"));
     }
     
     private void method3763(final ITextComponent class2250, final int n, final int n2, final boolean b) {

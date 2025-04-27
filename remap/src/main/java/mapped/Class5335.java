@@ -10,11 +10,11 @@ import java.nio.ByteBuffer;
 
 public class Class5335 implements Class5336
 {
-    private int field22371;
-    private int field22372;
-    private int field22373;
-    private int field22374;
-    private byte[] field22375;
+    private final int field22371;
+    private final int field22372;
+    private final int field22373;
+    private final int field22374;
+    private final byte[] field22375;
     
     public Class5335(final int field22371, final int field22372) {
         this.field22371 = field22371;

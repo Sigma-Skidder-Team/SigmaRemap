@@ -55,8 +55,8 @@ public class Class1728 implements Class1727
         if (!other.contains("/") && !other.contains("\\")) {
             if (Class1728.field9659 != null) {
                 final Path resolve = Class1728.field9659.resolve(other);
-                if (Files.exists(resolve, new LinkOption[0])) {
-                    return Files.newInputStream(resolve, new OpenOption[0]);
+                if (Files.exists(resolve)) {
+                    return Files.newInputStream(resolve);
                 }
             }
             return this.method6107(other);
@@ -110,26 +110,26 @@ public class Class1728 implements Class1727
                 method6103(hashSet, n, s, Paths.get(new URL(resource.toString().substring(0, resource.toString().length() - ".mcassetsroot".length())).toURI()), s2, predicate);
             }
             else if ("jar".equals(uri2.getScheme())) {
-                method6103(hashSet, n, "minecraft", Class1728.field9662.get(class346).getPath("/" + class346.method1028(), new String[0]), s2, predicate);
+                method6103(hashSet, n, "minecraft", Class1728.field9662.get(class346).getPath("/" + class346.method1028()), s2, predicate);
             }
             else {
-                Class1728.field9660.error("Unsupported scheme {} trying to list vanilla resources (NYI?)", (Object)uri2);
+                Class1728.field9660.error("Unsupported scheme {} trying to list vanilla resources (NYI?)", uri2);
             }
         }
         catch (final FileNotFoundException | NoSuchFileException ex4) {}
         catch (final URISyntaxException | IOException ex5) {
-            Class1728.field9660.error("Couldn't get a list of all vanilla resources", (Throwable)ex5);
+            Class1728.field9660.error("Couldn't get a list of all vanilla resources", ex5);
         }
         return hashSet;
     }
     
     private static void method6103(final Collection<ResourceLocation> collection, final int maxDepth, final String other, final Path path, final String other2, final Predicate<String> predicate) throws IOException {
-        try (final Stream<Path> walk = Files.walk(path.resolve(other).resolve(other2), maxDepth, new FileVisitOption[0])) {
+        try (final Stream<Path> walk = Files.walk(path.resolve(other).resolve(other2), maxDepth)) {
             walk.filter(path2 -> {
                 final boolean b;
                 if (!path2.endsWith(".mcmeta")) {
-                    if (!(!Files.isRegularFile(path2, new LinkOption[0]))) {
-                        if (!(!predicate2.test(path2.getFileName().toString()))) {
+                    if (Files.isRegularFile(path2)) {
+                        if (predicate2.test(path2.getFileName().toString())) {
                             return b;
                         }
                     }
@@ -148,9 +148,9 @@ public class Class1728 implements Class1727
         }
         if (Class1728.field9659 != null) {
             final Path resolve = Class1728.field9659.resolve(class346.method1028() + "/" + class347.method7798() + "/" + class347.method7797());
-            if (Files.exists(resolve, new LinkOption[0])) {
+            if (Files.exists(resolve)) {
                 try {
-                    return Files.newInputStream(resolve, new OpenOption[0]);
+                    return Files.newInputStream(resolve);
                 }
                 catch (final IOException ex) {}
             }
@@ -183,7 +183,7 @@ public class Class1728 implements Class1727
         if (Class7667.method24302(method6105) != null) {
             return true;
         }
-        if (Class1728.field9659 != null && Files.exists(Class1728.field9659.resolve(class346.method1028() + "/" + class347.method7798() + "/" + class347.method7797()), new LinkOption[0])) {
+        if (Class1728.field9659 != null && Files.exists(Class1728.field9659.resolve(class346.method1028() + "/" + class347.method7798() + "/" + class347.method7797()))) {
             return true;
         }
         try {
@@ -233,7 +233,7 @@ public class Class1728 implements Class1727
     private InputStream method6109(final Class346 class346, final String s) {
         try {
             final FileSystem fileSystem = Class1728.field9662.get(class346);
-            return (fileSystem != null) ? Files.newInputStream(fileSystem.getPath(s, new String[0]), new OpenOption[0]) : Class1728.class.getResourceAsStream(s);
+            return (fileSystem != null) ? Files.newInputStream(fileSystem.getPath(s)) : Class1728.class.getResourceAsStream(s);
         }
         catch (final IOException ex) {
             return Class1728.class.getResourceAsStream(s);
@@ -266,11 +266,10 @@ public class Class1728 implements Class1727
                         }
                     }
                     catch (final URISyntaxException | IOException ex2) {
-                        Class1728.field9660.error("Couldn't get a list of all vanilla resources", (Throwable)ex2);
+                        Class1728.field9660.error("Couldn't get a list of all vanilla resources", ex2);
                     }
                 }
             }
-            return;
         });
         field9664 = (Util.method27845() == Class306.field1833);
         field9665 = Class9570.field41282.method22623();

@@ -119,9 +119,7 @@ public class Class8874
         final Block method21696 = class7096.getBlock();
         if (!class7096.method21706()) {
             if (method21696 != Blocks.FIRE) {
-                if (method21696 != Blocks.field29341) {
-                    return false;
-                }
+                return method21696 == Blocks.field29341;
             }
         }
         return true;
@@ -132,9 +130,7 @@ public class Class8874
             if (this.field37310 >= 2) {
                 if (this.field37310 <= 21) {
                     if (this.field37309 >= 3) {
-                        if (this.field37309 <= 21) {
-                            return true;
-                        }
+                        return this.field37309 <= 21;
                     }
                 }
             }
@@ -146,7 +142,7 @@ public class Class8874
         for (int i = 0; i < this.field37310; ++i) {
             final BlockPos method1150 = this.field37308.method1150(this.field37305, i);
             for (int j = 0; j < this.field37309; ++j) {
-                this.field37303.setBlockState(method1150.method1138(j), ((StateHolder<O, BlockState>) Blocks.field29341.getDefaultState()).with(Class3998.field18018, this.field37304), 18);
+                this.field37303.setBlockState(method1150.method1138(j), Blocks.field29341.getDefaultState().with(Class3998.field18018, this.field37304), 18);
             }
         }
     }

@@ -23,13 +23,13 @@ public class Class607 extends Class605<Class594>
             final String method1057 = class870.method1057();
             if (!method1057.equals(anObject)) {
                 anObject = method1057;
-                ((Class604<Class596>)this).method3536(new Class596(this, method1057));
+                this.method3536(new Class596(this, method1057));
             }
-            final int method1058 = class869.fontRenderer.getStringWidth(Class8822.method30773(class870.method1060(), new Object[0]));
+            final int method1058 = class869.fontRenderer.getStringWidth(Class8822.method30773(class870.method1060()));
             if (method1058 > this.field3560) {
                 this.field3560 = method1058;
             }
-            ((Class604<Class595>)this).method3536(new Class595(this, class870, null));
+            this.method3536(new Class595(this, class870, null));
         }
     }
     

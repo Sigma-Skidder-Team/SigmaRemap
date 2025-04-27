@@ -21,7 +21,7 @@ public enum Class2113
     private final int field12295;
     private final String field12296;
     
-    private Class2113(final int field12295, final String field12296) {
+    Class2113(final int field12295, final String field12296) {
         this.field12295 = field12295;
         this.field12296 = field12296;
     }
@@ -31,7 +31,7 @@ public enum Class2113
     }
     
     public ITextComponent method8236() {
-        return new Class2259("options.difficulty." + this.field12296, new Object[0]);
+        return new Class2259("options.difficulty." + this.field12296);
     }
     
     public static Class2113 method8237(final int n) {

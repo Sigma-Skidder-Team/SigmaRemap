@@ -59,9 +59,8 @@ public class Class4185 implements Class4178, Class4186, Class4187
                 for (int k = 0; k < this.field18714; ++k) {
                     array2[k] = array3[k] + this.field18720[k] * this.field18712[n2][k];
                 }
-                for (int l = 0; l < this.field18716; ++l) {
-                    array3[l] = this.field18720[this.field18714 + l];
-                }
+                if (this.field18716 >= 0)
+                    System.arraycopy(this.field18720, this.field18714 + 0, array3, 0, this.field18716);
                 for (int n4 = 0; n4 < this.field18715; ++n4) {
                     array3[this.field18716 + n4] = this.field18720[this.field18714 + this.field18716 + n4] * this.field18713[n][this.field18715 - n4 - 1];
                 }
@@ -74,12 +73,10 @@ public class Class4185 implements Class4178, Class4186, Class4187
                 for (int n6 = 0; n6 < 8; ++n6) {
                     this.field18718.method21824(array, n6 * this.field18715, this.field18720, 2 * n6 * this.field18715);
                 }
-                for (int n7 = 0; n7 < this.field18716; ++n7) {
-                    array2[n7] = array3[n7];
-                }
+                if (this.field18716 >= 0) System.arraycopy(array3, 0, array2, 0, this.field18716);
                 for (int n8 = 0; n8 < this.field18715; ++n8) {
                     array2[this.field18716 + n8] = array3[this.field18716 + n8] + this.field18720[n8] * this.field18713[n2][n8];
-                    array2[this.field18716 + 1 * this.field18715 + n8] = array3[this.field18716 + this.field18715 * 1 + n8] + this.field18720[this.field18715 * 1 + n8] * this.field18713[n][this.field18715 - 1 - n8] + this.field18720[this.field18715 * 2 + n8] * this.field18713[n][n8];
+                    array2[this.field18716 + this.field18715 + n8] = array3[this.field18716 + this.field18715 + n8] + this.field18720[this.field18715 + n8] * this.field18713[n][this.field18715 - 1 - n8] + this.field18720[this.field18715 * 2 + n8] * this.field18713[n][n8];
                     array2[this.field18716 + 2 * this.field18715 + n8] = array3[this.field18716 + this.field18715 * 2 + n8] + this.field18720[this.field18715 * 3 + n8] * this.field18713[n][this.field18715 - 1 - n8] + this.field18720[this.field18715 * 4 + n8] * this.field18713[n][n8];
                     array2[this.field18716 + 3 * this.field18715 + n8] = array3[this.field18716 + this.field18715 * 3 + n8] + this.field18720[this.field18715 * 5 + n8] * this.field18713[n][this.field18715 - 1 - n8] + this.field18720[this.field18715 * 6 + n8] * this.field18713[n][n8];
                     if (n8 < this.field18717) {
@@ -102,9 +99,7 @@ public class Class4185 implements Class4178, Class4186, Class4187
             }
             case 4: {
                 this.field18719.method21824(array, 0, this.field18720, 0);
-                for (int n11 = 0; n11 < this.field18716; ++n11) {
-                    array2[n11] = array3[n11];
-                }
+                if (this.field18716 >= 0) System.arraycopy(array3, 0, array2, 0, this.field18716);
                 for (int n12 = 0; n12 < this.field18715; ++n12) {
                     array2[this.field18716 + n12] = array3[this.field18716 + n12] + this.field18720[this.field18716 + n12] * this.field18713[n2][n12];
                 }
@@ -132,9 +127,8 @@ public class Class4185 implements Class4178, Class4186, Class4187
                 for (int j = 0; j < this.field18714; ++j) {
                     this.field18720[j] = array[j] * this.field18712[n2][j];
                 }
-                for (int k = 0; k < this.field18716; ++k) {
-                    this.field18720[k + this.field18714] = array[k + this.field18714];
-                }
+                if (this.field18716 >= 0)
+                    System.arraycopy(array, 0 + this.field18714, this.field18720, 0 + this.field18714, this.field18716);
                 for (int l = 0; l < this.field18715; ++l) {
                     this.field18720[l + this.field18714 + this.field18716] = array[l + this.field18714 + this.field18716] * this.field18713[n][this.field18715 - 1 - l];
                 }

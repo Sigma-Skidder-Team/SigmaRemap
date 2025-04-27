@@ -171,7 +171,7 @@ public abstract class Draft {
         } else {
             continuousFrameType = op;
         }
-        return Collections.singletonList((Framedata) bui);
+        return Collections.singletonList(bui);
     }
 
     public abstract void reset();

@@ -35,7 +35,7 @@ public class Class3977 extends Block
                 int n;
                 for (n = 1; class7097.getBlockState(class7098.method1140(n)).method21696() == this; ++n) {}
                 if (n < 3) {
-                    final int intValue = class7096.get((IProperty<Integer>)Class3977.field17967);
+                    final int intValue = class7096.get(Class3977.field17967);
                     if (intValue != 15) {
                         class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3977.field17967, intValue + 1), 4);
                     }
@@ -87,10 +87,7 @@ public class Class3977 extends Block
                 }
             }
         }
-        if (!class7097.getBlockState(class7098.method1137()).getMaterial().method26438()) {
-            return true;
-        }
-        return false;
+        return !class7097.getBlockState(class7098.method1137()).getMaterial().method26438();
     }
     
     @Override

@@ -30,7 +30,7 @@ public class Class23 extends Class11
                 if (b) {
                     this.method178(n);
                 }
-                Cleaner.create((Object)this, (Runnable)new Class993(this.field34, this.field30, this.field31));
+                Cleaner.create(this, new Class993(this.field34, this.field30, this.field31));
                 Class7579.method23860(this.field30 * this.field31);
             }
             return;

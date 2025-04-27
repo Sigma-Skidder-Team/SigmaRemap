@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Class4905 extends Class4841
 {
-    private List<Class4868> field20983;
+    private final List<Class4868> field20983;
     public int field20984;
     
     public Class4905(final CustomGuiScreen customGuiScreen, final String s, int n, final int n2) {

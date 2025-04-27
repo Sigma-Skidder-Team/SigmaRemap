@@ -24,7 +24,7 @@ public class Class4801 extends Class4800
     private static Animation field20461;
     private static boolean field20462;
     private static boolean field20463;
-    private Map<Category, Class4924> field20464;
+    private final Map<Category, Class4924> field20464;
     public Class4833 field20465;
     public Class4912 field20466;
     public Class4889 field20467;
@@ -121,7 +121,6 @@ public class Class4801 extends Class4800
                     }
                 }).start());
                 this.field20469.method14744(true);
-                return;
             });
             return true;
         }
@@ -167,7 +166,6 @@ public class Class4801 extends Class4800
                     this.runThisOnDimensionUpdate(() -> {
                         this.method14245(this.field20468);
                         this.field20468 = null;
-                        return;
                     });
                 }
             }

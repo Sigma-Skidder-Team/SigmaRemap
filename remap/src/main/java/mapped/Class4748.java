@@ -12,7 +12,7 @@ public abstract class Class4748<T extends Class827, M extends Class5863<T>> exte
     
     public Class4748(final Class8551 class8551, final M m, final M i, final M j) {
         super(class8551, m, 0.5f);
-        this.method13978((Class1799<T, M>)new Class1835((Class4778<LivingEntity, Class5853>)this, i, j));
+        this.method13978((Class1799<T, M>)new Class1835(this, i, j));
     }
     
     public ResourceLocation method14083(final Class827 class827) {

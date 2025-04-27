@@ -9,8 +9,8 @@ public class Class5050 extends RealmsScreen
     private final Class5078 field21680;
     private Class5066 field21681;
     private Class5065 field21682;
-    private Boolean field21683;
-    private Integer field21684;
+    private final Boolean field21683;
+    private final Integer field21684;
     public String[] field21685;
     private final int field21686 = 0;
     private final int field21687 = 1;
@@ -86,6 +86,6 @@ public class Class5050 extends RealmsScreen
     }
     
     private String method15474() {
-        return RealmsScreen.getLocalizedString("selectWorld.mapFeatures") + " " + RealmsScreen.getLocalizedString(((boolean)this.field21683) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("selectWorld.mapFeatures") + " " + RealmsScreen.getLocalizedString(this.field21683 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
 }

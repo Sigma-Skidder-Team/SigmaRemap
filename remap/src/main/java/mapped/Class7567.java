@@ -12,10 +12,10 @@ public class Class7567
     public static final int field29995 = 3;
     public static final int field29996 = 4;
     public static final int field29997 = 5;
-    private int field29998;
-    private Class2400 field29999;
-    private Class8299 field30000;
-    private Class7310 field30001;
+    private final int field29998;
+    private final Class2400 field29999;
+    private final Class8299 field30000;
+    private final Class7310 field30001;
     
     public Class7567(final int field29998, final Class2400 field29999, final Class8299 field30000, final Class7310 field30001) {
         this.field29999 = field29999;

@@ -16,14 +16,14 @@ public class ClassicMainMenu extends Class4800
 {
     public final Class4825 field21186;
     public final Class4825 field21187;
-    private int field21188;
-    private int field21189;
-    private boolean field21190;
+    private final int field21188;
+    private final int field21189;
+    private final boolean field21190;
     private Class4897 field21191;
     private Animation field21192;
-    private Animation field21193;
-    private Class4920 field21194;
-    private Class4814 field21195;
+    private final Animation field21193;
+    private final Class4920 field21194;
+    private final Class4814 field21195;
     private float field21196;
     private float field21197;
     private static long field21198;
@@ -71,7 +71,7 @@ public class ClassicMainMenu extends Class4800
         list.add("Tomygames");
         list.add("Omikron");
         Collections.shuffle(list);
-        this.addToList(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, colorHelper, "by " + (String)list.get(0) + ", " + (String)list.get(1) + ", " + (String)list.get(2), ClassicAssets.field40808));
+        this.addToList(new Class4834(this, "names", 130, 9, field40807.getWidth(s), 140, colorHelper, "by " + list.get(0) + ", " + list.get(1) + ", " + list.get(2), ClassicAssets.field40808));
         this.addToList(this.field21186 = new Class4834(this, "Version", this.method14276() - field40807.getWidth(string) - 9, this.method14278() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), string, field40807));
         this.addToList(new Class4834(this, "Hello", 10, this.method14278() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "Hello,", field40807));
         this.addToList(new Class4834(this, "Latest", 10, this.method14278() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), "You are using the latest version", field40807));
@@ -107,7 +107,7 @@ public class ClassicMainMenu extends Class4800
         this.drawBackground(round);
         this.method14228();
         GL11.glPushMatrix();
-        GL11.glTranslated((double)(int)(-this.method14276() / 200 + this.field21196 / 200.0f), (double)((int)(-this.method14278() / 100 + this.field21197 / 100.0f) - round), 0.0);
+        GL11.glTranslated((int)(-this.method14276() / 200 + this.field21196 / 200.0f), (int)(-this.method14278() / 100 + this.field21197 / 100.0f) - round, 0.0);
         RenderUtil.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), ClassicAssets.field40801);
         GL11.glPopMatrix();
         this.field21195.method14295((int)(-this.method14276() / 40 + this.field21196 / 40.0f), (int)(-this.method14278() / 40 + this.field21197 / 40.0f) + round);

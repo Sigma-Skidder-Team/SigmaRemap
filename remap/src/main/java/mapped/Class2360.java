@@ -23,7 +23,7 @@ public class Class2360 extends Class2359
     
     @Override
     public String getMessage() {
-        return super.getMessage() + " at " + ("" + this.field14146.getX() + "," + this.field14146.getY() + "," + this.field14146.getZ() + " (relative: " + this.field14147.getX() + "," + this.field14147.getY() + "," + this.field14147.getZ() + ")") + " (t=" + this.field14148 + ")";
+        return super.getMessage() + " at " + (this.field14146.getX() + "," + this.field14146.getY() + "," + this.field14146.getZ() + " (relative: " + this.field14147.getX() + "," + this.field14147.getY() + "," + this.field14147.getZ() + ")") + " (t=" + this.field14148 + ")";
     }
     
     @Nullable

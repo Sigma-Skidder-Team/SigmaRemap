@@ -45,7 +45,7 @@ public class Class6124 implements Class6113
             for (final Map.Entry<String, V> entry : this.field24863.get(method5834).entrySet()) {
                 final String s = entry.getKey();
                 final MutableBoundingBox class7355 = (MutableBoundingBox)entry.getValue();
-                final Boolean b = (Boolean)this.field24864.get(method5834).get(s);
+                final Boolean b = this.field24864.get(method5834).get(s);
                 if (!class7353.withinDistance(class7355.func_215126_f(), 500.0)) {
                     continue;
                 }

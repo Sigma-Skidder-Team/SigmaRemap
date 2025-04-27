@@ -31,7 +31,7 @@ import com.mojang.brigadier.CommandDispatcher;
 public class Class7321
 {
     public static void method22439(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("test").then(Class7788.method25001("runthis").executes(commandContext -> method22442((Class7492)commandContext.getSource())))).then(Class7788.method25001("runthese").executes(commandContext -> method22443((Class7492)commandContext.getSource())))).then(Class7788.method25001("run").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8487.method28341()).executes(commandContext -> method22447((Class7492)commandContext.getSource(), Class8487.method28342((CommandContext<Class7492>)commandContext, "testName")))))).then(((LiteralArgumentBuilder)Class7788.method25001("runall").executes(commandContext -> method22449((Class7492)commandContext.getSource()))).then(Class7788.method25002("testClassName", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8894.method31306()).executes(commandContext -> method22450((Class7492)commandContext.getSource(), Class8894.method31307((CommandContext<Class7492>)commandContext, "testClassName")))))).then(Class7788.method25001("export").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22453((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "testName")))))).then(Class7788.method25001("import").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22454((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "testName")))))).then(((LiteralArgumentBuilder)Class7788.method25001("pos").executes(commandContext -> method22441((Class7492)commandContext.getSource(), "pos"))).then(Class7788.method25002("var", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22441((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "var")))))).then(Class7788.method25001("create").then(((RequiredArgumentBuilder)Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22440((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), 5, 5, 5))).then(((RequiredArgumentBuilder)Class7788.method25002("width", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22440((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "width")))).then(Class7788.method25002("height", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).then(Class7788.method25002("depth", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22440((Class7492)commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "height"), IntegerArgumentType.getInteger(commandContext, "depth"))))))))).then(((LiteralArgumentBuilder)Class7788.method25001("clearall").executes(commandContext -> method22446((Class7492)commandContext.getSource(), 200))).then(Class7788.method25002("radius", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22446((Class7492)commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "radius"))))));
+        commandDispatcher.register((LiteralArgumentBuilder) ((LiteralArgumentBuilder)Class7788.method25001("test").then(Class7788.method25001("runthis").executes(commandContext -> method22442(commandContext.getSource())))).then(Class7788.method25001("runthese").executes(commandContext -> method22443(commandContext.getSource()))).then(Class7788.method25001("run").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8487.method28341()).executes(commandContext -> method22447(commandContext.getSource(), Class8487.method28342(commandContext, "testName"))))).then(((LiteralArgumentBuilder)Class7788.method25001("runall").executes(commandContext -> method22449(commandContext.getSource()))).then(Class7788.method25002("testClassName", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8894.method31306()).executes(commandContext -> method22450(commandContext.getSource(), Class8894.method31307(commandContext, "testClassName"))))).then(Class7788.method25001("export").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22453(commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"))))).then(Class7788.method25001("import").then(Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22454(commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"))))).then(((LiteralArgumentBuilder)Class7788.method25001("pos").executes(commandContext -> method22441(commandContext.getSource(), "pos"))).then(Class7788.method25002("var", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22441(commandContext.getSource(), StringArgumentType.getString(commandContext, "var"))))).then(Class7788.method25001("create").then(((RequiredArgumentBuilder)Class7788.method25002("testName", (com.mojang.brigadier.arguments.ArgumentType<Object>)StringArgumentType.word()).executes(commandContext -> method22440(commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), 5, 5, 5))).then(((RequiredArgumentBuilder)Class7788.method25002("width", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22440(commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "width")))).then(Class7788.method25002("height", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).then(Class7788.method25002("depth", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22440(commandContext.getSource(), StringArgumentType.getString(commandContext, "testName"), IntegerArgumentType.getInteger(commandContext, "width"), IntegerArgumentType.getInteger(commandContext, "height"), IntegerArgumentType.getInteger(commandContext, "depth")))))))).then(((LiteralArgumentBuilder)Class7788.method25001("clearall").executes(commandContext -> method22446(commandContext.getSource(), 200))).then(Class7788.method25002("radius", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method22446(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "radius"))))));
     }
     
     private static int method22440(final Class7492 class7492, final String s, final int n, final int n2, final int n3) {
@@ -97,7 +97,6 @@ public class Class7321
             method23251.forEach(class7496 -> {
                 final Object o = new Class7333();
                 method22444(class7494, class7496, class7495);
-                return;
             });
             return 1;
         }
@@ -123,10 +122,10 @@ public class Class7321
                 method22455(class1849, "All required tests passed :)", TextFormatting.GREEN);
             }
             else {
-                method22455(class1849, "" + class1850.method22487() + " required tests failed :(", TextFormatting.RED);
+                method22455(class1849, class1850.method22487() + " required tests failed :(", TextFormatting.RED);
             }
             if (class1850.method22491()) {
-                method22455(class1849, "" + class1850.method22488() + " optional tests failed", TextFormatting.GRAY);
+                method22455(class1849, class1850.method22488() + " optional tests failed", TextFormatting.GRAY);
             }
         }
     }
@@ -182,7 +181,7 @@ public class Class7321
     }
     
     private static int method22453(final Class7492 class7492, final String s) {
-        final Path value = Paths.get(Class8787.field36936, new String[0]);
+        final Path value = Paths.get(Class8787.field36936);
         final Path method6525 = class7492.method23250().method6910().method6525(new ResourceLocation("minecraft", s), ".nbt");
         final Path method6526 = Class3701.method11378(method6525, s, value);
         if (method6526 == null) {
@@ -190,7 +189,7 @@ public class Class7321
             return 1;
         }
         try {
-            Files.createDirectories(method6526.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
+            Files.createDirectories(method6526.getParent(), new FileAttribute[0]);
         }
         catch (final IOException ex) {
             method22452(class7492, "Could not create folder " + method6526.getParent());
@@ -205,15 +204,15 @@ public class Class7321
         final Path value = Paths.get(Class8787.field36936, s + ".snbt");
         final Path method6525 = class7492.method23250().method6910().method6525(new ResourceLocation("minecraft", s), ".nbt");
         try {
-            final String string = IOUtils.toString((Reader)Files.newBufferedReader(value));
-            Files.createDirectories(method6525.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-            Class8097.method26591(Class5704.method16938(string), Files.newOutputStream(method6525, new OpenOption[0]));
+            final String string = IOUtils.toString(Files.newBufferedReader(value));
+            Files.createDirectories(method6525.getParent(), new FileAttribute[0]);
+            Class8097.method26591(Class5704.method16938(string), Files.newOutputStream(method6525));
             method22452(class7492, "Imported to " + method6525.toAbsolutePath());
             return 0;
         }
         catch (final CommandSyntaxException | IOException ex) {
             System.err.println("Failed to load structure " + s);
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
             return 1;
         }
     }

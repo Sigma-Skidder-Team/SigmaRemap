@@ -36,7 +36,7 @@ public abstract class Class5479 implements Class5484
     @Override
     public String toString() {
         if (this.field22750 != null) {
-            return this.field22750.toString();
+            return this.field22750;
         }
         return "";
     }

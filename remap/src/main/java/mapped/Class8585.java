@@ -22,7 +22,7 @@ public class Class8585
     }
     
     public int method29063(final Predicate<Class100> predicate) {
-        return this.field36075.object2IntEntrySet().stream().filter(object2IntMap$Entry -> predicate2.test(object2IntMap$Entry.getKey())).mapToInt(object2IntMap$Entry2 -> object2IntMap$Entry2.getIntValue() * ((Class100)object2IntMap$Entry2.getKey()).field291).sum();
+        return this.field36075.object2IntEntrySet().stream().filter(object2IntMap$Entry -> predicate2.test(object2IntMap$Entry.getKey())).mapToInt(object2IntMap$Entry2 -> object2IntMap$Entry2.getIntValue() * object2IntMap$Entry2.getKey().field291).sum();
     }
     
     public Stream<Class6556> method29064(final UUID uuid) {
@@ -48,7 +48,7 @@ public class Class8585
     }
     
     public void method29067(final Class100 class100) {
-        final int int1 = this.field36075.getInt((Object)class100);
+        final int int1 = this.field36075.getInt(class100);
         if (int1 > class100.field292) {
             this.field36075.put((Object)class100, class100.field292);
         }
@@ -58,6 +58,6 @@ public class Class8585
     }
     
     public void method29068(final Class100 class100) {
-        this.field36075.removeInt((Object)class100);
+        this.field36075.removeInt(class100);
     }
 }

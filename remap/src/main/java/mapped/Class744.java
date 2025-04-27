@@ -56,10 +56,10 @@ public class Class744 extends Class516<Class3439>
         final int field3079 = this.field3079;
         final int field3080 = this.field3080;
         this.blit(field3079, field3080, 0, 0, this.field3075, this.field3076);
-        final Class6601 method10977 = ((Class3439)this.field3077).method10977();
-        final Class6601 method10978 = ((Class3439)this.field3077).method10978();
-        final Class6601 method10979 = ((Class3439)this.field3077).method10979();
-        final Class6601 method10980 = ((Class3439)this.field3077).method10980();
+        final Class6601 method10977 = this.field3077.method10977();
+        final Class6601 method10978 = this.field3077.method10978();
+        final Class6601 method10979 = this.field3077.method10979();
+        final Class6601 method10980 = this.field3077.method10980();
         if (!method10977.method20054()) {
             this.blit(field3079 + method10977.field26175, field3080 + method10977.field26176, this.field3075, 0, 16, 16);
         }
@@ -92,7 +92,7 @@ public class Class744 extends Class516<Class3439>
                 final int n5 = field3080 + 13;
                 this.minecraft.method5290().method5849(Class744.field4018);
                 this.blit(n4, n5, 0, this.field3076, 14, 14);
-                this.method4059(((Class3439)this.field3077).method10974(), n4, n5);
+                this.method4059(this.field3077.method10974(), n4, n5);
             }
         }
         else {
@@ -104,7 +104,7 @@ public class Class744 extends Class516<Class3439>
                 final int n11 = n7 + n9 / 4 * 14;
                 this.minecraft.method5290().method5849(Class744.field4018);
                 int field3082 = this.field3076;
-                if (field3081 != ((Class3439)this.field3077).method10974()) {
+                if (field3081 != this.field3077.method10974()) {
                     if (n2 >= n10) {
                         if (n3 >= n11) {
                             if (n2 < n10 + 14) {
@@ -157,9 +157,9 @@ public class Class744 extends Class516<Class3439>
                     if (n9 >= 0.0) {
                         if (n8 < 14.0) {
                             if (n9 < 14.0) {
-                                if (((Class3439)this.field3077).method10877(this.minecraft.player, i)) {
+                                if (this.field3077.method10877(this.minecraft.player, i)) {
                                     Minecraft.getInstance().method5299().method6422(Class6836.method20933(Class8520.field35663, 1.0f));
-                                    this.minecraft.playerController.method27326(((Class3439)this.field3077).field16154, i);
+                                    this.minecraft.playerController.method27326(this.field3077.field16154, i);
                                     return true;
                                 }
                             }
@@ -214,9 +214,7 @@ public class Class744 extends Class516<Class3439>
         if (n >= n3) {
             if (n2 >= n4) {
                 if (n < n3 + this.field3075) {
-                    if (n2 < n4 + this.field3076) {
-                        return false;
-                    }
+                    return !(n2 < n4 + this.field3076);
                 }
             }
         }
@@ -224,16 +222,16 @@ public class Class744 extends Class516<Class3439>
     }
     
     private void method4060() {
-        final ItemStack method20053 = ((Class3439)this.field3077).method10980().method20053();
+        final ItemStack method20053 = this.field3077.method10980().method20053();
         if (!method20053.method27620()) {
             this.field4021 = Class465.method2387(((Class4044)method20053.getItem()).method12244(), Class465.method2382(method20053));
         }
         else {
             this.field4021 = null;
         }
-        final ItemStack method20054 = ((Class3439)this.field3077).method10977().method20053();
-        final ItemStack method20055 = ((Class3439)this.field3077).method10978().method20053();
-        final ItemStack method20056 = ((Class3439)this.field3077).method10979().method20053();
+        final ItemStack method20054 = this.field3077.method10977().method20053();
+        final ItemStack method20055 = this.field3077.method10978().method20053();
+        final ItemStack method20056 = this.field3077.method10979().method20053();
         final CompoundNBT method20057 = method20054.method27659("BlockEntityTag");
         boolean field4027 = false;
         Label_0160: {

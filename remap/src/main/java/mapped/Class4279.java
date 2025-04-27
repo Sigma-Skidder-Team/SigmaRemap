@@ -56,6 +56,6 @@ public class Class4279 implements IPacket<IClientPlayNetHandler>
     }
     
     public Map<Class9455<?>, Integer> method12856() {
-        return (Map<Class9455<?>, Integer>)this.field19200;
+        return this.field19200;
     }
 }

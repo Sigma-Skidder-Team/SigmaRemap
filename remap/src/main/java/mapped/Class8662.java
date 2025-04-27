@@ -37,11 +37,11 @@ public class Class8662 extends DataFix
             opticFinder5.type().findField("EntityTag");
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
-                if (!(!Objects.equals(optional.get().getSecond(), "minecraft:spawn_egg"))) {
+            if (optional.isPresent()) {
+                if (Objects.equals(optional.get().getSecond(), "minecraft:spawn_egg")) {
                     typed.getOrCreateTyped(opticFinder2).getOrCreateTyped(opticFinder3).getOptional(opticFinder4);
                     final Optional optional2;
-                    if (!(!optional2.isPresent())) {
+                    if (optional2.isPresent()) {
                         return typed.set(opticFinder, (Object)Pair.of((Object)Class9451.field40628.typeName(), (Object)Class8662.field36391.getOrDefault(optional2.get(), "minecraft:pig_spawn_egg")));
                     }
                 }

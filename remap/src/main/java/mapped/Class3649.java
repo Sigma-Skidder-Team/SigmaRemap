@@ -89,9 +89,7 @@ public class Class3649 extends Class3643
         final Class9068 class6112 = Class3649.field16923.get(this.method11205(class6108, class6110.method27702(class6111)));
         if (class6112 != null) {
             if (class6112.method32665() == class6109.method32665()) {
-                if (class6112.method32662() == class6109.method32662()) {
-                    return false;
-                }
+                return class6112.method32662() != class6109.method32662();
             }
         }
         return true;

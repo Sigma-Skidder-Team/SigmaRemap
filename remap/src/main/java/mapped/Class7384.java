@@ -52,7 +52,7 @@ public class Class7384 implements ArgumentType<IParticleData>
     static {
         field28442 = Arrays.asList("foo", "foo:bar", "particle with options");
         field28443 = new DynamicCommandExceptionType(o -> {
-            new Class2259("particle.notFound", new Object[] { o });
+            new Class2259("particle.notFound", o);
             return;
         });
     }

@@ -98,7 +98,7 @@ public class Class1885 extends WorldLightManager implements AutoCloseable
     
     private void method7258(final int n, final int n2, final IntSupplier intSupplier, final Class2216 class2216, final Runnable runnable) {
         this.field10267.method5386(Class1910.method7463(() -> {
-            this.field10265.add((Object)Pair.of((Object)class2217, (Object)runnable2));
+            this.field10265.add((Object)Pair.of(class2217, runnable2));
             if (this.field10265.size() >= this.field10268) {
                 this.method7262();
             }
@@ -119,7 +119,7 @@ public class Class1885 extends WorldLightManager implements AutoCloseable
             while (i < 16) {
                 final Class8199[] array;
                 if (!Class8199.method27155(array[i])) {
-                    super.method7254(Class353.method1090(class1862, i), (boolean)(0 != 0));
+                    super.method7254(Class353.method1090(class1862, i), 0 != 0);
                 }
                 ++i;
             }
@@ -128,7 +128,6 @@ public class Class1885 extends WorldLightManager implements AutoCloseable
                 class1861.method7035().forEach(class1864 -> super.method7251(class1864, class1863.method6984(class1864)));
             }
             this.field10266.method1331(class1862);
-            return;
         }, () -> "lightChunk " + obj + " " + b3));
         return CompletableFuture.supplyAsync(() -> {
             class1865.method7044(true);

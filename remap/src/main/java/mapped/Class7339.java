@@ -150,7 +150,7 @@ public class Class7339
     
     public JsonElement method22541() {
         final JsonObject jsonObject = new JsonObject();
-        jsonObject.add("icon", (JsonElement)this.method22542());
+        jsonObject.add("icon", this.method22542());
         jsonObject.add("title", Class5953.method17870(this.field28342));
         jsonObject.add("description", Class5953.method17870(this.field28343));
         jsonObject.addProperty("frame", this.field28346.method8015());
@@ -160,7 +160,7 @@ public class Class7339
         if (this.field28345 != null) {
             jsonObject.addProperty("background", this.field28345.toString());
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     private JsonObject method22542() {

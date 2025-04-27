@@ -157,9 +157,9 @@ public class OmegaCraftFly extends Module
                 }
             }
             else {
-                field15974 += n * 1.0 / 3.0;
-                field15975 += n2 * 1.0 / 3.0;
-                field15976 += n3 * 1.0 / 3.0;
+                field15974 += n / 3.0;
+                field15975 += n2 / 3.0;
+                field15976 += n3 / 3.0;
                 n *= 0.0;
                 n2 *= 0.0;
                 n3 *= 0.0;

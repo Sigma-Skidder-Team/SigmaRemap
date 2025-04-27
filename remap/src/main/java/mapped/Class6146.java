@@ -17,7 +17,7 @@ public class Class6146 extends Class6132
     }
     
     public Dynamic<?> method18375(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)dynamic.update("CollarColor", dynamic2 -> dynamic2.createByte((byte)(15 - dynamic2.asInt(0))));
+        return dynamic.update("CollarColor", dynamic2 -> dynamic2.createByte((byte)(15 - dynamic2.asInt(0))));
     }
     
     @Override

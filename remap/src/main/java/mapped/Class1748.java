@@ -28,7 +28,7 @@ public class Class1748 extends FilterInputStream
         this.field9730 = true;
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         if (!this.field9730) {
             Class6583.method19944().warn(this.field9729);
         }

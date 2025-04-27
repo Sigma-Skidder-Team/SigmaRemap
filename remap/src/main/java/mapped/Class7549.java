@@ -11,7 +11,7 @@ public class Class7549
     private final boolean field29948;
     private final boolean field29949;
     private final Class222 field29950;
-    private int field29951;
+    private final int field29951;
     
     public Class7549(final boolean field29946, final boolean field29947, final boolean field29948, final boolean field29949, final Class222 field29950, final int field29951) {
         this.field29946 = field29946;

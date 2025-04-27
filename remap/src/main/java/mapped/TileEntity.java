@@ -67,7 +67,7 @@ public abstract class TileEntity
                 return class52.method16522();
             }
             catch (final Throwable t) {
-                TileEntity.field2654.error("Failed to create block entity {}", (Object)s, (Object)t);
+                TileEntity.field2654.error("Failed to create block entity {}", (Object)s, t);
                 return null;
             }
         }).map(class54 -> {
@@ -76,7 +76,7 @@ public abstract class TileEntity
                 return class54;
             }
             catch (final Throwable t2) {
-                TileEntity.field2654.error("Failed to load data for block entity {}", (Object)s2, (Object)t2);
+                TileEntity.field2654.error("Failed to load data for block entity {}", (Object)s2, t2);
                 return null;
             }
         }).orElseGet(() -> {
@@ -175,7 +175,7 @@ public abstract class TileEntity
     public void method2207() {
         if (!this.field2660) {
             this.field2660 = true;
-            TileEntity.field2654.warn("Block entity invalid: {} @ {}", new Supplier[] { () -> Registry.field224.getKey(this.getType()), this::getPos});
+            TileEntity.field2654.warn("Block entity invalid: {} @ {}", () -> Registry.field224.getKey(this.getType()), this::getPos);
         }
     }
     

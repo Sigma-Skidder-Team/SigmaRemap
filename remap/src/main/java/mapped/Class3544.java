@@ -40,9 +40,7 @@ public class Class3544 extends Class3542
         if (this.field16600 <= 0) {
             if (this.field16601.world.method6703()) {
                 if (this.method11092()) {
-                    if (!this.method11093()) {
-                        return true;
-                    }
+                    return !this.method11093();
                 }
             }
             return false;

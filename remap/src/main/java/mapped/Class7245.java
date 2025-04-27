@@ -11,10 +11,10 @@ import java.util.Iterator;
 
 public class Class7245 implements Iterator<BlockPos>
 {
-    private double field28078;
-    private double field28079;
-    private int field28080;
-    private int field28081;
+    private final double field28078;
+    private final double field28079;
+    private final int field28080;
+    private final int field28081;
     private double field28082;
     private double field28083;
     private double field28084;
@@ -22,7 +22,7 @@ public class Class7245 implements Iterator<BlockPos>
     private int field28086;
     private double field28087;
     private double field28088;
-    private Class384 field28089;
+    private final Class384 field28089;
     private boolean field28090;
     
     public Class7245(final BlockPos class354, final BlockPos class355, final double field28078, final double field28079) {

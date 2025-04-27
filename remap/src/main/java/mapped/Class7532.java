@@ -41,9 +41,9 @@ public class Class7532
         final CompoundNBT method7440 = class1852.getCompound("Level");
         final ChunkPos b = new ChunkPos(method7440.getInt("xPos"), method7440.getInt("zPos"));
         if (!Objects.equals(a, b)) {
-            Class7532.field29910.error("Chunk file at {} is in the wrong location; relocating. (Expected {}, got {})", (Object)a, (Object)a, (Object)b);
+            Class7532.field29910.error("Chunk file at {} is in the wrong location; relocating. (Expected {}, got {})", a, a, b);
         }
-        final Class1873 class1853 = new Class1873(a, method7439, (int[])(method7440.contains("Biomes", 11) ? method7440.getIntArray("Biomes") : null));
+        final Class1873 class1853 = new Class1873(a, method7439, method7440.contains("Biomes", 11) ? method7440.getIntArray("Biomes") : null);
         final Class8288 class1854 = method7440.contains("UpgradeData", 10) ? new Class8288(method7440.getCompound("UpgradeData")) : Class8288.field34078;
         final Class6951 class1855 = new Class6951<Block>(class1862 -> class1862 == null || class1862.getDefaultState().method21706(), a, method7440.getList("ToBeTicked", 9));
         final Class6951 class1856 = new Class6951<Fluid>(class1863 -> class1863 == null || class1863 == Class7558.field29974, a, method7440.getList("LiquidsToBeTicked", 9));
@@ -218,7 +218,7 @@ public class Class7532
                     e.putByteArray("SkyLight", method7025.method22321());
                 }
             }
-            ((AbstractList<CompoundNBT>)class1853).add(e);
+            class1853.add(e);
         }
         class1852.put("Sections", class1853);
         if (method7023) {
@@ -235,13 +235,13 @@ public class Class7532
             if (method7027 == null) {
                 continue;
             }
-            ((AbstractList<CompoundNBT>)class1855).add(method7027);
+            class1855.add(method7027);
         }
         class1852.put("TileEntities", class1855);
         final ListNBT class1856 = new ListNBT();
         if (class1850.method7027().getType() != ChunkStatus.Type.LEVELCHUNK) {
             final Class1865 class1857 = (Class1865)class1850;
-            ((AbstractCollection<Object>)class1856).addAll(class1857.method7096());
+            class1856.addAll(class1857.method7096());
             class1852.put("Lights", method23599(class1857.method7090()));
             final CompoundNBT class1858 = new CompoundNBT();
             for (final Class2126 class1859 : Class2126.values()) {
@@ -259,7 +259,7 @@ public class Class7532
                         continue;
                     }
                     class1860.method7068(true);
-                    ((AbstractList<CompoundNBT>)class1856).add(e2);
+                    class1856.add(e2);
                 }
             }
         }
@@ -370,7 +370,7 @@ public class Class7532
                     return true;
                 }
                 else {
-                    Class7532.field29910.warn("Found invalid structure reference [ {} @ {} ] for chunk {}.", (Object)s2, (Object)class7862, (Object)class7861);
+                    Class7532.field29910.warn("Found invalid structure reference [ {} @ {} ] for chunk {}.", (Object)s2, class7862, (Object)class7861);
                     return false;
                 }
             }).toArray()));
@@ -384,11 +384,11 @@ public class Class7532
             final ListNBT e = new ListNBT();
             if (list != null) {
                 final ShortListIterator iterator = list.iterator();
-                while (((Iterator)iterator).hasNext()) {
-                    ((AbstractList<ShortNBT>)e).add(ShortNBT.method286((short)((Iterator)iterator).next()));
+                while (iterator.hasNext()) {
+                    e.add(ShortNBT.method286((short)((Iterator)iterator).next()));
                 }
             }
-            ((AbstractList<ListNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }

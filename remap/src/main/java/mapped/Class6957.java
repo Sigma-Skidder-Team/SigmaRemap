@@ -55,7 +55,7 @@ public final class Class6957
     }
     
     public Set<String> method21365() {
-        final TreeSet s = new TreeSet((Comparator<? super E>)String.CASE_INSENSITIVE_ORDER);
+        final TreeSet s = new TreeSet(String.CASE_INSENSITIVE_ORDER);
         for (int i = 0; i < this.method21362(); ++i) {
             s.add(this.method21363(i));
         }
@@ -101,7 +101,7 @@ public final class Class6957
     }
     
     public Map<String, List<String>> method21367() {
-        final TreeMap treeMap = new TreeMap((Comparator<? super K>)String.CASE_INSENSITIVE_ORDER);
+        final TreeMap treeMap = new TreeMap(String.CASE_INSENSITIVE_ORDER);
         for (int i = 0; i < this.method21362(); ++i) {
             final String lowerCase = this.method21363(i).toLowerCase(Locale.US);
             List list = (List)treeMap.get(lowerCase);

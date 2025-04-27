@@ -59,10 +59,9 @@ public class ClientWorld extends World
         this.field10078 = new Class6516();
         this.field10079 = Maps.newHashMap();
         this.field10081 = (Object2ObjectArrayMap<Class8895, Class8141>) Util.method27851(new Object2ObjectArrayMap(3), object2ObjectArrayMap -> {
-            object2ObjectArrayMap.put((Object)Class8364.field34301, (Object)new Class8141());
-            object2ObjectArrayMap.put((Object)Class8364.field34302, (Object)new Class8141());
-            object2ObjectArrayMap.put((Object)Class8364.field34303, (Object)new Class8141());
-            return;
+            object2ObjectArrayMap.put(Class8364.field34301, new Class8141());
+            object2ObjectArrayMap.put(Class8364.field34302, new Class8141());
+            object2ObjectArrayMap.put(Class8364.field34303, new Class8141());
         });
         this.field10082 = false;
         this.field10073 = field10073;
@@ -71,7 +70,7 @@ public class ClientWorld extends World
         this.method6733();
         this.method6735();
         if (Class9570.field41366.method22605()) {
-            Class9570.method35826(this, Class9570.field41185, Class9570.method35826(this.dimension, Class9570.field41366, new Object[0]));
+            Class9570.method35826(this, Class9570.field41185, Class9570.method35826(this.dimension, Class9570.field41366));
         }
         Class9570.method35840(Class9570.field41427, this);
         if (this.field10075.playerController != null) {
@@ -103,10 +102,9 @@ public class ClientWorld extends World
             final Entity class399 = this.field10071.get(i);
             this.method6717(class401 -> {
                 ++class401.ticksExisted;
-                if (!(!Class7667.method24316(class401))) {
+                if (Class7667.method24316(class401)) {
                     class401.method1659();
                 }
-                return;
             }, class399);
             if (class399.removed) {
                 this.field10071.remove(i--);
@@ -286,14 +284,14 @@ public class ClientWorld extends World
             this.field10072.put(n, (Object)class399);
             this.method6835().method7413(MathHelper.floor(class399.getPosX() / 16.0), MathHelper.floor(class399.getPosZ() / 16.0), ChunkStatus.FULL, true).method7010(class399);
             if (Class9570.field41253.method22605()) {
-                Class9570.method35826(class399, Class9570.field41253, new Object[0]);
+                Class9570.method35826(class399, Class9570.field41253);
             }
             this.method6851(class399);
         }
     }
     
     public void method6821(final int n) {
-        final Entity class399 = (Entity)this.field10072.remove(n);
+        final Entity class399 = this.field10072.remove(n);
         if (class399 != null) {
             class399.method1652();
             this.method6822(class399);
@@ -307,15 +305,15 @@ public class ClientWorld extends World
         }
         this.field10076.remove(class399);
         if (Class9570.field41254.method22605()) {
-            Class9570.method35826(class399, Class9570.field41254, new Object[0]);
+            Class9570.method35826(class399, Class9570.field41254);
         }
         this.method6852(class399);
     }
     
     public void method6823(final Chunk class1862) {
         final ObjectIterator iterator = this.field10072.int2ObjectEntrySet().iterator();
-        while (((Iterator)iterator).hasNext()) {
-            final Entity class1863 = (Entity)((Int2ObjectMap$Entry)((Iterator)iterator).next()).getValue();
+        while (iterator.hasNext()) {
+            final Entity class1863 = (Entity)((Int2ObjectMap$Entry) iterator.next()).getValue();
             final int method35644 = MathHelper.floor(class1863.getPosX() / 16.0);
             final int method35645 = MathHelper.floor(class1863.getPosZ() / 16.0);
             if (method35644 != class1862.method7019().field32290) {
@@ -331,7 +329,7 @@ public class ClientWorld extends World
     @Nullable
     @Override
     public Entity getEntityByID(final int n) {
-        return (Entity)this.field10072.get(n);
+        return this.field10072.get(n);
     }
     
     public void method6824(final BlockPos class354, final Class7096 class355) {
@@ -340,7 +338,7 @@ public class ClientWorld extends World
     
     @Override
     public void method6751() {
-        this.field10073.getNetworkManager().method11181(new Class2259("multiplayer.status.quitting", new Object[0]));
+        this.field10073.getNetworkManager().method11181(new Class2259("multiplayer.status.quitting"));
     }
     
     public void method6825(final int n, final int n2, final int n3) {
@@ -447,12 +445,12 @@ public class ClientWorld extends World
     public void method6706(final PlayerEntity playerEntity, final double n, final double n2, final double n3, Class7795 class513, Class286 class514, float method35823, final float f) {
         if (Class9570.field41267.method22605()) {
             final Object method35824 = Class9570.field41267.method22608(playerEntity, class513, class514, method35823, f);
-            if (Class9570.method35820(method35824, Class9570.field41225, new Object[0]) || Class9570.method35826(method35824, Class9570.field41403, new Object[0]) == null) {
+            if (Class9570.method35820(method35824, Class9570.field41225) || Class9570.method35826(method35824, Class9570.field41403) == null) {
                 return;
             }
             class513 = (Class7795)Class9570.method35826(method35824, Class9570.field41403, new Object[0]);
             class514 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
-            method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
+            method35823 = Class9570.method35823(method35824, Class9570.field41405);
         }
         if (playerEntity == this.field10075.player) {
             this.method6708(n, n2, n3, class513, class514, method35823, f, false);
@@ -463,12 +461,12 @@ public class ClientWorld extends World
     public void method6707(final PlayerEntity playerEntity, final Entity class513, Class7795 class514, Class286 class515, float method35823, final float f) {
         if (Class9570.field41267.method22605()) {
             final Object method35824 = Class9570.field41267.method22608(playerEntity, class514, class515, method35823, f);
-            if (Class9570.method35820(method35824, Class9570.field41225, new Object[0]) || Class9570.method35826(method35824, Class9570.field41403, new Object[0]) == null) {
+            if (Class9570.method35820(method35824, Class9570.field41225) || Class9570.method35826(method35824, Class9570.field41403) == null) {
                 return;
             }
             class514 = (Class7795)Class9570.method35826(method35824, Class9570.field41403, new Object[0]);
             class515 = (Class286)Class9570.method35826(method35824, Class9570.field41404, new Object[0]);
-            method35823 = Class9570.method35823(method35824, Class9570.field41405, new Object[0]);
+            method35823 = Class9570.method35823(method35824, Class9570.field41405);
         }
         if (playerEntity == this.field10075.player) {
             this.field10075.method5299().method6422(new Class6838(class514, class515, class513));
@@ -524,12 +522,12 @@ public class ClientWorld extends World
     
     @Override
     public Class6952<Block> method6833() {
-        return (Class6952<Block>)Class6954.method21355();
+        return Class6954.method21355();
     }
     
     @Override
     public Class6952<Fluid> method6834() {
-        return (Class6952<Fluid>)Class6954.method21355();
+        return Class6954.method21355();
     }
     
     public Class1907 method6835() {
@@ -685,7 +683,7 @@ public class ClientWorld extends World
             final float n13 = n12 * 0.45f;
             n5 = n5 * (1.0f - n13) + 0.8f * n13;
             n6 = n6 * (1.0f - n13) + 0.8f * n13;
-            n7 = n7 * (1.0f - n13) + 1.0f * n13;
+            n7 = n7 * (1.0f - n13) + n13;
         }
         return new Vec3d(n5, n6, n7);
     }
@@ -741,7 +739,7 @@ public class ClientWorld extends World
     
     @Override
     public int method6849(final BlockPos class354, final Class8895 class355) {
-        return ((Class8141)this.field10081.get((Object)class355)).method26829(class354, () -> this.method6850(class356, class357));
+        return this.field10081.get(class355).method26829(class354, () -> this.method6850(class356, class357));
     }
     
     public int method6850(final BlockPos class354, final Class8895 class355) {

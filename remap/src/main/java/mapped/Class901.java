@@ -10,8 +10,8 @@ import java.io.InputStream;
 public class Class901 extends Thread
 {
     private static String[] field4850;
-    private InputStream field4851;
-    private StringBuffer field4852;
+    private final InputStream field4851;
+    private final StringBuffer field4852;
     
     public Class901(final StringBuffer field4852, final InputStream field4853) {
         this.field4851 = field4853;

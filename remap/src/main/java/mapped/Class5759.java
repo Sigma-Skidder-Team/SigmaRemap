@@ -62,7 +62,7 @@ public class Class5759
         final Class1663 method28895 = Config.method28895();
         final Class1666 method28896 = method28895.method5853(class755);
         if (method28896 instanceof Class1767) {
-            ((Class1767)method28896).method5870();
+            method28896.method5870();
             method28895.method5858(class755);
         }
         class754.method4107(null);

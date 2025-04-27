@@ -35,7 +35,7 @@ public class Class2725 extends Class2466
             }
         }
         if (Class8563.method28794().method33559()) {
-            Class8563.method28793().method34742().log(Level.INFO, "{0} logged in with protocol {1}, Route: {2}", new Object[] { class8699.method29818(Class5260.field22308, 1), class8700.method20207(), Joiner.on(", ").join((Object)class8700.method20211().method16337(), (Object)", ", new Object[0]) });
+            Class8563.method28793().method34742().log(Level.INFO, "{0} logged in with protocol {1}, Route: {2}", new Object[] { class8699.method29818(Class5260.field22308, 1), class8700.method20207(), Joiner.on(", ").join(class8700.method20211().method16337(), ", ") });
         }
     }
 }

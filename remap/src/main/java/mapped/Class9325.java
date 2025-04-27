@@ -14,7 +14,7 @@ public class Class9325
     public static void method34544(final Class74 class74) {
         if (class74.method419("id") instanceof Class71) {
             final Class71 class75 = class74.method419("id");
-            final String s = (String)Class9325.field40035.get((Object)class75.method406());
+            final String s = Class9325.field40035.get(class75.method406());
             if (s != null) {
                 class75.method407(s);
             }
@@ -50,7 +50,7 @@ public class Class9325
             final Class74 class7563 = class7562.method23743().method419("EntityTag");
             if (class7563.method419("id") instanceof Class71) {
                 final Class71 class7564 = class7563.method419("id");
-                final String s = (String)Class9325.field40035.inverse().get((Object)class7564.method406());
+                final String s = Class9325.field40035.inverse().get(class7564.method406());
                 if (s != null) {
                     class7564.method407(s);
                 }
@@ -65,9 +65,7 @@ public class Class9325
                 if (method23743 != null) {
                     if (method23743.method418("EntityTag")) {
                         if (method23743.method419("EntityTag") instanceof Class74) {
-                            if (((Class74)method23743.method419("EntityTag")).method419("id") instanceof Class71) {
-                                return true;
-                            }
+                            return ((Class74) method23743.method419("EntityTag")).method419("id") instanceof Class71;
                         }
                     }
                 }
@@ -77,7 +75,7 @@ public class Class9325
     }
     
     static {
-        (Class9325.field40035 = (BiMap<String, String>)HashBiMap.create()).put((Object)"AreaEffectCloud", (Object)"minecraft:area_effect_cloud");
+        (Class9325.field40035 = HashBiMap.create()).put((Object)"AreaEffectCloud", (Object)"minecraft:area_effect_cloud");
         Class9325.field40035.put((Object)"ArmorStand", (Object)"minecraft:armor_stand");
         Class9325.field40035.put((Object)"Arrow", (Object)"minecraft:arrow");
         Class9325.field40035.put((Object)"Bat", (Object)"minecraft:bat");

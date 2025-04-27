@@ -14,7 +14,7 @@ public class Class5466 extends Class5419<Class759>
     private final float field22733;
     
     public Class5466(final float field22732, final float field22733) {
-        super((Map)ImmutableMap.of());
+        super(ImmutableMap.of());
         this.field22732 = field22732;
         this.field22733 = field22733;
     }

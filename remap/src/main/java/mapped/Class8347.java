@@ -57,9 +57,7 @@ public class Class8347
         if (method28003 != 1) {
             if (method28003 != 2) {
                 if (method28003 != 3) {
-                    if (method28003 != 4) {
-                        return false;
-                    }
+                    return method28003 == 4;
                 }
             }
         }
@@ -117,10 +115,10 @@ public class Class8347
         for (int i = 0; i < Class8398.method28007(class8398); ++i) {
             for (int j = 0; j < Class8398.method28006(class8398); ++j) {
                 if (class8398.method28003(j, i) == 0) {
-                    final int n = 0 + (method27815(class8398, j + 1, i) ? 1 : 0) + (method27815(class8398, j - 1, i) ? 1 : 0) + (method27815(class8398, j, i + 1) ? 1 : 0) + (method27815(class8398, j, i - 1) ? 1 : 0);
+                    final int n = (method27815(class8398, j + 1, i) ? 1 : 0) + (method27815(class8398, j - 1, i) ? 1 : 0) + (method27815(class8398, j, i + 1) ? 1 : 0) + (method27815(class8398, j, i - 1) ? 1 : 0);
                     if (n < 3) {
                         if (n == 2) {
-                            if (0 + (method27815(class8398, j + 1, i + 1) ? 1 : 0) + (method27815(class8398, j - 1, i + 1) ? 1 : 0) + (method27815(class8398, j + 1, i - 1) ? 1 : 0) + (method27815(class8398, j - 1, i - 1) ? 1 : 0) <= 1) {
+                            if ((method27815(class8398, j + 1, i + 1) ? 1 : 0) + (method27815(class8398, j - 1, i + 1) ? 1 : 0) + (method27815(class8398, j + 1, i - 1) ? 1 : 0) + (method27815(class8398, j - 1, i - 1) ? 1 : 0) <= 1) {
                                 class8398.method28001(j, i, 2);
                                 b = true;
                             }

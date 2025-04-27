@@ -1969,7 +1969,7 @@ public class Class8601
         final Future[] array = new Future[n2];
         for (int i = 0; i < n2; ++i) {
             final long n4 = i * n3;
-            array[i] = cachedThreadPool.submit((Callable<Object>)new Class7076(n4, (i == n2 - 1) ? field30 : (n4 + n3), class12));
+            array[i] = cachedThreadPool.submit(new Class7076(n4, (i == n2 - 1) ? field30 : (n4 + n3), class12));
         }
         try {
             for (int j = 0; j < n2; ++j) {

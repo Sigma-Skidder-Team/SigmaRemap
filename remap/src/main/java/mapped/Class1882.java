@@ -57,7 +57,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     
     @Nullable
     public Optional<R> method7179(final long n) {
-        return (Optional)this.field10243.get(n);
+        return this.field10243.get(n);
     }
     
     public Optional<R> method7180(final long n) {
@@ -101,14 +101,14 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
             return this.field10242.method7557(class7859);
         }
         catch (final IOException ex) {
-            Class1882.field10241.error("Error reading chunk {} data from disk", (Object)class7859, (Object)ex);
+            Class1882.field10241.error("Error reading chunk {} data from disk", class7859, ex);
             return null;
         }
     }
     
     private <T> void method7185(final ChunkPos class7859, final DynamicOps<T> dynamicOps, final T t) {
         if (t != null) {
-            final Dynamic dynamic = new Dynamic((DynamicOps)dynamicOps, (Object)t);
+            final Dynamic dynamic = new Dynamic(dynamicOps, t);
             final int method7190 = method7190((Dynamic<?>)dynamic);
             final int worldVersion = Class9528.method35579().getWorldVersion();
             final boolean b = method7190 != worldVersion;
@@ -119,10 +119,9 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
                 this.field10243.put(method7191, (Object)map);
                 map.ifPresent(p2 -> {
                     this.method7188(n2);
-                    if (!(!b2)) {
+                    if (b2) {
                         this.method7189(n2);
                     }
-                    return;
                 });
             }
         }
@@ -136,7 +135,7 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
     private void method7186(final ChunkPos class7859) {
         final INBT class7860 = (INBT)this.method7187(class7859, (com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue();
         if (!(class7860 instanceof CompoundNBT)) {
-            Class1882.field10241.error("Expected compound tag, got {}", (Object)class7860);
+            Class1882.field10241.error("Expected compound tag, got {}", class7860);
         }
         else {
             this.field10242.method7556(class7859, (CompoundNBT)class7860);
@@ -148,26 +147,26 @@ public class Class1882<R extends IDynamicSerializable> implements AutoCloseable
         for (int i = 0; i < 16; ++i) {
             final long method1117 = Class353.method1090(class7859, i).method1117();
             this.field10244.remove(method1117);
-            final Optional optional = (Optional)this.field10243.get(method1117);
+            final Optional optional = this.field10243.get(method1117);
             if (optional != null) {
                 if (optional.isPresent()) {
                     hashMap.put(dynamicOps.createString(Integer.toString(i)), ((IDynamicSerializable)optional.get()).serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
                 }
             }
         }
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Sections"), dynamicOps.createMap((Map)hashMap), dynamicOps.createString("DataVersion"), dynamicOps.createInt(Class9528.method35579().getWorldVersion()))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("Sections"), dynamicOps.createMap(hashMap), dynamicOps.createString("DataVersion"), dynamicOps.createInt(Class9528.method35579().getWorldVersion()))));
     }
     
     public void method7188(final long n) {
     }
     
     public void method7189(final long n) {
-        final Optional optional = (Optional)this.field10243.get(n);
+        final Optional optional = this.field10243.get(n);
         if (optional != null && optional.isPresent()) {
             this.field10244.add(n);
         }
         else {
-            Class1882.field10241.warn("No data for position: {}", (Object)Class353.method1092(n));
+            Class1882.field10241.warn("No data for position: {}", Class353.method1092(n));
         }
     }
     

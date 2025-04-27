@@ -44,7 +44,7 @@ public class Class6877 implements ArgumentType<Class5328>
     static {
         field26945 = Arrays.asList("spooky", "effect");
         field26946 = new DynamicCommandExceptionType(o -> {
-            new Class2259("effect.effectNotFound", new Object[] { o });
+            new Class2259("effect.effectNotFound", o);
             return;
         });
     }

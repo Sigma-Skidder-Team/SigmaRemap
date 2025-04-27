@@ -27,7 +27,7 @@ public class Class5203 extends DataFix
     }
     
     private static <T> Dynamic<T> method16289(final Dynamic<T> other) {
-        return (Dynamic<T>)other.asStreamOpt().map(stream -> stream.filter(dynamic -> !method16290((Dynamic<?>)dynamic))).map((Function<? super Object, ? extends com.mojang.datafixers.Dynamic<?>>)other::createList).orElse(other);
+        return (Dynamic<T>)other.asStreamOpt().map(stream -> stream.filter(dynamic -> !method16290(dynamic))).map((Function<? super Object, ? extends com.mojang.datafixers.Dynamic<?>>)other::createList).orElse(other);
     }
     
     private static boolean method16290(final Dynamic<?> dynamic) {

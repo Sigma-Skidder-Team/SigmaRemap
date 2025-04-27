@@ -71,10 +71,10 @@ public class Class7699
         field30601 = new Class9092().method32847(true).method32853(Class4106.field18207);
         field30602 = new Class9092().method32847(true).method32853(Class4106.field18209);
         field30603 = new Class5816();
-        field30604 = Lists.newArrayList((Object[])new Class8554[] { new Class8554((A)Class2052.field11707, (B)new BlockPos(1, -1, 0)), new Class8554((A)Class2052.field11708, (B)new BlockPos(6, -1, 1)), new Class8554((A)Class2052.field11710, (B)new BlockPos(0, -1, 5)), new Class8554((A)Class2052.field11709, (B)new BlockPos(5, -1, 6)) });
+        field30604 = Lists.newArrayList((Object[])new Class8554[] { new Class8554(Class2052.field11707, new BlockPos(1, -1, 0)), new Class8554(Class2052.field11708, new BlockPos(6, -1, 1)), new Class8554(Class2052.field11710, new BlockPos(0, -1, 5)), new Class8554(Class2052.field11709, new BlockPos(5, -1, 6)) });
         field30605 = new Class5820();
         field30606 = new Class5818();
-        field30607 = Lists.newArrayList((Object[])new Class8554[] { new Class8554((A)Class2052.field11707, (B)new BlockPos(4, -1, 0)), new Class8554((A)Class2052.field11708, (B)new BlockPos(12, -1, 4)), new Class8554((A)Class2052.field11710, (B)new BlockPos(0, -1, 8)), new Class8554((A)Class2052.field11709, (B)new BlockPos(8, -1, 12)) });
+        field30607 = Lists.newArrayList((Object[])new Class8554[] { new Class8554(Class2052.field11707, new BlockPos(4, -1, 0)), new Class8554(Class2052.field11708, new BlockPos(12, -1, 4)), new Class8554(Class2052.field11710, new BlockPos(0, -1, 8)), new Class8554(Class2052.field11709, new BlockPos(8, -1, 12)) });
         field30608 = new Class5819();
     }
 }

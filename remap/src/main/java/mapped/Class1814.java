@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class1814<T extends Class805> extends Class1799<T, Class5931<T>>
 {
-    private Class6300 field9986;
+    private final Class6300 field9986;
     private static final ResourceLocation field9987;
     private static final ResourceLocation field9988;
     private static boolean field9989;

@@ -24,7 +24,7 @@ public class Class5445 extends Class5419<Class824>
     private final List<BlockPos> field22672;
     
     public Class5445() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)Class8233.field33803, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33810, Class1952.field10629, Class8233.field33809, Class1952.field10629, (Object)Class8233.field33803, (Object)Class1952.field10628));
         this.field22672 = Lists.newArrayList();
     }
     
@@ -61,9 +61,7 @@ public class Class5445 extends Class5419<Class824>
             }
             this.field22667 = this.method16631(class1849);
             if (this.field22668 || this.field22669) {
-                if (this.field22667 != null) {
-                    return true;
-                }
+                return this.field22667 != null;
             }
             return false;
         }
@@ -88,9 +86,7 @@ public class Class5445 extends Class5419<Class824>
         }
         if (method6701.method21706()) {
             if (method6703 instanceof Class4021) {
-                if (this.field22668) {
-                    return true;
-                }
+                return this.field22668;
             }
         }
         return false;

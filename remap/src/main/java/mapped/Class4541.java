@@ -123,7 +123,7 @@ public class Class4541 extends Class4535<Class5122>
             class1851.setBlockState(class1853, Blocks.SPAWNER.getDefaultState(), 2);
             final TileEntity method1137 = class1851.getTileEntity(class1853);
             if (!(method1137 instanceof Class494)) {
-                Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", (Object)class1853.getX(), (Object)class1853.getY(), (Object)class1853.getZ());
+                Class4541.field20026.error("Failed to fetch mob spawner entity at ({}, {}, {})", class1853.getX(), class1853.getY(), class1853.getZ());
             }
             else {
                 ((Class494)method1137).method2509().method13884(this.method13540(random));

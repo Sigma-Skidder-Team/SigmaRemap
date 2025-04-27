@@ -42,7 +42,7 @@ public class Class3976 extends Block
     public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
         if (!class1847.isRemote()) {
             if (!class1850.method2889()) {
-                if (class1849.get((IProperty<Boolean>)Class3976.field17965)) {
+                if (class1849.get(Class3976.field17965)) {
                     method12118(class1847, class1848);
                 }
             }

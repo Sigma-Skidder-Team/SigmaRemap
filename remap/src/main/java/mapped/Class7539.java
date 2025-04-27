@@ -47,7 +47,7 @@ public class Class7539<T>
                 throw (RuntimeException)targetException;
             }
         }
-        final AssertionError assertionError = new AssertionError((Object)"Unexpected exception");
+        final AssertionError assertionError = new AssertionError("Unexpected exception");
         assertionError.initCause(targetException);
         throw assertionError;
     }
@@ -55,13 +55,13 @@ public class Class7539<T>
     public Object method23622(final T t, final Object... args) throws InvocationTargetException {
         final Method method23624 = this.method23624(t.getClass());
         if (method23624 == null) {
-            throw new AssertionError((Object)("Method " + this.field29921 + " not supported for object " + t));
+            throw new AssertionError("Method " + this.field29921 + " not supported for object " + t);
         }
         try {
             return method23624.invoke(t, args);
         }
         catch (final IllegalAccessException cause) {
-            final AssertionError assertionError = new AssertionError((Object)("Unexpectedly could not call: " + method23624));
+            final AssertionError assertionError = new AssertionError("Unexpectedly could not call: " + method23624);
             assertionError.initCause(cause);
             throw assertionError;
         }
@@ -78,7 +78,7 @@ public class Class7539<T>
                 throw (RuntimeException)targetException;
             }
         }
-        final AssertionError assertionError = new AssertionError((Object)"Unexpected exception");
+        final AssertionError assertionError = new AssertionError("Unexpected exception");
         assertionError.initCause(targetException);
         throw assertionError;
     }
@@ -101,7 +101,7 @@ public class Class7539<T>
     private static Method method23625(final Class<?> clazz, final String name, final Class[] parameterTypes) {
         Method method = null;
         try {
-            method = clazz.getMethod(name, (Class[])parameterTypes);
+            method = clazz.getMethod(name, parameterTypes);
             if ((method.getModifiers() & 0x1) == 0x0) {
                 method = null;
             }

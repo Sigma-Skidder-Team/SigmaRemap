@@ -75,6 +75,6 @@ public class Class6461 implements Class6459
     
     @Nullable
     public ChunkStatus method19327(final int n, final int n2) {
-        return (ChunkStatus)this.field25674.get(ChunkPos.method25423(n + this.field25675.field32290 - this.field25677, n2 + this.field25675.field32291 - this.field25677));
+        return this.field25674.get(ChunkPos.method25423(n + this.field25675.field32290 - this.field25677, n2 + this.field25675.field32291 - this.field25677));
     }
 }

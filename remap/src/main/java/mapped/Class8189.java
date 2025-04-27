@@ -108,7 +108,7 @@ public class Class8189
     
     public static String method27126(String substring) {
         if (substring.length() >= 2) {
-            substring = substring.substring(1, substring.length());
+            substring = substring.substring(1);
             return substring;
         }
         return "";

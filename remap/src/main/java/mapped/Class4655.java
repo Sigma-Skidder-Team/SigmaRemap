@@ -90,7 +90,7 @@ public class Class4655 extends Class4654
                 class6772.field26600 += 8.0f;
             }
         }
-        return (method13920 != Class257.field1206) ? method13919 : method13919;
+        return method13919;
     }
     
     private Class257 method13930(final int n, final int n2, final int n3) {

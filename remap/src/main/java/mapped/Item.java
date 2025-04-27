@@ -155,7 +155,7 @@ public class Item implements Class3832
     }
     
     public ITextComponent method11715() {
-        return new Class2259(this.getTranslationKey(), new Object[0]);
+        return new Class2259(this.getTranslationKey());
     }
     
     @Override
@@ -219,7 +219,7 @@ public class Item implements Class3832
     }
     
     public ITextComponent method11729(final ItemStack class8321) {
-        return new Class2259(this.method11718(class8321), new Object[0]);
+        return new Class2259(this.method11718(class8321));
     }
     
     public boolean method11730(final ItemStack class8321) {

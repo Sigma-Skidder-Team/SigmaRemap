@@ -103,7 +103,7 @@ public final class Class6746 implements Class6747
         if (length > n + 1) {
             try {
                 s.charAt(++n);
-                class9041.field38266 = (T)new JSONTokener(s.substring(n)).nextValue();
+                class9041.field38266 = new JSONTokener(s.substring(n)).nextValue();
             }
             catch (final JSONException thrown) {
                 Class8171.method27013().log(Level.WARNING, "An error occured while retrieving data from JSONTokener", thrown);

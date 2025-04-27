@@ -28,9 +28,9 @@ public class Class3477 extends Class3446
     
     @Override
     public void method11015() {
-        final List<Entity> method6739 = this.field16385.world.method6739((Class<? extends Entity>)Class427.class, this.field16385.getBoundingBox().grow(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class840.field4478);
+        final List<Entity> method6739 = this.field16385.world.method6739(Class427.class, this.field16385.getBoundingBox().grow(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class840.field4478);
         if (!method6739.isEmpty()) {
-            this.field16385.method4150().method24725((Entity)method6739.get(0), 1.2000000476837158);
+            this.field16385.method4150().method24725(method6739.get(0), 1.2000000476837158);
             this.field16385.method1695(Class8520.field35123, 1.0f, 1.0f);
         }
         this.field16384 = 0;
@@ -48,11 +48,11 @@ public class Class3477 extends Class3446
     
     @Override
     public void method11016() {
-        final List<Entity> method6739 = this.field16385.world.method6739((Class<? extends Entity>)Class427.class, this.field16385.getBoundingBox().grow(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class840.field4478);
+        final List<Entity> method6739 = this.field16385.world.method6739(Class427.class, this.field16385.getBoundingBox().grow(8.0, 8.0, 8.0), (Predicate<? super Entity>)Class840.field4478);
         final ItemStack method6740 = this.field16385.method2718(Class2215.field13600);
         if (method6740.method27620()) {
             if (!method6739.isEmpty()) {
-                this.field16385.method4150().method24725((Entity)method6739.get(0), 1.2000000476837158);
+                this.field16385.method4150().method24725(method6739.get(0), 1.2000000476837158);
             }
         }
         else {

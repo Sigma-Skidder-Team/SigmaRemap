@@ -8,11 +8,11 @@ public class Class6336 extends Class6334
 {
     public Class6336(final boolean b) {
         super("overlay", () -> {
-            if (!(!b2)) {
+            if (b2) {
                 Minecraft.getInstance().field4644.method5835().method7384();
             }
         }, () -> {
-            if (!(!b3)) {
+            if (b3) {
                 Minecraft.getInstance().field4644.method5835().method7389();
             }
         }, b);

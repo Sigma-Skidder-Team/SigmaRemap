@@ -15,7 +15,7 @@ public class Class2707 extends Class2466
     
     @Override
     public void method9802(final Class8699 class8699) throws Exception {
-        for (final Class7668 class8700 : class8699.method29824((Class5260<Class6562>)new Class5285(class8699.method29841().method18207(Class6637.class))).method19889()) {
+        for (final Class7668 class8700 : class8699.method29824(new Class5285(class8699.method29841().method18207(Class6637.class))).method19889()) {
             if (class8700 != null) {
                 for (int j = 0; j < class8700.method24327(); ++j) {
                     class8700.method24329(j, Class5220.method16332(class8700.method24328(j)));

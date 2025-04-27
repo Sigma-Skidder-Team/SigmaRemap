@@ -25,6 +25,6 @@ public class Class1810 extends Class1799<Class786, Class5874<Class786>>
     }
     
     static {
-        field9981 = (Map)ImmutableMap.of((Object)Class2195.field13359, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_low.png"), (Object)Class2195.field13360, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_medium.png"), (Object)Class2195.field13361, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_high.png"));
+        field9981 = (Map)ImmutableMap.of(Class2195.field13359, new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_low.png"), Class2195.field13360, new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_medium.png"), (Object)Class2195.field13361, (Object)new ResourceLocation("textures/entity/iron_golem/iron_golem_crackiness_high.png"));
     }
 }

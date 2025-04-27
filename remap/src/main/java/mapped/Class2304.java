@@ -1565,7 +1565,7 @@ public class Class2304 implements Serializable, Cloneable
             n7 -= 4;
             array3[n2 + 4] = (array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7 + 1];
             n7 -= 4;
-            array3[n2 + 0] = (array3[n2 + 0] - array[n7 + 1] * array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7 + 0];
+            array3[n2] = (array3[n2] - array[n7 + 1] * array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7];
         }
     }
     
@@ -2144,7 +2144,7 @@ public class Class2304 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * 1L + Class9427.method35031(this.field13961)) + Class9427.method35031(this.field13962)) + Class9427.method35031(this.field13963)) + Class9427.method35031(this.field13964)) + Class9427.method35031(this.field13965)) + Class9427.method35031(this.field13966)) + Class9427.method35031(this.field13967)) + Class9427.method35031(this.field13968)) + Class9427.method35031(this.field13969)) + Class9427.method35031(this.field13970)) + Class9427.method35031(this.field13971)) + Class9427.method35031(this.field13972)) + Class9427.method35031(this.field13973)) + Class9427.method35031(this.field13974)) + Class9427.method35031(this.field13975)) + Class9427.method35031(this.field13976);
+        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L + Class9427.method35031(this.field13961)) + Class9427.method35031(this.field13962)) + Class9427.method35031(this.field13963)) + Class9427.method35031(this.field13964)) + Class9427.method35031(this.field13965)) + Class9427.method35031(this.field13966)) + Class9427.method35031(this.field13967)) + Class9427.method35031(this.field13968)) + Class9427.method35031(this.field13969)) + Class9427.method35031(this.field13970)) + Class9427.method35031(this.field13971)) + Class9427.method35031(this.field13972)) + Class9427.method35031(this.field13973)) + Class9427.method35031(this.field13974)) + Class9427.method35031(this.field13975)) + Class9427.method35031(this.field13976);
         return (int)(n ^ n >> 32);
     }
     

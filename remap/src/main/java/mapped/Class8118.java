@@ -27,7 +27,7 @@ public class Class8118 extends Class8117<Class8118>
     
     @Override
     public void method26706(final CommandContext<Class7492> commandContext, final String s) {
-        this.field33454 = IntegerArgumentType.getInteger((CommandContext)commandContext, s);
+        this.field33454 = IntegerArgumentType.getInteger(commandContext, s);
     }
     
     public int method26715() {

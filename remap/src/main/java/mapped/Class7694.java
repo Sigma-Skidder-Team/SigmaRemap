@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class Class7694 implements Class7693
 {
     private static String[] field30558;
-    private Class2212[] field30559;
-    private Class2212[] field30560;
-    private Class2212[] field30561;
+    private final Class2212[] field30559;
+    private final Class2212[] field30560;
+    private final Class2212[] field30561;
     private int field30562;
     private static final Class2212[] field30563;
     

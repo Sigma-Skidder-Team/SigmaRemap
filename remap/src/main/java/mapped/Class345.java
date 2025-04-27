@@ -28,7 +28,7 @@ public enum Class345
                 return (Optional<Class345>)Optional.of((Object)class345);
             }
         }
-        return (Optional<Class345>)Optional.absent();
+        return Optional.absent();
     }
     
     public String method1026() {
@@ -39,7 +39,7 @@ public enum Class345
         return this.field2135;
     }
     
-    private Class345(final String field2134, final int field2135) {
+    Class345(final String field2134, final int field2135) {
         this.field2134 = field2134;
         this.field2135 = field2135;
     }

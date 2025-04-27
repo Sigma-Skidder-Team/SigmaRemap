@@ -17,7 +17,7 @@ public class Class9335
     private boolean field40085;
     private int field40086;
     private boolean[] field40087;
-    private Class8417[] field40088;
+    private final Class8417[] field40088;
     
     public Class9335() {
         this.field40088 = new Class8417[672];

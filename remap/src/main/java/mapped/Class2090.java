@@ -22,7 +22,7 @@ public enum Class2090
     public int field12092;
     public Class350 field12093;
     
-    private Class2090(final float field12088, final float field12089, final Class350 field12090) {
+    Class2090(final float field12088, final float field12089, final Class350 field12090) {
         this.field12090 = 48;
         this.field12091 = 48;
         this.field12092 = 3;
@@ -31,7 +31,7 @@ public enum Class2090
         this.field12093 = field12090;
     }
     
-    private Class2090(final float field12088, final float field12089, final int field12090, final Class350 field12091) {
+    Class2090(final float field12088, final float field12089, final int field12090, final Class350 field12091) {
         this.field12090 = 48;
         this.field12091 = 48;
         this.field12092 = 3;

@@ -31,7 +31,7 @@ public final class Class8452
     
     public static void method28200() {
         try {
-            AccessController.doPrivileged((PrivilegedAction<Object>)new Class2428());
+            AccessController.doPrivileged(new Class2428());
         }
         catch (final Throwable t) {}
     }

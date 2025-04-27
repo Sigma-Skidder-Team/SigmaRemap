@@ -13,6 +13,6 @@ import com.mentalfrostbyte.jello.mods.impl.movement.highjumps.VanillaHighJump;
 public class HighJump extends ModuleWithSettings
 {
     public HighJump() {
-        super(Category.MOVEMENT, "HighJump", "Makes you jump higher", new Module[] { new VanillaHighJump(), new HypixelHighJump() });
+        super(Category.MOVEMENT, "HighJump", "Makes you jump higher", new VanillaHighJump(), new HypixelHighJump());
     }
 }

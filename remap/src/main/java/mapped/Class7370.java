@@ -32,7 +32,7 @@ public class Class7370 extends DataFix
         if (string.isPresent()) {
             set = set.set("Name", set.createString(((String)string.get()).replace("\"translate\":\"block.minecraft.illager_banner\"", "\"translate\":\"block.minecraft.ominous_banner\"")));
         }
-        return (Dynamic<?>)dynamic.set("display", set);
+        return dynamic.set("display", set);
     }
     
     public TypeRewriteRule makeRule() {
@@ -42,13 +42,13 @@ public class Class7370 extends DataFix
             type.findField("tag");
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
-                if (!(!Objects.equals(optional.get().getSecond(), "minecraft:white_banner"))) {
+            if (optional.isPresent()) {
+                if (Objects.equals(optional.get().getSecond(), "minecraft:white_banner")) {
                     typed.getOptionalTyped(opticFinder2);
                     final Optional optional2;
-                    if (!(!optional2.isPresent())) {
+                    if (optional2.isPresent()) {
                         final Typed typed2 = optional2.get();
-                        return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), (Object)this.method22636((Dynamic<?>)typed2.get(DSL.remainderFinder()))));
+                        return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), this.method22636((Dynamic<?>)typed2.get(DSL.remainderFinder()))));
                     }
                 }
             }

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovementManager {
-    private Minecraft field33313;
+    private final Minecraft field33313;
     private List<Class8733> field33314;
     public float field33315;
     public float field33316;
@@ -342,7 +342,7 @@ public class MovementManager {
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
         RenderUtil.method26876((float) (-field40314.getWidth(s) / 2 - 10), 0.0f, (float) (field40314.getWidth(s) / 2 + 10), (float) (field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
-        GL11.glTranslated((double) (-field40314.getWidth(s) / 2), 0.0, 0.0);
+        GL11.glTranslated(-field40314.getWidth(s) / 2, 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();

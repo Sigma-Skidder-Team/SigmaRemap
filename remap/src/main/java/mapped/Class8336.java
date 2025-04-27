@@ -72,7 +72,7 @@ public class Class8336
     }
     
     private boolean method27783(final int n) {
-        return (this.field34229 & (long)(1 << n)) != 0x0L;
+        return (this.field34229 & (long)(1L << n)) != 0x0L;
     }
     
     private void method27784(final int n, final boolean b) {
@@ -85,11 +85,11 @@ public class Class8336
     }
     
     private void method27785(final int n) {
-        this.field34229 |= 1 << n;
+        this.field34229 |= 1L << n;
     }
     
     private void method27786(final int n) {
-        this.field34229 &= ~(1 << n);
+        this.field34229 &= ~(1L << n);
     }
     
     static {

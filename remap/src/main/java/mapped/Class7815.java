@@ -63,9 +63,7 @@ public class Class7815 extends Class7814
         if (!method8461.contains("§8[NPC]")) {
             if (!method8461.contains("§c")) {
                 if (s != null) {
-                    if (!s.equalsIgnoreCase("")) {
-                        return true;
-                    }
+                    return !s.equalsIgnoreCase("");
                 }
             }
             return false;

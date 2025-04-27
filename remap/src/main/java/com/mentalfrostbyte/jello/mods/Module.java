@@ -33,7 +33,7 @@ public abstract class Module
     private static List<Class<? extends Module>> field15521;
     private Module field15522;
     private int field15523;
-    private Set<String> field15524;
+    private final Set<String> field15524;
     public Map<String, Setting> field15525;
     
     public Module(final Category category, final String name, final String desc) {
@@ -309,12 +309,7 @@ public abstract class Module
     }
     
     public void toggle() {
-        if (this.isEnabled()) {
-            this.method9909(false);
-        }
-        else {
-            this.method9909(true);
-        }
+        this.method9909(!this.isEnabled());
     }
     
     public boolean method9911() {

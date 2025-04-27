@@ -10,5 +10,5 @@ public enum Class2013 implements Class2014
     field11449, 
     field11450, 
     field11451, 
-    field11452;
+    field11452
 }

@@ -217,10 +217,10 @@ public class PacketBuffer extends ByteBuf
         }
         else {
             try {
-                Class8097.method26597(class51, (DataOutput)new ByteBufOutputStream((ByteBuf)this));
+                Class8097.method26597(class51, new ByteBufOutputStream(this));
             }
             catch (final IOException ex) {
-                throw new EncoderException((Throwable)ex);
+                throw new EncoderException(ex);
             }
         }
         return this;
@@ -234,10 +234,10 @@ public class PacketBuffer extends ByteBuf
         }
         this.readerIndex(readerIndex);
         try {
-            return Class8097.method26596((DataInput)new ByteBufInputStream((ByteBuf)this), new NBTSizeTracker(2097152L));
+            return Class8097.method26596(new ByteBufInputStream(this), new NBTSizeTracker(2097152L));
         }
         catch (final IOException ex) {
-            throw new EncoderException((Throwable)ex);
+            throw new EncoderException(ex);
         }
     }
     

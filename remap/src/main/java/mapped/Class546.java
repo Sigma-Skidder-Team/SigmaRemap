@@ -22,7 +22,7 @@ public class Class546 extends Screen
     public final BooleanConsumer field3295;
     
     public Class546(final BooleanConsumer booleanConsumer, final ITextComponent class2250, final ITextComponent class2251) {
-        this(booleanConsumer, class2250, class2251, Class8822.method30773("gui.yes", new Object[0]), Class8822.method30773("gui.no", new Object[0]));
+        this(booleanConsumer, class2250, class2251, Class8822.method30773("gui.yes"), Class8822.method30773("gui.no"));
     }
     
     public Class546(final BooleanConsumer field3295, final ITextComponent class2250, final ITextComponent field3296, final String field3297, final String field3298) {

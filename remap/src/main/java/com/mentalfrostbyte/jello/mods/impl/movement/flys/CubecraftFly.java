@@ -16,13 +16,13 @@ public class CubecraftFly extends Module {
     private boolean field15694;
     private int field15695;
     private static int field15696;
-    private TimerUtil timer;
+    private final TimerUtil timer;
     private double field15698;
 
     public CubecraftFly() {
         super(Category.MOVEMENT, "Cubecraft", "Fly for Cubecraft");
         this.timer = new TimerUtil();
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[]{"Basic", "Fast", "Test"}));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Fast", "Test"));
         this.addSetting(new BooleanSetting("Damage", "Allows you to go up.", true));
         this.addSetting(new BooleanSetting("Smooth fly", "Better look.", true));
     }

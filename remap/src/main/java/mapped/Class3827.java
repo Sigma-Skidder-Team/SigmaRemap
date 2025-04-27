@@ -49,10 +49,8 @@ public class Class3827 extends Item
     
     public static boolean method11759(final BlockState class7096) {
         if (class7096.getBlock() == Blocks.CAMPFIRE) {
-            if (!class7096.get((IProperty<Boolean>)Class8970.field37747)) {
-                if (!class7096.get((IProperty<Boolean>)Class8970.field37736)) {
-                    return true;
-                }
+            if (!class7096.get(Class8970.field37747)) {
+                return !class7096.get(Class8970.field37736);
             }
         }
         return false;

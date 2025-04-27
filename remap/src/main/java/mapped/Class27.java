@@ -14,7 +14,7 @@ import java.util.Properties;
 public class Class27 extends Properties
 {
     private static String[] field74;
-    private Set<Object> field75;
+    private final Set<Object> field75;
     
     public Class27() {
         this.field75 = new LinkedHashSet<Object>();
@@ -35,7 +35,7 @@ public class Class27 extends Properties
     @Override
     public Set<Object> keySet() {
         this.field75.retainAll(super.keySet());
-        return Collections.unmodifiableSet((Set<?>)this.field75);
+        return Collections.unmodifiableSet(this.field75);
     }
     
     @Override

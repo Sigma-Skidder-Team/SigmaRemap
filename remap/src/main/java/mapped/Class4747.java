@@ -12,7 +12,7 @@ public class Class4747 extends Class4746<Class826, Class5859<Class826>>
     
     public Class4747(final Class8551 class8551, final Class6580 class8552) {
         super(class8551, new Class5859(0.0f, false), 0.5f);
-        this.method13978((Class1799<Class826, Class5859<Class826>>)new Class1835((Class4778<LivingEntity, Class5853>)this, new Class5859(0.5f, true), new Class5859(1.0f, true)));
+        this.method13978((Class1799<Class826, Class5859<Class826>>)new Class1835(this, new Class5859(0.5f, true), new Class5859(1.0f, true)));
         this.method13978(new Class1798<Class826, Class5859<Class826>>(this, class8552, "zombie_villager"));
     }
     

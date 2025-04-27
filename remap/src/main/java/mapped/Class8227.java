@@ -38,13 +38,13 @@ public class Class8227 extends Class8228
     
     @Deprecated
     public Class8227(final String s) {
-        this(s, (List<Class4107>)ImmutableList.of());
+        this(s, ImmutableList.of());
     }
     
     public Class8227(final Dynamic<?> dynamic) {
         super(dynamic);
         this.field33789 = new ResourceLocation(dynamic.get("location").asString(""));
-        this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf((Collection)dynamic.get("processors").asList(dynamic2 -> Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)dynamic2, Registry.field233, "processor_type", Class4111.field18215)));
+        this.field33790 = (ImmutableList<Class4107>)ImmutableList.copyOf(dynamic.get("processors").asList(dynamic2 -> Class7754.method24753((Dynamic<Object>)dynamic2, Registry.field233, "processor_type", Class4111.field18215)));
     }
     
     public List<Class9038> method27252(final Class1795 class1795, final BlockPos class1796, final Class2052 class1797, final boolean b) {
@@ -108,7 +108,7 @@ public class Class8227 extends Class8228
     
     @Override
     public <T> Dynamic<T> method27258(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("location"), dynamicOps.createString(this.field33789.toString()), dynamicOps.createString("processors"), dynamicOps.createList((Stream)this.field33790.stream().map(class4107 -> class4107.method12355((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("location"), dynamicOps.createString(this.field33789.toString()), dynamicOps.createString("processors"), dynamicOps.createList((Stream)this.field33790.stream().map(class4107 -> class4107.method12355(dynamicOps2).getValue())))));
     }
     
     @Override

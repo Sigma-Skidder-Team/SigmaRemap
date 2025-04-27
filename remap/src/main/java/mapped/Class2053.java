@@ -19,11 +19,11 @@ public enum Class2053
     public final Class7915<?> field11717;
     public final Function<Class7529, INBT> field11718;
     
-    private <T> Class2053(final String field11716, final Class7915<T> field11717, final Function<? super T, INBT> function) {
+    <T> Class2053(final String field11716, final Class7915<T> field11717, final Function<? super T, INBT> function) {
         this.field11716 = field11716;
         this.field11717 = field11717;
-        this.field11718 = (Function<Class7529, INBT>)(class7917 -> {
-            class7917.method23579((Class7915<Object>)class7915);
+        this.field11718 = (class7917 -> {
+            class7917.method23579(class7915);
             final Object o;
             return (o == null) ? null : function2.apply(o);
         });

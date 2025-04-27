@@ -41,27 +41,27 @@ public class Class3404 implements Class3398
         if (i < 10) {
             sb.append("0");
         }
-        sb.append(String.valueOf(i));
+        sb.append(i);
         sb.append("-");
         if (value2 < 10) {
             sb.append("0");
         }
-        sb.append(String.valueOf(value2));
+        sb.append(value2);
         sb.append("T");
         if (value3 < 10) {
             sb.append("0");
         }
-        sb.append(String.valueOf(value3));
+        sb.append(value3);
         sb.append(":");
         if (value4 < 10) {
             sb.append("0");
         }
-        sb.append(String.valueOf(value4));
+        sb.append(value4);
         sb.append(":");
         if (value5 < 10) {
             sb.append("0");
         }
-        sb.append(String.valueOf(value5));
+        sb.append(value5);
         if (value6 > 0) {
             if (value6 >= 10) {
                 if (value6 >= 100) {
@@ -74,7 +74,7 @@ public class Class3404 implements Class3398
             else {
                 sb.append(".00");
             }
-            sb.append(String.valueOf(value6));
+            sb.append(value6);
         }
         int offset = instance.getTimeZone().getOffset(instance.get(0), instance.get(1), instance.get(2), instance.get(5), instance.get(7), instance.get(14));
         if (offset != 0) {

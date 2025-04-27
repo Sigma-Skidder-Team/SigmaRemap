@@ -67,7 +67,7 @@ public class Class8213
             }
         }
         catch (final Exception ex) {
-            Class8213.field33753.error("Error loading saved data: {}", (Object)s, (Object)ex);
+            Class8213.field33753.error("Error loading saved data: {}", s, ex);
         }
         return null;
     }

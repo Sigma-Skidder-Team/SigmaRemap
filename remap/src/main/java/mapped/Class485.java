@@ -43,7 +43,7 @@ public class Class485 extends Class443
                 final CompoundNBT e = new CompoundNBT();
                 e.putByte("Slot", (byte)i);
                 method2157.method27627(e);
-                ((AbstractList<CompoundNBT>)class52).add(e);
+                class52.add(e);
             }
         }
         return class52;

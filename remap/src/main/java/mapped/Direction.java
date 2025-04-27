@@ -7,5 +7,5 @@ package mapped;
 public enum Direction
 {
     BACKWARDS,
-    FORWARDS;
+    FORWARDS
 }

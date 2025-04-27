@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 
 public class AutoArmor extends Module
 {
-    private TimerUtil field15964;
+    private final TimerUtil field15964;
     private boolean field15965;
     public static boolean field15966;
     public boolean field15967;
@@ -28,8 +28,8 @@ public class AutoArmor extends Module
         this.field15968 = false;
         this.addSetting(new BooleanSetting("Fake Items", "Bypass for fake items (AAC).", false));
         this.addSetting(new NumberSetting("Delay", "Inventory clicks delay", 0.3f, Float.class, 0.0f, 1.0f, 0.01f));
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "OpenInv", "FakeInv" }));
-        this.addSetting(new StringSetting("Elytra", "Elytra Equip Mode", 0, new String[] { "Ignore", "Equip", "On Use" }));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "OpenInv", "FakeInv"));
+        this.addSetting(new StringSetting("Elytra", "Elytra Equip Mode", 0, "Ignore", "Equip", "On Use"));
     }
     
     @Override

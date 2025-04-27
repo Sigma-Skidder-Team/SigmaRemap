@@ -42,21 +42,21 @@ public class Class5416 implements Class5414
     
     @Override
     public ITextComponent method16527() {
-        return new Class2259("commands.data.entity.modified", new Object[] { this.field22587.getDisplayName() });
+        return new Class2259("commands.data.entity.modified", this.field22587.getDisplayName());
     }
     
     @Override
     public ITextComponent method16528(final INBT class41) {
-        return new Class2259("commands.data.entity.query", new Object[] { this.field22587.getDisplayName(), class41.toFormattedComponent() });
+        return new Class2259("commands.data.entity.query", this.field22587.getDisplayName(), class41.toFormattedComponent());
     }
     
     @Override
     public ITextComponent method16529(final NBTPath class8570, final double d, final int i) {
-        return new Class2259("commands.data.entity.get", new Object[] { class8570, this.field22587.getDisplayName(), String.format(Locale.ROOT, "%.2f", d), i });
+        return new Class2259("commands.data.entity.get", class8570, this.field22587.getDisplayName(), String.format(Locale.ROOT, "%.2f", d), i);
     }
     
     static {
-        field22585 = new SimpleCommandExceptionType((Message)new Class2259("commands.data.entity.invalid", new Object[0]));
+        field22585 = new SimpleCommandExceptionType(new Class2259("commands.data.entity.invalid", new Object[0]));
         field22586 = (s -> new Class6597(s));
     }
 }

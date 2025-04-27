@@ -38,9 +38,7 @@ public class Class4609
         final VoxelShape method21727 = class3833.getDefaultState().getCollisionShape(Class4609.field20075.world, class3834);
         if (!method13708(class3834)) {
             if (Class4609.field20075.world.method6957(Class4609.field20075.player, method21727)) {
-                if (class3834.getY() <= Class4609.field20075.player.method1894().getY()) {
-                    return true;
-                }
+                return class3834.getY() <= Class4609.field20075.player.method1894().getY();
             }
         }
         return false;
@@ -421,7 +419,7 @@ public class Class4609
     }
     
     public static int method13703(final BlockState class7096) {
-        return ((List)class7096.getBlock().getStateContainer().method32902()).indexOf(class7096);
+        return class7096.getBlock().getStateContainer().method32902().indexOf(class7096);
     }
     
     public static int method13704(final Block class3833) {

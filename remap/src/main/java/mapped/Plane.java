@@ -19,7 +19,7 @@ public enum Plane implements Iterable<Direction>, Predicate<Direction>
     private final Direction[] field270;
     private final Direction.Axis[] field271;
     
-    private Plane(final Direction[] field270, final Direction.Axis[] field271) {
+    Plane(final Direction[] field270, final Direction.Axis[] field271) {
         this.field270 = field270;
         this.field271 = field271;
     }

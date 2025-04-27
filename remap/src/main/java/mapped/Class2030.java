@@ -11,7 +11,7 @@ import java.util.Map;
 
 public enum Class2030
 {
-    field11568("bitmap", (Function<JsonObject, Class7823>)Class7822::method25275), 
+    field11568("bitmap", Class7822::method25275),
     field11569("ttf", Class7825::method25279), 
     field11570("legacy_unicode", Class7824::method25278);
     
@@ -19,7 +19,7 @@ public enum Class2030
     private final String field11572;
     private final Function<JsonObject, Class7823> field11573;
     
-    private Class2030(final String field11572, final Function<JsonObject, Class7823> field11573) {
+    Class2030(final String field11572, final Function<JsonObject, Class7823> field11573) {
         this.field11572 = field11572;
         this.field11573 = field11573;
     }

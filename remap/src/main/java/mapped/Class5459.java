@@ -22,7 +22,7 @@ public class Class5459 extends Class5419<Class824>
     private Class363 field22711;
     
     public Class5459(final Class8233<List<Class363>> field22705, final float field22706, final int field22707, final int field22708, final Class8233<Class363> field22709) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10630, (Object)field22705, (Object)Class1952.field10628, (Object)field22709, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10630, field22705, Class1952.field10628, (Object)field22709, (Object)Class1952.field10628));
         this.field22705 = field22705;
         this.field22707 = field22706;
         this.field22708 = field22707;
@@ -40,9 +40,7 @@ public class Class5459 extends Class5419<Class824>
                     this.field22711 = (Class363)list.get(class1849.method6790().nextInt(list.size()));
                     if (this.field22711 != null) {
                         if (Objects.equals(class1849.method6789().getType(), this.field22711.method1169())) {
-                            if (method1199.get().method1170().withinDistance(class1850.method1934(), this.field22709)) {
-                                return true;
-                            }
+                            return method1199.get().method1170().withinDistance(class1850.method1934(), this.field22709);
                         }
                     }
                     return false;

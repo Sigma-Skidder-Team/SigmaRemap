@@ -31,7 +31,7 @@ public class Class9508 implements ArgumentType<Class6311>
         final Class7071 method21632 = new Class7071(stringReader, true).method21632();
         if (method21632.method21626() == null) {
             return commandContext -> {
-                final Class7909<Object> method18460 = (Class7909<Object>)((Class7492)commandContext.getSource()).method23255().method1578().method6464().method18460(class1932);
+                final Class7909<Object> method18460 = (Class7909<Object>) commandContext.getSource().method23255().method1578().method6464().method18460(class1932);
                 if (method18460 != null) {
                     return new Class176((Class7909<Item>)method18460, method21632.method21627());
                 }
@@ -63,7 +63,7 @@ public class Class9508 implements ArgumentType<Class6311>
     static {
         field40918 = Arrays.asList("stick", "minecraft:stick", "#stick", "#stick{foo=bar}");
         field40919 = new DynamicCommandExceptionType(o -> {
-            new Class2259("arguments.item.tag.unknown", new Object[] { o });
+            new Class2259("arguments.item.tag.unknown", o);
             return;
         });
     }

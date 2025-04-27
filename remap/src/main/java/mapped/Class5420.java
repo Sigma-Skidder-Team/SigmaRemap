@@ -23,7 +23,7 @@ public class Class5420 extends Class5419<Class787>
     
     public Class5420(final Class8912 field22597, final Class8233<Class363> field22598, final boolean field22599) {
         super((Map)ImmutableMap.of((Object)field22598, (Object)Class1952.field10629));
-        this.field22601 = (Long2LongMap)new Long2LongOpenHashMap();
+        this.field22601 = new Long2LongOpenHashMap();
         this.field22597 = field22597;
         this.field22598 = field22598;
         this.field22599 = field22599;

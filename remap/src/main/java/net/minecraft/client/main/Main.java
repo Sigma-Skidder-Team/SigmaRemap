@@ -153,7 +153,7 @@ public class Main
                 }
             }
             catch (final InterruptedException ex2) {
-                Main.field14380.error("Exception during client thread shutdown", (Throwable)ex2);
+                Main.field14380.error("Exception during client thread shutdown", ex2);
             }
             finally {
                 class9409.method5246();

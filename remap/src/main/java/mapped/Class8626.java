@@ -71,7 +71,7 @@ public class Class8626
                 Class8626.field36210.add(class7906.method25613());
                 final Iterator<Class7803<Integer, Class5207>> iterator2 = method29280.iterator();
                 while (iterator2.hasNext()) {
-                    Class8626.field36210.add(((Class7803<Integer, Y>)iterator2.next()).method25203());
+                    Class8626.field36210.add(iterator2.next().method25203());
                 }
             }
         }
@@ -139,7 +139,7 @@ public class Class8626
     }
     
     public static List<Class7803<Integer, Class5207>> method29280(final int i, final int j) {
-        final Class7803 class7803 = new Class7803((X)i, (Y)j);
+        final Class7803 class7803 = new Class7803(i, j);
         final List list = Class8626.field36208.get(class7803);
         if (list == null) {
             final List<Class7803<Integer, Class5207>> method29279 = method29279(new ArrayList<Class7803<Integer, Class5207>>(), i, j);
@@ -153,7 +153,7 @@ public class Class8626
     
     public static Class5207 method29281(final int n) {
         for (final Class7803 class7803 : Lists.reverse((List)Class8626.field36211)) {
-            if (!((Range)class7803.method25203()).contains((Comparable)n)) {
+            if (!((Range)class7803.method25203()).contains(n)) {
                 continue;
             }
             return (Class5207)class7803.method25204();
@@ -181,7 +181,7 @@ public class Class8626
         field36210 = Sets.newConcurrentHashSet();
         field36211 = Lists.newCopyOnWriteArrayList();
         method29274(Class8626.field36205, (Range<Integer>)Range.lessThan((Comparable)Integer.MIN_VALUE));
-        method29274(new Class5216(), (Range<Integer>)Range.all());
+        method29274(new Class5216(), Range.all());
         method29273(new Class5224(), Collections.singletonList(Class7906.field32453.method25613()), Class7906.field32452.method25613());
         method29273(new Class5212(), Arrays.asList(Class7906.field32454.method25613(), Class7906.field32455.method25613()), Class7906.field32453.method25613());
         method29273(new Class5229(), Collections.singletonList(Class7906.field32456.method25613()), Class7906.field32455.method25613());

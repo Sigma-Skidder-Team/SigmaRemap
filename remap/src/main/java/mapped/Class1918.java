@@ -41,7 +41,7 @@ public class Class1918 implements AutoCloseable
     public CompletableFuture<Void> method7589(final BufferBuilder class4148) {
         if (RenderSystem.method29984()) {
             this.method7590(class4148);
-            return CompletableFuture.completedFuture((Void)null);
+            return CompletableFuture.completedFuture(null);
         }
         return CompletableFuture.runAsync(() -> this.method7590(class4149), runnable -> RenderSystem.method29991(runnable::run));
     }
@@ -50,7 +50,7 @@ public class Class1918 implements AutoCloseable
         final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
         if (this.field10426 == null) {
             if (this.field10423 != -1) {
-                final ByteBuffer byteBuffer = (ByteBuffer)method12401.getSecond();
+                final ByteBuffer byteBuffer = method12401.getSecond();
                 this.field10425 = byteBuffer.remaining() / this.field10424.method34194();
                 this.method7587();
                 RenderSystem.method30089(34962, byteBuffer, 35044);
@@ -58,7 +58,7 @@ public class Class1918 implements AutoCloseable
             }
         }
         else {
-            this.field10426.method31167((ByteBuffer)method12401.getSecond(), this.field10427);
+            this.field10426.method31167(method12401.getSecond(), this.field10427);
         }
     }
     

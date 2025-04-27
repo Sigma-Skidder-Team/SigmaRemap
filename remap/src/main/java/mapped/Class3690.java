@@ -33,7 +33,7 @@ public class Class3690 implements Class3689
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Class4947>>>, Class8212>> field17002;
     
     public Class3690(final Class7203 field17001) {
-        this.field17002 = (List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Class4947>>>, Class8212>>)ImmutableList.of((Object)Pair.of((Object)Class5915::new, (Object)Class7104.field27714), (Object)Pair.of((Object)Class5907::new, (Object)Class7104.field27711), (Object)Pair.of((Object)Class5913::new, (Object)Class7104.field27715), (Object)Pair.of((Object)Class5906::new, (Object)Class7104.field27719), (Object)Pair.of((Object)Class5912::new, (Object)Class7104.field27716));
+        this.field17002 = (List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Class4947>>>, Class8212>>)ImmutableList.of(Pair.of((Object)Class5915::new, (Object)Class7104.field27714), Pair.of((Object)Class5907::new, (Object)Class7104.field27711), Pair.of((Object)Class5913::new, (Object)Class7104.field27715), Pair.of((Object)Class5906::new, (Object)Class7104.field27719), (Object)Pair.of((Object)Class5912::new, (Object)Class7104.field27716));
         this.field17001 = field17001;
     }
     
@@ -44,13 +44,13 @@ public class Class3690 implements Class3689
         this.field17002.forEach(pair -> ((Supplier)pair.getFirst()).get().accept((obj, class8844) -> {
             if (map.put(obj, class8844.method14903((Class8212)pair2.getSecond()).method14906()) != null) {
                 new IllegalStateException("Duplicate loot table " + obj);
-                throw;
+                throw
             }
         }));
         final Class7790 class8843 = new Class7790(Class7104.field27718, p0 -> null, hashMap::get);
-        final UnmodifiableIterator iterator = Sets.difference((Set)Class9020.method32317(), (Set)hashMap.keySet()).iterator();
-        while (((Iterator)iterator).hasNext()) {
-            class8843.method25014("Missing built-in table: " + ((Iterator)iterator).next());
+        final UnmodifiableIterator iterator = Sets.difference((Set)Class9020.method32317(), hashMap.keySet()).iterator();
+        while (iterator.hasNext()) {
+            class8843.method25014("Missing built-in table: " + iterator.next());
         }
         hashMap.forEach((class8847, class8848) -> Class1782.method6403(class8846, class8847, class8848));
         final Multimap<String, String> method25020 = class8843.method25020();
@@ -63,7 +63,7 @@ public class Class3690 implements Class3689
                 }
                 catch (final IOException ex2) {
                     final Path path2;
-                    Class3690.field16999.error("Couldn't save loot table {}", (Object)path2, (Object)ex2);
+                    Class3690.field16999.error("Couldn't save loot table {}", path2, ex2);
                 }
             });
             return;

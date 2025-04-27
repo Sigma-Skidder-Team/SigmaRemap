@@ -32,7 +32,7 @@ public final class Class7743 extends Class7744
             throw ex;
         }
         catch (final IllegalAccessException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     

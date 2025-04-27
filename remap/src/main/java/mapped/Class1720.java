@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.DataOutput;
 import java.io.FilterOutputStream;
+import java.nio.charset.StandardCharsets;
 
 public class Class1720 extends FilterOutputStream implements DataOutput
 {
@@ -100,7 +101,7 @@ public class Class1720 extends FilterOutputStream implements DataOutput
     
     @Override
     public void writeUTF(final String s) throws IOException {
-        final byte[] bytes = s.getBytes("UTF-8");
+        final byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
         this.writeShort(bytes.length);
         this.write(bytes);
     }

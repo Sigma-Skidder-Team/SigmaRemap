@@ -17,11 +17,11 @@ import java.util.HashMap;
 
 public class Class4819 extends Class4817 implements Class4820
 {
-    private Module field20620;
+    private final Module field20620;
     private boolean field20621;
     private boolean field20622;
     public int field20623;
-    private HashMap<Class4834, Setting> field20624;
+    private final HashMap<Class4834, Setting> field20624;
     public HashMap<Module, CustomGuiScreen> field20625;
     public Animation field20626;
     private String field20627;
@@ -127,7 +127,7 @@ public class Class4819 extends Class4817 implements Class4820
             case 6: {
                 final CustomGuiScreen class4810 = new CustomGuiScreen(customGuiScreen, class4804.method15204() + "view", n, n2, customGuiScreen.method14276(), 0);
                 int method15186 = 0;
-                final Iterator<Setting> iterator = (Iterator<Setting>)((SubOptionSettingExtender)class4804).method15224().iterator();
+                final Iterator<Setting> iterator = ((SubOptionSettingExtender)class4804).method15224().iterator();
                 while (iterator.hasNext()) {
                     method15186 = this.method14402(class4810, iterator.next(), 0, method15186, n3);
                 }

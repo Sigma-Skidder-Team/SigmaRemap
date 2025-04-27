@@ -32,7 +32,7 @@ public class Class5976 implements JsonDeserializer<Class5593>
         final HashMap hashMap = Maps.newHashMap();
         if (jsonObject.has("variants")) {
             for (final Map.Entry<Object, V> entry : Class9583.method35914(jsonObject, "variants").entrySet()) {
-                hashMap.put(entry.getKey(), jsonDeserializationContext.deserialize((JsonElement)entry.getValue(), (Type)Class7683.class));
+                hashMap.put(entry.getKey(), jsonDeserializationContext.deserialize((JsonElement)entry.getValue(), Class7683.class));
             }
         }
         return hashMap;
@@ -41,7 +41,7 @@ public class Class5976 implements JsonDeserializer<Class5593>
     @Nullable
     public Class7686 method17899(final JsonDeserializationContext jsonDeserializationContext, final JsonObject jsonObject) {
         if (jsonObject.has("multipart")) {
-            return (Class7686)jsonDeserializationContext.deserialize((JsonElement)Class9583.method35917(jsonObject, "multipart"), (Type)Class7686.class);
+            return jsonDeserializationContext.deserialize(Class9583.method35917(jsonObject, "multipart"), Class7686.class);
         }
         return null;
     }

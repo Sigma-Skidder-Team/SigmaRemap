@@ -18,7 +18,7 @@ public class Class736 extends Screen
     private final Class9495 field3998;
     
     public Class736(final BooleanConsumer field3997, final String s, final Class7952 class7952, final boolean b) {
-        super(new Class2259("optimizeWorld.title", new Object[] { class7952.method25791(s).method29549() }));
+        super(new Class2259("optimizeWorld.title", class7952.method25791(s).method29549()));
         this.field3997 = field3997;
         this.field3998 = new Class9495(s, class7952, class7952.method25791(s), b);
     }
@@ -26,7 +26,7 @@ public class Class736 extends Screen
     @Override
     public void init() {
         super.init();
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 150, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 150, 200, 20, Class8822.method30773("gui.cancel"), class654 -> {
             this.field3998.method35335();
             this.field3997.accept(false);
         }));
@@ -61,7 +61,7 @@ public class Class736 extends Screen
             int n8 = 0;
             for (final DimensionType class383 : DimensionType.method1269()) {
                 final int method35642 = MathHelper.method35642(this.field3998.method35339(class383) * (n5 - n4));
-                AbstractGui.fill(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt((Object)class383));
+                AbstractGui.fill(n4 + n8, n6, n4 + n8 + method35642, n7, Class736.field3996.getInt(class383));
                 n8 += method35642;
             }
             this.drawCenteredString(this.font, this.field3998.method35342() + this.field3998.method35343() + " / " + this.field3998.method35341(), this.width / 2, n6 + 18 + 2, 10526880);
@@ -72,9 +72,9 @@ public class Class736 extends Screen
     
     static {
         field3996 = Util.method27851((Object2IntMap)new Object2IntOpenCustomHashMap((Hash$Strategy) Util.method27852()), object2IntOpenCustomHashMap -> {
-            object2IntOpenCustomHashMap.put((Object) DimensionType.field2223, -13408734);
-            object2IntOpenCustomHashMap.put((Object) DimensionType.field2224, -10075085);
-            object2IntOpenCustomHashMap.put((Object) DimensionType.field2225, -8943531);
+            object2IntOpenCustomHashMap.put(DimensionType.field2223, -13408734);
+            object2IntOpenCustomHashMap.put(DimensionType.field2224, -10075085);
+            object2IntOpenCustomHashMap.put(DimensionType.field2225, -8943531);
             object2IntOpenCustomHashMap.defaultReturnValue(-2236963);
         });
     }

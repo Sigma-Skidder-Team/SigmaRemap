@@ -196,7 +196,7 @@ public class ChunkStatus
         SPAWN = registerSelective("spawn", ChunkStatus.LIGHT, 0, ChunkStatus.POST_FEATURES, Type.PROTOCHUNK, (class1849, class1850, list, class1851) -> class1850.method18868(new Class1878(class1849, list)));
         HEIGHTMAPS = registerSelective("heightmaps", ChunkStatus.SPAWN, 0, ChunkStatus.POST_FEATURES, Type.PROTOCHUNK, (class1849, class1850, list, class1851) -> {});
         FULL = register("full", ChunkStatus.HEIGHTMAPS, 0, ChunkStatus.POST_FEATURES, Type.LEVELCHUNK, (class9312, class9313, class9314, class9315, class9316, function, list, class9317) -> function.apply(class9317), (class9312, class9313, class9314, class9315, function, class9316) -> function.apply(class9316));
-        STATUS_BY_RANGE = (List)ImmutableList.of((Object) ChunkStatus.FULL, (Object) ChunkStatus.FEATURES, (Object) ChunkStatus.LIQUID_CARVERS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS);
+        STATUS_BY_RANGE = (List)ImmutableList.of(ChunkStatus.FULL, ChunkStatus.FEATURES, ChunkStatus.LIQUID_CARVERS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, ChunkStatus.STRUCTURE_STARTS, (Object) ChunkStatus.STRUCTURE_STARTS);
         RANGE_BY_STATUS = Util.method27851((IntList)new IntArrayList(getAll().size()), list -> {
             for (int i = getAll().size() - 1; i >= 0; --i) {
                 int n = 0;
@@ -221,6 +221,6 @@ public class ChunkStatus
     public enum Type
     {
         PROTOCHUNK,
-        LEVELCHUNK;
+        LEVELCHUNK
     }
 }

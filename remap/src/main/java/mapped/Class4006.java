@@ -251,9 +251,7 @@ public class Class4006 extends Block
         if (!class7096.method21772((IProperty<Boolean>)Class4006.field18056)) {
             if (!class7096.method21772((IProperty<Boolean>)Class4006.field18057)) {
                 if (!class7096.method21772((IProperty<Boolean>)Class4006.field18058)) {
-                    if (!class7096.method21772((IProperty<Boolean>)Class4006.field18059)) {
-                        return false;
-                    }
+                    return class7096.method21772((IProperty<Boolean>) Class4006.field18059);
                 }
             }
         }
@@ -290,7 +288,7 @@ public class Class4006 extends Block
         for (final Direction class7076 : class7074.method21643()) {
             if (class7076 != Direction.DOWN) {
                 final Class7113 method6703 = method12181(class7076);
-                if (!b || !((StateHolder<O, Class7096>)method6701).get((IProperty<Boolean>)method6703)) {
+                if (!b || !((StateHolder<O, Class7096>)method6701).get(method6703)) {
                     if (this.method12175(class7074.method21654(), class7074.method21639(), class7076)) {
                         return ((StateHolder<O, Class7096>)class7075).with((IProperty<T>)method6703, true);
                     }

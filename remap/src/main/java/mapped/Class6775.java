@@ -10,7 +10,7 @@ import org.newdawn.slick.opengl.renderer.Renderer;
 public class Class6775
 {
     public static SGL field26606;
-    private Runnable field26607;
+    private final Runnable field26607;
     private int field26608;
     
     public Class6775(final Runnable field26607) {

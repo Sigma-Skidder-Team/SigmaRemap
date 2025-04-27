@@ -20,7 +20,7 @@ public class Class4576 extends Class4574<Class5136>
             return false;
         }
         ((Class2317)random).method9441(class5508.method18880(), n, n2, 10387320);
-        return random.nextFloat() < class5508.method18878(class5509, (Class4574<Class5136>)this).field22115;
+        return random.nextFloat() < class5508.method18878(class5509, this).field22115;
     }
     
     @Override

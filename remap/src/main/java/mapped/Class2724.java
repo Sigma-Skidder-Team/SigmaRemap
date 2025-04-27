@@ -35,7 +35,7 @@ public class Class2724 extends Class2466
                         list.add(method30247);
                     }
                 }
-                class8699.method29823(Class5260.field22291, Joiner.on('\0').join((Iterable)list).getBytes(StandardCharsets.UTF_8));
+                class8699.method29823(Class5260.field22291, Joiner.on('\0').join(list).getBytes(StandardCharsets.UTF_8));
             }
             class8699.method29821(Class5260.field22308, 0, method30246);
             return;

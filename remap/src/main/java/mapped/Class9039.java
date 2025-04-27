@@ -39,7 +39,7 @@ public class Class9039
             return (n2 >= this.field38259.method21400().size()) ? Class9039.field38255 : Class9039.field38254;
         }
         if (n != 8) {
-            return (Class6991)((n2 >= 0 && n2 < this.field38259.method21400().size()) ? MoreObjects.firstNonNull((Object)this.field38259.method21400().get(n2), (Object)Class9039.field38256) : Class9039.field38256);
+            return (Class6991)((n2 >= 0 && n2 < this.field38259.method21400().size()) ? MoreObjects.firstNonNull(this.field38259.method21400().get(n2), (Object)Class9039.field38256) : Class9039.field38256);
         }
         return Class9039.field38252;
     }

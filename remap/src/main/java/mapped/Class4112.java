@@ -38,6 +38,6 @@ public class Class4112 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("heightmap"), dynamicOps.createString(this.field18216.method8060()), dynamicOps.createString("offset"), dynamicOps.createInt(this.field18217))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("heightmap"), dynamicOps.createString(this.field18216.method8060()), dynamicOps.createString("offset"), dynamicOps.createInt(this.field18217))));
     }
 }

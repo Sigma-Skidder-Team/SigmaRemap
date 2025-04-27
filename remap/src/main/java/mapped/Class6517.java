@@ -18,7 +18,7 @@ public class Class6517
     private static final SimpleCommandExceptionType field25937;
     
     public static void method19665(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("tm").redirect((CommandNode)commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("teammsg").then(Class7788.method25002("message", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8695.method29806()).executes(commandContext -> method19666((Class7492)commandContext.getSource(), Class8695.method29807((CommandContext<Class7492>)commandContext, "message")))))));
+        commandDispatcher.register(Class7788.method25001("tm").redirect(commandDispatcher.register(Class7788.method25001("teammsg").then(Class7788.method25002("message", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8695.method29806()).executes(commandContext -> method19666(commandContext.getSource(), Class8695.method29807(commandContext, "message")))))));
     }
     
     private static int method19666(final Class7492 p0, final ITextComponent p1) throws CommandSyntaxException {
@@ -171,6 +171,6 @@ public class Class6517
     }
     
     static {
-        field25937 = new SimpleCommandExceptionType((Message)new Class2259("commands.teammsg.failed.noteam", new Object[0]));
+        field25937 = new SimpleCommandExceptionType(new Class2259("commands.teammsg.failed.noteam", new Object[0]));
     }
 }

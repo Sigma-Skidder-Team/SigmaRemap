@@ -6,9 +6,9 @@ package mapped;
 
 public class Class331 implements Class328
 {
-    private Class289 field2051;
-    private int field2052;
-    private int field2053;
+    private final Class289 field2051;
+    private final int field2052;
+    private final int field2053;
     
     public Class331(final Class289 class289) {
         this(class289, 0, 0);
@@ -32,7 +32,7 @@ public class Class331 implements Class328
     @Override
     public String toString() {
         if (this.field2051.method939() != null) {
-            return (this.field2051.method940() != null) ? ("" + this.field2051 + "." + this.field2051.method939()[this.field2052] + "." + this.field2051.method940()[this.field2053]) : ("" + this.field2051 + "." + this.field2051.method939()[this.field2052]);
+            return (this.field2051.method940() != null) ? (this.field2051 + "." + this.field2051.method939()[this.field2052] + "." + this.field2051.method940()[this.field2053]) : (this.field2051 + "." + this.field2051.method939()[this.field2052]);
         }
         return "" + this.field2051;
     }

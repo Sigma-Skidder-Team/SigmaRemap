@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Class6539
 {
-    private List field25990;
+    private final List field25990;
     public final /* synthetic */ Class7290 field25991;
     
     private Class6539(final Class7290 field25991) {

@@ -70,7 +70,7 @@ public class NBTPath
     public int func_218076_b(INBT class412, Supplier<INBT> supplier) throws CommandSyntaxException {
         List<INBT> list = this.func_218072_d(class412);
         INode class6102 = this.nodes[this.nodes.length - 1];
-        return NBTPath.reduceToInt(list, class41 -> class6102.func_218051_a((INBT)class41, supplier));
+        return NBTPath.reduceToInt(list, class41 -> class6102.func_218051_a(class41, supplier));
     }
     
     public int method28810(final INBT o) {
@@ -82,7 +82,7 @@ public class NBTPath
     }
     
     private CommandSyntaxException createNothingFoundException(final INode class6102) {
-        return NBTPathArgument.NOTHING_FOUND.create((Object)this.rawText.substring(0, this.field_218078_b.getInt((Object)class6102)));
+        return NBTPathArgument.NOTHING_FOUND.create(this.rawText.substring(0, this.field_218078_b.getInt(class6102)));
     }
     
     @Override

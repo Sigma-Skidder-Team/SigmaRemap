@@ -15,7 +15,7 @@ import mapped.*;
 
 public class AutoSprint extends Module
 {
-    private double[] field15769;
+    private final double[] field15769;
     private boolean field15770;
     
     public AutoSprint() {
@@ -37,12 +37,7 @@ public class AutoSprint extends Module
                     }
                 }
             }
-            if (AutoSprint.mc.player.field2970 > 0.0f && !((BlockFly) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).method10278()) {
-                AutoSprint.mc.player.method1816(true);
-            }
-            else {
-                AutoSprint.mc.player.method1816(false);
-            }
+            AutoSprint.mc.player.method1816(AutoSprint.mc.player.field2970 > 0.0f && !((BlockFly) Client.getInstance().moduleManager().getModuleByClass(BlockFly.class)).method10278());
         }
     }
     

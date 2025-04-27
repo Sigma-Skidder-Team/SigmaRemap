@@ -22,6 +22,6 @@ public class Class5174 extends Schema
     }
     
     public Type<?> getChoiceType(final DSL$TypeReference dsl$TypeReference, final String s) {
-        return (Type<?>)super.getChoiceType(dsl$TypeReference, method16141(s));
+        return super.getChoiceType(dsl$TypeReference, method16141(s));
     }
 }

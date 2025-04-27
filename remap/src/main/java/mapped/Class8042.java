@@ -6,9 +6,9 @@ package mapped;
 
 public class Class8042
 {
-    private short field33108;
-    private short field33109;
-    private short field33110;
+    private final short field33108;
+    private final short field33109;
+    private final short field33110;
     
     public Class8042(final short field33108, final short field33109, final short field33110) {
         this.field33108 = field33108;

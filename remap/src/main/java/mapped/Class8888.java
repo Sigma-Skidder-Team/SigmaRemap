@@ -11,7 +11,7 @@ public class Class8888
 {
     private Class field37389;
     private int field37390;
-    private ArrayDeque field37391;
+    private final ArrayDeque field37391;
     
     public Class8888(final Class field37389, final int field37390) {
         this.field37389 = null;

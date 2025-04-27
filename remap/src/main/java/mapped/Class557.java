@@ -110,7 +110,7 @@ public class Class557 extends Screen implements Class558
         }
         else {
             AbstractGui.fill(n3 + 9, n4 + 18, n3 + 9 + 234, n4 + 18 + 113, -16777216);
-            final String method30773 = Class8822.method30773("advancements.empty", new Object[0]);
+            final String method30773 = Class8822.method30773("advancements.empty");
             this.font.method6610(method30773, (float)(n3 + 9 + 117 - this.font.getStringWidth(method30773) / 2), (float)(n4 + 18 + 56 - 4), -1);
             this.font.method6610(":(", (float)(n3 + 9 + 117 - this.font.getStringWidth(":(") / 2), (float)(n4 + 18 + 113 - 9), -1);
         }
@@ -134,7 +134,7 @@ public class Class557 extends Screen implements Class558
             }
             RenderSystem.disableBlend();
         }
-        this.font.method6610(Class8822.method30773("gui.advancements", new Object[0]), (float)(n + 8), (float)(n2 + 6), 4210752);
+        this.font.method6610(Class8822.method30773("gui.advancements"), (float)(n + 8), (float)(n2 + 6), 4210752);
     }
     
     private void method3262(final int n, final int n2, final int n3, final int n4) {

@@ -43,8 +43,8 @@ public class Class8622 extends DataFix
     
     private <TE> TypeRewriteRule method29259(final Type<?> type, final List$ListType<TE> list$ListType) {
         return TypeRewriteRule.seq(this.fixTypeEverywhere("InjectBedBlockEntityType", (Type)this.getInputSchema().findChoiceType(Class9451.field40621), (Type)this.getOutputSchema().findChoiceType(Class9451.field40621), p0 -> pair -> pair), this.fixTypeEverywhereTyped("BedBlockEntityInjecter", this.getOutputSchema().getType(Class9451.field40613), typed -> {
-            DSL.fieldFinder("Level", (Type)type2);
-            DSL.fieldFinder("TileEntities", (Type)list$ListType2);
+            DSL.fieldFinder("Level", type2);
+            DSL.fieldFinder("TileEntities", list$ListType2);
             list$ListType2.getElement();
             typed.getTyped(opticFinder);
             final Typed typed2;
@@ -52,7 +52,7 @@ public class Class8622 extends DataFix
             dynamic.get("xPos").asInt(0);
             dynamic.get("zPos").asInt(0);
             Lists.newArrayList((Iterable)typed2.getOrCreate(opticFinder2));
-            dynamic.get("Sections").asList((Function)Function.identity());
+            dynamic.get("Sections").asList(Function.identity());
             int i = 0;
             final List list;
             final ArrayList list2;
@@ -78,7 +78,7 @@ public class Class8622 extends DataFix
                         final int n6;
                         hashMap.put(dynamic2.createString("z"), dynamic2.createInt(n5 + (n6 << 4)));
                         hashMap.put(dynamic2.createString("color"), dynamic2.createShort((short)14));
-                        list2.add(((Optional)type3.read(dynamic2.createMap((Map)hashMap)).getSecond()).orElseThrow(() -> new IllegalStateException("Could not parse newly created bed block entity.")));
+                        list2.add(((Optional)type3.read(dynamic2.createMap(hashMap)).getSecond()).orElseThrow(() -> new IllegalStateException("Could not parse newly created bed block entity.")));
                     }
                     int n7 = 0;
                     ++n7;

@@ -27,6 +27,6 @@ public class Class7590 extends Class7591
     
     @Override
     public JsonElement method23884() {
-        return (JsonElement)new JsonPrimitive(this.field30111);
+        return new JsonPrimitive(this.field30111);
     }
 }

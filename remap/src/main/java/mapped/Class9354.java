@@ -4,13 +4,10 @@
 
 package mapped;
 
-import java.nio.charset.CodingErrorAction;
-import java.nio.charset.Charset;
+import java.nio.charset.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.nio.charset.CharacterCodingException;
 import java.nio.ByteBuffer;
-import java.nio.charset.CharsetDecoder;
 
 public abstract class Class9354
 {
@@ -36,7 +33,7 @@ public abstract class Class9354
     }
     
     static {
-        field40131 = Charset.forName("UTF-8").newDecoder().onMalformedInput(CodingErrorAction.REPORT);
+        field40131 = StandardCharsets.UTF_8.newDecoder().onMalformedInput(CodingErrorAction.REPORT);
         field40133 = new Class7505("-_.!~*'()@:$&,;=[]/", false);
     }
 }

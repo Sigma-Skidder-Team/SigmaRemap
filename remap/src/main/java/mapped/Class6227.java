@@ -16,8 +16,8 @@ public abstract class Class6227<T extends Class126> extends Class6230<T>
     }
     
     public void method18536(final JsonObject jsonObject, final T t, final JsonSerializationContext jsonSerializationContext) {
-        if (!ArrayUtils.isEmpty((Object[])t.field383)) {
-            jsonObject.add("conditions", jsonSerializationContext.serialize((Object)t.field383));
+        if (!ArrayUtils.isEmpty(t.field383)) {
+            jsonObject.add("conditions", jsonSerializationContext.serialize(t.field383));
         }
     }
     

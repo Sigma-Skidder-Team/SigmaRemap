@@ -23,7 +23,7 @@ public class Class5128 extends Class5127
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("height_interval"), dynamicOps.createInt(this.field22084), dynamicOps.createString("crown_height"), dynamicOps.createInt(this.field22085)))).merge((Dynamic)super.method16010((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("height_interval"), dynamicOps.createInt(this.field22084), dynamicOps.createString("crown_height"), dynamicOps.createInt(this.field22085)))).merge(super.method16010((DynamicOps<Object>)dynamicOps));
     }
     
     public static <T> Class5128 method16036(final Dynamic<T> dynamic) {

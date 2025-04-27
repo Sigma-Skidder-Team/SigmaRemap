@@ -7,8 +7,8 @@ package mapped;
 public class Class14 extends Class11
 {
     private static final long field28 = 155390537810310407L;
-    private Class22 field47;
-    private Class22 field48;
+    private final Class22 field47;
+    private final Class22 field48;
     
     public Class14(final long n) {
         this(n, true);

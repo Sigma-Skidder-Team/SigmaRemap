@@ -7,7 +7,7 @@ package mapped;
 public class Class2423 implements Class2422
 {
     private static String[] field14329;
-    private float[][] field14330;
+    private final float[][] field14330;
     
     public Class2423(final Class2422 class2422) {
         this.field14330 = new float[class2422.method9733() * 6 * 3][2];
@@ -31,8 +31,8 @@ public class Class2423 implements Class2422
                 final float[] method9736 = class2422.method9734(i, n6);
                 method9735[0] = (method9735[0] + method9736[0]) / 2.0f;
                 method9735[1] = (method9735[1] + method9736[1]) / 2.0f;
-                this.field14330[n * 3 + 0][0] = n4;
-                this.field14330[n * 3 + 0][1] = n5;
+                this.field14330[n * 3][0] = n4;
+                this.field14330[n * 3][1] = n5;
                 this.field14330[n * 3 + 1][0] = method9735[0];
                 this.field14330[n * 3 + 1][1] = method9735[1];
                 this.field14330[n * 3 + 2][0] = method9736[0];
@@ -48,8 +48,8 @@ public class Class2423 implements Class2422
                 final float[] method9738 = class2422.method9734(i, n7);
                 method9738[0] = (method9737[0] + method9738[0]) / 2.0f;
                 method9738[1] = (method9737[1] + method9738[1]) / 2.0f;
-                this.field14330[n * 3 + 0][0] = n4;
-                this.field14330[n * 3 + 0][1] = n5;
+                this.field14330[n * 3][0] = n4;
+                this.field14330[n * 3][1] = n5;
                 this.field14330[n * 3 + 1][0] = method9737[0];
                 this.field14330[n * 3 + 1][1] = method9737[1];
                 this.field14330[n * 3 + 2][0] = method9738[0];

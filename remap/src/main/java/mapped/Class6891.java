@@ -11,8 +11,8 @@ import java.util.Map;
 public class Class6891
 {
     private static String[] field27026;
-    private Class8541[] field27027;
-    private Class333[] field27028;
+    private final Class8541[] field27027;
+    private final Class333[] field27028;
     
     public Class6891(final Class8541[] field27027, final Map<String, Class327> map) {
         this.field27027 = field27027;

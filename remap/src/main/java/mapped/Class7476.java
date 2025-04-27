@@ -28,7 +28,7 @@ public final class Class7476
         return method23095(class399, b, b2, class400, class401, true, class403 -> {
             final boolean b4;
             if (!class403.isSpectator()) {
-                if (!(!class403.method1749())) {
+                if (class403.method1749()) {
                     if (b3 || !class403.method1843(class402)) {
                         if (!class403.noClip) {
                             return b4;
@@ -53,7 +53,7 @@ public final class Class7476
         final Vec3d method1935 = class399.getMotion();
         final World field2391 = class399.world;
         final Vec3d method1936 = class399.method1934();
-        if (b3 && !field2391.method6979(class399, class399.getBoundingBox(), (Set<Entity>)((!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of()))) {
+        if (b3 && !field2391.method6979(class399, class399.getBoundingBox(), (!b2 && class400 != null) ? method23098(class400) : ImmutableSet.of())) {
             return new BlockRayTraceResult(method1936, Direction.getFacingFromVector(method1935.x, method1935.y, method1935.z), new BlockPos(class399), false);
         }
         Vec3d class403 = method1936.add(method1935);
@@ -134,10 +134,10 @@ public final class Class7476
     
     private static Set<Entity> method23098(final Entity class399) {
         final Entity method1920 = class399.method1920();
-        return (Set<Entity>)((method1920 == null) ? ImmutableSet.of((Object)class399) : ImmutableSet.of((Object)class399, (Object)method1920));
+        return (Set<Entity>)((method1920 == null) ? ImmutableSet.of((Object)class399) : ImmutableSet.of(class399, (Object)method1920));
     }
     
-    public static final void method23099(final Entity class399, final float n) {
+    public static void method23099(final Entity class399, final float n) {
         final Vec3d method1935 = class399.getMotion();
         final float method1936 = MathHelper.sqrt(Entity.horizontalMag(method1935));
         class399.rotationYaw = (float)(MathHelper.method35693(method1935.z, method1935.x) * 57.2957763671875) + 90.0f;

@@ -37,7 +37,7 @@ public class Class653 extends Class649
     
     @Override
     public void method3362(final int n, final int n2) {
-        String str = Class8822.method30773(this.field3678.method16455(), new Object[0]);
+        String str = Class8822.method30773(this.field3678.method16455());
         if (!this.field3680) {
             if (this.field3678 != Class9439.field40483) {
                 str += " II";

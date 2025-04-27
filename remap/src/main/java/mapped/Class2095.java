@@ -40,11 +40,11 @@ public enum Class2095
     private final boolean field12139;
     private final int field12140;
     
-    private Class2095(final boolean b) {
+    Class2095(final boolean b) {
         this(b, -1);
     }
     
-    private Class2095(final boolean field12139, final int field12140) {
+    Class2095(final boolean field12139, final int field12140) {
         this.field12138 = (byte)this.ordinal();
         this.field12139 = field12139;
         this.field12140 = field12140;

@@ -39,7 +39,7 @@ public class Class6023 extends Class6022<GameProfile>
             jsonObject.addProperty("uuid", (this.method17942().getId() != null) ? this.method17942().getId().toString() : "");
             jsonObject.addProperty("name", this.method17942().getName());
             super.method17944(jsonObject);
-            jsonObject.addProperty("level", (Number)this.field24512);
+            jsonObject.addProperty("level", this.field24512);
             jsonObject.addProperty("bypassesPlayerLimit", Boolean.valueOf(this.field24513));
         }
     }

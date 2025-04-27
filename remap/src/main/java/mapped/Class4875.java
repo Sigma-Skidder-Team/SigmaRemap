@@ -10,7 +10,7 @@ import org.newdawn.slick.TrueTypeFont;
 
 public class Class4875 extends Class4873
 {
-    private String[] field20860;
+    private final String[] field20860;
     private int field20861;
     
     public Class4875(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final String[] field20860, final int field20861, final ColorHelper class4804, final String s2, final TrueTypeFont class4805) {

@@ -66,7 +66,7 @@ public class Class9081
     
     public ResourceLocation method32726() {
         this.method32730();
-        return (ResourceLocation)MoreObjects.firstNonNull((Object)this.field38438.get(MinecraftProfileTexture$Type.SKIN), (Object)Class7634.method24004(this.field38437.getId()));
+        return (ResourceLocation)MoreObjects.firstNonNull(this.field38438.get(MinecraftProfileTexture$Type.SKIN), (Object)Class7634.method24004(this.field38437.getId()));
     }
     
     @Nullable

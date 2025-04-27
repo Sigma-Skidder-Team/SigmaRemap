@@ -57,7 +57,6 @@ public class Class6749 extends Team
             final HoverEvent class8769;
             final Object o;
             ((Style)o).method30420(class8769);
-            return;
         }));
         final TextFormatting method35300 = this.getColor();
         if (method35300 != TextFormatting.RESET) {

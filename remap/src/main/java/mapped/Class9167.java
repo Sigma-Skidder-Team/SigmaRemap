@@ -47,9 +47,7 @@ public class Class9167
                 return false;
             }
             final int intValue = map.get(this.field38836);
-            if (this.field38837 != null && !this.field38837.method29755(intValue)) {
-                return false;
-            }
+            return this.field38837 == null || this.field38837.method29755(intValue);
         }
         return true;
     }
@@ -61,9 +59,9 @@ public class Class9167
                 jsonObject.addProperty("enchantment", Registry.field209.getKey(this.field38836).toString());
             }
             jsonObject.add("levels", this.field38837.method29745());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     public static Class9167 method33466(final JsonElement jsonElement) {

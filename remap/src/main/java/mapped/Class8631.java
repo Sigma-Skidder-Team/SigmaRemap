@@ -37,7 +37,7 @@ public class Class8631 implements ArgumentType<Integer>
         if (Class8631.field36226.containsKey(unquotedString)) {
             return Class8631.field36226.get(unquotedString);
         }
-        throw Class8631.field36225.create((Object)unquotedString);
+        throw Class8631.field36225.create(unquotedString);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -51,7 +51,7 @@ public class Class8631 implements ArgumentType<Integer>
     static {
         field36224 = Arrays.asList("container.5", "12", Class8631.\u387d\u7325\uff74\ucb49\u35ef\u093d[6]);
         field36225 = new DynamicCommandExceptionType(o -> {
-            new Class2259("slot.unknown", new Object[] { o });
+            new Class2259("slot.unknown", o);
             return;
         });
         field36226 = Util.method27851(Maps.newHashMap(), hashMap -> {

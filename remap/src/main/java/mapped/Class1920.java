@@ -57,7 +57,7 @@ public class Class1920<T extends Class1921> implements AutoCloseable
             if (this.field10440.contains(class1921)) {
                 continue;
             }
-            class1921.method7624().method8128((List<Class1921>)this.field10440, class1921, (Function<Class1921, Class1921>)Functions.identity(), false);
+            class1921.method7624().method8128((List<Class1921>)this.field10440, class1921, Functions.identity(), false);
         }
     }
     
@@ -71,7 +71,7 @@ public class Class1920<T extends Class1921> implements AutoCloseable
     
     public void method7608(final Collection<T> collection) {
         this.field10440.clear();
-        this.field10440.addAll((Collection<? extends T>)collection);
+        this.field10440.addAll(collection);
         for (final Class1921 class1921 : this.field10439.values()) {
             if (!class1921.method7622()) {
                 continue;
@@ -79,7 +79,7 @@ public class Class1920<T extends Class1921> implements AutoCloseable
             if (this.field10440.contains(class1921)) {
                 continue;
             }
-            class1921.method7624().method8128((List<Class1921>)this.field10440, class1921, (Function<Class1921, Class1921>)Functions.identity(), false);
+            class1921.method7624().method8128((List<Class1921>)this.field10440, class1921, Functions.identity(), false);
         }
     }
     

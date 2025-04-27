@@ -43,8 +43,8 @@ public interface Class7619
         this.method23941(class7619.method23940());
         final Set<Class7919> method23943 = class7619.method23943();
         final Set<Class7919> method23944 = this.method23943();
-        final ImmutableSet copy = ImmutableSet.copyOf((Collection)Sets.difference((Set)method23943, (Set)method23944));
-        final ImmutableSet copy2 = ImmutableSet.copyOf((Collection)Sets.difference((Set)method23944, (Set)method23943));
+        final ImmutableSet copy = ImmutableSet.copyOf(Sets.difference((Set)method23943, method23944));
+        final ImmutableSet copy2 = ImmutableSet.copyOf(Sets.difference((Set)method23944, method23943));
         copy.forEach((Consumer)this::method23946);
         copy2.forEach((Consumer)this::method23947);
     }

@@ -31,7 +31,6 @@ public class Class8663
             else {
                 obj.method12762(class4254);
             }
-            return;
         });
         throw Class2382.field14183;
     }

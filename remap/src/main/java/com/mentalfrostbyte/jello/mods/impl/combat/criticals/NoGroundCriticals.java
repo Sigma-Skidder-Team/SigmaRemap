@@ -22,7 +22,7 @@ public class NoGroundCriticals extends Module
     
     public NoGroundCriticals() {
         super(Category.COMBAT, "NoGround", "NoGround criticals");
-        this.addSetting(new StringSetting("Offset", "The way you will fake no ground", 0, new String[] { "Vanilla", "OldHypixel" }));
+        this.addSetting(new StringSetting("Offset", "The way you will fake no ground", 0, "Vanilla", "OldHypixel"));
         this.addSetting(new BooleanSetting("Avoid Fall Damage", "Avoid fall damages.", true));
     }
     

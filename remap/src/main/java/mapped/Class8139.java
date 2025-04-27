@@ -32,7 +32,7 @@ public class Class8139
     private static Class170 method26818(final JsonElement jsonElement) {
         if (!jsonElement.isJsonPrimitive()) {
             final Object2BooleanOpenHashMap object2BooleanOpenHashMap = new Object2BooleanOpenHashMap();
-            Class9583.method35913(jsonElement, "criterion data").entrySet().forEach(entry -> object2BooleanMap.put(entry.getKey(), Class9583.method35899((JsonElement)entry.getValue(), "criterion test")));
+            Class9583.method35913(jsonElement, "criterion data").entrySet().forEach(entry -> object2BooleanMap.put(entry.getKey(), Class9583.method35899(entry.getValue(), "criterion test")));
             return new Class171((Object2BooleanMap<String>)object2BooleanOpenHashMap);
         }
         return new Class172(jsonElement.getAsBoolean());
@@ -109,7 +109,7 @@ public class Class8139
             }
             final Object2BooleanOpenHashMap object2BooleanOpenHashMap = new Object2BooleanOpenHashMap();
             for (final Map.Entry<K, JsonElement> entry : Class9583.method35915(method35913, "recipes", new JsonObject()).entrySet()) {
-                ((Object2BooleanMap)object2BooleanOpenHashMap).put((Object)new ResourceLocation((String)entry.getKey()), Class9583.method35899(entry.getValue(), "recipe present"));
+                object2BooleanOpenHashMap.put(new ResourceLocation((String)entry.getKey()), Class9583.method35899(entry.getValue(), "recipe present"));
             }
             final HashMap hashMap2 = Maps.newHashMap();
             for (final Map.Entry<K, JsonElement> entry2 : Class9583.method35915(method35913, "advancements", new JsonObject()).entrySet()) {
@@ -147,23 +147,22 @@ public class Class8139
                     jsonObject4.addProperty("stat", method26822((Class9455<Object>)class9455).toString());
                     jsonObject4.add("value", class9456.method29745());
                     jsonArray2.add((JsonElement)jsonObject4);
-                    return;
                 });
-                jsonObject.add("stats", (JsonElement)jsonArray);
+                jsonObject.add("stats", jsonArray);
             }
             if (!this.field33534.isEmpty()) {
                 final JsonObject jsonObject2 = new JsonObject();
                 this.field33534.forEach((class9457, b) -> jsonObject5.addProperty(class9457.toString(), b));
-                jsonObject.add("recipes", (JsonElement)jsonObject2);
+                jsonObject.add("recipes", jsonObject2);
             }
             if (!this.field33535.isEmpty()) {
                 final JsonObject jsonObject3 = new JsonObject();
                 this.field33535.forEach((class9458, class9459) -> jsonObject6.add(class9458.toString(), class9459.method770()));
-                jsonObject.add("advancements", (JsonElement)jsonObject3);
+                jsonObject.add("advancements", jsonObject3);
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

@@ -52,10 +52,7 @@ public class Class3593 extends Class3592
                     }
                 }
             }
-            if (!this.field16738.method4656()) {
-                return true;
-            }
-            return false;
+            return !this.field16738.method4656();
         }
         return false;
     }

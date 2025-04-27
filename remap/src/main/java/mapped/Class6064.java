@@ -11,7 +11,7 @@ import java.util.List;
 public class Class6064 implements Class6063
 {
     private static String[] field24655;
-    private List<Class6287> field24656;
+    private final List<Class6287> field24656;
     
     private Class6064() {
         this.field24656 = new ArrayList<Class6287>(100);

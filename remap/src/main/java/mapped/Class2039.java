@@ -12,7 +12,7 @@ public enum Class2039
     public final int field11629;
     public final String field11630;
     
-    private Class2039(final String field11630, final int field11631) {
+    Class2039(final String field11630, final int field11631) {
         this.field11630 = field11630;
         this.field11629 = field11631;
     }

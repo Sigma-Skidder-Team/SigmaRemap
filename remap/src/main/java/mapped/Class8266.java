@@ -28,9 +28,7 @@ public final class Class8266
             final Class8266 class8266 = (Class8266)o;
             if (this.field33941 == class8266.field33941) {
                 if (this.field33942 == class8266.field33942) {
-                    if (this.field33943 == class8266.field33943) {
-                        return true;
-                    }
+                    return this.field33943 == class8266.field33943;
                 }
             }
             return false;

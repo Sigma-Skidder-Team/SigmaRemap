@@ -9,9 +9,9 @@ public enum Class2206
     field13425(new Integer[] { 1, 0 }), 
     field13426(new Integer[] { 1, 1 });
     
-    private Integer[] field13427;
+    private final Integer[] field13427;
     
-    private Class2206(final Integer[] field13427) {
+    Class2206(final Integer[] field13427) {
         this.field13427 = field13427;
     }
     

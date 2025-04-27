@@ -49,12 +49,12 @@ public class Class3946 extends Class3944
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3946.field17842, class7097.method8143(class7096.get((IProperty<Integer>)Class3946.field17842), 16));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3946.field17842, class7097.method8143(class7096.get(Class3946.field17842), 16));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3946.field17842, class7097.method8343(class7096.get((IProperty<Integer>)Class3946.field17842), 16));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3946.field17842, class7097.method8343(class7096.get(Class3946.field17842), 16));
     }
     
     @Override

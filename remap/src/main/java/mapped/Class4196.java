@@ -115,9 +115,7 @@ public class Class4196 implements Class4178
     public static boolean method12605(final Class2002 class2002) {
         if (!class2002.equals(Class2002.field11223)) {
             if (!class2002.equals(Class2002.field11230)) {
-                if (!class2002.equals(Class2002.field11227)) {
-                    return false;
-                }
+                return class2002.equals(Class2002.field11227);
             }
         }
         return true;

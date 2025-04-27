@@ -16,7 +16,7 @@ public class Class533 extends Screen
     private final boolean field3183;
     
     public Class533(final ITextComponent field3182, final boolean field3183) {
-        super(new Class2259(field3183 ? "deathScreen.title.hardcore" : "deathScreen.title", new Object[0]));
+        super(new Class2259(field3183 ? "deathScreen.title.hardcore" : "deathScreen.title"));
         this.field3182 = field3182;
         this.field3183 = field3183;
     }
@@ -24,13 +24,13 @@ public class Class533 extends Screen
     @Override
     public void init() {
         this.field3181 = 0;
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 72, 200, 20, this.field3183 ? Class8822.method30773("deathScreen.spectate", new Object[0]) : Class8822.method30773("deathScreen.respawn", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 72, 200, 20, this.field3183 ? Class8822.method30773("deathScreen.spectate") : Class8822.method30773("deathScreen.respawn"), class654 -> {
             this.minecraft.player.method2842();
             this.minecraft.displayGuiScreen(null);
         }));
-        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96, 200, 20, Class8822.method30773("deathScreen.titleScreen", new Object[0]), class654 -> {
+        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 96, 200, 20, Class8822.method30773("deathScreen.titleScreen"), class654 -> {
             if (!this.field3183) {
-                final Class546 class655 = new Class546(this::method3076, new Class2259("deathScreen.quit.confirm", new Object[0]), new StringTextComponent(""), Class8822.method30773("deathScreen.titleScreen", new Object[0]), Class8822.method30773("deathScreen.respawn", new Object[0]));
+                final Class546 class655 = new Class546(this::method3076, new Class2259("deathScreen.quit.confirm"), new StringTextComponent(""), Class8822.method30773("deathScreen.titleScreen"), Class8822.method30773("deathScreen.respawn"));
                 this.minecraft.displayGuiScreen(class655);
                 class655.method3209(20);
             }
@@ -68,7 +68,7 @@ public class Class533 extends Screen
         if (this.minecraft.world != null) {
             this.minecraft.world.method6751();
         }
-        this.minecraft.method5265(new Class729(new Class2259("menu.savingLevel", new Object[0])));
+        this.minecraft.method5265(new Class729(new Class2259("menu.savingLevel")));
         this.minecraft.displayGuiScreen(new MainMenu());
     }
     
@@ -82,7 +82,7 @@ public class Class533 extends Screen
         if (this.field3182 != null) {
             this.drawCenteredString(this.font, this.field3182.getFormattedText(), this.width / 2, 85, 16777215);
         }
-        this.drawCenteredString(this.font, Class8822.method30773("deathScreen.score", new Object[0]) + ": " + TextFormatting.YELLOW + this.minecraft.player.method2817(), this.width / 2, 100, 16777215);
+        this.drawCenteredString(this.font, Class8822.method30773("deathScreen.score") + ": " + TextFormatting.YELLOW + this.minecraft.player.method2817(), this.width / 2, 100, 16777215);
         if (this.field3182 != null) {
             if (n2 > 85) {
                 if (n2 < 94) {

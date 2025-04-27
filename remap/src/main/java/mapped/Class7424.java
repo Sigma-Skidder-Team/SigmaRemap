@@ -97,16 +97,16 @@ public class Class7424 extends ValueObject
             jsonObject.addProperty("spawnNPCs", this.field28601);
         }
         if (this.field28602 != 0) {
-            jsonObject.addProperty("spawnProtection", (Number)this.field28602);
+            jsonObject.addProperty("spawnProtection", this.field28602);
         }
         if (this.field28603) {
             jsonObject.addProperty("commandBlocks", this.field28603);
         }
         if (this.field28605 != 2) {
-            jsonObject.addProperty("difficulty", (Number)this.field28605);
+            jsonObject.addProperty("difficulty", this.field28605);
         }
         if (this.field28606 != 0) {
-            jsonObject.addProperty("gameMode", (Number)this.field28606);
+            jsonObject.addProperty("gameMode", this.field28606);
         }
         if (this.field28604) {
             jsonObject.addProperty("forceGameMode", this.field28604);

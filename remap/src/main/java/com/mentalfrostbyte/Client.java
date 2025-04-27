@@ -100,7 +100,7 @@ public class Client {
         (this.waypointManager = new WaypointManager()).method24261();
         (this.blurManager = new BlurManager()).method29895();
         (this.movementManager = new MovementManager()).method26554();
-        GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), (CharSequence) "Sigma 5.0");
+        GLFW.glfwSetWindowTitle(Client.mc.window.getHandle(), "Sigma 5.0");
         System.currentTimeMillis();
         this.logger.info("Initialized.");
     }
@@ -171,7 +171,7 @@ public class Client {
         GL11.glPushMatrix();
         final double n = Client.mc.window.getGuiScaleFactor() / (float) Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
         GL11.glScaled(n, n, n);
-        GL11.glScaled((double) ScreenManager.guiScale, (double) ScreenManager.guiScale, (double) ScreenManager.guiScale);
+        GL11.glScaled(ScreenManager.guiScale, ScreenManager.guiScale, ScreenManager.guiScale);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0f, 0.0f, 1000.0f);
@@ -204,7 +204,7 @@ public class Client {
         if (getInstance().getClientMode() != ClientMode.NOADDONS) {
             final double n = Client.mc.window.getGuiScaleFactor() / (float) Math.pow(Client.mc.window.getGuiScaleFactor(), 2.0);
             GL11.glScaled(n, n, 1.0);
-            GL11.glScaled((double) ScreenManager.guiScale, (double) ScreenManager.guiScale, 1.0);
+            GL11.glScaled(ScreenManager.guiScale, ScreenManager.guiScale, 1.0);
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0f, 0.0f, 1000.0f);

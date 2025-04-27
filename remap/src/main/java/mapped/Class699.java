@@ -6,13 +6,13 @@ package mapped;
 
 public class Class699 extends Class698
 {
-    private Screen field3845;
-    private Class5760 field3846;
+    private final Screen field3845;
+    private final Class5760 field3846;
     private static Class6469[] field3847;
-    private Class8297 field3848;
+    private final Class8297 field3848;
     
     public Class699(final Screen field3845, final Class5760 field3846) {
-        super(new StringTextComponent(Class8822.method30773("of.options.detailsTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.detailsTitle")));
         this.field3848 = new Class8297(this, new Class7298());
         this.field3845 = field3845;
         this.field3846 = field3846;
@@ -24,7 +24,7 @@ public class Class699 extends Class698
         for (int i = 0; i < Class699.field3847.length; ++i) {
             this.addButton(Class699.field3847[i].method19362(this.minecraft.gameSettings, this.width / 2 - 155 + i % 2 * 160, this.height / 6 + 21 * (i / 2) - 12, 150));
         }
-        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done")));
     }
     
     @Override

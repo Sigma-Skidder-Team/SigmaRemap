@@ -18,7 +18,7 @@ public class Class6061<T> implements Class6058<T>
     @Override
     public int method18026(final T t) {
         final boolean method563 = this.field24639.method563(t) != 0;
-        return (((method563 ? 1 : 0) != -1) ? method563 : false) ? 1 : 0;
+        return ((method563 ? 1 : 0) != -1 && method563) ? 1 : 0;
     }
     
     @Override

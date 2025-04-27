@@ -17,6 +17,6 @@ public final class Class8151 extends Class8150
     
     @Override
     public JsonElement method26846() {
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
 }

@@ -45,7 +45,7 @@ public class Class765 extends Class763 implements Class766
         this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(6, new Class3503(this));
         this.field4115.method22062(1, new Class3555<Object>(this, PlayerEntity.class, true));
-        this.field4115.method22062(2, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(2, new Class3547(this, new Class[0]));
     }
     
     @Override

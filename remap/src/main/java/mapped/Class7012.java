@@ -74,7 +74,7 @@ public class Class7012
     public void method21457() {
         final Iterator<? extends Class4640<?>> iterator = Class7770.method24879().iterator();
         while (iterator.hasNext()) {
-            ((Class4640)iterator.next()).method13725(this);
+            iterator.next().method13725(this);
         }
     }
     
@@ -123,9 +123,9 @@ public class Class7012
     
     private void method21462() {
         if (this.field27336.isFile()) {
-            try (final JsonReader jsonReader = new JsonReader((Reader)new StringReader(Files.toString(this.field27336, StandardCharsets.UTF_8)))) {
+            try (final JsonReader jsonReader = new JsonReader(new StringReader(Files.toString(this.field27336, StandardCharsets.UTF_8)))) {
                 jsonReader.setLenient(false);
-                Dynamic set = new Dynamic((DynamicOps)JsonOps.INSTANCE, (Object)Streams.parse(jsonReader));
+                Dynamic set = new Dynamic(JsonOps.INSTANCE, Streams.parse(jsonReader));
                 if (!set.get("DataVersion").asNumber().isPresent()) {
                     set = set.set("DataVersion", set.createInt(1343));
                 }
@@ -136,7 +136,7 @@ public class Class7012
                 for (final Map.Entry<ResourceLocation, V> entry : (List<Object>)map.entrySet().stream().sorted(Comparator.comparing((Function<? super T, ? extends Comparable>)Map.Entry::getValue)).collect(Collectors.toList())) {
                     final Class8863 method6398 = this.field27335.method1566().method6398(entry.getKey());
                     if (method6398 == null) {
-                        Class7012.field27332.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", (Object)entry.getKey(), (Object)this.field27336);
+                        Class7012.field27332.warn("Ignored advancement '{}' in progress file {} - it doesn't exist anymore?", entry.getKey(), this.field27336);
                     }
                     else {
                         this.method21471(method6398, (Class348)entry.getValue());
@@ -144,10 +144,10 @@ public class Class7012
                 }
             }
             catch (final JsonParseException ex) {
-                Class7012.field27332.error("Couldn't parse player advancements in {}", (Object)this.field27336, (Object)ex);
+                Class7012.field27332.error("Couldn't parse player advancements in {}", this.field27336, ex);
             }
             catch (final IOException ex2) {
-                Class7012.field27332.error("Couldn't access player advancements in {}", (Object)this.field27336, (Object)ex2);
+                Class7012.field27332.error("Couldn't access player advancements in {}", this.field27336, ex2);
             }
         }
         this.method21461();
@@ -166,14 +166,14 @@ public class Class7012
         if (this.field27336.getParentFile() != null) {
             this.field27336.getParentFile().mkdirs();
         }
-        final JsonElement jsonTree = Class7012.field27333.toJsonTree((Object)hashMap);
-        jsonTree.getAsJsonObject().addProperty("DataVersion", (Number)Class9528.method35579().getWorldVersion());
+        final JsonElement jsonTree = Class7012.field27333.toJsonTree(hashMap);
+        jsonTree.getAsJsonObject().addProperty("DataVersion", Class9528.method35579().getWorldVersion());
         try (final FileOutputStream out = new FileOutputStream(this.field27336);
              final OutputStreamWriter outputStreamWriter = new OutputStreamWriter(out, Charsets.UTF_8.newEncoder())) {
-            Class7012.field27333.toJson(jsonTree, (Appendable)outputStreamWriter);
+            Class7012.field27333.toJson(jsonTree, outputStreamWriter);
         }
         catch (final IOException ex) {
-            Class7012.field27332.error("Couldn't save player advancements to {}", (Object)this.field27336, (Object)ex);
+            Class7012.field27332.error("Couldn't save player advancements to {}", this.field27336, ex);
         }
     }
     
@@ -191,7 +191,7 @@ public class Class7012
                     if (class8863.method31036() != null) {
                         if (class8863.method31036().method22535()) {
                             if (this.field27341.world.method6765().method31216(Class8878.field37337)) {
-                                this.field27335.method1537().method20619(new Class2259("chat.type.advancement." + class8863.method31036().method22531().method8015(), new Object[] { this.field27341.getDisplayName(), class8863.method31044() }));
+                                this.field27335.method1537().method20619(new Class2259("chat.type.advancement." + class8863.method31036().method22531().method8015(), this.field27341.getDisplayName(), class8863.method31044()));
                             }
                         }
                     }
@@ -399,7 +399,7 @@ public class Class7012
     
     static {
         field27332 = LogManager.getLogger();
-        field27333 = new GsonBuilder().registerTypeAdapter((Type)Class348.class, (Object)new Class5988()).registerTypeAdapter((Type) ResourceLocation.class, (Object)new Class5958()).setPrettyPrinting().create();
+        field27333 = new GsonBuilder().registerTypeAdapter(Class348.class, new Class5988()).registerTypeAdapter(ResourceLocation.class, new Class5958()).setPrettyPrinting().create();
         field27334 = new Class7514();
     }
 }

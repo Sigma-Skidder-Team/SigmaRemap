@@ -25,7 +25,7 @@ public class Class6197 extends Class6159
     }
     
     public void method18455(final int n) {
-        this.method18435(((n & 0xFF0000) >> 16) / 255.0f * 1.0f, ((n & 0xFF00) >> 8) / 255.0f * 1.0f, ((n & 0xFF) >> 0) / 255.0f * 1.0f);
+        this.method18435(((n & 0xFF0000) >> 16) / 255.0f, ((n & 0xFF00) >> 8) / 255.0f, ((n & 0xFF) >> 0) / 255.0f);
     }
     
     public void method18456(final int n) {

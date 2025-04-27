@@ -22,7 +22,7 @@ public enum Class2075
     private final boolean field11978;
     private final String field11979;
     
-    private Class2075(final String field11979, final boolean field11980) {
+    Class2075(final String field11979, final boolean field11980) {
         this.field11979 = field11979;
         this.field11978 = field11980;
     }

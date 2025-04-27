@@ -7,7 +7,7 @@ package mapped;
 public class Class7397 extends Class7398
 {
     private static String[] field28520;
-    private Class3739 field28521;
+    private final Class3739 field28521;
     
     public Class7397(final Class3737 class3737) {
         this.field28521 = (Class3739)class3737;

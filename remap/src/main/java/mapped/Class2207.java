@@ -32,7 +32,7 @@ public enum Class2207
     
     private final String field13452;
     
-    private Class2207(final String field13452) {
+    Class2207(final String field13452) {
         this.field13452 = field13452;
     }
     

@@ -32,11 +32,11 @@ public class Class7335
     }
     
     private void method22497(final String s, final Object... array) {
-        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix", new Object[0]).applyTextStyles(TextFormatting.YELLOW, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
+        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix").applyTextStyles(TextFormatting.YELLOW, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
     }
     
     private void method22498(final String s, final Object... array) {
-        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix", new Object[0]).applyTextStyles(TextFormatting.RED, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
+        this.field28331.field4647.method3807().method3761(new StringTextComponent("").appendSibling(new Class2259("debug.prefix").applyTextStyles(TextFormatting.RED, TextFormatting.BOLD)).appendText(" ").appendSibling(new Class2259(s, array)));
     }
     
     private boolean method22499(final int n) {
@@ -46,20 +46,20 @@ public class Class7335
         switch (n) {
             case 65: {
                 this.field28331.worldRenderer.loadRenderers();
-                this.method22497("debug.reload_chunks.message", new Object[0]);
+                this.method22497("debug.reload_chunks.message");
                 return true;
             }
             case 66: {
                 final boolean b = !this.field28331.method5306().method28704();
                 this.field28331.method5306().method28703(b);
-                this.method22497(b ? "debug.show_hitboxes.on" : "debug.show_hitboxes.off", new Object[0]);
+                this.method22497(b ? "debug.show_hitboxes.on" : "debug.show_hitboxes.off");
                 return true;
             }
             case 67: {
                 if (this.field28331.player.method2896()) {
                     return false;
                 }
-                this.method22497("debug.copy_location.message", new Object[0]);
+                this.method22497("debug.copy_location.message");
                 this.method22508(String.format(Locale.ROOT, "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f", DimensionType.method1276(this.field28331.player.world.dimension.getType()), this.field28331.player.getPosX(), this.field28331.player.getPosY(), this.field28331.player.getPosZ(), this.field28331.player.rotationYaw, this.field28331.player.rotationPitch));
                 return true;
             }
@@ -78,12 +78,12 @@ public class Class7335
                 return true;
             }
             case 71: {
-                this.method22497(this.field28331.field4645.method22331() ? "debug.chunk_boundaries.on" : "debug.chunk_boundaries.off", new Object[0]);
+                this.method22497(this.field28331.field4645.method22331() ? "debug.chunk_boundaries.on" : "debug.chunk_boundaries.off");
                 return true;
             }
             case 72: {
                 this.field28331.gameSettings.advancedItemTooltips = !this.field28331.gameSettings.advancedItemTooltips;
-                this.method22497(this.field28331.gameSettings.advancedItemTooltips ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off", new Object[0]);
+                this.method22497(this.field28331.gameSettings.advancedItemTooltips ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off");
                 this.field28331.gameSettings.method17121();
                 return true;
             }
@@ -96,12 +96,12 @@ public class Class7335
             case 76: {
                 final Minecraft method28894 = Config.method28894();
                 method28894.worldRenderer.field9366 = 1;
-                method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks", new Object[0])), 201435902);
+                method28894.field4647.method3807().method3762(new StringTextComponent(Class8822.method30773("of.message.loadingVisibleChunks")), 201435902);
                 return true;
             }
             case 78: {
                 if (!this.field28331.player.method1926(2)) {
-                    this.method22497("debug.creative_spectator.error", new Object[0]);
+                    this.method22497("debug.creative_spectator.error");
                 }
                 else if (this.field28331.player.method2889()) {
                     this.field28331.player.method4114("/gamemode spectator");
@@ -120,25 +120,25 @@ public class Class7335
             case 80: {
                 this.field28331.gameSettings.field23395 = !this.field28331.gameSettings.field23395;
                 this.field28331.gameSettings.method17121();
-                this.method22497(this.field28331.gameSettings.field23395 ? "debug.pause_focus.on" : "debug.pause_focus.off", new Object[0]);
+                this.method22497(this.field28331.gameSettings.field23395 ? "debug.pause_focus.on" : "debug.pause_focus.off");
                 return true;
             }
             case 81: {
-                this.method22497("debug.help.message", new Object[0]);
+                this.method22497("debug.help.message");
                 final Class684 method28895 = this.field28331.field4647.method3807();
-                method28895.method3761(new Class2259("debug.reload_chunks.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.show_hitboxes.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.copy_location.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.clear_chat.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.cycle_renderdistance.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.chunk_boundaries.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.advanced_tooltips.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.inspect.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.creative_spectator.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.pause_focus.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.help.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.reload_resourcepacks.help", new Object[0]));
-                method28895.method3761(new Class2259("debug.pause.help", new Object[0]));
+                method28895.method3761(new Class2259("debug.reload_chunks.help"));
+                method28895.method3761(new Class2259("debug.show_hitboxes.help"));
+                method28895.method3761(new Class2259("debug.copy_location.help"));
+                method28895.method3761(new Class2259("debug.clear_chat.help"));
+                method28895.method3761(new Class2259("debug.cycle_renderdistance.help"));
+                method28895.method3761(new Class2259("debug.chunk_boundaries.help"));
+                method28895.method3761(new Class2259("debug.advanced_tooltips.help"));
+                method28895.method3761(new Class2259("debug.inspect.help"));
+                method28895.method3761(new Class2259("debug.creative_spectator.help"));
+                method28895.method3761(new Class2259("debug.pause_focus.help"));
+                method28895.method3761(new Class2259("debug.help.help"));
+                method28895.method3761(new Class2259("debug.reload_resourcepacks.help"));
+                method28895.method3761(new Class2259("debug.pause.help"));
                 return true;
             }
             case 82: {
@@ -149,7 +149,7 @@ public class Class7335
                 return true;
             }
             case 84: {
-                this.method22497("debug.reload_resourcepacks.message", new Object[0]);
+                this.method22497("debug.reload_resourcepacks.message");
                 this.field28331.method5241();
                 return true;
             }
@@ -165,20 +165,19 @@ public class Class7335
                     final BlockState method21448 = this.field28331.player.world.getBlockState(method21447);
                     if (!b) {
                         this.method22501(method21448, method21447, null);
-                        this.method22497("debug.inspect.client.block", new Object[0]);
+                        this.method22497("debug.inspect.client.block");
                         break;
                     }
                     if (b2) {
                         this.field28331.player.field4069.method17378().method26648(method21447, class7098 -> {
                             this.method22501(class7096, class7097, class7098);
-                            this.method22497("debug.inspect.server.block", new Object[0]);
-                            return;
+                            this.method22497("debug.inspect.server.block");
                         });
                         break;
                     }
                     final TileEntity method21449 = this.field28331.player.world.getTileEntity(method21447);
                     this.method22501(method21448, method21447, (method21449 != null) ? method21449.method2180(new CompoundNBT()) : null);
-                    this.method22497("debug.inspect.client.block", new Object[0]);
+                    this.method22497("debug.inspect.client.block");
                     break;
                 }
                 case 2: {
@@ -186,19 +185,18 @@ public class Class7335
                     final ResourceLocation method21451 = Registry.field210.getKey(method21450.getType());
                     if (!b) {
                         this.method22502(method21451, method21450.method1934(), null);
-                        this.method22497("debug.inspect.client.entity", new Object[0]);
+                        this.method22497("debug.inspect.client.entity");
                         break;
                     }
                     if (b2) {
                         this.field28331.player.field4069.method17378().method26647(method21450.getEntityId(), class7101 -> {
                             this.method22502(class7099, class7100.method1934(), class7101);
-                            this.method22497("debug.inspect.server.entity", new Object[0]);
-                            return;
+                            this.method22497("debug.inspect.server.entity");
                         });
                         break;
                     }
                     this.method22502(method21451, method21450.method1934(), method21450.method1756(new CompoundNBT()));
-                    this.method22497("debug.inspect.client.entity", new Object[0]);
+                    this.method22497("debug.inspect.client.entity");
                     break;
                 }
             }
@@ -332,13 +330,13 @@ public class Class7335
                 Screen.method3053(() -> {
                     if (n3 != 1 && (n3 != 2 || !this.field28332)) {
                         if (n3 == 0) {
-                            if (!(!Class9570.field41304.method22605())) {
-                                if (!(!(array2[0] = Class9570.method35812(Class9570.field41304, this.field28331.currentScreen, n4, n5, n6)))) {
+                            if (Class9570.field41304.method22605()) {
+                                if (array2[0] = Class9570.method35812(Class9570.field41304, this.field28331.currentScreen, n4, n5, n6)) {
                                     return;
                                 }
                             }
                             array2[0] = class5755.method3007(n4, n5, n6);
-                            if (!(!Class9570.field41305.method22605())) {
+                            if (Class9570.field41305.method22605()) {
                                 if (!array2[0]) {
                                     array2[0] = Class9570.method35812(Class9570.field41305, this.field28331.currentScreen, n4, n5, n6);
                                 }
@@ -346,19 +344,18 @@ public class Class7335
                         }
                     }
                     else {
-                        if (!(!Class9570.field41302.method22605())) {
-                            if (!(!(array2[0] = Class9570.method35812(Class9570.field41302, this.field28331.currentScreen, n4, n5, n6)))) {
+                        if (Class9570.field41302.method22605()) {
+                            if (array2[0] = Class9570.method35812(Class9570.field41302, this.field28331.currentScreen, n4, n5, n6)) {
                                 return;
                             }
                         }
                         array2[0] = class5755.method2972(n4, n5, n6);
-                        if (!(!Class9570.field41303.method22605())) {
+                        if (Class9570.field41303.method22605()) {
                             if (!array2[0]) {
                                 array2[0] = Class9570.method35812(Class9570.field41303, this.field28331.currentScreen, n4, n5, n6);
                             }
                         }
                     }
-                    return;
                 }, "keyPressed event handler", ((Class710)field4700).getClass().getCanonicalName());
                 if (array[0]) {
                     return;
@@ -575,7 +572,7 @@ public class Class7335
                     this.method22498("debug.crash.warning", MathHelper.ceil(n4 / 1000.0f));
                 }
                 else {
-                    this.method22497("debug.crash.message", new Object[0]);
+                    this.method22497("debug.crash.message");
                 }
                 this.field28335 = method27837;
                 ++this.field28336;

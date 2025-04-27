@@ -77,14 +77,9 @@ public class Class8322
             final Long method27708 = this.method27706();
             final Long method27709 = class8322.method27706();
             if (method27708 != null) {
-                if (!method27708.equals(method27709)) {
-                    return false;
-                }
+                return method27708.equals(method27709);
             }
-            else if (method27709 != null) {
-                return false;
-            }
-            return true;
+            else return method27709 == null;
         }
         return false;
     }

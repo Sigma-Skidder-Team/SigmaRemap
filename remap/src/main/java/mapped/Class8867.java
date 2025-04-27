@@ -136,14 +136,9 @@ public class Class8867
                 final String method31150 = this.method31146();
                 final String method31151 = class8867.method31146();
                 if (method31150 != null) {
-                    if (!method31150.equals(method31151)) {
-                        return false;
-                    }
+                    return method31150.equals(method31151);
                 }
-                else if (method31151 != null) {
-                    return false;
-                }
-                return true;
+                else return method31151 == null;
             }
             return false;
         }

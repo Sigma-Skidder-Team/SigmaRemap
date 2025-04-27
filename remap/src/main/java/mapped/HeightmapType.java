@@ -31,7 +31,7 @@ public enum HeightmapType
     private final Predicate<BlockState> field11529;
     private static final Map<String, HeightmapType> field11530;
     
-    private HeightmapType(final String field11527, final Class2106 field11528, final Predicate<BlockState> field11529) {
+    HeightmapType(final String field11527, final Class2106 field11528, final Predicate<BlockState> field11529) {
         this.field11527 = field11527;
         this.field11528 = field11528;
         this.field11529 = field11529;

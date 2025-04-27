@@ -19,7 +19,7 @@ public final class Class6398 extends Class6397
         final World method16763 = class5491.method16763();
         if (!method16763.isRemote()) {
             this.field25515 = false;
-            final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().get((IProperty<Direction>)Class3955.field17859));
+            final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().get(Class3955.field17859));
             for (final Class802 class5493 : method16763.method7128((Class<? extends Class802>)Class802.class, new AxisAlignedBB(method16764))) {
                 if (!class5493.isAlive()) {
                     continue;
@@ -40,7 +40,7 @@ public final class Class6398 extends Class6397
             if (!this.field25515) {
                 final BlockState method16765 = method16763.getBlockState(method16764);
                 if (method16765.method21755(Class7188.field27931)) {
-                    if (method16765.get((IProperty<Integer>)Class3961.field17902) >= 5) {
+                    if (method16765.get(Class3961.field17902) >= 5) {
                         if (class5492.method27635(1, method16763.rand, null)) {
                             class5492.method27691(0);
                         }

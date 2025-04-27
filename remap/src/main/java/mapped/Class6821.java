@@ -21,7 +21,7 @@ public abstract class Class6821
     public Class6821() {
         this.field26774 = Maps.newHashMap();
         this.field26775 = new Class26<Class7619>();
-        this.field26776 = (Multimap<Class8725, Class8725>)HashMultimap.create();
+        this.field26776 = HashMultimap.create();
     }
     
     @Nullable

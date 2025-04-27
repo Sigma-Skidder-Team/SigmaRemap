@@ -36,16 +36,16 @@ public class Class7104
     
     @Nullable
     public static Class8212 method21810(final ResourceLocation class1932) {
-        return (Class8212)Class7104.field27709.get((Object)class1932);
+        return Class7104.field27709.get(class1932);
     }
     
     @Nullable
     public static ResourceLocation method21811(final Class8212 class8212) {
-        return (ResourceLocation)Class7104.field27709.inverse().get((Object)class8212);
+        return Class7104.field27709.inverse().get(class8212);
     }
     
     static {
-        field27709 = (BiMap)HashBiMap.create();
+        field27709 = HashBiMap.create();
         field27710 = method21809("empty", p0 -> {});
         field27711 = method21809("chest", class7724 -> class7724.method24659(Class6683.field26367).method24660(Class6683.field26362));
         field27712 = method21809("command", class7725 -> class7725.method24659(Class6683.field26367).method24660(Class6683.field26362));

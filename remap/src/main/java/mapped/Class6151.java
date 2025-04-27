@@ -26,11 +26,11 @@ public class Class6151 extends Class6132
     private Dynamic<?> method18384(final Dynamic<?> dynamic, final String s) {
         final String string = dynamic.get(s).asString("");
         ITextComponent class2250 = null;
-        if (!"null".equals(string) && !StringUtils.isEmpty((CharSequence)string)) {
+        if (!"null".equals(string) && !StringUtils.isEmpty(string)) {
             if (string.charAt(0) != '\"' || string.charAt(string.length() - 1) != '\"') {
                 if (string.charAt(0) != '{' || string.charAt(string.length() - 1) != '}') {
                     class2250 = new StringTextComponent(string);
-                    return (Dynamic<?>)dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
+                    return dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
                 }
             }
             try {
@@ -59,21 +59,21 @@ public class Class6151 extends Class6132
         else {
             class2250 = new StringTextComponent("");
         }
-        return (Dynamic<?>)dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
+        return dynamic.set(s, dynamic.createString(Class5953.method17869(class2250)));
     }
     
     @Override
     public Typed<?> method18357(final Typed<?> typed) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> {
-            dynamic = this.method18384((Dynamic<?>)dynamic, "Text1");
-            dynamic = this.method18384((Dynamic<?>)dynamic, "Text2");
-            dynamic = this.method18384((Dynamic<?>)dynamic, "Text3");
-            dynamic = this.method18384((Dynamic<?>)dynamic, "Text4");
+        return typed.update(DSL.remainderFinder(), dynamic -> {
+            dynamic = this.method18384(dynamic, "Text1");
+            dynamic = this.method18384(dynamic, "Text2");
+            dynamic = this.method18384(dynamic, "Text3");
+            dynamic = this.method18384(dynamic, "Text4");
             return dynamic;
         });
     }
     
     static {
-        field24883 = new GsonBuilder().registerTypeAdapter((Type) ITextComponent.class, (Object)new Class5965()).create();
+        field24883 = new GsonBuilder().registerTypeAdapter(ITextComponent.class, new Class5965()).create();
     }
 }

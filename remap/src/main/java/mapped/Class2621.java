@@ -25,7 +25,7 @@ public class Class2621 extends Class2466
             final Class8699 class8700 = new Class8699(0, null, class8699.method29841());
             Class5224.field22245.method9789(class8700, Class300.method955('&', Class8563.method28792().method23294()));
             class8699.method29839();
-            class8700.method29834(Class5218.class).addListener((GenericFutureListener)new Class7935(this, class8699));
+            class8700.method29834(Class5218.class).addListener(new Class7935(this, class8699));
         }
     }
 }

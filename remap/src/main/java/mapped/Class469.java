@@ -21,7 +21,7 @@ public interface Class469
         final IRecipe<?> method2402 = this.method2402();
         if (method2402 != null) {
             if (!method2402.isDynamic()) {
-                playerEntity.method2862((Collection<IRecipe<?>>)Collections.singleton(method2402));
+                playerEntity.method2862(Collections.singleton(method2402));
                 this.method2401(null);
             }
         }

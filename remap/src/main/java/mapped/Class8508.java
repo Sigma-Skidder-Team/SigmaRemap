@@ -41,7 +41,7 @@ public class Class8508
                 final CompoundNBT e = new CompoundNBT();
                 e.putByte("Slot", (byte)i);
                 class54.method27627(e);
-                ((AbstractList<CompoundNBT>)class53).add(e);
+                class53.add(e);
             }
         }
         if (!class53.isEmpty() || b) {

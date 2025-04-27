@@ -20,13 +20,13 @@ public class Class5978 implements JsonDeserializer<Class7787>, JsonSerializer<Cl
         final JsonObject method35913 = Class9583.method35913(jsonElement, "status");
         final Class7787 class7787 = new Class7787();
         if (method35913.has("description")) {
-            class7787.method24991((ITextComponent)jsonDeserializationContext.deserialize(method35913.get("description"), (Type) ITextComponent.class));
+            class7787.method24991(jsonDeserializationContext.deserialize(method35913.get("description"), ITextComponent.class));
         }
         if (method35913.has("players")) {
-            class7787.method24993((Class8499)jsonDeserializationContext.deserialize(method35913.get("players"), (Type)Class8499.class));
+            class7787.method24993(jsonDeserializationContext.deserialize(method35913.get("players"), Class8499.class));
         }
         if (method35913.has("version")) {
-            class7787.method24995((Class9315)jsonDeserializationContext.deserialize(method35913.get("version"), (Type)Class9315.class));
+            class7787.method24995(jsonDeserializationContext.deserialize(method35913.get("version"), Class9315.class));
         }
         if (method35913.has("favicon")) {
             class7787.method24996(Class9583.method35895(method35913, "favicon"));
@@ -37,17 +37,17 @@ public class Class5978 implements JsonDeserializer<Class7787>, JsonSerializer<Cl
     public JsonElement serialize(final Class7787 class7787, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
         if (class7787.method24990() != null) {
-            jsonObject.add("description", jsonSerializationContext.serialize((Object)class7787.method24990()));
+            jsonObject.add("description", jsonSerializationContext.serialize(class7787.method24990()));
         }
         if (class7787.method24992() != null) {
-            jsonObject.add("players", jsonSerializationContext.serialize((Object)class7787.method24992()));
+            jsonObject.add("players", jsonSerializationContext.serialize(class7787.method24992()));
         }
         if (class7787.method24994() != null) {
-            jsonObject.add("version", jsonSerializationContext.serialize((Object)class7787.method24994()));
+            jsonObject.add("version", jsonSerializationContext.serialize(class7787.method24994()));
         }
         if (class7787.method24997() != null) {
             jsonObject.addProperty("favicon", class7787.method24997());
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

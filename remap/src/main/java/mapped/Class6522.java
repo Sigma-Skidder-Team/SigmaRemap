@@ -64,7 +64,7 @@ public class Class6522 extends Class6521
     }
     
     private void method19722(final Class2227 class2227, final Class513 class2228, final List<ResourceLocation> list) {
-        class2228.field3039.method17469(new Class4331(class2227, list, (Collection<ResourceLocation>)Collections.emptyList(), this.field25953, this.field25954, this.field25955, this.field25956));
+        class2228.field3039.method17469(new Class4331(class2227, list, Collections.emptyList(), this.field25953, this.field25954, this.field25955, this.field25956));
     }
     
     public CompoundNBT method19723() {
@@ -76,13 +76,13 @@ public class Class6522 extends Class6521
         final ListNBT class52 = new ListNBT();
         final Iterator<ResourceLocation> iterator = this.field25951.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<StringNBT>)class52).add(StringNBT.method290(iterator.next().toString()));
+            class52.add(StringNBT.method290(iterator.next().toString()));
         }
         class51.put("recipes", class52);
         final ListNBT class53 = new ListNBT();
         final Iterator<ResourceLocation> iterator2 = this.field25952.iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<StringNBT>)class53).add(StringNBT.method290(iterator2.next().toString()));
+            class53.add(StringNBT.method290(iterator2.next().toString()));
         }
         class51.put("toBeDisplayed", class53);
         return class51;
@@ -104,14 +104,14 @@ public class Class6522 extends Class6521
                 final ResourceLocation class53 = new ResourceLocation(method353);
                 final Optional<? extends IRecipe<?>> method354 = this.field25962.method6382(class53);
                 if (!method354.isPresent()) {
-                    Class6522.field25961.error("Tried to load unrecognized recipe: {} removed now.", (Object)class53);
+                    Class6522.field25961.error("Tried to load unrecognized recipe: {} removed now.", class53);
                 }
                 else {
                     consumer.accept(method354.get());
                 }
             }
             catch (final Class2357 class54) {
-                Class6522.field25961.error("Tried to load improperly formatted recipe: {} removed now.", (Object)method353);
+                Class6522.field25961.error("Tried to load improperly formatted recipe: {} removed now.", method353);
             }
         }
     }

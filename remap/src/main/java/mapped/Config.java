@@ -10,7 +10,8 @@ import org.apache.logging.log4j.LogManager;
 import java.nio.IntBuffer;
 import java.net.URI;
 import java.io.FileOutputStream;
-import java.util.Arrays;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 import java.lang.reflect.Array;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -20,12 +21,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.File;
-import java.util.StringTokenizer;
-import java.util.Iterator;
-import java.util.Collection;
-import java.util.ArrayList;
 import java.io.IOException;
-import java.util.List;
+
 import org.lwjgl.opengl.GL30;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -84,7 +81,7 @@ public class Config
         final StringBuffer sb = new StringBuffer(32);
         if (method29002()) {
             sb.append("DL: ");
-            sb.append(String.valueOf(Class8850.method30998()));
+            sb.append(Class8850.method30998());
             sb.append(", ");
         }
         sb.append("OptiFine_1.15.2_HD_U_G1_pre18");
@@ -161,7 +158,7 @@ public class Config
                 Config.field36015 = method28957(method28821)[0];
             }
             catch (final Exception ex) {
-                warn("" + ex.getClass().getName() + ": " + ex.getMessage());
+                warn(ex.getClass().getName() + ": " + ex.getMessage());
                 Config.field36015 = "";
             }
         }
@@ -192,7 +189,7 @@ public class Config
                 field36024 += 100 * method28933(method28937[1], 0);
             }
             if (method28937.length > 2) {
-                field36024 += 1 * method28933(method28937[2], 0);
+                field36024 += method28933(method28937[2], 0);
             }
             Config.field36024 = field36024;
         }
@@ -201,7 +198,7 @@ public class Config
     
     public static String method28825() {
         final Class6435 method28827 = method28827();
-        return "" + method28827.method19197() + "." + method28827.method19198() + "." + method28827.method19199();
+        return method28827.method19197() + "." + method28827.method19198() + "." + method28827.method19199();
     }
     
     private static Class6435 method28826() {
@@ -673,7 +670,7 @@ public class Config
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(value));
+                sb.append(value);
             }
             return sb.toString();
         }
@@ -692,7 +689,7 @@ public class Config
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(obj));
+                sb.append(obj);
             }
             return sb.toString();
         }
@@ -711,7 +708,7 @@ public class Config
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(j));
+                sb.append(j);
             }
             return sb.toString();
         }
@@ -730,7 +727,7 @@ public class Config
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(f));
+                sb.append(f);
             }
             return sb.toString();
         }
@@ -1094,7 +1091,7 @@ public class Config
     
     public static String[] method28957(final InputStream in) throws IOException {
         final ArrayList list = new ArrayList();
-        final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, "ASCII"));
+        final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in, StandardCharsets.US_ASCII));
         while (true) {
             final String line = bufferedReader.readLine();
             if (line == null) {
@@ -1239,7 +1236,7 @@ public class Config
     }
     
     public static boolean equals(final Object o, final Object obj) {
-        return o == obj || (o != null && o.equals(obj));
+        return Objects.equals(o, obj);
     }
     
     public static boolean method28977(final Object o, final Object[] array) {
@@ -1302,7 +1299,7 @@ public class Config
     }
     
     public static Object[] method28983(final Object[] a, final Object o, final int n) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(a));
+        final ArrayList list = new ArrayList(Arrays.asList(a));
         list.add(n, o);
         return list.toArray((Object[])Array.newInstance(a.getClass().getComponentType(), list.size()));
     }
@@ -1322,7 +1319,7 @@ public class Config
     }
     
     public static Object[] method28985(final Object[] a, final Object o) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(a));
+        final ArrayList list = new ArrayList(Arrays.asList(a));
         list.remove(o);
         return method28986(list, a.getClass().getComponentType());
     }
@@ -1345,7 +1342,7 @@ public class Config
     }
     
     public static void method28988() {
-        Config.field36028.fontRenderer.method6610("" + Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.worldRenderer.method5757() + ", E: " + Config.field36028.worldRenderer.method5758() + "+" + Config.field36028.worldRenderer.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
+        Config.field36028.fontRenderer.method6610(Class9570.method35833(Class9570.field41444, -1) + "/" + method28989() + " fps, C: " + Config.field36028.worldRenderer.method5757() + ", E: " + Config.field36028.worldRenderer.method5758() + "+" + Config.field36028.worldRenderer.method5759() + ", U: " + method28990(Config.field36028.field4707), 2.0f, 2.0f, -2039584);
     }
     
     public static int method28989() {
@@ -1425,9 +1422,7 @@ public class Config
             final int length = array.length;
             final int[] array3 = new int[length + array2.length];
             System.arraycopy(array, 0, array3, 0, length);
-            for (int i = 0; i < array2.length; ++i) {
-                array3[i + length] = array2[i];
-            }
+            System.arraycopy(array2, 0, array3, 0 + length, array2.length);
             return array3;
         }
         throw new NullPointerException("The given array is NULL");
@@ -1435,7 +1430,7 @@ public class Config
     
     public static void method28999(final File file, final String s) throws IOException {
         final FileOutputStream fileOutputStream = new FileOutputStream(file);
-        fileOutputStream.write(s.getBytes("ASCII"));
+        fileOutputStream.write(s.getBytes(StandardCharsets.US_ASCII));
         fileOutputStream.close();
     }
     
@@ -1515,7 +1510,7 @@ public class Config
                 if (i > 0) {
                     sb.append(str);
                 }
-                sb.append(String.valueOf(b));
+                sb.append(b);
             }
             return sb.toString();
         }

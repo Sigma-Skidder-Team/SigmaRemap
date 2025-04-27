@@ -34,6 +34,6 @@ public class Class3978 extends Block
     }
     
     static {
-        field17970 = new Class2259("container.cartography_table", new Object[0]);
+        field17970 = new Class2259("container.cartography_table");
     }
 }

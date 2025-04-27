@@ -42,7 +42,7 @@ public class HandshakedataImpl1 implements HandshakeBuilder {
     /**
      * Attribute for the http fields and values
      */
-    private TreeMap<String, String> map;
+    private final TreeMap<String, String> map;
 
     /**
      * Constructor for handshake implementation

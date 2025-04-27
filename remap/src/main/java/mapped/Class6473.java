@@ -40,12 +40,12 @@ public class Class6473 extends Class6470
                 }
                 else {
                     final String str;
-                    s = str + Class8822.method30773("options.fullscreen.current", new Object[0]);
+                    s = str + Class8822.method30773("options.fullscreen.current");
                 }
                 return s;
             }
             else {
-                return Class8822.method30773("options.fullscreen.unavailable", new Object[0]);
+                return Class8822.method30773("options.fullscreen.unavailable");
             }
         });
     }

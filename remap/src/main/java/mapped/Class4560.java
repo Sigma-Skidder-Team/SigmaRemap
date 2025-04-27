@@ -59,9 +59,9 @@ public class Class4560 extends Class4535<Class5117>
     }
     
     static {
-        field20036 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.BAMBOO.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, 1)).with(Class3913.field17724, Class184.field574)).with((IProperty<Comparable>)Class3913.field17725, 0);
-        field20037 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field576)).with((IProperty<Comparable>)Class3913.field17725, 1);
-        field20038 = ((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field576);
-        field20039 = ((StateHolder<O, BlockState>)Class4560.field20036).with(Class3913.field17724, Class184.field575);
+        field20036 = ((StateHolder<O, BlockState>) ((StateHolder<O, BlockState>) Blocks.BAMBOO.getDefaultState()).with((IProperty<Comparable>)Class3913.field17723, 1).with(Class3913.field17724, Class184.field574)).with((IProperty<Comparable>)Class3913.field17725, 0);
+        field20037 = ((StateHolder<O, BlockState>) Class4560.field20036.with(Class3913.field17724, Class184.field576)).with((IProperty<Comparable>)Class3913.field17725, 1);
+        field20038 = Class4560.field20036.with(Class3913.field17724, Class184.field576);
+        field20039 = Class4560.field20036.with(Class3913.field17724, Class184.field575);
     }
 }

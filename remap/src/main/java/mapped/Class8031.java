@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Class8031
 {
     private static String[] field33057;
-    private ArrayList field33058;
+    private final ArrayList field33058;
     public final /* synthetic */ Class2425 field33059;
     
     public Class8031(final Class2425 field33059) {

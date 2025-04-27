@@ -186,7 +186,6 @@ public class AutoMiner extends Module
                                 }
                                 catch (final InterruptedException ex2) {}
                                 this.field16106 = null;
-                                return;
                             })).start();
                         }
                     }

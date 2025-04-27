@@ -76,17 +76,17 @@ public class Class3688 implements Class3689
     @Nullable
     private Class7792 method11340(final Path path, final String s) {
         try (final BufferedReader bufferedReader = Files.newBufferedReader(path)) {
-            final String string = IOUtils.toString((Reader)bufferedReader);
+            final String string = IOUtils.toString(bufferedReader);
             final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             Class8097.method26591(this.method11336(s, Class5704.method16938(string)), byteArrayOutputStream);
             final byte[] byteArray = byteArrayOutputStream.toByteArray();
             return new Class7792(s, byteArray, Class3688.field16998.hashBytes(byteArray).toString());
         }
         catch (final CommandSyntaxException ex) {
-            Class3688.field16995.error("Couldn't convert {} from SNBT to NBT at {} as it's invalid SNBT", (Object)s, (Object)path, (Object)ex);
+            Class3688.field16995.error("Couldn't convert {} from SNBT to NBT at {} as it's invalid SNBT", s, path, ex);
         }
         catch (final IOException ex2) {
-            Class3688.field16995.error("Couldn't convert {} from SNBT to NBT at {}", (Object)s, (Object)path, (Object)ex2);
+            Class3688.field16995.error("Couldn't convert {} from SNBT to NBT at {}", s, path, ex2);
         }
         return null;
     }
@@ -94,16 +94,16 @@ public class Class3688 implements Class3689
     private void method11341(final Class8842 class8842, final Class7792 class8843, final Path path) {
         final Path resolve = path.resolve(Class7792.method25032(class8843) + ".nbt");
         try {
-            if (!Objects.equals(class8842.method30884(resolve), Class7792.method25033(class8843)) || !Files.exists(resolve, new LinkOption[0])) {
-                Files.createDirectories(resolve.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-                try (final OutputStream outputStream = Files.newOutputStream(resolve, new OpenOption[0])) {
+            if (!Objects.equals(class8842.method30884(resolve), Class7792.method25033(class8843)) || !Files.exists(resolve)) {
+                Files.createDirectories(resolve.getParent(), new FileAttribute[0]);
+                try (final OutputStream outputStream = Files.newOutputStream(resolve)) {
                     outputStream.write(Class7792.method25034(class8843));
                 }
             }
             class8842.method30885(resolve, Class7792.method25033(class8843));
         }
         catch (final IOException ex) {
-            Class3688.field16995.error("Couldn't write structure {} at {}", (Object)Class7792.method25032(class8843), (Object)resolve, (Object)ex);
+            Class3688.field16995.error("Couldn't write structure {} at {}", (Object)Class7792.method25032(class8843), resolve, ex);
         }
     }
     

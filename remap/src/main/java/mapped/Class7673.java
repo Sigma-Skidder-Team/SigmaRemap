@@ -45,7 +45,7 @@ public class Class7673
     }
     
     public static List<Class7971> method24357(final List<Class7971> c, final Class225 class225, final String s) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)c);
+        final ArrayList list = new ArrayList(c);
         switch (Class6748.field26542[class225.ordinal()]) {
             case 1: {
                 Collections.sort((List<Object>)list, (Comparator<? super Object>)new Class4465());

@@ -26,7 +26,7 @@ public class Class3700 implements Class3689
     private final List<Consumer<Consumer<Class8863>>> field17021;
     
     public Class3700(final Class7203 field17020) {
-        this.field17021 = (List<Consumer<Consumer<Class8863>>>)ImmutableList.of((Object)new Class5909(), (Object)new Class5914(), (Object)new Class5908(), (Object)new Class5910(), (Object)new Class5911());
+        this.field17021 = (List<Consumer<Consumer<Class8863>>>)ImmutableList.of(new Class5909(), new Class5914(), new Class5908(), new Class5910(), (Object)new Class5911());
         this.field17020 = field17020;
     }
     
@@ -37,7 +37,7 @@ public class Class3700 implements Class3689
             this.field17020.method22099();
             if (!set.add(class8844.method31042())) {
                 new IllegalStateException("Duplicate advancement " + class8844.method31042());
-                throw;
+                throw
             }
             else {
                 method11375(path, class8844);
@@ -47,14 +47,13 @@ public class Class3700 implements Class3689
                 }
                 catch (final IOException ex2) {
                     final Path path2;
-                    Class3700.field17018.error("Couldn't save advancement {}", (Object)path2, (Object)ex2);
+                    Class3700.field17018.error("Couldn't save advancement {}", path2, ex2);
                 }
-                return;
             }
         };
         final Iterator<Consumer<Consumer<Class8863>>> iterator = this.field17021.iterator();
         while (iterator.hasNext()) {
-            ((Consumer<Consumer>)iterator.next()).accept(consumer);
+            iterator.next().accept(consumer);
         }
     }
     

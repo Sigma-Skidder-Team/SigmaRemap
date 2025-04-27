@@ -35,6 +35,6 @@ public class Class4245 extends Class4211
         jsonObject.add("entered", this.field19063.method29813());
         jsonObject.add("exited", this.field19064.method29813());
         jsonObject.add("distance", this.field19065.method30759());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

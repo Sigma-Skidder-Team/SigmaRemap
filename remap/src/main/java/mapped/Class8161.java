@@ -210,7 +210,6 @@ public class Class8161
                                 final Object o = (n9 - this.field33608) * this.field33604.method5332().method7696() / this.field33604.method5332().method7694();
                                 final Object o2 = (n11 - this.field33609) * this.field33604.method5332().method7697() / this.field33604.method5332().method7695();
                                 class575.method2984(n8, n10, this.field33611, n12, n13);
-                                return;
                             }, "mouseDragged event handler", field4700.getClass().getCanonicalName());
                         }
                     }

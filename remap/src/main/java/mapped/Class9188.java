@@ -26,7 +26,7 @@ public class Class9188 extends DataFix
     
     public TypeRewriteRule makeRule() {
         return this.fixTypeEverywhereTyped(this.field38930, this.getInputSchema().getType(Class9451.field40619), typed -> typed.update(DSL.remainderFinder(), dynamic -> dynamic.updateMapValues(pair2 -> pair2.mapFirst(p2 -> {
-            ((Dynamic)pair2.getFirst()).asString("");
+            pair2.getFirst().asString("");
             return dynamic2.createString((String)this.field38931.apply(s));
         }))));
     }

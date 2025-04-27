@@ -38,8 +38,8 @@ public class Class8476 extends DataFix
             final Object o2 = p0 -> {};
             final Object o3 = p1 -> {};
             final Object o4 = p0 -> {};
-            typed = this.method28288((Typed<?>)typed, "minecraft:falling_block", this::method28286);
-            typed = this.method28288((Typed<?>)typed, "minecraft:enderman", typed3 -> this.method28287((Typed<?>)typed3, "carried", "carriedData", "carriedBlockState"));
+            typed = this.method28288(typed, "minecraft:falling_block", this::method28286);
+            typed = this.method28288(typed, "minecraft:enderman", typed3 -> this.method28287(typed3, "carried", "carriedData", "carriedBlockState"));
             typed = this.method28288((Typed<?>)typed, "minecraft:arrow", function);
             typed = this.method28288((Typed<?>)typed, "minecraft:spectral_arrow", function);
             typed = this.method28288((Typed<?>)typed, "minecraft:egg", function2);
@@ -62,15 +62,15 @@ public class Class8476 extends DataFix
     }
     
     private Typed<?> method28286(final Typed<?> typed) {
-        return (Typed<?>)typed.update(DSL.optional((Type)DSL.field("Block", DSL.named(Class9451.field40627.typeName(), DSL.or(DSL.intType(), DSL.namespacedString())))).finder(), DSL.optional((Type)DSL.field("BlockState", DSL.named(Class9451.field40623.typeName(), DSL.remainderType()))), either -> Either.left((Object)Pair.of((Object)Class9451.field40623.typeName(), (Object)Class7922.method25672((int)either.map(pair -> ((Either)pair.getSecond()).map(n -> n, (Function)Class8476::method28285), p1 -> dynamic2.get("TileID").asNumber().map(Number::intValue).orElseGet(() -> dynamic3.get("Tile").asByte((byte)0) & 0xFF)) << 4 | (dynamic.get("Data").asInt(0) & 0xF))))).set(DSL.remainderFinder(), (Object)((Dynamic)typed.get(DSL.remainderFinder())).remove("Data").remove("TileID").remove("Tile"));
+        return (Typed<?>)typed.update(DSL.optional((Type)DSL.field("Block", DSL.named(Class9451.field40627.typeName(), DSL.or(DSL.intType(), DSL.namespacedString())))).finder(), DSL.optional((Type)DSL.field("BlockState", DSL.named(Class9451.field40623.typeName(), DSL.remainderType()))), either -> Either.left((Object)Pair.of((Object)Class9451.field40623.typeName(), (Object)Class7922.method25672((int)either.map(pair -> ((Either)pair.getSecond()).map(n -> n, (Function)Class8476::method28285), p1 -> dynamic2.get("TileID").asNumber().map(Number::intValue).orElseGet(() -> dynamic3.get("Tile").asByte((byte)0) & 0xFF)) << 4 | (dynamic.get("Data").asInt(0) & 0xF))))).set(DSL.remainderFinder(), ((Dynamic)typed.get(DSL.remainderFinder())).remove("Data").remove("TileID").remove("Tile"));
     }
     
     private Typed<?> method28287(final Typed<?> typed, final String s, final String s2, final String s3) {
-        return (Typed<?>)typed.update(((Type)DSL.field(s, DSL.named(Class9451.field40627.typeName(), DSL.or(DSL.intType(), DSL.namespacedString())))).finder(), (Type)DSL.field(s3, DSL.named(Class9451.field40623.typeName(), DSL.remainderType())), pair -> Pair.of((Object)Class9451.field40623.typeName(), (Object)Class7922.method25672((int)((Either)pair.getSecond()).map(n -> n, (Function)Class8476::method28285) << 4 | (dynamic.get(s4).asInt(0) & 0xF)))).set(DSL.remainderFinder(), (Object)((Dynamic)typed.getOrCreate(DSL.remainderFinder())).remove(s2));
+        return (Typed<?>)typed.update(((Type)DSL.field(s, DSL.named(Class9451.field40627.typeName(), DSL.or(DSL.intType(), DSL.namespacedString())))).finder(), (Type)DSL.field(s3, DSL.named(Class9451.field40623.typeName(), DSL.remainderType())), pair -> Pair.of((Object)Class9451.field40623.typeName(), (Object)Class7922.method25672((int)((Either)pair.getSecond()).map(n -> n, (Function)Class8476::method28285) << 4 | (dynamic.get(s4).asInt(0) & 0xF)))).set(DSL.remainderFinder(), ((Dynamic)typed.getOrCreate(DSL.remainderFinder())).remove(s2));
     }
     
     private Typed<?> method28288(final Typed<?> typed, final String s, final Function<Typed<?>, Typed<?>> function) {
-        return (Typed<?>)typed.updateTyped(DSL.namedChoice(s, this.getInputSchema().getChoiceType(Class9451.field40626, s)), this.getOutputSchema().getChoiceType(Class9451.field40626, s), (Function)function);
+        return (Typed<?>)typed.updateTyped(DSL.namedChoice(s, this.getInputSchema().getChoiceType(Class9451.field40626, s)), this.getOutputSchema().getChoiceType(Class9451.field40626, s), function);
     }
     
     static {

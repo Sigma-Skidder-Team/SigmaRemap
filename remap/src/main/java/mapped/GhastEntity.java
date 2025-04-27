@@ -105,9 +105,7 @@ public class GhastEntity extends FlyingEntity implements IMob
     public static boolean method4225(final EntityType<GhastEntity> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (class7500.method6954() != Class2113.field12290) {
             if (random.nextInt(20) == 0) {
-                if (Class759.method4178(class7499, class7500, class7501, class7502, random)) {
-                    return true;
-                }
+                return Class759.method4178(class7499, class7500, class7501, class7502, random);
             }
         }
         return false;

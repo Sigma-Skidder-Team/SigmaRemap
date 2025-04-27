@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class ModuleManager
 {
-    private Map<Class<? extends Module>, Module> moduleMap;
+    private final Map<Class<? extends Module>, Module> moduleMap;
     private ProfileManager profile;
     private JelloTouch macOSTouchBar;
     private List<Module> modules;

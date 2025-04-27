@@ -49,6 +49,6 @@ public class DiscordUser extends Structure
     }
     
     static {
-        FIELD_ORDER = Collections.unmodifiableList((List<? extends String>)Arrays.asList("userId", "username", "discriminator", "avatar"));
+        FIELD_ORDER = Collections.unmodifiableList(Arrays.asList("userId", "username", "discriminator", "avatar"));
     }
 }

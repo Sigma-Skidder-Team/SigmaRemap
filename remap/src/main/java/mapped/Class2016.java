@@ -14,5 +14,5 @@ public enum Class2016
     field11491, 
     field11492, 
     field11493, 
-    field11494;
+    field11494
 }

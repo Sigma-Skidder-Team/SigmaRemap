@@ -31,7 +31,7 @@ public class Class6116 implements Class6113
             final int method6992 = field4683.method6992(Class237.field911, class7354);
             final int method6993 = MathHelper.method35697((15 - method6992) / 15.0f * 0.5f + 0.16f, 0.9f, 0.9f);
             final long method6994 = Class353.method1111(class7354.toLong());
-            if (((LongSet)set).add(method6994)) {
+            if (set.add(method6994)) {
                 Class7282.method22340(field4683.getChunkProvider().getLightManager().method7289(Class237.field911, Class353.method1092(method6994)), Class353.method1099(method6994) * 16 + 8, Class353.method1100(method6994) * 16 + 8, Class353.method1101(method6994) * 16 + 8, 16711680, 0.3f);
             }
             if (method6992 == 15) {

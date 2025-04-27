@@ -52,7 +52,7 @@ public class Class1878 implements Class1851
             this.field10218 = method35644;
             this.field10219 = field10219;
             this.field10220 = field10219.method6753();
-            this.field10225 = (Class7065)field10219.method6904().method7438().method18876();
+            this.field10225 = field10219.method6904().method7438().method18876();
             this.field10221 = field10219.method6743();
             this.field10222 = field10219.method6764();
             this.field10223 = field10219.method6790();
@@ -95,8 +95,8 @@ public class Class1878 implements Class1851
         }
         final IChunk class9314 = this.field10215.get(0);
         final IChunk class9315 = this.field10215.get(this.field10215.size() - 1);
-        Class1878.field10214.error("Requested chunk : {} {}", (Object)i, (Object)j);
-        Class1878.field10214.error("Region bounds : {} {} | {} {}", (Object)class9314.method7019().field32290, (Object)class9314.method7019().field32291, (Object)class9315.method7019().field32290, (Object)class9315.method7019().field32291);
+        Class1878.field10214.error("Requested chunk : {} {}", i, j);
+        Class1878.field10214.error("Region bounds : {} {} | {} {}", class9314.method7019().field32290, class9314.method7019().field32291, class9315.method7019().field32290, class9315.method7019().field32291);
         if (class9313 == null) {
             throw Util.pauseDevMode(new RuntimeException(String.format("We are asking a region for a chunk out of bound | %s %s", i, j)));
         }
@@ -110,9 +110,7 @@ public class Class1878 implements Class1851
         if (n >= class1860.method7019().field32290) {
             if (n <= class1861.method7019().field32290) {
                 if (n2 >= class1860.method7019().field32291) {
-                    if (n2 <= class1861.method7019().field32291) {
-                        return true;
-                    }
+                    return n2 <= class1861.method7019().field32291;
                 }
             }
         }
@@ -192,7 +190,7 @@ public class Class1878 implements Class1851
                 }
             }
             if (method6965.getBlockState(class354).getBlock() instanceof Class3840) {
-                Class1878.field10214.warn("Tried to access a block entity before it was created. {}", (Object)class354);
+                Class1878.field10214.warn("Tried to access a block entity before it was created. {}", class354);
             }
             return null;
         }

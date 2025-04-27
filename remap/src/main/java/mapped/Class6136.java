@@ -17,7 +17,7 @@ public class Class6136 extends Class6132
     }
     
     public Dynamic<?> method18361(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)(dynamic.get("Color").map((Function)Dynamic::asNumber).isPresent() ? dynamic : dynamic.set("Color", dynamic.createByte((byte)10)));
+        return dynamic.get("Color").map((Function)Dynamic::asNumber).isPresent() ? dynamic : dynamic.set("Color", dynamic.createByte((byte)10));
     }
     
     @Override

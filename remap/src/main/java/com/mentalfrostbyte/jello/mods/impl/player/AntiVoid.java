@@ -29,7 +29,7 @@ public class AntiVoid extends Module
         this.field15665 = null;
         this.addSetting(new BooleanSetting("Void", "Catch only above void", true));
         this.addSetting(new NumberSetting("Fall Distance", "Fall distance before catching you", 8.0f, Float.class, 2.0f, 15.0f, 0.5f));
-        this.addSetting(new StringSetting("Mode", "AntiVoid method", 0, new String[] { "Hypixel", "Motion", "Cubecraft", "Legit" }));
+        this.addSetting(new StringSetting("Mode", "AntiVoid method", 0, "Hypixel", "Motion", "Cubecraft", "Legit"));
     }
     
     @Override

@@ -36,11 +36,11 @@ public class Class743 extends Class516<Class3421>
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
         this.blit(n4, n5, 0, 0, this.field3075, this.field3076);
-        final int method35651 = MathHelper.method35651((18 * ((Class3421)this.field3077).method10902() + 20 - 1) / 20, 0, 18);
+        final int method35651 = MathHelper.method35651((18 * this.field3077.method10902() + 20 - 1) / 20, 0, 18);
         if (method35651 > 0) {
             this.blit(n4 + 60, n5 + 44, 176, 29, method35651, 4);
         }
-        final int method35652 = ((Class3421)this.field3077).method10903();
+        final int method35652 = this.field3077.method10903();
         if (method35652 > 0) {
             final int n6 = (int)(28.0f * (1.0f - method35652 / 400.0f));
             if (n6 > 0) {

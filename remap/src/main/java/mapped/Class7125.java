@@ -66,7 +66,7 @@ public final class Class7125
     Label_0087:
         while (true) {
             for (final Class9038 class4522 : method13518.method27253(this.field27769, method13519, method13520, this.field27771)) {
-                final Direction class4523 = class4522.field38249.get((IProperty<Direction>)Class3839.field17415);
+                final Direction class4523 = class4522.field38249.get(Class3839.field17415);
                 final BlockPos field27295 = class4522.field38248;
                 final BlockPos method13523 = field27295.method1149(class4523);
                 final int n3 = field27295.getY() - field27294;
@@ -101,7 +101,7 @@ public final class Class7125
                             int orElse;
                             if (class4524.method27254(this.field27769, BlockPos.ZERO, class4525).getYSize() <= 16) {
                                 orElse = method13526.stream().mapToInt(class4529 -> {
-                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.get((IProperty<Direction>)Class3839.field17415)))) {
+                                    if (class4528.method21415(class4529.field38248.method1149(class4529.field38249.get(Class3839.field17415)))) {
                                         Class7323.field28316.method25554(new ResourceLocation(class4529.field38250.getString("target_pool")));
                                         final Class8795 class4530;
                                         return Math.max(class4530.method30671(this.field27769), Class7323.field28316.method25554(class4530.method30672()).method30671(this.field27769));
@@ -125,7 +125,7 @@ public final class Class7125
                                 final Class261 method13528 = class4524.method27263();
                                 final boolean b2 = method13528 == Class261.field1247;
                                 final int method13529 = field27296.getY();
-                                final int n6 = n3 - method13529 + class4522.field38249.get((IProperty<Direction>)Class3839.field17415).getYOffset();
+                                final int n6 = n3 - method13529 + class4522.field38249.get(Class3839.field17415).getYOffset();
                                 int n7;
                                 if (b && b2) {
                                     n7 = field27294 + n6;

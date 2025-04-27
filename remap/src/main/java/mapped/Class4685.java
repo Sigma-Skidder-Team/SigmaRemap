@@ -31,14 +31,14 @@ public class Class4685 implements Class4659
                 class2347 = new Class2347("probe error");
             }
             else {
-                class2347 = new Class2347("probe error: " + (String)o);
+                class2347 = new Class2347("probe error: " + o);
             }
         }
         else {
             class2347 = new Class2347("probe error", (Throwable)o);
         }
         class2347.field14130 = this.field20230[0].field21319;
-        this.field20231.method13945(new Object[0]);
+        this.field20231.method13945();
         if (Class4968.method15143().isLoggable(Level.FINE)) {
             Class4968.method15143().fine(String.format("probe transport \"%s\" failed because of error: %s", this.field20232, o));
         }

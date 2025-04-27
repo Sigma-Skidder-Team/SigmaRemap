@@ -21,7 +21,7 @@ public class Class8299
     public static final String field34118 = "stroke-opacity";
     public static final String field34119 = "none";
     private String field34120;
-    private Properties field34121;
+    private final Properties field34121;
     
     public Class8299(final String field34120) {
         this.field34120 = "";

@@ -44,7 +44,7 @@ public class Class6445
         collection.forEach(class6812 -> map.computeIfAbsent(class6812.method20853(), p0 -> Lists.newArrayList()).add(class6812));
         return (Collection)hashMap.keySet().stream().flatMap(s2 -> {
             final Collection collection2 = map2.get(s2);
-            return Streams.stream(Iterables.partition((Iterable)collection2, 100)).map(p4 -> {
+            return Streams.stream(Iterables.partition(collection2, 100)).map(p4 -> {
                 final Object o3 = new AtomicInteger();
                 Class8972.method31857(s2);
                 new Class8928(str + ":" + atomicInteger.incrementAndGet(), collection3, consumer);
@@ -91,7 +91,7 @@ public class Class6445
             sb.append("(optional)\n");
         }
         sb.append("-------------------\n");
-        ((AbstractList<StringNBT>)class8322).add(StringNBT.method290(sb.toString() + str));
+        class8322.add(StringNBT.method290(sb + str));
         class8321.method27676("pages", class8322);
         return class8321;
     }

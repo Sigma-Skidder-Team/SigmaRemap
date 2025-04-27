@@ -93,7 +93,7 @@ public class Class6581 implements Class6580
         while (iterator.hasNext()) {
             hashSet.addAll(iterator.next().method19936(s, predicate));
         }
-        final ArrayList arrayList = Lists.newArrayList((Iterable)hashSet);
+        final ArrayList arrayList = Lists.newArrayList(hashSet);
         Collections.sort((List<Comparable>)arrayList);
         return arrayList;
     }
@@ -129,13 +129,13 @@ public class Class6581 implements Class6580
     @Override
     public Class8207 method19929(final Executor executor, final Executor executor2, final CompletableFuture<Class315> completableFuture, final List<Class1727> list) {
         this.method19937();
-        Class6581.field26113.info("Reloading ResourceManager: {}", (Object)list.stream().map((Function<? super Object, ?>)Class1727::method6102).collect((Collector<? super Object, ?, String>)Collectors.joining(", ")));
+        Class6581.field26113.info("Reloading ResourceManager: {}", list.stream().map((Function<? super Object, ?>)Class1727::method6102).collect((Collector<? super Object, ?, String>)Collectors.joining(", ")));
         for (final Class1727 class1727 : list) {
             try {
                 this.method19931(class1727);
             }
             catch (final Exception ex) {
-                Class6581.field26113.error("Failed to add resource pack {}", (Object)class1727.method6102(), (Object)ex);
+                Class6581.field26113.error("Failed to add resource pack {}", class1727.method6102(), ex);
                 return new Class8208(new Class2370(class1727, ex));
             }
         }

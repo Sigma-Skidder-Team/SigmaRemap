@@ -1,15 +1,15 @@
 package org.newdawn.slick.opengl.renderer;
 
 public class QuadBasedLineStripRenderer implements LineStripRenderer {
-    private SGL GL = Renderer.get();
+    private final SGL GL = Renderer.get();
     public static int MAX_POINTS = 10000;
     private boolean antialias;
     private float width = 1.0F;
-    private float[] points;
-    private float[] colours;
+    private final float[] points;
+    private final float[] colours;
     private int pts;
     private int cpt;
-    private DefaultLineStripRenderer def = new DefaultLineStripRenderer();
+    private final DefaultLineStripRenderer def = new DefaultLineStripRenderer();
     private boolean renderHalf;
     private boolean lineCaps = false;
 
@@ -114,7 +114,7 @@ public class QuadBasedLineStripRenderer implements LineStripRenderer {
             float var20 = var18 - var16;
             if (var19 != 0.0F || var20 != 0.0F) {
                 float var21 = var19 * var19 + var20 * var20;
-                float var22 = (float) Math.sqrt((double) var21);
+                float var22 = (float) Math.sqrt(var21);
                 var19 *= var6;
                 var20 *= var6;
                 var19 /= var22;
@@ -149,16 +149,16 @@ public class QuadBasedLineStripRenderer implements LineStripRenderer {
         if (this.lineCaps) {
             float var26 = var1[2] - var1[0];
             float var28 = var1[3] - var1[1];
-            float var30 = (float) Math.toDegrees(Math.atan2((double) var28, (double) var26)) + 90.0F;
+            float var30 = (float) Math.toDegrees(Math.atan2(var28, var26)) + 90.0F;
             if (var26 != 0.0F || var28 != 0.0F) {
                 this.GL.glBegin(SGL.GL_TRIANGLE_FAN);
                 this.bindColor(0);
                 this.GL.glVertex2f(var1[0], var1[1]);
 
                 for (int var32 = 0; (float) var32 < 180.0F + step; var32 = (int) ((float) var32 + step)) {
-                    float var34 = (float) Math.toRadians((double) (var30 + (float) var32));
+                    float var34 = (float) Math.toRadians(var30 + (float) var32);
                     this.GL
-                            .glVertex2f(var1[0] + (float) (Math.cos((double) var34) * (double) var6), var1[1] + (float) (Math.sin((double) var34) * (double) var6));
+                            .glVertex2f(var1[0] + (float) (Math.cos(var34) * (double) var6), var1[1] + (float) (Math.sin(var34) * (double) var6));
                 }
 
                 this.GL.glEnd();
@@ -168,17 +168,17 @@ public class QuadBasedLineStripRenderer implements LineStripRenderer {
         if (this.lineCaps) {
             float var27 = var1[var2 * 2 - 2] - var1[var2 * 2 - 4];
             float var29 = var1[var2 * 2 - 1] - var1[var2 * 2 - 3];
-            float var31 = (float) Math.toDegrees(Math.atan2((double) var29, (double) var27)) - 90.0F;
+            float var31 = (float) Math.toDegrees(Math.atan2(var29, var27)) - 90.0F;
             if (var27 != 0.0F || var29 != 0.0F) {
                 this.GL.glBegin(SGL.GL_TRIANGLE_FAN);
                 this.bindColor(var2 - 1);
                 this.GL.glVertex2f(var1[var2 * 2 - 2], var1[var2 * 2 - 1]);
 
                 for (int var33 = 0; (float) var33 < 180.0F + step; var33 = (int) ((float) var33 + step)) {
-                    float var35 = (float) Math.toRadians((double) (var31 + (float) var33));
+                    float var35 = (float) Math.toRadians(var31 + (float) var33);
                     this.GL
                             .glVertex2f(
-                                    var1[var2 * 2 - 2] + (float) (Math.cos((double) var35) * (double) var6), var1[var2 * 2 - 1] + (float) (Math.sin((double) var35) * (double) var6)
+                                    var1[var2 * 2 - 2] + (float) (Math.cos(var35) * (double) var6), var1[var2 * 2 - 1] + (float) (Math.sin(var35) * (double) var6)
                             );
                 }
 
@@ -218,6 +218,6 @@ public class QuadBasedLineStripRenderer implements LineStripRenderer {
 
     @Override
     public boolean applyGLLineFixes() {
-        return this.width != 1.0F ? this.def.applyGLLineFixes() : this.def.applyGLLineFixes();
+        return this.def.applyGLLineFixes();
     }
 }

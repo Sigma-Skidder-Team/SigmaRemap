@@ -15,8 +15,8 @@ import java.util.List;
 
 public class BasicClickTP extends Module
 {
-    private List<Class9407> field15867;
-    private TimerUtil field15868;
+    private final List<Class9407> field15867;
+    private final TimerUtil field15868;
     
     public BasicClickTP() {
         super(Category.MOVEMENT, "Basic", "Basic click tp");

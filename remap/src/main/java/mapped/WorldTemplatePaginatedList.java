@@ -36,9 +36,7 @@ public class WorldTemplatePaginatedList extends ValueObject
         if (this.field28718 * this.field28719 >= this.field28720) {
             if (this.field28718 > 0) {
                 if (this.field28720 > 0) {
-                    if (this.field28719 > 0) {
-                        return true;
-                    }
+                    return this.field28719 > 0;
                 }
             }
         }

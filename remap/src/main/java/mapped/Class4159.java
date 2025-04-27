@@ -78,9 +78,7 @@ public class Class4159 extends Class4158<Class497>
         if (!Class9216.field39049) {
             if (!Config.field36033) {
                 final Entity method5303 = Minecraft.getInstance().method5303();
-                if (class497.method2191(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4159.field18543) {
-                    return false;
-                }
+                return !(class497.method2191(method5303.getPosX(), method5303.getPosY(), method5303.getPosZ()) > Class4159.field18543);
             }
             return true;
         }

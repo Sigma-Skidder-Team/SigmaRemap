@@ -12,7 +12,7 @@ public class Class4876 extends Class4868
     private static String[] field20862;
     private final Texture field20863;
     private boolean field20864;
-    private Animation field20865;
+    private final Animation field20865;
     
     public Class4876(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final Texture field20863) {
         super(customGuiScreen, s, n, n2, n3, n4);

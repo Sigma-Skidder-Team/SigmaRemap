@@ -22,9 +22,7 @@ public class Class9528
     public static boolean method35576(final char c) {
         if (c != '§') {
             if (c >= ' ') {
-                if (c != '\u007f') {
-                    return true;
-                }
+                return c != '\u007f';
             }
         }
         return false;
@@ -66,7 +64,7 @@ public class Class9528
         field41022 = new char[] { '/', '\n', '\r', '\t', '\0', '\f', '`', '?', '*', '\\', '<', '>', '|', '\"', ':' };
         ResourceLeakDetector.setLevel(Class9528.field41020);
         CommandSyntaxException.ENABLE_COMMAND_STACK_TRACES = false;
-        CommandSyntaxException.BUILT_IN_EXCEPTIONS = (BuiltInExceptionProvider)new Class8099();
+        CommandSyntaxException.BUILT_IN_EXCEPTIONS = new Class8099();
         NamespacedStringType.ENSURE_NAMESPACE = Class5174::method16141;
     }
 }

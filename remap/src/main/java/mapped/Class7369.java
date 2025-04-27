@@ -30,11 +30,11 @@ public class Class7369 extends DataFix
             typed.getOptional(opticFinder);
             final Optional optional;
             if (optional.isPresent() && Objects.equals(optional.get().getSecond(), "minecraft:filled_map")) {
-                final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+                final Dynamic dynamic = typed.get(DSL.remainderFinder());
                 typed.getOrCreateTyped(opticFinder2);
                 final Typed typed2;
                 final Dynamic dynamic2 = (Dynamic)typed2.get(DSL.remainderFinder());
-                return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), (Object)dynamic2.set("map", dynamic2.createInt(dynamic.get("Damage").asInt(0)))));
+                return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), dynamic2.set("map", dynamic2.createInt(dynamic.get("Damage").asInt(0)))));
             }
             else {
                 return typed;

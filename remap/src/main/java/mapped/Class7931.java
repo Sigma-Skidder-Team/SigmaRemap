@@ -38,6 +38,6 @@ public class Class7931 extends Class7930
         final ItemStack class513 = (this.field32596 instanceof LivingEntity) ? ((LivingEntity)this.field32596).getHeldItemMainhand() : ItemStack.EMPTY;
         final String string = "death.attack." + this.field32593;
         final String string2 = string + ".item";
-        return (!class513.method27620() && class513.method27667()) ? new Class2259(string2, new Object[] { class511.getDisplayName(), class512, class513.method27684() }) : new Class2259(string, new Object[] { class511.getDisplayName(), class512 });
+        return (!class513.method27620() && class513.method27667()) ? new Class2259(string2, class511.getDisplayName(), class512, class513.method27684()) : new Class2259(string, class511.getDisplayName(), class512);
     }
 }

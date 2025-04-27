@@ -46,7 +46,7 @@ public class Class8000
     }
     
     public JsonElement method26172() {
-        return (JsonElement)((this.field32951 == null) ? JsonNull.INSTANCE : new JsonPrimitive(Class8000.field32950.format(this.field32951)));
+        return (this.field32951 == null) ? JsonNull.INSTANCE : new JsonPrimitive(Class8000.field32950.format(this.field32951));
     }
     
     public static Class8000 method26173(final PacketBuffer class8654) {
@@ -64,7 +64,7 @@ public class Class8000
             return class8000;
         }
         catch (final ParseException ex) {
-            throw new JsonSyntaxException("Invalid datetime: " + s, (Throwable)ex);
+            throw new JsonSyntaxException("Invalid datetime: " + s, ex);
         }
     }
     

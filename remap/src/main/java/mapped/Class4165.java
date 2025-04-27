@@ -64,7 +64,7 @@ public class Class4165 extends Class4158<Class465>
             this.field18563.method18643(class466, method2389, n2, n3);
             this.field18564.method18643(class466, method2389, n2, n3);
             final BlockPos method2390 = class465.getPos();
-            this.field18562.field25183 = (-0.0125f + 0.01f * MathHelper.cos(6.2831855f * ((Math.floorMod(method2390.getX() * 7 + method2390.getY() * 9 + method2390.getZ() * 13 + method2387, 100L) + n) / 100.0f))) * 3.1415927f;
+            this.field18562.field25183 = (-0.0125f + 0.01f * MathHelper.cos(6.2831855f * ((Math.floorMod(method2390.getX() * 7L + method2390.getY() * 9L + method2390.getZ() * 13L + method2387, 100L) + n) / 100.0f))) * 3.1415927f;
             this.field18562.field25181 = -32.0f;
             method12473(class466, class467, n2, n3, this.field18562, Class7637.field30242, true, method2386);
             class466.method22568();

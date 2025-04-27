@@ -7,11 +7,11 @@ package mapped;
 public class Class2389 extends Class2386
 {
     private static final long field14194 = -9119388488683035101L;
-    private String field14195;
-    private Class2314 field14196;
-    private String field14197;
-    private Class2314 field14198;
-    private String field14199;
+    private final String field14195;
+    private final Class2314 field14196;
+    private final String field14197;
+    private final Class2314 field14198;
+    private final String field14199;
     
     public Class2389(final String s, final Class2314 class2314, final String s2, final Class2314 class2315, final String s3) {
         this(s, class2314, s2, class2315, s3, null);
@@ -59,7 +59,7 @@ public class Class2389 extends Class2386
                         }
                     }
                 }
-                sb.append(this.field14196.toString());
+                sb.append(this.field14196);
                 sb.append("\n");
             }
         }
@@ -68,7 +68,7 @@ public class Class2389 extends Class2386
             sb.append("\n");
         }
         if (this.field14198 != null) {
-            sb.append(this.field14198.toString());
+            sb.append(this.field14198);
             sb.append("\n");
         }
         if (this.field14199 != null) {

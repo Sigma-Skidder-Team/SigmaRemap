@@ -7,9 +7,9 @@ package mapped;
 public class Class330 implements Class328
 {
     private static String[] field2047;
-    private String field2048;
-    private Class6300 field2049;
-    private Class2187 field2050;
+    private final String field2048;
+    private final Class6300 field2049;
+    private final Class2187 field2050;
     
     public Class330(final String field2048, final Class6300 field2049, final Class2187 field2050) {
         this.field2048 = field2048;

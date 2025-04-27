@@ -11,7 +11,7 @@ import totalcross.json.JSONObject;
 public class Class6696 extends Class6693
 {
     public Class6696() {
-        super("panic", "Disable all modules", new String[0]);
+        super("panic", "Disable all modules");
     }
     
     @Override

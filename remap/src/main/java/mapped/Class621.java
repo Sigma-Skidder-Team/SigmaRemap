@@ -24,7 +24,7 @@ public class Class621 extends Class608<Class642>
     public void method3617(final Class642 class642) {
         super.method3531(class642);
         if (class642 != null) {
-            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", new Object[] { Registry.field217.getOrDefault(Class642.method3685(class642)).method9864().getString() }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.select", Registry.field217.getOrDefault(Class642.method3685(class642)).method9864().getString()).getString());
         }
     }
     

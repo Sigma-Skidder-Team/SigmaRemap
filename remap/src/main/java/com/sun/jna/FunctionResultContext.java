@@ -6,8 +6,8 @@ package com.sun.jna;
 
 public class FunctionResultContext extends FromNativeContext
 {
-    private Function function;
-    private Object[] args;
+    private final Function function;
+    private final Object[] args;
     
     public FunctionResultContext(final Class<?> resultClass, final Function function, final Object[] args) {
         super(resultClass);

@@ -14,10 +14,10 @@ public class RealmsTasks
     
     private static void method29098(final int n) {
         try {
-            Thread.sleep(n * 1000);
+            Thread.sleep(n * 1000L);
         }
         catch (final InterruptedException ex) {
-            RealmsTasks.field_225184_a.error("", (Throwable)ex);
+            RealmsTasks.field_225184_a.error("", ex);
         }
     }
 
@@ -158,7 +158,7 @@ public class RealmsTasks
                         return;
                     }
 
-                    field_225184_a.error("Couldn't download world data", (Throwable)exception);
+                    field_225184_a.error("Couldn't download world data", exception);
                     this.func_224986_a(exception.getLocalizedMessage());
                     return;
                 }
@@ -217,7 +217,7 @@ public class RealmsTasks
                         return;
                     }
 
-                    RealmsTasks.field_225184_a.error("Failed to close server", (Throwable)exception);
+                    RealmsTasks.field_225184_a.error("Failed to close server", exception);
                     this.func_224986_a("Failed to close the server");
                 }
             }
@@ -395,7 +395,7 @@ public class RealmsTasks
                         return;
                     }
 
-                    field_225184_a.error("Failed to open server", (Throwable)exception);
+                    field_225184_a.error("Failed to open server", exception);
                     this.func_224986_a("Failed to open the server");
                 }
             }

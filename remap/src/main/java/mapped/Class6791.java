@@ -33,7 +33,7 @@ public abstract class Class6791 implements Class6792
         if (class5009 == null) {
             throw new NullPointerException("command is marked non-null but is null");
         }
-        Preconditions.checkArgument(class5009.method15225().matches("^[a-z0-9_-]{3,15}$"), (Object)(class5009.method15225() + " is not a valid sub-command name."));
+        Preconditions.checkArgument(class5009.method15225().matches("^[a-z0-9_-]{3,15}$"), class5009.method15225() + " is not a valid sub-command name.");
         if (!this.method20774(class5009.method15225())) {
             this.field26706.put(class5009.method15225().toLowerCase(Locale.ROOT), class5009);
             return;

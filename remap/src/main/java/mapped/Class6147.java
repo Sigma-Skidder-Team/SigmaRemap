@@ -30,7 +30,7 @@ public class Class6147 extends Class6132
             return dynamic;
         }
         final String lowerCase = string.get().toLowerCase(Locale.ROOT);
-        return (Dynamic<?>)dynamic.set("Motive", dynamic.createString(new ResourceLocation(Class6147.field24881.getOrDefault(lowerCase, lowerCase)).toString()));
+        return dynamic.set("Motive", dynamic.createString(new ResourceLocation(Class6147.field24881.getOrDefault(lowerCase, lowerCase)).toString()));
     }
     
     @Override

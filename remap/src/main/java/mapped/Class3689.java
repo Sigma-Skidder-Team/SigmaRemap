@@ -19,7 +19,7 @@ import com.google.common.hash.HashFunction;
 
 public interface Class3689
 {
-    public static final HashFunction field16998 = Hashing.sha1();
+    HashFunction field16998 = Hashing.sha1();
     
     void method11337(final Class8842 p0) throws IOException;
     
@@ -27,10 +27,10 @@ public interface Class3689
     
     default void method11346(final Gson gson, final Class8842 class8842, final JsonElement jsonElement, final Path path) throws IOException {
         final String json = gson.toJson(jsonElement);
-        final String string = Class3689.field16998.hashUnencodedChars((CharSequence)json).toString();
-        if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path, new LinkOption[0])) {
-            Files.createDirectories(path.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-            try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path, new OpenOption[0])) {
+        final String string = Class3689.field16998.hashUnencodedChars(json).toString();
+        if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path)) {
+            Files.createDirectories(path.getParent(), new FileAttribute[0]);
+            try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path)) {
                 bufferedWriter.write(json);
             }
         }

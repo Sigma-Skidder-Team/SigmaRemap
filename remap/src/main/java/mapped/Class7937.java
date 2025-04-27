@@ -114,10 +114,9 @@ public class Class7937 implements Class7938
                 return o2;
             }).whenComplete((p1, t3) -> {
                 if (t3 != null) {
-                    Class7937.field32606.warn("Pack application failed: {}, deleting file {}", (Object)t3.getMessage(), (Object)file2);
+                    Class7937.field32606.warn("Pack application failed: {}, deleting file {}", t3.getMessage(), (Object)file2);
                     method25743(file2);
                 }
-                return;
             });
             field32612 = this.field32612;
         }
@@ -132,7 +131,7 @@ public class Class7937 implements Class7938
             Files.delete(file.toPath());
         }
         catch (final IOException ex) {
-            Class7937.field32606.warn("Failed to delete file {}: {}", (Object)file, (Object)ex.getMessage());
+            Class7937.field32606.warn("Failed to delete file {}: {}", file, ex.getMessage());
         }
     }
     
@@ -155,38 +154,38 @@ public class Class7937 implements Class7938
     
     private boolean method25745(final String s, final File file) {
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
-            final String sha1Hex = DigestUtils.sha1Hex((InputStream)fileInputStream);
+            final String sha1Hex = DigestUtils.sha1Hex(fileInputStream);
             if (s.isEmpty()) {
-                Class7937.field32606.info("Found file {} without verification hash", (Object)file);
+                Class7937.field32606.info("Found file {} without verification hash", file);
                 return true;
             }
             if (sha1Hex.toLowerCase(Locale.ROOT).equals(s.toLowerCase(Locale.ROOT))) {
-                Class7937.field32606.info("Found file {} matching requested hash {}", (Object)file, (Object)s);
+                Class7937.field32606.info("Found file {} matching requested hash {}", file, s);
                 return true;
             }
-            Class7937.field32606.warn("File {} had wrong hash (expected {}, found {}).", (Object)file, (Object)s, (Object)sha1Hex);
+            Class7937.field32606.warn("File {} had wrong hash (expected {}, found {}).", file, s, sha1Hex);
             return false;
         }
         catch (final IOException ex) {
-            Class7937.field32606.warn("File {} couldn't be hashed.", (Object)file, (Object)ex);
+            Class7937.field32606.warn("File {} couldn't be hashed.", file, ex);
         }
         return false;
     }
     
     private void method25746() {
         try {
-            final ArrayList arrayList = Lists.newArrayList((Iterable)FileUtils.listFiles(this.field32609, TrueFileFilter.TRUE, (IOFileFilter)null));
+            final ArrayList arrayList = Lists.newArrayList((Iterable)FileUtils.listFiles(this.field32609, TrueFileFilter.TRUE, null));
             arrayList.sort(LastModifiedFileComparator.LASTMODIFIED_REVERSE);
             int n = 0;
             for (final File file : arrayList) {
                 if (n++ >= 10) {
-                    Class7937.field32606.info("Deleting old server resource pack {}", (Object)file.getName());
+                    Class7937.field32606.info("Deleting old server resource pack {}", file.getName());
                     FileUtils.deleteQuietly(file);
                 }
             }
         }
         catch (final IllegalArgumentException ex) {
-            Class7937.field32606.error("Error while deleting old server resource pack : {}", (Object)ex.getMessage());
+            Class7937.field32606.error("Error while deleting old server resource pack : {}", ex.getMessage());
         }
     }
     
@@ -195,22 +194,22 @@ public class Class7937 implements Class7938
         Class1846 method6637 = null;
         Object message = null;
         try (final Class1733 class8546 = new Class1733(file)) {
-            class8545 = class8546.method6101((Class5092<Class8545>)Class8545.field35888);
+            class8545 = class8546.method6101(Class8545.field35888);
             try (final InputStream method6638 = class8546.method6096("pack.png")) {
                 method6637 = Class1846.method6637(method6638);
             }
             catch (final IllegalArgumentException | IOException ex) {
-                Class7937.field32606.info("Could not read pack.png: {}", (Object)((Throwable)ex).getMessage());
+                Class7937.field32606.info("Could not read pack.png: {}", ex.getMessage());
             }
         }
         catch (final IOException ex2) {
             message = ex2.getMessage();
         }
         if (message != null) {
-            return (CompletableFuture<Void>) Util.method27843(new RuntimeException(String.format("Invalid resourcepack at %s: %s", file, message)));
+            return Util.method27843(new RuntimeException(String.format("Invalid resourcepack at %s: %s", file, message)));
         }
-        Class7937.field32606.info("Applying server pack {}", (Object)file);
-        this.field32613 = new Class1922("server", true, () -> new Class1733(file2), (ITextComponent)new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);
+        Class7937.field32606.info("Applying server pack {}", file);
+        this.field32613 = new Class1922("server", true, () -> new Class1733(file2), new Class2259("resourcePack.server.name", new Object[0]), class8545.method28688(), Class2009.method8044(class8545.method28689()), Class2043.field11642, true, method6637);
         return Minecraft.getInstance().method5278();
     }
     

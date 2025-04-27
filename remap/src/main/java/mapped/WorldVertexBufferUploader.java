@@ -15,8 +15,8 @@ public class WorldVertexBufferUploader
     public static void draw(final BufferBuilder class4148) {
         if (RenderSystem.method29984()) {
             final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
-            final Class8127 class4149 = (Class8127)method12401.getFirst();
-            method28283((ByteBuffer)method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
+            final Class8127 class4149 = method12401.getFirst();
+            method28283(method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
         }
         else {
             if (class4148.method12417() == 7) {
@@ -26,8 +26,8 @@ public class WorldVertexBufferUploader
             }
             RenderSystem.method29991(() -> {
                 final Pair<Class8127, ByteBuffer> method12401 = class4148.method12401();
-                final Class8127 class4149 = (Class8127)method12401.getFirst();
-                method28283((ByteBuffer)method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
+                final Class8127 class4149 = method12401.getFirst();
+                method28283(method12401.getSecond(), class4149.method26772(), class4149.method26770(), class4149.method26771());
             });
         }
     }

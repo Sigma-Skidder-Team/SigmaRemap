@@ -131,7 +131,6 @@ public class TestFly extends Module
     @EventListener
     public void method10022(final Class5741 class5741) {
         if (this.isEnabled()) {
-            return;
         }
     }
 }

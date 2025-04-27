@@ -16,9 +16,9 @@ public class Class4836 extends Class4825
     private BufferedImage field20724;
     private Texture field20725;
     private float field20726;
-    private LoadingIndicator field20727;
+    private final LoadingIndicator field20727;
     private boolean field20728;
-    private float field20729;
+    private final float field20729;
     private int field20730;
     private int field20731;
     private int field20732;

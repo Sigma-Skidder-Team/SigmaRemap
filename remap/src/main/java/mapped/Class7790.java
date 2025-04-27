@@ -25,7 +25,7 @@ public class Class7790
     private String field31885;
     
     public Class7790(final Class8212 class8212, final Function<ResourceLocation, Class122> function, final Function<ResourceLocation, Class9317> function2) {
-        this((Multimap<String, String>)HashMultimap.create(), () -> "", class8212, function, (Set<ResourceLocation>)ImmutableSet.of(), function2, (Set<ResourceLocation>)ImmutableSet.of());
+        this(HashMultimap.create(), () -> "", class8212, function, ImmutableSet.of(), function2, ImmutableSet.of());
     }
     
     public Class7790(final Multimap<String, String> field31878, final Supplier<String> field31879, final Class8212 field31880, final Function<ResourceLocation, Class122> field31881, final Set<ResourceLocation> field31882, final Function<ResourceLocation, Class9317> field31883, final Set<ResourceLocation> field31884) {
@@ -54,11 +54,11 @@ public class Class7790
     }
     
     public Class7790 method25016(final String s, final ResourceLocation class1932) {
-        return new Class7790(this.field31878, () -> this.method25013() + str, this.field31880, this.field31881, this.field31882, this.field31883, (Set<ResourceLocation>)ImmutableSet.builder().addAll((Iterable)this.field31884).add((Object)class1932).build());
+        return new Class7790(this.field31878, () -> this.method25013() + str, this.field31880, this.field31881, this.field31882, this.field31883, (Set<ResourceLocation>)ImmutableSet.builder().addAll(this.field31884).add(class1932).build());
     }
     
     public Class7790 method25017(final String s, final ResourceLocation class1932) {
-        return new Class7790(this.field31878, () -> this.method25013() + str, this.field31880, this.field31881, (Set<ResourceLocation>)ImmutableSet.builder().addAll((Iterable)this.field31882).add((Object)class1932).build(), this.field31883, this.field31884);
+        return new Class7790(this.field31878, () -> this.method25013() + str, this.field31880, this.field31881, (Set<ResourceLocation>)ImmutableSet.builder().addAll(this.field31882).add(class1932).build(), this.field31883, this.field31884);
     }
     
     public boolean method25018(final ResourceLocation class1932) {

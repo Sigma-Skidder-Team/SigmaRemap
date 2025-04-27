@@ -14,7 +14,7 @@ public class Class4206 implements Class4178
     private final Class4179 field18964;
     private final Class4205 field18965;
     private final Class4185 field18966;
-    private Class8157 field18967;
+    private final Class8157 field18967;
     private Class7279 field18968;
     
     public static boolean method12667(final Class2002 class2002) {

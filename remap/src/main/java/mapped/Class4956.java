@@ -9,7 +9,7 @@ public class Class4956 extends Class4943<Class4956>
     private String field21256;
     private Class2095 field21257;
     private byte field21258;
-    private int field21259;
+    private final int field21259;
     private boolean field21260;
     
     public Class4956() {

@@ -21,7 +21,7 @@ public class Class4737 extends Class4712<Class792, Class5900<Class792>>
     
     public ResourceLocation method14058(final Class792 class792) {
         final String method8259 = TextFormatting.getTextWithoutFormattingCodes(class792.getName().getString());
-        if (method8259 != null && "Toast".equals(method8259)) {
+        if ("Toast".equals(method8259)) {
             return Class4737.field20352;
         }
         switch (class792.method4444()) {

@@ -29,7 +29,7 @@ public class Class5051 extends RealmsScreen
         if (field21694.changeList != null) {
             final Iterator<Map.Entry<String, String>> iterator = field21694.changeList.entrySet().iterator();
             while (iterator.hasNext()) {
-                this.field21696.add(((Map.Entry<String, V>)iterator.next()).getKey());
+                this.field21696.add(iterator.next().getKey());
             }
         }
     }

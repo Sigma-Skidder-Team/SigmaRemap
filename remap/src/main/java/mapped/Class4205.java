@@ -9,7 +9,7 @@ import net.sourceforge.jaad.aac.AACException;
 
 public class Class4205 implements Class4178
 {
-    private Class4179 field18950;
+    private final Class4179 field18950;
     private boolean field18951;
     private boolean field18952;
     private int field18953;

@@ -44,6 +44,6 @@ public abstract class Class1703 implements Class1676
     
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "(" + this.field9584.toString() + ")";
+        return this.getClass().getSimpleName() + "(" + this.field9584 + ")";
     }
 }

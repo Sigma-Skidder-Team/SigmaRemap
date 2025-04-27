@@ -56,9 +56,9 @@ public class Class8439
             if (this.field34688 != null) {
                 jsonObject.addProperty("blocked", this.field34688);
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

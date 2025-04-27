@@ -34,15 +34,15 @@ public class Class7456 implements ArgumentType<Class8953>
     }
     
     public static Collection<String> method22950(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return method22952(commandContext, s, (Supplier<Collection<String>>)Collections::emptyList);
+        return method22952(commandContext, s, Collections::emptyList);
     }
     
     public static Collection<String> method22951(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return method22952(commandContext, s, ((Class7492)commandContext.getSource()).method23255().method1579()::method19640);
+        return method22952(commandContext, s, commandContext.getSource().method23255().method1579()::method19640);
     }
     
     public static Collection<String> method22952(final CommandContext<Class7492> commandContext, final String s, final Supplier<Collection<String>> supplier) throws CommandSyntaxException {
-        final Collection<String> method31766 = ((Class8953)commandContext.getArgument(s, (Class)Class8953.class)).method31766((Class7492)commandContext.getSource(), supplier);
+        final Collection<String> method31766 = ((Class8953)commandContext.getArgument(s, (Class)Class8953.class)).method31766(commandContext.getSource(), supplier);
         if (!method31766.isEmpty()) {
             return method31766;
         }
@@ -100,6 +100,6 @@ public class Class7456 implements ArgumentType<Class8953>
             return class7793.method25081(suggestionsBuilder, suggestionsBuilder2 -> Class7491.method23226(((Class7492)commandContext2.getSource()).method23205(), suggestionsBuilder2));
         });
         field28759 = Arrays.asList("Player", "0123", Class7456.\u156e\ua6ae\ub9c6\u97e7\u7074\u2db3[0], "@e");
-        field28760 = new SimpleCommandExceptionType((Message)new Class2259("argument.scoreHolder.empty", new Object[0]));
+        field28760 = new SimpleCommandExceptionType(new Class2259("argument.scoreHolder.empty", new Object[0]));
     }
 }

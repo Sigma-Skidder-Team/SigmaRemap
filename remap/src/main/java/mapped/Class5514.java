@@ -32,7 +32,7 @@ public class Class5514 extends Class5509
         if (!method16820.containsKey(s)) {
             return null;
         }
-        return (Class6300)Class9570.method35831(class5902, Class9570.field41495, (int)method16820.get(s));
+        return (Class6300)Class9570.method35831(class5902, Class9570.field41495, method16820.get(s));
     }
     
     @Override

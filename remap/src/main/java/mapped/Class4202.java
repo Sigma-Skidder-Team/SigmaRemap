@@ -155,17 +155,12 @@ public class Class4202 implements Class4198
             }
             class4197.field18790 = min + min2;
             class4197.field18790 = Math.min(class4197.field18790, 64);
-            for (int n13 = 0; n13 <= min; ++n13) {
-                class4197.field18796[n13] = array2[n13];
-            }
-            for (int n14 = min + 1; n14 <= class4197.field18790; ++n14) {
-                class4197.field18796[n14] = array3[n14 - min];
-            }
+            System.arraycopy(array2, 0, class4197.field18796, 0, min + 1);
+            if (class4197.field18790 + 1 - (min + 1) >= 0)
+                System.arraycopy(array3, min + 1 - min, class4197.field18796, min + 1, class4197.field18790 + 1 - (min + 1));
             return 0;
         }
-        for (int n15 = 0; n15 <= min; ++n15) {
-            class4197.field18796[n15] = array2[n15];
-        }
+        System.arraycopy(array2, 0, class4197.field18796, 0, min + 1);
         class4197.field18790 = min;
         class4197.field18790 = Math.min(class4197.field18790, 64);
         return 0;
@@ -180,9 +175,8 @@ public class Class4202 implements Class4198
         class4197.field18792 = (class4197.field18791 >> 1) + (class4197.field18791 - (class4197.field18791 >> 1 << 1));
         class4197.field18795[0] = class4197.field18792;
         class4197.field18795[1] = class4197.field18791;
-        for (int i = 0; i <= class4197.field18791; ++i) {
-            class4197.field18797[1][i] = class4197.field18796[i + n];
-        }
+        if (class4197.field18791 + 1 >= 0)
+            System.arraycopy(class4197.field18796, 0 + n, class4197.field18797[1], 0, class4197.field18791 + 1);
         class4197.field18789 = class4197.field18797[1][class4197.field18791] - class4197.field18797[1][0];
         class4197.field18788 = class4197.field18797[1][0];
         if (class4197.field18788 > 32) {
@@ -240,12 +234,9 @@ public class Class4202 implements Class4198
             for (int j = 1; j <= class4197.field18829; ++j) {
                 array[j] = array[j - 1] + class4197.field18830[j - 1];
             }
-            for (int k = 0; k <= class4197.field18792; ++k) {
-                a[k] = class4197.field18797[0][k];
-            }
-            for (int l = 1; l < class4197.field18829; ++l) {
-                a[l + class4197.field18792] = array[l];
-            }
+            System.arraycopy(class4197.field18797[0], 0, a, 0, class4197.field18792 + 1);
+            if (class4197.field18829 - 1 >= 0)
+                System.arraycopy(array, 1, a, 1 + class4197.field18792, class4197.field18829 - 1);
             Arrays.sort(a, 0, class4197.field18829 + class4197.field18792);
             int n = 1;
             int toIndex = class4197.field18829 + class4197.field18792 - 1;
@@ -269,6 +260,7 @@ public class Class4202 implements Class4198
                         for (int n4 = 0; n4 <= class4197.field18829; ++n4) {
                             if (a[n] == array[n4]) {
                                 n3 = 1;
+                                break;
                             }
                         }
                         if (n3 != 0) {
@@ -276,6 +268,7 @@ public class Class4202 implements Class4198
                             for (int n6 = 0; n6 <= class4197.field18829; ++n6) {
                                 if (a[n - 1] == array[n6]) {
                                     n5 = 1;
+                                    break;
                                 }
                             }
                             if (n5 == 0) {

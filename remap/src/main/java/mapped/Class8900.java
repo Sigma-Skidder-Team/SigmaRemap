@@ -45,7 +45,7 @@ public class Class8900
     
     public static void method31337(final BlockState class7096, final Class4150 class7097) {
         if (class7097 instanceof BufferBuilder) {
-            ((BufferBuilder)class7097).field18495.method31335(((long)(Class3660.method11271(class7096) & 0xFFFF) << 32) + (((Class3660.method11287(class7096) & 0xFFFF) << 16) + (Class3660.method11269(class7096) & 0xFFFF)));
+            ((BufferBuilder)class7097).field18495.method31335(((long)(Class3660.method11271(class7096) & 0xFFFF) << 32) + (((long) (Class3660.method11287(class7096) & 0xFFFF) << 16) + (Class3660.method11269(class7096) & 0xFFFF)));
         }
     }
     
@@ -138,16 +138,16 @@ public class Class8900
         n += class4148.method12430();
         final FloatBuffer method12424 = class4148.method12424();
         final IntBuffer method12425 = class4148.method12425();
-        final float value = method12424.get(n + 0 * this.field37412);
-        final float value2 = method12424.get(n + 0 * this.field37412 + 1);
-        final float value3 = method12424.get(n + 0 * this.field37412 + 2);
-        final float value4 = method12424.get(n + 0 * this.field37412 + this.field37414);
-        final float value5 = method12424.get(n + 0 * this.field37412 + this.field37414 + 1);
-        final float value6 = method12424.get(n + 1 * this.field37412);
-        final float value7 = method12424.get(n + 1 * this.field37412 + 1);
-        final float value8 = method12424.get(n + 1 * this.field37412 + 2);
-        final float value9 = method12424.get(n + 1 * this.field37412 + this.field37414);
-        final float value10 = method12424.get(n + 1 * this.field37412 + this.field37414 + 1);
+        final float value = method12424.get(n + 0);
+        final float value2 = method12424.get(n + 0 + 1);
+        final float value3 = method12424.get(n + 0 + 2);
+        final float value4 = method12424.get(n + 0 + this.field37414);
+        final float value5 = method12424.get(n + 0 + this.field37414 + 1);
+        final float value6 = method12424.get(n + this.field37412);
+        final float value7 = method12424.get(n + this.field37412 + 1);
+        final float value8 = method12424.get(n + this.field37412 + 2);
+        final float value9 = method12424.get(n + this.field37412 + this.field37414);
+        final float value10 = method12424.get(n + this.field37412 + this.field37414 + 1);
         final float value11 = method12424.get(n + 2 * this.field37412);
         final float value12 = method12424.get(n + 2 * this.field37412 + 1);
         final float value13 = method12424.get(n + 2 * this.field37412 + 2);
@@ -199,26 +199,26 @@ public class Class8900
         final float n40 = (n39 == 0.0) ? 1.0f : ((float)(1.0 / Math.sqrt(n39)));
         final float n41 = (n31 * n40 * (n15 * n37 - n14 * n38) + n32 * n40 * (n13 * n38 - n15 * n36) + n33 * n40 * (n14 * n36 - n13 * n37) >= 0.0f) ? 1.0f : -1.0f;
         final int n42 = (((int)(n15 * 127.0f) & 0xFF) << 16) + (((int)(n14 * 127.0f) & 0xFF) << 8) + ((int)(n13 * 127.0f) & 0xFF);
-        method12425.put(n + 0 * this.field37412 + this.field37413, n42);
-        method12425.put(n + 1 * this.field37412 + this.field37413, n42);
+        method12425.put(n + 0 + this.field37413, n42);
+        method12425.put(n + this.field37412 + this.field37413, n42);
         method12425.put(n + 2 * this.field37412 + this.field37413, n42);
         method12425.put(n + 3 * this.field37412 + this.field37413, n42);
         final int n43 = ((int)(n36 * 32767.0f) & 0xFFFF) + (((int)(n37 * 32767.0f) & 0xFFFF) << 16);
         final int n44 = ((int)(n38 * 32767.0f) & 0xFFFF) + (((int)(n41 * 32767.0f) & 0xFFFF) << 16);
-        method12425.put(n + 0 * this.field37412 + 11, n43);
-        method12425.put(n + 0 * this.field37412 + 11 + 1, n44);
-        method12425.put(n + 1 * this.field37412 + 11, n43);
-        method12425.put(n + 1 * this.field37412 + 11 + 1, n44);
+        method12425.put(n + 0 + 11, n43);
+        method12425.put(n + 0 + 11 + 1, n44);
+        method12425.put(n + this.field37412 + 11, n43);
+        method12425.put(n + this.field37412 + 11 + 1, n44);
         method12425.put(n + 2 * this.field37412 + 11, n43);
         method12425.put(n + 2 * this.field37412 + 11 + 1, n44);
         method12425.put(n + 3 * this.field37412 + 11, n43);
         method12425.put(n + 3 * this.field37412 + 11 + 1, n44);
         final float n45 = (value4 + value9 + value14 + value19) / 4.0f;
         final float n46 = (value5 + value10 + value15 + value20) / 4.0f;
-        method12424.put(n + 0 * this.field37412 + 9, n45);
-        method12424.put(n + 0 * this.field37412 + 9 + 1, n46);
-        method12424.put(n + 1 * this.field37412 + 9, n45);
-        method12424.put(n + 1 * this.field37412 + 9 + 1, n46);
+        method12424.put(n + 0 + 9, n45);
+        method12424.put(n + 0 + 9 + 1, n46);
+        method12424.put(n + this.field37412 + 9, n45);
+        method12424.put(n + this.field37412 + 9 + 1, n46);
         method12424.put(n + 2 * this.field37412 + 9, n45);
         method12424.put(n + 2 * this.field37412 + 9 + 1, n46);
         method12424.put(n + 3 * this.field37412 + 9, n45);

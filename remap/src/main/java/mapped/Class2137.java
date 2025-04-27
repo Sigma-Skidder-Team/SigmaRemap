@@ -112,7 +112,7 @@ public enum Class2137
     private final int field12572;
     private final Class2137 field12573;
     
-    private Class2137(final int field12572) {
+    Class2137(final int field12572) {
         this.field12572 = field12572;
         this.field12573 = null;
     }
@@ -121,7 +121,7 @@ public enum Class2137
         if (i != -1) {
             return (Optional<Class2137>)Optional.fromNullable((Object)Class2137.field12571.get(i));
         }
-        return (Optional<Class2137>)Optional.absent();
+        return Optional.absent();
     }
     
     public boolean method8293(final Class2137... array) {
@@ -149,7 +149,7 @@ public enum Class2137
         return true;
     }
     
-    private Class2137(final int field12572, final Class2137 field12573) {
+    Class2137(final int field12572, final Class2137 field12573) {
         this.field12572 = field12572;
         this.field12573 = field12573;
     }

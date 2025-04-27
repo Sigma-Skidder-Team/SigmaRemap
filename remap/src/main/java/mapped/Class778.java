@@ -39,7 +39,7 @@ public class Class778 extends Class776 implements Class768
         this.field4183 = new Class3567<Class776>(this, Class776.class, true, class511 -> {
             final boolean b;
             if (class511 != null) {
-                if (!(!this.method4293())) {
+                if (this.method4293()) {
                     if (class511.getType() != EntityType.field29047) {
                         return b;
                     }
@@ -53,7 +53,7 @@ public class Class778 extends Class776 implements Class768
         this.field4114.method22062(2, new Class3517(this, 1.0));
         this.field4114.method22062(3, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(3, new Class3503(this));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[] { Class776.class }));
+        this.field4115.method22062(1, new Class3547(this, new Class[] { Class776.class }));
         this.field4115.method22062(2, this.field4183);
         this.field4115.method22062(3, this.field4184);
     }
@@ -99,12 +99,7 @@ public class Class778 extends Class776 implements Class768
         if (!this.world.isRemote) {
             if (this.isAlive()) {
                 this.field4183.method11111();
-                if (this.field4183.method11110() > 0) {
-                    this.field4184.method11107(false);
-                }
-                else {
-                    this.field4184.method11107(true);
-                }
+                this.field4184.method11107(this.field4183.method11110() <= 0);
                 if (!this.method4319()) {
                     Class8061 class8061 = null;
                     Label_0125: {

@@ -348,10 +348,10 @@ public class Class8969
         for (int i = 0; i < method7526.length; ++i) {
             final Class1846 obj = method7526[i];
             if (obj != null) {
-                Config.method28847("" + i + ": " + obj.method6644() * obj.method6645());
+                Config.method28847(i + ": " + obj.method6644() * obj.method6645());
             }
             else {
-                Config.method28847("" + i + ": " + obj);
+                Config.method28847(i + ": " + obj);
             }
         }
     }
@@ -384,7 +384,7 @@ public class Class8969
             }
             catch (final Exception ex) {
                 Config.warn("Error writing: " + obj);
-                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn(ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
     }

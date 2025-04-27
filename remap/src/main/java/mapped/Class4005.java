@@ -59,7 +59,7 @@ public class Class4005 extends Block
     
     private void method12169(final World class1847, final BlockPos class1848, final BlockState class1849) {
         class1847.method6705(null, class1848, Class8520.field35653, Class286.field1582, 0.7f, 0.9f + class1847.rand.nextFloat() * 0.2f);
-        final int intValue = class1849.get((IProperty<Integer>)Class4005.field18053);
+        final int intValue = class1849.get(Class4005.field18053);
         if (intValue > 1) {
             class1847.setBlockState(class1848, (BlockState)((StateHolder<Object, Object>)class1849).with((IProperty<Comparable>)Class4005.field18053, intValue - 1), 2);
             class1847.method6955(2001, class1848, Block.method11774(class1849));
@@ -73,11 +73,11 @@ public class Class4005 extends Block
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         if (this.method12171(class7097)) {
             if (this.method12170(class7097, class7098)) {
-                final int intValue = class7096.get((IProperty<Integer>)Class4005.field18052);
+                final int intValue = class7096.get(Class4005.field18052);
                 if (intValue >= 2) {
                     class7097.method6705(null, class7098, Class8520.field35655, Class286.field1582, 0.7f, 0.9f + random.nextFloat() * 0.2f);
                     class7097.method6690(class7098, false);
-                    for (int i = 0; i < class7096.get((IProperty<Integer>)Class4005.field18053); ++i) {
+                    for (int i = 0; i < class7096.get(Class4005.field18053); ++i) {
                         class7097.method6955(2001, class7098, Block.method11774(class7096));
                         final Class793 class7099 = EntityType.field29035.method23371(class7097);
                         class7099.method4354(-24000);
@@ -120,19 +120,19 @@ public class Class4005 extends Block
     
     @Override
     public boolean method11798(final BlockState class7096, final Class7074 class7097) {
-        return (class7097.method21651().getItem() == this.method11704() && class7096.get((IProperty<Integer>)Class4005.field18053) < 4) || super.method11798(class7096, class7097);
+        return (class7097.method21651().getItem() == this.method11704() && class7096.get(Class4005.field18053) < 4) || super.method11798(class7096, class7097);
     }
     
     @Nullable
     @Override
     public BlockState method11846(final Class7074 class7074) {
         final BlockState method6701 = class7074.method21654().getBlockState(class7074.method21639());
-        return (method6701.getBlock() != this) ? super.method11846(class7074) : ((StateHolder<Object, BlockState>)method6701).with((IProperty<Comparable>)Class4005.field18053, Math.min(4, ((StateHolder<Object, BlockState>)method6701).get((IProperty<Integer>)Class4005.field18053) + 1));
+        return (method6701.getBlock() != this) ? super.method11846(class7074) : ((StateHolder<Object, BlockState>)method6701).with((IProperty<Comparable>)Class4005.field18053, Math.min(4, method6701.get(Class4005.field18053) + 1));
     }
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return (class7096.get((IProperty<Integer>)Class4005.field18053) <= 1) ? Class4005.field18050 : Class4005.field18051;
+        return (class7096.get(Class4005.field18053) <= 1) ? Class4005.field18050 : Class4005.field18051;
     }
     
     @Override

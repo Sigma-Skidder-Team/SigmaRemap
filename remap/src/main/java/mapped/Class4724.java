@@ -10,7 +10,7 @@ public class Class4724 extends Class4723<Class775>
     
     public Class4724(final Class8551 class8551) {
         super(class8551, new Class5851(0.0f, 0.0f, 64, 64), 0.5f);
-        this.method13978((Class1799<T, Class5851<T>>)new Class1824(this, this));
+        this.method13978(new Class1824(this, this));
     }
     
     public ResourceLocation method14035(final Class775 class775) {

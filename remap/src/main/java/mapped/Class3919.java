@@ -43,12 +43,12 @@ public class Class3919 extends Class3841 implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3919.field17766) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3919.field17766) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3919.field17766)) {
+        if (class7096.get(Class3919.field17766)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);

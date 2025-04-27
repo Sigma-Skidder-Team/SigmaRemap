@@ -19,7 +19,7 @@ public enum Class323
     private final int field1929;
     private final String field1930;
     
-    private Class323(final int field1929, final String field1930) {
+    Class323(final int field1929, final String field1930) {
         this.field1929 = field1929;
         this.field1930 = field1930;
     }

@@ -13,7 +13,7 @@ public class Class2409 extends Class2400
     private float field14266;
     private float field14267;
     private boolean field14268;
-    private ArrayList field14269;
+    private final ArrayList field14269;
     private ArrayList field14270;
     
     public Class2409(final float field14266, final float field14267) {

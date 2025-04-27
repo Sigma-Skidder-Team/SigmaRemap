@@ -38,9 +38,7 @@ public final class Class1949<T> implements Comparable<Class1949<?>>
             final Class1949 class1949 = (Class1949)o;
             if (this.field10617 == class1949.field10617) {
                 if (Objects.equals(this.field10616, class1949.field10616)) {
-                    if (Objects.equals(this.field10618, class1949.field10618)) {
-                        return true;
-                    }
+                    return Objects.equals(this.field10618, class1949.field10618);
                 }
             }
             return false;

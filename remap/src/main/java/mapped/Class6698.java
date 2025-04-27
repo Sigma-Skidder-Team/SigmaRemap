@@ -13,7 +13,7 @@ public class Class6698 extends Class6693
     public final int field26425 = 7;
     
     public Class6698() {
-        super("help", "Show this help dialog", new String[] { "vc" });
+        super("help", "Show this help dialog", "vc");
         this.method20351("page/command");
     }
     

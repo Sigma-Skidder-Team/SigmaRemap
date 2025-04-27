@@ -6,8 +6,8 @@ package mapped;
 
 public class Class7356
 {
-    private int field28387;
-    private int field28388;
+    private final int field28387;
+    private final int field28388;
     
     public Class7356(final int n, final int n2) {
         this.field28387 = Math.min(n, n2);

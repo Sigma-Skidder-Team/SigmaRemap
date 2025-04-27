@@ -11,7 +11,7 @@ import java.net.URI;
 import java.util.HashMap;
 
 public class Class959 extends WebSocketClient {
-    private AgoraManager field5102;
+    private final AgoraManager field5102;
 
     public Class959(final AgoraManager field5102, final String str, final HashMap<String, String> hashMap) throws URISyntaxException {
         super(new URI(str), hashMap);

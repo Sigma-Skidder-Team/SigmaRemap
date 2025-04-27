@@ -8,7 +8,7 @@ public class Class1112 implements Runnable
 {
     private static String[] field5995;
     private Class754 field5996;
-    private ResourceLocation field5997;
+    private final ResourceLocation field5997;
     private boolean field5998;
     
     public Class1112(final Class754 field5996, final ResourceLocation field5997) {

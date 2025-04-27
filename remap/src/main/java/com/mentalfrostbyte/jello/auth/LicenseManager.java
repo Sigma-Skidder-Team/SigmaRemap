@@ -52,7 +52,7 @@ public class LicenseManager
         this.claimPremiumUrl = this.mainURL + "/claim_premium";
         this.challengeUrl = this.mainURL + "/challenge";
         this.token = UUID.randomUUID().toString().replaceAll("-", "");
-        this.httpClient = (HttpClient)HttpClients.createDefault();
+        this.httpClient = HttpClients.createDefault();
     }
     
     public void init() {
@@ -179,11 +179,11 @@ public class LicenseManager
             list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.getChallengeAnswer()));
             list.add(new BasicNameValuePair("token", this.token));
             captchaChecker.method30473(false);
-            httpPost.setEntity((HttpEntity)new UrlEncodedFormEntity((List)list, "UTF-8"));
-            final HttpEntity entity = this.httpClient.execute((HttpUriRequest)httpPost).getEntity();
+            httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
+            final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
-                    final PremiumJSONObject class8774 = new PremiumJSONObject(IOUtils.toString(content, "UTF-8"));
+                    final PremiumJSONObject class8774 = new PremiumJSONObject(IOUtils.toString(content, StandardCharsets.UTF_8));
                     if (class8774.getBoolean("success")) {
                         this.parse(class8774);
                         return null;

@@ -30,7 +30,7 @@ public class Class1721 extends PrintStream
     }
     
     public void method6071(final String s) {
-        Class1721.field9637.info("[{}]: {}", (Object)this.field9638, (Object)s);
+        Class1721.field9637.info("[{}]: {}", this.field9638, s);
     }
     
     static {

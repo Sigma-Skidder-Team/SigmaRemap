@@ -37,7 +37,7 @@ public abstract class Class780 extends Class763 implements Class768
         this.field4114.method22062(5, new Class3517(this, 1.0));
         this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(6, new Class3503(this));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[0]));
         this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class793.class, 10, true, false, Class793.field4242));
@@ -107,8 +107,8 @@ public abstract class Class780 extends Class763 implements Class768
         this.method4193(this.rand.nextFloat() < 0.55f * class1852.method35975());
         if (this.method2718(Class2215.field13605).method27620()) {
             final LocalDate now = LocalDate.now();
-            final int value = now.get(ChronoField.DAY_OF_MONTH);
-            if (now.get(ChronoField.MONTH_OF_YEAR) == 10) {
+            final int value = now.getDayOfMonth();
+            if (now.getMonth() == 10) {
                 if (value == 31) {
                     if (this.rand.nextFloat() < 0.25f) {
                         this.method1803(Class2215.field13605, new ItemStack((this.rand.nextFloat() >= 0.1f) ? Blocks.field29342 : Blocks.field29343));

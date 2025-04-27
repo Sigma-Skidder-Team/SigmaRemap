@@ -100,7 +100,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2023() {
-        final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
+        final List<Entity> method6739 = this.world.method6739(LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0), (Predicate<? super Entity>)Class415.field2523);
         if (!method6739.isEmpty()) {
             for (final LivingEntity class511 : method6739) {
                 if (this.method1734(class511) >= 16.0) {
@@ -115,7 +115,7 @@ public class Class415 extends Class414 implements Class407
     }
     
     private void method2024(final List<Class1948> list, final Entity class399) {
-        final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0));
+        final List<Entity> method7128 = this.world.method7128(LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0));
         if (!method7128.isEmpty()) {
             for (final LivingEntity class400 : method7128) {
                 if (!class400.method2776()) {
@@ -176,7 +176,7 @@ public class Class415 extends Class414 implements Class407
         final Block method6702 = method6701.method21696();
         if (method6702 != Blocks.FIRE) {
             if (method6702 == Blocks.CAMPFIRE) {
-                if (((StateHolder<Object, Class7096>)method6701).get((IProperty<Boolean>)Class3918.field17760)) {
+                if (((StateHolder<Object, Class7096>)method6701).get(Class3918.field17760)) {
                     this.world.method6839(null, 1009, class354, 0);
                     this.world.method6692(class354, ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3918.field17760, false));
                 }

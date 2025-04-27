@@ -35,7 +35,7 @@ public class Class4046 extends Class4043
                     o = method27657.getString("SkullOwner");
                 }
                 if (o != null) {
-                    return new Class2259(this.getTranslationKey() + ".named", new Object[] { o });
+                    return new Class2259(this.getTranslationKey() + ".named", o);
                 }
             }
         }
@@ -45,8 +45,8 @@ public class Class4046 extends Class4043
     @Override
     public boolean method11702(final CompoundNBT class51) {
         super.method11702(class51);
-        if (class51.contains("SkullOwner", 8) && !StringUtils.isBlank((CharSequence)class51.getString("SkullOwner"))) {
-            class51.put("SkullOwner", Class9346.method34641(new CompoundNBT(), Class493.method2508(new GameProfile((UUID)null, class51.getString("SkullOwner")))));
+        if (class51.contains("SkullOwner", 8) && !StringUtils.isBlank(class51.getString("SkullOwner"))) {
+            class51.put("SkullOwner", Class9346.method34641(new CompoundNBT(), Class493.method2508(new GameProfile(null, class51.getString("SkullOwner")))));
             return true;
         }
         return false;

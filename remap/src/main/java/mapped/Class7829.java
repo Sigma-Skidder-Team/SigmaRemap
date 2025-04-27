@@ -7,7 +7,7 @@ package mapped;
 public class Class7829
 {
     private final CompoundNBT field32060;
-    private int field32061;
+    private final int field32061;
     private final int field32062;
     
     private Class7829(final CompoundNBT field32060, final int field32061, final int field32062) {

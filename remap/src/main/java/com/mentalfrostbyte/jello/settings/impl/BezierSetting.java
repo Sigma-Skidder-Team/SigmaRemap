@@ -39,7 +39,7 @@ public class BezierSetting extends Setting<Class8531> {
 
     public void method15218(final float n, final float n2, final float n3, final float n4, final boolean b) {
         final Class8531 field21511 = new Class8531(n, n2, n3, n4);
-        if (!((Class8531) this.currentValue).equals(field21511)) {
+        if (!this.currentValue.equals(field21511)) {
             this.currentValue = field21511;
             if (b) {
                 this.method15196();

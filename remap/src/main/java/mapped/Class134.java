@@ -22,7 +22,7 @@ public class Class134 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27630()) {
-            Class134.field406.warn("Couldn't set damage of loot item {}", (Object)class8321);
+            Class134.field406.warn("Couldn't set damage of loot item {}", class8321);
         }
         else {
             class8321.method27633(MathHelper.method35642((1.0f - this.field407.method17169(class8322.method23586())) * class8321.method27634()));

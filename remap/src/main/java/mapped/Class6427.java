@@ -16,7 +16,7 @@ public final class Class6427 extends Class6397
     @Override
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         final World method16763 = class5491.method16763();
-        final Direction class5493 = class5491.method16765().get((IProperty<Direction>)Class3955.field17859);
+        final Direction class5493 = class5491.method16765().get(Class3955.field17859);
         final BlockPos method16764 = class5491.method16764().method1149(class5493);
         if (method16763.method6961(method16764) && Class3938.method12052(method16763, method16764, class5492)) {
             method16763.setBlockState(method16764, ((StateHolder<O, BlockState>) Blocks.field29455.getDefaultState()).with((IProperty<Comparable>)Class3936.field17819, (class5493.getAxis() != Direction.Axis.Y) ? (class5493.getOpposite().getHorizontalIndex() * 4) : 0), 3);

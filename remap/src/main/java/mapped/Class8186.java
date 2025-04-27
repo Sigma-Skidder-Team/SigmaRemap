@@ -21,7 +21,7 @@ public final class Class8186 extends Class8187
     
     @Override
     public boolean method27101() {
-        this.field33693 = (IntSet)new IntOpenHashSet();
+        this.field33693 = new IntOpenHashSet();
         for (int i = 0; i < this.field33696.size(); ++i) {
             if (Objects.equals(this.field33696.get(i).get("Name").asString(""), "minecraft:trapped_chest")) {
                 this.field33693.add(i);

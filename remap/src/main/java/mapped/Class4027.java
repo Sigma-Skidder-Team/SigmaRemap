@@ -13,7 +13,7 @@ public class Class4027 extends Block
     
     public Class4027(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.getDefaultState()).with(Class4027.field18120, Direction.Axis.Y));
+        this.method11877(this.getDefaultState().with(Class4027.field18120, Direction.Axis.Y));
     }
     
     @Override
@@ -23,10 +23,10 @@ public class Class4027 extends Block
             case 2: {
                 switch (Class6210.field25054[class7096.get(Class4027.field18120).ordinal()]) {
                     case 1: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Direction.Axis.Z);
+                        return class7096.with(Class4027.field18120, Direction.Axis.Z);
                     }
                     case 2: {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class4027.field18120, Direction.Axis.X);
+                        return class7096.with(Class4027.field18120, Direction.Axis.X);
                     }
                     default: {
                         return class7096;
@@ -47,7 +47,7 @@ public class Class4027 extends Block
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class4027.field18120, class7074.method21648().getAxis());
+        return this.getDefaultState().with(Class4027.field18120, class7074.method21648().getAxis());
     }
     
     static {

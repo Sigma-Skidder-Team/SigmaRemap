@@ -24,9 +24,7 @@ public class Class3637 extends Class3446
         if (this.field16879.isAlive()) {
             if (this.field16879.method4152() == null) {
                 if (method4292 != null) {
-                    if (method4292.method30623()) {
-                        return true;
-                    }
+                    return method4292.method30623();
                 }
             }
         }

@@ -11,9 +11,9 @@ import java.util.List;
 
 public class Class8440
 {
-    private String field34690;
-    private List<String> field34691;
-    private Map<String, String> field34692;
+    private final String field34690;
+    private final List<String> field34691;
+    private final Map<String, String> field34692;
     
     public Class8440(final String field34690) {
         this.field34691 = new ArrayList<String>();

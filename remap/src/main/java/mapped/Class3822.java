@@ -53,14 +53,14 @@ public class Class3822 extends Class3821
                     final String string2 = "color.minecraft." + Class835.method4975(method27658);
                     for (int i = 0; i < Class835.field4451.length; ++i) {
                         if (method27658 == Class835.field4451[i]) {
-                            list.add(new Class2259(Class835.method4973(i), new Object[0]).applyTextStyles(array));
+                            list.add(new Class2259(Class835.method4973(i)).applyTextStyles(array));
                             return;
                         }
                     }
-                    list.add(new Class2259(Class835.method4976(method27658), new Object[0]).applyTextStyles(array));
-                    final Class2259 class8324 = new Class2259(string, new Object[0]);
+                    list.add(new Class2259(Class835.method4976(method27658)).applyTextStyles(array));
+                    final Class2259 class8324 = new Class2259(string);
                     if (!string.equals(string2)) {
-                        class8324.appendText(", ").appendSibling(new Class2259(string2, new Object[0]));
+                        class8324.appendText(", ").appendSibling(new Class2259(string2));
                     }
                     class8324.applyTextStyles(array);
                     list.add(class8324);

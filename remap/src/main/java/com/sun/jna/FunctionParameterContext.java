@@ -6,9 +6,9 @@ package com.sun.jna;
 
 public class FunctionParameterContext extends ToNativeContext
 {
-    private Function function;
-    private Object[] args;
-    private int index;
+    private final Function function;
+    private final Object[] args;
+    private final int index;
     
     public FunctionParameterContext(final Function f, final Object[] args, final int index) {
         this.function = f;

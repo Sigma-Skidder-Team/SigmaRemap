@@ -30,7 +30,7 @@ public class Class4559 extends Class4535<Class5124>
                         class1851.setBlockState(class1855, class1856, 2);
                     }
                     else {
-                        final BlockState class1857 = ((StateHolder<O, BlockState>)class1856).with(Class3868.field17508, Class182.field564);
+                        final BlockState class1857 = class1856.with(Class3868.field17508, Class182.field564);
                         final BlockPos method1137 = class1855.method1137();
                         if (class1851.getBlockState(method1137).getBlock() == Blocks.field29173) {
                             class1851.setBlockState(class1855, class1856, 2);

@@ -23,7 +23,7 @@ public enum Class2088
         return null;
     }
     
-    private Class2088(final int field12075, final String field12076) {
+    Class2088(final int field12075, final String field12076) {
         this.field12075 = field12075;
         this.field12076 = field12076;
     }

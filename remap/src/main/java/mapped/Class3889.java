@@ -42,7 +42,7 @@ public class Class3889 extends Class3874 implements Class3872, Class3856
             final IFluidState method6702 = class7074.method21654().getFluidState(class7074.method21639());
             return (Class7096)((StateHolder<Object, Object>)super.method11846(class7074)).with((IProperty<Comparable>)Class3889.field17552, method6702.isTagged(Class7324.field28319) && method6702.getLevel() == 8);
         }
-        return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3889.field17551, Math.min(4, ((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class3889.field17551) + 1));
+        return ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3889.field17551, Math.min(4, ((StateHolder<Object, Class7096>)method6701).get(Class3889.field17551) + 1));
     }
     
     private boolean method11964(final Class7096 class7096) {

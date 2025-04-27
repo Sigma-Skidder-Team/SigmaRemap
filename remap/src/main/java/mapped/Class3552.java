@@ -13,7 +13,7 @@ public class Class3552 extends Class3547
     
     public Class3552(final Class798 field16623, final Class798 class798) {
         this.field16623 = field16623;
-        super(class798, (Class<?>[])new Class[0]);
+        super(class798, new Class[0]);
     }
     
     @Override

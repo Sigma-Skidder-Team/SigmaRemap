@@ -16,8 +16,8 @@ public final class Class3136 extends Class3090
         Class9218.method33934(this);
         Class9218.method33935(this);
         Class9218.method33937(this);
-        this.method9849(Class2108.field12225, Class4535.field19992.method13527(Class5113.field22059).method28610(Class7133.field27783.method21889((Object)new Class6927(3))));
-        this.method9849(Class2108.field12225, Class4535.field20001.method13527(new Class5120(2)).method28610(Class7133.field27783.method21889((Object)new Class6927(2))));
+        this.method9849(Class2108.field12225, Class4535.field19992.method13527(Class5113.field22059).method28610(Class7133.field27783.method21889(new Class6927(3))));
+        this.method9849(Class2108.field12225, Class4535.field20001.method13527(new Class5120(2)).method28610(Class7133.field27783.method21889(new Class6927(2))));
         Class9218.method33938(this);
         Class9218.method33939(this);
         Class9218.method33943(this);

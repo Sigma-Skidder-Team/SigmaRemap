@@ -79,7 +79,7 @@ public class Class8827 extends JSONTokener
             obj.append(Character.toLowerCase(method30785));
         }
         if (method30785 != ';') {
-            throw this.syntaxError("Missing ';' in XML entity: &" + (Object)obj);
+            throw this.syntaxError("Missing ';' in XML entity: &" + obj);
         }
         final String string = obj.toString();
         final Character value = Class8827.field37113.get(string);

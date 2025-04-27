@@ -92,8 +92,8 @@ public class Class8752
         consumer.accept(Class8752.field36750);
         Class8752.field36751.forEach(consumer);
         for (final Class230 class230 : Class230.values()) {
-            consumer.accept((Object)new Class3687(Class8752.field36736, class230.method857(true)));
-            consumer.accept((Object)new Class3687(Class8752.field36737, class230.method857(false)));
+            consumer.accept(new Class3687(Class8752.field36736, class230.method857(true)));
+            consumer.accept(new Class3687(Class8752.field36737, class230.method857(false)));
         }
         Class8752.field36752.values().forEach(consumer);
         final Class3687[] field36753 = Class8752.field36753;
@@ -170,7 +170,7 @@ public class Class8752
             new Class3687(field36764, class1932);
             return;
         }).collect((Collector<? super Object, Object, List<Class3687>>)ImmutableList.toImmutableList());
-        field36752 = Class8289.method27556().collect(Collectors.toMap((Function<? super Class8289, ? extends Class8289>)Function.identity(), (Function<? super Class8289, ? extends Class3687>)Class8752::method30268));
+        field36752 = Class8289.method27556().collect(Collectors.toMap(Function.identity(), (Function<? super Class8289, ? extends Class3687>)Class8752::method30268));
         field36753 = Arrays.stream(Class181.values()).sorted(Comparator.comparingInt(Class181::method813)).map(class1933 -> {
             new(mapped.Class3687.class)();
             final ResourceLocation field36765 = Class8752.field36735;

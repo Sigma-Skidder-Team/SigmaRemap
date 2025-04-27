@@ -23,6 +23,6 @@ public class Class8149 extends Class8150
     
     @Override
     public JsonElement method26846() {
-        return (JsonElement)new JsonPrimitive("#" + this.field33560.method25621().toString());
+        return new JsonPrimitive("#" + this.field33560.method25621().toString());
     }
 }

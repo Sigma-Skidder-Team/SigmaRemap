@@ -31,7 +31,7 @@ public class TextField extends Class4825
     private boolean field20682;
     private boolean field20683;
     private String field20684;
-    private TimerUtil field20685;
+    private final TimerUtil field20685;
     private final List<Class8992> field20686;
     private boolean field20687;
     
@@ -273,7 +273,7 @@ public class TextField extends Class4825
                 }
                 case 88: {
                     if (this.method14472() && this.field20679 != this.field20680) {
-                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
+                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
                         this.field20495 = Class9274.method34215(this.field20495, "", this.field20679, this.field20680);
                         if (this.field20678 > this.field20679) {
                             this.field20678 -= Math.max(this.field20679, this.field20680) - Math.min(this.field20679, this.field20680);
@@ -287,7 +287,7 @@ public class TextField extends Class4825
                 }
                 case 67: {
                     if (this.method14472() && this.field20679 != this.field20680) {
-                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), (CharSequence)this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
+                        GLFW.glfwSetClipboardString(Minecraft.getInstance().window.getHandle(), this.field20495.substring(Math.min(this.field20679, this.field20680), Math.max(this.field20679, this.field20680)));
                         break;
                     }
                     break;

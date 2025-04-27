@@ -128,7 +128,7 @@ public class Class9379
         field40213 = 1 + MathHelper.log2(MathHelper.smallestEncompassingPowerOfTwo(30000000));
         field40214 = Class9379.field40213;
         field40215 = 64 - Class9379.field40213 - Class9379.field40214;
-        field40216 = 0 + Class9379.field40214;
+        field40216 = Class9379.field40214;
         field40217 = Class9379.field40216 + Class9379.field40215;
         field40218 = (1L << Class9379.field40213) - 1L;
         field40219 = (1L << Class9379.field40215) - 1L;

@@ -243,7 +243,6 @@ public class Class1849 extends World
                 this.method6717(class403 -> {
                     ++class403.ticksExisted;
                     class403.method1659();
-                    return;
                 }, class399);
                 if (class399.removed) {
                     this.field10084.remove(i--);
@@ -379,11 +378,11 @@ public class Class1849 extends World
     
     public BlockPos method6865(final BlockPos class354) {
         BlockPos class355 = this.method6958(HeightmapType.field11525, class354);
-        final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).intersect(3.0), class356 -> {
+        final List<Entity> method6739 = this.method6739(LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).intersect(3.0), class356 -> {
             final boolean b;
             if (class356 != null) {
-                if (!(!class356.isAlive())) {
-                    if (!(!this.method6994(class356.method1894()))) {
+                if (class356.isAlive()) {
+                    if (this.method6994(class356.method1894())) {
                         return b;
                     }
                 }
@@ -396,7 +395,7 @@ public class Class1849 extends World
             }
             return class355;
         }
-        return ((LivingEntity)method6739.get(this.rand.nextInt(method6739.size()))).method1894();
+        return method6739.get(this.rand.nextInt(method6739.size())).method1894();
     }
     
     public boolean method6866() {
@@ -627,7 +626,7 @@ public class Class1849 extends World
     }
     
     public void method6877() {
-        Class4535.field20016.method13527(Class5113.field22059).method28613(this, (Class6346<? extends Class7065>)this.method6904().method7438(), this.rand, new BlockPos(this.worldInfo.method29536(), this.worldInfo.method29537(), this.worldInfo.method29538()));
+        Class4535.field20016.method13527(Class5113.field22059).method28613(this, this.method6904().method7438(), this.rand, new BlockPos(this.worldInfo.method29536(), this.worldInfo.method29537(), this.worldInfo.method29538()));
     }
     
     @Nullable
@@ -639,11 +638,11 @@ public class Class1849 extends World
         final Class1909 method6904 = this.method6904();
         if (!b2) {
             if (class732 != null) {
-                class732.method4036(new Class2259("menu.savingLevel", new Object[0]));
+                class732.method4036(new Class2259("menu.savingLevel"));
             }
             this.method6880();
             if (class732 != null) {
-                class732.method4038(new Class2259("menu.savingChunks", new Object[0]));
+                class732.method4038(new Class2259("menu.savingChunks"));
             }
             method6904.method7435(b);
         }
@@ -701,7 +700,7 @@ public class Class1849 extends World
     @Nullable
     public Class513 method6884() {
         final List<Class513> method6883 = this.method6883(LivingEntity::isAlive);
-        return method6883.isEmpty() ? null : ((Class513)method6883.get(this.rand.nextInt(method6883.size())));
+        return method6883.isEmpty() ? null : method6883.get(this.rand.nextInt(method6883.size()));
     }
     
     public Object2IntMap<Class1976> method6885() {
@@ -720,7 +719,7 @@ public class Class1849 extends World
             if (!this.method6904().method7433(class399)) {
                 continue;
             }
-            ((Object2IntMap)object2IntOpenHashMap).mergeInt((Object)method23365, 1, (BiFunction)Integer::sum);
+            object2IntOpenHashMap.mergeInt(method23365, 1, Integer::sum);
         }
         return (Object2IntMap<Class1976>)object2IntOpenHashMap;
     }
@@ -763,7 +762,7 @@ public class Class1849 extends World
     private void method6893(final Class513 class513) {
         final Entity class514 = this.field10086.get(class513.method1865());
         if (class514 != null) {
-            Class1849.field10083.warn("Force-added player with duplicate UUID {}", (Object)class513.method1865().toString());
+            Class1849.field10083.warn("Force-added player with duplicate UUID {}", class513.method1865().toString());
             class514.detach();
             this.method6902((Class513)class514);
         }
@@ -778,7 +777,7 @@ public class Class1849 extends World
     
     private boolean method6894(final Entity class399) {
         if (class399.removed) {
-            Class1849.field10083.warn("Tried to add entity {} but it was marked as removed already", (Object) EntityType.method23354(class399.getType()));
+            Class1849.field10083.warn("Tried to add entity {} but it was marked as removed already", EntityType.method23354(class399.getType()));
             return false;
         }
         if (this.method6896(class399)) {
@@ -804,7 +803,7 @@ public class Class1849 extends World
     private boolean method6896(final Entity class399) {
         final Entity class400 = this.field10086.get(class399.method1865());
         if (class400 != null) {
-            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", (Object) EntityType.method23354(class400.getType()), (Object)class399.method1865().toString());
+            Class1849.field10083.warn("Keeping entity {} that already exists with UUID {}", EntityType.method23354(class400.getType()), class399.method1865().toString());
             return true;
         }
         return false;
@@ -978,12 +977,12 @@ public class Class1849 extends World
     
     @Override
     public void method6763(final BlockPos class354, final Block class355, final int n, final int n2) {
-        this.field10100.add((Object)new Class9569(class354, class355, n, n2));
+        this.field10100.add(new Class9569(class354, class355, n, n2));
     }
     
     private void method6905() {
         while (!this.field10100.isEmpty()) {
-            final Class9569 class9569 = (Class9569)this.field10100.removeFirst();
+            final Class9569 class9569 = this.field10100.removeFirst();
             if (!this.method6906(class9569)) {
                 continue;
             }
@@ -1019,7 +1018,7 @@ public class Class1849 extends World
     }
     
     public <T extends IParticleData> int method6911(final T t, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
-        final Class4278 class4278 = new Class4278((T)t, false, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4);
+        final Class4278 class4278 = new Class4278(t, false, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4);
         int n9 = 0;
         for (int i = 0; i < this.field10088.size(); ++i) {
             if (this.method6913(this.field10088.get(i), false, n, n2, n3, class4278)) {
@@ -1030,7 +1029,7 @@ public class Class1849 extends World
     }
     
     public <T extends IParticleData> boolean method6912(final Class513 class513, final T t, final boolean b, final double n, final double n2, final double n3, final int n4, final double n5, final double n6, final double n7, final double n8) {
-        return this.method6913(class513, b, n, n2, n3, new Class4278((T)t, b, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4));
+        return this.method6913(class513, b, n, n2, n3, new Class4278(t, b, n, n2, n3, (float)n5, (float)n6, (float)n7, (float)n8, n4));
     }
     
     private boolean method6913(final Class513 class513, final boolean b, final double n, final double n2, final double n3, final IPacket<?> class514) {
@@ -1047,7 +1046,7 @@ public class Class1849 extends World
     @Nullable
     @Override
     public Entity getEntityByID(final int n) {
-        return (Entity)this.field10085.get(n);
+        return this.field10085.get(n);
     }
     
     @Nullable
@@ -1119,7 +1118,7 @@ public class Class1849 extends World
     
     public LongSet method6919() {
         final Class6358 class6358 = this.method6918().method27209(Class6358::new, "chunks");
-        return (LongSet)((class6358 == null) ? LongSets.EMPTY_SET : LongSets.unmodifiable(class6358.method18933()));
+        return (class6358 == null) ? LongSets.EMPTY_SET : LongSets.unmodifiable(class6358.method18933());
     }
     
     public boolean method6920(final int n, final int n2, final boolean b) {
@@ -1204,7 +1203,7 @@ public class Class1849 extends World
     
     public void method6930(final Path path) throws IOException {
         final Class388 field10354 = this.method6904().field10354;
-        try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path.resolve("stats.txt"), new OpenOption[0])) {
+        try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path.resolve("stats.txt"))) {
             bufferedWriter.write(String.format("spawning_chunks: %d\n", field10354.method1341().method30140()));
             for (final Object2IntMap$Entry object2IntMap$Entry : this.method6885().object2IntEntrySet()) {
                 bufferedWriter.write(String.format("spawn_count.%s: %d\n", ((Class1976)object2IntMap$Entry.getKey()).method7986(), object2IntMap$Entry.getIntValue()));
@@ -1218,19 +1217,19 @@ public class Class1849 extends World
         }
         final CrashReport class7689 = new CrashReport("Level dump", new Exception("dummy"));
         this.method6779(class7689);
-        try (final BufferedWriter bufferedWriter2 = Files.newBufferedWriter(path.resolve("example_crash.txt"), new OpenOption[0])) {
+        try (final BufferedWriter bufferedWriter2 = Files.newBufferedWriter(path.resolve("example_crash.txt"))) {
             bufferedWriter2.write(class7689.method24414());
         }
-        try (final BufferedWriter bufferedWriter3 = Files.newBufferedWriter(path.resolve("chunks.csv"), new OpenOption[0])) {
+        try (final BufferedWriter bufferedWriter3 = Files.newBufferedWriter(path.resolve("chunks.csv"))) {
             field10354.method1343(bufferedWriter3);
         }
-        try (final BufferedWriter bufferedWriter4 = Files.newBufferedWriter(path.resolve("entities.csv"), new OpenOption[0])) {
-            method6931(bufferedWriter4, (Iterable<Entity>)this.field10085.values());
+        try (final BufferedWriter bufferedWriter4 = Files.newBufferedWriter(path.resolve("entities.csv"))) {
+            method6931(bufferedWriter4, this.field10085.values());
         }
-        try (final BufferedWriter bufferedWriter5 = Files.newBufferedWriter(path.resolve("global_entities.csv"), new OpenOption[0])) {
+        try (final BufferedWriter bufferedWriter5 = Files.newBufferedWriter(path.resolve("global_entities.csv"))) {
             method6931(bufferedWriter5, this.field10084);
         }
-        try (final BufferedWriter bufferedWriter6 = Files.newBufferedWriter(path.resolve("block_entities.csv"), new OpenOption[0])) {
+        try (final BufferedWriter bufferedWriter6 = Files.newBufferedWriter(path.resolve("block_entities.csv"))) {
             this.method6932(bufferedWriter6);
         }
     }

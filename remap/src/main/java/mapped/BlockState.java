@@ -392,7 +392,7 @@ public class BlockState extends StateHolder<Block, BlockState> implements IState
             if (iproperty == null) {
                 continue;
             }
-            blockstate = IStateHolder.withString(blockstate, iproperty, s, dynamic.toString(), (String) entry.getValue());
+            blockstate = IStateHolder.withString(blockstate, iproperty, s, dynamic.toString(), entry.getValue());
         }
         return blockstate;
     }

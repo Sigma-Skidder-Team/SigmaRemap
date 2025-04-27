@@ -31,14 +31,14 @@ public class Class4741 extends Class4712<Class838, Class5845<Class838>>
         if (method4988 != this.field20358) {
             if (method4988 != 0) {
                 if (method4988 != 1) {
-                    this.field20301 = (M)this.field20361;
+                    this.field20301 = this.field20361;
                 }
                 else {
-                    this.field20301 = (M)this.field20360;
+                    this.field20301 = this.field20360;
                 }
             }
             else {
-                this.field20301 = (M)this.field20359;
+                this.field20301 = this.field20359;
             }
         }
         this.field20358 = method4988;

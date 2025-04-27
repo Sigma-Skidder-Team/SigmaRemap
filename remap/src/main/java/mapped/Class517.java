@@ -84,10 +84,10 @@ public abstract class Class517<T extends Class3418> extends Class516<T>
     private void method2998(final int n, final int n2, final Iterable<Class1948> iterable) {
         int field3080 = this.field3080;
         for (final Class1948 class1948 : iterable) {
-            String str = Class8822.method30773(class1948.method7906().method16455(), new Object[0]);
+            String str = Class8822.method30773(class1948.method7906().method16455());
             if (class1948.method7908() >= 1) {
                 if (class1948.method7908() <= 9) {
-                    str = str + ' ' + Class8822.method30773("enchantment.level." + (class1948.method7908() + 1), new Object[0]);
+                    str = str + ' ' + Class8822.method30773("enchantment.level." + (class1948.method7908() + 1));
                 }
             }
             this.font.drawStringWithShadow(str, (float)(n + 10 + 18), (float)(field3080 + 6), 16777215);

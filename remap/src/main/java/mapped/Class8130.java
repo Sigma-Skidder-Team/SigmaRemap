@@ -6,12 +6,12 @@ package mapped;
 
 public final class Class8130
 {
-    private int field33493;
-    private boolean field33494;
-    private int field33495;
-    private int field33496;
-    private int field33497;
-    private Class2314 field33498;
+    private final int field33493;
+    private final boolean field33494;
+    private final int field33495;
+    private final int field33496;
+    private final int field33497;
+    private final Class2314 field33498;
     
     public Class8130(final int field33493, final boolean field33494, final int field33495, final int field33496, final int field33497, final Class2314 field33498) {
         this.field33493 = field33493;

@@ -33,7 +33,7 @@ public class Class846 extends Class763
         this.field4114.method22062(5, new Class3517(this, 0.8));
         this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(6, new Class3503(this));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[0]));
         this.field4115.method22062(2, new Class3558<Object>(this, PlayerEntity.class));
         this.field4115.method22062(3, new Class3558<Object>(this, Class786.class));
     }

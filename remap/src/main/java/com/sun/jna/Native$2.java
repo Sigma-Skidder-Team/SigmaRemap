@@ -6,7 +6,7 @@ package com.sun.jna;
 
 public final class Native$2
 {
-    public void finalize() {
+    protected void finalize() {
         Native.access$000();
     }
 }

@@ -75,7 +75,7 @@ public class Class8878
     
     public void method31213(final CompoundNBT class51) {
         this.field37346.forEach((class53, class54) -> {
-            if (!(!class52.method315(Class9424.method35023(class53)))) {
+            if (class52.method315(Class9424.method35023(class53))) {
                 class54.method26709(class52.method323(Class9424.method35023(class53)));
             }
         });

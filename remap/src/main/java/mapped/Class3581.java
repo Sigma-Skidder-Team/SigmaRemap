@@ -39,9 +39,7 @@ public class Class3581 extends Class3574
             if (!this.field16703.method2783()) {
                 if (!this.field16703.method1814()) {
                     if (!this.field16703.method4656()) {
-                        if (super.method11013()) {
-                            return true;
-                        }
+                        return super.method11013();
                     }
                 }
             }

@@ -11,7 +11,7 @@ public class Class5721 extends Class5714
 {
     private static String[] field23268;
     private IPacket field23269;
-    private List<IPacket> field23270;
+    private final List<IPacket> field23270;
     
     public Class5721(final IPacket field23269) {
         this.field23270 = new ArrayList<IPacket>();

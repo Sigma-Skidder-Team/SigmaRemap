@@ -66,7 +66,7 @@ public class Class1923 implements AutoCloseable
                 if (class1738 == Class2021.field11532) {
                     break;
                 }
-                ((CharList)this.field10465.computeIfAbsent(MathHelper.ceil(class1738.method8080(false)), p0 -> new CharArrayList())).add(c);
+                this.field10465.computeIfAbsent(MathHelper.ceil(class1738.method8080(false)), p0 -> new CharArrayList()).add(c);
                 break;
             }
         }
@@ -96,7 +96,7 @@ public class Class1923 implements AutoCloseable
     }
     
     public Class2023 method7630(final char c) {
-        Class2023 class2023 = (Class2023)this.field10464.get(c);
+        Class2023 class2023 = this.field10464.get(c);
         if (class2023 == null) {
             if (c != ' ') {
                 class2023 = this.method7631(c);
@@ -122,7 +122,7 @@ public class Class1923 implements AutoCloseable
     }
     
     public Class8048 method7632(final char c) {
-        Class8048 class8048 = (Class8048)this.field10463.get(c);
+        Class8048 class8048 = this.field10463.get(c);
         if (class8048 == null) {
             if (c != ' ') {
                 class8048 = this.method7633(this.method7631(c));
@@ -152,7 +152,7 @@ public class Class1923 implements AutoCloseable
     }
     
     public Class8048 method7634(final Class2023 class2023) {
-        final CharList list = (CharList)this.field10465.get(MathHelper.ceil(class2023.method8080(false)));
+        final CharList list = this.field10465.get(MathHelper.ceil(class2023.method8080(false)));
         return (list != null && !list.isEmpty()) ? this.method7632(list.get(Class1923.field10457.nextInt(list.size()))) : this.field10460;
     }
     

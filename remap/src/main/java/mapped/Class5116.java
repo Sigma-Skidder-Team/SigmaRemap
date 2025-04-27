@@ -40,7 +40,7 @@ public class Class5116 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, this.field22064.map(class354 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("exit_x"), dynamicOps2.createInt(class354.getX()), dynamicOps2.createString("exit_y"), dynamicOps2.createInt(class354.getY()), dynamicOps2.createString("exit_z"), dynamicOps2.createInt(class354.getZ()), dynamicOps2.createString("exact"), dynamicOps2.createBoolean(this.field22065)))).orElse(dynamicOps.emptyMap()));
+        return (Dynamic<T>)new Dynamic(dynamicOps, this.field22064.map(class354 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("exit_x"), dynamicOps2.createInt(class354.getX()), dynamicOps2.createString("exit_y"), dynamicOps2.createInt(class354.getY()), dynamicOps2.createString("exit_z"), dynamicOps2.createInt(class354.getZ()), dynamicOps2.createString("exact"), dynamicOps2.createBoolean(this.field22065)))).orElse(dynamicOps.emptyMap()));
     }
     
     public static <T> Class5116 method16018(final Dynamic<T> dynamic) {

@@ -169,7 +169,7 @@ public class Class853 extends Class759 implements IMob
                     for (int n = 2 + this.rand.nextInt(3), i = 0; i < n; ++i) {
                         final float n2 = (i % 2 - 0.5f) * method5130 / 4.0f;
                         final float n3 = (i / 2 - 0.5f) * method5130 / 4.0f;
-                        final Class853 class853 = (Class853)this.getType().method23371(this.world);
+                        final Class853 class853 = this.getType().method23371(this.world);
                         if (this.hasCustomName()) {
                             class853.method1872(this.getCustomName());
                         }

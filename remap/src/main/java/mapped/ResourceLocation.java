@@ -19,7 +19,7 @@ public class ResourceLocation implements Comparable<ResourceLocation>
     public final String field10543;
     
     public ResourceLocation(final String[] array) {
-        this.field10542 = (StringUtils.isEmpty((CharSequence)array[0]) ? "minecraft" : array[0]);
+        this.field10542 = (StringUtils.isEmpty(array[0]) ? "minecraft" : array[0]);
         this.field10543 = array[1];
         if (this.field10543.equals("DUMMY")) {
             if (!method7802(this.field10542)) {
@@ -57,7 +57,7 @@ public class ResourceLocation implements Comparable<ResourceLocation>
         final String[] array = { "minecraft", s };
         final int index = s.indexOf(ch);
         if (index >= 0) {
-            array[1] = s.substring(index + 1, s.length());
+            array[1] = s.substring(index + 1);
             if (index >= 1) {
                 array[0] = s.substring(0, index);
             }
@@ -115,7 +115,7 @@ public class ResourceLocation implements Comparable<ResourceLocation>
         }
         catch (final Class2357 class2357) {
             stringReader.setCursor(cursor);
-            throw ResourceLocation.field10541.createWithContext((ImmutableStringReader)stringReader);
+            throw ResourceLocation.field10541.createWithContext(stringReader);
         }
     }
     
@@ -126,9 +126,7 @@ public class ResourceLocation implements Comparable<ResourceLocation>
                     if (c != ':') {
                         if (c != '/') {
                             if (c != '.') {
-                                if (c != '-') {
-                                    return false;
-                                }
+                                return c == '-';
                             }
                         }
                     }
@@ -178,10 +176,10 @@ public class ResourceLocation implements Comparable<ResourceLocation>
     
     public static boolean method7803(final String s) {
         final String[] method7796 = method7796(s, ':');
-        return method7802(StringUtils.isEmpty((CharSequence)method7796[0]) ? "minecraft" : method7796[0]) && method7801(method7796[1]);
+        return method7802(StringUtils.isEmpty(method7796[0]) ? "minecraft" : method7796[0]) && method7801(method7796[1]);
     }
     
     static {
-        field10541 = new SimpleCommandExceptionType((Message)new Class2259("argument.id.invalid", new Object[0]));
+        field10541 = new SimpleCommandExceptionType(new Class2259("argument.id.invalid", new Object[0]));
     }
 }

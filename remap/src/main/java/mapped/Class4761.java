@@ -23,6 +23,6 @@ public class Class4761<T extends Class812> extends Class4759<T, Class5929<T>>
     }
     
     static {
-        field20385 = Maps.newHashMap((Map)ImmutableMap.of((Object) EntityType.field28970, (Object)new ResourceLocation("textures/entity/horse/donkey.png"), (Object) EntityType.field29006, (Object)new ResourceLocation("textures/entity/horse/mule.png")));
+        field20385 = Maps.newHashMap((Map)ImmutableMap.of(EntityType.field28970, new ResourceLocation("textures/entity/horse/donkey.png"), (Object) EntityType.field29006, (Object)new ResourceLocation("textures/entity/horse/mule.png")));
     }
 }

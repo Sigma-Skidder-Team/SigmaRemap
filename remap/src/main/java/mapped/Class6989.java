@@ -25,6 +25,6 @@ public class Class6989 implements Class6988
     
     @Override
     public ITextComponent method21401() {
-        return new Class2259("spectatorMenu.root.prompt", new Object[0]);
+        return new Class2259("spectatorMenu.root.prompt");
     }
 }

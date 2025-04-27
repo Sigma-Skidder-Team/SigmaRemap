@@ -12,7 +12,7 @@ import java.util.List;
 public class Class3767 extends Class3736
 {
     private String field17226;
-    private List<Long> field17227;
+    private final List<Long> field17227;
     
     public Class3767() {
         super("Track Reference Box");
@@ -32,6 +32,6 @@ public class Class3767 extends Class3736
     }
     
     public List<Long> method11573() {
-        return Collections.unmodifiableList((List<? extends Long>)this.field17227);
+        return Collections.unmodifiableList(this.field17227);
     }
 }

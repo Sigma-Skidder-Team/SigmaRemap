@@ -62,6 +62,6 @@ public abstract class Class378 implements IDynamicSerializable
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field220.getKey(this.field2222).toString())).put(dynamicOps.createString("radius"), dynamicOps.createInt(this.field2220)).put(dynamicOps.createString("radius_random"), dynamicOps.createInt(this.field2221));
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
+        return (T)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
 }

@@ -51,7 +51,7 @@ public class Class4024 extends Class4022
     
     @Override
     public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
-        return (class7096.get((IProperty<Boolean>)Class4024.field18113) && Direction.UP != class7099) ? 15 : 0;
+        return (class7096.get(Class4024.field18113) && Direction.UP != class7099) ? 15 : 0;
     }
     
     public boolean method12216(final World class1847, final BlockPos class1848, final BlockState class1849) {
@@ -74,7 +74,7 @@ public class Class4024 extends Class4022
             }
             list.remove(0);
         }
-        if (!class7096.get((IProperty<Boolean>)Class4024.field18113)) {
+        if (!class7096.get(Class4024.field18113)) {
             if (!b) {
                 if (!method12218(class7097, class7098, false)) {
                     class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class4024.field18113, true), 3);
@@ -92,7 +92,7 @@ public class Class4024 extends Class4022
     
     @Override
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
-        if (class7096.get((IProperty<Boolean>)Class4024.field18113) == this.method12216(class7097, class7098, class7096)) {
+        if (class7096.get(Class4024.field18113) == this.method12216(class7097, class7098, class7096)) {
             if (!class7097.method6833().method21342(class7098, this)) {
                 class7097.method6833().method21345(class7098, this, this.tickRate(class7097));
             }
@@ -111,14 +111,14 @@ public class Class4024 extends Class4022
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.get((IProperty<Boolean>)Class4024.field18113)) {
+        if (class7096.get(Class4024.field18113)) {
             class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2, class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2, 0.0, 0.0, 0.0);
         }
     }
     
     @Override
     public int getLightValue(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class4024.field18113) ? super.getLightValue(class7096) : 0;
+        return class7096.get(Class4024.field18113) ? super.getLightValue(class7096) : 0;
     }
     
     @Override

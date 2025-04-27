@@ -43,11 +43,11 @@ public enum Class314
     private final boolean field1872;
     private final String field1873;
     
-    private Class314(final char c) {
+    Class314(final char c) {
         this(c, false);
     }
     
-    private Class314(final char c, final boolean field1872) {
+    Class314(final char c, final boolean field1872) {
         this.field1871 = c;
         this.field1872 = field1872;
         this.field1873 = "§" + c;

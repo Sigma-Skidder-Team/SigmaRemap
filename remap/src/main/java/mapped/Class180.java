@@ -16,7 +16,7 @@ public enum Class180 implements IStringSerializable
     private final String field534;
     private final int field535;
     
-    private Class180(final String field534, final int field535) {
+    Class180(final String field534, final int field535) {
         this.field534 = field534;
         this.field535 = field535;
     }

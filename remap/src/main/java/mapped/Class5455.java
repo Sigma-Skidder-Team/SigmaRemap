@@ -27,7 +27,7 @@ public class Class5455<E extends LivingEntity> extends Class5419<E>
         this.field22691 = field22691;
         this.field22692 = field22692;
         this.field22693 = field22693;
-        list.forEach(pair -> this.field22694.method30872((Class5419<? super E>)pair.getFirst(), (int)pair.getSecond()));
+        list.forEach(pair -> this.field22694.method30872(pair.getFirst(), pair.getSecond()));
     }
     
     @Override

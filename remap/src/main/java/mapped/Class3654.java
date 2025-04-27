@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Class3654 extends Class3651
 {
-    private int field16931;
+    private final int field16931;
     
     public static List<Class7220> method11246() {
         final ArrayList list = new ArrayList(2);

@@ -31,9 +31,9 @@ public class Class6239 extends Class6227<Class141>
                 if (method503 == null) {
                     throw new IllegalArgumentException("Don't know how to serialize enchantment " + obj);
                 }
-                jsonArray.add((JsonElement)new JsonPrimitive(method503.toString()));
+                jsonArray.add(new JsonPrimitive(method503.toString()));
             }
-            jsonObject.add("enchantments", (JsonElement)jsonArray);
+            jsonObject.add("enchantments", jsonArray);
         }
     }
     

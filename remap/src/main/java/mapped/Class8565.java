@@ -32,7 +32,7 @@ public class Class8565
                 final Class2083 class5418 = function.apply(method16526);
                 if (class5418 != Class2083.field12047) {
                     if (class5417 != class5418) {
-                        if (((StateHolder<Object, Object>)method16526).get((IProperty<Comparable>)class5413) == class5414.get((IProperty<Comparable>)class5413)) {
+                        if (method16526.get((IProperty<Comparable>)class5413) == class5414.get((IProperty<Comparable>)class5413)) {
                             if (biPredicate.test(class5415, method16525)) {
                                 return Class6389::method19072;
                             }

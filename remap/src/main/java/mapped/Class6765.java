@@ -84,7 +84,7 @@ public abstract class Class6765
         if (class3641.method11180() != null) {
             string = class3641.method11180().toString();
         }
-        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", (Object)class3642.getName().getString(), (Object)string, (Object)class3642.getEntityId(), (Object)class3642.getPosX(), (Object)class3642.getPosY(), (Object)class3642.getPosZ());
+        Class6765.field26560.info("{}[{}] logged in with entity id {} at ({}, {}, {})", class3642.getName().getString(), string, class3642.getEntityId(), class3642.getPosX(), class3642.getPosY(), class3642.getPosZ());
         final WorldInfo method2849 = method2848.method6764();
         this.method20615(class3642, null, method2848);
         final Class5814 class3643 = new Class5814(this.field26562, class3641, class3642);
@@ -103,18 +103,18 @@ public abstract class Class6765
         this.field26562.method1558();
         Class2259 class3644;
         if (!class3642.method2844().getName().equalsIgnoreCase(anotherString)) {
-            class3644 = new Class2259("multiplayer.player.joined.renamed", new Object[] { class3642.getDisplayName(), anotherString });
+            class3644 = new Class2259("multiplayer.player.joined.renamed", class3642.getDisplayName(), anotherString);
         }
         else {
-            class3644 = new Class2259("multiplayer.player.joined", new Object[] { class3642.getDisplayName() });
+            class3644 = new Class2259("multiplayer.player.joined", class3642.getDisplayName());
         }
         this.method20619(class3644.applyTextStyle(TextFormatting.YELLOW));
         class3643.method17467(class3642.getPosX(), class3642.getPosY(), class3642.getPosZ(), class3642.rotationYaw, class3642.rotationPitch);
         this.field26563.add(class3642);
         this.field26564.put(class3642.method1865(), class3642);
-        this.method20586(new Class4330(Class2156.field12803, new Class513[] { class3642 }));
+        this.method20586(new Class4330(Class2156.field12803, class3642));
         for (int i = 0; i < this.field26563.size(); ++i) {
-            class3642.field3039.method17469(new Class4330(Class2156.field12803, new Class513[] { this.field26563.get(i) }));
+            class3642.field3039.method17469(new Class4330(Class2156.field12803, this.field26563.get(i)));
         }
         method2848.method6891(class3642);
         this.field26562.method1584().method28267(class3642);
@@ -129,7 +129,7 @@ public abstract class Class6765
         if (method2847 != null) {
             if (method2847.contains("RootVehicle", 10)) {
                 final CompoundNBT method2851 = method2847.getCompound("RootVehicle");
-                final Entity method2852 = EntityType.method23378(method2851.getCompound("Entity"), (World)method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
+                final Entity method2852 = EntityType.method23378(method2851.getCompound("Entity"), method2848, class3648 -> class3646.method6887(class3648) ? class3648 : null);
                 if (method2852 != null) {
                     final UUID method2853 = method2851.getUniqueId("Attach");
                     if (!method2852.method1865().equals(method2853)) {
@@ -238,29 +238,29 @@ public abstract class Class6765
             this.field26569.remove(method2942);
             this.field26570.remove(method2942);
         }
-        this.method20586(new Class4330(Class2156.field12807, new Class513[] { class513 }));
+        this.method20586(new Class4330(Class2156.field12807, class513));
     }
     
     @Nullable
     public ITextComponent method20573(final SocketAddress socketAddress, final GameProfile gameProfile) {
         if (this.field26565.method26219(gameProfile)) {
             final Class6025 class6025 = this.field26565.method26207(gameProfile);
-            final Class2259 class6026 = new Class2259("multiplayer.disconnect.banned.reason", new Object[] { class6025.method17950() });
+            final Class2259 class6026 = new Class2259("multiplayer.disconnect.banned.reason", class6025.method17950());
             if (class6025.method17949() != null) {
-                class6026.appendSibling(new Class2259("multiplayer.disconnect.banned.expiration", new Object[] { Class6765.field26561.format(class6025.method17949()) }));
+                class6026.appendSibling(new Class2259("multiplayer.disconnect.banned.expiration", Class6765.field26561.format(class6025.method17949())));
             }
             return class6026;
         }
         if (!this.method20596(gameProfile)) {
-            return new Class2259("multiplayer.disconnect.not_whitelisted", new Object[0]);
+            return new Class2259("multiplayer.disconnect.not_whitelisted");
         }
         if (!this.field26566.method26222(socketAddress)) {
-            return (this.field26563.size() >= this.field26573 && !this.method20625(gameProfile)) ? new Class2259("multiplayer.disconnect.server_full", new Object[0]) : null;
+            return (this.field26563.size() >= this.field26573 && !this.method20625(gameProfile)) ? new Class2259("multiplayer.disconnect.server_full") : null;
         }
         final Class6026 method26224 = this.field26566.method26224(socketAddress);
-        final Class2259 class6027 = new Class2259("multiplayer.disconnect.banned_ip.reason", new Object[] { method26224.method17950() });
+        final Class2259 class6027 = new Class2259("multiplayer.disconnect.banned_ip.reason", method26224.method17950());
         if (method26224.method17949() != null) {
-            class6027.appendSibling(new Class2259("multiplayer.disconnect.banned_ip.expiration", new Object[] { Class6765.field26561.format(method26224.method17949()) }));
+            class6027.appendSibling(new Class2259("multiplayer.disconnect.banned_ip.expiration", Class6765.field26561.format(method26224.method17949())));
         }
         return class6027;
     }
@@ -282,7 +282,7 @@ public abstract class Class6765
         }
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
-            ((Class513)iterator.next()).field3039.method17463(new Class2259("multiplayer.disconnect.duplicate_login", new Object[0]));
+            ((Class513)iterator.next()).field3039.method17463(new Class2259("multiplayer.disconnect.duplicate_login"));
         }
         Class8071 class515;
         if (!this.field26562.method1509()) {
@@ -424,7 +424,7 @@ public abstract class Class6765
     }
     
     public void method20593(final GameProfile gameProfile) {
-        ((Class8006<K, Class6023>)this.field26567).method26206(new Class6023(gameProfile, this.field26562.method1448(), this.field26567.method26221(gameProfile)));
+        this.field26567.method26206(new Class6023(gameProfile, this.field26562.method1448(), this.field26567.method26221(gameProfile)));
         final Class513 method20624 = this.method20624(gameProfile.getId());
         if (method20624 != null) {
             this.method20584(method20624);
@@ -432,7 +432,7 @@ public abstract class Class6765
     }
     
     public void method20594(final GameProfile gameProfile) {
-        ((Class8006<GameProfile, V>)this.field26567).method26208(gameProfile);
+        this.field26567.method26208(gameProfile);
         final Class513 method20624 = this.method20624(gameProfile.getId());
         if (method20624 != null) {
             this.method20584(method20624);
@@ -460,21 +460,17 @@ public abstract class Class6765
     
     public boolean method20596(final GameProfile gameProfile) {
         if (this.field26572) {
-            if (!((Class8006<GameProfile, V>)this.field26567).method26213(gameProfile)) {
-                if (!((Class8006<GameProfile, V>)this.field26568).method26213(gameProfile)) {
-                    return false;
-                }
+            if (!this.field26567.method26213(gameProfile)) {
+                return this.field26568.method26213(gameProfile);
             }
         }
         return true;
     }
     
     public boolean method20597(final GameProfile gameProfile) {
-        if (!((Class8006<GameProfile, V>)this.field26567).method26213(gameProfile)) {
+        if (!this.field26567.method26213(gameProfile)) {
             if (!this.field26562.method1592(gameProfile) || !this.field26562.method1481(DimensionType.field2223).method6764().method29574()) {
-                if (!this.field26576) {
-                    return false;
-                }
+                return this.field26576;
             }
         }
         return true;
@@ -610,7 +606,7 @@ public abstract class Class6765
     
     public void method20617() {
         for (int i = 0; i < this.field26563.size(); ++i) {
-            this.field26563.get(i).field3039.method17463(new Class2259("multiplayer.disconnect.server_shutdown", new Object[0]));
+            this.field26563.get(i).field3039.method17463(new Class2259("multiplayer.disconnect.server_shutdown"));
         }
     }
     

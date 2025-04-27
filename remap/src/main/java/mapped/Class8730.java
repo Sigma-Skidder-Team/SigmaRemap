@@ -48,7 +48,7 @@ public abstract class Class8730
         this.field36668 = new Class1894(this, 8);
         this.field36669 = new Class1895(this, 33);
         this.field36670 = Sets.newHashSet();
-        this.field36674 = (LongSet)new LongOpenHashSet();
+        this.field36674 = new LongOpenHashSet();
         final Class875<Runnable> method5392 = Class875.method5392("player ticket throttler", field36675::execute);
         final Class1910 field36676 = new Class1910((List<Class875<?>>)ImmutableList.of((Object)method5392), executor, 4);
         this.field36671 = field36676;
@@ -147,11 +147,11 @@ public abstract class Class8730
     }
     
     private Class79<Class1949<?>> method30134(final long n) {
-        return (Class79)this.field36666.computeIfAbsent(n, p0 -> Class79.method430(4));
+        return this.field36666.computeIfAbsent(n, p0 -> Class79.method430(4));
     }
     
     public void method30135(final ChunkPos class7859, final boolean b) {
-        final Class1949 class7860 = new Class1949((Class9105<T>)Class9105.field38568, 31, (T)class7859);
+        final Class1949 class7860 = new Class1949(Class9105.field38568, 31, class7859);
         if (!b) {
             this.method30129(class7859.method25422(), class7860);
         }
@@ -162,15 +162,15 @@ public abstract class Class8730
     
     public void method30136(final Class353 class353, final Class513 class354) {
         final long method25422 = class353.method1115().method25422();
-        ((ObjectSet)this.field36665.computeIfAbsent(method25422, p0 -> new ObjectOpenHashSet())).add((Object)class354);
+        ((ObjectSet)this.field36665.computeIfAbsent(method25422, p0 -> new ObjectOpenHashSet())).add(class354);
         this.field36668.method7329(method25422, 0, true);
         this.field36669.method7329(method25422, 0, true);
     }
     
     public void method30137(final Class353 class353, final Class513 class354) {
         final long method25422 = class353.method1115().method25422();
-        final ObjectSet set = (ObjectSet)this.field36665.get(method25422);
-        set.remove((Object)class354);
+        final ObjectSet set = this.field36665.get(method25422);
+        set.remove(class354);
         if (set.isEmpty()) {
             this.field36665.remove(method25422);
             this.field36668.method7329(method25422, Integer.MAX_VALUE, false);
@@ -179,7 +179,7 @@ public abstract class Class8730
     }
     
     public String method30138(final long n) {
-        final Class79 class79 = (Class79)this.field36666.get(n);
+        final Class79 class79 = this.field36666.get(n);
         String string;
         if (class79 != null && !class79.isEmpty()) {
             string = class79.method439().toString();

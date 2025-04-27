@@ -29,6 +29,6 @@ public class Class4229 extends Class4211
     public JsonElement method12682() {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.add("item", this.field19033.method34629());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

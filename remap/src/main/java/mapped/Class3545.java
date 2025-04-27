@@ -101,9 +101,7 @@ public abstract class Class3545 extends Class3446
                 if (this.field16605 == 0) {
                     this.field16605 = (this.method11098(class511) ? 1 : 2);
                 }
-                if (this.field16605 == 2) {
-                    return false;
-                }
+                return this.field16605 != 2;
             }
             return true;
         }

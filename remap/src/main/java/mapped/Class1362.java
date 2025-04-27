@@ -189,7 +189,7 @@ public class Class1362 extends Class1361
                 this.field7468 = method27837;
                 final Iterator<Map.Entry<SocketAddress, Class8764>> iterator = this.field7480.entrySet().iterator();
                 while (iterator.hasNext()) {
-                    if (!((Map.Entry<K, Class8764>)iterator.next()).getValue().method30392(method27837)) {
+                    if (!iterator.next().getValue().method30392(method27837)) {
                         continue;
                     }
                     iterator.remove();

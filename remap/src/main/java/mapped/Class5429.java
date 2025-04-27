@@ -13,7 +13,7 @@ public class Class5429 extends Class5419<Class824>
     private static String[] field22620;
     
     public Class5429() {
-        super((Map)ImmutableMap.of());
+        super(ImmutableMap.of());
     }
     
     public boolean method16560(final Class1849 class1849, final Class824 class1850, final long n) {

@@ -51,7 +51,7 @@ public class Class7271<C>
             return class52.method20842(class51);
         }
         catch (final Exception ex) {
-            Class7271.field28165.error("Failed to deserialize timer callback: " + class51, (Throwable)ex);
+            Class7271.field28165.error("Failed to deserialize timer callback: " + class51, ex);
             return null;
         }
     }

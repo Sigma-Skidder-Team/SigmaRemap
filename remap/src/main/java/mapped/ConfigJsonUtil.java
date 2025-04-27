@@ -21,7 +21,7 @@ public class ConfigJsonUtil {
 
     public static void saveJSONToFile(final JSONObject JSONObject, final File file) throws IOException {
         final FileOutputStream fileOutputStream = new FileOutputStream(file);
-        IOUtils.write(JSONObject.toString(0), (OutputStream) fileOutputStream);
+        IOUtils.write(JSONObject.toString(0), fileOutputStream);
         fileOutputStream.close();
     }
 
@@ -29,7 +29,7 @@ public class ConfigJsonUtil {
         JSONObject JSONObject = new JSONObject();
         if (file.exists()) {
             final FileInputStream fileInputStream = new FileInputStream(file);
-            final String string = IOUtils.toString((InputStream) fileInputStream);
+            final String string = IOUtils.toString(fileInputStream);
             if (string == null) {
                 fileInputStream.close();
                 return new JSONObject();

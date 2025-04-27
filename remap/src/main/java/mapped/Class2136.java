@@ -21,7 +21,7 @@ public enum Class2136
         class2136.field12471.put(n, (Object)new Class7985(s, class2136, n, null));
     }
     
-    private Class2136(final String field12472) {
+    Class2136(final String field12472) {
         this.field12471 = (Int2ObjectMap<Class7985>)new Int2ObjectOpenHashMap();
         this.field12472 = field12472;
     }
@@ -42,7 +42,7 @@ public enum Class2136
             this.field12471.put(i, (Object)class7985);
             return class7985;
         }
-        return (Class7985)this.field12471.get(i);
+        return this.field12471.get(i);
     }
     
     public String method8290() {

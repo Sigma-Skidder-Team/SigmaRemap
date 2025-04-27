@@ -31,10 +31,10 @@ public abstract class Class8187
     
     public Class8187(final Typed<?> typed, final Schema schema) {
         this.field33694 = (Type<Pair<String, Dynamic<?>>>)DSL.named(Class9451.field40623.typeName(), DSL.remainderType());
-        this.field33695 = (OpticFinder<List<Pair<String, Dynamic<?>>>>)DSL.fieldFinder("Palette", (Type)DSL.list((Type)this.field33694));
+        this.field33695 = (OpticFinder<List<Pair<String, Dynamic<?>>>>)DSL.fieldFinder("Palette", DSL.list((Type)this.field33694));
         if (Objects.equals(schema.getType(Class9451.field40623), this.field33694)) {
-            this.field33696 = typed.getOptional((OpticFinder)this.field33695).map(list -> list.stream().map(Pair::getSecond).collect(Collectors.toList())).orElse((List<Dynamic<?>>)ImmutableList.of());
-            final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+            this.field33696 = typed.getOptional((OpticFinder)this.field33695).map(list -> list.stream().map(Pair::getSecond).collect(Collectors.toList())).orElse(ImmutableList.of());
+            final Dynamic dynamic = typed.get(DSL.remainderFinder());
             this.field33697 = dynamic.get("Y").asInt(0);
             this.method27103((Dynamic<?>)dynamic);
             return;

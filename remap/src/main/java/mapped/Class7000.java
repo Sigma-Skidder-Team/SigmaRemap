@@ -26,24 +26,24 @@ public class Class7000 implements ArgumentType<ResourceLocation>
     
     public static Class8863 method21430(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         final ResourceLocation class1932 = (ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class);
-        final Class8863 method6398 = ((Class7492)commandContext.getSource()).method23255().method1566().method6398(class1932);
+        final Class8863 method6398 = commandContext.getSource().method23255().method1566().method6398(class1932);
         if (method6398 != null) {
             return method6398;
         }
-        throw Class7000.field27309.create((Object)class1932);
+        throw Class7000.field27309.create(class1932);
     }
     
     public static IRecipe<?> method21431(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return (IRecipe)((Class7492)commandContext.getSource()).method23255().method1577().method6382((ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class)).orElseThrow(() -> Class7000.field27310.create((Object)class1932));
+        return commandContext.getSource().method23255().method1577().method6382((ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class)).orElseThrow(() -> Class7000.field27310.create((Object)class1932));
     }
     
     public static Class122 method21432(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         final ResourceLocation class1932 = (ResourceLocation)commandContext.getArgument(s, (Class) ResourceLocation.class);
-        final Class122 method6409 = ((Class7492)commandContext.getSource()).method23255().method1582().method6409(class1932);
+        final Class122 method6409 = commandContext.getSource().method23255().method1582().method6409(class1932);
         if (method6409 != null) {
             return method6409;
         }
-        throw Class7000.field27311.create((Object)class1932);
+        throw Class7000.field27311.create(class1932);
     }
     
     public static ResourceLocation method21433(final CommandContext<Class7492> commandContext, final String s) {
@@ -61,15 +61,15 @@ public class Class7000 implements ArgumentType<ResourceLocation>
     static {
         field27308 = Arrays.asList("foo", "foo:bar", "012");
         field27309 = new DynamicCommandExceptionType(o -> {
-            new Class2259("advancement.advancementNotFound", new Object[] { o });
+            new Class2259("advancement.advancementNotFound", o);
             return;
         });
         field27310 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("recipe.notFound", new Object[] { o3 });
+            new Class2259("recipe.notFound", o3);
             return;
         });
         field27311 = new DynamicCommandExceptionType(o5 -> {
-            new Class2259("predicate.unknown", new Object[] { o5 });
+            new Class2259("predicate.unknown", o5);
             return;
         });
     }

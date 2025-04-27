@@ -41,11 +41,11 @@ public class Class3876 extends Class3874 implements Class3872
     }
     
     public void method11951(final Class1849 class1849, final BlockPos class1850, final BlockState class1851, final Random random) {
-        if (class1851.get((IProperty<Integer>)Class3876.field17525) != 0) {
+        if (class1851.get(Class3876.field17525) != 0) {
             this.field17527.method17514(class1849, class1849.method6904().method7438(), class1850, class1851, random);
         }
         else {
-            class1849.setBlockState(class1850, ((StateHolder<O, BlockState>)class1851).method21768((IProperty<Comparable>)Class3876.field17525), 4);
+            class1849.setBlockState(class1850, class1851.method21768((IProperty<Comparable>)Class3876.field17525), 4);
         }
     }
     

@@ -62,8 +62,8 @@ public class Class1790 extends Class1776<Class7637> implements AutoCloseable
     
     public boolean method6456(final BlockState class7096, final BlockState class7097) {
         if (class7096 != class7097) {
-            final int int1 = this.field9913.getInt((Object)class7096);
-            return int1 == -1 || int1 != this.field9913.getInt((Object)class7097) || class7096.getFluidState() != class7097.getFluidState();
+            final int int1 = this.field9913.getInt(class7096);
+            return int1 == -1 || int1 != this.field9913.getInt(class7097) || class7096.getFluidState() != class7097.getFluidState();
         }
         return false;
     }

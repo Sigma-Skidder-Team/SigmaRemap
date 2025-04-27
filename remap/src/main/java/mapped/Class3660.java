@@ -333,11 +333,11 @@ public class Class3660
         for (final BlockState class3834 : BlockUtils.method20654(class3833)) {
             int n2 = 1;
             for (final IProperty class3835 : keySet) {
-                if (!((StateHolder<Object, Object>)class3834).method21771((IProperty<Comparable>)class3835)) {
+                if (!class3834.method21771((IProperty<Comparable>)class3835)) {
                     n2 = 0;
                     break;
                 }
-                if (map.get(class3835).equals(((StateHolder<Object, Object>)class3834).get((IProperty<Comparable>)class3835))) {
+                if (map.get(class3835).equals(class3834.get((IProperty<Comparable>)class3835))) {
                     continue;
                 }
                 n2 = 0;

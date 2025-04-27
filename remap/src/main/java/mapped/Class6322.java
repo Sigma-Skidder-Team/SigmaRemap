@@ -98,43 +98,34 @@ public abstract class Class6322
         field25278 = new Class6331("additive_transparency", () -> {
             RenderSystem.enableBlend();
             RenderSystem.method30013(Class2050.field11686, Class2135.field12455);
-            return;
         }, () -> {
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
-            return;
         });
         field25279 = new Class6331("lightning_transparency", () -> {
             RenderSystem.enableBlend();
             RenderSystem.method30013(Class2050.field11693, Class2135.field12455);
-            return;
         }, () -> {
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
-            return;
         });
         field25280 = new Class6331("glint_transparency", () -> {
             RenderSystem.enableBlend();
             RenderSystem.method30013(Class2050.field11695, Class2135.field12455);
-            return;
         }, () -> {
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
-            return;
         });
         field25281 = new Class6331("crumbling_transparency", () -> {
             RenderSystem.enableBlend();
             RenderSystem.method30015(Class2050.field11685, Class2135.field12463, Class2050.field11686, Class2135.field12464);
-            return;
         }, () -> {
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
-            return;
         });
         field25282 = new Class6331("translucent_transparency", () -> {
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
-            return;
         }, () -> RenderSystem.disableBlend());
         field25283 = new Class6321(0.0f);
         field25284 = new Class6321(0.003921569f);
@@ -151,13 +142,11 @@ public abstract class Class6322
             RenderSystem.method30057(5890);
             RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
-            return;
         });
         field25295 = new Class6323("entity_glint_texturing", () -> method18711(0.16f), () -> {
             RenderSystem.method30057(5890);
             RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
-            return;
         });
         field25296 = new Class6337(true);
         field25297 = new Class6337(false);
@@ -177,38 +166,31 @@ public abstract class Class6322
         field25311 = new Class6330("polygon_offset_layering", () -> {
             RenderSystem.method30035(-1.0f, -10.0f);
             RenderSystem.method30031();
-            return;
         }, () -> {
             RenderSystem.method30035(0.0f, 0.0f);
             RenderSystem.method30032();
-            return;
         });
         field25312 = new Class6330("projection_layering", () -> {
             RenderSystem.method30057(5889);
             RenderSystem.pushMatrix();
             RenderSystem.method30063(1.0f, 1.0f, 0.999f);
             RenderSystem.method30057(5888);
-            return;
         }, () -> {
             RenderSystem.method30057(5889);
             RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
-            return;
         });
         field25313 = new Class6329("no_fog", () -> {}, () -> {});
         field25314 = new Class6329("fog", () -> {
             Class9111.method32956();
             RenderSystem.method30019();
-            return;
         }, () -> RenderSystem.method30020());
         field25315 = new Class6329("black_fog", () -> {
             RenderSystem.method30026(2918, 0.0f, 0.0f, 0.0f, 1.0f);
             RenderSystem.method30019();
-            return;
         }, () -> {
             Class9111.method32956();
             RenderSystem.method30020();
-            return;
         });
         field25316 = new Class6341("main_target", () -> {}, () -> {});
         field25317 = new Class6341("outline_target", () -> Minecraft.getInstance().worldRenderer.method5778().method18395(false), () -> Minecraft.getInstance().method5234().method18395(false));

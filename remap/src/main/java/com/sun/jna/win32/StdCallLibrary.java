@@ -9,6 +9,6 @@ import com.sun.jna.Library;
 
 public interface StdCallLibrary extends Library, StdCall
 {
-    public static final int STDCALL_CONVENTION = 63;
-    public static final FunctionMapper FUNCTION_MAPPER = new StdCallFunctionMapper();
+    int STDCALL_CONVENTION = 63;
+    FunctionMapper FUNCTION_MAPPER = new StdCallFunctionMapper();
 }

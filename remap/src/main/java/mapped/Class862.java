@@ -274,7 +274,7 @@ public class Class862 extends Class860
             if (!method327.method331()) {
                 final ItemStack method328 = ItemStack.method27619(method327);
                 if (method328.method27620()) {
-                    Class862.field4602.warn("Unable to load item from: {}", (Object)method327);
+                    Class862.field4602.warn("Unable to load item from: {}", method327);
                 }
                 final ItemStack method329 = this.method5198();
                 if (!method329.method27620()) {

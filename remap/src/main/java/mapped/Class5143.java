@@ -31,7 +31,7 @@ public class Class5143 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("crystalInvulnerable"), dynamicOps.createBoolean(this.field22130), dynamicOps.createString("spikes"), dynamicOps.createList((Stream)this.field22131.stream().map(class9341 -> class9341.method34625((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2).getValue())), dynamicOps.createString("crystalBeamTarget"), (this.field22132 != null) ? dynamicOps.createList((Stream)IntStream.of(this.field22132.getX(), this.field22132.getY(), this.field22132.getZ()).mapToObj((IntFunction<?>)dynamicOps::createInt)) : dynamicOps.createList((Stream)Stream.empty()))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("crystalInvulnerable"), dynamicOps.createBoolean(this.field22130), dynamicOps.createString("spikes"), dynamicOps.createList((Stream)this.field22131.stream().map(class9341 -> class9341.method34625(dynamicOps2).getValue())), dynamicOps.createString("crystalBeamTarget"), (this.field22132 != null) ? dynamicOps.createList((Stream)IntStream.of(this.field22132.getX(), this.field22132.getY(), this.field22132.getZ()).mapToObj((IntFunction<?>)dynamicOps::createInt)) : dynamicOps.createList(Stream.empty()))));
     }
     
     public static <T> Class5143 method16057(final Dynamic<T> dynamic) {

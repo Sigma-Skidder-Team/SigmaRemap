@@ -25,7 +25,7 @@ public enum Class2235
     private final int field13744;
     private final boolean field13745;
     
-    private Class2235(final int field13733, final int field13734, final boolean field13735, final boolean field13736, final boolean field13737, final boolean field13738, final boolean field13739, final int field13740, final int field13741, final int field13742, final int field13743, final int field13744, final boolean field13745) {
+    Class2235(final int field13733, final int field13734, final boolean field13735, final boolean field13736, final boolean field13737, final boolean field13738, final boolean field13739, final int field13740, final int field13741, final int field13742, final int field13743, final int field13744, final boolean field13745) {
         this.field13733 = field13733;
         this.field13734 = field13734;
         this.field13735 = field13735;

@@ -101,7 +101,7 @@ public class Class9020
     
     static {
         field38061 = Sets.newHashSet();
-        field38062 = Collections.unmodifiableSet((Set<? extends ResourceLocation>)Class9020.field38061);
+        field38062 = Collections.unmodifiableSet(Class9020.field38061);
         field38063 = new ResourceLocation("empty");
         field38064 = method32315("chests/spawn_bonus_chest");
         field38065 = method32315("chests/end_city_treasure");

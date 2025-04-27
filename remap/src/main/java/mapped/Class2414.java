@@ -9,8 +9,8 @@ import java.io.Serializable;
 public class Class2414 implements Serializable
 {
     private static String[] field14285;
-    private int field14286;
-    private int field14287;
+    private final int field14286;
+    private final int field14287;
     public final /* synthetic */ Class2411 field14288;
     
     public Class2414(final Class2411 field14288, final int field14289, final int field14290) {

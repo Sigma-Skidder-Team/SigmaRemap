@@ -475,9 +475,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
             }
         }
         if (!this.method4721()) {
-            if (!this.method4722()) {
-                return false;
-            }
+            return this.method4722();
         }
         return true;
     }
@@ -819,9 +817,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
                 if (this.method4715()) {
                     if (!this.method2625()) {
                         if (this.method2664() >= this.method2701()) {
-                            if (this.method4363()) {
-                                return true;
-                            }
+                            return this.method4363();
                         }
                     }
                 }

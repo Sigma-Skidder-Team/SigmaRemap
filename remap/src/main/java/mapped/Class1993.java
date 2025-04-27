@@ -14,7 +14,7 @@ public enum Class1993
     private final int field11166;
     private final TextFormatting field11167;
     
-    private Class1993(final String field11165, final int field11166, final TextFormatting field11167) {
+    Class1993(final String field11165, final int field11166, final TextFormatting field11167) {
         this.field11165 = field11165;
         this.field11166 = field11166;
         this.field11167 = field11167;

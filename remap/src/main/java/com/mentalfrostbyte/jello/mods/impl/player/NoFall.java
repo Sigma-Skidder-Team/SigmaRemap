@@ -20,7 +20,7 @@ public class NoFall extends Module
     public NoFall() {
         super(Category.PLAYER, "NoFall", "Avoid you from getting fall damages");
         this.field16111 = false;
-        this.addSetting(new StringSetting("Mode", "Nofall mode", 0, new String[] { "Vanilla", "Hypixel", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit", "Test" }).setPremiumMode("Hypixel", "Test"));
+        this.addSetting(new StringSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit", "Test").setPremiumMode("Hypixel", "Test"));
     }
     
     @Override
@@ -47,7 +47,7 @@ public class NoFall extends Module
                                     final double a2 = (int)(field2396 + class5717.method16974()) - field2396 - class5717.method16974() + n;
                                     double n2 = 0.02;
                                     final double n3 = -0.05;
-                                    if (class5717.method16974() > -0.5 + MovementUtil.method23140() * 1) {
+                                    if (class5717.method16974() > -0.5 + MovementUtil.method23140()) {
                                         n2 = 0.0;
                                     }
                                     if (a2 > n3) {

@@ -50,6 +50,6 @@ public class Class3839 extends Class3834 implements Class3840
     }
     
     public static boolean method11899(final Class9038 class9038, final Class9038 class9039) {
-        return class9038.field38249.get((IProperty<Comparable>)Class3839.field17415) == class9039.field38249.get((IProperty<Direction>)Class3839.field17415).getOpposite() && class9038.field38250.getString("attachement_type").equals(class9039.field38250.getString("attachement_type"));
+        return class9038.field38249.get((IProperty<Comparable>)Class3839.field17415) == class9039.field38249.get(Class3839.field17415).getOpposite() && class9038.field38250.getString("attachement_type").equals(class9039.field38250.getString("attachement_type"));
     }
 }

@@ -36,12 +36,12 @@ public class Class9502 implements ArgumentType<ITextComponent>
         try {
             final ITextComponent method17874 = Class5953.method17874(stringReader);
             if (method17874 == null) {
-                throw Class9502.field40882.createWithContext((ImmutableStringReader)stringReader, (Object)"empty");
+                throw Class9502.field40882.createWithContext(stringReader, "empty");
             }
             return method17874;
         }
         catch (final JsonParseException ex) {
-            throw Class9502.field40882.createWithContext((ImmutableStringReader)stringReader, (Object)((ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage()));
+            throw Class9502.field40882.createWithContext(stringReader, (ex.getCause() != null) ? ex.getCause().getMessage() : ex.getMessage());
         }
     }
     
@@ -52,7 +52,7 @@ public class Class9502 implements ArgumentType<ITextComponent>
     static {
         field40881 = Arrays.asList("\"hello world\"", "\"\"", "\"{\"text\":\"hello world\"}", "[\"\"]");
         field40882 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.component.invalid", new Object[] { o });
+            new Class2259("argument.component.invalid", o);
             return;
         });
     }

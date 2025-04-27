@@ -7,8 +7,8 @@ package mapped;
 public class Class9432
 {
     private Class7718 field40457;
-    private float[][] field40458;
-    private float[][] field40459;
+    private final float[][] field40458;
+    private final float[][] field40459;
     
     public Class9432(final Class7718 field40457) {
         this.field40457 = null;
@@ -86,9 +86,7 @@ public class Class9432
             for (int k = 0; k < 16; ++k) {
                 final float[] array6 = array[n2 + k * n3 + n4];
                 final float[] array7 = array2[k];
-                for (int l = 0; l < 3; ++l) {
-                    array7[l] = array6[l];
-                }
+                System.arraycopy(array6, 0, array7, 0, 3);
             }
         }
     }

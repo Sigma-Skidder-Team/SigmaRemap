@@ -54,21 +54,21 @@ public class DefaultVertexFormats
         field39604 = new Class7187(2, Class297.field1704, Class2078.field12013, 2);
         field39605 = new Class7187(0, Class297.field1702, Class2078.field12011, 3);
         field39606 = new Class7187(0, Class297.field1702, Class2078.field12014, 1);
-        DefaultVertexFormats.field39607 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39604).add((Object) DefaultVertexFormats.field39605).add((Object) DefaultVertexFormats.field39606).build());
-        DefaultVertexFormats.field39608 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39603).add((Object) DefaultVertexFormats.field39604).add((Object) DefaultVertexFormats.field39605).add((Object) DefaultVertexFormats.field39606).build());
+        DefaultVertexFormats.field39607 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39604).add(DefaultVertexFormats.field39605).add(DefaultVertexFormats.field39606).build());
+        DefaultVertexFormats.field39608 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39603).add(DefaultVertexFormats.field39604).add(DefaultVertexFormats.field39605).add(DefaultVertexFormats.field39606).build());
         field39609 = DefaultVertexFormats.field39607;
         field39610 = Class8066.method26463(DefaultVertexFormats.field39609);
         field39611 = DefaultVertexFormats.field39609.method34194();
         field39612 = DefaultVertexFormats.field39610.method34194();
-        field39613 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39604).build());
-        field39614 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).build());
-        POSITION_COLOR = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).build());
-        field39616 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39604).build());
-        field39617 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39602).build());
-        field39618 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39602).build());
-        field39619 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39601).build());
-        field39620 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39604).build());
-        field39621 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39604).add((Object) DefaultVertexFormats.field39601).build());
-        field39622 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add((Object) DefaultVertexFormats.field39600).add((Object) DefaultVertexFormats.field39602).add((Object) DefaultVertexFormats.field39601).add((Object) DefaultVertexFormats.field39605).add((Object) DefaultVertexFormats.field39606).build());
+        field39613 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39604).build());
+        field39614 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).build());
+        POSITION_COLOR = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).build());
+        field39616 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39604).build());
+        field39617 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39602).build());
+        field39618 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39602).build());
+        field39619 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39601).build());
+        field39620 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39604).build());
+        field39621 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39604).add(DefaultVertexFormats.field39601).build());
+        field39622 = new Class9272((ImmutableList<Class7187>)ImmutableList.builder().add(DefaultVertexFormats.field39600).add(DefaultVertexFormats.field39602).add(DefaultVertexFormats.field39601).add(DefaultVertexFormats.field39605).add(DefaultVertexFormats.field39606).build());
     }
 }

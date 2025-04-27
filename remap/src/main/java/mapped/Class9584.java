@@ -10,10 +10,10 @@ import com.mojang.brigadier.CommandDispatcher;
 public class Class9584
 {
     public static void method35935(final CommandDispatcher<Class7492> commandDispatcher) {
-        final LiteralArgumentBuilder literalArgumentBuilder = (LiteralArgumentBuilder)Class7788.method25001("defaultgamemode").requires(class102 -> class102.method23210(2));
+        final LiteralArgumentBuilder literalArgumentBuilder = Class7788.method25001("defaultgamemode").requires(class102 -> class102.method23210(2));
         for (final Class101 class101 : Class101.values()) {
             if (class101 != Class101.field297) {
-                literalArgumentBuilder.then(Class7788.method25001(class101.method586()).executes(commandContext -> method35936((Class7492)commandContext.getSource(), class101)));
+                literalArgumentBuilder.then(Class7788.method25001(class101.method586()).executes(commandContext -> method35936(commandContext.getSource(), class101)));
             }
         }
         commandDispatcher.register(literalArgumentBuilder);
@@ -32,7 +32,7 @@ public class Class9584
                 ++n;
             }
         }
-        class7492.method23257(new Class2259("commands.defaultgamemode.success", new Object[] { class7493.method587() }), true);
+        class7492.method23257(new Class2259("commands.defaultgamemode.success", class7493.method587()), true);
         return n;
     }
 }

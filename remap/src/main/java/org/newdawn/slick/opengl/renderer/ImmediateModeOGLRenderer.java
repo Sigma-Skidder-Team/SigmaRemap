@@ -24,7 +24,7 @@ public class ImmediateModeOGLRenderer implements SGL {
     /**
      * The current colour
      */
-    private float[] current = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
+    private final float[] current = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
     /**
      * The global colour scale
      */
@@ -60,7 +60,7 @@ public class ImmediateModeOGLRenderer implements SGL {
     public void enterOrtho(int xsize, int ysize) {
         GL11.glMatrixMode(GL11.GL_PROJECTION);
         GL11.glLoadIdentity();
-        GL11.glOrtho(0.0, (double) this.width, (double) this.height, 0.0, 1.0, -1.0);
+        GL11.glOrtho(0.0, this.width, this.height, 0.0, 1.0, -1.0);
         GL11.glMatrixMode(GL11.GL_MODELVIEW);
         GL11.glTranslatef((float) ((this.width - xsize) / 2), (float) ((this.height - ysize) / 2), 0.0F);
     }

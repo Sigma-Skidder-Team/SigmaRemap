@@ -91,9 +91,7 @@ public class Class4201 implements Class4198
                 }
             }
         }
-        for (int n11 = 0; n11 < 6; ++n11) {
-            class4197.field18808[n][n11] = array[n11];
-        }
+        System.arraycopy(array, 0, class4197.field18808[n], 0, 6);
         return 0;
     }
     

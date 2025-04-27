@@ -43,9 +43,7 @@ public class Class9569
             if (this.field41172.equals(class9569.field41172)) {
                 if (this.field41174 == class9569.field41174) {
                     if (this.field41175 == class9569.field41175) {
-                        if (this.field41173 == class9569.field41173) {
-                            return true;
-                        }
+                        return this.field41173 == class9569.field41173;
                     }
                 }
             }

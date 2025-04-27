@@ -19,7 +19,7 @@ public class Class3819 extends Item
         final World method21654 = class7075.method21654();
         final BlockPos method21655 = class7075.method21639();
         final BlockState method21656 = method21654.getBlockState(method21655);
-        if (method21656.getBlock() != Blocks.field29402 || ((StateHolder<Object, BlockState>)method21656).get((IProperty<Boolean>)Class3964.field17909)) {
+        if (method21656.getBlock() != Blocks.field29402 || method21656.get(Class3964.field17909)) {
             return Class2201.field13402;
         }
         if (!method21654.isRemote) {

@@ -30,13 +30,13 @@ public class Class8837
     public Class8837() {
         this.field37143 = Maps.newHashMap();
         try (final InputStream resourceAsStream = Class8837.class.getResourceAsStream("/assets/minecraft/lang/en_us.json")) {
-            for (final Map.Entry<K, JsonElement> entry : Class9583.method35913((JsonElement)new Gson().fromJson((Reader)new InputStreamReader(resourceAsStream, StandardCharsets.UTF_8), (Class)JsonElement.class), "strings").entrySet()) {
+            for (final Map.Entry<K, JsonElement> entry : Class9583.method35913((JsonElement)new Gson().fromJson(new InputStreamReader(resourceAsStream, StandardCharsets.UTF_8), (Class)JsonElement.class), "strings").entrySet()) {
                 this.field37143.put((String)entry.getKey(), Class8837.field37141.matcher(Class9583.method35894(entry.getValue(), (String)entry.getKey())).replaceAll("%$1s"));
             }
             this.field37144 = Util.method27837();
         }
         catch (final JsonParseException | IOException ex) {
-            Class8837.field37140.error("Couldn't read strings from /assets/minecraft/lang/en_us.json", (Throwable)ex);
+            Class8837.field37140.error("Couldn't read strings from /assets/minecraft/lang/en_us.json", ex);
         }
     }
     

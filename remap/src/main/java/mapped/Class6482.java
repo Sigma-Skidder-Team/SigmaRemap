@@ -21,7 +21,7 @@ public class Class6482 implements Class6477
     public Optional<Class74> method19510(final Class6108 class6108, final Class8322 class6109) throws Exception {
         this.method19514(class6108);
         if (!this.method19515()) {
-            return (Optional<Class74>)Optional.absent();
+            return Optional.absent();
         }
         return this.method19512(class6108).method20199(class6109);
     }

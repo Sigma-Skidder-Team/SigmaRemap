@@ -28,8 +28,8 @@ public class Class7558
         final Iterator<Object> iterator = Registry.FLUID.iterator();
         while (iterator.hasNext()) {
             final UnmodifiableIterator iterator2 = iterator.next().method22146().method32902().iterator();
-            while (((Iterator)iterator2).hasNext()) {
-                Fluid.field28128.method562((IFluidState)((Iterator)iterator2).next());
+            while (iterator2.hasNext()) {
+                Fluid.field28128.method562((IFluidState) iterator2.next());
             }
         }
     }

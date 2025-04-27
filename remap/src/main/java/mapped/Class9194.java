@@ -9,9 +9,9 @@ import java.util.HashMap;
 public class Class9194
 {
     private static String[] field38967;
-    private Minecraft field38968;
-    private IRCManager field38969;
-    private HashMap<String, Class8502> field38970;
+    private final Minecraft field38968;
+    private final IRCManager field38969;
+    private final HashMap<String, Class8502> field38970;
     
     public Class9194(final IRCManager field38969) {
         this.field38968 = Minecraft.getInstance();

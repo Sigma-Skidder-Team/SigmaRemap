@@ -161,6 +161,6 @@ public class Class353 extends Vec3i
     }
     
     public static Stream<Class353> method1121(final int n, final int n2, final int n3, final int n4, final int n5, final int n6) {
-        return StreamSupport.stream((Spliterator<Class353>)new Class7581((n4 - n + 1) * (n5 - n2 + 1) * (n6 - n3 + 1), 64, n, n2, n3, n4, n5, n6), false);
+        return StreamSupport.stream((Spliterator<Class353>)new Class7581((long) (n4 - n + 1) * (n5 - n2 + 1) * (n6 - n3 + 1), 64, n, n2, n3, n4, n5, n6), false);
     }
 }

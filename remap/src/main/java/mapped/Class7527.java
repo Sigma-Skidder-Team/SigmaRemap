@@ -8,15 +8,16 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.Font;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 public class Class7527 implements Font
 {
-    private Class7765 field29883;
-    private char field29884;
-    private int field29885;
-    private int field29886;
-    private int field29887;
-    private int field29888;
+    private final Class7765 field29883;
+    private final char field29884;
+    private final int field29885;
+    private final int field29886;
+    private final int field29887;
+    private final int field29888;
     
     public Class7527(final Class7765 field29883, final char field29884) {
         this.field29883 = field29883;
@@ -40,21 +41,16 @@ public class Class7527 implements Font
     
     @Override
     public void drawString(final float x, final float y, final String text, final Color color, final int startIndex, final int endIndex) {
-        try {
-            final byte[] bytes = text.getBytes("US-ASCII");
-            for (int i = 0; i < bytes.length; ++i) {
-                final int n5 = bytes[i] - this.field29884;
-                if (n5 < this.field29888) {
-                    final int n6 = n5 % this.field29887;
-                    final int n7 = n5 / this.field29887;
-                    if (i >= startIndex || i <= endIndex) {
-                        this.field29883.method24860(n6, n7).method24776(x + i * this.field29885, y, color);
-                    }
+        final byte[] bytes = text.getBytes(StandardCharsets.US_ASCII);
+        for (int i = 0; i < bytes.length; ++i) {
+            final int n5 = bytes[i] - this.field29884;
+            if (n5 < this.field29888) {
+                final int n6 = n5 % this.field29887;
+                final int n7 = n5 / this.field29887;
+                if (i >= startIndex || i <= endIndex) {
+                    this.field29883.method24860(n6, n7).method24776(x + i * this.field29885, y, color);
                 }
             }
-        }
-        catch (final UnsupportedEncodingException ex) {
-            Class8452.method28203(ex);
         }
     }
     

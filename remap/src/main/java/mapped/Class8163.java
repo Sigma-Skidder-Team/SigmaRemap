@@ -199,6 +199,6 @@ public class Class8163
     }
     
     static {
-        field33624 = Lists.newArrayList((Object[])new String[] { Class8163.\uc854\u43e6\ud1d3\u74eb\u9bcc\u3fd9[1], "layer1", "layer2", "layer3", "layer4" });
+        field33624 = Lists.newArrayList((Object[])new String[] { Class8163.\uc854\u43e6\ud1d3\u74eb\u9bcc\u3fd9[1], "layer1", "layer2", "layer3", "layer4" })
     }
 }

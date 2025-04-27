@@ -18,9 +18,7 @@ public class Class3580 extends Class3574
     public boolean method11013() {
         if (super.method11013()) {
             if (this.field16702.method4519()) {
-                if (!this.field16702.method4531()) {
-                    return true;
-                }
+                return !this.field16702.method4531();
             }
         }
         return false;
@@ -30,9 +28,7 @@ public class Class3580 extends Class3574
     public boolean method11017() {
         if (super.method11017()) {
             if (this.field16702.method4519()) {
-                if (!this.field16702.method4531()) {
-                    return true;
-                }
+                return !this.field16702.method4531();
             }
         }
         return false;

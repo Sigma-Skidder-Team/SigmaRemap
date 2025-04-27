@@ -159,14 +159,9 @@ public class Class6560 implements Class6562
             final List<Class74> method19893 = this.method19892();
             final List<Class74> method19894 = class6560.method19892();
             if (method19893 != null) {
-                if (!method19893.equals(method19894)) {
-                    return false;
-                }
+                return method19893.equals(method19894);
             }
-            else if (method19894 != null) {
-                return false;
-            }
-            return true;
+            else return method19894 == null;
         }
         return false;
     }
@@ -177,7 +172,7 @@ public class Class6560 implements Class6562
     
     @Override
     public int hashCode() {
-        final int n = (((((1 * 59 + this.method19885()) * 59 + this.method19886()) * 59 + (this.method19887() ? 79 : 97)) * 59 + this.method19888()) * 59 + Arrays.deepHashCode(this.method19889())) * 59 + Arrays.hashCode(this.method19890());
+        final int n = (((((59 + this.method19885()) * 59 + this.method19886()) * 59 + (this.method19887() ? 79 : 97)) * 59 + this.method19888()) * 59 + Arrays.deepHashCode(this.method19889())) * 59 + Arrays.hashCode(this.method19890());
         final Class74 method19891 = this.method19891();
         final int n2 = n * 59 + ((method19891 != null) ? method19891.hashCode() : 43);
         final List<Class74> method19892 = this.method19892();

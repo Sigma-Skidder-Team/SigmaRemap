@@ -13,15 +13,15 @@ public enum Class2011
     field11433("("), 
     field11434(")");
     
-    private String field11435;
-    private String field11436;
+    private final String field11435;
+    private final String field11436;
     public static final Class2011[] field11437;
     
-    private Class2011(final String s2) {
+    Class2011(final String s2) {
         this(s2, "");
     }
     
-    private Class2011(final String field11435, final String field11436) {
+    Class2011(final String field11435, final String field11436) {
         this.field11435 = field11435;
         this.field11436 = field11436;
     }

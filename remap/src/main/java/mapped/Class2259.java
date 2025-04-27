@@ -83,7 +83,7 @@ public class Class2259 extends TextComponent implements Class2253
                 final int start = matcher.start();
                 end = matcher.end();
                 if (start > beginIndex) {
-                    final StringTextComponent class2260 = new StringTextComponent(String.format(input.substring(beginIndex, start), new Object[0]));
+                    final StringTextComponent class2260 = new StringTextComponent(String.format(input.substring(beginIndex, start)));
                     class2260.getStyle().method30422(this.getStyle());
                     this.field13815.add(class2260);
                 }
@@ -106,7 +106,7 @@ public class Class2259 extends TextComponent implements Class2253
                 }
             }
             if (beginIndex < input.length()) {
-                final StringTextComponent class2262 = new StringTextComponent(String.format(input.substring(beginIndex), new Object[0]));
+                final StringTextComponent class2262 = new StringTextComponent(String.format(input.substring(beginIndex)));
                 class2262.getStyle().method30422(this.getStyle());
                 this.field13815.add(class2262);
             }
@@ -203,9 +203,7 @@ public class Class2259 extends TextComponent implements Class2253
             final Class2259 class2259 = (Class2259)o;
             if (Arrays.equals(this.field13812, class2259.field13812)) {
                 if (this.field13811.equals(class2259.field13811)) {
-                    if (super.equals(o)) {
-                        return true;
-                    }
+                    return super.equals(o);
                 }
             }
             return false;

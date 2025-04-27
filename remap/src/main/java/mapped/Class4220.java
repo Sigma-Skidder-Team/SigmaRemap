@@ -12,6 +12,6 @@ public interface Class4220
     ResourceLocation method12683();
     
     default JsonElement method12682() {
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
 }

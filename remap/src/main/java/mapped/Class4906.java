@@ -8,7 +8,7 @@ public class Class4906 extends Class4841
 {
     private static String[] field20591;
     private boolean field20985;
-    private Animation field20986;
+    private final Animation field20986;
     
     public Class4906(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final boolean field20985) {
         super(customGuiScreen, s, n, n2, n3, n4, false);

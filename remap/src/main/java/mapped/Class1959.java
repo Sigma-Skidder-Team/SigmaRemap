@@ -21,7 +21,7 @@ public enum Class1959
     
     private final DSL$TypeReference field10685;
     
-    private Class1959(final DSL$TypeReference field10685) {
+    Class1959(final DSL$TypeReference field10685) {
         this.field10685 = field10685;
     }
     

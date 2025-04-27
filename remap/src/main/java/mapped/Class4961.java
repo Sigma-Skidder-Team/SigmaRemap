@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentMap;
 public class Class4961
 {
     private static String[] field21294;
-    private ConcurrentMap<String, ConcurrentLinkedQueue<Class4659>> field21295;
+    private final ConcurrentMap<String, ConcurrentLinkedQueue<Class4659>> field21295;
     
     public Class4961() {
         this.field21295 = new ConcurrentHashMap<String, ConcurrentLinkedQueue<Class4659>>();

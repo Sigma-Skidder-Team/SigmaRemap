@@ -146,7 +146,7 @@ public class Class9342
                 for (int length = field40112.length, i = 0; i < length; ++i) {
                     jsonArray.add(field40112[i].method33465());
                 }
-                jsonObject.add("enchantments", (JsonElement)jsonArray);
+                jsonObject.add("enchantments", jsonArray);
             }
             if (this.field40113.length > 0) {
                 final JsonArray jsonArray2 = new JsonArray();
@@ -154,14 +154,14 @@ public class Class9342
                 for (int length2 = field40113.length, j = 0; j < length2; ++j) {
                     jsonArray2.add(field40113[j].method33465());
                 }
-                jsonObject.add("stored_enchantments", (JsonElement)jsonArray2);
+                jsonObject.add("stored_enchantments", jsonArray2);
             }
             if (this.field40114 != null) {
                 jsonObject.addProperty("potion", Registry.field212.getKey(this.field40114).toString());
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     public static Class9342[] method34630(final JsonElement jsonElement) {

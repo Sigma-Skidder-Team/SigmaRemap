@@ -17,7 +17,7 @@ public class Class6145 extends Class6132
     }
     
     public Dynamic<?> method18374(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)((dynamic.get("CatType").asInt(0) != 9) ? dynamic : dynamic.set("CatType", dynamic.createInt(10)));
+        return (dynamic.get("CatType").asInt(0) != 9) ? dynamic : dynamic.set("CatType", dynamic.createInt(10));
     }
     
     @Override

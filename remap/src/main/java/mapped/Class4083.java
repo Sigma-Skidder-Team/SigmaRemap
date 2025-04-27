@@ -29,8 +29,8 @@ public class Class4083 extends Item
                 n = 1;
             }
         }
-        else if (!((StateHolder<Object, BlockState>)method21656).get((IProperty<Boolean>)Class3918.field17760)) {
-            if (!((StateHolder<Object, BlockState>)method21656).get((IProperty<Boolean>)Class3918.field17762)) {
+        else if (!method21656.get(Class3918.field17760)) {
+            if (!method21656.get(Class3918.field17762)) {
                 this.method12288(method21654, method21655);
                 method21654.method6692(method21655, ((StateHolder<Object, BlockState>)method21656).with((IProperty<Comparable>)Class3918.field17760, true));
                 n = 1;

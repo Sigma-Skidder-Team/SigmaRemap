@@ -34,9 +34,7 @@ public class Class3462 extends Class3461
         if (!this.field16320.method2783()) {
             if (!this.field16320.method4654()) {
                 if (!Class803.method4692(this.field16320)) {
-                    if (this.field16320.method4152() == null) {
-                        return true;
-                    }
+                    return this.field16320.method4152() == null;
                 }
             }
         }

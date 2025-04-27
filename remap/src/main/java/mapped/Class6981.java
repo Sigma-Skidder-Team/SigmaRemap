@@ -25,7 +25,7 @@ public class Class6981 extends Class6977
         final HashSet set = new HashSet();
         final BlockState method6701 = Minecraft.getInstance().world.getBlockState(class354);
         if (method6701.getBlock() instanceof Class3999) {
-            set.add(new Class9488(class354, ((StateHolder<Object, BlockState>)method6701).with((IProperty<Comparable>)Class3999.field18026, (Comparable)class355.get((IProperty<V>)Class3999.field18026))));
+            set.add(new Class9488(class354, method6701.with((IProperty<Comparable>)Class3999.field18026, (Comparable)class355.get((IProperty<V>)Class3999.field18026))));
         }
         return set;
     }

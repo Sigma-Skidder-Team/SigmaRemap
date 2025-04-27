@@ -6,7 +6,7 @@ package mapped;
 
 public class Class556 extends Screen
 {
-    private Class9103 field3335;
+    private final Class9103 field3335;
     
     public Class556() {
         super(NarratorChatListener.EMPTY);
@@ -26,7 +26,7 @@ public class Class556 extends Screen
         else {
             this.field3335.method32901(this.width, this.height);
         }
-        this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingTerrain", new Object[0]), this.width / 2, this.height / 2 - 50, 16777215);
+        this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingTerrain"), this.width / 2, this.height / 2 - 50, 16777215);
         super.render(n, n2, n3);
     }
     

@@ -367,7 +367,7 @@ public abstract class Class4473
             class1858 = class1859;
         }
         if (class1858 == null) {
-            Direction class1860 = class1857.get((IProperty<Direction>)Class3892.field17564);
+            Direction class1860 = class1857.get(Class3892.field17564);
             BlockPos class1861 = class1856.method1149(class1860);
             if (class1855.getBlockState(class1861).isOpaqueCube(class1855, class1861)) {
                 class1860 = class1860.getOpposite();
@@ -465,6 +465,6 @@ public abstract class Class4473
     
     static {
         field19848 = Blocks.CAVE_AIR.getDefaultState();
-        field19855 = (Set)ImmutableSet.builder().add((Object) Blocks.field29395).add((Object) Blocks.TORCH).add((Object) Blocks.WALL_TORCH).add((Object) Blocks.field29336).add((Object) Blocks.SPRUCE_FENCE).add((Object) Blocks.DARK_OAK_FENCE).add((Object) Blocks.ACACIA_FENCE).add((Object) Blocks.BIRCH_FENCE).add((Object) Blocks.JUNGLE_FENCE).add((Object) Blocks.field29307).add((Object) Blocks.field29381).build();
+        field19855 = (Set)ImmutableSet.builder().add(Blocks.field29395).add(Blocks.TORCH).add(Blocks.WALL_TORCH).add(Blocks.field29336).add(Blocks.SPRUCE_FENCE).add(Blocks.DARK_OAK_FENCE).add(Blocks.ACACIA_FENCE).add(Blocks.BIRCH_FENCE).add(Blocks.JUNGLE_FENCE).add(Blocks.field29307).add(Blocks.field29381).build();
     }
 }

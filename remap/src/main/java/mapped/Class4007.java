@@ -32,6 +32,6 @@ public class Class4007 extends Block
     }
     
     static {
-        field18066 = new Class2259("container.crafting", new Object[0]);
+        field18066 = new Class2259("container.crafting");
     }
 }

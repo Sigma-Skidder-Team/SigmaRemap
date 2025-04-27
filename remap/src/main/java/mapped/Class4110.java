@@ -51,6 +51,6 @@ public class Class4110 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("rules"), dynamicOps.createList((Stream)this.field18213.stream().map(class8732 -> class8732.method30165((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("rules"), dynamicOps.createList((Stream)this.field18213.stream().map(class8732 -> class8732.method30165(dynamicOps2).getValue())))));
     }
 }

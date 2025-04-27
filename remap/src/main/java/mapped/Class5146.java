@@ -52,9 +52,7 @@ public class Class5146
         if (class9469.field40723 >= 0) {
             if (class9469.field40724 >= 0) {
                 if (class9469.field40723 < this.field22146) {
-                    if (class9469.field40724 < this.field22147) {
-                        return false;
-                    }
+                    return class9469.field40724 >= this.field22147;
                 }
             }
         }

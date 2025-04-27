@@ -19,7 +19,7 @@ public class Class8212
     
     private Class8212(final Set<Class7915<?>> set, final Set<Class7915<?>> set2) {
         this.field33751 = (Set<Class7915<?>>)ImmutableSet.copyOf((Collection)set);
-        this.field33752 = (Set<Class7915<?>>)ImmutableSet.copyOf((Collection)Sets.union((Set)set, (Set)set2));
+        this.field33752 = (Set<Class7915<?>>)ImmutableSet.copyOf(Sets.union((Set)set, (Set)set2));
     }
     
     public Set<Class7915<?>> method27203() {
@@ -32,7 +32,7 @@ public class Class8212
     
     @Override
     public String toString() {
-        return "[" + Joiner.on(", ").join((Iterator)this.field33752.stream().map(class7915 -> (this.field33751.contains(class7915) ? "!" : "") + class7915.method25633()).iterator()) + "]";
+        return "[" + Joiner.on(", ").join(this.field33752.stream().map(class7915 -> (this.field33751.contains(class7915) ? "!" : "") + class7915.method25633()).iterator()) + "]";
     }
     
     public void method27205(final Class7790 class7790, final Class124 class7791) {

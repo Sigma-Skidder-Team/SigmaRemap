@@ -20,7 +20,7 @@ import java.io.File;
 public abstract class Class7495 implements Class7496
 {
     private static final ThreadLocal<Class6873> field28941;
-    private Class8583 field28942;
+    private final Class8583 field28942;
     private final File field28943;
     private ConcurrentSkipListMap<String, Object> field28944;
     
@@ -50,7 +50,7 @@ public abstract class Class7495 implements Class7496
         Map<?, ?> map = null;
         if (file.exists()) {
             try (final FileInputStream fileInputStream = new FileInputStream(file)) {
-                map = (Map<?, ?>)Class7495.field28941.get().method20998(fileInputStream);
+                map = Class7495.field28941.get().method20998(fileInputStream);
             }
             catch (final FileNotFoundException ex2) {
                 ex2.printStackTrace();

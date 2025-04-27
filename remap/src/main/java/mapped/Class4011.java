@@ -46,7 +46,7 @@ public class Class4011 extends Block
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        return this.method11843(class7096, class7099, class7100) ? ((StateHolder<O, BlockState>)this.method12184(class7099, class7100)).with((IProperty<Comparable>)Class4011.field18071, (Comparable)class7096.get((IProperty<V>)Class4011.field18071)) : Blocks.AIR.getDefaultState();
+        return this.method11843(class7096, class7099, class7100) ? this.method12184(class7099, class7100).with((IProperty<Comparable>)Class4011.field18071, (Comparable)class7096.get((IProperty<V>)Class4011.field18071)) : Blocks.AIR.getDefaultState();
     }
     
     @Nullable
@@ -102,7 +102,7 @@ public class Class4011 extends Block
                 b = true;
             }
             final boolean b2 = b;
-            final int intValue = class7096.get((IProperty<Integer>)Class4011.field18071);
+            final int intValue = class7096.get(Class4011.field18071);
             if (!b2) {
                 if (class7097.method6771()) {
                     if (this.method12185(class7097, class7098)) {
@@ -185,9 +185,7 @@ public class Class4011 extends Block
             if (!class1847.method6772(class1848.method1145())) {
                 if (!class1847.method6772(class1848.method1147())) {
                     if (!class1847.method6772(class1848.method1141())) {
-                        if (!class1847.method6772(class1848.method1143())) {
-                            return false;
-                        }
+                        return class1847.method6772(class1848.method1143());
                     }
                 }
             }
@@ -196,11 +194,11 @@ public class Class4011 extends Block
     }
     
     private int method12186(final BlockState class7096) {
-        return (class7096.method21771((IProperty<Comparable>)Class8970.field37747) && class7096.get((IProperty<Boolean>)Class8970.field37747)) ? 0 : this.field18079.getInt((Object)class7096.getBlock());
+        return (class7096.method21771((IProperty<Comparable>)Class8970.field37747) && class7096.get(Class8970.field37747)) ? 0 : this.field18079.getInt(class7096.getBlock());
     }
     
     private int method12187(final BlockState class7096) {
-        return (class7096.method21771((IProperty<Comparable>)Class8970.field37747) && class7096.get((IProperty<Boolean>)Class8970.field37747)) ? 0 : this.field18078.getInt((Object)class7096.getBlock());
+        return (class7096.method21771((IProperty<Comparable>)Class8970.field37747) && class7096.get(Class8970.field37747)) ? 0 : this.field18078.getInt(class7096.getBlock());
     }
     
     private void method12188(final World class1847, final BlockPos class1848, final int bound, final Random random, final int n) {

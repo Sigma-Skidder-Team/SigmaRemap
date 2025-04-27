@@ -29,7 +29,7 @@ public abstract class Class7110<T extends Comparable<T>> implements IProperty<T>
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("name", (Object)this.field27739).add("clazz", (Object)this.field27738).add("values", (Object)this.getAllowedValues()).toString();
+        return MoreObjects.toStringHelper(this).add("name", this.field27739).add("clazz", this.field27738).add("values", this.getAllowedValues()).toString();
     }
     
     @Override

@@ -39,7 +39,7 @@ public class NCPBlockFly extends Module
         this.field15624 = -1;
         this.field15628 = null;
         this.field15630 = false;
-        this.addSetting(new StringSetting("Speed Mode", "Speed mode", 0, new String[] { "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak" }));
+        this.addSetting(new StringSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
         this.addSetting(new BooleanSetting("KeepRotations", "Keeps your rotations.", true));
         this.addSetting(new NumberSetting("Extend", "Extend value", 0.0f, Float.class, 0.0f, 6.0f, 0.1f));
         this.addSetting(new BooleanSetting("Downwards", "Allows you to go down when sneaking.", true));

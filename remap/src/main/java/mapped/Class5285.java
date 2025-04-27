@@ -23,7 +23,7 @@ public class Class5285 extends Class5278<Class6562, Class6637>
         final int int2 = byteBuf.readInt();
         final boolean boolean1 = byteBuf.readBoolean();
         final int intValue = Class5260.field22312.method16378(byteBuf);
-        final ByteBuf slice = byteBuf.readSlice((int)Class5260.field22312.method16378(byteBuf));
+        final ByteBuf slice = byteBuf.readSlice(Class5260.field22312.method16378(byteBuf));
         final BitSet set = new BitSet(16);
         final Class7668[] array = new Class7668[16];
         for (int i = 0; i < 16; ++i) {
@@ -40,7 +40,7 @@ public class Class5285 extends Class5278<Class6562, Class6637>
                 }
             }
         }
-        final int[] array2 = (int[])(boolean1 ? new int[256] : null);
+        final int[] array2 = boolean1 ? new int[256] : null;
         if (boolean1) {
             if (slice.readableBytes() < 1024) {
                 Class8563.method28793().method34742().log(Level.WARNING, "Chunk x=" + int1 + " z=" + int2 + " doesn't have biome data!");

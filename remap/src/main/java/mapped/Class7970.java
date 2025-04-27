@@ -91,29 +91,21 @@ public class Class7970
             }
             final double n = class1858.method30306();
             if (n < 0.4) {
-                if (method21698.method21772((IProperty<Boolean>)Class3854.field17468)) {
-                    return true;
-                }
+                return method21698.method21772((IProperty<Boolean>) Class3854.field17468);
             }
             else if (n > 0.6) {
-                if (method21698.method21772((IProperty<Boolean>)Class3854.field17466)) {
-                    return true;
-                }
+                return method21698.method21772((IProperty<Boolean>) Class3854.field17466);
             }
             else {
                 final double method21700 = class1858.method30308();
                 if (method21700 < 0.4) {
-                    if (method21698.method21772((IProperty<Boolean>)Class3854.field17465)) {
-                        return true;
-                    }
+                    return method21698.method21772((IProperty<Boolean>) Class3854.field17465);
                 }
                 else {
                     if (method21700 <= 0.6) {
                         return true;
                     }
-                    if (method21698.method21772((IProperty<Boolean>)Class3854.field17467)) {
-                        return true;
-                    }
+                    return method21698.method21772((IProperty<Boolean>) Class3854.field17467);
                 }
             }
         }
@@ -219,7 +211,7 @@ public class Class7970
             method25840.set(i, class1862);
         }
         for (int k = 0; k < method25839.length; ++k) {
-            method25839[k] = (Class8754)method25840.get(k);
+            method25839[k] = method25840.get(k);
         }
         return method25839;
     }

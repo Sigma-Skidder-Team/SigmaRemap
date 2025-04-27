@@ -31,14 +31,14 @@ public class Class9548
     public static void method35711(final IChunk class1860, final Set<HeightmapType> set) {
         final int size = set.size();
         final ObjectArrayList list = new ObjectArrayList(size);
-        final ObjectListIterator iterator = ((ObjectList)list).iterator();
+        final ObjectListIterator iterator = list.iterator();
         final int n = class1860.method7012() + 16;
         try (final Class386 method1296 = Class386.method1296()) {
             for (int i = 0; i < 16; ++i) {
                 for (int j = 0; j < 16; ++j) {
                     final Iterator iterator2 = set.iterator();
                     while (iterator2.hasNext()) {
-                        ((ObjectList)list).add((Object)class1860.method7017((HeightmapType)iterator2.next()));
+                        list.add(class1860.method7017((HeightmapType)iterator2.next()));
                     }
                     for (int k = n - 1; k >= 0; --k) {
                         method1296.method1300(i, k, j);
@@ -51,7 +51,7 @@ public class Class9548
                                     iterator.remove();
                                 }
                             }
-                            if (((ObjectList)list).isEmpty()) {
+                            if (list.isEmpty()) {
                                 break;
                             }
                             iterator.back(size);

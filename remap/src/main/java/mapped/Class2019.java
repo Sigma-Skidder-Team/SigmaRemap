@@ -11,5 +11,5 @@ public enum Class2019
     field11516, 
     field11517, 
     field11518, 
-    field11519;
+    field11519
 }

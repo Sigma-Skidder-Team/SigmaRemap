@@ -62,7 +62,7 @@ public class Class5860<T extends LivingEntity> extends Class5853<T>
     
     @Override
     public Iterable<Class6300> method17560() {
-        return Iterables.concat((Iterable)super.method17560(), (Iterable)ImmutableList.of((Object)this.field24024, (Object)this.field24025, (Object)this.field24022, (Object)this.field24023, (Object)this.field24026));
+        return Iterables.concat((Iterable)super.method17560(), ImmutableList.of(this.field24024, this.field24025, this.field24022, this.field24023, (Object)this.field24026));
     }
     
     public void method17593(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2) {

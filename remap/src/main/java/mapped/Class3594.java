@@ -61,10 +61,7 @@ public class Class3594 extends Class3592
                 }
             }
         }
-        if (!this.field16741.onGround) {
-            return true;
-        }
-        return false;
+        return !this.field16741.onGround;
     }
     
     @Override

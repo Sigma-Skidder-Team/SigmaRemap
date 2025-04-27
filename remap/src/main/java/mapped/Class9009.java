@@ -8,7 +8,7 @@ public class Class9009
 {
     private int field38036;
     private int field38037;
-    private Class5835<Class9009> field38038;
+    private final Class5835<Class9009> field38038;
     
     public Class9009() {
         this.field38036 = -1;
@@ -52,6 +52,6 @@ public class Class9009
     
     @Override
     public String toString() {
-        return "" + this.field38036 + "/" + this.field38037 + "/" + (this.field38036 + this.field38037);
+        return this.field38036 + "/" + this.field38037 + "/" + (this.field38036 + this.field38037);
     }
 }

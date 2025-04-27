@@ -42,21 +42,21 @@ public class Class5413 implements Class5414
     
     @Override
     public ITextComponent method16527() {
-        return new Class2259("commands.data.block.modified", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ() });
+        return new Class2259("commands.data.block.modified", this.field22580.getX(), this.field22580.getY(), this.field22580.getZ());
     }
     
     @Override
     public ITextComponent method16528(final INBT class41) {
-        return new Class2259("commands.data.block.query", new Object[] { this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), class41.toFormattedComponent() });
+        return new Class2259("commands.data.block.query", this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), class41.toFormattedComponent());
     }
     
     @Override
     public ITextComponent method16529(final NBTPath class8570, final double d, final int i) {
-        return new Class2259("commands.data.block.get", new Object[] { class8570, this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), String.format(Locale.ROOT, "%.2f", d), i });
+        return new Class2259("commands.data.block.get", class8570, this.field22580.getX(), this.field22580.getY(), this.field22580.getZ(), String.format(Locale.ROOT, "%.2f", d), i);
     }
     
     static {
-        field22577 = new SimpleCommandExceptionType((Message)new Class2259("commands.data.block.invalid", new Object[0]));
+        field22577 = new SimpleCommandExceptionType(new Class2259("commands.data.block.invalid", new Object[0]));
         field22578 = (s -> new Class6594(s));
     }
 }

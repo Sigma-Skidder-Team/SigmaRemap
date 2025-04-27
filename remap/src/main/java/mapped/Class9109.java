@@ -11,10 +11,10 @@ import java.text.DecimalFormat;
 
 public interface Class9109
 {
-    public static final DecimalFormat field38588 = Util.method27851(new DecimalFormat("########0.00"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
-    public static final Class9109 field38589 = NumberFormat.getIntegerInstance(Locale.US)::format;
-    public static final Class9109 field38590 = n -> Class9109.field38588.format(n * 0.1);
-    public static final Class9109 field38591 = i -> {
+    DecimalFormat field38588 = Util.method27851(new DecimalFormat("########0.00"), decimalFormat -> decimalFormat.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT)));
+    Class9109 field38589 = NumberFormat.getIntegerInstance(Locale.US)::format;
+    Class9109 field38590 = n -> Class9109.field38588.format(n * 0.1);
+    Class9109 field38591 = i -> {
         final double number = i / 100.0;
         final double number2;
         if (number2 <= 0.5) {
@@ -31,7 +31,7 @@ public interface Class9109
             return Class9109.field38588.format(number2) + " km";
         }
     };
-    public static final Class9109 field38592 = n4 -> {
+    Class9109 field38592 = n4 -> {
         final double d = n4 / 20.0;
         final double number3;
         if (number3 <= 0.5) {

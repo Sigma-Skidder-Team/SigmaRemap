@@ -13,7 +13,7 @@ import java.util.Map;
 public class Class6707 extends Class6693
 {
     public Class6707() {
-        super("bind", "Bind a module to a key", new String[0]);
+        super("bind", "Bind a module to a key");
         this.method20351("module");
         this.method20351("key/none");
     }
@@ -26,7 +26,6 @@ public class Class6707 extends Class6693
                 new Class531(new StringTextComponent("GuiKeybinds"));
                 final Class531 class6429;
                 field26420.displayGuiScreen(class6429);
-                return;
             });
         }
         if (array.length >= 1) {

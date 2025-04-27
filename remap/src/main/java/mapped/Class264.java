@@ -19,7 +19,7 @@ public enum Class264
     private final int field1270;
     private final int field1271;
     
-    private Class264(final Class7795 field1269, final int field1270, final int field1271) {
+    Class264(final Class7795 field1269, final int field1270, final int field1271) {
         this.field1269 = field1269;
         this.field1270 = field1270;
         this.field1271 = field1271;

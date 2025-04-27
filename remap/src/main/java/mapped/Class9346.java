@@ -83,13 +83,13 @@ public final class Class9346
             final CompoundNBT class52 = new CompoundNBT();
             for (final String s : gameProfile.getProperties().keySet()) {
                 final ListNBT class53 = new ListNBT();
-                for (final Property property : gameProfile.getProperties().get((Object)s)) {
+                for (final Property property : gameProfile.getProperties().get(s)) {
                     final CompoundNBT e = new CompoundNBT();
                     e.putString("Value", property.getValue());
                     if (property.hasSignature()) {
                         e.putString("Signature", property.getSignature());
                     }
-                    ((AbstractList<CompoundNBT>)class53).add(e);
+                    class53.add(e);
                 }
                 class52.put(s, class53);
             }
@@ -193,10 +193,10 @@ public final class Class9346
     private static <S extends IStateHolder<S>, T extends Comparable<T>> S method34648(final S n, final IProperty<T> class7111, final String s, final CompoundNBT class7112, final CompoundNBT class7113) {
         final Optional<T> method21830 = class7111.parseValue(class7112.getString(s));
         if (!method21830.isPresent()) {
-            Class9346.field40120.warn("Unable to read property: {} with value: {} for blockstate: {}", (Object)s, (Object)class7112.getString(s), (Object)class7113.toString());
+            Class9346.field40120.warn("Unable to read property: {} with value: {} for blockstate: {}", s, class7112.getString(s), class7113.toString());
             return n;
         }
-        return (S)((IStateHolder<Object>)n).with(class7111, (Comparable)method21830.get());
+        return (S)((IStateHolder<Object>)n).with(class7111, method21830.get());
     }
     
     public static CompoundNBT method34649(final BlockState class7096) {
@@ -223,7 +223,7 @@ public final class Class9346
     }
     
     public static CompoundNBT method34652(final DataFixer dataFixer, final Class1959 class1959, final CompoundNBT class1960, final int n, final int n2) {
-        return (CompoundNBT)dataFixer.update(class1959.method7946(), new Dynamic((DynamicOps)Class8453.field34721, (Object)class1960), n, n2).getValue();
+        return (CompoundNBT)dataFixer.update(class1959.method7946(), new Dynamic(Class8453.field34721, class1960), n, n2).getValue();
     }
     
     static {

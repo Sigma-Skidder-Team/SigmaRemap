@@ -29,11 +29,10 @@ public class Class4540 extends Class4535<Class5116>
                         class1854.method16016().ifPresent(class1859 -> {
                             class1856.method6727(class1857);
                             final Class488 class1860;
-                            if (!(!(class1860 instanceof Class488))) {
+                            if (class1860 instanceof Class488) {
                                 class1860.method2446(class1859, class1858.method16017());
                                 class1860.method2161();
                             }
-                            return;
                         });
                         continue;
                     }

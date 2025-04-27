@@ -13,7 +13,7 @@ import slick2d.Texture;
 
 public class Class8518 extends Class8519
 {
-    private Class7764 field34934;
+    private final Class7764 field34934;
     private int field34935;
     private boolean field34936;
     

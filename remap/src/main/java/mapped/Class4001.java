@@ -42,7 +42,7 @@ public class Class4001 extends Class4000
     
     @Override
     public int method12166(final BlockState class7096) {
-        return class7096.get((IProperty<Integer>)Class4001.field18035);
+        return class7096.get(Class4001.field18035);
     }
     
     @Override

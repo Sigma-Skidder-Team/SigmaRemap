@@ -11,9 +11,9 @@ public abstract class Class6253 implements Class6250
     public static final int field25103 = 2;
     public static final int field25104 = 3;
     public static final int field25105 = 4;
-    private int field25106;
-    private int field25107;
-    private int field25108;
+    private final int field25106;
+    private final int field25107;
+    private final int field25108;
     
     public Class6253(final int field25108, final int field25109, final int field25110) {
         this.field25106 = field25109;
@@ -30,9 +30,7 @@ public abstract class Class6253 implements Class6250
             final Class6253 class6253 = (Class6253)o;
             if (class6253.field25108 == this.field25108) {
                 if (class6253.field25106 == this.field25106) {
-                    if (class6253.field25107 == this.field25107) {
-                        return true;
-                    }
+                    return class6253.field25107 == this.field25107;
                 }
             }
             return false;

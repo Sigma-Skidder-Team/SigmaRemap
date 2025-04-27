@@ -9,14 +9,14 @@ import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 
 public class LoginScreen extends Class4841 {
-    private TextField inputUsername;
-    private TextField inputEmail;
-    private TextField inputPassword;
-    private TextField inputCatcha;
-    private UIButton loginButton;
-    private UIButton registerButton;
+    private final TextField inputUsername;
+    private final TextField inputEmail;
+    private final TextField inputPassword;
+    private final TextField inputCatcha;
+    private final UIButton loginButton;
+    private final UIButton registerButton;
     private UIButton forgotButton;
-    private LoadingIndicator loadingThingy;
+    private final LoadingIndicator loadingThingy;
     public static int field20841;
     public static int field20842;
 

@@ -16,6 +16,6 @@ public class Class1722 extends Class1721
     public void method6071(final String s) {
         final StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         final StackTraceElement stackTraceElement = stackTrace[Math.min(3, stackTrace.length)];
-        Class1722.field9637.info("[{}]@.({}:{}): {}", (Object)this.field9638, (Object)stackTraceElement.getFileName(), (Object)stackTraceElement.getLineNumber(), (Object)s);
+        Class1722.field9637.info("[{}]@.({}:{}): {}", this.field9638, stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), s);
     }
 }

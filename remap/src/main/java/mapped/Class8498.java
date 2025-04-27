@@ -35,6 +35,6 @@ public class Class8498<T>
     
     @Override
     public String toString() {
-        return "" + this.field34889 + ":" + this.field34888;
+        return this.field34889 + ":" + this.field34888;
     }
 }

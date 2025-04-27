@@ -30,12 +30,12 @@ public class BlockFly extends ModuleWithSettings {
     public int field15752;
 
     public BlockFly() {
-        super(Category.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new Module[]{new NCPBlockFly(), new AACBlockFly(), new HypixelBlockFly()});
+        super(Category.MOVEMENT, "BlockFly", "Allows you to automatically bridge", new NCPBlockFly(), new AACBlockFly(), new HypixelBlockFly());
         this.field15751 = new Animation(114, 114, Direction.FORWARDS);
         this.field15752 = 0;
-        this.addSetting(new StringSetting("ItemSpoof", "Item spoofing mode", 2, new String[]{"None", "Switch", "Spoof", "LiteSpoof"}));
-        this.addSetting(new StringSetting("Tower Mode", "Tower mode", 1, new String[]{"None", "NCP", "AAC", "Cubecraft"}).setPremiumMode("Cubecraft"));
-        this.addSetting(new StringSetting("Picking mode", "The way you will pick blocks in your inventory.", 0, new String[]{"Basic", "FakeInv", "OpenInv"}));
+        this.addSetting(new StringSetting("ItemSpoof", "Item spoofing mode", 2, "None", "Switch", "Spoof", "LiteSpoof"));
+        this.addSetting(new StringSetting("Tower Mode", "Tower mode", 1, "None", "NCP", "AAC", "Cubecraft").setPremiumMode("Cubecraft"));
+        this.addSetting(new StringSetting("Picking mode", "The way you will pick blocks in your inventory.", 0, "Basic", "FakeInv", "OpenInv"));
         this.addSetting(new BooleanSetting("Tower while moving", "Allows you to tower while moving.", false));
         this.addSetting(new BooleanSetting("Show Block Amount", "Shows the amount of blocks in your inventory.", true));
         this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", true));
@@ -63,9 +63,7 @@ public class BlockFly extends ModuleWithSettings {
                                     if (!(method12240 instanceof Class3936)) {
                                         if (!(method12240 instanceof Class3900)) {
                                             if (!(method12240 instanceof Class3841)) {
-                                                if (!(method12240 instanceof Class3865)) {
-                                                    return true;
-                                                }
+                                                return !(method12240 instanceof Class3865);
                                             }
                                         }
                                     }
@@ -224,13 +222,8 @@ public class BlockFly extends ModuleWithSettings {
 
     public boolean method10285(final Class316 class316) {
         if (!this.method9914().getStringSettingValueByName("ItemSpoof").equals("None")) {
-            if (this.method10281() == 0) {
-                return false;
-            }
-        } else if (!method10279(BlockFly.mc.player.method2715(class316).getItem())) {
-            return false;
-        }
-        return true;
+            return this.method10281() != 0;
+        } else return method10279(BlockFly.mc.player.method2715(class316).getItem());
     }
 
     public void method10286(final int n, final int n2) {

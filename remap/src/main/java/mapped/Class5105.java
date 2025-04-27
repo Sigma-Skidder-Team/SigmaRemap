@@ -10,7 +10,7 @@ import java.util.Map;
 public class Class5105 implements Class5106
 {
     private static String[] field22046;
-    private Map<String, Class339> field22047;
+    private final Map<String, Class339> field22047;
     
     public Class5105(final Class5601[] array) {
         this.field22047 = new HashMap<String, Class339>();

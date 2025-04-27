@@ -143,7 +143,7 @@ public enum Class266
     private final int field1423;
     private final Class266 field1424;
     
-    private Class266(final int field1423) {
+    Class266(final int field1423) {
         this.field1423 = field1423;
         this.field1424 = null;
     }
@@ -152,7 +152,7 @@ public enum Class266
         if (i != -1) {
             return (Optional<Class266>)Optional.fromNullable((Object)Class266.field1422.get(i));
         }
-        return (Optional<Class266>)Optional.absent();
+        return Optional.absent();
     }
     
     public boolean method908(final Class266... array) {
@@ -180,7 +180,7 @@ public enum Class266
         return true;
     }
     
-    private Class266(final int field1423, final Class266 field1424) {
+    Class266(final int field1423, final Class266 field1424) {
         this.field1423 = field1423;
         this.field1424 = field1424;
     }

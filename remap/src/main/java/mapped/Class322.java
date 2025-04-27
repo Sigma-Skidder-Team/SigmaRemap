@@ -31,7 +31,7 @@ public enum Class322
     private static final int field1922;
     private final Set<Direction> field1923;
     
-    private Class322(final Direction[] a) {
+    Class322(final Direction[] a) {
         this.field1923 = (Set<Direction>)Sets.immutableEnumSet((Iterable)Arrays.asList(a));
     }
     

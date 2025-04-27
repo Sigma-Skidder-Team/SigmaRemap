@@ -236,7 +236,7 @@ public class Class3439 extends Class3418
                     final CompoundNBT e = new CompoundNBT();
                     e.putString("Pattern", class8322.method859());
                     e.putInt("Color", method20055.method813());
-                    ((AbstractList<CompoundNBT>)method20057).add(e);
+                    method20057.add(e);
                 }
             }
             if (!ItemStack.method27643(class8321, this.field16244.method20053())) {

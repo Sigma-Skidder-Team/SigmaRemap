@@ -17,7 +17,7 @@ public class Class5191 extends Class5174
     }
     
     public static void method16205(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> Class9478.method35286(schema2));
+        schema.register(map, s, () -> Class9478.method35286(schema2));
     }
     
     public Map<String, Supplier<TypeTemplate>> registerEntities(final Schema schema) {

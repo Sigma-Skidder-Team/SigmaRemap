@@ -40,8 +40,8 @@ public class Class9203
         Class9203.field38995 = null;
         Class9203.field38996 = 0;
         final Pair<Class9103[], Integer> method33677 = method33677();
-        Class9203.field38995 = (Class9103[])method33677.getLeft();
-        Class9203.field38996 = (int)method33677.getRight();
+        Class9203.field38995 = method33677.getLeft();
+        Class9203.field38996 = method33677.getRight();
     }
     
     private static Pair<Class9103[], Integer> method33677() {
@@ -71,9 +71,9 @@ public class Class9203
                 final Integer n = array[j];
                 array2[n - intValue] = Class9103.method32897((String)hashMap.get(n), n, method32778);
             }
-            return (Pair<Class9103[], Integer>)new ImmutablePair((Object)array2, (Object)intValue);
+            return (Pair<Class9103[], Integer>)new ImmutablePair(array2, intValue);
         }
-        return (Pair<Class9103[], Integer>)new ImmutablePair((Object)null, (Object)0);
+        return (Pair<Class9103[], Integer>)new ImmutablePair(null, 0);
     }
     
     public static void method33678(final String str) {

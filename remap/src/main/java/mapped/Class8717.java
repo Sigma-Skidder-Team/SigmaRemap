@@ -29,11 +29,11 @@ public class Class8717 implements ArgumentType<String>
     
     public static Class9290 method29934(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         final String s2 = (String)commandContext.getArgument(s, (Class)String.class);
-        final Class9290 method19632 = ((Class7492)commandContext.getSource()).method23255().method1579().method19632(s2);
+        final Class9290 method19632 = commandContext.getSource().method23255().method1579().method19632(s2);
         if (method19632 != null) {
             return method19632;
         }
-        throw Class8717.field36627.create((Object)s2);
+        throw Class8717.field36627.create(s2);
     }
     
     public static Class9290 method29935(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
@@ -41,7 +41,7 @@ public class Class8717 implements ArgumentType<String>
         if (!method29934.method34313().method35140()) {
             return method29934;
         }
-        throw Class8717.field36628.create((Object)method29934.method34312());
+        throw Class8717.field36628.create(method29934.method34312());
     }
     
     public String parse(final StringReader stringReader) throws CommandSyntaxException {
@@ -49,7 +49,7 @@ public class Class8717 implements ArgumentType<String>
         if (unquotedString.length() <= 16) {
             return unquotedString;
         }
-        throw Class8717.field36629.create((Object)16);
+        throw Class8717.field36629.create(16);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -69,15 +69,15 @@ public class Class8717 implements ArgumentType<String>
     static {
         field36626 = Arrays.asList("foo", "*", "012");
         field36627 = new DynamicCommandExceptionType(o -> {
-            new Class2259("arguments.objective.notFound", new Object[] { o });
+            new Class2259("arguments.objective.notFound", o);
             return;
         });
         field36628 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("arguments.objective.readonly", new Object[] { o3 });
+            new Class2259("arguments.objective.readonly", o3);
             return;
         });
         field36629 = new DynamicCommandExceptionType(o5 -> {
-            new Class2259("commands.scoreboard.objectives.add.longName", new Object[] { o5 });
+            new Class2259("commands.scoreboard.objectives.add.longName", o5);
             return;
         });
     }

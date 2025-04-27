@@ -44,6 +44,6 @@ public class Class6468 extends Class6469
     }
     
     public String method19363(final Class5760 class5760) {
-        return this.method19365() + Class8822.method30773(this.method19361(class5760) ? "options.on" : "options.off", new Object[0]);
+        return this.method19365() + Class8822.method30773(this.method19361(class5760) ? "options.on" : "options.off");
     }
 }

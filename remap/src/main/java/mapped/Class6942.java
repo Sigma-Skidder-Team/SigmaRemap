@@ -49,7 +49,7 @@ public final class Class6942
     }
     
     public boolean method21321(final int ch) {
-        return (ch >= 128) ? (this.field27196 && this.field27194.indexOf(ch, 0) != -1) : this.field27195[ch];
+        return (ch >= 128) ? (this.field27196 && this.field27194.indexOf(ch) != -1) : this.field27195[ch];
     }
     
     public boolean method21322(final int n) {
@@ -57,7 +57,7 @@ public final class Class6942
     }
     
     public boolean method21323(final int ch, final String s) {
-        return this.method21321(ch) || s.indexOf(ch, 0) != -1;
+        return this.method21321(ch) || s.indexOf(ch) != -1;
     }
     
     public boolean method21324(final int n, final String s) {

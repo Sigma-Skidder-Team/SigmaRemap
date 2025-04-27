@@ -78,7 +78,7 @@ public class RealmsServer extends ValueObject
                     method28146 = Class8428.method28146(str);
                 }
                 catch (final Exception ex) {
-                    RealmsServer.field28674.error("Could not get name for " + str, (Throwable)ex);
+                    RealmsServer.field28674.error("Could not get name for " + str, ex);
                     continue;
                 }
                 if (sb.length() > 0) {
@@ -131,7 +131,7 @@ public class RealmsServer extends ValueObject
     }
     
     private static void method22878(final RealmsServer class7437) {
-        class7437.field28682.sort((class7438, class7439) -> ComparisonChain.start().compareFalseFirst(class7439.method22856(), class7438.method22856()).compare((Comparable)class7438.method22850().toLowerCase(Locale.ROOT), (Comparable)class7439.method22850().toLowerCase(Locale.ROOT)).result());
+        class7437.field28682.sort((class7438, class7439) -> ComparisonChain.start().compareFalseFirst(class7439.method22856(), class7438.method22856()).compare(class7438.method22850().toLowerCase(Locale.ROOT), class7439.method22850().toLowerCase(Locale.ROOT)).result());
     }
     
     private static List<Class7427> method22879(final JsonArray jsonArray) {
@@ -216,7 +216,7 @@ public class RealmsServer extends ValueObject
     
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37).append(this.id).append((Object)this.field28677).append((Object)this.field28678).append((Object)this.state).append((Object)this.field28680).append(this.field28684).toHashCode();
+        return new HashCodeBuilder(17, 37).append(this.id).append(this.field28677).append(this.field28678).append(this.state).append(this.field28680).append(this.field28684).toHashCode();
     }
     
     @Override
@@ -229,7 +229,7 @@ public class RealmsServer extends ValueObject
         }
         if (o.getClass() == this.getClass()) {
             final RealmsServer class7437 = (RealmsServer)o;
-            return new EqualsBuilder().append(this.id, class7437.id).append((Object)this.field28677, (Object)class7437.field28677).append((Object)this.field28678, (Object)class7437.field28678).append((Object)this.state, (Object)class7437.state).append((Object)this.field28680, (Object)class7437.field28680).append(this.field28684, class7437.field28684).append((Object)this.field28687, (Object)this.field28687).isEquals();
+            return new EqualsBuilder().append(this.id, class7437.id).append(this.field28677, class7437.field28677).append(this.field28678, class7437.field28678).append(this.state, class7437.state).append(this.field28680, class7437.field28680).append(this.field28684, class7437.field28684).append(this.field28687, this.field28687).isEquals();
         }
         return false;
     }
@@ -275,6 +275,6 @@ public class RealmsServer extends ValueObject
     {
         CLOSED,
         OPEN,
-        field12793;
+        field12793
     }
 }

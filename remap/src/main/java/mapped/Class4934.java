@@ -21,26 +21,26 @@ public class Class4934 extends Class4800
 {
     private int field21134;
     private float field21135;
-    private float field21136;
+    private final float field21136;
     private boolean field21137;
     public UIButton field21138;
-    private Class4817 field21139;
-    private Class4817 field21140;
+    private final Class4817 field21139;
+    private final Class4817 field21140;
     private Class4907 field21141;
     private Class4907 field21142;
-    private float field21143;
-    private float field21144;
-    private int field21145;
-    private Class4837 field21146;
-    private Class4826 field21147;
+    private final float field21143;
+    private final float field21144;
+    private final int field21145;
+    private final Class4837 field21146;
+    private final Class4826 field21147;
     public AltManager field21148;
     private Texture field21149;
     private float field21150;
-    private UIButton field21151;
+    private final UIButton field21151;
     private Class225 field21152;
     private String field21153;
-    private boolean field21154;
-    private TextField field21155;
+    private final boolean field21154;
+    private final TextField field21155;
     
     public Class4934() {
         super("Alt Manager");
@@ -184,7 +184,7 @@ public class Class4934 extends Class4800
     }
     
     private void method14813() {
-        this.addToList(this.field21141 = new Class4907(this, "Testt", true, "Add Alt", new Class7976[] { new Class7976(Class294.field1678, "Add Alt", 50), new Class7976(Class294.field1675, "Login with your minecraft", 15), new Class7976(Class294.field1675, "account here!", 25), new Class7976(Class294.field1676, "Email", 50), new Class7976(Class294.field1676, "Password", 50), new Class7976(Class294.field1679, "", 15), new Class7976(Class294.field1677, "Add alt", 50) }));
+        this.addToList(this.field21141 = new Class4907(this, "Testt", true, "Add Alt", new Class7976(Class294.field1678, "Add Alt", 50), new Class7976(Class294.field1675, "Login with your minecraft", 15), new Class7976(Class294.field1675, "account here!", 25), new Class7976(Class294.field1676, "Email", 50), new Class7976(Class294.field1676, "Password", 50), new Class7976(Class294.field1679, "", 15), new Class7976(Class294.field1677, "Add alt", 50)));
         this.field21141.method14516(class4841 -> {
             if (!this.field21141.method14741().get("Email").contains(":")) {
                 final Class7971 class4842 = new Class7971(this.field21141.method14741().get("Email"), this.field21141.method14741().get("Password"));
@@ -209,7 +209,7 @@ public class Class4934 extends Class4800
     }
     
     private void method14814() {
-        this.addToList(this.field21142 = new Class4907(this, "delete", true, "Delete", new Class7976[] { new Class7976(Class294.field1678, "Delete?", 50), new Class7976(Class294.field1675, "Are you sure you want", 15), new Class7976(Class294.field1675, "to delete this alt?", 40), new Class7976(Class294.field1677, "Delete", 50) }));
+        this.addToList(this.field21142 = new Class4907(this, "delete", true, "Delete", new Class7976(Class294.field1678, "Delete?", 50), new Class7976(Class294.field1675, "Are you sure you want", 15), new Class7976(Class294.field1675, "to delete this alt?", 40), new Class7976(Class294.field1677, "Delete", 50)));
     }
     
     @Override

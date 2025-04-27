@@ -54,9 +54,7 @@ public class Class6824
         if (method6686 != null) {
             if (method6686.field10145) {
                 if (method6687 != null) {
-                    if (method6687.field10145) {
-                        return true;
-                    }
+                    return method6687.field10145;
                 }
             }
         }

@@ -47,7 +47,7 @@ public class Class1924 implements AutoCloseable
         this.field10472 = ByteBuffer.allocateDirect(8192);
         this.field10475 = new Class8603();
         this.field10471 = field10471;
-        if (Files.isDirectory(path2, new LinkOption[0])) {
+        if (Files.isDirectory(path2)) {
             this.field10470 = path2;
             (this.field10473 = this.field10472.asIntBuffer()).limit();
             this.field10472.position();
@@ -58,7 +58,7 @@ public class Class1924 implements AutoCloseable
             final int read = this.field10469.read(this.field10472, 0L);
             if (read != -1) {
                 if (read != 8192) {
-                    Class1924.field10467.warn("Region file {} has truncated header: {}", (Object)path, (Object)read);
+                    Class1924.field10467.warn("Region file {} has truncated header: {}", path, read);
                 }
                 for (int i = 0; i < 1024; ++i) {
                     final int value = this.field10473.get(i);
@@ -85,16 +85,16 @@ public class Class1924 implements AutoCloseable
         final int method7656 = method7647(method7655);
         final int n = method7646(method7655) * 4096;
         final ByteBuffer allocate = ByteBuffer.allocate(n);
-        this.field10469.read(allocate, method7656 * 4096);
+        this.field10469.read(allocate, method7656 * 4096L);
         allocate.flip();
         if (allocate.remaining() < 5) {
-            Class1924.field10467.error("Chunk {} header is truncated: expected {} but read {}", (Object)class7859, (Object)n, (Object)allocate.remaining());
+            Class1924.field10467.error("Chunk {} header is truncated: expected {} but read {}", class7859, n, allocate.remaining());
             return null;
         }
         final int int1 = allocate.getInt();
         final byte value = allocate.get();
         if (int1 == 0) {
-            Class1924.field10467.warn("Chunk {} is allocated, but stream is missing", (Object)class7859);
+            Class1924.field10467.warn("Chunk {} is allocated, but stream is missing", class7859);
             return null;
         }
         final int i = int1 - 1;
@@ -105,13 +105,13 @@ public class Class1924 implements AutoCloseable
             return this.method7643(class7859, method7641(value));
         }
         if (i > allocate.remaining()) {
-            Class1924.field10467.error("Chunk {} stream is truncated: expected {} but read {}", (Object)class7859, (Object)i, (Object)allocate.remaining());
+            Class1924.field10467.error("Chunk {} stream is truncated: expected {} but read {}", class7859, i, allocate.remaining());
             return null;
         }
         if (i >= 0) {
             return this.method7642(class7859, value, method7644(allocate, i));
         }
-        Class1924.field10467.error("Declared size {} of chunk {} is negative", (Object)int1, (Object)class7859);
+        Class1924.field10467.error("Declared size {} of chunk {} is negative", int1, class7859);
         return null;
     }
     
@@ -129,17 +129,17 @@ public class Class1924 implements AutoCloseable
         if (method26430 != null) {
             return new DataInputStream(new BufferedInputStream(method26430.method26434(inputStream)));
         }
-        Class1924.field10467.error("Chunk {} has invalid chunk stream version {}", (Object)class7859, (Object)b);
+        Class1924.field10467.error("Chunk {} has invalid chunk stream version {}", class7859, b);
         return null;
     }
     
     @Nullable
     private DataInputStream method7643(final ChunkPos class7859, final byte b) throws IOException {
         final Path method7638 = this.method7638(class7859);
-        if (Files.isRegularFile(method7638, new LinkOption[0])) {
-            return this.method7642(class7859, b, Files.newInputStream(method7638, new OpenOption[0]));
+        if (Files.isRegularFile(method7638)) {
+            return this.method7642(class7859, b, Files.newInputStream(method7638));
         }
-        Class1924.field10467.error("External chunk path {} is not file", (Object)method7638);
+        Class1924.field10467.error("External chunk path {} is not file", method7638);
         return null;
     }
     
@@ -172,7 +172,7 @@ public class Class1924 implements AutoCloseable
         final int method7657 = method7646(method7655);
         final ByteBuffer allocate = ByteBuffer.allocate(5);
         try {
-            this.field10469.read(allocate, method7656 * 4096);
+            this.field10469.read(allocate, method7656 * 4096L);
             allocate.flip();
             if (allocate.remaining() != 5) {
                 return false;
@@ -183,9 +183,7 @@ public class Class1924 implements AutoCloseable
                 if (!Class8057.method26431(method7641(value))) {
                     return false;
                 }
-                if (!Files.isRegularFile(this.method7638(class7859), new LinkOption[0])) {
-                    return false;
-                }
+                return Files.isRegularFile(this.method7638(class7859));
             }
             else {
                 if (!Class8057.method26431(value)) {
@@ -195,11 +193,8 @@ public class Class1924 implements AutoCloseable
                     return false;
                 }
                 final int n = int1 - 1;
-                if (n < 0 || n > 4096 * method7657) {
-                    return false;
-                }
+                return n >= 0 && n <= 4096 * method7657;
             }
-            return true;
         }
         catch (final IOException ex) {
             return false;
@@ -222,15 +217,15 @@ public class Class1924 implements AutoCloseable
         if (method7660 < 256) {
             n = this.field10475.method29172(method7660);
             method7661 = (() -> Files.deleteIfExists(this.method7638(class7860)));
-            this.field10469.write(byteBuffer, n * 4096);
+            this.field10469.write(byteBuffer, n * 4096L);
         }
         else {
             final Path method7662 = this.method7638(class7859);
-            Class1924.field10467.warn("Saving oversized chunk {} ({} bytes} to external file {}", (Object)class7859, (Object)remaining, (Object)method7662);
+            Class1924.field10467.warn("Saving oversized chunk {} ({} bytes} to external file {}", class7859, remaining, method7662);
             method7660 = 1;
             n = this.field10475.method29172(method7660);
             method7661 = this.method7653(method7662, byteBuffer);
-            this.field10469.write(this.method7652(), n * 4096);
+            this.field10469.write(this.method7652(), n * 4096L);
         }
         final int n2 = (int)(Util.method27839() / 1000L);
         this.field10473.put(method7657, this.method7645(n, method7660));
@@ -251,7 +246,7 @@ public class Class1924 implements AutoCloseable
     }
     
     private Class9149 method7653(final Path path, final ByteBuffer byteBuffer) throws IOException {
-        try (final FileChannel open = FileChannel.open(Files.createTempFile(this.field10470, "tmp", null, (FileAttribute<?>[])new FileAttribute[0]), StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
+        try (final FileChannel open = FileChannel.open(Files.createTempFile(this.field10470, "tmp", null, new FileAttribute[0]), StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
             byteBuffer.position();
             open.write(byteBuffer);
         }

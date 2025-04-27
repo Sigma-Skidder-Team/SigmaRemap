@@ -173,7 +173,7 @@ public class Class9458
     
     public void method35153(final float n, final MatrixStack class7351, final IRenderTypeBuffer.Impl class7352, final ClientPlayerEntity class7353, final int n2) {
         final float method2748 = class7353.method2748(n);
-        final Class316 class7354 = (Class316)MoreObjects.firstNonNull((Object)class7353.field2934, (Object)Class316.field1877);
+        final Class316 class7354 = (Class316)MoreObjects.firstNonNull(class7353.field2934, (Object)Class316.field1877);
         final float method2749 = MathHelper.method35700(n, class7353.prevRotationPitch, class7353.rotationPitch);
         boolean b = true;
         int n3 = 1;

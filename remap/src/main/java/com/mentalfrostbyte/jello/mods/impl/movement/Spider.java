@@ -14,7 +14,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 public class Spider extends ModuleWithSettings
 {
     public Spider() {
-        super(Category.MOVEMENT, "Spider", "Climp walls like spiders", new Module[] { new VanillaSpider(), new SpartanSpider() });
+        super(Category.MOVEMENT, "Spider", "Climp walls like spiders", new VanillaSpider(), new SpartanSpider());
     }
     
     public int method10264() {

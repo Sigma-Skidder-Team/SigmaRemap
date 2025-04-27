@@ -72,7 +72,7 @@ public class Class1673 implements Class1671
             return null;
         }
         final String method15968 = class5092.method15968();
-        return (T)(this.field9466.has(method15968) ? class5092.method15969(Class9583.method35914(this.field9466, method15968)) : null);
+        return this.field9466.has(method15968) ? class5092.method15969(Class9583.method35914(this.field9466, method15968)) : null;
     }
     
     @Override
@@ -96,14 +96,9 @@ public class Class1673 implements Class1671
                 return false;
             }
             if (this.field9461 == null) {
-                if (class1673.field9461 != null) {
-                    return false;
-                }
+                return class1673.field9461 == null;
             }
-            else if (!this.field9461.equals(class1673.field9461)) {
-                return false;
-            }
-            return true;
+            else return this.field9461.equals(class1673.field9461);
         }
         return false;
     }

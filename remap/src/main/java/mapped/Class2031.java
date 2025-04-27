@@ -10,11 +10,11 @@ public enum Class2031
     field11576(Character.valueOf('\'')), 
     field11577(Character.valueOf('|')), 
     field11578(Character.valueOf('>')), 
-    field11579((Character)null);
+    field11579(null);
     
-    private Character field11580;
+    private final Character field11580;
     
-    private Class2031(final Character field11580) {
+    Class2031(final Character field11580) {
         this.field11580 = field11580;
     }
     
@@ -31,7 +31,7 @@ public enum Class2031
         if (obj == null) {
             return Class2031.field11579;
         }
-        switch ((char)obj) {
+        switch (obj) {
             case '\"': {
                 return Class2031.field11575;
             }

@@ -24,7 +24,7 @@ public abstract class Class649 extends Class648
                 }
             }
             else {
-                n4 += this.field3424 * 1;
+                n4 += this.field3424;
             }
         }
         else {

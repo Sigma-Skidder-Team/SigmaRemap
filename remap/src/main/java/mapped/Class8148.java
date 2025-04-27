@@ -63,6 +63,6 @@ public class Class8148 implements ArgumentType<EnumSet<Direction.Axis>>
     
     static {
         field33558 = Arrays.asList("xyz", "x");
-        field33559 = new SimpleCommandExceptionType((Message)new Class2259("arguments.swizzle.invalid", new Object[0]));
+        field33559 = new SimpleCommandExceptionType(new Class2259("arguments.swizzle.invalid", new Object[0]));
     }
 }

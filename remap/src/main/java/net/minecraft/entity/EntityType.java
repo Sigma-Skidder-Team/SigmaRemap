@@ -267,7 +267,7 @@ public class EntityType<T extends Entity>
     
     public ITextComponent method23367() {
         if (this.field29067 == null) {
-            this.field29067 = new Class2259(this.method23366(), new Object[0]);
+            this.field29067 = new Class2259(this.method23366());
         }
         return this.field29067;
     }
@@ -304,7 +304,7 @@ public class EntityType<T extends Entity>
     
     @Nullable
     private static Entity method23374(final World class1847, final EntityType<?> class1848) {
-        return (Entity)((class1848 != null) ? class1848.method23371(class1847) : null);
+        return (class1848 != null) ? class1848.method23371(class1847) : null;
     }
     
     public AxisAlignedBB method23375(final double n, final double n2, final double n3) {
@@ -323,7 +323,7 @@ public class EntityType<T extends Entity>
     @Nullable
     public static Entity method23378(final CompoundNBT class51, final World class52, final Function<Entity, Entity> mapper) {
         return method23379(class51, class52).map((Function<? super Entity, ?>)mapper).map(class55 -> {
-            if (!(!class53.method316("Passengers", 9))) {
+            if (class53.method316("Passengers", 9)) {
                 class53.method328("Passengers", 10);
                 int i = 0;
                 final ListNBT class56;
@@ -345,7 +345,7 @@ public class EntityType<T extends Entity>
             return method23373(class51, class52);
         }
         catch (final RuntimeException ex) {
-            EntityType.field28956.warn("Exception loading entity: ", (Throwable)ex);
+            EntityType.field28956.warn("Exception loading entity: ", ex);
             return Optional.empty();
         }
     }
@@ -487,9 +487,7 @@ public class EntityType<T extends Entity>
                             if (this != EntityType.field28995) {
                                 if (this != EntityType.field29009) {
                                     if (this != EntityType.field28975) {
-                                        if (this != EntityType.field28979) {
-                                            return true;
-                                        }
+                                        return this != EntityType.field28979;
                                     }
                                 }
                             }

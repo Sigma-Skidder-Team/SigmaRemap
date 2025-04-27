@@ -29,7 +29,7 @@ public class Class4109 extends Class4107
             class1857.method23802(true);
         }
         catch (final CommandSyntaxException cause) {
-            throw new RuntimeException((Throwable)cause);
+            throw new RuntimeException(cause);
         }
         return (class1857.method23799().method21696() == Blocks.STRUCTURE_VOID) ? null : new Class9038(class1855.field38248, class1857.method23799(), null);
     }
@@ -41,7 +41,7 @@ public class Class4109 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.emptyMap());
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.emptyMap());
     }
     
     static {

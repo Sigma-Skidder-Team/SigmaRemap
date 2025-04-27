@@ -17,6 +17,6 @@ public class Class6134 extends Class6132
     
     @Override
     public Typed<?> method18357(final Typed<?> typed) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> (dynamic.get("Color").asInt(0) != 10) ? dynamic : dynamic.set("Color", dynamic.createByte((byte)16)));
+        return typed.update(DSL.remainderFinder(), dynamic -> (dynamic.get("Color").asInt(0) != 10) ? dynamic : dynamic.set("Color", dynamic.createByte((byte)16)));
     }
 }

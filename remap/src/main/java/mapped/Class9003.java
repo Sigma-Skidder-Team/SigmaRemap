@@ -14,9 +14,9 @@ import java.util.HashMap;
 
 public class Class9003
 {
-    private HashMap field38005;
+    private final HashMap field38005;
     private String field38006;
-    private ArrayList field38007;
+    private final ArrayList field38007;
     private String field38008;
     
     public Class9003() {
@@ -260,7 +260,7 @@ public class Class9003
     
     private Method method32177(final Class clazz, final String name, final Class[] parameterTypes) {
         try {
-            return clazz.getMethod(name, (Class[])parameterTypes);
+            return clazz.getMethod(name, parameterTypes);
         }
         catch (final SecurityException ex) {
             return null;

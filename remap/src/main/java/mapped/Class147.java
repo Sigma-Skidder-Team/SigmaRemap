@@ -36,7 +36,7 @@ public class Class147 extends Class126
             return new NBTPathArgument().parse(new StringReader(str));
         }
         catch (final CommandSyntaxException cause) {
-            throw new IllegalArgumentException("Failed to parse path " + str, (Throwable)cause);
+            throw new IllegalArgumentException("Failed to parse path " + str, cause);
         }
     }
     

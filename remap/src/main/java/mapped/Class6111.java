@@ -21,7 +21,7 @@ public class Class6111
     public static void method18268() {
         final InputStreamReader inputStreamReader = new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("assets/viaversion/data/blockIds1.12to1.13.json"));
         try {
-            Class6111.field24816 = new HashMap<String, String[]>((Map<?, ?>)Class8557.method28750().fromJson((Reader)inputStreamReader, new Class7515().getType()));
+            Class6111.field24816 = new HashMap<String, String[]>((Map<?, ?>)Class8557.method28750().fromJson(inputStreamReader, new Class7515().getType()));
             Class6111.field24817 = new HashMap<String, String[]>();
             for (final Map.Entry<K, String[]> entry : Class6111.field24816.entrySet()) {
                 for (final String s : entry.getValue()) {
@@ -29,7 +29,7 @@ public class Class6111
                     if (array2 == null) {
                         array2 = new String[0];
                     }
-                    Class6111.field24817.put(s, (String[])ObjectArrays.concat((Object[])array2, (Object)entry.getKey()));
+                    Class6111.field24817.put(s, (String[])ObjectArrays.concat(array2, (Object)entry.getKey()));
                 }
             }
             try {
@@ -45,7 +45,7 @@ public class Class6111
         }
         final InputStreamReader inputStreamReader2 = new InputStreamReader(Class9526.class.getClassLoader().getResourceAsStream("assets/viaversion/data/blockNumberToString1.12.json"));
         try {
-            Class6111.field24818 = new HashMap<Integer, String>((Map<?, ?>)Class8557.method28750().fromJson((Reader)inputStreamReader2, new Class7513().getType()));
+            Class6111.field24818 = new HashMap<Integer, String>((Map<?, ?>)Class8557.method28750().fromJson(inputStreamReader2, new Class7513().getType()));
             try {
                 inputStreamReader2.close();
             }

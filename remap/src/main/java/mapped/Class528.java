@@ -28,7 +28,7 @@ public class Class528 extends Screen
         this.field3160 = Lists.newArrayList();
         this.field3158 = field3158;
         this.field3159 = field3159;
-        this.field3161 = Class8822.method30773(s, new Object[0]);
+        this.field3161 = Class8822.method30773(s);
     }
     
     @Override

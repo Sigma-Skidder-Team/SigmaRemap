@@ -14,12 +14,12 @@ public class Class7113 extends Class7110<Boolean>
     
     public Class7113(final String s) {
         super(s, Boolean.class);
-        this.field27742 = (ImmutableSet<Boolean>)ImmutableSet.of((Object)true, (Object)false);
+        this.field27742 = (ImmutableSet<Boolean>)ImmutableSet.of(true, (Object)false);
     }
     
     @Override
     public Collection<Boolean> getAllowedValues() {
-        return (Collection<Boolean>)this.field27742;
+        return this.field27742;
     }
     
     public static Class7113 method21834(final String s) {
@@ -37,7 +37,7 @@ public class Class7113 extends Class7110<Boolean>
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o instanceof Class7113 && super.equals(o) && this.field27742.equals((Object)((Class7113)o).field27742));
+        return this == o || (o instanceof Class7113 && super.equals(o) && this.field27742.equals(((Class7113)o).field27742));
     }
     
     @Override

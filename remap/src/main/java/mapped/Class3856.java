@@ -10,11 +10,11 @@ import net.minecraft.world.IBlockReader;
 public interface Class3856 extends Class3857, Class3867
 {
     default boolean method11920(final IBlockReader class1855, final BlockPos class1856, final BlockState class1857, final Fluid class1858) {
-        return !class1857.get((IProperty<Boolean>)Class8970.field37747) && class1858 == Class7558.field29976;
+        return !class1857.get(Class8970.field37747) && class1858 == Class7558.field29976;
     }
     
     default boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
-        if (!class1853.get((IProperty<Boolean>)Class8970.field37747) && class1854.getFluid() == Class7558.field29976) {
+        if (!class1853.get(Class8970.field37747) && class1854.getFluid() == Class7558.field29976) {
             if (!class1851.isRemote()) {
                 class1851.setBlockState(class1852, ((StateHolder<O, BlockState>)class1853).with((IProperty<Comparable>)Class8970.field37747, true), 3);
                 class1851.method6834().method21345(class1852, class1854.getFluid(), class1854.getFluid().method22156(class1851));
@@ -25,7 +25,7 @@ public interface Class3856 extends Class3857, Class3867
     }
     
     default Fluid method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        if (!class1853.get((IProperty<Boolean>)Class8970.field37747)) {
+        if (!class1853.get(Class8970.field37747)) {
             return Class7558.field29974;
         }
         class1851.setBlockState(class1852, ((StateHolder<O, BlockState>)class1853).with((IProperty<Comparable>)Class8970.field37747, false), 3);

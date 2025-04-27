@@ -64,7 +64,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
         this.field3471.player.inventory.method2379(this.field3476);
         this.field3470.method10934(this.field3476);
         final String s = (this.field3472 == null) ? "" : this.field3472.method3378();
-        (this.field3472 = new Class576(this.field3471.fontRenderer, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search", new Object[0]))).method3397(50);
+        (this.field3472 = new Class576(this.field3471.fontRenderer, n + 25, n2 + 14, 80, 14, Class8822.method30773("itemGroup.search"))).method3397(50);
         this.field3472.method3401(false);
         this.field3472.method3410(true);
         this.field3472.method3402(16777215);
@@ -151,7 +151,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
         if (!this.field3472.method3378().isEmpty()) {
             arrayList.removeIf(class9589 -> {
                 final String s;
-                final Object o = new ObjectLinkedOpenHashSet((Collection)this.field3471.method5309(Class1659.field9377).method31456(s.toLowerCase(Locale.ROOT)));
+                final Object o = new ObjectLinkedOpenHashSet(this.field3471.method5309(Class1659.field9377).method31456(s.toLowerCase(Locale.ROOT)));
                 return !set.contains((Object)class9589);
             });
         }
@@ -232,7 +232,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
     }
     
     public String method3429() {
-        return Class8822.method30773(this.field3469.method3692() ? "gui.recipebook.toggleRecipes.craftable" : "gui.recipebook.toggleRecipes.all", new Object[0]);
+        return Class8822.method30773(this.field3469.method3692() ? "gui.recipebook.toggleRecipes.craftable" : "gui.recipebook.toggleRecipes.all");
     }
     
     private void method3430(final int n, final int n2, final int n3, final int n4) {
@@ -347,9 +347,7 @@ public class Class581 extends AbstractGui implements IRenderable, IGuiEventListe
             final boolean b4 = b3;
             if (b2) {
                 if (!b4) {
-                    if (!this.field3468.method3360()) {
-                        return true;
-                    }
+                    return !this.field3468.method3360();
                 }
             }
             return false;

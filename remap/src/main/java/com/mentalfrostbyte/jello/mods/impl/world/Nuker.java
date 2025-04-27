@@ -27,7 +27,7 @@ public class Nuker extends Module
     public Nuker() {
         super(Category.WORLD, "Nuker", "Destroys blocks around you");
         this.addSetting(new NumberSetting("Range", "Range value for nuker", 6.0f, Float.class, 2.0f, 10.0f, 1.0f));
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "All", "One hit", "Bed", "Egg" }));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
         this.addSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
         this.addSetting(new StringListSetting("Blocks", "Blocks to destroy", true));
     }

@@ -15,7 +15,7 @@ public class Class5073 extends RealmsScreen
     private boolean field21774;
     private Class5059 field21775;
     private Class5066 field21776;
-    private int field21777;
+    private final int field21777;
     private Class5611 field21778;
     private Class5611 field21779;
     

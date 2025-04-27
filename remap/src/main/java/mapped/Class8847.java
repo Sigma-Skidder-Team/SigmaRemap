@@ -12,8 +12,8 @@ import java.io.PushbackInputStream;
 public class Class8847
 {
     private static final int field37198 = 6144;
-    private PushbackInputStream field37199;
-    private DataInputStream field37200;
+    private final PushbackInputStream field37199;
+    private final DataInputStream field37200;
     private boolean field37201;
     private Class9124 field37202;
     

@@ -17,7 +17,7 @@ public class Class1729 extends Class1728
     private final Class8175 field9666;
     
     public Class1729(final Class8175 field9666) {
-        super(new String[] { "minecraft", "realms" });
+        super("minecraft", "realms");
         this.field9666 = field9666;
     }
     

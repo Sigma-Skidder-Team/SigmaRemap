@@ -20,9 +20,7 @@ public class Class3487 extends Class3479
     public boolean method11013() {
         if (this.field16420.method4480()) {
             if (!this.field16420.method4483()) {
-                if (super.method11013()) {
-                    return true;
-                }
+                return super.method11013();
             }
         }
         return false;
@@ -62,7 +60,7 @@ public class Class3487 extends Class3479
         final BlockState method6701 = class1852.getBlockState(class1853);
         final Block method6702 = method6701.getBlock();
         if (method6702 != Blocks.CHEST) {
-            return (method6702 == Blocks.field29299 && method6701.get((IProperty<Boolean>)Class3951.field17847)) || (method6702.method11785(Class7188.field27910) && method6701.get(Class3900.field17599) != Class105.field323);
+            return (method6702 == Blocks.field29299 && method6701.get(Class3951.field17847)) || (method6702.method11785(Class7188.field27910) && method6701.get(Class3900.field17599) != Class105.field323);
         }
         return Class475.method2424(class1852, class1853) < 1;
     }

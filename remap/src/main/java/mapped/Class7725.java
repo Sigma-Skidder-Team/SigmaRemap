@@ -27,11 +27,11 @@ public class Class7725 implements ArgumentType<String>
     
     public static Class6749 method24663(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
         final String s2 = (String)commandContext.getArgument(s, (Class)String.class);
-        final Class6749 method19645 = ((Class7492)commandContext.getSource()).method23255().method1579().method19645(s2);
+        final Class6749 method19645 = commandContext.getSource().method23255().method1579().method19645(s2);
         if (method19645 != null) {
             return method19645;
         }
-        throw Class7725.field30728.create((Object)s2);
+        throw Class7725.field30728.create(s2);
     }
     
     public String parse(final StringReader stringReader) throws CommandSyntaxException {
@@ -49,7 +49,7 @@ public class Class7725 implements ArgumentType<String>
     static {
         field30727 = Arrays.asList("foo", "123");
         field30728 = new DynamicCommandExceptionType(o -> {
-            new Class2259("team.notFound", new Object[] { o });
+            new Class2259("team.notFound", o);
             return;
         });
     }

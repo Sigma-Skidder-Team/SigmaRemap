@@ -20,7 +20,7 @@ public final class Class7973 implements ProfileLookupCallback
     
     public void onProfileLookupSucceeded(final GameProfile gameProfile) {
         this.field32805.method1556().method29193(gameProfile);
-        ((Class8006<K, Class6027>)this.field32806).method26206(new Class6027(gameProfile));
+        this.field32806.method26206(new Class6027(gameProfile));
     }
     
     public void onProfileLookupFailed(final GameProfile gameProfile, final Exception ex) {

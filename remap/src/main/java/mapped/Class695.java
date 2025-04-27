@@ -28,7 +28,7 @@ public class Class695 extends Screen
     
     @Override
     public void removed() {
-        NarratorChatListener.field32404.method25556(Class8822.method30773("narrator.loading.done", new Object[0]));
+        NarratorChatListener.field32404.method25556(Class8822.method30773("narrator.loading.done"));
     }
     
     @Override
@@ -38,7 +38,7 @@ public class Class695 extends Screen
         final long method27837 = Util.method27837();
         if (method27837 - this.field3824 > 2000L) {
             this.field3824 = method27837;
-            NarratorChatListener.field32404.method25556(new Class2259("narrator.loading", new Object[] { string }).getString());
+            NarratorChatListener.field32404.method25556(new Class2259("narrator.loading", string).getString());
         }
         final int n4 = this.width / 2;
         final int n5 = this.height / 2;
@@ -65,7 +65,7 @@ public class Class695 extends Screen
                 final ChunkStatus method19326 = class6461.method19327(i, j);
                 final int n11 = n8 + i * n5;
                 final int n12 = n9 + j * n5;
-                AbstractGui.fill(n11, n12, n11 + n3, n12 + n3, Class695.field3825.getInt((Object)method19326) | 0xFF000000);
+                AbstractGui.fill(n11, n12, n11 + n3, n12 + n3, Class695.field3825.getInt(method19326) | 0xFF000000);
             }
         }
     }
@@ -73,19 +73,19 @@ public class Class695 extends Screen
     static {
         field3825 = Util.method27851((Object2IntMap)new Object2IntOpenHashMap(), object2IntOpenHashMap -> {
             object2IntOpenHashMap.defaultReturnValue(0);
-            object2IntOpenHashMap.put((Object) ChunkStatus.EMPTY, 5526612);
-            object2IntOpenHashMap.put((Object) ChunkStatus.STRUCTURE_STARTS, 10066329);
-            object2IntOpenHashMap.put((Object) ChunkStatus.STRUCTURE_REFERENCES, 6250897);
-            object2IntOpenHashMap.put((Object) ChunkStatus.BIOMES, 8434258);
-            object2IntOpenHashMap.put((Object) ChunkStatus.NOISE, 13750737);
-            object2IntOpenHashMap.put((Object) ChunkStatus.SURFACE, 7497737);
-            object2IntOpenHashMap.put((Object) ChunkStatus.CARVERS, 7169628);
-            object2IntOpenHashMap.put((Object) ChunkStatus.LIQUID_CARVERS, 3159410);
-            object2IntOpenHashMap.put((Object) ChunkStatus.FEATURES, 2213376);
-            object2IntOpenHashMap.put((Object) ChunkStatus.LIGHT, 13421772);
-            object2IntOpenHashMap.put((Object) ChunkStatus.SPAWN, 15884384);
-            object2IntOpenHashMap.put((Object) ChunkStatus.HEIGHTMAPS, 15658734);
-            object2IntOpenHashMap.put((Object) ChunkStatus.FULL, 16777215);
+            object2IntOpenHashMap.put(ChunkStatus.EMPTY, 5526612);
+            object2IntOpenHashMap.put(ChunkStatus.STRUCTURE_STARTS, 10066329);
+            object2IntOpenHashMap.put(ChunkStatus.STRUCTURE_REFERENCES, 6250897);
+            object2IntOpenHashMap.put(ChunkStatus.BIOMES, 8434258);
+            object2IntOpenHashMap.put(ChunkStatus.NOISE, 13750737);
+            object2IntOpenHashMap.put(ChunkStatus.SURFACE, 7497737);
+            object2IntOpenHashMap.put(ChunkStatus.CARVERS, 7169628);
+            object2IntOpenHashMap.put(ChunkStatus.LIQUID_CARVERS, 3159410);
+            object2IntOpenHashMap.put(ChunkStatus.FEATURES, 2213376);
+            object2IntOpenHashMap.put(ChunkStatus.LIGHT, 13421772);
+            object2IntOpenHashMap.put(ChunkStatus.SPAWN, 15884384);
+            object2IntOpenHashMap.put(ChunkStatus.HEIGHTMAPS, 15658734);
+            object2IntOpenHashMap.put(ChunkStatus.FULL, 16777215);
         });
     }
 }

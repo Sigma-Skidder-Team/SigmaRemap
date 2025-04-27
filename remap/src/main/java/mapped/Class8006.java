@@ -41,7 +41,7 @@ public class Class8006<K, V extends Class6022<K>>
         this.field32973 = true;
         this.field32971 = field32971;
         final GsonBuilder setPrettyPrinting = new GsonBuilder().setPrettyPrinting();
-        setPrettyPrinting.registerTypeHierarchyAdapter((Class)Class6022.class, (Object)new Class5989(this, null));
+        setPrettyPrinting.registerTypeHierarchyAdapter(Class6022.class, new Class5989(this, null));
         this.field32970 = setPrettyPrinting.create();
     }
     
@@ -63,7 +63,7 @@ public class Class8006<K, V extends Class6022<K>>
             this.method26217();
         }
         catch (final IOException ex) {
-            Class8006.field32969.warn("Could not save the list after adding a user.", (Throwable)ex);
+            Class8006.field32969.warn("Could not save the list after adding a user.", ex);
         }
     }
     
@@ -79,7 +79,7 @@ public class Class8006<K, V extends Class6022<K>>
             this.method26217();
         }
         catch (final IOException ex) {
-            Class8006.field32969.warn("Could not save the list after removing a user.", (Throwable)ex);
+            Class8006.field32969.warn("Could not save the list after removing a user.", ex);
         }
     }
     
@@ -126,7 +126,7 @@ public class Class8006<K, V extends Class6022<K>>
     }
     
     public void method26217() throws IOException {
-        final String json = this.field32970.toJson((Object)this.field32972.values());
+        final String json = this.field32970.toJson(this.field32972.values());
         Writer writer = null;
         try {
             writer = Files.newWriter(this.field32971, StandardCharsets.UTF_8);

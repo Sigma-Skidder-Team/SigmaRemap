@@ -14,7 +14,7 @@ public class Class384 extends BlockPos
     private int field2232;
     private int field2233;
     private int field2234;
-    private int field2235;
+    private final int field2235;
     private Class384[] field2236;
     private boolean field2237;
     

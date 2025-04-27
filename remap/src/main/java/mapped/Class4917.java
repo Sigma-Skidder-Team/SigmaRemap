@@ -15,9 +15,9 @@ public class Class4917 extends Class4825
     public Class7971 field21031;
     private BufferedImage field21032;
     private Texture field21033;
-    private LoadingIndicator field21034;
+    private final LoadingIndicator field21034;
     private boolean field21035;
-    private Animation field21036;
+    private final Animation field21036;
     private float field21037;
     public Animation field21038;
     private int field21039;

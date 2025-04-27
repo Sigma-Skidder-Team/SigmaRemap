@@ -11,11 +11,11 @@ public class Class4180 implements Class4178, Class4181
     private static final int field18652 = 20;
     private static final int[] field18653;
     private static final int[] field18654;
-    private int[] field18655;
-    private int[][] field18656;
-    private int[][] field18657;
-    private boolean[][] field18658;
-    private float[][][] field18659;
+    private final int[] field18655;
+    private final int[][] field18656;
+    private final int[][] field18657;
+    private final boolean[][] field18658;
+    private final float[][][] field18659;
     
     public Class4180() {
         this.field18655 = new int[8];

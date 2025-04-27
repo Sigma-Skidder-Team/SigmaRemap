@@ -11,5 +11,5 @@ public enum Class2004
     field11250, 
     field11251, 
     field11252, 
-    field11253;
+    field11253
 }

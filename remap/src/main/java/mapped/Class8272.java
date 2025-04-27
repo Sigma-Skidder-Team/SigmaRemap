@@ -23,7 +23,7 @@ public class Class8272
     }
     
     public static boolean method27500(final String s) {
-        return StringUtils.isEmpty((CharSequence)s);
+        return StringUtils.isEmpty(s);
     }
     
     static {

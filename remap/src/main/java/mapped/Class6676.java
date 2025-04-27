@@ -28,10 +28,10 @@ public class Class6676 implements Class6672<IntegerArgumentType>
     
     public void method20311(final IntegerArgumentType integerArgumentType, final JsonObject jsonObject) {
         if (integerArgumentType.getMinimum() != Integer.MIN_VALUE) {
-            jsonObject.addProperty("min", (Number)integerArgumentType.getMinimum());
+            jsonObject.addProperty("min", integerArgumentType.getMinimum());
         }
         if (integerArgumentType.getMaximum() != Integer.MAX_VALUE) {
-            jsonObject.addProperty("max", (Number)integerArgumentType.getMaximum());
+            jsonObject.addProperty("max", integerArgumentType.getMaximum());
         }
     }
 }

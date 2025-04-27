@@ -14,7 +14,7 @@ public enum Class106 implements IStringSerializable
     
     private final String field330;
     
-    private Class106(final String field330) {
+    Class106(final String field330) {
         this.field330 = field330;
     }
     

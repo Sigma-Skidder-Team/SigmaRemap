@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,7 +39,7 @@ public class Class3780 extends Class3703
     }
     
     public String method11590() {
-        return new String(this.field17257, 0, this.field17257.length, Charset.forName("UTF-8"));
+        return new String(this.field17257, StandardCharsets.UTF_8);
     }
     
     public long method11591() {

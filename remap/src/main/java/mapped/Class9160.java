@@ -29,7 +29,7 @@ public class Class9160 extends DataFix
             final Type type;
             DSL.fieldFinder("Level", type.findFieldType("Level"));
             return typed.updateTyped(opticFinder, typed2 -> {
-                final Dynamic dynamic = (Dynamic)typed2.get(DSL.remainderFinder());
+                final Dynamic dynamic = typed2.get(DSL.remainderFinder());
                 dynamic.get("Status").asString("empty");
                 final String s;
                 final String b = Class9160.field38820.getOrDefault(s, "empty");
@@ -39,6 +39,6 @@ public class Class9160 extends DataFix
     }
     
     static {
-        field38820 = (Map)ImmutableMap.builder().put((Object)"structure_references", (Object)Class9160.\uade7\uc61b\uc85a\ud4d3\u3122\u3f9b[3]).put((Object)"biomes", (Object)Class9160.\uade7\uc61b\uc85a\ud4d3\u3122\u3f9b[3]).put((Object)"base", (Object)"surface").put((Object)"carved", (Object)"carvers").put((Object)"liquid_carved", (Object)"liquid_carvers").put((Object)"decorated", (Object)"features").put((Object)"lighted", (Object)"light").put((Object)"mobs_spawned", (Object)"spawn").put((Object)"finalized", (Object)"heightmaps").put((Object)"fullchunk", (Object)"full").build();
+        field38820 = (Map)ImmutableMap.builder().put((Object)"structure_references", (Object)Class9160.\uade7\uc61b\uc85a\ud4d3\u3122\u3f9b[3]).put((Object)"biomes", (Object)Class9160.\uade7\uc61b\uc85a\ud4d3\u3122\u3f9b[3]).put("base", "surface").put("carved", "carvers").put("liquid_carved", "liquid_carvers").put("decorated", "features").put("lighted", "light").put("mobs_spawned", "spawn").put("finalized", "heightmaps").put("fullchunk", "full").build();
     }
 }

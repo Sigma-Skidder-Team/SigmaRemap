@@ -20,7 +20,7 @@ public final class Class8511
     private JsonElement field34920;
     
     public Class8511(final long field34913, final Class101 field34914, final boolean field34915, final boolean field34916, final Class9505 field34917) {
-        this.field34920 = (JsonElement)new JsonObject();
+        this.field34920 = new JsonObject();
         this.field34913 = field34913;
         this.field34914 = field34914;
         this.field34915 = field34915;

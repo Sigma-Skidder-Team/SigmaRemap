@@ -32,7 +32,7 @@ public abstract class Class9278<T extends Class9278<T>>
     
     public static Properties method34228(final Path path) {
         final Properties properties = new Properties();
-        try (final InputStream inputStream = Files.newInputStream(path, new OpenOption[0])) {
+        try (final InputStream inputStream = Files.newInputStream(path)) {
             properties.load(inputStream);
         }
         catch (final IOException ex) {
@@ -42,7 +42,7 @@ public abstract class Class9278<T extends Class9278<T>>
     }
     
     public void method34229(final Path path) {
-        try (final OutputStream outputStream = Files.newOutputStream(path, new OpenOption[0])) {
+        try (final OutputStream outputStream = Files.newOutputStream(path)) {
             this.field39812.store(outputStream, "Minecraft server properties");
         }
         catch (final IOException ex) {
@@ -62,14 +62,14 @@ public abstract class Class9278<T extends Class9278<T>>
     }
     
     public static <V> Function<String, V> method34231(final IntFunction<V> intFunction, final Function<String, V> function) {
-        return (Function<String, V>)(s2 -> {
+        return s2 -> {
             try {
                 return intFunction2.apply(Integer.parseInt(s2));
             }
             catch (final NumberFormatException ex) {
                 return function2.apply(s2);
             }
-        });
+        };
     }
     
     @Nullable
@@ -89,14 +89,14 @@ public abstract class Class9278<T extends Class9278<T>>
     
     public <V> V method34234(final String key, final Function<String, V> function, final Function<V, String> function2, final V v) {
         final String method34232 = this.method34232(key);
-        final Object firstNonNull = MoreObjects.firstNonNull((Object)((method34232 == null) ? null : function.apply(method34232)), (Object)v);
+        final Object firstNonNull = MoreObjects.firstNonNull((method34232 == null) ? null : function.apply(method34232), (Object)v);
         this.field39812.put(key, function2.apply((V)firstNonNull));
         return (V)firstNonNull;
     }
     
     public <V> Class9278$Property<V> method34235(final String key, final Function<String, V> function, final Function<V, String> function2, final V v) {
         final String method34232 = this.method34232(key);
-        final Object firstNonNull = MoreObjects.firstNonNull((Object)((method34232 == null) ? null : function.apply(method34232)), (Object)v);
+        final Object firstNonNull = MoreObjects.firstNonNull((method34232 == null) ? null : function.apply(method34232), (Object)v);
         this.field39812.put(key, function2.apply((V)firstNonNull));
         return (Class9278$Property<V>)new Class8147(this, key, firstNonNull, function2, null);
     }

@@ -55,8 +55,8 @@ public class Class1845 implements AutoCloseable
             class7351.method22565(4.0f, 4.0f, 3.0f);
             class7351.method22564(-0.125, 0.125, 0.0);
             final byte method32113 = class7353.method34522();
-            final float n3 = (method32113 % 16 + 0) / 16.0f;
-            final float n4 = (method32113 / 16 + 0) / 16.0f;
+            final float n3 = (method32113 % 16) / 16.0f;
+            final float n4 = (method32113 / 16) / 16.0f;
             final float n5 = (method32113 % 16 + 1) / 16.0f;
             final float n6 = (method32113 / 16 + 1) / 16.0f;
             final Matrix4f method32114 = class7351.getLast().getMatrix();

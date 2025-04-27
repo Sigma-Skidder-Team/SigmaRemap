@@ -26,9 +26,7 @@ public class Class3506 extends Class3446
     public boolean method11013() {
         if (!Class793.method4468(this.field16485)) {
             if (!this.field16485.method4456()) {
-                if (this.field16485.method1706()) {
-                    return true;
-                }
+                return this.field16485.method1706();
             }
         }
         return false;
@@ -77,9 +75,7 @@ public class Class3506 extends Class3446
             if (!this.field16487) {
                 if (!Class793.method4468(this.field16485)) {
                     if (!this.field16485.method4363()) {
-                        if (!this.field16485.method4456()) {
-                            return true;
-                        }
+                        return !this.field16485.method4456();
                     }
                 }
             }

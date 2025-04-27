@@ -13,13 +13,13 @@ import java.util.Map;
 public enum Class261
 {
     field1246("terrain_matching", (ImmutableList<Class4107>)ImmutableList.of((Object)new Class4112(HeightmapType.field11521, -1))),
-    field1247("rigid", (ImmutableList<Class4107>)ImmutableList.of());
+    field1247("rigid", ImmutableList.of());
     
     private static final Map<String, Class261> field1248;
     private final String field1249;
     private final ImmutableList<Class4107> field1250;
     
-    private Class261(final String field1249, final ImmutableList<Class4107> field1250) {
+    Class261(final String field1249, final ImmutableList<Class4107> field1250) {
         this.field1249 = field1249;
         this.field1250 = field1250;
     }

@@ -10,8 +10,8 @@ import java.awt.Color;
 public class Class9096
 {
     private static String[] field38515;
-    private float field38516;
-    private float field38517;
+    private final float field38516;
+    private final float field38517;
     public float field38518;
     public float field38519;
     public float field38520;
@@ -19,8 +19,8 @@ public class Class9096
     private float field38522;
     private float field38523;
     private boolean field38524;
-    private float field38525;
-    private Class2316 field38526;
+    private final float field38525;
+    private final Class2316 field38526;
     private float field38527;
     public float field38528;
     public Color field38529;

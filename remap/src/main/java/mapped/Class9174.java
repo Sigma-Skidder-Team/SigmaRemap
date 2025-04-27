@@ -26,7 +26,7 @@ public class Class9174 extends DataFix
             return typed.update(DSL.remainderFinder(), dynamic -> {
                 typed2.getOptional(opticFinder);
                 final Optional optional;
-                return (optional.isPresent() && Objects.equals(optional.get(), "minecraft:command_block")) ? dynamic : Class8957.method31777((Dynamic<?>)dynamic);
+                return (optional.isPresent() && Objects.equals(optional.get(), "minecraft:command_block")) ? dynamic : Class8957.method31777(dynamic);
             });
         });
     }

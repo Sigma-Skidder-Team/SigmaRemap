@@ -11,12 +11,12 @@ import java.util.Iterator;
 
 public class Class7244 implements Iterator<BlockPos>
 {
-    private Class7245 field28069;
-    private Class384 field28070;
+    private final Class7245 field28069;
+    private final Class384 field28070;
     private int field28071;
-    private int field28072;
-    private int field28073;
-    private int field28074;
+    private final int field28072;
+    private final int field28073;
+    private final int field28074;
     private static final int field28075 = 0;
     private static final int field28076 = 1;
     private static final int field28077 = 2;

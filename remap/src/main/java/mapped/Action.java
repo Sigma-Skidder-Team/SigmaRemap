@@ -61,7 +61,7 @@ public enum Action
     
     public abstract void runAction(final INBT p0, final NBTPath p1, final List<INBT> p2) throws CommandSyntaxException;
     
-    private Action(final String field13712) {
+    Action(final String field13712) {
         this.op = field13712;
     }
     

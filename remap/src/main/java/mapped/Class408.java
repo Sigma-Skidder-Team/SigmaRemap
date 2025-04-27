@@ -35,7 +35,7 @@ public class Class408 extends Entity implements Class407
     
     public void method2008(final ItemStack class8321) {
         if (class8321.getItem() != Items.field31449 || class8321.method27656()) {
-            this.method1650().set(Class408.field2500, (ItemStack) Util.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
+            this.method1650().set(Class408.field2500, Util.method27851((T)class8321.method27641(), class8322 -> class8322.method27691(1)));
         }
     }
     

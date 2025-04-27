@@ -23,6 +23,6 @@ public class Class4138 extends Class4139
     }
     
     static {
-        field18260 = (Map)ImmutableMap.builder().put((Object)"minecraft:illager_beast_spawn_egg", (Object)"minecraft:ravager_spawn_egg").build();
+        field18260 = (Map)ImmutableMap.builder().put("minecraft:illager_beast_spawn_egg", "minecraft:ravager_spawn_egg").build();
     }
 }

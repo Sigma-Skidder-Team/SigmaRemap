@@ -77,7 +77,7 @@ public abstract class Class5936
             synchronized (this.field24431) {
                 final Iterator<Class4473> iterator = this.field24431.iterator();
                 while (iterator.hasNext()) {
-                    ((AbstractList<CompoundNBT>)class52).add(iterator.next().method13430());
+                    class52.add(iterator.next().method13430());
                 }
             }
             class51.put("Children", class52);

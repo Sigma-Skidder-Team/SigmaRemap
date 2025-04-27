@@ -102,6 +102,6 @@ public class Class8065
         for (int i = 0; i < cfs.length; ++i) {
             cfs[i] = class1663.method5855(this.field33227[i], executor);
         }
-        return CompletableFuture.allOf((CompletableFuture<?>[])cfs);
+        return CompletableFuture.allOf(cfs);
     }
 }

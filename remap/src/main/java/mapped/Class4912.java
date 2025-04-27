@@ -10,8 +10,8 @@ import java.util.List;
 public class Class4912 extends Class4825
 {
     private static String[] field20591;
-    private List<Class9159> field21012;
-    private Class8338 field21013;
+    private final List<Class9159> field21012;
+    private final Class8338 field21013;
     public Class2315 field21014;
     
     public Class4912(final CustomGuiScreen customGuiScreen, final String s) {

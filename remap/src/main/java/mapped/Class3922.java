@@ -30,7 +30,7 @@ public class Class3922 extends Block implements Class3856
     }
     
     public static boolean method12038(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
-        if (!class7096.get((IProperty<Boolean>)Class3922.field17782)) {
+        if (!class7096.get(Class3922.field17782)) {
             final Direction[] values = Direction.values();
             for (int length = values.length, i = 0; i < length; ++i) {
                 if (class7097.getFluidState(class7098.method1149(values[i])).isTagged(Class7324.field28319)) {
@@ -56,7 +56,7 @@ public class Class3922 extends Block implements Class3856
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3922.field17782)) {
+        if (class7096.get(Class3922.field17782)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return (class7097 == Direction.DOWN && !this.method11843(class7096, class7099, class7100)) ? Blocks.AIR.getDefaultState() : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
@@ -75,7 +75,7 @@ public class Class3922 extends Block implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3922.field17782) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3922.field17782) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     static {

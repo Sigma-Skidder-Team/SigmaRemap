@@ -45,14 +45,13 @@ public class Class8842
         this.field37166 = Sets.newHashSet();
         this.field37161 = field37161;
         final Path resolve = field37161.resolve(".cache");
-        Files.createDirectories(resolve, (FileAttribute<?>[])new FileAttribute[0]);
+        Files.createDirectories(resolve, new FileAttribute[0]);
         this.field37162 = resolve.resolve(other);
         this.method30889().forEach(path -> {
             final String s = this.field37164.put(path, "");
-            return;
         });
         if (Files.isReadable(this.field37162)) {
-            IOUtils.readLines(Files.newInputStream(this.field37162, new OpenOption[0]), Charsets.UTF_8).forEach(s2 -> {
+            IOUtils.readLines(Files.newInputStream(this.field37162), Charsets.UTF_8).forEach(s2 -> {
                 s2.indexOf(32);
                 final int endIndex;
                 this.field37164.put(path2.resolve(s2.substring(endIndex + 1)), s2.substring(0, endIndex));
@@ -64,15 +63,15 @@ public class Class8842
         this.method30888();
         BufferedWriter bufferedWriter;
         try {
-            bufferedWriter = Files.newBufferedWriter(this.field37162, new OpenOption[0]);
+            bufferedWriter = Files.newBufferedWriter(this.field37162);
         }
         catch (final IOException ex) {
-            Class8842.field37160.warn("Unable write cachefile {}: {}", (Object)this.field37162, (Object)ex.toString());
+            Class8842.field37160.warn("Unable write cachefile {}: {}", this.field37162, ex.toString());
             return;
         }
-        IOUtils.writeLines((Collection)this.field37165.entrySet().stream().map(entry -> entry.getValue() + ' ' + this.field37161.relativize((Path)entry.getKey())).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()), System.lineSeparator(), (Writer)bufferedWriter);
+        IOUtils.writeLines(this.field37165.entrySet().stream().map(entry -> entry.getValue() + ' ' + this.field37161.relativize(entry.getKey())).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()), System.lineSeparator(), bufferedWriter);
         bufferedWriter.close();
-        Class8842.field37160.debug("Caching: cache hits: {}, created: {} removed: {}", (Object)this.field37163, (Object)(this.field37165.size() - this.field37163), (Object)this.field37164.size());
+        Class8842.field37160.debug("Caching: cache hits: {}, created: {} removed: {}", this.field37163, this.field37165.size() - this.field37163, this.field37164.size());
     }
     
     @Nullable
@@ -102,14 +101,14 @@ public class Class8842
                     Files.delete(path);
                 }
                 catch (final IOException ex) {
-                    Class8842.field37160.debug("Unable to delete: {} ({})", (Object)path, (Object)ex.toString());
+                    Class8842.field37160.debug("Unable to delete: {} ({})", path, ex.toString());
                 }
             }
         });
     }
     
     private Stream<Path> method30889() throws IOException {
-        return Files.walk(this.field37161, new FileVisitOption[0]).filter(path -> !Objects.equals(this.field37162, path) && !Files.isDirectory(path, new LinkOption[0]));
+        return Files.walk(this.field37161, new FileVisitOption[0]).filter(path -> !Objects.equals(this.field37162, path) && !Files.isDirectory(path));
     }
     
     static {

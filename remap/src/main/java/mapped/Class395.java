@@ -46,7 +46,7 @@ public class Class395 extends MinecraftServer implements Class396
     
     public Class395(final File file, final Class7794 field2373, final DataFixer dataFixer, final YggdrasilAuthenticationService yggdrasilAuthenticationService, final MinecraftSessionService minecraftSessionService, final GameProfileRepository gameProfileRepository, final Class8608 class8608, final Class6906 class8609, final String s) {
         super(file, Proxy.NO_PROXY, dataFixer, new Class7788(true), yggdrasilAuthenticationService, minecraftSessionService, gameProfileRepository, class8608, class8609, s);
-        this.field2369 = Collections.synchronizedList((List<Class5485>)Lists.newArrayList());
+        this.field2369 = Collections.synchronizedList(Lists.newArrayList());
         this.field2373 = field2373;
         this.field2371 = new Class398(this);
         final Class920 class8610 = new Class920(this, "Server Infinisleeper");
@@ -82,7 +82,7 @@ public class Class395 extends MinecraftServer implements Class396
         super.method1553((int)method25121.field39809.get());
         this.method1586(method25121.field39775);
         this.field2374 = method25121.field39778;
-        Class395.field2367.info("Default game type: {}", (Object)this.field2374);
+        Class395.field2367.info("Default game type: {}", this.field2374);
         InetAddress byName = null;
         if (!this.method1453().isEmpty()) {
             byName = InetAddress.getByName(this.method1453());
@@ -92,13 +92,13 @@ public class Class395 extends MinecraftServer implements Class396
         }
         Class395.field2367.info("Generating keypair");
         this.method1504(Class9359.method34698());
-        Class395.field2367.info("Starting Minecraft server on {}:{}", (Object)(this.method1453().isEmpty() ? "*" : this.method1453()), (Object)this.method1496());
+        Class395.field2367.info("Starting Minecraft server on {}:{}", this.method1453().isEmpty() ? "*" : this.method1453(), this.method1496());
         try {
             this.method1541().method24060(byName, this.method1496());
         }
         catch (final IOException ex) {
             Class395.field2367.warn("**** FAILED TO BIND TO PORT!");
-            Class395.field2367.warn("The exception was: {}", (Object)ex.toString());
+            Class395.field2367.warn("The exception was: {}", ex.toString());
             Class395.field2367.warn("Perhaps a server is already running on that port?");
             return false;
         }
@@ -135,7 +135,7 @@ public class Class395 extends MinecraftServer implements Class396
         Class493.method2502(this.method1556());
         Class493.method2503(this.method1554());
         Class8608.method29191(this.method1518());
-        Class395.field2367.info("Preparing level \"{}\"", (Object)this.method1501());
+        Class395.field2367.info("Preparing level \"{}\"", this.method1501());
         JsonObject method25123 = new JsonObject();
         if (field39782 == Class9505.field40893) {
             method25123.addProperty("flat_world_options", field39781);
@@ -143,8 +143,8 @@ public class Class395 extends MinecraftServer implements Class396
         else if (!field39781.isEmpty()) {
             method25123 = Class9583.method35932(field39781);
         }
-        this.method1438(this.method1501(), this.method1501(), nextLong, field39782, (JsonElement)method25123);
-        Class395.field2367.info("Done ({})! For help, type \"help\"", (Object)String.format(Locale.ROOT, "%.3fs", (Util.method27838() - method25122) / 1.0E9));
+        this.method1438(this.method1501(), this.method1501(), nextLong, field39782, method25123);
+        Class395.field2367.info("Done ({})! For help, type \"help\"", String.format(Locale.ROOT, "%.3fs", (Util.method27838() - method25122) / 1.0E9));
         if (method25121.field39785 != null) {
             this.method1583().method31211(Class8878.field37337).method26724(method25121.field39785, this);
         }
@@ -444,9 +444,7 @@ public class Class395 extends MinecraftServer implements Class396
             if (!method22921) {
                 if (!method22922) {
                     if (!method22923) {
-                        if (!method22924) {
-                            return false;
-                        }
+                        return method22924;
                     }
                 }
             }

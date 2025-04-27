@@ -38,7 +38,7 @@ public class Class7555 implements ArgumentType<Class5346>
     }
     
     public static Vec3d method23721(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16504((Class7492)commandContext.getSource());
+        return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16504(commandContext.getSource());
     }
     
     public static Class5346 method23722(final CommandContext<Class7492> commandContext, final String s) {
@@ -70,7 +70,7 @@ public class Class7555 implements ArgumentType<Class5346>
     
     static {
         field29959 = Arrays.asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "0.1 -0.5 .9", "~0.5 ~1 ~-5");
-        field29960 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos3d.incomplete", new Object[0]));
-        field29961 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos.mixed", new Object[0]));
+        field29960 = new SimpleCommandExceptionType(new Class2259("argument.pos3d.incomplete", new Object[0]));
+        field29961 = new SimpleCommandExceptionType(new Class2259("argument.pos.mixed", new Object[0]));
     }
 }

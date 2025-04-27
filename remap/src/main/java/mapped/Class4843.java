@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Class4843 extends Class4841
 {
-    private List<Class4868> field20750;
+    private final List<Class4868> field20750;
     public int field20751;
     public Class4901 field20752;
     public Class4818 field20753;
@@ -64,7 +64,7 @@ public class Class4843 extends Class4841
         this.field20752.draw(n);
         GL11.glPopMatrix();
         RenderUtil.method26928();
-        RenderUtil.method26874((float)(this.x + this.field20754), (float)(this.y + 0), 1.0f, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f));
+        RenderUtil.method26874((float)(this.x + this.field20754), (float)(this.y), 1.0f, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f));
         ColorUtils.applyAlpha(ColorUtils.method19121(-7687425, 0.2f), 0.8f);
         RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.x + 30), (float)(this.y + 25), "Waypoints", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f));
         RenderUtil.drawString(ClientFonts.JelloMedium40, (float)this.x, (float)((this.field20475.method14278() - this.field20481) / 2 - 70), "Jello Maps", ClientColors.LIGHT_GREYISH_BLUE.color);

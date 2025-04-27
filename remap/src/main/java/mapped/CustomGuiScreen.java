@@ -44,7 +44,7 @@ public class CustomGuiScreen implements Class4925
     public String field20495;
     public TrueTypeFont field20496;
     public ColorHelper field20497;
-    private ArrayList<Runnable> field20498;
+    private final ArrayList<Runnable> field20498;
     private final List<CustomGuiScreen> field20499;
     private boolean field20500;
     private final List<CustomGuiScreen> field20501;
@@ -367,9 +367,7 @@ public class CustomGuiScreen implements Class4925
         if (n >= 0) {
             if (n <= this.field20480) {
                 if (n2 >= 0) {
-                    if (n2 <= this.field20481) {
-                        return true;
-                    }
+                    return n2 <= this.field20481;
                 }
             }
         }
@@ -495,9 +493,7 @@ public class CustomGuiScreen implements Class4925
                 this.field20502 = null;
             }
         }
-        if (this.field20499.contains(customGuiScreen)) {
-            this.field20499.remove(customGuiScreen);
-        }
+        this.field20499.remove(customGuiScreen);
     }
     
     public void method14246(final CustomGuiScreen customGuiScreen) {
@@ -588,7 +584,7 @@ public class CustomGuiScreen implements Class4925
             final JSONArray method26638 = CJsonUtils.getJSONArrayOrNull(JSONObject, "children");
             JSONObject.keySet().iterator();
             if (method26638 != null) {
-                final ArrayList list = new ArrayList((Collection<? extends E>)this.field20476);
+                final ArrayList list = new ArrayList(this.field20476);
                 for (int i = 0; i < method26638.length(); ++i) {
                     final JSONObject method26639 = method26638.getJSONObject(i);
                     final String method26640 = CJsonUtils.getStringOrDefault(method26639, "id", null);

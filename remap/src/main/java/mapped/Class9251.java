@@ -146,7 +146,7 @@ public class Class9251 extends DataFix
     
     private static void method34108(final Map<String, Dynamic<?>> map, final int i, final String str) {
         for (int j = 0; j < 16; ++j) {
-            map.put("" + j + "_" + i, Class7922.method25671("{Name:'minecraft:" + str + "_banner',Properties:{rotation:'" + j + "'}}"));
+            map.put(j + "_" + i, Class7922.method25671("{Name:'minecraft:" + str + "_banner',Properties:{rotation:'" + j + "'}}"));
         }
         map.put("north_" + i, Class7922.method25671("{Name:'minecraft:" + str + "_wall_banner',Properties:{facing:'north'}}"));
         map.put("south_" + i, Class7922.method25671("{Name:'minecraft:" + str + "_wall_banner',Properties:{facing:'south'}}"));
@@ -172,7 +172,7 @@ public class Class9251 extends DataFix
     
     private Dynamic<?> method34112(final Dynamic<?> dynamic) {
         final Optional value = dynamic.get("Level").get();
-        return (Dynamic<?>)((value.isPresent() && ((Dynamic)value.get()).get("Sections").asStreamOpt().isPresent()) ? dynamic.set("Level", (Dynamic)new Class9186((Dynamic<?>)value.get()).method33587()) : dynamic);
+        return (value.isPresent() && ((Dynamic)value.get()).get("Sections").asStreamOpt().isPresent()) ? dynamic.set("Level", new Class9186((Dynamic<?>)value.get()).method33587()) : dynamic;
     }
     
     public TypeRewriteRule makeRule() {
@@ -255,7 +255,6 @@ public class Class9251 extends DataFix
             hashMap.put("minecraft:deadbush0", Class7922.method25671("{Name:'minecraft:potted_dead_bush'}"));
             hashMap.put("minecraft:tallgrass2", Class7922.method25671("{Name:'minecraft:potted_fern'}"));
             hashMap.put("minecraft:cactus0", Class7922.method25672(2240));
-            return;
         });
         field39680 = (Map)DataFixUtils.make((Object)Maps.newHashMap(), hashMap2 -> {
             method34105(hashMap2, 0, "skeleton", "skull");
@@ -264,7 +263,6 @@ public class Class9251 extends DataFix
             method34105(hashMap2, 3, "player", "head");
             method34105(hashMap2, 4, "creeper", "head");
             method34105(hashMap2, 5, "dragon", "head");
-            return;
         });
         field39681 = (Map)DataFixUtils.make((Object)Maps.newHashMap(), hashMap3 -> {
             method34106(hashMap3, "oak_door", 1024);
@@ -274,7 +272,6 @@ public class Class9251 extends DataFix
             method34106(hashMap3, "jungle_door", 3120);
             method34106(hashMap3, "acacia_door", 3136);
             method34106(hashMap3, "dark_oak_door", 3152);
-            return;
         });
         field39682 = (Map)DataFixUtils.make((Object)Maps.newHashMap(), hashMap4 -> {
             int i = 0;
@@ -283,7 +280,6 @@ public class Class9251 extends DataFix
                 hashMap4.put("false" + i, Class7922.method25671("{Name:'minecraft:note_block',Properties:{powered:'false',note:'" + i + "'}}"));
                 ++i;
             }
-            return;
         });
         field39683 = (Int2ObjectMap)DataFixUtils.make((Object)new Int2ObjectOpenHashMap(), int2ObjectOpenHashMap -> {
             int2ObjectOpenHashMap.put(0, (Object)"white");
@@ -302,7 +298,6 @@ public class Class9251 extends DataFix
             int2ObjectOpenHashMap.put(13, (Object)"green");
             int2ObjectOpenHashMap.put(14, (Object)"red");
             int2ObjectOpenHashMap.put(15, (Object)"black");
-            return;
         });
         field39684 = (Map)DataFixUtils.make((Object)Maps.newHashMap(), hashMap5 -> {
             Class9251.field39683.int2ObjectEntrySet().iterator();
@@ -316,7 +311,6 @@ public class Class9251 extends DataFix
                     method34107(hashMap5, int2ObjectMap$Entry.getIntKey(), (String)int2ObjectMap$Entry.getValue());
                 }
             }
-            return;
         });
         field39685 = (Map)DataFixUtils.make((Object)Maps.newHashMap(), hashMap6 -> {
             Class9251.field39683.int2ObjectEntrySet().iterator();
@@ -330,7 +324,6 @@ public class Class9251 extends DataFix
                     method34108(hashMap6, 15 - int2ObjectMap$Entry2.getIntKey(), (String)int2ObjectMap$Entry2.getValue());
                 }
             }
-            return;
         });
         field39686 = Class7922.method25672(0);
         Class9251.field39668.set(2);

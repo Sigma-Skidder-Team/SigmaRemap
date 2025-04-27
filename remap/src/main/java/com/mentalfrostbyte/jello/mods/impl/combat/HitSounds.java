@@ -27,7 +27,6 @@ public class HitSounds extends Module
                     if (class5724.method12799(HitSounds.mc.world).isAlive()) {
                         if (class5724.method12799(HitSounds.mc.world).method1732(HitSounds.mc.player) <= 5.0f) {
                             if (class5724.method12799(HitSounds.mc.world) != HitSounds.mc.player) {
-                                return;
                             }
                         }
                     }

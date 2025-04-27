@@ -184,7 +184,7 @@ public class Class8287
                 final int n3 = rgbArray[i] >> 16 & 0xFF;
                 final int n4 = rgbArray[i] >> 8 & 0xFF;
                 final int n5 = rgbArray[i] & 0xFF;
-                array[i * 4 + 0] = (byte)n3;
+                array[i * 4] = (byte)n3;
                 array[i * 4 + 1] = (byte)n4;
                 array[i * 4 + 2] = (byte)n5;
                 array[i * 4 + 3] = (byte)n2;

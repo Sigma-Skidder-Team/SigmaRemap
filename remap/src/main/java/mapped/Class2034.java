@@ -24,7 +24,7 @@ public enum Class2034 implements Class2035
     private final float field11604;
     private final Class8656<Ingredient> field11605;
     
-    private Class2034(final String field11599, final int field11600, final int[] field11601, final int field11602, final Class7795 field11603, final float field11604, final Supplier<Ingredient> supplier) {
+    Class2034(final String field11599, final int field11600, final int[] field11601, final int field11602, final Class7795 field11603, final float field11604, final Supplier<Ingredient> supplier) {
         this.field11599 = field11599;
         this.field11600 = field11600;
         this.field11601 = field11601;

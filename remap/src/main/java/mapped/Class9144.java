@@ -21,7 +21,7 @@ public class Class9144
     private static boolean field38732;
     private static final Class7781 field38733;
     private static final Class6332[] field38734;
-    private boolean field38735;
+    private final boolean field38735;
     
     private void method33350(final Class1856 class1856, final BlockState class1857, final BlockPos class1858, final MatrixStack class1859, final Class4150 class1860, final List<Class8754> list, final float[] array, final BitSet set, final Class9436 class1861, final int n) {
         for (final Class8754 class1862 : list) {

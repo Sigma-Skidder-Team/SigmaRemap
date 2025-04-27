@@ -67,7 +67,7 @@ public class Class7067 extends Class7065
             return Registry.BLOCK.method506(new ResourceLocation(s)).orElse(null);
         }
         catch (final IllegalArgumentException ex) {
-            Class7067.field27497.warn("Invalid blockstate: {}", (Object)s, (Object)ex);
+            Class7067.field27497.warn("Invalid blockstate: {}", s, ex);
             return null;
         }
     }
@@ -165,7 +165,7 @@ public class Class7067 extends Class7065
                     break Label_0057;
                 }
                 catch (final NumberFormatException ex) {
-                    Class7067.field27497.error("Error while parsing flat world string => {}", (Object)ex.getMessage());
+                    Class7067.field27497.error("Error while parsing flat world string => {}", ex.getMessage());
                     return null;
                 }
             }
@@ -177,11 +177,11 @@ public class Class7067 extends Class7065
             method21586 = method21586(split[split.length - 1]);
         }
         catch (final Exception ex2) {
-            Class7067.field27497.error("Error while parsing flat world string => {}", (Object)ex2.getMessage());
+            Class7067.field27497.error("Error while parsing flat world string => {}", ex2.getMessage());
             return null;
         }
         if (method21586 == null) {
-            Class7067.field27497.error("Error while parsing flat world string => Unknown block, {}", (Object)split[split.length - 1]);
+            Class7067.field27497.error("Error while parsing flat world string => Unknown block, {}", split[split.length - 1]);
             return null;
         }
         final Class9127 class9127 = new Class9127(n2, method21586);
@@ -206,7 +206,7 @@ public class Class7067 extends Class7065
     }
     
     public <T> Dynamic<T> method21594(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)this.field27517.stream().map(class9127 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt(class9127.method33114()), dynamicOps2.createString("block"), dynamicOps2.createString(Registry.BLOCK.getKey(class9127.method33115().getBlock()).toString()))))), dynamicOps.createString("biome"), dynamicOps.createString(Registry.field217.getKey(this.field27519).toString()), dynamicOps.createString("structures"), dynamicOps.createMap((Map)this.field27518.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)this.field27517.stream().map(class9127 -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt(class9127.method33114()), dynamicOps2.createString("block"), dynamicOps2.createString(Registry.BLOCK.getKey(class9127.method33115().getBlock()).toString()))))), dynamicOps.createString("biome"), dynamicOps.createString(Registry.field217.getKey(this.field27519).toString()), dynamicOps.createString("structures"), dynamicOps.createMap((Map)this.field27518.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
     }
     
     public static Class7067 method21595(final Dynamic<?> dynamic) {
@@ -227,7 +227,7 @@ public class Class7067 extends Class7065
     }
     
     public static Class7067 method21596(final String s) {
-        final Iterator iterator = Splitter.on(';').split((CharSequence)s).iterator();
+        final Iterator iterator = Splitter.on(';').split(s).iterator();
         if (!iterator.hasNext()) {
             return method21599();
         }
@@ -247,7 +247,7 @@ public class Class7067 extends Class7065
                 });
             }
             catch (final Exception ex) {
-                Class7067.field27497.error("Error while parsing flat world string => {}", (Object)ex.getMessage());
+                Class7067.field27497.error("Error while parsing flat world string => {}", ex.getMessage());
             }
         }
         class7067.method21588(field27633);
@@ -362,8 +362,8 @@ public class Class7067 extends Class7065
         field27504 = Class4535.field19963.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27505 = Class4535.field19964.method13527(new Class5125(false)).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27506 = Class4535.field19967.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
-        field27507 = Class4535.field20002.method13527(new Class5141(Blocks.field29173.getDefaultState())).method28610(Class7133.field27812.method21889((Object)new Class6928(4)));
-        field27508 = Class4535.field20002.method13527(new Class5141(Blocks.field29174.getDefaultState())).method28610(Class7133.field27811.method21889((Object)new Class6928(80)));
+        field27507 = Class4535.field20002.method13527(new Class5141(Blocks.field29173.getDefaultState())).method28610(Class7133.field27812.method21889(new Class6928(4)));
+        field27508 = Class4535.field20002.method13527(new Class5141(Blocks.field29174.getDefaultState())).method28610(Class7133.field27811.method21889(new Class6928(80)));
         field27509 = Class4535.field19970.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27510 = Class4535.field19960.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
         field27511 = Class4535.field19969.method13527(Class5113.field22059).method28610(Class7133.field27782.method21889(Class6926.field27145));
@@ -386,7 +386,6 @@ public class Class7067 extends Class7065
             hashMap.put(Class7067.field27511, Class2108.field12224);
             hashMap.put(Class7067.field27506, Class2108.field12225);
             hashMap.put(Class7067.field27513, Class2108.field12225);
-            return;
         });
         field27515 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put("mineshaft", new Class8530[] { Class7067.field27498 });
@@ -400,7 +399,6 @@ public class Class7067 extends Class7065
             hashMap2.put("mansion", new Class8530[] { Class7067.field27510 });
             hashMap2.put("fortress", new Class8530[] { Class7067.field27511 });
             hashMap2.put("pillager_outpost", new Class8530[] { Class7067.field27513 });
-            return;
         });
         field27516 = Util.method27851(Maps.newHashMap(), hashMap3 -> {
             hashMap3.put(Class7067.field27498, new Class5132(0.004, Class1964.field10718));

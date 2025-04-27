@@ -17,7 +17,7 @@ public class Class5271 extends Class5260<Boolean> implements Class5264<Boolean>
     }
     
     public void method16407(final ByteBuf byteBuf, final Boolean b) {
-        byteBuf.writeBoolean((boolean)b);
+        byteBuf.writeBoolean(b);
     }
     
     public Boolean method16408(final Object o) {

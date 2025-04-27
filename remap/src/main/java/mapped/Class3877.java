@@ -67,7 +67,7 @@ public class Class3877 extends Class3874 implements Class3872, Class3867
     @Override
     public void method11947(final Class1849 class1849, final Random random, final BlockPos class1850, final BlockState class1851) {
         final BlockState method11878 = Blocks.field29245.getDefaultState();
-        final BlockState class1852 = ((StateHolder<O, BlockState>)method11878).with(Class3868.field17508, Class182.field564);
+        final BlockState class1852 = method11878.with(Class3868.field17508, Class182.field564);
         final BlockPos method11879 = class1850.method1137();
         if (class1849.getBlockState(method11879).method21696() == Blocks.field29173) {
             class1849.setBlockState(class1850, method11878, 2);

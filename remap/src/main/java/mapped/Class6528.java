@@ -17,13 +17,13 @@ public abstract class Class6528<T extends Class6367> extends Class6529<T>
     
     public void method19750(final JsonObject jsonObject, final T t, final JsonSerializationContext jsonSerializationContext) {
         if (t.field25468 != 1) {
-            jsonObject.addProperty("weight", (Number)t.field25468);
+            jsonObject.addProperty("weight", t.field25468);
         }
         if (t.field25469 != 0) {
-            jsonObject.addProperty("quality", (Number)t.field25469);
+            jsonObject.addProperty("quality", t.field25469);
         }
-        if (!ArrayUtils.isEmpty((Object[])t.field25470)) {
-            jsonObject.add("functions", jsonSerializationContext.serialize((Object)t.field25470));
+        if (!ArrayUtils.isEmpty(t.field25470)) {
+            jsonObject.add("functions", jsonSerializationContext.serialize(t.field25470));
         }
     }
     

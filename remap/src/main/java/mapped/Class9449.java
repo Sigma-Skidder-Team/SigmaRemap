@@ -6,7 +6,7 @@ package mapped;
 
 public class Class9449
 {
-    private Class9334 field40609;
+    private final Class9334 field40609;
     private int[] field40610;
     
     public Class9449(final Class9334 class9334) {
@@ -64,6 +64,6 @@ public class Class9449
     
     @Override
     public String toString() {
-        return (this.field40610 != null) ? ("" + this.field40609 + ":" + Config.method28890(this.field40610)) : ("" + this.field40609);
+        return (this.field40610 != null) ? (this.field40609 + ":" + Config.method28890(this.field40610)) : ("" + this.field40609);
     }
 }

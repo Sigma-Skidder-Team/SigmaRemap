@@ -18,7 +18,7 @@ import java.util.List;
 
 public class StringSetting extends Setting<String> {
     private List<String> field21518;
-    private List<String> field21519;
+    private final List<String> field21519;
 
     public StringSetting(final String s, final String s2, final int n, final String... a) {
         super(s, s2, Type.STRING, a[n]);
@@ -52,7 +52,7 @@ public class StringSetting extends Setting<String> {
         if (!this.field21519.contains(this.currentValue)) {
             return super.method15198();
         }
-        return (String) this.value;
+        return this.value;
     }
 
     public int method15213() {

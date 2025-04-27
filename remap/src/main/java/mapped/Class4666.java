@@ -30,7 +30,7 @@ public class Class4666 implements Class4659
             if (Class4968.method15143().isLoggable(Level.FINE)) {
                 Class4968.method15143().fine(String.format("probe transport '%s' opened", this.field20184));
             }
-            this.field20185[0].method14999(new Class8437[] { new Class8437("ping", (T)"probe") });
+            this.field20185[0].method14999(new Class8437[] { new Class8437("ping", "probe") });
             this.field20185[0].method14977("packet", new Class4671(this));
         }
     }

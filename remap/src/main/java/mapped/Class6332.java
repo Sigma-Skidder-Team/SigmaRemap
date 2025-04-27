@@ -263,7 +263,7 @@ public abstract class Class6332 extends Class6322
     }
     
     public static List<Class6332> method18795() {
-        return (List<Class6332>)ImmutableList.of((Object)method18761(), (Object)method18762(), (Object)method18763(), (Object)method18765());
+        return (List<Class6332>)ImmutableList.of(method18761(), method18762(), method18763(), (Object)method18765());
     }
     
     public int method18796() {

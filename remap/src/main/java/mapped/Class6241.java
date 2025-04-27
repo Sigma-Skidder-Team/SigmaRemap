@@ -21,6 +21,6 @@ public class Class6241 extends Class6227<Class145>
     }
     
     public Class145 method18572(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {
-        return new Class145(array, Arrays.asList((Class6368[])Class9583.method35920(jsonObject, "entries", jsonDeserializationContext, (Class<? extends Class6368[]>)Class6368[].class)), null);
+        return new Class145(array, Arrays.asList(Class9583.method35920(jsonObject, "entries", jsonDeserializationContext, (Class<? extends Class6368[]>)Class6368[].class)), null);
     }
 }

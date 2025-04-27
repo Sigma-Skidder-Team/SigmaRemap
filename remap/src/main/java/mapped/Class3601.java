@@ -37,9 +37,7 @@ public class Class3601 extends Class3446
         this.method11132();
         if (this.method11129()) {
             if (this.method11130()) {
-                if (this.field16770.method4152() == null) {
-                    return true;
-                }
+                return this.field16770.method4152() == null;
             }
         }
         return false;
@@ -63,9 +61,7 @@ public class Class3601 extends Class3446
         if (!this.field16770.method4150().method24731()) {
             if (this.field16770.method4152() == null) {
                 if (!this.field16772.withinDistance(this.field16770.method1934(), this.field16770.method1930() + this.field16774)) {
-                    if (!this.field16775) {
-                        return true;
-                    }
+                    return !this.field16775;
                 }
             }
             return false;

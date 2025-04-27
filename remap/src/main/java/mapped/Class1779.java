@@ -46,11 +46,11 @@ public abstract class Class1779 extends Class1776<Map<ResourceLocation, JsonObje
                     }
                 }
                 else {
-                    Class1779.field9879.error("Couldn't load data file {} from {} as it's null or empty", (Object)obj, (Object)class6584);
+                    Class1779.field9879.error("Couldn't load data file {} from {} as it's null or empty", obj, class6584);
                 }
             }
             catch (final IllegalArgumentException | IOException | JsonParseException ex) {
-                Class1779.field9879.error("Couldn't parse data file {} from {}", (Object)obj, (Object)class6584, (Object)ex);
+                Class1779.field9879.error("Couldn't parse data file {} from {}", obj, class6584, ex);
             }
         }
         return hashMap;

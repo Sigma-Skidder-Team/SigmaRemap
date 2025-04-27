@@ -22,14 +22,14 @@ public class Class6479 implements Class6477
             }
             for (final Class9300 class6648 : array) {
                 final Class5281 class6649 = new Class5281(class6648.method34387());
-                class6648.method34393(class6647.method29822((Class5260<byte[]>)class6649));
+                class6648.method34393(class6647.method29822(class6649));
                 final Class8699 class6650 = new Class8699(33, null, class6647.method29841());
                 class6650.method29823(Class5260.field22296, class6648.method34384());
                 class6650.method29823(Class5260.field22296, class6648.method34385());
                 class6650.method29823(Class5260.field22294, true);
                 class6650.method29823(Class5260.field22306, class6648.method34386());
                 class6650.method29823(Class5260.field22312, class6648.method34387());
-                class6650.method29823((Class5260<byte[]>)class6649, class6648.method34388());
+                class6650.method29823(class6649, class6648.method34388());
                 class6646.method20189().add(Class6646.method20186(class6648.method34384(), class6648.method34385()));
                 list.add(class6650);
             }

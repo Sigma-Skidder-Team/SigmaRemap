@@ -201,9 +201,7 @@ public class Class1948 implements Comparable<Class1948>
                 if (this.field10609 == class1948.field10609) {
                     if (this.field10610 == class1948.field10610) {
                         if (this.field10611 == class1948.field10611) {
-                            if (this.field10607.equals(class1948.field10607)) {
-                                return true;
-                            }
+                            return this.field10607.equals(class1948.field10607);
                         }
                     }
                 }
@@ -258,7 +256,7 @@ public class Class1948 implements Comparable<Class1948>
         if (class5329.contains("HiddenEffect", 10)) {
             method322 = method7919(class5328, class5329.getCompound("HiddenEffect"));
         }
-        return new Class1948(class5328, method318, (method317 >= 0) ? method317 : 0, method319, (boolean)(method320 != 0), (boolean)(method321 != 0), method322);
+        return new Class1948(class5328, method318, (method317 >= 0) ? method317 : 0, method319, method320 != 0, method321 != 0, method322);
     }
     
     public void method7920(final boolean field10612) {

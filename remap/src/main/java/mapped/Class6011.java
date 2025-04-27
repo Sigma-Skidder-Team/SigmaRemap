@@ -28,7 +28,7 @@ public class Class6011 extends Class6002
                 if (class7579.method23835().size() != 1) {
                     throw new Class2390("while constructing pairs", class7576.method23847(), "expected a single mapping item, but found " + class7579.method23835().size() + " items", class7579.method23847());
                 }
-                list.add((Object)new Object[] { this.field24484.method19983(class7579.method23835().get(0).method35260()), this.field24484.method19983(class7579.method23835().get(0).method35261()) });
+                list.add(new Object[] { this.field24484.method19983(class7579.method23835().get(0).method35260()), this.field24484.method19983(class7579.method23835().get(0).method35261()) });
             }
             return list;
         }

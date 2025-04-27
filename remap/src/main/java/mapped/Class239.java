@@ -19,7 +19,7 @@ public enum Class239
     private final int field1174;
     private final int field1175;
     
-    private Class239(final int field1171, final int field1172, final int field1173, final int field1174, final int field1175) {
+    Class239(final int field1171, final int field1172, final int field1173, final int field1174, final int field1175) {
         this.field1171 = field1171;
         this.field1172 = field1172;
         this.field1173 = field1173;
@@ -116,9 +116,7 @@ public enum Class239
         if (n4 > n6) {
             if (n4 < n6 + this.field1173) {
                 if (n5 > n7) {
-                    if (n5 < n7 + this.field1174) {
-                        return true;
-                    }
+                    return n5 < n7 + this.field1174;
                 }
             }
         }

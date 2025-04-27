@@ -16,7 +16,7 @@ public class Class2424 implements Class2422
     public Class2313 field14334;
     private Class2313 field14335;
     private Class2421 field14336;
-    private List field14337;
+    private final List field14337;
     
     public Class2424() {
         this.field14337 = new ArrayList();

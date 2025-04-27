@@ -12,10 +12,10 @@ import java.io.DataOutput;
 
 public interface INBT
 {
-    public static final TextFormatting SYNTAX_HIGHLIGHTING_KEY = TextFormatting.AQUA;
-    public static final TextFormatting SYNTAX_HIGHLIGHTING_STRING = TextFormatting.GREEN;
-    public static final TextFormatting SYNTAX_HIGHLIGHTING_NUMBER = TextFormatting.GOLD;
-    public static final TextFormatting SYNTAX_HIGHLIGHTING_NUMBER_TYPE = TextFormatting.RED;
+    TextFormatting SYNTAX_HIGHLIGHTING_KEY = TextFormatting.AQUA;
+    TextFormatting SYNTAX_HIGHLIGHTING_STRING = TextFormatting.GREEN;
+    TextFormatting SYNTAX_HIGHLIGHTING_NUMBER = TextFormatting.GOLD;
+    TextFormatting SYNTAX_HIGHLIGHTING_NUMBER_TYPE = TextFormatting.RED;
     
     void write(final DataOutput p0) throws IOException;
     

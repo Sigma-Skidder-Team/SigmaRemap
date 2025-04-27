@@ -36,9 +36,9 @@ public class Class3698 implements Class3689
                     while (iterator3.hasNext()) {
                         jsonArray.add(Util.method27835((IProperty<Comparable>)class8844, iterator3.next()));
                     }
-                    jsonObject3.add(class8844.getName(), (JsonElement)jsonArray);
+                    jsonObject3.add(class8844.getName(), jsonArray);
                 }
-                jsonObject2.add("properties", (JsonElement)jsonObject3);
+                jsonObject2.add("properties", jsonObject3);
             }
             final JsonArray jsonArray2 = new JsonArray();
             for (final BlockState class8845 : method504.method32902()) {
@@ -48,16 +48,16 @@ public class Class3698 implements Class3689
                     jsonObject5.addProperty(class8846.getName(), Util.method27835((IProperty<Comparable>)class8846, class8845.get((IProperty<Object>)class8846)));
                 }
                 if (jsonObject5.size() > 0) {
-                    jsonObject4.add("properties", (JsonElement)jsonObject5);
+                    jsonObject4.add("properties", jsonObject5);
                 }
-                jsonObject4.addProperty("id", (Number) Block.method11774(class8845));
+                jsonObject4.addProperty("id", Block.method11774(class8845));
                 if (class8845 == class8843.getDefaultState()) {
                     jsonObject4.addProperty("default", Boolean.valueOf(true));
                 }
-                jsonArray2.add((JsonElement)jsonObject4);
+                jsonArray2.add(jsonObject4);
             }
-            jsonObject2.add("states", (JsonElement)jsonArray2);
-            jsonObject.add(method503.toString(), (JsonElement)jsonObject2);
+            jsonObject2.add("states", jsonArray2);
+            jsonObject.add(method503.toString(), jsonObject2);
         }
         Class3689.method11346(Class3698.field17014, class8842, (JsonElement)jsonObject, this.field17015.method22099().resolve("reports/blocks.json"));
     }

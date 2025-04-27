@@ -53,6 +53,7 @@ public class HypixelGamePlay extends Module
                 for (int i = 0; i < 6; ++i) {
                     if (method16999.startsWith("§a§l" + array[i] + "KILL! ")) {
                         b = true;
+                        break;
                     }
                 }
                 if (b) {
@@ -78,7 +79,7 @@ public class HypixelGamePlay extends Module
                         final String replaceAll2 = Class6749.method20549(method17000.method19651(class5725.method23973()), new StringTextComponent(class5725.method23973())).getString().replaceAll("§t", "");
                         final Iterator iterator2 = new ArrayList(Arrays.asList("players left", "joueurs restants", "spieler verbleibend")).iterator();
                         while (iterator2.hasNext()) {
-                            if (replaceAll2.toLowerCase().contains((String)iterator2.next() + ":")) {
+                            if (replaceAll2.toLowerCase().contains(iterator2.next() + ":")) {
                                 final String[] split2 = replaceAll2.split(" ");
                                 if (split2.length > 2) {
                                     try {

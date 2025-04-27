@@ -27,7 +27,7 @@ import totalcross.json.JSONObject;
 public class JelloTouch
 {
     public JTouchBar field27848;
-    private LinkedHashSet<Class8879> field27849;
+    private final LinkedHashSet<Class8879> field27849;
     public boolean field27850;
     public HashMap<Module, TouchBarButton> field27851;
     
@@ -156,9 +156,7 @@ public class JelloTouch
             if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
                 if (!System.getProperty("os.version").startsWith("10.14")) {
                     if (!System.getProperty("os.version").startsWith("10.15")) {
-                        if (!System.getProperty("os.version").startsWith("10.16")) {
-                            return false;
-                        }
+                        return System.getProperty("os.version").startsWith("10.16");
                     }
                 }
                 return true;

@@ -9,10 +9,10 @@ import com.sun.jna.Library;
 
 public interface DiscordRPC extends Library
 {
-    public static final DiscordRPC INSTANCE = Native.loadLibrary("discord-rpc", DiscordRPC.class);
-    public static final int DISCORD_REPLY_NO = 0;
-    public static final int DISCORD_REPLY_YES = 1;
-    public static final int DISCORD_REPLY_IGNORE = 2;
+    DiscordRPC INSTANCE = Native.loadLibrary("discord-rpc", DiscordRPC.class);
+    int DISCORD_REPLY_NO = 0;
+    int DISCORD_REPLY_YES = 1;
+    int DISCORD_REPLY_IGNORE = 2;
     
     void Discord_Initialize(final String p0, final DiscordEventHandlers p1, final boolean p2, final String p3);
     

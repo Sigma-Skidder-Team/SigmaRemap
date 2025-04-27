@@ -42,7 +42,7 @@ public class Class5808 implements Class5807
         final PublicKey method34698 = class4309.method12955();
         new BigInteger(Class9359.method34699(class4309.method12954(), method34698, method34697)).toString(16);
         final Class4341 class4310 = new Class4341(method34697, method34698, class4309.method12956());
-        this.field23841.accept(new Class2259("connect.authorizing", new Object[0]));
+        this.field23841.accept(new Class2259("connect.authorizing"));
         Class7676.field30475.submit(() -> {
             this.method17409(s);
             final ITextComponent class4312;
@@ -55,7 +55,7 @@ public class Class5808 implements Class5807
                     return;
                 }
             }
-            this.field23841.accept(new Class2259("connect.encrypting", new Object[0]));
+            this.field23841.accept(new Class2259("connect.encrypting"));
             this.field23842.method11175(class4311, (GenericFutureListener<? extends Future<? super Void>>)(future -> this.field23842.method11185(secretKey)));
         });
     }
@@ -67,13 +67,13 @@ public class Class5808 implements Class5807
             return null;
         }
         catch (final AuthenticationUnavailableException ex) {
-            return new Class2259("disconnect.loginFailedInfo", new Object[] { new Class2259("disconnect.loginFailedInfo.serversUnavailable", new Object[0]) });
+            return new Class2259("disconnect.loginFailedInfo", new Class2259("disconnect.loginFailedInfo.serversUnavailable"));
         }
         catch (final InvalidCredentialsException ex2) {
-            return new Class2259("disconnect.loginFailedInfo", new Object[] { new Class2259("disconnect.loginFailedInfo.invalidSession", new Object[0]) });
+            return new Class2259("disconnect.loginFailedInfo", new Class2259("disconnect.loginFailedInfo.invalidSession"));
         }
         catch (final AuthenticationException ex3) {
-            return new Class2259("disconnect.loginFailedInfo", new Object[] { ex3.getMessage() });
+            return new Class2259("disconnect.loginFailedInfo", ex3.getMessage());
         }
     }
     
@@ -83,7 +83,7 @@ public class Class5808 implements Class5807
     
     @Override
     public void method17405(final Class4367 class4367) {
-        this.field23841.accept(new Class2259("connect.joining", new Object[0]));
+        this.field23841.accept(new Class2259("connect.joining"));
         this.field23843 = class4367.method13133();
         this.field23842.method11171(Class2208.field13455);
         this.field23842.method11173(new Class5799(this.field23839, this.field23840, this.field23842, this.field23843));
@@ -118,7 +118,7 @@ public class Class5808 implements Class5807
     
     @Override
     public void method17408(final Class4299 class4299) {
-        this.field23841.accept(new Class2259("connect.negotiating", new Object[0]));
+        this.field23841.accept(new Class2259("connect.negotiating"));
         this.field23842.method11174(new Class4390(class4299.method12916(), null));
     }
     

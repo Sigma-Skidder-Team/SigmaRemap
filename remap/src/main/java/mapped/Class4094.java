@@ -138,17 +138,17 @@ public class Class4094 extends Class4093
                                                             }
                                                             class1849.method18923(class1847, method18923.method25426() + k + n11, method18923.method25427() + l + n12);
                                                             n14 += n15 / (double)(n * n);
-                                                            ((Multiset)create).add((Object)class1853.method21707(class1847, class1851));
+                                                            create.add((Object)class1853.method21707(class1847, class1851));
                                                         }
                                                     }
                                                 }
                                                 else {
                                                     final int n17 = n9 + n10 * 231871;
                                                     if ((n17 * n17 * 31287121 + n17 * 11 >> 20 & 0x1) != 0x0) {
-                                                        ((Multiset)create).add((Object) Blocks.STONE.getDefaultState().method21707(class1847, BlockPos.ZERO), 100);
+                                                        create.add(Blocks.STONE.getDefaultState().method21707(class1847, BlockPos.ZERO), 100);
                                                     }
                                                     else {
-                                                        ((Multiset)create).add((Object) Blocks.DIRT.getDefaultState().method21707(class1847, BlockPos.ZERO), 10);
+                                                        create.add(Blocks.DIRT.getDefaultState().method21707(class1847, BlockPos.ZERO), 10);
                                                     }
                                                     n14 = 100.0;
                                                 }
@@ -161,7 +161,7 @@ public class Class4094 extends Class4093
                                                 if (n19 < -0.6) {
                                                     n20 = 0;
                                                 }
-                                                final MaterialColor class1854 = (MaterialColor)Iterables.getFirst((Iterable)Multisets.copyHighestCountFirst((Multiset)create), (Object) MaterialColor.AIR);
+                                                final MaterialColor class1854 = (MaterialColor)Iterables.getFirst(Multisets.copyHighestCountFirst(create), (Object) MaterialColor.AIR);
                                                 if (class1854 == MaterialColor.WATER) {
                                                     final double n21 = n18 * 0.1 + (i + j & 0x1) * 0.2;
                                                     n20 = 1;
@@ -374,17 +374,17 @@ public class Class4094 extends Class4093
         final Class6356 class8324 = (class8322 != null) ? method12328(class8321, class8322) : null;
         if (class8324 != null) {
             if (class8324.field25427) {
-                list.add(new Class2259("filled_map.locked", new Object[] { method12329(class8321) }).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.locked", method12329(class8321)).applyTextStyle(TextFormatting.GRAY));
             }
         }
         if (class8323.method7991()) {
             if (class8324 == null) {
-                list.add(new Class2259("filled_map.unknown", new Object[0]).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.unknown").applyTextStyle(TextFormatting.GRAY));
             }
             else {
-                list.add(new Class2259("filled_map.id", new Object[] { method12329(class8321) }).applyTextStyle(TextFormatting.GRAY));
-                list.add(new Class2259("filled_map.scale", new Object[] { 1 << class8324.field25425 }).applyTextStyle(TextFormatting.GRAY));
-                list.add(new Class2259("filled_map.level", new Object[] { class8324.field25425, 4 }).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.id", method12329(class8321)).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.scale", 1 << class8324.field25425).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("filled_map.level", class8324.field25425, 4).applyTextStyle(TextFormatting.GRAY));
             }
         }
     }

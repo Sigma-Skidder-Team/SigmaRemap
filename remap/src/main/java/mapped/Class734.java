@@ -12,8 +12,8 @@ public class Class734 extends Screen
     
     @Override
     public void init() {
-        this.addButton(new Class654(this.width / 2 - 155, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.toTitle", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new MainMenu())));
-        this.addButton(new Class654(this.width / 2 - 155 + 160, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("menu.quit", new Object[0]), class654 -> this.minecraft.method5253()));
+        this.addButton(new Class654(this.width / 2 - 155, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("gui.toTitle"), class654 -> this.minecraft.displayGuiScreen(new MainMenu())));
+        this.addButton(new Class654(this.width / 2 - 155 + 160, this.height / 4 + 120 + 12, 150, 20, Class8822.method30773("menu.quit"), class654 -> this.minecraft.method5253()));
     }
     
     @Override
@@ -25,7 +25,7 @@ public class Class734 extends Screen
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, this.height / 4 - 60 + 20, 16777215);
-        this.drawString(this.font, "Minecraft has run out of memory.", this.width / 2 - 140, this.height / 4 - 60 + 60 + 0, 10526880);
+        this.drawString(this.font, "Minecraft has run out of memory.", this.width / 2 - 140, this.height / 4 - 60 + 60, 10526880);
         this.drawString(this.font, "This could be caused by a bug in the game or by the", this.width / 2 - 140, this.height / 4 - 60 + 60 + 18, 10526880);
         this.drawString(this.font, "Java Virtual Machine not being allocated enough", this.width / 2 - 140, this.height / 4 - 60 + 60 + 27, 10526880);
         this.drawString(this.font, "memory.", this.width / 2 - 140, this.height / 4 - 60 + 60 + 36, 10526880);

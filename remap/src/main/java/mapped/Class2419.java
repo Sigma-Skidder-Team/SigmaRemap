@@ -72,7 +72,7 @@ public class Class2419 extends JComponent
             this.add(this.method9713(), "West");
         }
         catch (final Exception ex) {
-            Class2419.field14313.error("Couldn't build server GUI", (Throwable)ex);
+            Class2419.field14313.error("Couldn't build server GUI", ex);
         }
     }
     
@@ -110,7 +110,6 @@ public class Class2419 extends JComponent
                 this.field14314.method1616(s, this.field14314.method1574());
             }
             textField.setText("");
-            return;
         });
         view.addFocusListener(new Class7044(this));
         panel.add(comp, "Center");
@@ -128,7 +127,6 @@ public class Class2419 extends JComponent
                     this.method9719(textArea, scrollPane, s2);
                 }
             }
-            return;
         })).setUncaughtExceptionHandler((Thread.UncaughtExceptionHandler)new Class8239(Class2419.field14313));
         this.field14315.setDaemon(true);
         return panel;

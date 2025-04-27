@@ -38,7 +38,7 @@ public class Class6066 implements ArgumentType<TextFormatting>
         if (method8260 != null && !method8260.isFancyStyling()) {
             return method8260;
         }
-        throw Class6066.field24693.create((Object)unquotedString);
+        throw Class6066.field24693.create(unquotedString);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -52,7 +52,7 @@ public class Class6066 implements ArgumentType<TextFormatting>
     static {
         field24692 = Arrays.asList("red", "green");
         field24693 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.color.invalid", new Object[] { o });
+            new Class2259("argument.color.invalid", o);
             return;
         });
     }

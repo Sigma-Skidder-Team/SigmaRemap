@@ -555,7 +555,7 @@ public class Class6779
     }
     
     private String[] method20710() {
-        return (String[])((method20711(this.field26611) != null) ? new String[] { this.field26611 } : null);
+        return (method20711(this.field26611) != null) ? new String[] { this.field26611 } : null;
     }
     
     private static TextureAtlasSprite method20711(final String str) {

@@ -22,7 +22,7 @@ public class UpdateWalkingEvent extends Class5714
     public static float field23326;
     public static float field23327;
     public static float field23328;
-    private List<Runnable> field23329;
+    private final List<Runnable> field23329;
     public boolean field23330;
     
     public UpdateWalkingEvent(final double field23317, final double field23318, final double field23319, final float field23320, final float field23321, final boolean field23322) {

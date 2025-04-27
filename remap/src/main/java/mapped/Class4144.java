@@ -74,7 +74,7 @@ public class Class4144 implements Class4145
         }
         Class3736 class9132 = null;
         try {
-            class9132 = (Class3736)clazz.newInstance();
+            class9132 = clazz.newInstance();
         }
         catch (final InstantiationException ex) {}
         catch (final IllegalAccessException ex2) {}

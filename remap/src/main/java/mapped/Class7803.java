@@ -58,14 +58,9 @@ public class Class7803<X, Y>
             final Object method25205 = this.method25204();
             final Object method25206 = class7803.method25204();
             if (method25205 != null) {
-                if (!method25205.equals(method25206)) {
-                    return false;
-                }
+                return method25205.equals(method25206);
             }
-            else if (method25206 != null) {
-                return false;
-            }
-            return true;
+            else return method25206 == null;
         }
         return false;
     }

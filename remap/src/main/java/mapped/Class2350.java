@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Class2350 extends IOException
 {
-    private ArrayList field14134;
+    private final ArrayList field14134;
     
     public Class2350() {
         this.field14134 = new ArrayList();

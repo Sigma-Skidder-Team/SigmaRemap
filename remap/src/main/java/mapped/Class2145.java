@@ -18,7 +18,7 @@ public enum Class2145
     private static final Map<String, Class2145> field12631;
     private final String field12632;
     
-    private Class2145(final String field12632) {
+    Class2145(final String field12632) {
         this.field12632 = field12632;
     }
     

@@ -26,7 +26,7 @@ public class Class92<T> extends Class91<T>
     
     public Class92() {
         this.field247 = new Class95<T>(256);
-        this.field248 = (BiMap<ResourceLocation, T>)HashBiMap.create();
+        this.field248 = HashBiMap.create();
     }
     
     @Override
@@ -35,8 +35,8 @@ public class Class92<T> extends Class91<T>
         Validate.notNull((Object)class1932);
         Validate.notNull((Object)v);
         this.field249 = null;
-        if (this.field248.containsKey((Object)class1932)) {
-            Class92.field246.debug("Adding duplicate key '{}' to registry", (Object)class1932);
+        if (this.field248.containsKey(class1932)) {
+            Class92.field246.debug("Adding duplicate key '{}' to registry", class1932);
         }
         this.field248.put((Object)class1932, (Object)v);
         if (this.field250 <= n) {
@@ -53,7 +53,7 @@ public class Class92<T> extends Class91<T>
     @Nullable
     @Override
     public ResourceLocation getKey(final T t) {
-        return (ResourceLocation)this.field248.inverse().get((Object)t);
+        return this.field248.inverse().get(t);
     }
     
     @Override
@@ -75,17 +75,17 @@ public class Class92<T> extends Class91<T>
     @Nullable
     @Override
     public T getOrDefault(final ResourceLocation class1932) {
-        return (T)this.field248.get((Object)class1932);
+        return this.field248.get(class1932);
     }
     
     @Override
     public Optional<T> method506(final ResourceLocation class1932) {
-        return Optional.ofNullable(this.field248.get((Object)class1932));
+        return Optional.ofNullable(this.field248.get(class1932));
     }
     
     @Override
     public Set<ResourceLocation> method507() {
-        return Collections.unmodifiableSet((Set<? extends ResourceLocation>)this.field248.keySet());
+        return Collections.unmodifiableSet(this.field248.keySet());
     }
     
     @Override
@@ -108,7 +108,7 @@ public class Class92<T> extends Class91<T>
     
     @Override
     public boolean method510(final ResourceLocation class1932) {
-        return this.field248.containsKey((Object)class1932);
+        return this.field248.containsKey(class1932);
     }
     
     static {

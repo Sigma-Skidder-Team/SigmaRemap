@@ -15,11 +15,11 @@ public final class Class9564
     public static ArrayList<String> field41153;
     
     public static String method35786() {
-        return Class9564.field41152.get(Math.round(0.0f + (float)Math.random() * (Class9564.field41152.size() - 1 - 0)));
+        return Class9564.field41152.get(Math.round(0.0f + (float)Math.random() * (Class9564.field41152.size() - 1)));
     }
     
     public static String method35787() {
-        return Class9564.field41153.get(Math.round(0.0f + (float)Math.random() * (Class9564.field41153.size() - 1 - 0)));
+        return Class9564.field41153.get(Math.round(0.0f + (float)Math.random() * (Class9564.field41153.size() - 1)));
     }
     
     static {

@@ -51,12 +51,12 @@ public class Class7820
     }
     
     public Class7990 method25270(final int n, final int n2, final int n3) {
-        return (Class7990)this.field32033.getUnchecked((Object)Class8691.method29798(this.field32030, this.method25266(), this.method25267(), n, n2, n3));
+        return this.field32033.getUnchecked(Class8691.method29798(this.field32030, this.method25266(), this.method25267(), n, n2, n3));
     }
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("up", (Object)this.field32032).add("forwards", (Object)this.field32031).add("frontTopLeft", (Object)this.field32030).toString();
+        return MoreObjects.toStringHelper(this).add("up", this.field32032).add("forwards", this.field32031).add("frontTopLeft", this.field32030).toString();
     }
     
     public Class9402 method25271(final Direction class179, final BlockPos class180, final double n, final Vec3d class181, final double n2) {

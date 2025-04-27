@@ -173,7 +173,7 @@ public class Class4481 extends Class4479
         if (class1852.isVecInside(class1854)) {
             if (class1851.getBlockState(class1854).method21706()) {
                 if (!class1851.getBlockState(class1854.method1139()).method21706()) {
-                    this.method13440(class1851, ((StateHolder<O, BlockState>) Blocks.field29308.getDefaultState()).with(Class4020.field18103, random.nextBoolean() ? Class104.field311 : Class104.field312), n, n2, n3, class1852);
+                    this.method13440(class1851, Blocks.field29308.getDefaultState().with(Class4020.field18103, random.nextBoolean() ? Class104.field311 : Class104.field312), n, n2, n3, class1852);
                     final Class505 class1855 = new Class505(class1851.method6744(), class1854.getX() + 0.5f, class1854.getY() + 0.5f, class1854.getZ() + 0.5f);
                     class1855.method2165(class1853, random.nextLong());
                     class1851.method6886(class1855);
@@ -239,7 +239,7 @@ public class Class4481 extends Class4479
                 }
             }
             if (this.field19871) {
-                final BlockState class1856 = ((StateHolder<O, BlockState>) Blocks.field29308.getDefaultState()).with(Class4020.field18103, Class104.field311);
+                final BlockState class1856 = Blocks.field29308.getDefaultState().with(Class4020.field18103, Class104.field311);
                 for (int l = 0; l <= n; ++l) {
                     final BlockState method13465 = this.method13441(class1851, 1, -1, l, class1853);
                     if (!method13465.method21706()) {

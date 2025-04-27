@@ -26,7 +26,7 @@ public class TargetStrafe extends Module
     public TargetStrafe() {
         super(Category.MOVEMENT, "TargetStrafe", "Allows you to strafe arround targets with speed");
         this.field15727 = 1;
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "Ninja", "Random" }));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Ninja", "Random"));
         this.addSetting(new NumberSetting("Radius", "Radius of the circle", 2.0f, Float.class, 1.0f, 6.0f, 0.01f));
         this.addSetting(new BooleanSetting("Only speed", "Use target strafe only when speed is enabled", true));
         this.addSetting(new BooleanSetting("Avoid void", "Avoid you from falling into void", true));

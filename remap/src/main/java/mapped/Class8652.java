@@ -303,7 +303,7 @@ public class Class8652
                 }
             }
             final Class3090 class1934 = Class8652.field36320.get(class1932);
-            return (class1934 == null) ? null : class1934;
+            return class1934;
         }
         return method26042;
     }
@@ -427,11 +427,11 @@ public class Class8652
     }
     
     public void method29460(final String str) {
-        Config.method28847("" + this.field36317 + ": " + str);
+        Config.method28847(this.field36317 + ": " + str);
     }
     
     public void method29461(final String str) {
-        Config.warn("" + this.field36317 + ": " + str);
+        Config.warn(this.field36317 + ": " + str);
     }
     
     public Class7740 method29462(final String s) {
@@ -647,7 +647,7 @@ public class Class8652
             lowerCase = lowerCase.toLowerCase();
             final ResourceLocation class1932 = new ResourceLocation(lowerCase);
             final Class93<Class9334> field240 = Registry.field240;
-            return field240.method510(class1932) ? ((Class9334)field240.getOrDefault(class1932)) : null;
+            return field240.method510(class1932) ? field240.getOrDefault(class1932) : null;
         }
         return null;
     }

@@ -70,7 +70,7 @@ public class Class8283
         Object method28903 = null;
         if (Class9570.field41306.method22605()) {
             method28903 = Class9570.method35818(Class9570.field41306, method28901, method28902);
-            if (Class9570.method35820(method28903, Class9570.field41225, new Object[0])) {
+            if (Class9570.method35820(method28903, Class9570.field41225)) {
                 consumer.accept((ITextComponent)Class9570.method35826(method28903, Class9570.field41420, new Object[0]));
                 return;
             }
@@ -85,14 +85,14 @@ public class Class8283
                 }
                 else {
                     final ITextComponent class6156;
-                    new Class2259("screenshot.success", new Object[] { class6156 });
+                    new Class2259("screenshot.success", class6156);
                     final Class2259 class6155;
                     consumer2.accept(class6155);
                 }
             }
             catch (final Exception ex) {
-                Class8283.field34072.warn("Couldn't save screenshot", (Throwable)ex);
-                new Class2259("screenshot.failure", new Object[] { ex.getMessage() });
+                Class8283.field34072.warn("Couldn't save screenshot", ex);
+                new Class2259("screenshot.failure", ex.getMessage());
                 final Class2259 class6157;
                 consumer2.accept(class6157);
             }

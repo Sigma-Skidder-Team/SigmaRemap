@@ -17,7 +17,7 @@ public final class VoxelShapeArray extends VoxelShape
     private final DoubleList zPoints;
     
     public VoxelShapeArray(final VoxelShapePart class8260, final double[] original, final double[] original2, final double[] original3) {
-        this(class8260, (DoubleList)DoubleArrayList.wrap(Arrays.copyOf(original, class8260.getXSize() + 1)), (DoubleList)DoubleArrayList.wrap(Arrays.copyOf(original2, class8260.getYSize() + 1)), (DoubleList)DoubleArrayList.wrap(Arrays.copyOf(original3, class8260.getZSize() + 1)));
+        this(class8260, DoubleArrayList.wrap(Arrays.copyOf(original, class8260.getXSize() + 1)), DoubleArrayList.wrap(Arrays.copyOf(original2, class8260.getYSize() + 1)), DoubleArrayList.wrap(Arrays.copyOf(original3, class8260.getZSize() + 1)));
     }
     
     public VoxelShapeArray(final VoxelShapePart class8260, final DoubleList xPoints, final DoubleList yPoints, final DoubleList zPoints) {

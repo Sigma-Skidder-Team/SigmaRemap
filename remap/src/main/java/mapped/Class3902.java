@@ -34,10 +34,10 @@ public class Class3902 extends Class3892
         for (final Direction class7075 : class7074.method21643()) {
             BlockState class7076;
             if (class7075.getAxis() != Direction.Axis.Y) {
-                class7076 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3902.field17618, Class107.field333)).with((IProperty<Comparable>)Class3902.field17564, class7075.getOpposite());
+                class7076 = ((StateHolder<O, BlockState>) this.getDefaultState().with(Class3902.field17618, Class107.field333)).with((IProperty<Comparable>)Class3902.field17564, class7075.getOpposite());
             }
             else {
-                class7076 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).with((IProperty<Comparable>)Class3902.field17564, class7074.method21644());
+                class7076 = ((StateHolder<O, BlockState>) this.getDefaultState().with(Class3902.field17618, (class7075 != Direction.UP) ? Class107.field332 : Class107.field334)).with((IProperty<Comparable>)Class3902.field17564, class7074.method21644());
             }
             if (class7076.method21752(class7074.method21654(), class7074.method21639())) {
                 return class7076;
@@ -60,7 +60,7 @@ public class Class3902 extends Class3892
                 return Direction.UP;
             }
             default: {
-                return class7096.get((IProperty<Direction>)Class3902.field17564);
+                return class7096.get(Class3902.field17564);
             }
         }
     }

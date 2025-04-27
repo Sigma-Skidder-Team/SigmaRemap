@@ -53,7 +53,7 @@ public class Class1784 extends Class1776<Class8875>
                         class6583.endSection();
                     }
                     catch (final RuntimeException ex) {
-                        Class1784.field9896.warn("Invalid sounds.json in resourcepack: '{}'", (Object)class6585.method5889(), (Object)ex);
+                        Class1784.field9896.warn("Invalid sounds.json in resourcepack: '{}'", class6585.method5889(), ex);
                     }
                     class6583.endSection();
                 }
@@ -76,14 +76,14 @@ public class Class1784 extends Class1776<Class8875>
             if (Class8822.method30774(method8496)) {
                 continue;
             }
-            Class1784.field9896.debug("Missing subtitle {} for event: {}", (Object)method8496, (Object)class8878);
+            Class1784.field9896.debug("Missing subtitle {} for event: {}", method8496, class8878);
         }
         if (Class1784.field9896.isDebugEnabled()) {
             for (final ResourceLocation class8880 : this.field9899.keySet()) {
                 if (Registry.field205.method510(class8880)) {
                     continue;
                 }
-                Class1784.field9896.debug("Not having sound event for: {}", (Object)class8880);
+                Class1784.field9896.debug("Not having sound event for: {}", class8880);
             }
         }
         this.field9900.method34832();
@@ -106,7 +106,7 @@ public class Class1784 extends Class1776<Class8875>
         if (class7834.method19934(method25305)) {
             return true;
         }
-        Class1784.field9896.warn("File {} does not exist, cannot add it to event {}", (Object)method25305, (Object)class7833);
+        Class1784.field9896.warn("File {} does not exist, cannot add it to event {}", method25305, class7833);
         return false;
     }
     
@@ -191,7 +191,7 @@ public class Class1784 extends Class1776<Class8875>
     static {
         field9895 = new Class7832("meta:missing_sound", 1.0f, 1.0f, 1, Class2158.field12815, false, false, 16);
         field9896 = LogManager.getLogger();
-        field9897 = new GsonBuilder().registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeAdapter((Type)Class8722.class, (Object)new Class5981()).create();
+        field9897 = new GsonBuilder().registerTypeHierarchyAdapter(ITextComponent.class, new Class5953()).registerTypeAdapter(Class8722.class, new Class5981()).create();
         field9898 = new Class8359();
     }
 }

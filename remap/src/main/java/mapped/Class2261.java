@@ -46,6 +46,6 @@ public class Class2261 extends TextComponent
     }
     
     static {
-        Class2261.field13818 = (Function<String, Supplier<String>>)(p0 -> () -> s2);
+        Class2261.field13818 = (p0 -> () -> s2);
     }
 }

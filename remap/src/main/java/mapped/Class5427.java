@@ -18,12 +18,12 @@ public class Class5427 extends Class5419<Class824>
     private List<Class427> field22615;
     
     public Class5427() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10629));
+        super((Map)ImmutableMap.of(Class8233.field33810, Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10629));
         this.field22615 = Lists.newArrayList();
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
-        this.field22615 = class1849.method7128((Class<? extends Class427>)Class427.class, class1850.getBoundingBox().grow(4.0, 2.0, 4.0));
+        this.field22615 = class1849.method7128(Class427.class, class1850.getBoundingBox().grow(4.0, 2.0, 4.0));
         return !this.field22615.isEmpty();
     }
     

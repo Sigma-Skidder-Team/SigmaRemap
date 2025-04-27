@@ -42,7 +42,7 @@ public class Class8987 extends DataFix
             typed.getOptional(opticFinder);
             final Optional optional;
             if (optional.isPresent()) {
-                final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+                final Dynamic dynamic = typed.get(DSL.remainderFinder());
                 dynamic.get("Damage").asInt(0);
                 final int n;
                 method31988((String)optional.get().getSecond(), n);
@@ -51,13 +51,13 @@ public class Class8987 extends DataFix
                 if (s != null) {
                     typed2 = typed.set(opticFinder, (Object)Pair.of((Object)Class9451.field40628.typeName(), (Object)s));
                 }
-                if (!(!Class8987.field37880.contains(optional.get().getSecond()))) {
+                if (Class8987.field37880.contains(optional.get().getSecond())) {
                     typed.getOrCreateTyped(opticFinder2);
                     final Typed typed3;
                     final Dynamic dynamic2 = (Dynamic)typed3.get(DSL.remainderFinder());
-                    typed2 = typed2.set(opticFinder2, typed3.set(DSL.remainderFinder(), (Object)dynamic2.set("Damage", dynamic2.createInt(n))));
+                    typed2 = typed2.set(opticFinder2, typed3.set(DSL.remainderFinder(), dynamic2.set("Damage", dynamic2.createInt(n))));
                 }
-                return typed2.set(DSL.remainderFinder(), (Object)dynamic.remove("Damage"));
+                return typed2.set(DSL.remainderFinder(), dynamic.remove("Damage"));
             }
             else {
                 return typed;
@@ -396,7 +396,6 @@ public class Class8987 extends DataFix
             hashMap.put("minecraft:record_strad.0", "minecraft:music_disc_strad");
             hashMap.put("minecraft:record_wait.0", "minecraft:music_disc_wait");
             hashMap.put("minecraft:record_ward.0", "minecraft:music_disc_ward");
-            return;
         });
         field37879 = Class8987.field37878.keySet().stream().map(s -> s.substring(0, s.indexOf(46))).collect((Collector<? super Object, ?, Set<String>>)Collectors.toSet());
         field37880 = Sets.newHashSet((Object[])new String[] { "minecraft:bow", "minecraft:carrot_on_a_stick", "minecraft:chainmail_boots", "minecraft:chainmail_chestplate", "minecraft:chainmail_helmet", "minecraft:chainmail_leggings", "minecraft:diamond_axe", "minecraft:diamond_boots", "minecraft:diamond_chestplate", "minecraft:diamond_helmet", "minecraft:diamond_hoe", "minecraft:diamond_leggings", "minecraft:diamond_pickaxe", "minecraft:diamond_shovel", "minecraft:diamond_sword", "minecraft:elytra", "minecraft:fishing_rod", "minecraft:flint_and_steel", "minecraft:golden_axe", "minecraft:golden_boots", "minecraft:golden_chestplate", "minecraft:golden_helmet", "minecraft:golden_hoe", "minecraft:golden_leggings", "minecraft:golden_pickaxe", "minecraft:golden_shovel", "minecraft:golden_sword", "minecraft:iron_axe", "minecraft:iron_boots", "minecraft:iron_chestplate", "minecraft:iron_helmet", "minecraft:iron_hoe", "minecraft:iron_leggings", "minecraft:iron_pickaxe", "minecraft:iron_shovel", "minecraft:iron_sword", "minecraft:leather_boots", "minecraft:leather_chestplate", "minecraft:leather_helmet", "minecraft:leather_leggings", "minecraft:shears", "minecraft:shield", "minecraft:stone_axe", "minecraft:stone_hoe", "minecraft:stone_pickaxe", "minecraft:stone_shovel", "minecraft:stone_sword", "minecraft:wooden_axe", "minecraft:wooden_hoe", "minecraft:wooden_pickaxe", "minecraft:wooden_shovel", "minecraft:wooden_sword" });

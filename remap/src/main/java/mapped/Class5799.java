@@ -711,7 +711,7 @@ public class Class5799 implements IClientPlayNetHandler
         final float n2 = class4276.method12839() * 360 / 256.0f;
         final LivingEntity class4277 = (LivingEntity) EntityType.method23372(class4276.method12831(), this.field23808.world);
         if (class4277 == null) {
-            Class5799.field23804.warn("Skipping Entity with id {}", (Object)class4276.method12831());
+            Class5799.field23804.warn("Skipping Entity with id {}", class4276.method12831());
         }
         else {
             class4277.setPacketCoordinates(method12832, method12833, method12834);
@@ -1083,7 +1083,7 @@ public class Class5799 implements IClientPlayNetHandler
         if (method12948 >= 0) {
             if (method12948 < Class4306.field19308.length) {
                 if (Class4306.field19308[method12948] != null) {
-                    field4684.method2853(new Class2259(Class4306.field19308[method12948], new Object[0]), false);
+                    field4684.method2853(new Class2259(Class4306.field19308[method12948]), false);
                 }
             }
         }
@@ -1129,19 +1129,19 @@ public class Class5799 implements IClientPlayNetHandler
                                     if (method12949 != 102.0f) {
                                         if (method12949 != 103.0f) {
                                             if (method12949 == 104.0f) {
-                                                this.field23808.field4647.method3807().method3761(new Class2259("demo.day.6", new Object[] { field4685.field23451.method1068() }));
+                                                this.field23808.field4647.method3807().method3761(new Class2259("demo.day.6", field4685.field23451.method1068()));
                                             }
                                         }
                                         else {
-                                            this.field23808.field4647.method3807().method3761(new Class2259("demo.help.inventory", new Object[] { field4685.field23442.method1068() }));
+                                            this.field23808.field4647.method3807().method3761(new Class2259("demo.help.inventory", field4685.field23442.method1068()));
                                         }
                                     }
                                     else {
-                                        this.field23808.field4647.method3807().method3761(new Class2259("demo.help.jump", new Object[] { field4685.field23439.method1068() }));
+                                        this.field23808.field4647.method3807().method3761(new Class2259("demo.help.jump", field4685.field23439.method1068()));
                                     }
                                 }
                                 else {
-                                    this.field23808.field4647.method3807().method3761(new Class2259("demo.help.movement", new Object[] { field4685.field23435.method1068(), field4685.field23436.method1068(), field4685.field23437.method1068(), field4685.field23438.method1068() }));
+                                    this.field23808.field4647.method3807().method3761(new Class2259("demo.help.movement", field4685.field23435.method1068(), field4685.field23436.method1068(), field4685.field23437.method1068(), field4685.field23438.method1068()));
                                 }
                             }
                             else {
@@ -1226,7 +1226,7 @@ public class Class5799 implements IClientPlayNetHandler
     @Override
     public void method17324(final Class4369 class4369) {
         Class8663.method29632((IPacket<Class5799>)class4369, this, this.field23808);
-        this.field23818 = (CommandDispatcher<Class7491>)new CommandDispatcher((RootCommandNode)class4369.method13139());
+        this.field23818 = (CommandDispatcher<Class7491>)new CommandDispatcher(class4369.method13139());
     }
     
     @Override
@@ -1266,7 +1266,7 @@ public class Class5799 implements IClientPlayNetHandler
     public void method17329(final Class4296 class4296) {
         Class8663.method29632((IPacket<Class5799>)class4296, this, this.field23808);
         if (!this.field23815.method26645(class4296.method12902(), class4296.method12903())) {
-            Class5799.field23804.debug("Got unhandled response to tag query {}", (Object)class4296.method12902());
+            Class5799.field23804.debug("Got unhandled response to tag query {}", class4296.method12902());
         }
     }
     
@@ -1315,7 +1315,6 @@ public class Class5799 implements IClientPlayNetHandler
                         class4332.method19693(class4333);
                         class4332.method19701(class4333);
                         Class6867.method20984(this.field23808.method5318(), class4333);
-                        return;
                     });
                 }
                 break;
@@ -1560,7 +1559,7 @@ public class Class5799 implements IClientPlayNetHandler
                             }
                             Class9295.method34339(method5282);
                             this.field23808.displayGuiScreen(null);
-                        }, new Class2259("multiplayer.texturePrompt.line1", new Object[0]), new Class2259("multiplayer.texturePrompt.line2", new Object[0]));
+                        }, new Class2259("multiplayer.texturePrompt.line1"), new Class2259("multiplayer.texturePrompt.line2"));
                         final Class546 class4284;
                         field23808.displayGuiScreen(class4284);
                     });
@@ -1785,7 +1784,7 @@ public class Class5799 implements IClientPlayNetHandler
                 this.field23808.field4645.field28223.method18351(method13159.method29494(), method13159.readInt(), method13159.method29512(), method13159.readInt());
             }
             else {
-                Class5799.field23804.warn("Unknown custom packed identifier: {}", (Object)method13158);
+                Class5799.field23804.warn("Unknown custom packed identifier: {}", method13158);
             }
         }
         finally {
@@ -1898,7 +1897,7 @@ public class Class5799 implements IClientPlayNetHandler
                 this.field23809.method6710(class4278.method12853(), class4278.method12844(), class4278.method12845(), class4278.method12846(), class4278.method12847(), n, n2, n3);
             }
             catch (final Throwable t) {
-                Class5799.field23804.warn("Could not spawn particle effect {}", (Object)class4278.method12853());
+                Class5799.field23804.warn("Could not spawn particle effect {}", class4278.method12853());
             }
         }
         else {
@@ -1913,7 +1912,7 @@ public class Class5799 implements IClientPlayNetHandler
                     this.field23809.method6710(class4278.method12853(), class4278.method12844(), class4278.method12845() + n4, class4278.method12846() + n5, class4278.method12847() + n6, n7, n8, n9);
                 }
                 catch (final Throwable t2) {
-                    Class5799.field23804.warn("Could not spawn particle effect {}", (Object)class4278.method12853());
+                    Class5799.field23804.warn("Could not spawn particle effect {}", class4278.method12853());
                     return;
                 }
             }
@@ -1951,7 +1950,7 @@ public class Class5799 implements IClientPlayNetHandler
         if (field3009.field16154 == class4257.method12780()) {
             if (field3009.method10886(this.field23808.player)) {
                 this.field23819.method6382(class4257.method12779()).ifPresent(class4259 -> {
-                    if (!(!(this.field23808.currentScreen instanceof Class519))) {
+                    if (this.field23808.currentScreen instanceof Class519) {
                         ((Class519)this.field23808.currentScreen).method3001().method3439(class4259, class4258.field16151);
                     }
                 });

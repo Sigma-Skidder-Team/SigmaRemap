@@ -23,8 +23,8 @@ public class Class746 extends Class516<Class3423>
     }
     
     private void method4061() {
-        ((Class3423)this.field3077).method10918(this.field4033);
-        ((Class3423)this.field3077).method10927(this.field4033);
+        this.field3077.method10918(this.field4033);
+        this.field3077.method10927(this.field4033);
         this.minecraft.method5269().method17292(new Class4324(this.field4033));
     }
     
@@ -46,14 +46,14 @@ public class Class746 extends Class516<Class3423>
     
     @Override
     public void method2973(final int n, final int n2) {
-        final int method10922 = ((Class3423)this.field3077).method10922();
+        final int method10922 = this.field3077.method10922();
         final int n3 = this.field3076 - 94;
         Label_0302: {
             if (method10922 > 0) {
                 if (method10922 <= 5) {
-                    if (((Class3423)this.field3077).method10932()) {
+                    if (this.field3077.method10932()) {
                         final String method10923 = this.title.getFormattedText();
-                        final String string = "- " + Class8822.method30773("merchant.level." + method10922, new Object[0]);
+                        final String string = "- " + Class8822.method30773("merchant.level." + method10922);
                         final int method10924 = this.font.getStringWidth(method10923);
                         final int n4 = 49 + this.field3075 / 2 - (method10924 + this.font.getStringWidth(string) + 3) / 2;
                         this.font.method6610(method10923, (float)n4, 6.0f, 4210752);
@@ -67,7 +67,7 @@ public class Class746 extends Class516<Class3423>
             this.font.method6610(method10925, (float)(49 + this.field3075 / 2 - this.font.getStringWidth(method10925) / 2), 6.0f, 4210752);
             this.font.method6610(this.field3078.getDisplayName().getFormattedText(), 107.0f, (float)n3, 4210752);
         }
-        final String method10926 = Class8822.method30773("merchant.trades", new Object[0]);
+        final String method10926 = Class8822.method30773("merchant.trades");
         this.font.method6610(method10926, (float)(5 - this.font.getStringWidth(method10926) / 2 + 48), 6.0f, 4210752);
     }
     
@@ -76,7 +76,7 @@ public class Class746 extends Class516<Class3423>
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.minecraft.method5290().method5849(Class746.field4032);
         AbstractGui.blit((this.width - this.field3075) / 2, (this.height - this.field3076) / 2, this.getBlitOffset(), 0.0f, 0.0f, this.field3075, this.field3076, 256, 512);
-        final Class57 method10931 = ((Class3423)this.field3077).method10931();
+        final Class57 method10931 = this.field3077.method10931();
         if (!method10931.isEmpty()) {
             final int field4033 = this.field4033;
             if (field4033 < 0 || field4033 >= method10931.size()) {
@@ -92,8 +92,8 @@ public class Class746 extends Class516<Class3423>
     
     private void method4062(final int n, final int n2, final Class9017 class9017) {
         this.minecraft.method5290().method5849(Class746.field4032);
-        final int method10922 = ((Class3423)this.field3077).method10922();
-        final int method10923 = ((Class3423)this.field3077).method10919();
+        final int method10922 = this.field3077.method10922();
+        final int method10923 = this.field3077.method10919();
         if (method10922 < 5) {
             AbstractGui.blit(n + 136, n2 + 16, this.getBlitOffset(), 0.0f, 186.0f, 102, 5, 256, 512);
             final int method10924 = Class8562.method28787(method10922);
@@ -102,7 +102,7 @@ public class Class746 extends Class516<Class3423>
                     final float n3 = (float)(100 / (Class8562.method28788(method10922) - method10924));
                     final int min = Math.min(MathHelper.method35642(n3 * (method10923 - method10924)), 100);
                     AbstractGui.blit(n + 136, n2 + 16, this.getBlitOffset(), 0.0f, 191.0f, min + 1, 5, 256, 512);
-                    final int method10925 = ((Class3423)this.field3077).method10920();
+                    final int method10925 = this.field3077.method10920();
                     if (method10925 > 0) {
                         AbstractGui.blit(n + 136 + min + 1, n2 + 16 + 1, this.getBlitOffset(), 2.0f, 182.0f, Math.min(MathHelper.method35642(method10925 * n3), 100 - min), 3, 256, 512);
                     }
@@ -129,7 +129,7 @@ public class Class746 extends Class516<Class3423>
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
         super.render(n, n2, n3);
-        final Class57 method10931 = ((Class3423)this.field3077).method10931();
+        final Class57 method10931 = this.field3077.method10931();
         if (!method10931.isEmpty()) {
             final int n4 = (this.width - this.field3075) / 2;
             final int n5 = (this.height - this.field3076) / 2;
@@ -165,13 +165,13 @@ public class Class746 extends Class516<Class3423>
                 }
             }
             final Class9017 class9018 = method10931.get(this.field4033);
-            if (((Class3423)this.field3077).method10932()) {
+            if (this.field3077.method10932()) {
                 this.method4062(n4, n5, class9018);
             }
             if (class9018.method32297()) {
                 if (this.method2987(186, 35, 22, 21, n, n2)) {
-                    if (((Class3423)this.field3077).method10925()) {
-                        this.renderTooltip(Class8822.method30773("merchant.deprecated", new Object[0]), n, n2);
+                    if (this.field3077.method10925()) {
+                        this.renderTooltip(Class8822.method30773("merchant.deprecated"), n, n2);
                     }
                 }
             }
@@ -179,7 +179,7 @@ public class Class746 extends Class516<Class3423>
                 if (class9019.method3360()) {
                     class9019.method3362(n, n2);
                 }
-                class9019.field3432 = (class9019.field3702 < ((Class3423)this.field3077).method10931().size());
+                class9019.field3432 = (class9019.field3702 < this.field3077.method10931().size());
             }
             RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
@@ -219,7 +219,7 @@ public class Class746 extends Class516<Class3423>
     
     @Override
     public boolean mouseScrolled(final double n, final double n2, final double n3) {
-        final int size = ((Class3423)this.field3077).method10931().size();
+        final int size = this.field3077.method10931().size();
         if (this.method4066(size)) {
             final int n4 = size - 7;
             this.field4035 -= (int)n3;
@@ -230,7 +230,7 @@ public class Class746 extends Class516<Class3423>
     
     @Override
     public boolean mouseDragged(final double n, final double n2, final int n3, final double n4, final double n5) {
-        final int size = ((Class3423)this.field3077).method10931().size();
+        final int size = this.field3077.method10931().size();
         if (!this.field4036) {
             return super.mouseDragged(n, n2, n3, n4, n5);
         }
@@ -246,7 +246,7 @@ public class Class746 extends Class516<Class3423>
         this.field4036 = false;
         final int n4 = (this.width - this.field3075) / 2;
         final int n5 = (this.height - this.field3076) / 2;
-        if (this.method4066(((Class3423)this.field3077).method10931().size())) {
+        if (this.method4066(this.field3077.method10931().size())) {
             if (n > n4 + 94) {
                 if (n < n4 + 94 + 6) {
                     if (n2 > n5 + 18) {

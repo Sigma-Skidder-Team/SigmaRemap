@@ -58,7 +58,7 @@ public class BlockUtils
     }
     
     public static int getMetadata(final BlockState class7096) {
-        return ((List)class7096.getBlock().getStateContainer().method32902()).indexOf(class7096);
+        return class7096.getBlock().getStateContainer().method32902().indexOf(class7096);
     }
     
     public static int method20652(final Block class3833) {
@@ -74,7 +74,7 @@ public class BlockUtils
     }
     
     public static List<BlockState> method20654(final Block class3833) {
-        return (List<BlockState>)class3833.getStateContainer().method32902();
+        return class3833.getStateContainer().method32902();
     }
     
     public static boolean method20655(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {

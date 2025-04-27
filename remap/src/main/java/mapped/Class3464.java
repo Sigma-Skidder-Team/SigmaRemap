@@ -20,9 +20,7 @@ public class Class3464 extends Class3446
     @Override
     public boolean method11013() {
         if (this.field16326.method1706() || this.field16326.method1723()) {
-            if (this.field16326.method4148() instanceof Class6567) {
-                return true;
-            }
+            return this.field16326.method4148() instanceof Class6567;
         }
         return false;
     }

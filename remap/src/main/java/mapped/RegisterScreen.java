@@ -21,13 +21,13 @@ public class RegisterScreen extends Class4800
     private boolean field21071;
     private float field21072;
     private float field21073;
-    private Texture field21074;
-    private Class4887 field21075;
-    private LoginScreen field21076;
+    private final Texture field21074;
+    private final Class4887 field21075;
+    private final LoginScreen field21076;
     private Class4907 field21077;
-    private UIButton field21078;
+    private final UIButton field21078;
     private boolean field21079;
-    private Animation field21080;
+    private final Animation field21080;
     
     public RegisterScreen() {
         super("Credits");

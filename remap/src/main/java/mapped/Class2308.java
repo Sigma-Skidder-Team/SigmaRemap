@@ -11,16 +11,16 @@ public class Class2308 implements Cloneable
 {
     private static String[] field13990;
     private HashMap<Integer, Class9501> field13991;
-    private short field13992;
-    private short field13993;
-    private String field13994;
-    private File field13995;
-    private String field13996;
-    private String field13997;
-    private float field13998;
+    private final short field13992;
+    private final short field13993;
+    private final String field13994;
+    private final File field13995;
+    private final String field13996;
+    private final String field13997;
+    private final float field13998;
     private float field13999;
-    private Class7117[] field14000;
-    private int field14001;
+    private final Class7117[] field14000;
+    private final int field14001;
     
     public Class2308(final Class2308 class2308) {
         this(class2308.method9382(), class2308.method9375(), class2308.method9376(), class2308.method9377(), class2308.method9378(), class2308.method9379(), class2308.method9381(), class2308.method9380(), class2308.method9385(), class2308.method9384());

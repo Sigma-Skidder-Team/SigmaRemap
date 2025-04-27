@@ -27,6 +27,6 @@ public class Class5964 extends Class5960 implements JsonSerializer<Class7268>, J
         final JsonObject jsonObject = new JsonObject();
         this.serialize(jsonObject, class7268, jsonSerializationContext);
         jsonObject.addProperty("keybind", class7268.method22264());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

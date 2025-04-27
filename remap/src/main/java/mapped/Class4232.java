@@ -17,7 +17,7 @@ public class Class4232 extends Class4211
     }
     
     public static Class4232 method12726() {
-        return new Class4232((Class8061)null);
+        return new Class4232(null);
     }
     
     public boolean method12727(final Class8061 class8061) {
@@ -30,6 +30,6 @@ public class Class4232 extends Class4211
         if (this.field19040 != null) {
             jsonObject.addProperty("potion", Registry.field212.getKey(this.field19040).toString());
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

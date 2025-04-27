@@ -57,7 +57,7 @@ public class Class7071
         this.field27537.getCursor();
         this.field27540 = Registry.field211.method506(ResourceLocation.method7799(this.field27537)).orElseThrow(() -> {
             this.field27537.setCursor(cursor);
-            return Class7071.field27535.createWithContext((ImmutableStringReader)this.field27537, (Object)class1932.toString());
+            return Class7071.field27535.createWithContext(this.field27537, (Object)class1932.toString());
         });
     }
     
@@ -117,9 +117,9 @@ public class Class7071
     }
     
     static {
-        field27534 = new SimpleCommandExceptionType((Message)new Class2259("argument.item.tag.disallowed", new Object[0]));
+        field27534 = new SimpleCommandExceptionType(new Class2259("argument.item.tag.disallowed", new Object[0]));
         field27535 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.item.id.invalid", new Object[] { o });
+            new Class2259("argument.item.id.invalid", o);
             return;
         });
         field27536 = SuggestionsBuilder::buildFuture;

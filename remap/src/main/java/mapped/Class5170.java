@@ -14,7 +14,7 @@ public class Class5170 implements Class5157<Class60, List>
         final ArrayList list = new ArrayList();
         final Iterator<Class61> iterator = class60.method365().iterator();
         while (iterator.hasNext()) {
-            list.add(Class7185.method22026((Class61)iterator.next()));
+            list.add(Class7185.method22026(iterator.next()));
         }
         return list;
     }

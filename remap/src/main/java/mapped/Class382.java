@@ -46,9 +46,7 @@ public class Class382 extends Class378
     public boolean method1263(final Random random, final int n, final int a, final int n2, final int a2, final int n3) {
         if (Math.abs(a) == n3) {
             if (Math.abs(a2) == n3) {
-                if (n3 > 0) {
-                    return true;
-                }
+                return n3 > 0;
             }
         }
         return false;

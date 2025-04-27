@@ -11,12 +11,12 @@ import java.util.concurrent.Future;
 
 public class Class6710
 {
-    private int field26437;
-    private int field26438;
-    private long field26439;
-    private long field26440;
-    private Class9267 field26441;
-    private Class9267 field26442;
+    private final int field26437;
+    private final int field26438;
+    private final long field26439;
+    private final long field26440;
+    private final Class9267 field26441;
+    private final Class9267 field26442;
     private boolean field26443;
     private boolean field26444;
     

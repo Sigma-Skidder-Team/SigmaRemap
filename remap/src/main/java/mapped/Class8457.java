@@ -24,6 +24,6 @@ public final class Class8457 extends ChannelInitializer<Channel>
             channel.config().setOption(ChannelOption.TCP_NODELAY, (Object)true);
         }
         catch (final ChannelException ex) {}
-        channel.pipeline().addLast("timeout", (ChannelHandler)new ReadTimeoutHandler(30)).addLast("splitter", (ChannelHandler)new Class8588()).addLast("decoder", (ChannelHandler)new Class6965(Class2060.field11780)).addLast("prepender", (ChannelHandler)new Class9340()).addLast("encoder", (ChannelHandler)new Class8386(Class2060.field11779)).addLast("packet_handler", (ChannelHandler)this.field34727);
+        channel.pipeline().addLast("timeout", new ReadTimeoutHandler(30)).addLast("splitter", new Class8588()).addLast("decoder", new Class6965(Class2060.field11780)).addLast("prepender", new Class9340()).addLast("encoder", new Class8386(Class2060.field11779)).addLast("packet_handler", this.field34727);
     }
 }

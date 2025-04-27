@@ -31,7 +31,7 @@ public class Class5885<T extends Entity> extends Class5846<T>
     
     @Override
     public Iterable<Class6300> method17570() {
-        return (Iterable<Class6300>)this.field24159;
+        return this.field24159;
     }
     
     @Override

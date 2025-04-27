@@ -17,7 +17,7 @@ public class Class691 extends Screen implements Class692
     private boolean field3814;
     
     public Class691(final Screen field3808, final Class7474 field3809) {
-        super(new Class2259("gui.stats", new Object[0]));
+        super(new Class2259("gui.stats"));
         this.field3814 = true;
         this.field3808 = field3808;
         this.field3812 = field3809;
@@ -36,10 +36,10 @@ public class Class691 extends Screen implements Class692
     }
     
     public void method3856() {
-        this.addButton(new Class654(this.width / 2 - 120, this.height - 52, 80, 20, Class8822.method30773("stat.generalButton", new Object[0]), class654 -> this.method3859(this.field3809)));
-        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 40, this.height - 52, 80, 20, Class8822.method30773("stat.itemsButton", new Object[0]), class654 -> this.method3859(this.field3810)));
-        final Class654 class655 = this.addButton(new Class654(this.width / 2 + 40, this.height - 52, 80, 20, Class8822.method30773("stat.mobsButton", new Object[0]), class654 -> this.method3859(this.field3811)));
-        this.addButton(new Class654(this.width / 2 - 100, this.height - 28, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3808)));
+        this.addButton(new Class654(this.width / 2 - 120, this.height - 52, 80, 20, Class8822.method30773("stat.generalButton"), class654 -> this.method3859(this.field3809)));
+        final Class654 class654 = this.addButton(new Class654(this.width / 2 - 40, this.height - 52, 80, 20, Class8822.method30773("stat.itemsButton"), class654 -> this.method3859(this.field3810)));
+        final Class654 class655 = this.addButton(new Class654(this.width / 2 + 40, this.height - 52, 80, 20, Class8822.method30773("stat.mobsButton"), class654 -> this.method3859(this.field3811)));
+        this.addButton(new Class654(this.width / 2 - 100, this.height - 28, 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3808)));
         if (this.field3810.children().isEmpty()) {
             class654.field3431 = false;
         }
@@ -57,7 +57,7 @@ public class Class691 extends Screen implements Class692
         }
         else {
             this.renderBackground();
-            this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingStats", new Object[0]), this.width / 2, this.height / 2, 16777215);
+            this.drawCenteredString(this.font, Class8822.method30773("multiplayer.downloadingStats"), this.width / 2, this.height / 2, 16777215);
             this.drawCenteredString(this.font, Class691.field3815[(int)(Util.method27837() / 150L % Class691.field3815.length)], this.width / 2, this.height / 2 + 18, 16777215);
         }
     }

@@ -81,7 +81,7 @@ public class Class3980 extends Block
     }
     
     static {
-        field17974 = new Class2259("container.stonecutter", new Object[0]);
+        field17974 = new Class2259("container.stonecutter");
         field17975 = Class3892.field17564;
         field17976 = Block.method11778(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
     }

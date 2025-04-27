@@ -24,7 +24,7 @@ public class Class3960 extends Class3841
     
     public Class3960(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3960.field17898, Direction.NORTH)).with(Class3960.field17899, Class178.field507));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3960.field17898, Direction.NORTH).with(Class3960.field17899, Class178.field507));
     }
     
     @Nullable
@@ -49,10 +49,10 @@ public class Class3960 extends Class3841
     
     @Override
     public void method11824(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        final BlockPos method1149 = class1852.method1149(class1853.get((IProperty<Direction>)Class3960.field17898).getOpposite());
+        final BlockPos method1149 = class1852.method1149(class1853.get(Class3960.field17898).getOpposite());
         final BlockState method1150 = class1851.getBlockState(method1149);
         if (method1150.getBlock() instanceof Class3836) {
-            if (method1150.get((IProperty<Boolean>)Class3836.field17438)) {
+            if (method1150.get(Class3836.field17438)) {
                 class1851.method6690(method1149, false);
             }
         }
@@ -107,12 +107,12 @@ public class Class3960 extends Class3841
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3960.field17898, class7097.method8142(class7096.get((IProperty<Direction>)Class3960.field17898)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3960.field17898, class7097.method8142(class7096.get(Class3960.field17898)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3960.field17898)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3960.field17898)));
     }
     
     @Override

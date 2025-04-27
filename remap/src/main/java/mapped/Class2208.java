@@ -9,10 +9,10 @@ import java.util.Map;
 
 public enum Class2208
 {
-    public static final enum Class2208 field13454;
-    public static final enum Class2208 field13455;
-    public static final enum Class2208 field13456;
-    public static final enum Class2208 field13457;
+    public final enum Class2208 field13454;
+    public final enum Class2208 field13455;
+    public final enum Class2208 field13456;
+    public final enum Class2208 field13457;
     private static final Class2208[] field13458;
     private static final Map<Class<? extends IPacket<?>>, Class2208> field13459;
     private final int field13460;
@@ -22,14 +22,14 @@ public enum Class2208
         return new Class7720(null);
     }
     
-    private Class2208(final int field13460, final Class7720 class7720) {
+    Class2208(final int field13460, final Class7720 class7720) {
         this.field13460 = field13460;
         this.field13461 = Class7720.method24651(class7720);
     }
     
     @Nullable
     public Integer method8387(final Class2060 class2060, final IPacket<?> class2061) {
-        return ((Class7719)this.field13461.get(class2060)).method24646(class2061.getClass());
+        return this.field13461.get(class2060).method24646(class2061.getClass());
     }
     
     @Nullable

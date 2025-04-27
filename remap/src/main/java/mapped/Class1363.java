@@ -42,7 +42,7 @@ public class Class1363 extends Class1361
     private void method5653() {
         final Iterator<Map.Entry<SocketAddress, Class1364>> iterator = this.field7488.entrySet().iterator();
         while (iterator.hasNext()) {
-            if (((Map.Entry<K, Class1364>)iterator.next()).getValue().method5631()) {
+            if (iterator.next().getValue().method5631()) {
                 continue;
             }
             iterator.remove();
@@ -104,7 +104,7 @@ public class Class1363 extends Class1361
         super.method5630();
         final Iterator<Map.Entry<SocketAddress, Class1364>> iterator = this.field7488.entrySet().iterator();
         while (iterator.hasNext()) {
-            ((Map.Entry<K, Class1364>)iterator.next()).getValue().method5630();
+            iterator.next().getValue().method5630();
         }
         this.method5639(this.field7486);
         this.method5652();

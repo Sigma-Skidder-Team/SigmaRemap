@@ -23,7 +23,7 @@ public class Class4286 implements IPacket<IClientPlayNetHandler>
         final List<Entity> method1908 = class399.method1908();
         this.field19225 = new int[method1908.size()];
         for (int i = 0; i < method1908.size(); ++i) {
-            this.field19225[i] = ((Entity)method1908.get(i)).getEntityId();
+            this.field19225[i] = method1908.get(i).getEntityId();
         }
     }
     

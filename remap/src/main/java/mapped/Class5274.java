@@ -17,7 +17,7 @@ public class Class5274 extends Class5260<Integer> implements Class5264<Integer>
     }
     
     public void method16392(final ByteBuf byteBuf, final Integer n) {
-        byteBuf.writeShort((int)n);
+        byteBuf.writeShort(n);
     }
     
     public Integer method16393(final Object o) {

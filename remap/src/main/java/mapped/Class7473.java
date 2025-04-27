@@ -50,10 +50,10 @@ public class Class7473 extends Class7474
                 this.method23077(field28866.method1564(), FileUtils.readFileToString(field28867));
             }
             catch (final IOException ex) {
-                Class7473.field28865.error("Couldn't read statistics file {}", (Object)field28867, (Object)ex);
+                Class7473.field28865.error("Couldn't read statistics file {}", field28867, ex);
             }
             catch (final JsonParseException ex2) {
-                Class7473.field28865.error("Couldn't parse statistics file {}", (Object)field28867, (Object)ex2);
+                Class7473.field28865.error("Couldn't parse statistics file {}", field28867, ex2);
             }
         }
     }
@@ -63,7 +63,7 @@ public class Class7473 extends Class7474
             FileUtils.writeStringToFile(this.field28867, this.method23080());
         }
         catch (final IOException ex) {
-            Class7473.field28865.error("Couldn't save stats", (Throwable)ex);
+            Class7473.field28865.error("Couldn't save stats", ex);
         }
     }
     
@@ -80,11 +80,11 @@ public class Class7473 extends Class7474
     }
     
     public void method23077(final DataFixer dataFixer, final String s) {
-        try (final JsonReader jsonReader = new JsonReader((Reader)new StringReader(s))) {
+        try (final JsonReader jsonReader = new JsonReader(new StringReader(s))) {
             jsonReader.setLenient(false);
             final JsonElement parse = Streams.parse(jsonReader);
             if (parse.isJsonNull()) {
-                Class7473.field28865.error("Unable to parse Stat data from {}", (Object)this.field28867);
+                Class7473.field28865.error("Unable to parse Stat data from {}", this.field28867);
                 return;
             }
             final CompoundNBT method23079 = method23079(parse.getAsJsonObject());
@@ -104,20 +104,19 @@ public class Class7473 extends Class7474
                             while (iterator2.hasNext()) {
                                 final String s4 = iterator2.next();
                                 if (!class53.contains(s4, 99)) {
-                                    Class7473.field28865.warn("Invalid statistic value in {}: Don't know what {} is for key {}", (Object)this.field28867, (Object)class53.get(s4), (Object)s4);
+                                    Class7473.field28865.warn("Invalid statistic value in {}: Don't know what {} is for key {}", this.field28867, class53.get(s4), s4);
                                 }
                                 else {
-                                    Util.method27855(this.method23078((Class2248<Object>)class52, s4), class55 -> this.field28871.put((Object)class55, class54.method319(s5)), () -> Class7473.field28865.warn("Invalid statistic in {}: Don't know what {} is", (Object)this.field28867, (Object)s6));
+                                    Util.method27855(this.method23078((Class2248<Object>)class52, s4), class55 -> this.field28871.put((Object)class55, class54.method319(s5)), () -> Class7473.field28865.warn("Invalid statistic in {}: Don't know what {} is", this.field28867, (Object)s6));
                                 }
                             }
-                            return;
-                        }, () -> Class7473.field28865.warn("Invalid statistic type in {}: Don't know what {} is", (Object)this.field28867, (Object)s7));
+                        }, () -> Class7473.field28865.warn("Invalid statistic type in {}: Don't know what {} is", this.field28867, (Object)s7));
                     }
                 }
             }
         }
         catch (final IOException | JsonParseException ex) {
-            Class7473.field28865.error("Unable to parse Stat data from {}", (Object)this.field28867, (Object)ex);
+            Class7473.field28865.error("Unable to parse Stat data from {}", this.field28867, ex);
         }
     }
     
@@ -157,8 +156,8 @@ public class Class7473 extends Class7474
             jsonObject.add(Registry.field238.getKey(entry.getKey()).toString(), (JsonElement)entry.getValue());
         }
         final JsonObject jsonObject2 = new JsonObject();
-        jsonObject2.add("stats", (JsonElement)jsonObject);
-        jsonObject2.addProperty("DataVersion", (Number)Class9528.method35579().getWorldVersion());
+        jsonObject2.add("stats", jsonObject);
+        jsonObject2.addProperty("DataVersion", Class9528.method35579().getWorldVersion());
         return jsonObject2.toString();
     }
     
@@ -167,7 +166,7 @@ public class Class7473 extends Class7474
     }
     
     public void method23082() {
-        this.field28868.addAll((Collection<? extends Class9455<?>>)this.field28871.keySet());
+        this.field28868.addAll(this.field28871.keySet());
     }
     
     public void method23083(final Class513 class513) {
@@ -176,7 +175,7 @@ public class Class7473 extends Class7474
         if (method1545 - this.field28869 > 300) {
             this.field28869 = method1545;
             for (final Class9455 class514 : this.method23076()) {
-                ((Object2IntMap)object2IntOpenHashMap).put((Object)class514, this.method23091(class514));
+                object2IntOpenHashMap.put(class514, this.method23091(class514));
             }
         }
         class513.field3039.method17469(new Class4279((Object2IntMap<Class9455<?>>)object2IntOpenHashMap));

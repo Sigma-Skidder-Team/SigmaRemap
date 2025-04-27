@@ -7,10 +7,10 @@ package mapped;
 public class Class7856
 {
     private static String[] field32278;
-    private String field32279;
-    private boolean field32280;
-    private Class6300 field32281;
-    private Class8473 field32282;
+    private final String field32279;
+    private final boolean field32280;
+    private final Class6300 field32281;
+    private final Class8473 field32282;
     
     public Class7856(final String field32279, final boolean field32280, final Class6300 field32281, final Class8473 field32282) {
         this.field32279 = field32279;

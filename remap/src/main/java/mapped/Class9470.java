@@ -46,7 +46,7 @@ public class Class9470
     }
     
     private Stream<Class6556> method35237() {
-        return this.field40726.entrySet().stream().flatMap(entry -> entry.getValue().method29064((UUID)entry.getKey()));
+        return this.field40726.entrySet().stream().flatMap(entry -> entry.getValue().method29064(entry.getKey()));
     }
     
     private Collection<Class6556> method35238(final Random random, final int n) {
@@ -65,7 +65,7 @@ public class Class9470
             }
             return identityHashSet;
         }
-        return (Collection<Class6556>)Collections.emptyList();
+        return Collections.emptyList();
     }
     
     private Class8585 method35239(final UUID key) {
@@ -96,7 +96,7 @@ public class Class9470
     }
     
     public <T> Dynamic<T> method35243(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createList((Stream)this.method35237().map(class6556 -> class6556.method19872((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2)).map((Function<? super Object, ?>)Dynamic::getValue)));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createList((Stream)this.method35237().map(class6556 -> class6556.method19872(dynamicOps2)).map((Function<? super Object, ?>)Dynamic::getValue)));
     }
     
     public void method35244(final Dynamic<?> dynamic) {

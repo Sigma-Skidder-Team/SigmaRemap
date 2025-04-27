@@ -10,7 +10,7 @@ import totalcross.json.JSONObject;
 import totalcross.json.CJsonUtils;
 
 public class NumberSetting<T extends Number> extends Setting<Float> {
-    private Class<? extends T> field21506;
+    private final Class<? extends T> field21506;
     private float field21507;
     private float field21508;
     private float field21509;

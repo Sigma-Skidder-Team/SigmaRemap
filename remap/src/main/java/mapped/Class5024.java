@@ -15,7 +15,7 @@ public class Class5024
     public final Int2IntMap field21533;
     
     public Class5024() {
-        this.field21533 = (Int2IntMap)new Int2IntOpenHashMap();
+        this.field21533 = new Int2IntOpenHashMap();
     }
     
     public void method15242(final ItemStack class8321) {

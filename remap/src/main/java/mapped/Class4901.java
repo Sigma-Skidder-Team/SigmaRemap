@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Class4901 extends Class4841
 {
-    private List<Class4868> field20957;
+    private final List<Class4868> field20957;
     public int field20958;
     public Class4847 field20959;
     public ChunkPos field20960;

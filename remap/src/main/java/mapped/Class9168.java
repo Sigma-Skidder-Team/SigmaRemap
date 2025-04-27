@@ -40,7 +40,7 @@ public class Class9168
         this.field38840 = Lists.newArrayList();
         Collections.reverse(this.field38841 = (List<Class6313>)list.stream().map(class7640 -> Objects.equals(function3.apply(class7640.method19882()), b) ? null : class7639.method24021(class7640.method19882(), Class2122.field12371, function4)).collect(Collectors.toList()));
         for (int i = list.size() - 1; i >= 0; --i) {
-            this.field38840.add((Class6559)list.get(i));
+            this.field38840.add(list.get(i));
         }
         if (this.field38840.size() > 65) {
             this.field38842 = Class7974.method25917(this.field38840);

@@ -25,7 +25,7 @@ public enum Class286
     private static final Map<String, Class286> field1588;
     private final String field1589;
     
-    private Class286(final String field1589) {
+    Class286(final String field1589) {
         this.field1589 = field1589;
     }
     
@@ -34,6 +34,6 @@ public enum Class286
     }
     
     static {
-        field1588 = Arrays.stream(values()).collect(Collectors.toMap((Function<? super Class286, ? extends String>)Class286::method935, (Function<? super Class286, ? extends Class286>)Function.identity()));
+        field1588 = Arrays.stream(values()).collect(Collectors.toMap((Function<? super Class286, ? extends String>)Class286::method935, Function.identity()));
     }
 }

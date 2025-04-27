@@ -56,10 +56,10 @@ public abstract class Class4703<T extends Entity>
         if (Class9570.field41417.method22619()) {
             final Object method35842 = Class9570.method35842(Class9570.field41417, t, t.getDisplayName().getFormattedText(), this, class7351, class7352, i);
             Class9570.method35841(method35842);
-            final Object method35843 = Class9570.method35826(method35842, Class9570.field41226, new Object[0]);
+            final Object method35843 = Class9570.method35826(method35842, Class9570.field41226);
             if (method35843 != Class7667.field30453) {
                 if (method35843 == Class7667.field30452 || this.method13956(t)) {
-                    this.method13958(t, Class9570.method35825(method35842, Class9570.field41418, new Object[0]), class7351, class7352, i);
+                    this.method13958(t, Class9570.method35825(method35842, Class9570.field41418), class7351, class7352, i);
                 }
             }
         }
@@ -104,7 +104,7 @@ public abstract class Class4703<T extends Entity>
     }
     
     public Class8651<EntityType, Class5412> method13960() {
-        return (Class8651<EntityType, Class5412>)((this.field20286 != null) ? Class8651.method29438(this.field20286) : null);
+        return (this.field20286 != null) ? Class8651.method29438(this.field20286) : null;
     }
     
     public void method13961(final Class8651<EntityType, Class5412> class8651) {

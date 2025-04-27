@@ -27,12 +27,12 @@ public class Class3855 extends Class3854
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return class7096.get((IProperty<Boolean>)Class3855.field17474) ? this.field17475[this.method11916(class7096)] : super.method11808(class7096, class7097, class7098, class7099);
+        return class7096.get(Class3855.field17474) ? this.field17475[this.method11916(class7096)] : super.method11808(class7096, class7097, class7098, class7099);
     }
     
     @Override
     public VoxelShape method11809(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        return class7096.get((IProperty<Boolean>)Class3855.field17474) ? this.field17476[this.method11916(class7096)] : super.method11809(class7096, class7097, class7098, class7099);
+        return class7096.get(Class3855.field17474) ? this.field17476[this.method11916(class7096)] : super.method11809(class7096, class7097, class7098, class7099);
     }
     
     @Override
@@ -91,15 +91,15 @@ public class Class3855 extends Class3854
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3855.field17469)) {
+        if (class7096.get(Class3855.field17469)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         if (class7097 != Direction.DOWN) {
             final Direction method782 = class7097.getOpposite();
-            final boolean b = (class7097 != Direction.NORTH) ? class7096.get((IProperty<Boolean>)Class3855.field17465) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
-            final boolean b2 = (class7097 != Direction.EAST) ? class7096.get((IProperty<Boolean>)Class3855.field17466) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
-            final boolean b3 = (class7097 != Direction.SOUTH) ? class7096.get((IProperty<Boolean>)Class3855.field17467) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
-            final boolean b4 = (class7097 != Direction.WEST) ? class7096.get((IProperty<Boolean>)Class3855.field17468) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
+            final boolean b = (class7097 != Direction.NORTH) ? class7096.get(Class3855.field17465) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
+            final boolean b2 = (class7097 != Direction.EAST) ? class7096.get(Class3855.field17466) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
+            final boolean b3 = (class7097 != Direction.SOUTH) ? class7096.get(Class3855.field17467) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
+            final boolean b4 = (class7097 != Direction.WEST) ? class7096.get(Class3855.field17468) : this.method11919(class7098, class7098.isSolidSide(class7099, class7101, method782), method782);
             Label_0283: {
                 if (b) {
                     if (!b2) {

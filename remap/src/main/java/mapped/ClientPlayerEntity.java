@@ -525,9 +525,7 @@ public class ClientPlayerEntity extends Class754
         final Entity method1920 = this.method1920();
         if (this.isPassenger()) {
             if (method1920 instanceof Class810) {
-                if (((Class810)method1920).method4759()) {
-                    return true;
-                }
+                return ((Class810) method1920).method4759();
             }
         }
         return false;
@@ -1028,9 +1026,7 @@ public class ClientPlayerEntity extends Class754
                     if (!this.method2806()) {
                         if (!this.isPassenger()) {
                             if (this.method4138()) {
-                                if (this.method1673() >= 1.0) {
-                                    return true;
-                                }
+                                return this.method1673() >= 1.0;
                             }
                         }
                     }

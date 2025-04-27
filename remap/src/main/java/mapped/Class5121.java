@@ -24,7 +24,7 @@ public class Class5121 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22070.stream().map(class8530 -> class8530.method28612(dynamicOps2).getValue())), dynamicOps.createString("count"), dynamicOps.createInt(this.field22071))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22070.stream().map(class8530 -> class8530.method28612(dynamicOps2).getValue())), dynamicOps.createString("count"), dynamicOps.createInt(this.field22071))));
     }
     
     public static <T> Class5121 method16025(final Dynamic<T> dynamic) {

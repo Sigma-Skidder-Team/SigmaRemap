@@ -33,7 +33,7 @@ public class Class8921
             }
         }
         catch (final Exception ex) {
-            System.err.println("error while decoding: " + ex.toString());
+            System.err.println("error while decoding: " + ex);
         }
     }
     

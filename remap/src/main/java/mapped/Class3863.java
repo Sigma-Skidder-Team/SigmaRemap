@@ -81,12 +81,12 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3863.field17491, class7097.method8142(class7096.get((IProperty<Direction>)Class3863.field17491)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3863.field17491, class7097.method8142(class7096.get(Class3863.field17491)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3863.field17491)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3863.field17491)));
     }
     
     @Override
@@ -96,12 +96,12 @@ public class Class3863 extends Class3864<Class477> implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3863.field17492) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3863.field17492) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3863.field17492)) {
+        if (class7096.get(Class3863.field17492)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
@@ -116,6 +116,6 @@ public class Class3863 extends Class3864<Class477> implements Class3856
         field17491 = Class3892.field17564;
         field17492 = Class8970.field37747;
         field17493 = Block.method11778(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
-        field17494 = new Class2259("container.enderchest", new Object[0]);
+        field17494 = new Class2259("container.enderchest");
     }
 }

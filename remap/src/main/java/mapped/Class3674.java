@@ -59,7 +59,7 @@ public class Class3674 extends Class3666
                     if (Class3674.field16961.test(method27660)) {
                         final CompoundNBT method27661 = method27660.method27660("Explosion");
                         if (method27661 != null) {
-                            ((AbstractList<CompoundNBT>)class475).add(method27661);
+                            class475.add(method27661);
                         }
                     }
                 }

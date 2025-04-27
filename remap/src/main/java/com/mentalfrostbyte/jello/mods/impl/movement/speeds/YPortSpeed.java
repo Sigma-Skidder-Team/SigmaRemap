@@ -22,7 +22,7 @@ public class YPortSpeed extends Module
     
     public YPortSpeed() {
         super(Category.MOVEMENT, "YPort", "YPort speed");
-        this.addSetting(new StringSetting("Mode", "YPort mode", 0, new String[] { "NCP", "OldNCP" }));
+        this.addSetting(new StringSetting("Mode", "YPort mode", 0, "NCP", "OldNCP"));
         this.addSetting(new BooleanSetting("OnGround", "See yourself on ground", true));
     }
     

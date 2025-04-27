@@ -65,9 +65,9 @@ public class Class8744
                 jsonObject.addProperty("tag", this.field36725.method25621().toString());
             }
             jsonObject.add("state", this.field36727.method34693());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

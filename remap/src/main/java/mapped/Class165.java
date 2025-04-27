@@ -22,9 +22,7 @@ public class Class165 implements Predicate<Entity>
     public boolean apply(final Entity class399) {
         if (class399 != null) {
             if (class399 instanceof Class858) {
-                if (class399.method1732(AutoCrystal.method10665().field4684) <= this.field479) {
-                    return true;
-                }
+                return class399.method1732(AutoCrystal.method10665().field4684) <= this.field479;
             }
         }
         return false;

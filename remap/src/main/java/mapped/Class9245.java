@@ -24,7 +24,7 @@ public class Class9245
 {
     private static final String[] field39652;
     private static final String[] field39653;
-    private Map<Class7017<?>, Object> field39654;
+    private final Map<Class7017<?>, Object> field39654;
     
     public Class9245() {
         this.field39654 = new HashMap<Class7017<?>, Object>();
@@ -458,7 +458,7 @@ public class Class9245
     }
     
     public Map<Class7017<?>, Object> method34094() {
-        return Collections.unmodifiableMap((Map<? extends Class7017<?>, ?>)this.field39654);
+        return Collections.unmodifiableMap(this.field39654);
     }
     
     static {

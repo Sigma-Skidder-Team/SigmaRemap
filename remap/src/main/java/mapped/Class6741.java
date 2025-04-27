@@ -132,10 +132,10 @@ public class Class6741
         if (str == null) {
             return b;
         }
-        if (str.toLowerCase().equals("true")) {
+        if (str.equalsIgnoreCase("true")) {
             return true;
         }
-        if (!str.toLowerCase().equals("false")) {
+        if (!str.equalsIgnoreCase("false")) {
             Config.warn("Unknown boolean: " + str);
             return b;
         }
@@ -342,10 +342,8 @@ public class Class6741
         if (!this.method20526(n, this.field26506, this.field26503)) {
             if (this.field26511 != null) {
                 long n2;
-                for (n2 = field26521.method6755() - this.field26503; n2 < 0L; n2 += 24000 * this.field26512) {}
-                if (!this.field26511.method24697((int)(n2 / 24000L) % this.field26512)) {
-                    return false;
-                }
+                for (n2 = field26521.method6755() - this.field26503; n2 < 0L; n2 += 24000L * this.field26512) {}
+                return this.field26511.method24697((int) (n2 / 24000L) % this.field26512);
             }
             return true;
         }
@@ -361,7 +359,7 @@ public class Class6741
     
     @Override
     public String toString() {
-        return "" + this.field26502 + ", " + this.field26503 + "-" + this.field26504 + " " + this.field26505 + "-" + this.field26506;
+        return this.field26502 + ", " + this.field26503 + "-" + this.field26504 + " " + this.field26505 + "-" + this.field26506;
     }
     
     static {

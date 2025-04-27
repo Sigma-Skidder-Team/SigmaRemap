@@ -139,7 +139,6 @@ public class Class3678 extends Class3666
             hashMap.put(Items.field31525, Class2141.field12608);
             hashMap.put(Items.field31528, Class2141.field12608);
             hashMap.put(Items.field31526, Class2141.field12608);
-            return;
         });
         field16968 = Ingredient.method618(Items.field31308);
     }

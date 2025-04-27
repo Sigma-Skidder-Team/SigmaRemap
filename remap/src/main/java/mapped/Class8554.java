@@ -7,8 +7,8 @@ package mapped;
 public class Class8554<A, B>
 {
     private static String[] field35929;
-    private A field35930;
-    private B field35931;
+    private final A field35930;
+    private final B field35931;
     
     public Class8554(final A field35930, final B field35931) {
         this.field35930 = field35930;

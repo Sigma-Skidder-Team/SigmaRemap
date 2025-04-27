@@ -30,9 +30,7 @@ public class Class3527 extends Class3446
                     }
                 }
             }
-            if (this.field16542.method4148() instanceof Class6567) {
-                return true;
-            }
+            return this.field16542.method4148() instanceof Class6567;
         }
         return false;
     }

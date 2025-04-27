@@ -19,7 +19,7 @@ public class Class5444 extends Class5419<Class759>
     private int field22665;
     
     public Class5444(final int n) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33813, (Object)Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10628), n);
+        super((Map)ImmutableMap.of(Class8233.field33813, Class1952.field10629, (Object)Class8233.field33809, (Object)Class1952.field10628), n);
     }
     
     public boolean method16590(final Class1849 class1849, final Class759 class1850) {
@@ -38,9 +38,7 @@ public class Class5444 extends Class5419<Class759>
             final Optional<Class6949> method1198 = class1850.method2618().method1198(Class8233.field33809);
             if (!class1850.method4150().method24731()) {
                 if (method1198.isPresent()) {
-                    if (!this.method16630(class1850, method1198.get())) {
-                        return true;
-                    }
+                    return !this.method16630(class1850, method1198.get());
                 }
             }
             return false;

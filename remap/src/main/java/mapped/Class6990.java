@@ -29,7 +29,7 @@ public class Class6990 implements Class6988, Class6991
     
     @Override
     public ITextComponent method21401() {
-        return new Class2259("spectatorMenu.team_teleport.prompt", new Object[0]);
+        return new Class2259("spectatorMenu.team_teleport.prompt");
     }
     
     @Override
@@ -39,7 +39,7 @@ public class Class6990 implements Class6988, Class6991
     
     @Override
     public ITextComponent method21403() {
-        return new Class2259("spectatorMenu.team_teleport", new Object[0]);
+        return new Class2259("spectatorMenu.team_teleport");
     }
     
     @Override

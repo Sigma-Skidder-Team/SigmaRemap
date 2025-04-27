@@ -123,7 +123,7 @@ public class Class6953<T> implements Class6952<T>
         if (!b2) {
             list = this.method21349(list, this.field27226, class6997, b);
         }
-        return (List<Class7460<T>>)((list != null) ? list : Collections.emptyList());
+        return (list != null) ? list : Collections.emptyList();
     }
     
     @Nullable
@@ -178,7 +178,7 @@ public class Class6953<T> implements Class6952<T>
             e.putInt("z", class53.field28774.getZ());
             e.putInt("t", (int)(class53.field28775 - n));
             e.putInt("p", class53.field28776.method7941());
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }

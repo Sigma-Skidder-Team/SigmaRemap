@@ -58,7 +58,7 @@ public class Class8619
     private List<Class858> field36180;
     
     public Class8619(final Class1849 field36166, final CompoundNBT class51) {
-        this.field36165 = (Class6879)new Class6879(new Class2259("entity.minecraft.ender_dragon", new Object[0]), Class2200.field13390, Class342.field2105).method21068(true).method21069(true);
+        this.field36165 = (Class6879)new Class6879(new Class2259("entity.minecraft.ender_dragon"), Class2200.field13390, Class342.field2105).method21068(true).method21069(true);
         this.field36167 = Lists.newArrayList();
         this.field36176 = true;
         this.field36166 = field36166;
@@ -80,7 +80,7 @@ public class Class8619
             }
         }
         if (!class51.contains("Gateways", 9)) {
-            this.field36167.addAll((Collection<? extends Integer>)ContiguousSet.create(Range.closedOpen((Comparable)0, (Comparable)20), DiscreteDomain.integers()));
+            this.field36167.addAll((Collection<? extends Integer>)ContiguousSet.create(Range.closedOpen(0, (Comparable)20), DiscreteDomain.integers()));
             Collections.shuffle(this.field36167, new Random(field36166.method6753()));
         }
         else {
@@ -105,7 +105,7 @@ public class Class8619
         final ListNBT class52 = new ListNBT();
         final Iterator<Integer> iterator = this.field36167.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<IntNBT>)class52).add(IntNBT.valueOf(iterator.next()));
+            class52.add(IntNBT.valueOf(iterator.next()));
         }
         class51.put("Gateways", class52);
         return class51;
@@ -173,7 +173,7 @@ public class Class8619
         if (!method29240.isEmpty()) {
             final Class852 class852 = method29240.get(0);
             this.field36175 = class852.method1865();
-            Class8619.field36163.info("Found that there's a dragon still alive ({})", (Object)class852);
+            Class8619.field36163.info("Found that there's a dragon still alive ({})", class852);
             this.field36173 = false;
             if (!method29239) {
                 Class8619.field36163.info("But we didn't have a portal, let's remove it.");
@@ -195,7 +195,7 @@ public class Class8619
         final List<Class852> method6882 = this.field36166.method6882();
         if (!method6882.isEmpty()) {
             Class8619.field36163.debug("Haven't seen our dragon, but found another one to use.");
-            this.field36175 = ((Class852)method6882.get(0)).method1865();
+            this.field36175 = method6882.get(0).method1865();
         }
         else {
             Class8619.field36163.debug("Haven't seen the dragon, respawning it");
@@ -310,7 +310,7 @@ public class Class8619
         while (iterator.hasNext()) {
             this.field36170 += this.field36166.method7128((Class<? extends Entity>)Class858.class, iterator.next().method34624()).size();
         }
-        Class8619.field36163.debug("Found {} end crystals still alive", (Object)this.field36170);
+        Class8619.field36163.debug("Found {} end crystals still alive", this.field36170);
     }
     
     public void method29244(final Class852 class852) {
@@ -336,7 +336,7 @@ public class Class8619
     
     private void method29246(final BlockPos class354) {
         this.field36166.method6955(3000, class354, 0);
-        Class4535.field20006.method13527(Class5116.method16015()).method28613(this.field36166, (Class6346<? extends Class7065>)this.field36166.method6904().method7438(), new Random(), class354);
+        Class4535.field20006.method13527(Class5116.method16015()).method28613(this.field36166, this.field36166.method6904().method7438(), new Random(), class354);
     }
     
     private void method29247(final boolean b) {
@@ -350,7 +350,7 @@ public class Class8619
                 this.field36177 = this.field36177.method1139();
             }
         }
-        class4551.method13527(Class5113.field22059).method28613(this.field36166, (Class6346<? extends Class7065>)this.field36166.method6904().method7438(), new Random(), this.field36177);
+        class4551.method13527(Class5113.field22059).method28613(this.field36166, this.field36166.method6904().method7438(), new Random(), this.field36177);
     }
     
     private Class852 method29248() {
@@ -417,7 +417,7 @@ public class Class8619
                 final BlockPos method1138 = class354.method1138(1);
                 final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
                 while (iterator.hasNext()) {
-                    final List<Entity> method1139 = this.field36166.method7128((Class<? extends Entity>)Class858.class, new AxisAlignedBB(method1138.method1150(iterator.next(), 2)));
+                    final List<Entity> method1139 = this.field36166.method7128(Class858.class, new AxisAlignedBB(method1138.method1150(iterator.next(), 2)));
                     if (method1139.isEmpty()) {
                         return;
                     }

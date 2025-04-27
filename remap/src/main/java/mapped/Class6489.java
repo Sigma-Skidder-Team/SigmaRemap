@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Class6489 implements Class6477
 {
-    private Map<String, Integer> field25846;
+    private final Map<String, Integer> field25846;
     
     public Class6489() {
         this.field25846 = new ConcurrentHashMap<String, Integer>();

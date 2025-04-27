@@ -53,12 +53,12 @@ public abstract class Class3693<T> implements Class3689
                 final JsonElement jsonElement;
                 Class3693.field17009.toJson(jsonElement);
                 final String str;
-                Class3693.field16998.hashUnencodedChars((CharSequence)str).toString();
+                Class3693.field16998.hashUnencodedChars(str).toString();
                 final Path path;
                 final String b;
-                if (!Objects.equals(class8845.method30884(path), b) || !Files.exists(path, new LinkOption[0])) {
-                    Files.createDirectories(path.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-                    Files.newBufferedWriter(path, new OpenOption[0]);
+                if (!Objects.equals(class8845.method30884(path), b) || !Files.exists(path)) {
+                    Files.createDirectories(path.getParent(), new FileAttribute[0]);
+                    Files.newBufferedWriter(path);
                     try {
                         final BufferedWriter bufferedWriter;
                         bufferedWriter.write(str);
@@ -88,9 +88,8 @@ public abstract class Class3693<T> implements Class3689
             }
             catch (final IOException ex) {
                 final Path path;
-                Class3693.field17008.error("Couldn't save tags to {}", (Object)path, (Object)ex);
+                Class3693.field17008.error("Couldn't save tags to {}", path, ex);
             }
-            return;
         });
         this.method11366(class8843);
     }

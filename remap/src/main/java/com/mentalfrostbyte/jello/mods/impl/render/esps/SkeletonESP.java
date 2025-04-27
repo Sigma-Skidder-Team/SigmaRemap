@@ -30,7 +30,6 @@ public class SkeletonESP extends Module
     @EventListener
     public void method10560(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
@@ -53,7 +52,7 @@ public class SkeletonESP extends Module
                             final float n2 = class5740.method1809() ? 0.6f : 0.75f;
                             GL11.glPushMatrix();
                             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-                            GL11.glTranslated(-0.125, (double)n2, 0.0);
+                            GL11.glTranslated(-0.125, n2, 0.0);
                             if (array[3][0] != 0.0f) {
                                 GL11.glRotatef(array[3][0] * 57.295776f, 1.0f, 0.0f, 0.0f);
                             }
@@ -65,12 +64,12 @@ public class SkeletonESP extends Module
                             }
                             GL11.glBegin(3);
                             GL11.glVertex3d(0.0, 0.0, 0.0);
-                            GL11.glVertex3d(0.0, (double)(-n2), 0.0);
+                            GL11.glVertex3d(0.0, -n2, 0.0);
                             GL11.glEnd();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-                            GL11.glTranslated(0.125, (double)n2, 0.0);
+                            GL11.glTranslated(0.125, n2, 0.0);
                             if (array[4][0] != 0.0f) {
                                 GL11.glRotatef(array[4][0] * 57.295776f, 1.0f, 0.0f, 0.0f);
                             }
@@ -82,7 +81,7 @@ public class SkeletonESP extends Module
                             }
                             GL11.glBegin(3);
                             GL11.glVertex3d(0.0, 0.0, 0.0);
-                            GL11.glVertex3d(0.0, (double)(-n2), 0.0);
+                            GL11.glVertex3d(0.0, -n2, 0.0);
                             GL11.glEnd();
                             GL11.glPopMatrix();
                             GL11.glTranslated(0.0, 0.0, class5740.method1809() ? 0.25 : 0.0);
@@ -138,7 +137,7 @@ public class SkeletonESP extends Module
                             GL11.glRotatef(class5740.method1809() ? 25.0f : 0.0f, 1.0f, 0.0f, 0.0f);
                             GL11.glTranslated(0.0, class5740.method1809() ? -0.16175 : 0.0, class5740.method1809() ? -0.48025 : 0.0);
                             GL11.glPushMatrix();
-                            GL11.glTranslated(0.0, (double)n2, 0.0);
+                            GL11.glTranslated(0.0, n2, 0.0);
                             GL11.glBegin(3);
                             GL11.glVertex3d(-0.125, 0.0, 0.0);
                             GL11.glVertex3d(0.125, 0.0, 0.0);
@@ -146,7 +145,7 @@ public class SkeletonESP extends Module
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
                             GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-                            GL11.glTranslated(0.0, (double)n2, 0.0);
+                            GL11.glTranslated(0.0, n2, 0.0);
                             GL11.glBegin(3);
                             GL11.glVertex3d(0.0, 0.0, 0.0);
                             GL11.glVertex3d(0.0, 0.55, 0.0);

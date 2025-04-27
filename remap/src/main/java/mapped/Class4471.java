@@ -227,10 +227,10 @@ public class Class4471 extends Class4469
             }
         }
         for (int n3 = 0; n3 < 5; ++n3) {
-            this.method13416(class1851, class1853, -1 - n3, 0 + n3 * 2, -1 - n3, -1 - n3, 23, 58 + n3);
-            this.method13416(class1851, class1853, 58 + n3, 0 + n3 * 2, -1 - n3, 58 + n3, 23, 58 + n3);
-            this.method13416(class1851, class1853, 0 - n3, 0 + n3 * 2, -1 - n3, 57 + n3, 23, -1 - n3);
-            this.method13416(class1851, class1853, 0 - n3, 0 + n3 * 2, 58 + n3, 57 + n3, 23, 58 + n3);
+            this.method13416(class1851, class1853, -1 - n3, n3 * 2, -1 - n3, -1 - n3, 23, 58 + n3);
+            this.method13416(class1851, class1853, 58 + n3, n3 * 2, -1 - n3, 58 + n3, 23, 58 + n3);
+            this.method13416(class1851, class1853, -n3, n3 * 2, -1 - n3, 57 + n3, 23, -1 - n3);
+            this.method13416(class1851, class1853, -n3, n3 * 2, 58 + n3, 57 + n3, 23, 58 + n3);
         }
         for (final Class4469 class1855 : this.field19846) {
             if (!class1855.method13432().intersectsWith(class1853)) {
@@ -243,8 +243,8 @@ public class Class4471 extends Class4469
     
     private void method13423(final boolean b, final int n, final Class1851 class1851, final Random random, final MutableBoundingBox class1852) {
         if (this.method13419(class1852, n, 0, n + 23, 20)) {
-            this.method13444(class1851, class1852, n + 0, 0, 0, n + 24, 0, 20, Class4471.field19829, Class4471.field19829, false);
-            this.method13416(class1851, class1852, n + 0, 1, 0, n + 24, 10, 20);
+            this.method13444(class1851, class1852, n, 0, 0, n + 24, 0, 20, Class4471.field19829, Class4471.field19829, false);
+            this.method13416(class1851, class1852, n, 1, 0, n + 24, 10, 20);
             for (int i = 0; i < 4; ++i) {
                 this.method13444(class1851, class1852, n + i, i + 1, i, n + i, i + 1, 20, Class4471.field19830, Class4471.field19830, false);
                 this.method13444(class1851, class1852, n + i + 7, i + 5, i + 7, n + i + 7, i + 5, 20, Class4471.field19830, Class4471.field19830, false);

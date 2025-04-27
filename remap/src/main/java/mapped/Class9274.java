@@ -21,9 +21,7 @@ public class Class9274
     public static boolean method34208(final char c) {
         if (c != '§') {
             if (c >= ' ') {
-                if (c != '\u007f') {
-                    return true;
-                }
+                return c != '\u007f';
             }
         }
         return false;
@@ -75,7 +73,7 @@ public class Class9274
     
     public static String method34214(final String s, final String str, final int n) {
         try {
-            return s.substring(0, n) + str + s.substring(n, s.length());
+            return s.substring(0, n) + str + s.substring(n);
         }
         catch (final Exception ex) {
             return s;
@@ -85,7 +83,7 @@ public class Class9274
     public static String method34215(final String s, final String str, int min, int min2) {
         min = Math.min(Math.max(0, min), s.length());
         min2 = Math.min(Math.max(0, min2), s.length());
-        return s.substring(0, (min <= min2) ? min : min2) + str + s.substring((min <= min2) ? min2 : min, s.length());
+        return s.substring(0, (min <= min2) ? min : min2) + str + s.substring((min <= min2) ? min2 : min);
     }
     
     public static int method34216(final String s, final TrueTypeFont class7524, final float n, final int n2, final float n3) {

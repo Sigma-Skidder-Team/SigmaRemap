@@ -33,11 +33,11 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
     /**
      * The last colour applied
      */
-    private float[] color = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
+    private final float[] color = new float[]{1.0F, 1.0F, 1.0F, 1.0F};
     /**
      * The last texture applied
      */
-    private float[] tex = new float[]{0.0F, 0.0F};
+    private final float[] tex = new float[]{0.0F, 0.0F};
     /**
      * The index of the next vertex to be created
      */
@@ -46,28 +46,28 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
     /**
      * The vertex data cached
      */
-    private float[] verts = new float[MAX_VERTS * 3];
+    private final float[] verts = new float[MAX_VERTS * 3];
     /**
      * The vertex colour data cached
      */
-    private float[] cols = new float[MAX_VERTS * 4];
+    private final float[] cols = new float[MAX_VERTS * 4];
     /**
      * The vertex texture coordiante data cached
      */
-    private float[] texs = new float[MAX_VERTS * 3];
+    private final float[] texs = new float[MAX_VERTS * 3];
 
     /**
      * The buffer used to pass the vertex data to the card
      */
-    private FloatBuffer vertices = BufferUtils.createFloatBuffer(MAX_VERTS * 3);
+    private final FloatBuffer vertices = BufferUtils.createFloatBuffer(MAX_VERTS * 3);
     /**
      * The buffer used to pass the vertex color data to the card
      */
-    private FloatBuffer colors = BufferUtils.createFloatBuffer(MAX_VERTS * 4);
+    private final FloatBuffer colors = BufferUtils.createFloatBuffer(MAX_VERTS * 4);
     /**
      * The buffer used to pass the vertex texture coordinate data to the card
      */
-    private FloatBuffer textures = BufferUtils.createFloatBuffer(MAX_VERTS * 2);
+    private final FloatBuffer textures = BufferUtils.createFloatBuffer(MAX_VERTS * 2);
 
     /**
      * The stack for entering list creation mode - when we're creating a list we can't use our VAs
@@ -190,7 +190,6 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
 
         if (listMode > 0) {
             super.glColor4f(r, g, b, a);
-            return;
         }
     }
 
@@ -200,7 +199,6 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
     public void glEnd() {
         if (listMode > 0) {
             super.glEnd();
-            return;
         }
     }
 
@@ -238,14 +236,14 @@ public class VAOGLRenderer extends ImmediateModeOGLRenderer {
             return;
         }
 
-        verts[(vertIndex * 3) + 0] = x;
+        verts[(vertIndex * 3)] = x;
         verts[(vertIndex * 3) + 1] = y;
         verts[(vertIndex * 3) + 2] = z;
-        cols[(vertIndex * 4) + 0] = color[0];
+        cols[(vertIndex * 4)] = color[0];
         cols[(vertIndex * 4) + 1] = color[1];
         cols[(vertIndex * 4) + 2] = color[2];
         cols[(vertIndex * 4) + 3] = color[3];
-        texs[(vertIndex * 2) + 0] = tex[0];
+        texs[(vertIndex * 2)] = tex[0];
         texs[(vertIndex * 2) + 1] = tex[1];
         vertIndex++;
 

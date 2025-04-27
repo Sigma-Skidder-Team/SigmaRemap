@@ -8,8 +8,8 @@ import java.lang.reflect.Field;
 
 public class StructureWriteContext extends ToNativeContext
 {
-    private Structure struct;
-    private Field field;
+    private final Structure struct;
+    private final Field field;
     
     public StructureWriteContext(final Structure struct, final Field field) {
         this.struct = struct;

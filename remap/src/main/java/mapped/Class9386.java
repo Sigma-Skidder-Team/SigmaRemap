@@ -9,9 +9,9 @@ import java.util.HashSet;
 
 public class Class9386
 {
-    private int field40277;
+    private final int field40277;
     private int field40278;
-    private Class8802[] field40279;
+    private final Class8802[] field40279;
     
     public Class9386(final int field40277, final int field40278, final Class8802[] field40279) {
         this.field40277 = field40277;

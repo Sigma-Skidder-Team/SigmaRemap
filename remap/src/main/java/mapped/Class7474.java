@@ -14,7 +14,7 @@ public class Class7474
     public final Object2IntMap<Class9455<?>> field28871;
     
     public Class7474() {
-        (this.field28871 = (Object2IntMap<Class9455<?>>)Object2IntMaps.synchronize((Object2IntMap)new Object2IntOpenHashMap())).defaultReturnValue(0);
+        (this.field28871 = (Object2IntMap<Class9455<?>>)Object2IntMaps.synchronize(new Object2IntOpenHashMap())).defaultReturnValue(0);
     }
     
     public void method23089(final PlayerEntity playerEntity, final Class9455<?> class513, final int n) {
@@ -30,6 +30,6 @@ public class Class7474
     }
     
     public int method23091(final Class9455<?> class9455) {
-        return this.field28871.getInt((Object)class9455);
+        return this.field28871.getInt(class9455);
     }
 }

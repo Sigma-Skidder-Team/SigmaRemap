@@ -23,7 +23,7 @@ public enum Class1965
     private final String field10732;
     private final boolean field10733;
     
-    private Class1965(final int field10731, final String field10732, final boolean field10733) {
+    Class1965(final int field10731, final String field10732, final boolean field10733) {
         this.field10731 = field10731;
         this.field10732 = field10732;
         this.field10733 = field10733;

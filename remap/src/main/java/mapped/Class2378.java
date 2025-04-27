@@ -11,7 +11,7 @@ public class Class2378 extends Class2377
     private final int field14175;
     
     public Class2378(final Class2190 class2190, final int i, final int n) {
-        super(class2190, i, new Object[] { n });
+        super(class2190, i, n);
         this.field14175 = n;
     }
     

@@ -41,9 +41,7 @@ public class Class3540 extends Class3446
     public boolean method11017() {
         if (!Class793.method4466(this.field16585).method1082(this.field16585.method1934(), 7.0)) {
             if (!this.field16587) {
-                if (this.field16588 <= 600) {
-                    return true;
-                }
+                return this.field16588 <= 600;
             }
         }
         return false;

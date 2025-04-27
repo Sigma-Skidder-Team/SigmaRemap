@@ -18,12 +18,12 @@ public final class Class3105 extends Class3090
         Class9218.method33934(this);
         Class9218.method33935(this);
         Class9218.method33937(this);
-        this.method9849(Class2108.field12228, Class4535.field20017.method13527(new Class5121((List<Class8530<?, ?>>)ImmutableList.of((Object)Class4535.field19982.method13527(Class9218.field39534), (Object)Class4535.field19982.method13527(Class9218.field39535), (Object)Class4535.field19982.method13527(Class9218.field39536), (Object)Class4535.field19981.method13527(Class9218.field39521)), 2)).method28610(Class7133.field27785.method21889((Object)new Class6927(5))));
+        this.method9849(Class2108.field12228, Class4535.field20017.method13527(new Class5121((List<Class8530<?, ?>>)ImmutableList.of(Class4535.field19982.method13527(Class9218.field39534), Class4535.field19982.method13527(Class9218.field39535), Class4535.field19982.method13527(Class9218.field39536), (Object)Class4535.field19981.method13527(Class9218.field39521)), 2)).method28610(Class7133.field27785.method21889(new Class6927(5))));
         Class9218.method33938(this);
         Class9218.method33939(this);
         Class9218.method33943(this);
-        this.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19974.method13527(Class9218.field39511).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39510).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39509))).method28610(Class7133.field27794.method21889((Object)new Class6934(6, 0.1f, 1))));
-        this.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39525).method28610(Class7133.field27785.method21889((Object)new Class6927(100))));
+        this.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19974.method13527(Class9218.field39511).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39510).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39509))).method28610(Class7133.field27794.method21889(new Class6934(6, 0.1f, 1))));
+        this.method9849(Class2108.field12228, Class4535.field19981.method13527(Class9218.field39525).method28610(Class7133.field27785.method21889(new Class6927(100))));
         Class9218.method33980(this);
         Class9218.method33983(this);
         Class9218.method33984(this);

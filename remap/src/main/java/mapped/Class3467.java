@@ -31,7 +31,7 @@ public abstract class Class3467 extends Class3446
         }
         final BlockState method6701 = this.field16340.world.getBlockState(this.field16341);
         if (method6701.getBlock() instanceof Class3969) {
-            return method6701.get((IProperty<Boolean>)Class3969.field17932);
+            return method6701.get(Class3969.field17932);
         }
         return this.field16342 = false;
     }

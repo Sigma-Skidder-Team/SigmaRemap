@@ -509,7 +509,7 @@ public abstract class Class3418
     
     public void method10883(final List<ItemStack> list) {
         for (int i = 0; i < list.size(); ++i) {
-            this.getSlot(i).method20055((ItemStack)list.get(i));
+            this.getSlot(i).method20055(list.get(i));
         }
     }
     
@@ -518,7 +518,7 @@ public abstract class Class3418
     }
     
     public short method10885(final Class464 class464) {
-        return (short)(++this.field16155);
+        return ++this.field16155;
     }
     
     public boolean method10886(final PlayerEntity playerEntity) {

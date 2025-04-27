@@ -41,15 +41,15 @@ public class Class6860 extends Class6851<LivingEntity>
     }
     
     private boolean method20971(final LivingEntity class511, final LivingEntity class512) {
-        final float floatValue = (float)Class6860.field26891.get((Object)class512.getType());
+        final float floatValue = Class6860.field26891.get(class512.getType());
         return class512.method1734(class511) <= floatValue * floatValue;
     }
     
     private boolean method20972(final LivingEntity class511) {
-        return Class6860.field26891.containsKey((Object)class511.getType());
+        return Class6860.field26891.containsKey(class511.getType());
     }
     
     static {
-        field26891 = ImmutableMap.builder().put((Object) EntityType.field28973, (Object)8.0f).put((Object) EntityType.field28980, (Object)12.0f).put((Object) EntityType.field28990, (Object)8.0f).put((Object) EntityType.field28991, (Object)12.0f).put((Object) EntityType.field29045, (Object)15.0f).put((Object) EntityType.field29056, (Object)12.0f).put((Object) EntityType.field29041, (Object)8.0f).put((Object) EntityType.field29044, (Object)10.0f).put((Object) EntityType.field29052, (Object)8.0f).put((Object) EntityType.field29054, (Object)8.0f).build();
+        field26891 = ImmutableMap.builder().put(EntityType.field28973, 8.0f).put(EntityType.field28980, 12.0f).put(EntityType.field28990, 8.0f).put(EntityType.field28991, 12.0f).put(EntityType.field29045, 15.0f).put(EntityType.field29056, 12.0f).put(EntityType.field29041, 8.0f).put(EntityType.field29044, 10.0f).put(EntityType.field29052, 8.0f).put(EntityType.field29054, 8.0f).build();
     }
 }

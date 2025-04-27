@@ -108,9 +108,7 @@ public class Class8843
             final Class8843 class8843 = (Class8843)o;
             if (Objects.equals(this.field37167, class8843.field37167)) {
                 if (this.field37168 == class8843.field37168) {
-                    if (Objects.equals(this.field37169, class8843.field37169)) {
-                        return true;
-                    }
+                    return Objects.equals(this.field37169, class8843.field37169);
                 }
             }
             return false;

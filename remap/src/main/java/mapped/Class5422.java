@@ -21,8 +21,8 @@ public class Class5422 extends Class5419<Class824>
     private Set<Item> field22607;
     
     public Class5422() {
-        super((Map)ImmutableMap.of((Object)Class8233.field33811, (Object)Class1952.field10628, (Object)Class8233.field33805, (Object)Class1952.field10628));
-        this.field22607 = (Set<Item>)ImmutableSet.of();
+        super((Map)ImmutableMap.of(Class8233.field33811, Class1952.field10628, (Object)Class8233.field33805, (Object)Class1952.field10628));
+        this.field22607 = ImmutableSet.of();
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {

@@ -22,7 +22,7 @@ public class Class8683 extends Class8684<Float>
         if (n != null) {
             if (n2 != null) {
                 if (n > n2) {
-                    throw Class8683.field36496.createWithContext((ImmutableStringReader)stringReader);
+                    throw Class8683.field36496.createWithContext(stringReader);
                 }
             }
         }
@@ -45,7 +45,7 @@ public class Class8683 extends Class8684<Float>
     }
     
     public boolean method29736(final float n) {
-        return (this.field36497 == null || (float)this.field36497 <= n) && (this.field36498 == null || (float)this.field36498 >= n);
+        return (this.field36497 == null || this.field36497 <= n) && (this.field36498 == null || this.field36498 >= n);
     }
     
     public boolean method29737(final double n) {
@@ -61,7 +61,7 @@ public class Class8683 extends Class8684<Float>
     }
     
     public static Class8683 method29740(final StringReader stringReader, final Function<Float, Float> function) throws CommandSyntaxException {
-        return Class8684.method29747(stringReader, (Class8561<Float, Class8683>)Class8683::method29733, Float::parseFloat, CommandSyntaxException.BUILT_IN_EXCEPTIONS::readerInvalidFloat, function);
+        return Class8684.method29747(stringReader, Class8683::method29733, Float::parseFloat, CommandSyntaxException.BUILT_IN_EXCEPTIONS::readerInvalidFloat, function);
     }
     
     static {

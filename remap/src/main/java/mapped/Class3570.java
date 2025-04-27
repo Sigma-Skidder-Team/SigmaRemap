@@ -20,9 +20,7 @@ public class Class3570 extends Class3545
     public boolean method11013() {
         if (Class843.method5048(this.field16666) != null) {
             if (Class843.method5048(this.field16666).method4152() != null) {
-                if (this.method11097(Class843.method5048(this.field16666).method4152(), this.field16665)) {
-                    return true;
-                }
+                return this.method11097(Class843.method5048(this.field16666).method4152(), this.field16665);
             }
         }
         return false;

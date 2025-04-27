@@ -196,7 +196,7 @@ public class ClientAssets
                         var8.append(" ").append(var12);
                     }
 
-                    throw new IllegalStateException("Unable to load texture " + var0 + " header" + var8.toString());
+                    throw new IllegalStateException("Unable to load texture " + var0 + " header" + var8);
                 } catch (Throwable var21) {
                     var6 = var21;
                     throw var21;

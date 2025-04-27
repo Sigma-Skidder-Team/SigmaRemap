@@ -108,9 +108,7 @@ public final class Class8713
         if (!s.equals(s2)) {
             if (s.endsWith(s2)) {
                 if (s.charAt(s.length() - s2.length() - 1) == '.') {
-                    if (!Class7690.method24455(s)) {
-                        return true;
-                    }
+                    return !Class7690.method24455(s);
                 }
             }
             return false;
@@ -125,9 +123,7 @@ public final class Class8713
                 if (s.endsWith("/")) {
                     return true;
                 }
-                if (method30940.charAt(s.length()) == '/') {
-                    return true;
-                }
+                return method30940.charAt(s.length()) == '/';
             }
             return false;
         }
@@ -336,7 +332,7 @@ public final class Class8713
                 return s.startsWith("-") ? Long.MIN_VALUE : Long.MAX_VALUE;
             }
         }
-        throw;
+        throw
     }
     
     private static String method29928(String substring) {
@@ -415,9 +411,7 @@ public final class Class8713
                                 if (class8713.field36614 == this.field36614) {
                                     if (class8713.field36615 == this.field36615) {
                                         if (class8713.field36616 == this.field36616) {
-                                            if (class8713.field36617 == this.field36617) {
-                                                return true;
-                                            }
+                                            return class8713.field36617 == this.field36617;
                                         }
                                     }
                                 }

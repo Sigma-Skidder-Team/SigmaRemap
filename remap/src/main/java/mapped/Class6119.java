@@ -43,12 +43,11 @@ public class Class6119 implements Class6113
             int i = 0;
             while (i < list.size()) {
                 final Class7472 class7355 = list.get(i);
-                if (!(!class7353.method1081(class7355.field28861, 160.0))) {
+                if (class7353.method1081(class7355.field28861, 160.0)) {
                     Class7282.method22339(class7355.field28863, class7355.field28861.getX() + 0.5, class7355.field28861.getY() + 2.0 + i * 0.25, class7355.field28861.getZ() + 0.5, class7355.field28864 ? -16711936 : -3355444);
                 }
                 ++i;
             }
-            return;
         });
         RenderSystem.enableDepthTest();
         RenderSystem.enableTexture();

@@ -39,7 +39,7 @@ public class Vec3d implements IPosition
 
     public Vec3d normalize()
     {
-        double d0 = (double)MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+        double d0 = MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
         return d0 < 1.0E-4D ? ZERO : new Vec3d(this.x / d0, this.y / d0, this.z / d0);
     }
 
@@ -78,7 +78,7 @@ public class Vec3d implements IPosition
         double d0 = vec.x - this.x;
         double d1 = vec.y - this.y;
         double d2 = vec.z - this.z;
-        return (double)MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+        return MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
     }
 
     public double squareDistanceTo(Vec3d vec)
@@ -119,7 +119,7 @@ public class Vec3d implements IPosition
 
     public double length()
     {
-        return (double)MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+        return MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
     }
 
     public double lengthSquared()
@@ -200,7 +200,7 @@ public class Vec3d implements IPosition
         float f1 = MathHelper.sin(-yaw * ((float)Math.PI / 180F) - (float)Math.PI);
         float f2 = -MathHelper.cos(-pitch * ((float)Math.PI / 180F));
         float f3 = MathHelper.sin(-pitch * ((float)Math.PI / 180F));
-        return new Vec3d((double)(f1 * f2), (double)f3, (double)(f * f2));
+        return new Vec3d(f1 * f2, f3, f * f2);
     }
 
     public Vec3d align(EnumSet<Direction.Axis> axes)

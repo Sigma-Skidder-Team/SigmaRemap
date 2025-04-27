@@ -33,7 +33,7 @@ public abstract class Class5476 extends DataFix
     }
     
     private <T> Dynamic<T> method16717(final Dynamic<T> dynamic) {
-        return (Dynamic<T>)dynamic.update("Sections", dynamic2 -> dynamic2.updateMapValues(pair -> pair.mapSecond(dynamic3 -> dynamic3.update("Records", dynamic4 -> DataFixUtils.orElse((Optional)this.method16718((com.mojang.datafixers.Dynamic<Object>)dynamic4), (Object)dynamic4)))));
+        return dynamic.update("Sections", dynamic2 -> dynamic2.updateMapValues(pair -> pair.mapSecond(dynamic3 -> dynamic3.update("Records", dynamic4 -> DataFixUtils.orElse((Optional)this.method16718((Dynamic<Object>)dynamic4), (Object)dynamic4)))));
     }
     
     private <T> Optional<Dynamic<T>> method16718(final Dynamic<T> dynamic) {

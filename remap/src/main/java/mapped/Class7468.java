@@ -314,7 +314,7 @@ public class Class7468
                 }
             }
             else {
-                System.out.println(String.format("%.4f", array[i]));
+                System.out.printf("%.4f%n", array[i]);
             }
         }
         System.out.println();
@@ -343,7 +343,7 @@ public class Class7468
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
     
     public static void method23038(final double[][] array, final String str) {
@@ -371,7 +371,7 @@ public class Class7468
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
     
     public static void method23039(final int n, final int n2, final int n3, final double[] array, final String x) {
@@ -400,10 +400,10 @@ public class Class7468
                         System.out.print(String.format("%.4f", array[j * n4 + k * n5 + i]) + "\t");
                     }
                 }
-                System.out.println("");
+                System.out.println();
             }
         }
-        System.out.println("");
+        System.out.println();
     }
     
     public static void method23040(final double[][][] array, final String x) {
@@ -432,10 +432,10 @@ public class Class7468
                         System.out.print(String.format("%.4f", array[j][k][i]) + "\t");
                     }
                 }
-                System.out.println("");
+                System.out.println();
             }
         }
-        System.out.println("");
+        System.out.println();
     }
     
     public static void method23041(final int n, final int n2, final int n3, final float[] array, final String x) {
@@ -464,17 +464,17 @@ public class Class7468
                         System.out.print(String.format("%.4f", array[j * n4 + k * n5 + i]) + "\t");
                     }
                 }
-                System.out.println("");
+                System.out.println();
             }
         }
-        System.out.println("");
+        System.out.println();
     }
     
     public static void method23042(final double[] array, final String x) {
         System.out.println(x);
         System.out.println("-------------------");
         for (int i = 0; i < array.length; ++i) {
-            System.out.println(String.format("%.4f", array[i]));
+            System.out.printf("%.4f%n", array[i]);
         }
         System.out.println();
     }

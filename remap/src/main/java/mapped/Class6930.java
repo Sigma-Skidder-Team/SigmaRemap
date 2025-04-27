@@ -23,7 +23,7 @@ public class Class6930 implements Class6926
     
     @Override
     public <T> Dynamic<T> method21299(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("noise_level"), dynamicOps.createDouble(this.field27151), dynamicOps.createString("below_noise"), dynamicOps.createInt(this.field27152), dynamicOps.createString("above_noise"), dynamicOps.createInt(this.field27153))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("noise_level"), dynamicOps.createDouble(this.field27151), dynamicOps.createString("below_noise"), dynamicOps.createInt(this.field27152), dynamicOps.createString("above_noise"), dynamicOps.createInt(this.field27153))));
     }
     
     public static Class6930 method21304(final Dynamic<?> dynamic) {

@@ -88,7 +88,7 @@ public class Class8231 extends Class8228
     
     @Override
     public <T> Dynamic<T> method27258(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("elements"), dynamicOps.createList((Stream)this.field33795.stream().map(class8228 -> class8228.method27264((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("elements"), dynamicOps.createList((Stream)this.field33795.stream().map(class8228 -> class8228.method27264(dynamicOps2).getValue())))));
     }
     
     @Override

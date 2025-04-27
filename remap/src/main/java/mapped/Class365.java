@@ -48,11 +48,9 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
         this.field2206 = -9999L;
         collection.forEach(class8233 -> {
             final Optional<?> optional = this.field2198.put(class8233, Optional.empty());
-            return;
         });
         collection2.forEach(class8234 -> {
             final Class6851<? super E> class8235 = this.field2199.put(class8234, class8234.method26348());
-            return;
         });
         this.field2199.values().forEach(class8236 -> {
             class8236.method20953().iterator();
@@ -60,10 +58,9 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
             while (iterator2.hasNext()) {
                 this.field2198.put(iterator2.next(), Optional.empty());
             }
-            return;
         });
         for (final Map.Entry<Dynamic, V> entry : dynamic.get("memories").asMap((Function)Function.identity(), (Function)Function.identity()).entrySet()) {
-            this.method1194(Registry.field242.getOrDefault(new ResourceLocation(entry.getKey().asString(""))), (com.mojang.datafixers.Dynamic<Object>)entry.getValue());
+            this.method1194(Registry.field242.getOrDefault(new ResourceLocation(entry.getKey().asString(""))), entry.getValue());
         }
     }
     
@@ -72,7 +69,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     private <T, U> void method1194(final Class8233<U> class8233, final Dynamic<T> dynamic) {
-        this.method1196((Class8233<Object>)class8233, class8233.method27285().orElseThrow((Supplier<? extends Throwable>)RuntimeException::new).apply((Object)dynamic));
+        this.method1196((Class8233<Object>)class8233, class8233.method27285().orElseThrow((Supplier<? extends Throwable>)RuntimeException::new).apply(dynamic));
     }
     
     public <U> void method1195(final Class8233<U> class8233) {
@@ -80,7 +77,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     public <U> void method1196(final Class8233<U> class8233, final U value) {
-        this.method1197(class8233, (Optional<U>)Optional.ofNullable((U)value));
+        this.method1197(class8233, Optional.ofNullable(value));
     }
     
     public <U> void method1197(final Class8233<U> class8233, final Optional<U> optional) {
@@ -103,9 +100,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
         if (optional != null) {
             if (class8234 != Class1952.field10630) {
                 if (class8234 != Class1952.field10628 || !optional.isPresent()) {
-                    if (class8234 != Class1952.field10629 || optional.isPresent()) {
-                        return false;
-                    }
+                    return class8234 == Class1952.field10629 && !optional.isPresent();
                 }
             }
             return true;
@@ -133,7 +128,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     public void method1204(final Class7635 class7635) {
         this.field2204.clear();
         this.field2204.addAll(this.field2203);
-        this.field2204.add((this.field2202.keySet().contains(class7635) && this.method1216(class7635)) ? class7635 : this.field2205);
+        this.field2204.add((this.field2202.containsKey(class7635) && this.method1216(class7635)) ? class7635 : this.field2205);
     }
     
     public void method1205(final long n, final long field2206) {
@@ -151,12 +146,12 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     public void method1207(final Class7635 class7635, final ImmutableList<Pair<Integer, ? extends Class5419<? super E>>> list) {
-        this.method1208(class7635, list, (Set<Pair<Class8233<?>, Class1952>>)ImmutableSet.of());
+        this.method1208(class7635, list, ImmutableSet.of());
     }
     
     public void method1208(final Class7635 class7635, final ImmutableList<Pair<Integer, ? extends Class5419<? super E>>> list, final Set<Pair<Class8233<?>, Class1952>> set) {
         this.field2202.put(class7635, set);
-        list.forEach(pair -> ((Set)this.field2200.computeIfAbsent((Integer)pair.getFirst(), p0 -> Maps.newHashMap()).computeIfAbsent((Object)key, p0 -> Sets.newLinkedHashSet())).add(pair.getSecond()));
+        list.forEach(pair -> this.field2200.computeIfAbsent(pair.getFirst(), p0 -> Maps.newHashMap()).computeIfAbsent((Object)key, p0 -> Sets.newLinkedHashSet()).add(pair.getSecond()));
     }
     
     public boolean method1209(final Class7635 class7635) {
@@ -164,7 +159,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     public Class365<E> method1210() {
-        final Class365 class365 = new Class365(this.field2198.keySet(), this.field2199.keySet(), (Dynamic<T>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new CompoundNBT()));
+        final Class365 class365 = new Class365(this.field2198.keySet(), this.field2199.keySet(), (Dynamic<T>)new Dynamic(Class8453.field34721, new CompoundNBT()));
         this.field2198.forEach((p1, optional) -> optional.ifPresent(value -> {
             final Optional<?> optional2 = class366.field2198.put(class367, Optional.of(value));
         }));
@@ -186,7 +181,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("memories"), dynamicOps.createMap((Map)this.field2198.entrySet().stream().filter(entry -> entry.getKey().method27285().isPresent() && ((Optional)entry.getValue()).isPresent()).map(entry2 -> Pair.of(dynamicOps2.createString(Registry.field242.getKey(entry2.getKey()).toString()), ((Optional)entry2.getValue()).get().method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
+        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("memories"), dynamicOps.createMap((Map)this.field2198.entrySet().stream().filter(entry -> entry.getKey().method27285().isPresent() && entry.getValue().isPresent()).map(entry2 -> Pair.of(dynamicOps2.createString(Registry.field242.getKey(entry2.getKey()).toString()), ((Optional)entry2.getValue()).get().method1123((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond)))));
     }
     
     private void method1213(final Class1849 class1849, final E e) {
@@ -208,7 +203,7 @@ public class Class365<E extends LivingEntity> implements IDynamicSerializable
     }
     
     private boolean method1216(final Class7635 class7635) {
-        return this.field2202.get(class7635).stream().allMatch(pair -> this.method1199((Class8233<?>)pair.getFirst(), (Class1952)pair.getSecond()));
+        return this.field2202.get(class7635).stream().allMatch(pair -> this.method1199(pair.getFirst(), pair.getSecond()));
     }
     
     private boolean method1217(final Object o) {

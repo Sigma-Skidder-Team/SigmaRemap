@@ -51,6 +51,6 @@ public class Class9500<O, S extends IStateHolder<S>>
     }
     
     public <A extends StateHolder<O, S>> StateContainer<O, S> method35380(final Class6846<O, S, A> class6846) {
-        return new StateContainer<O, S>(this.field40876, (Class6846<O, S, A>)class6846, this.field40877);
+        return new StateContainer<O, S>(this.field40876, class6846, this.field40877);
     }
 }

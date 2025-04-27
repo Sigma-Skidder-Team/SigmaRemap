@@ -42,7 +42,7 @@ public class Class141 extends Class126
                 arrayList.add(class8324);
             }
             if (arrayList.isEmpty()) {
-                Class141.field420.warn("Couldn't find a compatible enchantment for {}", (Object)class8321);
+                Class141.field420.warn("Couldn't find a compatible enchantment for {}", class8321);
                 return class8321;
             }
             class8323 = (Class6257)arrayList.get(method23586.nextInt(arrayList.size()));
@@ -59,7 +59,7 @@ public class Class141 extends Class126
     }
     
     public static Class4943<?> method690() {
-        return Class126.method640(array -> new Class141(array, (Collection<Class6257>)ImmutableList.of()));
+        return Class126.method640(array -> new Class141(array, ImmutableList.of()));
     }
     
     static {

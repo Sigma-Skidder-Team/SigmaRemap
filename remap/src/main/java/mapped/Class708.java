@@ -7,7 +7,7 @@ package mapped;
 public class Class708 extends Class703
 {
     public Class708(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("options.skinCustomisation.title", new Object[0]));
+        super(class527, class528, new Class2259("options.skinCustomisation.title"));
     }
     
     @Override
@@ -29,8 +29,8 @@ public class Class708 extends Class703
         if (++n % 2 == 1) {
             ++n;
         }
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n >> 1), 200, 20, Class8822.method30773("of.options.skinCustomisation.ofCape", new Object[0]), class654 -> this.minecraft.displayGuiScreen(new Class702(this))));
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n + 2 >> 1), 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n >> 1), 200, 20, Class8822.method30773("of.options.skinCustomisation.ofCape"), class654 -> this.minecraft.displayGuiScreen(new Class702(this))));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 24 * (n + 2 >> 1), 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override
@@ -43,10 +43,10 @@ public class Class708 extends Class703
     private String method3915(final Class189 class189) {
         String str;
         if (!this.field3869.method17125().contains(class189)) {
-            str = Class8822.method30773("options.off", new Object[0]);
+            str = Class8822.method30773("options.off");
         }
         else {
-            str = Class8822.method30773("options.on", new Object[0]);
+            str = Class8822.method30773("options.on");
         }
         return class189.method830().getFormattedText() + ": " + str;
     }

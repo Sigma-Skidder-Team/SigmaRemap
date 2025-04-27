@@ -112,7 +112,7 @@ public class Class8097
         }
         dataInput.readUTF();
         try {
-            return (INBT) NBTTypes.func_229710_a_(byte1).func_225649_b_(dataInput, n, class7553);
+            return NBTTypes.func_229710_a_(byte1).func_225649_b_(dataInput, n, class7553);
         }
         catch (final IOException ex) {
             final CrashReport method24421 = CrashReport.makeCrashReport(ex, "Loading NBT data");

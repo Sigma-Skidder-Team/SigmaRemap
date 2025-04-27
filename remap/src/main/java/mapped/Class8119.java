@@ -28,7 +28,7 @@ public class Class8119 extends Class8117<Class8119>
     
     @Override
     public void method26706(final CommandContext<Class7492> commandContext, final String s) {
-        this.field33456 = BoolArgumentType.getBool((CommandContext)commandContext, s);
+        this.field33456 = BoolArgumentType.getBool(commandContext, s);
     }
     
     public boolean method26723() {

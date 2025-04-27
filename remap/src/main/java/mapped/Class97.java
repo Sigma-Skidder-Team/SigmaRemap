@@ -21,6 +21,6 @@ public final class Class97 implements Iterable
     
     @Override
     public Iterator iterator() {
-        return (Iterator)new Class7247(this);
+        return new Class7247(this);
     }
 }

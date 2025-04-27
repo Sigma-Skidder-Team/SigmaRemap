@@ -50,7 +50,7 @@ public class Class9509
     }
     
     public static Class1933 method35432(final ResourceLocation class1932, final BlockState class1933) {
-        return new Class1933(class1932, method35433((Map<IProperty<?>, Comparable<?>>)class1933.getValues()));
+        return new Class1933(class1932, method35433(class1933.getValues()));
     }
     
     public static String method35433(final Map<IProperty<?>, Comparable<?>> map) {

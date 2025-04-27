@@ -51,6 +51,6 @@ public class Class82 extends AbstractDoubleList implements IDoubleListMerger
     }
     
     public DoubleList func_212435_a() {
-        return (DoubleList)this;
+        return this;
     }
 }

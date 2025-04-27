@@ -30,8 +30,8 @@ public class NoteblockPlayer extends PremiumModule
     public int field16033;
     private Class2308 field16034;
     private List<String> field16035;
-    private List<Class9486> field16036;
-    private List<BlockPos> field16037;
+    private final List<Class9486> field16036;
+    private final List<BlockPos> field16037;
     
     public NoteblockPlayer() {
         super("NoteblockPlayer", "Plays noteblocks! Needs NBS files in sigma5/nbs", Category.MISC);
@@ -141,7 +141,7 @@ public class NoteblockPlayer extends PremiumModule
     public boolean method10707(final List<Class9486> list) {
         for (final Class9486 class9486 : list) {
             if (this.method10710(class9486.field40774, class9486.field40775) && Math.sqrt(NoteblockPlayer.mc.player.method1894().distanceSq(class9486.field40773)) < NoteblockPlayer.mc.playerController.method27315()) {
-                if (NoteblockPlayer.mc.player.ticksExisted % 1 == 0) {
+                if (0 == 0) {
                     final float[] method13672 = Class4609.method13672(class9486.field40773, Direction.UP);
                     NoteblockPlayer.mc.player.method2707(Class316.field1877);
                     NoteblockPlayer.mc.method5269().method17292(new Class4356(method13672[0], method13672[1], NoteblockPlayer.mc.player.onGround));
@@ -255,7 +255,7 @@ public class NoteblockPlayer extends PremiumModule
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
         RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
-        GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
+        GL11.glTranslated(-field40314.getWidth(s) / 2, 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ClientColors.LIGHT_GREYISH_BLUE.color);
         GL11.glPopMatrix();
         GL11.glPopMatrix();
@@ -314,7 +314,7 @@ public class NoteblockPlayer extends PremiumModule
     private int method10713(final Class9486 class9486) {
         final HashMap hashMap = new HashMap();
         for (final Class9486 class9487 : this.field16036) {
-            hashMap.put(class9487.field40775, (int)hashMap.getOrDefault(class9487.field40775, 0));
+            hashMap.put(class9487.field40775, hashMap.getOrDefault(class9487.field40775, 0));
         }
         return hashMap.getOrDefault(class9486.field40775, 0);
     }

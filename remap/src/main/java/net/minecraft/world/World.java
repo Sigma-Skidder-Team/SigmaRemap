@@ -97,9 +97,7 @@ public abstract class World implements Class1851, AutoCloseable
             if (class354.getX() >= -30000000) {
                 if (class354.getZ() >= -30000000) {
                     if (class354.getX() < 30000000) {
-                        if (class354.getZ() < 30000000) {
-                            return true;
-                        }
+                        return class354.getZ() < 30000000;
                     }
                 }
             }
@@ -369,7 +367,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     public boolean method6714(final TileEntity tileEntity) {
         if (this.processingLoadedTiles) {
-            World.LOGGER.error("Adding block entity while ticking: {} @ {}", new Supplier[] { () -> Registry.field224.getKey(tileEntity.getType()), tileEntity::getPos});
+            World.LOGGER.error("Adding block entity while ticking: {} @ {}", () -> Registry.field224.getKey(tileEntity.getType()), tileEntity::getPos);
         }
         final boolean add = this.loadedTileEntityList.add(tileEntity);
         if (add) {
@@ -824,7 +822,7 @@ public abstract class World implements Class1851, AutoCloseable
         final int max5 = Math.max(max4, this.method6964(class354.method1145(), Direction.WEST));
         if (max5 < 15) {
             final int max6 = Math.max(max5, this.method6964(class354.method1147(), Direction.EAST));
-            return (max6 < 15) ? max6 : max6;
+            return max6;
         }
         return max5;
     }

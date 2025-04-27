@@ -71,9 +71,9 @@ public class Class1733 extends Class1732
         final Enumeration<? extends ZipEntry> entries = method6131.entries();
         final HashSet hashSet = Sets.newHashSet();
         while (entries.hasMoreElements()) {
-            final String name = ((ZipEntry)entries.nextElement()).getName();
+            final String name = entries.nextElement().getName();
             if (name.startsWith(class346.method1028() + "/")) {
-                final ArrayList arrayList = Lists.newArrayList(Class1733.field9680.split((CharSequence)name));
+                final ArrayList arrayList = Lists.newArrayList(Class1733.field9680.split(name));
                 if (arrayList.size() <= 1) {
                     continue;
                 }
@@ -89,7 +89,7 @@ public class Class1733 extends Class1732
         return hashSet;
     }
     
-    public void finalize() throws Throwable {
+    protected void finalize() throws Throwable {
         this.close();
         super.finalize();
     }
@@ -97,7 +97,7 @@ public class Class1733 extends Class1732
     @Override
     public void close() {
         if (this.field9681 != null) {
-            IOUtils.closeQuietly((Closeable)this.field9681);
+            IOUtils.closeQuietly(this.field9681);
             this.field9681 = null;
         }
     }
@@ -109,14 +109,14 @@ public class Class1733 extends Class1732
             method6131 = this.method6131();
         }
         catch (final IOException ex) {
-            return (Collection<ResourceLocation>)Collections.emptySet();
+            return Collections.emptySet();
         }
         final Enumeration<? extends ZipEntry> entries = method6131.entries();
         final ArrayList arrayList = Lists.newArrayList();
         final String string = class346.method1028() + "/" + str + "/";
         final String string2 = string + str2 + "/";
         while (entries.hasMoreElements()) {
-            final ZipEntry zipEntry = (ZipEntry)entries.nextElement();
+            final ZipEntry zipEntry = entries.nextElement();
             if (!zipEntry.isDirectory()) {
                 final String name = zipEntry.getName();
                 if (name.endsWith(".mcmeta") || !name.startsWith(string2)) {

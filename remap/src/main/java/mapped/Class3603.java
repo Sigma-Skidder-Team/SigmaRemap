@@ -27,7 +27,7 @@ public class Class3603 extends Class3446
     
     @Override
     public boolean method11013() {
-        final List<Class423> method7128 = this.field16781.world.method7128((Class<? extends Class423>)Class423.class, this.field16781.getBoundingBox().intersect(5.0));
+        final List<Class423> method7128 = this.field16781.world.method7128(Class423.class, this.field16781.getBoundingBox().intersect(5.0));
         int n = 0;
         final Iterator<Class423> iterator = method7128.iterator();
         while (iterator.hasNext()) {
@@ -45,10 +45,7 @@ public class Class3603 extends Class3446
                 return true;
             }
         }
-        if (n == 0) {
-            return false;
-        }
-        return true;
+        return n != 0;
     }
     
     @Override
@@ -60,9 +57,7 @@ public class Class3603 extends Class3446
     public boolean method11017() {
         if (this.field16782 != null) {
             if (this.field16782.isPassenger()) {
-                if (MathHelper.method35647(this.field16782.field2968) > 0.0f || MathHelper.method35647(this.field16782.field2970) > 0.0f) {
-                    return true;
-                }
+                return MathHelper.method35647(this.field16782.field2968) > 0.0f || MathHelper.method35647(this.field16782.field2970) > 0.0f;
             }
         }
         return false;

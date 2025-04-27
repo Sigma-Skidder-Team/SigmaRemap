@@ -13,7 +13,7 @@ public enum Class2094
     field12107(2), 
     field12108(3);
     
-    private int field12109;
+    private final int field12109;
     
     public static Class2094 method8211(final int n) throws AACException {
         Class2094 class2094 = null;
@@ -41,7 +41,7 @@ public enum Class2094
         return class2094;
     }
     
-    private Class2094(final int field12109) {
+    Class2094(final int field12109) {
         this.field12109 = field12109;
     }
 }

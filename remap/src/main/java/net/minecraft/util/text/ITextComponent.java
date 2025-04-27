@@ -63,7 +63,7 @@ public interface ITextComponent extends Message, Iterable<ITextComponent> {
 
                 if (!s2.equals(s)) {
                     if (!s.isEmpty()) {
-                        stringbuilder.append((Object) TextFormatting.RESET);
+                        stringbuilder.append(TextFormatting.RESET);
                     }
 
                     stringbuilder.append(s2);
@@ -75,7 +75,7 @@ public interface ITextComponent extends Message, Iterable<ITextComponent> {
         }
 
         if (!s.isEmpty()) {
-            stringbuilder.append((Object) TextFormatting.RESET);
+            stringbuilder.append(TextFormatting.RESET);
         }
 
         return stringbuilder.toString();

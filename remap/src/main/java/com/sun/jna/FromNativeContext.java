@@ -6,7 +6,7 @@ package com.sun.jna;
 
 public class FromNativeContext
 {
-    private Class<?> type;
+    private final Class<?> type;
     
     public FromNativeContext(final Class<?> javaType) {
         this.type = javaType;

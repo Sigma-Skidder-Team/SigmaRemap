@@ -10,7 +10,7 @@ public class Class710 extends Class703
     private Widget field3884;
     
     public Class710(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("options.accessibility.title", new Object[0]));
+        super(class527, class528, new Class2259("options.accessibility.title"));
     }
     
     @Override
@@ -24,7 +24,7 @@ public class Class710 extends Class703
             }
             ++n;
         }
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 144, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 6 + 144, 200, 20, Class8822.method30773("gui.done"), class654 -> this.minecraft.displayGuiScreen(this.field3868)));
     }
     
     @Override

@@ -241,7 +241,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                     }
                     final Class4521 class1855 = (Class4521)class1854;
                     if (class1855.method13518().method27263() == Class261.field1247) {
-                        ((ObjectList)list).add((Object)class1855);
+                        list.add(class1855);
                     }
                     for (final Class9330 class1856 : class1855.method13522()) {
                         final int method18857 = class1856.method34564();
@@ -258,7 +258,7 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                         if (method18858 >= n2 + 15 + 12) {
                             continue;
                         }
-                        ((ObjectList)list2).add((Object)class1856);
+                        list2.add(class1856);
                     }
                 }
             }
@@ -272,8 +272,8 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
         final Class9548 method18859 = class1857.method7017(HeightmapType.field11523);
         final Class9548 method18860 = class1857.method7017(HeightmapType.field11521);
         final Mutable class1858 = new Mutable();
-        final ObjectListIterator iterator5 = ((ObjectList)list).iterator();
-        final ObjectListIterator iterator6 = ((ObjectList)list2).iterator();
+        final ObjectListIterator iterator5 = list.iterator();
+        final ObjectListIterator iterator6 = list2.iterator();
         for (int j = 0; j < this.field25363; ++j) {
             for (int k = 0; k < this.field25365 + 1; ++k) {
                 this.method18847(array[1][k], field32290 * this.field25363 + j + 1, field32291 * this.field25365 + k);
@@ -320,12 +320,12 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                                     final MutableBoundingBox method18868 = class1860.method13432();
                                     n24 += method18862(Math.max(0, Math.max(method18868.minX - n18, n18 - method18868.maxX)), n13 - (method18868.minY + class1860.method13520()), Math.max(0, Math.max(method18868.minZ - n22, n22 - method18868.maxZ))) * 0.8;
                                 }
-                                iterator5.back(((ObjectList)list).size());
+                                iterator5.back(list.size());
                                 while (iterator6.hasNext()) {
                                     final Class9330 class1861 = (Class9330)iterator6.next();
                                     n24 += method18862(n18 - class1861.method34564(), n13 - class1861.method34565(), n22 - class1861.method34566()) * 0.4;
                                 }
-                                iterator6.back(((ObjectList)list2).size());
+                                iterator6.back(list2.size());
                                 BlockState class1862;
                                 if (n24 <= 0.0) {
                                     if (n13 >= method18853) {
@@ -394,7 +394,6 @@ public abstract class Class6343<T extends Class7065> extends Class6346<T>
                 }
                 ++i;
             }
-            return;
         });
         field25360 = Blocks.AIR.getDefaultState();
     }

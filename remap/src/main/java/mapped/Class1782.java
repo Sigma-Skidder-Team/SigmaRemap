@@ -25,7 +25,7 @@ public class Class1782 extends Class1779
     
     public Class1782(final Class1783 field9891) {
         super(Class1782.field9889, "loot_tables");
-        this.field9890 = (Map<ResourceLocation, Class9317>)ImmutableMap.of();
+        this.field9890 = ImmutableMap.of();
         this.field9891 = field9891;
     }
     
@@ -36,16 +36,15 @@ public class Class1782 extends Class1779
     public void method6377(final Map<ResourceLocation, JsonObject> map, final Class6582 class6582, final IProfiler class6583) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         if (map.remove(Class9020.field38063) != null) {
-            Class1782.field9888.warn("Datapack tried to redefine {} loot table, ignoring", (Object)Class9020.field38063);
+            Class1782.field9888.warn("Datapack tried to redefine {} loot table, ignoring", Class9020.field38063);
         }
         map.forEach((class6585, jsonObject) -> {
             try {
-                immutableMap$Builder.put((Object)class6585, (Object)Class1782.field9889.fromJson((JsonElement)jsonObject, (Class)Class9317.class));
+                immutableMap$Builder.put((Object)class6585, (Object)Class1782.field9889.fromJson(jsonObject, (Class)Class9317.class));
             }
             catch (final Exception ex) {
-                Class1782.field9888.error("Couldn't parse loot table {}", (Object)class6585, (Object)ex);
+                Class1782.field9888.error("Couldn't parse loot table {}", class6585, ex);
             }
-            return;
         });
         builder.put((Object)Class9020.field38063, (Object)Class9317.field40009);
         final ImmutableMap build = builder.build();
@@ -60,7 +59,7 @@ public class Class1782 extends Class1779
     }
     
     public static JsonElement method6404(final Class9317 class9317) {
-        return Class1782.field9889.toJsonTree((Object)class9317);
+        return Class1782.field9889.toJsonTree(class9317);
     }
     
     public Set<ResourceLocation> method6405() {
@@ -69,6 +68,6 @@ public class Class1782 extends Class1779
     
     static {
         field9888 = LogManager.getLogger();
-        field9889 = new GsonBuilder().registerTypeAdapter((Type)Class5772.class, (Object)new Class5957()).registerTypeAdapter((Type)Class5769.class, (Object)new Class5986()).registerTypeAdapter((Type)Class5771.class, (Object)new Class5975()).registerTypeAdapter((Type)Class9299.class, (Object)new Class5971()).registerTypeAdapter((Type)Class9320.class, (Object)new Class5980()).registerTypeAdapter((Type)Class9317.class, (Object)new Class5969()).registerTypeHierarchyAdapter((Class)Class6368.class, (Object)new Class5955()).registerTypeHierarchyAdapter((Class)Class125.class, (Object)new Class5974()).registerTypeHierarchyAdapter((Class)Class122.class, (Object)new Class5967()).registerTypeHierarchyAdapter((Class)Class2065.class, (Object)new Class7904()).create();
+        field9889 = new GsonBuilder().registerTypeAdapter(Class5772.class, new Class5957()).registerTypeAdapter(Class5769.class, new Class5986()).registerTypeAdapter(Class5771.class, new Class5975()).registerTypeAdapter(Class9299.class, new Class5971()).registerTypeAdapter(Class9320.class, new Class5980()).registerTypeAdapter(Class9317.class, new Class5969()).registerTypeHierarchyAdapter(Class6368.class, new Class5955()).registerTypeHierarchyAdapter(Class125.class, new Class5974()).registerTypeHierarchyAdapter(Class122.class, new Class5967()).registerTypeHierarchyAdapter(Class2065.class, new Class7904()).create();
     }
 }

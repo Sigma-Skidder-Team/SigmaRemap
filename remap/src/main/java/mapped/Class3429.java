@@ -147,7 +147,7 @@ public abstract class Class3429 extends Class3426<IInventory>
     }
     
     public boolean method10946(final ItemStack class8321) {
-        return this.field16211.method6792().method6378((IRecipeType<IRecipe>)this.field16212, new Class443(new ItemStack[] { class8321 }), this.field16211).isPresent();
+        return this.field16211.method6792().method6378((IRecipeType<IRecipe>)this.field16212, new Class443(class8321), this.field16211).isPresent();
     }
     
     public boolean method10947(final ItemStack class8321) {

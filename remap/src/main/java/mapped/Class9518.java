@@ -84,7 +84,7 @@ public class Class9518
     
     private static boolean method35502(final String s, final String s2, final char c) {
         if (s != null && s2 != null) {
-            return s.length() >= s2.length() && method35500(s.substring(s.length() - s2.length(), s.length()), s2, c);
+            return s.length() >= s2.length() && method35500(s.substring(s.length() - s2.length()), s2, c);
         }
         return s == s2;
     }
@@ -157,7 +157,7 @@ public class Class9518
                     n = i + 1;
                 }
             }
-            list.add(s.substring(n, s.length()));
+            list.add(s.substring(n));
             return (String[])list.toArray(new String[list.size()]);
         }
         return new String[] { s };
@@ -229,7 +229,7 @@ public class Class9518
             while (sb.length() < n - str.length()) {
                 sb.append(c);
             }
-            return sb.toString() + str;
+            return sb + str;
         }
         return str;
     }

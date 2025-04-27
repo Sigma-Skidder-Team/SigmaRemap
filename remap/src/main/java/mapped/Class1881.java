@@ -26,16 +26,16 @@ public final class Class1881 implements AutoCloseable
     
     private Class1924 method7175(final ChunkPos class7859) throws IOException {
         final long method25423 = ChunkPos.method25423(class7859.method25430(), class7859.method25431());
-        final Class1924 class7860 = (Class1924)this.field10239.getAndMoveToFirst(method25423);
+        final Class1924 class7860 = this.field10239.getAndMoveToFirst(method25423);
         if (class7860 == null) {
             if (this.field10239.size() >= 256) {
-                ((Class1924)this.field10239.removeLast()).close();
+                this.field10239.removeLast().close();
             }
             if (!this.field10240.exists()) {
                 this.field10240.mkdirs();
             }
             final Class1924 class7861 = new Class1924(new File(this.field10240, "r." + class7859.method25430() + "." + class7859.method25431() + ".mca"), this.field10240);
-            this.field10239.putAndMoveToFirst(method25423, (Object)class7861);
+            this.field10239.putAndMoveToFirst(method25423, class7861);
             return class7861;
         }
         return class7860;
@@ -64,8 +64,8 @@ public final class Class1881 implements AutoCloseable
     @Override
     public void close() throws IOException {
         final ObjectIterator iterator = this.field10239.values().iterator();
-        while (((Iterator)iterator).hasNext()) {
-            ((Class1924)((Iterator)iterator).next()).close();
+        while (iterator.hasNext()) {
+            ((Class1924) iterator.next()).close();
         }
     }
 }

@@ -26,7 +26,7 @@ public class Class3456 extends Class3446
         if (this.field16299.method4351() >= 0) {
             return false;
         }
-        final List<Entity> method7128 = (List<Entity>)this.field16299.world.method7128(this.field16299.getClass(), this.field16299.getBoundingBox().grow(8.0, 4.0, 8.0));
+        final List<Entity> method7128 = this.field16299.world.method7128(this.field16299.getClass(), this.field16299.getBoundingBox().grow(8.0, 4.0, 8.0));
         Class789 field16300 = null;
         double n = Double.MAX_VALUE;
         for (final Class789 class789 : method7128) {

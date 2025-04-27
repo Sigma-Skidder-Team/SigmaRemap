@@ -22,7 +22,7 @@ public class Class7519 implements Class7518
     public Class7519(final String name) throws IOException {
         this.field29126 = new HashMap<String, String>();
         try (final InputStreamReader inputStreamReader = new InputStreamReader(Class7519.class.getResourceAsStream(name), Charsets.UTF_8)) {
-            for (final Map.Entry<String, V> entry : ((JsonObject)new Gson().fromJson((Reader)inputStreamReader, (Class)JsonObject.class)).entrySet()) {
+            for (final Map.Entry<String, V> entry : ((JsonObject)new Gson().fromJson(inputStreamReader, (Class)JsonObject.class)).entrySet()) {
                 this.field29126.put(entry.getKey(), ((JsonElement)entry.getValue()).getAsString());
             }
         }
@@ -50,14 +50,9 @@ public class Class7519 implements Class7518
             final Map<String, String> method23450 = this.method23450();
             final Map<String, String> method23451 = class7519.method23450();
             if (method23450 != null) {
-                if (!method23450.equals(method23451)) {
-                    return false;
-                }
+                return method23450.equals(method23451);
             }
-            else if (method23451 != null) {
-                return false;
-            }
-            return true;
+            else return method23451 == null;
         }
         return false;
     }

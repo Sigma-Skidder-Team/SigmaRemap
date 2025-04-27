@@ -16,10 +16,10 @@ public enum Class2187
     field12974("sy"), 
     field12975("sz");
     
-    private String field12976;
+    private final String field12976;
     public static Class2187[] field12977;
     
-    private Class2187(final String field12976) {
+    Class2187(final String field12976) {
         this.field12976 = field12976;
     }
     

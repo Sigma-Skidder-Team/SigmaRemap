@@ -85,8 +85,8 @@ public class Class821 extends Class819
     
     @Override
     public void method4839() {
-        final Class7954[] array = (Class7954[])Class9352.field40129.get(1);
-        final Class7954[] array2 = (Class7954[])Class9352.field40129.get(2);
+        final Class7954[] array = Class9352.field40129.get(1);
+        final Class7954[] array2 = Class9352.field40129.get(2);
         if (array != null) {
             if (array2 != null) {
                 final Class57 method4825 = this.method4825();

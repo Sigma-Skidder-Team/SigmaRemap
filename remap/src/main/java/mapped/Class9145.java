@@ -9,6 +9,7 @@ import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.BitSet;
 
@@ -21,24 +22,24 @@ public class Class9145
     private int field38740;
     private int field38741;
     private int field38742;
-    private float[] field38743;
-    private BitSet field38744;
-    private Class9436 field38745;
+    private final float[] field38743;
+    private final BitSet field38744;
+    private final Class9436 field38745;
     private Class384 field38746;
     private boolean[] field38747;
     private boolean[] field38748;
     private boolean[] field38749;
     private Direction[] field38750;
-    private List<Class8754> field38751;
-    private List<Class8754> field38752;
-    private Class8754[] field38753;
-    private Class8754[] field38754;
-    private Class8754[] field38755;
-    private Class8754[] field38756;
+    private final List<Class8754> field38751;
+    private final List<Class8754> field38752;
+    private final Class8754[] field38753;
+    private final Class8754[] field38754;
+    private final Class8754[] field38755;
+    private final Class8754[] field38756;
     private Class9226 field38757;
-    private Class8040[] field38758;
+    private final Class8040[] field38758;
     private boolean field38759;
-    private Long2ByteLinkedOpenHashMap field38760;
+    private final Long2ByteLinkedOpenHashMap field38760;
     private static final int field38761 = -1;
     private static final int field38762 = 0;
     private static final int field38763 = 1;
@@ -231,9 +232,7 @@ public class Class9145
     public List<Class8754> method33395(final Class8754[] array) {
         this.field38752.clear();
         if (array != null) {
-            for (int i = 0; i < array.length; ++i) {
-                this.field38752.add(array[i]);
-            }
+            Collections.addAll(this.field38752, array);
         }
         return this.field38752;
     }

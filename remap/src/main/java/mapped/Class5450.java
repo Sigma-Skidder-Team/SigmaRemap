@@ -17,7 +17,7 @@ public class Class5450 extends Class5419<LivingEntity>
     private int field22682;
     
     public Class5450(final int n, final int field22680) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33820, (Object)Class1952.field10628, (Object)Class8233.field33821, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33820, Class1952.field10628, (Object)Class8233.field33821, (Object)Class1952.field10628));
         this.field22681 = n * 20;
         this.field22682 = 0;
         this.field22680 = field22680;

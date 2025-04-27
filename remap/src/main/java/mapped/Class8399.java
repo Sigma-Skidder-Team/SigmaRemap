@@ -35,7 +35,6 @@ public class Class8399
                 Class9196.method33653(class272, class273);
                 this.field34428.add(class272);
             }
-            return;
         });
         return class270;
     }

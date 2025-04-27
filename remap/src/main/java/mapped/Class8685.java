@@ -22,7 +22,7 @@ public class Class8685 extends Class8684<Integer>
         if (n != null) {
             if (n2 != null) {
                 if (n > n2) {
-                    throw Class8685.field36496.createWithContext((ImmutableStringReader)stringReader);
+                    throw Class8685.field36496.createWithContext(stringReader);
                 }
             }
         }
@@ -49,7 +49,7 @@ public class Class8685 extends Class8684<Integer>
     }
     
     public boolean method29755(final int n) {
-        return (this.field36497 == null || (int)this.field36497 <= n) && (this.field36498 == null || (int)this.field36498 >= n);
+        return (this.field36497 == null || this.field36497 <= n) && (this.field36498 == null || this.field36498 >= n);
     }
     
     public static Class8685 method29756(final JsonElement jsonElement) {
@@ -61,7 +61,7 @@ public class Class8685 extends Class8684<Integer>
     }
     
     public static Class8685 method29758(final StringReader stringReader, final Function<Integer, Integer> function) throws CommandSyntaxException {
-        return Class8684.method29747(stringReader, (Class8561<Integer, Class8685>)Class8685::method29751, Integer::parseInt, CommandSyntaxException.BUILT_IN_EXCEPTIONS::readerInvalidInt, function);
+        return Class8684.method29747(stringReader, Class8685::method29751, Integer::parseInt, CommandSyntaxException.BUILT_IN_EXCEPTIONS::readerInvalidInt, function);
     }
     
     static {

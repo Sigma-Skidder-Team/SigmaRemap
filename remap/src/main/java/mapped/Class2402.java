@@ -10,14 +10,14 @@ public class Class2402 extends Class2400
     private Class2412 field14229;
     private Class2412 field14230;
     private float field14231;
-    private Class2412 field14232;
-    private Class2412 field14233;
-    private Class2412 field14234;
-    private Class2412 field14235;
-    private Class2412 field14236;
-    private Class2412 field14237;
-    private boolean field14238;
-    private boolean field14239;
+    private final Class2412 field14232;
+    private final Class2412 field14233;
+    private final Class2412 field14234;
+    private final Class2412 field14235;
+    private final Class2412 field14236;
+    private final Class2412 field14237;
+    private final boolean field14238;
+    private final boolean field14239;
     
     public Class2402(final float n, final float n2, final boolean b, final boolean b2) {
         this(0.0f, 0.0f, n, n2);

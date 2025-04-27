@@ -19,7 +19,7 @@ public class Class2527 extends Class2466
     @Override
     public void method9802(final Class8699 class8699) throws Exception {
         try {
-            final JsonObject jsonObject = (JsonObject)new JsonParser().parse((String)class8699.method29818(Class5260.field22308, 0));
+            final JsonObject jsonObject = (JsonObject)new JsonParser().parse(class8699.method29818(Class5260.field22308, 0));
             Class8529.method28609(jsonObject, class8699.method29841());
             class8699.method29821(Class5260.field22308, 0, jsonObject.toString());
         }

@@ -17,7 +17,7 @@ import mapped.ClientMode;
 public class AntiKnockBack extends ModuleWithSettings
 {
     public AntiKnockBack() {
-        super(Category.COMBAT, "AntiKnockBack", "Prevents you from taking knockback", new Module[] { new BasicAntiKnockBack(), new AACAntiKnockBack(), new DelayAntiKnockBack(), new SpartanAntiKnockBack() });
+        super(Category.COMBAT, "AntiKnockBack", "Prevents you from taking knockback", new BasicAntiKnockBack(), new AACAntiKnockBack(), new DelayAntiKnockBack(), new SpartanAntiKnockBack());
     }
     
     @Override

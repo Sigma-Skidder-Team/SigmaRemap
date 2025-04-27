@@ -31,10 +31,10 @@ public class Class554 extends Screen
         this.field3326 = field3326;
         this.field3327 = field3327;
         this.field3328 = field3328;
-        this.field3330 = Class8822.method30773("selectWorld.backupEraseCache", new Object[0]);
-        this.field3331 = Class8822.method30773("selectWorld.backupJoinConfirmButton", new Object[0]);
-        this.field3332 = Class8822.method30773("selectWorld.backupJoinSkipButton", new Object[0]);
-        this.field3333 = Class8822.method30773("gui.cancel", new Object[0]);
+        this.field3330 = Class8822.method30773("selectWorld.backupEraseCache");
+        this.field3331 = Class8822.method30773("selectWorld.backupJoinConfirmButton");
+        this.field3332 = Class8822.method30773("selectWorld.backupJoinSkipButton");
+        this.field3333 = Class8822.method30773("gui.cancel");
     }
     
     @Override

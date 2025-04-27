@@ -71,15 +71,15 @@ public abstract class Class2255 extends TextComponent implements Class2253
                     return Stream.empty();
                 }
             }).map((Function<? super Object, ?>) INBT::getString);
-            return this.field13801 ? ((ITextComponent)map.flatMap(str -> {
+            return this.field13801 ? map.flatMap(str -> {
                 try {
                     return Stream.of(Class9479.method35294(class7495, Class5953.method17871(str), class7496, n2));
                 }
                 catch (final Exception ex2) {
-                    Class2255.field13800.warn("Failed to parse component: " + str, (Throwable)ex2);
+                    Class2255.field13800.warn("Failed to parse component: " + str, ex2);
                     return Stream.of(new ITextComponent[0]);
                 }
-            }).reduce((class7497, class7499) -> class7497.appendText(", ").appendSibling(class7499)).orElse(new StringTextComponent(""))) : new StringTextComponent(Joiner.on(", ").join((Iterator)map.iterator()));
+            }).reduce((class7497, class7499) -> class7497.appendText(", ").appendSibling(class7499)).orElse(new StringTextComponent("")) : new StringTextComponent(Joiner.on(", ").join(map.iterator()));
         }
         return new StringTextComponent("");
     }

@@ -82,12 +82,12 @@ public class Class9357
             if (!this.field40142.isEmpty()) {
                 this.field40142.forEach(class7591 -> jsonObject2.add(class7591.method23886(), class7591.method23884()));
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {
-        field40141 = new Class9357((List<Class7591>)ImmutableList.of());
+        field40141 = new Class9357(ImmutableList.of());
     }
 }

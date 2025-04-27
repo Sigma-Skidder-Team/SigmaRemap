@@ -63,7 +63,7 @@ public abstract class Class6346<C extends Class7065>
     
     @Nullable
     public BlockPos method18874(final World class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
-        final Class4574 class1849 = (Class4574)Class4535.field20023.get((Object)s.toLowerCase(Locale.ROOT));
+        final Class4574 class1849 = Class4535.field20023.get(s.toLowerCase(Locale.ROOT));
         return (class1849 == null) ? null : class1849.method13591(class1847, this, class1848, n, b);
     }
     

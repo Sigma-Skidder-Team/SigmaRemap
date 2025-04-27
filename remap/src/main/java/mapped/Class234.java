@@ -25,10 +25,10 @@ public enum Class234
     field882(Items.field31510, 0.0f, 0.6f, 0.0f),
     field883(Items.field31607, 0.0f, 2.5f, 0.0f);
     
-    private Item field884;
-    private float field885;
-    private float field886;
-    private float field887;
+    private final Item field884;
+    private final float field885;
+    private final float field886;
+    private final float field887;
     public double field888;
     public double field889;
     public double field890;
@@ -38,7 +38,7 @@ public enum Class234
     public RayTraceResult field894;
     public Entity field895;
     
-    private Class234(final Item field884, final float field885, final float field886, final float field887) {
+    Class234(final Item field884, final float field885, final float field886, final float field887) {
         this.field884 = field884;
         this.field885 = field885;
         this.field886 = field886;
@@ -100,7 +100,7 @@ public enum Class234
             final Vec3d class5487 = new Vec3d(this.field888, this.field889, this.field890);
             final Vec3d class5488 = new Vec3d(this.field888 + this.field891, this.field889 + this.field892, this.field890 + this.field893);
             final float n5 = (float)((this.field884 instanceof Class4087) ? 0.3 : 0.25);
-            final List<Entity> method6737 = Projectiles.method10130().field4683.method6737(Projectiles.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).offset(this.field891, this.field892, this.field893).grow(1.0, 1.0, 1.0), Class9170.field38850.and((Predicate<? super Entity>)new Class166(this, n5, class5487, class5488)));
+            final List<Entity> method6737 = Projectiles.method10130().field4683.method6737(Projectiles.method10129().field4684, new AxisAlignedBB(this.field888 - n5, this.field889 - n5, this.field890 - n5, this.field888 + n5, this.field889 + n5, this.field890 + n5).offset(this.field891, this.field892, this.field893).grow(1.0, 1.0, 1.0), Class9170.field38850.and(new Class166(this, n5, class5487, class5488)));
             if (method6737.size() > 0) {
                 final Iterator<Entity> iterator = method6737.iterator();
                 while (iterator.hasNext()) {

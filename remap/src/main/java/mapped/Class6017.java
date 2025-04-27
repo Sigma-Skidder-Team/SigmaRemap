@@ -39,7 +39,7 @@ public class Class6017 implements Class5997
                 final ArrayList list = new ArrayList(class7577.method23835().size());
                 for (final Constructor<?> constructor : class7576.method23849().getDeclaredConstructors()) {
                     if (class7577.method23835().size() == constructor.getParameterTypes().length) {
-                        list.add((Object)constructor);
+                        list.add(constructor);
                     }
                 }
                 if (!list.isEmpty()) {
@@ -87,7 +87,7 @@ public class Class6017 implements Class5997
                         }
                     }
                 }
-                throw new Class2386("No suitable constructor with " + String.valueOf(class7577.method23835().size()) + " arguments found for " + class7576.method23849());
+                throw new Class2386("No suitable constructor with " + class7577.method23835().size() + " arguments found for " + class7576.method23849());
             }
             if (class7576.method23852()) {
                 return this.field24493.method19990(class7576.method23849(), class7577.method23835().size());

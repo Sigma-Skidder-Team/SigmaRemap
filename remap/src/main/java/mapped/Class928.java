@@ -42,7 +42,7 @@ public class Class928 extends Thread
                             return class7447;
                         }
                         else {
-                            if (!(!Class5045.method15393(this.field4914).method15547())) {
+                            if (Class5045.method15393(this.field4914).method15547()) {
                                 RealmsScreen.method15439("mco.template.select.none", "%link");
                                 Class6387.method19067(RealmsScreen.getLocalizedString("mco.template.select.none.linkTitle"), "https://minecraft.net/realms/content-creator/");
                                 final String s;
@@ -55,7 +55,7 @@ public class Class928 extends Thread
                 }
                 else {
                     Class5045.method15392().error("Couldn't fetch templates: {}", either.right().get());
-                    if (!(!Class5045.method15393(this.field4914).method15547())) {
+                    if (Class5045.method15393(this.field4914).method15547()) {
                         Class5045.method15394(this.field4914, Class7692.method24463(RealmsScreen.getLocalizedString("mco.template.select.failure"), new Class6387[0]));
                     }
                     return null;

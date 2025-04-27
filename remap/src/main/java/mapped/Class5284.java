@@ -44,7 +44,7 @@ public class Class5284 extends Class5278<Class6562, Class6637>
                 }
             }
         }
-        final int[] array2 = (int[])(boolean1 ? new int[256] : null);
+        final int[] array2 = boolean1 ? new int[256] : null;
         if (boolean1) {
             for (int k = 0; k < 256; ++k) {
                 array2[k] = (byteBuf.readByte() & 0xFF);
@@ -80,7 +80,7 @@ public class Class5284 extends Class5278<Class6562, Class6637>
         if (class6638.method19884()) {
             final int[] method19890 = class6638.method19890();
             for (int length = method19890.length, j = 0; j < length; ++j) {
-                byteBuf.writeByte((int)(byte)method19890[j]);
+                byteBuf.writeByte((byte)method19890[j]);
             }
         }
     }

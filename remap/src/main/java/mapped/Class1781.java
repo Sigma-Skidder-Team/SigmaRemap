@@ -37,12 +37,11 @@ public class Class1781 extends Class1779
         final HashMap hashMap = Maps.newHashMap();
         map.forEach((class6585, jsonObject) -> {
             try {
-                map2.put(class6585, Class1781.field9886.fromJson((JsonElement)jsonObject, (Class)Class6056.class));
+                map2.put(class6585, Class1781.field9886.fromJson(jsonObject, Class6056.class));
             }
             catch (final IllegalArgumentException | JsonParseException ex) {
-                Class1781.field9879.error("Parsing error loading custom advancement {}: {}", (Object)class6585, (Object)((Throwable)ex).getMessage());
+                Class1781.field9879.error("Parsing error loading custom advancement {}: {}", class6585, ex.getMessage());
             }
-            return;
         });
         final Class6518 field9887 = new Class6518();
         field9887.method19671(hashMap);
@@ -66,6 +65,6 @@ public class Class1781 extends Class1779
     
     static {
         field9879 = LogManager.getLogger();
-        field9886 = new GsonBuilder().registerTypeHierarchyAdapter((Class)Class6056.class, (Object)((jsonElement, type, jsonDeserializationContext) -> Class6056.method18017(Class9583.method35913(jsonElement, "advancement"), jsonDeserializationContext))).registerTypeAdapter((Type)Class9032.class, (Object)new Class5992()).registerTypeHierarchyAdapter((Class) ITextComponent.class, (Object)new Class5953()).registerTypeHierarchyAdapter((Class) Style.class, (Object)new Class5982()).registerTypeAdapterFactory((TypeAdapterFactory)new Class8818()).create();
+        field9886 = new GsonBuilder().registerTypeHierarchyAdapter(Class6056.class, (Object)((jsonElement, type, jsonDeserializationContext) -> Class6056.method18017(Class9583.method35913(jsonElement, "advancement"), jsonDeserializationContext))).registerTypeAdapter(Class9032.class, new Class5992()).registerTypeHierarchyAdapter(ITextComponent.class, new Class5953()).registerTypeHierarchyAdapter(Style.class, new Class5982()).registerTypeAdapterFactory(new Class8818()).create();
     }
 }

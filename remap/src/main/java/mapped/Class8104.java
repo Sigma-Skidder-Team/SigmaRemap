@@ -41,9 +41,7 @@ public class Class8104
             final Class8104 class8104 = (Class8104)o;
             if (Float.compare(class8104.field33368, this.field33368) == 0) {
                 if (Float.compare(class8104.field33369, this.field33369) == 0) {
-                    if (Objects.equals(this.field33367, class8104.field33367)) {
-                        return true;
-                    }
+                    return Objects.equals(this.field33367, class8104.field33367);
                 }
             }
             return false;

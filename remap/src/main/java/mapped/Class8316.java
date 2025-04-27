@@ -38,7 +38,7 @@ public class Class8316 implements ArgumentType<Class2042>
             return method8121;
         }
         stringReader.setCursor(cursor);
-        throw Class8316.field34164.createWithContext((ImmutableStringReader)stringReader, (Object)unquotedString);
+        throw Class8316.field34164.createWithContext(stringReader, unquotedString);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -52,7 +52,7 @@ public class Class8316 implements ArgumentType<Class2042>
     static {
         field34163 = Arrays.asList("eyes", "feet");
         field34164 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.anchor.invalid", new Object[] { o });
+            new Class2259("argument.anchor.invalid", o);
             return;
         });
     }

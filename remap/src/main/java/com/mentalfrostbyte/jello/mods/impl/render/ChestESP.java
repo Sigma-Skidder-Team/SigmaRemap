@@ -16,7 +16,7 @@ import com.mentalfrostbyte.jello.settings.impl.ColorSetting;
 public class ChestESP extends ModuleWithSettings
 {
     public ChestESP() {
-        super(Category.RENDER, "ChestESP", "Allows you to see chests through blocks", new Module[] { new OutlineChestESP(), new BoxChestESP() });
+        super(Category.RENDER, "ChestESP", "Allows you to see chests through blocks", new OutlineChestESP(), new BoxChestESP());
         this.addSetting(new BooleanSetting("Show Regular Chests", "Renders the regular chest esp", true));
         this.addSetting(new ColorSetting("Regular Color", "The render color", ClientColors.LIGHT_GREYISH_BLUE.color));
         this.addSetting(new BooleanSetting("Show Trapped Chests", "Renders the regular chest esp", true));

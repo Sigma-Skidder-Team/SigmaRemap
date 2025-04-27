@@ -140,7 +140,7 @@ public class Class3965 extends Block implements Class3966
     public Class2201 method11844(final Class7096 class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
         final ItemStack method2715 = class7099.method2715(class7100);
-        if (intValue < 8 && Class3965.field17916.containsKey((Object)method2715.getItem())) {
+        if (intValue < 8 && Class3965.field17916.containsKey(method2715.getItem())) {
             if (intValue < 7) {
                 if (!class7097.isRemote) {
                     class7097.method6955(1500, class7098, method12098(class7096, class7097, class7098, method2715) ? 1 : 0);
@@ -170,7 +170,7 @@ public class Class3965 extends Block implements Class3966
     
     private static boolean method12098(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final ItemStack class7099) {
         final int intValue = class7096.method21772((IProperty<Integer>)Class3965.field17915);
-        final float float1 = Class3965.field17916.getFloat((Object)class7099.getItem());
+        final float float1 = Class3965.field17916.getFloat(class7099.getItem());
         if (intValue != 0 || float1 <= 0.0f) {
             if (class7097.method6790().nextDouble() >= float1) {
                 return false;

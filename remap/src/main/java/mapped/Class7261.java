@@ -154,8 +154,8 @@ public abstract class Class7261 extends Class7257
         int method22156 = this.method22156(class1847);
         if (!class1849.isEmpty()) {
             if (!class1850.isEmpty()) {
-                if (!class1849.get((IProperty<Boolean>)Class7261.field28132)) {
-                    if (!class1850.get((IProperty<Boolean>)Class7261.field28132)) {
+                if (!class1849.get(Class7261.field28132)) {
+                    if (!class1850.get(Class7261.field28132)) {
                         if (class1850.getActualHeight(class1847, class1848) > class1849.getActualHeight(class1847, class1848)) {
                             if (class1847.method6790().nextInt(4) != 0) {
                                 method22156 *= 4;

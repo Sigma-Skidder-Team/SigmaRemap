@@ -43,7 +43,7 @@ public class Class9456
     public static Optional<Class9456> method35137(final String s) {
         if (!Class9456.field40639.containsKey(s)) {
             final int index = s.indexOf(58);
-            return (Optional<Class9456>)((index >= 0) ? Registry.field238.method506(ResourceLocation.method7794(s.substring(0, index), '.')).flatMap(class2248 -> method35138((Class2248<Object>)class2248, ResourceLocation.method7794(s2.substring(n + 1), '.'))) : Optional.empty());
+            return (index >= 0) ? Registry.field238.method506(ResourceLocation.method7794(s.substring(0, index), '.')).flatMap(class2248 -> method35138((Class2248<Object>)class2248, ResourceLocation.method7794(s2.substring(n + 1), '.'))) : Optional.empty();
         }
         return Optional.of(Class9456.field40639.get(s));
     }

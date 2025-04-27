@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Class6706 extends Class6693
 {
     public Class6706() {
-        super("friend", "Manage friends", new String[] { "friends", "f" });
+        super("friend", "Manage friends", "friends", "f");
         this.method20351("add/remove/list/clear");
     }
     

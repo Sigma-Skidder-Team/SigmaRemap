@@ -15,7 +15,7 @@ public final class Class5238<T> extends Class5233
         super(class2314, class2315);
         this.field22261 = field22261;
         if (field22262 != null && field22262.size() != 2) {
-            throw new Class2386("Two strings must be provided instead of " + String.valueOf(field22262.size()));
+            throw new Class2386("Two strings must be provided instead of " + field22262.size());
         }
         this.field22262 = field22262;
     }

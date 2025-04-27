@@ -47,9 +47,7 @@ public class Class8531
             if (this.field35807 == class8531.field35807) {
                 if (this.field35808 == class8531.field35808) {
                     if (this.field35809 == class8531.field35809) {
-                        if (this.field35810 == class8531.field35810) {
-                            return true;
-                        }
+                        return this.field35810 == class8531.field35810;
                     }
                 }
             }

@@ -22,10 +22,10 @@ public class Class7982 extends DataFix
     
     public TypeRewriteRule makeRule() {
         return this.fixTypeEverywhereTyped("EntityRedundantChanceTagsFix", this.getInputSchema().getType(Class9451.field40626), typed -> typed.update(DSL.remainderFinder(), dynamic -> {
-            if (!(!Objects.equals(dynamic.get("HandDropChances"), Optional.of(dynamic.createList((Stream)Stream.generate(() -> dynamic2.createFloat(0.0f)).limit(2L)))))) {
+            if (Objects.equals(dynamic.get("HandDropChances"), Optional.of(dynamic.createList((Stream) Stream.generate(() -> dynamic2.createFloat(0.0f)).limit(2L))))) {
                 dynamic = dynamic.remove("HandDropChances");
             }
-            if (!(!Objects.equals(dynamic.get("ArmorDropChances"), Optional.of(dynamic.createList((Stream)Stream.generate(() -> dynamic3.createFloat(0.0f)).limit(4L)))))) {
+            if (Objects.equals(dynamic.get("ArmorDropChances"), Optional.of(dynamic.createList((Stream) Stream.generate(() -> dynamic3.createFloat(0.0f)).limit(4L))))) {
                 dynamic = dynamic.remove("ArmorDropChances");
             }
             return dynamic;

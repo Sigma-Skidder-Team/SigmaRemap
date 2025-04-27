@@ -4,14 +4,10 @@
 
 package mapped;
 
-import java.util.Locale;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 import java.net.IDN;
 import java.util.concurrent.ThreadFactory;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.List;
 import java.io.InterruptedIOException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -19,8 +15,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.Closeable;
 import java.util.regex.Pattern;
-import java.util.Comparator;
-import java.util.TimeZone;
 import java.nio.charset.Charset;
 
 public final class Class7690
@@ -58,7 +52,7 @@ public final class Class7690
     }
     
     public static boolean method24431(final Object o, final Object obj) {
-        return o == obj || (o != null && o.equals(obj));
+        return Objects.equals(o, obj);
     }
     
     public static void method24432(final Closeable closeable) {
@@ -137,11 +131,11 @@ public final class Class7690
     }
     
     public static <T> List<T> method24437(final List<T> c) {
-        return Collections.unmodifiableList((List<? extends T>)new ArrayList<T>((Collection<? extends T>)c));
+        return Collections.unmodifiableList(new ArrayList<T>(c));
     }
     
     public static <T> List<T> method24438(final T... array) {
-        return Collections.unmodifiableList((List<? extends T>)Arrays.asList((T[])array.clone()));
+        return Collections.unmodifiableList(Arrays.asList(array.clone()));
     }
     
     public static ThreadFactory method24439(final String s, final boolean b) {
@@ -207,9 +201,7 @@ public final class Class7690
     public static boolean method24444(final AssertionError assertionError) {
         if (assertionError.getCause() != null) {
             if (assertionError.getMessage() != null) {
-                if (assertionError.getMessage().contains("getsockname failed")) {
-                    return true;
-                }
+                return assertionError.getMessage().contains("getsockname failed");
             }
         }
         return false;
@@ -375,9 +367,9 @@ public final class Class7690
         field30546 = Class1929.method7758("fffe");
         field30547 = Class1929.method7758("0000ffff");
         field30548 = Class1929.method7758("ffff0000");
-        field30549 = Charset.forName("UTF-8");
-        field30550 = Charset.forName("UTF-16BE");
-        field30551 = Charset.forName("UTF-16LE");
+        field30549 = StandardCharsets.UTF_8;
+        field30550 = StandardCharsets.UTF_16BE;
+        field30551 = StandardCharsets.UTF_16LE;
         field30552 = Charset.forName("UTF-32BE");
         field30553 = Charset.forName("UTF-32LE");
         field30554 = TimeZone.getTimeZone("GMT");

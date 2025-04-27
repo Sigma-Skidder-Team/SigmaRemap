@@ -10,7 +10,7 @@ import java.util.List;
 
 public enum Class2234
 {
-    field13720((Vec3i)null),
+    field13720(null),
     field13721(new Vec3i(-1, 0, 0)),
     field13722(new Vec3i(1, 0, 0)),
     field13723(new Vec3i(0, 0, -1)),
@@ -20,7 +20,7 @@ public enum Class2234
     
     public Vec3i field13727;
     
-    private Class2234(final Vec3i field13727) {
+    Class2234(final Vec3i field13727) {
         this.field13727 = field13727;
     }
     

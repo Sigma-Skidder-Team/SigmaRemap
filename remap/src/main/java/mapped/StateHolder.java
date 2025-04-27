@@ -31,7 +31,7 @@ public abstract class StateHolder<O, S> implements IStateHolder<S>
     }
     
     public <T extends Comparable<T>> S method21768(final IProperty<T> class7111) {
-        return this.with(class7111, (Comparable)method21769((Collection<V>)class7111.getAllowedValues(), (V)this.get((IProperty<T>)class7111)));
+        return this.with(class7111, (Comparable)method21769((Collection<V>)class7111.getAllowedValues(), (V)this.get(class7111)));
     }
     
     public static <T> T method21769(final Collection<T> collection, final T obj) {
@@ -61,16 +61,16 @@ public abstract class StateHolder<O, S> implements IStateHolder<S>
     }
     
     public Collection<IProperty<?>> method21770() {
-        return Collections.unmodifiableCollection((Collection<? extends IProperty<?>>)this.field27625.keySet());
+        return Collections.unmodifiableCollection(this.field27625.keySet());
     }
     
     public <T extends Comparable<T>> boolean method21771(final IProperty<T> class7111) {
-        return this.field27625.containsKey((Object)class7111);
+        return this.field27625.containsKey(class7111);
     }
     
     @Override
     public <T extends Comparable<T>> T get(final IProperty<T> obj) {
-        final Comparable obj2 = (Comparable)this.field27625.get((Object)obj);
+        final Comparable obj2 = this.field27625.get(obj);
         if (obj2 != null) {
             return obj.getValueClass().cast(obj2);
         }
@@ -79,14 +79,14 @@ public abstract class StateHolder<O, S> implements IStateHolder<S>
     
     @Override
     public <T extends Comparable<T>, V extends T> S with(final IProperty<T> class7111, final V obj) {
-        final Comparable comparable = (Comparable)this.field27625.get((Object)class7111);
+        final Comparable comparable = this.field27625.get(class7111);
         if (comparable == null) {
             throw new IllegalArgumentException("Cannot set property " + class7111 + " as it does not exist in " + this.object);
         }
         if (comparable == obj) {
             return (S)this;
         }
-        final Object value = this.field27626.get((Object)class7111, (Object)obj);
+        final Object value = this.field27626.get(class7111, (Object)obj);
         if (value != null) {
             return (S)value;
         }
@@ -102,10 +102,10 @@ public abstract class StateHolder<O, S> implements IStateHolder<S>
                     if (comparable == entry.getValue()) {
                         continue;
                     }
-                    ((Table)create).put((Object)class7111, (Object)comparable, (Object)map.get(this.method21775(class7111, comparable)));
+                    create.put(class7111, comparable, map.get(this.method21775(class7111, comparable)));
                 }
             }
-            this.field27626 = (Table<IProperty<?>, Comparable<?>, S>)(((Table)create).isEmpty() ? create : ArrayTable.create((Table)create));
+            this.field27626 = create.isEmpty() ? create : ArrayTable.create(create);
             return;
         }
         throw new IllegalStateException();

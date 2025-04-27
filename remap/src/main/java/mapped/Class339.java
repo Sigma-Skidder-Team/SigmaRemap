@@ -6,7 +6,7 @@ package mapped;
 
 public class Class339 implements Class326
 {
-    private Class5604 field2084;
+    private final Class5604 field2084;
     
     public Class339(final Class5604 field2084) {
         this.field2084 = field2084;

@@ -148,7 +148,7 @@ public class Class1794 implements Class1657
         }
         CompletableFuture.allOf((CompletableFuture<?>[])arrayList.toArray(new CompletableFuture[0])).join();
         if (!this.field9938.isEmpty()) {
-            Class1794.field9932.info("Loaded {} custom command functions", (Object)this.field9938.size());
+            Class1794.field9932.info("Loaded {} custom command functions", this.field9938.size());
         }
         this.field9942.method18465(this.field9942.method18464(class6582, this.field9937.method1591()).join());
         this.field9943.addAll(this.field9942.method18461(Class1794.field9933).method25616());
@@ -158,7 +158,7 @@ public class Class1794 implements Class1657
     @Nullable
     private Class8263 method6509(final Class8263 class8263, final Throwable t, final ResourceLocation class8264) {
         if (t != null) {
-            Class1794.field9932.error("Couldn't load function at {}", (Object)class8264, (Object)t);
+            Class1794.field9932.error("Couldn't load function at {}", class8264, t);
             return null;
         }
         synchronized (this.field9938) {

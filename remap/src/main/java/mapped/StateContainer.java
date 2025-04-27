@@ -37,7 +37,7 @@ public class StateContainer<O, S extends IStateHolder<S>>
         final LinkedHashMap linkedHashMap = Maps.newLinkedHashMap();
         final ArrayList arrayList = Lists.newArrayList();
         Object o = Stream.of(Collections.emptyList());
-        while (((Iterator)this.field38560.values().iterator()).hasNext()) {
+        while (this.field38560.values().iterator().hasNext()) {
             o = ((Stream<List<Object>>)o).flatMap(p1 -> {
                 final Iterator<IProperty> iterator2;
                 final Object o3 = iterator2.next();
@@ -50,19 +50,18 @@ public class StateContainer<O, S extends IStateHolder<S>>
             });
         }
         ((Stream<List<Object>>)o).forEach(list3 -> {
-            Class8739.method30188((Iterable<Object>)this.field38560.values(), (Iterable<Object>)list3);
+            Class8739.method30188((Iterable<Object>)this.field38560.values(), list3);
             final Map map3;
             class6848.method20943(o5, ImmutableMap.copyOf(map3));
             final StateHolder class6849;
             map2.put(map3, class6849);
             list2.add(class6849);
-            return;
         });
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             ((StateHolder)iterator.next()).method21774(linkedHashMap);
         }
-        this.field38561 = (ImmutableList<S>)ImmutableList.copyOf((Collection)arrayList);
+        this.field38561 = (ImmutableList<S>)ImmutableList.copyOf(arrayList);
     }
     
     public ImmutableList<S> method32902() {
@@ -70,7 +69,7 @@ public class StateContainer<O, S extends IStateHolder<S>>
     }
     
     public S method32903() {
-        return (S)this.field38561.get(0);
+        return this.field38561.get(0);
     }
     
     public O method32904() {
@@ -78,17 +77,17 @@ public class StateContainer<O, S extends IStateHolder<S>>
     }
     
     public Collection<IProperty<?>> method32905() {
-        return (Collection<IProperty<?>>)this.field38560.values();
+        return this.field38560.values();
     }
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("block", (Object)this.field38559).add("properties", (Object)this.field38560.values().stream().map(IProperty::getName).collect((Collector<? super Object, ?, List<Object>>)Collectors.toList())).toString();
+        return MoreObjects.toStringHelper(this).add("block", this.field38559).add("properties", this.field38560.values().stream().map(IProperty::getName).collect((Collector<? super Object, ?, List<Object>>)Collectors.toList())).toString();
     }
     
     @Nullable
     public IProperty<?> getProperty(final String s) {
-        return (IProperty)this.field38560.get((Object)s);
+        return this.field38560.get(s);
     }
     
     static {

@@ -34,7 +34,7 @@ public class Class6318 implements Class6313
     public Class6318(final List<Pair<Predicate<BlockState>, Class6313>> field25262) {
         this.field25269 = (Map<BlockState, BitSet>)new Object2ObjectOpenCustomHashMap((Hash$Strategy) Util.method27852());
         this.field25262 = field25262;
-        final Class6313 class6313 = (Class6313)field25262.iterator().next().getRight();
+        final Class6313 class6313 = field25262.iterator().next().getRight();
         this.field25263 = class6313.method18692();
         this.field25264 = class6313.method18693();
         this.field25265 = class6313.method18694();
@@ -50,7 +50,7 @@ public class Class6318 implements Class6313
             if (set == null) {
                 set = new BitSet();
                 for (int i = 0; i < this.field25262.size(); ++i) {
-                    if (((Predicate)this.field25262.get(i).getLeft()).test(class7096)) {
+                    if (this.field25262.get(i).getLeft().test(class7096)) {
                         set.set(i);
                     }
                 }
@@ -60,7 +60,7 @@ public class Class6318 implements Class6313
             final long nextLong = random.nextLong();
             for (int j = 0; j < set.length(); ++j) {
                 if (set.get(j)) {
-                    arrayList.addAll(((Class6313)this.field25262.get(j).getRight()).method18691(class7096, class7097, new Random(nextLong)));
+                    arrayList.addAll(this.field25262.get(j).getRight().method18691(class7096, class7097, new Random(nextLong)));
                 }
             }
             return arrayList;

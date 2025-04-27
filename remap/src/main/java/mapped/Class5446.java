@@ -19,7 +19,7 @@ public class Class5446 extends Class5419<Class824>
     private Class8792 field22673;
     
     public Class5446(final int n, final int n2) {
-        super((Map)ImmutableMap.of(), n, n2);
+        super(ImmutableMap.of(), n, n2);
     }
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
@@ -27,9 +27,7 @@ public class Class5446 extends Class5419<Class824>
         this.field22673 = class1849.method6927(class1851);
         if (this.field22673 != null) {
             if (this.field22673.method30622()) {
-                if (Class5418.method16541(class1849, class1850, class1851)) {
-                    return true;
-                }
+                return Class5418.method16541(class1849, class1850, class1851);
             }
         }
         return false;
@@ -68,7 +66,7 @@ public class Class5446 extends Class5419<Class824>
         final ListNBT class184 = new ListNBT();
         final CompoundNBT method27661 = class183.method27660("Explosion");
         if (method27661 != null) {
-            ((AbstractList<CompoundNBT>)class184).add(method27661);
+            class184.add(method27661);
         }
         method27660.putByte("Flight", (byte)n);
         if (!class184.isEmpty()) {

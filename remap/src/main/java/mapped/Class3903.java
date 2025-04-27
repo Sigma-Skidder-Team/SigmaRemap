@@ -81,7 +81,7 @@ public class Class3903 extends Class3902
     
     public Class3903(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3903.field17564, Direction.NORTH)).with(Class3903.field17618, Class107.field333));
+        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3903.field17564, Direction.NORTH).with(Class3903.field17618, Class107.field333));
     }
     
     @Override
@@ -90,7 +90,7 @@ public class Class3903 extends Class3902
     }
     
     private VoxelShape method12004(final BlockState class7096) {
-        final Direction class7097 = class7096.get((IProperty<Direction>)Class3903.field17564);
+        final Direction class7097 = class7096.get(Class3903.field17564);
         switch (Class9270.field39751[class7096.get(Class3903.field17618).ordinal()]) {
             case 1: {
                 if (class7097 != Direction.NORTH && class7097 != Direction.SOUTH) {
@@ -154,12 +154,12 @@ public class Class3903 extends Class3902
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3903.field17564, class7097.method8142(class7096.get((IProperty<Direction>)Class3903.field17564)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3903.field17564, class7097.method8142(class7096.get(Class3903.field17564)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3903.field17564)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3903.field17564)));
     }
     
     @Override
@@ -237,6 +237,6 @@ public class Class3903 extends Class3902
         field17680 = VoxelShapes.method24492(Class3903.field17676, Class3903.field17678);
         field17681 = VoxelShapes.method24492(Class3903.field17679, Class3903.field17680);
         field17682 = VoxelShapes.method24492(Class3903.field17681, Block.method11778(2.0, 0.0, 4.0, 14.0, 12.0, 12.0));
-        field17683 = new Class2259("container.grindstone_title", new Object[0]);
+        field17683 = new Class2259("container.grindstone_title");
     }
 }

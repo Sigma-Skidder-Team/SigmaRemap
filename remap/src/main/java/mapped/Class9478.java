@@ -21,7 +21,7 @@ public class Class9478 extends Schema
     }
     
     public static void method35287(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> method35286(schema2));
+        schema.register(map, s, () -> method35286(schema2));
     }
     
     public Map<String, Supplier<TypeTemplate>> registerEntities(final Schema schema) {
@@ -66,7 +66,7 @@ public class Class9478 extends Schema
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40616, () -> DSL.optionalFields("entities", DSL.list(DSL.optionalFields("nbt", Class9451.field40625.in(schema2))), "blocks", DSL.list(DSL.optionalFields("nbt", Class9451.field40621.in(schema2))), "palette", DSL.list(Class9451.field40623.in(schema2))));
         schema.registerType(false, Class9451.field40623, (Supplier)DSL::remainder);
     }

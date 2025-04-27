@@ -106,11 +106,11 @@ public class Class8906
             return method31386(Class6904.method21259(class1932), class1932.method7797());
         }
         catch (final IOException ex) {
-            Config.method28850("" + ex.getClass().getName() + ": " + ex.getMessage());
+            Config.method28850(ex.getClass().getName() + ": " + ex.getMessage());
             return null;
         }
         catch (final JsonParseException ex2) {
-            Config.method28850("" + ex2.getClass().getName() + ": " + ex2.getMessage());
+            Config.method28850(ex2.getClass().getName() + ": " + ex2.getMessage());
             return null;
         }
         catch (final Exception ex3) {

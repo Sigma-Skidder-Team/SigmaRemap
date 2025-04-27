@@ -125,8 +125,8 @@ public class Class805 extends Class804
                     for (int j = 0; j < 4; ++j) {
                         this.world.method6709(Class8432.field34612, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
                     }
-                    this.field4328 = (Class5328)method2716.getLeft();
-                    this.field4329 = (int)method2716.getRight();
+                    this.field4328 = method2716.getLeft();
+                    this.field4329 = method2716.getRight();
                     this.method1695(Class8520.field35370, 2.0f, 1.0f);
                 }
                 else {

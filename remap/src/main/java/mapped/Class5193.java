@@ -19,7 +19,7 @@ public class Class5193 extends Class5174
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40627, () -> DSL.constType(DSL.namespacedString()));
     }
 }

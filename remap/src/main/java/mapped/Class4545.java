@@ -191,9 +191,7 @@ public class Class4545 extends Class4535<Class5141>
     private boolean method13554(final Block class3833) {
         if (class3833 != Blocks.field29548) {
             if (class3833 != Blocks.field29331) {
-                if (class3833 != Blocks.BLUE_ICE) {
-                    return false;
-                }
+                return class3833 == Blocks.BLUE_ICE;
             }
         }
         return true;

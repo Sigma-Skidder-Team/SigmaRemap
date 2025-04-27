@@ -37,7 +37,7 @@ public class Class9295
             }
         }
         catch (final Exception ex) {
-            Class9295.field39864.error("Couldn't load server list", (Throwable)ex);
+            Class9295.field39864.error("Couldn't load server list", ex);
         }
     }
     
@@ -46,14 +46,14 @@ public class Class9295
             final ListNBT class52 = new ListNBT();
             final Iterator<ServerData> iterator = this.field39866.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method35865());
+                class52.add(iterator.next().method35865());
             }
             final CompoundNBT class53 = new CompoundNBT();
             class53.put("servers", class52);
             Class8097.method26592(class53, new File(this.field39865.field4652, "servers.dat"));
         }
         catch (final Exception ex) {
-            Class9295.field39864.error("Couldn't save server list", (Throwable)ex);
+            Class9295.field39864.error("Couldn't save server list", ex);
         }
     }
     

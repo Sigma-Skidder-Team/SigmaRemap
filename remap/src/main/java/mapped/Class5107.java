@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Class5107 implements Class5106
 {
-    private Map<String, Class327> field22048;
+    private final Map<String, Class327> field22048;
     
     public Class5107(final Map<String, Class327> map) {
         this.field22048 = new HashMap<String, Class327>();

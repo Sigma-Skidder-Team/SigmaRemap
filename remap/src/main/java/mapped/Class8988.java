@@ -529,7 +529,7 @@ public class Class8988
         final Item method31997 = this.method31997(this.field37881);
         if (method31997 != null) {
             final int method31998 = Item.method11696(method31997);
-            return (int[])((method31998 >= 0) ? new int[] { method31998 } : null);
+            return (method31998 >= 0) ? new int[] { method31998 } : null;
         }
         return null;
     }
@@ -625,9 +625,7 @@ public class Class8988
         if (!s.startsWith("bow")) {
             if (!s.startsWith("crossbow")) {
                 if (!s.startsWith("fishing_rod")) {
-                    if (!s.startsWith("shield")) {
-                        return false;
-                    }
+                    return s.startsWith("shield");
                 }
             }
         }
@@ -758,7 +756,7 @@ public class Class8988
     
     @Override
     public String toString() {
-        return "" + this.field37882 + "/" + this.field37881 + ", type: " + this.field37883 + ", items: [" + Config.method28890(this.field37884) + "], textture: " + this.field37885;
+        return this.field37882 + "/" + this.field37881 + ", type: " + this.field37883 + ", items: [" + Config.method28890(this.field37884) + "], textture: " + this.field37885;
     }
     
     public float method32028(final Class1663 class1663) {

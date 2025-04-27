@@ -131,7 +131,7 @@ public class Class1926 implements Class1927, AutoCloseable
             throw method19943;
         }
         finally {
-            IOUtils.closeQuietly((Closeable)method19933);
+            IOUtils.closeQuietly(method19933);
         }
         this.method7713();
     }
@@ -144,7 +144,7 @@ public class Class1926 implements Class1927, AutoCloseable
                 method34572 = Class9331.method34572(class6583, str, method34573.method5887());
             }
             finally {
-                IOUtils.closeQuietly((Closeable)method34573);
+                IOUtils.closeQuietly(method34573);
             }
         }
         return method34572;
@@ -293,7 +293,7 @@ public class Class1926 implements Class1927, AutoCloseable
                 this.field10508.add(method7156);
             }
             else {
-                Class1926.field10502.warn("Shader {}could not find sampler named {} in the specified shader program.", (Object)this.field10513, (Object)s);
+                Class1926.field10502.warn("Shader {}could not find sampler named {} in the specified shader program.", this.field10513, s);
                 this.field10506.remove(s);
                 this.field10507.remove(n);
                 --n;
@@ -308,7 +308,7 @@ public class Class1926 implements Class1927, AutoCloseable
                 this.field10511.put(method7157, class1879);
             }
             else {
-                Class1926.field10502.warn("Could not find uniform named {} in the specified shader program.", (Object)method7157);
+                Class1926.field10502.warn("Could not find uniform named {} in the specified shader program.", method7157);
             }
         }
     }
@@ -326,9 +326,7 @@ public class Class1926 implements Class1927, AutoCloseable
     }
     
     public void method7718(final String s, final Object o) {
-        if (this.field10506.containsKey(s)) {
-            this.field10506.remove(s);
-        }
+        this.field10506.remove(s);
         this.field10506.put(s, o);
         this.method7713();
     }

@@ -52,7 +52,7 @@ public class Class7277
     
     @Override
     public int hashCode() {
-        return ((1 * 59 + this.method22301()) * 59 + this.method22302()) * 59 + this.method22303();
+        return ((59 + this.method22301()) * 59 + this.method22302()) * 59 + this.method22303();
     }
     
     @Override

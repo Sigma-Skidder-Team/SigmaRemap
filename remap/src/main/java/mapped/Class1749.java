@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.DataInput;
 import java.io.FilterInputStream;
+import java.nio.charset.StandardCharsets;
 
 public class Class1749 extends FilterInputStream implements DataInput
 {
@@ -158,6 +159,6 @@ public class Class1749 extends FilterInputStream implements DataInput
     public String readUTF() throws IOException {
         final byte[] bytes = new byte[this.readUnsignedShort()];
         this.readFully(bytes);
-        return new String(bytes, "UTF-8");
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 }

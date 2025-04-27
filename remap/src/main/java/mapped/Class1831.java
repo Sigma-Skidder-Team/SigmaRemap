@@ -43,8 +43,8 @@ public class Class1831<T extends LivingEntity, M extends Class5845<T> & Class585
                     if (!method2720.contains("SkullOwner", 10)) {
                         if (method2720.contains("SkullOwner", 8)) {
                             final String method2721 = method2720.getString("SkullOwner");
-                            if (!StringUtils.isBlank((CharSequence)method2721)) {
-                                gameProfile = Class493.method2508(new GameProfile((UUID)null, method2721));
+                            if (!StringUtils.isBlank(method2721)) {
+                                gameProfile = Class493.method2508(new GameProfile(null, method2721));
                                 method2720.put("SkullOwner", Class9346.method34641(new CompoundNBT(), gameProfile));
                             }
                         }

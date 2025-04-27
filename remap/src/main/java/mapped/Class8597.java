@@ -12,11 +12,11 @@ public class Class8597
     private static String[] field36105;
     
     public static Object method29119(final Class<?> clazz, final String name) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        return clazz.getDeclaredMethod(name, (Class<?>[])new Class[0]).invoke(null, new Object[0]);
+        return clazz.getDeclaredMethod(name, new Class[0]).invoke(null);
     }
     
     public static Object method29120(final Object obj, final String name) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        return obj.getClass().getDeclaredMethod(name, (Class<?>[])new Class[0]).invoke(obj, new Object[0]);
+        return obj.getClass().getDeclaredMethod(name, new Class[0]).invoke(obj);
     }
     
     public static <T> T method29121(final Class<?> clazz, final String name, final Class<T> clazz2) throws NoSuchFieldException, IllegalAccessException {

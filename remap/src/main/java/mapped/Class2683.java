@@ -23,7 +23,7 @@ public class Class2683 extends Class2466
             }
         }
         else {
-            class8699.method29821(Class5260.field22296, 1, (int)Class9526.field41005.get((Object)(intValue2 << 4)));
+            class8699.method29821(Class5260.field22296, 1, Class9526.field41005.get(intValue2 << 4));
         }
     }
 }

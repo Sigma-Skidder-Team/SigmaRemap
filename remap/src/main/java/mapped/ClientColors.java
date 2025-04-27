@@ -28,7 +28,7 @@ public enum ClientColors
     
     public final int color;
     
-    private ClientColors(final int color) {
+    ClientColors(final int color) {
         this.color = color;
     }
 }

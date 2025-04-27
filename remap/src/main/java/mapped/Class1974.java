@@ -95,7 +95,7 @@ public enum Class1974
     private final int field10940;
     private final Class1974 field10941;
     
-    private Class1974(final int field10940) {
+    Class1974(final int field10940) {
         this.field10940 = field10940;
         this.field10941 = null;
     }
@@ -104,10 +104,10 @@ public enum Class1974
         if (i != -1) {
             return (Optional<Class1974>)Optional.fromNullable((Object)Class1974.field10939.get(i));
         }
-        return (Optional<Class1974>)Optional.absent();
+        return Optional.absent();
     }
     
-    private Class1974(final int field10940, final Class1974 field10941) {
+    Class1974(final int field10940, final Class1974 field10941) {
         this.field10940 = field10940;
         this.field10941 = field10941;
     }

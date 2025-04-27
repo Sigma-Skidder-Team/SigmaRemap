@@ -13,8 +13,8 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 public class Class8604
 {
     private static String[] field36118;
-    private Int2ObjectMap<Class9591> field36119;
-    private List<Class9591> field36120;
+    private final Int2ObjectMap<Class9591> field36119;
+    private final List<Class9591> field36120;
     private boolean field36121;
     
     public Class8604() {
@@ -24,13 +24,13 @@ public class Class8604
     }
     
     public Class9591 method29173(final int n, final Class9591 class9591) {
-        final Class9591 class9592 = (Class9591)this.field36119.put(n, (Object)class9591);
+        final Class9591 class9592 = this.field36119.put(n, (Object)class9591);
         this.method29178();
         return class9592;
     }
     
     public Class9591 method29174(final int n) {
-        return (Class9591)this.field36119.get(n);
+        return this.field36119.get(n);
     }
     
     public int method29175() {
@@ -38,7 +38,7 @@ public class Class8604
     }
     
     public Class9591 method29176(final int n) {
-        final Class9591 class9591 = (Class9591)this.field36119.remove(n);
+        final Class9591 class9591 = this.field36119.remove(n);
         if (class9591 != null) {
             this.method29178();
         }
@@ -58,7 +58,7 @@ public class Class8604
     public List<Class9591> method29179() {
         if (this.field36121) {
             this.field36120.clear();
-            this.field36120.addAll((Collection<? extends Class9591>)this.field36119.values());
+            this.field36120.addAll(this.field36119.values());
             this.field36121 = false;
         }
         return this.field36120;

@@ -68,7 +68,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
                 Label_0425: {
                     if (field20303.isPassenger()) {
                         if (field20303.method1920() != null) {
-                            if (Class9570.method35820(field20303.method1920(), Class9570.field41255, new Object[0])) {
+                            if (Class9570.method35820(field20303.method1920(), Class9570.field41255)) {
                                 field20305 = true;
                                 break Label_0425;
                             }

@@ -16,7 +16,7 @@ public class Class666 extends Class662
     
     @Override
     public void method3711() {
-        this.method3367(Class8822.method30773("soundCategory." + this.field3699.method935(), new Object[0]) + ": " + (((float)this.field3694 != this.method3350(false)) ? ((int)((float)this.field3694 * 100.0f) + "%") : Class8822.method30773("options.off", new Object[0])));
+        this.method3367(Class8822.method30773("soundCategory." + this.field3699.method935()) + ": " + (((float)this.field3694 != this.method3350(false)) ? ((int)((float)this.field3694 * 100.0f) + "%") : Class8822.method30773("options.off")));
     }
     
     @Override

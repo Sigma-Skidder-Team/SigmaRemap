@@ -82,7 +82,7 @@ public class Class9300
     
     @Override
     public int hashCode() {
-        return ((((1 * 59 + this.method34384()) * 59 + this.method34385()) * 59 + this.method34386()) * 59 + this.method34387()) * 59 + Arrays.hashCode(this.method34388());
+        return ((((59 + this.method34384()) * 59 + this.method34385()) * 59 + this.method34386()) * 59 + this.method34387()) * 59 + Arrays.hashCode(this.method34388());
     }
     
     @Override

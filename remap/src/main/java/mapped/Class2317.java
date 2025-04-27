@@ -43,7 +43,7 @@ public class Class2317 extends Random
     }
     
     public long method9439(final long n, final int n2, final int n3) {
-        final long seed = n + n2 + 10000 * n3;
+        final long seed = n + n2 + 10000L * n3;
         this.setSeed(seed);
         return seed;
     }
@@ -62,6 +62,6 @@ public class Class2317 extends Random
     }
     
     public static Random method9442(final int n, final int n2, final long n3, final long n4) {
-        return new Random(n3 + n * n * 4987142 + n * 5947611 + n2 * n2 * 4392871L + n2 * 389711 ^ n4);
+        return new Random(n3 + (long) n * n * 4987142 + n * 5947611L + n2 * n2 * 4392871L + n2 * 389711L ^ n4);
     }
 }

@@ -7,7 +7,7 @@ package mapped;
 public class Class2283 implements Cloneable
 {
     private Class8611 field13888;
-    private Class8408 field13889;
+    private final Class8408 field13889;
     
     public Class2283() {
         this.field13888 = Class8611.field36144;

@@ -37,9 +37,7 @@ public class Class487 extends Class443 implements Class441
     public boolean method2249(final int n, final ItemStack class8321, final Direction class8322) {
         if (!this.field2800) {
             if (class8322 == Direction.UP) {
-                if (Class3965.field17916.containsKey((Object)class8321.getItem())) {
-                    return true;
-                }
+                return Class3965.field17916.containsKey(class8321.getItem());
             }
         }
         return false;

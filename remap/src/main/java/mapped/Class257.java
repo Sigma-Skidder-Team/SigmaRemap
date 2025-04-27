@@ -31,7 +31,7 @@ public enum Class257
     
     private final float field1227;
     
-    private Class257(final float field1227) {
+    Class257(final float field1227) {
         this.field1227 = field1227;
     }
     

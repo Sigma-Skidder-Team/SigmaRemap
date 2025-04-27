@@ -23,6 +23,6 @@ public class Class8517 implements SuggestionProvider<Class7491>
     }
     
     public CompletableFuture<Suggestions> getSuggestions(final CommandContext<Class7491> commandContext, final SuggestionsBuilder suggestionsBuilder) throws CommandSyntaxException {
-        return this.field34932.getSuggestions((CommandContext)commandContext, suggestionsBuilder);
+        return this.field34932.getSuggestions(commandContext, suggestionsBuilder);
     }
 }

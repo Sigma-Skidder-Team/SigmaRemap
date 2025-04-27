@@ -96,9 +96,7 @@ public class Class7843
             }
             if (!this.field32121) {
                 if (class511 instanceof Class759) {
-                    if (!((Class759)class511).method4151().method34143(class512)) {
-                        return false;
-                    }
+                    return ((Class759) class511).method4151().method34143(class512);
                 }
             }
         }

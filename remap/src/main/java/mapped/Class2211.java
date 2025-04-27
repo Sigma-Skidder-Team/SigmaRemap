@@ -15,5 +15,5 @@ public enum Class2211
     field13478, 
     field13479, 
     field13480, 
-    field13481;
+    field13481
 }

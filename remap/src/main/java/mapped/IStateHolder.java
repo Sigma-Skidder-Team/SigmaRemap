@@ -27,7 +27,7 @@ public interface IStateHolder<C> {
     static <S extends IStateHolder<S>, T extends Comparable<T>> S withString(final S n, final IProperty<T> class7111, final String s, final String s2, final String s3) {
         final Optional<T> optional = class7111.parseValue(s3);
         if (!optional.isPresent()) {
-            IStateHolder.logger.warn("Unable to read property: {} with value: {} for input: {}", (Object) s, (Object) s3, (Object) s2);
+            IStateHolder.logger.warn("Unable to read property: {} with value: {} for input: {}", s, s3, s2);
             return n;
         }
         return n;

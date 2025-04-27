@@ -64,9 +64,9 @@ public class Class8817
             jsonObject.add("z", this.field37027.method29745());
             jsonObject.add("horizontal", this.field37028.method29745());
             jsonObject.add("absolute", this.field37029.method29745());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

@@ -30,7 +30,7 @@ public class Class6131 extends Class6132
             }
             dynamic = dynamic.remove("IsVillager");
         }
-        return (Dynamic<?>)dynamic;
+        return dynamic;
     }
     
     private int method18356(final int n) {

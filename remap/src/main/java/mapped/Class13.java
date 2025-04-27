@@ -5,6 +5,8 @@
 package mapped;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+
 import sun.misc.Cleaner;
 
 public class Class13 extends Class11
@@ -44,7 +46,7 @@ public class Class13 extends Class11
                 if (b) {
                     this.method178(this.field43);
                 }
-                Cleaner.create((Object)this, (Runnable)new Class993(this.field34, this.field43, this.field31));
+                Cleaner.create(this, new Class993(this.field34, this.field43, this.field31));
                 Class7579.method23860(this.field43 * this.field31);
                 this.field41 = new Class16(n);
                 this.field44 = new byte[n2 * 4];
@@ -111,12 +113,7 @@ public class Class13 extends Class11
             for (short n3 = 0; n3 < method129; ++n3) {
                 this.field44[n3] = Class8601.field36113.getByte(this.field34 + n2 + this.field31 * n3);
             }
-            try {
-                return new String(this.field44, 0, method129, "UTF-8");
-            }
-            catch (final UnsupportedEncodingException ex) {
-                return null;
-            }
+            return new String(this.field44, 0, method129, StandardCharsets.UTF_8);
         }
         if (this.field32) {
             return this.field40[0];
@@ -133,12 +130,7 @@ public class Class13 extends Class11
         for (short n3 = 0; n3 < method129; ++n3) {
             this.field44[n3] = Class8601.field36113.getByte(this.field34 + n2 + this.field31 * n3);
         }
-        try {
-            return new String(this.field44, 0, method129, "UTF-8");
-        }
-        catch (final UnsupportedEncodingException ex) {
-            return null;
-        }
+        return new String(this.field44, 0, method129, StandardCharsets.UTF_8);
     }
     
     @Override
@@ -726,12 +718,7 @@ public class Class13 extends Class11
                 throw new IllegalArgumentException("String  " + s + " is too long.");
             }
             byte[] bytes;
-            try {
-                bytes = s.getBytes("UTF-8");
-            }
-            catch (final UnsupportedEncodingException ex) {
-                return;
-            }
+            bytes = s.getBytes(StandardCharsets.UTF_8);
             final int length = bytes.length;
             if (length > 32767) {
                 throw new IllegalArgumentException("String  " + s + " is too long.");
@@ -767,12 +754,7 @@ public class Class13 extends Class11
                     throw new IllegalArgumentException("String  " + s + " is too long.");
                 }
                 byte[] bytes;
-                try {
-                    bytes = s.getBytes("UTF-8");
-                }
-                catch (final UnsupportedEncodingException ex) {
-                    return;
-                }
+                bytes = s.getBytes(StandardCharsets.UTF_8);
                 final int length = bytes.length;
                 if (length > 32767) {
                     throw new IllegalArgumentException("String  " + s + " is too long.");

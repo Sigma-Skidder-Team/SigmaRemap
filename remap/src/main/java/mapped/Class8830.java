@@ -32,7 +32,7 @@ public class Class8830
     public Class8830(final Class5024 field37127, final IRecipe<?> field37128) {
         this.field37127 = field37127;
         this.field37121 = Lists.newArrayList();
-        this.field37126 = (IntList)new IntArrayList();
+        this.field37126 = new IntArrayList();
         this.field37120 = field37128;
         this.field37121.addAll(field37128.getIngredients());
         this.field37121.removeIf(Ingredient::method616);
@@ -73,7 +73,7 @@ public class Class8830
             int n4 = 0;
             final NonNullList<Ingredient> method11294 = this.field37120.getIngredients();
             for (int j = 0; j < method11294.size(); ++j) {
-                if (b2 && ((Ingredient)method11294.get(j)).method616()) {
+                if (b2 && method11294.get(j).method616()) {
                     list.add(0);
                 }
                 else {
@@ -98,7 +98,7 @@ public class Class8830
         final IntAVLTreeSet set = new IntAVLTreeSet();
         final Iterator<Ingredient> iterator = this.field37121.iterator();
         while (iterator.hasNext()) {
-            ((IntCollection)set).addAll((IntCollection)iterator.next().method613());
+            set.addAll(iterator.next().method613());
         }
         final IntIterator iterator2 = ((IntCollection)set).iterator();
         while (iterator2.hasNext()) {
@@ -107,7 +107,7 @@ public class Class8830
             }
             iterator2.remove();
         }
-        return ((IntCollection)set).toIntArray();
+        return set.toIntArray();
     }
     
     private boolean method30825(final int n) {
@@ -213,7 +213,7 @@ public class Class8830
         for (final Ingredient class120 : this.field37121) {
             int max = 0;
             final IntListIterator iterator2 = class120.method613().iterator();
-            while (((Iterator)iterator2).hasNext()) {
+            while (iterator2.hasNext()) {
                 max = Math.max(max, this.field37127.field21533.get((int)((Iterator)iterator2).next()));
             }
             if (min <= 0) {

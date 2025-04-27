@@ -11,12 +11,12 @@ public class Class8567 implements Class8568
     private final int field35993;
     private final float[][] field35994;
     private final float[][] field35995;
-    private float[] field35996;
-    private float[] field35997;
-    private float[] field35998;
-    private float[] field35999;
-    private float[] field36000;
-    private float[] field36001;
+    private final float[] field35996;
+    private final float[] field35997;
+    private final float[] field35998;
+    private final float[] field35999;
+    private final float[] field36000;
+    private final float[] field36001;
     
     public Class8567(final int n) throws AACException {
         switch (this.field35993 = n) {

@@ -242,7 +242,7 @@ public class Explosion
     
     private static void method18410(final ObjectArrayList<Pair<ItemStack, BlockPos>> list, final ItemStack class8321, final BlockPos class8322) {
         for (int size = list.size(), i = 0; i < size; ++i) {
-            final Pair pair = (Pair)list.get(i);
+            final Pair pair = list.get(i);
             final ItemStack class8323 = (ItemStack)pair.getFirst();
             if (Class427.method2103(class8323, class8321)) {
                 list.set(i, (Object)Pair.of((Object)Class427.method2104(class8323, class8321, 16), pair.getSecond()));
@@ -292,6 +292,6 @@ public class Explosion
     {
         field13365,
         field13366,
-        field13367;
+        field13367
     }
 }

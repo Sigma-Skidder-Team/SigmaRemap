@@ -12,7 +12,7 @@ public class Class6708 extends Class6693
     private Entity field26436;
     
     public Class6708() {
-        super("entitydesync", "Forces a client side entity dismount", new String[] { "vanish", "riderdesync" });
+        super("entitydesync", "Forces a client side entity dismount", "vanish", "riderdesync");
         this.field26436 = null;
         this.method20351("remount/dismount");
     }

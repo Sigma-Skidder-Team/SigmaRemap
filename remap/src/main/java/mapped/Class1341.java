@@ -49,16 +49,16 @@ public class Class1341 extends LongRunningTask
                 else {
                     b2 = true;
                     this.func_224986_a(class2332.toString());
-                    RealmsTasks.getLogger().error("Couldn't connect to world", (Throwable)class2332);
+                    RealmsTasks.getLogger().error("Couldn't connect to world", class2332);
                 }
                 break;
             }
             catch (final IOException ex) {
-                RealmsTasks.getLogger().error("Couldn't parse response connecting to world", (Throwable)ex);
+                RealmsTasks.getLogger().error("Couldn't parse response connecting to world", ex);
             }
             catch (final Exception ex2) {
                 b2 = true;
-                RealmsTasks.getLogger().error("Couldn't connect to world", (Throwable)ex2);
+                RealmsTasks.getLogger().error("Couldn't connect to world", ex2);
                 this.func_224986_a(ex2.getLocalizedMessage());
                 break;
             }
@@ -101,7 +101,7 @@ public class Class1341 extends LongRunningTask
     
     private void method5628(final int n) {
         try {
-            Thread.sleep(n * 1000);
+            Thread.sleep(n * 1000L);
         }
         catch (final InterruptedException ex) {
             RealmsTasks.getLogger().warn(ex.getLocalizedMessage());

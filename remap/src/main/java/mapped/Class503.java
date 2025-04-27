@@ -36,7 +36,7 @@ public class Class503 implements INamedContainerProvider
     @Override
     public ITextComponent method1871() {
         if (!this.field2878.hasCustomName()) {
-            return this.field2879.hasCustomName() ? this.field2879.getDisplayName() : new Class2259("container.chestDouble", new Object[0]);
+            return this.field2879.hasCustomName() ? this.field2879.getDisplayName() : new Class2259("container.chestDouble");
         }
         return this.field2878.getDisplayName();
     }

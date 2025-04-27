@@ -6,8 +6,8 @@ package mapped;
 
 public class Class9241
 {
-    private String field39626;
-    private String field39627;
+    private final String field39626;
+    private final String field39627;
     private Class330 field39628;
     private Class328 field39629;
     

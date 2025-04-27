@@ -23,7 +23,7 @@ public class Class6995 implements Class6991
     
     @Override
     public ITextComponent method21403() {
-        return (this.field27291 >= 0) ? new Class2259("spectatorMenu.next_page", new Object[0]) : new Class2259("spectatorMenu.previous_page", new Object[0]);
+        return (this.field27291 >= 0) ? new Class2259("spectatorMenu.next_page") : new Class2259("spectatorMenu.previous_page");
     }
     
     @Override

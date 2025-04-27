@@ -35,9 +35,7 @@ public class Class1942 extends Class1941
             final Class1941 class1941 = (Class1941)o;
             if ((int)class1941.method7835() == (int)this.field10582) {
                 if ((int)class1941.method7839() == (int)this.field10583) {
-                    if ((int)class1941.method7843() == (int)this.field10584) {
-                        return true;
-                    }
+                    return (int) class1941.method7843() == (int) this.field10584;
                 }
             }
             return false;

@@ -21,8 +21,8 @@ public class Class4894 extends Class4841
     public int field20921;
     public boolean field20922;
     public boolean field20923;
-    private Animation field20924;
-    private Map<Integer, Class4845> field20925;
+    private final Animation field20924;
+    private final Map<Integer, Class4845> field20925;
     
     public Class4894(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final List<String> field20920, final int field20921) {
         super(customGuiScreen, s, n, n2, n3, n4, Class4894.field20919, false);
@@ -184,7 +184,7 @@ public class Class4894 extends Class4841
         if (!this.method14236(n, n2) || this.field20924.getDirection() == Direction.FORWARDS) {
             final Iterator<Map.Entry<Integer, Class4845>> iterator2 = this.field20925.entrySet().iterator();
             while (iterator2.hasNext()) {
-                ((Map.Entry<K, Class4845>)iterator2.next()).getValue().setEnabled(false);
+                iterator2.next().getValue().setEnabled(false);
             }
         }
     }
@@ -243,7 +243,7 @@ public class Class4894 extends Class4841
     public <E extends Enum<E>> void method14692(final Class<E> clazz) {
         this.field20920.clear();
         for (final Enum<E> enum1 : clazz.getEnumConstants()) {
-            this.method14690(enum1.toString().substring(0, 1).toUpperCase() + enum1.toString().substring(1, enum1.toString().length()).toLowerCase(), enum1.ordinal());
+            this.method14690(enum1.toString().substring(0, 1).toUpperCase() + enum1.toString().substring(1).toLowerCase(), enum1.ordinal());
         }
     }
     
@@ -281,9 +281,7 @@ public class Class4894 extends Class4841
         if (n >= 0) {
             if (n <= this.method14276()) {
                 if (n2 >= 0) {
-                    if (n2 <= this.method14278() + this.method14686()) {
-                        return true;
-                    }
+                    return n2 <= this.method14278() + this.method14686();
                 }
             }
         }

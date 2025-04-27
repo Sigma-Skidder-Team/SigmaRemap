@@ -55,7 +55,7 @@ public class Class465 extends TileEntity implements INameable
     
     @Override
     public ITextComponent getName() {
-        return (this.field2747 == null) ? new Class2259("block.minecraft.banner", new Object[0]) : this.field2747;
+        return (this.field2747 == null) ? new Class2259("block.minecraft.banner") : this.field2747;
     }
     
     @Nullable

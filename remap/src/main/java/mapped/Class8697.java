@@ -85,13 +85,13 @@ public class Class8697
                 jsonObject2.add("x", this.field36545.method29745());
                 jsonObject2.add("y", this.field36546.method29745());
                 jsonObject2.add("z", this.field36547.method29745());
-                jsonObject.add("position", (JsonElement)jsonObject2);
+                jsonObject.add("position", jsonObject2);
             }
             if (this.field36550 != null) {
                 jsonObject.addProperty("dimension", DimensionType.method1276(this.field36550).toString());
             }
             if (this.field36549 != null) {
-                jsonObject.addProperty("feature", (String)Class4535.field20023.inverse().get((Object)this.field36549));
+                jsonObject.addProperty("feature", Class4535.field20023.inverse().get(this.field36549));
             }
             if (this.field36548 != null) {
                 jsonObject.addProperty("biome", Registry.field217.getKey(this.field36548).toString());
@@ -99,9 +99,9 @@ public class Class8697
             jsonObject.add("light", this.field36551.method27891());
             jsonObject.add("block", this.field36552.method25400());
             jsonObject.add("fluid", this.field36553.method30237());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     public static Class8697 method29814(final JsonElement jsonElement) {
@@ -112,7 +112,7 @@ public class Class8697
             final Class8683 method35916 = Class8683.method29738(method35914.get("y"));
             final Class8683 method35917 = Class8683.method29738(method35914.get("z"));
             final DimensionType class383 = method35913.has("dimension") ? DimensionType.method1275(new ResourceLocation(Class9583.method35895(method35913, "dimension"))) : null;
-            final Class4574 class384 = method35913.has("feature") ? ((Class4574)Class4535.field20023.get((Object)Class9583.method35895(method35913, "feature"))) : null;
+            final Class4574 class384 = method35913.has("feature") ? Class4535.field20023.get(Class9583.method35895(method35913, "feature")) : null;
             Class3090 class385 = null;
             if (method35913.has("biome")) {
                 class385 = Registry.field217.method506(new ResourceLocation(Class9583.method35895(method35913, "biome"))).orElseThrow(() -> {

@@ -116,11 +116,11 @@ public class ShulkerInfo extends Module
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0f);
-        GL11.glTranslated((double)n5, (double)(n6 + 0.6f - 0.33333334f * (1.0f - n4)), (double)n7);
+        GL11.glTranslated(n5, n6 + 0.6f - 0.33333334f * (1.0f - n4), n7);
         GL11.glRotatef(ShulkerInfo.mc.field4644.method5833().method18164(), 0.0f, -1.0f, 0.0f);
         GL11.glRotatef(ShulkerInfo.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
         GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
-        GL11.glTranslated((double)(-field40314.getWidth(method8459) / 2), 0.0, 0.0);
+        GL11.glTranslated(-field40314.getWidth(method8459) / 2, 0.0, 0.0);
         this.method9929(-87, -70, this.method9931(((Class427)class399).method2107()), ((Class427)class399).method2107().method27664().getUnformattedComponentText(), false);
         GL11.glPopMatrix();
         GL11.glEnable(2929);
@@ -221,7 +221,7 @@ public class ShulkerInfo extends Module
                     int a = ShulkerInfo.mc.fontRenderer.getStringWidth(class8322.method27664().getUnformattedComponentText());
                     final List<String> method23541 = this.method9930(class8322);
                     for (int k = 0; k < method23541.size(); ++k) {
-                        a = Math.max(a, ShulkerInfo.mc.fontRenderer.getStringWidth((String)method23541.get(k)));
+                        a = Math.max(a, ShulkerInfo.mc.fontRenderer.getStringWidth(method23541.get(k)));
                     }
                     final int n12 = (int)(a * RenderUtil.method26867());
                     RenderUtil.method26874((float)n11, (float)(n10 + round), n12 + 9.0f * RenderUtil.method26867(), 10.0f * RenderUtil.method26867() * method23541.size() + 7.0f * RenderUtil.method26867(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f));
@@ -232,7 +232,7 @@ public class ShulkerInfo extends Module
                     round *= (int)(1.0f / RenderUtil.method26867());
                     final int n15 = (int)(n12 * (1.0f / RenderUtil.method26867()));
                     for (int l = 0; l < method23541.size(); ++l) {
-                        ShulkerInfo.mc.fontRenderer.method6610((String)method23541.get(l), (float)(n14 + 5), 5.3f + n13 + round + l * 10, ClientColors.LIGHT_GREYISH_BLUE.color);
+                        ShulkerInfo.mc.fontRenderer.method6610(method23541.get(l), (float)(n14 + 5), 5.3f + n13 + round + l * 10, ClientColors.LIGHT_GREYISH_BLUE.color);
                     }
                     GL11.glPopMatrix();
                     RenderSystem.method30001();

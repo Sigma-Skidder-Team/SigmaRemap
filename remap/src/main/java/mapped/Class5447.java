@@ -13,7 +13,7 @@ public class Class5447 extends Class5419<LivingEntity>
     private static String[] field22674;
     
     public Class5447(final int n, final int n2) {
-        super((Map)ImmutableMap.of(), n, n2);
+        super(ImmutableMap.of(), n, n2);
     }
     
     @Override

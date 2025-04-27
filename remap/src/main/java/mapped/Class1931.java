@@ -12,7 +12,7 @@ public class Class1931 implements Comparable<Class1931>
 {
     private static final Pattern field10538;
     private final int[] field10539;
-    private String field10540;
+    private final String field10540;
     
     public Class1931(final String input) {
         this.field10539 = new int[3];
@@ -63,9 +63,7 @@ public class Class1931 implements Comparable<Class1931>
         if (class1931 != class1932) {
             if (class1931 != null) {
                 if (class1932 != null) {
-                    if (method7792(class1931, class1932) == 0) {
-                        return true;
-                    }
+                    return method7792(class1931, class1932) == 0;
                 }
             }
             return false;
@@ -79,7 +77,7 @@ public class Class1931 implements Comparable<Class1931>
         for (int i = 0; i < this.field10539.length; ++i) {
             array[i] = String.valueOf(this.field10539[i]);
         }
-        return Joiner.on(".").join((Object[])array) + ((this.field10540.length() == 0) ? "" : ("-" + this.field10540));
+        return Joiner.on(".").join(array) + ((this.field10540.length() == 0) ? "" : ("-" + this.field10540));
     }
     
     @Override

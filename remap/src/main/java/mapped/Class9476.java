@@ -5,6 +5,7 @@
 package mapped;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public final class Class9476
 {
@@ -41,7 +42,7 @@ public final class Class9476
         method35282(t);
     }
     
-    private static <T extends Throwable> void method35282(final Throwable t) throws T, Throwable {
+    private static <T extends Throwable> void method35282(final Throwable t) throws Throwable {
         throw t;
     }
     
@@ -55,6 +56,6 @@ public final class Class9476
     }
     
     static {
-        field40748 = Charset.forName("UTF-8");
+        field40748 = StandardCharsets.UTF_8;
     }
 }

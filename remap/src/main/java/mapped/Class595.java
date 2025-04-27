@@ -18,9 +18,9 @@ public class Class595 extends Class594
     private Class595(final Class607 field3503, final Class350 field3504) {
         this.field3503 = field3503;
         this.field3499 = field3504;
-        this.field3500 = Class8822.method30773(field3504.method1060(), new Object[0]);
+        this.field3500 = Class8822.method30773(field3504.method1060());
         this.field3501 = new Class681(this, 0, 0, 75, 20, this.field3500, class654 -> Class607.method3568(this.field3503).field3504 = field3504, field3503, field3504);
-        this.field3502 = new Class671(this, 0, 0, 50, 20, Class8822.method30773("controls.reset", new Object[0]), class351 -> {
+        this.field3502 = new Class671(this, 0, 0, 50, 20, Class8822.method30773("controls.reset"), class351 -> {
             this.field3503.field3540.gameSettings.method17117(field3504, field3504.method1061());
             Class350.method1055();
         }, field3503);
@@ -59,7 +59,7 @@ public class Class595 extends Class594
     
     @Override
     public List<? extends IGuiEventListener> children() {
-        return (List<? extends IGuiEventListener>)ImmutableList.of((Object)this.field3501, (Object)this.field3502);
+        return (List<? extends IGuiEventListener>)ImmutableList.of(this.field3501, (Object)this.field3502);
     }
     
     @Override

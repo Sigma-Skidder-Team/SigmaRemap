@@ -21,10 +21,10 @@ public class Class6100<T extends Class3685> implements IRecipeSerializer<T>
         final String method35896 = Class9583.method35896(jsonObject, "group", "");
         Ingredient class1933;
         if (!Class9583.method35891(jsonObject, "ingredient")) {
-            class1933 = Ingredient.method622((JsonElement)Class9583.method35914(jsonObject, "ingredient"));
+            class1933 = Ingredient.method622(Class9583.method35914(jsonObject, "ingredient"));
         }
         else {
-            class1933 = Ingredient.method622((JsonElement)Class9583.method35917(jsonObject, "ingredient"));
+            class1933 = Ingredient.method622(Class9583.method35917(jsonObject, "ingredient"));
         }
         return this.field24755.method34696(class1932, method35896, class1933, new ItemStack(Registry.field211.getOrDefault(new ResourceLocation(Class9583.method35895(jsonObject, "result"))), Class9583.method35909(jsonObject, "count")));
     }

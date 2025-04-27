@@ -87,19 +87,19 @@ public class Class5900<T extends Class792> extends Class5845<T>
             class7351.method22567();
             class7351.method22565(0.6f, 0.6f, 0.6f);
             class7351.method22564(0.0, 1.0, 0.0);
-            ImmutableList.of((Object)this.field24255, (Object)this.field24256, (Object)this.field24257, (Object)this.field24258, (Object)this.field24259, (Object)this.field24260, (Object)this.field24261, (Object)this.field24262, (Object)this.field24263, (Object)this.field24264, (Object)this.field24265, (Object)this.field24266, (Object[])new Class6300[0]).forEach(class7355 -> class7355.method18644(class7353, class7354, n7, n8, n9, n10, n11, n12));
+            ImmutableList.of(this.field24255, this.field24256, this.field24257, this.field24258, this.field24259, this.field24260, this.field24261, this.field24262, this.field24263, this.field24264, this.field24265, this.field24266, (Object[])new Class6300[0]).forEach(class7355 -> class7355.method18644(class7353, class7354, n7, n8, n9, n10, n11, n12));
             class7351.method22568();
         }
         else {
             class7351.method22567();
             class7351.method22565(0.56666666f, 0.56666666f, 0.56666666f);
             class7351.method22564(0.0, 1.375, 0.125);
-            ImmutableList.of((Object)this.field24262, (Object)this.field24264, (Object)this.field24263, (Object)this.field24266).forEach(class7358 -> class7358.method18644(class7356, class7357, n13, n14, n15, n16, n17, n18));
+            ImmutableList.of(this.field24262, this.field24264, this.field24263, (Object)this.field24266).forEach(class7358 -> class7358.method18644(class7356, class7357, n13, n14, n15, n16, n17, n18));
             class7351.method22568();
             class7351.method22567();
             class7351.method22565(0.4f, 0.4f, 0.4f);
             class7351.method22564(0.0, 2.25, 0.0);
-            ImmutableList.of((Object)this.field24255, (Object)this.field24256, (Object)this.field24257, (Object)this.field24258, (Object)this.field24259, (Object)this.field24260, (Object)this.field24261, (Object)this.field24265).forEach(class7361 -> class7361.method18644(class7359, class7360, n19, n20, n21, n22, n23, n24));
+            ImmutableList.of(this.field24255, this.field24256, this.field24257, this.field24258, this.field24259, this.field24260, this.field24261, (Object)this.field24265).forEach(class7361 -> class7361.method18644(class7359, class7360, n19, n20, n21, n22, n23, n24));
             class7351.method22568();
         }
     }

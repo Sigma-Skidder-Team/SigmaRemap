@@ -24,11 +24,11 @@ public class Class4970
                 method15155.method27396(class8473, class8471, class8472, n);
             }
             else {
-                Class4970.field21431.warn("Failed to create screen for menu type: {}", (Object) Registry.field235.getKey(class8471));
+                Class4970.field21431.warn("Failed to create screen for menu type: {}", Registry.field235.getKey(class8471));
             }
         }
         else {
-            Class4970.field21431.warn("Trying to open invalid screen with name: {}", (Object)class8473.getString());
+            Class4970.field21431.warn("Trying to open invalid screen with name: {}", class8473.getString());
         }
     }
     
@@ -50,7 +50,7 @@ public class Class4970
             if (Class4970.field21432.containsKey(class8471)) {
                 continue;
             }
-            Class4970.field21431.debug("Menu {} has no matching screen", (Object) Registry.field235.getKey(class8471));
+            Class4970.field21431.debug("Menu {} has no matching screen", Registry.field235.getKey(class8471));
             b = true;
         }
         return b;

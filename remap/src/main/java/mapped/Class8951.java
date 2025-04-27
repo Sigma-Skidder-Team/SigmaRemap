@@ -7,8 +7,8 @@ package mapped;
 public class Class8951
 {
     private static String[] field37641;
-    private short field37642;
-    private byte field37643;
+    private final short field37642;
+    private final byte field37643;
     public Class1942 field37644;
     
     public Class8951(final short field37642, final byte field37643, final Class1942 field37644) {

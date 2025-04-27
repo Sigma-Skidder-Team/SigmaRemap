@@ -171,7 +171,7 @@ public class Memory extends Pointer
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public void finalize() {
+    protected void finalize() {
         this.dispose();
     }
     
@@ -208,7 +208,7 @@ public class Memory extends Pointer
     
     @Override
     public void read(final long bOff, final byte[] buf, final int index, final int length) {
-        this.boundsCheck(bOff, length * 1L);
+        this.boundsCheck(bOff, (long) length);
         super.read(bOff, buf, index, length);
     }
     
@@ -250,7 +250,7 @@ public class Memory extends Pointer
     
     @Override
     public void write(final long bOff, final byte[] buf, final int index, final int length) {
-        this.boundsCheck(bOff, length * 1L);
+        this.boundsCheck(bOff, (long) length);
         super.write(bOff, buf, index, length);
     }
     

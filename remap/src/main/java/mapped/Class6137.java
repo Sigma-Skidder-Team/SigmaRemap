@@ -26,14 +26,14 @@ public class Class6137 extends Class6132
         final Type typeRaw = this.getInputSchema().getTypeRaw(Class9451.field40622);
         final OpticFinder fieldFinder2 = DSL.fieldFinder("SaddleItem", typeRaw);
         final Optional optionalTyped = typed.getOptionalTyped(fieldFinder2);
-        final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+        final Dynamic dynamic = typed.get(DSL.remainderFinder());
         if (!optionalTyped.isPresent() && dynamic.get("Saddle").asBoolean(false)) {
             final Typed set = typeRaw.pointTyped(typed.getOps()).orElseThrow(IllegalStateException::new).set(fieldFinder, (Object)Pair.of((Object)Class9451.field40628.typeName(), (Object)"minecraft:saddle"));
             final Dynamic emptyMap = dynamic.emptyMap();
             final Dynamic set2 = emptyMap.set("Count", emptyMap.createByte((byte)1));
-            final Typed set3 = set.set(DSL.remainderFinder(), (Object)set2.set("Damage", set2.createShort((short)0)));
+            final Typed set3 = set.set(DSL.remainderFinder(), set2.set("Damage", set2.createShort((short)0)));
             dynamic.remove("Saddle");
-            return (Typed<?>)typed.set(fieldFinder2, set3).set(DSL.remainderFinder(), (Object)dynamic);
+            return (Typed<?>)typed.set(fieldFinder2, set3).set(DSL.remainderFinder(), dynamic);
         }
         return typed;
     }

@@ -31,13 +31,13 @@ public class Class8481 extends DataFix
     
     public final <K> TypeRewriteRule method28313(final String s, final TaggedChoice$TaggedChoiceType<K> taggedChoice$TaggedChoiceType, final TaggedChoice$TaggedChoiceType<?> taggedChoice$TaggedChoiceType2) {
         if (taggedChoice$TaggedChoiceType.getKeyType() == taggedChoice$TaggedChoiceType2.getKeyType()) {
-            return this.fixTypeEverywhere(s, (Type)taggedChoice$TaggedChoiceType, (Type)taggedChoice$TaggedChoiceType2, p1 -> pair -> {
+            return this.fixTypeEverywhere(s, taggedChoice$TaggedChoiceType, taggedChoice$TaggedChoiceType2, p1 -> pair -> {
                 if (taggedChoice$TaggedChoiceType3.hasType(pair.getFirst())) {
                     return pair;
                 }
                 else {
                     new IllegalArgumentException(String.format("Unknown type %s in %s ", pair.getFirst(), this.field34802));
-                    throw;
+                    throw
                 }
             });
         }

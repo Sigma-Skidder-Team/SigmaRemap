@@ -40,7 +40,7 @@ public interface Class1874
         return class400.isEmpty() || this.method7127(class399, class400.getBoundingBox()).stream().filter(class402 -> {
             final boolean b;
             if (!class402.removed) {
-                if (!(!class402.preventEntitySpawning)) {
+                if (class402.preventEntitySpawning) {
                     if (class401 == null || !class402.method1916(class401)) {
                         return b;
                     }
@@ -51,11 +51,11 @@ public interface Class1874
     }
     
     default <T extends Entity> List<T> method7128(final Class<? extends T> clazz, final AxisAlignedBB class6221) {
-        return this.method6739(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
+        return this.method6739(clazz, class6221, Class9170.field38850);
     }
     
     default <T extends Entity> List<T> method7129(final Class<? extends T> clazz, final AxisAlignedBB class6221) {
-        return this.method6740(clazz, class6221, (Predicate<? super T>)Class9170.field38850);
+        return this.method6740(clazz, class6221, Class9170.field38850);
     }
     
     default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {
@@ -147,17 +147,17 @@ public interface Class1874
     
     @Nullable
     default PlayerEntity method7137(final Class7843 class7843, final double n, final double n2, final double n3) {
-        return this.method7140(this.method6840(), class7843, (LivingEntity)null, n, n2, n3);
+        return this.method7140(this.method6840(), class7843, null, n, n2, n3);
     }
     
     @Nullable
     default <T extends LivingEntity> T method7138(final Class<? extends T> clazz, final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
-        return this.method7140(this.method6739(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
+        return this.method7140(this.method6739(clazz, class7845, null), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
     default <T extends LivingEntity> T method7139(final Class<? extends T> clazz, final Class7843 class7843, final LivingEntity class7844, final double n, final double n2, final double n3, final AxisAlignedBB class7845) {
-        return this.method7140(this.method6740(clazz, class7845, (Predicate<? super T>)null), class7843, class7844, n, n2, n3);
+        return this.method7140(this.method6740(clazz, class7845, null), class7843, class7844, n, n2, n3);
     }
     
     @Nullable
@@ -207,7 +207,7 @@ public interface Class1874
     @Nullable
     default PlayerEntity method7143(final UUID uuid) {
         for (int i = 0; i < this.method6840().size(); ++i) {
-            final PlayerEntity playerEntity = (PlayerEntity)this.method6840().get(i);
+            final PlayerEntity playerEntity = this.method6840().get(i);
             if (uuid.equals(playerEntity.method1865())) {
                 return playerEntity;
             }

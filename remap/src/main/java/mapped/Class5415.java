@@ -19,7 +19,7 @@ public class Class5415 implements Class5414
     private final ResourceLocation field22584;
     
     private static Class8965 method16532(final CommandContext<Class7492> commandContext) {
-        return ((Class7492)commandContext.getSource()).method23255().method1580();
+        return commandContext.getSource().method23255().method1580();
     }
     
     private Class5415(final Class8965 field22583, final ResourceLocation field22584) {
@@ -39,21 +39,21 @@ public class Class5415 implements Class5414
     
     @Override
     public ITextComponent method16527() {
-        return new Class2259("commands.data.storage.modified", new Object[] { this.field22584 });
+        return new Class2259("commands.data.storage.modified", this.field22584);
     }
     
     @Override
     public ITextComponent method16528(final INBT class41) {
-        return new Class2259("commands.data.storage.query", new Object[] { this.field22584, class41.toFormattedComponent() });
+        return new Class2259("commands.data.storage.query", this.field22584, class41.toFormattedComponent());
     }
     
     @Override
     public ITextComponent method16529(final NBTPath class8570, final double d, final int i) {
-        return new Class2259("commands.data.storage.get", new Object[] { class8570, this.field22584, String.format(Locale.ROOT, "%.2f", d), i });
+        return new Class2259("commands.data.storage.get", class8570, this.field22584, String.format(Locale.ROOT, "%.2f", d), i);
     }
     
     static {
-        field22581 = ((commandContext, suggestionsBuilder) -> Class7491.method23222(method16532((CommandContext<Class7492>)commandContext).method31807(), suggestionsBuilder));
+        field22581 = ((commandContext, suggestionsBuilder) -> Class7491.method23222(method16532(commandContext).method31807(), suggestionsBuilder));
         field22582 = (s -> new Class6596(s));
     }
 }

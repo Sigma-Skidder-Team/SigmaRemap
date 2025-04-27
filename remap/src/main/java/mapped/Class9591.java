@@ -23,7 +23,7 @@ public class Class9591
     private int field41809;
     private long field41810;
     private Set<BlockPos> field41811;
-    private Mutable field41812;
+    private final Mutable field41812;
     
     public Class9591(final Entity field41804) {
         this.field41804 = null;

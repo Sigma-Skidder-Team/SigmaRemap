@@ -55,20 +55,20 @@ public class Class7463
                 return array2[0];
             }
             case 2: {
-                return (BiFunction<ItemStack, Class7529, ItemStack>)((class8323, class8324) -> {
+                return (class8323, class8324) -> {
                     final Object o = array2[1];
                     final Object o2 = array2[0];
                     return (ItemStack)biFunction.apply(biFunction2.apply(class8323, class8324), class8324);
-                });
+                };
             }
             default: {
-                return (BiFunction<ItemStack, Class7529, ItemStack>)((class8326, class8328) -> {
+                return (class8326, class8328) -> {
                     int i = 0;
                     for (int length = array3.length; i < length; ++i) {
                         class8326 = (ItemStack)array3[i].apply(class8326, class8328);
                     }
                     return class8326;
-                });
+                };
             }
         }
     }

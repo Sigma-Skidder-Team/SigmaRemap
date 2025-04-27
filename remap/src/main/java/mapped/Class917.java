@@ -40,7 +40,7 @@ public class Class917 extends Thread
                 this.field4883.send(new DatagramPacket(bytes, bytes.length, InetAddress.getByName("224.0.2.60"), 4445));
             }
             catch (final IOException ex) {
-                Class917.field4881.warn("LanServerPinger: {}", (Object)ex.getMessage());
+                Class917.field4881.warn("LanServerPinger: {}", ex.getMessage());
                 break;
             }
             try {

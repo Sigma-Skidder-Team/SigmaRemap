@@ -80,7 +80,7 @@ public class Class1865 implements IChunk
         this.field10185 = field10172;
         if (array != null) {
             if (this.field10177.length != array.length) {
-                Class1865.field10168.warn("Could not set level chunk sections, array length is {} instead of {}", (Object)array.length, (Object)this.field10177.length);
+                Class1865.field10168.warn("Could not set level chunk sections, array length is {} instead of {}", array.length, this.field10177.length);
             }
             else {
                 System.arraycopy(array, 0, this.field10177, 0, this.field10177.length);
@@ -315,7 +315,7 @@ public class Class1865 implements IChunk
     
     @Override
     public Map<String, Class5936> method7021() {
-        return Collections.unmodifiableMap((Map<? extends String, ? extends Class5936>)this.field10181);
+        return Collections.unmodifiableMap(this.field10181);
     }
     
     @Override
@@ -338,7 +338,7 @@ public class Class1865 implements IChunk
     
     @Override
     public Map<String, LongSet> method7049() {
-        return Collections.unmodifiableMap((Map<? extends String, ? extends LongSet>)this.field10182);
+        return Collections.unmodifiableMap(this.field10182);
     }
     
     @Override
@@ -402,7 +402,7 @@ public class Class1865 implements IChunk
     }
     
     public Map<BlockPos, CompoundNBT> method7104() {
-        return Collections.unmodifiableMap((Map<? extends BlockPos, ? extends CompoundNBT>)this.field10176);
+        return Collections.unmodifiableMap(this.field10176);
     }
     
     @Override

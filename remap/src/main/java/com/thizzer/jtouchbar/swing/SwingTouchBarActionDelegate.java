@@ -28,7 +28,6 @@ public class SwingTouchBarActionDelegate implements TouchBarViewAction
             if ("enabled".equals(event.getPropertyName())) {
                 touchBarButton.fireActionStateChanged();
             }
-            return;
         });
         this.action.addPropertyChangeListener(this.propertyChangeListener);
     }

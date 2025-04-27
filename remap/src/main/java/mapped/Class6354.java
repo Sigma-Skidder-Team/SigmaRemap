@@ -49,7 +49,7 @@ public abstract class Class6354
                 Class8097.method26591(class51, fileOutputStream);
             }
             catch (final IOException ex) {
-                Class6354.field25416.error("Could not save data {}", (Object)this, (Object)ex);
+                Class6354.field25416.error("Could not save data {}", this, ex);
             }
             this.method18904(false);
         }

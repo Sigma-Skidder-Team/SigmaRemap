@@ -96,9 +96,7 @@ public final class Matrix4f
                                                             if (Float.compare(class6789.field26701, this.field26701) == 0) {
                                                                 if (Float.compare(class6789.field26702, this.field26702) == 0) {
                                                                     if (Float.compare(class6789.field26703, this.field26703) == 0) {
-                                                                        if (Float.compare(class6789.field26704, this.field26704) == 0) {
-                                                                            return true;
-                                                                        }
+                                                                        return Float.compare(class6789.field26704, this.field26704) == 0;
                                                                     }
                                                                 }
                                                             }
@@ -130,41 +128,40 @@ public final class Matrix4f
     
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append("Matrix4f:\n");
-        sb.append(this.m00);
-        sb.append(" ");
-        sb.append(this.m01);
-        sb.append(" ");
-        sb.append(this.m02);
-        sb.append(" ");
-        sb.append(this.field26692);
-        sb.append("\n");
-        sb.append(this.m10);
-        sb.append(" ");
-        sb.append(this.m11);
-        sb.append(" ");
-        sb.append(this.m12);
-        sb.append(" ");
-        sb.append(this.field26696);
-        sb.append("\n");
-        sb.append(this.m20);
-        sb.append(" ");
-        sb.append(this.m21);
-        sb.append(" ");
-        sb.append(this.m22);
-        sb.append(" ");
-        sb.append(this.field26700);
-        sb.append("\n");
-        sb.append(this.field26701);
-        sb.append(" ");
-        sb.append(this.field26702);
-        sb.append(" ");
-        sb.append(this.field26703);
-        sb.append(" ");
-        sb.append(this.field26704);
-        sb.append("\n");
-        return sb.toString();
+        String sb = "Matrix4f:\n" +
+                this.m00 +
+                " " +
+                this.m01 +
+                " " +
+                this.m02 +
+                " " +
+                this.field26692 +
+                "\n" +
+                this.m10 +
+                " " +
+                this.m11 +
+                " " +
+                this.m12 +
+                " " +
+                this.field26696 +
+                "\n" +
+                this.m20 +
+                " " +
+                this.m21 +
+                " " +
+                this.m22 +
+                " " +
+                this.field26700 +
+                "\n" +
+                this.field26701 +
+                " " +
+                this.field26702 +
+                " " +
+                this.field26703 +
+                " " +
+                this.field26704 +
+                "\n";
+        return sb;
     }
     
     public void method20747(final FloatBuffer floatBuffer) {

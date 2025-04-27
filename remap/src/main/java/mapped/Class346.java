@@ -11,7 +11,7 @@ public enum Class346
     
     private final String field2139;
     
-    private Class346(final String field2139) {
+    Class346(final String field2139) {
         this.field2139 = field2139;
     }
     

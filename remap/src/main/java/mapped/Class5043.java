@@ -25,7 +25,7 @@ public class Class5043
     private Class2175 field21599;
     private boolean field21600;
     private boolean field21601;
-    private Class5995 field21602;
+    private final Class5995 field21602;
     private static final String field21603 = "transient";
     
     public Class5043() {

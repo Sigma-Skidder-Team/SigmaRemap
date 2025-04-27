@@ -10,14 +10,14 @@ import java.util.Map;
 
 public interface Class7611
 {
-    public static final Class7611 field30163 = method23912("desert");
-    public static final Class7611 field30164 = method23912("jungle");
-    public static final Class7611 field30165 = method23912("plains");
-    public static final Class7611 field30166 = method23912("savanna");
-    public static final Class7611 field30167 = method23912("snow");
-    public static final Class7611 field30168 = method23912("swamp");
-    public static final Class7611 field30169 = method23912("taiga");
-    public static final Map<Class3090, Class7611> field30170 = Util.method27851(Maps.newHashMap(), hashMap -> {
+    Class7611 field30163 = method23912("desert");
+    Class7611 field30164 = method23912("jungle");
+    Class7611 field30165 = method23912("plains");
+    Class7611 field30166 = method23912("savanna");
+    Class7611 field30167 = method23912("snow");
+    Class7611 field30168 = method23912("swamp");
+    Class7611 field30169 = method23912("taiga");
+    Map<Class3090, Class7611> field30170 = Util.method27851(Maps.newHashMap(), hashMap -> {
         hashMap.put(Class7102.field27669, Class7611.field30163);
         hashMap.put(Class7102.field27671, Class7611.field30163);
         hashMap.put(Class7102.field27634, Class7611.field30163);

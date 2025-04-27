@@ -41,7 +41,7 @@ public enum Class2122 implements Class2123
         return n * 360 + n2;
     }
     
-    private Class2122(final int n, final int n2) {
+    Class2122(final int n, final int n2) {
         this.field12388 = method8273(n, n2);
         final Quaternion field12389 = new Quaternion(new Vector3f(0.0f, 1.0f, 0.0f), (float)(-n2), true);
         field12389.multiply(new Quaternion(new Vector3f(1.0f, 0.0f, 0.0f), (float)(-n), true));

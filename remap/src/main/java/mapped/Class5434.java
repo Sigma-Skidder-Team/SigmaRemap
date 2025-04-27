@@ -19,7 +19,7 @@ public class Class5434 extends Class5419<Class759>
     private int field22636;
     
     public Class5434(final float field22632) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33816, (Object)Class1952.field10628, (Object)Class8233.field33809, (Object)Class1952.field10629));
+        super((Map)ImmutableMap.of(Class8233.field33816, Class1952.field10628, (Object)Class8233.field33809, (Object)Class1952.field10629));
         this.field22632 = field22632;
     }
     
@@ -51,9 +51,7 @@ public class Class5434 extends Class5419<Class759>
             if (this.field22633 != null) {
                 if (this.method16596(class1849, this.field22633)) {
                     if (!this.method16598(class1849, class1850)) {
-                        if (!this.method16599(class1849, class1850)) {
-                            return true;
-                        }
+                        return !this.method16599(class1849, class1850);
                     }
                 }
             }

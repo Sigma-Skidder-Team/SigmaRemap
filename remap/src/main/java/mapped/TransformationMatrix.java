@@ -65,11 +65,11 @@ public final class TransformationMatrix
     private void method34325() {
         if (!this.field39858) {
             final Pair<Matrix3f, Vector3f> method34327 = method34327(this.field39857);
-            final Triple<Quaternion, Vector3f, Quaternion> method34328 = ((Matrix3f)method34327.getFirst()).svdDecompose();
-            this.field39859 = (Vector3f)method34327.getSecond();
-            this.field39860 = (Quaternion)method34328.getLeft();
-            this.field39861 = (Vector3f)method34328.getMiddle();
-            this.field39862 = (Quaternion)method34328.getRight();
+            final Triple<Quaternion, Vector3f, Quaternion> method34328 = method34327.getFirst().svdDecompose();
+            this.field39859 = method34327.getSecond();
+            this.field39860 = method34328.getLeft();
+            this.field39861 = method34328.getMiddle();
+            this.field39862 = method34328.getRight();
             this.field39858 = true;
         }
     }

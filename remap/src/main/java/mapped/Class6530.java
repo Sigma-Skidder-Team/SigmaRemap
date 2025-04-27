@@ -15,7 +15,7 @@ public abstract class Class6530<T extends Class6369> extends Class6529<T>
     }
     
     public void method19756(final JsonObject jsonObject, final T t, final JsonSerializationContext jsonSerializationContext) {
-        jsonObject.add("children", jsonSerializationContext.serialize((Object)t.field25475));
+        jsonObject.add("children", jsonSerializationContext.serialize(t.field25475));
     }
     
     public final T method19757(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {

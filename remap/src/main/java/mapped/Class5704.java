@@ -46,7 +46,7 @@ public class Class5704
         if (!this.field23167.canRead()) {
             return method16945;
         }
-        throw Class5704.field23154.createWithContext((ImmutableStringReader)this.field23167);
+        throw Class5704.field23154.createWithContext(this.field23167);
     }
     
     public Class5704(final StringReader field23167) {
@@ -58,7 +58,7 @@ public class Class5704
         if (this.field23167.canRead()) {
             return this.field23167.readString();
         }
-        throw Class5704.field23155.createWithContext((ImmutableStringReader)this.field23167);
+        throw Class5704.field23155.createWithContext(this.field23167);
     }
     
     public INBT method16941() throws CommandSyntaxException {
@@ -72,7 +72,7 @@ public class Class5704
             return this.method16942(unquotedString);
         }
         this.field23167.setCursor(cursor);
-        throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+        throw Class5704.field23156.createWithContext(this.field23167);
     }
     
     private INBT method16942(final String anotherString) {
@@ -112,7 +112,7 @@ public class Class5704
     public INBT method16943() throws CommandSyntaxException {
         this.field23167.skipWhitespace();
         if (!this.field23167.canRead()) {
-            throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+            throw Class5704.field23156.createWithContext(this.field23167);
         }
         final char peek = this.field23167.peek();
         if (peek != '{') {
@@ -144,7 +144,7 @@ public class Class5704
             final String method16940 = this.method16940();
             if (method16940.isEmpty()) {
                 this.field23167.setCursor(cursor);
-                throw Class5704.field23155.createWithContext((ImmutableStringReader)this.field23167);
+                throw Class5704.field23155.createWithContext(this.field23167);
             }
             this.method16950(':');
             class51.put(method16940, this.method16943());
@@ -154,7 +154,7 @@ public class Class5704
             if (this.field23167.canRead()) {
                 continue;
             }
-            throw Class5704.field23155.createWithContext((ImmutableStringReader)this.field23167);
+            throw Class5704.field23155.createWithContext(this.field23167);
         }
         this.method16950('}');
         return class51;
@@ -173,7 +173,7 @@ public class Class5704
                 if (class53 != null) {
                     if (method16944 != class53) {
                         this.field23167.setCursor(cursor);
-                        throw Class5704.field23157.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.func_225650_b_(), (Object)class53.func_225650_b_());
+                        throw Class5704.field23157.createWithContext(this.field23167, method16944.func_225650_b_(), class53.func_225650_b_());
                     }
                 }
                 else {
@@ -186,12 +186,12 @@ public class Class5704
                 if (this.field23167.canRead()) {
                     continue;
                 }
-                throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+                throw Class5704.field23156.createWithContext(this.field23167);
             }
             this.method16950(']');
             return class52;
         }
-        throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+        throw Class5704.field23156.createWithContext(this.field23167);
     }
     
     private INBT method16947() throws CommandSyntaxException {
@@ -201,7 +201,7 @@ public class Class5704
         this.field23167.read();
         this.field23167.skipWhitespace();
         if (!this.field23167.canRead()) {
-            throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+            throw Class5704.field23156.createWithContext(this.field23167);
         }
         if (read == 'B') {
             return new ByteArrayNBT(this.method16948(ByteArrayNBT.TYPE, ByteNBT.TYPE));
@@ -211,7 +211,7 @@ public class Class5704
         }
         if (read != 'I') {
             this.field23167.setCursor(cursor);
-            throw Class5704.field23159.createWithContext((ImmutableStringReader)this.field23167, (Object)String.valueOf(read));
+            throw Class5704.field23159.createWithContext(this.field23167, String.valueOf(read));
         }
         return new IntArrayNBT(this.method16948(IntArrayNBT.TYPE, IntNBT.TYPE));
     }
@@ -224,7 +224,7 @@ public class Class5704
             final INBTType<?> method16944 = method16943.getType();
             if (method16944 != class6069) {
                 this.field23167.setCursor(cursor);
-                throw Class5704.field23158.createWithContext((ImmutableStringReader)this.field23167, (Object)method16944.func_225650_b_(), (Object)class6068.func_225650_b_());
+                throw Class5704.field23158.createWithContext(this.field23167, method16944.func_225650_b_(), class6068.func_225650_b_());
             }
             if (class6069 != ByteNBT.TYPE) {
                 if (class6069 != LongNBT.TYPE) {
@@ -243,7 +243,7 @@ public class Class5704
             if (this.field23167.canRead()) {
                 continue;
             }
-            throw Class5704.field23156.createWithContext((ImmutableStringReader)this.field23167);
+            throw Class5704.field23156.createWithContext(this.field23167);
         }
         this.method16950(']');
         return arrayList;
@@ -265,13 +265,13 @@ public class Class5704
     }
     
     static {
-        field23154 = new SimpleCommandExceptionType((Message)new Class2259("argument.nbt.trailing", new Object[0]));
-        field23155 = new SimpleCommandExceptionType((Message)new Class2259("argument.nbt.expected.key", new Object[0]));
-        field23156 = new SimpleCommandExceptionType((Message)new Class2259("argument.nbt.expected.value", new Object[0]));
-        field23157 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.nbt.list.mixed", new Object[] { o, o2 }));
-        field23158 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.nbt.array.mixed", new Object[] { o, o2 }));
+        field23154 = new SimpleCommandExceptionType(new Class2259("argument.nbt.trailing", new Object[0]));
+        field23155 = new SimpleCommandExceptionType(new Class2259("argument.nbt.expected.key", new Object[0]));
+        field23156 = new SimpleCommandExceptionType(new Class2259("argument.nbt.expected.value", new Object[0]));
+        field23157 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.nbt.list.mixed", o, o2));
+        field23158 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.nbt.array.mixed", o, o2));
         field23159 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.nbt.array.invalid", new Object[] { o });
+            new Class2259("argument.nbt.array.invalid", o);
             return;
         });
         field23160 = Pattern.compile("[-+]?(?:[0-9]+[.]|[0-9]*[.][0-9]+)(?:e[-+]?[0-9]+)?", 2);

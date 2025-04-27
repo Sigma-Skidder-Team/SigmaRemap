@@ -56,7 +56,7 @@ public class Class827 extends Class763
         this.field4114.method22062(2, new Class3583(this, 1.0, false));
         this.field4114.method22062(6, new Class3573(this, 1.0, true, 4, this::method4924));
         this.field4114.method22062(7, new Class3517(this, 1.0));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100(Class828.class));
+        this.field4115.method22062(1, new Class3547(this, new Class[0]).method11100(Class828.class));
         this.field4115.method22062(2, new Class3555<Object>(this, PlayerEntity.class, true));
         this.field4115.method22062(3, new Class3555<Object>(this, Class819.class, false));
         this.field4115.method22062(3, new Class3555<Object>(this, Class786.class, true));
@@ -214,7 +214,7 @@ public class Class827 extends Class763
     
     public void method4930(final EntityType<? extends Class827> class7499) {
         if (!this.removed) {
-            final Class827 class7500 = (Class827)class7499.method23371(this.world);
+            final Class827 class7500 = class7499.method23371(this.world);
             class7500.method1852(this);
             class7500.method4193(this.method4192());
             class7500.method4925(class7500.method4926() && this.method4924());
@@ -458,7 +458,7 @@ public class Class827 extends Class763
     @Nullable
     @Override
     public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
-        method4188 = super.method4188(class1851, class1852, class1853, (Class5496)method4188, class1854);
+        method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         final float method4189 = class1852.method35975();
         this.method4193(this.rand.nextFloat() < 0.55f * method4189);
         if (method4188 == null) {
@@ -478,7 +478,7 @@ public class Class827 extends Class763
                     }
                 }
                 else {
-                    final List<Entity> method4190 = class1851.method6739((Class<? extends Entity>)Class818.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), (Predicate<? super Entity>)Class9170.field38847);
+                    final List<Entity> method4190 = class1851.method6739(Class818.class, this.getBoundingBox().grow(5.0, 3.0, 5.0), Class9170.field38847);
                     if (!method4190.isEmpty()) {
                         final Class818 class1856 = method4190.get(0);
                         class1856.method4818(true);
@@ -492,8 +492,8 @@ public class Class827 extends Class763
         }
         if (this.method2718(Class2215.field13605).method27620()) {
             final LocalDate now = LocalDate.now();
-            final int value = now.get(ChronoField.DAY_OF_MONTH);
-            if (now.get(ChronoField.MONTH_OF_YEAR) == 10) {
+            final int value = now.getDayOfMonth();
+            if (now.getMonth() == 10) {
                 if (value == 31) {
                     if (this.rand.nextFloat() < 0.25f) {
                         this.method1803(Class2215.field13605, new ItemStack((this.rand.nextFloat() >= 0.1f) ? Blocks.field29342 : Blocks.field29343));
@@ -503,7 +503,7 @@ public class Class827 extends Class763
             }
         }
         this.method4932(method4189);
-        return (Class5496)method4188;
+        return method4188;
     }
     
     public void method4932(final float n) {

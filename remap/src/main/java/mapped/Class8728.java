@@ -33,9 +33,7 @@ public final class Class8728
     public boolean equals(final Object o) {
         if (o instanceof Class8728) {
             if (((Class8728)o).field36660.equals(this.field36660)) {
-                if (((Class8728)o).field36661.equals(this.field36661)) {
-                    return true;
-                }
+                return ((Class8728) o).field36661.equals(this.field36661);
             }
         }
         return false;

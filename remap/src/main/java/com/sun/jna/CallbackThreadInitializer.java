@@ -6,10 +6,10 @@ package com.sun.jna;
 
 public class CallbackThreadInitializer
 {
-    private boolean daemon;
-    private boolean detach;
-    private String name;
-    private ThreadGroup group;
+    private final boolean daemon;
+    private final boolean detach;
+    private final String name;
+    private final ThreadGroup group;
     
     public CallbackThreadInitializer() {
         this(true);

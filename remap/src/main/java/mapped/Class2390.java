@@ -14,6 +14,6 @@ public class Class2390 extends Class2389
     }
     
     public Class2390(final String s, final Class2314 class2314, final String s2, final Class2314 class2315) {
-        this(s, class2314, s2, class2315, (Throwable)null);
+        this(s, class2314, s2, class2315, null);
     }
 }

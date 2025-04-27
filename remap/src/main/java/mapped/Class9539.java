@@ -39,7 +39,7 @@ public class Class9539 extends DataFix
     }
     
     private Dynamic<?> method35610(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)(dynamic.get("generatorName").asString("").equalsIgnoreCase("flat") ? dynamic.update("generatorOptions", dynamic2 -> DataFixUtils.orElse((Optional)dynamic2.asString().map(this::method35611).map(dynamic2::createString), (Object)dynamic2)) : dynamic);
+        return dynamic.get("generatorName").asString("").equalsIgnoreCase("flat") ? dynamic.update("generatorOptions", dynamic2 -> DataFixUtils.orElse((Optional)dynamic2.asString().map(this::method35611).map(dynamic2::createString), (Object)dynamic2)) : dynamic;
     }
     
     @VisibleForTesting
@@ -47,7 +47,7 @@ public class Class9539 extends DataFix
         if (s.isEmpty()) {
             return "minecraft:bedrock,2*minecraft:dirt,minecraft:grass_block;1;village";
         }
-        final Iterator iterator = Class9539.field41056.split((CharSequence)s).iterator();
+        final Iterator iterator = Class9539.field41056.split(s).iterator();
         final String s2 = (String)iterator.next();
         int n2;
         String s3;
@@ -61,7 +61,7 @@ public class Class9539 extends DataFix
         }
         if (n2 >= 0 && n2 <= 3) {
             final StringBuilder sb = new StringBuilder();
-            sb.append(StreamSupport.stream(Class9539.field41057.split((CharSequence)s3).spliterator(), false).map(s4 -> {
+            sb.append(StreamSupport.stream(Class9539.field41057.split(s3).spliterator(), false).map(s4 -> {
                 final int n2;
                 final Object o = (n2 >= 3) ? Class9539.field41059 : Class9539.field41058;
                 splitter.splitToList((CharSequence)s4);
@@ -74,7 +74,7 @@ public class Class9539 extends DataFix
                     NumberUtils.toInt((String)list.get(0));
                     s5 = list.get(1);
                 }
-                Class9539.field41060.splitToList((CharSequence)s5);
+                Class9539.field41060.splitToList(s5);
                 final List list2;
                 list2.get(0).equals("minecraft");
                 final int n3;

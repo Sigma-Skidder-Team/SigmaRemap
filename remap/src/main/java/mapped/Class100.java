@@ -26,7 +26,7 @@ public enum Class100
     public final int field294;
     private static final Map<String, Class100> field295;
     
-    private Class100(final String field290, final int field291, final int field292, final int field293, final int field294) {
+    Class100(final String field290, final int field291, final int field292, final int field293, final int field294) {
         this.field290 = field290;
         this.field291 = field291;
         this.field292 = field292;
@@ -40,6 +40,6 @@ public enum Class100
     }
     
     static {
-        field295 = Stream.of(values()).collect((Collector<? super Class100, Object, Map<String, Class100>>)ImmutableMap.toImmutableMap(class100 -> class100.field290, (Function)Function.identity()));
+        field295 = Stream.of(values()).collect((Collector<? super Class100, Object, Map<String, Class100>>)ImmutableMap.toImmutableMap(class100 -> class100.field290, Function.identity()));
     }
 }

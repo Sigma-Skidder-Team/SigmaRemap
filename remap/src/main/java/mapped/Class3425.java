@@ -42,9 +42,7 @@ public class Class3425 extends Class3418
     public boolean method10854(final PlayerEntity playerEntity) {
         if (this.field16190.method2162(playerEntity)) {
             if (this.field16191.isAlive()) {
-                if (this.field16191.method1732(playerEntity) < 8.0f) {
-                    return true;
-                }
+                return this.field16191.method1732(playerEntity) < 8.0f;
             }
         }
         return false;

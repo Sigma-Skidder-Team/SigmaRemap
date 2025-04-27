@@ -77,7 +77,7 @@ public class Class5899<T extends Class812> extends Class5845<T>
     @Override
     public void method17564(final MatrixStack class7351, final Class4150 class7352, final int n, final int n2, final float n3, final float n4, final float n5, final float n6) {
         if (!this.field23957) {
-            ImmutableList.of((Object)this.field24246, (Object)this.field24247, (Object)this.field24248, (Object)this.field24249, (Object)this.field24250, (Object)this.field24251, (Object)this.field24252, (Object)this.field24253).forEach(class7355 -> class7355.method18644(class7353, class7354, n7, n8, n9, n10, n11, n12));
+            ImmutableList.of(this.field24246, this.field24247, this.field24248, this.field24249, this.field24250, this.field24251, this.field24252, (Object)this.field24253).forEach(class7355 -> class7355.method18644(class7353, class7354, n7, n8, n9, n10, n11, n12));
         }
         else {
             class7351.method22567();
@@ -93,7 +93,7 @@ public class Class5899<T extends Class812> extends Class5845<T>
             class7351.method22567();
             class7351.method22565(0.45454544f, 0.41322312f, 0.45454544f);
             class7351.method22564(0.0, 2.0625, 0.0);
-            ImmutableList.of((Object)this.field24248, (Object)this.field24249, (Object)this.field24250, (Object)this.field24251, (Object)this.field24252, (Object)this.field24253).forEach(class7358 -> class7358.method18644(class7356, class7357, n13, n14, n15, n16, n17, n18));
+            ImmutableList.of(this.field24248, this.field24249, this.field24250, this.field24251, this.field24252, (Object)this.field24253).forEach(class7358 -> class7358.method18644(class7356, class7357, n13, n14, n15, n16, n17, n18));
             class7351.method22568();
         }
     }

@@ -55,7 +55,7 @@ public class Backup extends ValueObject
             if (s2 != null) {
                 if (s2.length() >= 1) {
                     if (!"of".equals(s2)) {
-                        sb.append(Character.toUpperCase(s2.charAt(0))).append(s2.substring(1, s2.length())).append(" ");
+                        sb.append(Character.toUpperCase(s2.charAt(0))).append(s2, 1, s2.length()).append(" ");
                     }
                     else {
                         sb.append(s2).append(" ");

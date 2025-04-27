@@ -53,7 +53,7 @@ public class Class9265
             if (method28934 < 0.0f) {
                 continue;
             }
-            ((Char2ObjectMap)char2ObjectOpenHashMap).put((char)method28933, (Object)new Float(method28934));
+            char2ObjectOpenHashMap.put((char)method28933, new Float(method28934));
         }
         return (Char2ObjectMap<Float>)char2ObjectOpenHashMap;
     }

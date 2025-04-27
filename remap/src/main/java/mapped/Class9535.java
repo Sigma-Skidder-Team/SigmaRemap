@@ -81,31 +81,31 @@ public class Class9535
             if (method35597 != null && class8779.method30537() == DamageSource.field32572) {
                 final ITextComponent method35600 = method35597.method30541();
                 if (method35597.method30537() != DamageSource.field32572 && method35597.method30537() != DamageSource.field32574) {
-                    if (method35600 != null && (method35598 == null || !method35600.equals(method35598))) {
+                    if (method35600 != null && (!method35600.equals(method35598))) {
                         final Entity method35601 = method35597.method30537().method25714();
                         final ItemStack class8780 = (method35601 instanceof LivingEntity) ? ((LivingEntity)method35601).getHeldItemMainhand() : ItemStack.EMPTY;
                         if (!class8780.method27620() && class8780.method27667()) {
-                            method35602 = new Class2259("death.fell.assist.item", new Object[] { this.field41037.getDisplayName(), method35600, class8780.method27684() });
+                            method35602 = new Class2259("death.fell.assist.item", this.field41037.getDisplayName(), method35600, class8780.method27684());
                         }
                         else {
-                            method35602 = new Class2259("death.fell.assist", new Object[] { this.field41037.getDisplayName(), method35600 });
+                            method35602 = new Class2259("death.fell.assist", this.field41037.getDisplayName(), method35600);
                         }
                     }
                     else if (method35598 == null) {
-                        method35602 = new Class2259("death.fell.killer", new Object[] { this.field41037.getDisplayName() });
+                        method35602 = new Class2259("death.fell.killer", this.field41037.getDisplayName());
                     }
                     else {
                         final ItemStack class8781 = (method35599 instanceof LivingEntity) ? ((LivingEntity)method35599).getHeldItemMainhand() : ItemStack.EMPTY;
                         if (!class8781.method27620() && class8781.method27667()) {
-                            method35602 = new Class2259("death.fell.finish.item", new Object[] { this.field41037.getDisplayName(), method35598, class8781.method27684() });
+                            method35602 = new Class2259("death.fell.finish.item", this.field41037.getDisplayName(), method35598, class8781.method27684());
                         }
                         else {
-                            method35602 = new Class2259("death.fell.finish", new Object[] { this.field41037.getDisplayName(), method35598 });
+                            method35602 = new Class2259("death.fell.finish", this.field41037.getDisplayName(), method35598);
                         }
                     }
                 }
                 else {
-                    method35602 = new Class2259("death.fell.accident." + this.method35598(method35597), new Object[] { this.field41037.getDisplayName() });
+                    method35602 = new Class2259("death.fell.accident." + this.method35598(method35597), this.field41037.getDisplayName());
                 }
             }
             else {
@@ -113,7 +113,7 @@ public class Class9535
             }
             return method35602;
         }
-        return new Class2259("death.attack.generic", new Object[] { this.field41037.getDisplayName() });
+        return new Class2259("death.attack.generic", this.field41037.getDisplayName());
     }
     
     @Nullable

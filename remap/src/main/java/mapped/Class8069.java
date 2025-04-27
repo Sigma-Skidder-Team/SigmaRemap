@@ -72,14 +72,9 @@ public class Class8069<A, B, C>
             final Object method26473 = this.method26471();
             final Object method26474 = class8069.method26471();
             if (method26473 != null) {
-                if (!method26473.equals(method26474)) {
-                    return false;
-                }
+                return method26473.equals(method26474);
             }
-            else if (method26474 != null) {
-                return false;
-            }
-            return true;
+            else return method26474 == null;
         }
         return false;
     }

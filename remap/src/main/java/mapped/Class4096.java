@@ -47,9 +47,9 @@ public class Class4096 extends Item
             final CompoundNBT method27657 = class8321.method27657();
             final String method27658 = method27657.getString("author");
             if (!Class8272.method27500(method27658)) {
-                list.add(new Class2259("book.byAuthor", new Object[] { method27658 }).applyTextStyle(TextFormatting.GRAY));
+                list.add(new Class2259("book.byAuthor", method27658).applyTextStyle(TextFormatting.GRAY));
             }
-            list.add(new Class2259("book.generation." + method27657.getInt("generation"), new Object[0]).applyTextStyle(TextFormatting.GRAY));
+            list.add(new Class2259("book.generation." + method27657.getInt("generation")).applyTextStyle(TextFormatting.GRAY));
         }
     }
     

@@ -60,7 +60,7 @@ public class Class626 extends Class624
                 RealmsMainScreen.method15849(this.field3608, n + 225, n2 + 2, n3, n4);
             }
             if (!"0".equals(class7437.field28692.field28697)) {
-                final String string = Class314.field1853 + "" + class7437.field28692.field28697;
+                final String string = Class314.field1853 + class7437.field28692.field28697;
                 this.field3608.method15407(string, n + 207 - this.field3608.method15424(string), n2 + 3, 8421504);
                 if (n3 >= n + 207 - this.field3608.method15424(string)) {
                     if (n3 <= n + 207) {

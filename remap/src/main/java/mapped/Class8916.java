@@ -108,7 +108,7 @@ public final class Class8916
     }
     
     public List<Class8975> method31430() {
-        final ArrayList list = new ArrayList((Collection<? extends E>)this.field37494);
+        final ArrayList list = new ArrayList(this.field37494);
         this.field37494.clear();
         return list;
     }

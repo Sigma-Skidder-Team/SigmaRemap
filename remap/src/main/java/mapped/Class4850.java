@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Class4850 extends Class4841
 {
-    private List<Class4868> field20785;
+    private final List<Class4868> field20785;
     private final int field20786;
     private final Animation field20787;
     private boolean field20788;

@@ -23,7 +23,7 @@ public class Class5279 extends Class5278<Class6562, Class6637>
         final boolean boolean1 = byteBuf.readBoolean();
         final int intValue = Class5260.field22312.method16378(byteBuf);
         final Class74 class6638 = Class5260.field22322.method16378(byteBuf);
-        final int[] array = (int[])(boolean1 ? new int[1024] : null);
+        final int[] array = boolean1 ? new int[1024] : null;
         if (boolean1) {
             for (int i = 0; i < 1024; ++i) {
                 array[i] = byteBuf.readInt();

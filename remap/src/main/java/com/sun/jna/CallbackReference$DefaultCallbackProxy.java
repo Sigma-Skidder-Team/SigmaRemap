@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 public class CallbackReference$DefaultCallbackProxy implements CallbackProxy
 {
     private final Method callbackMethod;
-    private ToNativeConverter toNative;
+    private final ToNativeConverter toNative;
     private final FromNativeConverter[] fromNative;
     private final String encoding;
     public final /* synthetic */ CallbackReference this$0;

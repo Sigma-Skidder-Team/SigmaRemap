@@ -69,6 +69,6 @@ public class Class3933 extends Class3932
     
     static {
         field17814 = Class3892.field17564;
-        field17815 = Maps.newEnumMap((Map)ImmutableMap.of((Object) Direction.NORTH, (Object) Block.method11778(4.0, 4.0, 8.0, 12.0, 12.0, 16.0), (Object) Direction.SOUTH, (Object) Block.method11778(4.0, 4.0, 0.0, 12.0, 12.0, 8.0), (Object) Direction.EAST, (Object) Block.method11778(0.0, 4.0, 4.0, 8.0, 12.0, 12.0), (Object) Direction.WEST, (Object) Block.method11778(8.0, 4.0, 4.0, 16.0, 12.0, 12.0)));
+        field17815 = Maps.newEnumMap((Map)ImmutableMap.of(Direction.NORTH, Block.method11778(4.0, 4.0, 8.0, 12.0, 12.0, 16.0), Direction.SOUTH, Block.method11778(4.0, 4.0, 0.0, 12.0, 12.0, 8.0), Direction.EAST, Block.method11778(0.0, 4.0, 4.0, 8.0, 12.0, 12.0), (Object) Direction.WEST, (Object) Block.method11778(8.0, 4.0, 4.0, 16.0, 12.0, 12.0)));
     }
 }

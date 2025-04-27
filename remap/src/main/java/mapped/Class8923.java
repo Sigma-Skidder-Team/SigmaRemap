@@ -63,14 +63,14 @@ public class Class8923<T> implements Class8924<T>
     }
     
     public int method31460(final T t, final T t2) {
-        return Integer.compare(this.field37515.getInt((Object)t), this.field37515.getInt((Object)t2));
+        return Integer.compare(this.field37515.getInt(t), this.field37515.getInt(t2));
     }
     
     @Override
     public List<T> method31456(final String s) {
         final int index = s.indexOf(58);
         if (index != -1) {
-            return Lists.newArrayList((Iterator)new Class7250((Iterator<Object>)this.field37511.method26809(s.substring(0, index).trim()).iterator(), (Iterator<Object>)this.field37512.method26809(s.substring(index + 1).trim()).iterator(), this::method31460));
+            return Lists.newArrayList(new Class7250((Iterator<Object>)this.field37511.method26809(s.substring(0, index).trim()).iterator(), (Iterator<Object>)this.field37512.method26809(s.substring(index + 1).trim()).iterator(), this::method31460));
         }
         return this.field37512.method26809(s);
     }

@@ -118,7 +118,7 @@ public class Class1929 implements Serializable, Comparable<Class1929>
             return method7738(MessageDigest.getInstance(algorithm).digest(this.field10533));
         }
         catch (final NoSuchAlgorithmException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
     }
     
@@ -141,7 +141,7 @@ public class Class1929 implements Serializable, Comparable<Class1929>
             return method7738(instance.doFinal(this.field10533));
         }
         catch (final NoSuchAlgorithmException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
+            throw new AssertionError(detailMessage);
         }
         catch (final InvalidKeyException cause) {
             throw new IllegalArgumentException(cause);
@@ -322,9 +322,7 @@ public class Class1929 implements Serializable, Comparable<Class1929>
             if (n <= this.field10533.length - n3) {
                 if (n2 >= 0) {
                     if (n2 <= array.length - n3) {
-                        if (Class9476.method35283(this.field10533, n, array, n2, n3)) {
-                            return true;
-                        }
+                        return Class9476.method35283(this.field10533, n, array, n2, n3);
                     }
                 }
             }
@@ -397,9 +395,7 @@ public class Class1929 implements Serializable, Comparable<Class1929>
         if (o != this) {
             if (o instanceof Class1929) {
                 if (((Class1929)o).method7766() == this.field10533.length) {
-                    if (((Class1929)o).method7773(0, this.field10533, 0, this.field10533.length)) {
-                        return true;
-                    }
+                    return ((Class1929) o).method7773(0, this.field10533, 0, this.field10533.length);
                 }
             }
             return false;
@@ -491,6 +487,6 @@ public class Class1929 implements Serializable, Comparable<Class1929>
     
     static {
         field10530 = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-        field10532 = method7738(new byte[0]);
+        field10532 = method7738();
     }
 }

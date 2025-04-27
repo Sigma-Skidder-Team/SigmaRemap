@@ -61,6 +61,6 @@ public final class Class8402
     }
     
     private Class8402() {
-        throw new AssertionError((Object)"No instances.");
+        throw new AssertionError("No instances.");
     }
 }

@@ -21,7 +21,7 @@ public class Class4282 implements IPacket<IClientPlayNetHandler>
     }
     
     public Class4282(final Class7795 field19210, final Class286 field19211, final double n, final double n2, final double n3, final float field19212, final float field19213) {
-        Validate.notNull((Object)field19210, "sound", new Object[0]);
+        Validate.notNull((Object)field19210, "sound");
         this.field19210 = field19210;
         this.field19211 = field19211;
         this.field19212 = (int)(n * 8.0);

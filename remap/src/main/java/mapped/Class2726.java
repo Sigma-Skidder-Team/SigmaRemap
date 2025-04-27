@@ -34,14 +34,14 @@ public class Class2726 extends Class2466
                 final int intValue2 = class8699.method29822(Class5260.field22312);
                 final ArrayList list = new ArrayList(intValue2);
                 for (int j = 0; j < intValue2; ++j) {
-                    list.add((Object)new Class8069(class8699.method29822(Class5260.field22310), class8699.method29822(Class5260.field22298), class8699.method29822(Class5260.field22289)));
+                    list.add(new Class8069(class8699.method29822(Class5260.field22310), class8699.method29822(Class5260.field22298), class8699.method29822(Class5260.field22289)));
                 }
-                hashMap.put((Object)s, (Object)new Class7803(n, list));
+                hashMap.put(s, new Class7803(n, list));
             }
-            hashMap.put((Object)"generic.attackSpeed", (Object)new Class7803(15.9, ImmutableList.of((Object)new Class8069(UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3"), 0.0, 0), (Object)new Class8069(UUID.fromString("AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3"), 0.0, 2), (Object)new Class8069(UUID.fromString("55FCED67-E92A-486E-9800-B47F202C4386"), 0.0, 2))));
+            hashMap.put("generic.attackSpeed", new Class7803(15.9, ImmutableList.of(new Class8069(UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3"), 0.0, 0), new Class8069(UUID.fromString("AF8B6E3F-3328-4C0A-AA36-5BA2BB9DBEF3"), 0.0, 2), (Object)new Class8069(UUID.fromString("55FCED67-E92A-486E-9800-B47F202C4386"), 0.0, 2))));
             class8699.method29823(Class5260.field22296, hashMap.size());
             for (final Map.Entry<T, V> entry : hashMap.entrySet()) {
-                class8699.method29823(Class5260.field22308, (String)entry.getKey());
+                class8699.method29823(Class5260.field22308, entry.getKey());
                 class8699.method29823(Class5260.field22298, (Double)((Class7803)entry.getValue()).method25203());
                 class8699.method29823(Class5260.field22312, ((List)((Class7803)entry.getValue()).method25204()).size());
                 for (final Class8069 class8700 : ((Class7803)entry.getValue()).method25204()) {

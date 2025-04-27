@@ -73,7 +73,7 @@ public class Class4921 extends Class4825
             final int n3 = 0;
             field20479 -= 7;
             field20478 += 7;
-            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n3), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 1.0f * n));
+            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n3), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, n));
         }
         else {
             RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, n);

@@ -156,9 +156,7 @@ public class Class4651 extends Class4654
                     if (class6774.field26590 <= class6772.field26590 && class6773.field26590 <= class6772.field26590) {
                         if (class6775.field26600 >= 0.0f) {
                             if (class6774.field26590 < class6772.field26590 || class6774.field26600 >= 0.0f) {
-                                if (class6773.field26590 < class6772.field26590 || class6773.field26600 >= 0.0f) {
-                                    return true;
-                                }
+                                return class6773.field26590 < class6772.field26590 || class6773.field26600 >= 0.0f;
                             }
                         }
                         return false;
@@ -456,19 +454,19 @@ public class Class4651 extends Class4654
         }
         if (method6702 instanceof Class3969) {
             if (method6703 == Material.WOOD) {
-                if (!method6701.get((IProperty<Boolean>)Class3969.field17932)) {
+                if (!method6701.get(Class3969.field17932)) {
                     return Class257.field1221;
                 }
             }
         }
         if (method6702 instanceof Class3969) {
             if (method6703 == Material.IRON) {
-                if (!method6701.get((IProperty<Boolean>)Class3969.field17932)) {
+                if (!method6701.get(Class3969.field17932)) {
                     return Class257.field1222;
                 }
             }
         }
-        if (method6702 instanceof Class3969 && method6701.get((IProperty<Boolean>)Class3969.field17932)) {
+        if (method6702 instanceof Class3969 && method6701.get(Class3969.field17932)) {
             return Class257.field1220;
         }
         if (method6702 instanceof Class4017) {
@@ -477,7 +475,7 @@ public class Class4651 extends Class4654
         if (!(method6702 instanceof Class3972)) {
             if (!method6702.method11785(Class7188.field27911)) {
                 if (!method6702.method11785(Class7188.field27904)) {
-                    if (!(method6702 instanceof Class3898) || method6701.get((IProperty<Boolean>)Class3898.field17585)) {
+                    if (!(method6702 instanceof Class3898) || method6701.get(Class3898.field17585)) {
                         final IFluidState method6704 = class1855.getFluidState(class1856);
                         if (method6704.isTagged(Class7324.field28319)) {
                             return Class257.field1211;

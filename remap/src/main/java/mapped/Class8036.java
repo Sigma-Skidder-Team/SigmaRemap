@@ -76,7 +76,7 @@ public class Class8036
         }
         catch (final Exception ex) {
             ex.printStackTrace();
-            System.err.println("error while reading file: " + ex.toString());
+            System.err.println("error while reading file: " + ex);
         }
     }
     
@@ -91,7 +91,7 @@ public class Class8036
             sb.append("  ");
         }
         sb.append(class3746.toString());
-        System.out.println(sb.toString());
+        System.out.println(sb);
         final Iterator<Class3746> iterator = class3746.method11500().iterator();
         while (iterator.hasNext()) {
             method26366(iterator.next(), n + 1);

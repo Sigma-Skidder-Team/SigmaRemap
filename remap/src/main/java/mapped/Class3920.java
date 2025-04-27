@@ -40,7 +40,7 @@ public class Class3920 extends Block implements Class3856
         if (class7099.hasItem(class7096.getBlock().method11704())) {
             return VoxelShapes.fullCube();
         }
-        return class7096.get((IProperty<Boolean>)Class3920.field17775) ? Class3920.field17770 : Class3920.field17769;
+        return class7096.get(Class3920.field17775) ? Class3920.field17770 : Class3920.field17769;
     }
     
     @Override
@@ -70,7 +70,7 @@ public class Class3920 extends Block implements Class3856
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3920.field17774)) {
+        if (class7096.get(Class3920.field17774)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         if (!class7099.isRemote()) {
@@ -83,12 +83,12 @@ public class Class3920 extends Block implements Class3856
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
         final int method12036 = method12036(class7097, class7098);
         final BlockState class7099 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3920.field17773, method12036)).with((IProperty<Comparable>)Class3920.field17775, this.method12035(class7097, class7098, method12036));
-        if (((StateHolder<Object, BlockState>)class7099).get((IProperty<Integer>)Class3920.field17773) != 7) {
+        if (class7099.get(Class3920.field17773) != 7) {
             if (class7096 != class7099) {
                 class7097.setBlockState(class7098, class7099, 3);
             }
         }
-        else if (class7096.get((IProperty<Integer>)Class3920.field17773) != 7) {
+        else if (class7096.get(Class3920.field17773) != 7) {
             class7097.method7149(class7098, true);
         }
         else {
@@ -106,8 +106,8 @@ public class Class3920 extends Block implements Class3856
         if (class7099.func_216378_a(VoxelShapes.fullCube(), class7098, true) && !class7099.func_225581_b_()) {
             return Class3920.field17769;
         }
-        if (class7096.get((IProperty<Integer>)Class3920.field17773) != 0) {
-            if (class7096.get((IProperty<Boolean>)Class3920.field17775)) {
+        if (class7096.get(Class3920.field17773) != 0) {
+            if (class7096.get(Class3920.field17775)) {
                 if (class7099.func_216378_a(Class3920.field17772, class7098, true)) {
                     return Class3920.field17771;
                 }
@@ -118,7 +118,7 @@ public class Class3920 extends Block implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3920.field17774) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3920.field17774) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     private boolean method12035(final IBlockReader class1855, final BlockPos class1856, final int n) {
@@ -135,7 +135,7 @@ public class Class3920 extends Block implements Class3856
             }
         }
         else {
-            a = method1291.get((IProperty<Integer>)Class3920.field17773);
+            a = method1291.get(Class3920.field17773);
         }
         final Iterator<Direction> iterator = Plane.HORIZONTAL.iterator();
         while (iterator.hasNext()) {
@@ -143,7 +143,7 @@ public class Class3920 extends Block implements Class3856
             if (method1292.getBlock() != Blocks.SCAFFOLDING) {
                 continue;
             }
-            a = Math.min(a, method1292.get((IProperty<Integer>)Class3920.field17773) + 1);
+            a = Math.min(a, method1292.get(Class3920.field17773) + 1);
             if (a != 1) {
                 continue;
             }

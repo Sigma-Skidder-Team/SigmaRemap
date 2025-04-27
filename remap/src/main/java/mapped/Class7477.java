@@ -74,7 +74,7 @@ public class Class7477
             }
             obj.append(class8082.method32252());
         }
-        method23106("List: " + (Object)obj);
+        method23106("List: " + obj);
     }
     
     private static void method23104(final Class8081<Class9009> class8081, final int i) {

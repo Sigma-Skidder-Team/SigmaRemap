@@ -7,7 +7,7 @@ package mapped;
 public class Class8473
 {
     private static String[] field34784;
-    private Class9241[] field34785;
+    private final Class9241[] field34785;
     
     public Class8473(final Class9241[] field34785) {
         this.field34785 = field34785;

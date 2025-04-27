@@ -23,8 +23,8 @@ public class Class9055
     private boolean field38338;
     
     public Class9055(final Class357 field38328, final Class373 field38329) {
-        this.field38330 = (Set<Block>)ImmutableSet.of();
-        this.field38331 = (Set<BlockState>)ImmutableSet.of();
+        this.field38330 = ImmutableSet.of();
+        this.field38331 = ImmutableSet.of();
         this.field38332 = 64;
         this.field38333 = 7;
         this.field38334 = 3;

@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Class716 extends Class698
 {
     public Screen field3910;
-    private Class8297 field3911;
+    private final Class8297 field3911;
     private int field3912;
     private Class603 field3913;
     private boolean field3914;
@@ -26,7 +26,7 @@ public class Class716 extends Class698
     public static final int field3923 = 4;
     
     public Class716(final Screen field3910, final Class5760 class5760) {
-        super(new StringTextComponent(Class8822.method30773("of.options.shadersTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.shadersTitle")));
         this.field3911 = new Class8297(this, new Class7301());
         this.field3912 = -1;
         this.field3914 = false;
@@ -46,8 +46,8 @@ public class Class716 extends Class698
         final int n6 = this.width - n - 20;
         this.field3913 = new Class603(this, n6, this.height, n4, this.height - 50, 16);
         this.children.add(this.field3913);
-        this.addButton(new Class677(Class2222.field13663, n3, 0 * n5 + n4, n, n2));
-        this.addButton(new Class677(Class2222.field13664, n3, 1 * n5 + n4, n, n2));
+        this.addButton(new Class677(Class2222.field13663, n3, n4, n, n2));
+        this.addButton(new Class677(Class2222.field13664, n3, n5 + n4, n, n2));
         this.addButton(new Class677(Class2222.field13665, n3, 2 * n5 + n4, n, n2));
         this.addButton(new Class677(Class2222.field13666, n3, 3 * n5 + n4, n, n2));
         this.addButton(new Class677(Class2222.field13667, n3, 4 * n5 + n4, n, n2));
@@ -59,7 +59,7 @@ public class Class716 extends Class698
         final int n8 = this.height - 25;
         this.addButton(new Class673(201, n7, n8, min - 22 + 1, n2, Class4647.method13876("of.options.shaders.shadersFolder")));
         this.addButton(new Class676(210, n7 + min - 22 - 1, n8));
-        this.addButton(new Class673(202, n6 / 4 * 3 - min / 2, this.height - 25, min, n2, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(202, n6 / 4 * 3 - min / 2, this.height - 25, min, n2, Class8822.method30773("gui.done")));
         this.addButton(new Class673(203, n3, this.height - 25, n, n2, Class4647.method13876("of.options.shaders.shaderOptions")));
         this.setFocused(this.field3913);
         this.method3934();

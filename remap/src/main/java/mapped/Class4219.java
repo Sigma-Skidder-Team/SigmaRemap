@@ -20,7 +20,7 @@ public class Class4219 extends Class4211
     public JsonElement method12682() {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("recipe", this.field19016.toString());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public boolean method12702(final IRecipe<?> class3662) {

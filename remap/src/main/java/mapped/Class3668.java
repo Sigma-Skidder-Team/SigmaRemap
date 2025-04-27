@@ -44,9 +44,7 @@ public class Class3668 extends Class3666
         if (n != 0) {
             if (n3 != 0) {
                 if (n2 != 0) {
-                    if (n4 != 0) {
-                        return true;
-                    }
+                    return n4 != 0;
                 }
             }
         }

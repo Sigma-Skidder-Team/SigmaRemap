@@ -49,7 +49,7 @@ public class EntityDataManager
             try {
                 final Class<?> forName = Class.forName(Thread.currentThread().getStackTrace()[2].getClassName());
                 if (!forName.equals(obj)) {
-                    EntityDataManager.field38914.debug("defineId called for: {} from {}", (Object)obj, (Object)forName, (Object)new RuntimeException());
+                    EntityDataManager.field38914.debug("defineId called for: {} from {}", obj, forName, new RuntimeException());
                 }
             }
             catch (final ClassNotFoundException ex) {}
@@ -123,7 +123,7 @@ public class EntityDataManager
     
     public <T> void set(final DataParameter<T> class8810, final T t) {
         final Class9369<T> method33567 = this.method33567(class8810);
-        if (ObjectUtils.notEqual((Object)t, (Object)method33567.method34768())) {
+        if (ObjectUtils.notEqual(t, method33567.method34768())) {
             method33567.method34767(t);
             this.field38916.method1880(class8810);
             method33567.method34770(true);

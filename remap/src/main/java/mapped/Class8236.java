@@ -17,6 +17,6 @@ public class Class8236 implements UncaughtExceptionHandler
     @Override
     public void uncaughtException(final Thread thread, final Throwable t) {
         this.field33829.error("Caught previously unhandled exception :");
-        this.field33829.error((Object)t);
+        this.field33829.error(t);
     }
 }

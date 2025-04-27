@@ -51,6 +51,6 @@ public class Class4430 extends DataFix
     }
     
     private static <T> Dynamic<T> method13411(final Dynamic<T> dynamic, final String s) {
-        return (Dynamic<T>)(dynamic.get(s).asNumber().isPresent() ? dynamic.set(s, (Dynamic)Class7922.method25672(dynamic.get(s).asInt(0) << 4)) : dynamic);
+        return dynamic.get(s).asNumber().isPresent() ? dynamic.set(s, Class7922.method25672(dynamic.get(s).asInt(0) << 4)) : dynamic;
     }
 }

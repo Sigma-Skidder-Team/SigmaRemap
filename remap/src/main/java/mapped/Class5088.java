@@ -23,7 +23,7 @@ public class Class5088 extends RealmsScreen
     private Class5611 field21983;
     private final DateFormat field21984;
     private List<Class1951> field21985;
-    private int field21986;
+    private final int field21986;
     private Class5058 field21987;
     private String field21988;
     private String field21989;
@@ -58,7 +58,7 @@ public class Class5088 extends RealmsScreen
             this.method15946();
         }
         catch (final Exception ex) {
-            Class5088.field21979.error("Couldn't load level list", (Throwable)ex);
+            Class5088.field21979.error("Couldn't load level list", ex);
             Realms.setScreen(new RealmsGenericErrorScreen("Unable to load worlds", ex.getMessage(), this.field21980));
             return;
         }

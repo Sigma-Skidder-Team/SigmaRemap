@@ -51,7 +51,7 @@ public class Class1938 extends Class1937
     public Object method7827(final Object o) {
         try {
             this.field10572.getReadMethod().setAccessible(true);
-            return this.field10572.getReadMethod().invoke(o, new Object[0]);
+            return this.field10572.getReadMethod().invoke(o);
         }
         catch (final Exception obj) {
             throw new Class2386("Unable to find getter for property '" + this.field10572.getName() + "' on object " + o + ":" + obj);

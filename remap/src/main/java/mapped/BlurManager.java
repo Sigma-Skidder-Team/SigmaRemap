@@ -51,7 +51,7 @@ public class BlurManager {
                     BlurManager.field36588 = BlurManager.field36587.method7249("jello");
                     BlurManager.field36589 = BlurManager.field36587.method7249("jelloswap");
                 } catch (final JsonSyntaxException | IOException ex) {
-                    ((Throwable) ex).printStackTrace();
+                    ex.printStackTrace();
                 }
             }
             if (BlurManager.field36588.field24887 != BlurManager.field36586.field4667.field24887 || BlurManager.field36588.field24886 != BlurManager.field36586.field4667.field24886) {

@@ -37,7 +37,7 @@ public class Class6300
     private ResourceLocation field25195;
     private String field25196;
     private Class8473 field25197;
-    private Class1656 field25198;
+    private final Class1656 field25198;
     
     public Class6300(final Class5901 class5901) {
         this.field25176 = 64.0f;
@@ -90,7 +90,7 @@ public class Class6300
     }
     
     public void method18633(final Class6300 class6300) {
-        this.field25189.add((Object)class6300);
+        this.field25189.add(class6300);
     }
     
     public Class6300 method18634(final int field25178, final int field25179) {
@@ -128,7 +128,7 @@ public class Class6300
     }
     
     private void method18641(final int n, final int n2, final float n3, final float n4, final float n5, final float n6, final float n7, final float n8, final float n9, final float n10, final float n11, final boolean b, final boolean b2) {
-        this.field25188.add((Object)new Class9536(n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, b, this.field25176, this.field25177));
+        this.field25188.add(new Class9536(n, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, b, this.field25176, this.field25177));
     }
     
     public void method18642(final float field25180, final float field25181, final float field25182) {
@@ -148,7 +148,7 @@ public class Class6300
                 this.method18645(class7351);
                 this.method18646(class7351.getLast(), class7352, n, n2, n3, n4, n5, n6);
                 for (int size = this.field25189.size(), i = 0; i < size; ++i) {
-                    ((Class6300)this.field25189.get(i)).method18644(class7351, class7352, n, n2, n3, n4, n5, n6);
+                    this.field25189.get(i).method18644(class7351, class7352, n, n2, n3, n4, n5, n6);
                 }
                 class7351.method22568();
             }
@@ -172,7 +172,7 @@ public class Class6300
         final Matrix4f method32111 = class8996.getMatrix();
         final Matrix3f method32112 = class8996.method32112();
         for (int size = this.field25188.size(), i = 0; i < size; ++i) {
-            final Class9536 class8998 = (Class9536)this.field25188.get(i);
+            final Class9536 class8998 = this.field25188.get(i);
             for (int length = Class9536.method35604(class8998).length, j = 0; j < length; ++j) {
                 final Class9094 class8999 = Class9536.method35604(class8998)[j];
                 if (class8999 != null) {
@@ -200,7 +200,7 @@ public class Class6300
     }
     
     public Class9536 method18648(final Random random) {
-        return (Class9536)this.field25188.get(random.nextInt(this.field25188.size()));
+        return this.field25188.get(random.nextInt(this.field25188.size()));
     }
     
     public void method18649(final float n, final float n2, final float n3, final int n4, final int n5, final int n6, final float n7) {
@@ -224,12 +224,12 @@ public class Class6300
     }
     
     public void method18654(final int[][] array, final float n, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
-        this.field25188.add((Object)new Class9536(array, n, n2, n3, n4, n5, n6, n7, n7, n7, this.field25186, this.field25176, this.field25177));
+        this.field25188.add(new Class9536(array, n, n2, n3, n4, n5, n6, n7, n7, n7, this.field25186, this.field25176, this.field25177));
     }
     
     public Class6300 method18655(final int n) {
         if (this.field25189 != null) {
-            return (n >= 0 && n < this.field25189.size()) ? ((Class6300)this.field25189.get(n)) : null;
+            return (n >= 0 && n < this.field25189.size()) ? this.field25189.get(n) : null;
         }
         return null;
     }
@@ -238,7 +238,7 @@ public class Class6300
         if (s != null) {
             if (this.field25189 != null) {
                 for (int i = 0; i < this.field25189.size(); ++i) {
-                    final Class6300 class6300 = (Class6300)this.field25189.get(i);
+                    final Class6300 class6300 = this.field25189.get(i);
                     if (s.equals(class6300.method18652())) {
                         return class6300;
                     }
@@ -257,7 +257,7 @@ public class Class6300
         if (method18656 == null) {
             if (this.field25189 != null) {
                 for (int i = 0; i < this.field25189.size(); ++i) {
-                    final Class6300 method18657 = ((Class6300)this.field25189.get(i)).method18657(s);
+                    final Class6300 method18657 = this.field25189.get(i).method18657(s);
                     if (method18657 != null) {
                         return method18657;
                     }
@@ -274,8 +274,6 @@ public class Class6300
     
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer();
-        sb.append("id: " + this.field25196 + ", boxes: " + ((this.field25188 == null) ? null : Integer.valueOf(this.field25188.size())) + ", submodels: " + ((this.field25189 == null) ? null : Integer.valueOf(this.field25189.size())));
-        return sb.toString();
+        return "id: " + this.field25196 + ", boxes: " + ((this.field25188 == null) ? null : Integer.valueOf(this.field25188.size())) + ", submodels: " + ((this.field25189 == null) ? null : Integer.valueOf(this.field25189.size()));
     }
 }

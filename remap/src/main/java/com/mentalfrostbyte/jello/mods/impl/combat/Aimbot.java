@@ -25,7 +25,7 @@ import java.util.List;
 public class Aimbot extends ModuleWithSettings
 {
     public Aimbot() {
-        super(Category.COMBAT, "Aimbot", "Automatically aim at players", new Module[] { new BasicAimbot(), new SmoothAimbot(), new CANDCAimbot() });
+        super(Category.COMBAT, "Aimbot", "Automatically aim at players", new BasicAimbot(), new SmoothAimbot(), new CANDCAimbot());
         this.addSetting(new BooleanSetting("Players", "Aim at players", true));
         this.addSetting(new BooleanSetting("Animals/Monsters", "Aim at animals and monsters", false));
         this.addSetting(new BooleanSetting("Invisible", "Aim at invisible entites", true));

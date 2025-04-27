@@ -37,7 +37,7 @@ public class Class4369 implements IPacket<IClientPlayNetHandler>
         final Class8624[] array = new Class8624[class8654.readVarInt()];
         final ArrayDeque arrayDeque = new ArrayDeque(array.length);
         for (int i = 0; i < array.length; ++i) {
-            arrayDeque.add((Object)(array[i] = this.method13136(class8654)));
+            arrayDeque.add(array[i] = this.method13136(class8654));
         }
         while (!arrayDeque.isEmpty()) {
             int n = 0;
@@ -95,14 +95,14 @@ public class Class4369 implements IPacket<IClientPlayNetHandler>
     private ArgumentBuilder<Class7491, ?> method13137(final PacketBuffer class8654, final byte b) {
         final int n = b & 0x3;
         if (n != 2) {
-            return (ArgumentBuilder<Class7491, ?>)((n != 1) ? null : LiteralArgumentBuilder.literal(class8654.method29513(32767)));
+            return (n != 1) ? null : LiteralArgumentBuilder.literal(class8654.method29513(32767));
         }
         final String method29513 = class8654.method29513(32767);
         final ArgumentType<?> method29514 = Class8381.method27935(class8654);
         if (method29514 != null) {
             final RequiredArgumentBuilder argument = RequiredArgumentBuilder.argument(method29513, (ArgumentType)method29514);
             if ((b & 0x10) != 0x0) {
-                argument.suggests((SuggestionProvider)Class8533.method28625(class8654.method29516()));
+                argument.suggests(Class8533.method28625(class8654.method29516()));
             }
             return (ArgumentBuilder<Class7491, ?>)argument;
         }

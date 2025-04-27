@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.commands.CommandException;
 public class Class6705 extends Class6693
 {
     public Class6705() {
-        super("highdpi", "Toggles macOS HiDPI, Needs mc restart.", new String[] { "hidpi" });
+        super("highdpi", "Toggles macOS HiDPI, Needs mc restart.", "hidpi");
     }
     
     @Override

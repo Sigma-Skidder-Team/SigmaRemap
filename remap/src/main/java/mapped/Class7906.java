@@ -68,7 +68,7 @@ public class Class7906
     }
     
     public static List<Class7906> method25611() {
-        return Collections.unmodifiableList((List<? extends Class7906>)new ArrayList<Class7906>(Class7906.field32450.values()));
+        return Collections.unmodifiableList(new ArrayList<Class7906>(Class7906.field32450.values()));
     }
     
     public static Class7906 method25612(final String s) {

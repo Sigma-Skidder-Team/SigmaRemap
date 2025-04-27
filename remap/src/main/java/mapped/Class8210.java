@@ -12,8 +12,8 @@ import java.util.HashMap;
 
 public class Class8210
 {
-    private Class7764 field33747;
-    private HashMap field33748;
+    private final Class7764 field33747;
+    private final HashMap field33748;
     
     public Class8210(final String s, final String s2) throws SlickException {
         this.field33748 = new HashMap();

@@ -13,7 +13,7 @@ import java.util.function.BiFunction;
 
 public interface Class7318
 {
-    public static final Class7318 field28308 = new Class7319();
+    Class7318 field28308 = new Class7319();
     
     default Class7318 method22434(final World class1847, final BlockPos class1848) {
         return new Class7320(class1847, class1848);

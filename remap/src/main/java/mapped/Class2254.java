@@ -84,7 +84,7 @@ public class Class2254 extends TextComponent implements Class2253
                     if (method32511.size() != 1) {
                         throw Class6886.field27001.create();
                     }
-                    s = ((Entity)method32511.get(0)).method1867();
+                    s = method32511.get(0).method1867();
                 }
                 else {
                     s = this.field13796;
@@ -107,9 +107,7 @@ public class Class2254 extends TextComponent implements Class2253
             final Class2254 class2254 = (Class2254)o;
             if (this.field13796.equals(class2254.field13796)) {
                 if (this.field13798.equals(class2254.field13798)) {
-                    if (super.equals(o)) {
-                        return true;
-                    }
+                    return super.equals(o);
                 }
             }
             return false;

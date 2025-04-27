@@ -31,6 +31,6 @@ public class Class2564 extends Class2466
         }
         class8699.method29824(Class5260.field22312);
         class8699.method29824(Class5260.field22312);
-        class8699.method29823(Class5260.field22294, (boolean)class8699.method29824(Class5260.field22294));
+        class8699.method29823(Class5260.field22294, class8699.method29824(Class5260.field22294));
     }
 }

@@ -1392,7 +1392,7 @@ public class Class2284 implements Serializable, Cloneable
             n7 -= 4;
             array3[n2 + 4] = (array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7 + 1];
             n7 -= 4;
-            array3[n2 + 0] = (array3[n2 + 0] - array[n7 + 1] * array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7 + 0];
+            array3[n2] = (array3[n2] - array[n7 + 1] * array3[n2 + 4] - array[n7 + 2] * array3[n2 + 8] - array[n7 + 3] * array3[n2 + 12]) / array[n7];
         }
     }
     
@@ -1957,10 +1957,7 @@ public class Class2284 implements Serializable, Cloneable
     }
     
     public boolean method8896(final Class2284 class2284, final float n) {
-        boolean b = true;
-        if (Math.abs(this.field13891 - class2284.field13891) > n) {
-            b = false;
-        }
+        boolean b = !(Math.abs(this.field13891 - class2284.field13891) > n);
         if (Math.abs(this.field13892 - class2284.field13892) > n) {
             b = false;
         }
@@ -2011,7 +2008,7 @@ public class Class2284 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * 1L + Class9427.method35030(this.field13891)) + Class9427.method35030(this.field13892)) + Class9427.method35030(this.field13893)) + Class9427.method35030(this.field13894)) + Class9427.method35030(this.field13895)) + Class9427.method35030(this.field13896)) + Class9427.method35030(this.field13897)) + Class9427.method35030(this.field13898)) + Class9427.method35030(this.field13899)) + Class9427.method35030(this.field13900)) + Class9427.method35030(this.field13901)) + Class9427.method35030(this.field13902)) + Class9427.method35030(this.field13903)) + Class9427.method35030(this.field13904)) + Class9427.method35030(this.field13905)) + Class9427.method35030(this.field13906);
+        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L + Class9427.method35030(this.field13891)) + Class9427.method35030(this.field13892)) + Class9427.method35030(this.field13893)) + Class9427.method35030(this.field13894)) + Class9427.method35030(this.field13895)) + Class9427.method35030(this.field13896)) + Class9427.method35030(this.field13897)) + Class9427.method35030(this.field13898)) + Class9427.method35030(this.field13899)) + Class9427.method35030(this.field13900)) + Class9427.method35030(this.field13901)) + Class9427.method35030(this.field13902)) + Class9427.method35030(this.field13903)) + Class9427.method35030(this.field13904)) + Class9427.method35030(this.field13905)) + Class9427.method35030(this.field13906);
         return (int)(n ^ n >> 32);
     }
     

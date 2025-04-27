@@ -84,7 +84,7 @@ public class RealmsClient
     }
     
     public void method35452(final long l, final String s, final String s2) throws RealmsServiceException, IOException {
-        this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/initialize".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7441(s, s2)), 5000, 10000));
+        this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/initialize".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson(new Class7441(s, s2)), 5000, 10000));
     }
     
     public Boolean method35453() throws RealmsServiceException, IOException {
@@ -116,7 +116,7 @@ public class RealmsClient
     public RealmsServer method35458(final long l, final String s) throws RealmsServiceException, IOException {
         final Class7427 class7427 = new Class7427();
         class7427.method22851(s);
-        return RealmsServer.method22882(this.method35486(Class8178.method27088(this.method35484("invites" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)class7427))));
+        return RealmsServer.method22882(this.method35486(Class8178.method27088(this.method35484("invites" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson(class7427))));
     }
     
     public Class7436 method35459(final long l) throws RealmsServiceException {
@@ -124,7 +124,7 @@ public class RealmsClient
     }
     
     public void method35460(final long l, final String s, final String s2) throws RealmsServiceException, UnsupportedEncodingException {
-        this.method35486(Class8178.method27088(this.method35484("worlds" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7441(s, s2))));
+        this.method35486(Class8178.method27088(this.method35484("worlds" + "/$WORLD_ID".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson(new Class7441(s, s2))));
     }
     
     public void method35461(final long l, final int i, final Class7424 class7424) throws RealmsServiceException, UnsupportedEncodingException {
@@ -164,11 +164,11 @@ public class RealmsClient
     }
     
     public Boolean func_224943_a(final long l, final String s, final Integer n, final boolean b) throws RealmsServiceException, IOException {
-        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(s, -1L, n, b)), 30000, 80000)));
+        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson(new Class7421(s, -1L, n, b)), 30000, 80000)));
     }
     
     public Boolean func_224924_g(final long l, final String s) throws RealmsServiceException, IOException {
-        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson((Object)new Class7421(null, Long.valueOf(s), -1, false)), 30000, 80000)));
+        return Boolean.valueOf(this.method35486(Class8178.method27089(this.method35484("worlds" + "/$WORLD_ID/reset".replace("$WORLD_ID", String.valueOf(l))), RealmsClient.field40935.toJson(new Class7421(null, Long.valueOf(s), -1, false)), 30000, 80000)));
     }
     
     public Class7432 method35472(final long l) throws RealmsServiceException, IOException {
@@ -199,7 +199,7 @@ public class RealmsClient
         }
         final GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.excludeFieldsWithoutExposeAnnotation();
-        return Class7444.method22890(this.method35486(Class8178.method27091(method35484, gsonBuilder.create().toJson((Object)class7444))));
+        return Class7444.method22890(this.method35486(Class8178.method27091(method35484, gsonBuilder.create().toJson(class7444))));
     }
     
     public void method35478(final String replacement) throws RealmsServiceException {
@@ -215,7 +215,7 @@ public class RealmsClient
     }
     
     public void method35481(final Class7443 class7443) throws RealmsServiceException {
-        this.method35486(Class8178.method27088(this.method35484("regions/ping/stat"), RealmsClient.field40935.toJson((Object)class7443)));
+        this.method35486(Class8178.method27088(this.method35484("regions/ping/stat"), RealmsClient.field40935.toJson(class7443)));
     }
     
     public Boolean method35482() throws RealmsServiceException, IOException {

@@ -229,7 +229,7 @@ public class Class7467
                     if (!(method465 instanceof String)) {
                         if (!(method465 instanceof JSONObject)) {
                             if (!(method465 instanceof JSONArray)) {
-                                sb.append(method465.toString());
+                                sb.append(method465);
                             }
                             else {
                                 sb.append(toString((JSONArray)method465));
@@ -294,7 +294,7 @@ public class Class7467
                         if (!(method13298 instanceof String)) {
                             if (!(method13298 instanceof JSONObject)) {
                                 if (!(method13298 instanceof JSONArray)) {
-                                    sb.append(method13298.toString());
+                                    sb.append(method13298);
                                 }
                                 else {
                                     sb.append(toString((JSONArray)method13298));

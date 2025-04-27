@@ -11,7 +11,7 @@ public class Class7939 implements Class7938
     private final Class1728 field32614;
     
     public Class7939() {
-        this.field32614 = new Class1728(new String[] { "minecraft" });
+        this.field32614 = new Class1728("minecraft");
     }
     
     @Override

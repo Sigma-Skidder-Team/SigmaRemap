@@ -9,5 +9,5 @@ public enum Class1977
     field10959, 
     field10960, 
     field10961, 
-    field10962;
+    field10962
 }

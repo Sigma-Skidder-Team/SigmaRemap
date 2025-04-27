@@ -28,13 +28,13 @@ public class Class361 extends Class357
     
     @Override
     public BlockState method1164(final Random random, final BlockPos class354) {
-        return ((StateHolder<O, BlockState>)this.field2189.getDefaultState()).with(Class4027.field18120, Direction.Axis.random(random));
+        return this.field2189.getDefaultState().with(Class4027.field18120, Direction.Axis.random(random));
     }
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field218.getKey(this.field2184).toString())).put(dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field2189.getDefaultState()).getValue());
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
+        return (T)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
 }

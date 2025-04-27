@@ -22,7 +22,7 @@ public class Step extends ModuleWithSettings
     public static int field15758;
     
     public Step() {
-        super(Category.MOVEMENT, "Step", "Allows you to step up more than 0.5 block", new Module[] { new VanillaStep(), new NCPStep(), new AACStep(), new SpiderStep() });
+        super(Category.MOVEMENT, "Step", "Allows you to step up more than 0.5 block", new VanillaStep(), new NCPStep(), new AACStep(), new SpiderStep());
     }
     
     @Override

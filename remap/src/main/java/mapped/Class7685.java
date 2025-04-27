@@ -107,10 +107,10 @@ public class Class7685 implements Class7684
             linkedHashSet.add(field30525);
             Class7684 class7684 = function.apply(field30525.field30526);
             if (class7684 == null) {
-                Class7685.field30515.warn("No parent '{}' while loading model '{}'", (Object)this.field30526, (Object)field30525);
+                Class7685.field30515.warn("No parent '{}' while loading model '{}'", this.field30526, field30525);
             }
             if (linkedHashSet.contains(class7684)) {
-                Class7685.field30515.warn("Found 'parent' loop while loading model '{}' in chain: {} -> {}", (Object)field30525, linkedHashSet.stream().map(Object::toString).collect(Collectors.joining(" -> ")), (Object)this.field30526);
+                Class7685.field30515.warn("Found 'parent' loop while loading model '{}' in chain: {} -> {}", field30525, linkedHashSet.stream().map(Object::toString).collect(Collectors.joining(" -> ")), this.field30526);
                 class7684 = null;
             }
             if (class7684 == null) {
@@ -138,7 +138,6 @@ public class Class7685 implements Class7684
             if (!Objects.equals(a, this)) {
                 set2.addAll(a.method24382(function2, set3));
             }
-            return;
         });
         if (this.method24398() == Class7637.field30256) {
             Class8163.field33624.forEach(s -> set4.add(this.method24395(s)));
@@ -191,9 +190,9 @@ public class Class7685 implements Class7684
             if (left.isPresent()) {
                 return (Class3687)left.get();
             }
-            substring = (String)method24396.right().get();
+            substring = method24396.right().get();
             if (arrayList.contains(substring)) {
-                Class7685.field30515.warn("Unable to resolve texture due to reference chain {}->{} in {}", (Object)Joiner.on("->").join((Iterable)arrayList), (Object)substring, (Object)this.field30523);
+                Class7685.field30515.warn("Unable to resolve texture due to reference chain {}->{} in {}", Joiner.on("->").join(arrayList), substring, this.field30523);
                 return new Class3687(Class1774.field9853, Class1913.method7551());
             }
             arrayList.add(substring);
@@ -234,6 +233,6 @@ public class Class7685 implements Class7684
     static {
         field30515 = LogManager.getLogger();
         field30516 = new Class6225();
-        field30517 = new GsonBuilder().registerTypeAdapter((Type)Class7685.class, (Object)new Class5985()).registerTypeAdapter((Type)Class9219.class, (Object)new Class5970()).registerTypeAdapter((Type)Class8111.class, (Object)new Class5990()).registerTypeAdapter((Type)Class8435.class, (Object)new Class5972()).registerTypeAdapter((Type)Class6429.class, (Object)new Class5983()).registerTypeAdapter((Type)Class7503.class, (Object)new Class5979()).registerTypeAdapter((Type)Class6559.class, (Object)new Class5968()).create();
+        field30517 = new GsonBuilder().registerTypeAdapter(Class7685.class, new Class5985()).registerTypeAdapter(Class9219.class, new Class5970()).registerTypeAdapter(Class8111.class, new Class5990()).registerTypeAdapter(Class8435.class, new Class5972()).registerTypeAdapter(Class6429.class, new Class5983()).registerTypeAdapter(Class7503.class, new Class5979()).registerTypeAdapter(Class6559.class, new Class5968()).create();
     }
 }

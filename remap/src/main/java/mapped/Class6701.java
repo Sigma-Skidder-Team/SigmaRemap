@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Class6701 extends Class6693
 {
     public Class6701() {
-        super("enemy", "Manage enemies", new String[] { "enemies", "target" });
+        super("enemy", "Manage enemies", "enemies", "target");
         this.method20351("add/remove/list/clear");
     }
     

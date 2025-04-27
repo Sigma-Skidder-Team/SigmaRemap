@@ -41,12 +41,12 @@ public abstract class WebSocketServer extends AbstractWebSocket implements Runna
     private final InetSocketAddress address;
     private ServerSocketChannel server;
     private Selector selector;
-    private List<Draft> drafts;
+    private final List<Draft> drafts;
     private Thread selectorthread;
     private final AtomicBoolean isclosed = new AtomicBoolean(false);
     protected List<WebSocketWorker> decoders;
-    private List<WebSocketImpl> iqueue;
-    private BlockingQueue<ByteBuffer> buffers;
+    private final List<WebSocketImpl> iqueue;
+    private final BlockingQueue<ByteBuffer> buffers;
     private int queueinvokes = 0;
     private final AtomicInteger queuesize = new AtomicInteger(0);
 
@@ -709,7 +709,7 @@ public abstract class WebSocketServer extends AbstractWebSocket implements Runna
     }
 
     public class WebSocketWorker extends Thread {
-        private BlockingQueue<WebSocketImpl> iqueue;
+        private final BlockingQueue<WebSocketImpl> iqueue;
 
         public WebSocketWorker() {
             iqueue = new LinkedBlockingQueue<>();

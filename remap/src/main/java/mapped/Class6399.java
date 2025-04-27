@@ -17,7 +17,7 @@ public final class Class6399 extends Class6397
     public ItemStack method19087(final Class5491 class5491, final ItemStack class5492) {
         this.field25515 = true;
         final World method16763 = class5491.method16763();
-        final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().get((IProperty<Direction>)Class3955.field17859));
+        final BlockPos method16764 = class5491.method16764().method1149(class5491.method16765().get(Class3955.field17859));
         if (!Class4088.method12322(class5492, method16763, method16764) && !Class4088.method12323(class5492, method16763, method16764, null)) {
             this.field25515 = false;
         }

@@ -123,7 +123,6 @@ public class Class6359 extends Class6354
                     substring = substring.substring(0, 16);
                 }
                 this.field25439.method19633(substring, class54, Class5953.method17871(class53.method323("DisplayName")), Class263.method903(class53.method323("RenderType")));
-                return;
             });
         }
     }
@@ -160,10 +159,10 @@ public class Class6359 extends Class6354
             final ListNBT class54 = new ListNBT();
             final Iterator<String> iterator2 = class53.method20547().iterator();
             while (iterator2.hasNext()) {
-                ((AbstractList<StringNBT>)class54).add(StringNBT.method290(iterator2.next()));
+                class54.add(StringNBT.method290(iterator2.next()));
             }
             e.put("Players", class54);
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }
@@ -194,7 +193,7 @@ public class Class6359 extends Class6354
             e.putString("CriteriaName", class53.method34313().method35139());
             e.putString("DisplayName", Class5953.method17869(class53.method34314()));
             e.putString("RenderType", class53.method34317().method902());
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }

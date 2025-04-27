@@ -82,7 +82,7 @@ public class Class567 extends Class566
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, method7699);
         this.blit(n6, n7, 0, 0, 256, 256);
         this.field3370 = MathHelper.clamp(this.field3370 * 0.95f + this.field3367.method27189() * 0.050000012f, 0.0f, 1.0f);
-        Class9570.field41188.method22608(new Object[0]);
+        Class9570.field41188.method22608();
         if (n4 < 1.0f) {
             this.method3307(method7696 / 2 - 150, method7697 / 4 * 3, method7696 / 2 + 150, method7697 / 4 * 3 + 10, 1.0f - MathHelper.clamp(n4, 0.0f, 1.0f));
         }
@@ -146,7 +146,7 @@ public class Class567 extends Class566
                 this.field3376 = method3309(class1933, "screen.loading.progress", this.field3376);
             }
             catch (final Exception ex) {
-                Config.warn("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Config.warn(ex.getClass().getName() + ": " + ex.getMessage());
             }
         }
     }

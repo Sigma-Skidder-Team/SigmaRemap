@@ -28,8 +28,8 @@ public class Class5288 extends Class5287
     public void method16426(final ByteBuf byteBuf, final Class7562 class7562) throws Exception {
         if (class7562 != null) {
             byteBuf.writeShort(class7562.method23740());
-            byteBuf.writeByte((int)class7562.method23741());
-            byteBuf.writeShort((int)class7562.method23742());
+            byteBuf.writeByte(class7562.method23741());
+            byteBuf.writeShort(class7562.method23742());
             Class5260.field22322.method16379(byteBuf, class7562.method23743());
         }
         else {

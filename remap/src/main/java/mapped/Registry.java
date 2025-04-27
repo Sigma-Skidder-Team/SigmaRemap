@@ -163,22 +163,21 @@ public abstract class Registry<T> implements Class89<T>
         field245 = method500("activity", () -> Class7635.field30227);
         Registry.field203.entrySet().forEach(entry -> {
             if (entry.getValue().get() == null) {
-                Registry.field202.error("Unable to bootstrap registry '{}'", (Object)entry.getKey());
+                Registry.field202.error("Unable to bootstrap registry '{}'", entry.getKey());
             }
-            return;
         });
         Registry.field204.forEach(class91 -> {
-            if (!(!class91.method559())) {
-                Registry.field202.error("Registry '{}' was empty after loading", (Object) Registry.field204.getKey(class91));
-                if (!(!Class9528.field41021)) {
+            if (class91.method559()) {
+                Registry.field202.error("Registry '{}' was empty after loading", Registry.field204.getKey(class91));
+                if (Class9528.field41021) {
                     new IllegalStateException("Registry: '" + Registry.field204.getKey(class91) + "' is empty, not allowed, fix me!");
-                    throw;
+                    throw
                 }
             }
-            if (!(!(class91 instanceof Class93))) {
+            if (class91 instanceof Class93) {
                 ((Class93)class91).method560();
                 final ResourceLocation obj;
-                Validate.notNull(class91.getOrDefault(obj), "Missing default of DefaultedMappedRegistry: " + obj, new Object[0]);
+                Validate.notNull(class91.getOrDefault(obj), "Missing default of DefaultedMappedRegistry: " + obj);
             }
         });
     }

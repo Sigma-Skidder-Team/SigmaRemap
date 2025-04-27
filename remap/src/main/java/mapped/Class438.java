@@ -253,7 +253,7 @@ public class Class438 extends TileEntity implements Class439
             e.put("EntityData", Class7829.method25298(class53));
             e.putInt("TicksInHive", Class7829.method25296(class53));
             e.putInt("MinOccupationTicks", Class7829.method25297(class53));
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         return class52;
     }

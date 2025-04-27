@@ -24,7 +24,7 @@ public class Class5145 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22144.stream().map(class9337 -> class9337.method34604(dynamicOps2).getValue())), dynamicOps.createString("default"), this.field22145.method28612((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22144.stream().map(class9337 -> class9337.method34604(dynamicOps2).getValue())), dynamicOps.createString("default"), this.field22145.method28612((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
     }
     
     public static <T> Class5145 method16066(final Dynamic<T> dynamic) {

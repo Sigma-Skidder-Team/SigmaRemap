@@ -39,7 +39,7 @@ public class Class5960
             class7266.method22254(jsonObject.get("insertion").getAsString());
         }
         if (jsonObject.has("extra")) {
-            class7266.method22242(Arrays.asList((Class7266[])jsonDeserializationContext.deserialize(jsonObject.get("extra"), (Type)Class7266[].class)));
+            class7266.method22242(Arrays.asList(jsonDeserializationContext.deserialize(jsonObject.get("extra"), Class7266[].class)));
         }
         if (jsonObject.has("clickEvent")) {
             final JsonObject asJsonObject = jsonObject.getAsJsonObject("clickEvent");
@@ -49,10 +49,10 @@ public class Class5960
             final JsonObject asJsonObject2 = jsonObject.getAsJsonObject("hoverEvent");
             Class7266[] array;
             if (!asJsonObject2.get("value").isJsonArray()) {
-                array = new Class7266[] { (Class7266)jsonDeserializationContext.deserialize(asJsonObject2.get("value"), (Type)Class7266.class) };
+                array = new Class7266[] {jsonDeserializationContext.deserialize(asJsonObject2.get("value"), Class7266.class)};
             }
             else {
-                array = (Class7266[])jsonDeserializationContext.deserialize(asJsonObject2.get("value"), (Type)Class7266[].class);
+                array = jsonDeserializationContext.deserialize(asJsonObject2.get("value"), Class7266[].class);
             }
             class7266.method22256(new Class7566(Class2111.valueOf(asJsonObject2.get("action").getAsString().toUpperCase(Locale.ROOT)), array));
         }
@@ -65,7 +65,7 @@ public class Class5960
             Class5977.field24459.set(new HashSet<Class7266>());
         }
         try {
-            Preconditions.checkArgument(!Class5977.field24459.get().contains(o), (Object)"Component loop");
+            Preconditions.checkArgument(!Class5977.field24459.get().contains(o), "Component loop");
             Class5977.field24459.get().add(o);
             if (o.method22231() != null) {
                 jsonObject.addProperty("color", o.method22231().method957());
@@ -89,19 +89,19 @@ public class Class5960
                 jsonObject.addProperty("insertion", o.method22257());
             }
             if (o.method22258() != null) {
-                jsonObject.add("extra", jsonSerializationContext.serialize((Object)o.method22258()));
+                jsonObject.add("extra", jsonSerializationContext.serialize(o.method22258()));
             }
             if (o.method22259() != null) {
                 final JsonObject jsonObject2 = new JsonObject();
                 jsonObject2.addProperty("action", o.method22259().method29816().toString().toLowerCase(Locale.ROOT));
                 jsonObject2.addProperty("value", o.method22259().method29817());
-                jsonObject.add("clickEvent", (JsonElement)jsonObject2);
+                jsonObject.add("clickEvent", jsonObject2);
             }
             if (o.method22260() != null) {
                 final JsonObject jsonObject3 = new JsonObject();
                 jsonObject3.addProperty("action", o.method22260().method23752().toString().toLowerCase(Locale.ROOT));
-                jsonObject3.add("value", jsonSerializationContext.serialize((Object)o.method22260().method23753()));
-                jsonObject.add("hoverEvent", (JsonElement)jsonObject3);
+                jsonObject3.add("value", jsonSerializationContext.serialize(o.method22260().method23753()));
+                jsonObject.add("hoverEvent", jsonObject3);
             }
         }
         finally {

@@ -21,7 +21,7 @@ public class AnvilScreen extends Class516<Class3441> implements Class514
     public void init() {
         super.init();
         this.minecraft.field4651.method22505(true);
-        (this.field3073 = new Class576(this.font, (this.width - this.field3075) / 2 + 62, (this.height - this.field3076) / 2 + 24, 103, 12, Class8822.method30773("container.repair", new Object[0]))).method3408(false);
+        (this.field3073 = new Class576(this.font, (this.width - this.field3075) / 2 + 62, (this.height - this.field3076) / 2 + 24, 103, 12, Class8822.method30773("container.repair"))).method3408(false);
         this.field3073.changeFocus(true);
         this.field3073.method3402(-1);
         this.field3073.method3403(-1);
@@ -59,13 +59,13 @@ public class AnvilScreen extends Class516<Class3441> implements Class514
     public void method2973(final int n, final int n2) {
         RenderSystem.disableBlend();
         this.font.method6610(this.title.getFormattedText(), 60.0f, 6.0f, 4210752);
-        final int method10998 = ((Class3441)this.field3077).method10998();
+        final int method10998 = this.field3077.method10998();
         if (method10998 > 0) {
             int n3 = 8453920;
             int n4 = 1;
             String s = Class8822.method30773("container.repair.cost", method10998);
             if (method10998 >= 40 && !this.minecraft.player.field3025.field27304) {
-                s = Class8822.method30773("container.repair.expensive", new Object[0]);
+                s = Class8822.method30773("container.repair.expensive");
                 n3 = 16736352;
             }
             else if (this.field3077.getSlot(2).method20054()) {
@@ -97,7 +97,7 @@ public class AnvilScreen extends Class516<Class3441> implements Class514
                     }
                 }
             }
-            ((Class3441)this.field3077).method10997(s2);
+            this.field3077.method10997(s2);
             this.minecraft.player.field4069.method17292(new Class4362(s2));
         }
     }

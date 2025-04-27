@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public class TimeManager {
     private static String[] field34664;
-    private Minecraft field34665;
-    private HashMap<Integer, Date> field34666;
+    private final Minecraft field34665;
+    private final HashMap<Integer, Date> field34666;
 
     public TimeManager() {
         this.field34665 = Minecraft.getInstance();

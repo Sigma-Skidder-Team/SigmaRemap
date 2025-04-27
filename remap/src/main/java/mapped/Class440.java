@@ -36,7 +36,7 @@ public class Class440 extends Class456 implements Class441, Class439
     }
     
     public Class440() {
-        this((Class181)null);
+        this(null);
         this.field2672 = true;
     }
     
@@ -209,7 +209,7 @@ public class Class440 extends Class456 implements Class441, Class439
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.shulkerBox", new Object[0]);
+        return new Class2259("container.shulkerBox");
     }
     
     @Override

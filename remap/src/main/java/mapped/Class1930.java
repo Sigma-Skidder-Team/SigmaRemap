@@ -22,7 +22,7 @@ public final class Class1930 extends Class1929
         int n2 = 0;
         for (Class9258 class1681 = class1680.field9511; i < n; i += class1681.field39715 - class1681.field39714, ++n2, class1681 = class1681.field39718) {
             if (class1681.field39715 == class1681.field39714) {
-                throw new AssertionError((Object)"s.limit == s.pos");
+                throw new AssertionError("s.limit == s.pos");
             }
         }
         this.field10536 = new byte[n2][];
@@ -253,9 +253,7 @@ public final class Class1930 extends Class1929
         if (o != this) {
             if (o instanceof Class1929) {
                 if (((Class1929)o).method7766() == this.method7766()) {
-                    if (this.method7772(0, (Class1929)o, 0, this.method7766())) {
-                        return true;
-                    }
+                    return this.method7772(0, (Class1929) o, 0, this.method7766());
                 }
             }
             return false;

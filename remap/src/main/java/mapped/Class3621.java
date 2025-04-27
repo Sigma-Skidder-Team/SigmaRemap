@@ -26,9 +26,7 @@ public class Class3621 extends Class3617
     public boolean method11137() {
         if (Class798.method4584(this.field16823) == 0) {
             if (!this.field16823.method4523()) {
-                if (Class798.method4544(this.field16823)) {
-                    return true;
-                }
+                return Class798.method4544(this.field16823);
             }
         }
         return false;

@@ -28,7 +28,7 @@ public class Class9320
     private Class9320(final Class6368[] field40020, final Class122[] field40021, final Class125[] field40022, final Class5770 field40023, final Class5772 field40024) {
         this.field40020 = field40020;
         this.field40021 = field40021;
-        this.field40022 = Class7454.method22943((Predicate<Class7529>[])field40021);
+        this.field40022 = Class7454.method22943(field40021);
         this.field40023 = field40022;
         this.field40024 = Class7463.method22991(field40022);
         this.field40025 = field40023;
@@ -48,7 +48,6 @@ public class Class9320
                     list.add(class7532);
                     mutableInt2.add(n);
                 }
-                return;
             });
         }
         final int size = arrayList.size();

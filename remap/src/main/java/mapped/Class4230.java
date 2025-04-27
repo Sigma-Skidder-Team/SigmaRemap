@@ -35,6 +35,6 @@ public class Class4230 extends Class4211
         jsonObject.add("item", this.field19034.method34629());
         jsonObject.add("durability", this.field19035.method29745());
         jsonObject.add("delta", this.field19036.method29745());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

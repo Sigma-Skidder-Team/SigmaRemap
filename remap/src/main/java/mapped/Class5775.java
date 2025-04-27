@@ -24,7 +24,7 @@ public abstract class Class5775
     public int field23637;
     public int field23638;
     public long field23639;
-    private List<Class5775> field23640;
+    private final List<Class5775> field23640;
     
     public static Class5775 method17219(final Class9131 class9131) throws IOException {
         final int method33135 = class9131.method33135();
@@ -97,7 +97,7 @@ public abstract class Class5775
     }
     
     public List<Class5775> method17222() {
-        return Collections.unmodifiableList((List<? extends Class5775>)this.field23640);
+        return Collections.unmodifiableList(this.field23640);
     }
     
     public int method17223() {

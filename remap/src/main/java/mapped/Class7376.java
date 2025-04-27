@@ -37,7 +37,7 @@ public class Class7376
         jsonObject.addProperty("name", this.field28426);
         jsonObject.addProperty("attribute", this.field28427);
         jsonObject.addProperty("operation", method22644(this.field28428));
-        jsonObject.add("amount", jsonSerializationContext.serialize((Object)this.field28429));
+        jsonObject.add("amount", jsonSerializationContext.serialize(this.field28429));
         if (this.field28430 != null) {
             jsonObject.addProperty("id", this.field28430.toString());
         }
@@ -45,9 +45,9 @@ public class Class7376
             final JsonArray jsonArray = new JsonArray();
             final Class2215[] field28431 = this.field28431;
             for (int length = field28431.length, i = 0; i < length; ++i) {
-                jsonArray.add((JsonElement)new JsonPrimitive(field28431[i].method8404()));
+                jsonArray.add(new JsonPrimitive(field28431[i].method8404()));
             }
-            jsonObject.add("slot", (JsonElement)jsonArray);
+            jsonObject.add("slot", jsonArray);
         }
         else {
             jsonObject.addProperty("slot", this.field28431[0].method8404());

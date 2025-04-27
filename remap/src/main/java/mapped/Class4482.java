@@ -120,7 +120,7 @@ public class Class4482 extends Class4479
         final ListNBT class52 = new ListNBT();
         final Iterator<MutableBoundingBox> iterator = this.field19875.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<IntArrayNBT>)class52).add(iterator.next().toNBTTagIntArray());
+            class52.add(iterator.next().toNBTTagIntArray());
         }
         class51.put("Entrances", class52);
     }

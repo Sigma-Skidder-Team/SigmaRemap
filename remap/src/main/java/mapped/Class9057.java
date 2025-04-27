@@ -177,7 +177,7 @@ public class Class9057
             }
         }
         catch (final Exception ex) {
-            Class9057.field38341.error("Failed to cancel Realms tasks", (Throwable)ex);
+            Class9057.field38341.error("Failed to cancel Realms tasks", ex);
         }
     }
     

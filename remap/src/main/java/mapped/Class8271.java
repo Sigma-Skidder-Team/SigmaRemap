@@ -43,7 +43,7 @@ public class Class8271
                 }
                 catch (final FileNotFoundException ex) {}
                 catch (final Exception ex2) {
-                    Class8271.field33962.warn("Skipped language file: {}:{} ({})", (Object)s, (Object)format, (Object)ex2.toString());
+                    Class8271.field33962.warn("Skipped language file: {}:{} ({})", s, format, ex2.toString());
                 }
             }
         }
@@ -63,7 +63,7 @@ public class Class8271
     }
     
     private void method27494(final InputStream in) {
-        for (final Map.Entry<K, JsonElement> entry : Class9583.method35913((JsonElement)Class8271.field33961.fromJson((Reader)new InputStreamReader(in, StandardCharsets.UTF_8), (Class)JsonElement.class), "strings").entrySet()) {
+        for (final Map.Entry<K, JsonElement> entry : Class9583.method35913((JsonElement)Class8271.field33961.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), (Class)JsonElement.class), "strings").entrySet()) {
             this.field33964.put((String)entry.getKey(), Class8271.field33963.matcher(Class9583.method35894(entry.getValue(), (String)entry.getKey())).replaceAll("%$1s"));
         }
     }

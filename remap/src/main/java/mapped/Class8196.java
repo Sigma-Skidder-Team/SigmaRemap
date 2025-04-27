@@ -11,9 +11,7 @@ public final class Class8196
             if (!s.equals("PATCH")) {
                 if (!s.equals("PUT")) {
                     if (!s.equals("DELETE")) {
-                        if (!s.equals("MOVE")) {
-                            return false;
-                        }
+                        return s.equals("MOVE");
                     }
                 }
             }
@@ -26,9 +24,7 @@ public final class Class8196
             if (!s.equals("PUT")) {
                 if (!s.equals("PATCH")) {
                     if (!s.equals("PROPPATCH")) {
-                        if (!s.equals("REPORT")) {
-                            return false;
-                        }
+                        return s.equals("REPORT");
                     }
                 }
             }
@@ -42,9 +38,7 @@ public final class Class8196
                 if (!s.equals("DELETE")) {
                     if (!s.equals("PROPFIND")) {
                         if (!s.equals("MKCOL")) {
-                            if (!s.equals("LOCK")) {
-                                return false;
-                            }
+                            return s.equals("LOCK");
                         }
                     }
                 }

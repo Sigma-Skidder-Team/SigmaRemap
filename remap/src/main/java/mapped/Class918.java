@@ -14,10 +14,10 @@ public class Class918 extends Thread
     private static final String field4886 = "percent";
     private static final String field4887 = "minutes";
     private static final String field4888 = "seconds";
-    private InputStream field4889;
-    private StringBuffer field4890;
+    private final InputStream field4889;
+    private final StringBuffer field4890;
     private final Class8413 field4891;
-    private Pattern field4892;
+    private final Pattern field4892;
     
     public Class918(final StringBuffer field4890, final InputStream field4891, final Class8413 field4892) {
         this.field4892 = Pattern.compile("\\[download\\]\\s+(?<percent>\\d+\\.\\d)% .* ETA (?<minutes>\\d+):(?<seconds>\\d+)");

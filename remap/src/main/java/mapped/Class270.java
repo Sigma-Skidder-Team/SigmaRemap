@@ -15,7 +15,7 @@ public enum Class270
     private final boolean field1468;
     private final boolean field1469;
     
-    private Class270(final boolean field1468, final boolean field1469) {
+    Class270(final boolean field1468, final boolean field1469) {
         this.field1468 = field1468;
         this.field1469 = field1469;
     }

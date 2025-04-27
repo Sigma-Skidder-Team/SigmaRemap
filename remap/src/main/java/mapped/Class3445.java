@@ -35,9 +35,7 @@ public class Class3445 extends Class3446
         final boolean b2 = b;
         if (!this.field16268.method4483()) {
             if (b2) {
-                if (this.field16268.method4493()) {
-                    return true;
-                }
+                return this.field16268.method4493();
             }
         }
         return false;

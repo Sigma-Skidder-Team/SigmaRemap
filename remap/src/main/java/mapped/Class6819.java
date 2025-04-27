@@ -28,6 +28,6 @@ public class Class6819 extends ChannelInitializer<Channel>
             channel.config().setOption(ChannelOption.TCP_NODELAY, (Object)true);
         }
         catch (final ChannelException ex) {}
-        channel.pipeline().addLast(new ChannelHandler[] { (ChannelHandler)new Class8224(this) });
+        channel.pipeline().addLast(new Class8224(this));
     }
 }

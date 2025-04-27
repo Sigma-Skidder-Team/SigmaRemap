@@ -24,7 +24,7 @@ public class Class9061
     private final List<Pair<Class8928, Collection<Class9083>>> field38369;
     private Class7333 field38370;
     private int field38371;
-    private Mutable field38372;
+    private final Mutable field38372;
     private int field38373;
     
     public Class9061(final Collection<Class8928> collection, final BlockPos field38365, final Class1849 field38366, final Class8564 field38367) {

@@ -52,13 +52,13 @@ public class Class5017 extends Class5009
             }
         }
         final TreeMap treeMap = new TreeMap(m);
-        this.method15234(class7671, "&4Live Packets Per Second", new Object[0]);
+        this.method15234(class7671, "&4Live Packets Per Second");
         if (n2 > 1) {
-            this.method15234(class7671, "&cAverage: &f" + n / n2, new Object[0]);
-            this.method15234(class7671, "&cHighest: &f" + method18229, new Object[0]);
+            this.method15234(class7671, "&cAverage: &f" + n / n2);
+            this.method15234(class7671, "&cHighest: &f" + method18229);
         }
         if (n2 == 0) {
-            this.method15234(class7671, "&cNo clients to display.", new Object[0]);
+            this.method15234(class7671, "&cNo clients to display.");
         }
         for (final Map.Entry<Integer, V> entry : treeMap.entrySet()) {
             this.method15234(class7671, "&8[&6%s&8]: &b%s", Class7906.method25609(entry.getKey()).method25614(), entry.getValue());

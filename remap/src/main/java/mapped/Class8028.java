@@ -20,7 +20,7 @@ public class Class8028
     private int field33052;
     private int field33053;
     private int field33054;
-    private char[] field33055;
+    private final char[] field33055;
     private static final int field33056 = 1025;
     
     public Class8028(final String s) {
@@ -60,9 +60,7 @@ public class Class8028
                         if (n != 133) {
                             if (n < 160 || n > 55295) {
                                 if (n < 57344 || n > 65533) {
-                                    if (n < 65536 || n > 1114111) {
-                                        return false;
-                                    }
+                                    return n >= 65536 && n <= 1114111;
                                 }
                             }
                         }

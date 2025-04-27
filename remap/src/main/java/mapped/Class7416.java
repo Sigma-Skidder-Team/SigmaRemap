@@ -92,9 +92,7 @@ public class Class7416
     public boolean method22787() {
         if (this.field28583 != 6) {
             if (this.field28586 == null) {
-                if (this.field28587 == null) {
-                    return false;
-                }
+                return this.field28587 != null;
             }
         }
         return true;
@@ -103,9 +101,7 @@ public class Class7416
     public boolean method22788() {
         if (this.field28583 != 6) {
             if (this.field28583 != 2) {
-                if (this.field28583 != 3) {
-                    return false;
-                }
+                return this.field28583 == 3;
             }
         }
         return true;
@@ -151,7 +147,7 @@ public class Class7416
         final int n2 = (this.field28580 * this.field28582 + 7) / 8 * this.field28584;
         byte[] array = new byte[n2 + 1];
         byte[] array2 = new byte[n2 + 1];
-        byte[] array3 = (byte[])((this.field28582 < 8) ? new byte[this.field28580 + 1] : null);
+        byte[] array3 = (this.field28582 < 8) ? new byte[this.field28580 + 1] : null;
         final Inflater inflater = new Inflater();
         try {
             for (int i = 0; i < this.field28581; ++i) {
@@ -354,7 +350,7 @@ public class Class7416
     
     private void method22796(final ByteBuffer byteBuffer, final byte[] array) {
         for (int i = 1; i < array.length; i += 4) {
-            byteBuffer.put(array[i + 2]).put(array[i + 1]).put(array[i + 0]).put(array[i + 3]);
+            byteBuffer.put(array[i + 2]).put(array[i + 1]).put(array[i]).put(array[i + 3]);
         }
     }
     
@@ -368,13 +364,13 @@ public class Class7416
         if (this.field28586 == null) {
             for (int i = 1; i < array.length; ++i) {
                 final int n = array[i] & 0xFF;
-                byteBuffer.put((byte)(-1)).put(this.field28585[n * 3 + 2]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3 + 0]);
+                byteBuffer.put((byte)(-1)).put(this.field28585[n * 3 + 2]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3]);
             }
         }
         else {
             for (int j = 1; j < array.length; ++j) {
                 final int n2 = array[j] & 0xFF;
-                byteBuffer.put(this.field28586[n2]).put(this.field28585[n2 * 3 + 2]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3 + 0]);
+                byteBuffer.put(this.field28586[n2]).put(this.field28585[n2 * 3 + 2]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3]);
             }
         }
     }
@@ -383,13 +379,13 @@ public class Class7416
         if (this.field28586 == null) {
             for (int i = 1; i < array.length; ++i) {
                 final int n = array[i] & 0xFF;
-                byteBuffer.put(this.field28585[n * 3 + 0]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3 + 2]).put((byte)(-1));
+                byteBuffer.put(this.field28585[n * 3]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3 + 2]).put((byte)(-1));
             }
         }
         else {
             for (int j = 1; j < array.length; ++j) {
                 final int n2 = array[j] & 0xFF;
-                byteBuffer.put(this.field28585[n2 * 3 + 0]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3 + 2]).put(this.field28586[n2]);
+                byteBuffer.put(this.field28585[n2 * 3]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3 + 2]).put(this.field28586[n2]);
             }
         }
     }
@@ -398,13 +394,13 @@ public class Class7416
         if (this.field28586 == null) {
             for (int i = 1; i < array.length; ++i) {
                 final int n = array[i] & 0xFF;
-                byteBuffer.put(this.field28585[n * 3 + 2]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3 + 0]).put((byte)(-1));
+                byteBuffer.put(this.field28585[n * 3 + 2]).put(this.field28585[n * 3 + 1]).put(this.field28585[n * 3]).put((byte)(-1));
             }
         }
         else {
             for (int j = 1; j < array.length; ++j) {
                 final int n2 = array[j] & 0xFF;
-                byteBuffer.put(this.field28585[n2 * 3 + 2]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3 + 0]).put(this.field28586[n2]);
+                byteBuffer.put(this.field28585[n2 * 3 + 2]).put(this.field28585[n2 * 3 + 1]).put(this.field28585[n2 * 3]).put(this.field28586[n2]);
             }
         }
     }
@@ -760,7 +756,7 @@ public class Class7416
             } while (i > 0);
         }
         catch (final DataFormatException cause) {
-            throw (IOException)new IOException("inflate error").initCause(cause);
+            throw (IOException) new IOException("inflate error", cause);
         }
     }
     

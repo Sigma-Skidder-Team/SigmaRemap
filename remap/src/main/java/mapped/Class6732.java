@@ -50,7 +50,7 @@ public class Class6732
             }
             final Path resolve = path.resolve(s + str);
             try {
-                final Path directory = Files.createDirectory(resolve, (FileAttribute<?>[])new FileAttribute[0]);
+                final Path directory = Files.createDirectory(resolve, new FileAttribute[0]);
                 Files.deleteIfExists(directory);
                 return path.relativize(directory).toString();
             }
@@ -77,7 +77,7 @@ public class Class6732
     
     public static Path method20424(final Path path, final String str, final String s) {
         final String string = str + s;
-        final Path value = Paths.get(string, new String[0]);
+        final Path value = Paths.get(string);
         if (!value.endsWith(s)) {
             return path.resolve(value);
         }

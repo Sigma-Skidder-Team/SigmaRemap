@@ -35,13 +35,13 @@ public class Class3958 extends Class3841
     
     public Class3958(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3958.field17865, Direction.NORTH)).with(Class3958.field17866, Class108.field337)).with((IProperty<Comparable>)Class3958.field17867, false));
+        this.method11877(((StateHolder<O, BlockState>) ((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3958.field17865, Direction.NORTH).with(Class3958.field17866, Class108.field337)).with((IProperty<Comparable>)Class3958.field17867, false));
     }
     
     @Override
     public void method11825(final BlockState class7096, final World class7097, final BlockPos class7098, final Block class7099, final BlockPos class7100, final boolean b) {
         final boolean method6749 = class7097.method6749(class7098);
-        if (method6749 != class7096.get((IProperty<Boolean>)Class3958.field17867)) {
+        if (method6749 != class7096.get(Class3958.field17867)) {
             if (method6749) {
                 this.method12076(class7097, class7098, null);
             }
@@ -80,7 +80,7 @@ public class Class3958 extends Class3841
         if (class7097.getAxis() == Direction.Axis.Y || n > 0.8123999834060669) {
             return false;
         }
-        final Direction class7098 = class7096.get((IProperty<Direction>)Class3958.field17865);
+        final Direction class7098 = class7096.get(Class3958.field17865);
         switch (Class7409.field28543[class7096.get(Class3958.field17866).ordinal()]) {
             case 1: {
                 return class7098.getAxis() == class7097.getAxis();
@@ -112,7 +112,7 @@ public class Class3958 extends Class3841
     }
     
     private VoxelShape method12077(final BlockState class7096) {
-        final Direction class7097 = class7096.get((IProperty<Direction>)Class3958.field17865);
+        final Direction class7097 = class7096.get(Class3958.field17865);
         final Class108 class7098 = class7096.get(Class3958.field17866);
         if (class7098 == Class108.field337) {
             return (class7097 != Direction.NORTH && class7097 != Direction.SOUTH) ? Class3958.field17869 : Class3958.field17868;
@@ -177,17 +177,17 @@ public class Class3958 extends Class3841
                 }
                 b = true;
             }
-            final BlockState class7075 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3958.field17865, method21648.getOpposite())).with(Class3958.field17866, b ? Class108.field340 : Class108.field339);
+            final BlockState class7075 = ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3958.field17865, method21648.getOpposite()).with(Class3958.field17866, b ? Class108.field340 : Class108.field339);
             if (class7075.method21752(class7074.method21654(), class7074.method21639())) {
                 return class7075;
             }
-            final BlockState class7076 = ((StateHolder<Object, BlockState>)class7075).with(Class3958.field17866, method21650.getBlockState(method21649.method1139()).method21761(method21650, method21649.method1139(), Direction.UP) ? Class108.field337 : Class108.field338);
+            final BlockState class7076 = class7075.with(Class3958.field17866, method21650.getBlockState(method21649.method1139()).method21761(method21650, method21649.method1139(), Direction.UP) ? Class108.field337 : Class108.field338);
             if (class7076.method21752(class7074.method21654(), class7074.method21639())) {
                 return class7076;
             }
         }
         else {
-            final BlockState class7077 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3958.field17866, (method21648 != Direction.DOWN) ? Class108.field337 : Class108.field338)).with((IProperty<Comparable>)Class3958.field17865, class7074.method21644());
+            final BlockState class7077 = ((StateHolder<O, BlockState>) this.getDefaultState().with(Class3958.field17866, (method21648 != Direction.DOWN) ? Class108.field337 : Class108.field338)).with((IProperty<Comparable>)Class3958.field17865, class7074.method21644());
             if (class7077.method21752(class7074.method21654(), method21649)) {
                 return class7077;
             }
@@ -206,14 +206,14 @@ public class Class3958 extends Class3841
                 }
             }
         }
-        if (class7097.getAxis() == class7096.get((IProperty<Direction>)Class3958.field17865).getAxis()) {
+        if (class7097.getAxis() == class7096.get(Class3958.field17865).getAxis()) {
             if (class7102 == Class108.field340 && !class7098.isSolidSide(class7099, class7101, class7097)) {
-                return ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)class7096).with(Class3958.field17866, Class108.field339)).with((IProperty<Comparable>)Class3958.field17865, class7097.getOpposite());
+                return ((StateHolder<O, BlockState>) class7096.with(Class3958.field17866, Class108.field339)).with((IProperty<Comparable>)Class3958.field17865, class7097.getOpposite());
             }
             if (class7102 == Class108.field339) {
                 if (method782.getOpposite() == class7097) {
-                    if (class7098.isSolidSide(class7099, class7101, class7096.get((IProperty<Direction>)Class3958.field17865))) {
-                        return ((StateHolder<O, BlockState>)class7096).with(Class3958.field17866, Class108.field340);
+                    if (class7098.isSolidSide(class7099, class7101, class7096.get(Class3958.field17865))) {
+                        return class7096.with(Class3958.field17866, Class108.field340);
                     }
                 }
             }
@@ -235,7 +235,7 @@ public class Class3958 extends Class3841
                 return Direction.DOWN;
             }
             default: {
-                return class7096.get((IProperty<Direction>)Class3958.field17865).getOpposite();
+                return class7096.get(Class3958.field17865).getOpposite();
             }
         }
     }

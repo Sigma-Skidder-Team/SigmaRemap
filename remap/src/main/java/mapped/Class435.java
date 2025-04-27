@@ -131,6 +131,6 @@ public class Class435 extends TileEntity implements Class447, INamedContainerPro
     
     @Override
     public ITextComponent method1871() {
-        return new Class2259("container.lectern", new Object[0]);
+        return new Class2259("container.lectern");
     }
 }

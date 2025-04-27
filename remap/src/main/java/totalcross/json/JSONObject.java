@@ -98,7 +98,7 @@ public class JSONObject {
          * @return NULL.
          */
         @Override
-        protected final Object clone() {
+        protected Object clone() {
             return this;
         }
 
@@ -278,7 +278,7 @@ public class JSONObject {
      * @param names  An array of strings, the names of the fields to be obtained
      *               from the object.
      */
-    public JSONObject(Object object, String names[]) {
+    public JSONObject(Object object, String[] names) {
         this();
         Class c = object.getClass();
         for (int i = 0; i < names.length; i += 1) {
@@ -1163,7 +1163,7 @@ public class JSONObject {
                     if (c < ' ' || (c >= '\u0080' && c < '\u00a0') || (c >= '\u2000' && c < '\u2100')) {
                         w.append("\\u");
                         hhhh = Integer.toHexString(c);
-                        w.append("0000".substring(0, 4 - hhhh.length()));
+                        w.append("0000", 0, 4 - hhhh.length());
                         w.append(hhhh);
                     } else {
                         w.append(c);
@@ -1490,7 +1490,7 @@ public class JSONObject {
         } else if (value instanceof Number) {
             writer.append(numberToString((Number) value));
         } else if (value instanceof Boolean) {
-            writer.append(value.toString());
+            writer.append(value);
         } else if (value instanceof JSONString) {
             Object o;
             try {

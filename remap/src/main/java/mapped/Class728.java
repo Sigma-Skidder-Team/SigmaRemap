@@ -18,7 +18,7 @@ public class Class728 extends Screen
     @Override
     public void init() {
         super.init();
-        this.addButton(new Class654(this.width / 2 - 100, 140, 200, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(null)));
+        this.addButton(new Class654(this.width / 2 - 100, 140, 200, 20, Class8822.method30773("gui.cancel"), class654 -> this.minecraft.displayGuiScreen(null)));
     }
     
     @Override

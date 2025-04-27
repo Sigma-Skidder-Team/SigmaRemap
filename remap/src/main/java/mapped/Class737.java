@@ -45,17 +45,17 @@ public class Class737 extends Screen
     @Override
     public void init() {
         this.minecraft.field4651.method22505(true);
-        this.field4003 = this.addButton(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> this.method4046()));
-        this.addButton(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.method4047()));
-        (this.field4001 = new Class576(this.font, this.width / 2 - 152, 40, 300, 20, Class8822.method30773("jigsaw_block.target_pool", new Object[0]))).method3397(128);
+        this.field4003 = this.addButton(new Class654(this.width / 2 - 4 - 150, 210, 150, 20, Class8822.method30773("gui.done"), class654 -> this.method4046()));
+        this.addButton(new Class654(this.width / 2 + 4, 210, 150, 20, Class8822.method30773("gui.cancel"), class654 -> this.method4047()));
+        (this.field4001 = new Class576(this.font, this.width / 2 - 152, 40, 300, 20, Class8822.method30773("jigsaw_block.target_pool"))).method3397(128);
         this.field4001.method3377(this.field3999.method2532().toString());
         this.field4001.method3374(p0 -> this.method4049());
         this.children.add(this.field4001);
-        (this.field4000 = new Class576(this.font, this.width / 2 - 152, 80, 300, 20, Class8822.method30773("jigsaw_block.attachement_type", new Object[0]))).method3397(128);
+        (this.field4000 = new Class576(this.font, this.width / 2 - 152, 80, 300, 20, Class8822.method30773("jigsaw_block.attachement_type"))).method3397(128);
         this.field4000.method3377(this.field3999.method2531().toString());
         this.field4000.method3374(p0 -> this.method4049());
         this.children.add(this.field4000);
-        (this.field4002 = new Class576(this.font, this.width / 2 - 152, 120, 300, 20, Class8822.method30773("jigsaw_block.final_state", new Object[0]))).method3397(256);
+        (this.field4002 = new Class576(this.font, this.width / 2 - 152, 120, 300, 20, Class8822.method30773("jigsaw_block.final_state"))).method3397(256);
         this.field4002.method3377(this.field3999.method2533());
         this.children.add(this.field4002);
         this.setFocusedDefault(this.field4001);
@@ -97,11 +97,11 @@ public class Class737 extends Screen
     @Override
     public void render(final int n, final int n2, final float n3) {
         this.renderBackground();
-        this.drawString(this.font, Class8822.method30773("jigsaw_block.target_pool", new Object[0]), this.width / 2 - 153, 30, 10526880);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.target_pool"), this.width / 2 - 153, 30, 10526880);
         this.field4001.render(n, n2, n3);
-        this.drawString(this.font, Class8822.method30773("jigsaw_block.attachement_type", new Object[0]), this.width / 2 - 153, 70, 10526880);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.attachement_type"), this.width / 2 - 153, 70, 10526880);
         this.field4000.render(n, n2, n3);
-        this.drawString(this.font, Class8822.method30773("jigsaw_block.final_state", new Object[0]), this.width / 2 - 153, 110, 10526880);
+        this.drawString(this.font, Class8822.method30773("jigsaw_block.final_state"), this.width / 2 - 153, 110, 10526880);
         this.field4002.render(n, n2, n3);
         super.render(n, n2, n3);
     }

@@ -5,6 +5,7 @@
 package mapped;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 public class Class3403 implements Class3398
 {
@@ -22,16 +23,11 @@ public class Class3403 implements Class3398
         if (!Class8028.method26319(s)) {
             class8542 = Class8542.field35869;
             char[] method23159;
-            try {
-                final byte[] bytes = s.getBytes("UTF-8");
-                if (!new String(bytes, "UTF-8").equals(s)) {
-                    throw new Class2386("invalid string value has occurred");
-                }
-                method23159 = Class7484.method23159(bytes);
+            final byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
+            if (!new String(bytes, StandardCharsets.UTF_8).equals(s)) {
+                throw new Class2386("invalid string value has occurred");
             }
-            catch (final UnsupportedEncodingException ex) {
-                throw new Class2386(ex);
-            }
+            method23159 = Class7484.method23159(bytes);
             s = String.valueOf(method23159);
             class8543 = Class2031.field11577;
         }

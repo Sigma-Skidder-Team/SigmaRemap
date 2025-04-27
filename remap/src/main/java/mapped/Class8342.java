@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class Class8342
 {
-    private Class2206 field34249;
-    private Map<String, String> field34250;
+    private final Class2206 field34249;
+    private final Map<String, String> field34250;
     
     public Class8342(final Class2206 field34249, final Map<String, String> field34250) {
         this.field34249 = field34249;

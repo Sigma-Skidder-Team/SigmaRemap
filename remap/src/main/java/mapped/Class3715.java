@@ -14,7 +14,7 @@ public class Class3715 extends Class3703
     private long field17076;
     private double field17077;
     private double field17078;
-    private double[] field17079;
+    private final double[] field17079;
     private long field17080;
     
     public Class3715() {

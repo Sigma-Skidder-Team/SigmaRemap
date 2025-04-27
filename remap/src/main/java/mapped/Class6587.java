@@ -64,7 +64,7 @@ public class Class6587 extends Class6586
                         throw new Class2390("while constructing a mapping", class7575.method23847(), "found unacceptable key " + method23837, class7576.method35260().method23847(), ex);
                     }
                 }
-                final Integer e = (Integer)hashMap.put(method23837, (Object)i);
+                final Integer e = (Integer)hashMap.put(method23837, i);
                 if (e != null) {
                     if (!this.method20011()) {
                         throw new Class2391(class7575.method23847(), method23837, class7576.method35260().method23847());
@@ -117,7 +117,7 @@ public class Class6587 extends Class6586
                     if (!b) {
                         continue;
                     }
-                    list.set((int)map.get(method35262), class7576);
+                    list.set(map.get(method35262), class7576);
                 }
             }
         }

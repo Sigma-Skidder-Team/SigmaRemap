@@ -17,7 +17,7 @@ public class NoSlow extends Module
     
     public NoSlow() {
         super(Category.MOVEMENT, "NoSlow", "Stops slowdown when using an item");
-        this.addSetting(new StringSetting("Mode", "NoSlow mode", 0, new String[] { "Vanilla", "NCP" }));
+        this.addSetting(new StringSetting("Mode", "NoSlow mode", 0, "Vanilla", "NCP"));
     }
     
     @EventListener

@@ -128,7 +128,7 @@ public class Class5328
     }
     
     public ITextComponent method16456() {
-        return new Class2259(this.method16455(), new Object[0]);
+        return new Class2259(this.method16455());
     }
     
     public Class2069 method16457() {

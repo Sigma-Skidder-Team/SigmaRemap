@@ -153,14 +153,12 @@ public class ElytraFly extends Module
     @HigherPriority
     private void method10034(final Class5721 class5721) {
         if (this.isEnabled()) {
-            return;
         }
     }
     
     @EventListener
     private void method10035(final Class5715 class5715) {
         if (this.isEnabled()) {
-            return;
         }
     }
     

@@ -28,10 +28,10 @@ public class Class6673 implements Class6672<LongArgumentType>
     
     public void method20305(final LongArgumentType longArgumentType, final JsonObject jsonObject) {
         if (longArgumentType.getMinimum() != Long.MIN_VALUE) {
-            jsonObject.addProperty("min", (Number)longArgumentType.getMinimum());
+            jsonObject.addProperty("min", longArgumentType.getMinimum());
         }
         if (longArgumentType.getMaximum() != Long.MAX_VALUE) {
-            jsonObject.addProperty("max", (Number)longArgumentType.getMaximum());
+            jsonObject.addProperty("max", longArgumentType.getMaximum());
         }
     }
 }

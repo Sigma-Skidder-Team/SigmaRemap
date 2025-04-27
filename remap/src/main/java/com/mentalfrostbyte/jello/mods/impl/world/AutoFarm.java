@@ -103,7 +103,7 @@ public class AutoFarm extends Module
                     }
                     final ItemStack method6710 = AutoFarm.mc.player.method2715(Class316.field1877);
                     if (method6710 != null && method6710.getItem() instanceof Class3829) {
-                        if (method6701.get((IProperty<Integer>)Class8970.field37773) == 7) {
+                        if (method6701.get(Class8970.field37773) == 7) {
                             continue;
                         }
                         final float[] method6711 = Class4609.method13672(class5745, Direction.DOWN);
@@ -112,7 +112,7 @@ public class AutoFarm extends Module
                         updateWalkingEvent.method17047(new Class1242(this, method6711));
                     }
                     else {
-                        if (method6701.get((IProperty<Integer>)Class8970.field37773) == 7) {
+                        if (method6701.get(Class8970.field37773) == 7) {
                             final float[] method6712 = Class4609.method13672(class5745, Direction.DOWN);
                             updateWalkingEvent.method17043(method6712[0]);
                             updateWalkingEvent.method17041(method6712[1]);

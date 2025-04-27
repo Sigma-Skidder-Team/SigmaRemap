@@ -24,12 +24,12 @@ public class Class8428
     public static LoadingCache<String, GameProfile> field34591;
     
     public static String method28146(final String s) throws Exception {
-        return ((GameProfile)Class8428.field34591.get((Object)s)).getName();
+        return Class8428.field34591.get(s).getName();
     }
     
     public static Map<MinecraftProfileTexture$Type, MinecraftProfileTexture> method28147(final String s) {
         try {
-            return Class8428.field34590.getTextures((GameProfile)Class8428.field34591.get((Object)s), false);
+            return Class8428.field34590.getTextures(Class8428.field34591.get(s), false);
         }
         catch (final Exception ex) {
             return Maps.newHashMap();

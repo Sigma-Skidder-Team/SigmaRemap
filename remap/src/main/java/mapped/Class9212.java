@@ -43,7 +43,7 @@ public class Class9212
             return new GameProfile(UUIDTypeAdapter.fromString(this.method33691()), this.method33692());
         }
         catch (final IllegalArgumentException ex) {
-            return new GameProfile((UUID)null, this.method33692());
+            return new GameProfile(null, this.method33692());
         }
     }
 }

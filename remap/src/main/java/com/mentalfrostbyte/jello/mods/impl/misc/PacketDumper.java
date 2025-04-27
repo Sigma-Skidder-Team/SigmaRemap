@@ -64,7 +64,7 @@ public class PacketDumper extends Module
     private void method10235(final IPacket class4252, final boolean b) {
         try {
             this.packetWriter.write((b ? "-->" : "<--") + "\t" + class4252.getClass().getSimpleName() + "\n");
-            for (final Field field : FieldUtils.getAllFields((Class)class4252.getClass())) {
+            for (final Field field : FieldUtils.getAllFields(class4252.getClass())) {
                 try {
                     this.packetWriter.write("\t\t" + field.getName() + "=" + this.method10234(field, class4252) + "\n");
                 }

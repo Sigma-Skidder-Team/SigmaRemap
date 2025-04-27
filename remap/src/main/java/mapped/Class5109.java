@@ -6,12 +6,12 @@ package mapped;
 
 public class Class5109 implements Class5108
 {
-    private Class5509 field22049;
-    private Class5901 field22050;
-    private Class7856[] field22051;
+    private final Class5509 field22049;
+    private final Class5901 field22050;
+    private final Class7856[] field22051;
     private Class6300 field22052;
     private Class6300 field22053;
-    private Class6464 field22054;
+    private final Class6464 field22054;
     
     public Class5109(final Class5509 field22049, final Class5901 field22050, final Class7856[] field22051) {
         this.field22049 = field22049;
@@ -30,7 +30,7 @@ public class Class5109 implements Class5108
         final Class330 method16007 = this.method16007(s);
         if (method16007 == null) {
             final Class327 method16008 = this.field22054.method19337(s);
-            return (method16008 == null) ? null : method16008;
+            return method16008;
         }
         return method16007;
     }

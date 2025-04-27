@@ -14,12 +14,12 @@ import java.net.URL;
 
 public class Class7765 extends Class7764
 {
-    private int field31749;
-    private int field31750;
+    private final int field31749;
+    private final int field31750;
     private int field31751;
     private Class7764[][] field31752;
     private int field31753;
-    private Class7764 field31754;
+    private final Class7764 field31754;
     
     public Class7765(final URL url, final int n, final int n2) throws SlickException, IOException {
         this(new Class7764(url.openStream(), url.toString(), false), n, n2);

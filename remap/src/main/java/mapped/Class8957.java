@@ -24,13 +24,13 @@ public class Class8957 extends DataFix
             return typed.update(DSL.remainderFinder(), dynamic -> {
                 typed2.getOptional(opticFinder);
                 final Optional optional;
-                return (optional.isPresent() && Objects.equals(optional.get(), "minecraft:commandblock_minecart")) ? dynamic : method31777((Dynamic<?>)dynamic);
+                return (optional.isPresent() && Objects.equals(optional.get(), "minecraft:commandblock_minecart")) ? dynamic : method31777(dynamic);
             });
         });
     }
     
     public static Dynamic<?> method31777(final Dynamic<?> dynamic) {
         final String string = dynamic.get("CustomName").asString("");
-        return (Dynamic<?>)(string.isEmpty() ? dynamic.remove("CustomName") : dynamic.set("CustomName", dynamic.createString(Class5953.method17869(new StringTextComponent(string)))));
+        return string.isEmpty() ? dynamic.remove("CustomName") : dynamic.set("CustomName", dynamic.createString(Class5953.method17869(new StringTextComponent(string))));
     }
 }

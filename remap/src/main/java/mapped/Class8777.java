@@ -22,7 +22,7 @@ public class Class8777
     public Color field36902;
     public float field36903;
     public float field36904;
-    private Class8014 field36905;
+    private final Class8014 field36905;
     private Class7394 field36906;
     public Class7764 field36907;
     public int field36908;

@@ -111,9 +111,7 @@ public final class CacheInterceptor implements Class6814
                         if (!"TE".equalsIgnoreCase(s)) {
                             if (!"Trailers".equalsIgnoreCase(s)) {
                                 if (!"Transfer-Encoding".equalsIgnoreCase(s)) {
-                                    if (!"Upgrade".equalsIgnoreCase(s)) {
-                                        return true;
-                                    }
+                                    return !"Upgrade".equalsIgnoreCase(s);
                                 }
                             }
                         }

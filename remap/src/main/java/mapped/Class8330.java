@@ -30,11 +30,11 @@ public class Class8330 implements ArgumentType<Class5346>
     }
     
     public static BlockPos method27768(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
-        if (!((Class7492)commandContext.getSource()).method23250().method6971(method16506)) {
+        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506(commandContext.getSource());
+        if (!commandContext.getSource().method23250().method6971(method16506)) {
             throw Class8330.field34211.create();
         }
-        ((Class7492)commandContext.getSource()).method23250();
+        commandContext.getSource().method23250();
         if (World.method6682(method16506)) {
             return method16506;
         }
@@ -42,7 +42,7 @@ public class Class8330 implements ArgumentType<Class5346>
     }
     
     public static BlockPos method27769(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
+        return ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506(commandContext.getSource());
     }
     
     public Class5346 parse(final StringReader stringReader) throws CommandSyntaxException {
@@ -70,7 +70,7 @@ public class Class8330 implements ArgumentType<Class5346>
     
     static {
         field34210 = Arrays.asList("0 0 0", "~ ~ ~", "^ ^ ^", "^1 ^ ^-5", "~0.5 ~1 ~-5");
-        field34211 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos.unloaded", new Object[0]));
-        field34212 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos.outofworld", new Object[0]));
+        field34211 = new SimpleCommandExceptionType(new Class2259("argument.pos.unloaded", new Object[0]));
+        field34212 = new SimpleCommandExceptionType(new Class2259("argument.pos.outofworld", new Object[0]));
     }
 }

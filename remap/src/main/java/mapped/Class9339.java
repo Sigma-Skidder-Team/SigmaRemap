@@ -10,10 +10,10 @@ import java.nio.IntBuffer;
 public class Class9339
 {
     private static String[] field40096;
-    private IntBuffer field40097;
-    private int field40098;
-    private boolean[] field40099;
-    private boolean[] field40100;
+    private final IntBuffer field40097;
+    private final int field40098;
+    private final boolean[] field40099;
+    private final boolean[] field40100;
     
     public Class9339(final IntBuffer field40097, final int field40098) {
         this.field40097 = field40097;

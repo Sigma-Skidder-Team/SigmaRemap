@@ -63,7 +63,7 @@ public class Class5776 extends Class5775
                     this.field23660 = class9131.method33137(4);
                 }
                 final long method33137 = class9131.method33137((int)Math.ceil(2 * this.field23652 / 8.0));
-                final long n = (1 << this.field23652) - 1;
+                final long n = (1L << this.field23652) - 1;
                 this.field23661 = (method33137 >> this.field23652 & n);
                 this.field23662 = (method33137 & n);
             }

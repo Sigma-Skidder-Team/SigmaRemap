@@ -10,7 +10,7 @@ public class Class8599 implements Class8598
     private static final int[][] field36107;
     private final int field36108;
     private final int[] field36109;
-    private float[] field36110;
+    private final float[] field36110;
     
     public Class8599(final int field36108) {
         if (!method29135(field36108)) {

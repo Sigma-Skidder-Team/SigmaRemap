@@ -58,19 +58,19 @@ public enum Class230
     private final String[] field856;
     private ItemStack field857;
     
-    private Class230(final String field854, final String field855) {
+    Class230(final String field854, final String field855) {
         this.field856 = new String[3];
         this.field857 = ItemStack.EMPTY;
         this.field854 = field854;
         this.field855 = field855;
     }
     
-    private Class230(final String s2, final String s3, final ItemStack field857) {
+    Class230(final String s2, final String s3, final ItemStack field857) {
         this(s2, s3);
         this.field857 = field857;
     }
     
-    private Class230(final String s2, final String s3, final String s4, final String s5, final String s6) {
+    Class230(final String s2, final String s3, final String s4, final String s5, final String s6) {
         this(s2, s3);
         this.field856[0] = s4;
         this.field856[1] = s5;

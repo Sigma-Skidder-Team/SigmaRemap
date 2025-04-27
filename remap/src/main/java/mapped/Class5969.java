@@ -43,6 +43,6 @@ public class Class5969 implements JsonDeserializer<Class9317>, JsonSerializer<Cl
         if (!ArrayUtils.isEmpty((Object[])Class9317.method34496(class9317))) {
             jsonObject.add("functions", jsonSerializationContext.serialize((Object)Class9317.method34496(class9317)));
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

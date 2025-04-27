@@ -17,7 +17,7 @@ public class Speed extends ModuleWithSettings
     public static int field15748;
     
     public Speed() {
-        super(Category.MOVEMENT, "Speed", "Vroom vroom", new Module[] { new VanillaSpeed(), new HypixelSpeed(), new AACSpeed(), new OldAACSpeed(), new ViperMCSpeed(), new SlowHop(), new NCPSpeed(), new LegitSpeed(), new CubecraftSpeed(), new YPortSpeed(), new AGCSpeed(), new InvadedSpeed(), new MineplexSpeed(), new GommeSpeed(), new TestSpeedSpeed() });
+        super(Category.MOVEMENT, "Speed", "Vroom vroom", new VanillaSpeed(), new HypixelSpeed(), new AACSpeed(), new OldAACSpeed(), new ViperMCSpeed(), new SlowHop(), new NCPSpeed(), new LegitSpeed(), new CubecraftSpeed(), new YPortSpeed(), new AGCSpeed(), new InvadedSpeed(), new MineplexSpeed(), new GommeSpeed(), new TestSpeedSpeed());
         this.addSetting(new BooleanSetting("Lag back checker", "Disable speed when you get lag back", true));
         Speed.field15748 = 0;
     }

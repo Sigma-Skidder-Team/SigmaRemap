@@ -10,7 +10,7 @@ import java.util.Deque;
 public class Class9573
 {
     private static String[] field41608;
-    private Deque<Class9023> field41609;
+    private final Deque<Class9023> field41609;
     
     public Class9573() {
         this.field41609 = new ArrayDeque<Class9023>();

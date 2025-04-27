@@ -28,7 +28,7 @@ public class Class2262 extends ForwardingList<ItemStack>
         final ListNBT class52 = new ListNBT();
         final Iterator<ItemStack> iterator = this.delegate().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<CompoundNBT>)class52).add(iterator.next().method27627(new CompoundNBT()));
+            class52.add(iterator.next().method27627(new CompoundNBT()));
         }
         return class52;
     }

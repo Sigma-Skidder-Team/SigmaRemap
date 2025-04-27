@@ -23,7 +23,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
     }
 
     public SubOptionSetting(final String s, final String s2, final Type class2076, final boolean b, final Setting... a) {
-        this(s, s2, class2076, b, (List<Setting>) Arrays.asList((Setting[]) a));
+        this(s, s2, class2076, b, Arrays.asList(a));
     }
 
     @Override
@@ -49,7 +49,7 @@ public abstract class SubOptionSetting extends Setting<Boolean> {
     @Override
     public JSONObject method15193(final JSONObject JSONObject) {
         final JSONArray class4406 = new JSONArray();
-        final Iterator<Setting> iterator = (Iterator<Setting>) this.method15224().iterator();
+        final Iterator<Setting> iterator = this.method15224().iterator();
         while (iterator.hasNext()) {
             class4406.put(iterator.next().method15193(new JSONObject()));
         }

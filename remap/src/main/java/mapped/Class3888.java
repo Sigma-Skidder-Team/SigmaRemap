@@ -80,7 +80,7 @@ public class Class3888 extends Class3874 implements Class3872
         else {
             class1852 = Class4535.field19991.method13527(Class9218.field39552);
         }
-        if (!class1852.method28613(class1849, (Class6346)class1849.method6904().method7438(), random, class1850)) {
+        if (!class1852.method28613(class1849, class1849.method6904().method7438(), random, class1850)) {
             class1849.setBlockState(class1850, class1851, 3);
             return false;
         }

@@ -47,17 +47,17 @@ public class Class3701 implements Class3689
     @Nullable
     public static Path method11378(final Path path, final String str, final Path path2) {
         try {
-            final String string = Class8097.method26590(Files.newInputStream(path, new OpenOption[0])).toFormattedComponent("    ", 0).getString() + "\n";
+            final String string = Class8097.method26590(Files.newInputStream(path)).toFormattedComponent("    ", 0).getString() + "\n";
             final Path resolve = path2.resolve(str + ".snbt");
-            Files.createDirectories(resolve.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-            try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(resolve, new OpenOption[0])) {
+            Files.createDirectories(resolve.getParent(), new FileAttribute[0]);
+            try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(resolve)) {
                 bufferedWriter.write(string);
             }
-            Class3701.field17022.info("Converted {} from NBT to SNBT", (Object)str);
+            Class3701.field17022.info("Converted {} from NBT to SNBT", str);
             return resolve;
         }
         catch (final IOException ex) {
-            Class3701.field17022.error("Couldn't convert {} from NBT to SNBT at {}", (Object)str, (Object)path, (Object)ex);
+            Class3701.field17022.error("Couldn't convert {} from NBT to SNBT at {}", str, path, ex);
             return null;
         }
     }

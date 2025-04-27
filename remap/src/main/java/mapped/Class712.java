@@ -6,12 +6,12 @@ package mapped;
 
 public class Class712 extends Class698
 {
-    private Screen field3888;
-    private Class5760 field3889;
+    private final Screen field3888;
+    private final Class5760 field3889;
     private static Class6469[] field3890;
     
     public Class712(final Screen field3888, final Class5760 field3889) {
-        super(new StringTextComponent(Class8822.method30773("of.options.animationsTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.animationsTitle")));
         this.field3888 = field3888;
         this.field3889 = field3889;
     }
@@ -24,7 +24,7 @@ public class Class712 extends Class698
         }
         this.addButton(new Class673(210, this.width / 2 - 155, this.height / 6 + 168 + 11, 70, 20, Class4647.method13876("of.options.animation.allOn")));
         this.addButton(new Class673(211, this.width / 2 - 155 + 80, this.height / 6 + 168 + 11, 70, 20, Class4647.method13876("of.options.animation.allOff")));
-        this.addButton(new Class678(200, this.width / 2 + 5, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class678(200, this.width / 2 + 5, this.height / 6 + 168 + 11, Class8822.method30773("gui.done")));
     }
     
     @Override

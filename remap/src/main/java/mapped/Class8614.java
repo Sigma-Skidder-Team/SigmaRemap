@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Class8614
 {
-    private Map<String, boolean[]> field36150;
+    private final Map<String, boolean[]> field36150;
     
     public Class8614() {
         this.field36150 = new HashMap<String, boolean[]>();

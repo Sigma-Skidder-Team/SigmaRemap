@@ -22,9 +22,7 @@ public class Class3874 extends Block
             if (method21696 != Blocks.DIRT) {
                 if (method21696 != Blocks.COARSE_DIRT) {
                     if (method21696 != Blocks.PODZOL) {
-                        if (method21696 != Blocks.field29298) {
-                            return false;
-                        }
+                        return method21696 == Blocks.field29298;
                     }
                 }
             }

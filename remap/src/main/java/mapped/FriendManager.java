@@ -15,7 +15,7 @@ public class FriendManager {
     public List<String> field36582;
     public List<String> field36583;
     public int field36584;
-    private Minecraft field36585;
+    private final Minecraft field36585;
 
     public FriendManager() {
         this.field36582 = new CopyOnWriteArrayList<String>();
@@ -38,10 +38,10 @@ public class FriendManager {
                     method35204.method32672();
                     if (this.method29878(this.field36585.field4690)) {
                         this.method29886(this.field36585.field4690.getName().getUnformattedComponentText());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is no longer your friend.");
+                        Class9274.method34209(method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is no longer your friend.");
                     } else {
                         this.method29882(this.field36585.field4690.getName().getUnformattedComponentText());
-                        Class9274.method34209("" + method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is now your friend.");
+                        Class9274.method34209(method35204.method32671() + " " + this.field36585.field4690.getName().getUnformattedComponentText() + " is now your friend.");
                     }
                     this.method29890();
                 }

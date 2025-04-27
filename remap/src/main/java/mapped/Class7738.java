@@ -20,7 +20,7 @@ public class Class7738 implements Class7735
     
     private static List<String> method24689(final ItemStack class8321) {
         final CompoundNBT method27657 = class8321.method27657();
-        return (List<String>)((method27657 != null && Class4096.method12339(method27657)) ? Class723.method3979(method27657) : ImmutableList.of((Object)new Class2259("book.invalid.tag", new Object[0]).applyTextStyle(TextFormatting.DARK_RED).getFormattedText()));
+        return (List<String>)((method27657 != null && Class4096.method12339(method27657)) ? Class723.method3979(method27657) : ImmutableList.of((Object)new Class2259("book.invalid.tag").applyTextStyle(TextFormatting.DARK_RED).getFormattedText()));
     }
     
     @Override

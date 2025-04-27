@@ -42,7 +42,7 @@ public class Class8808 implements ArgumentType<Class7927>
     }
     
     public static Predicate<Class7990> method30733(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return ((Class7927)commandContext.getArgument(s, (Class)Class7927.class)).method25689(((Class7492)commandContext.getSource()).method23255().method1578());
+        return ((Class7927)commandContext.getArgument(s, (Class)Class7927.class)).method25689(commandContext.getSource().method23255().method1578());
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -63,7 +63,7 @@ public class Class8808 implements ArgumentType<Class7927>
     static {
         field37015 = Arrays.asList("stone", "minecraft:stone", "stone[foo=bar]", "#stone", "#stone[foo=bar]{baz=nbt}");
         field37016 = new DynamicCommandExceptionType(o -> {
-            new Class2259("arguments.block.tag.unknown", new Object[] { o });
+            new Class2259("arguments.block.tag.unknown", o);
             return;
         });
     }

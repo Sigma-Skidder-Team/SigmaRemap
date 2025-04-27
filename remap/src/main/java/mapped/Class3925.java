@@ -38,7 +38,7 @@ public class Class3925 extends Class3924
             return Blocks.AIR.getDefaultState();
         }
         this.method12037(class7096, class7099, class7100);
-        if (class7096.get((IProperty<Boolean>)Class3925.field17782)) {
+        if (class7096.get(Class3925.field17782)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);

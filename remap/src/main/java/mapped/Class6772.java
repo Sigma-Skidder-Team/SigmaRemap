@@ -83,9 +83,7 @@ public class Class6772
             if (this.field26592 == class6772.field26592) {
                 if (this.field26589 == class6772.field26589) {
                     if (this.field26590 == class6772.field26590) {
-                        if (this.field26591 == class6772.field26591) {
-                            return true;
-                        }
+                        return this.field26591 == class6772.field26591;
                     }
                 }
             }

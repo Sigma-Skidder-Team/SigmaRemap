@@ -90,7 +90,7 @@ public class AutoCrystal extends PremiumModule
     }
     
     private List<Entity> method10653() {
-        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and((Predicate<? super Entity>)new Class167(this)));
+        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(9.0, 9.0, 9.0), Class9170.field38850.and(new Class167(this)));
     }
     
     private List<Class7014> method10654(final Entity class399) {
@@ -100,7 +100,7 @@ public class AutoCrystal extends PremiumModule
             ColorUtils.method19106("Dmg: " + this.method10655(class399, value));
         }
         if (!treeMap.isEmpty()) {
-            ColorUtils.method19106("Dmgs: " + treeMap.toString());
+            ColorUtils.method19106("Dmgs: " + treeMap);
             final BlockPos class400 = treeMap.lastEntry().getValue();
             final ArrayList list = new ArrayList();
             for (final Map.Entry entry : treeMap.entrySet()) {
@@ -166,12 +166,12 @@ public class AutoCrystal extends PremiumModule
     
     public List<Entity> method10657() {
         final float method9886 = this.getNumberSettingValueByName("Reach");
-        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and((Predicate<? super Entity>)new Class164(this, method9886)));
+        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(method9886, method9886, method9886), Class9170.field38850.and(new Class164(this, method9886)));
     }
     
     private List<Entity> method10658() {
         final float n = this.getNumberSettingValueByName("Reach") + 1.0f;
-        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(n, n, n), Class9170.field38850.and((Predicate<? super Entity>)new Class165(this, n)));
+        return AutoCrystal.mc.world.method6737(AutoCrystal.mc.player, AutoCrystal.mc.player.boundingBox.grow(n, n, n), Class9170.field38850.and(new Class165(this, n)));
     }
     
     private void method10659(final UpdateWalkingEvent updateWalkingEvent) {

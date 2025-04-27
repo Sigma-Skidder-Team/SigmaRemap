@@ -146,9 +146,7 @@ public enum Class220 implements Class193
             final Class2081 method9862 = class3091.method9861();
             if (method9861 != method9862) {
                 if (method9861 != Class2081.field12034) {
-                    if (method9862 != Class2081.field12034) {
-                        return false;
-                    }
+                    return method9862 == Class2081.field12034;
                 }
             }
             return true;

@@ -44,9 +44,7 @@ public final class Class7917
         if (o instanceof Class7917) {
             if (this.field32502.equals(((Class7917)o).field32502)) {
                 if (this.field32504.equals(((Class7917)o).field32504)) {
-                    if (this.field32505.equals(((Class7917)o).field32505)) {
-                        return true;
-                    }
+                    return this.field32505.equals(((Class7917) o).field32505);
                 }
             }
         }

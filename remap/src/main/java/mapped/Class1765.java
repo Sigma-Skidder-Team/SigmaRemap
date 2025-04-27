@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.io.PushbackInputStream;
 import java.nio.charset.Charset;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 
 public class Class1765 extends Reader
 {
@@ -79,8 +80,8 @@ public class Class1765 extends Reader
     }
     
     static {
-        field9821 = Charset.forName("UTF-8");
-        field9822 = Charset.forName("UTF-16BE");
-        field9823 = Charset.forName("UTF-16LE");
+        field9821 = StandardCharsets.UTF_8;
+        field9822 = StandardCharsets.UTF_16BE;
+        field9823 = StandardCharsets.UTF_16LE;
     }
 }

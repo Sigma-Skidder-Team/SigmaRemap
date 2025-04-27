@@ -155,27 +155,27 @@ public class Class5085 extends RealmsScreen
     }
     
     private String method15873() {
-        return RealmsScreen.getLocalizedString("mco.configure.world.pvp") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21920) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("mco.configure.world.pvp") + ": " + RealmsScreen.getLocalizedString(this.field21920 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
     
     private String method15874() {
-        return RealmsScreen.getLocalizedString("mco.configure.world.spawnAnimals") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21922) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("mco.configure.world.spawnAnimals") + ": " + RealmsScreen.getLocalizedString(this.field21922 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
     
     private String method15875() {
-        return (this.field21918 != 0) ? (RealmsScreen.getLocalizedString("mco.configure.world.spawnMonsters") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21923) ? "mco.configure.world.on" : "mco.configure.world.off")) : (RealmsScreen.getLocalizedString("mco.configure.world.spawnMonsters") + ": " + RealmsScreen.getLocalizedString("mco.configure.world.off"));
+        return (this.field21918 != 0) ? (RealmsScreen.getLocalizedString("mco.configure.world.spawnMonsters") + ": " + RealmsScreen.getLocalizedString(this.field21923 ? "mco.configure.world.on" : "mco.configure.world.off")) : (RealmsScreen.getLocalizedString("mco.configure.world.spawnMonsters") + ": " + RealmsScreen.getLocalizedString("mco.configure.world.off"));
     }
     
     private String method15876() {
-        return RealmsScreen.getLocalizedString("mco.configure.world.spawnNPCs") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21921) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("mco.configure.world.spawnNPCs") + ": " + RealmsScreen.getLocalizedString(this.field21921 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
     
     private String method15877() {
-        return RealmsScreen.getLocalizedString("mco.configure.world.commandBlocks") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21925) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("mco.configure.world.commandBlocks") + ": " + RealmsScreen.getLocalizedString(this.field21925 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
     
     private String method15878() {
-        return RealmsScreen.getLocalizedString("mco.configure.world.forceGameMode") + ": " + RealmsScreen.getLocalizedString(((boolean)this.field21926) ? "mco.configure.world.on" : "mco.configure.world.off");
+        return RealmsScreen.getLocalizedString("mco.configure.world.forceGameMode") + ": " + RealmsScreen.getLocalizedString(this.field21926 ? "mco.configure.world.on" : "mco.configure.world.off");
     }
     
     @Override

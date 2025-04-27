@@ -73,7 +73,7 @@ public class Class9317
     
     public List<ItemStack> method34485(final Class7529 class7529) {
         final ArrayList arrayList = Lists.newArrayList();
-        this.method34484(class7529, (Consumer<ItemStack>)arrayList::add);
+        this.method34484(class7529, arrayList::add);
         return arrayList;
     }
     
@@ -104,7 +104,7 @@ public class Class9317
                 class446.method2160(method34487.remove(method34487.size() - 1), class448);
             }
             else {
-                class446.method2160((int)method34487.remove(method34487.size() - 1), ItemStack.EMPTY);
+                class446.method2160(method34487.remove(method34487.size() - 1), ItemStack.EMPTY);
             }
         }
     }

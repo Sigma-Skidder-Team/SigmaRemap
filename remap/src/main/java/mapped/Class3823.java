@@ -37,7 +37,7 @@ public class Class3823 extends Item
                     final String method2719 = method2717.method353(i);
                     final Optional<? extends IRecipe<?>> method2720 = method2718.method6382(new ResourceLocation(method2719));
                     if (!method2720.isPresent()) {
-                        Class3823.field17375.error("Invalid recipe: {}", (Object)method2719);
+                        Class3823.field17375.error("Invalid recipe: {}", method2719);
                         return Class9355.method34677(method2715);
                     }
                     arrayList.add(method2720.get());
@@ -47,7 +47,7 @@ public class Class3823 extends Item
             }
             return Class9355.method34674(method2715);
         }
-        Class3823.field17375.error("Tag not valid: {}", (Object)method2716);
+        Class3823.field17375.error("Tag not valid: {}", method2716);
         return Class9355.method34677(method2715);
     }
     

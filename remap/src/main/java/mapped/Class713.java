@@ -8,9 +8,9 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class713 extends Class698
 {
-    private Screen field3891;
-    private Class5760 field3892;
-    private Class8297 field3893;
+    private final Screen field3891;
+    private final Class5760 field3892;
+    private final Class8297 field3893;
     private String field3894;
     private String field3895;
     private boolean field3896;
@@ -19,7 +19,7 @@ public class Class713 extends Class698
     public static final String field3899 = "*";
     
     public Class713(final Screen field3891, final Class5760 field3892) {
-        super(new StringTextComponent(Class8822.method30773("of.options.shaderOptionsTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.shaderOptionsTitle")));
         this.field3893 = new Class8297(this, new Class7299());
         this.field3894 = null;
         this.field3895 = null;
@@ -74,8 +74,8 @@ public class Class713 extends Class698
                 }
             }
         }
-        this.addButton(new Class673(201, this.width / 2 - n4 - 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("controls.reset", new Object[0])));
-        this.addButton(new Class673(200, this.width / 2 + 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(201, this.width / 2 - n4 - 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("controls.reset")));
+        this.addButton(new Class673(200, this.width / 2 + 20, this.height / 6 + 168 + 11, n4, n5, Class8822.method30773("gui.done")));
     }
     
     public static String method3931(final Class5601 class5601, final int n) {

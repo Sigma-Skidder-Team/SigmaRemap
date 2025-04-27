@@ -495,9 +495,7 @@ public final class Class9085
         if (!s.equals("..")) {
             if (!s.equalsIgnoreCase("%2e.")) {
                 if (!s.equalsIgnoreCase(".%2e")) {
-                    if (!s.equalsIgnoreCase("%2e%2e")) {
-                        return false;
-                    }
+                    return s.equalsIgnoreCase("%2e%2e");
                 }
             }
         }

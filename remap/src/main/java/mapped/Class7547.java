@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface Class7547
 {
-    public static final Class7547 field29941 = new Class7546();
+    Class7547 field29941 = new Class7546();
     
     boolean method23701(final int p0, final List<Class8975> p1);
     

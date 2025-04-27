@@ -158,7 +158,7 @@ public class Class405 extends Class402
             final ListNBT class52 = new ListNBT();
             final Iterator<Class1948> iterator = this.field2492.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method7916(new CompoundNBT()));
+                class52.add(iterator.next().method7916(new CompoundNBT()));
             }
             class51.put("CustomPotionEffects", class52);
         }

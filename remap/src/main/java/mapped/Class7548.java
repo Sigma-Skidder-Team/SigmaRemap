@@ -14,8 +14,8 @@ import java.util.HashMap;
 public class Class7548
 {
     private Class7764 field29942;
-    private String field29943;
-    private HashMap field29944;
+    private final String field29943;
+    private final HashMap field29944;
     private int field29945;
     
     public Class7548(final String s) throws SlickException {

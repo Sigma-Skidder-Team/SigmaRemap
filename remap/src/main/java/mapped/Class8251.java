@@ -115,7 +115,7 @@ public class Class8251
     private static int[] method27366(final List<Integer> list) {
         final int[] array = new int[list.size()];
         for (int i = 0; i < array.length; ++i) {
-            array[i] = (int)list.get(i);
+            array[i] = list.get(i);
         }
         return array;
     }

@@ -21,9 +21,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
                 if (!t.hasCustomName()) {
                     return false;
                 }
-                if (t != this.field20283.field35908) {
-                    return false;
-                }
+                return t == this.field20283.field35908;
             }
             return true;
         }
@@ -31,7 +29,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
     }
     
     public boolean method14005(final T t, final Class6664 class6664, final double n, final double n2, final double n3) {
-        if (!super.method13952((T)t, class6664, n, n2, n3)) {
+        if (!super.method13952(t, class6664, n, n2, n3)) {
             final Entity method4206 = t.method4206();
             return method4206 != null && class6664.method20261(method4206.method1887());
         }
@@ -78,7 +76,7 @@ public abstract class Class4712<T extends Class759, M extends Class5845<T>> exte
             final float n15 = MathHelper.fastInvSqrt(n12 * n12 + n14 * n14) * 0.025f / 2.0f;
             final float n16 = n14 * n15;
             final float n17 = n12 * n15;
-            final int method35704 = this.method13954((T)t, n);
+            final int method35704 = this.method13954(t, n);
             final int method35705 = this.field20283.method28699(e).method13954(e, n);
             final int method35706 = t.world.method6992(Class237.field911, new BlockPos(t.method1747(n)));
             final int method35707 = t.world.method6992(Class237.field911, new BlockPos(e.method1747(n)));

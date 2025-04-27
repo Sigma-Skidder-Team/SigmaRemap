@@ -40,8 +40,8 @@ public class Class7639
     private final List<NetworkManager> field30282;
     
     public Class7639(final MinecraftServer field30279) {
-        this.field30281 = Collections.synchronizedList((List<ChannelFuture>)Lists.newArrayList());
-        this.field30282 = Collections.synchronizedList((List<NetworkManager>)Lists.newArrayList());
+        this.field30281 = Collections.synchronizedList(Lists.newArrayList());
+        this.field30282 = Collections.synchronizedList(Lists.newArrayList());
         this.field30279 = field30279;
         this.field30280 = true;
     }
@@ -60,14 +60,14 @@ public class Class7639
                 o = Class7639.field30277;
                 Class7639.field30276.info("Using default channel type");
             }
-            this.field30281.add(((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel((Class)s)).childHandler((ChannelHandler)new Class8041(this)).group((EventLoopGroup)((Class8656<EventLoopGroup>)o).method29528()).localAddress(inetAddress, n)).bind().syncUninterruptibly());
+            this.field30281.add(new ServerBootstrap().channel((Class)s).childHandler(new Class8041(this)).group(((Class8656<EventLoopGroup>)o).method29528()).localAddress(inetAddress, n).bind().syncUninterruptibly());
         }
     }
     
     public SocketAddress method24061() {
         final ChannelFuture syncUninterruptibly;
         synchronized (this.field30281) {
-            syncUninterruptibly = ((ServerBootstrap)((ServerBootstrap)new ServerBootstrap().channel((Class)LocalServerChannel.class)).childHandler((ChannelHandler)new Class4147(this)).group((EventLoopGroup)Class7639.field30277.method29528()).localAddress((SocketAddress)LocalAddress.ANY)).bind().syncUninterruptibly();
+            syncUninterruptibly = new ServerBootstrap().channel(LocalServerChannel.class).childHandler(new Class4147(this)).group(Class7639.field30277.method29528()).localAddress(LocalAddress.ANY).bind().syncUninterruptibly();
             this.field30281.add(syncUninterruptibly);
         }
         return syncUninterruptibly.channel().localAddress();
@@ -104,7 +104,7 @@ public class Class7639
                             }
                         }
                         final Exception ex;
-                        Class7639.field30276.warn("Failed to handle packet for {}", (Object)class3641.method11180(), (Object)ex);
+                        Class7639.field30276.warn("Failed to handle packet for {}", class3641.method11180(), ex);
                         final StringTextComponent class3642 = new StringTextComponent("Internal server error");
                         class3641.method11175(new Class4262(class3642), (GenericFutureListener<? extends Future<? super Void>>)(future -> class3641.method11181(class3642)));
                         class3641.method11191();

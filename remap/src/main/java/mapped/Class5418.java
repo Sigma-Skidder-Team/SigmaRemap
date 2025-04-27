@@ -27,7 +27,7 @@ public class Class5418 extends Class5419<LivingEntity>
     public void method16539(final Class1849 class1849, final LivingEntity class1850, final long n) {
         final Optional<Vec3d> ofNullable = Optional.ofNullable(this.method16540(class1849, class1850));
         if (ofNullable.isPresent()) {
-            class1850.method2618().method1197(Class8233.field33809, (Optional<Class6949>)ofNullable.map(class1851 -> new Class6949(class1851, this.field22590, 0)));
+            class1850.method2618().method1197(Class8233.field33809, ofNullable.map(class1851 -> new Class6949(class1851, this.field22590, 0)));
         }
     }
     

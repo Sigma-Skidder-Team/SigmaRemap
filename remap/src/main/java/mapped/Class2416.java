@@ -25,7 +25,7 @@ public class Class2416 extends JPanel
     private static final long field14292 = 1L;
     private static final Logger field14293;
     private static final Random field14294;
-    private List<Object> field14295;
+    private final List<Object> field14295;
     private transient boolean field14296;
     private transient boolean field14297;
     private transient boolean field14298;
@@ -34,7 +34,7 @@ public class Class2416 extends JPanel
     private transient volatile boolean field14301;
     private transient volatile Thread field14302;
     private transient volatile int field14303;
-    private transient volatile SourceDataLine field14304;
+    private final transient SourceDataLine field14304;
     
     public Class2416() {
         this.field14295 = new ArrayList<Object>();

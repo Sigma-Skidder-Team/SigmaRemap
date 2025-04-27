@@ -26,7 +26,7 @@ public final class Class6333 extends Class6332
     }
     
     private static Class6333 method18826(final String s, final Class9272 class9272, final int n, final int n2, final boolean b, final boolean b2, final Class6304 class9273) {
-        return (Class6333)Class6333.field25346.addOrGet((Object)new Class6333(s, class9272, n, n2, b, b2, class9273));
+        return Class6333.field25346.addOrGet(new Class6333(s, class9272, n, n2, b, b2, class9273));
     }
     
     @Override
@@ -51,7 +51,7 @@ public final class Class6333 extends Class6332
     
     @Override
     public String toString() {
-        return "" + this.field25274 + ", " + Class6304.method18668(this.field25347).method18842();
+        return this.field25274 + ", " + Class6304.method18668(this.field25347).method18842();
     }
     
     static {

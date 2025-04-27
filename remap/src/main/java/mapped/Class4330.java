@@ -68,17 +68,17 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                     break;
                 }
                 case 2: {
-                    gameProfile = new GameProfile(class8654.method29504(), (String)null);
+                    gameProfile = new GameProfile(class8654.method29504(), null);
                     class8655 = Class101.method592(class8654.readVarInt());
                     break;
                 }
                 case 3: {
-                    gameProfile = new GameProfile(class8654.method29504(), (String)null);
+                    gameProfile = new GameProfile(class8654.method29504(), null);
                     n = class8654.readVarInt();
                     break;
                 }
                 case 4: {
-                    gameProfile = new GameProfile(class8654.method29504(), (String)null);
+                    gameProfile = new GameProfile(class8654.method29504(), null);
                     if (class8654.readBoolean()) {
                         class8656 = class8654.method29497();
                         break;
@@ -86,7 +86,7 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
                     break;
                 }
                 case 5: {
-                    gameProfile = new GameProfile(class8654.method29504(), (String)null);
+                    gameProfile = new GameProfile(class8654.method29504(), null);
                     break;
                 }
             }
@@ -167,6 +167,6 @@ public class Class4330 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("action", (Object)this.field19387).add("entries", (Object)this.field19388).toString();
+        return MoreObjects.toStringHelper(this).add("action", this.field19387).add("entries", this.field19388).toString();
     }
 }

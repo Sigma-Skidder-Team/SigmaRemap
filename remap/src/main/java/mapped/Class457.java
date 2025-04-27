@@ -59,7 +59,7 @@ public class Class457 extends Class456
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.barrel", new Object[0]);
+        return new Class2259("container.barrel");
     }
     
     @Override
@@ -75,7 +75,7 @@ public class Class457 extends Class456
             }
             ++this.field2713;
             final BlockState method2194 = this.method2194();
-            if (!method2194.get((IProperty<Boolean>)Class3939.field17825)) {
+            if (!method2194.get(Class3939.field17825)) {
                 this.method2332(method2194, Class8520.field35004);
                 this.method2331(method2194, true);
             }
@@ -95,7 +95,7 @@ public class Class457 extends Class456
                 this.method2198();
                 return;
             }
-            if (method2194.get((IProperty<Boolean>)Class3939.field17825)) {
+            if (method2194.get(Class3939.field17825)) {
                 this.method2332(method2194, Class8520.field35003);
                 this.method2331(method2194, false);
             }
@@ -117,7 +117,7 @@ public class Class457 extends Class456
     }
     
     private void method2332(final BlockState class7096, final Class7795 class7097) {
-        final Vec3i method802 = class7096.get((IProperty<Direction>)Class3939.field17824).getDirectionVec();
+        final Vec3i method802 = class7096.get(Class3939.field17824).getDirectionVec();
         this.field2656.method6706(null, this.field2657.getX() + 0.5 + method802.getX() / 2.0, this.field2657.getY() + 0.5 + method802.getY() / 2.0, this.field2657.getZ() + 0.5 + method802.getZ() / 2.0, class7097, Class286.field1582, 0.5f, this.field2656.rand.nextFloat() * 0.1f + 0.9f);
     }
 }

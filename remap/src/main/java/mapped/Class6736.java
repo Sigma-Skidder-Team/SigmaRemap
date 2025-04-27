@@ -42,7 +42,7 @@ public class Class6736 extends Dimension
         final Class7768<Class5469, Class1871> field36584 = Class7768.field31770;
         final Class7768<Class5472, Class1872> field36585 = Class7768.field31768;
         if (method29570 == Class9505.field40893) {
-            final Class7067 method29571 = Class7067.method21595((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)this.field26492.method6764().method29572()));
+            final Class7067 method29571 = Class7067.method21595((Dynamic<?>)new Dynamic(Class8453.field34721, this.field26492.method6764().method29572()));
             return field36578.method29872(this.field26492, field36583.method24875(field36583.method24876(this.field26492.method6764()).method16709(method29571.method21587())), method29571);
         }
         if (method29570 == Class9505.field40898) {
@@ -178,7 +178,7 @@ public class Class6736 extends Dimension
     @Override
     public Vec3d method20493(final float n, final float n2) {
         final float method35653 = MathHelper.clamp(MathHelper.cos(n * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
-        return new Vec3d(0.7529412f * (method35653 * 0.94f + 0.06f), 0.84705883f * (method35653 * 0.94f + 0.06f), 1.0f * (method35653 * 0.91f + 0.09f));
+        return new Vec3d(0.7529412f * (method35653 * 0.94f + 0.06f), 0.84705883f * (method35653 * 0.94f + 0.06f), (method35653 * 0.91f + 0.09f));
     }
     
     @Override

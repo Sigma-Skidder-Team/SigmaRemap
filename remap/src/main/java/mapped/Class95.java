@@ -126,7 +126,7 @@ public class Class95<K> implements Class89<K>
     
     @Override
     public Iterator<K> iterator() {
-        return (Iterator<K>)Iterators.filter((Iterator)Iterators.forArray((Object[])this.field260), Predicates.notNull());
+        return (Iterator<K>)Iterators.filter(Iterators.forArray((Object[])this.field260), Predicates.notNull());
     }
     
     public void method574() {

@@ -35,14 +35,14 @@ public class Class8873 extends DataFix
             final OpticFinder opticFinder2;
             ((List$ListType)opticFinder2.type()).getElement().finder();
             return typed.updateTyped(opticFinder, type, typed2 -> {
-                final Dynamic dynamic = (Dynamic)typed2.get(DSL.remainderFinder());
+                final Dynamic dynamic = typed2.get(DSL.remainderFinder());
                 dynamic.get("VillagerData").get("level").asNumber().orElse(0).intValue();
                 final int n;
                 Typed<?> typed3 = null;
                 if (n == 0 || n == 1) {
                     MathHelper.method35651(typed2.getOptionalTyped(opticFinder3).flatMap(typed4 -> typed4.getOptionalTyped(opticFinder4)).map(typed5 -> typed5.getAllTyped(opticFinder5).size()).orElse(0) / 2, 1, 5);
                     if (n > 1) {
-                        typed3 = method31184((Typed<?>)typed2, n);
+                        typed3 = method31184(typed2, n);
                     }
                 }
                 if (!dynamic.get("Xp").asNumber().isPresent()) {
@@ -54,11 +54,11 @@ public class Class8873 extends DataFix
     }
     
     private static Typed<?> method31184(final Typed<?> typed, final int n) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> dynamic.update("VillagerData", dynamic2 -> dynamic2.set("level", dynamic2.createInt(n2))));
+        return typed.update(DSL.remainderFinder(), dynamic -> dynamic.update("VillagerData", dynamic2 -> dynamic2.set("level", dynamic2.createInt(n2))));
     }
     
     private static Typed<?> method31185(final Typed<?> typed, final int n) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> {
+        return typed.update(DSL.remainderFinder(), dynamic -> {
             method31183(n3);
             return dynamic.set("Xp", dynamic.createInt(n2));
         });

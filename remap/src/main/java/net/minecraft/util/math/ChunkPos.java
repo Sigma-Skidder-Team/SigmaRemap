@@ -125,7 +125,7 @@ public class ChunkPos
     }
     
     public static Stream<ChunkPos> method25438(final ChunkPos class7859, final ChunkPos class7860) {
-        return StreamSupport.stream((Spliterator<ChunkPos>)new Class7584((Math.abs(class7859.field32290 - class7860.field32290) + 1) * (Math.abs(class7859.field32291 - class7860.field32291) + 1), 64, class7859, class7860, (class7859.field32291 >= class7860.field32291) ? -1 : 1, (class7859.field32290 >= class7860.field32290) ? -1 : 1), false);
+        return StreamSupport.stream((Spliterator<ChunkPos>)new Class7584((long) (Math.abs(class7859.field32290 - class7860.field32290) + 1) * (Math.abs(class7859.field32291 - class7860.field32291) + 1), 64, class7859, class7860, (class7859.field32291 >= class7860.field32291) ? -1 : 1, (class7859.field32290 >= class7860.field32290) ? -1 : 1), false);
     }
     
     static {

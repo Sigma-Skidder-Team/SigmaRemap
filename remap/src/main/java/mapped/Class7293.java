@@ -11,7 +11,7 @@ public class Class7293 implements Class7292
     private static String[] field28255;
     private int field28256;
     private int field28257;
-    private float field28258;
+    private final float field28258;
     private boolean field28259;
     
     public Class7293() {

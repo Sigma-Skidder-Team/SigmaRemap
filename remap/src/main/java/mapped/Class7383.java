@@ -7,9 +7,9 @@ package mapped;
 public class Class7383
 {
     private static String[] field28438;
-    private short field28439;
-    private short field28440;
-    private short field28441;
+    private final short field28439;
+    private final short field28440;
+    private final short field28441;
     
     public Class7383(final short field28439, final short field28440, final short field28441) {
         this.field28439 = field28439;

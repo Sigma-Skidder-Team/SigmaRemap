@@ -37,7 +37,7 @@ public class Class1735 extends Class1732
     public static boolean method6132(final File file, final String suffix) throws IOException {
         String s = file.getCanonicalPath();
         if (Class1735.field9684) {
-            s = Class1735.field9685.replaceFrom((CharSequence)s, '/');
+            s = Class1735.field9685.replaceFrom(s, '/');
         }
         return s.endsWith(suffix);
     }

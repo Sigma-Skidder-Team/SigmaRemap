@@ -47,9 +47,7 @@ public class Class3587 extends Class3446
     public boolean method11017() {
         if (this.field16722.isAlive()) {
             if (this.field16722.method4363()) {
-                if (this.field16723 < 60) {
-                    return true;
-                }
+                return this.field16723 < 60;
             }
         }
         return false;
@@ -75,7 +73,7 @@ public class Class3587 extends Class3446
     
     @Nullable
     private Class789 method11118() {
-        final List<Class789> method7142 = this.field16721.method7142(this.field16720, Class3587.field16718, (LivingEntity)this.field16719, this.field16719.getBoundingBox().intersect(8.0));
+        final List<Class789> method7142 = this.field16721.method7142(this.field16720, Class3587.field16718, this.field16719, this.field16719.getBoundingBox().intersect(8.0));
         double method7143 = Double.MAX_VALUE;
         Class789 class789 = null;
         for (final Class789 class790 : method7142) {

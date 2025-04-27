@@ -31,7 +31,7 @@ public class Class8386 extends MessageToByteEncoder<IPacket<?>>
         }
         final Integer method8387 = class2208.method8387(this.field34379, obj);
         if (Class8386.field34377.isDebugEnabled()) {
-            Class8386.field34377.debug(Class8386.field34378, "OUT: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), (Object)method8387, (Object)obj.getClass().getName());
+            Class8386.field34377.debug(Class8386.field34378, "OUT: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), method8387, obj.getClass().getName());
         }
         if (method8387 == null) {
             throw new IOException("Can't serialize unregistered packet");
@@ -43,12 +43,12 @@ public class Class8386 extends MessageToByteEncoder<IPacket<?>>
             return;
         }
         catch (final Throwable t) {
-            Class8386.field34377.error((Object)t);
+            Class8386.field34377.error(t);
             if (obj.shouldSkipErrors()) {
                 throw new Class6577(t);
             }
         }
-        throw;
+        throw
     }
     
     static {

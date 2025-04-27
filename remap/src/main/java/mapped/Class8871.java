@@ -14,7 +14,7 @@ public class Class8871
     private int field37291;
     private int field37292;
     private int field37293;
-    private Class8081<Class9009> field37294;
+    private final Class8081<Class9009> field37294;
     private Class9009 field37295;
     private IntBuffer field37296;
     private IntBuffer field37297;

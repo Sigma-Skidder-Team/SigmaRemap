@@ -22,8 +22,8 @@ public class Class5452 extends Class5419<LivingEntity>
     private long field22688;
     
     public Class5452(final float field22685) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10629, (Object)Class8233.field33800, (Object)Class1952.field10629));
-        this.field22686 = (Long2LongMap)new Long2LongOpenHashMap();
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10629, (Object)Class8233.field33800, (Object)Class1952.field10629));
+        this.field22686 = new Long2LongOpenHashMap();
         this.field22685 = field22685;
     }
     

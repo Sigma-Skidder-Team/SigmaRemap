@@ -140,7 +140,7 @@ public class Class7718 implements Class7712
                 }
             }
             final Class8802[] method28934 = new Class8652("Colormap").method29444(this.field30681);
-            return (Class8802[])((method28934 == null) ? null : method28934);
+            return method28934;
         }
         return new Class8802[] { new Class8802(BlockUtils.method20649(Registry.BLOCK.getOrDefault(class1932))) };
     }
@@ -399,10 +399,10 @@ public class Class7718 implements Class7712
     
     @Override
     public String toString() {
-        return "" + this.field30682 + "/" + this.field30681 + ", blocks: " + Config.method28888(this.field30684) + ", source: " + this.field30685;
+        return this.field30682 + "/" + this.field30681 + ", blocks: " + Config.method28888(this.field30684) + ", source: " + this.field30685;
     }
     
     static {
-        field30700 = new String[] { Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[7], Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[8], Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[9] };
+        field30700 = new String[] { Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[7], Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[8], Class7718.\u9414\ub31c\ucf13\u5afc\ua6ae\u54f3[9] }
     }
 }

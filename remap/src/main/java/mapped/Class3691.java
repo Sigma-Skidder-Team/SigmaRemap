@@ -32,16 +32,16 @@ public class Class3691 implements Class3689
         if (class91 instanceof Class93) {
             jsonObject.addProperty("default", ((Class93)class91).method560().toString());
         }
-        jsonObject.addProperty("protocol_id", (Number) Registry.field204.getId((Class93)class91));
+        jsonObject.addProperty("protocol_id", Registry.field204.getId(class91));
         final JsonObject jsonObject2 = new JsonObject();
         for (final ResourceLocation class92 : class91.method507()) {
             final int method504 = class91.getId(class91.getOrDefault(class92));
             final JsonObject jsonObject3 = new JsonObject();
-            jsonObject3.addProperty("protocol_id", (Number)method504);
-            jsonObject2.add(class92.toString(), (JsonElement)jsonObject3);
+            jsonObject3.addProperty("protocol_id", method504);
+            jsonObject2.add(class92.toString(), jsonObject3);
         }
-        jsonObject.add("entries", (JsonElement)jsonObject2);
-        return (JsonElement)jsonObject;
+        jsonObject.add("entries", jsonObject2);
+        return jsonObject;
     }
     
     @Override

@@ -29,7 +29,7 @@ public class Class5935 extends Class5936
             class6349.method13431(class6349, this.field24431, this.field24436);
             final List<Class4473> field19905 = class6349.field19905;
             while (!field19905.isEmpty()) {
-                ((Class4473)field19905.remove(this.field24436.nextInt(field19905.size()))).method13431(class6349, this.field24431, this.field24436);
+                field19905.remove(this.field24436.nextInt(field19905.size())).method13431(class6349, this.field24431, this.field24436);
             }
             this.method17854();
             this.method17856(class6346.method18853(), this.field24436, 10);

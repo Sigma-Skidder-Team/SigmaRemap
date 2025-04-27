@@ -41,6 +41,6 @@ public class Class4235 extends Class4211
         jsonObject.add("state", this.field19046.method34693());
         jsonObject.add("location", this.field19047.method29813());
         jsonObject.add("item", this.field19048.method34629());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

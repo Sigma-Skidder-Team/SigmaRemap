@@ -34,11 +34,11 @@ public class Class5127 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("trunk_provider"), this.field22079.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("leaves_provider"), this.field22080.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("decorators"), dynamicOps.createList((Stream)this.field22081.stream().map(class367 -> class367.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2)))).put(dynamicOps.createString("base_height"), dynamicOps.createInt(this.field22082));
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
+        builder.put(dynamicOps.createString("trunk_provider"), this.field22079.serialize(dynamicOps)).put(dynamicOps.createString("leaves_provider"), this.field22080.serialize(dynamicOps)).put(dynamicOps.createString("decorators"), dynamicOps.createList((Stream)this.field22081.stream().map(class367 -> class367.serialize(dynamicOps2)))).put(dynamicOps.createString("base_height"), dynamicOps.createInt(this.field22082));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     
     public static <T> Class5127 method16033(final Dynamic<T> dynamic) {
-        return new Class5127(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("trunk_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("trunk_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("leaves_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("leaves_provider").orElseEmptyMap()), dynamic.get("decorators").asList(dynamic2 -> Registry.field221.getOrDefault(new ResourceLocation(dynamic2.get("type").asString().orElseThrow(RuntimeException::new))).method24707((Dynamic<?>)dynamic2)), dynamic.get("base_height").asInt(0));
+        return new Class5127(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("trunk_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718(dynamic.get("trunk_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("leaves_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718(dynamic.get("leaves_provider").orElseEmptyMap()), dynamic.get("decorators").asList(dynamic2 -> Registry.field221.getOrDefault(new ResourceLocation(dynamic2.get("type").asString().orElseThrow(RuntimeException::new))).method24707(dynamic2)), dynamic.get("base_height").asInt(0));
     }
 }

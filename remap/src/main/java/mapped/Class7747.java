@@ -29,9 +29,7 @@ public class Class7747 extends Class7746
     public boolean method24735() {
         if (!this.field31657.onGround) {
             if (!this.method24736()) {
-                if (!this.field31657.isPassenger()) {
-                    return false;
-                }
+                return this.field31657.isPassenger();
             }
         }
         return true;

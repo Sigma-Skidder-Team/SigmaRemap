@@ -21,7 +21,7 @@ public class Class2511 extends Class2466
         final int intValue = class8699.method29818(Class5260.field22312, 0);
         final Optional<Class2137> method20168 = class8699.method29841().method18207(Class6642.class).method20168(intValue);
         if (method20168.isPresent()) {
-            Class9140.method33332(intValue, (Class2137)method20168.get(), class8699.method29818(Class8794.field36974, 0), class8699.method29841());
+            Class9140.method33332(intValue, method20168.get(), class8699.method29818(Class8794.field36974, 0), class8699.method29841());
         }
     }
 }

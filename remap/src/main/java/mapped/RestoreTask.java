@@ -60,7 +60,7 @@ public class RestoreTask extends LongRunningTask
                     return;
                 }
 
-                RealmsTasks.field_225184_a.error("Couldn't restore backup", (Throwable)realmsserviceexception);
+                RealmsTasks.field_225184_a.error("Couldn't restore backup", realmsserviceexception);
                 Realms.setScreen(new RealmsGenericErrorScreen(realmsserviceexception, this.field_225023_d));
                 return;
             }
@@ -71,7 +71,7 @@ public class RestoreTask extends LongRunningTask
                     return;
                 }
 
-                RealmsTasks.field_225184_a.error("Couldn't restore backup", (Throwable)exception);
+                RealmsTasks.field_225184_a.error("Couldn't restore backup", exception);
                 this.func_224986_a(exception.getLocalizedMessage());
                 return;
             }

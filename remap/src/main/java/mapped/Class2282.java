@@ -41,9 +41,7 @@ public class Class2282 implements Serializable, Cloneable
         this.field13884 = field13884;
         this.field13885 = field13885;
         for (int i = 0; i < field13884; ++i) {
-            for (int j = 0; j < field13885; ++j) {
-                this.field13886[i][j] = array[i * field13885 + j];
-            }
+            System.arraycopy(array, i * field13885 + 0, this.field13886[i], 0, field13885);
         }
     }
     
@@ -52,9 +50,7 @@ public class Class2282 implements Serializable, Cloneable
         this.field13885 = class2282.field13885;
         this.field13886 = new double[this.field13884][this.field13885];
         for (int i = 0; i < this.field13884; ++i) {
-            for (int j = 0; j < this.field13885; ++j) {
-                this.field13886[i][j] = class2282.field13886[i][j];
-            }
+            System.arraycopy(class2282.field13886[i], 0, this.field13886[i], 0, this.field13885);
         }
     }
     
@@ -259,21 +255,16 @@ public class Class2282 implements Serializable, Cloneable
         if (this == class2282) {
             final double[][] array = new double[n3][n4];
             for (int i = 0; i < n3; ++i) {
-                for (int j = 0; j < n4; ++j) {
-                    array[i][j] = this.field13886[n + i][n2 + j];
-                }
+                System.arraycopy(this.field13886[n + i], n2 + 0, array[i], 0, n4);
             }
             for (int k = 0; k < n3; ++k) {
-                for (int l = 0; l < n4; ++l) {
-                    class2282.field13886[n5 + k][n6 + l] = array[k][l];
-                }
+                System.arraycopy(array[k], 0, class2282.field13886[n5 + k], n6 + 0, n4);
             }
         }
         else {
             for (int n7 = 0; n7 < n3; ++n7) {
-                for (int n8 = 0; n8 < n4; ++n8) {
-                    class2282.field13886[n5 + n7][n6 + n8] = this.field13886[n + n7][n2 + n8];
-                }
+                if (n4 >= 0)
+                    System.arraycopy(this.field13886[n + n7], n2 + 0, class2282.field13886[n5 + n7], n6 + 0, n4);
             }
         }
     }
@@ -295,9 +286,7 @@ public class Class2282 implements Serializable, Cloneable
             field13888 = this.field13885;
         }
         for (int i = 0; i < field13887; ++i) {
-            for (int j = 0; j < field13888; ++j) {
-                field13886[i][j] = this.field13886[i][j];
-            }
+            if (field13888 >= 0) System.arraycopy(this.field13886[i], 0, field13886[i], 0, field13888);
         }
         this.field13884 = field13884;
         this.field13885 = field13885;
@@ -306,9 +295,8 @@ public class Class2282 implements Serializable, Cloneable
     
     public final void method8774(final double[] array) {
         for (int i = 0; i < this.field13884; ++i) {
-            for (int j = 0; j < this.field13885; ++j) {
-                this.field13886[i][j] = array[this.field13885 * i + j];
-            }
+            if (this.field13885 >= 0)
+                System.arraycopy(array, this.field13885 * i + 0, this.field13886[i], 0, this.field13885);
         }
     }
     
@@ -421,9 +409,8 @@ public class Class2282 implements Serializable, Cloneable
             this.field13886 = new double[this.field13884][this.field13885];
         }
         for (int i = 0; i < Math.min(this.field13884, class2282.field13884); ++i) {
-            for (int j = 0; j < Math.min(this.field13885, class2282.field13885); ++j) {
-                this.field13886[i][j] = class2282.field13886[i][j];
-            }
+            if (Math.min(this.field13885, class2282.field13885) >= 0)
+                System.arraycopy(class2282.field13886[i], 0, this.field13886[i], 0, Math.min(this.field13885, class2282.field13885));
         }
         for (int k = class2282.field13884; k < this.field13884; ++k) {
             for (int l = class2282.field13885; l < this.field13885; ++l) {
@@ -449,18 +436,14 @@ public class Class2282 implements Serializable, Cloneable
     }
     
     public final void method8784(final int n, final double[] array) {
-        for (int i = 0; i < this.field13885; ++i) {
-            array[i] = this.field13886[n][i];
-        }
+        if (this.field13885 >= 0) System.arraycopy(this.field13886[n], 0, array, 0, this.field13885);
     }
     
     public final void method8785(final int n, final Class2281 class2281) {
         if (class2281.method8746() < this.field13885) {
             class2281.method8738(this.field13885);
         }
-        for (int i = 0; i < this.field13885; ++i) {
-            class2281.field13880[i] = this.field13886[n][i];
-        }
+        if (this.field13885 >= 0) System.arraycopy(this.field13886[n], 0, class2281.field13880, 0, this.field13885);
     }
     
     public final void method8786(final int n, final double[] array) {
@@ -754,9 +737,7 @@ public class Class2282 implements Serializable, Cloneable
             n2 = this.field13884;
         }
         for (int i = 0; i < n2; ++i) {
-            for (int j = 0; j < n; ++j) {
-                class2282.field13886[i][j] = this.field13886[i][j];
-            }
+            if (n >= 0) System.arraycopy(this.field13886[i], 0, class2282.field13886[i], 0, n);
         }
         for (int k = n2; k < class2282.field13884; ++k) {
             for (int l = 0; l < class2282.field13885; ++l) {
@@ -771,15 +752,11 @@ public class Class2282 implements Serializable, Cloneable
     }
     
     public final void method8793(final int n, final double[] array) {
-        for (int i = 0; i < this.field13885; ++i) {
-            this.field13886[n][i] = array[i];
-        }
+        if (this.field13885 >= 0) System.arraycopy(array, 0, this.field13886[n], 0, this.field13885);
     }
     
     public final void method8794(final int n, final Class2281 class2281) {
-        for (int i = 0; i < this.field13885; ++i) {
-            this.field13886[n][i] = class2281.field13880[i];
-        }
+        if (this.field13885 >= 0) System.arraycopy(class2281.field13880, 0, this.field13886[n], 0, this.field13885);
     }
     
     public final void method8795(final int n, final double[] array) {
@@ -974,7 +951,7 @@ public class Class2282 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        long n = 31L * (31L * 1L + this.field13884) + this.field13885;
+        long n = 31L * (31L + this.field13884) + this.field13885;
         for (int i = 0; i < this.field13884; ++i) {
             for (int j = 0; j < this.field13885; ++j) {
                 n = 31L * n + Class9427.method35031(this.field13886[i][j]);
@@ -1110,15 +1087,12 @@ public class Class2282 implements Serializable, Cloneable
             throw new Class2363(Class9531.method35584("GMatrix20"));
         }
         for (int i = 0; i < this.field13884; ++i) {
-            for (int j = 0; j < this.field13885; ++j) {
-                array[i * this.field13885 + j] = this.field13886[i][j];
-            }
+            System.arraycopy(this.field13886[i], 0, array, i * this.field13885 + 0, this.field13885);
         }
         if (method8810(class2282.field13884, array, array3, array2)) {
             for (int k = 0; k < this.field13884; ++k) {
-                for (int l = 0; l < this.field13885; ++l) {
-                    class2282.field13886[k][l] = array[k * this.field13885 + l];
-                }
+                if (this.field13885 >= 0)
+                    System.arraycopy(array, k * this.field13885 + 0, class2282.field13886[k], 0, this.field13885);
             }
             for (int n = 0; n < class2282.field13884; ++n) {
                 class2283.field13880[n] = array3[n];
@@ -1156,9 +1130,8 @@ public class Class2282 implements Serializable, Cloneable
             throw new Class2363(Class9531.method35584("GMatrix22"));
         }
         for (int i = 0; i < this.field13884; ++i) {
-            for (int j = 0; j < this.field13885; ++j) {
-                array[i * this.field13885 + j] = class2282.field13886[i][j];
-            }
+            if (this.field13885 >= 0)
+                System.arraycopy(class2282.field13886[i], 0, array, i * this.field13885 + 0, this.field13885);
         }
         if (method8810(class2282.field13884, array, array3, array4)) {
             for (int k = 0; k < n; ++k) {
@@ -1169,9 +1142,8 @@ public class Class2282 implements Serializable, Cloneable
             }
             method8811(class2282.field13884, array, array3, array2);
             for (int n2 = 0; n2 < this.field13884; ++n2) {
-                for (int n3 = 0; n3 < this.field13885; ++n3) {
-                    this.field13886[n2][n3] = array2[n2 * this.field13885 + n3];
-                }
+                if (this.field13885 >= 0)
+                    System.arraycopy(array2, n2 * this.field13885 + 0, this.field13886[n2], 0, this.field13885);
             }
             return;
         }
@@ -1377,9 +1349,8 @@ public class Class2282 implements Serializable, Cloneable
                     }
                 }
                 for (int n15 = i; n15 < class2289.field13884; ++n15) {
-                    for (int n16 = i + 1; n16 < class2289.field13885; ++n16) {
-                        class2289.field13886[n15][n16] = class2286.field13886[n15][n16];
-                    }
+                    if (class2289.field13885 - (i + 1) >= 0)
+                        System.arraycopy(class2286.field13886[n15], i + 1, class2289.field13886[n15], i + 1, class2289.field13885 - (i + 1));
                 }
                 for (int n17 = i; n17 < class2289.field13884; ++n17) {
                     for (int n18 = 0; n18 < class2289.field13885; ++n18) {
@@ -1392,9 +1363,8 @@ public class Class2282 implements Serializable, Cloneable
                     }
                 }
                 for (int n21 = i; n21 < class2289.field13884; ++n21) {
-                    for (int n22 = 0; n22 < class2289.field13885; ++n22) {
-                        class2283.field13886[n21][n22] = class2286.field13886[n21][n22];
-                    }
+                    if (class2289.field13885 >= 0)
+                        System.arraycopy(class2286.field13886[n21], 0, class2283.field13886[n21], 0, class2289.field13885);
                 }
                 --field13885;
             }
@@ -1444,9 +1414,8 @@ public class Class2282 implements Serializable, Cloneable
                     }
                 }
                 for (int n38 = i + 1; n38 < class2289.field13884; ++n38) {
-                    for (int n39 = i + 1; n39 < class2289.field13885; ++n39) {
-                        class2289.field13886[n38][n39] = class2286.field13886[n38][n39];
-                    }
+                    if (class2289.field13885 - (i + 1) >= 0)
+                        System.arraycopy(class2286.field13886[n38], i + 1, class2289.field13886[n38], i + 1, class2289.field13885 - (i + 1));
                 }
                 for (int n40 = 0; n40 < class2289.field13884; ++n40) {
                     for (int n41 = i + 1; n41 < class2289.field13885; ++n41) {
@@ -1459,9 +1428,8 @@ public class Class2282 implements Serializable, Cloneable
                     }
                 }
                 for (int n44 = 0; n44 < class2289.field13884; ++n44) {
-                    for (int n45 = i + 1; n45 < class2289.field13885; ++n45) {
-                        class2285.field13886[n44][n45] = class2286.field13886[n44][n45];
-                    }
+                    if (class2289.field13885 - (i + 1) >= 0)
+                        System.arraycopy(class2286.field13886[n44], i + 1, class2285.field13886[n44], i + 1, class2289.field13885 - (i + 1));
                 }
                 --field13886;
             }
@@ -1691,8 +1659,8 @@ public class Class2282 implements Serializable, Cloneable
         for (int j = 0; j < array2.length; ++j) {
             System.out.println(" " + array2[j]);
         }
-        System.out.println(" \nu  = \n" + class2282.toString());
-        System.out.println(" \nv  = \n" + class2283.toString());
+        System.out.println(" \nu  = \n" + class2282);
+        System.out.println(" \nv  = \n" + class2283);
         class2284.method8767();
         for (int k = 0; k < array.length; ++k) {
             class2284.field13886[k][k] = array[k];
@@ -1700,10 +1668,10 @@ public class Class2282 implements Serializable, Cloneable
         for (int l = 0; l < array2.length; ++l) {
             class2284.field13886[l][l + 1] = array2[l];
         }
-        System.out.println(" \nm  = \n" + class2284.toString());
+        System.out.println(" \nm  = \n" + class2284);
         class2284.method8799(class2282, class2284);
         class2284.method8798(class2284, class2283);
-        System.out.println(" \n u.transpose*m*v.transpose  = \n" + class2284.toString());
+        System.out.println(" \n u.transpose*m*v.transpose  = \n" + class2284);
     }
     
     public static double method8823(final double n, final double n2) {
@@ -1996,9 +1964,7 @@ public class Class2282 implements Serializable, Cloneable
         }
         class2282.field13886 = new double[this.field13884][this.field13885];
         for (int i = 0; i < this.field13884; ++i) {
-            for (int j = 0; j < this.field13885; ++j) {
-                class2282.field13886[i][j] = this.field13886[i][j];
-            }
+            System.arraycopy(this.field13886[i], 0, class2282.field13886[i], 0, this.field13885);
         }
         return class2282;
     }

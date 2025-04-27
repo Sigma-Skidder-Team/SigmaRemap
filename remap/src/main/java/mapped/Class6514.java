@@ -78,10 +78,10 @@ public class Class6514
                         continue;
                     }
                     for (final Map.Entry<String, V> entry : jsonObject3.entrySet()) {
-                        if (jsonObject2.has((String)entry.getKey())) {
+                        if (jsonObject2.has(entry.getKey())) {
                             continue;
                         }
-                        jsonObject2.add((String)entry.getKey(), (JsonElement)entry.getValue());
+                        jsonObject2.add(entry.getKey(), (JsonElement)entry.getValue());
                     }
                 }
                 final String method22667 = Class7382.method22663(jsonObject2, "id");
@@ -313,9 +313,10 @@ public class Class6514
         for (int i = 0; i < array.length; ++i) {
             if (array[i] != null) {
                 b = true;
+                break;
             }
         }
-        return (int[][])(b ? array : null);
+        return b ? array : null;
     }
     
     static {

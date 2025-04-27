@@ -13,7 +13,7 @@ public enum Class2157
     private static final Class2157[] field12812;
     private final int field12813;
     
-    private Class2157(final int field12813) {
+    Class2157(final int field12813) {
         this.field12813 = field12813;
     }
     

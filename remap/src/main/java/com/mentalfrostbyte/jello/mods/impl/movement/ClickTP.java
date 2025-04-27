@@ -19,7 +19,7 @@ import org.lwjgl.opengl.GL11;
 public class ClickTP extends ModuleWithSettings
 {
     public ClickTP() {
-        super(Category.MOVEMENT, "ClickTP", "TP's you when you click", new Module[] { new BasicClickTP(), new SpartanClickTP() });
+        super(Category.MOVEMENT, "ClickTP", "TP's you when you click", new BasicClickTP(), new SpartanClickTP());
         this.addSetting(new BooleanSetting("Sneak", "Allows teleport only when sneaking", true));
         this.addSetting(new NumberSetting("Maximum range", "Maximum range of the teleport", 100.0f, Float.class, 10.0f, 300.0f, 1.0f));
     }

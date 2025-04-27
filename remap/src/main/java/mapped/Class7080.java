@@ -98,7 +98,7 @@ public class Class7080 implements Class7079
     
     static {
         field27574 = Sets.newHashSet((Object[])new Block[] { Blocks.field29181, Blocks.field29182, Blocks.field29183, Blocks.field29184, Blocks.field29185, Blocks.field29186, Blocks.field29193, Blocks.field29194, Blocks.field29195, Blocks.field29196, Blocks.field29197, Blocks.field29198, Blocks.field29205, Blocks.field29206, Blocks.field29207, Blocks.field29208, Blocks.field29209, Blocks.field29210 });
-        field27575 = new Class2259("tutorial.find_tree.title", new Object[0]);
-        field27576 = new Class2259("tutorial.find_tree.description", new Object[0]);
+        field27575 = new Class2259("tutorial.find_tree.title");
+        field27576 = new Class2259("tutorial.find_tree.description");
     }
 }

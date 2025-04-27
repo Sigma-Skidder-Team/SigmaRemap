@@ -20,7 +20,7 @@ public class Class2654 extends Class2466
         class8699.method29839();
         if (intValue != 383) {
             for (int i = 0; i < 16; ++i) {
-                final Integer n = (Integer)Class9526.field41005.get((Object)(intValue << 4 | i));
+                final Integer n = Class9526.field41005.get(intValue << 4 | i);
                 if (n == null) {
                     break;
                 }
@@ -32,7 +32,7 @@ public class Class2654 extends Class2466
         }
         else {
             for (int j = 0; j < 44; ++j) {
-                final Integer n2 = (Integer)Class9526.field41005.get((Object)(intValue << 16 | j));
+                final Integer n2 = Class9526.field41005.get(intValue << 16 | j);
                 if (n2 == null) {
                     break;
                 }

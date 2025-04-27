@@ -19,7 +19,7 @@ public class Class677 extends Class673
     }
     
     private static String method3740(final Class2222 class2222) {
-        final String string = Class8822.method30773(class2222.method8416(), new Object[0]) + ": ";
+        final String string = Class8822.method30773(class2222.method8416()) + ": ";
         switch (Class7721.field30712[class2222.ordinal()]) {
             case 1: {
                 return string + Class716.method3937(Class9216.field39317);

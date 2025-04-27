@@ -26,7 +26,7 @@ public class Class4550 extends Class4535<Class5143>
     }
     
     public static List<Class9341> method13560(final Class1851 class1851) {
-        return (List)Class4550.field20029.getUnchecked((Object)(new Random(class1851.method6753()).nextLong() & 0xFFFFL));
+        return Class4550.field20029.getUnchecked(new Random(class1851.method6753()).nextLong() & 0xFFFFL);
     }
     
     public boolean method13561(final Class1851 class1851, final Class6346<? extends Class7065> class1852, final Random random, final BlockPos class1853, final Class5143 class1854) {

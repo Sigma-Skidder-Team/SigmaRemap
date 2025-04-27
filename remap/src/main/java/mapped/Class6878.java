@@ -149,7 +149,7 @@ public class Class6878 extends Class6879
         final ListNBT class52 = new ListNBT();
         final Iterator<UUID> iterator = this.field26948.iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<CompoundNBT>)class52).add(Class9346.method34643(iterator.next()));
+            class52.add(Class9346.method34643(iterator.next()));
         }
         class51.put("Players", class52);
         return class51;

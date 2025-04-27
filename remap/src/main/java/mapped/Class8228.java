@@ -49,7 +49,7 @@ public abstract class Class8228
     public abstract <T> Dynamic<T> method27258(final DynamicOps<T> p0);
     
     public <T> Dynamic<T> method27264(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.mergeInto(dynamicOps.mergeInto(this.method27258((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("element_type"), dynamicOps.createString(Registry.field234.getKey(this.method27257()).toString())), dynamicOps.createString("projection"), dynamicOps.createString(this.field33791.method898())));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.mergeInto(dynamicOps.mergeInto(this.method27258((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue(), dynamicOps.createString("element_type"), dynamicOps.createString(Registry.field234.getKey(this.method27257()).toString())), dynamicOps.createString("projection"), dynamicOps.createString(this.field33791.method898())));
     }
     
     public int method27265() {

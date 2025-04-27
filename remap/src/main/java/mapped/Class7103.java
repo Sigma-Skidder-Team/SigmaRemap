@@ -38,7 +38,7 @@ public class Class7103
     }
     
     public JsonElement method21806() {
-        return (JsonElement)((this != Class7103.field27707 && this.field27708 != null) ? new JsonPrimitive(this.field27708.toString()) : JsonNull.INSTANCE);
+        return (this != Class7103.field27707 && this.field27708 != null) ? new JsonPrimitive(this.field27708.toString()) : JsonNull.INSTANCE;
     }
     
     public static Class7103 method21807(final JsonElement jsonElement) {

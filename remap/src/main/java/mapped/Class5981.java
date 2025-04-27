@@ -44,11 +44,11 @@ public class Class5981 implements JsonDeserializer<Class8722>
         final String method35895 = Class9583.method35895(jsonObject, "name");
         final Class2158 method35896 = this.method17904(jsonObject, Class2158.field12815);
         final float method35897 = Class9583.method35904(jsonObject, "volume", 1.0f);
-        Validate.isTrue(method35897 > 0.0f, "Invalid volume", new Object[0]);
+        Validate.isTrue(method35897 > 0.0f, "Invalid volume");
         final float method35898 = Class9583.method35904(jsonObject, "pitch", 1.0f);
-        Validate.isTrue(method35898 > 0.0f, "Invalid pitch", new Object[0]);
+        Validate.isTrue(method35898 > 0.0f, "Invalid pitch");
         final int method35899 = Class9583.method35910(jsonObject, "weight", 1);
-        Validate.isTrue(method35899 > 0, "Invalid weight", new Object[0]);
+        Validate.isTrue(method35899 > 0, "Invalid weight");
         return new Class7832(method35895, method35897, method35898, method35899, method35896, Class9583.method35901(jsonObject, "stream", false), Class9583.method35901(jsonObject, "preload", false), Class9583.method35910(jsonObject, "attenuation_distance", 16));
     }
     
@@ -56,7 +56,7 @@ public class Class5981 implements JsonDeserializer<Class8722>
         Class2158 method8324 = class2158;
         if (jsonObject.has("type")) {
             method8324 = Class2158.method8324(Class9583.method35895(jsonObject, "type"));
-            Validate.notNull((Object)method8324, "Invalid type", new Object[0]);
+            Validate.notNull((Object)method8324, "Invalid type");
         }
         return method8324;
     }

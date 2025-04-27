@@ -66,7 +66,7 @@ public class Class5347 implements Class5346
         final Class7629 method23980 = Class7629.method23980(stringReader);
         if (!stringReader.canRead() || stringReader.peek() != ' ') {
             stringReader.setCursor(cursor);
-            throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7555.field29960.createWithContext(stringReader);
         }
         stringReader.skip();
         final Class7629 method23981 = Class7629.method23980(stringReader);
@@ -75,7 +75,7 @@ public class Class5347 implements Class5346
             return new Class5347(method23980, method23981, Class7629.method23980(stringReader));
         }
         stringReader.setCursor(cursor);
-        throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7555.field29960.createWithContext(stringReader);
     }
     
     public static Class5347 method16511(final StringReader stringReader, final boolean b) throws CommandSyntaxException {
@@ -83,7 +83,7 @@ public class Class5347 implements Class5346
         final Class7629 method23979 = Class7629.method23979(stringReader, b);
         if (!stringReader.canRead() || stringReader.peek() != ' ') {
             stringReader.setCursor(cursor);
-            throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7555.field29960.createWithContext(stringReader);
         }
         stringReader.skip();
         final Class7629 method23980 = Class7629.method23979(stringReader, false);
@@ -92,7 +92,7 @@ public class Class5347 implements Class5346
             return new Class5347(method23979, method23980, Class7629.method23979(stringReader, b));
         }
         stringReader.setCursor(cursor);
-        throw Class7555.field29960.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7555.field29960.createWithContext(stringReader);
     }
     
     public static Class5347 method16512() {

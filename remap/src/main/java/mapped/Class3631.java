@@ -20,9 +20,7 @@ public class Class3631 extends Class3628
     public boolean method11013() {
         if (super.method11013()) {
             if (!this.field16867.method4656()) {
-                if (!this.field16867.method4670()) {
-                    return true;
-                }
+                return !this.field16867.method4670();
             }
         }
         return false;
@@ -32,9 +30,7 @@ public class Class3631 extends Class3628
     public boolean method11017() {
         if (super.method11017()) {
             if (!this.field16867.method4656()) {
-                if (!this.field16867.method4670()) {
-                    return true;
-                }
+                return !this.field16867.method4670();
             }
         }
         return false;

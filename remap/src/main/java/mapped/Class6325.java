@@ -21,13 +21,11 @@ public final class Class6325 extends Class6323
             RenderSystem.method30110();
             RenderSystem.method30057(5888);
             RenderSystem.method30111();
-            return;
         }, () -> {
             RenderSystem.method30057(5890);
             RenderSystem.popMatrix();
             RenderSystem.method30057(5888);
             RenderSystem.method30112();
-            return;
         });
         this.field25321 = field25321;
     }

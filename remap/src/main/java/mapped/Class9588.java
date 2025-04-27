@@ -36,7 +36,7 @@ public class Class9588
     
     public static Class9588 method35958(final StringReader stringReader, final boolean b, final Function<Float, Float> function) throws CommandSyntaxException {
         if (!stringReader.canRead()) {
-            throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+            throw Class8684.field36495.createWithContext(stringReader);
         }
         final int cursor = stringReader.getCursor();
         final Float method35961 = method35961(method35959(stringReader, b), function);
@@ -55,7 +55,7 @@ public class Class9588
                             break Label_0104;
                         }
                         stringReader.setCursor(cursor);
-                        throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+                        throw Class8684.field36495.createWithContext(stringReader);
                     }
                 }
             }
@@ -63,7 +63,7 @@ public class Class9588
                 if (stringReader.canRead()) {
                     if (stringReader.peek() == '.') {
                         stringReader.setCursor(cursor);
-                        throw Class9588.field41798.createWithContext((ImmutableStringReader)stringReader);
+                        throw Class9588.field41798.createWithContext(stringReader);
                     }
                 }
             }
@@ -71,7 +71,7 @@ public class Class9588
         }
         if (method35961 == null && method35962 == null) {
             stringReader.setCursor(cursor);
-            throw Class8684.field36495.createWithContext((ImmutableStringReader)stringReader);
+            throw Class8684.field36495.createWithContext(stringReader);
         }
         return new Class9588(method35961, method35962);
     }
@@ -91,10 +91,10 @@ public class Class9588
         }
         catch (final NumberFormatException ex) {
             if (b) {
-                throw CommandSyntaxException.BUILT_IN_EXCEPTIONS.readerInvalidDouble().createWithContext((ImmutableStringReader)stringReader, (Object)substring);
+                throw CommandSyntaxException.BUILT_IN_EXCEPTIONS.readerInvalidDouble().createWithContext(stringReader, substring);
             }
         }
-        throw CommandSyntaxException.BUILT_IN_EXCEPTIONS.readerInvalidInt().createWithContext((ImmutableStringReader)stringReader, (Object)substring);
+        throw CommandSyntaxException.BUILT_IN_EXCEPTIONS.readerInvalidInt().createWithContext(stringReader, substring);
     }
     
     private static boolean method35960(final StringReader stringReader, final boolean b) {
@@ -114,6 +114,6 @@ public class Class9588
     
     static {
         field41797 = new Class9588(null, null);
-        field41798 = new SimpleCommandExceptionType((Message)new Class2259("argument.range.ints", new Object[0]));
+        field41798 = new SimpleCommandExceptionType(new Class2259("argument.range.ints", new Object[0]));
     }
 }

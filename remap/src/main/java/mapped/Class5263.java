@@ -17,7 +17,7 @@ public class Class5263 extends Class5260<Long> implements Class5264<Long>
     }
     
     public void method16388(final ByteBuf byteBuf, final Long n) {
-        byteBuf.writeLong((long)n);
+        byteBuf.writeLong(n);
     }
     
     public Long method16389(final Object o) {

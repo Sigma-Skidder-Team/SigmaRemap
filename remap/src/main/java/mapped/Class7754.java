@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public interface Class7754<T>
 {
-    public static final Logger field31687 = LogManager.getLogger();
+    Logger field31687 = LogManager.getLogger();
     
     T method24752(final Dynamic<?> p0);
     
@@ -18,7 +18,7 @@ public interface Class7754<T>
         final Class7754<V> class91 = class90.getOrDefault(new ResourceLocation(dynamic.get(s).asString("")));
         V method24752;
         if (class91 == null) {
-            Class7754.field31687.error("Unknown type {}, replacing with {}", (Object)dynamic.get(s).asString(""), (Object)v);
+            Class7754.field31687.error("Unknown type {}, replacing with {}", dynamic.get(s).asString(""), v);
             method24752 = v;
         }
         else {

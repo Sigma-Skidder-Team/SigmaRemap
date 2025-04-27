@@ -235,9 +235,7 @@ public class Class1941 implements Comparable<Class1941>
                 if (this.field10583 >= class1941.field10583) {
                     if (this.field10583 <= class1942.field10583) {
                         if (this.field10584 >= class1941.field10584) {
-                            if (this.field10584 <= class1942.field10584) {
-                                return true;
-                            }
+                            return this.field10584 <= class1942.field10584;
                         }
                     }
                 }
@@ -252,9 +250,7 @@ public class Class1941 implements Comparable<Class1941>
                 if (this.method7840() >= class1941.method7840()) {
                     if (this.method7840() <= class1942.method7840()) {
                         if (this.method7844() >= class1941.method7844()) {
-                            if (this.method7844() <= class1942.method7844()) {
-                                return true;
-                            }
+                            return this.method7844() <= class1942.method7844();
                         }
                     }
                 }
@@ -369,9 +365,7 @@ public class Class1941 implements Comparable<Class1941>
             final Class1941 class1941 = (Class1941)o;
             if (class1941.field10582 == this.field10582) {
                 if (class1941.field10583 == this.field10583) {
-                    if (class1941.field10584 == this.field10584) {
-                        return true;
-                    }
+                    return class1941.field10584 == this.field10584;
                 }
             }
             return false;

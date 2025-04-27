@@ -41,7 +41,7 @@ public class Class9330
     public <T> Dynamic<T> method34567(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         builder.put(dynamicOps.createString("source_x"), dynamicOps.createInt(this.field40048)).put(dynamicOps.createString("source_ground_y"), dynamicOps.createInt(this.field40049)).put(dynamicOps.createString("source_z"), dynamicOps.createInt(this.field40050)).put(dynamicOps.createString("delta_y"), dynamicOps.createInt(this.field40051)).put(dynamicOps.createString("dest_proj"), dynamicOps.createString(this.field40052.method898()));
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     
     public static <T> Class9330 method34568(final Dynamic<T> dynamic) {

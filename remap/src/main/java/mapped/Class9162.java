@@ -44,7 +44,7 @@ public class Class9162 implements ArgumentType<Class6257>
     static {
         field38821 = Arrays.asList("unbreaking", "silk_touch");
         field38822 = new DynamicCommandExceptionType(o -> {
-            new Class2259("enchantment.unknown", new Object[] { o });
+            new Class2259("enchantment.unknown", o);
             return;
         });
     }

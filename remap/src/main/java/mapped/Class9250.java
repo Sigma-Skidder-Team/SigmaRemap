@@ -26,7 +26,7 @@ public class Class9250
     private static final SimpleCommandExceptionType field39665;
     
     public static void method34095(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)Class7788.method25001("trigger").then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("objective", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8717.method29933()).suggests((commandContext, suggestionsBuilder) -> method34096((Class7492)commandContext.getSource(), suggestionsBuilder)).executes(commandContext -> method34099((Class7492)commandContext.getSource(), method34100(((Class7492)commandContext.getSource()).method23253(), Class8717.method29934((CommandContext<Class7492>)commandContext, "objective"))))).then(Class7788.method25001("add").then(Class7788.method25002("value", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method34097((Class7492)commandContext.getSource(), method34100(((Class7492)commandContext.getSource()).method23253(), Class8717.method29934((CommandContext<Class7492>)commandContext, "objective")), IntegerArgumentType.getInteger(commandContext, "value")))))).then(Class7788.method25001("set").then(Class7788.method25002("value", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method34098((Class7492)commandContext.getSource(), method34100(((Class7492)commandContext.getSource()).method23253(), Class8717.method29934((CommandContext<Class7492>)commandContext, "objective")), IntegerArgumentType.getInteger(commandContext, "value")))))));
+        commandDispatcher.register(Class7788.method25001("trigger").then(((RequiredArgumentBuilder)Class7788.method25002("objective", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8717.method29933()).suggests((commandContext, suggestionsBuilder) -> method34096(commandContext.getSource(), suggestionsBuilder)).executes(commandContext -> method34099(commandContext.getSource(), method34100(commandContext.getSource().method23253(), Class8717.method29934(commandContext, "objective"))))).then(Class7788.method25001("add").then(Class7788.method25002("value", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method34097(commandContext.getSource(), method34100(commandContext.getSource().method23253(), Class8717.method29934(commandContext, "objective")), IntegerArgumentType.getInteger(commandContext, "value"))))).then(Class7788.method25001("set").then(Class7788.method25002("value", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer()).executes(commandContext -> method34098(commandContext.getSource(), method34100(commandContext.getSource().method23253(), Class8717.method29934(commandContext, "objective")), IntegerArgumentType.getInteger(commandContext, "value")))))));
     }
     
     public static CompletableFuture<Suggestions> method34096(final Class7492 class7492, final SuggestionsBuilder suggestionsBuilder) {
@@ -53,19 +53,19 @@ public class Class9250
     
     private static int method34097(final Class7492 class7492, final Class7628 class7493, final int i) {
         class7493.method23967(i);
-        class7492.method23257(new Class2259("commands.trigger.add.success", new Object[] { class7493.method23972().method34315(), i }), true);
+        class7492.method23257(new Class2259("commands.trigger.add.success", class7493.method23972().method34315(), i), true);
         return class7493.method23969();
     }
     
     private static int method34098(final Class7492 class7492, final Class7628 class7493, final int i) {
         class7493.method23971(i);
-        class7492.method23257(new Class2259("commands.trigger.set.success", new Object[] { class7493.method23972().method34315(), i }), true);
+        class7492.method23257(new Class2259("commands.trigger.set.success", class7493.method23972().method34315(), i), true);
         return i;
     }
     
     private static int method34099(final Class7492 class7492, final Class7628 class7493) {
         class7493.method23967(1);
-        class7492.method23257(new Class2259("commands.trigger.simple.success", new Object[] { class7493.method23972().method34315() }), true);
+        class7492.method23257(new Class2259("commands.trigger.simple.success", class7493.method23972().method34315()), true);
         return class7493.method23969();
     }
     
@@ -87,7 +87,7 @@ public class Class9250
     }
     
     static {
-        field39664 = new SimpleCommandExceptionType((Message)new Class2259("commands.trigger.failed.unprimed", new Object[0]));
-        field39665 = new SimpleCommandExceptionType((Message)new Class2259("commands.trigger.failed.invalid", new Object[0]));
+        field39664 = new SimpleCommandExceptionType(new Class2259("commands.trigger.failed.unprimed", new Object[0]));
+        field39665 = new SimpleCommandExceptionType(new Class2259("commands.trigger.failed.invalid", new Object[0]));
     }
 }

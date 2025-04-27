@@ -44,7 +44,7 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
                 if (!t.method2625()) {
                     Class1799.method6558(method4875, this.method6552("profession", Registry.field240.getKey(method4872)), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     if (method4872 != Class9334.field40071) {
-                        Class1799.method6558(method4875, this.method6552("profession_level", (ResourceLocation)Class1798.field9961.get(MathHelper.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
+                        Class1799.method6558(method4875, this.method6552("profession_level", Class1798.field9961.get(MathHelper.method35651(method4870.method28782(), 1, Class1798.field9961.size()))), class7351, class7352, n, t, 1.0f, 1.0f, 1.0f);
                     }
                 }
             }
@@ -56,12 +56,12 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
     }
     
     public <K> Class235 method6553(final Object2ObjectMap<K, Class235> object2ObjectMap, final String s, final Class93<K> class93, final K k) {
-        return (Class235)object2ObjectMap.computeIfAbsent((Object)k, p3 -> {
+        return object2ObjectMap.computeIfAbsent((Object)k, p3 -> {
             try {
                 this.field9964.method19933(this.method6552(s2, class94.method503(o2)));
                 try {
                     final Class1671 class96;
-                    final Class7483 class95 = class96.method5888((Class5092<Class7483>)Class7483.field28905);
+                    final Class7483 class95 = class96.method5888(Class7483.field28905);
                     if (class95 != null) {
                         class95.method23155();
                         return;
@@ -104,11 +104,11 @@ public class Class1798<T extends LivingEntity & Class825, M extends Class5845<T>
     
     static {
         field9961 = Util.method27851((Int2ObjectMap)new Int2ObjectOpenHashMap(), int2ObjectOpenHashMap -> {
-            int2ObjectOpenHashMap.put(1, (Object)new ResourceLocation("stone"));
-            int2ObjectOpenHashMap.put(2, (Object)new ResourceLocation("iron"));
-            int2ObjectOpenHashMap.put(3, (Object)new ResourceLocation("gold"));
-            int2ObjectOpenHashMap.put(4, (Object)new ResourceLocation("emerald"));
-            int2ObjectOpenHashMap.put(5, (Object)new ResourceLocation("diamond"));
+            int2ObjectOpenHashMap.put(1, new ResourceLocation("stone"));
+            int2ObjectOpenHashMap.put(2, new ResourceLocation("iron"));
+            int2ObjectOpenHashMap.put(3, new ResourceLocation("gold"));
+            int2ObjectOpenHashMap.put(4, new ResourceLocation("emerald"));
+            int2ObjectOpenHashMap.put(5, new ResourceLocation("diamond"));
         });
     }
 }

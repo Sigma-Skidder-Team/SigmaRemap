@@ -376,7 +376,7 @@ public class Class425 extends Entity
             }
             else {
                 this.method2078();
-                Class7770.field31804.method13808((Class513)this.field2586, class8321, this, (Collection<ItemStack>)Collections.emptyList());
+                Class7770.field31804.method13808((Class513)this.field2586, class8321, this, Collections.emptyList());
                 this.world.method6761(this, (byte)31);
                 n = ((this.field2592 instanceof Class427) ? 3 : 5);
             }

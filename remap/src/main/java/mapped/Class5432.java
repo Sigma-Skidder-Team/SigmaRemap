@@ -18,7 +18,7 @@ public class Class5432 extends Class5419<Class787>
     private long field22629;
     
     public Class5432(final Class8233<Class363> field22626, final int field22627, final int field22628) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33809, (Object)Class1952.field10630, (Object)field22626, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33809, Class1952.field10630, (Object)field22626, (Object)Class1952.field10628));
         this.field22626 = field22626;
         this.field22627 = field22627;
         this.field22628 = field22628;
@@ -28,9 +28,7 @@ public class Class5432 extends Class5419<Class787>
         final Optional<Class363> method1198 = class1850.method2618().method1198(this.field22626);
         if (method1198.isPresent()) {
             if (Objects.equals(class1849.method6789().getType(), method1198.get().method1169())) {
-                if (method1198.get().method1170().withinDistance(class1850.method1934(), this.field22628)) {
-                    return true;
-                }
+                return method1198.get().method1170().withinDistance(class1850.method1934(), this.field22628);
             }
         }
         return false;

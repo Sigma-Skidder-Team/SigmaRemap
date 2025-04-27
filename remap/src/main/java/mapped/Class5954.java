@@ -23,7 +23,7 @@ public class Class5954 implements JsonDeserializer<Class9315>, JsonSerializer<Cl
     public JsonElement serialize(final Class9315 class9315, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", class9315.method34475());
-        jsonObject.addProperty("protocol", (Number)class9315.method34476());
-        return (JsonElement)jsonObject;
+        jsonObject.addProperty("protocol", class9315.method34476());
+        return jsonObject;
     }
 }

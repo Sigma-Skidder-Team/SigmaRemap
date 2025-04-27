@@ -34,9 +34,9 @@ public class Class8736
                  final STBISkipCallback create2 = STBISkipCallback.create(method30184::method7582);
                  final STBIEOFCallback create3 = STBIEOFCallback.create(method30184::method7583)) {
                 final STBIIOCallbacks mallocStack = STBIIOCallbacks.mallocStack(stackPush);
-                mallocStack.read((STBIReadCallbackI)create);
-                mallocStack.skip((STBISkipCallbackI)create2);
-                mallocStack.eof((STBIEOFCallbackI)create3);
+                mallocStack.read(create);
+                mallocStack.skip(create2);
+                mallocStack.eof(create3);
                 final IntBuffer mallocInt = stackPush.mallocInt(1);
                 final IntBuffer mallocInt2 = stackPush.mallocInt(1);
                 if (!STBImage.stbi_info_from_callbacks(mallocStack, 0L, mallocInt, mallocInt2, stackPush.mallocInt(1))) {
@@ -50,7 +50,7 @@ public class Class8736
     
     @Override
     public String toString() {
-        return "" + this.field36713 + " x " + this.field36714;
+        return this.field36713 + " x " + this.field36714;
     }
     
     private static Class1915 method30184(final InputStream in) {

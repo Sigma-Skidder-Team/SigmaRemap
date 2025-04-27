@@ -64,6 +64,6 @@ public final class Class1697 implements Class1682
         if (this.field9567 == field9567) {
             return;
         }
-        throw Class6885.method21140("TYPE_CONTINUATION streamId changed", new Object[0]);
+        throw Class6885.method21140("TYPE_CONTINUATION streamId changed");
     }
 }

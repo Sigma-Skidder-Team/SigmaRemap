@@ -22,11 +22,11 @@ public final class Class366 implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createLong(this.field2208);
+        return dynamicOps.createLong(this.field2208);
     }
     
     public static Class366 method1239(final Dynamic<?> dynamic) {
-        return new Class366(dynamic.asNumber((Number)0).longValue());
+        return new Class366(dynamic.asNumber(0).longValue());
     }
     
     public static Class366 method1240(final long n) {

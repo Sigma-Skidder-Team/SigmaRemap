@@ -9,9 +9,9 @@ import net.minecraft.entity.Entity;
 public class Class8131
 {
     private static String[] field33499;
-    private Entity field33500;
+    private final Entity field33500;
     private Class7988 field33501;
-    private Class6938 field33502;
+    private final Class6938 field33502;
     
     public Class8131(final Entity field33500, final Class7988 field33501) {
         this.field33500 = field33500;

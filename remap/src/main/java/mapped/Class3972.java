@@ -25,13 +25,13 @@ public class Class3972 extends Block
     
     @Override
     public boolean method11801(final BlockState class7096) {
-        return class7096.get((IProperty<Integer>)Class3972.field17945) == 7 && !class7096.get((IProperty<Boolean>)Class3972.field17946);
+        return class7096.get(Class3972.field17945) == 7 && !class7096.get(Class3972.field17946);
     }
     
     @Override
     public void method11821(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (!class7096.get((IProperty<Boolean>)Class3972.field17946)) {
-            if (class7096.get((IProperty<Integer>)Class3972.field17945) == 7) {
+        if (!class7096.get(Class3972.field17946)) {
+            if (class7096.get(Class3972.field17945) == 7) {
                 Block.spawnDrops(class7096, class7097, class7098);
                 class7097.method6690(class7098, false);
             }
@@ -51,7 +51,7 @@ public class Class3972 extends Block
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
         final int n = method12113(class7098) + 1;
-        if (n != 1 || class7096.get((IProperty<Integer>)Class3972.field17945) != n) {
+        if (n != 1 || class7096.get(Class3972.field17945) != n) {
             class7099.method6833().method21345(class7100, this, 1);
         }
         return class7096;
@@ -74,7 +74,7 @@ public class Class3972 extends Block
     
     private static int method12113(final BlockState class7096) {
         if (!Class7188.field27893.method25618(class7096.getBlock())) {
-            return (class7096.getBlock() instanceof Class3972) ? class7096.get((IProperty<Integer>)Class3972.field17945) : 7;
+            return (class7096.getBlock() instanceof Class3972) ? class7096.get(Class3972.field17945) : 7;
         }
         return 0;
     }

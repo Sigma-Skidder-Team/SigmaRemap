@@ -19,19 +19,19 @@ public class Class9411
     
     public static Class5770 method35007(final JsonElement jsonElement, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         if (jsonElement.isJsonPrimitive()) {
-            return (Class5770)jsonDeserializationContext.deserialize(jsonElement, (Type)Class5771.class);
+            return jsonDeserializationContext.deserialize(jsonElement, Class5771.class);
         }
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
         final String method35896 = Class9583.method35896(asJsonObject, "type", Class5770.field23604.toString());
         final Class clazz = Class9411.field40386.get(new ResourceLocation(method35896));
         if (clazz != null) {
-            return (Class5770)jsonDeserializationContext.deserialize((JsonElement)asJsonObject, (Type)clazz);
+            return jsonDeserializationContext.deserialize(asJsonObject, clazz);
         }
         throw new JsonParseException("Unknown generator: " + method35896);
     }
     
     public static JsonElement method35008(final Class5770 class5770, final JsonSerializationContext jsonSerializationContext) {
-        final JsonElement serialize = jsonSerializationContext.serialize((Object)class5770);
+        final JsonElement serialize = jsonSerializationContext.serialize(class5770);
         if (serialize.isJsonObject()) {
             serialize.getAsJsonObject().addProperty("type", class5770.method17161().toString());
         }

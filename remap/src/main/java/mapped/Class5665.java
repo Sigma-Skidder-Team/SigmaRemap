@@ -15,7 +15,7 @@ public class Class5665 extends Class5611
     
     @Override
     public void method16922() {
-        this.method16925(Realms.method25379((RealmsMainScreen.method15839(this.field23079) != 0) ? "mco.invites.pending" : "mco.invites.nopending", new Object[0]));
+        this.method16925(Realms.method25379((RealmsMainScreen.method15839(this.field23079) != 0) ? "mco.invites.pending" : "mco.invites.nopending"));
     }
     
     @Override

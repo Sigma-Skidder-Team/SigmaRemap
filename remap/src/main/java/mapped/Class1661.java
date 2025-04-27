@@ -33,7 +33,7 @@ public class Class1661 implements Class1657
         this.field9426.clear();
         for (final Class1727 class1727 : list) {
             try {
-                final Class8785 class1728 = class1727.method6101((Class5092<Class8785>)Class8785.field36934);
+                final Class8785 class1728 = class1727.method6101(Class8785.field36934);
                 if (class1728 == null) {
                     continue;
                 }
@@ -44,7 +44,7 @@ public class Class1661 implements Class1657
                 }
             }
             catch (final IOException | RuntimeException ex) {
-                Class1661.field9423.warn("Unable to parse language metadata section of resourcepack: {}", (Object)class1727.method6102(), (Object)ex);
+                Class1661.field9423.warn("Unable to parse language metadata section of resourcepack: {}", class1727.method6102(), ex);
             }
         }
     }

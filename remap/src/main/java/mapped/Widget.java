@@ -178,9 +178,7 @@ public abstract class Widget extends AbstractGui implements IRenderable, IGuiEve
                 if (n >= this.field3426) {
                     if (n2 >= this.field3427) {
                         if (n < this.field3426 + this.field3424) {
-                            if (n2 < this.field3427 + this.field3425) {
-                                return true;
-                            }
+                            return n2 < this.field3427 + this.field3425;
                         }
                     }
                 }
@@ -212,9 +210,7 @@ public abstract class Widget extends AbstractGui implements IRenderable, IGuiEve
                 if (n >= this.field3426) {
                     if (n2 >= this.field3427) {
                         if (n < this.field3426 + this.field3424) {
-                            if (n2 < this.field3427 + this.field3425) {
-                                return true;
-                            }
+                            return n2 < this.field3427 + this.field3425;
                         }
                     }
                 }

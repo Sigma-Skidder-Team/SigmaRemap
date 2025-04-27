@@ -21,12 +21,10 @@ public class Class6327 extends Class6322
                     RenderSystem.method30072((float)a.getAsDouble());
                 }
             }
-            return;
         }, () -> {
             if (!Objects.equals(a2, OptionalDouble.of(1.0))) {
                 RenderSystem.method30072(1.0f);
             }
-            return;
         });
         this.field25324 = field25324;
     }

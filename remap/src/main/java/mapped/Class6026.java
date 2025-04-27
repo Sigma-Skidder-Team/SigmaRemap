@@ -35,7 +35,7 @@ public class Class6026 extends Class6024<String>
     @Override
     public void method17944(final JsonObject jsonObject) {
         if (this.method17942() != null) {
-            jsonObject.addProperty("ip", (String)this.method17942());
+            jsonObject.addProperty("ip", this.method17942());
             super.method17944(jsonObject);
         }
     }

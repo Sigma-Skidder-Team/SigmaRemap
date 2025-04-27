@@ -42,7 +42,7 @@ public class Class6208<T>
     private final String field25050;
     
     public Class6208(final Function<ResourceLocation, Optional<T>> field25047, final String field25048, final boolean field25049, final String field25050) {
-        this.field25046 = (Map<ResourceLocation, Class7909<T>>)ImmutableMap.of();
+        this.field25046 = ImmutableMap.of();
         this.field25047 = field25047;
         this.field25048 = field25048;
         this.field25049 = field25049;
@@ -99,7 +99,7 @@ public class Class6208<T>
                                     final Reader reader;
                                     final JsonObject jsonObject = Class9583.method35928(Class6208.field25044, reader, JsonObject.class);
                                     if (jsonObject == null) {
-                                        Class6208.field25043.error("Couldn't load {} tag list {} from {} in data pack {} as it's empty or null", (Object)this.field25050, (Object)key, (Object)class6584, (Object)class6585.method5889());
+                                        Class6208.field25043.error("Couldn't load {} tag list {} from {} in data pack {} as it's empty or null", this.field25050, key, class6584, class6585.method5889());
                                     }
                                     else {
                                         ((Class8162)hashMap.computeIfAbsent(key, p0 -> Util.method27851(Class8162.method26975(), class6586 -> class6586.method26980(this.field25049)))).method26983(this.field25047, jsonObject);
@@ -148,15 +148,15 @@ public class Class6208<T>
                             }
                         }
                         catch (final RuntimeException | IOException ex) {
-                            Class6208.field25043.error("Couldn't read {} tag list {} from {} in data pack {}", (Object)this.field25050, (Object)key, (Object)class6584, (Object)class6585.method5889(), (Object)ex);
+                            Class6208.field25043.error("Couldn't read {} tag list {} from {} in data pack {}", this.field25050, key, class6584, class6585.method5889(), ex);
                         }
                         finally {
-                            IOUtils.closeQuietly((Closeable)class6585);
+                            IOUtils.closeQuietly(class6585);
                         }
                     }
                 }
                 catch (final IOException ex2) {
-                    Class6208.field25043.error("Couldn't read {} tag list {} from {}", (Object)this.field25050, (Object)key, (Object)class6584, (Object)ex2);
+                    Class6208.field25043.error("Couldn't read {} tag list {} from {}", this.field25050, key, class6584, ex2);
                 }
             }
             return hashMap;
@@ -182,12 +182,11 @@ public class Class6208<T>
             if (n != 0) {
                 continue;
             }
-            map.forEach((class8164, p1) -> Class6208.field25043.error("Couldn't load {} tag {} as it either references another tag that doesn't exist, or ultimately references itself", (Object)this.field25050, (Object)class8164));
+            map.forEach((class8164, p1) -> Class6208.field25043.error("Couldn't load {} tag {} as it either references another tag that doesn't exist, or ultimately references itself", this.field25050, class8164));
             break;
         }
         map.forEach((class8165, class8166) -> {
             final Class7909 class8167 = map2.put(class8165, class8166.method26982(class8165));
-            return;
         });
         this.method18466(hashMap);
     }

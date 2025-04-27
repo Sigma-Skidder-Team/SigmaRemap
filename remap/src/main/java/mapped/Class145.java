@@ -23,7 +23,7 @@ public class Class145 extends Class126
     @Override
     public ItemStack method639(final ItemStack class8321, final Class7529 class8322) {
         if (!class8321.method27620()) {
-            final NonNullList<Object> method8506 = (NonNullList<Object>) NonNullList.create();
+            final NonNullList<Object> method8506 = NonNullList.create();
             this.field428.forEach(class8325 -> class8325.method19016(class8324, class8328 -> class8328.method21974(Class9317.method34482(class8326::add), class8327)));
             final CompoundNBT class8323 = new CompoundNBT();
             Class8508.method28424(class8323, (NonNullList<ItemStack>)method8506);

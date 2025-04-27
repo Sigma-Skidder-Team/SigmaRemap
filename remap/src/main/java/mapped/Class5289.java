@@ -27,7 +27,7 @@ public class Class5289 extends Class5287
         if (class7562 != null) {
             byteBuf.writeBoolean(true);
             Class5260.field22312.method16379(byteBuf, class7562.method23740());
-            byteBuf.writeByte((int)class7562.method23741());
+            byteBuf.writeByte(class7562.method23741());
             Class5260.field22322.method16379(byteBuf, class7562.method23743());
         }
         else {

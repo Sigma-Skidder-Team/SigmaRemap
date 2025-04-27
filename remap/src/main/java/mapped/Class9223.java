@@ -10,9 +10,9 @@ import java.util.LinkedHashMap;
 
 public class Class9223
 {
-    private String field39559;
-    private int field39560;
-    private LinkedHashMap<String, String> field39561;
+    private final String field39559;
+    private final int field39560;
+    private final LinkedHashMap<String, String> field39561;
     
     public static Class9223 method34004(final String s) {
         final String[] split = s.split("\\[");

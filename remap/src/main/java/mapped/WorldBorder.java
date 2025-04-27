@@ -41,9 +41,7 @@ public class WorldBorder
         if (class354.getX() + 1 > this.method34786()) {
             if (class354.getX() < this.method34788()) {
                 if (class354.getZ() + 1 > this.method34787()) {
-                    if (class354.getZ() < this.method34789()) {
-                        return true;
-                    }
+                    return class354.getZ() < this.method34789();
                 }
             }
         }
@@ -54,9 +52,7 @@ public class WorldBorder
         if (class7859.method25428() > this.method34786()) {
             if (class7859.method25426() < this.method34788()) {
                 if (class7859.method25429() > this.method34787()) {
-                    if (class7859.method25427() < this.method34789()) {
-                        return true;
-                    }
+                    return class7859.method25427() < this.method34789();
                 }
             }
         }
@@ -67,9 +63,7 @@ public class WorldBorder
         if (class6221.maxX > this.method34786()) {
             if (class6221.minX < this.method34788()) {
                 if (class6221.maxZ > this.method34787()) {
-                    if (class6221.minZ < this.method34789()) {
-                        return true;
-                    }
+                    return class6221.minZ < this.method34789();
                 }
             }
         }

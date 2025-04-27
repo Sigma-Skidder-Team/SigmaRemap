@@ -41,7 +41,7 @@ public class Class6512
             method19602(method1273, arrayList3);
         }
         final int i = arrayList.size() + arrayList2.size() + arrayList3.size();
-        Class6512.field25888.info("Total conversion count is {}", (Object)i);
+        Class6512.field25888.info("Total conversion count is {}", i);
         final WorldInfo method1274 = Class7952.method25792(path, dataFixer, child);
         final Class7768<Class5471, Class1869> field31769 = Class7768.field31769;
         final Class7768<Class5469, Class1871> field31770 = Class7768.field31770;
@@ -102,13 +102,13 @@ public class Class6512
                         CompoundNBT method7640;
                         try (final DataInputStream method7639 = class1870.method7639(class1872)) {
                             if (method7639 == null) {
-                                Class6512.field25888.warn("Failed to fetch input stream for chunk {}", (Object)class1872);
+                                Class6512.field25888.warn("Failed to fetch input stream for chunk {}", class1872);
                                 continue;
                             }
                             method7640 = Class8097.method26595(method7639);
                         }
                         catch (final IOException ex) {
-                            Class6512.field25888.warn("Failed to read data for chunk {}", (Object)class1872, (Object)ex);
+                            Class6512.field25888.warn("Failed to read data for chunk {}", class1872, ex);
                             continue;
                         }
                         final Class6822 method7641 = Class6774.method20679(method7640.getCompound("Level"));
@@ -129,7 +129,7 @@ public class Class6512
             }
         }
         catch (final IOException ex2) {
-            Class6512.field25888.error("Failed to upgrade region file {}", (Object)file, (Object)ex2);
+            Class6512.field25888.error("Failed to upgrade region file {}", file, ex2);
         }
     }
     

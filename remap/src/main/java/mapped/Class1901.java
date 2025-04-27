@@ -59,7 +59,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
         for (int length = field10325.length, i = 0; i < length; ++i) {
             final long method1112 = BlockPos.offset(n, field10325[i]);
             final long method1113 = Class353.method1111(method1112);
-            if (method1111 == method1113 || ((Class1899)this.field10277).method7347(method1113)) {
+            if (method1111 == method1113 || this.field10277.method7347(method1113)) {
                 this.method7322(n, method1112, n2, b);
             }
         }
@@ -78,7 +78,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
             }
         }
         final long method7306 = Class353.method1111(n);
-        final Class7281 method7307 = ((Class1899)this.field10277).method7348(method7306, true);
+        final Class7281 method7307 = this.field10277.method7348(method7306, true);
         final Direction[] field10325 = Class1901.field10325;
         for (int length = field10325.length, i = 0; i < length; ++i) {
             final long method7308 = BlockPos.offset(n, field10325[i]);
@@ -86,7 +86,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
                 final long method7309 = Class353.method1111(method7308);
                 Class7281 method7310;
                 if (method7306 != method7309) {
-                    method7310 = ((Class1899)this.field10277).method7348(method7309, true);
+                    method7310 = this.field10277.method7348(method7309, true);
                 }
                 else {
                     method7310 = method7307;
@@ -107,7 +107,7 @@ public final class Class1901 extends Class1890<Class7502, Class1899>
     
     @Override
     public void method7311(final BlockPos class354, final int n) {
-        ((Class1899)this.field10277).method7364();
+        this.field10277.method7364();
         this.method7320(Long.MAX_VALUE, class354.toLong(), 15 - n, true);
     }
     

@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class FakeLag extends Module
 {
-    private ArrayList<IPacket<?>> field15553;
-    private TimerUtil field15554;
+    private final ArrayList<IPacket<?>> field15553;
+    private final TimerUtil field15554;
     private boolean field15555;
     
     public FakeLag() {

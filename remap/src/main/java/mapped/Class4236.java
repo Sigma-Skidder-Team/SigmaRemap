@@ -29,7 +29,7 @@ public class Class4236 extends Class4211
             jsonObject.addProperty("block", Registry.BLOCK.getKey(this.field19049).toString());
         }
         jsonObject.add("state", this.field19050.method34693());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public boolean method12738(final BlockState class7096) {

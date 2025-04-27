@@ -35,15 +35,15 @@ public class Class3898 extends Class3892
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        if (!class7096.get((IProperty<Boolean>)Class3898.field17587)) {
-            return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17588 : Class3898.field17589;
+        if (!class7096.get(Class3898.field17587)) {
+            return (class7096.get(Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17588 : Class3898.field17589;
         }
-        return (class7096.get((IProperty<Direction>)Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17590 : Class3898.field17591;
+        return (class7096.get(Class3898.field17564).getAxis() != Direction.Axis.X) ? Class3898.field17590 : Class3898.field17591;
     }
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Direction>)Class3898.field17564).rotateY().getAxis() == class7097.getAxis()) {
+        if (class7096.get(Class3898.field17564).rotateY().getAxis() == class7097.getAxis()) {
             return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3898.field17587, this.method11982(class7098) || this.method11982(class7099.getBlockState(class7100.method1149(class7097.getOpposite()))));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);

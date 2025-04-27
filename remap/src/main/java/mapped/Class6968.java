@@ -19,7 +19,7 @@ public class Class6968<T> implements Class6967<T>
     
     @Override
     public void method21379(final Collection<T> collection) {
-        collection.addAll((Collection<? extends T>)this.field27248);
+        collection.addAll(this.field27248);
     }
     
     @Override

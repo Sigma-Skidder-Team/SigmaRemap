@@ -22,7 +22,7 @@ public class Class2699 extends Class2466
             return;
         }
         try {
-            final JsonElement parse = new JsonParser().parse((String)class8699.method29818(Class5260.field22308, 0));
+            final JsonElement parse = new JsonParser().parse(class8699.method29818(Class5260.field22308, 0));
             if (!Class8397.method28000(parse, class8699.method29841())) {
                 class8699.method29839();
                 return;

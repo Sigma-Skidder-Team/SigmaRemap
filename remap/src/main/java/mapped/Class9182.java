@@ -14,7 +14,7 @@ import io.netty.handler.codec.MessageToMessageEncoder;
 public class Class9182 extends MessageToMessageEncoder<ByteBuf>
 {
     private final Class6108 field38905;
-    private boolean field38906;
+    private final boolean field38906;
     
     public void encode(final ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, final List<Object> list) throws Exception {
         if (byteBuf.readableBytes() == 0) {

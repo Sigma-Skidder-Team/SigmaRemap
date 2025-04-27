@@ -15,11 +15,11 @@ public class Class672 extends Class654
     
     @Override
     public String method3369() {
-        return Class8822.method30773("selectWorld.mapFeatures", new Object[0]) + ' ' + Class8822.method30773(Class539.method3126(this.field3707) ? "options.on" : "options.off", new Object[0]);
+        return Class8822.method30773("selectWorld.mapFeatures", new Object[0]) + ' ' + Class8822.method30773(Class539.method3126(this.field3707) ? "options.on" : "options.off");
     }
     
     @Override
     public String method3352() {
-        return super.method3352() + ". " + Class8822.method30773("selectWorld.mapFeatures.info", new Object[0]);
+        return super.method3352() + ". " + Class8822.method30773("selectWorld.mapFeatures.info");
     }
 }

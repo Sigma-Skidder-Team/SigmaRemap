@@ -27,6 +27,6 @@ public class Class3720 extends Class3703
     }
     
     public List<Class5775> method11446() {
-        return Collections.unmodifiableList((List<? extends Class5775>)this.field17092);
+        return Collections.unmodifiableList(this.field17092);
     }
 }

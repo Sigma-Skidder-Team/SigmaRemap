@@ -66,11 +66,11 @@ public abstract class Class4515 extends Class4473
                             method324 = method325;
                         }
                         else {
-                            Class4515.field19917.error("Error while parsing blockstate {} in jigsaw block @ {}", (Object)method323, (Object)class1856.field38248);
+                            Class4515.field19917.error("Error while parsing blockstate {} in jigsaw block @ {}", method323, class1856.field38248);
                         }
                     }
                     catch (final CommandSyntaxException ex) {
-                        Class4515.field19917.error("Error while parsing blockstate {} in jigsaw block @ {}", (Object)method323, (Object)class1856.field38248);
+                        Class4515.field19917.error("Error while parsing blockstate {} in jigsaw block @ {}", method323, class1856.field38248);
                     }
                     class1851.setBlockState(class1856.field38248, method324, 3);
                 }

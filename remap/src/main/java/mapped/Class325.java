@@ -24,11 +24,11 @@ public enum Class325 implements Class326
     field2038("is_sprinting"), 
     field2039("is_wet");
     
-    private String field2040;
-    private Class8551 field2041;
+    private final String field2040;
+    private final Class8551 field2041;
     private static final Class325[] field2042;
     
-    private Class325(final String field2040) {
+    Class325(final String field2040) {
         this.field2040 = field2040;
         this.field2041 = Minecraft.getInstance().method5306();
     }

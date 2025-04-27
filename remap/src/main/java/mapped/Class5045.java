@@ -19,7 +19,7 @@ public class Class5045 extends RealmsScreen
     private static final Logger field21607;
     private final Class5075<Class7430> field21608;
     private Class5062 field21609;
-    private int field21610;
+    private final int field21610;
     private String field21611;
     private Class5611 field21612;
     private Class5611 field21613;

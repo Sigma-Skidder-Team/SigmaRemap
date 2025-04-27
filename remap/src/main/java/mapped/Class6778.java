@@ -106,7 +106,7 @@ public class Class6778
     }
     
     public static AxisAlignedBB method20694(final AxisAlignedBB class6221, final Class2180 class6222, final BlockPos class6223) {
-        final long n = (long)(class6223.getX() * 3129871) ^ class6223.getZ() * 116129781L;
+        final long n = (long)(class6223.getX() * 3129871L) ^ class6223.getZ() * 116129781L;
         final long n2 = n * n * 42317861L + n * 11L;
         final double n3 = ((n2 >> 16 & 0xFL) / 15.0f - 0.5) * 0.5;
         final double n4 = ((n2 >> 24 & 0xFL) / 15.0f - 0.5) * 0.5;

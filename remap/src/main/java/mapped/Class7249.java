@@ -27,18 +27,18 @@ public class Class7249<T> extends AbstractIterator<T>
         final boolean b = !this.field28107.hasNext();
         final boolean b2 = !this.field28108.hasNext();
         if (b && b2) {
-            return (T)this.endOfData();
+            return this.endOfData();
         }
         if (b) {
-            return (T)this.field28108.next();
+            return this.field28108.next();
         }
         if (!b2) {
-            final int compare = this.field28109.compare((T)this.field28107.peek(), (T)this.field28108.peek());
+            final int compare = this.field28109.compare(this.field28107.peek(), this.field28108.peek());
             if (compare == 0) {
                 this.field28108.next();
             }
-            return (T)((compare > 0) ? this.field28108.next() : this.field28107.next());
+            return (compare > 0) ? this.field28108.next() : this.field28107.next();
         }
-        return (T)this.field28107.next();
+        return this.field28107.next();
     }
 }

@@ -19,7 +19,7 @@ public class Class5018 extends Class5009
     @Override
     public boolean method15227(final Class7671 class7671, final String[] array) {
         Class1632.method5678().run();
-        this.method15234(class7671, "&6Started searching for protocol versions", new Object[0]);
+        this.method15234(class7671, "&6Started searching for protocol versions");
         return true;
     }
 }

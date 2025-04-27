@@ -30,11 +30,11 @@ public class Class5955 implements JsonDeserializer<Class6368>, JsonSerializer<Cl
         final JsonObject jsonObject = new JsonObject();
         final Class6529<Class6368> method17879 = method17879(class6368.getClass());
         jsonObject.addProperty("type", method17879.method19754().toString());
-        if (!ArrayUtils.isEmpty((Object[])class6368.field25473)) {
-            jsonObject.add("conditions", jsonSerializationContext.serialize((Object)class6368.field25473));
+        if (!ArrayUtils.isEmpty(class6368.field25473)) {
+            jsonObject.add("conditions", jsonSerializationContext.serialize(class6368.field25473));
         }
         method17879.method19753(jsonObject, class6368, jsonSerializationContext);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     private static Class6529<Class6368> method17879(final Class<?> obj) {

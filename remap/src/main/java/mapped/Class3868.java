@@ -59,9 +59,7 @@ public class Class3868 extends Class3869 implements Class3867
             final IFluidState method6702 = class7097.getFluidState(class7098);
             if (super.method11843(class7096, class7097, class7098)) {
                 if (method6702.isTagged(Class7324.field28319)) {
-                    if (method6702.getLevel() == 8) {
-                        return true;
-                    }
+                    return method6702.getLevel() == 8;
                 }
             }
             return false;

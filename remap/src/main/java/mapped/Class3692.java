@@ -45,11 +45,10 @@ public class Class3692 implements Class3689
                 if (jsonObject != null) {
                     this.method11357(class8843, jsonObject, path.resolve("data/" + class8844.method17155().method7798() + "/advancements/" + class8844.method17158().method7797() + ".json"));
                 }
-                return;
             }
             else {
                 new IllegalStateException("Duplicate recipe " + class8844.method17155());
-                throw;
+                throw
             }
         });
         this.method11357(class8842, Class6056.method18001().method18009("impossible", new Class4242()).method18015(), method22099.resolve("data/minecraft/advancements/recipes/root.json"));
@@ -57,35 +56,35 @@ public class Class3692 implements Class3689
     
     private void method11356(final Class8842 class8842, final JsonObject jsonObject, final Path path) {
         try {
-            final String json = Class3692.field17006.toJson((JsonElement)jsonObject);
-            final String string = Class3692.field16998.hashUnencodedChars((CharSequence)json).toString();
-            if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path, new LinkOption[0])) {
-                Files.createDirectories(path.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-                try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path, new OpenOption[0])) {
+            final String json = Class3692.field17006.toJson(jsonObject);
+            final String string = Class3692.field16998.hashUnencodedChars(json).toString();
+            if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path)) {
+                Files.createDirectories(path.getParent(), new FileAttribute[0]);
+                try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path)) {
                     bufferedWriter.write(json);
                 }
             }
             class8842.method30885(path, string);
         }
         catch (final IOException ex) {
-            Class3692.field17005.error("Couldn't save recipe {}", (Object)path, (Object)ex);
+            Class3692.field17005.error("Couldn't save recipe {}", path, ex);
         }
     }
     
     private void method11357(final Class8842 class8842, final JsonObject jsonObject, final Path path) {
         try {
-            final String json = Class3692.field17006.toJson((JsonElement)jsonObject);
-            final String string = Class3692.field16998.hashUnencodedChars((CharSequence)json).toString();
-            if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path, new LinkOption[0])) {
-                Files.createDirectories(path.getParent(), (FileAttribute<?>[])new FileAttribute[0]);
-                try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path, new OpenOption[0])) {
+            final String json = Class3692.field17006.toJson(jsonObject);
+            final String string = Class3692.field16998.hashUnencodedChars(json).toString();
+            if (!Objects.equals(class8842.method30884(path), string) || !Files.exists(path)) {
+                Files.createDirectories(path.getParent(), new FileAttribute[0]);
+                try (final BufferedWriter bufferedWriter = Files.newBufferedWriter(path)) {
                     bufferedWriter.write(json);
                 }
             }
             class8842.method30885(path, string);
         }
         catch (final IOException ex) {
-            Class3692.field17005.error("Couldn't save recipe advancement {}", (Object)path, (Object)ex);
+            Class3692.field17005.error("Couldn't save recipe advancement {}", path, ex);
         }
     }
     

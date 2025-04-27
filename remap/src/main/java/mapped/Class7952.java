@@ -43,7 +43,7 @@ public class Class7952
     public Class7952(final Path path, final Path field32669, final DataFixer field32670) {
         this.field32670 = field32670;
         try {
-            Files.createDirectories(Files.exists(path, new LinkOption[0]) ? path.toRealPath(new LinkOption[0]) : path, (FileAttribute<?>[])new FileAttribute[0]);
+            Files.createDirectories(Files.exists(path) ? path.toRealPath() : path, new FileAttribute[0]);
         }
         catch (final IOException cause) {
             throw new RuntimeException(cause);
@@ -57,7 +57,7 @@ public class Class7952
     }
     
     public List<Class1934> method25785() throws AnvilConverterException {
-        if (Files.isDirectory(this.field32668, new LinkOption[0])) {
+        if (Files.isDirectory(this.field32668)) {
             final ArrayList arrayList = Lists.newArrayList();
             for (final File file : this.field32668.toFile().listFiles()) {
                 if (file.isDirectory()) {
@@ -67,7 +67,7 @@ public class Class7952
                         if (method25791.method29551() == 19132 || method25791.method29551() == 19133) {
                             final boolean b = method25791.method29551() != this.method25786();
                             String method25792 = method25791.method29549();
-                            if (StringUtils.isEmpty((CharSequence)method25792)) {
+                            if (StringUtils.isEmpty(method25792)) {
                                 method25792 = name;
                             }
                             arrayList.add(new Class1934(method25791, name, method25792, 0L, b));
@@ -77,7 +77,7 @@ public class Class7952
             }
             return arrayList;
         }
-        throw new Class2323(new Class2259("selectWorld.load_folder_access", new Object[0]).getString());
+        throw new Class2323(new Class2259("selectWorld.load_folder_access").getString());
     }
     
     private int method25786() {
@@ -133,7 +133,7 @@ public class Class7952
             return new WorldInfo(Class9346.method34651(dataFixer, Class1959.field10675, method327, n), dataFixer, n, class51);
         }
         catch (final Exception ex) {
-            Class7952.field32666.error("Exception reading {}", (Object)file, (Object)ex);
+            Class7952.field32666.error("Exception reading {}", file, ex);
             return null;
         }
     }
@@ -158,7 +158,7 @@ public class Class7952
     public boolean method25795(final String other) {
         try {
             final Path resolve = this.field32668.resolve(other);
-            Files.createDirectory(resolve, (FileAttribute<?>[])new FileAttribute[0]);
+            Files.createDirectory(resolve, new FileAttribute[0]);
             Files.deleteIfExists(resolve);
             return true;
         }
@@ -172,9 +172,9 @@ public class Class7952
         if (!file.exists()) {
             return true;
         }
-        Class7952.field32666.info("Deleting level {}", (Object)child);
+        Class7952.field32666.info("Deleting level {}", child);
         for (int i = 1; i <= 5; ++i) {
-            Class7952.field32666.info("Attempt {}...", (Object)i);
+            Class7952.field32666.info("Attempt {}...", i);
             if (method25797(file.listFiles())) {
                 break;
             }
@@ -191,13 +191,13 @@ public class Class7952
     
     private static boolean method25797(final File[] array) {
         for (final File file : array) {
-            Class7952.field32666.debug("Deleting {}", (Object)file);
+            Class7952.field32666.debug("Deleting {}", file);
             if (file.isDirectory() && !method25797(file.listFiles())) {
-                Class7952.field32666.warn("Couldn't delete directory {}", (Object)file);
+                Class7952.field32666.warn("Couldn't delete directory {}", file);
                 return false;
             }
             if (!file.delete()) {
-                Class7952.field32666.warn("Couldn't delete file {}", (Object)file);
+                Class7952.field32666.warn("Couldn't delete file {}", file);
                 return false;
             }
         }
@@ -205,7 +205,7 @@ public class Class7952
     }
     
     public boolean method25798(final String other) {
-        return Files.isDirectory(this.field32668.resolve(other), new LinkOption[0]);
+        return Files.isDirectory(this.field32668.resolve(other));
     }
     
     public Path method25799() {
@@ -229,14 +229,14 @@ public class Class7952
         final String string = LocalDateTime.now().format(Class7952.field32667) + "_" + s;
         final Path method25802 = this.method25802();
         try {
-            Files.createDirectories(Files.exists(method25802, new LinkOption[0]) ? method25802.toRealPath(new LinkOption[0]) : method25802, (FileAttribute<?>[])new FileAttribute[0]);
+            Files.createDirectories(Files.exists(method25802) ? method25802.toRealPath() : method25802, new FileAttribute[0]);
         }
         catch (final IOException cause) {
             throw new RuntimeException(cause);
         }
         final Path resolve = method25802.resolve(Class6732.method20421(method25802, string, ".zip"));
-        try (final ZipOutputStream zipOutputStream = new ZipOutputStream(new BufferedOutputStream(Files.newOutputStream(resolve, new OpenOption[0])))) {
-            Files.walkFileTree(method25801, new Class8448(this, Paths.get(s, new String[0]), method25801, zipOutputStream));
+        try (final ZipOutputStream zipOutputStream = new ZipOutputStream(new BufferedOutputStream(Files.newOutputStream(resolve)))) {
+            Files.walkFileTree(method25801, new Class8448(this, Paths.get(s), method25801, zipOutputStream));
         }
         return Files.size(resolve);
     }

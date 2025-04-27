@@ -11,7 +11,7 @@ import com.google.common.cache.CacheLoader;
 public final class Class6049 extends CacheLoader<String, GameProfile>
 {
     public GameProfile load(final String s) throws Exception {
-        final GameProfile fillProfileProperties = Class8428.method28150().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), (String)null), false);
+        final GameProfile fillProfileProperties = Class8428.method28150().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), null), false);
         if (fillProfileProperties != null) {
             return fillProfileProperties;
         }

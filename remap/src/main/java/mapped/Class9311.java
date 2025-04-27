@@ -21,7 +21,7 @@ public class Class9311
     }
     
     public Class6991 method34431(final int n) {
-        return (Class6991)((n >= 0 && n < this.field39972.size()) ? MoreObjects.firstNonNull((Object)this.field39972.get(n), (Object)Class9039.field38256) : Class9039.field38256);
+        return (Class6991)((n >= 0 && n < this.field39972.size()) ? MoreObjects.firstNonNull(this.field39972.get(n), (Object)Class9039.field38256) : Class9039.field38256);
     }
     
     public int method34432() {

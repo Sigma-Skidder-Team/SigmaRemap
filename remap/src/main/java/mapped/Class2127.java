@@ -27,9 +27,9 @@ public enum Class2127
     field12423(32822), 
     field12424(33640);
     
-    private int field12425;
+    private final int field12425;
     
-    private Class2127(final int field12425) {
+    Class2127(final int field12425) {
         this.field12425 = field12425;
     }
     

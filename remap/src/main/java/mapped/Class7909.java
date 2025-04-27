@@ -26,7 +26,7 @@ public class Class7909<T>
     public Class7909(final ResourceLocation field32480) {
         this.field32480 = field32480;
         this.field32481 = Collections.emptySet();
-        this.field32482 = (Collection<Class6967<T>>)Collections.emptyList();
+        this.field32482 = Collections.emptyList();
     }
     
     public Class7909(final ResourceLocation field32480, final Collection<Class6967<T>> field32481, final boolean b) {
@@ -47,7 +47,7 @@ public class Class7909<T>
             iterator.next().method21381(jsonArray, function);
         }
         jsonObject.addProperty("replace", Boolean.valueOf(false));
-        jsonObject.add("values", (JsonElement)jsonArray);
+        jsonObject.add("values", jsonArray);
         return jsonObject;
     }
     

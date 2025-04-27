@@ -31,9 +31,7 @@ public class Class3569 extends Class3545
             this.field16662 = method4488.method2637();
             if (method4488.method2638() != this.field16663) {
                 if (this.method11097(this.field16662, Class7843.field32117)) {
-                    if (this.field16661.method4491(this.field16662, method4488)) {
-                        return true;
-                    }
+                    return this.field16661.method4491(this.field16662, method4488);
                 }
             }
             return false;

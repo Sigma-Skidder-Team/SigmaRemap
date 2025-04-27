@@ -42,10 +42,10 @@ public class Class8974
     private final Class8974[] field37825;
     private boolean field37826;
     private Chunk field37827;
-    private Class8974[] field37828;
-    private Class8974[] field37829;
+    private final Class8974[] field37828;
+    private final Class8974[] field37829;
     private boolean field37830;
-    private Class9071 field37831;
+    private final Class9071 field37831;
     public Class6222 field37832;
     public final /* synthetic */ Class7520 field37833;
     
@@ -63,7 +63,6 @@ public class Class8974
                 array[i] = new Mutable();
                 ++i;
             }
-            return;
         });
         this.field37820 = Config.method28836();
         this.field37821 = !Class9570.field41178.method22623();
@@ -88,9 +87,7 @@ public class Class8974
             if (this.method31863(this.field37818[Direction.WEST.ordinal()])) {
                 if (this.method31863(this.field37818[Direction.NORTH.ordinal()])) {
                     if (this.method31863(this.field37818[Direction.EAST.ordinal()])) {
-                        if (this.method31863(this.field37818[Direction.SOUTH.ordinal()])) {
-                            return true;
-                        }
+                        return this.method31863(this.field37818[Direction.SOUTH.ordinal()]);
                     }
                 }
             }

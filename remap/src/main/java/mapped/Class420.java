@@ -34,7 +34,7 @@ public class Class420 extends Class419
         super.method2032(class7006);
         if (class7006.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)class7006).getEntity().method1843(this.field2527)) {
             if (!this.world.isRemote) {
-                final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0));
+                final List<Entity> method7128 = this.world.method7128(LivingEntity.class, this.getBoundingBox().grow(4.0, 2.0, 4.0));
                 final Class426 class7007 = new Class426(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
                 class7007.method2097(this.field2527);
                 class7007.method2089(Class8432.field34605);

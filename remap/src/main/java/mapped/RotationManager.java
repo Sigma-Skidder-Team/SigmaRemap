@@ -187,9 +187,7 @@ public class RotationManager {
                     if (Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() || ViaManager.method34762() == Class7906.field32452.method25613()) {
                         if (!(class5724.method13247().getItem() instanceof Class4100)) {
                             final Entity method6741 = this.field34856.world.getEntityByID(class5724.method13248());
-                            if (RotationManager.field34858.contains(method6741)) {
-                                RotationManager.field34858.remove(method6741);
-                            }
+                            RotationManager.field34858.remove(method6741);
                         } else {
                             final Entity method6742 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (!RotationManager.field34858.contains(method6742)) {

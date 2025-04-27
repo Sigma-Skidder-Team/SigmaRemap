@@ -55,7 +55,7 @@ public class Class8583
         final InputStreamReader inputStreamReader = new InputStreamReader(in);
         String string;
         try {
-            string = CharStreams.toString((Readable)inputStreamReader);
+            string = CharStreams.toString(inputStreamReader);
         }
         finally {
             inputStreamReader.close();
@@ -154,7 +154,7 @@ public class Class8583
     private String method29059(final String[] array, final char c, final int n, final int n2) {
         final String[] array2 = new String[n2 - n];
         System.arraycopy(array, n, array2, 0, n2 - n);
-        return Joiner.on(c).join((Object[])array2);
+        return Joiner.on(c).join(array2);
     }
     
     private int method29060(final String s, final char c) {

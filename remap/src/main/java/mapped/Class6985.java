@@ -23,7 +23,7 @@ public class Class6985 extends Class6977
         if (class355.get(Class3870.field17513) == Class182.field564) {
             final BlockState method23927 = class356.method23927(class354.method1139());
             if (method23927.getBlock() instanceof Class3871) {
-                set.add(new Class9488(class354, ((StateHolder<O, BlockState>)method23927).with(Class3871.field17513, Class182.field564)));
+                set.add(new Class9488(class354, method23927.with(Class3871.field17513, Class182.field564)));
             }
         }
         return set;

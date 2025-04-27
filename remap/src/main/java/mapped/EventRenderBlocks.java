@@ -7,7 +7,7 @@ package mapped;
 public class EventRenderBlocks extends Class5714
 {
     private static String[] field23263;
-    private BlockState field23264;
+    private final BlockState field23264;
     private boolean field23265;
     
     public EventRenderBlocks(final BlockState field23264) {

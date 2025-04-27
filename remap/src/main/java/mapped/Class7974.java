@@ -21,8 +21,8 @@ import java.util.Map;
 
 public class Class7974
 {
-    private Class8521[] field32807;
-    private Map<Class9100, Integer> field32808;
+    private final Class8521[] field32807;
+    private final Map<Class9100, Integer> field32808;
     public static final Integer field32809;
     
     public Class7974(final Class8521[] field32807) {
@@ -95,12 +95,12 @@ public class Class7974
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append("" + class8521.method28534() + "=" + class8521.method28535().length);
+            sb.append(class8521.method28534() + "=" + class8521.method28535().length);
         }
         if (list.size() > 0) {
             sb.append(" -> " + list.get(0).method19882() + " ...");
         }
-        Config.method28847("ItemOverrideCache: " + sb.toString());
+        Config.method28847("ItemOverrideCache: " + sb);
     }
     
     @Override

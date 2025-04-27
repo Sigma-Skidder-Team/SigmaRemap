@@ -58,10 +58,10 @@ public class Class8175
             }
         }
         catch (final JsonParseException ex) {
-            Class8175.field33679.error("Unable to parse resource index file: {}", (Object)file2);
+            Class8175.field33679.error("Unable to parse resource index file: {}", file2);
         }
         catch (final FileNotFoundException ex2) {
-            Class8175.field33679.error("Can't find the resource index file: {}", (Object)file2);
+            Class8175.field33679.error("Can't find the resource index file: {}", file2);
         }
         finally {
             IOUtils.closeQuietly(reader);
@@ -82,11 +82,11 @@ public class Class8175
         return this.field33681.keySet().stream().filter(class1932 -> {
             class1932.method7797();
             final boolean b;
-            if (!(!class1932.method7798().equals(anObject))) {
+            if (class1932.method7798().equals(anObject)) {
                 final String s3;
                 if (!s3.endsWith(".mcmeta")) {
-                    if (!(!s3.startsWith(str + "/"))) {
-                        if (!(!predicate2.test(s3))) {
+                    if (s3.startsWith(str + "/")) {
+                        if (predicate2.test(s3)) {
                             return b;
                         }
                     }

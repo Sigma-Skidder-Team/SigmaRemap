@@ -45,9 +45,7 @@ public class Class6429
             final Class6429 class6429 = (Class6429)o;
             if (this.field25538.equals(class6429.field25538)) {
                 if (this.field25540.equals(class6429.field25540)) {
-                    if (this.field25539.equals(class6429.field25539)) {
-                        return true;
-                    }
+                    return this.field25539.equals(class6429.field25539);
                 }
             }
             return false;

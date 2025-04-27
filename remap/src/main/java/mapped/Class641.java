@@ -29,7 +29,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         this.field3642 = class620.method3611();
         this.field3643 = field3649;
         this.field3641 = Minecraft.getInstance();
-        this.field3644 = new ResourceLocation("worlds/" + Hashing.sha1().hashUnencodedChars((CharSequence)field3649.method7808()) + "/icon");
+        this.field3644 = new ResourceLocation("worlds/" + Hashing.sha1().hashUnencodedChars(field3649.method7808()) + "/icon");
         this.field3645 = class621.method25800(field3649.method7808(), "icon.png");
         if (!this.field3645.isFile()) {
             this.field3645 = null;
@@ -41,32 +41,32 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
     public void method3467(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final boolean b, final float n8) {
         String s = this.field3643.method7809();
         final String string = this.field3643.method7808() + " (" + Class620.method3612().format(new Date(this.field3643.method7812())) + ")";
-        if (StringUtils.isEmpty((CharSequence)s)) {
-            s = Class8822.method30773("selectWorld.world", new Object[0]) + " " + (n + 1);
+        if (StringUtils.isEmpty(s)) {
+            s = Class8822.method30773("selectWorld.world") + " " + (n + 1);
         }
         final String str = "";
         String s3;
         if (!this.field3643.method7811()) {
-            String s2 = Class8822.method30773("gameMode." + this.field3643.method7813().method586(), new Object[0]);
+            String s2 = Class8822.method30773("gameMode." + this.field3643.method7813().method586());
             if (this.field3643.method7814()) {
                 s2 = TextFormatting.DARK_RED + Class8822.method30773("gameMode.hardcore", new Object[0]) + TextFormatting.RESET;
             }
             if (this.field3643.method7815()) {
-                s2 = s2 + ", " + Class8822.method30773("selectWorld.cheats", new Object[0]);
+                s2 = s2 + ", " + Class8822.method30773("selectWorld.cheats");
             }
             final String method8461 = this.field3643.method7816().getFormattedText();
             if (!this.field3643.method7817()) {
-                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + method8461;
+                s3 = s2 + ", " + Class8822.method30773("selectWorld.version") + " " + method8461;
             }
             else if (!this.field3643.method7818()) {
-                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + TextFormatting.ITALIC + method8461 + TextFormatting.RESET;
+                s3 = s2 + ", " + Class8822.method30773("selectWorld.version") + " " + TextFormatting.ITALIC + method8461 + TextFormatting.RESET;
             }
             else {
-                s3 = s2 + ", " + Class8822.method30773("selectWorld.version", new Object[0]) + " " + TextFormatting.RED + method8461 + TextFormatting.RESET;
+                s3 = s2 + ", " + Class8822.method30773("selectWorld.version") + " " + TextFormatting.RED + method8461 + TextFormatting.RESET;
             }
         }
         else {
-            s3 = Class8822.method30773("selectWorld.conversion", new Object[0]) + " " + str;
+            s3 = Class8822.method30773("selectWorld.conversion") + " " + str;
         }
         this.field3641.fontRenderer.method6610(s, (float)(n3 + 32 + 3), (float)(n2 + 1), 16777215);
         this.field3641.fontRenderer.method6610(string, (float)(n3 + 32 + 3), (float)(n2 + 9 + 3), 8421504);
@@ -106,7 +106,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                 else {
                     AbstractGui.blit(n3, n2, 96.0f, (float)n10, 32, 32, 256, 256);
                     if (n9 < 32) {
-                        this.field3642.method3172(this.field3641.fontRenderer.method6627(new Class2259("selectWorld.tooltip.unsupported", new Object[] { this.field3643.method7816() }).applyTextStyle(TextFormatting.RED).getFormattedText(), 175));
+                        this.field3642.method3172(this.field3641.fontRenderer.method6627(new Class2259("selectWorld.tooltip.unsupported", this.field3643.method7816()).applyTextStyle(TextFormatting.RED).getFormattedText(), 175));
                     }
                 }
             }
@@ -142,24 +142,24 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                         }
                         catch (final Exception ex) {
                             Class620.method3616().error("Failure to open 'future world'", (Throwable)ex);
-                            this.field3641.displayGuiScreen(new Class528(() -> this.field3641.displayGuiScreen(this.field3642), new Class2259("selectWorld.futureworld.error.title", new Object[0]), new Class2259("selectWorld.futureworld.error.text", new Object[0])));
+                            this.field3641.displayGuiScreen(new Class528(() -> this.field3641.displayGuiScreen(this.field3642), new Class2259("selectWorld.futureworld.error.title"), new Class2259("selectWorld.futureworld.error.text")));
                         }
                     }
                     else {
                         this.field3641.displayGuiScreen(this.field3642);
                     }
-                }, new Class2259("selectWorld.versionQuestion", new Object[0]), new Class2259("selectWorld.versionWarning", new Object[] { this.field3643.method7816().getFormattedText() }), Class8822.method30773("selectWorld.versionJoinButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                }, new Class2259("selectWorld.versionQuestion"), new Class2259("selectWorld.versionWarning", this.field3643.method7816().getFormattedText()), Class8822.method30773("selectWorld.versionJoinButton"), Class8822.method30773("gui.cancel")));
             }
         }
         else {
-            Class2259 class2259 = new Class2259("selectWorld.backupQuestion", new Object[0]);
-            Class2259 class2260 = new Class2259("selectWorld.backupWarning", new Object[] { this.field3643.method7816().getFormattedText(), Class9528.method35579().getName() });
+            Class2259 class2259 = new Class2259("selectWorld.backupQuestion");
+            Class2259 class2260 = new Class2259("selectWorld.backupWarning", this.field3643.method7816().getFormattedText(), Class9528.method35579().getName());
             if (this.field3643.method7819()) {
-                class2259 = new Class2259("selectWorld.backupQuestion.customized", new Object[0]);
-                class2260 = new Class2259("selectWorld.backupWarning.customized", new Object[0]);
+                class2259 = new Class2259("selectWorld.backupQuestion.customized");
+                class2260 = new Class2259("selectWorld.backupWarning.customized");
             }
             this.field3641.displayGuiScreen(new Class554(this.field3642, (b2, p1) -> {
-                if (!(!b2)) {
+                if (b2) {
                     Class532.method3066(this.field3641.method5243(), this.field3643.method7808());
                 }
                 this.method3673();
@@ -175,7 +175,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
                 this.field3648.method3608(() -> this.field3642.field3286.method3378(), true);
             }
             this.field3641.displayGuiScreen(this.field3642);
-        }, new Class2259("selectWorld.deleteQuestion", new Object[0]), new Class2259("selectWorld.deleteWarning", new Object[] { this.field3643.method7809() }), Class8822.method30773("selectWorld.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+        }, new Class2259("selectWorld.deleteQuestion"), new Class2259("selectWorld.deleteWarning", this.field3643.method7809()), Class8822.method30773("selectWorld.deleteButton"), Class8822.method30773("gui.cancel")));
     }
     
     public void method3671() {
@@ -195,7 +195,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
             if (method29394 != null) {
                 class539.method3110(method29394);
                 if (this.field3643.method7819()) {
-                    this.field3641.displayGuiScreen(new Class546(b -> this.field3641.displayGuiScreen(b ? class539 : this.field3642), new Class2259("selectWorld.recreate.customized.title", new Object[0]), new Class2259("selectWorld.recreate.customized.text", new Object[0]), Class8822.method30773("gui.proceed", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                    this.field3641.displayGuiScreen(new Class546(b -> this.field3641.displayGuiScreen(b ? class539 : this.field3642), new Class2259("selectWorld.recreate.customized.title"), new Class2259("selectWorld.recreate.customized.text"), Class8822.method30773("gui.proceed"), Class8822.method30773("gui.cancel")));
                 }
                 else {
                     this.field3641.displayGuiScreen(class539);
@@ -204,7 +204,7 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         }
         catch (final Exception ex) {
             Class620.method3616().error("Unable to recreate world", (Throwable)ex);
-            this.field3641.displayGuiScreen(new Class528(() -> this.field3641.displayGuiScreen(this.field3642), new Class2259("selectWorld.recreate.error.title", new Object[0]), new Class2259("selectWorld.recreate.error.text", new Object[0])));
+            this.field3641.displayGuiScreen(new Class528(() -> this.field3641.displayGuiScreen(this.field3642), new Class2259("selectWorld.recreate.error.title"), new Class2259("selectWorld.recreate.error.text")));
         }
     }
     
@@ -220,8 +220,8 @@ public final class Class641 extends Class623<Class641> implements AutoCloseable
         if (this.field3645 != null && this.field3645.isFile()) {
             try (final FileInputStream fileInputStream = new FileInputStream(this.field3645)) {
                 final Class1846 method6637 = Class1846.method6637(fileInputStream);
-                Validate.validState(method6637.method6644() == 64, "Must be 64 pixels wide", new Object[0]);
-                Validate.validState(method6637.method6645() == 64, "Must be 64 pixels high", new Object[0]);
+                Validate.validState(method6637.method6644() == 64, "Must be 64 pixels wide");
+                Validate.validState(method6637.method6645() == 64, "Must be 64 pixels high");
                 final Class1773 class1773 = new Class1773(method6637);
                 this.field3641.method5290().method5851(this.field3644, class1773);
                 return class1773;

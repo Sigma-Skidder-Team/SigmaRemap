@@ -46,9 +46,7 @@ public class Class3470 extends Class3467
         if (this.field16353 <= this.method11036()) {
             if (!this.method11033()) {
                 if (this.field16341.withinDistance(this.field16340.method1934(), 2.0)) {
-                    if (this.method11037(this.field16340.world.method6954())) {
-                        return true;
-                    }
+                    return this.method11037(this.field16340.world.method6954());
                 }
             }
         }

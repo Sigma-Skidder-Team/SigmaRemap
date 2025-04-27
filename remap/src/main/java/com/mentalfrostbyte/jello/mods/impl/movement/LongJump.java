@@ -14,7 +14,7 @@ import mapped.ColorUtils;
 public class LongJump extends ModuleWithSettings
 {
     public LongJump() {
-        super(Category.MOVEMENT, "LongJump", "Makes you jump far away", new Module[] { new NCPLongJump(), new CubecraftLongJump(), new MineplexLongJump() });
+        super(Category.MOVEMENT, "LongJump", "Makes you jump far away", new NCPLongJump(), new CubecraftLongJump(), new MineplexLongJump());
         this.addSetting(new BooleanSetting("Auto Disable", "Disable Longjump when landing", true));
         this.addSetting(new BooleanSetting("BorderJump", "Jumps when you are close to a border", true));
         this.addSetting(new BooleanSetting("Auto Jump", "Automatically jumps when you can", true));

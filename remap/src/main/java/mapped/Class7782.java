@@ -89,14 +89,9 @@ public class Class7782
             final JsonObject method24987 = this.method24984();
             final JsonObject method24988 = class7782.method24984();
             if (method24987 != null) {
-                if (!method24987.equals(method24988)) {
-                    return false;
-                }
+                return method24987.equals(method24988);
             }
-            else if (method24988 != null) {
-                return false;
-            }
-            return true;
+            else return method24988 == null;
         }
         return false;
     }

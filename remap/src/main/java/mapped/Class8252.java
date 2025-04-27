@@ -16,18 +16,18 @@ import java.util.UUID;
 
 public abstract class Class8252<T> extends Class8254<T>
 {
-    private UUID field33893;
+    private final UUID field33893;
     private String field33894;
     private float field33895;
     private Class320 field33896;
     private Class2163 field33897;
-    private Set<UUID> field33898;
+    private final Set<UUID> field33898;
     private boolean field33899;
-    private Set<Class2205> field33900;
+    private final Set<Class2205> field33900;
     
     public Class8252(final String field33894, final float field33895, final Class320 class320, final Class2163 class321) {
-        Preconditions.checkNotNull((Object)field33894, (Object)"Title cannot be null");
-        Preconditions.checkArgument(field33895 >= 0.0f && field33895 <= 1.0f, (Object)"Health must be between 0 and 1");
+        Preconditions.checkNotNull((Object)field33894, "Title cannot be null");
+        Preconditions.checkArgument(field33895 >= 0.0f && field33895 <= 1.0f, "Health must be between 0 and 1");
         this.field33893 = UUID.randomUUID();
         this.field33894 = field33894;
         this.field33895 = field33895;
@@ -55,7 +55,7 @@ public abstract class Class8252<T> extends Class8254<T>
                 field33895 = 1.0f;
             }
         }
-        Preconditions.checkArgument(field33895 >= 0.0f && field33895 <= 1.0f, (Object)"Health must be between 0 and 1");
+        Preconditions.checkArgument(field33895 >= 0.0f && field33895 <= 1.0f, "Health must be between 0 and 1");
         this.field33895 = field33895;
         this.method27384(Class2098.field12157);
         return this;
@@ -140,7 +140,7 @@ public abstract class Class8252<T> extends Class8254<T>
     
     @Override
     public Set<UUID> method27378() {
-        return Collections.unmodifiableSet((Set<? extends UUID>)this.field33898);
+        return Collections.unmodifiableSet(this.field33898);
     }
     
     @Override

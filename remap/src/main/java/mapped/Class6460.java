@@ -38,13 +38,13 @@ public class Class6460 implements Class6459
         final int method19322 = this.method19322();
         if (Util.method27837() > this.field25671) {
             this.field25671 += 500L;
-            Class6460.field25667.info(new Class2259("menu.preparingSpawn", new Object[] { MathHelper.method35651(method19322, 0, 100) }).getString());
+            Class6460.field25667.info(new Class2259("menu.preparingSpawn", MathHelper.method35651(method19322, 0, 100)).getString());
         }
     }
     
     @Override
     public void method19319() {
-        Class6460.field25667.info("Time elapsed: {} ms", (Object)(Util.method27837() - this.field25670));
+        Class6460.field25667.info("Time elapsed: {} ms", Util.method27837() - this.field25670);
         this.field25671 = Long.MAX_VALUE;
     }
     

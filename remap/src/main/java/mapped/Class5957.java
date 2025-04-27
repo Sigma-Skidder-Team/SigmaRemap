@@ -29,8 +29,8 @@ public class Class5957 implements JsonDeserializer<Class5772>, JsonSerializer<Cl
             final JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("min", (Number)Class5772.method17171(class5772));
             jsonObject.addProperty("max", (Number)Class5772.method17172(class5772));
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)new JsonPrimitive((Number)Class5772.method17171(class5772));
+        return new JsonPrimitive((Number)Class5772.method17171(class5772));
     }
 }

@@ -340,7 +340,7 @@ public enum Class2189 implements Class2190
     
     private final String field13323;
     
-    private Class2189(final String field13323) {
+    Class2189(final String field13323) {
         this.field13323 = field13323;
     }
     

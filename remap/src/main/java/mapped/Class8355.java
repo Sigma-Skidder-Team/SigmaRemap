@@ -26,9 +26,9 @@ public class Class8355
         if (this != Class8355.field34288) {
             final JsonObject jsonObject = new JsonObject();
             jsonObject.add("light", this.field34289.method29745());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     public static Class8355 method27892(final JsonElement jsonElement) {

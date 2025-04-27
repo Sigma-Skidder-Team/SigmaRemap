@@ -37,7 +37,7 @@ public abstract class Class3905 extends Class3902
     
     public Class3905(final boolean field17710, final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3905.field17564, Direction.NORTH)).with((IProperty<Comparable>)Class3905.field17693, false)).with(Class3905.field17618, Class107.field333));
+        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3905.field17564, Direction.NORTH)).with((IProperty<Comparable>)Class3905.field17693, false).with(Class3905.field17618, Class107.field333));
         this.field17710 = field17710;
     }
     
@@ -48,8 +48,8 @@ public abstract class Class3905 extends Class3902
     
     @Override
     public VoxelShape method11808(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final ISelectionContext class7099) {
-        final Direction class7100 = class7096.get((IProperty<Direction>)Class3905.field17564);
-        final boolean booleanValue = class7096.get((IProperty<Boolean>)Class3905.field17693);
+        final Direction class7100 = class7096.get(Class3905.field17564);
+        final boolean booleanValue = class7096.get(Class3905.field17693);
         switch (Class8420.field34566[class7096.get(Class3905.field17618).ordinal()]) {
             case 1: {
                 if (class7100.getAxis() == Direction.Axis.X) {
@@ -85,7 +85,7 @@ public abstract class Class3905 extends Class3902
     
     @Override
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
-        if (!class7096.get((IProperty<Boolean>)Class3905.field17693)) {
+        if (!class7096.get(Class3905.field17693)) {
             this.method12009(class7096, class7097, class7098);
             this.method12010(class7099, class7097, class7098, true);
             return Class2201.field13400;
@@ -109,7 +109,7 @@ public abstract class Class3905 extends Class3902
     public void onReplaced(final BlockState class7096, final World class7097, final BlockPos class7098, final BlockState class7099, final boolean b) {
         if (!b) {
             if (class7096.getBlock() != class7099.getBlock()) {
-                if (class7096.get((IProperty<Boolean>)Class3905.field17693)) {
+                if (class7096.get(Class3905.field17693)) {
                     this.method12013(class7096, class7097, class7098);
                 }
                 super.onReplaced(class7096, class7097, class7098, class7099, b);
@@ -119,12 +119,12 @@ public abstract class Class3905 extends Class3902
     
     @Override
     public int method11848(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
-        return class7096.get((IProperty<Boolean>)Class3905.field17693) ? 15 : 0;
+        return class7096.get(Class3905.field17693) ? 15 : 0;
     }
     
     @Override
     public int method11851(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
-        return (class7096.get((IProperty<Boolean>)Class3905.field17693) && Class3902.method12003(class7096) == class7099) ? 15 : 0;
+        return (class7096.get(Class3905.field17693) && Class3902.method12003(class7096) == class7099) ? 15 : 0;
     }
     
     @Override
@@ -134,7 +134,7 @@ public abstract class Class3905 extends Class3902
     
     @Override
     public void method11822(final BlockState class7096, final Class1849 class7097, final BlockPos class7098, final Random random) {
-        if (class7096.get((IProperty<Boolean>)Class3905.field17693)) {
+        if (class7096.get(Class3905.field17693)) {
             if (!this.field17710) {
                 class7097.setBlockState(class7098, ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3905.field17693, false), 3);
                 this.method12013(class7096, class7097, class7098);
@@ -150,7 +150,7 @@ public abstract class Class3905 extends Class3902
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7097.isRemote) {
             if (this.field17710) {
-                if (!class7096.get((IProperty<Boolean>)Class3905.field17693)) {
+                if (!class7096.get(Class3905.field17693)) {
                     this.method12012(class7096, class7097, class7098);
                 }
             }
@@ -159,7 +159,7 @@ public abstract class Class3905 extends Class3902
     
     private void method12012(final BlockState class7096, final World class7097, final BlockPos class7098) {
         final boolean b = !class7097.method7128((Class<? extends Entity>)Class402.class, class7096.getShape(class7097, class7098).getBoundingBox().offset(class7098)).isEmpty();
-        if (b != class7096.get((IProperty<Boolean>)Class3905.field17693)) {
+        if (b != class7096.get(Class3905.field17693)) {
             class7097.setBlockState(class7098, (BlockState)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3905.field17693, b), 3);
             this.method12013(class7096, class7097, class7098);
             this.method12010(null, class7097, class7098, b);

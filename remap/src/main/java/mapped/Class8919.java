@@ -30,7 +30,7 @@ public class Class8919 implements ArgumentType<Class5346>
     public Class5346 parse(final StringReader stringReader) throws CommandSyntaxException {
         final int cursor = stringReader.getCursor();
         if (!stringReader.canRead()) {
-            throw Class8919.field37503.createWithContext((ImmutableStringReader)stringReader);
+            throw Class8919.field37503.createWithContext(stringReader);
         }
         final Class7629 method23979 = Class7629.method23979(stringReader, false);
         if (stringReader.canRead() && stringReader.peek() == ' ') {
@@ -38,7 +38,7 @@ public class Class8919 implements ArgumentType<Class5346>
             return new Class5347(Class7629.method23979(stringReader, false), method23979, new Class7629(true, 0.0));
         }
         stringReader.setCursor(cursor);
-        throw Class8919.field37503.createWithContext((ImmutableStringReader)stringReader);
+        throw Class8919.field37503.createWithContext(stringReader);
     }
     
     public Collection<String> getExamples() {
@@ -47,6 +47,6 @@ public class Class8919 implements ArgumentType<Class5346>
     
     static {
         field37502 = Arrays.asList("0 0", "~ ~", "~-5 ~5");
-        field37503 = new SimpleCommandExceptionType((Message)new Class2259("argument.rotation.incomplete", new Object[0]));
+        field37503 = new SimpleCommandExceptionType(new Class2259("argument.rotation.incomplete", new Object[0]));
     }
 }

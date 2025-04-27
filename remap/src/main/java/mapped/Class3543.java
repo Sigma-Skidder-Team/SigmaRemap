@@ -30,9 +30,7 @@ public class Class3543 extends Class3542
                         if (this.field16593.method4150().method24731()) {
                             if (!this.method11093()) {
                                 if (!this.field16593.method4665()) {
-                                    if (!this.field16593.method1814()) {
-                                        return true;
-                                    }
+                                    return !this.field16593.method1814();
                                 }
                             }
                         }

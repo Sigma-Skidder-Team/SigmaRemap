@@ -13,7 +13,7 @@ public class Class161 implements Class122
     
     private Class161(final Class122[] field469) {
         this.field469 = field469;
-        this.field470 = Class7454.method22944((Predicate<Class7529>[])field469);
+        this.field470 = Class7454.method22944(field469);
     }
     
     @Override

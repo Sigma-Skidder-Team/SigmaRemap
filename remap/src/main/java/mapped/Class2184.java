@@ -44,18 +44,18 @@ public enum Class2184
         if (i != -1) {
             return (Optional<Class2184>)Optional.fromNullable((Object)Class2184.field12956.get(i));
         }
-        return (Optional<Class2184>)Optional.absent();
+        return Optional.absent();
     }
     
     public static Optional<Class1974> method8349(final int n) {
         final Optional<Class2184> method8348 = method8348(n);
         if (method8348.isPresent()) {
-            return (Optional<Class1974>)Optional.of((Object)((Class2184)method8348.get()).method8351());
+            return (Optional<Class1974>)Optional.of((Object) method8348.get().method8351());
         }
-        return (Optional<Class1974>)Optional.absent();
+        return Optional.absent();
     }
     
-    private Class2184(final int field12957, final Class1974 field12958) {
+    Class2184(final int field12957, final Class1974 field12958) {
         this.field12957 = field12957;
         this.field12958 = field12958;
     }

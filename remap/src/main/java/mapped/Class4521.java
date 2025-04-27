@@ -41,12 +41,12 @@ public abstract class Class4521 extends Class4473
         this.field19941 = field19941;
         this.field19937 = new BlockPos(class51.getInt("PosX"), class51.getInt("PosY"), class51.getInt("PosZ"));
         this.field19938 = class51.getInt("ground_level_delta");
-        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.getCompound("pool_element")), Registry.field234, "element_type", Class8230.field33794);
+        this.field19936 = Class7754.method24753((com.mojang.datafixers.Dynamic<Object>)new Dynamic(Class8453.field34721, class51.getCompound("pool_element")), Registry.field234, "element_type", Class8230.field33794);
         this.field19939 = Class2052.valueOf(class51.getString("rotation"));
         this.field19849 = this.field19936.method27254(field19941, this.field19937, this.field19939);
         final ListNBT method328 = class51.getList("junctions", 10);
         this.field19940.clear();
-        method328.forEach(class53 -> this.field19940.add(Class9330.method34568((com.mojang.datafixers.Dynamic<Object>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class53))));
+        method328.forEach(class53 -> this.field19940.add(Class9330.method34568((com.mojang.datafixers.Dynamic<Object>)new Dynamic(Class8453.field34721, class53))));
     }
     
     @Override

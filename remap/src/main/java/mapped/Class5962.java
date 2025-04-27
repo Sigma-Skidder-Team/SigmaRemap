@@ -39,6 +39,6 @@ public class Class5962 extends Class5960 implements JsonSerializer<Class7270>, J
             this.serialize(jsonObject, class7270, jsonSerializationContext);
         }
         jsonObject.addProperty("text", class7270.method22275());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

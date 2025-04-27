@@ -43,13 +43,13 @@ public class Class5765 implements Class5763
         while (iterator.hasNext()) {
             jsonArray.add(iterator.next().method615());
         }
-        jsonObject.add("ingredients", (JsonElement)jsonArray);
+        jsonObject.add("ingredients", jsonArray);
         final JsonObject jsonObject2 = new JsonObject();
         jsonObject2.addProperty("item", Registry.field211.getKey(this.field23574).toString());
         if (this.field23575 > 1) {
-            jsonObject2.addProperty("count", (Number)this.field23575);
+            jsonObject2.addProperty("count", this.field23575);
         }
-        jsonObject.add("result", (JsonElement)jsonObject2);
+        jsonObject.add("result", jsonObject2);
     }
     
     @Override

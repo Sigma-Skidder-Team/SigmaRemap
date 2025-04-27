@@ -20,9 +20,7 @@ public class Class5439 extends Class5419<Class824>
         if (method4870.method28781() != Class9334.field40060) {
             if (method4870.method28781() != Class9334.field40071) {
                 if (class1850.method4821() == 0) {
-                    if (method4870.method28782() <= 1) {
-                        return true;
-                    }
+                    return method4870.method28782() <= 1;
                 }
             }
         }

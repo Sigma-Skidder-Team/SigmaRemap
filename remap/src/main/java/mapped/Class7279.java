@@ -12,7 +12,7 @@ public final class Class7279
     private static final long field28193 = 1094994246L;
     private long field28194;
     private boolean field28195;
-    private byte[] field28196;
+    private final byte[] field28196;
     private boolean field28197;
     private boolean field28198;
     private boolean field28199;

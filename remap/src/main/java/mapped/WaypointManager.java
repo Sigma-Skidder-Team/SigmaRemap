@@ -29,12 +29,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WaypointManager {
-    private Minecraft field30396;
-    private List<ChunkPos> field30397;
-    private List<ChunkPos> field30398;
-    private List<Class8124> field30399;
+    private final Minecraft field30396;
+    private final List<ChunkPos> field30397;
+    private final List<ChunkPos> field30398;
+    private final List<Class8124> field30399;
     private boolean field30400;
-    private int field30401;
+    private final int field30401;
     private String field30402;
     public HashMap<Long, Class8537> field30403;
     public int field30404;
@@ -219,7 +219,6 @@ public class WaypointManager {
                                         } catch (final IOException ex3) {
                                             ex3.printStackTrace();
                                         }
-                                        return;
                                     }).start();
                                     if (++n3 > 6) {
                                         break;
@@ -257,7 +256,7 @@ public class WaypointManager {
         return false;
     }
 
-    public void method24270() throws FileNotFoundException, IOException {
+    public void method24270() throws IOException {
         if (this.field30402 != null) {
             final String field30402 = this.field30402;
             for (final Map.Entry<K, Class8537> entry : this.field30403.entrySet()) {
@@ -365,9 +364,7 @@ public class WaypointManager {
         if (method6686 != null) {
             if (!method6686.method7062()) {
                 if (method6687 != null) {
-                    if (!method6687.method7062()) {
-                        return true;
-                    }
+                    return !method6687.method7062();
                 }
             }
         }

@@ -108,6 +108,6 @@ public class Class3990 extends Class3986
         field18007 = Block.method11778(3.0, 10.0, 0.0, 13.0, 16.0, 16.0);
         field18008 = VoxelShapes.method24493(Class3990.field18001, Class3990.field18002, Class3990.field18003, Class3990.field18004);
         field18009 = VoxelShapes.method24493(Class3990.field18001, Class3990.field18005, Class3990.field18006, Class3990.field18007);
-        field18010 = new Class2259("container.repair", new Object[0]);
+        field18010 = new Class2259("container.repair");
     }
 }

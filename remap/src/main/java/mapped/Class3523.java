@@ -44,7 +44,7 @@ public class Class3523 extends Class3446
                 final BlockPos class354 = new BlockPos(this.field16528);
                 final BlockState method4489 = this.field16527.world.getBlockState(class354);
                 if (method4489.getBlock().method11785(Class7188.field27910)) {
-                    final Direction class355 = method4489.get((IProperty<Direction>)Class3900.field17564);
+                    final Direction class355 = method4489.get(Class3900.field17564);
                     this.field16529 = new BlockPos(class354.getX() - class355.getXOffset(), class354.getY(), class354.getZ() - class355.getZOffset());
                     return !this.method11075();
                 }
@@ -70,9 +70,7 @@ public class Class3523 extends Class3446
                 if (this.field16528 != null) {
                     if (this.field16528.method2783()) {
                         if (this.field16529 != null) {
-                            if (!this.method11075()) {
-                                return true;
-                            }
+                            return !this.method11075();
                         }
                     }
                 }

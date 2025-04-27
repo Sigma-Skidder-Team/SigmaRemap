@@ -20,9 +20,7 @@ public class Class5417 extends Class5418
         final Class8792 method6927 = class1849.method6927(new BlockPos(class1850));
         if (method6927 != null) {
             if (method6927.method30622()) {
-                if (super.method16538(class1849, class1850)) {
-                    return true;
-                }
+                return super.method16538(class1849, class1850);
             }
         }
         return false;

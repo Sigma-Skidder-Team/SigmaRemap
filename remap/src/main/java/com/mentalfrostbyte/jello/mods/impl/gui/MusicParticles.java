@@ -18,7 +18,7 @@ import java.util.List;
 public class MusicParticles extends PremiumModule
 {
     public long field16021;
-    private List<Class7386> field16022;
+    private final List<Class7386> field16022;
     
     public MusicParticles() {
         super("MusicParticles", "Shows nice particles when music is playing", Category.GUI);

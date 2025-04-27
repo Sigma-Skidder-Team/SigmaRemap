@@ -15,6 +15,6 @@ public class Class655 extends Class654
     
     @Override
     public String method3369() {
-        return Class8822.method30773("selectWorld.bonusItems", new Object[0]) + ' ' + Class8822.method30773((Class539.method3130(this.field3684) && !Class539.method3129(this.field3684)) ? "options.on" : "options.off", new Object[0]);
+        return Class8822.method30773("selectWorld.bonusItems", new Object[0]) + ' ' + Class8822.method30773((Class539.method3130(this.field3684) && !Class539.method3129(this.field3684)) ? "options.on" : "options.off");
     }
 }

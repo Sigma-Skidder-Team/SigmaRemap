@@ -23,7 +23,7 @@ public class Class7205
     private static void method22104(final List<Integer> list, final String s) {
         final Iterator<Integer> iterator = list.iterator();
         while (iterator.hasNext()) {
-            method22103((int)iterator.next(), s);
+            method22103(iterator.next(), s);
         }
     }
     

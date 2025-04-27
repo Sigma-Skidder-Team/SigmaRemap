@@ -38,6 +38,6 @@ public class Class4218 extends Class4211
         jsonObject.add("parent", this.field19013.method27019());
         jsonObject.add("partner", this.field19014.method27019());
         jsonObject.add("child", this.field19015.method27019());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

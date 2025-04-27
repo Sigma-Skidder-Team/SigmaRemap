@@ -6,7 +6,7 @@ package com.sun.jna;
 
 public final class WString implements CharSequence, Comparable
 {
-    private String string;
+    private final String string;
     
     public WString(final String s) {
         if (s == null) {

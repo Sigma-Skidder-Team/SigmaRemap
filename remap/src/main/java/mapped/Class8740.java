@@ -24,7 +24,7 @@ public class Class8740 implements ArgumentType<Class7732>
     public static final SimpleCommandExceptionType field36718;
     
     public static Collection<GameProfile> method30190(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return ((Class7732)commandContext.getArgument(s, (Class)Class7732.class)).method24681((Class7492)commandContext.getSource());
+        return ((Class7732)commandContext.getArgument(s, (Class)Class7732.class)).method24681(commandContext.getSource());
     }
     
     public static Class8740 method30191() {
@@ -72,6 +72,6 @@ public class Class8740 implements ArgumentType<Class7732>
     
     static {
         field36717 = Arrays.asList("Player", "0123", "dd12be42-52a9-4a91-a8a1-11c01849e498", "@e");
-        field36718 = new SimpleCommandExceptionType((Message)new Class2259("argument.player.unknown", new Object[0]));
+        field36718 = new SimpleCommandExceptionType(new Class2259("argument.player.unknown", new Object[0]));
     }
 }

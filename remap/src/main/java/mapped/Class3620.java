@@ -14,7 +14,7 @@ public class Class3620 extends Class3617
 {
     private static String[] field16817;
     private int field16818;
-    private List<BlockPos> field16819;
+    private final List<BlockPos> field16819;
     private Class9468 field16820;
     public final /* synthetic */ Class798 field16821;
     
@@ -33,9 +33,7 @@ public class Class3620 extends Class3617
             if (!this.field16821.method4201()) {
                 if (Class798.method4544(this.field16821)) {
                     if (!this.method11145(Class798.method4545(this.field16821))) {
-                        if (this.field16821.world.getBlockState(Class798.method4545(this.field16821)).method21755(Class7188.field27931)) {
-                            return true;
-                        }
+                        return this.field16821.world.getBlockState(Class798.method4545(this.field16821)).method21755(Class7188.field27931);
                     }
                 }
             }
@@ -133,9 +131,7 @@ public class Class3620 extends Class3617
             if (method24727 != null) {
                 if (method24727.method35232().equals(class354)) {
                     if (method24727.method35228()) {
-                        if (method24727.method35215()) {
-                            return true;
-                        }
+                        return method24727.method35215();
                     }
                 }
             }

@@ -112,7 +112,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
                     class8321 = class8321.method27641();
                     class8321.method27691(this.field3097);
                     if (class8321.method27620()) {
-                        string = "" + TextFormatting.YELLOW + "0";
+                        string = TextFormatting.YELLOW + "0";
                     }
                 }
             }
@@ -217,7 +217,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
             if (class6601.method20062()) {
                 final Pair<ResourceLocation, ResourceLocation> method2376 = class6601.method20059();
                 if (method2376 != null) {
-                    final TextureAtlasSprite class6603 = this.minecraft.method5296((ResourceLocation)method2376.getFirst()).apply((ResourceLocation)method2376.getSecond());
+                    final TextureAtlasSprite class6603 = this.minecraft.method5296(method2376.getFirst()).apply(method2376.getSecond());
                     this.minecraft.method5290().method5849(class6603.method7504().method6340());
                     AbstractGui.blit(field26175, field26176, this.getBlitOffset(), 16, 16, class6603);
                     n2 = 1;
@@ -380,9 +380,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
         if (n >= n3) {
             if (n2 >= n4) {
                 if (n < n3 + this.field3075) {
-                    if (n2 < n4 + this.field3076) {
-                        return false;
-                    }
+                    return !(n2 < n4 + this.field3076);
                 }
             }
         }
@@ -577,9 +575,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
         if (n5 >= n - 1) {
             if (n5 < n + n3 + 1) {
                 if (n6 >= n2 - 1) {
-                    if (n6 < n2 + n4 + 1) {
-                        return true;
-                    }
+                    return n6 < n2 + n4 + 1;
                 }
             }
         }

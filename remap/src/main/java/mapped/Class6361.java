@@ -37,7 +37,7 @@ public class Class6361 extends Class6354
     }
     
     public int method18948() {
-        final int n = this.field25443.getInt((Object)"map") + 1;
+        final int n = this.field25443.getInt("map") + 1;
         this.field25443.put((Object)"map", n);
         this.method18903();
         return n;

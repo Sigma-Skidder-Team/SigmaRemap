@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Class5832 extends Class5831
 {
-    private ArrayList field23914;
+    private final ArrayList field23914;
     
     public Class5832(final Class5831 class5831) {
         super(class5831.method17520(), class5831.method17521());

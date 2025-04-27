@@ -35,11 +35,11 @@ public class Class4583 extends Class4582<Class5125>
     
     @Override
     public int method13603(final Class6346<?> class6346) {
-        return ((Class7065)class6346.method18876()).method21574();
+        return class6346.method18876().method21574();
     }
     
     @Override
     public int method13604(final Class6346<?> class6346) {
-        return ((Class7065)class6346.method18876()).method21575();
+        return class6346.method18876().method21575();
     }
 }

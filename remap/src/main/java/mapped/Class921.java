@@ -59,7 +59,7 @@ public class Class921 extends Thread
             if (byName != null) {
                 s = s.replaceAll(byName + ":" + this.field4899, "");
             }
-            Realms.setScreen(new Class5070(Class9019.method32313(this.field4900), "connect.failed", new Class2259("disconnect.genericReason", new Object[] { s })));
+            Realms.setScreen(new Class5070(Class9019.method32313(this.field4900), "connect.failed", new Class2259("disconnect.genericReason", s)));
         }
     }
 }

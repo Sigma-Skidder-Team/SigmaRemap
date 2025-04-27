@@ -56,7 +56,7 @@ public class Class4060 extends Item
                     final IProperty<?> class517 = method12267(method21698, method21700, playerEntity.method2804());
                     final String method21701 = class517.getName();
                     method21699.putString(string, method21701);
-                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".select", new Object[] { method21701, method12269(class513, class517) }));
+                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".select", method21701, method12269(class513, class517)));
                 }
                 else {
                     if (method21700 == null) {
@@ -64,17 +64,17 @@ public class Class4060 extends Item
                     }
                     final BlockState method21702 = method12266(class513, method21700, playerEntity.method2804());
                     class514.setBlockState(class515, method21702, 18);
-                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".update", new Object[] { method21700.getName(), method12269(method21702, method21700) }));
+                    method12268(playerEntity, new Class2259(this.getTranslationKey() + ".update", method21700.getName(), method12269(method21702, method21700)));
                 }
             }
             else {
-                method12268(playerEntity, new Class2259(this.getTranslationKey() + ".empty", new Object[] { string }));
+                method12268(playerEntity, new Class2259(this.getTranslationKey() + ".empty", string));
             }
         }
     }
     
     private static <T extends Comparable<T>> BlockState method12266(final BlockState class7096, final IProperty<T> class7097, final boolean b) {
-        return ((StateHolder<O, BlockState>)class7096).with(class7097, (Comparable)method12267((Iterable<V>)class7097.getAllowedValues(), (V)class7096.get((IProperty<T>)class7097), b));
+        return class7096.with(class7097, (Comparable)method12267((Iterable<V>)class7097.getAllowedValues(), (V)class7096.get(class7097), b));
     }
     
     private static <T> T method12267(final Iterable<T> iterable, final T t, final boolean b) {

@@ -18,7 +18,7 @@ import java.util.List;
 public class AutoGapple extends ModuleWithSettings
 {
     public AutoGapple() {
-        super(Category.ITEM, "AutoGapple", "Automatically eat golden apples", new Module[] { new BaicAutoGapple(), new HypixelAutoGapple() });
+        super(Category.ITEM, "AutoGapple", "Automatically eat golden apples", new BaicAutoGapple(), new HypixelAutoGapple());
         this.addSetting(new NumberSetting("Health", "Maximum health before eating gapple.", 7.0f, Float.class, 0.5f, 10.0f, 0.5f));
     }
     

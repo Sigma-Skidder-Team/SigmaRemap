@@ -11,20 +11,20 @@ import java.util.List;
 
 public class Class715 extends Class698
 {
-    private Screen field3904;
-    private String field3905;
-    private String field3906;
+    private final Screen field3904;
+    private final String field3905;
+    private final String field3906;
     private final List<String> field3907;
     public String field3908;
     private int field3909;
     
     public Class715(final Screen field3904, final String field3905, final String field3906) {
-        super(new Class2259("of.options.detailsTitle", new Object[0]));
+        super(new Class2259("of.options.detailsTitle"));
         this.field3907 = Lists.newArrayList();
         this.field3904 = field3904;
         this.field3905 = field3905;
         this.field3906 = field3906;
-        this.field3908 = Class8822.method30773("gui.done", new Object[0]);
+        this.field3908 = Class8822.method30773("gui.done");
     }
     
     @Override

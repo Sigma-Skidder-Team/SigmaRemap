@@ -34,7 +34,7 @@ public class Class8965
     }
     
     public Stream<ResourceLocation> method31807() {
-        return this.field37671.entrySet().stream().flatMap(entry -> entry.getValue().method18910((String)entry.getKey()));
+        return this.field37671.entrySet().stream().flatMap(entry -> entry.getValue().method18910(entry.getKey()));
     }
     
     private static String method31808(final String str) {

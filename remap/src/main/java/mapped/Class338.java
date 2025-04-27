@@ -26,11 +26,11 @@ public enum Class338 implements Class328
     field2078("revenge_time"), 
     field2079("swing_progress");
     
-    private String field2080;
-    private Class8551 field2081;
+    private final String field2080;
+    private final Class8551 field2081;
     private static final Class338[] field2082;
     
-    private Class338(final String field2080) {
+    Class338(final String field2080) {
         this.field2080 = field2080;
         this.field2081 = Minecraft.getInstance().method5306();
     }

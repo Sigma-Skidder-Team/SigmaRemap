@@ -114,9 +114,7 @@ public class Class8797
         if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29173) {
             if (this.method30699(this.method30692())) {
                 if (this.method30699(this.method30692().method1137())) {
-                    if (!this.method30699(this.method30692().method1139())) {
-                        return true;
-                    }
+                    return !this.method30699(this.method30692().method1139());
                 }
             }
             return false;
@@ -162,9 +160,7 @@ public class Class8797
     public boolean method30698() {
         if (!this.method30697()) {
             if (Class8797.field36991.world.getBlockState(this.method30692()).method21696() != Blocks.field29172) {
-                if (Class8797.field36991.world.getBlockState(this.method30692().method1137()).method21696() != Blocks.field29172) {
-                    return false;
-                }
+                return Class8797.field36991.world.getBlockState(this.method30692().method1137()).method21696() == Blocks.field29172;
             }
         }
         return true;

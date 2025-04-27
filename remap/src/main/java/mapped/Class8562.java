@@ -51,7 +51,7 @@ public class Class8562
     }
     
     public <T> T method28786(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field239.getKey(this.field35984).toString()), dynamicOps.createString("profession"), dynamicOps.createString(Registry.field240.getKey(this.field35985).toString()), dynamicOps.createString("level"), dynamicOps.createInt(this.field35986)));
+        return (T)dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("type"), dynamicOps.createString(Registry.field239.getKey(this.field35984).toString()), dynamicOps.createString("profession"), dynamicOps.createString(Registry.field240.getKey(this.field35985).toString()), dynamicOps.createString("level"), dynamicOps.createInt(this.field35986)));
     }
     
     public static int method28787(final int n) {

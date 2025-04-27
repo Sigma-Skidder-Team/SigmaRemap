@@ -52,7 +52,7 @@ public class Class8463 extends DataFix
                 return typed.updateTyped(opticFinder, typed2 -> {
                     final int[] array = { 0 };
                     typed2.updateTyped(opticFinder2, typed3 -> {
-                        final Int2ObjectMap int2ObjectMap = (Int2ObjectMap)new Int2ObjectOpenHashMap((Map)typed3.getAllTyped(opticFinder3).stream().map(typed4 -> new Class8188((Typed<?>)typed4, this.getInputSchema())).collect(Collectors.toMap((Function<? super Object, ?>)Class8187::method27108, class8190 -> class8190)));
+                        final Int2ObjectMap int2ObjectMap = new Int2ObjectOpenHashMap(typed3.getAllTyped(opticFinder3).stream().map(typed4 -> new Class8188(typed4, this.getInputSchema())).collect(Collectors.toMap((Function<? super Object, ?>)Class8187::method27108, class8190 -> class8190)));
                         if (!int2ObjectMap.values().stream().allMatch(Class8187::method27105)) {
                             Lists.newArrayList();
                             boolean b = false;
@@ -74,7 +74,7 @@ public class Class8463 extends DataFix
                                         class8188.method27106(i);
                                         final int n;
                                         if (!class8188.method27113(n)) {
-                                            if (!(!class8188.method27114(n))) {
+                                            if (class8188.method27114(n)) {
                                                 this.method28238(i);
                                                 this.method28240(i);
                                                 final int n2;
@@ -125,7 +125,7 @@ public class Class8463 extends DataFix
                                                                         final int n12;
                                                                         class8189.method27106(n12);
                                                                         final int n13;
-                                                                        if (!(!class8189.method27114(n13))) {
+                                                                        if (class8189.method27114(n13)) {
                                                                             if (Class8188.method27117(class8189, n13) > j) {
                                                                                 Class8188.method27118(class8189, n12, n13, j);
                                                                                 set2.add(method28237(n6, n8, n10));
@@ -143,7 +143,7 @@ public class Class8463 extends DataFix
                                 }
                                 ++j;
                             }
-                            return typed3.updateTyped(opticFinder3, typed5 -> ((Class8188)int2ObjectMap2.get(((Dynamic)typed5.get(DSL.remainderFinder())).get("Y").asInt(0))).method27104((Typed<?>)typed5));
+                            return typed3.updateTyped(opticFinder3, typed5 -> ((Class8188)int2ObjectMap2.get(((Dynamic)typed5.get(DSL.remainderFinder())).get("Y").asInt(0))).method27104(typed5));
                         }
                         else {
                             return typed3;
@@ -227,8 +227,7 @@ public class Class8463 extends DataFix
             object2IntOpenHashMap.put((Object)"minecraft:jungle_leaves", 3);
             object2IntOpenHashMap.put((Object)"minecraft:oak_leaves", 4);
             object2IntOpenHashMap.put((Object)"minecraft:spruce_leaves", 5);
-            return;
         });
-        field34743 = (Set)ImmutableSet.of((Object)"minecraft:acacia_bark", (Object)"minecraft:birch_bark", (Object)"minecraft:dark_oak_bark", (Object)"minecraft:jungle_bark", (Object)"minecraft:oak_bark", (Object)"minecraft:spruce_bark", (Object[])new String[] { "minecraft:acacia_log", "minecraft:birch_log", "minecraft:dark_oak_log", "minecraft:jungle_log", "minecraft:oak_log", "minecraft:spruce_log", "minecraft:stripped_acacia_log", "minecraft:stripped_birch_log", "minecraft:stripped_dark_oak_log", "minecraft:stripped_jungle_log", "minecraft:stripped_oak_log", "minecraft:stripped_spruce_log" });
+        field34743 = (Set)ImmutableSet.of("minecraft:acacia_bark", "minecraft:birch_bark", "minecraft:dark_oak_bark", "minecraft:jungle_bark", "minecraft:oak_bark", "minecraft:spruce_bark", (Object[])new String[] { "minecraft:acacia_log", "minecraft:birch_log", "minecraft:dark_oak_log", "minecraft:jungle_log", "minecraft:oak_log", "minecraft:spruce_log", "minecraft:stripped_acacia_log", "minecraft:stripped_birch_log", "minecraft:stripped_dark_oak_log", "minecraft:stripped_jungle_log", "minecraft:stripped_oak_log", "minecraft:stripped_spruce_log" });
     }
 }

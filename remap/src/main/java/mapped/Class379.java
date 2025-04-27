@@ -35,9 +35,7 @@ public class Class379 extends Class378
     public boolean method1263(final Random random, final int n, final int a, final int n2, final int a2, final int n3) {
         if (Math.abs(a) == n3) {
             if (Math.abs(a2) == n3) {
-                if (random.nextInt(2) == 0 || n2 == n) {
-                    return true;
-                }
+                return random.nextInt(2) == 0 || n2 == n;
             }
         }
         return false;

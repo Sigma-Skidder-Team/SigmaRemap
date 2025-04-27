@@ -71,12 +71,12 @@ public class Class9550
                 if (e.hasWorld()) {
                     if (e.getType().method16523(e.method2194().getBlock())) {
                         method35729(e, () -> {
-                            if (!(!Class8880.method31235())) {
+                            if (Class8880.method31235()) {
                                 Class8880.method31237();
                             }
                             method35727(class7353, class7354, n2, class7355, class7356);
-                            if (!(!Class8880.method31235())) {
-                                if (!(!Class8880.method31239())) {
+                            if (Class8880.method31235()) {
+                                if (Class8880.method31239()) {
                                     Class8880.method31240();
                                     method35727(class7353, class7354, n2, class7355, class7356);
                                     Class8880.method31241();
@@ -107,7 +107,6 @@ public class Class9550
             method35729(e, () -> {
                 class7353.method12454(this.field41133 = field41133, 0.0f, class7354, class7355, n3, n4);
                 this.field41133 = null;
-                return;
             });
             return false;
         }

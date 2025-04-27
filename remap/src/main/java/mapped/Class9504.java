@@ -7,9 +7,9 @@ package mapped;
 public class Class9504
 {
     private static String[] field40885;
-    private Class8683 field40886;
-    private Class8683 field40887;
-    private Class8172 field40888;
+    private final Class8683 field40886;
+    private final Class8683 field40887;
+    private final Class8172 field40888;
     private Boolean field40889;
     private Class9089 field40890;
     

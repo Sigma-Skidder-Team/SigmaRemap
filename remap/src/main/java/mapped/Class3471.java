@@ -26,9 +26,7 @@ public class Class3471 extends Class3470
         final Class775 class775 = (Class775)this.field16340;
         if (class775.method4293()) {
             if (Class775.method4286(class775).nextInt(10) == 0) {
-                if (super.method11013()) {
-                    return true;
-                }
+                return super.method11013();
             }
         }
         return false;

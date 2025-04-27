@@ -36,8 +36,8 @@ public class Class8637
     
     public Pair<Integer, Integer> method29301(final int i, final int j) {
         final Pair<Integer, Integer> method29303 = this.method29303(i, j);
-        final int intValue = (int)method29303.getFirst();
-        final int intValue2 = (int)method29303.getSecond();
+        final int intValue = method29303.getFirst();
+        final int intValue2 = method29303.getSecond();
         if (method29302(i, intValue) && method29302(j, intValue2)) {
             return method29303;
         }

@@ -63,7 +63,7 @@ public class Class79<T> extends AbstractSet<T>
             }
             final Object[] array = new Object[n];
             System.arraycopy(this.field176, 0, array, 0, this.field177);
-            this.field176 = (T[])method431(array);
+            this.field176 = method431(array);
         }
     }
     

@@ -11,8 +11,8 @@ import java.util.concurrent.Future;
 
 public class Class6062
 {
-    private int field24641;
-    private long field24642;
+    private final int field24641;
+    private final long field24642;
     private int[] field24643;
     private Class15 field24644;
     private double[] field24645;
@@ -24,7 +24,7 @@ public class Class6062
     private boolean field24651;
     private Class7992 field24652;
     private static final double field24653 = 3.141592653589793;
-    private boolean field24654;
+    private final boolean field24654;
     
     public Class6062(final long field24642) {
         this.field24651 = false;
@@ -64,7 +64,7 @@ public class Class6062
                     this.field24643 = new int[(int)Class7640.method24124(2 + (1 << (int)(Class7640.method24089(field24642 / 2L + 0.5) / Class7640.method24089(2.0)) / 2))];
                     this.field24645 = new double[this.field24641 * 5 / 4];
                     this.field24647 = this.field24643[0];
-                    if (field24642 > this.field24647 << 2) {
+                    if (field24642 > (long) this.field24647 << 2) {
                         Class9133.method33179(this.field24647 = this.field24641 >> 2, this.field24643, this.field24645);
                     }
                     this.field24649 = this.field24643[1];

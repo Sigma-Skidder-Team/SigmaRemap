@@ -16,7 +16,7 @@ public class Class4779 extends Class4710<Class857, Class5866>
     
     public Class4779(final Class8551 class8551) {
         super(class8551, new Class5867(), 0.0f);
-        this.method13978((Class1799<Class857, Class5866>)new Class1835((Class4778<LivingEntity, Class5853>)this, new Class5866(0.5f), new Class5866(1.0f)));
+        this.method13978((Class1799<Class857, Class5866>)new Class1835(this, new Class5866(0.5f), new Class5866(1.0f)));
         this.method13978(new Class1823<Class857, Class5866>(this));
         this.method13978(new Class1801<Class857, Class5866>(this));
         this.method13978(new Class1831<Class857, Class5866>(this));

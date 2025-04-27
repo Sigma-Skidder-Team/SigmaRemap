@@ -44,8 +44,8 @@ public class Class576 extends Widget implements IRenderable, IGuiEventListener
         this.field3444 = true;
         this.field3449 = 14737632;
         this.field3450 = 7368816;
-        this.field3453 = (Predicate<String>)Predicates.alwaysTrue();
-        this.field3454 = (BiFunction<String, Integer, String>)((s2, p1) -> s2);
+        this.field3453 = Predicates.alwaysTrue();
+        this.field3454 = ((s2, p1) -> s2);
         this.field3438 = field3438;
         if (class576 != null) {
             this.method3377(class576.method3378());
@@ -337,9 +337,7 @@ public class Class576 extends Widget implements IRenderable, IGuiEventListener
     public boolean method3394() {
         if (this.method3409()) {
             if (this.method3370()) {
-                if (this.method3404()) {
-                    return true;
-                }
+                return this.method3404();
             }
         }
         return false;
@@ -547,9 +545,7 @@ public class Class576 extends Widget implements IRenderable, IGuiEventListener
             if (n >= this.field3426) {
                 if (n < this.field3426 + this.field3424) {
                     if (n2 >= this.field3427) {
-                        if (n2 < this.field3427 + this.field3425) {
-                            return true;
-                        }
+                        return n2 < this.field3427 + this.field3425;
                     }
                 }
             }

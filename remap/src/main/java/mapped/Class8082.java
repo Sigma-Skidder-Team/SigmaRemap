@@ -56,9 +56,7 @@ public final class Class8082
         if (this.field33288 == null) {
             if (this.field33284.field9541 || this.field33284.field9540) {
                 if (this.field33285.field9604 || this.field33285.field9603) {
-                    if (this.field33283) {
-                        return false;
-                    }
+                    return !this.field33283;
                 }
             }
             return true;

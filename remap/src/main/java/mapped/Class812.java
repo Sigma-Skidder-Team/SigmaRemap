@@ -82,7 +82,7 @@ public abstract class Class812 extends Class806
                     final CompoundNBT e = new CompoundNBT();
                     e.putByte("Slot", (byte)i);
                     method2157.method27627(e);
-                    ((AbstractList<CompoundNBT>)class52).add(e);
+                    class52.add(e);
                 }
             }
             class51.put("Items", class52);

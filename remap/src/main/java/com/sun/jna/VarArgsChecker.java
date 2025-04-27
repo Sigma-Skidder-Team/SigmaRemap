@@ -13,7 +13,7 @@ public abstract class VarArgsChecker
     
     public static VarArgsChecker create() {
         try {
-            if (Method.class.getMethod("isVarArgs", (Class<?>[])new Class[0]) != null) {
+            if (Method.class.getMethod("isVarArgs", new Class[0]) != null) {
                 return new VarArgsChecker$RealVarArgsChecker(null);
             }
             return new VarArgsChecker$NoVarArgsChecker(null);

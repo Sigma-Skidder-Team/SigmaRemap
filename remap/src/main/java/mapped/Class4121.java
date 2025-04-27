@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class Class4121 implements Class4119
 {
-    private boolean field18238;
+    private final boolean field18238;
     public final /* synthetic */ Class6065 field18239;
     
     public Class4121(final Class6065 field18239, final boolean field18240) {

@@ -882,7 +882,7 @@ public class Class2274 implements Serializable, Cloneable
             n7 -= 3;
             array3[n2 + 3] = (array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7 + 1];
             n7 -= 3;
-            array3[n2 + 0] = (array3[n2 + 0] - array[n7 + 1] * array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7 + 0];
+            array3[n2] = (array3[n2] - array[n7 + 1] * array3[n2 + 3] - array[n7 + 2] * array3[n2 + 6]) / array[n7];
         }
     }
     
@@ -1304,7 +1304,7 @@ public class Class2274 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * 1L + Class9427.method35031(this.field13845)) + Class9427.method35031(this.field13846)) + Class9427.method35031(this.field13847)) + Class9427.method35031(this.field13848)) + Class9427.method35031(this.field13849)) + Class9427.method35031(this.field13850)) + Class9427.method35031(this.field13851)) + Class9427.method35031(this.field13852)) + Class9427.method35031(this.field13853);
+        final long n = 31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L * (31L + Class9427.method35031(this.field13845)) + Class9427.method35031(this.field13846)) + Class9427.method35031(this.field13847)) + Class9427.method35031(this.field13848)) + Class9427.method35031(this.field13849)) + Class9427.method35031(this.field13850)) + Class9427.method35031(this.field13851)) + Class9427.method35031(this.field13852)) + Class9427.method35031(this.field13853);
         return (int)(n ^ n >> 32);
     }
     
@@ -1371,9 +1371,7 @@ public class Class2274 implements Serializable, Cloneable
         final double[] array11 = new double[3];
         final double[] array12 = new double[3];
         int n = 0;
-        for (int i = 0; i < 9; ++i) {
-            array10[i] = array[i];
-        }
+        System.arraycopy(array, 0, array10, 0, 9);
         if (array[3] * array[3] >= 1.110223024E-16) {
             if (array[0] * array[0] >= 1.110223024E-16) {
                 final double n2 = 1.0 / Math.sqrt(array[0] * array[0] + array[3] * array[3]);
@@ -1593,9 +1591,7 @@ public class Class2274 implements Serializable, Cloneable
                         final double n17 = 1.0;
                         array2[n16] = n17;
                         array2[n14] = (array2[n15] = n17);
-                        for (int k = 0; k < 9; ++k) {
-                            array3[k] = array10[k];
-                        }
+                        System.arraycopy(array10, 0, array3, 0, 9);
                         return;
                     }
                 }
@@ -1631,12 +1627,8 @@ public class Class2274 implements Serializable, Cloneable
         }
         method8634(array2, array3, array10);
         if (method8637(Math.abs(array4[0]), Math.abs(array4[1])) && method8637(Math.abs(array4[1]), Math.abs(array4[2]))) {
-            for (int i = 0; i < 9; ++i) {
-                array5[i] = array10[i];
-            }
-            for (int j = 0; j < 3; ++j) {
-                array6[j] = array4[j];
-            }
+            System.arraycopy(array10, 0, array5, 0, 9);
+            System.arraycopy(array4, 0, array6, 0, 3);
         }
         else {
             if (array4[0] <= array4[1]) {
@@ -2130,7 +2122,7 @@ public class Class2274 implements Serializable, Cloneable
     
     public static void method8632(final double[] array) {
         for (int i = 0; i < 3; ++i) {
-            System.out.println(array[i * 3 + 0] + " " + array[i * 3 + 1] + " " + array[i * 3 + 2] + "\n");
+            System.out.println(array[i * 3] + " " + array[i * 3 + 1] + " " + array[i * 3 + 2] + "\n");
         }
     }
     
@@ -2140,9 +2132,7 @@ public class Class2274 implements Serializable, Cloneable
     
     public static void method8634(final double[] array, final double[] array2, final double[] array3) {
         final double[] array4 = { array[0] * array2[0] + array[1] * array2[3] + array[2] * array2[6], array[0] * array2[1] + array[1] * array2[4] + array[2] * array2[7], array[0] * array2[2] + array[1] * array2[5] + array[2] * array2[8], array[3] * array2[0] + array[4] * array2[3] + array[5] * array2[6], array[3] * array2[1] + array[4] * array2[4] + array[5] * array2[7], array[3] * array2[2] + array[4] * array2[5] + array[5] * array2[8], array[6] * array2[0] + array[7] * array2[3] + array[8] * array2[6], array[6] * array2[1] + array[7] * array2[4] + array[8] * array2[7], array[6] * array2[2] + array[7] * array2[5] + array[8] * array2[8] };
-        for (int i = 0; i < 9; ++i) {
-            array3[i] = array4[i];
-        }
+        System.arraycopy(array4, 0, array3, 0, 9);
     }
     
     public static void method8635(final double[] array, final double[] array2) {

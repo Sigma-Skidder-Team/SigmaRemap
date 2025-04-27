@@ -58,7 +58,7 @@ public class Class26<V> implements Map<String, V>
     @Override
     public void putAll(final Map<? extends String, ? extends V> map) {
         for (final Entry<String, V> entry : map.entrySet()) {
-            this.put((String)entry.getKey(), entry.getValue());
+            this.put(entry.getKey(), entry.getValue());
         }
     }
     

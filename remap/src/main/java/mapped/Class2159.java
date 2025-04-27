@@ -19,7 +19,7 @@ public enum Class2159
     private final int field12823;
     private final String field12824;
     
-    private Class2159(final int field12823, final String field12824) {
+    Class2159(final int field12823, final String field12824) {
         this.field12823 = field12823;
         this.field12824 = field12824;
     }

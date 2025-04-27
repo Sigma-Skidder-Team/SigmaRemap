@@ -72,7 +72,7 @@ public class Class7042 implements Class7038
                 arrayDeque.removeLast();
             }
         }
-        return Joiner.on('/').join((Iterable)arrayDeque);
+        return Joiner.on('/').join(arrayDeque);
     }
     
     private String method21535(final ZipFile zipFile) {
@@ -83,7 +83,7 @@ public class Class7042 implements Class7038
         final Pattern compile = Pattern.compile("([^/]+/)shaders/");
         final Enumeration<? extends ZipEntry> entries = zipFile.entries();
         while (entries.hasMoreElements()) {
-            final Matcher matcher = compile.matcher(((ZipEntry)entries.nextElement()).getName());
+            final Matcher matcher = compile.matcher(entries.nextElement().getName());
             if (!matcher.matches()) {
                 continue;
             }

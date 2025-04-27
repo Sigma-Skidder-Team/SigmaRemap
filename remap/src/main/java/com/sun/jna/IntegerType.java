@@ -7,9 +7,9 @@ package com.sun.jna;
 public abstract class IntegerType extends Number implements NativeMapped
 {
     private static final long serialVersionUID = 1L;
-    private int size;
+    private final int size;
     private Number number;
-    private boolean unsigned;
+    private final boolean unsigned;
     private long value;
     
     public IntegerType(final int size) {
@@ -83,7 +83,7 @@ public abstract class IntegerType extends Number implements NativeMapped
     public Object fromNative(final Object nativeValue, final FromNativeContext context) {
         final long value = (nativeValue == null) ? 0L : ((Number)nativeValue).longValue();
         try {
-            final IntegerType integerType = (IntegerType)this.getClass().newInstance();
+            final IntegerType integerType = this.getClass().newInstance();
             integerType.setValue(value);
             return integerType;
         }

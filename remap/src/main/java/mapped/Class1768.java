@@ -81,16 +81,15 @@ public class Class1768 extends Class1767
                     super.method5871(class6583);
                 }
                 catch (final IOException ex) {
-                    Class1768.field9834.warn("Failed to load texture: {}", (Object)this.field9830, (Object)ex);
+                    Class1768.field9834.warn("Failed to load texture: {}", this.field9830, ex);
                 }
                 this.field9840 = true;
             }
-            return;
         });
         if (this.field9839 == null) {
             Class1846 method6303;
             if (this.field9835 != null && this.field9835.isFile()) {
-                Class1768.field9834.debug("Loading http texture from local cache ({})", (Object)this.field9835);
+                Class1768.field9834.debug("Loading http texture from local cache ({})", this.field9835);
                 method6303 = this.method6303(new FileInputStream(this.field9835));
             }
             else {
@@ -98,7 +97,7 @@ public class Class1768 extends Class1767
             }
             if (method6303 == null) {
                 this.field9839 = CompletableFuture.runAsync(() -> {
-                    Class1768.field9834.debug("Downloading http texture from {} to {}", (Object)this.field9836, (Object)this.field9835);
+                    Class1768.field9834.debug("Downloading http texture from {} to {}", this.field9836, this.field9835);
                     if (this.method6304()) {
                         this.method6305();
                     }
@@ -128,13 +127,12 @@ public class Class1768 extends Class1767
                                         this.method6300(class6584);
                                         this.method6306();
                                     }
-                                    return;
                                 });
                                 this.field9843 = true;
                             }
                         }
                         catch (final Exception ex2) {
-                            Class1768.field9834.error("Couldn't download http texture", (Throwable)ex2);
+                            Class1768.field9834.error("Couldn't download http texture", ex2);
                         }
                         finally {
                             final URLConnection urlConnection;
@@ -163,7 +161,7 @@ public class Class1768 extends Class1767
             }
         }
         catch (final IOException ex) {
-            Class1768.field9834.warn("Error while loading the skin texture", (Throwable)ex);
+            Class1768.field9834.warn("Error while loading the skin texture", ex);
         }
         return class1846;
     }
@@ -185,7 +183,7 @@ public class Class1768 extends Class1767
             final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(method19926.method27220());
             Class1846 class1846;
             if (this.field9835 != null) {
-                FileUtils.copyInputStreamToFile((InputStream)byteArrayInputStream, this.field9835);
+                FileUtils.copyInputStreamToFile(byteArrayInputStream, this.field9835);
                 class1846 = Class1846.method6637(new FileInputStream(this.field9835));
             }
             else {

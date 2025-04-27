@@ -15,9 +15,9 @@ public enum Class2009
     private final ITextComponent field11412;
     private final ITextComponent field11413;
     
-    private Class2009(final String s) {
-        this.field11412 = new Class2259("resourcePack.incompatible." + s, new Object[0]);
-        this.field11413 = new Class2259("resourcePack.incompatible.confirm." + s, new Object[0]);
+    Class2009(final String s) {
+        this.field11412 = new Class2259("resourcePack.incompatible." + s);
+        this.field11413 = new Class2259("resourcePack.incompatible.confirm." + s);
     }
     
     public boolean method8043() {

@@ -33,6 +33,6 @@ public class Class9529
     
     @Override
     public String toString() {
-        return "" + this.field41024 + ", " + this.field41025 + ", " + this.field41026;
+        return this.field41024 + ", " + this.field41025 + ", " + this.field41026;
     }
 }

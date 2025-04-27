@@ -18,7 +18,7 @@ public class Class6996 implements Class6991
     
     @Override
     public ITextComponent method21403() {
-        return new Class2259("spectatorMenu.close", new Object[0]);
+        return new Class2259("spectatorMenu.close");
     }
     
     @Override

@@ -16,7 +16,7 @@ public class Class6704 extends Class6693
     public static final String[] field26435;
     
     public Class6704() {
-        super("insult", "Sends a randomly generated insult", new String[0]);
+        super("insult", "Sends a randomly generated insult");
     }
     
     @Override
@@ -39,7 +39,7 @@ public class Class6704 extends Class6693
         }
         else {
             final String s = Class6704.field26434[method20361(Class6704.field26434.length)];
-            final String string2 = s.substring(0, 1).toUpperCase() + s.substring(1, s.length());
+            final String string2 = s.substring(0, 1).toUpperCase() + s.substring(1);
             final String method20360 = method20360();
             String str = "a";
             Label_0155: {

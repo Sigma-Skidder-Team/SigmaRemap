@@ -12,9 +12,9 @@ import org.w3c.dom.Element;
 
 public class Class8017
 {
-    private Element field33023;
+    private final Element field33023;
     private Class7595 field33024;
-    private String field33025;
+    private final String field33025;
     
     public Class8017(final Element field33023) {
         this.field33023 = field33023;

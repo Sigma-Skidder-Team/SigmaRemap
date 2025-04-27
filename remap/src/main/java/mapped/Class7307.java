@@ -20,7 +20,7 @@ public class Class7307 extends Class7303
 {
     public Class7307(final Function<Dynamic<?>, ? extends Class5117> function) {
         super(function, 256);
-        this.field28285 = (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE, (Object) Blocks.DIRT, (Object) Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29175, Blocks.field29177, Blocks.field29173, Blocks.field29174, Blocks.OBSIDIAN, Blocks.AIR, Blocks.CAVE_AIR, Blocks.field29548 });
+        this.field28285 = (Set<Block>)ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.DIRT, Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29175, Blocks.field29177, Blocks.field29173, Blocks.field29174, Blocks.OBSIDIAN, Blocks.AIR, Blocks.CAVE_AIR, Blocks.field29548 });
     }
     
     @Override

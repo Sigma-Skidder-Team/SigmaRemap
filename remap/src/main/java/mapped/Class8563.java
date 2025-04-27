@@ -17,12 +17,12 @@ public class Class8563
     }
     
     public static Class8948 method28791() {
-        Preconditions.checkArgument(Class8563.field35987 != null, (Object)"ViaVersion has not loaded the Platform");
+        Preconditions.checkArgument(Class8563.field35987 != null, "ViaVersion has not loaded the Platform");
         return Class8563.field35987.method34755();
     }
     
     public static Class7493 method28792() {
-        Preconditions.checkArgument(Class8563.field35987 != null, (Object)"ViaVersion has not loaded the Platform");
+        Preconditions.checkArgument(Class8563.field35987 != null, "ViaVersion has not loaded the Platform");
         return Class8563.field35987.method34756();
     }
     

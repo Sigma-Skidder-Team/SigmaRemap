@@ -46,19 +46,19 @@ public class Draft_6455 extends Draft {
     private static final String CONNECTION = "Connection";
     private final Logger log = LoggerFactory.getLogger(Draft_6455.class);
     private IExtension negotiatedExtension = new DefaultExtension();
-    private IExtension defaultExtension = new DefaultExtension();
+    private final IExtension defaultExtension = new DefaultExtension();
     private IExtension currentDecodingExtension;
-    private List<IExtension> knownExtensions;
+    private final List<IExtension> knownExtensions;
     private IProtocol protocol;
-    private List<IProtocol> knownProtocols;
+    private final List<IProtocol> knownProtocols;
     private Framedata currentContinuousFrame;
     private final List<ByteBuffer> byteBufferList;
     private ByteBuffer incompleteframe;
     private final SecureRandom reuseableRandom = new SecureRandom();
-    private int maxFrameSize;
+    private final int maxFrameSize;
 
     public Draft_6455() {
-        this(Collections.<IExtension>emptyList());
+        this(Collections.emptyList());
     }
 
     public Draft_6455(IExtension inputExtension) {
@@ -66,7 +66,7 @@ public class Draft_6455 extends Draft {
     }
 
     public Draft_6455(List<IExtension> inputExtensions) {
-        this(inputExtensions, Collections.<IProtocol>singletonList(new Protocol("")));
+        this(inputExtensions, Collections.singletonList(new Protocol("")));
     }
 
     public Draft_6455(List<IExtension> inputExtensions, List<IProtocol> inputProtocols) {
@@ -74,7 +74,7 @@ public class Draft_6455 extends Draft {
     }
 
     public Draft_6455(List<IExtension> inputExtensions, int inputMaxFrameSize) {
-        this(inputExtensions, Collections.<IProtocol>singletonList(new Protocol("")),
+        this(inputExtensions, Collections.singletonList(new Protocol("")),
                 inputMaxFrameSize);
     }
 
@@ -90,6 +90,7 @@ public class Draft_6455 extends Draft {
         for (IExtension inputExtension : inputExtensions) {
             if (inputExtension.getClass().equals(DefaultExtension.class)) {
                 hasDefault = true;
+                break;
             }
         }
         knownExtensions.addAll(inputExtensions);
@@ -548,7 +549,7 @@ public class Draft_6455 extends Draft {
         } catch (InvalidDataException e) {
             throw new NotSendableException(e);
         }
-        return Collections.singletonList((Framedata) curframe);
+        return Collections.singletonList(curframe);
     }
 
     @Override
@@ -561,7 +562,7 @@ public class Draft_6455 extends Draft {
         } catch (InvalidDataException e) {
             throw new NotSendableException(e);
         }
-        return Collections.singletonList((Framedata) curframe);
+        return Collections.singletonList(curframe);
     }
 
     @Override
@@ -872,8 +873,8 @@ public class Draft_6455 extends Draft {
     }
 
     private class TranslatedPayloadMetaData {
-        private int payloadLength;
-        private int realPackageSize;
+        private final int payloadLength;
+        private final int realPackageSize;
 
         private int getPayloadLength() {
             return payloadLength;

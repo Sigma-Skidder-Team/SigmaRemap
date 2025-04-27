@@ -43,9 +43,7 @@ public class Class9007
         }
         if (this.field38035 != null) {
             if (class399 instanceof LivingEntity) {
-                if (((LivingEntity)class399).method2625() != this.field38035) {
-                    return false;
-                }
+                return ((LivingEntity) class399).method2625() == this.field38035;
             }
         }
         return true;
@@ -78,9 +76,9 @@ public class Class9007
             this.method32229(jsonObject, "is_sprinting", this.field38033);
             this.method32229(jsonObject, "is_swimming", this.field38034);
             this.method32229(jsonObject, "is_baby", this.field38035);
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

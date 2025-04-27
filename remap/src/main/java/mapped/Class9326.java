@@ -23,6 +23,6 @@ public class Class9326 extends DataFix
     }
     
     private static <T> Dynamic<T> method34549(final Dynamic<T> dynamic) {
-        return (Dynamic<T>)dynamic.update("references", dynamic2 -> dynamic2.createInt((int)dynamic2.asNumber().map(Number::intValue).filter(n -> n > 0).orElse(1)));
+        return dynamic.update("references", dynamic2 -> dynamic2.createInt(dynamic2.asNumber().map(Number::intValue).filter(n -> n > 0).orElse(1)));
     }
 }

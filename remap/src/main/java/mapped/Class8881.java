@@ -53,7 +53,7 @@ public class Class8881
                     final ArrayList list = new ArrayList<Class9119>();
                     if (Math.abs(i) + Math.abs(j) == 2) {
                         for (int k = n3 * 16; k < n3 * 16 + 16; ++k) {
-                            method31252(class6108, new Class8322((n + i << 4) + (long)((i == 1) ? 0 : 15), (long)k, (n2 + j << 4) + (long)((j == 1) ? 0 : 15)), list);
+                            method31252(class6108, new Class8322(((long) n + i << 4) + (long)((i == 1) ? 0 : 15), (long)k, ((long) n2 + j << 4) + (long)((j == 1) ? 0 : 15)), list);
                         }
                     }
                     else {
@@ -88,7 +88,7 @@ public class Class8881
                             }
                             for (int n8 = n4; n8 < n5; ++n8) {
                                 for (int n9 = n6; n9 < n7; ++n9) {
-                                    method31252(class6108, new Class8322((n + i << 4) + (long)n8, (long)l, (n2 + j << 4) + (long)n9), list);
+                                    method31252(class6108, new Class8322(((long) n + i << 4) + (long)n8, (long)l, ((long) n2 + j << 4) + (long)n9), list);
                                 }
                             }
                         }
@@ -114,7 +114,7 @@ public class Class8881
         final int method19526 = Class8563.method28794().method33549().method29950(Class6490.class).method19526(class6108, class6109);
         final Class3643 method19527 = method31262(method19526);
         if (method19527 != null) {
-            list.add(new Class9119((short)(((long)class6109.method27704() & 0xFL) << 4 | ((long)class6109.method27706() & 0xFL)), class6109.method27705().shortValue(), method19527.method11202(class6108, class6109, method19526)));
+            list.add(new Class9119((short)((class6109.method27704() & 0xFL) << 4 | (class6109.method27706() & 0xFL)), class6109.method27705().shortValue(), method19527.method11202(class6108, class6109, method19526)));
         }
     }
     
@@ -144,8 +144,8 @@ public class Class8881
     }
     
     public static void method31257(final Class6108 class6108, final Class6562 class6109) {
-        final long n = class6109.method19885() << 4;
-        final long n2 = class6109.method19886() << 4;
+        final long n = (long) class6109.method19885() << 4;
+        final long n2 = (long) class6109.method19886() << 4;
         for (int i = 0; i < class6109.method19889().length; ++i) {
             final Class7668 class6110 = class6109.method19889()[i];
             if (class6110 != null) {
@@ -157,7 +157,7 @@ public class Class8881
                     }
                 }
                 if (n3 != 0) {
-                    final long n4 = i << 4;
+                    final long n4 = (long) i << 4;
                     for (int k = 0; k < 16; ++k) {
                         for (int l = 0; l < 16; ++l) {
                             for (int n5 = 0; n5 < 16; ++n5) {

@@ -51,6 +51,6 @@ public class Class6845 extends DataFix
     }
     
     static {
-        field26862 = Lists.newArrayList((Object[])new String[] { Class6845.\u7074\u7d3f\uff74\u430d\ua592\u35ef[3], "MinecartChest", "MinecartFurnace" });
+        field26862 = Lists.newArrayList((Object[])new String[] { Class6845.\u7074\u7d3f\uff74\u430d\ua592\u35ef[3], "MinecartChest", "MinecartFurnace" })
     }
 }

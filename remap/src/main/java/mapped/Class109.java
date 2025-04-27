@@ -13,7 +13,7 @@ public enum Class109 implements IStringSerializable
     
     private final String field345;
     
-    private Class109(final String field345) {
+    Class109(final String field345) {
         this.field345 = field345;
     }
     

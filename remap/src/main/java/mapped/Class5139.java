@@ -22,7 +22,7 @@ public class Class5139 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22123).getValue(), dynamicOps.createString("start_radius"), dynamicOps.createInt(this.field22124))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22123).getValue(), dynamicOps.createString("start_radius"), dynamicOps.createInt(this.field22124))));
     }
     
     public static <T> Class5139 method16053(final Dynamic<T> dynamic) {

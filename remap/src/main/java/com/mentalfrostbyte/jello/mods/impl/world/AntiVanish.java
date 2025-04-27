@@ -16,7 +16,7 @@ import java.util.List;
 
 public class AntiVanish extends Module
 {
-    private List<UUID> field15919;
+    private final List<UUID> field15919;
     private int field15920;
     
     public AntiVanish() {

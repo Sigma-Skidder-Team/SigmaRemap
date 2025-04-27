@@ -28,7 +28,7 @@ public class Class8027
     }
     
     public synchronized List<Class9506> method26317() {
-        return Collections.unmodifiableList((List<? extends Class9506>)this.field33044);
+        return Collections.unmodifiableList(this.field33044);
     }
     
     public synchronized void method26318(final String s, final InetAddress inetAddress) {

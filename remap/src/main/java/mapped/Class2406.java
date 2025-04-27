@@ -10,7 +10,7 @@ public class Class2406 extends Class2400
 {
     private static String[] field14257;
     public static final int field14258 = 50;
-    private int field14259;
+    private final int field14259;
     private float field14260;
     private float field14261;
     

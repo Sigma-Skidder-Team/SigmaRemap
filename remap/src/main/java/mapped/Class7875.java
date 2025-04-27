@@ -176,7 +176,7 @@ public class Class7875<T> implements Class7876<T>
     
     public void method25512(final CompoundNBT class51, final String s, final String s2) {
         this.method25498();
-        final Class6060 class52 = new Class6060((Class94<T>)this.field32325, this.field32331, (Class7876<T>)this.field32324, (Function<CompoundNBT, T>)this.field32326, (Function<T, CompoundNBT>)this.field32327);
+        final Class6060 class52 = new Class6060(this.field32325, this.field32331, this.field32324, this.field32326, this.field32327);
         T field32328 = this.field32328;
         int n = class52.method18026(this.field32328);
         final int[] array = new int[4096];

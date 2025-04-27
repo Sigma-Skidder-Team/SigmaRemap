@@ -50,14 +50,14 @@ public class ColorSetting extends Setting<Integer> {
 
     public Integer method15221() {
         if (!this.field21520) {
-            return (Integer) this.currentValue;
+            return this.currentValue;
         }
-        final Color color = new Color((int) this.currentValue);
+        final Color color = new Color(this.currentValue);
         final float[] rgBtoHSB = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
         return Color.getHSBColor(System.currentTimeMillis() % 4000L / 4000.0f, rgBtoHSB[1], rgBtoHSB[2]).getRGB();
     }
 
     public Integer method15222() {
-        return (Integer) this.currentValue;
+        return this.currentValue;
     }
 }

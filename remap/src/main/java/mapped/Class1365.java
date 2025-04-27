@@ -53,7 +53,7 @@ public class Class1365 implements Runnable
             }
         }
         else if (this.field7495 != -1) {
-            for (long n7 = 4L * this.field7496; n7 < Class8788.method30614(this.field7500); n7 += 4 * this.field7497) {
+            for (long n7 = 4L * this.field7496; n7 < Class8788.method30614(this.field7500); n7 += 4L * this.field7497) {
                 for (long n8 = 0L; n8 < Class8788.method30615(this.field7500); ++n8) {
                     final long n9 = n8 * Class8788.method30614(this.field7500) + n7;
                     final long n10 = Class8788.method30615(this.field7500) + n8;
@@ -77,7 +77,7 @@ public class Class1365 implements Runnable
             }
         }
         else {
-            for (long n14 = 4L * this.field7496; n14 < Class8788.method30614(this.field7500); n14 += 4 * this.field7497) {
+            for (long n14 = 4L * this.field7496; n14 < Class8788.method30614(this.field7500); n14 += 4L * this.field7497) {
                 for (long n15 = 0L; n15 < Class8788.method30615(this.field7500); ++n15) {
                     final long n16 = n15 * Class8788.method30614(this.field7500) + n14;
                     final long n17 = Class8788.method30615(this.field7500) + n15;

@@ -93,7 +93,7 @@ public class Class463 extends TileEntity implements INameable, Class439
     
     @Override
     public ITextComponent getName() {
-        return (this.field2738 == null) ? new Class2259("container.enchant", new Object[0]) : this.field2738;
+        return (this.field2738 == null) ? new Class2259("container.enchant") : this.field2738;
     }
     
     public void method2344(final ITextComponent field2738) {

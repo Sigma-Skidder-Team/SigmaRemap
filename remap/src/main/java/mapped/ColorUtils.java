@@ -74,10 +74,9 @@ public class ColorUtils
     public static List<PlayerEntity> method19108() {
         final ArrayList list = new ArrayList();
         ColorUtils.field25541.world.field10072.forEach((p1, class399) -> {
-            if (!(!(class399 instanceof PlayerEntity))) {
+            if (class399 instanceof PlayerEntity) {
                 list2.add(class399);
             }
-            return;
         });
         return list;
     }
@@ -115,8 +114,8 @@ public class ColorUtils
         if (list.size() > 0) {
             Entity class400 = null;
             for (int i = 0; i < list.size(); ++i) {
-                if (class400 == null || class399.method1732((Entity)list.get(i)) < class399.method1732(class400)) {
-                    class400 = (Entity)list.get(i);
+                if (class400 == null || class399.method1732(list.get(i)) < class399.method1732(class400)) {
+                    class400 = list.get(i);
                 }
             }
             return class400;
@@ -134,9 +133,7 @@ public class ColorUtils
         final double n3 = class399.posZ - class399.lastTickPosZ;
         if (n == 0.0) {
             if (n2 == 0.0) {
-                if (n3 == 0.0) {
-                    return false;
-                }
+                return n3 != 0.0;
             }
         }
         return true;
@@ -321,7 +318,7 @@ public class ColorUtils
         final ArrayList list = new ArrayList();
         String string = "";
         System.out.println("https://api.mojang.com/user/profiles/" + s.replaceAll("-", "") + "/names");
-        final CloseableHttpResponse execute = HttpClients.createDefault().execute((HttpUriRequest)new HttpGet("https://api.mojang.com/user/profiles/" + s.replaceAll("-", "") + "/names"));
+        final CloseableHttpResponse execute = HttpClients.createDefault().execute(new HttpGet("https://api.mojang.com/user/profiles/" + s.replaceAll("-", "") + "/names"));
         if (execute.getStatusLine().getStatusCode() == 204) {
             final ArrayList list2 = new ArrayList();
             list2.add("Unknown Name");
@@ -493,9 +490,7 @@ public class ColorUtils
                 if (class5487.y >= class5488.minY) {
                     if (class5487.y <= class5488.maxY) {
                         if (class5487.z >= class5488.minZ) {
-                            if (class5487.z <= class5488.maxZ) {
-                                return true;
-                            }
+                            return class5487.z <= class5488.maxZ;
                         }
                     }
                 }
@@ -508,9 +503,7 @@ public class ColorUtils
         if (!ColorUtils.field25546) {
             if (ColorUtils.field25541.method5285() == null) {
                 if (ColorUtils.field25541.method5282() != null) {
-                    if (ColorUtils.field25541.method5282().field41613.toLowerCase().contains("hypixel.net")) {
-                        return true;
-                    }
+                    return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("hypixel.net");
                 }
             }
         }
@@ -520,9 +513,7 @@ public class ColorUtils
     public static boolean method19147() {
         if (ColorUtils.field25541.method5285() == null) {
             if (ColorUtils.field25541.method5282() != null) {
-                if (ColorUtils.field25541.method5282().field41613.toLowerCase().contains("minemen.club")) {
-                    return true;
-                }
+                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("minemen.club");
             }
         }
         return false;
@@ -531,9 +522,7 @@ public class ColorUtils
     public static boolean method19148() {
         if (ColorUtils.field25541.method5285() == null) {
             if (ColorUtils.field25541.method5282() != null) {
-                if (ColorUtils.field25541.method5282().field41613.toLowerCase().contains("play.cubecraft.net")) {
-                    return true;
-                }
+                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("play.cubecraft.net");
             }
         }
         return false;
@@ -542,9 +531,7 @@ public class ColorUtils
     public static boolean method19149() {
         if (ColorUtils.field25541.method5285() == null) {
             if (ColorUtils.field25541.method5282() != null) {
-                if (ColorUtils.field25541.method5282().field41613.toLowerCase().contains("mineplex.com")) {
-                    return true;
-                }
+                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("mineplex.com");
             }
         }
         return false;
@@ -736,7 +723,7 @@ public class ColorUtils
             field25543[0] = field25543[0] * field25543[3] + 0.5f;
             field25543[1] = field25543[1] * field25543[3] + 0.5f;
             field25543[2] = field25543[2] * field25543[3] + 0.5f;
-            floatBuffer3.put(0, field25543[0] * intBuffer.get(intBuffer.position() + 2) + intBuffer.get(intBuffer.position() + 0));
+            floatBuffer3.put(0, field25543[0] * intBuffer.get(intBuffer.position() + 2) + intBuffer.get(intBuffer.position()));
             floatBuffer3.put(1, field25543[1] * intBuffer.get(intBuffer.position() + 3) + intBuffer.get(intBuffer.position() + 1));
             floatBuffer3.put(2, field25543[2]);
             return true;
@@ -746,7 +733,7 @@ public class ColorUtils
     
     private static void method19168(final FloatBuffer floatBuffer, final float[] array, final float[] array2) {
         for (int i = 0; i < 4; ++i) {
-            array2[i] = array[0] * floatBuffer.get(floatBuffer.position() + 0 + i) + array[1] * floatBuffer.get(floatBuffer.position() + 4 + i) + array[2] * floatBuffer.get(floatBuffer.position() + 8 + i) + array[3] * floatBuffer.get(floatBuffer.position() + 12 + i);
+            array2[i] = array[0] * floatBuffer.get(floatBuffer.position() + i) + array[1] * floatBuffer.get(floatBuffer.position() + 4 + i) + array[2] * floatBuffer.get(floatBuffer.position() + 8 + i) + array[3] * floatBuffer.get(floatBuffer.position() + 12 + i);
         }
     }
     
@@ -832,7 +819,7 @@ public class ColorUtils
                             if (class7524.getWidth(substring2) <= n) {
                                 ++i;
                                 hashMap.put(i, substring2);
-                                substring = substring.substring(substring.length() - k, substring.length());
+                                substring = substring.substring(substring.length() - k);
                                 break;
                             }
                         }
@@ -853,7 +840,7 @@ public class ColorUtils
                 hashMap.put(i, substring);
             }
         }
-        return (String[])hashMap.values().toArray(new String[hashMap.values().size()]);
+        return (String[])hashMap.values().toArray(new String[hashMap.size()]);
     }
     
     public static void method19176(final ServerData class9575) {
@@ -950,9 +937,7 @@ public class ColorUtils
         if (!class399.method1850()) {
             if (class399 instanceof PlayerEntity) {
                 if (Class9011.method32262((PlayerEntity)class399)) {
-                    if (Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled()) {
-                        return false;
-                    }
+                    return !Client.getInstance().moduleManager().getModuleByClass(Teams.class).isEnabled();
                 }
             }
             return true;

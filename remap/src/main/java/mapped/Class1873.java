@@ -62,7 +62,7 @@ public class Class1873 implements Class1867
         }
         else {
             for (int j = 0; j < array.length; ++j) {
-                this.field10213[j] = (Class3090) Registry.field217.method499(array[j]);
+                this.field10213[j] = Registry.field217.method499(array[j]);
                 if (this.field10213[j] == null) {
                     this.field10213[j] = class7860.method6960(n + (j & Class1873.field10211), j >> Class1873.field10208 + Class1873.field10208 & Class1873.field10212, n2 + (j >> Class1873.field10208 & Class1873.field10211));
                 }

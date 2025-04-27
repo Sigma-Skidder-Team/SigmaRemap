@@ -88,7 +88,7 @@ public class Class5256
                         if (value == obj2) {
                             list.add(field);
                         }
-                        else if (value != null && obj2 != null && value.equals(obj2)) {
+                        else if (value != null && value.equals(obj2)) {
                             list.add(field);
                         }
                     }

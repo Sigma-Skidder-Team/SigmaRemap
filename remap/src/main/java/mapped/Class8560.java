@@ -8,15 +8,15 @@ import java.math.BigDecimal;
 
 public final class Class8560
 {
-    private float[] field35940;
-    private float[] field35941;
+    private final float[] field35940;
+    private final float[] field35941;
     private float[] field35942;
     private int field35943;
-    private float[] field35944;
-    private int field35945;
-    private float field35946;
+    private final float[] field35944;
+    private final int field35945;
+    private final float field35946;
     private float[] field35947;
-    private float[] field35948;
+    private final float[] field35948;
     private static final double field35949 = 3.141592653589793;
     private static final float field35950;
     private static final float field35951;
@@ -335,7 +335,7 @@ public final class Class8560
         final float n229 = n228 - n226;
         final float[] field35945 = this.field35942;
         final int field35946 = this.field35943;
-        field35945[0 + field35946] = n127;
+        field35945[field35946] = n127;
         field35945[16 + field35946] = n217;
         field35945[32 + field35946] = n121;
         field35945[48 + field35946] = n220;
@@ -368,7 +368,7 @@ public final class Class8560
         field35945[480 + field35946] = -n121;
         field35945[496 + field35946] = -n217;
         final float[] array = (this.field35942 != this.field35940) ? this.field35940 : this.field35941;
-        array[0 + field35946] = -n127;
+        array[field35946] = -n127;
         array[16 + field35946] = n216;
         array[32 + field35946] = n120;
         array[48 + field35946] = n219;
@@ -661,7 +661,7 @@ public final class Class8560
         array[28] = n37 - n36;
         final float[] array24 = array;
         final float[] field35945 = this.field35942;
-        field35945[0 + this.field35943] = array24[0];
+        field35945[this.field35943] = array24[0];
         field35945[16 + this.field35943] = array24[1];
         field35945[32 + this.field35943] = array24[2];
         field35945[48 + this.field35943] = array24[3];
@@ -701,7 +701,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[0 + n] * array[0] + field35942[15 + n] * array[1] + field35942[14 + n] * array[2] + field35942[13 + n] * array[3] + field35942[12 + n] * array[4] + field35942[11 + n] * array[5] + field35942[10 + n] * array[6] + field35942[9 + n] * array[7] + field35942[8 + n] * array[8] + field35942[7 + n] * array[9] + field35942[6 + n] * array[10] + field35942[5 + n] * array[11] + field35942[4 + n] * array[12] + field35942[3 + n] * array[13] + field35942[2 + n] * array[14] + field35942[1 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[n] * array[0] + field35942[15 + n] * array[1] + field35942[14 + n] * array[2] + field35942[13 + n] * array[3] + field35942[12 + n] * array[4] + field35942[11 + n] * array[5] + field35942[10 + n] * array[6] + field35942[9 + n] * array[7] + field35942[8 + n] * array[8] + field35942[7 + n] * array[9] + field35942[6 + n] * array[10] + field35942[5 + n] * array[11] + field35942[4 + n] * array[12] + field35942[3 + n] * array[13] + field35942[2 + n] * array[14] + field35942[1 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -712,7 +712,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[1 + n] * array[0] + field35942[0 + n] * array[1] + field35942[15 + n] * array[2] + field35942[14 + n] * array[3] + field35942[13 + n] * array[4] + field35942[12 + n] * array[5] + field35942[11 + n] * array[6] + field35942[10 + n] * array[7] + field35942[9 + n] * array[8] + field35942[8 + n] * array[9] + field35942[7 + n] * array[10] + field35942[6 + n] * array[11] + field35942[5 + n] * array[12] + field35942[4 + n] * array[13] + field35942[3 + n] * array[14] + field35942[2 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[1 + n] * array[0] + field35942[n] * array[1] + field35942[15 + n] * array[2] + field35942[14 + n] * array[3] + field35942[13 + n] * array[4] + field35942[12 + n] * array[5] + field35942[11 + n] * array[6] + field35942[10 + n] * array[7] + field35942[9 + n] * array[8] + field35942[8 + n] * array[9] + field35942[7 + n] * array[10] + field35942[6 + n] * array[11] + field35942[5 + n] * array[12] + field35942[4 + n] * array[13] + field35942[3 + n] * array[14] + field35942[2 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -723,7 +723,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[2 + n] * array[0] + field35942[1 + n] * array[1] + field35942[0 + n] * array[2] + field35942[15 + n] * array[3] + field35942[14 + n] * array[4] + field35942[13 + n] * array[5] + field35942[12 + n] * array[6] + field35942[11 + n] * array[7] + field35942[10 + n] * array[8] + field35942[9 + n] * array[9] + field35942[8 + n] * array[10] + field35942[7 + n] * array[11] + field35942[6 + n] * array[12] + field35942[5 + n] * array[13] + field35942[4 + n] * array[14] + field35942[3 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[2 + n] * array[0] + field35942[1 + n] * array[1] + field35942[n] * array[2] + field35942[15 + n] * array[3] + field35942[14 + n] * array[4] + field35942[13 + n] * array[5] + field35942[12 + n] * array[6] + field35942[11 + n] * array[7] + field35942[10 + n] * array[8] + field35942[9 + n] * array[9] + field35942[8 + n] * array[10] + field35942[7 + n] * array[11] + field35942[6 + n] * array[12] + field35942[5 + n] * array[13] + field35942[4 + n] * array[14] + field35942[3 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -734,7 +734,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[3 + n] * array[0] + field35942[2 + n] * array[1] + field35942[1 + n] * array[2] + field35942[0 + n] * array[3] + field35942[15 + n] * array[4] + field35942[14 + n] * array[5] + field35942[13 + n] * array[6] + field35942[12 + n] * array[7] + field35942[11 + n] * array[8] + field35942[10 + n] * array[9] + field35942[9 + n] * array[10] + field35942[8 + n] * array[11] + field35942[7 + n] * array[12] + field35942[6 + n] * array[13] + field35942[5 + n] * array[14] + field35942[4 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[3 + n] * array[0] + field35942[2 + n] * array[1] + field35942[1 + n] * array[2] + field35942[n] * array[3] + field35942[15 + n] * array[4] + field35942[14 + n] * array[5] + field35942[13 + n] * array[6] + field35942[12 + n] * array[7] + field35942[11 + n] * array[8] + field35942[10 + n] * array[9] + field35942[9 + n] * array[10] + field35942[8 + n] * array[11] + field35942[7 + n] * array[12] + field35942[6 + n] * array[13] + field35942[5 + n] * array[14] + field35942[4 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -745,7 +745,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[4 + n] * array[0] + field35942[3 + n] * array[1] + field35942[2 + n] * array[2] + field35942[1 + n] * array[3] + field35942[0 + n] * array[4] + field35942[15 + n] * array[5] + field35942[14 + n] * array[6] + field35942[13 + n] * array[7] + field35942[12 + n] * array[8] + field35942[11 + n] * array[9] + field35942[10 + n] * array[10] + field35942[9 + n] * array[11] + field35942[8 + n] * array[12] + field35942[7 + n] * array[13] + field35942[6 + n] * array[14] + field35942[5 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[4 + n] * array[0] + field35942[3 + n] * array[1] + field35942[2 + n] * array[2] + field35942[1 + n] * array[3] + field35942[n] * array[4] + field35942[15 + n] * array[5] + field35942[14 + n] * array[6] + field35942[13 + n] * array[7] + field35942[12 + n] * array[8] + field35942[11 + n] * array[9] + field35942[10 + n] * array[10] + field35942[9 + n] * array[11] + field35942[8 + n] * array[12] + field35942[7 + n] * array[13] + field35942[6 + n] * array[14] + field35942[5 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -756,7 +756,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[5 + n] * array[0] + field35942[4 + n] * array[1] + field35942[3 + n] * array[2] + field35942[2 + n] * array[3] + field35942[1 + n] * array[4] + field35942[0 + n] * array[5] + field35942[15 + n] * array[6] + field35942[14 + n] * array[7] + field35942[13 + n] * array[8] + field35942[12 + n] * array[9] + field35942[11 + n] * array[10] + field35942[10 + n] * array[11] + field35942[9 + n] * array[12] + field35942[8 + n] * array[13] + field35942[7 + n] * array[14] + field35942[6 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[5 + n] * array[0] + field35942[4 + n] * array[1] + field35942[3 + n] * array[2] + field35942[2 + n] * array[3] + field35942[1 + n] * array[4] + field35942[n] * array[5] + field35942[15 + n] * array[6] + field35942[14 + n] * array[7] + field35942[13 + n] * array[8] + field35942[12 + n] * array[9] + field35942[11 + n] * array[10] + field35942[10 + n] * array[11] + field35942[9 + n] * array[12] + field35942[8 + n] * array[13] + field35942[7 + n] * array[14] + field35942[6 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -767,7 +767,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[6 + n] * array[0] + field35942[5 + n] * array[1] + field35942[4 + n] * array[2] + field35942[3 + n] * array[3] + field35942[2 + n] * array[4] + field35942[1 + n] * array[5] + field35942[0 + n] * array[6] + field35942[15 + n] * array[7] + field35942[14 + n] * array[8] + field35942[13 + n] * array[9] + field35942[12 + n] * array[10] + field35942[11 + n] * array[11] + field35942[10 + n] * array[12] + field35942[9 + n] * array[13] + field35942[8 + n] * array[14] + field35942[7 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[6 + n] * array[0] + field35942[5 + n] * array[1] + field35942[4 + n] * array[2] + field35942[3 + n] * array[3] + field35942[2 + n] * array[4] + field35942[1 + n] * array[5] + field35942[n] * array[6] + field35942[15 + n] * array[7] + field35942[14 + n] * array[8] + field35942[13 + n] * array[9] + field35942[12 + n] * array[10] + field35942[11 + n] * array[11] + field35942[10 + n] * array[12] + field35942[9 + n] * array[13] + field35942[8 + n] * array[14] + field35942[7 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -778,7 +778,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[7 + n] * array[0] + field35942[6 + n] * array[1] + field35942[5 + n] * array[2] + field35942[4 + n] * array[3] + field35942[3 + n] * array[4] + field35942[2 + n] * array[5] + field35942[1 + n] * array[6] + field35942[0 + n] * array[7] + field35942[15 + n] * array[8] + field35942[14 + n] * array[9] + field35942[13 + n] * array[10] + field35942[12 + n] * array[11] + field35942[11 + n] * array[12] + field35942[10 + n] * array[13] + field35942[9 + n] * array[14] + field35942[8 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[7 + n] * array[0] + field35942[6 + n] * array[1] + field35942[5 + n] * array[2] + field35942[4 + n] * array[3] + field35942[3 + n] * array[4] + field35942[2 + n] * array[5] + field35942[1 + n] * array[6] + field35942[n] * array[7] + field35942[15 + n] * array[8] + field35942[14 + n] * array[9] + field35942[13 + n] * array[10] + field35942[12 + n] * array[11] + field35942[11 + n] * array[12] + field35942[10 + n] * array[13] + field35942[9 + n] * array[14] + field35942[8 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -789,7 +789,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[8 + n] * array[0] + field35942[7 + n] * array[1] + field35942[6 + n] * array[2] + field35942[5 + n] * array[3] + field35942[4 + n] * array[4] + field35942[3 + n] * array[5] + field35942[2 + n] * array[6] + field35942[1 + n] * array[7] + field35942[0 + n] * array[8] + field35942[15 + n] * array[9] + field35942[14 + n] * array[10] + field35942[13 + n] * array[11] + field35942[12 + n] * array[12] + field35942[11 + n] * array[13] + field35942[10 + n] * array[14] + field35942[9 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[8 + n] * array[0] + field35942[7 + n] * array[1] + field35942[6 + n] * array[2] + field35942[5 + n] * array[3] + field35942[4 + n] * array[4] + field35942[3 + n] * array[5] + field35942[2 + n] * array[6] + field35942[1 + n] * array[7] + field35942[n] * array[8] + field35942[15 + n] * array[9] + field35942[14 + n] * array[10] + field35942[13 + n] * array[11] + field35942[12 + n] * array[12] + field35942[11 + n] * array[13] + field35942[10 + n] * array[14] + field35942[9 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -800,7 +800,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[9 + n] * array[0] + field35942[8 + n] * array[1] + field35942[7 + n] * array[2] + field35942[6 + n] * array[3] + field35942[5 + n] * array[4] + field35942[4 + n] * array[5] + field35942[3 + n] * array[6] + field35942[2 + n] * array[7] + field35942[1 + n] * array[8] + field35942[0 + n] * array[9] + field35942[15 + n] * array[10] + field35942[14 + n] * array[11] + field35942[13 + n] * array[12] + field35942[12 + n] * array[13] + field35942[11 + n] * array[14] + field35942[10 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[9 + n] * array[0] + field35942[8 + n] * array[1] + field35942[7 + n] * array[2] + field35942[6 + n] * array[3] + field35942[5 + n] * array[4] + field35942[4 + n] * array[5] + field35942[3 + n] * array[6] + field35942[2 + n] * array[7] + field35942[1 + n] * array[8] + field35942[n] * array[9] + field35942[15 + n] * array[10] + field35942[14 + n] * array[11] + field35942[13 + n] * array[12] + field35942[12 + n] * array[13] + field35942[11 + n] * array[14] + field35942[10 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -811,7 +811,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[10 + n] * array[0] + field35942[9 + n] * array[1] + field35942[8 + n] * array[2] + field35942[7 + n] * array[3] + field35942[6 + n] * array[4] + field35942[5 + n] * array[5] + field35942[4 + n] * array[6] + field35942[3 + n] * array[7] + field35942[2 + n] * array[8] + field35942[1 + n] * array[9] + field35942[0 + n] * array[10] + field35942[15 + n] * array[11] + field35942[14 + n] * array[12] + field35942[13 + n] * array[13] + field35942[12 + n] * array[14] + field35942[11 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[10 + n] * array[0] + field35942[9 + n] * array[1] + field35942[8 + n] * array[2] + field35942[7 + n] * array[3] + field35942[6 + n] * array[4] + field35942[5 + n] * array[5] + field35942[4 + n] * array[6] + field35942[3 + n] * array[7] + field35942[2 + n] * array[8] + field35942[1 + n] * array[9] + field35942[n] * array[10] + field35942[15 + n] * array[11] + field35942[14 + n] * array[12] + field35942[13 + n] * array[13] + field35942[12 + n] * array[14] + field35942[11 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -822,7 +822,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[11 + n] * array[0] + field35942[10 + n] * array[1] + field35942[9 + n] * array[2] + field35942[8 + n] * array[3] + field35942[7 + n] * array[4] + field35942[6 + n] * array[5] + field35942[5 + n] * array[6] + field35942[4 + n] * array[7] + field35942[3 + n] * array[8] + field35942[2 + n] * array[9] + field35942[1 + n] * array[10] + field35942[0 + n] * array[11] + field35942[15 + n] * array[12] + field35942[14 + n] * array[13] + field35942[13 + n] * array[14] + field35942[12 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[11 + n] * array[0] + field35942[10 + n] * array[1] + field35942[9 + n] * array[2] + field35942[8 + n] * array[3] + field35942[7 + n] * array[4] + field35942[6 + n] * array[5] + field35942[5 + n] * array[6] + field35942[4 + n] * array[7] + field35942[3 + n] * array[8] + field35942[2 + n] * array[9] + field35942[1 + n] * array[10] + field35942[n] * array[11] + field35942[15 + n] * array[12] + field35942[14 + n] * array[13] + field35942[13 + n] * array[14] + field35942[12 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -833,7 +833,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[12 + n] * array[0] + field35942[11 + n] * array[1] + field35942[10 + n] * array[2] + field35942[9 + n] * array[3] + field35942[8 + n] * array[4] + field35942[7 + n] * array[5] + field35942[6 + n] * array[6] + field35942[5 + n] * array[7] + field35942[4 + n] * array[8] + field35942[3 + n] * array[9] + field35942[2 + n] * array[10] + field35942[1 + n] * array[11] + field35942[0 + n] * array[12] + field35942[15 + n] * array[13] + field35942[14 + n] * array[14] + field35942[13 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[12 + n] * array[0] + field35942[11 + n] * array[1] + field35942[10 + n] * array[2] + field35942[9 + n] * array[3] + field35942[8 + n] * array[4] + field35942[7 + n] * array[5] + field35942[6 + n] * array[6] + field35942[5 + n] * array[7] + field35942[4 + n] * array[8] + field35942[3 + n] * array[9] + field35942[2 + n] * array[10] + field35942[1 + n] * array[11] + field35942[n] * array[12] + field35942[15 + n] * array[13] + field35942[14 + n] * array[14] + field35942[13 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -844,7 +844,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[13 + n] * array[0] + field35942[12 + n] * array[1] + field35942[11 + n] * array[2] + field35942[10 + n] * array[3] + field35942[9 + n] * array[4] + field35942[8 + n] * array[5] + field35942[7 + n] * array[6] + field35942[6 + n] * array[7] + field35942[5 + n] * array[8] + field35942[4 + n] * array[9] + field35942[3 + n] * array[10] + field35942[2 + n] * array[11] + field35942[1 + n] * array[12] + field35942[0 + n] * array[13] + field35942[15 + n] * array[14] + field35942[14 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[13 + n] * array[0] + field35942[12 + n] * array[1] + field35942[11 + n] * array[2] + field35942[10 + n] * array[3] + field35942[9 + n] * array[4] + field35942[8 + n] * array[5] + field35942[7 + n] * array[6] + field35942[6 + n] * array[7] + field35942[5 + n] * array[8] + field35942[4 + n] * array[9] + field35942[3 + n] * array[10] + field35942[2 + n] * array[11] + field35942[1 + n] * array[12] + field35942[n] * array[13] + field35942[15 + n] * array[14] + field35942[14 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -855,7 +855,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[14 + n] * array[0] + field35942[13 + n] * array[1] + field35942[12 + n] * array[2] + field35942[11 + n] * array[3] + field35942[10 + n] * array[4] + field35942[9 + n] * array[5] + field35942[8 + n] * array[6] + field35942[7 + n] * array[7] + field35942[6 + n] * array[8] + field35942[5 + n] * array[9] + field35942[4 + n] * array[10] + field35942[3 + n] * array[11] + field35942[2 + n] * array[12] + field35942[1 + n] * array[13] + field35942[0 + n] * array[14] + field35942[15 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[14 + n] * array[0] + field35942[13 + n] * array[1] + field35942[12 + n] * array[2] + field35942[11 + n] * array[3] + field35942[10 + n] * array[4] + field35942[9 + n] * array[5] + field35942[8 + n] * array[6] + field35942[7 + n] * array[7] + field35942[6 + n] * array[8] + field35942[5 + n] * array[9] + field35942[4 + n] * array[10] + field35942[3 + n] * array[11] + field35942[2 + n] * array[12] + field35942[1 + n] * array[13] + field35942[n] * array[14] + field35942[15 + n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -866,7 +866,7 @@ public final class Class8560
         int n = 0;
         for (int i = 0; i < 32; ++i) {
             final float[] array = Class8560.field35982[i];
-            field35943[i] = (field35942[15 + n] * array[0] + field35942[14 + n] * array[1] + field35942[13 + n] * array[2] + field35942[12 + n] * array[3] + field35942[11 + n] * array[4] + field35942[10 + n] * array[5] + field35942[9 + n] * array[6] + field35942[8 + n] * array[7] + field35942[7 + n] * array[8] + field35942[6 + n] * array[9] + field35942[5 + n] * array[10] + field35942[4 + n] * array[11] + field35942[3 + n] * array[12] + field35942[2 + n] * array[13] + field35942[1 + n] * array[14] + field35942[0 + n] * array[15]) * this.field35946;
+            field35943[i] = (field35942[15 + n] * array[0] + field35942[14 + n] * array[1] + field35942[13 + n] * array[2] + field35942[12 + n] * array[3] + field35942[11 + n] * array[4] + field35942[10 + n] * array[5] + field35942[9 + n] * array[6] + field35942[8 + n] * array[7] + field35942[7 + n] * array[8] + field35942[6 + n] * array[9] + field35942[5 + n] * array[10] + field35942[4 + n] * array[11] + field35942[3 + n] * array[12] + field35942[2 + n] * array[13] + field35942[1 + n] * array[14] + field35942[n] * array[15]) * this.field35946;
             n += 16;
         }
     }
@@ -979,9 +979,7 @@ public final class Class8560
             n2 = 0;
         }
         final float[] array2 = new float[n2];
-        for (int i = 0; i < n2; ++i) {
-            array2[i] = array[n + i];
-        }
+        System.arraycopy(array, n + 0, array2, 0, n2);
         return array2;
     }
     

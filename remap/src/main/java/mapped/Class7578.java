@@ -7,7 +7,7 @@ package mapped;
 public class Class7578 extends Class7576
 {
     private static String[] field30056;
-    private Class7576 field30057;
+    private final Class7576 field30057;
     
     public Class7578(final Class7576 field30057) {
         super(field30057.method23845(), field30057.method23847(), field30057.method23846());

@@ -55,7 +55,7 @@ public class Class4502 extends Class4500
         this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17465, true)).with((IProperty<Comparable>)Class3853.field17467, true), 4, 3, 2, class1853);
         this.method13440(class1851, ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29381.getDefaultState()).with((IProperty<Comparable>)Class3853.field17465, true)).with((IProperty<Comparable>)Class3853.field17467, true), 4, 3, 8, class1853);
         final BlockState class1855 = ((StateHolder<O, BlockState>) Blocks.field29318.getDefaultState()).with((IProperty<Comparable>)Class3969.field17931, Direction.WEST);
-        final BlockState class1856 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>) Blocks.field29318.getDefaultState()).with((IProperty<Comparable>)Class3969.field17931, Direction.WEST)).with(Class3969.field17935, Class182.field564);
+        final BlockState class1856 = ((StateHolder<O, BlockState>) Blocks.field29318.getDefaultState()).with((IProperty<Comparable>)Class3969.field17931, Direction.WEST).with(Class3969.field17935, Class182.field564);
         this.method13440(class1851, class1855, 4, 1, 2, class1853);
         this.method13440(class1851, class1856, 4, 2, 2, class1853);
         this.method13440(class1851, class1855, 4, 1, 8, class1853);

@@ -14,7 +14,7 @@ public class Class8611
     public static final Class8611 field36143;
     public static final Class8611 field36144;
     public static final Class8611 field36145;
-    private int field36146;
+    private final int field36146;
     
     public static Class8611 method29202(final int i) {
         switch (i) {

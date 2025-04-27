@@ -29,6 +29,6 @@ public class Class4056 extends Item
     }
     
     public ITextComponent method12261() {
-        return new Class2259(this.getTranslationKey() + ".desc", new Object[0]);
+        return new Class2259(this.getTranslationKey() + ".desc");
     }
 }

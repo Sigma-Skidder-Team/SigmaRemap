@@ -31,7 +31,7 @@ public class Class8107
         final ListNBT class6822 = new ListNBT();
         final Iterator<Class7619> iterator = class6821.method20880().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<CompoundNBT>)class6822).add(method26640(iterator.next()));
+            class6822.add(method26640(iterator.next()));
         }
         return class6822;
     }
@@ -48,7 +48,7 @@ public class Class8107
                     if (!class7622.method25639()) {
                         continue;
                     }
-                    ((AbstractList<CompoundNBT>)class7621).add(method26641(class7622));
+                    class7621.add(method26641(class7622));
                 }
                 class7620.put("Modifiers", class7621);
             }
@@ -73,7 +73,7 @@ public class Class8107
                 method26643(method347, method346);
             }
             else {
-                Class8107.field33404.warn("Ignoring unknown attribute '{}'", (Object)method346.getString("Name"));
+                Class8107.field33404.warn("Ignoring unknown attribute '{}'", method346.getString("Name"));
             }
         }
     }
@@ -102,7 +102,7 @@ public class Class8107
             return new Class7919(method301, class51.getString("Name"), class51.getDouble("Amount"), Class2157.method8323(class51.getInt("Operation")));
         }
         catch (final Exception ex) {
-            Class8107.field33404.warn("Unable to create attribute: {}", (Object)ex.getMessage());
+            Class8107.field33404.warn("Unable to create attribute: {}", ex.getMessage());
             return null;
         }
     }

@@ -26,7 +26,7 @@ public class Class7899 implements RunningGame
         this.field32413 = field32413;
         this.field32414 = Bridge.getLauncher();
         if (this.field32414 != null) {
-            this.field32414.registerGame((RunningGame)this);
+            this.field32414.registerGame(this);
         }
     }
     
@@ -35,13 +35,13 @@ public class Class7899 implements RunningGame
     }
     
     public Language getSelectedLanguage() {
-        return (Language)this.field32413.method5295().method5845();
+        return this.field32413.method5295().method5845();
     }
     
     @Nullable
     public GameSession getCurrentSession() {
         final ClientWorld field4683 = this.field32413.world;
-        return (GameSession)((field4683 != null) ? new Class6714(field4683, this.field32413.player, this.field32413.player.field4069) : null);
+        return (field4683 != null) ? new Class6714(field4683, this.field32413.player, this.field32413.player.field4069) : null;
     }
     
     public PerformanceMetrics getPerformanceMetrics() {
@@ -54,7 +54,7 @@ public class Class7899 implements RunningGame
             max = Math.max(max, n2);
             n += n2;
         }
-        return (PerformanceMetrics)new Class9197((int)min, (int)max, (int)(n / method5310.method35172().length), method5310.method35172().length);
+        return new Class9197((int)min, (int)max, (int)(n / method5310.method35172().length), method5310.method35172().length);
     }
     
     public void setSessionEventListener(final SessionEventListener field32415) {

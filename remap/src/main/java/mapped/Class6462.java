@@ -12,7 +12,7 @@ public class Class6462
 {
     private String field25680;
     private String field25681;
-    private Map<String, String> field25682;
+    private final Map<String, String> field25682;
     
     public String method19328() {
         return this.field25680;

@@ -77,7 +77,7 @@ public class Class5867 extends Class5866
     
     @Override
     public Iterable<Class6300> method17560() {
-        return Iterables.concat((Iterable)super.method17560(), (Iterable)ImmutableList.of((Object)this.field24037, (Object)this.field24038, (Object)this.field24039, (Object)this.field24040));
+        return Iterables.concat((Iterable)super.method17560(), ImmutableList.of(this.field24037, this.field24038, this.field24039, (Object)this.field24040));
     }
     
     @Override

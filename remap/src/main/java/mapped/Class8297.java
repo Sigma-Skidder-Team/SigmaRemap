@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Class8297
 {
-    private Screen field34103;
-    private Class7300 field34104;
+    private final Screen field34103;
+    private final Class7300 field34104;
     private int field34105;
     private int field34106;
     private long field34107;

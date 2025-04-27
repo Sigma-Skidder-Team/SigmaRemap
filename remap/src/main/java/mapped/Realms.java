@@ -54,7 +54,7 @@ public class Realms
     }
     
     public static String method25359(final String s) {
-        return Minecraft.getInstance().method5301().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), (String)null), false).getName();
+        return Minecraft.getInstance().method5301().fillProfileProperties(new GameProfile(UUIDTypeAdapter.fromString(s), null), false).getName();
     }
     
     public static <V> CompletableFuture<V> method25360(final Supplier<V> supplier) {

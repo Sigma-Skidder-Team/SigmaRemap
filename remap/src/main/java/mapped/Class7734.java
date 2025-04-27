@@ -29,14 +29,14 @@ public class Class7734 implements ArgumentType<Class5346>
     }
     
     public static Class7587 method24683(final CommandContext<Class7492> commandContext, final String s) {
-        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506((Class7492)commandContext.getSource());
+        final BlockPos method16506 = ((Class5346)commandContext.getArgument(s, (Class)Class5346.class)).method16506(commandContext.getSource());
         return new Class7587(method16506.getX(), method16506.getZ());
     }
     
     public Class5346 parse(final StringReader stringReader) throws CommandSyntaxException {
         final int cursor = stringReader.getCursor();
         if (!stringReader.canRead()) {
-            throw Class7734.field30750.createWithContext((ImmutableStringReader)stringReader);
+            throw Class7734.field30750.createWithContext(stringReader);
         }
         final Class7629 method23980 = Class7629.method23980(stringReader);
         if (stringReader.canRead() && stringReader.peek() == ' ') {
@@ -44,7 +44,7 @@ public class Class7734 implements ArgumentType<Class5346>
             return new Class5347(method23980, new Class7629(true, 0.0), Class7629.method23980(stringReader));
         }
         stringReader.setCursor(cursor);
-        throw Class7734.field30750.createWithContext((ImmutableStringReader)stringReader);
+        throw Class7734.field30750.createWithContext(stringReader);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -68,6 +68,6 @@ public class Class7734 implements ArgumentType<Class5346>
     
     static {
         field30749 = Arrays.asList("0 0", "~ ~", "~1 ~-2", "^ ^", "^-1 ^0");
-        field30750 = new SimpleCommandExceptionType((Message)new Class2259("argument.pos2d.incomplete", new Object[0]));
+        field30750 = new SimpleCommandExceptionType(new Class2259("argument.pos2d.incomplete", new Object[0]));
     }
 }

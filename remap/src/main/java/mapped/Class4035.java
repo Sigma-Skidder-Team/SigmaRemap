@@ -22,7 +22,7 @@ public class Class4035 extends Item
         final CompoundNBT e = new CompoundNBT();
         e.putByte("EffectId", (byte)Class5328.method16451(class8322));
         e.putInt("EffectDuration", n);
-        ((AbstractList<CompoundNBT>)method27659).add(e);
+        method27659.add(e);
         method27658.put("Effects", method27659);
     }
     

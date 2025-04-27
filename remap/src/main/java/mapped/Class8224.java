@@ -33,7 +33,7 @@ public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
             buffer.writeShort(charArray.length);
             final char[] array = charArray;
             for (int length = array.length, i = 0; i < length; ++i) {
-                buffer.writeChar((int)array[i]);
+                buffer.writeChar(array[i]);
             }
             buffer.writeShort(7 + 2 * this.field33781.field26768.method25492().length());
             buffer.writeByte(127);
@@ -41,10 +41,10 @@ public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
             buffer.writeShort(charArray2.length);
             final char[] array2 = charArray2;
             for (int length2 = array2.length, j = 0; j < length2; ++j) {
-                buffer.writeChar((int)array2[j]);
+                buffer.writeChar(array2[j]);
             }
             buffer.writeInt(this.field33781.field26768.method25493());
-            channelHandlerContext.channel().writeAndFlush((Object)buffer).addListener((GenericFutureListener)ChannelFutureListener.CLOSE_ON_FAILURE);
+            channelHandlerContext.channel().writeAndFlush(buffer).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
         }
         finally {
             buffer.release();
@@ -63,7 +63,7 @@ public class Class8224 extends SimpleChannelInboundHandler<ByteBuf>
                 this.field33781.field26769.field41617 = -1;
                 this.field33781.field26769.field41618 = field41618;
                 this.field33781.field26769.field41615 = field41619;
-                this.field33781.field26769.field41614 = TextFormatting.GRAY + "" + method35675 + "" + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method35676;
+                this.field33781.field26769.field41614 = TextFormatting.GRAY + "" + method35675 + TextFormatting.DARK_GRAY + "/" + TextFormatting.GRAY + method35676;
             }
         }
         channelHandlerContext.close();

@@ -11,7 +11,7 @@ import java.io.DataInput;
 
 public abstract class Class61 implements Cloneable
 {
-    private String field142;
+    private final String field142;
     
     public Class61(final String field142) {
         this.field142 = field142;

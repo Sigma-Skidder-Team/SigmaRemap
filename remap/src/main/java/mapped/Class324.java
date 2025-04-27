@@ -98,13 +98,13 @@ public enum Class324
     field2018(Class1974.field10908, 11, Class1972.field10833, Class1968.field10759);
     
     private static final HashMap<Class7803<Class1974, Integer>, Class324> field2019;
-    private Class1974 field2020;
-    private int field2021;
-    private Class1968 field2022;
-    private Class1972 field2023;
-    private int field2024;
+    private final Class1974 field2020;
+    private final int field2021;
+    private final Class1968 field2022;
+    private final Class1972 field2023;
+    private final int field2024;
     
-    private Class324(final Class1974 field2020, final int n, final Class1972 field2021, final Class1968 field2022) {
+    Class324(final Class1974 field2020, final int n, final Class1972 field2021, final Class1968 field2022) {
         this.field2020 = field2020;
         this.field2024 = n;
         this.field2021 = n;
@@ -112,7 +112,7 @@ public enum Class324
         this.field2022 = field2022;
     }
     
-    private Class324(final Class1974 field2020, final int field2021, final Class1972 field2022, final int field2023, final Class1968 field2024) {
+    Class324(final Class1974 field2020, final int field2021, final Class1972 field2022, final int field2023, final Class1968 field2024) {
         this.field2020 = field2020;
         this.field2024 = field2021;
         this.field2023 = field2022;
@@ -129,7 +129,7 @@ public enum Class324
         while (true) {
             final Optional<Class324> method7986 = method998(method7985, n);
             if (method7986.isPresent()) {
-                return (Class324)method7986.get();
+                return method7986.get();
             }
             method7985 = method7985.method7985();
             if (method7985 != null) {

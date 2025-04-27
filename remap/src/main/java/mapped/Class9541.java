@@ -19,7 +19,7 @@ public final class Class9541
     public Class9541(final Class1675 field41075, final Class9067 field41076) {
         this.field41075 = field41075;
         this.field41072 = field41076;
-        this.field41073 = (boolean[])(field41076.field38403 ? null : new boolean[field41075.field9488]);
+        this.field41073 = field41076.field38403 ? null : new boolean[field41075.field9488];
     }
     
     public void method35618() {

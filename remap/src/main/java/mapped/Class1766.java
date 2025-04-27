@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 
 public class Class1766 extends Class1666
 {
-    private String field9827;
+    private final String field9827;
     
     public Class1766(final String field9827) {
         this.field9827 = field9827;
@@ -48,7 +48,7 @@ public class Class1766 extends Class1666
             final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(method33892));
             Class9413 class9413;
             try {
-                final JsonObject asJsonObject = new JsonParser().parse((Reader)bufferedReader).getAsJsonObject().getAsJsonObject(s);
+                final JsonObject asJsonObject = new JsonParser().parse(bufferedReader).getAsJsonObject().getAsJsonObject(s);
                 if (asJsonObject == null) {
                     return new Class9413(false, false);
                 }
@@ -61,11 +61,11 @@ public class Class1766 extends Class1666
             }
             catch (final RuntimeException ex) {
                 Class8885.method31271("Error reading metadata: " + string);
-                Class8885.method31271("" + ex.getClass().getName() + ": " + ex.getMessage());
+                Class8885.method31271(ex.getClass().getName() + ": " + ex.getMessage());
                 return new Class9413(false, false);
             }
             finally {
-                IOUtils.closeQuietly((Reader)bufferedReader);
+                IOUtils.closeQuietly(bufferedReader);
                 IOUtils.closeQuietly(method33892);
             }
             return class9413;

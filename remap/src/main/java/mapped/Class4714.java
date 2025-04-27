@@ -27,7 +27,7 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
             final double n3 = n2 * n2;
             return new Vec3d(-((method5025.getX() - method5026.getX()) * n3), -((method5025.getY() - method5026.getY()) * n3), -((method5025.getZ() - method5026.getZ()) * n3));
         }
-        return super.method13955((T)class841, n);
+        return super.method13955(class841, n);
     }
     
     public boolean method14013(final Class841 class841, final Class6664 class842, final double n, final double n2, final double n3) {
@@ -36,9 +36,7 @@ public class Class4714 extends Class4712<Class841, Class5876<Class841>>
                 if (class841.method5026()) {
                     final Vec3d class843 = new Vec3d(class841.method5019());
                     final Vec3d class844 = new Vec3d(class841.method5025());
-                    if (class842.method20261(new AxisAlignedBB(class844.x, class844.y, class844.z, class843.x, class843.y, class843.z))) {
-                        return true;
-                    }
+                    return class842.method20261(new AxisAlignedBB(class844.x, class844.y, class844.z, class843.x, class843.y, class843.z));
                 }
             }
             return false;

@@ -23,6 +23,6 @@ public final class Class7004 implements Class7003
     
     @Override
     public Object2LongMap<String> method21440() {
-        return (Object2LongMap<String>)Object2LongMaps.emptyMap();
+        return Object2LongMaps.emptyMap();
     }
 }

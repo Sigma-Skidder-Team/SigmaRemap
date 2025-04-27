@@ -29,11 +29,11 @@ import java.util.Map;
 public class ScreenManager {
     private static final Map<Class<? extends Screen>, Class<? extends Class4800>> replacements;
     public static final Map<Class<? extends Screen>, String> field37983;
-    private List<Integer> field37984;
-    private List<Integer> field37985;
-    private List<Integer> field37986;
-    private List<Integer> field37987;
-    private List<Integer> field37988;
+    private final List<Integer> field37984;
+    private final List<Integer> field37985;
+    private final List<Integer> field37986;
+    private final List<Integer> field37987;
+    private final List<Integer> field37988;
     public static long field37989;
     public static long field37990;
     public static long field37991;
@@ -315,7 +315,7 @@ public class ScreenManager {
             if (method35586.has("hidpicocoa")) {
                 ScreenManager.field37996 = method35586.getBoolean("hidpicocoa");
             }
-            GLFW.glfwWindowHint(143361, (int) (ScreenManager.field37996 ? 1 : 0));
+            GLFW.glfwWindowHint(143361, ScreenManager.field37996 ? 1 : 0);
         } catch (final IOException ex) {
             ex.printStackTrace();
         }
@@ -367,9 +367,9 @@ public class ScreenManager {
         if (this.field37997 != null) {
             this.method32142(Client.getInstance().getConfig());
             try {
-                this.field37997 = (Class4800) this.field37997.getClass().newInstance();
+                this.field37997 = this.field37997.getClass().newInstance();
             } catch (final InstantiationException | IllegalAccessException ex) {
-                ((Throwable) ex).printStackTrace();
+                ex.printStackTrace();
             }
             this.method32150(Client.getInstance().getConfig());
         }

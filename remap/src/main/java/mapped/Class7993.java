@@ -7,6 +7,8 @@ package mapped;
 import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -81,7 +83,7 @@ public class Class7993
     private Class7771 method26157(final String s) {
         final String string = Class8337.method27789() + "/" + s;
         try {
-            return Class6514.method19604((JsonObject)new JsonParser().parse(new String(Class6579.method19925(string, Minecraft.getInstance().method5289()), "ASCII")));
+            return Class6514.method19604((JsonObject)new JsonParser().parse(new String(Class6579.method19925(string, Minecraft.getInstance().method5289()), StandardCharsets.US_ASCII)));
         }
         catch (final Exception ex) {
             Config.warn("Error loading item model " + s + ": " + ex.getClass().getName() + ": " + ex.getMessage());

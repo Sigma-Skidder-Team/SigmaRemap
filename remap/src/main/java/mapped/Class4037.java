@@ -41,7 +41,7 @@ public class Class4037 extends Class4036
                     if (method21641.getY() < method21643) {
                         break;
                     }
-                    ((Class513)method21642).field3039.method17469(new Class4378(new Class2259("build.tooHigh", new Object[] { method21643 }).applyTextStyle(TextFormatting.RED), Class285.field1574));
+                    ((Class513)method21642).field3039.method17469(new Class4378(new Class2259("build.tooHigh", method21643).applyTextStyle(TextFormatting.RED), Class285.field1574));
                     break;
                 }
                 else {

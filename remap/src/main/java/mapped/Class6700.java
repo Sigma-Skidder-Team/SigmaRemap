@@ -12,7 +12,7 @@ import java.util.Collections;
 public class Class6700 extends Class6693
 {
     public Class6700() {
-        super("hclip", "Horizontal clip", new String[] { "hc" });
+        super("hclip", "Horizontal clip", "hc");
         this.method20351("offset");
     }
     

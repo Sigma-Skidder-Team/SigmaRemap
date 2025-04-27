@@ -49,7 +49,7 @@ public class Class493 extends TileEntity implements Class439
             if (class51.contains("ExtraType", 8)) {
                 final String method323 = class51.getString("ExtraType");
                 if (!Class8272.method27500(method323)) {
-                    this.method2506(new GameProfile((UUID)null, method323));
+                    this.method2506(new GameProfile(null, method323));
                 }
             }
         }
@@ -106,7 +106,7 @@ public class Class493 extends TileEntity implements Class439
         if (gameProfile == null || Class8272.method27500(gameProfile.getName())) {
             return gameProfile;
         }
-        if (gameProfile.isComplete() && gameProfile.getProperties().containsKey((Object)"textures")) {
+        if (gameProfile.isComplete() && gameProfile.getProperties().containsKey("textures")) {
             return gameProfile;
         }
         if (Class493.field2838 == null || Class493.field2839 == null) {
@@ -114,7 +114,7 @@ public class Class493 extends TileEntity implements Class439
         }
         GameProfile gameProfile2 = Class493.field2838.method29195(gameProfile.getName());
         if (gameProfile2 != null) {
-            if (Iterables.getFirst((Iterable)gameProfile2.getProperties().get((Object)"textures"), (Object)null) == null) {
+            if (Iterables.getFirst(gameProfile2.getProperties().get("textures"), (Object)null) == null) {
                 gameProfile2 = Class493.field2839.fillProfileProperties(gameProfile2, true);
             }
             return gameProfile2;

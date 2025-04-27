@@ -14,9 +14,7 @@ public class Class7310
     
     public Class7310(final Class7310 class7310) {
         this.field28293 = new float[9];
-        for (int i = 0; i < 9; ++i) {
-            this.field28293[i] = class7310.field28293[i];
-        }
+        System.arraycopy(class7310.field28293, 0, this.field28293, 0, 9);
     }
     
     public Class7310(final Class7310 class7310, final Class7310 class7311) {
@@ -40,7 +38,7 @@ public class Class7310
         final float[] array3 = (array != array2) ? array2 : new float[n3 * 2];
         for (int i = 0; i < n3 * 2; i += 2) {
             for (int j = 0; j < 6; j += 3) {
-                array3[i + j / 3] = array[i + n] * this.field28293[j] + array[i + n + 1] * this.field28293[j + 1] + 1.0f * this.field28293[j + 2];
+                array3[i + j / 3] = array[i + n] * this.field28293[j] + array[i + n + 1] * this.field28293[j + 1] + this.field28293[j + 2];
             }
         }
         if (array == array2) {
@@ -71,7 +69,7 @@ public class Class7310
     
     @Override
     public String toString() {
-        return ("Transform[[" + this.field28293[0] + "," + this.field28293[1] + "," + this.field28293[2] + "][" + this.field28293[3] + "," + this.field28293[4] + "," + this.field28293[5] + "][" + this.field28293[6] + "," + this.field28293[7] + "," + this.field28293[8] + "]]").toString();
+        return ("Transform[[" + this.field28293[0] + "," + this.field28293[1] + "," + this.field28293[2] + "][" + this.field28293[3] + "," + this.field28293[4] + "," + this.field28293[5] + "][" + this.field28293[6] + "," + this.field28293[7] + "," + this.field28293[8] + "]]");
     }
     
     public float[] method22421() {

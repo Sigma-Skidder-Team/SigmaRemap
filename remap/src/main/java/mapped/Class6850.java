@@ -20,7 +20,7 @@ public class Class6850 extends Class6851<Class759>
     
     public Class6850() {
         super(20);
-        this.field26875 = (Long2LongMap)new Long2LongOpenHashMap();
+        this.field26875 = new Long2LongOpenHashMap();
     }
     
     @Override

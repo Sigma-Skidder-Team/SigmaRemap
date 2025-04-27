@@ -15,7 +15,7 @@ public final class Class6044
     private static SGL field24592;
     private static LineStripRenderer field24593;
     
-    public static final void method17966(final Class2400 class2400) {
+    public static void method17966(final Class2400 class2400) {
         final Texture method24927 = Class7777.method24927();
         Class7777.method24930();
         final float[] method24928 = class2400.method9536();
@@ -35,7 +35,7 @@ public final class Class6044
         }
     }
     
-    public static final void method17967(final Class2400 class2400, final Class7471 class2401) {
+    public static void method17967(final Class2400 class2400, final Class7471 class2401) {
         final float[] method9536 = class2400.method9536();
         final Texture method9537 = Class7777.method24927();
         Class7777.method24930();
@@ -64,7 +64,7 @@ public final class Class6044
         return class2400.method9551() != null && class2400.method9551().method9733() != 0;
     }
     
-    public static final void method17969(final Class2400 class2400) {
+    public static void method17969(final Class2400 class2400) {
         if (method17968(class2400)) {
             final Texture method24927 = Class7777.method24927();
             Class7777.method24930();
@@ -78,7 +78,7 @@ public final class Class6044
         }
     }
     
-    private static final void method17970(final Class2400 class2400, final Class6918 class2401) {
+    private static void method17970(final Class2400 class2400, final Class6918 class2401) {
         final Class2422 method9551 = class2400.method9551();
         Class6044.field24592.glBegin(4);
         for (int i = 0; i < method9551.method9733(); ++i) {
@@ -96,15 +96,15 @@ public final class Class6044
         Class6044.field24592.glEnd();
     }
     
-    public static final void method17971(final Class2400 class2400, final Class7764 class2401) {
+    public static void method17971(final Class2400 class2400, final Class7764 class2401) {
         method17973(class2400, class2401, 0.01f, 0.01f);
     }
     
-    public static final void method17972(final Class2400 class2400, final Class7764 class2401) {
+    public static void method17972(final Class2400 class2400, final Class7764 class2401) {
         method17974(class2400, class2401, 1.0f, 1.0f);
     }
     
-    public static final void method17973(final Class2400 class2400, final Class7764 class2401, final float n, final float n2) {
+    public static void method17973(final Class2400 class2400, final Class7764 class2401, final float n, final float n2) {
         if (method17968(class2400)) {
             final Texture method24927 = Class7777.method24927();
             class2401.method24852().bind();
@@ -119,7 +119,7 @@ public final class Class6044
         }
     }
     
-    public static final void method17974(final Class2400 class2400, final Class7764 class2401, final float n, final float n2) {
+    public static void method17974(final Class2400 class2400, final Class7764 class2401, final float n, final float n2) {
         if (method17968(class2400)) {
             class2400.method9536();
             final Texture method24927 = Class7777.method24927();
@@ -138,7 +138,7 @@ public final class Class6044
         }
     }
     
-    public static final void method17975(final Class2400 class2400, final Class7471 class2401) {
+    public static void method17975(final Class2400 class2400, final Class7471 class2401) {
         if (method17968(class2400)) {
             final Texture method24927 = Class7777.method24927();
             Class7777.method24930();
@@ -153,7 +153,7 @@ public final class Class6044
         }
     }
     
-    public static final void method17976(final Class2400 class2400, final Class7764 class2401, final float n, final float n2, final Class7471 class2402) {
+    public static void method17976(final Class2400 class2400, final Class7764 class2401, final float n, final float n2, final Class7471 class2402) {
         if (method17968(class2400)) {
             final Texture method24927 = Class7777.method24927();
             class2401.method24852().bind();
@@ -167,7 +167,7 @@ public final class Class6044
         }
     }
     
-    public static final void method17977(final Class2400 class2400, final Class7764 class2401, final Class8375 class2402) {
+    public static void method17977(final Class2400 class2400, final Class7764 class2401, final Class8375 class2402) {
         final Texture method24927 = Class7777.method24927();
         class2401.method24852().bind();
         class2400.method9535();

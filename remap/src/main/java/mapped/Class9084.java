@@ -6,16 +6,12 @@ package mapped;
 
 import java.io.InputStream;
 import java.io.FileNotFoundException;
-import java.util.Properties;
-import java.util.Locale;
-import java.util.Enumeration;
+import java.util.*;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-import java.util.ArrayList;
 import java.io.File;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
 
 public class Class9084
 {
@@ -107,9 +103,7 @@ public class Class9084
                 if (!file2.isFile()) {
                     if (file2.isDirectory()) {
                         final String[] method32781 = method32781(file2, s + file2.getName() + "/", array, array2);
-                        for (int j = 0; j < method32781.length; ++j) {
-                            list.add(method32781[j]);
-                        }
+                        Collections.addAll(list, method32781);
                     }
                 }
                 else {
@@ -141,7 +135,7 @@ public class Class9084
             final ZipFile zipFile = new ZipFile(file);
             final Enumeration<? extends ZipEntry> entries = zipFile.entries();
             while (entries.hasMoreElements()) {
-                final String name = ((ZipEntry)entries.nextElement()).getName();
+                final String name = entries.nextElement().getName();
                 if (name.startsWith(prefix)) {
                     final String substring = name.substring(prefix.length());
                     if (!Class9518.method35515(substring, array) || !Class9518.method35516(substring, array2)) {
@@ -178,14 +172,14 @@ public class Class9084
             final Class27 class1933 = new Class27();
             class1933.load(method28897);
             method28897.close();
-            Config.method28847("" + s2 + ": Loading " + s);
+            Config.method28847(s2 + ": Loading " + s);
             return class1933;
         }
         catch (final FileNotFoundException ex) {
             return null;
         }
         catch (final IOException ex2) {
-            Config.warn("" + s2 + ": Error reading " + s);
+            Config.warn(s2 + ": Error reading " + s);
             return null;
         }
     }

@@ -17,7 +17,7 @@ public enum Class2032
     private final int field11586;
     private final Map<String, Class9331> field11587;
     
-    private Class2032(final String field11584, final String field11585, final int field11586) {
+    Class2032(final String field11584, final String field11585, final int field11586) {
         this.field11587 = Maps.newHashMap();
         this.field11584 = field11584;
         this.field11585 = field11585;

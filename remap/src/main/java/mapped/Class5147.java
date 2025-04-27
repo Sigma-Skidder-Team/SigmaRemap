@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public abstract class Class5147
 {
-    private String field22150;
+    private final String field22150;
     private int field22151;
     private int[] field22152;
     private static final int field22153 = -1;
@@ -52,7 +52,7 @@ public abstract class Class5147
         if (this.field22151 > 0) {
             int glGetUniformLocationARB = this.field22152[this.field22151];
             if (glGetUniformLocationARB == Integer.MIN_VALUE) {
-                glGetUniformLocationARB = ARBShaderObjects.glGetUniformLocationARB(this.field22151, (CharSequence)this.field22150);
+                glGetUniformLocationARB = ARBShaderObjects.glGetUniformLocationARB(this.field22151, this.field22150);
                 this.field22152[this.field22151] = glGetUniformLocationARB;
             }
             return glGetUniformLocationARB;

@@ -12,6 +12,6 @@ import com.mentalfrostbyte.jello.mods.impl.combat.criticals.*;
 public class Criticals extends ModuleWithSettings
 {
     public Criticals() {
-        super(Category.COMBAT, "Criticals", "Automatically does criticals without jumping", new Module[] { new MinisCriticals(), new PacketCriticals(), new NoGroundCriticals(), new HoverCriticals(), new AAC4Criticals(), new AGCCriticals() });
+        super(Category.COMBAT, "Criticals", "Automatically does criticals without jumping", new MinisCriticals(), new PacketCriticals(), new NoGroundCriticals(), new HoverCriticals(), new AAC4Criticals(), new AGCCriticals());
     }
 }

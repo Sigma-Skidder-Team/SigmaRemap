@@ -42,7 +42,7 @@ public class Class5982 implements JsonDeserializer<Style>, JsonSerializer<Style>
                 Style.method30431(class8768, asJsonObject.get("obfuscated").getAsBoolean());
             }
             if (asJsonObject.has("color")) {
-                Style.method30432(class8768, (TextFormatting)jsonDeserializationContext.deserialize(asJsonObject.get("color"), (Type) TextFormatting.class));
+                Style.method30432(class8768, (TextFormatting)jsonDeserializationContext.deserialize(asJsonObject.get("color"), TextFormatting.class));
             }
             if (asJsonObject.has("insertion")) {
                 Style.method30433(class8768, asJsonObject.get("insertion").getAsString());
@@ -64,7 +64,7 @@ public class Class5982 implements JsonDeserializer<Style>, JsonSerializer<Style>
                 final JsonObject method35917 = Class9583.method35914(asJsonObject, "hoverEvent");
                 final String method35918 = Class9583.method35896(method35917, "action", null);
                 final HoverEvent.Action class8770 = (method35918 != null) ? HoverEvent.Action.method7949(method35918) : null;
-                final ITextComponent class8771 = (ITextComponent)jsonDeserializationContext.deserialize(method35917.get("value"), (Type) ITextComponent.class);
+                final ITextComponent class8771 = jsonDeserializationContext.deserialize(method35917.get("value"), ITextComponent.class);
                 if (class8770 != null) {
                     if (class8771 != null) {
                         if (class8770.method7947()) {
@@ -107,15 +107,15 @@ public class Class5982 implements JsonDeserializer<Style>, JsonSerializer<Style>
                 final JsonObject jsonObject2 = new JsonObject();
                 jsonObject2.addProperty("action", Style.method30443(class8768).method35309().method8177());
                 jsonObject2.addProperty("value", Style.method30443(class8768).method35310());
-                jsonObject.add("clickEvent", (JsonElement)jsonObject2);
+                jsonObject.add("clickEvent", jsonObject2);
             }
             if (Style.method30444(class8768) != null) {
                 final JsonObject jsonObject3 = new JsonObject();
                 jsonObject3.addProperty("action", Style.method30444(class8768).method34911().method7948());
                 jsonObject3.add("value", jsonSerializationContext.serialize((Object) Style.method30444(class8768).method34912()));
-                jsonObject.add("hoverEvent", (JsonElement)jsonObject3);
+                jsonObject.add("hoverEvent", jsonObject3);
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
         return null;
     }

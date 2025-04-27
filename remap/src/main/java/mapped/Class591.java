@@ -31,12 +31,12 @@ public class Class591<C extends IInventory> extends Class590<C>
         }
         final int method15253 = this.method3462(b, method15251, this.field3495);
         final IntArrayList list = new IntArrayList();
-        if (this.field3491.method15250(class3662, (IntList)list, method15253)) {
+        if (this.field3491.method15250(class3662, list, method15253)) {
             if (!this.field3495) {
                 this.method3460(this.field3493.method10937());
                 this.method3460(0);
             }
-            this.method3466(method15253, (IntList)list);
+            this.method3466(method15253, list);
         }
     }
     

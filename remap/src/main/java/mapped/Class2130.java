@@ -55,7 +55,7 @@ public enum Class2130
     
     private final String field12435;
     
-    private Class2130(final String str) {
+    Class2130(final String str) {
         this.field12435 = "commands.advancement." + str;
     }
     

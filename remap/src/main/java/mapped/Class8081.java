@@ -158,6 +158,6 @@ public class Class8081<T>
             }
             sb.append(class5835.method17537());
         }
-        return "" + this.field33276 + " [" + sb.toString() + "]";
+        return this.field33276 + " [" + sb + "]";
     }
 }

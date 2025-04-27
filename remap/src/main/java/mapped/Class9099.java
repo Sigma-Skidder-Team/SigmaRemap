@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class Class9099
 {
-    private String field38535;
-    private ResourceLocation[] field38536;
+    private final String field38535;
+    private final ResourceLocation[] field38536;
     private int field38537;
     private int field38538;
     private int field38539;
@@ -82,6 +82,6 @@ public class Class9099
     
     @Override
     public String toString() {
-        return "" + this.field38535 + ", weight: " + this.field38537 + ", blur: " + this.field38538 + " " + this.field38539 + " " + this.field38540 + ", overlay: " + this.field38541 + " " + this.field38542 + " " + this.field38543 + " " + this.field38544;
+        return this.field38535 + ", weight: " + this.field38537 + ", blur: " + this.field38538 + " " + this.field38539 + " " + this.field38540 + ", overlay: " + this.field38541 + " " + this.field38542 + " " + this.field38543 + " " + this.field38544;
     }
 }

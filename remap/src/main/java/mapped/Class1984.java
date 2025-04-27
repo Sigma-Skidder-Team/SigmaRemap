@@ -14,7 +14,7 @@ public enum Class1984
     private final String field10990;
     private final Class101 field10991;
     
-    private Class1984(final String field10990, final Class101 field10991) {
+    Class1984(final String field10990, final Class101 field10991) {
         this.field10990 = field10990;
         this.field10991 = field10991;
     }

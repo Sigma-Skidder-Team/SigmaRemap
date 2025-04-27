@@ -24,7 +24,7 @@ public class Class721 extends Class720
     @Override
     public void init() {
         super.init();
-        this.field3944 = this.addButton(new Class6470("jello.portaloption", 0.0, (double)(this.method3963().size() - 1), 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> ViaManager.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.minecraft.gameSettings, this.width / 2 + 40, 7, 114));
+        this.field3944 = this.addButton(new Class6470("jello.portaloption", 0.0, this.method3963().size() - 1, 1.0f, p0 -> Double.valueOf(this.method3962()), (p0, n) -> ViaManager.field40167 = this.method3964(n.intValue()), (class5762, class5764) -> this.method3964((int)class5764.method19476(class5762)).method25614()).method19362(this.minecraft.gameSettings, this.width / 2 + 40, 7, 114));
     }
     
     @Override

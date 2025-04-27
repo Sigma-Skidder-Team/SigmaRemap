@@ -55,7 +55,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
             class1879.getBlock();
             final Block class1880;
             final boolean b;
-            if (!(!Class4535.method13533(class1880))) {
+            if (Class4535.method13533(class1880)) {
                 if (class1880 != Blocks.GRASS_BLOCK) {
                     if (class1880 != Blocks.field29392) {
                         return b;
@@ -150,8 +150,8 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
             if (method21408) {
                 if (!hashSet.isEmpty()) {
                     if (!t.field22081.isEmpty()) {
-                        final ArrayList arrayList = Lists.newArrayList((Iterable)hashSet);
-                        final ArrayList arrayList2 = Lists.newArrayList((Iterable)hashSet2);
+                        final ArrayList arrayList = Lists.newArrayList(hashSet);
+                        final ArrayList arrayList2 = Lists.newArrayList(hashSet2);
                         arrayList.sort(Comparator.comparingInt(Vec3i::getY));
                         arrayList2.sort(Comparator.comparingInt(Vec3i::getY));
                         t.field22081.forEach(class1856 -> class1856.method1241(class1854, random2, list, list2, set, class1855));
@@ -185,7 +185,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                     method1296.method1303(class1855).method1304(values[j]);
                     if (!set.contains(method1296)) {
                         final BlockState method1297 = class1851.getBlockState(method1296);
-                        if (((StateHolder<Object, Object>)method1297).method21771((IProperty<Comparable>)Class8970.field37778)) {
+                        if (method1297.method21771((IProperty<Comparable>)Class8970.field37778)) {
                             ((Set)arrayList.get(0)).add(method1296.toImmutable());
                             this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1297).with((IProperty<Comparable>)Class8970.field37778, 1));
                             if (class1852.isVecInside(method1296)) {
@@ -207,7 +207,7 @@ public abstract class Class4592<T extends Class5127> extends Class4535<T>
                         method1296.method1303(class1856).method1304(values2[l]);
                         if (!set3.contains(method1296) && !set4.contains(method1296)) {
                             final BlockState method1298 = class1851.getBlockState(method1296);
-                            if (((StateHolder<Object, Object>)method1298).method21771((IProperty<Comparable>)Class8970.field37778) && ((StateHolder<Object, BlockState>)method1298).get((IProperty<Integer>)Class8970.field37778) > k + 1) {
+                            if (method1298.method21771((IProperty<Comparable>)Class8970.field37778) && method1298.get(Class8970.field37778) > k + 1) {
                                 this.method13621(class1851, method1296, ((StateHolder<Object, BlockState>)method1298).with((IProperty<Comparable>)Class8970.field37778, k + 1));
                                 if (class1852.isVecInside(method1296)) {
                                     class1853.setFilled(method1296.getX() - class1852.minX, method1296.getY() - class1852.minY, method1296.getZ() - class1852.minZ, true, true);

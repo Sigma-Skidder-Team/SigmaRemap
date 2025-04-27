@@ -12,11 +12,11 @@ public class Class4716 extends Class4712<Class778, Class5857<Class778>>
     
     public Class4716(final Class8551 class8551) {
         super(class8551, new Class5857(0.0f), 0.5f);
-        this.method13978((Class1799<Class778, Class5857<Class778>>)new Class1828((Class4778<LivingEntity, Class5857<LivingEntity>>)this));
+        this.method13978((Class1799<Class778, Class5857<Class778>>)new Class1828(this));
     }
     
     public void method14021(final Class778 class778, final float n, final float n2, final MatrixStack class779, final IRenderTypeBuffer class780, final int n3) {
-        ((Class5857)this.field20301).method17591(!class778.getHeldItemMainhand().method27620());
+        this.field20301.method17591(!class778.getHeldItemMainhand().method27620());
         super.method14006(class778, n, n2, class779, class780, n3);
     }
     

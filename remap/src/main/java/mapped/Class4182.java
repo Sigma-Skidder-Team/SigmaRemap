@@ -15,7 +15,7 @@ public class Class4182 implements Class4178, Class4183
     public static final int field18668 = 1;
     private final int field18669;
     private Class303 field18670;
-    private int[] field18671;
+    private final int[] field18671;
     private int field18672;
     private boolean field18673;
     private Class9335 field18674;

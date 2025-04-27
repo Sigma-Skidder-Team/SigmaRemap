@@ -54,9 +54,7 @@ public class Class3986 extends Block
         if (!class7096.method21706()) {
             if (method21696 != Blocks.FIRE) {
                 if (!method21697.method26438()) {
-                    if (!method21697.method26442()) {
-                        return false;
-                    }
+                    return method21697.method26442();
                 }
             }
         }

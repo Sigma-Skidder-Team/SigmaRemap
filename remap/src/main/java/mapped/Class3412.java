@@ -49,7 +49,7 @@ public class Class3412 implements Class3398
         final byte[] array = (byte[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Byte>)list;
     }
@@ -58,7 +58,7 @@ public class Class3412 implements Class3398
         final short[] array = (short[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Short>)list;
     }
@@ -67,7 +67,7 @@ public class Class3412 implements Class3398
         final int[] array = (int[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Integer>)list;
     }
@@ -76,7 +76,7 @@ public class Class3412 implements Class3398
         final long[] array = (long[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Long>)list;
     }
@@ -85,7 +85,7 @@ public class Class3412 implements Class3398
         final float[] array = (float[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Float>)list;
     }
@@ -94,7 +94,7 @@ public class Class3412 implements Class3398
         final double[] array = (double[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Double>)list;
     }
@@ -103,7 +103,7 @@ public class Class3412 implements Class3398
         final char[] array = (char[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Character>)list;
     }
@@ -112,7 +112,7 @@ public class Class3412 implements Class3398
         final boolean[] array = (boolean[])o;
         final ArrayList list = new ArrayList(array.length);
         for (int i = 0; i < array.length; ++i) {
-            list.add((Object)array[i]);
+            list.add(array[i]);
         }
         return (List<Boolean>)list;
     }

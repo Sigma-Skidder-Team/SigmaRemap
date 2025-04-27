@@ -20,6 +20,6 @@ public class Class5975 implements JsonDeserializer<Class5771>, JsonSerializer<Cl
     }
     
     public JsonElement serialize(final Class5771 class5771, final Type type, final JsonSerializationContext jsonSerializationContext) {
-        return (JsonElement)new JsonPrimitive((Number)Class5771.method17165(class5771));
+        return new JsonPrimitive((Number)Class5771.method17165(class5771));
     }
 }

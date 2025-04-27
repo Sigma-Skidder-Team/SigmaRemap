@@ -64,7 +64,7 @@ public class EntitySpeed extends Module
         this.field15763 = 2.75f;
         final float field4088 = this.field15763;
         if (EntitySpeed.mc.player.method1920() instanceof Class808) {
-            if (((Class808) EntitySpeed.mc.player.method1920()).onGround) {
+            if (EntitySpeed.mc.player.method1920().onGround) {
                 if (EntitySpeed.mc.gameSettings.field23439.method1056()) {
                     EntitySpeed.mc.player.field4094 = 1.0f;
                 }

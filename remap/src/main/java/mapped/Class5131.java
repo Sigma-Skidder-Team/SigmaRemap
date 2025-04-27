@@ -32,7 +32,7 @@ public class Class5131 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), IFluidState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22100).getValue(), dynamicOps.createString("requires_block_below"), dynamicOps.createBoolean(this.field22101), dynamicOps.createString("rock_count"), dynamicOps.createInt(this.field22102), dynamicOps.createString("hole_count"), dynamicOps.createInt(this.field22103), dynamicOps.createString("valid_blocks"), dynamicOps.createList((Stream)this.field22104.stream().map((Function<? super Object, ?>) Registry.BLOCK::getKey).map((Function<? super Object, ?>) ResourceLocation::toString).map((Function<? super Object, ?>)dynamicOps::createString)))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("state"), IFluidState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, this.field22100).getValue(), dynamicOps.createString("requires_block_below"), dynamicOps.createBoolean(this.field22101), dynamicOps.createString("rock_count"), dynamicOps.createInt(this.field22102), dynamicOps.createString("hole_count"), dynamicOps.createInt(this.field22103), dynamicOps.createString("valid_blocks"), dynamicOps.createList((Stream)this.field22104.stream().map((Function<? super Object, ?>) Registry.BLOCK::getKey).map((Function<? super Object, ?>) ResourceLocation::toString).map((Function<? super Object, ?>)dynamicOps::createString)))));
     }
     
     public static <T> Class5131 method16039(final Dynamic<T> dynamic) {

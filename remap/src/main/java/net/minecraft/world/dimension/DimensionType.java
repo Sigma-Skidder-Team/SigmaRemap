@@ -59,7 +59,7 @@ public class DimensionType implements IDynamicSerializable
     }
     
     public Dimension create(final World class1847) {
-        return (Dimension)this.field2229.apply(class1847, this);
+        return this.field2229.apply(class1847, this);
     }
     
     @Override
@@ -92,7 +92,7 @@ public class DimensionType implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createString(Registry.field226.getKey(this).toString());
+        return dynamicOps.createString(Registry.field226.getKey(this).toString());
     }
     
     static {

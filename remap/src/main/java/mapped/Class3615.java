@@ -29,9 +29,7 @@ public class Class3615 extends Class3446
     public boolean method11017() {
         if (this.field16811 != null) {
             if (this.field16811.method1817()) {
-                if (this.field16809.method1734(this.field16811) < 256.0) {
-                    return true;
-                }
+                return this.field16809.method1734(this.field16811) < 256.0;
             }
         }
         return false;

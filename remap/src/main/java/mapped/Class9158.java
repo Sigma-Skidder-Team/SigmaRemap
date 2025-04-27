@@ -23,7 +23,7 @@ public class Class9158
     private static final DynamicCommandExceptionType field38804;
     
     public static void method33427(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder)Class7788.method25001("clear").requires(class7492 -> class7492.method23210(2))).executes(commandContext -> method33428((Class7492)commandContext.getSource(), Collections.singleton(((Class7492)commandContext.getSource()).method23253()), p0 -> true, -1))).then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()).executes(commandContext -> method33428((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), p0 -> true, -1))).then(((RequiredArgumentBuilder)Class7788.method25002("item", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class9508.method35422()).executes(commandContext -> method33428((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class9508.method35423((CommandContext<Class7492>)commandContext, "item"), -1))).then(Class7788.method25002("maxCount", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method33428((Class7492)commandContext.getSource(), Class6886.method21152((CommandContext<Class7492>)commandContext, "targets"), Class9508.method35423((CommandContext<Class7492>)commandContext, "item"), IntegerArgumentType.getInteger(commandContext, "maxCount")))))));
+        commandDispatcher.register((LiteralArgumentBuilder) ((LiteralArgumentBuilder)Class7788.method25001("clear").requires(class7492 -> class7492.method23210(2))).executes(commandContext -> method33428((Class7492)commandContext.getSource(), Collections.singleton(((Class7492)commandContext.getSource()).method23253()), p0 -> true, -1)).then(((RequiredArgumentBuilder)Class7788.method25002("targets", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()).executes(commandContext -> method33428(commandContext.getSource(), Class6886.method21152(commandContext, "targets"), p0 -> true, -1))).then(((RequiredArgumentBuilder)Class7788.method25002("item", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class9508.method35422()).executes(commandContext -> method33428(commandContext.getSource(), Class6886.method21152(commandContext, "targets"), Class9508.method35423(commandContext, "item"), -1))).then(Class7788.method25002("maxCount", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)).executes(commandContext -> method33428(commandContext.getSource(), Class6886.method21152(commandContext, "targets"), Class9508.method35423(commandContext, "item"), IntegerArgumentType.getInteger(commandContext, "maxCount")))))));
     }
     
     private static int method33428(final Class7492 class7492, final Collection<Class513> collection, final Predicate<ItemStack> predicate, final int n) throws CommandSyntaxException {
@@ -36,33 +36,33 @@ public class Class9158
         if (n2 != 0) {
             if (n != 0) {
                 if (collection.size() != 1) {
-                    class7492.method23257(new Class2259("commands.clear.success.multiple", new Object[] { n2, collection.size() }), true);
+                    class7492.method23257(new Class2259("commands.clear.success.multiple", n2, collection.size()), true);
                 }
                 else {
-                    class7492.method23257(new Class2259("commands.clear.success.single", new Object[] { n2, collection.iterator().next().getDisplayName() }), true);
+                    class7492.method23257(new Class2259("commands.clear.success.single", n2, collection.iterator().next().getDisplayName()), true);
                 }
             }
             else if (collection.size() != 1) {
-                class7492.method23257(new Class2259("commands.clear.test.multiple", new Object[] { n2, collection.size() }), true);
+                class7492.method23257(new Class2259("commands.clear.test.multiple", n2, collection.size()), true);
             }
             else {
-                class7492.method23257(new Class2259("commands.clear.test.single", new Object[] { n2, collection.iterator().next().getDisplayName() }), true);
+                class7492.method23257(new Class2259("commands.clear.test.single", n2, collection.iterator().next().getDisplayName()), true);
             }
             return n2;
         }
         if (collection.size() != 1) {
-            throw Class9158.field38804.create((Object)collection.size());
+            throw Class9158.field38804.create(collection.size());
         }
-        throw Class9158.field38803.create((Object)collection.iterator().next().getName().getFormattedText());
+        throw Class9158.field38803.create(collection.iterator().next().getName().getFormattedText());
     }
     
     static {
         field38803 = new DynamicCommandExceptionType(o -> {
-            new Class2259("clear.failed.single", new Object[] { o });
+            new Class2259("clear.failed.single", o);
             return;
         });
         field38804 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("clear.failed.multiple", new Object[] { o3 });
+            new Class2259("clear.failed.multiple", o3);
             return;
         });
     }

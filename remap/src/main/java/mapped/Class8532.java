@@ -76,7 +76,7 @@ public final class Class8532
                                                                 class1981 = (Class759)method7448;
                                                             }
                                                             catch (final Exception ex) {
-                                                                Class8532.field35811.warn("Failed to create mob", (Throwable)ex);
+                                                                Class8532.field35811.warn("Failed to create mob", ex);
                                                                 return;
                                                             }
                                                             class1981.method1730(n5, method7441, n6, class1977.rand.nextFloat() * 360.0f, 0.0f);
@@ -183,7 +183,7 @@ public final class Class8532
                                 method9846 = class1853.field26820.method23371(class1851.method6744());
                             }
                             catch (final Exception ex) {
-                                Class8532.field35811.warn("Failed to create mob", (Throwable)ex);
+                                Class8532.field35811.warn("Failed to create mob", ex);
                                 continue;
                             }
                             ((Entity)method9846).method1730(method9844, method9842.getY(), method9845, random.nextFloat() * 360.0f, 0.0f);

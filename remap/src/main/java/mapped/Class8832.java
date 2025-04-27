@@ -74,6 +74,6 @@ public class Class8832
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("trigger", this.field37130.method12683().toString());
         jsonObject.add("conditions", this.field37130.method12682());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

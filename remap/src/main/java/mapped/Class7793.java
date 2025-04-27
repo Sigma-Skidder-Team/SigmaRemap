@@ -111,7 +111,7 @@ public class Class7793
                     }
                 }
             }
-            method25036 = this.method25036((this.field31912 != null) ? ((double)this.field31912) : 0.0, (this.field31913 != null) ? ((double)this.field31913) : 0.0, (this.field31914 != null) ? ((double)this.field31914) : 0.0);
+            method25036 = this.method25036((this.field31912 != null) ? this.field31912 : 0.0, (this.field31913 != null) ? this.field31913 : 0.0, (this.field31914 != null) ? this.field31914 : 0.0);
         }
         if (this.field31909 == null) {
             if (this.field31910 == null) {
@@ -175,7 +175,7 @@ public class Class7793
                         if (read != 's') {
                             if (read != 'e') {
                                 this.field31902.setCursor(cursor);
-                                throw Class7793.field31892.createWithContext((ImmutableStringReader)this.field31902, (Object)('@' + String.valueOf(read)));
+                                throw Class7793.field31892.createWithContext(this.field31902, '@' + String.valueOf(read));
                             }
                             this.field31904 = Integer.MAX_VALUE;
                             this.field31905 = true;
@@ -218,7 +218,7 @@ public class Class7793
             }
             return;
         }
-        throw Class7793.field31894.createWithContext((ImmutableStringReader)this.field31902);
+        throw Class7793.field31894.createWithContext(this.field31902);
     }
     
     public void method25040() throws CommandSyntaxException {
@@ -236,7 +236,7 @@ public class Class7793
             catch (final IllegalArgumentException ex) {
                 if (string.isEmpty() || string.length() > 16) {
                     this.field31902.setCursor(cursor);
-                    throw Class7793.field31891.createWithContext((ImmutableStringReader)this.field31902);
+                    throw Class7793.field31891.createWithContext(this.field31902);
                 }
             }
             this.field31905 = false;
@@ -259,7 +259,7 @@ public class Class7793
             this.field31902.skipWhitespace();
             if (!this.field31902.canRead() || this.field31902.peek() != '=') {
                 this.field31902.setCursor(cursor);
-                throw Class7793.field31896.createWithContext((ImmutableStringReader)this.field31902, (Object)string);
+                throw Class7793.field31896.createWithContext(this.field31902, string);
             }
             this.field31902.skip();
             this.field31902.skipWhitespace();
@@ -274,7 +274,7 @@ public class Class7793
                 if (this.field31902.peek() == ']') {
                     break;
                 }
-                throw Class7793.field31895.createWithContext((ImmutableStringReader)this.field31902);
+                throw Class7793.field31895.createWithContext(this.field31902);
             }
             else {
                 this.field31902.skip();
@@ -282,7 +282,7 @@ public class Class7793
             }
         }
         if (!this.field31902.canRead()) {
-            throw Class7793.field31895.createWithContext((ImmutableStringReader)this.field31902);
+            throw Class7793.field31895.createWithContext(this.field31902);
         }
         this.field31902.skip();
         this.field31923 = Class7793.field31901;
@@ -423,7 +423,7 @@ public class Class7793
         this.field31923 = this::method25072;
         if (this.field31902.canRead() && this.field31902.peek() == '@') {
             if (!this.field31903) {
-                throw Class7793.field31893.createWithContext((ImmutableStringReader)this.field31902);
+                throw Class7793.field31893.createWithContext(this.field31902);
             }
             this.field31902.skip();
             this.method25039();
@@ -436,11 +436,11 @@ public class Class7793
     }
     
     private static void method25071(final SuggestionsBuilder suggestionsBuilder) {
-        suggestionsBuilder.suggest("@p", (Message)new Class2259("argument.entity.selector.nearestPlayer", new Object[0]));
-        suggestionsBuilder.suggest("@a", (Message)new Class2259("argument.entity.selector.allPlayers", new Object[0]));
-        suggestionsBuilder.suggest("@r", (Message)new Class2259("argument.entity.selector.randomPlayer", new Object[0]));
-        suggestionsBuilder.suggest("@s", (Message)new Class2259("argument.entity.selector.self", new Object[0]));
-        suggestionsBuilder.suggest("@e", (Message)new Class2259("argument.entity.selector.allEntities", new Object[0]));
+        suggestionsBuilder.suggest("@p", new Class2259("argument.entity.selector.nearestPlayer", new Object[0]));
+        suggestionsBuilder.suggest("@a", new Class2259("argument.entity.selector.allPlayers", new Object[0]));
+        suggestionsBuilder.suggest("@r", new Class2259("argument.entity.selector.randomPlayer", new Object[0]));
+        suggestionsBuilder.suggest("@s", new Class2259("argument.entity.selector.self", new Object[0]));
+        suggestionsBuilder.suggest("@e", new Class2259("argument.entity.selector.allEntities", new Object[0]));
     }
     
     private CompletableFuture<Suggestions> method25072(final SuggestionsBuilder suggestionsBuilder, final Consumer<SuggestionsBuilder> consumer) {
@@ -591,16 +591,16 @@ public class Class7793
     }
     
     static {
-        field31891 = new SimpleCommandExceptionType((Message)new Class2259("argument.entity.invalid", new Object[0]));
+        field31891 = new SimpleCommandExceptionType(new Class2259("argument.entity.invalid", new Object[0]));
         field31892 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.entity.selector.unknown", new Object[] { o });
+            new Class2259("argument.entity.selector.unknown", o);
             return;
         });
-        field31893 = new SimpleCommandExceptionType((Message)new Class2259("argument.entity.selector.not_allowed", new Object[0]));
-        field31894 = new SimpleCommandExceptionType((Message)new Class2259("argument.entity.selector.missing", new Object[0]));
-        field31895 = new SimpleCommandExceptionType((Message)new Class2259("argument.entity.options.unterminated", new Object[0]));
+        field31893 = new SimpleCommandExceptionType(new Class2259("argument.entity.selector.not_allowed", new Object[0]));
+        field31894 = new SimpleCommandExceptionType(new Class2259("argument.entity.selector.missing", new Object[0]));
+        field31895 = new SimpleCommandExceptionType(new Class2259("argument.entity.options.unterminated", new Object[0]));
         field31896 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("argument.entity.options.valueless", new Object[] { o3 });
+            new Class2259("argument.entity.options.valueless", o3);
             return;
         });
         field31897 = ((p0, p1) -> {});

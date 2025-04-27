@@ -79,18 +79,18 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
             this.field16911 = new ViaManager(this.field16899);
         }
         catch (final Throwable t) {
-            NetworkManager.field16890.fatal((Object)t);
+            NetworkManager.field16890.fatal(t);
         }
     }
     
     public void method11171(final Class2208 class2208) {
-        this.field16899.attr((AttributeKey) NetworkManager.field16893).set((Object)class2208);
+        this.field16899.attr((AttributeKey) NetworkManager.field16893).set(class2208);
         this.field16899.config().setAutoRead(true);
         NetworkManager.field16890.debug("Enabled auto read");
     }
     
     public void channelInactive(final ChannelHandlerContext channelHandlerContext) throws Exception {
-        this.method11181(new Class2259("disconnect.endOfStream", new Object[0]));
+        this.method11181(new Class2259("disconnect.endOfStream"));
     }
     
     public void exceptionCaught(final ChannelHandlerContext channelHandlerContext, final Throwable obj) {
@@ -99,7 +99,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
             this.field16910 = true;
             if (this.field16899.isOpen()) {
                 if (!(obj instanceof TimeoutException)) {
-                    final Class2259 class2259 = new Class2259("disconnect.genericReason", new Object[] { "Internal Exception: " + obj });
+                    final Class2259 class2259 = new Class2259("disconnect.genericReason", "Internal Exception: " + obj);
                     obj.printStackTrace(System.out);
                     if (!b) {
                         NetworkManager.field16890.debug("Double fault", obj);
@@ -113,7 +113,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
                 }
                 else {
                     NetworkManager.field16890.debug("Timeout", obj);
-                    this.method11181(new Class2259("disconnect.timeout", new Object[0]));
+                    this.method11181(new Class2259("disconnect.timeout"));
                 }
             }
         }
@@ -142,8 +142,8 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     }
     
     public void method11173(final INetHandler field16901) {
-        Validate.notNull((Object)field16901, "packetListener", new Object[0]);
-        NetworkManager.field16890.debug("Set listener of {} to {}", (Object)this, (Object)field16901);
+        Validate.notNull((Object)field16901, "packetListener");
+        NetworkManager.field16890.debug("Set listener of {} to {}", this, field16901);
         this.field16901 = field16901;
     }
     
@@ -195,18 +195,18 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
                 if (genericFutureListener2 != null) {
                     channelFuture.addListener(genericFutureListener2);
                 }
-                channelFuture.addListener((GenericFutureListener)ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
+                channelFuture.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
             });
         }
         else {
             if (method8391 != class4253) {
                 this.method11171(method8391);
             }
-            final ChannelFuture writeAndFlush = this.field16899.writeAndFlush((Object)class4252);
+            final ChannelFuture writeAndFlush = this.field16899.writeAndFlush(class4252);
             if (genericFutureListener != null) {
-                writeAndFlush.addListener((GenericFutureListener)genericFutureListener);
+                writeAndFlush.addListener(genericFutureListener);
             }
-            writeAndFlush.addListener((GenericFutureListener)ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
+            writeAndFlush.addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE);
         }
     }
     
@@ -270,20 +270,20 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
             s = NioSocketChannel.class;
             o = NetworkManager.field16894;
         }
-        ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup)((Class8656<EventLoopGroup>)o).method29528())).handler((ChannelHandler)new Class8457(class3641))).channel((Class)s)).connect(inetAddress, n).syncUninterruptibly();
+        new Bootstrap().group(((Class8656<EventLoopGroup>)o).method29528()).handler(new Class8457(class3641)).channel((Class)s).connect(inetAddress, n).syncUninterruptibly();
         return class3641;
     }
     
     public static NetworkManager method11184(final SocketAddress socketAddress) {
         final NetworkManager class3641 = new NetworkManager(Class2060.field11780);
-        ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field16896.method29528())).handler((ChannelHandler)new Class7681(class3641))).channel((Class)LocalChannel.class)).connect(socketAddress).syncUninterruptibly();
+        new Bootstrap().group(NetworkManager.field16896.method29528()).handler(new Class7681(class3641)).channel(LocalChannel.class).connect(socketAddress).syncUninterruptibly();
         return class3641;
     }
     
     public void method11185(final SecretKey secretKey) {
         this.field16903 = true;
-        this.field16899.pipeline().addBefore("splitter", "decrypt", (ChannelHandler)new Class9002(Class9359.method34707(2, secretKey)));
-        this.field16899.pipeline().addBefore("prepender", "encrypt", (ChannelHandler)new Class7664(Class9359.method34707(1, secretKey)));
+        this.field16899.pipeline().addBefore("splitter", "decrypt", new Class9002(Class9359.method34707(2, secretKey)));
+        this.field16899.pipeline().addBefore("prepender", "encrypt", new Class7664(Class9359.method34707(1, secretKey)));
     }
     
     public boolean method11186() {
@@ -322,13 +322,13 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
         }
         else {
             if (!(this.field16899.pipeline().get("decompress") instanceof Class9213)) {
-                this.field16899.pipeline().addBefore("decoder", "decompress", (ChannelHandler)new Class9213(n));
+                this.field16899.pipeline().addBefore("decoder", "decompress", new Class9213(n));
             }
             else {
                 ((Class9213)this.field16899.pipeline().get("decompress")).method33695(n);
             }
             if (!(this.field16899.pipeline().get("compress") instanceof Class8982)) {
-                this.field16899.pipeline().addBefore("encoder", "compress", (ChannelHandler)new Class8982(n));
+                this.field16899.pipeline().addBefore("encoder", "compress", new Class8982(n));
             }
             else {
                 ((Class8982)this.field16899.pipeline().get("compress")).method31932(n);
@@ -344,7 +344,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
                     this.field16904 = true;
                     if (this.method11190() == null) {
                         if (this.method11189() != null) {
-                            this.method11189().onDisconnect(new Class2259("multiplayer.disconnect.generic", new Object[0]));
+                            this.method11189().onDisconnect(new Class2259("multiplayer.disconnect.generic"));
                         }
                     }
                     else {

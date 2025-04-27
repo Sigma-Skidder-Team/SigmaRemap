@@ -25,8 +25,8 @@ public class Class9271 extends DataFix
             final Type type;
             DSL.fieldFinder("Level", type.findFieldType("Level"));
             return typed.updateTyped(opticFinder, typed2 -> {
-                Dynamic set = (Dynamic)typed2.get(DSL.remainderFinder());
-                if (!(!Objects.equals(set.get("Status").asString("empty"), "postprocessed"))) {
+                Dynamic set = typed2.get(DSL.remainderFinder());
+                if (Objects.equals(set.get("Status").asString("empty"), "postprocessed")) {
                     set = set.set("Status", set.createString("fullchunk"));
                 }
                 return typed2.set(DSL.remainderFinder(), (Object)set);

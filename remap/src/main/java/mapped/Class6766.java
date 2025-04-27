@@ -62,7 +62,7 @@ public class Class6766 extends Class6765
             this.method20592().method26217();
         }
         catch (final IOException ex) {
-            Class6766.field26560.warn("Failed to save ip banlist: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to save ip banlist: ", ex);
         }
     }
     
@@ -71,7 +71,7 @@ public class Class6766 extends Class6765
             this.method20591().method26217();
         }
         catch (final IOException ex) {
-            Class6766.field26560.warn("Failed to save user banlist: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to save user banlist: ", ex);
         }
     }
     
@@ -80,7 +80,7 @@ public class Class6766 extends Class6765
             this.method20592().method26218();
         }
         catch (final IOException ex) {
-            Class6766.field26560.warn("Failed to load ip banlist: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to load ip banlist: ", ex);
         }
     }
     
@@ -89,7 +89,7 @@ public class Class6766 extends Class6765
             this.method20591().method26218();
         }
         catch (final IOException ex) {
-            Class6766.field26560.warn("Failed to load user banlist: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to load user banlist: ", ex);
         }
     }
     
@@ -98,7 +98,7 @@ public class Class6766 extends Class6765
             this.method20603().method26218();
         }
         catch (final Exception ex) {
-            Class6766.field26560.warn("Failed to load operators list: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to load operators list: ", ex);
         }
     }
     
@@ -107,7 +107,7 @@ public class Class6766 extends Class6765
             this.method20603().method26217();
         }
         catch (final Exception ex) {
-            Class6766.field26560.warn("Failed to save operators list: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to save operators list: ", ex);
         }
     }
     
@@ -116,7 +116,7 @@ public class Class6766 extends Class6765
             this.method20601().method26218();
         }
         catch (final Exception ex) {
-            Class6766.field26560.warn("Failed to load white-list: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to load white-list: ", ex);
         }
     }
     
@@ -125,7 +125,7 @@ public class Class6766 extends Class6765
             this.method20601().method26217();
         }
         catch (final Exception ex) {
-            Class6766.field26560.warn("Failed to save white-list: ", (Throwable)ex);
+            Class6766.field26560.warn("Failed to save white-list: ", ex);
         }
     }
     
@@ -133,9 +133,7 @@ public class Class6766 extends Class6765
     public boolean method20596(final GameProfile gameProfile) {
         if (this.method20610()) {
             if (!this.method20597(gameProfile)) {
-                if (!this.method20601().method26226(gameProfile)) {
-                    return false;
-                }
+                return this.method20601().method26226(gameProfile);
             }
         }
         return true;

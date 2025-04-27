@@ -38,7 +38,7 @@ public class Murderer extends Module
                 if (class5724.method13247().getItem() instanceof SwordItem) {
                     if (Murderer.mc.world.getEntityByID(class5724.method13248()) instanceof PlayerEntity) {
                         final Entity method6741 = Murderer.mc.world.getEntityByID(class5724.method13248());
-                        if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {
+                        if (!this.field15732.equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {
                             if (this.getBooleanValueFromSettingName("Chat Message")) {
                                 Murderer.mc.player.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
                             }

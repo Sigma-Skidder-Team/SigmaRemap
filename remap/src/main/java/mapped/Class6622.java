@@ -37,7 +37,6 @@ public class Class6622 extends Class6601
                 class514.method6705(null, class515, Class8520.field35664, Class286.field1582, 1.0f, 1.0f);
                 Class3439.method10988(this.field26203, n);
             }
-            return;
         });
         return super.method20047(playerEntity, class513);
     }

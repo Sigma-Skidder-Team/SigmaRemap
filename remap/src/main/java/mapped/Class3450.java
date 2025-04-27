@@ -20,9 +20,7 @@ public class Class3450<T extends LivingEntity> extends Class3448<T>
     public boolean method11013() {
         if (this.field16288.method4395()) {
             if (this.field16288.method4414()) {
-                if (super.method11013()) {
-                    return true;
-                }
+                return super.method11013();
             }
         }
         return false;

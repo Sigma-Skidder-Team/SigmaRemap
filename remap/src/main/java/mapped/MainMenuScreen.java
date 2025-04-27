@@ -22,9 +22,9 @@ public class MainMenuScreen extends Class4800 {
     public Class4811 field21091;
     public Class4812 field21092;
     public RedeemKeyScreen field21093;
-    private Animation field21094;
-    private Animation field21095;
-    private Animation field21096;
+    private final Animation field21094;
+    private final Animation field21095;
+    private final Animation field21096;
     private static Texture field21097;
     public List<Class4804> field21098;
     public static float field21099;

@@ -8,9 +8,9 @@ import java.lang.reflect.Method;
 
 public class CallbackParameterContext extends FromNativeContext
 {
-    private Method method;
-    private Object[] args;
-    private int index;
+    private final Method method;
+    private final Object[] args;
+    private final int index;
     
     public CallbackParameterContext(final Class<?> javaType, final Method m, final Object[] args, final int index) {
         super(javaType);

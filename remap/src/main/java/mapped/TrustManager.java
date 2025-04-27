@@ -20,7 +20,7 @@ import javax.net.ssl.X509TrustManager;
 
 public class TrustManager implements X509TrustManager
 {
-    private X509TrustManager field36477;
+    private final X509TrustManager field36477;
     
     public TrustManager(final X509TrustManager field36477) {
         this.field36477 = field36477;
@@ -78,7 +78,7 @@ public class TrustManager implements X509TrustManager
             return trustManager;
         }
         catch (final NoSuchAlgorithmException | KeyManagementException | KeyStoreException ex) {
-            ((Throwable)ex).printStackTrace();
+            ex.printStackTrace();
             return null;
         }
     }

@@ -36,7 +36,7 @@ public class Class3961 extends Class3841
     
     @Override
     public int method11874(final BlockState class7096, final World class7097, final BlockPos class7098) {
-        return class7096.get((IProperty<Integer>)Class3961.field17902);
+        return class7096.get(Class3961.field17902);
     }
     
     @Override
@@ -56,9 +56,9 @@ public class Class3961 extends Class3841
     }
     
     private void method12082(final World class1847, final BlockPos class1848) {
-        final List<Entity> method7128 = class1847.method7128((Class<? extends Entity>)Class798.class, new AxisAlignedBB(class1848).grow(8.0, 6.0, 8.0));
+        final List<Entity> method7128 = class1847.method7128(Class798.class, new AxisAlignedBB(class1848).grow(8.0, 6.0, 8.0));
         if (!method7128.isEmpty()) {
-            final List<Entity> method7129 = class1847.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(class1848).grow(8.0, 6.0, 8.0));
+            final List<Entity> method7129 = class1847.method7128(PlayerEntity.class, new AxisAlignedBB(class1848).grow(8.0, 6.0, 8.0));
             final int size = method7129.size();
             for (final Class798 class1849 : method7128) {
                 if (class1849.method4152() != null) {
@@ -77,7 +77,7 @@ public class Class3961 extends Class3841
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
         final ItemStack method2715 = class7099.method2715(class7100);
         final ItemStack method2716 = method2715.method27641();
-        final int intValue = class7096.get((IProperty<Integer>)Class3961.field17902);
+        final int intValue = class7096.get(Class3961.field17902);
         int n = 0;
         if (intValue >= 5) {
             if (method2715.getItem() != Items.field31426) {
@@ -139,7 +139,7 @@ public class Class3961 extends Class3841
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.get((IProperty<Integer>)Class3961.field17902) >= 5) {
+        if (class7096.get(Class3961.field17902) >= 5) {
             for (int i = 0; i < random.nextInt(1) + 1; ++i) {
                 this.method12087(class7097, class7098, class7096);
             }
@@ -209,7 +209,7 @@ public class Class3961 extends Class3841
                     if (method6727 instanceof Class438) {
                         final Class438 class1851 = (Class438)method6727;
                         final ItemStack class1852 = new ItemStack(this);
-                        final int intValue = class1849.get((IProperty<Integer>)Class3961.field17902);
+                        final int intValue = class1849.get(Class3961.field17902);
                         final boolean b = !class1851.method2216();
                         if (!b && intValue == 0) {
                             return;

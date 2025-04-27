@@ -21,7 +21,7 @@ public class Class6935 implements Class6926
     
     @Override
     public <T> Dynamic<T> method21299(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("count"), dynamicOps.createInt(this.field27165), dynamicOps.createString("chance"), dynamicOps.createFloat(this.field27166))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("count"), dynamicOps.createInt(this.field27165), dynamicOps.createString("chance"), dynamicOps.createFloat(this.field27166))));
     }
     
     public static Class6935 method21309(final Dynamic<?> dynamic) {

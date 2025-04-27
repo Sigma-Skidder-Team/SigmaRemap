@@ -12,11 +12,11 @@ import java.awt.Shape;
 public class Class8274
 {
     private static String[] field33969;
-    private int field33970;
+    private final int field33970;
     private short field33971;
     private short field33972;
     private short field33973;
-    private boolean field33974;
+    private final boolean field33974;
     private Shape field33975;
     private Class7764 field33976;
     

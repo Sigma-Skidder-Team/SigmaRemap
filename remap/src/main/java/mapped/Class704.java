@@ -12,7 +12,7 @@ public class Class704 extends Class703
     private Class654 field3873;
     
     public Class704(final Screen class527, final Class5760 class528, final Class1661 field3871) {
-        super(class527, class528, new Class2259("options.language", new Object[0]));
+        super(class527, class528, new Class2259("options.language"));
         this.field3871 = field3871;
     }
     
@@ -26,7 +26,7 @@ public class Class704 extends Class703
             class654.method3367(Class6469.field25738.method19363(this.field3869));
             this.minecraft.method5248();
         }));
-        this.field3873 = this.addButton(new Class654(this.width / 2 - 155 + 160, this.height - 38, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.field3873 = this.addButton(new Class654(this.width / 2 - 155 + 160, this.height - 38, 150, 20, Class8822.method30773("gui.done"), class654 -> {
             final Class643 class655 = this.field3870.method3530();
             if (class655 != null) {
                 if (!Class643.method3687(class655).getCode().equals(this.field3871.method5845().getCode())) {
@@ -34,7 +34,7 @@ public class Class704 extends Class703
                     this.field3869.field23476 = Class643.method3687(class655).getCode();
                     this.minecraft.method5241();
                     this.font.method6625(this.field3871.method5843());
-                    this.field3873.method3367(Class8822.method30773("gui.done", new Object[0]));
+                    this.field3873.method3367(Class8822.method30773("gui.done"));
                     this.field3872.method3367(Class6469.field25738.method19363(this.field3869));
                     this.field3869.method17121();
                 }
@@ -48,7 +48,7 @@ public class Class704 extends Class703
     public void render(final int n, final int n2, final float n3) {
         this.field3870.render(n, n2, n3);
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 16, 16777215);
-        this.drawCenteredString(this.font, "(" + Class8822.method30773("options.languageWarning", new Object[0]) + ")", this.width / 2, this.height - 56, 8421504);
+        this.drawCenteredString(this.font, "(" + Class8822.method30773("options.languageWarning") + ")", this.width / 2, this.height - 56, 8421504);
         super.render(n, n2, n3);
     }
 }

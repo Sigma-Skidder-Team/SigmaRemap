@@ -93,7 +93,7 @@ public class Class6109
         catch (final IOException ex) {}
         final HttpGet httpGet = new HttpGet(s);
         httpGet.addHeader("User-Agent", "");
-        try (final CloseableHttpResponse execute = Class6109.field24784.execute((HttpUriRequest)httpGet)) {
+        try (final CloseableHttpResponse execute = Class6109.field24784.execute(httpGet)) {
             final HttpEntity entity = execute.getEntity();
             if (entity != null) {
                 return EntityUtils.toString(entity);
@@ -101,7 +101,7 @@ public class Class6109
             return "";
         }
         catch (final ParseException | IOException ex2) {
-            ((Throwable)ex2).printStackTrace();
+            ex2.printStackTrace();
         }
         return "";
     }

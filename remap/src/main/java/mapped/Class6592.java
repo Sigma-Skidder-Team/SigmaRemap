@@ -6,7 +6,7 @@ package mapped;
 
 public class Class6592 extends Class6591
 {
-    private String field26152;
+    private final String field26152;
     
     public Class6592(final String field26152) {
         this.field26152 = field26152;

@@ -240,7 +240,7 @@ public class ListNBT extends CollectionNBT<INBT>
     }
     
     public ListNBT copy() {
-        return new ListNBT(Lists.newArrayList((Iterable)(NBTTypes.func_229710_a_(this.field131).func_225651_c_() ? this.field130 : Iterables.transform((Iterable)this.field130, INBT::copy))), this.field131);
+        return new ListNBT(Lists.newArrayList((Iterable)(NBTTypes.func_229710_a_(this.field131).func_225651_c_() ? this.field130 : Iterables.transform(this.field130, INBT::copy))), this.field131);
     }
     
     @Override
@@ -301,6 +301,6 @@ public class ListNBT extends CollectionNBT<INBT>
     
     static {
         TYPE = new Class6074();
-        field129 = (ByteSet)new ByteOpenHashSet((Collection)Arrays.asList(1, 2, 3, 4, 5, 6));
+        field129 = new ByteOpenHashSet((Collection)Arrays.asList(1, 2, 3, 4, 5, 6));
     }
 }

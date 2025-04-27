@@ -46,7 +46,7 @@ public class Class6951<T> implements Class6952<T>
         for (int i = 0; i < this.field27218.length; ++i) {
             if (this.field27218[i] != null) {
                 final ShortListIterator iterator = this.field27218[i].iterator();
-                while (((Iterator)iterator).hasNext()) {
+                while (iterator.hasNext()) {
                     final BlockPos method7101 = Class1865.method7101((short)((Iterator)iterator).next(), i, this.field27217);
                     class6952.method21345(method7101, function.apply(method7101), 0);
                 }

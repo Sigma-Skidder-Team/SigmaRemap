@@ -18,7 +18,7 @@ public class Class696 extends Screen
     private Class654 field3831;
     
     public Class696(final Class539 field3826, final CompoundNBT class51) {
-        super(new Class2259("createWorld.customize.flat.title", new Object[0]));
+        super(new Class2259("createWorld.customize.flat.title"));
         this.field3827 = Class7067.method21599();
         this.field3826 = field3826;
         this.method3886(class51);
@@ -37,16 +37,16 @@ public class Class696 extends Screen
     }
     
     public void method3886(final CompoundNBT class51) {
-        this.field3827 = Class7067.method21595((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51));
+        this.field3827 = Class7067.method21595((Dynamic<?>)new Dynamic(Class8453.field34721, class51));
     }
     
     @Override
     public void init() {
-        this.field3828 = Class8822.method30773("createWorld.customize.flat.tile", new Object[0]);
-        this.field3829 = Class8822.method30773("createWorld.customize.flat.height", new Object[0]);
+        this.field3828 = Class8822.method30773("createWorld.customize.flat.tile");
+        this.field3829 = Class8822.method30773("createWorld.customize.flat.height");
         this.field3830 = new Class618(this);
         this.children.add(this.field3830);
-        this.field3831 = this.addButton(new Class654(this.width / 2 - 155, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer", new Object[0]), class654 -> {
+        this.field3831 = this.addButton(new Class654(this.width / 2 - 155, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.flat.removeLayer"), class654 -> {
             if (this.method3888()) {
                 final List<Class9127> method21590 = this.field3827.method21590();
                 final int index = this.field3830.children().indexOf(((Class604<Object>)this.field3830).method3530());
@@ -56,18 +56,18 @@ public class Class696 extends Screen
                 this.method3887();
             }
         }));
-        this.addButton(new Class654(this.width / 2 + 5, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.presets", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 52, 150, 20, Class8822.method30773("createWorld.customize.presets"), class654 -> {
             this.minecraft.displayGuiScreen(new Class561(this));
             this.field3827.method21591();
             this.method3887();
         }));
-        this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 155, this.height - 28, 150, 20, Class8822.method30773("gui.done"), class654 -> {
             this.field3826.field3231 = this.method3884();
             this.minecraft.displayGuiScreen(this.field3826);
             this.field3827.method21591();
             this.method3887();
         }));
-        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 + 5, this.height - 28, 150, 20, Class8822.method30773("gui.cancel"), class654 -> {
             this.minecraft.displayGuiScreen(this.field3826);
             this.field3827.method21591();
             this.method3887();

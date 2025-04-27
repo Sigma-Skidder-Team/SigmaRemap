@@ -29,7 +29,7 @@ public class HypixelFly extends Module {
 
     public HypixelFly() {
         super(Category.MOVEMENT, "Hypixel", "Fly for Hypixel");
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[]{"Basic", "Fast", "NoDmg", "Old", "Funcraft"}).setPremiumMode("Fast"));
+        this.addSetting(new StringSetting("Mode", "Mode", 0, "Basic", "Fast", "NoDmg", "Old", "Funcraft").setPremiumMode("Fast"));
         this.addSetting(new NumberSetting("Speed", "Old and funcraft speed", 3.5f, Float.class, 0.0f, 4.0f, 0.1f));
         this.addSetting(new BooleanSetting("No Collision", "Prevents block collison.", true));
         this.addSetting(new BooleanSetting("Timer boost", "Faster fly.", true));

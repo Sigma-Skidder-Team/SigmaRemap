@@ -38,7 +38,7 @@ public class Class7675 implements ArgumentType<Integer>
         if (method19653 != -1) {
             return method19653;
         }
-        throw Class7675.field30473.create((Object)unquotedString);
+        throw Class7675.field30473.create(unquotedString);
     }
     
     public <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> commandContext, final SuggestionsBuilder suggestionsBuilder) {
@@ -52,7 +52,7 @@ public class Class7675 implements ArgumentType<Integer>
     static {
         field30472 = Arrays.asList("sidebar", "foo.bar");
         field30473 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.scoreboardDisplaySlot.invalid", new Object[] { o });
+            new Class2259("argument.scoreboardDisplaySlot.invalid", o);
             return;
         });
     }

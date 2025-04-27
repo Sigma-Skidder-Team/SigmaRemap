@@ -37,12 +37,12 @@ public class Class3635 extends Class3634
         if (!method4152.isAlive()) {
             return false;
         }
-        if (method4152 instanceof PlayerEntity && (((PlayerEntity)method4152).isSpectator() || ((PlayerEntity)method4152).method2889())) {
+        if (method4152 instanceof PlayerEntity && (method4152.isSpectator() || ((PlayerEntity)method4152).method2889())) {
             return false;
         }
         if (this.method11013()) {
             if (this.field16871.ticksExisted % 20 == 0) {
-                final List<Entity> method4153 = this.field16871.world.method6739((Class<? extends Entity>)Class800.class, this.field16871.getBoundingBox().intersect(16.0), (Predicate<? super Entity>)Class9170.field38845);
+                final List<Entity> method4153 = this.field16871.world.method6739(Class800.class, this.field16871.getBoundingBox().intersect(16.0), Class9170.field38845);
                 if (!method4153.isEmpty()) {
                     final Iterator iterator = method4153.iterator();
                     while (iterator.hasNext()) {

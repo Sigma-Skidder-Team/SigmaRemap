@@ -33,7 +33,7 @@ public class Class4106 extends Class4107
     @Nullable
     @Override
     public Class9038 method12350(final Class1852 class1852, final BlockPos class1853, final Class9038 class1854, final Class9038 class1855, final Class9092 class1856) {
-        return this.field18210.contains((Object)class1855.field38249.getBlock()) ? null : class1855;
+        return this.field18210.contains(class1855.field38249.getBlock()) ? null : class1855;
     }
     
     @Override
@@ -43,12 +43,12 @@ public class Class4106 extends Class4107
     
     @Override
     public <T> Dynamic<T> method12352(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class3833.getDefaultState()).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("blocks"), dynamicOps.createList((Stream)this.field18210.stream().map(class3833 -> BlockState.serialize(dynamicOps2, class3833.getDefaultState()).getValue())))));
     }
     
     static {
         field18207 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.STRUCTURE_BLOCK));
         field18208 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.AIR));
-        field18209 = new Class4106((List<Block>)ImmutableList.of((Object) Blocks.AIR, (Object) Blocks.STRUCTURE_BLOCK));
+        field18209 = new Class4106((List<Block>)ImmutableList.of(Blocks.AIR, (Object) Blocks.STRUCTURE_BLOCK));
     }
 }

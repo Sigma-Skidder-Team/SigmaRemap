@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Breadcrumbs extends Module
 {
-    private List<Vec3d> field15850;
+    private final List<Vec3d> field15850;
     
     public Breadcrumbs() {
         super(Category.RENDER, "Breadcrumbs", "Shows your taken path");

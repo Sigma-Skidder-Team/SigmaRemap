@@ -11,19 +11,19 @@ import java.util.concurrent.Future;
 
 public class Class5815
 {
-    private int field23887;
-    private long field23888;
-    private int field23889;
-    private long field23890;
-    private int field23891;
-    private long field23892;
-    private int field23893;
-    private long field23894;
-    private int field23895;
-    private long field23896;
-    private Class6970 field23897;
-    private Class6970 field23898;
-    private Class6970 field23899;
+    private final int field23887;
+    private final long field23888;
+    private final int field23889;
+    private final long field23890;
+    private final int field23891;
+    private final long field23892;
+    private final int field23893;
+    private final long field23894;
+    private final int field23895;
+    private final long field23896;
+    private final Class6970 field23897;
+    private final Class6970 field23898;
+    private final Class6970 field23899;
     private boolean field23900;
     private boolean field23901;
     

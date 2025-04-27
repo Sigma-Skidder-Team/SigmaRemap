@@ -14,8 +14,8 @@ import java.awt.Image;
 
 public class Class7231
 {
-    private Class2150 field28034;
-    private byte[] field28035;
+    private final Class2150 field28034;
+    private final byte[] field28035;
     private Image field28036;
     
     public Class7231(final Class2150 field28034, final byte[] field28035) {

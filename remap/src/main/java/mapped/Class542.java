@@ -34,15 +34,15 @@ public class Class542 extends Class541
     @Override
     public void init() {
         super.init();
-        this.field3272 = this.addButton(new Class654(this.width / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence", new Object[0]), class654 -> {
+        this.field3272 = this.addButton(new Class654(this.width / 2 - 50 - 100 - 4, 165, 100, 20, Class8822.method30773("advMode.mode.sequence"), class654 -> {
             this.method3169();
             this.method3168();
         }));
-        this.field3273 = this.addButton(new Class654(this.width / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional", new Object[0]), class654 -> {
+        this.field3273 = this.addButton(new Class654(this.width / 2 - 50, 165, 100, 20, Class8822.method30773("advMode.mode.unconditional"), class654 -> {
             this.field3276 = !this.field3276;
             this.method3170();
         }));
-        this.field3274 = this.addButton(new Class654(this.width / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]), class654 -> {
+        this.field3274 = this.addButton(new Class654(this.width / 2 + 50 + 4, 165, 100, 20, Class8822.method30773("advMode.mode.redstoneTriggered"), class654 -> {
             this.field3277 = !this.field3277;
             this.method3171();
         }));
@@ -93,15 +93,15 @@ public class Class542 extends Class541
     private void method3168() {
         switch (Class8325.field34198[this.field3275.ordinal()]) {
             case 1: {
-                this.field3272.method3367(Class8822.method30773("advMode.mode.sequence", new Object[0]));
+                this.field3272.method3367(Class8822.method30773("advMode.mode.sequence"));
                 break;
             }
             case 2: {
-                this.field3272.method3367(Class8822.method30773("advMode.mode.auto", new Object[0]));
+                this.field3272.method3367(Class8822.method30773("advMode.mode.auto"));
                 break;
             }
             case 3: {
-                this.field3272.method3367(Class8822.method30773("advMode.mode.redstone", new Object[0]));
+                this.field3272.method3367(Class8822.method30773("advMode.mode.redstone"));
                 break;
             }
         }
@@ -126,19 +126,19 @@ public class Class542 extends Class541
     
     private void method3170() {
         if (!this.field3276) {
-            this.field3273.method3367(Class8822.method30773("advMode.mode.unconditional", new Object[0]));
+            this.field3273.method3367(Class8822.method30773("advMode.mode.unconditional"));
         }
         else {
-            this.field3273.method3367(Class8822.method30773("advMode.mode.conditional", new Object[0]));
+            this.field3273.method3367(Class8822.method30773("advMode.mode.conditional"));
         }
     }
     
     private void method3171() {
         if (!this.field3277) {
-            this.field3274.method3367(Class8822.method30773("advMode.mode.redstoneTriggered", new Object[0]));
+            this.field3274.method3367(Class8822.method30773("advMode.mode.redstoneTriggered"));
         }
         else {
-            this.field3274.method3367(Class8822.method30773("advMode.mode.autoexec.bat", new Object[0]));
+            this.field3274.method3367(Class8822.method30773("advMode.mode.autoexec.bat"));
         }
     }
 }

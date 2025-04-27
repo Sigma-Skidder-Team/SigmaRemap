@@ -24,7 +24,7 @@ public class Class8780 extends DataFix
     }
     
     public Dynamic<?> method30543(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)dynamic.update("pages", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asStreamOpt().map(stream -> stream.map(dynamic4 -> {
+        return dynamic.update("pages", dynamic3 -> DataFixUtils.orElse((Optional)dynamic3.asStreamOpt().map(stream -> stream.map(dynamic4 -> {
             if (!dynamic4.asString().isPresent()) {
                 return dynamic4;
             }
@@ -32,7 +32,7 @@ public class Class8780 extends DataFix
                 dynamic4.asString("");
                 final String anObject;
                 ITextComponent class2250 = null;
-                if (!"null".equals(anObject) && !StringUtils.isEmpty((CharSequence)anObject)) {
+                if (!"null".equals(anObject) && !StringUtils.isEmpty(anObject)) {
                     if (anObject.charAt(0) != '\"' || anObject.charAt(anObject.length() - 1) != '\"') {
                         if (anObject.charAt(0) != '{' || anObject.charAt(anObject.length() - 1) != '}') {
                             class2250 = new StringTextComponent(anObject);

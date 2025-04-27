@@ -32,7 +32,7 @@ public class Class1933 extends ResourceLocation
         final int index = s.indexOf(35);
         String substring = s;
         if (index >= 0) {
-            array[2] = s.substring(index + 1, s.length());
+            array[2] = s.substring(index + 1);
             if (index > 1) {
                 substring = s.substring(0, index);
             }

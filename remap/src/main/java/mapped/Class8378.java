@@ -51,7 +51,7 @@ public class Class8378
     }
     
     public static int method27919(final int n) {
-        final Integer n2 = (Integer)Class7504.field29088.get((Object)n);
+        final Integer n2 = Class7504.field29088.get(n);
         if (n2 != null) {
             return n2;
         }
@@ -90,7 +90,7 @@ public class Class8378
     }
     
     public static int method27921(final int i) {
-        final Integer n = (Integer)Class7504.field29088.inverse().get((Object)i);
+        final Integer n = Class7504.field29088.inverse().get(i);
         return (n == null) ? 1 : n;
     }
     

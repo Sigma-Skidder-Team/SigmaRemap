@@ -277,9 +277,7 @@ public final class VoxelShapes
             final IBooleanFunction class7707 = (method791 != AxisDirection.POSITIVE) ? IBooleanFunction.ONLY_SECOND : IBooleanFunction.ONLY_FIRST;
             if (DoubleMath.fuzzyEquals(class7705.getEnd(method790), 1.0, 1.0E-7)) {
                 if (DoubleMath.fuzzyEquals(class7706.getStart(method790), 0.0, 1.0E-7)) {
-                    if (!method24496(new SplitVoxelShape(class7705, method790, class7705.part.getSize(method790) - 1), new SplitVoxelShape(class7706, method790, 0), class7707)) {
-                        return true;
-                    }
+                    return !method24496(new SplitVoxelShape(class7705, method790, class7705.part.getSize(method790) - 1), new SplitVoxelShape(class7706, method790, 0), class7707);
                 }
             }
             return false;
@@ -359,10 +357,10 @@ public final class VoxelShapes
             return new Class7705(class8259);
         });
         field30599 = method24488(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
-        field30600 = new VoxelShapeArray(new BitSetVoxelShapePart(0, 0, 0), (DoubleList)new DoubleArrayList(new double[] { 0.0 }), (DoubleList)new DoubleArrayList(new double[] { 0.0 }), (DoubleList)new DoubleArrayList(new double[] { 0.0 }));
+        field30600 = new VoxelShapeArray(new BitSetVoxelShapePart(0, 0, 0), new DoubleArrayList(new double[] { 0.0 }), new DoubleArrayList(new double[] { 0.0 }), new DoubleArrayList(new double[] { 0.0 }));
     }
 
-    public static interface ILineConsumer
+    public interface ILineConsumer
     {
         void consume(final double p0, final double p1, final double p2, final double p3, final double p4, final double p5);
     }

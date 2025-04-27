@@ -48,7 +48,7 @@ public class Class3483 extends Class3479
             final Block method1139 = method1138.getBlock();
             if (this.field16409) {
                 if (method1139 instanceof Class3881) {
-                    final Integer n = ((StateHolder<Object, BlockState>)method1138).get((IProperty<Integer>)Class3881.field17529);
+                    final Integer n = method1138.get(Class3881.field17529);
                     if (n != 0) {
                         field2391.setBlockState(method1137, ((StateHolder<Object, BlockState>)method1138).with((IProperty<Comparable>)Class3881.field17529, n - 1), 2);
                         field2391.method6955(2001, method1137, Block.method11774(method1138));

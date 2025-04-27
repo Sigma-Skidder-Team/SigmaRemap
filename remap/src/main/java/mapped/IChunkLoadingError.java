@@ -6,5 +6,5 @@ package mapped;
 
 public interface IChunkLoadingError
 {
-    public static final IChunkLoadingError field26732 = new Class6799();
+    IChunkLoadingError field26732 = new Class6799();
 }

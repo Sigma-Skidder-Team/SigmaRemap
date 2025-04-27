@@ -212,7 +212,7 @@ public class Class3953 extends Class3841
             class1849 = method6767.method21772((IProperty<Direction>)Class3953.field17853);
         }
         if (method6766 <= 0) {
-            Class3953.field17390.warn("Command Block chain tried to execute more than {} steps!", (Object)Math.max(method6765.method31217(Class8878.field37336), 0));
+            Class3953.field17390.warn("Command Block chain tried to execute more than {} steps!", Math.max(method6765.method31217(Class8878.field37336), 0));
         }
     }
     

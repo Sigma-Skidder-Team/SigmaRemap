@@ -25,8 +25,8 @@ public class Class7649
 {
     public static SGL field30374;
     private static final Class7649 field30375;
-    private HashMap field30376;
-    private HashMap field30377;
+    private final HashMap field30376;
+    private final HashMap field30377;
     private int field30378;
     private boolean field30379;
     private boolean field30380;

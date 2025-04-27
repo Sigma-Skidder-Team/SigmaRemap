@@ -78,7 +78,7 @@ public class Class758 extends Class754
     }
     
     public static ResourceLocation method4102(final String s) {
-        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars((CharSequence)Class8272.method27499(s)));
+        return new ResourceLocation("skins/" + Hashing.sha1().hashUnencodedChars(Class8272.method27499(s)));
     }
     
     @Override

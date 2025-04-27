@@ -7,12 +7,12 @@ package mapped;
 public class Class5596 implements Class5595
 {
     private static String[] field22867;
-    private int field22868;
-    private int[] field22869;
-    private int[] field22870;
-    private float[][] field22871;
-    private float[][][] field22872;
-    private float[][][] field22873;
+    private final int field22868;
+    private final int[] field22869;
+    private final int[] field22870;
+    private final float[][] field22871;
+    private final float[][][] field22872;
+    private final float[][][] field22873;
     
     public Class5596(final int field22868) {
         this.field22869 = new int[3];
@@ -97,14 +97,14 @@ public class Class5596 implements Class5595
     
     public static void method16838(final int n, final float[] array, final float[][] array2, final float[][][] array3) {
         for (int i = 0; i < n; ++i) {
-            final float n2 = array[0] * (array2[0 + i][0] + array2[12 + i][0]);
+            final float n2 = array[0] * (array2[i][0] + array2[12 + i][0]);
             final float n3 = array[1] * (array2[1 + i][0] + array2[11 + i][0]);
             final float n4 = array[2] * (array2[2 + i][0] + array2[10 + i][0]);
             final float n5 = array[3] * (array2[3 + i][0] + array2[9 + i][0]);
             final float n6 = array[4] * (array2[4 + i][0] + array2[8 + i][0]);
             final float n7 = array[5] * (array2[5 + i][0] + array2[7 + i][0]);
             final float n8 = array[6] * array2[6 + i][0];
-            final float n9 = array[0] * (array2[0 + i][1] + array2[12 + i][1]);
+            final float n9 = array[0] * (array2[i][1] + array2[12 + i][1]);
             final float n10 = array[1] * (array2[1 + i][1] + array2[11 + i][1]);
             final float n11 = array[2] * (array2[2 + i][1] + array2[10 + i][1]);
             final float n12 = array[3] * (array2[3 + i][1] + array2[9 + i][1]);
@@ -126,9 +126,9 @@ public class Class5596 implements Class5595
         for (int i = 0; i < n; ++i) {
             array4[0] = -(array[2] * (array2[i + 2][0] + array2[i + 10][0])) + array[6] * array2[i + 6][0];
             array4[1] = -0.70710677f * (array[1] * (array2[i + 1][0] + array2[i + 11][0]) + array[3] * (array2[i + 3][0] + array2[i + 9][0]) - array[5] * (array2[i + 5][0] + array2[i + 7][0]));
-            array6[0] = array[0] * (array2[i + 0][1] - array2[i + 12][1]) - array[4] * (array2[i + 4][1] - array2[i + 8][1]);
+            array6[0] = array[0] * (array2[i][1] - array2[i + 12][1]) - array[4] * (array2[i + 4][1] - array2[i + 8][1]);
             array6[1] = 0.70710677f * (array[1] * (array2[i + 1][1] - array2[i + 11][1]) - array[3] * (array2[i + 3][1] - array2[i + 9][1]) - array[5] * (array2[i + 5][1] - array2[i + 7][1]));
-            array5[0] = array[0] * (array2[i + 0][0] - array2[i + 12][0]) - array[4] * (array2[i + 4][0] - array2[i + 8][0]);
+            array5[0] = array[0] * (array2[i][0] - array2[i + 12][0]) - array[4] * (array2[i + 4][0] - array2[i + 8][0]);
             array5[1] = 0.70710677f * (array[1] * (array2[i + 1][0] - array2[i + 11][0]) - array[3] * (array2[i + 3][0] - array2[i + 9][0]) - array[5] * (array2[i + 5][0] - array2[i + 7][0]));
             array7[0] = -(array[2] * (array2[i + 2][1] + array2[i + 10][1])) + array[6] * array2[i + 6][1];
             array7[1] = -0.70710677f * (array[1] * (array2[i + 1][1] + array2[i + 11][1]) + array[3] * (array2[i + 3][1] + array2[i + 9][1]) - array[5] * (array2[i + 5][1] + array2[i + 7][1]));
@@ -168,10 +168,10 @@ public class Class5596 implements Class5595
         for (int i = 0; i < n; ++i) {
             array4[0] = array[6] * array2[6 + i][0];
             array4[1] = array[5] * (array2[5 + i][0] + array2[7 + i][0]);
-            array4[2] = -(array[0] * (array2[0 + i][0] + array2[12 + i][0])) + array[4] * (array2[4 + i][0] + array2[8 + i][0]);
+            array4[2] = -(array[0] * (array2[i][0] + array2[12 + i][0])) + array[4] * (array2[4 + i][0] + array2[8 + i][0]);
             array4[3] = -(array[1] * (array2[1 + i][0] + array2[11 + i][0])) + array[3] * (array2[3 + i][0] + array2[9 + i][0]);
             array6[0] = array[5] * (array2[7 + i][1] - array2[5 + i][1]);
-            array6[1] = array[0] * (array2[12 + i][1] - array2[0 + i][1]) + array[4] * (array2[8 + i][1] - array2[4 + i][1]);
+            array6[1] = array[0] * (array2[12 + i][1] - array2[i][1]) + array[4] * (array2[8 + i][1] - array2[4 + i][1]);
             array6[2] = array[1] * (array2[11 + i][1] - array2[1 + i][1]) + array[3] * (array2[9 + i][1] - array2[3 + i][1]);
             array6[3] = array[2] * (array2[10 + i][1] - array2[2 + i][1]);
             for (int j = 0; j < 4; ++j) {
@@ -192,10 +192,10 @@ public class Class5596 implements Class5595
             array3[i][0][0] = array8[0];
             array7[0] = array[6] * array2[6 + i][1];
             array7[1] = array[5] * (array2[5 + i][1] + array2[7 + i][1]);
-            array7[2] = -(array[0] * (array2[0 + i][1] + array2[12 + i][1])) + array[4] * (array2[4 + i][1] + array2[8 + i][1]);
+            array7[2] = -(array[0] * (array2[i][1] + array2[12 + i][1])) + array[4] * (array2[4 + i][1] + array2[8 + i][1]);
             array7[3] = -(array[1] * (array2[1 + i][1] + array2[11 + i][1])) + array[3] * (array2[3 + i][1] + array2[9 + i][1]);
             array5[0] = array[5] * (array2[7 + i][0] - array2[5 + i][0]);
-            array5[1] = array[0] * (array2[12 + i][0] - array2[0 + i][0]) + array[4] * (array2[8 + i][0] - array2[4 + i][0]);
+            array5[1] = array[0] * (array2[12 + i][0] - array2[i][0]) + array[4] * (array2[8 + i][0] - array2[4 + i][0]);
             array5[2] = array[1] * (array2[11 + i][0] - array2[1 + i][0]) + array[3] * (array2[9 + i][0] - array2[3 + i][0]);
             array5[3] = array[2] * (array2[10 + i][0] - array2[2 + i][0]);
             for (int l = 0; l < 4; ++l) {

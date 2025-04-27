@@ -31,6 +31,6 @@ public final class AbstractIterator extends com.google.common.collect.AbstractIt
     }
     
     public BlockPos computeNext() {
-        return this.field_218298_a.hasNext() ? this.field_218299_b.setPos(this.field_218298_a.getX(), this.field_218298_a.getY(), this.field_218298_a.getZ()) : ((BlockPos)this.endOfData());
+        return this.field_218298_a.hasNext() ? this.field_218299_b.setPos(this.field_218298_a.getX(), this.field_218298_a.getY(), this.field_218298_a.getZ()) : this.endOfData();
     }
 }

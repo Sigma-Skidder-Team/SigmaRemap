@@ -23,7 +23,7 @@ public class SlabBlock extends Block implements Class3856
     
     public SlabBlock(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(SlabBlock.field17777, Class186.field599)).with((IProperty<Comparable>) SlabBlock.field17778, false));
+        this.method11877(((StateHolder<O, BlockState>) this.getDefaultState().with(SlabBlock.field17777, Class186.field599)).with((IProperty<Comparable>) SlabBlock.field17778, false));
     }
     
     @Override
@@ -57,11 +57,11 @@ public class SlabBlock extends Block implements Class3856
         final BlockPos method21639 = class7074.method21639();
         final BlockState method21640 = class7074.method21654().getBlockState(method21639);
         if (method21640.getBlock() != this) {
-            final BlockState class7075 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with(SlabBlock.field17777, Class186.field599)).with((IProperty<Comparable>) SlabBlock.field17778, class7074.method21654().getFluidState(method21639).getFluid() == Class7558.field29976);
+            final BlockState class7075 = ((StateHolder<O, BlockState>) this.getDefaultState().with(SlabBlock.field17777, Class186.field599)).with((IProperty<Comparable>) SlabBlock.field17778, class7074.method21654().getFluidState(method21639).getFluid() == Class7558.field29976);
             final Direction method21641 = class7074.method21648();
-            return (method21641 != Direction.DOWN && (method21641 == Direction.UP || class7074.method21649().y - method21639.getY() <= 0.5)) ? class7075 : ((StateHolder<O, BlockState>)class7075).with(SlabBlock.field17777, Class186.field598);
+            return (method21641 != Direction.DOWN && (method21641 == Direction.UP || class7074.method21649().y - method21639.getY() <= 0.5)) ? class7075 : class7075.with(SlabBlock.field17777, Class186.field598);
         }
-        return (BlockState)((StateHolder<Object, Object>)((StateHolder<O, BlockState>)method21640).with(SlabBlock.field17777, Class186.field600)).with((IProperty<Comparable>) SlabBlock.field17778, false);
+        return (BlockState)((StateHolder<Object, Object>) method21640.with(SlabBlock.field17777, Class186.field600)).with((IProperty<Comparable>) SlabBlock.field17778, false);
     }
     
     @Override
@@ -84,7 +84,7 @@ public class SlabBlock extends Block implements Class3856
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>) SlabBlock.field17778) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(SlabBlock.field17778) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
@@ -99,7 +99,7 @@ public class SlabBlock extends Block implements Class3856
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>) SlabBlock.field17778)) {
+        if (class7096.get(SlabBlock.field17778)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);

@@ -18,7 +18,7 @@ public class Class172 implements Class170
     
     @Override
     public JsonElement method770() {
-        return (JsonElement)new JsonPrimitive(Boolean.valueOf(this.field496));
+        return new JsonPrimitive(Boolean.valueOf(this.field496));
     }
     
     @Override

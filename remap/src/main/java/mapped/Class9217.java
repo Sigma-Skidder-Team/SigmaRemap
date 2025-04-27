@@ -21,7 +21,7 @@ public class Class9217
     }
     
     public Class9217(final int field39427, final int field39428, final long[] field39429) {
-        Validate.inclusiveBetween(1L, 32L, (long)field39427);
+        Validate.inclusiveBetween(1L, 32L, field39427);
         this.field39429 = field39428;
         this.field39427 = field39427;
         this.field39426 = field39429;
@@ -34,8 +34,8 @@ public class Class9217
     }
     
     public int method33925(final int n, final int n2) {
-        Validate.inclusiveBetween(0L, (long)(this.field39429 - 1), (long)n);
-        Validate.inclusiveBetween(0L, this.field39428, (long)n2);
+        Validate.inclusiveBetween(0L, this.field39429 - 1, n);
+        Validate.inclusiveBetween(0L, this.field39428, n2);
         final int n3 = n * this.field39427;
         final int n4 = n3 >> 6;
         final int n5 = (n + 1) * this.field39427 - 1 >> 6;
@@ -52,8 +52,8 @@ public class Class9217
     }
     
     public void method33926(final int n, final int n2) {
-        Validate.inclusiveBetween(0L, (long)(this.field39429 - 1), (long)n);
-        Validate.inclusiveBetween(0L, this.field39428, (long)n2);
+        Validate.inclusiveBetween(0L, this.field39429 - 1, n);
+        Validate.inclusiveBetween(0L, this.field39428, n2);
         final int n3 = n * this.field39427;
         final int n4 = n3 >> 6;
         final int n5 = (n + 1) * this.field39427 - 1 >> 6;
@@ -67,7 +67,7 @@ public class Class9217
     }
     
     public int method33927(final int n) {
-        Validate.inclusiveBetween(0L, (long)(this.field39429 - 1), (long)n);
+        Validate.inclusiveBetween(0L, this.field39429 - 1, n);
         final int n2 = n * this.field39427;
         final int n3 = n2 >> 6;
         final int n4 = (n + 1) * this.field39427 - 1 >> 6;

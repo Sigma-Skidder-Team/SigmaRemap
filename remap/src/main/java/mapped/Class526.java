@@ -59,8 +59,8 @@ public class Class526 extends Class516<Class3433>
                 if (n7 >= 0.0) {
                     if (n6 < 108.0) {
                         if (n7 < 19.0) {
-                            if (((Class3433)this.field3077).method10877(this.minecraft.player, i)) {
-                                this.minecraft.playerController.method27326(((Class3433)this.field3077).field16154, i);
+                            if (this.field3077.method10877(this.minecraft.player, i)) {
+                                this.minecraft.playerController.method27326(this.field3077.field16154, i);
                                 return true;
                             }
                         }
@@ -128,14 +128,14 @@ public class Class526 extends Class516<Class3433>
         RenderSystem.method30057(5888);
         Class8317.method27612();
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
-        Class8430.method28151().method28153(((Class3433)this.field3077).method10953());
-        final int method22572 = ((Class3433)this.field3077).method10952();
+        Class8430.method28151().method28153(this.field3077.method10953());
+        final int method22572 = this.field3077.method10952();
         for (int i = 0; i < 3; ++i) {
             final int n11 = n4 + 60;
             final int n12 = n11 + 20;
             this.setBlitOffset(0);
             this.minecraft.method5290().method5849(Class526.field3134);
-            final int j = ((Class3433)this.field3077).field16221[i];
+            final int j = this.field3077.field16221[i];
             RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
             if (j != 0) {
                 final String string = "" + j;
@@ -190,11 +190,11 @@ public class Class526 extends Class516<Class3433>
         super.render(n, n2, method5314);
         this.method2977(n, n2);
         final boolean field27304 = this.minecraft.player.field3025.field27304;
-        final int method5315 = ((Class3433)this.field3077).method10952();
+        final int method5315 = this.field3077.method10952();
         for (int i = 0; i < 3; ++i) {
-            final int n3 = ((Class3433)this.field3077).field16221[i];
-            final Class6257 method5316 = Class6257.method18590(((Class3433)this.field3077).field16222[i]);
-            final int n4 = ((Class3433)this.field3077).field16223[i];
+            final int n3 = this.field3077.field16221[i];
+            final Class6257 method5316 = Class6257.method18590(this.field3077.field16222[i]);
+            final int n4 = this.field3077.field16223[i];
             final int n5 = i + 1;
             if (this.method2987(60, 14 + 19 * i, 108, 17, n, n2)) {
                 if (n3 > 0) {
@@ -210,20 +210,20 @@ public class Class526 extends Class516<Class3433>
                                         str = Class8822.method30773("container.enchant.lapis.many", n5);
                                     }
                                     else {
-                                        str = Class8822.method30773("container.enchant.lapis.one", new Object[0]);
+                                        str = Class8822.method30773("container.enchant.lapis.one");
                                     }
-                                    arrayList.add(((method5315 < n5) ? TextFormatting.RED : TextFormatting.GRAY) + "" + str);
+                                    arrayList.add(((method5315 < n5) ? TextFormatting.RED : TextFormatting.GRAY) + str);
                                     String str2;
                                     if (n5 != 1) {
                                         str2 = Class8822.method30773("container.enchant.level.many", n5);
                                     }
                                     else {
-                                        str2 = Class8822.method30773("container.enchant.level.one", new Object[0]);
+                                        str2 = Class8822.method30773("container.enchant.level.one");
                                     }
-                                    arrayList.add(TextFormatting.GRAY + "" + str2);
+                                    arrayList.add(TextFormatting.GRAY + str2);
                                 }
                                 else {
-                                    arrayList.add(TextFormatting.RED + Class8822.method30773("container.enchant.level.requirement", ((Class3433)this.field3077).field16221[i]));
+                                    arrayList.add(TextFormatting.RED + Class8822.method30773("container.enchant.level.requirement", this.field3077.field16221[i]));
                                 }
                             }
                             this.renderTooltip(arrayList, n, n2);
@@ -251,8 +251,9 @@ public class Class526 extends Class516<Class3433>
         this.field3144 = this.field3143;
         int n = 0;
         for (int i = 0; i < 3; ++i) {
-            if (((Class3433)this.field3077).field16221[i] != 0) {
+            if (this.field3077.field16221[i] != 0) {
                 n = 1;
+                break;
             }
         }
         if (n == 0) {

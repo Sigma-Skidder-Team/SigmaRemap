@@ -14,7 +14,7 @@ public enum Class2045
     
     private final Predicate<? super Class377> field11653;
     
-    private Class2045(final Predicate<? super Class377> field11653) {
+    Class2045(final Predicate<? super Class377> field11653) {
         this.field11653 = field11653;
     }
     

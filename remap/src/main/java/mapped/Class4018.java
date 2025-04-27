@@ -67,10 +67,7 @@ public class Class4018 extends Class4017
     
     private void method12206(final World class1847, final BlockPos class1848, final Class7096 class1849) {
         final boolean booleanValue = class1849.method21772((IProperty<Boolean>)Class4018.field18098);
-        boolean b = false;
-        if (!this.method12208(class1847, class1848, Class428.class, null).isEmpty()) {
-            b = true;
-        }
+        boolean b = !this.method12208(class1847, class1848, Class428.class, null).isEmpty();
         if (b) {
             if (!booleanValue) {
                 final Class7096 class1850 = ((StateHolder<O, Class7096>)class1849).with((IProperty<Comparable>)Class4018.field18098, true);
@@ -127,7 +124,7 @@ public class Class4018 extends Class4017
         if (class7096.method21772((IProperty<Boolean>)Class4018.field18098)) {
             final List<Class429> method12208 = this.method12208(class7097, class7098, Class429.class, null);
             if (!method12208.isEmpty()) {
-                return ((Class429)method12208.get(0)).method2149().method5206();
+                return method12208.get(0).method2149().method5206();
             }
             final List<Class428> method12209 = this.method12208(class7097, class7098, Class428.class, Class9170.field38848);
             if (!method12209.isEmpty()) {
@@ -138,7 +135,7 @@ public class Class4018 extends Class4017
     }
     
     public <T extends Class428> List<T> method12208(final World class1847, final BlockPos class1848, final Class<T> clazz, final Predicate<Entity> predicate) {
-        return class1847.method6739((Class<? extends T>)clazz, this.method12209(class1848), (Predicate<? super T>)predicate);
+        return class1847.method6739(clazz, this.method12209(class1848), predicate);
     }
     
     private AxisAlignedBB method12209(final BlockPos class354) {

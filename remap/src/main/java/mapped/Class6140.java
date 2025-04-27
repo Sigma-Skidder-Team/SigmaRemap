@@ -17,7 +17,7 @@ public class Class6140 extends Class6132
     
     @Override
     public Typed<?> method18357(final Typed<?> typed) {
-        return (Typed<?>)typed.update(DSL.remainderFinder(), dynamic -> {
+        return typed.update(DSL.remainderFinder(), dynamic -> {
             if (dynamic.get("Xp").asNumber().isPresent()) {
                 return dynamic;
             }

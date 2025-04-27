@@ -39,7 +39,7 @@ public class Class5280 extends Class5278<Class6562, Class6637>
                 array[j] = class6639;
             }
         }
-        final int[] array2 = (int[])(boolean1 ? new int[256] : null);
+        final int[] array2 = boolean1 ? new int[256] : null;
         if (boolean1) {
             for (int k = 0; k < 256; ++k) {
                 array2[k] = byteBuf.readInt();

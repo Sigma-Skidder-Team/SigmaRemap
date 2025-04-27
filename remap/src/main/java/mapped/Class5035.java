@@ -76,7 +76,7 @@ public abstract class Class5035 extends DataFix
     }
     
     private <A> Typed<A> method15325(final Object o, final DynamicOps<?> dynamicOps, final Type<A> type) {
-        return (Typed<A>)new Typed((Type)type, (DynamicOps)dynamicOps, o);
+        return (Typed<A>)new Typed(type, dynamicOps, o);
     }
     
     public abstract Pair<String, Typed<?>> method15324(final String p0, final Typed<?> p1);

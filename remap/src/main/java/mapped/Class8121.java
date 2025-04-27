@@ -4,6 +4,7 @@
 
 package mapped;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Class8121
         if (Class9216.field39370) {
             Class9216.method33771(s.replace(':', '/'), str);
         }
-        return new ByteArrayInputStream(str.getBytes("ASCII"));
+        return new ByteArrayInputStream(str.getBytes(StandardCharsets.US_ASCII));
     }
     
     public static String method26734(final String s) throws IOException {

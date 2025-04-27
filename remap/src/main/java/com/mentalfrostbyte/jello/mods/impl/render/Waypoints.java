@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class Waypoints extends Module
 {
     public HashMap<UUID, Class8124> field15594;
-    private Category field15595;
+    private final Category field15595;
     
     public Waypoints() {
         super(Category.RENDER, "Waypoints", "Renders waypoints you added in Jello maps");
@@ -47,23 +47,17 @@ public class Waypoints extends Module
                     if (!(class5723.method16998() instanceof Class4276)) {
                         if (class5723.method16998() instanceof Class4361) {
                             final Class4361 class5724 = (Class4361)class5723.method16998();
-                            if (this.field15594.containsKey(class5724.method13116())) {
-                                this.field15594.remove(class5724.method13116());
-                            }
+                            this.field15594.remove(class5724.method13116());
                         }
                     }
                     else {
                         final Class4276 class5725 = (Class4276)class5723.method16998();
-                        if (this.field15594.containsKey(class5725.method12830())) {
-                            this.field15594.remove(class5725.method12830());
-                        }
+                        this.field15594.remove(class5725.method12830());
                     }
                 }
                 else {
                     final Class4339 class5726 = (Class4339)class5723.method16998();
-                    if (this.field15594.containsKey(class5726.method13024())) {
-                        this.field15594.remove(class5726.method13024());
-                    }
+                    this.field15594.remove(class5726.method13024());
                 }
             }
             else {
@@ -72,9 +66,7 @@ public class Waypoints extends Module
                     final Entity method12990 = Waypoints.mc.world.getEntityByID(method12989[i]);
                     if (method12990 != null) {
                         if (method12990 instanceof PlayerEntity) {
-                            if (this.field15594.containsKey(method12990.method1865())) {
-                                this.field15594.remove(method12990.method1865());
-                            }
+                            this.field15594.remove(method12990.method1865());
                             this.field15594.put(method12990.method1865(), new Class8124(method12990.getName().getUnformattedComponentText() + " Unspawn", (int)method12990.posX, (int)method12990.posY, (int)method12990.posZ, ClientColors.DARK_OLIVE.color));
                         }
                     }
@@ -93,7 +85,7 @@ public class Waypoints extends Module
     }
     
     public List<Class8124> method10007(final List<Class8124> c) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)c);
+        final ArrayList list = new ArrayList(c);
         if (this.getBooleanValueFromSettingName("Unspawn Positions")) {
             list.addAll(this.field15594.values());
         }
@@ -217,19 +209,19 @@ public class Waypoints extends Module
         GL11.glPushMatrix();
         GL11.glAlphaFunc(519, 0.0f);
         GL11.glColor4f(0.0f, 0.0f, 0.0f, 0.114f);
-        GL11.glTranslated(n + 0.5, (double)n2, n3 + 0.5);
+        GL11.glTranslated(n + 0.5, n2, n3 + 0.5);
         GL11.glRotatef(90.0f, -1.0f, 0.0f, 0.0f);
         this.method10013(0.5f);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
         GL11.glColor4fv(ColorUtils.method19139(n4));
-        GL11.glTranslated(n + 0.5, (double)(n2 + 0.7f), n3 + 0.5);
+        GL11.glTranslated(n + 0.5, n2 + 0.7f, n3 + 0.5);
         GL11.glRotatef((float)(Waypoints.mc.player.ticksExisted % 90 * 4), 0.0f, -1.0f, 0.0f);
         GL11.glLineWidth(1.4f + 1.0f / n5 * 1.4f);
         this.method10012(0.6f);
         GL11.glPopMatrix();
         GL11.glPushMatrix();
-        GL11.glTranslated(n + 0.5, (double)(n2 + 0.7f), n3 + 0.5);
+        GL11.glTranslated(n + 0.5, n2 + 0.7f, n3 + 0.5);
         GL11.glRotatef((float)(Waypoints.mc.player.ticksExisted % 90 * 4), 0.0f, 1.0f, 0.0f);
         this.method10009(n4);
         GL11.glPopMatrix();
@@ -244,7 +236,7 @@ public class Waypoints extends Module
         GL11.glTranslated(0.0, -20.0 * Math.sqrt(Math.sqrt(n5)), 0.0);
         RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, field40314.getWidth(s) / 2.0f + 14.0f, (float)(field40314.getHeight() + 7), ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.5f));
         RenderUtil.method26913((float)(-field40314.getWidth(s) / 2 - 14), -5.0f, (float)(field40314.getWidth(s) + 28), (float)(field40314.getHeight() + 12), 20.0f, 0.5f);
-        GL11.glTranslated((double)(-field40314.getWidth(s) / 2), 0.0, 0.0);
+        GL11.glTranslated(-field40314.getWidth(s) / 2, 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();

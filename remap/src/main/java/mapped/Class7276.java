@@ -66,14 +66,9 @@ public class Class7276
             final Object method22297 = this.method22296();
             final Object method22298 = class7276.method22296();
             if (method22297 != null) {
-                if (!method22297.equals(method22298)) {
-                    return false;
-                }
+                return method22297.equals(method22298);
             }
-            else if (method22298 != null) {
-                return false;
-            }
-            return true;
+            else return method22298 == null;
         }
         return false;
     }
@@ -84,7 +79,7 @@ public class Class7276
     
     @Override
     public int hashCode() {
-        final int n = 1 * 59 + this.method22294();
+        final int n = 59 + this.method22294();
         final Class1967 method22295 = this.method22295();
         final int n2 = n * 59 + ((method22295 != null) ? method22295.hashCode() : 43);
         final Object method22296 = this.method22296();

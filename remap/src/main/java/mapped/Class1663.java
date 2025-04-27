@@ -92,7 +92,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
         }
         catch (final IOException ex) {
             if (class1932 != Class1663.field9428) {
-                Class1663.field9427.warn("Failed to load texture: {}", (Object)class1932, (Object)ex);
+                Class1663.field9427.warn("Failed to load texture: {}", class1932, ex);
             }
             return Class1913.method7553();
         }
@@ -127,7 +127,7 @@ public class Class1663 implements Class1664, AutoCloseable, Class1662
     
     public CompletableFuture<Void> method5855(final ResourceLocation class1932, final Executor executor) {
         if (this.field9429.containsKey(class1932)) {
-            return CompletableFuture.completedFuture((Void)null);
+            return CompletableFuture.completedFuture(null);
         }
         final Class1770 class1933 = new Class1770(this.field9432, class1932, executor);
         this.field9429.put(class1932, class1933);

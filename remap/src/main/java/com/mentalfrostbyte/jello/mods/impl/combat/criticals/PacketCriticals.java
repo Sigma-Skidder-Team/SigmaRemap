@@ -14,7 +14,7 @@ import net.minecraft.entity.LivingEntity;
 
 public class PacketCriticals extends Module
 {
-    private TimerUtil field15680;
+    private final TimerUtil field15680;
     private boolean field15681;
     
     public PacketCriticals() {

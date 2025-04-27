@@ -8,21 +8,21 @@ import slick2d.Texture;
 
 public class Class7920
 {
-    private Texture field32514;
+    private final Texture field32514;
     private int field32515;
-    private int field32516;
-    private int field32517;
-    private int field32518;
+    private final int field32516;
+    private final int field32517;
+    private final int field32518;
     private int field32519;
     private final int field32520;
     private boolean field32521;
     private boolean field32522;
     private Class226 field32523;
-    private Class267 field32524;
-    private TimerUtil field32525;
+    private final Class267 field32524;
+    private final TimerUtil field32525;
     private int field32526;
     private int field32527;
-    private Animation field32528;
+    private final Animation field32528;
     
     public Class7920(final Texture field32514, final int field32515, final int field32516, final int field32517, final Class267 field32518, final int field32519, final int field32520) {
         this.field32522 = true;

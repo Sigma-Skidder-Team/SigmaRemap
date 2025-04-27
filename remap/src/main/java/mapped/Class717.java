@@ -6,13 +6,13 @@ package mapped;
 
 public class Class717 extends Class698
 {
-    private Screen field3924;
-    private Class5760 field3925;
+    private final Screen field3924;
+    private final Class5760 field3925;
     private static Class6469[] field3926;
-    private Class8297 field3927;
+    private final Class8297 field3927;
     
     public Class717(final Screen field3924, final Class5760 field3925) {
-        super(new StringTextComponent(Class8822.method30773("of.options.performanceTitle", new Object[0])));
+        super(new StringTextComponent(Class8822.method30773("of.options.performanceTitle")));
         this.field3927 = new Class8297(this, new Class7298());
         this.field3924 = field3924;
         this.field3925 = field3925;
@@ -28,7 +28,7 @@ public class Class717 extends Class698
                 method3029.field3431 = false;
             }
         }
-        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done")));
     }
     
     @Override

@@ -18,11 +18,11 @@ public class Class7614
 {
     private static String[] field30173;
     private final RotationManager field30174;
-    private HashMap<BlockPos, BlockState> field30175;
-    private HashMap<BlockPos, BlockState> field30176;
-    private Set<Class6977> field30177;
-    private Set<Class9488> field30178;
-    private Set<Class9488> field30179;
+    private final HashMap<BlockPos, BlockState> field30175;
+    private final HashMap<BlockPos, BlockState> field30176;
+    private final Set<Class6977> field30177;
+    private final Set<Class9488> field30178;
+    private final Set<Class9488> field30179;
     
     public Class7614(final RotationManager field30174) {
         this.field30175 = new HashMap<BlockPos, BlockState>();

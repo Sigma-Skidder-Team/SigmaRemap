@@ -17,6 +17,6 @@ public final class Class7681 extends ChannelInitializer<Channel>
     }
     
     public void initChannel(final Channel channel) throws Exception {
-        channel.pipeline().addLast("packet_handler", (ChannelHandler)this.field30508);
+        channel.pipeline().addLast("packet_handler", this.field30508);
     }
 }

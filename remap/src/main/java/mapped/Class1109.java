@@ -23,7 +23,7 @@ public class Class1109 implements Runnable
         if (!this.field5986.field32319[0]) {
             this.field5986.field32319[0] = true;
             if (Class4960.method14969().isLoggable(Level.FINE)) {
-                Class4960.method14969().fine(String.format("sending ack %s", (Object[])((this.field5985.length == 0) ? null : this.field5985)));
+                Class4960.method14969().fine(String.format("sending ack %s", (this.field5985.length == 0) ? null : this.field5985));
             }
             final JSONArray JSONArray = new JSONArray();
             final Object[] field5985 = this.field5985;

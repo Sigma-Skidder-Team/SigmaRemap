@@ -125,9 +125,7 @@ public final class Class8753
     public static boolean method30290(final AssertionError assertionError) {
         if (assertionError.getCause() != null) {
             if (assertionError.getMessage() != null) {
-                if (assertionError.getMessage().contains("getsockname failed")) {
-                    return true;
-                }
+                return assertionError.getMessage().contains("getsockname failed");
             }
         }
         return false;

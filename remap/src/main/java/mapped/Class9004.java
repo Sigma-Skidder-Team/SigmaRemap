@@ -8,10 +8,10 @@ import net.minecraft.client.renderer.Vector4f;
 
 public class Class9004
 {
-    private int field38009;
-    private String field38010;
-    private String field38011;
-    private String field38012;
+    private final int field38009;
+    private final String field38010;
+    private final String field38011;
+    private final String field38012;
     public static final int field38013 = 1;
     public static final int field38014 = 2;
     public static final int field38015 = 3;
@@ -123,9 +123,7 @@ public class Class9004
     public boolean method32201(final String s, final String s2, final String s3) {
         if (!this.method32196(s)) {
             if (!this.method32196(s2)) {
-                if (!this.method32196(s3)) {
-                    return false;
-                }
+                return this.method32196(s3);
             }
         }
         return true;

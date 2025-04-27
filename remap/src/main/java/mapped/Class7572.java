@@ -305,7 +305,7 @@ public class Class7572
         this.field30036 = ResourceLocation.method7799(this.field30032);
         final Block class3833 = Registry.BLOCK.method506(this.field30036).orElseThrow(() -> {
             this.field30032.setCursor(cursor);
-            return Class7572.field30025.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString());
+            return Class7572.field30025.createWithContext(this.field30032, this.field30036.toString());
         });
         this.field30037 = class3833.getStateContainer();
         this.field30038 = class3833.getDefaultState();
@@ -336,20 +336,20 @@ public class Class7572
             final IProperty<?> method32906 = this.field30037.getProperty(string);
             if (method32906 == null) {
                 this.field30032.setCursor(cursor);
-                throw Class7572.field30026.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
+                throw Class7572.field30026.createWithContext(this.field30032, this.field30036.toString(), string);
             }
             if (this.field30034.containsKey(method32906)) {
                 this.field30032.setCursor(cursor);
-                throw Class7572.field30027.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
+                throw Class7572.field30027.createWithContext(this.field30032, this.field30036.toString(), string);
             }
             this.field30032.skipWhitespace();
             this.field30042 = this::method23809;
             if (!this.field30032.canRead() || this.field30032.peek() != '=') {
-                throw Class7572.field30029.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
+                throw Class7572.field30029.createWithContext(this.field30032, this.field30036.toString(), string);
             }
             this.field30032.skip();
             this.field30032.skipWhitespace();
-            this.field30042 = (Function<SuggestionsBuilder, CompletableFuture<Suggestions>>)(suggestionsBuilder2 -> method23811(suggestionsBuilder2, (IProperty<Comparable>)class7111).buildFuture());
+            this.field30042 = (suggestionsBuilder2 -> method23811(suggestionsBuilder2, (IProperty<Comparable>)class7111).buildFuture());
             this.method23822(method32906, this.field30032.readString(), this.field30032.getCursor());
             this.field30042 = this::method23810;
             this.field30032.skipWhitespace();
@@ -360,7 +360,7 @@ public class Class7572
                 if (this.field30032.peek() == ']') {
                     break;
                 }
-                throw Class7572.field30030.createWithContext((ImmutableStringReader)this.field30032);
+                throw Class7572.field30030.createWithContext(this.field30032);
             }
             else {
                 this.field30032.skip();
@@ -368,7 +368,7 @@ public class Class7572
             }
         }
         if (!this.field30032.canRead()) {
-            throw Class7572.field30030.createWithContext((ImmutableStringReader)this.field30032);
+            throw Class7572.field30030.createWithContext(this.field30032);
         }
         this.field30032.skip();
     }
@@ -387,16 +387,16 @@ public class Class7572
             final String string = this.field30032.readString();
             if (this.field30035.containsKey(string)) {
                 this.field30032.setCursor(cursor2);
-                throw Class7572.field30027.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
+                throw Class7572.field30027.createWithContext(this.field30032, this.field30036.toString(), string);
             }
             this.field30032.skipWhitespace();
             if (!this.field30032.canRead() || this.field30032.peek() != '=') {
                 this.field30032.setCursor(cursor2);
-                throw Class7572.field30029.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)string);
+                throw Class7572.field30029.createWithContext(this.field30032, this.field30036.toString(), string);
             }
             this.field30032.skip();
             this.field30032.skipWhitespace();
-            this.field30042 = (Function<SuggestionsBuilder, CompletableFuture<Suggestions>>)(suggestionsBuilder2 -> this.method23812(suggestionsBuilder2, s));
+            this.field30042 = (suggestionsBuilder2 -> this.method23812(suggestionsBuilder2, s));
             cursor = this.field30032.getCursor();
             this.field30035.put(string, this.field30032.readString());
             this.field30032.skipWhitespace();
@@ -408,7 +408,7 @@ public class Class7572
                 if (this.field30032.peek() == ']') {
                     break;
                 }
-                throw Class7572.field30030.createWithContext((ImmutableStringReader)this.field30032);
+                throw Class7572.field30030.createWithContext(this.field30032);
             }
             else {
                 this.field30032.skip();
@@ -419,7 +419,7 @@ public class Class7572
             if (cursor >= 0) {
                 this.field30032.setCursor(cursor);
             }
-            throw Class7572.field30030.createWithContext((ImmutableStringReader)this.field30032);
+            throw Class7572.field30030.createWithContext(this.field30032);
         }
         this.field30032.skip();
     }
@@ -432,7 +432,7 @@ public class Class7572
         final Optional method21830 = class7111.parseValue(s);
         if (!method21830.isPresent()) {
             this.field30032.setCursor(cursor);
-            throw Class7572.field30028.createWithContext((ImmutableStringReader)this.field30032, (Object)this.field30036.toString(), (Object)class7111.getName(), (Object)s);
+            throw Class7572.field30028.createWithContext(this.field30032, this.field30036.toString(), class7111.getName(), s);
         }
         this.field30038 = (Class7096)((StateHolder<Object, Object>)this.field30038).with(class7111, method21830.get());
         this.field30034.put(class7111, (Comparable<?>)method21830.get());
@@ -470,16 +470,16 @@ public class Class7572
     }
     
     static {
-        field30024 = new SimpleCommandExceptionType((Message)new Class2259("argument.block.tag.disallowed", new Object[0]));
+        field30024 = new SimpleCommandExceptionType(new Class2259("argument.block.tag.disallowed", new Object[0]));
         field30025 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.block.id.invalid", new Object[] { o });
+            new Class2259("argument.block.id.invalid", o);
             return;
         });
-        field30026 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.unknown", new Object[] { o, o2 }));
-        field30027 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.duplicate", new Object[] { o2, o }));
-        field30028 = new Dynamic3CommandExceptionType((o, o2, o3) -> new Class2259("argument.block.property.invalid", new Object[] { o, o3, o2 }));
-        field30029 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.novalue", new Object[] { o, o2 }));
-        field30030 = new SimpleCommandExceptionType((Message)new Class2259("argument.block.property.unclosed", new Object[0]));
+        field30026 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.unknown", o, o2));
+        field30027 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.duplicate", o2, o));
+        field30028 = new Dynamic3CommandExceptionType((o, o2, o3) -> new Class2259("argument.block.property.invalid", o, o3, o2));
+        field30029 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.block.property.novalue", o, o2));
+        field30030 = new SimpleCommandExceptionType(new Class2259("argument.block.property.unclosed", new Object[0]));
         field30031 = SuggestionsBuilder::buildFuture;
     }
 }

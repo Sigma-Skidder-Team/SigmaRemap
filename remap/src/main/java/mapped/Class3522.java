@@ -28,9 +28,7 @@ public class Class3522 extends Class3446
                         if (this.field16525.method1734(method4152) > 36.0) {
                             if (!this.field16525.method1814()) {
                                 if (!this.field16525.method4670()) {
-                                    if (!this.field16525.field2967) {
-                                        return true;
-                                    }
+                                    return !this.field16525.field2967;
                                 }
                             }
                         }

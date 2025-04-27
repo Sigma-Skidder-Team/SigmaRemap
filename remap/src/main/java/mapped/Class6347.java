@@ -28,9 +28,9 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     private Class3090 method18886() {
-        final Class3090 method21587 = ((Class7067)this.field25386).method21587();
+        final Class3090 method21587 = this.field25386.method21587();
         final Class3108 class3108 = new Class3108(method21587.method9871(), method21587.method9841(), method21587.method9870(), method21587.method9862(), method21587.method9866(), method21587.method9867(), method21587.method9863(), method21587.method9868(), method21587.method9869(), method21587.method9873());
-        final Map<String, Map<String, String>> method21588 = ((Class7067)this.field25386).method21589();
+        final Map<String, Map<String, String>> method21588 = this.field25386.method21589();
         final Iterator<String> iterator = method21588.keySet().iterator();
         while (iterator.hasNext()) {
             final Class8530[] array = Class7067.field27515.get(iterator.next());
@@ -49,7 +49,7 @@ public class Class6347 extends Class6346<Class7067>
         }
         boolean b = false;
         Label_0320: {
-            if (!((Class7067)this.field25386).method21600() || method21587 == Class7102.field27683) {
+            if (!this.field25386.method21600() || method21587 == Class7102.field27683) {
                 if (method21588.containsKey("decoration")) {
                     b = true;
                     break Label_0320;
@@ -70,12 +70,12 @@ public class Class6347 extends Class6346<Class7067>
                 }
             }
         }
-        final Class7096[] method21590 = ((Class7067)this.field25386).method21601();
+        final Class7096[] method21590 = this.field25386.method21601();
         for (int k = 0; k < method21590.length; ++k) {
             final Class7096 class3112 = method21590[k];
             if (class3112 != null) {
                 if (!HeightmapType.field11525.method8064().test(class3112)) {
-                    ((Class7067)this.field25386).method21602(k);
+                    this.field25386.method21602(k);
                     class3108.method9849(Class2108.field12229, Class4535.field20015.method13527(new Class5140(k, class3112)).method28610(Class7133.field27782.method21889(Class6926.field27145)));
                 }
             }
@@ -99,7 +99,7 @@ public class Class6347 extends Class6346<Class7067>
     
     @Override
     public void method18861(final Class1851 class1851, final IChunk class1852) {
-        final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
+        final Class7096[] method21601 = this.field25386.method21601();
         final Mutable class1853 = new Mutable();
         final Class9548 method21602 = class1852.method7017(HeightmapType.field11523);
         final Class9548 method21603 = class1852.method7017(HeightmapType.field11521);
@@ -119,7 +119,7 @@ public class Class6347 extends Class6346<Class7067>
     
     @Override
     public int method18857(final int n, final int n2, final HeightmapType class2020) {
-        final Class7096[] method21601 = ((Class7067)this.field25386).method21601();
+        final Class7096[] method21601 = this.field25386.method21601();
         for (int i = method21601.length - 1; i >= 0; --i) {
             final Class7096 class2021 = method21601[i];
             if (class2021 != null && class2020.method8064().test(class2021)) {
@@ -149,6 +149,6 @@ public class Class6347 extends Class6346<Class7067>
     @Nullable
     @Override
     public BlockPos method18874(final World class1847, final String s, final BlockPos class1848, final int n, final boolean b) {
-        return ((Class7067)this.field25386).method21589().keySet().contains(s.toLowerCase(Locale.ROOT)) ? super.method18874(class1847, s, class1848, n, b) : null;
+        return this.field25386.method21589().containsKey(s.toLowerCase(Locale.ROOT)) ? super.method18874(class1847, s, class1848, n, b) : null;
     }
 }

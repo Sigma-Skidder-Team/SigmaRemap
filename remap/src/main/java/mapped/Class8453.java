@@ -38,46 +38,46 @@ public class Class8453 implements DynamicOps<INBT>
     public Type<?> getType(final INBT class41) {
         switch (class41.getId()) {
             case 0: {
-                return (Type<?>)DSL.nilType();
+                return DSL.nilType();
             }
             case 1: {
-                return (Type<?>)DSL.byteType();
+                return DSL.byteType();
             }
             case 2: {
-                return (Type<?>)DSL.shortType();
+                return DSL.shortType();
             }
             case 3: {
-                return (Type<?>)DSL.intType();
+                return DSL.intType();
             }
             case 4: {
-                return (Type<?>)DSL.longType();
+                return DSL.longType();
             }
             case 5: {
-                return (Type<?>)DSL.floatType();
+                return DSL.floatType();
             }
             case 6: {
-                return (Type<?>)DSL.doubleType();
+                return DSL.doubleType();
             }
             case 7: {
-                return (Type<?>)DSL.list(DSL.byteType());
+                return DSL.list(DSL.byteType());
             }
             case 8: {
-                return (Type<?>)DSL.string();
+                return DSL.string();
             }
             case 9: {
-                return (Type<?>)DSL.list(DSL.remainderType());
+                return DSL.list(DSL.remainderType());
             }
             case 10: {
-                return (Type<?>)DSL.compoundList(DSL.remainderType(), DSL.remainderType());
+                return DSL.compoundList(DSL.remainderType(), DSL.remainderType());
             }
             case 11: {
-                return (Type<?>)DSL.list(DSL.intType());
+                return DSL.list(DSL.intType());
             }
             case 12: {
-                return (Type<?>)DSL.list(DSL.longType());
+                return DSL.list(DSL.longType());
             }
             default: {
-                return (Type<?>)DSL.remainderType();
+                return DSL.remainderType();
             }
         }
     }
@@ -217,7 +217,7 @@ public class Class8453 implements DynamicOps<INBT>
     }
     
     public Optional<Stream<INBT>> getStream(final INBT class41) {
-        return (Optional<Stream<INBT>>)((class41 instanceof CollectionNBT) ? Optional.of(((CollectionNBT)class41).stream().map(o -> o)) : Optional.empty());
+        return (class41 instanceof CollectionNBT) ? Optional.of(((CollectionNBT)class41).stream().map(o -> o)) : Optional.empty();
     }
     
     public Optional<ByteBuffer> getByteBuffer(final INBT class41) {
@@ -251,10 +251,10 @@ public class Class8453 implements DynamicOps<INBT>
         }
         final INBT class41 = (INBT)peekingIterator.peek();
         if (class41 instanceof ByteNBT) {
-            return new ByteArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((ByteNBT)class41).getByte())));
+            return new ByteArrayNBT(Lists.newArrayList(Iterators.transform(peekingIterator, class41 -> ((ByteNBT)class41).getByte())));
         }
         if (class41 instanceof IntNBT) {
-            return new IntArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((IntNBT)class41).getInt())));
+            return new IntArrayNBT(Lists.newArrayList(Iterators.transform(peekingIterator, class41 -> ((IntNBT)class41).getInt())));
         }
         if (!(class41 instanceof LongNBT)) {
             final ListNBT class42 = new ListNBT();
@@ -267,7 +267,7 @@ public class Class8453 implements DynamicOps<INBT>
             }
             return class42;
         }
-        return new LongArrayNBT(Lists.newArrayList(Iterators.transform((Iterator)peekingIterator, class41 -> ((LongNBT)class41).getLong())));
+        return new LongArrayNBT(Lists.newArrayList(Iterators.transform(peekingIterator, class41 -> ((LongNBT)class41).getLong())));
     }
     
     public INBT remove(final INBT class41, final String s) {

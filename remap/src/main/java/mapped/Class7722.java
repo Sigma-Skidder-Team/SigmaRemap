@@ -123,7 +123,7 @@ public final class Class7722
                 final String method6096 = class1681.method5985();
                 final Class1680 class1682 = new Class1680();
                 class1682.method5996(Class1929.method7756(method6096));
-                list.add((Object)instance.generateCertificate(class1682.method5954()));
+                list.add(instance.generateCertificate(class1682.method5954()));
             }
             return (List<Certificate>)list;
         }
@@ -136,7 +136,7 @@ public final class Class7722
         try {
             class1679.method5944(list.size()).method5937(10);
             for (int i = 0; i < list.size(); ++i) {
-                class1679.method5932(Class1929.method7738(((Certificate)list.get(i)).getEncoded()).method7745()).method5937(10);
+                class1679.method5932(Class1929.method7738(list.get(i).getEncoded()).method7745()).method5937(10);
             }
         }
         catch (final CertificateEncodingException ex) {
@@ -147,9 +147,7 @@ public final class Class7722
     public boolean method24656(final Request request, final Response class8597) {
         if (this.field30715.equals(request.url().toString())) {
             if (this.field30717.equals(request.method29110())) {
-                if (Class9558.method35754(class8597, this.field30716, request)) {
-                    return true;
-                }
+                return Class9558.method35754(class8597, this.field30716, request);
             }
         }
         return false;

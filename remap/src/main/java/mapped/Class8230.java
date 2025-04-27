@@ -42,7 +42,7 @@ public class Class8230 extends Class8228
     
     @Override
     public <T> Dynamic<T> method27258(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.emptyMap());
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.emptyMap());
     }
     
     @Override

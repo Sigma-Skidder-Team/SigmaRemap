@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.HttpURLConnection;
+import java.nio.charset.StandardCharsets;
 
 public abstract class Class8178<T extends Class8178<T>>
 {
@@ -97,7 +98,7 @@ public abstract class Class8178<T extends Class8178<T>>
     
     private String method27083(final InputStream in) throws IOException {
         if (in != null) {
-            final InputStreamReader inputStreamReader = new InputStreamReader(in, "UTF-8");
+            final InputStreamReader inputStreamReader = new InputStreamReader(in, StandardCharsets.UTF_8);
             final StringBuilder sb = new StringBuilder();
             for (int i = inputStreamReader.read(); i != -1; i = inputStreamReader.read()) {
                 sb.append((char)i);
@@ -133,7 +134,7 @@ public abstract class Class8178<T extends Class8178<T>>
     
     public T method27085() {
         if (!this.field33686) {
-            final Class8178<T> method27076 = (Class8178<T>)this.method27076();
+            final Class8178<T> method27076 = this.method27076();
             this.field33686 = true;
             return (T)method27076;
         }

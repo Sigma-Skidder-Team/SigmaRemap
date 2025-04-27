@@ -24,9 +24,7 @@ public class Class3586 extends Class3446
     public boolean method11013() {
         if (!this.field16713.world.method6703()) {
             if (this.field16713.method1706()) {
-                if (this.field16713.getPosY() < this.field16715 - 2) {
-                    return true;
-                }
+                return this.field16713.getPosY() < this.field16715 - 2;
             }
         }
         return false;

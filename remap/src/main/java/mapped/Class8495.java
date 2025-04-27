@@ -17,7 +17,7 @@ public class Class8495
         if (!Class8495.field34884) {
             Class8495.field34884 = true;
             try {
-                AccessController.doPrivileged((PrivilegedAction<Object>)new Class2429());
+                AccessController.doPrivileged(new Class2429());
             }
             catch (final Throwable t) {}
         }

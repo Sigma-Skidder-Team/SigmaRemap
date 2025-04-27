@@ -13,7 +13,7 @@ public class Class4722 extends Class4712<Class851, Class5891<Class851>>
     
     public Class4722(final Class8551 class8551) {
         super(class8551, new Class5891(), 0.75f);
-        this.method13978((Class1799<Class851, Class5891<Class851>>)new Class1838((Class4778<Entity, Class5891<Entity>>)this));
+        this.method13978((Class1799<Class851, Class5891<Class851>>)new Class1838(this));
     }
     
     public ResourceLocation method14031(final Class851 class851) {

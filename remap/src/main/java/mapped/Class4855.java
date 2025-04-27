@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class Class4855 extends Class4841
 {
-    private Class4911 field20801;
-    private Class4911 field20802;
+    private final Class4911 field20801;
+    private final Class4911 field20802;
     public int field20803;
     private Animation field20804;
     
@@ -68,7 +68,7 @@ public class Class4855 extends Class4841
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.x + field20803), (float)(this.y + field20803), 0.0f);
         GL11.glLineWidth(1.0f);
-        GL11.glColor4d(0.0, 0.0, 0.0, (double)(0.6f * n));
+        GL11.glColor4d(0.0, 0.0, 0.0, 0.6f * n);
         GL11.glAlphaFunc(519, 0.0f);
         RenderSystem.enableBlend();
         RenderSystem.disableTexture();

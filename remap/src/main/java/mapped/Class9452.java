@@ -31,7 +31,7 @@ public class Class9452
                 n = 1;
             }
             if (n != 0) {
-                class7492.method23257(new Class2259("commands.save.disabled", new Object[0]), true);
+                class7492.method23257(new Class2259("commands.save.disabled"), true);
                 return 1;
             }
             throw Class9452.field40635.create();
@@ -39,6 +39,6 @@ public class Class9452
     }
     
     static {
-        field40635 = new SimpleCommandExceptionType((Message)new Class2259("commands.save.alreadyOff", new Object[0]));
+        field40635 = new SimpleCommandExceptionType(new Class2259("commands.save.alreadyOff", new Object[0]));
     }
 }

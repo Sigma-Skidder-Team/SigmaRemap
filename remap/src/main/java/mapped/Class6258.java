@@ -55,7 +55,7 @@ public class Class6258 extends Class6257
                 if (method11879.getMaterial() != Material.WATER) {
                     continue;
                 }
-                if (method11879.get((IProperty<Integer>)Class3859.field17480) != 0) {
+                if (method11879.get(Class3859.field17480) != 0) {
                     continue;
                 }
                 if (!method11878.method21752(class512, class515)) {

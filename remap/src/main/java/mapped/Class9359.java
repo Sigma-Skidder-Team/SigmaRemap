@@ -60,7 +60,7 @@ public class Class9359
     
     public static byte[] method34699(final String s, final PublicKey publicKey, final SecretKey secretKey) {
         try {
-            return method34700("SHA-1", new byte[][] { s.getBytes("ISO_8859_1"), secretKey.getEncoded(), publicKey.getEncoded() });
+            return method34700("SHA-1", s.getBytes("ISO_8859_1"), secretKey.getEncoded(), publicKey.getEncoded());
         }
         catch (final UnsupportedEncodingException ex) {
             ex.printStackTrace();

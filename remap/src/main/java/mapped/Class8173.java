@@ -33,51 +33,51 @@ public class Class8173 extends Schema
     }
     
     public static void method27022(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> method27021(schema2));
+        schema.register(map, s, () -> method27021(schema2));
     }
     
     public static void method27023(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> DSL.optionalFields("inTile", Class9451.field40627.in(schema2)));
+        schema.register(map, s, () -> DSL.optionalFields("inTile", Class9451.field40627.in(schema2)));
     }
     
     public static void method27024(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema2)));
+        schema.register(map, s, () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema2)));
     }
     
     public static void method27025(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema2))));
+        schema.register(map, s, () -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema2))));
     }
     
     public Map<String, Supplier<TypeTemplate>> registerEntities(final Schema schema) {
         final HashMap hashMap = Maps.newHashMap();
-        schema.register((Map)hashMap, "Item", p1 -> DSL.optionalFields("Item", Class9451.field40622.in(schema2)));
-        schema.registerSimple((Map)hashMap, "XPOrb");
+        schema.register(hashMap, "Item", p1 -> DSL.optionalFields("Item", Class9451.field40622.in(schema2)));
+        schema.registerSimple(hashMap, "XPOrb");
         method27023(schema, hashMap, "ThrownEgg");
-        schema.registerSimple((Map)hashMap, "LeashKnot");
-        schema.registerSimple((Map)hashMap, "Painting");
-        schema.register((Map)hashMap, "Arrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema3)));
-        schema.register((Map)hashMap, "TippedArrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema4)));
-        schema.register((Map)hashMap, "SpectralArrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema5)));
+        schema.registerSimple(hashMap, "LeashKnot");
+        schema.registerSimple(hashMap, "Painting");
+        schema.register(hashMap, "Arrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema3)));
+        schema.register(hashMap, "TippedArrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema4)));
+        schema.register(hashMap, "SpectralArrow", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema5)));
         method27023(schema, hashMap, "Snowball");
         method27023(schema, hashMap, "Fireball");
         method27023(schema, hashMap, "SmallFireball");
         method27023(schema, hashMap, "ThrownEnderpearl");
-        schema.registerSimple((Map)hashMap, "EyeOfEnderSignal");
-        schema.register((Map)hashMap, "ThrownPotion", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema6), "Potion", Class9451.field40622.in(schema6)));
+        schema.registerSimple(hashMap, "EyeOfEnderSignal");
+        schema.register(hashMap, "ThrownPotion", p1 -> DSL.optionalFields("inTile", Class9451.field40627.in(schema6), "Potion", Class9451.field40622.in(schema6)));
         method27023(schema, hashMap, "ThrownExpBottle");
-        schema.register((Map)hashMap, "ItemFrame", p1 -> DSL.optionalFields("Item", Class9451.field40622.in(schema7)));
+        schema.register(hashMap, "ItemFrame", p1 -> DSL.optionalFields("Item", Class9451.field40622.in(schema7)));
         method27023(schema, hashMap, "WitherSkull");
-        schema.registerSimple((Map)hashMap, "PrimedTnt");
-        schema.register((Map)hashMap, "FallingSand", p1 -> DSL.optionalFields("Block", Class9451.field40627.in(schema8), "TileEntityData", Class9451.field40621.in(schema8)));
-        schema.register((Map)hashMap, "FireworksRocketEntity", p1 -> DSL.optionalFields("FireworksItem", Class9451.field40622.in(schema9)));
-        schema.registerSimple((Map)hashMap, "Boat");
-        schema.register((Map)hashMap, "Minecart", () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema10), "Items", DSL.list(Class9451.field40622.in(schema10))));
+        schema.registerSimple(hashMap, "PrimedTnt");
+        schema.register(hashMap, "FallingSand", p1 -> DSL.optionalFields("Block", Class9451.field40627.in(schema8), "TileEntityData", Class9451.field40621.in(schema8)));
+        schema.register(hashMap, "FireworksRocketEntity", p1 -> DSL.optionalFields("FireworksItem", Class9451.field40622.in(schema9)));
+        schema.registerSimple(hashMap, "Boat");
+        schema.register(hashMap, "Minecart", () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema10), "Items", DSL.list(Class9451.field40622.in(schema10))));
         method27024(schema, hashMap, "MinecartRideable");
-        schema.register((Map)hashMap, "MinecartChest", p1 -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema11), "Items", DSL.list(Class9451.field40622.in(schema11))));
+        schema.register(hashMap, "MinecartChest", p1 -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema11), "Items", DSL.list(Class9451.field40622.in(schema11))));
         method27024(schema, hashMap, "MinecartFurnace");
         method27024(schema, hashMap, "MinecartTNT");
-        schema.register((Map)hashMap, "MinecartSpawner", () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema12), Class9451.field40629.in(schema12)));
-        schema.register((Map)hashMap, "MinecartHopper", p1 -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema13), "Items", DSL.list(Class9451.field40622.in(schema13))));
+        schema.register(hashMap, "MinecartSpawner", () -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema12), Class9451.field40629.in(schema12)));
+        schema.register(hashMap, "MinecartHopper", p1 -> DSL.optionalFields("DisplayTile", Class9451.field40627.in(schema13), "Items", DSL.list(Class9451.field40622.in(schema13))));
         method27024(schema, hashMap, "MinecartCommandBlock");
         method27022(schema, hashMap, "ArmorStand");
         method27022(schema, hashMap, "Creeper");
@@ -88,7 +88,7 @@ public class Class8173 extends Schema
         method27022(schema, hashMap, "Slime");
         method27022(schema, hashMap, "Ghast");
         method27022(schema, hashMap, "PigZombie");
-        schema.register((Map)hashMap, "Enderman", p1 -> DSL.optionalFields("carried", Class9451.field40627.in(schema14), method27021(schema14)));
+        schema.register(hashMap, "Enderman", p1 -> DSL.optionalFields("carried", Class9451.field40627.in(schema14), method27021(schema14)));
         method27022(schema, hashMap, "CaveSpider");
         method27022(schema, hashMap, "Silverfish");
         method27022(schema, hashMap, "Blaze");
@@ -109,12 +109,12 @@ public class Class8173 extends Schema
         method27022(schema, hashMap, "SnowMan");
         method27022(schema, hashMap, "Ozelot");
         method27022(schema, hashMap, "VillagerGolem");
-        schema.register((Map)hashMap, "EntityHorse", p1 -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema15)), "ArmorItem", Class9451.field40622.in(schema15), "SaddleItem", Class9451.field40622.in(schema15), method27021(schema15)));
+        schema.register(hashMap, "EntityHorse", p1 -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema15)), "ArmorItem", Class9451.field40622.in(schema15), "SaddleItem", Class9451.field40622.in(schema15), method27021(schema15)));
         method27022(schema, hashMap, "Rabbit");
-        schema.register((Map)hashMap, "Villager", p1 -> DSL.optionalFields("Inventory", DSL.list(Class9451.field40622.in(schema16)), "Offers", DSL.optionalFields("Recipes", DSL.list(DSL.optionalFields("buy", Class9451.field40622.in(schema16), "buyB", Class9451.field40622.in(schema16), "sell", Class9451.field40622.in(schema16)))), method27021(schema16)));
-        schema.registerSimple((Map)hashMap, "EnderCrystal");
-        schema.registerSimple((Map)hashMap, "AreaEffectCloud");
-        schema.registerSimple((Map)hashMap, "ShulkerBullet");
+        schema.register(hashMap, "Villager", p1 -> DSL.optionalFields("Inventory", DSL.list(Class9451.field40622.in(schema16)), "Offers", DSL.optionalFields("Recipes", DSL.list(DSL.optionalFields("buy", Class9451.field40622.in(schema16), "buyB", Class9451.field40622.in(schema16), "sell", Class9451.field40622.in(schema16)))), method27021(schema16)));
+        schema.registerSimple(hashMap, "EnderCrystal");
+        schema.registerSimple(hashMap, "AreaEffectCloud");
+        schema.registerSimple(hashMap, "ShulkerBullet");
         method27022(schema, hashMap, "Shulker");
         return hashMap;
     }
@@ -123,27 +123,27 @@ public class Class8173 extends Schema
         final HashMap hashMap = Maps.newHashMap();
         method27025(schema, hashMap, "Furnace");
         method27025(schema, hashMap, "Chest");
-        schema.registerSimple((Map)hashMap, "EnderChest");
-        schema.register((Map)hashMap, "RecordPlayer", p1 -> DSL.optionalFields("RecordItem", Class9451.field40622.in(schema2)));
+        schema.registerSimple(hashMap, "EnderChest");
+        schema.register(hashMap, "RecordPlayer", p1 -> DSL.optionalFields("RecordItem", Class9451.field40622.in(schema2)));
         method27025(schema, hashMap, "Trap");
         method27025(schema, hashMap, "Dropper");
-        schema.registerSimple((Map)hashMap, "Sign");
-        schema.register((Map)hashMap, "MobSpawner", p1 -> Class9451.field40629.in(schema3));
-        schema.registerSimple((Map)hashMap, "Music");
-        schema.registerSimple((Map)hashMap, "Piston");
+        schema.registerSimple(hashMap, "Sign");
+        schema.register(hashMap, "MobSpawner", p1 -> Class9451.field40629.in(schema3));
+        schema.registerSimple(hashMap, "Music");
+        schema.registerSimple(hashMap, "Piston");
         method27025(schema, hashMap, "Cauldron");
-        schema.registerSimple((Map)hashMap, "EnchantTable");
-        schema.registerSimple((Map)hashMap, "Airportal");
-        schema.registerSimple((Map)hashMap, "Control");
-        schema.registerSimple((Map)hashMap, "Beacon");
-        schema.registerSimple((Map)hashMap, "Skull");
-        schema.registerSimple((Map)hashMap, "DLDetector");
+        schema.registerSimple(hashMap, "EnchantTable");
+        schema.registerSimple(hashMap, "Airportal");
+        schema.registerSimple(hashMap, "Control");
+        schema.registerSimple(hashMap, "Beacon");
+        schema.registerSimple(hashMap, "Skull");
+        schema.registerSimple(hashMap, "DLDetector");
         method27025(schema, hashMap, "Hopper");
-        schema.registerSimple((Map)hashMap, "Comparator");
-        schema.register((Map)hashMap, "FlowerPot", p1 -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), Class9451.field40628.in(schema4))));
-        schema.registerSimple((Map)hashMap, "Banner");
-        schema.registerSimple((Map)hashMap, "Structure");
-        schema.registerSimple((Map)hashMap, "EndGateway");
+        schema.registerSimple(hashMap, "Comparator");
+        schema.register(hashMap, "FlowerPot", p1 -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), Class9451.field40628.in(schema4))));
+        schema.registerSimple(hashMap, "Banner");
+        schema.registerSimple(hashMap, "Structure");
+        schema.registerSimple(hashMap, "EndGateway");
         return hashMap;
     }
     
@@ -169,7 +169,7 @@ public class Class8173 extends Schema
     }
     
     public static <T> T method27026(final Dynamic<T> dynamic, final Map<String, String> map, final String s) {
-        return (T)dynamic.update("tag", dynamic2 -> dynamic2.update("BlockEntityTag", dynamic4 -> {
+        return dynamic.update("tag", dynamic2 -> dynamic2.update("BlockEntityTag", dynamic4 -> {
             dynamic3.get("id").asString("");
             final String s3;
             final String s2 = map2.get(Class5174.method16141(s3));
@@ -177,7 +177,7 @@ public class Class8173 extends Schema
                 return dynamic4.set("id", dynamic3.createString(s2));
             }
             else {
-                Class8173.field33675.warn("Unable to resolve BlockEntity for ItemStack: {}", (Object)s3);
+                Class8173.field33675.warn("Unable to resolve BlockEntity for ItemStack: {}", s3);
                 return dynamic4;
             }
         }).update("EntityTag", dynamic6 -> Objects.equals(Class5174.method16141(dynamic5.get("id").asString("")), "minecraft:armor_stand") ? dynamic6.set("id", dynamic5.createString(s4)) : dynamic6)).getValue();
@@ -220,7 +220,6 @@ public class Class8173 extends Schema
             hashMap.put("minecraft:end_portal", "Airportal");
             hashMap.put("minecraft:end_gateway", "EndGateway");
             hashMap.put("minecraft:shield", "Banner");
-            return;
         });
         field33677 = (Hook$HookFunction)new Class7996();
     }

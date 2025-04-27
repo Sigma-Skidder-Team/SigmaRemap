@@ -12,13 +12,13 @@ import java.io.File;
 
 public class Class7838
 {
-    private File field32086;
+    private final File field32086;
     public Class1941 field32087;
     private short field32088;
     private short field32089;
     private short field32090;
     private String field32091;
-    private List<Class8951> field32092;
+    private final List<Class8951> field32092;
     
     public Class7838(final File field32086) {
         this.field32087 = null;

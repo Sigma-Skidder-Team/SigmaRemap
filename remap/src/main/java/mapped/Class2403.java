@@ -121,9 +121,7 @@ public class Class2403 extends Class2400
         if (n >= n3) {
             if (n2 >= n4) {
                 if (n <= n3 + n5) {
-                    if (n2 <= n4 + n6) {
-                        return true;
-                    }
+                    return n2 <= n4 + n6;
                 }
             }
         }

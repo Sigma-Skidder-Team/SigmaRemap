@@ -32,7 +32,7 @@ public class Class5603 extends Class5601
     
     public void method16887() {
         final Class9319 method16890 = this.method16890(this.method16863());
-        if (method16890 == null || !Class7510.method23442(method16890, this.field22965, false)) {
+        if (!Class7510.method23442(method16890, this.field22965, false)) {
             this.method16864(method16891(this.field22964, this.field22965));
         }
     }

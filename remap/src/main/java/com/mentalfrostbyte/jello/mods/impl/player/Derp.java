@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Derp extends Module
 {
-    private Random field15869;
+    private final Random field15869;
     private boolean field15870;
     private int field15871;
     private int field15872;
@@ -22,7 +22,7 @@ public class Derp extends Module
     public Derp() {
         super(Category.PLAYER, "Derp", "Spazzes around");
         this.field15869 = new Random();
-        this.addSetting(new StringSetting("Rotation Mode", "Rotation Mode", 0, new String[] { "Random", "Spin", "None" }));
+        this.addSetting(new StringSetting("Rotation Mode", "Rotation Mode", 0, "Random", "Spin", "None"));
         this.addSetting(new BooleanSetting("Hit", "Randomly hit", true));
         this.addSetting(new BooleanSetting("Sneak", "Randomly sneak", true));
     }

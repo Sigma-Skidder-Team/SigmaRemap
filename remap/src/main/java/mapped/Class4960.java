@@ -40,10 +40,10 @@ public class Class4960 extends Class4961
     public String field21284;
     private volatile boolean field21285;
     private int field21286;
-    private String field21287;
-    private Class4967 field21288;
+    private final String field21287;
+    private final Class4967 field21288;
     private String field21289;
-    private Map<Integer, Class7873> field21290;
+    private final Map<Integer, Class7873> field21290;
     private Queue<Class4248> field21291;
     private final Queue<List<Object>> field21292;
     private final Queue<Class9041<JSONArray>> field21293;
@@ -155,7 +155,7 @@ public class Class4960 extends Class4961
     }
     
     private void method14948(final Class9041<JSONArray> class9041) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)Arrays.asList(method14960(class9041.field38266)));
+        final ArrayList list = new ArrayList(Arrays.asList(method14960(class9041.field38266)));
         if (Class4960.field21268.isLoggable(Level.FINE)) {
             Class4960.field21268.fine(String.format("emitting event %s", list));
         }
@@ -195,7 +195,7 @@ public class Class4960 extends Class4961
     
     private void method14951() {
         this.field21285 = true;
-        this.method14942("connect", new Object[0]);
+        this.method14942("connect");
         this.method14952();
     }
     

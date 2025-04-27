@@ -63,7 +63,7 @@ public enum Class2001
         return class2001;
     }
     
-    private Class2001(final int field11216, final String field11217) {
+    Class2001(final int field11216, final String field11217) {
         this.field11216 = field11216;
         this.field11217 = field11217;
     }

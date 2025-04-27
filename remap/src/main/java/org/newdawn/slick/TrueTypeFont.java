@@ -20,15 +20,15 @@ import java.util.Map;
 
 public class TrueTypeFont implements Font {
     private static final SGL GL;
-    private IntObject[] charArray = new IntObject[256];
-    private Map customChars = new HashMap();
-    private boolean antiAlias;
+    private final IntObject[] charArray = new IntObject[256];
+    private final Map customChars = new HashMap();
+    private final boolean antiAlias;
     private int fontSize = 0;
     private int fontHeight = 0;
     public Texture fontTexture;
     private int textureWidth = 512;
     private int textureHeight = 512;
-    private java.awt.Font font;
+    private final java.awt.Font font;
     private FontMetrics fontMetrics;
     private final int field29869;
 

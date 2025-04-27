@@ -43,8 +43,8 @@ public class Class7940 implements Class7938
         field32615 = (parent -> {
             final boolean b = parent.isFile() && parent.getName().endsWith(".zip");
             Label_0063_1: {
-                if (!(!parent.isDirectory())) {
-                    if (!(!new File(parent, "pack.mcmeta").isFile())) {
+                if (parent.isDirectory()) {
+                    if (new File(parent, "pack.mcmeta").isFile()) {
                         break Label_0063_1;
                     }
                 }

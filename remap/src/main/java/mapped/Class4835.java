@@ -11,8 +11,8 @@ public class Class4835 extends Class4825
 {
     private static String[] field20591;
     public boolean field20720;
-    private ItemStack field20721;
-    private Minecraft field20722;
+    private final ItemStack field20721;
+    private final Minecraft field20722;
     
     public Class4835(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int n5) {
         super(customGuiScreen, s, n, n2, n3, n4, false);

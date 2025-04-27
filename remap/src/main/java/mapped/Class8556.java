@@ -33,17 +33,17 @@ public class Class8556 extends DataFix
     
     private <IS> TypeRewriteRule method28747(final Type<IS> type) {
         return this.fixTypeEverywhereTyped("EntityEquipmentToArmorAndHandFix", this.getInputSchema().getType(Class9451.field40626), this.getOutputSchema().getType(Class9451.field40626), typed -> {
-            DSL.fieldFinder("Equipment", (Type)DSL.list((Type)type2));
-            DSL.typeFinder(DSL.and(DSL.optional((Type)DSL.field("Equipment", (Type)DSL.list((Type)type2))), DSL.remainderType()));
-            DSL.and(DSL.optional((Type)DSL.field("ArmorItems", (Type)DSL.list((Type)type2))), DSL.optional((Type)DSL.field("HandItems", (Type)DSL.list((Type)type2))), DSL.remainderType());
+            DSL.fieldFinder("Equipment", DSL.list(type2));
+            DSL.typeFinder(DSL.and(DSL.optional(DSL.field("Equipment", DSL.list(type2))), DSL.remainderType()));
+            DSL.and(DSL.optional(DSL.field("ArmorItems", DSL.list(type2))), DSL.optional(DSL.field("HandItems", DSL.list(type2))), DSL.remainderType());
             Either.right((Object)DSL.unit());
             Either.right((Object)DSL.unit());
-            Dynamic dynamic = (Dynamic)typed.getOrCreate(DSL.remainderFinder());
+            Dynamic dynamic = typed.getOrCreate(DSL.remainderFinder());
             typed.getOptional(opticFinder);
             final Optional optional;
             Either left = null;
             Either left2 = null;
-            if (!(!optional.isPresent())) {
+            if (optional.isPresent()) {
                 final List list = optional.get();
                 ((Optional)type3.read(dynamic.emptyMap()).getSecond()).orElseThrow(() -> new IllegalStateException("Could not parse newly created empty itemstack."));
                 final Object o2;
@@ -51,7 +51,7 @@ public class Class8556 extends DataFix
                     left = Either.left((Object)Lists.newArrayList(new Object[] { list.get(0), o2 }));
                 }
                 if (list.size() > 1) {
-                    Lists.newArrayList(new Object[] { o2, o2, o2, o2 });
+                    Lists.newArrayList(o2, o2, o2, o2);
                     int i = 0;
                     final ArrayList list2;
                     while (i < Math.min(list.size(), 5)) {
@@ -63,7 +63,7 @@ public class Class8556 extends DataFix
             }
             dynamic.get("DropChances").asStreamOpt();
             final Optional optional2;
-            if (!(!optional2.isPresent())) {
+            if (optional2.isPresent()) {
                 Stream.concat((Stream<?>)optional2.get(), Stream.generate(() -> dynamic2.createInt(0))).iterator();
                 final Iterator iterator;
                 iterator.next().asFloat(0.0f);

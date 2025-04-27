@@ -16,7 +16,7 @@ import java.util.List;
 
 public class Class4862 extends Class4841
 {
-    private List<Class4868> field20819;
+    private final List<Class4868> field20819;
     private final Date field20820;
     private boolean field20821;
     private Date field20822;

@@ -67,7 +67,7 @@ public class Class8734
         final CompoundNBT method30176 = method30175.getCompound("Structures");
         final CompoundNBT method30177 = method30176.getCompound("References");
         for (final String s : this.field36702) {
-            final Class4574 class7860 = (Class4574)Class4535.field20023.get((Object)s.toLowerCase(Locale.ROOT));
+            final Class4574 class7860 = Class4535.field20023.get(s.toLowerCase(Locale.ROOT));
             if (method30177.contains(s, 12)) {
                 continue;
             }
@@ -79,11 +79,11 @@ public class Class8734
             for (int i = class7859.field32290 - method30178; i <= class7859.field32290 + method30178; ++i) {
                 for (int j = class7859.field32291 - method30178; j <= class7859.field32291 + method30178; ++j) {
                     if (this.method30172(i, j, s)) {
-                        ((LongList)list).add(ChunkPos.method25423(i, j));
+                        list.add(ChunkPos.method25423(i, j));
                     }
                 }
             }
-            method30177.putLongArray(s, (List<Long>)list);
+            method30177.putLongArray(s, list);
         }
         method30176.put("References", method30177);
         method30175.put("Structures", method30176);
@@ -177,7 +177,7 @@ public class Class8734
     
     public static Class8734 method30176(final DimensionType class383, final Class8213 class384) {
         if (class383 == DimensionType.field2223) {
-            return new Class8734(class384, (List<String>)ImmutableList.of((Object)"Monument", (Object)"Stronghold", (Object)"Village", (Object)"Mineshaft", (Object)"Temple", (Object)"Mansion"), (List<String>)ImmutableList.of((Object)"Village", (Object)"Mineshaft", (Object)"Mansion", (Object)"Igloo", (Object)"Desert_Pyramid", (Object)"Jungle_Pyramid", (Object)"Swamp_Hut", (Object)"Stronghold", (Object)"Monument"));
+            return new Class8734(class384, (List<String>)ImmutableList.of("Monument", "Stronghold", "Village", "Mineshaft", "Temple", (Object)"Mansion"), (List<String>)ImmutableList.of("Village", "Mineshaft", "Mansion", "Igloo", "Desert_Pyramid", "Jungle_Pyramid", "Swamp_Hut", "Stronghold", (Object)"Monument"));
         }
         if (class383 == DimensionType.field2224) {
             final ImmutableList of = ImmutableList.of((Object)"Fortress");
@@ -203,7 +203,6 @@ public class Class8734
             hashMap.put("Monument", "Monument");
             hashMap.put("Fortress", "Fortress");
             hashMap.put("EndCity", "EndCity");
-            return;
         });
         field36697 = Util.method27851(Maps.newHashMap(), hashMap2 -> {
             hashMap2.put("Iglu", "Igloo");

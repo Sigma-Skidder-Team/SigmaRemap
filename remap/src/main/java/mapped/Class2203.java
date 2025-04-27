@@ -14,8 +14,8 @@ public enum Class2203
     
     private final ITextComponent field13415;
     
-    private Class2203(final String str) {
-        this.field13415 = new Class2259("addServer.resourcePack." + str, new Object[0]);
+    Class2203(final String str) {
+        this.field13415 = new Class2259("addServer.resourcePack." + str);
     }
     
     public ITextComponent method8380() {

@@ -30,7 +30,7 @@ public class ChatFilter extends Module
                             if (split.length != 0) {
                                 sb.append(" ");
                             }
-                            sb.append(split[i].substring(0, 1) + "\uf8ff" + split[i].substring(1));
+                            sb.append(split[i].charAt(0) + "\uf8ff" + split[i].substring(1));
                         }
                         else {
                             sb.append(split[i]);

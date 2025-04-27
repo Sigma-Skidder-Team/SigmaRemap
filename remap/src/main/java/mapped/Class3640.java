@@ -30,9 +30,7 @@ public class Class3640<T extends Class776> extends Class3446
             if (!this.field16889.isBeingRidden()) {
                 if (this.field16889.method4293()) {
                     if (!this.field16889.method4292().method30618()) {
-                        if (!((Class1849)this.field16889.world).method6922(new BlockPos(this.field16889))) {
-                            return true;
-                        }
+                        return !((Class1849) this.field16889.world).method6922(new BlockPos(this.field16889));
                     }
                 }
             }
@@ -45,9 +43,7 @@ public class Class3640<T extends Class776> extends Class3446
         if (this.field16889.method4293()) {
             if (!this.field16889.method4292().method30618()) {
                 if (this.field16889.world instanceof Class1849) {
-                    if (!((Class1849)this.field16889.world).method6922(new BlockPos(this.field16889))) {
-                        return true;
-                    }
+                    return !((Class1849) this.field16889.world).method6922(new BlockPos(this.field16889));
                 }
             }
         }

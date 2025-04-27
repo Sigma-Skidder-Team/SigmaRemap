@@ -105,7 +105,7 @@ public class Class7637
             this.method24018(Class7637.field30250);
         }
         catch (final IOException cause) {
-            Class7637.field30249.error("Error loading missing model, should never happen :(", (Throwable)cause);
+            Class7637.field30249.error("Error loading missing model, should never happen :(", cause);
             throw new RuntimeException(cause);
         }
         class5028.method15300("static_definitions");
@@ -162,12 +162,11 @@ public class Class7637
                 method24020 = this.method24020(class1667, Class2122.field12371);
             }
             catch (final Exception ex) {
-                Class7637.field30249.warn("Unable to bake model: '{}': {}", (Object)class1667, (Object)ex);
+                Class7637.field30249.warn("Unable to bake model: '{}': {}", class1667, ex);
             }
             if (method24020 != null) {
                 this.field30269.put(class1667, method24020);
             }
-            return;
         });
         class1664.endSection();
         return this.field30262;
@@ -175,7 +174,7 @@ public class Class7637
     
     private static Predicate<Class7096> method24012(final StateContainer<Block, Class7096> class9105, final String s) {
         final HashMap hashMap = Maps.newHashMap();
-        final Iterator iterator = Class7637.field30254.split((CharSequence)s).iterator();
+        final Iterator iterator = Class7637.field30254.split(s).iterator();
         while (iterator.hasNext()) {
             final Iterator iterator2 = Class7637.field30255.split((CharSequence)iterator.next()).iterator();
             if (!iterator2.hasNext()) {
@@ -246,7 +245,7 @@ public class Class7637
                 this.field30266.put(class1933, defaultValue);
             }
             catch (final Exception ex) {
-                Class7637.field30249.warn("Unable to load model: '{}' referenced from: {}: {}", (Object)class1933, (Object)class1932);
+                Class7637.field30249.warn("Unable to load model: '{}' referenced from: {}: {}", class1933, class1932);
                 Class7637.field30249.warn(ex.getClass().getName() + ": " + ex.getMessage());
                 this.field30266.put(class1933, defaultValue);
             }
@@ -679,7 +678,7 @@ public class Class7637
         }
         finally {
             IOUtils.closeQuietly(reader);
-            IOUtils.closeQuietly((Closeable)method19933);
+            IOUtils.closeQuietly(method19933);
         }
         return field30257;
     }
@@ -800,7 +799,6 @@ public class Class7637
             set.add(new Class3687(Class1774.field9853, Class3427.field16196));
             set.add(new Class3687(Class1774.field9853, Class3427.field16197));
             Class8752.method30267(set::add);
-            return;
         });
         field30249 = LogManager.getLogger();
         field30250 = new Class1933("builtin/missing", "missing");

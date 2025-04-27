@@ -22,7 +22,7 @@ public class Class5134 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22110.stream().map(class8530 -> class8530.method28612(dynamicOps2).getValue())))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("features"), dynamicOps.createList((Stream)this.field22110.stream().map(class8530 -> class8530.method28612(dynamicOps2).getValue())))));
     }
     
     public static <T> Class5134 method16043(final Dynamic<T> dynamic) {

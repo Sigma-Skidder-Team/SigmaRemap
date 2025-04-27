@@ -33,7 +33,7 @@ public class Class4555 extends Class4535<Class5122>
                 if (method6959.method9848(class1851, class1855)) {
                     class1851.setBlockState(class1855, Blocks.field29329.getDefaultState(), 2);
                     final BlockState method6960 = class1851.getBlockState(class1856);
-                    if (((StateHolder<Object, Object>)method6960).method21771((IProperty<Comparable>)Class3911.field17717)) {
+                    if (method6960.method21771((IProperty<Comparable>)Class3911.field17717)) {
                         class1851.setBlockState(class1856, ((StateHolder<Object, BlockState>)method6960).with((IProperty<Comparable>)Class3911.field17717, true), 2);
                     }
                 }

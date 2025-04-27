@@ -25,7 +25,7 @@ public class Class9239
         final GLFWErrorCallback glfwSetErrorCallback = GLFW.glfwSetErrorCallback(glfwErrorCallbackI);
         final String glfwGetClipboardString = GLFW.glfwGetClipboardString(n);
         final String s = (glfwGetClipboardString == null) ? "" : Class9528.method35578(glfwGetClipboardString);
-        final GLFWErrorCallback glfwSetErrorCallback2 = GLFW.glfwSetErrorCallback((GLFWErrorCallbackI)glfwSetErrorCallback);
+        final GLFWErrorCallback glfwSetErrorCallback2 = GLFW.glfwSetErrorCallback(glfwSetErrorCallback);
         if (glfwSetErrorCallback2 != null) {
             glfwSetErrorCallback2.free();
         }
@@ -52,7 +52,7 @@ public class Class9239
                 method34064(n, memAlloc, bytes);
             }
             finally {
-                MemoryUtil.memFree((Buffer)memAlloc);
+                MemoryUtil.memFree(memAlloc);
             }
         }
     }

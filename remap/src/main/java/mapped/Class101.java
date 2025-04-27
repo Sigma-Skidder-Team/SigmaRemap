@@ -17,7 +17,7 @@ public enum Class101
     private final int field302;
     private final String field303;
     
-    private Class101(final int field302, final String field303) {
+    Class101(final int field302, final String field303) {
         this.field302 = field302;
         this.field303 = field303;
     }
@@ -31,7 +31,7 @@ public enum Class101
     }
     
     public ITextComponent method587() {
-        return new Class2259("gameMode." + this.field303, new Object[0]);
+        return new Class2259("gameMode." + this.field303);
     }
     
     public void method588(final Class6999 class6999) {

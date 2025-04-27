@@ -144,7 +144,7 @@ public enum Class1989
     private final int field11129;
     private final Class1989 field11130;
     
-    private Class1989(final int field11129) {
+    Class1989(final int field11129) {
         this.field11129 = field11129;
         this.field11130 = null;
     }
@@ -153,7 +153,7 @@ public enum Class1989
         if (i != -1) {
             return (Optional<Class1989>)Optional.fromNullable((Object)Class1989.field11128.get(i));
         }
-        return (Optional<Class1989>)Optional.absent();
+        return Optional.absent();
     }
     
     public boolean method8005(final Class1989... array) {
@@ -181,7 +181,7 @@ public enum Class1989
         return true;
     }
     
-    private Class1989(final int field11129, final Class1989 field11130) {
+    Class1989(final int field11129, final Class1989 field11130) {
         this.field11129 = field11129;
         this.field11130 = field11130;
     }

@@ -123,9 +123,9 @@ public class Class8172
             if (this.field33674 != null) {
                 jsonObject.addProperty("catType", this.field33674.toString());
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     public static JsonElement method27020(final Class8172[] array) {
@@ -137,9 +137,9 @@ public class Class8172
                     jsonArray.add(method27019);
                 }
             }
-            return (JsonElement)jsonArray;
+            return jsonArray;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

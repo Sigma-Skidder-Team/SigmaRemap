@@ -16,7 +16,7 @@ import mapped.*;
 public class Phase extends ModuleWithSettings
 {
     public Phase() {
-        super(Category.MOVEMENT, "Phase", "Allows you to go through blocks", new Module[] { new FullBlockPhase(), new NCPPhase(), new NoClipPhase(), new UnfullPhase() });
+        super(Category.MOVEMENT, "Phase", "Allows you to go through blocks", new FullBlockPhase(), new NCPPhase(), new NoClipPhase(), new UnfullPhase());
     }
     
     @EventListener

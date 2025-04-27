@@ -8,8 +8,8 @@ import java.lang.reflect.Field;
 
 public class StructureReadContext extends FromNativeContext
 {
-    private Structure structure;
-    private Field field;
+    private final Structure structure;
+    private final Field field;
     
     public StructureReadContext(final Structure struct, final Field field) {
         super(field.getType());

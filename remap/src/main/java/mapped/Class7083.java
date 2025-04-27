@@ -48,7 +48,7 @@ public class Class7083 implements Class7079
     }
     
     static {
-        field27591 = new Class2259("tutorial.open_inventory.title", new Object[0]);
-        field27592 = new Class2259("tutorial.open_inventory.description", new Object[] { Class9106.method32929("inventory") });
+        field27591 = new Class2259("tutorial.open_inventory.title");
+        field27592 = new Class2259("tutorial.open_inventory.description", Class9106.method32929("inventory"));
     }
 }

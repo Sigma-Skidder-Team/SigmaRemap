@@ -49,7 +49,7 @@ public class PerMessageDeflateExtension extends CompressionExtension {
 
   // For WebSocketServers, this variable holds the extension parameters that the peer client has requested.
   // For WebSocketClients, this variable holds the extension parameters that client himself has requested.
-  private Map<String, String> requestedParameters = new LinkedHashMap<>();
+  private final Map<String, String> requestedParameters = new LinkedHashMap<>();
 
   private final int compressionLevel;
 

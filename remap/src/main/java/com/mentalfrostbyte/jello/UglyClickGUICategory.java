@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UglyClickGUICategory extends Class4807
 {
-    private List<Class4868> field20530;
+    private final List<Class4868> field20530;
     public int field20531;
     public UglyClickGUICategoryIcon combatCat;
     public UglyClickGUICategoryIcon movementCat;

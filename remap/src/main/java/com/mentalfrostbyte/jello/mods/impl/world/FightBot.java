@@ -33,7 +33,6 @@ public class FightBot extends PremiumModule
     @EventListener
     public void method10639(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            return;
         }
     }
     

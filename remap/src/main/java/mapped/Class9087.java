@@ -86,6 +86,6 @@ public class Class9087
     }
     
     static {
-        field38481 = (List)ImmutableList.of();
+        field38481 = ImmutableList.of();
     }
 }

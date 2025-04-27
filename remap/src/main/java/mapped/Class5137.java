@@ -25,11 +25,11 @@ public class Class5137 implements Class5113
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("cap_provider"), this.field22116.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("stem_provider"), this.field22117.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps)).put(dynamicOps.createString("foliage_radius"), dynamicOps.createInt(this.field22118));
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build()));
+        builder.put(dynamicOps.createString("cap_provider"), this.field22116.serialize(dynamicOps)).put(dynamicOps.createString("stem_provider"), this.field22117.serialize(dynamicOps)).put(dynamicOps.createString("foliage_radius"), dynamicOps.createInt(this.field22118));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build()));
     }
     
     public static <T> Class5137 method16050(final Dynamic<T> dynamic) {
-        return new Class5137(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("cap_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("cap_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("stem_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718((Dynamic<?>)dynamic.get("stem_provider").orElseEmptyMap()), dynamic.get("foliage_radius").asInt(2));
+        return new Class5137(Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("cap_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718(dynamic.get("cap_provider").orElseEmptyMap()), Registry.field218.getOrDefault(new ResourceLocation(dynamic.get("stem_provider").get("type").asString().orElseThrow(RuntimeException::new))).method30718(dynamic.get("stem_provider").orElseEmptyMap()), dynamic.get("foliage_radius").asInt(2));
     }
 }

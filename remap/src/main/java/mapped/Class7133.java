@@ -63,7 +63,7 @@ public abstract class Class7133<DC extends Class6926>
     }
     
     public DC method21888(final Dynamic<?> dynamic) {
-        return (DC)this.field27820.apply(dynamic);
+        return this.field27820.apply(dynamic);
     }
     
     public Class9166<DC> method21889(final DC dc) {
@@ -76,7 +76,6 @@ public abstract class Class7133<DC extends Class6926>
             class1855.method28613(class1856, class1857, random2, class1858);
             final boolean b;
             atomicBoolean2.set(atomicBoolean2.get() || b);
-            return;
         });
         return atomicBoolean.get();
     }

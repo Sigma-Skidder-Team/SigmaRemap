@@ -14,7 +14,7 @@ public enum Class233
     public int field874;
     public boolean field875;
     
-    private Class233(final int field874, final boolean field875) {
+    Class233(final int field874, final boolean field875) {
         this.field874 = field874;
         this.field875 = field875;
     }

@@ -7,7 +7,7 @@ public class ExtensionRequestData {
 
   public static final String EMPTY_VALUE = "";
 
-  private Map<String, String> extensionParameters;
+  private final Map<String, String> extensionParameters;
   private String extensionName;
 
   private ExtensionRequestData() {

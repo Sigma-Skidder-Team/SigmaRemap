@@ -108,13 +108,13 @@ public class Class6356 extends Class6354
         final ListNBT class52 = new ListNBT();
         final Iterator<Class8843> iterator = this.field25430.values().iterator();
         while (iterator.hasNext()) {
-            ((AbstractList<CompoundNBT>)class52).add(iterator.next().method30900());
+            class52.add(iterator.next().method30900());
         }
         class51.put("banners", class52);
         final ListNBT class53 = new ListNBT();
         final Iterator<Class8525> iterator2 = this.field25432.values().iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<CompoundNBT>)class53).add(iterator2.next().method28589());
+            class53.add(iterator2.next().method28589());
         }
         class51.put("frames", class53);
         return class51;
@@ -203,7 +203,7 @@ public class Class6356 extends Class6354
         e.putDouble("x", class8322.getX());
         e.putDouble("z", class8322.getZ());
         e.putDouble("rot", 180.0);
-        ((AbstractList<CompoundNBT>)method328).add(e);
+        method328.add(e);
         if (class8323.method8214()) {
             class8321.method27659("display").putInt("MapColor", class8323.method8215());
         }

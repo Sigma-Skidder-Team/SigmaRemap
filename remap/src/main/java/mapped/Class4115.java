@@ -7,7 +7,7 @@ package mapped;
 public class Class4115 implements Class4114
 {
     private int field18221;
-    private ResourceLocation field18222;
+    private final ResourceLocation field18222;
     private int field18223;
     private Class1666 field18224;
     public static final int field18225 = 0;

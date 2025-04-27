@@ -23,7 +23,7 @@ public class Class4635 extends Class4611<Class4217>
     }
     
     public Class4217 method13826(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext) {
-        return new Class4217(this.field20102, Class8697.method29814((JsonElement)jsonObject));
+        return new Class4217(this.field20102, Class8697.method29814(jsonObject));
     }
     
     public void method13827(final Class513 class513) {

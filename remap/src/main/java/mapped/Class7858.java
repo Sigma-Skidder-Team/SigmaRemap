@@ -33,9 +33,9 @@ public class Class7858<T>
     }
     
     public Class7858(final Class7271<T> field32285) {
-        this.field32286 = new PriorityQueue<Class7599<T>>((Comparator<? super Class7599<T>>)method25412());
+        this.field32286 = new PriorityQueue<Class7599<T>>(method25412());
         this.field32287 = UnsignedLong.ZERO;
-        this.field32288 = (Table<String, Long, Class7599<T>>)HashBasedTable.create();
+        this.field32288 = HashBasedTable.create();
         this.field32285 = field32285;
     }
     
@@ -46,13 +46,13 @@ public class Class7858<T>
                 break;
             }
             this.field32286.remove();
-            this.field32288.remove((Object)class7599.field30136, (Object)l);
-            class7599.field30137.run((T)t, (Class7858<T>)this, l);
+            this.field32288.remove(class7599.field30136, (Object)l);
+            class7599.field30137.run(t, this, l);
         }
     }
     
     public void method25413(final String s, final long n, final Class8183<T> class8183) {
-        if (!this.field32288.contains((Object)s, (Object)n)) {
+        if (!this.field32288.contains(s, (Object)n)) {
             this.field32287 = this.field32287.plus(UnsignedLong.ONE);
             final Class7599 class8184 = new Class7599(n, this.field32287, s, class8183, null);
             this.field32288.put((Object)s, (Object)n, (Object)class8184);
@@ -61,7 +61,7 @@ public class Class7858<T>
     }
     
     public int method25414(final String s) {
-        final Collection values = this.field32288.row((Object)s).values();
+        final Collection values = this.field32288.row(s).values();
         values.forEach(this.field32286::remove);
         final int size = values.size();
         values.clear();
@@ -69,7 +69,7 @@ public class Class7858<T>
     }
     
     public Set<String> method25415() {
-        return Collections.unmodifiableSet((Set<? extends String>)this.field32288.rowKeySet());
+        return Collections.unmodifiableSet(this.field32288.rowKeySet());
     }
     
     private void method25416(final CompoundNBT class51) {
@@ -106,7 +106,7 @@ public class Class7858<T>
     
     public ListNBT method25419() {
         final ListNBT class52 = new ListNBT();
-        this.field32286.stream().sorted((Comparator<? super Object>)method25412()).map((Function<? super Object, ?>)this::method25418).forEach(class52::add);
+        this.field32286.stream().sorted(method25412()).map((Function<? super Object, ?>)this::method25418).forEach(class52::add);
         return class52;
     }
     

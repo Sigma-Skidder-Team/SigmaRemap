@@ -31,7 +31,7 @@ public class Class464 implements IInventory, INameable
         this.field2739 = NonNullList.withSize(36, ItemStack.EMPTY);
         this.field2740 = NonNullList.withSize(4, ItemStack.EMPTY);
         this.field2741 = NonNullList.withSize(1, ItemStack.EMPTY);
-        this.field2742 = (List<NonNullList<ItemStack>>)ImmutableList.of((Object)this.field2739, (Object)this.field2740, (Object)this.field2741);
+        this.field2742 = (List<NonNullList<ItemStack>>)ImmutableList.of(this.field2739, this.field2740, (Object)this.field2741);
         this.field2745 = ItemStack.EMPTY;
         this.field2744 = field2744;
     }
@@ -49,9 +49,7 @@ public class Class464 implements IInventory, INameable
             if (this.method2348(class8321, class8322)) {
                 if (class8321.method27629()) {
                     if (class8321.method27690() < class8321.method27628()) {
-                        if (class8321.method27690() < this.method2254()) {
-                            return true;
-                        }
+                        return class8321.method27690() < this.method2254();
                     }
                 }
             }
@@ -405,7 +403,7 @@ public class Class464 implements IInventory, INameable
                 final CompoundNBT e = new CompoundNBT();
                 e.putByte("Slot", (byte)i);
                 this.field2739.get(i).method27627(e);
-                ((AbstractList<CompoundNBT>)class52).add(e);
+                class52.add(e);
             }
         }
         for (int j = 0; j < this.field2740.size(); ++j) {
@@ -413,7 +411,7 @@ public class Class464 implements IInventory, INameable
                 final CompoundNBT e2 = new CompoundNBT();
                 e2.putByte("Slot", (byte)(j + 100));
                 this.field2740.get(j).method27627(e2);
-                ((AbstractList<CompoundNBT>)class52).add(e2);
+                class52.add(e2);
             }
         }
         for (int k = 0; k < this.field2741.size(); ++k) {
@@ -421,7 +419,7 @@ public class Class464 implements IInventory, INameable
                 final CompoundNBT e3 = new CompoundNBT();
                 e3.putByte("Slot", (byte)(k + 150));
                 this.field2741.get(k).method27627(e3);
-                ((AbstractList<CompoundNBT>)class52).add(e3);
+                class52.add(e3);
             }
         }
         return class52;
@@ -497,7 +495,7 @@ public class Class464 implements IInventory, INameable
     
     @Override
     public ITextComponent getName() {
-        return new Class2259("container.inventory", new Object[0]);
+        return new Class2259("container.inventory");
     }
     
     public boolean method2369(final BlockState class7096) {

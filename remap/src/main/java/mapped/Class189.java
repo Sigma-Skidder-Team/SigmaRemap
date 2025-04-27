@@ -21,11 +21,11 @@ public enum Class189
     private final String field619;
     private final ITextComponent field620;
     
-    private Class189(final int field617, final String s) {
+    Class189(final int field617, final String s) {
         this.field617 = field617;
         this.field618 = 1 << field617;
         this.field619 = s;
-        this.field620 = new Class2259("options.modelPart." + s, new Object[0]);
+        this.field620 = new Class2259("options.modelPart." + s);
     }
     
     public int method828() {

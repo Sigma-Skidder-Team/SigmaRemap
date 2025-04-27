@@ -89,7 +89,7 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
     
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
-        return (T)dynamicOps.createIntList(IntStream.of(this.getX(), this.getY(), this.getZ()));
+        return dynamicOps.createIntList(IntStream.of(this.getX(), this.getY(), this.getZ()));
     }
     
     public static long offset(final long n, final Direction class179) {
@@ -248,7 +248,7 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
 
     public static Stream<BlockPos> getAllInBox(final int p_218287_0_, final int p_218287_1_, final int p_218287_2_, final int p_218287_3_, final int p_218287_4_, final int p_218287_5_)
     {
-        return StreamSupport.stream(new Spliterators.AbstractSpliterator<BlockPos>((long)((p_218287_3_ - p_218287_0_ + 1) * (p_218287_4_ - p_218287_1_ + 1) * (p_218287_5_ - p_218287_2_ + 1)), 64)
+        return StreamSupport.stream(new Spliterators.AbstractSpliterator<BlockPos>((long) (p_218287_3_ - p_218287_0_ + 1) * (p_218287_4_ - p_218287_1_ + 1) * (p_218287_5_ - p_218287_2_ + 1), 64)
         {
             final CubeCoordinateIterator iter = new CubeCoordinateIterator(p_218287_0_, p_218287_1_, p_218287_2_, p_218287_3_, p_218287_4_, p_218287_5_);
             final Mutable pos = new Mutable();
@@ -277,7 +277,7 @@ public class BlockPos extends Vec3i implements IDynamicSerializable
                 final Mutable field_218299_b = new Mutable();
                 protected BlockPos computeNext()
                 {
-                    return (BlockPos)(this.field_218298_a.hasNext() ? this.field_218299_b.setPos(this.field_218298_a.getX(), this.field_218298_a.getY(), this.field_218298_a.getZ()) : this.endOfData());
+                    return this.field_218298_a.hasNext() ? this.field_218299_b.setPos(this.field_218298_a.getX(), this.field_218298_a.getY(), this.field_218298_a.getZ()) : this.endOfData();
                 }
             };
         };

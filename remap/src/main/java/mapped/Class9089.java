@@ -72,9 +72,9 @@ public class Class9089
             this.method32841(jsonObject, "is_lightning", this.field38492);
             jsonObject.add("direct_entity", this.field38493.method27019());
             jsonObject.add("source_entity", this.field38494.method27019());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     private void method32841(final JsonObject jsonObject, final String s, final Boolean b) {

@@ -37,7 +37,7 @@ public class Class6591 extends Class6589
         for (int i = 0; i < parameterTypes.length; ++i) {
             parameterTypes[i] = String.class;
         }
-        final Constructor<?> declaredConstructor = method20024.getDeclaredConstructor((Class<?>[])parameterTypes);
+        final Constructor<?> declaredConstructor = method20024.getDeclaredConstructor(parameterTypes);
         declaredConstructor.setAccessible(true);
         return declaredConstructor.newInstance(class7578.method28175().toArray());
     }

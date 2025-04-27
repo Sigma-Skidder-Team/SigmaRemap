@@ -21,7 +21,7 @@ public final class Class3159 extends Class3090
         Class9218.method33934(this);
         Class9218.method33935(this);
         Class9218.method33937(this);
-        this.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of((Object)Class4535.field19991.method13527(Class9218.field39552).method28611(0.025f), (Object)Class4535.field19990.method13527(Class9218.field39551).method28611(0.05f), (Object)Class4535.field19978.method13527(Class9218.field39514).method28611(0.6666667f), (Object)Class4535.field19974.method13527(Class9218.field39500).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27814.method21889(Class6926.field27145)));
+        this.method9849(Class2108.field12228, Class4535.field20018.method13527(new Class5145((List<Class9337<?>>)ImmutableList.of(Class4535.field19991.method13527(Class9218.field39552).method28611(0.025f), Class4535.field19990.method13527(Class9218.field39551).method28611(0.05f), Class4535.field19978.method13527(Class9218.field39514).method28611(0.6666667f), Class4535.field19974.method13527(Class9218.field39500).method28611(0.2f), (Object)Class4535.field19976.method13527(Class9218.field39504).method28611(0.1f)), Class4535.field19974.method13527(Class9218.field39494))).method28610(Class7133.field27814.method21889(Class6926.field27145)));
         Class9218.method33971(this);
         Class9218.method33938(this);
         Class9218.method33939(this);

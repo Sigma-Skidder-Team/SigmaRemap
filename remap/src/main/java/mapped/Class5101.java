@@ -17,7 +17,7 @@ public class Class5101 extends Class5100
     
     public Class5101(final Class357 class357, final Class357 class358) {
         super(class357, class358);
-        this.field22030 = (List<Class367>)ImmutableList.of();
+        this.field22030 = ImmutableList.of();
     }
     
     public Class5101 method15992(final List<Class367> field22030) {

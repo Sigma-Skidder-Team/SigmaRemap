@@ -80,7 +80,7 @@ public class Class3335 extends Module
                         if ((int)Class6029.method17958(method9885 * 5.0f, 1.0) != 100 && method9884) {
                             RenderSystem.pushMatrix();
                             RenderSystem.method30063(2.0f, 2.0f, 2.0f);
-                            new StringBuilder().append((int)Class6029.method17958(method9885 * 5.0f, 1.0)).append("HP").toString();
+                            (int) Class6029.method17958(method9885 * 5.0f, 1.0) + "HP";
                             RenderSystem.popMatrix();
                         }
                     }
@@ -166,7 +166,7 @@ public class Class3335 extends Module
         }
         catch (final IllegalArgumentException ex) {
             final NumberFormat numberInstance = NumberFormat.getNumberInstance();
-            System.out.println(numberInstance.format((double)r) + "; " + numberInstance.format((double)g) + "; " + numberInstance.format((double)b));
+            System.out.println(numberInstance.format(r) + "; " + numberInstance.format(g) + "; " + numberInstance.format(b));
             ex.printStackTrace();
         }
         return color3;
@@ -210,7 +210,7 @@ public class Class3335 extends Module
     
     private void method10557(final Entity class399) {
         final float n = 1.0f;
-        final float n2 = (float)(n * (Class3335.mc.gameSettings.field23471 / Class3335.mc.gameSettings.field23471));
+        final float n2 = (float)(n * (1.0));
         if (this.field15933 == 0.0 || Double.isNaN(this.field15933)) {
             this.field15933 = n2;
         }

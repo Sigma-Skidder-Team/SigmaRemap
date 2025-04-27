@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ProfileManager
 {
-    private List<Class8241> field38428;
+    private final List<Class8241> field38428;
     private Class8241 field38429;
     private Class8241 field38430;
     public static final String field38431 = ".profile";
@@ -62,7 +62,7 @@ public class ProfileManager
     
     public Class8241 method32703(final String s) {
         for (final Class8241 class8241 : this.field38428) {
-            if (!class8241.field33839.toLowerCase().equals(s.toLowerCase())) {
+            if (!class8241.field33839.equalsIgnoreCase(s)) {
                 continue;
             }
             return class8241;
@@ -77,10 +77,10 @@ public class ProfileManager
         }
         for (final File file2 : file.listFiles((p0, s2) -> s2.toLowerCase().endsWith(".profile"))) {
             try {
-                final Class8241 method27288 = new Class8241().method27288(new JSONObject(IOUtils.toString((InputStream)new FileInputStream(file2))));
+                final Class8241 method27288 = new Class8241().method27288(new JSONObject(IOUtils.toString(new FileInputStream(file2))));
                 method27288.field33839 = file2.getName().substring(0, file2.getName().length() - ".profile".length());
                 this.field38428.add(method27288);
-                if (s != null && method27288.field33839.toLowerCase().equals(s.toLowerCase())) {
+                if (s != null && method27288.field33839.equalsIgnoreCase(s)) {
                     this.field38429 = method27288;
                 }
             }
@@ -100,7 +100,7 @@ public class ProfileManager
     public boolean method32705(final String s) {
         final Iterator<Class8241> iterator = this.field38428.iterator();
         while (iterator.hasNext()) {
-            if (!iterator.next().field33839.toLowerCase().equals(s.toLowerCase())) {
+            if (!iterator.next().field33839.equalsIgnoreCase(s)) {
                 continue;
             }
             return true;
@@ -123,7 +123,7 @@ public class ProfileManager
             if (!file2.exists()) {
                 file2.createNewFile();
             }
-            IOUtils.write(class8241.method27289(new JSONObject()).toString(0), (OutputStream)new FileOutputStream(file2));
+            IOUtils.write(class8241.method27289(new JSONObject()).toString(0), new FileOutputStream(file2));
         }
     }
     

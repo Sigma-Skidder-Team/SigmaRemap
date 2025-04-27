@@ -19,7 +19,7 @@ public class Class5125 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("is_beached"), dynamicOps.createBoolean(this.field22076))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("is_beached"), dynamicOps.createBoolean(this.field22076))));
     }
     
     public static <T> Class5125 method16030(final Dynamic<T> dynamic) {

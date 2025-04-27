@@ -17,7 +17,7 @@ public class Class6152 extends Class6132
     }
     
     public Dynamic<?> method18386(final Dynamic<?> dynamic) {
-        return (Dynamic<?>)((dynamic.get("Silent").asBoolean(false) && !dynamic.get("Marker").asBoolean(false)) ? dynamic.remove("Silent") : dynamic);
+        return (dynamic.get("Silent").asBoolean(false) && !dynamic.get("Marker").asBoolean(false)) ? dynamic.remove("Silent") : dynamic;
     }
     
     @Override

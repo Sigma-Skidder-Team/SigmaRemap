@@ -25,7 +25,7 @@ public class Class6247 extends Class6227<Class147>
         jsonObject.addProperty("source", Class147.method716(class147).field11716);
         final JsonArray jsonArray = new JsonArray();
         Class147.method717(class147).stream().map(Class9254::method34145).forEach(jsonArray::add);
-        jsonObject.add("ops", (JsonElement)jsonArray);
+        jsonObject.add("ops", jsonArray);
     }
     
     public Class147 method18583(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {

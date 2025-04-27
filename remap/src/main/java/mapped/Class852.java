@@ -305,7 +305,7 @@ public class Class852 extends Class759 implements IMob
             }
         }
         if (this.rand.nextInt(10) == 0) {
-            final List<Class858> method7128 = this.world.method7128((Class<? extends Class858>)Class858.class, this.getBoundingBox().intersect(32.0));
+            final List<Class858> method7128 = this.world.method7128(Class858.class, this.getBoundingBox().intersect(32.0));
             Class858 field4548 = null;
             double n = Double.MAX_VALUE;
             for (final Class858 class858 : method7128) {
@@ -636,7 +636,7 @@ public class Class852 extends Class759 implements IMob
             }
         }
         if (field26598 != class6774) {
-            Class852.field2379.debug("Failed to find path from {} to {}", (Object)i, (Object)j);
+            Class852.field2379.debug("Failed to find path from {} to {}", i, j);
             if (class6772 != null) {
                 class6772.field26597 = field26598;
                 field26598 = class6772;

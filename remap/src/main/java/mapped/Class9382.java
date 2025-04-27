@@ -52,7 +52,7 @@ public class Class9382
         this.field40251 = new Class874();
         this.field40252 = new Class8399(this.field40248, this.field40251);
         this.field40254 = Maps.newHashMap();
-        this.field40255 = (Multimap<Class286, Class6834>)HashMultimap.create();
+        this.field40255 = HashMultimap.create();
         this.field40256 = Lists.newArrayList();
         this.field40257 = Maps.newHashMap();
         this.field40258 = Maps.newHashMap();
@@ -71,7 +71,7 @@ public class Class9382
             if (this.field40245.method6419(method25124) != null) {
                 continue;
             }
-            Class9382.field40243.warn("Missing sound for event: {}", (Object) Registry.field205.getKey(class7795));
+            Class9382.field40243.warn("Missing sound for event: {}", Registry.field205.getKey(class7795));
             Class9382.field40244.add(method25124);
         }
         this.method34836();
@@ -89,7 +89,7 @@ public class Class9382
                 Class9382.field40243.info(Class9382.field40242, "Sound engine started");
             }
             catch (final RuntimeException ex) {
-                Class9382.field40243.error(Class9382.field40242, "Error starting SoundSystem. Turning off sounds & music", (Throwable)ex);
+                Class9382.field40243.error(Class9382.field40242, "Error starting SoundSystem. Turning off sounds & music", ex);
             }
         }
     }
@@ -185,7 +185,6 @@ public class Class9382
                     class6840.method34878(n);
                     class6840.method34876(n2);
                     class6840.method34875(class6839);
-                    return;
                 });
             }
         }
@@ -208,10 +207,10 @@ public class Class9382
                         this.field40257.put(class6837, this.field40253 + method20926);
                     }
                     iterator2.remove();
-                    Class9382.field40243.debug(Class9382.field40242, "Removed channel {} because it's not playing anymore", (Object)class6836);
+                    Class9382.field40243.debug(Class9382.field40242, "Removed channel {} because it's not playing anymore", class6836);
                     this.field40258.remove(class6837);
                     try {
-                        this.field40255.remove((Object)class6837.method20923(), (Object)class6837);
+                        this.field40255.remove(class6837.method20923(), (Object)class6837);
                     }
                     catch (final RuntimeException ex) {}
                     if (!(class6837 instanceof Class6833)) {
@@ -261,13 +260,13 @@ public class Class9382
                         class6834.method20932();
                         class6834.method20925();
                         if (method20925 == 0.0f && !class6834.method20917()) {
-                            Class9382.field40243.debug(Class9382.field40242, "Skipped playing sound {}, volume was zero.", (Object)method20923.method25304());
+                            Class9382.field40243.debug(Class9382.field40242, "Skipped playing sound {}, volume was zero.", method20923.method25304());
                         }
                         else {
                             final boolean b = class6834.method20924() && class6834.method20926() == 0;
                             final Vec3d class6835 = new Vec3d(class6834.method20929(), class6834.method20930(), class6834.method20931());
                             final Class9196 method20926 = this.field40252.method28008(method20923.method25309() ? Class269.field1461 : Class269.field1460);
-                            Class9382.field40243.debug(Class9382.field40242, "Playing sound {} for event {}", (Object)method20923.method25304(), (Object)method20922);
+                            Class9382.field40243.debug(Class9382.field40242, "Playing sound {} for event {}", method20923.method25304(), method20922);
                             this.field40258.put(class6834, this.field40253 + 20);
                             this.field40254.put(class6834, method20926);
                             this.field40255.put((Object)method20924, (Object)class6834);
@@ -283,7 +282,6 @@ public class Class9382
                                 class6838.method34877(b2);
                                 class6838.method34875(class6837);
                                 class6838.method34881(b3);
-                                return;
                             });
                             if (method20923.method25309()) {
                                 this.field40250.method33126(method20923.method25305()).thenAccept(p1 -> class6839.method33649(class6841 -> {
@@ -303,15 +301,15 @@ public class Class9382
                         }
                     }
                     else if (Class9382.field40244.add(method20922)) {
-                        Class9382.field40243.warn(Class9382.field40242, "Unable to play empty soundEvent: {}", (Object)method20922);
+                        Class9382.field40243.warn(Class9382.field40242, "Unable to play empty soundEvent: {}", method20922);
                     }
                 }
                 else {
-                    Class9382.field40243.debug(Class9382.field40242, "Skipped playing soundEvent: {}, master volume was zero", (Object)method20922);
+                    Class9382.field40243.debug(Class9382.field40242, "Skipped playing soundEvent: {}, master volume was zero", method20922);
                 }
             }
             else if (Class9382.field40244.add(method20922)) {
-                Class9382.field40243.warn(Class9382.field40242, "Unable to play unknown soundEvent: {}", (Object)method20922);
+                Class9382.field40243.warn(Class9382.field40242, "Unable to play unknown soundEvent: {}", method20922);
             }
         }
     }
@@ -377,7 +375,7 @@ public class Class9382
             }
         }
         else {
-            for (final Class6834 class1935 : this.field40255.get((Object)class1933)) {
+            for (final Class6834 class1935 : this.field40255.get(class1933)) {
                 if (class1932 != null && !class1935.method20920().equals(class1932)) {
                     continue;
                 }

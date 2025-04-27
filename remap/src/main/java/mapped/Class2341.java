@@ -18,7 +18,7 @@ public final class Class2341 implements Class2340
     private static final int field14093 = 433;
     private final int[] field14094;
     private int field14095;
-    private byte[] field14096;
+    private final byte[] field14096;
     private int field14097;
     private int field14098;
     private int field14099;
@@ -28,7 +28,7 @@ public final class Class2341 implements Class2340
     private final PushbackInputStream field14103;
     private final Class8664 field14104;
     private final byte[] field14105;
-    private Class9410[] field14106;
+    private final Class9410[] field14106;
     private byte[] field14107;
     private boolean field14108;
     

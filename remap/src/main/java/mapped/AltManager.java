@@ -20,7 +20,7 @@ public class AltManager
     public ArrayList<Class7971> field32296;
     public File field32297;
     private String field32298;
-    private Class8327 field32299;
+    private final Class8327 field32299;
     
     public AltManager() {
         this.field32296 = new ArrayList<Class7971>();

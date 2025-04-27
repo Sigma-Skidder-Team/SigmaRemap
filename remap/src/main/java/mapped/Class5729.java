@@ -13,8 +13,8 @@ public class Class5729 extends Class5725
     private float field23286;
     private float field23287;
     private float field23288;
-    private float field23289;
-    private LivingEntity field23290;
+    private final float field23289;
+    private final LivingEntity field23290;
     private boolean field23291;
     private boolean field23292;
     private Class1953 field23293;

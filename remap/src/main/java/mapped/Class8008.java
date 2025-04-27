@@ -24,9 +24,9 @@ public class Class8008 extends Class8006<GameProfile, Class6023>
     
     @Override
     public String[] method26210() {
-        final String[] array = new String[((Class8006<K, Class6023>)this).method26216().size()];
+        final String[] array = new String[this.method26216().size()];
         int n = 0;
-        final Iterator<Class6023> iterator = ((Class8006<K, Class6023>)this).method26216().iterator();
+        final Iterator<Class6023> iterator = this.method26216().iterator();
         while (iterator.hasNext()) {
             array[n++] = iterator.next().method17942().getName();
         }

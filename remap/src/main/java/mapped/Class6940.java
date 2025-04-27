@@ -10,7 +10,7 @@ import java.io.File;
 
 public interface Class6940
 {
-    public static final Class6940 field27177 = new Class6941();
+    Class6940 field27177 = new Class6941();
     
     Class1682 method21313(final File p0) throws FileNotFoundException;
     

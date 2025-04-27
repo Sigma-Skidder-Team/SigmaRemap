@@ -42,7 +42,7 @@ public enum Class181 implements IStringSerializable
     private final int field561;
     private final int field562;
     
-    private Class181(final int field555, final String field556, final int field557, final MaterialColor field558, final int field559, final int field560) {
+    Class181(final int field555, final String field556, final int field557, final MaterialColor field558, final int field559, final int field560) {
         this.field555 = field555;
         this.field556 = field556;
         this.field558 = field557;
@@ -98,7 +98,7 @@ public enum Class181 implements IStringSerializable
     
     @Nullable
     public static Class181 method821(final int n) {
-        return (Class181)Class181.field554.get(n);
+        return Class181.field554.get(n);
     }
     
     @Override
@@ -113,6 +113,6 @@ public enum Class181 implements IStringSerializable
     
     static {
         field553 = Arrays.stream(values()).sorted(Comparator.comparingInt(Class181::method813)).toArray(Class181[]::new);
-        field554 = new Int2ObjectOpenHashMap((Map)Arrays.stream(values()).collect(Collectors.toMap(class181 -> class181.field561, class182 -> class182)));
+        field554 = new Int2ObjectOpenHashMap(Arrays.stream(values()).collect(Collectors.toMap(class181 -> class181.field561, class182 -> class182)));
     }
 }

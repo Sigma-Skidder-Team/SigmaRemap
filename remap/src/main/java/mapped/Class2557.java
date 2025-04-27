@@ -50,7 +50,7 @@ public class Class2557 extends Class2466
                         class8699.method29839();
                         return;
                     }
-                    class8699.method29823(Class5260.field22291, Joiner.on('\0').join((Iterable)list).getBytes(StandardCharsets.UTF_8));
+                    class8699.method29823(Class5260.field22291, Joiner.on('\0').join(list).getBytes(StandardCharsets.UTF_8));
                 }
             }
             else {

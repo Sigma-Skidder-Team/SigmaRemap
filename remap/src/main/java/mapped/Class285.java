@@ -13,7 +13,7 @@ public enum Class285
     private final byte field1575;
     private final boolean field1576;
     
-    private Class285(final byte field1575, final boolean field1576) {
+    Class285(final byte field1575, final boolean field1576) {
         this.field1575 = field1575;
         this.field1576 = field1576;
     }

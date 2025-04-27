@@ -34,7 +34,7 @@ public class Class3699 implements Class3689
         final GameProfileRepository profileRepository = yggdrasilAuthenticationService.createProfileRepository();
         final File parent = new File(this.field17017.method22099().toFile(), "tmp");
         final Class8608 class8843 = new Class8608(profileRepository, new File(parent, MinecraftServer.field2293.getName()));
-        final Class7794 class8844 = new Class7794(Paths.get("server.properties", new String[0]));
+        final Class7794 class8844 = new Class7794(Paths.get("server.properties"));
         final Class395 class8845 = new Class395(parent, class8844, Class5494.method16768(), yggdrasilAuthenticationService, minecraftSessionService, profileRepository, class8843, Class6460::new, class8844.method25121().field39779);
         final Path resolve = this.field17017.method22099().resolve("reports/commands.json");
         final CommandDispatcher<Class7492> method25004 = class8845.method1573().method25004();

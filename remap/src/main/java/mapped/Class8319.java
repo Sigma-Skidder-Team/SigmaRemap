@@ -5,6 +5,7 @@
 package mapped;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 public final class Class8319
 {
@@ -139,12 +140,7 @@ public final class Class8319
                 break;
             }
         }
-        try {
-            return new String(bytes, "US-ASCII");
-        }
-        catch (final UnsupportedEncodingException detailMessage) {
-            throw new AssertionError((Object)detailMessage);
-        }
+        return new String(bytes, StandardCharsets.US_ASCII);
     }
     
     static {

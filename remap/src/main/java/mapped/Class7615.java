@@ -59,7 +59,7 @@ public final class Class7615 implements Class7616
         final Class7845 method16358 = Class5255.method16358(class9041);
         final String method16359 = this.method23930(method16358.field32127);
         final ArrayList list = new ArrayList(Arrays.asList(method16358.field32128));
-        list.add(0, (Object)method16359);
+        list.add(0, method16359);
         class9042.method21669(list.toArray());
     }
 }

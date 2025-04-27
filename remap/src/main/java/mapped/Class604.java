@@ -88,7 +88,7 @@ public abstract class Class604<E extends Class592<E>> extends FocusableGui imple
     
     public void method3534(final Collection<E> collection) {
         this.field3542.clear();
-        this.field3542.addAll((Collection<? extends E>)collection);
+        this.field3542.addAll(collection);
     }
     
     public E method3535(final int n) {
@@ -299,7 +299,7 @@ public abstract class Class604<E extends Class592<E>> extends FocusableGui imple
     public boolean mouseClicked(final double n, final double n2, final int n3) {
         this.method3554(n, n2, n3);
         if (this.isMouseOver(n, n2)) {
-            final Class592<E> method3539 = (Class592<E>)this.method3539(n, n2);
+            final Class592<E> method3539 = this.method3539(n, n2);
             if (method3539 == null) {
                 if (n3 == 0) {
                     this.method3543((int)(n - (this.field3548 + this.field3543 / 2 - this.method3529() / 2)), (int)(n2 - this.field3545) + (int)this.method3550() - 4);
@@ -383,9 +383,7 @@ public abstract class Class604<E extends Class592<E>> extends FocusableGui imple
         if (n2 >= this.field3545) {
             if (n2 <= this.field3546) {
                 if (n >= this.field3548) {
-                    if (n <= this.field3547) {
-                        return true;
-                    }
+                    return n <= this.field3547;
                 }
             }
         }
@@ -402,7 +400,7 @@ public abstract class Class604<E extends Class592<E>> extends FocusableGui imple
                 if (method3540 <= this.field3546) {
                     final int n6 = n2 + i * this.field3541 + this.field3554;
                     final int n7 = this.field3541 - 4;
-                    final Class592<E> method3541 = (Class592<E>)this.method3535(i);
+                    final Class592<E> method3541 = this.method3535(i);
                     final int method3542 = this.method3529();
                     if (this.field3552) {
                         if (this.method3538(i)) {

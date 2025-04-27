@@ -18,9 +18,9 @@ import net.minecraft.world.World;
 public class Class851 extends FlyingEntity implements IMob
 {
     private static final DataParameter<Integer> field4526;
-    private Vec3d field4527;
+    private final Vec3d field4527;
     private BlockPos field4528;
-    private Class2129 field4529;
+    private final Class2129 field4529;
     
     public Class851(final EntityType<? extends Class851> class7499, final World class7500) {
         super(class7499, class7500);

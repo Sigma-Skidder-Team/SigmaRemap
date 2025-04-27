@@ -31,9 +31,7 @@ public class Class6270 extends Class6257
     public boolean method18589(final Class6257 class6257) {
         if (super.method18589(class6257)) {
             if (class6257 != Class7882.field32375) {
-                if (class6257 != Class7882.field32378) {
-                    return true;
-                }
+                return class6257 != Class7882.field32378;
             }
         }
         return false;

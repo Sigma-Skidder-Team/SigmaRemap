@@ -9,12 +9,12 @@ public class Function$PointerArray extends Memory implements Function$PostCallRe
     private final Pointer[] original;
     
     public Function$PointerArray(final Pointer[] arg) {
-        super(Pointer.SIZE * (arg.length + 1));
+        super((long) Pointer.SIZE * (arg.length + 1));
         this.original = arg;
         for (int i = 0; i < arg.length; ++i) {
-            this.setPointer(i * Pointer.SIZE, arg[i]);
+            this.setPointer((long) i * Pointer.SIZE, arg[i]);
         }
-        this.setPointer(Pointer.SIZE * arg.length, null);
+        this.setPointer((long) Pointer.SIZE * arg.length, null);
     }
     
     @Override

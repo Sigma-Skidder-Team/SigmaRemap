@@ -71,7 +71,7 @@ public class Class1795 implements Class1657
             return null;
         }
         catch (final Throwable t3) {
-            Class1795.field9945.error("Couldn't load structure {}: {}", (Object)class1932, (Object)t3.toString());
+            Class1795.field9945.error("Couldn't load structure {}: {}", class1932, t3.toString());
             return null;
         }
     }
@@ -89,7 +89,7 @@ public class Class1795 implements Class1657
             return null;
         }
         catch (final IOException ex2) {
-            Class1795.field9945.error("Couldn't load structure from {}", (Object)method6526, (Object)ex2);
+            Class1795.field9945.error("Couldn't load structure from {}", method6526, ex2);
             return null;
         }
     }
@@ -118,10 +118,10 @@ public class Class1795 implements Class1657
             return false;
         }
         try {
-            Files.createDirectories(Files.exists(parent, new LinkOption[0]) ? parent.toRealPath(new LinkOption[0]) : parent, (FileAttribute<?>[])new FileAttribute[0]);
+            Files.createDirectories(Files.exists(parent) ? parent.toRealPath() : parent, new FileAttribute[0]);
         }
         catch (final IOException ex) {
-            Class1795.field9945.error("Failed to create parent directory: {}", (Object)parent);
+            Class1795.field9945.error("Failed to create parent directory: {}", parent);
             return false;
         }
         final CompoundNBT method6527 = class1933.method19968(new CompoundNBT());

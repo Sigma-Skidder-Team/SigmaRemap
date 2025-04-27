@@ -39,7 +39,7 @@ public class Class6965 extends ByteToMessageDecoder
             }
             list.add(method29502);
             if (Class6965.field27243.isDebugEnabled()) {
-                Class6965.field27243.debug(Class6965.field27244, " IN: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), (Object)method29501, (Object)method29502.getClass().getName());
+                Class6965.field27243.debug(Class6965.field27244, " IN: [{}:{}] {}", channelHandlerContext.channel().attr((AttributeKey) NetworkManager.field16893).get(), method29501, method29502.getClass().getName());
             }
         }
     }

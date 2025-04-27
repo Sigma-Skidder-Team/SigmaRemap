@@ -163,9 +163,7 @@ public class Class495 extends TileEntity implements Class439
         if (class511.isAlive()) {
             if (!class511.removed) {
                 if (this.getPos().withinDistance(class511.method1934(), 48.0)) {
-                    if (class511.getType().method23383(Class8039.field33100)) {
-                        return true;
-                    }
+                    return class511.getType().method23383(Class8039.field33100);
                 }
             }
         }

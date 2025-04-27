@@ -36,7 +36,7 @@ public class Class6319
                 n = class7494.method27399();
             }
             if (n < this.field25271.length()) {
-                class7493.appendText(this.field25271.substring(n, this.field25271.length()));
+                class7493.appendText(this.field25271.substring(n));
             }
             return class7493;
         }

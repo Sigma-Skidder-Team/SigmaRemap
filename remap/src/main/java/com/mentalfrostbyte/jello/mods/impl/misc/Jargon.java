@@ -15,7 +15,7 @@ public class Jargon extends Module
 {
     public Jargon() {
         super(Category.MISC, "Jargon", "Sends a randomly contructed message in chat");
-        this.addSetting(new StringSetting("Jargon", "A test type button", 0, new String[] { "Excuse", "Techincal", "Audio" }));
+        this.addSetting(new StringSetting("Jargon", "A test type button", 0, "Excuse", "Techincal", "Audio"));
     }
     
     @Override
@@ -34,7 +34,7 @@ public class Jargon extends Module
         else {
             str = this.method10739();
         }
-        Jargon.mc.player.method4114("" + str);
+        Jargon.mc.player.method4114(str);
         this.method9907(false);
     }
     

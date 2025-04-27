@@ -24,7 +24,7 @@ public class Class7833 implements Class7831<Class7832>
         this.field32076 = Lists.newArrayList();
         this.field32077 = new Random();
         this.field32078 = field32078;
-        this.field32079 = ((s != null) ? new Class2259(s, new Object[0]) : null);
+        this.field32079 = ((s != null) ? new Class2259(s) : null);
     }
     
     @Override

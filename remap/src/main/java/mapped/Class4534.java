@@ -41,7 +41,7 @@ public class Class4534 extends Class4535<Class5139>
                     }
                     class1851.setBlockState(class1855, class1854.field22123, 4);
                 }
-                class1853 = class1853.add(-(field22124 + 1) + random.nextInt(2 + field22124 * 2), 0 - random.nextInt(2), -(field22124 + 1) + random.nextInt(2 + field22124 * 2));
+                class1853 = class1853.add(-(field22124 + 1) + random.nextInt(2 + field22124 * 2), -random.nextInt(2), -(field22124 + 1) + random.nextInt(2 + field22124 * 2));
             }
             return true;
         }

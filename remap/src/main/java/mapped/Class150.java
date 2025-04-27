@@ -24,7 +24,7 @@ public class Class150 implements Class122
     
     @Override
     public Set<Class7915<?>> method635() {
-        return (Set<Class7915<?>>)ImmutableSet.of((Object)Class6683.field26367, (Object)this.field442.method8153());
+        return (Set<Class7915<?>>)ImmutableSet.of(Class6683.field26367, (Object)this.field442.method8153());
     }
     
     @Override

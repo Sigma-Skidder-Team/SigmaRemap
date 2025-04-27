@@ -15,7 +15,7 @@ import net.minecraft.util.Direction;
 public class BowFly extends Module
 {
     private int field15760;
-    private TimerUtil field15761;
+    private final TimerUtil field15761;
     
     public BowFly() {
         super(Category.MOVEMENT, "Bow", "Fly for Bow");

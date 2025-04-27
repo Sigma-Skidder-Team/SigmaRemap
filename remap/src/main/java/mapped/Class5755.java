@@ -49,7 +49,7 @@ public class Class5755 implements Class5756
     }
     
     private Class7003 method17083(final String s) {
-        final Class7003 class7003 = (Class7003)this.field23368.get(s);
+        final Class7003 class7003 = this.field23368.get(s);
         return (class7003 == null) ? Class5755.field23365 : class7003;
     }
     
@@ -96,9 +96,7 @@ public class Class5755 implements Class5756
     private static boolean method17085(final String prefix, final String s) {
         if (s.length() > prefix.length()) {
             if (s.startsWith(prefix)) {
-                if (s.indexOf(30, prefix.length() + 1) < 0) {
-                    return true;
-                }
+                return s.indexOf(30, prefix.length() + 1) < 0;
             }
         }
         return false;
@@ -115,7 +113,6 @@ public class Class5755 implements Class5756
                     map.computeIfAbsent(key, p0 -> new Class7933(null)).method25730(list.iterator(), n);
                 });
             }
-            return;
         });
         return treeMap;
     }
@@ -151,7 +148,7 @@ public class Class5755 implements Class5756
             return true;
         }
         catch (final Throwable t) {
-            Class5755.field23364.error("Could not save profiler results to {}", (Object)file, (Object)t);
+            Class5755.field23364.error("Could not save profiler results to {}", file, t);
             b = false;
         }
         finally {
@@ -192,7 +189,7 @@ public class Class5755 implements Class5756
     
     private void method17094(final int n, final String str, final StringBuilder sb) {
         final List<Class1943> method17084 = this.method17084(str);
-        ((Class7003)this.field23368.get(str)).method21440().forEach((str2, obj2) -> method17093(sb2, n2).append('#').append(str2).append(' ').append(obj2).append('/').append(obj2 / this.field23373).append('\n'));
+        this.field23368.get(str).method21440().forEach((str2, obj2) -> method17093(sb2, n2).append('#').append(str2).append(' ').append(obj2).append('/').append(obj2 / this.field23373).append('\n'));
         if (method17084.size() >= 3) {
             for (int i = 1; i < method17084.size(); ++i) {
                 final Class1943 class1943 = method17084.get(i);

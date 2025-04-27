@@ -23,12 +23,12 @@ public class Class5923<T extends LivingEntity> extends Class5844<T>
     
     @Override
     public Iterable<Class6300> method17559() {
-        return (Iterable<Class6300>)ImmutableList.of();
+        return ImmutableList.of();
     }
     
     @Override
     public Iterable<Class6300> method17560() {
-        return (Iterable<Class6300>)ImmutableList.of((Object)this.field24337, (Object)this.field24336);
+        return (Iterable<Class6300>)ImmutableList.of(this.field24337, (Object)this.field24336);
     }
     
     public void method17580(final T t, final float n, final float n2, final float n3, final float n4, final float n5) {

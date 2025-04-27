@@ -40,14 +40,9 @@ public class HoverEvent
         final HoverEvent class9390 = (HoverEvent)o;
         if (this.field40296 == class9390.field40296) {
             if (this.field40297 == null) {
-                if (class9390.field40297 != null) {
-                    return false;
-                }
+                return class9390.field40297 == null;
             }
-            else if (!this.field40297.equals(class9390.field40297)) {
-                return false;
-            }
-            return true;
+            else return this.field40297.equals(class9390.field40297);
         }
         return false;
     }
@@ -72,7 +67,7 @@ public class HoverEvent
         private final boolean field10701;
         private final String field10702;
 
-        private Action(final String field10702, final boolean field10703) {
+        Action(final String field10702, final boolean field10703) {
             this.field10702 = field10702;
             this.field10701 = field10703;
         }

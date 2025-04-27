@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.ClientAssets;
 public class Class4842 extends Class4841
 {
     private static String[] field20591;
-    private MusicManager field20748;
+    private final MusicManager field20748;
     public float field20749;
     
     public Class4842(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {

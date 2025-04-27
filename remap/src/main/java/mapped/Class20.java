@@ -49,7 +49,7 @@ public class Class20 extends Class11
                 if (b) {
                     this.method178(this.field59);
                 }
-                Cleaner.create((Object)this, (Runnable)new Class993(this.field34, this.field59, this.field31));
+                Cleaner.create(this, new Class993(this.field34, this.field59, this.field31));
                 Class7579.method23860(this.field59 * this.field31);
                 this.field57 = new Class16(n);
                 this.field60 = new byte[n2];
@@ -378,7 +378,7 @@ public class Class20 extends Class11
             }
         }
         catch (final Exception ex2) {
-            throw new SerializationException((Throwable)ex2);
+            throw new SerializationException(ex2);
         }
         finally {
             try {
@@ -399,7 +399,7 @@ public class Class20 extends Class11
             return objectInputStream.readObject();
         }
         catch (final Exception ex) {
-            throw new SerializationException((Throwable)ex);
+            throw new SerializationException(ex);
         }
         finally {
             try {

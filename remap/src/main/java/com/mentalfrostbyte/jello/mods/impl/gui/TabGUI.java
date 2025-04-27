@@ -23,8 +23,8 @@ public class TabGUI extends Module
 {
     public static final Animation field15637;
     public Animation field15638;
-    private Animation field15639;
-    private List<Category> field15640;
+    private final Animation field15639;
+    private final List<Category> field15640;
     private int field15641;
     private static List<Class8221> field15642;
     
@@ -357,7 +357,7 @@ public class TabGUI extends Module
     }
     
     public List<Setting> method10075(final Module class3167) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)class3167.getSettingMap().values());
+        final ArrayList list = new ArrayList(class3167.getSettingMap().values());
         if (class3167 instanceof ModuleWithSettings) {
             final ModuleWithSettings class3168 = (ModuleWithSettings)class3167;
             class3168.method10258();

@@ -14,14 +14,14 @@ public class Class6360 extends Class6354
     
     public Class6360(final String s) {
         super(s);
-        this.field25441 = (LongSet)new LongOpenHashSet();
-        this.field25442 = (LongSet)new LongOpenHashSet();
+        this.field25441 = new LongOpenHashSet();
+        this.field25442 = new LongOpenHashSet();
     }
     
     @Override
     public void method18901(final CompoundNBT class51) {
-        this.field25441 = (LongSet)new LongOpenHashSet(class51.method326("All"));
-        this.field25442 = (LongSet)new LongOpenHashSet(class51.method326("Remaining"));
+        this.field25441 = new LongOpenHashSet(class51.method326("All"));
+        this.field25442 = new LongOpenHashSet(class51.method326("Remaining"));
     }
     
     @Override

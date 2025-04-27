@@ -38,7 +38,7 @@ public abstract class Class7304<C extends Class5118>
     }
     
     public Class7304(final Function<Dynamic<?>, ? extends C> field28287, final int field28288) {
-        this.field28285 = (Set<Block>)ImmutableSet.of((Object) Blocks.STONE, (Object) Blocks.GRANITE, (Object) Blocks.DIORITE, (Object) Blocks.ANDESITE, (Object) Blocks.DIRT, (Object) Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29548 });
+        this.field28285 = (Set<Block>)ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.DIRT, Blocks.COARSE_DIRT, (Object[])new Block[] { Blocks.PODZOL, Blocks.GRASS_BLOCK, Blocks.field29546, Blocks.field29482, Blocks.field29483, Blocks.field29484, Blocks.field29485, Blocks.field29486, Blocks.field29487, Blocks.field29488, Blocks.field29489, Blocks.field29490, Blocks.field29491, Blocks.field29492, Blocks.field29493, Blocks.field29494, Blocks.field29495, Blocks.field29496, Blocks.field29497, Blocks.field29217, Blocks.field29587, Blocks.field29392, Blocks.field29329, Blocks.field29548 });
         this.field28286 = (Set<Fluid>)ImmutableSet.of((Object)Class7558.field29976);
         this.field28287 = field28287;
         this.field28288 = field28288;
@@ -135,9 +135,7 @@ public abstract class Class7304<C extends Class5118>
         final Block method21696 = class7096.getBlock();
         if (!this.method22407(class7096)) {
             if (method21696 == Blocks.field29175 || method21696 == Blocks.field29177) {
-                if (!class7097.getFluidState().isTagged(Class7324.field28319)) {
-                    return true;
-                }
+                return !class7097.getFluidState().isTagged(Class7324.field28319);
             }
             return false;
         }
@@ -167,9 +165,7 @@ public abstract class Class7304<C extends Class5118>
         if (n5 != n) {
             if (n5 != n2 - 1) {
                 if (n6 != n3) {
-                    if (n6 != n4 - 1) {
-                        return false;
-                    }
+                    return n6 == n4 - 1;
                 }
             }
         }

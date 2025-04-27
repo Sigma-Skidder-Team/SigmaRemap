@@ -187,7 +187,7 @@ public final class Class1759 implements Closeable
             this.field9799.flush();
             return;
         }
-        throw Class6885.method21139("errorCode.httpCode == -1", new Object[0]);
+        throw Class6885.method21139("errorCode.httpCode == -1");
     }
     
     public synchronized void method6277(final int n, final long l) throws IOException {

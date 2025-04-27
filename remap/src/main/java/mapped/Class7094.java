@@ -9,7 +9,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class Class7094
 {
-    private int[] field27606;
+    private final int[] field27606;
     private int field27607;
     private String field27608;
     private String[] field27609;
@@ -45,7 +45,7 @@ public class Class7094
             this.field27612 = this.field27607;
             return false;
         }
-        this.field27612 = ArrayUtils.indexOf((Object[])this.field27609, (Object)s);
+        this.field27612 = ArrayUtils.indexOf(this.field27609, s);
         if (this.field27612 >= 0 && this.field27612 < this.field27609.length) {
             return true;
         }
@@ -108,6 +108,6 @@ public class Class7094
     
     @Override
     public String toString() {
-        return "" + this.field27608 + "=" + this.method21682() + " [" + Config.method28888(this.field27609) + "], value: " + this.field27612;
+        return this.field27608 + "=" + this.method21682() + " [" + Config.method28888(this.field27609) + "], value: " + this.field27612;
     }
 }

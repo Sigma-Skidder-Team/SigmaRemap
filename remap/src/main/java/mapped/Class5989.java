@@ -25,7 +25,7 @@ public class Class5989 implements JsonDeserializer<Class6022<Object>>, JsonSeria
     public JsonElement serialize(final Class6022<Object> class6022, final Type type, final JsonSerializationContext jsonSerializationContext) {
         final JsonObject jsonObject = new JsonObject();
         class6022.method17944(jsonObject);
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
     
     public Class6022<Object> deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {

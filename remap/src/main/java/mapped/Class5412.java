@@ -65,13 +65,13 @@ public class Class5412<T extends TileEntity>
             choiceType = Class5494.method16768().getSchema(DataFixUtils.makeKey(Class9528.method35579().getWorldVersion())).getChoiceType(Class9451.field40621, s);
         }
         catch (final IllegalArgumentException ex) {
-            Class5412.field22540.error("No data fixer registered for block entity {}", (Object)s);
+            Class5412.field22540.error("No data fixer registered for block entity {}", s);
             if (Class9528.field41021) {
                 throw ex;
             }
         }
         if (Class8835.method30856((Class8835<TileEntity>)class8835).isEmpty()) {
-            Class5412.field22540.warn("Block entity type {} requires at least one valid block to be defined!", (Object)s);
+            Class5412.field22540.warn("Block entity type {} requires at least one valid block to be defined!", s);
         }
         return Registry.register(Registry.field224, s, class8835.method30855((Type<?>)choiceType));
     }
@@ -84,7 +84,7 @@ public class Class5412<T extends TileEntity>
     
     @Nullable
     public T method16522() {
-        return (T)this.field22574.get();
+        return this.field22574.get();
     }
     
     public boolean method16523(final Block class3833) {

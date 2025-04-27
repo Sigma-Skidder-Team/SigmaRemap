@@ -128,9 +128,9 @@ public class Class7078 implements Class7079
     }
     
     static {
-        field27560 = new Class2259("tutorial.move.title", new Object[] { Class9106.method32929("forward"), Class9106.method32929("left"), Class9106.method32929("back"), Class9106.method32929("right") });
-        field27561 = new Class2259("tutorial.move.description", new Object[] { Class9106.method32929("jump") });
-        field27562 = new Class2259("tutorial.look.title", new Object[0]);
-        field27563 = new Class2259("tutorial.look.description", new Object[0]);
+        field27560 = new Class2259("tutorial.move.title", Class9106.method32929("forward"), Class9106.method32929("left"), Class9106.method32929("back"), Class9106.method32929("right"));
+        field27561 = new Class2259("tutorial.move.description", Class9106.method32929("jump"));
+        field27562 = new Class2259("tutorial.look.title");
+        field27563 = new Class2259("tutorial.look.description");
     }
 }

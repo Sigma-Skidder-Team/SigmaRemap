@@ -39,7 +39,7 @@ public class Class1743 implements Class1742
                 }
                 final int position = this.field9715.position();
                 this.field9715.position();
-                this.field9712 = STBVorbis.stb_vorbis_open_pushdata(this.field9715, mallocInt, mallocInt2, (STBVorbisAlloc)null);
+                this.field9712 = STBVorbis.stb_vorbis_open_pushdata(this.field9715, mallocInt, mallocInt2, null);
                 this.field9715.position();
                 final int value = mallocInt2.get(0);
                 if (value == 1) {
@@ -87,7 +87,7 @@ public class Class1743 implements Class1742
         else {
             final ByteBuffer memAlloc = MemoryUtil.memAlloc(b ? (2 * this.field9715.capacity()) : this.field9715.capacity());
             memAlloc.put(this.field9715);
-            MemoryUtil.memFree((Buffer)this.field9715);
+            MemoryUtil.memFree(this.field9715);
             memAlloc.flip();
             this.field9715 = memAlloc;
         }
@@ -154,7 +154,7 @@ public class Class1743 implements Class1742
             STBVorbis.stb_vorbis_close(this.field9712);
             this.field9712 = 0L;
         }
-        MemoryUtil.memFree((Buffer)this.field9715);
+        MemoryUtil.memFree(this.field9715);
         this.field9714.close();
     }
     

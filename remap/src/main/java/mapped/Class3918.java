@@ -36,7 +36,7 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public Class2201 method11844(final BlockState class7096, final World class7097, final BlockPos class7098, final PlayerEntity class7099, final Class316 class7100, final BlockRayTraceResult class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3918.field17760)) {
+        if (class7096.get(Class3918.field17760)) {
             final TileEntity method6727 = class7097.getTileEntity(class7098);
             if (method6727 instanceof Class448) {
                 final Class448 class7102 = (Class448)method6727;
@@ -57,7 +57,7 @@ public class Class3918 extends Class3841 implements Class3856
     @Override
     public void method11850(final BlockState class7096, final World class7097, final BlockPos class7098, final Entity class7099) {
         if (!class7099.method1704()) {
-            if (class7096.get((IProperty<Boolean>)Class3918.field17760)) {
+            if (class7096.get(Class3918.field17760)) {
                 if (class7099 instanceof LivingEntity) {
                     if (!Class8742.method30216((LivingEntity)class7099)) {
                         class7099.attackEntityFrom(DamageSource.field32562, 1.0f);
@@ -90,7 +90,7 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public BlockState method11789(final BlockState class7096, final Direction class7097, final BlockState class7098, final Class1851 class7099, final BlockPos class7100, final BlockPos class7101) {
-        if (class7096.get((IProperty<Boolean>)Class3918.field17762)) {
+        if (class7096.get(Class3918.field17762)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
         return (class7097 != Direction.DOWN) ? super.method11789(class7096, class7097, class7098, class7099, class7100, class7101) : ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3918.field17761, this.method12030(class7098));
@@ -102,7 +102,7 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public int getLightValue(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3918.field17760) ? super.getLightValue(class7096) : 0;
+        return class7096.get(Class3918.field17760) ? super.getLightValue(class7096) : 0;
     }
     
     @Override
@@ -117,7 +117,7 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public void method11823(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random) {
-        if (class7096.get((IProperty<Boolean>)Class3918.field17760)) {
+        if (class7096.get(Class3918.field17760)) {
             if (random.nextInt(10) == 0) {
                 class7097.method6708(class7098.getX() + 0.5f, class7098.getY() + 0.5f, class7098.getZ() + 0.5f, Class8520.field35055, Class286.field1582, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
             }
@@ -131,14 +131,14 @@ public class Class3918 extends Class3841 implements Class3856
     
     @Override
     public boolean method11921(final Class1851 class1851, final BlockPos class1852, final BlockState class1853, final IFluidState class1854) {
-        if (!class1853.get((IProperty<Boolean>)Class8970.field37747) && class1854.getFluid() == Class7558.field29976) {
-            if (class1853.get((IProperty<Boolean>)Class3918.field17760)) {
+        if (!class1853.get(Class8970.field37747) && class1854.getFluid() == Class7558.field29976) {
+            if (class1853.get(Class3918.field17760)) {
                 if (!class1851.isRemote()) {
                     class1851.method6705(null, class1852, Class8520.field35219, Class286.field1582, 1.0f, 1.0f);
                 }
                 else {
                     for (int i = 0; i < 20; ++i) {
-                        method12032(class1851.method6744(), class1852, class1853.get((IProperty<Boolean>)Class3918.field17761), true);
+                        method12032(class1851.method6744(), class1852, class1853.get(Class3918.field17761), true);
                     }
                 }
                 final TileEntity method6727 = class1851.getTileEntity(class1852);
@@ -179,8 +179,8 @@ public class Class3918 extends Class3841 implements Class3856
                     b = true;
                 }
                 if (b) {
-                    if (!class1848.get((IProperty<Boolean>)Class3918.field17760)) {
-                        if (!class1848.get((IProperty<Boolean>)Class3918.field17762)) {
+                    if (!class1848.get(Class3918.field17760)) {
+                        if (!class1848.get(Class3918.field17762)) {
                             class1847.setBlockState(class1849.getPos(), ((StateHolder<O, BlockState>)class1848).with((IProperty<Comparable>)Class8970.field37736, true), 11);
                         }
                     }
@@ -212,22 +212,22 @@ public class Class3918 extends Class3841 implements Class3856
     }
     
     private static boolean method12034(final BlockState class7096) {
-        return class7096.getBlock() == Blocks.CAMPFIRE && class7096.get((IProperty<Boolean>)Class3918.field17760);
+        return class7096.getBlock() == Blocks.CAMPFIRE && class7096.get(Class3918.field17760);
     }
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return class7096.get((IProperty<Boolean>)Class3918.field17762) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
+        return class7096.get(Class3918.field17762) ? Class7558.field29976.method22177(false) : super.method11864(class7096);
     }
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3918.field17763, class7097.method8142(class7096.get((IProperty<Direction>)Class3918.field17763)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3918.field17763, class7097.method8142(class7096.get(Class3918.field17763)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3918.field17763)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3918.field17763)));
     }
     
     @Override

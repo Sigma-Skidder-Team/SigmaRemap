@@ -27,7 +27,7 @@ public class FontRenderer implements AutoCloseable
     public final Class1923 field10031;
     private boolean field10032;
     private boolean field10033;
-    private Class9075 field10034;
+    private final Class9075 field10034;
     private Class2023 field10035;
     
     public FontRenderer(final Class1663 field10030, final Class1923 field10031) {

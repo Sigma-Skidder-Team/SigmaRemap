@@ -13,7 +13,7 @@ public abstract class Class6368 implements Class6373
     
     public Class6368(final Class122[] field25473) {
         this.field25473 = field25473;
-        this.field25474 = Class7454.method22943((Predicate<Class7529>[])field25473);
+        this.field25474 = Class7454.method22943(field25473);
     }
     
     public void method19015(final Class7790 class7790) {

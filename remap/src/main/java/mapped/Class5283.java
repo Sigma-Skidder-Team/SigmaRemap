@@ -109,7 +109,7 @@ public class Class5283 extends Class5278<Class6562, Class6646>
         if (class6648.method19903()) {
             return;
         }
-        byteBuf.writeByte((int)(class6648.method19887() ? 1 : 0));
+        byteBuf.writeByte(class6648.method19887() ? 1 : 0);
         Class5260.field22312.method16379(byteBuf, class6648.method19888());
         final ByteBuf buffer = byteBuf.alloc().buffer();
         try {
@@ -133,7 +133,7 @@ public class Class5283 extends Class5278<Class6562, Class6646>
         if (class6648.method19902()) {
             final int[] method19890 = class6648.method19890();
             for (int length = method19890.length, j = 0; j < length; ++j) {
-                byteBuf.writeByte((int)(byte)method19890[j]);
+                byteBuf.writeByte((byte)method19890[j]);
             }
         }
     }

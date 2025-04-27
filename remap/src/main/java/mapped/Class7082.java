@@ -87,7 +87,7 @@ public class Class7082 implements Class7079
     }
     
     static {
-        field27585 = new Class2259("tutorial.punch_tree.title", new Object[0]);
-        field27586 = new Class2259("tutorial.punch_tree.description", new Object[] { Class9106.method32929("attack") });
+        field27585 = new Class2259("tutorial.punch_tree.title");
+        field27586 = new Class2259("tutorial.punch_tree.description", Class9106.method32929("attack"));
     }
 }

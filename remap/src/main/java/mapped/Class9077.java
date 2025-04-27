@@ -38,7 +38,7 @@ public class Class9077 extends DataFix
             typed.getOptional(opticFinder);
             final Optional optional;
             if (optional.isPresent() && Objects.equals(optional.get().getSecond(), "minecraft:spawn_egg")) {
-                final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+                final Dynamic dynamic = typed.get(DSL.remainderFinder());
                 dynamic.get("Damage").asShort((short)0);
                 typed.getOptionalTyped(opticFinder2).flatMap(typed5 -> typed5.getOptionalTyped(opticFinder6)).flatMap(typed6 -> typed6.getOptionalTyped(opticFinder7)).flatMap(typed7 -> typed7.getOptional(opticFinder8));
                 final int n;
@@ -55,7 +55,7 @@ public class Class9077 extends DataFix
                     }
                 }
                 if (n != 0) {
-                    typed3 = typed3.set(DSL.remainderFinder(), (Object)dynamic.set("Damage", dynamic.createShort((short)0)));
+                    typed3 = typed3.set(DSL.remainderFinder(), dynamic.set("Damage", dynamic.createShort((short)0)));
                 }
                 return typed3;
             }

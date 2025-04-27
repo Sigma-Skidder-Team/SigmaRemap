@@ -28,7 +28,7 @@ public class Class8937 extends DataFix
             type.findField("tag");
             typed.getOptional(opticFinder);
             final Optional optional;
-            if (!(!optional.isPresent())) {
+            if (optional.isPresent()) {
                 final String s = (String)optional.get().getSecond();
                 if (!"minecraft:potion".equals(s)) {
                     if (!"minecraft:splash_potion".equals(s)) {
@@ -45,7 +45,7 @@ public class Class8937 extends DataFix
                 if (!set.get("Potion").asString().isPresent()) {
                     set = set.set("Potion", set.createString("minecraft:water"));
                 }
-                return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), (Object)set));
+                return typed.set(opticFinder2, typed2.set(DSL.remainderFinder(), set));
             }
             return typed;
         });

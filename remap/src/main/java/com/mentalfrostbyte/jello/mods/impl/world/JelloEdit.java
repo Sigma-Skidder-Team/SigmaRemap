@@ -28,7 +28,7 @@ public class JelloEdit extends Module
     private Block field15545;
     private Class9052 field15546;
     private boolean field15547;
-    private boolean field15548;
+    private final boolean field15548;
     private final int field15549 = 0;
     private List<String> field15550;
     private int field15551;
@@ -47,7 +47,7 @@ public class JelloEdit extends Module
                     break;
                 }
             }
-            this.addSetting(new StringSetting("Shematics", "shematics", 0, (String[])this.field15550.toArray(new String[this.field15550.size()])));
+            this.addSetting(new StringSetting("Shematics", "shematics", 0, this.field15550.toArray(new String[this.field15550.size()])));
         }
     }
     
@@ -70,7 +70,7 @@ public class JelloEdit extends Module
     
     @Override
     public void onEnable() {
-        final File file = new File(Client.getInstance().getFile() + "/shematics/" + (String)this.method9882("Shematics"));
+        final File file = new File(Client.getInstance().getFile() + "/shematics/" + this.method9882("Shematics"));
         if (!file.exists()) {
             ColorUtils.method19106("Schematic does not exist");
             this.toggle();

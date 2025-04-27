@@ -30,14 +30,14 @@ public class Class5977 implements JsonDeserializer<Class7266>
     }
     
     public static String toString(final Class7266 class7266) {
-        return Class5977.field24458.toJson((Object)class7266);
+        return Class5977.field24458.toJson(class7266);
     }
     
     public static String toString(final Class7266... array) {
         if (array.length != 1) {
-            return Class5977.field24458.toJson((Object)new Class7270(array));
+            return Class5977.field24458.toJson(new Class7270(array));
         }
-        return Class5977.field24458.toJson((Object)array[0]);
+        return Class5977.field24458.toJson(array[0]);
     }
     
     public Class7266 deserialize(final JsonElement jsonElement, final Type type, final JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
@@ -46,23 +46,23 @@ public class Class5977 implements JsonDeserializer<Class7266>
         }
         final JsonObject asJsonObject = jsonElement.getAsJsonObject();
         if (asJsonObject.has("translate")) {
-            return (Class7266)jsonDeserializationContext.deserialize(jsonElement, (Type)Class7265.class);
+            return jsonDeserializationContext.deserialize(jsonElement, Class7265.class);
         }
         if (asJsonObject.has("keybind")) {
-            return (Class7266)jsonDeserializationContext.deserialize(jsonElement, (Type)Class7268.class);
+            return jsonDeserializationContext.deserialize(jsonElement, Class7268.class);
         }
         if (asJsonObject.has("score")) {
-            return (Class7266)jsonDeserializationContext.deserialize(jsonElement, (Type)Class7269.class);
+            return jsonDeserializationContext.deserialize(jsonElement, Class7269.class);
         }
         if (!asJsonObject.has("selector")) {
-            return (Class7266)jsonDeserializationContext.deserialize(jsonElement, (Type)Class7270.class);
+            return jsonDeserializationContext.deserialize(jsonElement, Class7270.class);
         }
-        return (Class7266)jsonDeserializationContext.deserialize(jsonElement, (Type)Class7267.class);
+        return jsonDeserializationContext.deserialize(jsonElement, Class7267.class);
     }
     
     static {
         field24457 = new JsonParser();
-        field24458 = new GsonBuilder().registerTypeAdapter((Type)Class7266.class, (Object)new Class5977()).registerTypeAdapter((Type)Class7270.class, (Object)new Class5962()).registerTypeAdapter((Type)Class7265.class, (Object)new Class5959()).registerTypeAdapter((Type)Class7268.class, (Object)new Class5964()).registerTypeAdapter((Type)Class7269.class, (Object)new Class5961()).registerTypeAdapter((Type)Class7267.class, (Object)new Class5963()).create();
+        field24458 = new GsonBuilder().registerTypeAdapter(Class7266.class, new Class5977()).registerTypeAdapter(Class7270.class, new Class5962()).registerTypeAdapter(Class7265.class, new Class5959()).registerTypeAdapter(Class7268.class, new Class5964()).registerTypeAdapter(Class7269.class, new Class5961()).registerTypeAdapter(Class7267.class, new Class5963()).create();
         field24459 = new ThreadLocal<HashSet<Class7266>>();
     }
 }

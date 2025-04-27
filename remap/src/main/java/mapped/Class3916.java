@@ -72,7 +72,7 @@ public class Class3916 extends Block implements Class3856
     
     public Class3916(final BlockState field17750, final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3916.field17732, Direction.NORTH)).with(Class3916.field17733, Class109.field344)).with(Class3916.field17734, Class183.field567)).with((IProperty<Comparable>)Class3916.field17735, false));
+        this.method11877(((StateHolder<O, BlockState>) ((StateHolder<O, BlockState>)this.field17406.method32903()).with((IProperty<Comparable>)Class3916.field17732, Direction.NORTH).with(Class3916.field17733, Class109.field344).with(Class3916.field17734, Class183.field567)).with((IProperty<Comparable>)Class3916.field17735, false));
         this.field17749 = field17750.method21696();
         this.field17750 = field17750;
     }
@@ -155,8 +155,8 @@ public class Class3916 extends Block implements Class3856
     public BlockState method11846(final Class7074 class7074) {
         final Direction method21648 = class7074.method21648();
         final BlockPos method21649 = class7074.method21639();
-        final BlockState class7075 = ((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3916.field17732, class7074.method21644())).with(Class3916.field17733, (method21648 != Direction.DOWN && (method21648 == Direction.UP || class7074.method21649().y - method21649.getY() <= 0.5)) ? Class109.field344 : Class109.field343)).with((IProperty<Comparable>)Class3916.field17735, class7074.method21654().getFluidState(method21649).getFluid() == Class7558.field29976);
-        return ((StateHolder<O, BlockState>)class7075).with(Class3916.field17734, method12024(class7075, class7074.method21654(), method21649));
+        final BlockState class7075 = ((StateHolder<O, BlockState>) ((StateHolder<O, BlockState>)this.getDefaultState()).with((IProperty<Comparable>)Class3916.field17732, class7074.method21644()).with(Class3916.field17733, (method21648 != Direction.DOWN && (method21648 == Direction.UP || class7074.method21649().y - method21649.getY() <= 0.5)) ? Class109.field344 : Class109.field343)).with((IProperty<Comparable>)Class3916.field17735, class7074.method21654().getFluidState(method21649).getFluid() == Class7558.field29976);
+        return class7075.with(Class3916.field17734, method12024(class7075, class7074.method21654(), method21649));
     }
     
     @Override
@@ -164,7 +164,7 @@ public class Class3916 extends Block implements Class3856
         if (class7096.method21772((IProperty<Boolean>)Class3916.field17735)) {
             class7099.method6834().method21345(class7100, Class7558.field29976, Class7558.field29976.method22156(class7099));
         }
-        return class7097.getAxis().isHorizontal() ? ((StateHolder<O, BlockState>)class7096).with(Class3916.field17734, method12024(class7096, class7099, class7100)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
+        return class7097.getAxis().isHorizontal() ? class7096.with(Class3916.field17734, method12024(class7096, class7099, class7100)) : super.method11789(class7096, class7097, class7098, class7099, class7100, class7101);
     }
     
     public static Class183 method12024(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
@@ -203,10 +203,8 @@ public class Class3916 extends Block implements Class3856
     private static boolean method12025(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098, final Direction class7099) {
         final BlockState method6701 = class7097.getBlockState(class7098.method1149(class7099));
         if (method12026(method6701)) {
-            if (((StateHolder<Object, Object>)method6701).get((IProperty<Comparable>)Class3916.field17732) == class7096.method21772((IProperty<Comparable>)Class3916.field17732)) {
-                if (((StateHolder<Object, Object>)method6701).get(Class3916.field17733) == class7096.method21772(Class3916.field17733)) {
-                    return false;
-                }
+            if (method6701.get((IProperty<Comparable>)Class3916.field17732) == class7096.method21772((IProperty<Comparable>)Class3916.field17732)) {
+                return method6701.get(Class3916.field17733) != class7096.method21772(Class3916.field17733);
             }
         }
         return true;

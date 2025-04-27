@@ -33,6 +33,6 @@ public class Class3779 extends Class3703
     }
     
     public List<Long> method11587() {
-        return Collections.unmodifiableList((List<? extends Long>)this.field17254);
+        return Collections.unmodifiableList(this.field17254);
     }
 }

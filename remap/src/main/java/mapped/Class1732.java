@@ -57,7 +57,7 @@ public abstract class Class1732 implements Class1727
     public abstract boolean method6128(final String p0);
     
     public void method6129(final String s) {
-        Class1732.field9678.warn("ResourcePack: ignored non-lowercase namespace: {} in {}", (Object)s, (Object)this.field9679);
+        Class1732.field9678.warn("ResourcePack: ignored non-lowercase namespace: {} in {}", s, this.field9679);
     }
     
     @Nullable
@@ -77,17 +77,17 @@ public abstract class Class1732 implements Class1727
             method35933 = Class9583.method35933(bufferedReader);
         }
         catch (final IOException | JsonParseException ex) {
-            Class1732.field9678.error("Couldn't load {} metadata", (Object)class5092.method15968(), (Object)ex);
+            Class1732.field9678.error("Couldn't load {} metadata", class5092.method15968(), ex);
             return null;
         }
         if (!method35933.has(class5092.method15968())) {
             return null;
         }
         try {
-            return (T)class5092.method15969(Class9583.method35914(method35933, class5092.method15968()));
+            return class5092.method15969(Class9583.method35914(method35933, class5092.method15968()));
         }
         catch (final JsonParseException ex2) {
-            Class1732.field9678.error("Couldn't load {} metadata", (Object)class5092.method15968(), (Object)ex2);
+            Class1732.field9678.error("Couldn't load {} metadata", class5092.method15968(), ex2);
             return null;
         }
     }

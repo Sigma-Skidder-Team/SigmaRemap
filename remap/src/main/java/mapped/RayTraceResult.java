@@ -24,6 +24,6 @@ public abstract class RayTraceResult
     {
         MISS,
         BLOCK,
-        ENTITY;
+        ENTITY
     }
 }

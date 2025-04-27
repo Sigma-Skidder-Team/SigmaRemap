@@ -38,14 +38,14 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     
     public Class1897(final Class237 field10300, final IChunkLightProvider field10301, final M field10302) {
         super(3, 16, 256);
-        this.field10302 = (LongSet)new LongOpenHashSet();
-        this.field10303 = (LongSet)new LongOpenHashSet();
-        this.field10304 = (LongSet)new LongOpenHashSet();
-        this.field10307 = (LongSet)new LongOpenHashSet();
-        this.field10308 = (LongSet)new LongOpenHashSet();
-        this.field10309 = (Long2ObjectMap<Class7281>)Long2ObjectMaps.synchronize((Long2ObjectMap)new Long2ObjectOpenHashMap());
-        this.field10310 = (LongSet)new LongOpenHashSet();
-        this.field10311 = (LongSet)new LongOpenHashSet();
+        this.field10302 = new LongOpenHashSet();
+        this.field10303 = new LongOpenHashSet();
+        this.field10304 = new LongOpenHashSet();
+        this.field10307 = new LongOpenHashSet();
+        this.field10308 = new LongOpenHashSet();
+        this.field10309 = (Long2ObjectMap<Class7281>)Long2ObjectMaps.synchronize(new Long2ObjectOpenHashMap());
+        this.field10310 = new LongOpenHashSet();
+        this.field10311 = new LongOpenHashSet();
         this.field10300 = field10300;
         this.field10301 = field10301;
         this.field10306 = field10302;
@@ -68,7 +68,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     
     @Nullable
     public Class7281 method7350(final long n) {
-        final Class7281 class7281 = (Class7281)this.field10309.get(n);
+        final Class7281 class7281 = this.field10309.get(n);
         return (class7281 == null) ? this.method7348(n, false) : class7281;
     }
     
@@ -155,7 +155,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
     }
     
     public Class7281 method7354(final long n) {
-        final Class7281 class7281 = (Class7281)this.field10309.get(n);
+        final Class7281 class7281 = this.field10309.get(n);
         return (class7281 == null) ? new Class7281() : class7281;
     }
     
@@ -185,7 +185,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
         if (this.method7356() || !this.field10309.isEmpty()) {
             for (final long longValue : this.field10311) {
                 this.method7355(class1890, longValue);
-                final Class7281 class1891 = (Class7281)this.field10309.remove(longValue);
+                final Class7281 class1891 = this.field10309.remove(longValue);
                 final Class7281 method23397 = this.field10306.method23397(longValue);
                 if (this.field10310.contains(Class353.method1112(longValue))) {
                     if (class1891 != null) {
@@ -201,7 +201,7 @@ public abstract class Class1897<M extends Class7501<M>> extends Class1896
             }
             this.field10306.method23399();
             final LongIterator iterator2 = this.field10311.iterator();
-            while (((Iterator)iterator2).hasNext()) {
+            while (iterator2.hasNext()) {
                 this.method7359((long)((Iterator)iterator2).next());
             }
             this.field10311.clear();

@@ -88,10 +88,10 @@ public class Class388 extends Class387 implements Class389
     public Class388(final Class1849 field2254, final File file, final DataFixer dataFixer, final Class1795 field2255, final Executor executor, final Class872<Runnable> field2256, final IChunkLightProvider class1908, final Class6346<?> field2257, final Class6459 field2258, final Supplier<Class8213> field2259, final int n) {
         super(new File(field2254.method6789().getType().method1272(file), "region"), dataFixer);
         this.field2250 = (Long2ObjectLinkedOpenHashMap<Class9298>)new Long2ObjectLinkedOpenHashMap();
-        this.field2251 = (Long2ObjectLinkedOpenHashMap<Class9298>)this.field2250.clone();
+        this.field2251 = this.field2250.clone();
         this.field2252 = (Long2ObjectLinkedOpenHashMap<Class9298>)new Long2ObjectLinkedOpenHashMap();
-        this.field2253 = (LongSet)new LongOpenHashSet();
-        this.field2260 = (LongSet)new LongOpenHashSet();
+        this.field2253 = new LongOpenHashSet();
+        this.field2260 = new LongOpenHashSet();
         this.field2267 = new AtomicInteger();
         this.field2270 = new Class8249();
         this.field2271 = (Int2ObjectMap<Class9406>)new Int2ObjectOpenHashMap();
@@ -105,7 +105,7 @@ public class Class388 extends Class387 implements Class389
         final Class875<Runnable> method5394 = Class875.method5392("main", field2256::method5381);
         this.field2265 = field2258;
         final Class877<Runnable> method5395 = Class877.method5393(executor, "light");
-        this.field2262 = new Class1910((List<Class875<?>>)ImmutableList.of((Object)method5393, (Object)method5394, (Object)method5395), executor, Integer.MAX_VALUE);
+        this.field2262 = new Class1910((List<Class875<?>>)ImmutableList.of(method5393, method5394, (Object)method5395), executor, Integer.MAX_VALUE);
         this.field2263 = this.field2262.method7466(method5393, false);
         this.field2264 = this.field2262.method7466(method5394, false);
         this.field2255 = new Class1885(class1908, this, this.field2254.method6789().method20503(), method5395, this.field2262.method7466(method5395, false));
@@ -148,12 +148,12 @@ public class Class388 extends Class387 implements Class389
     
     @Nullable
     public Class9298 method1316(final long n) {
-        return (Class9298)this.field2250.get(n);
+        return this.field2250.get(n);
     }
     
     @Nullable
     public Class9298 method1317(final long n) {
-        return (Class9298)this.field2251.get(n);
+        return this.field2251.get(n);
     }
     
     public IntSupplier method1318(final long n) {
@@ -242,7 +242,7 @@ public class Class388 extends Class387 implements Class389
         }
         if (n2 <= Class388.field2249) {
             if (class9298 == null) {
-                class9298 = (Class9298)this.field2252.remove(n);
+                class9298 = this.field2252.remove(n);
                 if (class9298 == null) {
                     class9298 = new Class9298(new ChunkPos(n), n2, this.field2255, this.field2262, this);
                 }
@@ -303,7 +303,7 @@ public class Class388 extends Class387 implements Class389
             }
             this.method1325(() -> true);
             this.method1311();
-            Class388.field2248.info("ThreadedAnvilChunkStorage ({}): All chunks are saved", (Object)this.field2269.getName());
+            Class388.field2248.info("ThreadedAnvilChunkStorage ({}): All chunks are saved", this.field2269.getName());
         }
     }
     
@@ -335,7 +335,7 @@ public class Class388 extends Class387 implements Class389
                 }
             }
             final long nextLong = iterator.nextLong();
-            final Class9298 class9298 = (Class9298)this.field2250.remove(nextLong);
+            final Class9298 class9298 = this.field2250.remove(nextLong);
             if (class9298 != null) {
                 this.field2252.put(nextLong, (Object)class9298);
                 this.field2261 = true;
@@ -356,17 +356,17 @@ public class Class388 extends Class387 implements Class389
     private void method1326(final long n, final Class9298 class9298) {
         class9298.method34348().thenAcceptAsync(class9300 -> {
             if (class9299.method34348() == completableFuture) {
-                if (!(!this.field2252.remove(n2, (Object)class9299))) {
+                if (this.field2252.remove(n2, (Object) class9299)) {
                     if (class9300 != null) {
-                        if (!(!(class9300 instanceof Chunk))) {
+                        if (class9300 instanceof Chunk) {
                             ((Chunk)class9300).method7064(false);
-                            if (!(!Class9570.field41194.method22619())) {
+                            if (Class9570.field41194.method22619()) {
                                 Class9570.method35840(Class9570.field41194, class9300);
                             }
                         }
                         this.method1337(class9300);
-                        if (!(!this.field2253.remove(n2))) {
-                            if (!(!(class9300 instanceof Chunk))) {
+                        if (this.field2253.remove(n2)) {
+                            if (class9300 instanceof Chunk) {
                                 this.field2254.method6897((Chunk)class9300);
                             }
                         }
@@ -388,7 +388,7 @@ public class Class388 extends Class387 implements Class389
     
     public boolean method1327() {
         if (this.field2261) {
-            this.field2251 = (Long2ObjectLinkedOpenHashMap<Class9298>)this.field2250.clone();
+            this.field2251 = this.field2250.clone();
             this.field2261 = false;
             return true;
         }
@@ -424,7 +424,7 @@ public class Class388 extends Class387 implements Class389
                 else {
                     return CompletableFuture.completedFuture(value);
                 }
-            }, (Executor)this.field2256);
+            }, this.field2256);
         }
         return this.method1329(method34357);
     }
@@ -459,7 +459,7 @@ public class Class388 extends Class387 implements Class389
                 }
             }
             catch (final Exception ex) {
-                Class388.field2248.error("Couldn't load chunk {}", (Object)class7860, (Object)ex);
+                Class388.field2248.error("Couldn't load chunk {}", (Object)class7860, ex);
             }
             return Either.left((Object)new Class1865(class7860, Class8288.field34078));
         }, this.field2256);
@@ -519,7 +519,7 @@ public class Class388 extends Class387 implements Class389
             method7114.method7074(() -> Class9298.method34364(class9304.method34358()));
             method7114.method7057();
             final ChunkPos class9302;
-            if (!(!this.field2253.add(class9302.method25422()))) {
+            if (this.field2253.add(class9302.method25422())) {
                 method7114.method7064(true);
                 this.field2254.method6715(method7114.method7066().values());
                 method7114.method7067();
@@ -548,7 +548,7 @@ public class Class388 extends Class387 implements Class389
                 if (arrayList != null) {
                     arrayList.forEach(method7114::method7053);
                 }
-                if (!(!Class9570.field41192.method22619())) {
+                if (Class9570.field41192.method22619()) {
                     Class9570.method35840(Class9570.field41192, method7114);
                 }
             }
@@ -567,9 +567,8 @@ public class Class388 extends Class387 implements Class389
             this.method1351(class9301, (boolean)(0 != 0)).forEach(class9304 -> {
                 final Object o2 = new IPacket[2];
                 this.method1357(class9304, array, class9303);
-                return;
             });
-            return Either.left((Object)class9302);
+            return Either.left(class9302);
         }), runnable4 -> this.field2264.method5386(Class1910.method7464(class9305, runnable4)));
         return (CompletableFuture<Either<Chunk, IChunkLoadingError>>)thenApplyAsync;
     }
@@ -595,7 +594,7 @@ public class Class388 extends Class387 implements Class389
             this.field2254.method6916();
         }
         catch (final Class2337 class1861) {
-            Class388.field2248.error("Couldn't save chunk; already in use by another instance of Minecraft?", (Throwable)class1861);
+            Class388.field2248.error("Couldn't save chunk; already in use by another instance of Minecraft?", class1861);
             return false;
         }
         class1860.method7020(this.field2254.method6754());
@@ -621,7 +620,7 @@ public class Class388 extends Class387 implements Class389
             return true;
         }
         catch (final Exception ex) {
-            Class388.field2248.error("Failed to save chunk {},{}", (Object)method7019.field32290, (Object)method7019.field32291, (Object)ex);
+            Class388.field2248.error("Failed to save chunk {},{}", method7019.field32290, method7019.field32291, ex);
             return false;
         }
     }
@@ -633,8 +632,8 @@ public class Class388 extends Class387 implements Class389
             this.field2273 = method35651;
             this.field2266.method30139(this.field2273);
             final ObjectIterator iterator = this.field2250.values().iterator();
-            while (((Iterator)iterator).hasNext()) {
-                this.method1351(((Class9298)((Iterator)iterator).next()).method34357(), false).forEach(class7860 -> {
+            while (iterator.hasNext()) {
+                this.method1351(((Class9298) iterator.next()).method34357(), false).forEach(class7860 -> {
                     final Object o = new IPacket[2];
                     method1313(class7859, class7860, (boolean)(1 != 0));
                     final int n3;
@@ -865,11 +864,11 @@ public class Class388 extends Class387 implements Class389
             final Class513 class400 = (Class513)class399;
             this.method1348(class400, false);
             final ObjectIterator iterator = this.field2271.values().iterator();
-            while (((Iterator)iterator).hasNext()) {
-                ((Class9406)((Iterator)iterator).next()).method34985(class400);
+            while (iterator.hasNext()) {
+                ((Class9406) iterator.next()).method34985(class400);
             }
         }
-        final Class9406 class401 = (Class9406)this.field2271.remove(class399.getEntityId());
+        final Class9406 class401 = this.field2271.remove(class399.getEntityId());
         if (class401 != null) {
             class401.method34984();
         }
@@ -893,21 +892,21 @@ public class Class388 extends Class387 implements Class389
         }
         if (!arrayList.isEmpty()) {
             final ObjectIterator iterator2 = this.field2271.values().iterator();
-            while (((Iterator)iterator2).hasNext()) {
-                ((Class9406)((Iterator)iterator2).next()).method34988(arrayList);
+            while (iterator2.hasNext()) {
+                ((Class9406) iterator2.next()).method34988(arrayList);
             }
         }
     }
     
     public void method1355(final Entity class399, final IPacket<?> class400) {
-        final Class9406 class401 = (Class9406)this.field2271.get(class399.getEntityId());
+        final Class9406 class401 = this.field2271.get(class399.getEntityId());
         if (class401 != null) {
             class401.method34982(class400);
         }
     }
     
     public void method1356(final Entity class399, final IPacket<?> class400) {
-        final Class9406 class401 = (Class9406)this.field2271.get(class399.getEntityId());
+        final Class9406 class401 = this.field2271.get(class399.getEntityId());
         if (class401 != null) {
             class401.method34983(class400);
         }

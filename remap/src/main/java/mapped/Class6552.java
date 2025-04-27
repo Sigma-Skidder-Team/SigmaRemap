@@ -56,7 +56,7 @@ public final class Class6552 extends Class6550
     
     public static Class6552 method19856() {
         try {
-            return new Class6552(SSLParameters.class.getMethod("setApplicationProtocols", String[].class), SSLSocket.class.getMethod("getApplicationProtocol", (Class<?>[])new Class[0]));
+            return new Class6552(SSLParameters.class.getMethod("setApplicationProtocols", String[].class), SSLSocket.class.getMethod("getApplicationProtocol", new Class[0]));
         }
         catch (final NoSuchMethodException ex) {
             return null;

@@ -60,7 +60,7 @@ public class Class4278 implements IPacket<IClientPlayNetHandler>
     
     @Override
     public void writePacketData(final PacketBuffer class8654) throws IOException {
-        class8654.writeInt(Registry.field222.getId((Class6907<? extends IParticleData>)this.field19198.method21272()));
+        class8654.writeInt(Registry.field222.getId(this.field19198.method21272()));
         class8654.writeBoolean(this.field19197);
         class8654.writeDouble(this.field19189);
         class8654.writeDouble(this.field19190);

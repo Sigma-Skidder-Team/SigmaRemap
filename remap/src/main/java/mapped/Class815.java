@@ -315,9 +315,7 @@ public class Class815 extends Class812 implements Class768
         if (class789 != this) {
             if (class789 instanceof Class815) {
                 if (this.method4753()) {
-                    if (((Class815)class789).method4753()) {
-                        return true;
-                    }
+                    return ((Class815) class789).method4753();
                 }
             }
         }

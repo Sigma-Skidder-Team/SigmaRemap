@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.commands.CommandException;
 public class Class6703 extends Class6693
 {
     public Class6703() {
-        super("clearchat", "Clears your chat client side", new String[] { "cc", "chatclear" });
+        super("clearchat", "Clears your chat client side", "cc", "chatclear");
     }
     
     @Override

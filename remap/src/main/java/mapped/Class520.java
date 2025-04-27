@@ -22,7 +22,7 @@ public class Class520 extends Class516<Class3428> implements Class519
     public void init() {
         super.init();
         this.field3114 = (this.width < 379);
-        this.field3113.method3415(this.width, this.height, this.minecraft, this.field3114, (Class3426<?>)this.field3077);
+        this.field3113.method3415(this.width, this.height, this.minecraft, this.field3114, this.field3077);
         this.field3079 = this.field3113.method3419(this.field3114, this.width, this.field3075);
         this.children.add(this.field3113);
         this.setFocusedDefault(this.field3113);
@@ -73,9 +73,7 @@ public class Class520 extends Class516<Class3428> implements Class519
     @Override
     public boolean method2987(final int n, final int n2, final int n3, final int n4, final double n5, final double n6) {
         if (!this.field3114 || !this.field3113.method3421()) {
-            if (super.method2987(n, n2, n3, n4, n5, n6)) {
-                return true;
-            }
+            return super.method2987(n, n2, n3, n4, n5, n6);
         }
         return false;
     }

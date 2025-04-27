@@ -25,7 +25,7 @@ public class Class1773 extends Class1666 implements AutoCloseable
             RenderSystem.method29991(() -> {
                 Class8995.method32103(this.method5869(), this.field9851.method6644(), this.field9851.method6645());
                 this.method6327();
-                if (!(!Config.method28955())) {
+                if (Config.method28955()) {
                     Class8990.method32051(this);
                 }
             });

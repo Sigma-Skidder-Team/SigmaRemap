@@ -76,9 +76,9 @@ public class Class8003
             for (final Map.Entry<Class5328, V> entry : this.field32964.entrySet()) {
                 jsonObject.add(Registry.field207.getKey(entry.getKey()).toString(), ((Class8940)entry.getValue()).method31709());
             }
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

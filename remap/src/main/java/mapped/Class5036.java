@@ -21,7 +21,7 @@ public class Class5036 extends Class5035
     
     @Override
     public Pair<String, Typed<?>> method15324(final String b, final Typed<?> typed) {
-        final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+        final Dynamic dynamic = typed.get(DSL.remainderFinder());
         if (Objects.equals("EntityHorse", b)) {
             String s = null;
             switch (dynamic.get("Type").asInt(0)) {

@@ -15,7 +15,7 @@ public class Category
     public static final Category MOVEMENT;
     public static final Category GUI;
     public static final Category ITEM;
-    private String name;
+    private final String name;
     
     public Category(final String name) {
         this.name = name;

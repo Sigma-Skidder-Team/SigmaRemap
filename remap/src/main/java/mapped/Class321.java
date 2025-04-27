@@ -13,7 +13,7 @@ public enum Class321
     
     private final Consumer<Class8841<?>> field1905;
     
-    private Class321(final Consumer<Class8841<?>> field1905) {
+    Class321(final Consumer<Class8841<?>> field1905) {
         this.field1905 = field1905;
     }
     

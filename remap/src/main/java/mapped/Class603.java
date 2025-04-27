@@ -11,7 +11,7 @@ public class Class603 extends Class599
 {
     private ArrayList field3534;
     private int field3535;
-    private long field3536;
+    private final long field3536;
     private long field3537;
     public final Class716 field3538;
     
@@ -38,7 +38,7 @@ public class Class603 extends Class599
         this.field3534 = Class9216.method33737();
         this.field3535 = 0;
         for (int i = 0; i < this.field3534.size(); ++i) {
-            if (((String)this.field3534.get(i)).equals(Class9216.field39326)) {
+            if (this.field3534.get(i).equals(Class9216.field39326)) {
                 this.field3535 = i;
                 break;
             }
@@ -89,7 +89,7 @@ public class Class603 extends Class599
                     this.method3523(n);
                 }
                 this.field3512.displayGuiScreen(this.field3538);
-            }, new StringTextComponent(Class8822.method30773("of.message.shaders.nv1", ("HD_U_" + trim).replace('_', ' '))), new StringTextComponent(Class8822.method30773("of.message.shaders.nv2", new Object[0]))));
+            }, new StringTextComponent(Class8822.method30773("of.message.shaders.nv1", ("HD_U_" + trim).replace('_', ' '))), new StringTextComponent(Class8822.method30773("of.message.shaders.nv2"))));
             return false;
         }
         return true;

@@ -99,7 +99,7 @@ public abstract class Class4535<FC extends Class5113>
     }
     
     public FC method13528(final Dynamic<?> dynamic) {
-        return (FC)this.field20025.apply(dynamic);
+        return this.field20025.apply(dynamic);
     }
     
     public void method13529(final Class1876 class1876, final BlockPos class1877, final BlockState class1878) {
@@ -120,9 +120,7 @@ public abstract class Class4535<FC extends Class5113>
         if (class3833 != Blocks.STONE) {
             if (class3833 != Blocks.GRANITE) {
                 if (class3833 != Blocks.DIORITE) {
-                    if (class3833 != Blocks.ANDESITE) {
-                        return false;
-                    }
+                    return class3833 == Blocks.ANDESITE;
                 }
             }
         }
@@ -134,9 +132,7 @@ public abstract class Class4535<FC extends Class5113>
             if (class3833 != Blocks.GRASS_BLOCK) {
                 if (class3833 != Blocks.PODZOL) {
                     if (class3833 != Blocks.COARSE_DIRT) {
-                        if (class3833 != Blocks.field29392) {
-                            return false;
-                        }
+                        return class3833 == Blocks.field29392;
                     }
                 }
             }
@@ -211,23 +207,22 @@ public abstract class Class4535<FC extends Class5113>
         field20021 = method13526("decorated", new Class4603(Class5114::method16012));
         field20022 = method13526("decorated_flower", new Class4604(Class5114::method16012));
         field20023 = Util.method27851((BiMap)HashBiMap.create(), hashBiMap -> {
-            hashBiMap.put((Object)"Pillager_Outpost".toLowerCase(Locale.ROOT), (Object)Class4535.field19958);
-            hashBiMap.put((Object)"Mineshaft".toLowerCase(Locale.ROOT), (Object)Class4535.field19959);
-            hashBiMap.put((Object)"Mansion".toLowerCase(Locale.ROOT), (Object)Class4535.field19960);
-            hashBiMap.put((Object)"Jungle_Pyramid".toLowerCase(Locale.ROOT), (Object)Class4535.field19961);
-            hashBiMap.put((Object)"Desert_Pyramid".toLowerCase(Locale.ROOT), (Object)Class4535.field19962);
-            hashBiMap.put((Object)"Igloo".toLowerCase(Locale.ROOT), (Object)Class4535.field19963);
-            hashBiMap.put((Object)"Shipwreck".toLowerCase(Locale.ROOT), (Object)Class4535.field19964);
-            hashBiMap.put((Object)"Swamp_Hut".toLowerCase(Locale.ROOT), (Object)Class4535.field19965);
-            hashBiMap.put((Object)"Stronghold".toLowerCase(Locale.ROOT), (Object)Class4535.field19966);
-            hashBiMap.put((Object)"Monument".toLowerCase(Locale.ROOT), (Object)Class4535.field19967);
-            hashBiMap.put((Object)"Ocean_Ruin".toLowerCase(Locale.ROOT), (Object)Class4535.field19968);
-            hashBiMap.put((Object)"Fortress".toLowerCase(Locale.ROOT), (Object)Class4535.field19969);
-            hashBiMap.put((Object)"EndCity".toLowerCase(Locale.ROOT), (Object)Class4535.field19970);
-            hashBiMap.put((Object)"Buried_Treasure".toLowerCase(Locale.ROOT), (Object)Class4535.field19971);
-            hashBiMap.put((Object)"Village".toLowerCase(Locale.ROOT), (Object)Class4535.field19972);
-            return;
+            hashBiMap.put("Pillager_Outpost".toLowerCase(Locale.ROOT), Class4535.field19958);
+            hashBiMap.put("Mineshaft".toLowerCase(Locale.ROOT), Class4535.field19959);
+            hashBiMap.put("Mansion".toLowerCase(Locale.ROOT), Class4535.field19960);
+            hashBiMap.put("Jungle_Pyramid".toLowerCase(Locale.ROOT), Class4535.field19961);
+            hashBiMap.put("Desert_Pyramid".toLowerCase(Locale.ROOT), Class4535.field19962);
+            hashBiMap.put("Igloo".toLowerCase(Locale.ROOT), Class4535.field19963);
+            hashBiMap.put("Shipwreck".toLowerCase(Locale.ROOT), Class4535.field19964);
+            hashBiMap.put("Swamp_Hut".toLowerCase(Locale.ROOT), Class4535.field19965);
+            hashBiMap.put("Stronghold".toLowerCase(Locale.ROOT), Class4535.field19966);
+            hashBiMap.put("Monument".toLowerCase(Locale.ROOT), Class4535.field19967);
+            hashBiMap.put("Ocean_Ruin".toLowerCase(Locale.ROOT), Class4535.field19968);
+            hashBiMap.put("Fortress".toLowerCase(Locale.ROOT), Class4535.field19969);
+            hashBiMap.put("EndCity".toLowerCase(Locale.ROOT), Class4535.field19970);
+            hashBiMap.put("Buried_Treasure".toLowerCase(Locale.ROOT), Class4535.field19971);
+            hashBiMap.put("Village".toLowerCase(Locale.ROOT), Class4535.field19972);
         });
-        field20024 = (List)ImmutableList.of((Object)Class4535.field19958, (Object)Class4535.field19972);
+        field20024 = (List)ImmutableList.of(Class4535.field19958, (Object)Class4535.field19972);
     }
 }

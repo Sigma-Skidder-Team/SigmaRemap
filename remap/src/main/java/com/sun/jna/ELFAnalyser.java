@@ -15,12 +15,12 @@ public class ELFAnalyser
     private static final int E_MACHINE_ARM = 40;
     private static final int EI_CLASS_64BIT = 2;
     private final String filename;
-    private boolean ELF;
-    private boolean _64Bit;
-    private boolean bigEndian;
-    private boolean armHardFloat;
-    private boolean armSoftFloat;
-    private boolean arm;
+    private final boolean ELF;
+    private final boolean _64Bit;
+    private final boolean bigEndian;
+    private final boolean armHardFloat;
+    private final boolean armSoftFloat;
+    private final boolean arm;
     
     public static ELFAnalyser analyse(final String filename) throws IOException {
         final ELFAnalyser elfAnalyser = new ELFAnalyser(filename);

@@ -22,13 +22,13 @@ public class ViaManager implements Class9366<ClientPlayerEntity> {
     public static Class7906 field40167;
     public static final Class7906 field40168;
     private Logger field40169;
-    private Logger field40170;
+    private final Logger field40170;
     private Path field40171;
-    private Class8947 field40172;
-    private Class7494 field40173;
+    private final Class8947 field40172;
+    private final Class7494 field40173;
     private Class6542 field40174;
-    private Class6558 field40175;
-    private List<Class5993> field40176;
+    private final Class6558 field40175;
+    private final List<Class5993> field40176;
 
     public ViaManager(final Channel field40166) {
         this.field40176 = new ArrayList<Class5993>();

@@ -19,7 +19,7 @@ public class Class5120 implements Class5113
     
     @Override
     public <T> Dynamic<T> method16010(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("radius"), dynamicOps.createInt(this.field22069))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap(ImmutableMap.of(dynamicOps.createString("radius"), dynamicOps.createInt(this.field22069))));
     }
     
     public static <T> Class5120 method16024(final Dynamic<T> dynamic) {

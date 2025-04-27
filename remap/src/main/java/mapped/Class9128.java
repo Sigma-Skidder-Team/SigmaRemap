@@ -10,7 +10,7 @@ import java.util.List;
 public class Class9128
 {
     private static String[] field38684;
-    private List<Class9469> field38685;
+    private final List<Class9469> field38685;
     private Class2067 field38686;
     private boolean field38687;
     private boolean field38688;

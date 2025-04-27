@@ -49,7 +49,7 @@ public class Class7667
     }
     
     public static boolean method24304(final BlockState class7096) {
-        return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246, new Object[0]) : class7096.getBlock().method11802();
+        return Class7667.field30455 ? Class9570.method35820(class7096, Class9570.field41246) : class7096.getBlock().method11802();
     }
     
     public static boolean method24305(final ItemStack class8321) {
@@ -72,14 +72,14 @@ public class Class7667
         if (!Class9570.field41382.method22623()) {
             return new String[0];
         }
-        final List list = (List)Class9570.method35826(Class9570.method35818(Class9570.field41384, new Object[0]), Class9570.field41383, new Object[0]);
+        final List list = (List)Class9570.method35826(Class9570.method35818(Class9570.field41384), Class9570.field41383, new Object[0]);
         if (list != null) {
             final ArrayList list2 = new ArrayList();
             for (final Object next : list) {
                 if (!Class9570.field41389.method22625(next)) {
                     continue;
                 }
-                final String method35825 = Class9570.method35825(next, Class9570.field41390, new Object[0]);
+                final String method35825 = Class9570.method35825(next, Class9570.field41390);
                 if (method35825 == null) {
                     continue;
                 }
@@ -102,12 +102,12 @@ public class Class7667
         if (!Class9570.field41337.method22605()) {
             return class8321.getItem() == Items.field31583;
         }
-        return Class9570.method35820(class8321, Class9570.field41337, new Object[0]);
+        return Class9570.method35820(class8321, Class9570.field41337);
     }
     
     public static Class654 method24312(final MainMenu mainMenu, final int n, final int n2) {
         if (Class9570.field41399.method22619()) {
-            return new Class654(mainMenu.width / 2 - 100, n + n2 * 2, 98, 20, Class8822.method30773("fml.menu.mods", new Object[0]), class549 -> Minecraft.getInstance().displayGuiScreen((Screen)Class9570.field41399.method22621(mainMenu)));
+            return new Class654(mainMenu.width / 2 - 100, n + n2 * 2, 98, 20, Class8822.method30773("fml.menu.mods"), class549 -> Minecraft.getInstance().displayGuiScreen((Screen)Class9570.field41399.method22621(mainMenu)));
         }
         return null;
     }
@@ -128,7 +128,7 @@ public class Class7667
         }
         final Object method22631 = Class9570.method35828(method22630, class7364);
         if (method22631 != null) {
-            return Class9570.method35820(method22631, Class9570.field41322, new Object[0]);
+            return Class9570.method35820(method22631, Class9570.field41322);
         }
         return b;
     }
@@ -151,7 +151,7 @@ public class Class7667
     }
     
     public static boolean method24316(final Entity class399) {
-        return !Class7667.field30456 || Class9570.method35820(class399, Class9570.field41252, new Object[0]);
+        return !Class7667.field30456 || Class9570.method35820(class399, Class9570.field41252);
     }
     
     static {

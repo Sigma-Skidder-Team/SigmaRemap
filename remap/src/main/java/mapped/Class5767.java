@@ -46,20 +46,20 @@ public class Class5767 implements Class5763
         final JsonArray jsonArray = new JsonArray();
         final Iterator<String> iterator = this.field23586.iterator();
         while (iterator.hasNext()) {
-            jsonArray.add((String)iterator.next());
+            jsonArray.add(iterator.next());
         }
-        jsonObject.add("pattern", (JsonElement)jsonArray);
+        jsonObject.add("pattern", jsonArray);
         final JsonObject jsonObject2 = new JsonObject();
         for (final Map.Entry<Object, V> entry : this.field23587.entrySet()) {
             jsonObject2.add(String.valueOf(entry.getKey()), ((Ingredient)entry.getValue()).method615());
         }
-        jsonObject.add("key", (JsonElement)jsonObject2);
+        jsonObject.add("key", jsonObject2);
         final JsonObject jsonObject3 = new JsonObject();
         jsonObject3.addProperty("item", Registry.field211.getKey(this.field23583).toString());
         if (this.field23584 > 1) {
-            jsonObject3.addProperty("count", (Number)this.field23584);
+            jsonObject3.addProperty("count", this.field23584);
         }
-        jsonObject.add("result", (JsonElement)jsonObject3);
+        jsonObject.add("result", jsonObject3);
     }
     
     @Override

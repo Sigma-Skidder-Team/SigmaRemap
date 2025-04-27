@@ -35,14 +35,14 @@ public class Class7504
         Class8563.method28793().method34742().info("Loading 1.13.2 -> 1.14 block mapping...");
         Class7504.field29090 = new Class6744(method23405.getAsJsonObject("blocks"), method23406.getAsJsonObject("blocks"));
         Class8563.method28793().method34742().info("Loading 1.13.2 -> 1.14 item mapping...");
-        method23406((Map<Integer, Integer>)Class7504.field29088, method23405.getAsJsonObject("items"), method23406.getAsJsonObject("items"));
+        method23406(Class7504.field29088, method23405.getAsJsonObject("items"), method23406.getAsJsonObject("items"));
         Class8563.method28793().method34742().info("Loading 1.13.2 -> 1.14 sound mapping...");
         Class7504.field29091 = new Class6308(method23405.getAsJsonArray("sounds"), method23406.getAsJsonArray("sounds"));
         Class8563.method28793().method34742().info("Loading 1.14 blockstates...");
         final JsonObject asJsonObject = method23406.getAsJsonObject("blockstates");
         final HashMap hashMap = new HashMap(asJsonObject.entrySet().size());
         for (final Map.Entry<K, JsonElement> entry : asJsonObject.entrySet()) {
-            hashMap.put((Object)entry.getValue().getAsString(), (Object)Integer.parseInt((String)entry.getKey()));
+            hashMap.put(entry.getValue().getAsString(), Integer.parseInt((String)entry.getKey()));
         }
         Class8563.method28793().method34742().info("Loading 1.14 heightmap data...");
         final JsonArray asJsonArray = method23405("heightMapData-1.14.json").getAsJsonArray("MOTION_BLOCKING");
@@ -81,7 +81,7 @@ public class Class7504
     public static JsonObject method23405(final String str) {
         final InputStreamReader inputStreamReader = new InputStreamReader(Class7504.class.getClassLoader().getResourceAsStream("assets/viaversion/data/" + str));
         try {
-            return (JsonObject)Class8557.method28750().fromJson((Reader)inputStreamReader, (Class)JsonObject.class);
+            return (JsonObject)Class8557.method28750().fromJson(inputStreamReader, (Class)JsonObject.class);
         }
         finally {
             try {
@@ -158,6 +158,6 @@ public class Class7504
     }
     
     static {
-        Class7504.field29088 = (BiMap<Integer, Integer>)HashBiMap.create();
+        Class7504.field29088 = HashBiMap.create();
     }
 }

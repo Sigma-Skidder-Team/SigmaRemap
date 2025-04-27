@@ -16,7 +16,7 @@ public enum Class2107
     private final int field12219;
     private final double[] field12220;
     
-    private Class2107(final int field12219, final double n, final double n2, final double n3) {
+    Class2107(final int field12219, final double n, final double n2, final double n3) {
         this.field12219 = field12219;
         this.field12220 = new double[] { n, n2, n3 };
     }

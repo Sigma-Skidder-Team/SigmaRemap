@@ -21,7 +21,7 @@ public class Class8695 implements ArgumentType<Class6319>
     }
     
     public static ITextComponent method29807(final CommandContext<Class7492> commandContext, final String s) throws CommandSyntaxException {
-        return ((Class6319)commandContext.getArgument(s, (Class)Class6319.class)).method18705((Class7492)commandContext.getSource(), ((Class7492)commandContext.getSource()).method23210(2));
+        return ((Class6319)commandContext.getArgument(s, (Class)Class6319.class)).method18705(commandContext.getSource(), commandContext.getSource().method23210(2));
     }
     
     public Class6319 parse(final StringReader stringReader) throws CommandSyntaxException {

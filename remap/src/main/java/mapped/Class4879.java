@@ -9,8 +9,8 @@ import org.newdawn.slick.TrueTypeFont;
 
 public class Class4879 extends Class4868
 {
-    private Class4892 field20871;
-    private Animation field20872;
+    private final Class4892 field20871;
+    private final Animation field20872;
     
     public Class4879(final Class4892 field20871, final int n) {
         super(field20871, "sliderButton", 0, 0, n, n, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color));

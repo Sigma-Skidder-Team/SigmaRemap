@@ -40,7 +40,7 @@ public abstract class PointerType implements NativeMapped
             return null;
         }
         try {
-            final PointerType pointerType = (PointerType)this.getClass().newInstance();
+            final PointerType pointerType = this.getClass().newInstance();
             pointerType.pointer = (Pointer)nativeValue;
             return pointerType;
         }
@@ -74,6 +74,6 @@ public abstract class PointerType implements NativeMapped
     
     @Override
     public String toString() {
-        return (this.pointer == null) ? "NULL" : (this.pointer.toString() + " (" + super.toString() + ")");
+        return (this.pointer == null) ? "NULL" : (this.pointer + " (" + super.toString() + ")");
     }
 }

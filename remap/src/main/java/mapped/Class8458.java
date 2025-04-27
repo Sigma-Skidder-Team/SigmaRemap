@@ -143,7 +143,7 @@ public class Class8458
                 }
                 final Class60 class7564 = method23745.method419("pages");
                 if (class7564 == null) {
-                    method23745.method420(new Class60("pages", (List<Class61>)Collections.singletonList(new Class71(Class5224.method16340("")))));
+                    method23745.method420(new Class60("pages", Collections.singletonList(new Class71(Class5224.method16340("")))));
                     class7562.method23747(method23745);
                     return;
                 }

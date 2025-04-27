@@ -18,7 +18,7 @@ public abstract class Class8117<T extends Class8117<T>>
     
     public void method26707(final CommandContext<Class7492> commandContext, final String s) {
         this.method26706(commandContext, s);
-        this.method26708(((Class7492)commandContext.getSource()).method23255());
+        this.method26708(commandContext.getSource().method23255());
     }
     
     public void method26708(final MinecraftServer class394) {

@@ -35,7 +35,6 @@ public class Class9263
             final Class7635 class7479;
             this.field39734.method30458(class7479).forEach(class7481 -> class7481.method28442(class7480.method23107(), 0.0f));
             this.field39734.method30457(class7479).method28442(class7478.method23107(), 1.0f);
-            return;
         });
         return this.field39734;
     }

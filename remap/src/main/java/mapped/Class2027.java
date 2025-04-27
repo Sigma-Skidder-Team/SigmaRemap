@@ -15,7 +15,7 @@ public final class Class2027 implements Class2022
     private final int field11552;
     private final int field11553;
     private final int field11554;
-    private float field11555;
+    private final float field11555;
     
     private Class2027(final float field11547, final Class1846 field11548, final int field11549, final int field11550, final int field11551, final int field11552, final int field11553, final int field11554) {
         this.field11555 = 1.0f;

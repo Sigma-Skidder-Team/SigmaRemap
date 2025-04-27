@@ -29,6 +29,6 @@ public class Class5979 implements JsonDeserializer<Class7503>
     }
     
     private Class6429 method17901(final JsonDeserializationContext jsonDeserializationContext, final JsonObject jsonObject, final String s) {
-        return (Class6429)(jsonObject.has(s) ? jsonDeserializationContext.deserialize(jsonObject.get(s), (Type)Class6429.class) : Class6429.field25537);
+        return jsonObject.has(s) ? jsonDeserializationContext.deserialize(jsonObject.get(s), Class6429.class) : Class6429.field25537;
     }
 }

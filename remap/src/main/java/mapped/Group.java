@@ -7,5 +7,5 @@ package mapped;
 public enum Group
 {
     field1681, 
-    field1682;
+    field1682
 }

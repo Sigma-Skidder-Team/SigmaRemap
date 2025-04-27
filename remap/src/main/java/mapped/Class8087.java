@@ -49,14 +49,9 @@ public class Class8087
             final List<Class9348> method26550 = this.method26550();
             final List<Class9348> method26551 = class8087.method26550();
             if (method26550 != null) {
-                if (!method26550.equals(method26551)) {
-                    return false;
-                }
+                return method26550.equals(method26551);
             }
-            else if (method26551 != null) {
-                return false;
-            }
-            return true;
+            else return method26551 == null;
         }
         return false;
     }
@@ -67,7 +62,7 @@ public class Class8087
     
     @Override
     public int hashCode() {
-        final int n = 1 * 59 + this.method26549();
+        final int n = 59 + this.method26549();
         final List<Class9348> method26550 = this.method26550();
         return n * 59 + ((method26550 != null) ? method26550.hashCode() : 43);
     }

@@ -329,7 +329,7 @@ public class RealmsDownloadLatestWorldScreen extends RealmsScreen
             RealmsDownloadLatestWorldScreen.field21662.unlock();
             this.field21650 = false;
             this.field21651 = true;
-            throw;
+            throw
         }).start();
     }
     
@@ -339,7 +339,7 @@ public class RealmsDownloadLatestWorldScreen extends RealmsScreen
     
     static {
         field21638 = LogManager.getLogger();
-        field21657 = new String[] { RealmsDownloadLatestWorldScreen.\uc350\u52b3\uce93\u65ed\u9bcc\ubfb4[12], ".", ". .", ". . ." };
+        field21657 = new String[] { RealmsDownloadLatestWorldScreen.\uc350\u52b3\uce93\u65ed\u9bcc\ubfb4[12], ".", ". .", ". . ." }
         field21662 = new ReentrantLock();
     }
 }

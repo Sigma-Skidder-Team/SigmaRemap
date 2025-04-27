@@ -39,7 +39,7 @@ public class Class7264
     
     @Nullable
     public Class6313 method22207(final Item class3820) {
-        return (Class6313)this.field28142.get(method22208(class3820));
+        return this.field28142.get(method22208(class3820));
     }
     
     private static int method22208(final Item class3820) {
@@ -57,7 +57,7 @@ public class Class7264
     public void method22211() {
         this.field28142.clear();
         for (final Map.Entry<Integer, V> entry : this.field28141.entrySet()) {
-            this.field28142.put(Integer.valueOf(entry.getKey()), (Object)this.field28143.method6451((Class1933)entry.getValue()));
+            this.field28142.put(entry.getKey(), (Object)this.field28143.method6451((Class1933)entry.getValue()));
         }
     }
 }

@@ -54,6 +54,6 @@ public final class Class9336
     
     @Override
     public String toString() {
-        return "" + this.field40089 + ", width: " + this.field40090 + ", height: " + this.field40091 + ", frames: " + this.field40092.method29306() + ", scale: " + this.field40093;
+        return this.field40089 + ", width: " + this.field40090 + ", height: " + this.field40091 + ", frames: " + this.field40092.method29306() + ", scale: " + this.field40093;
     }
 }

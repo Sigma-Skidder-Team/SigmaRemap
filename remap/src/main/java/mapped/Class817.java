@@ -232,9 +232,7 @@ public class Class817 extends Class789
                     return false;
                 }
                 final BlockState method6701 = class1852.getBlockState(class1853.method1139());
-                if (method6701.getBlock() == Blocks.GRASS_BLOCK || method6701.method21755(Class7188.field27907)) {
-                    return true;
-                }
+                return method6701.getBlock() == Blocks.GRASS_BLOCK || method6701.method21755(Class7188.field27907);
             }
         }
         return false;

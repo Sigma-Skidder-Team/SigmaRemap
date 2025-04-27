@@ -15,12 +15,12 @@ public class Class670 extends Class654
     
     @Override
     public String method3369() {
-        return Class8822.method30773("selectWorld.mapType", new Object[0]) + ' ' + Class8822.method30773(Class9505.field40891[Class539.method3127(this.field3704)].method35400(), new Object[0]);
+        return Class8822.method30773("selectWorld.mapType", new Object[0]) + ' ' + Class8822.method30773(Class9505.field40891[Class539.method3127(this.field3704)].method35400());
     }
     
     @Override
     public String method3352() {
         final Class9505 class9505 = Class9505.field40891[Class539.method3127(this.field3704)];
-        return class9505.method35412() ? (super.method3352() + ". " + Class8822.method30773(class9505.method35401(), new Object[0])) : super.method3352();
+        return class9505.method35412() ? (super.method3352() + ". " + Class8822.method30773(class9505.method35401())) : super.method3352();
     }
 }

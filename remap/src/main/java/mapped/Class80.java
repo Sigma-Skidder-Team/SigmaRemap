@@ -27,7 +27,7 @@ public class Class80<T> extends AbstractCollection<T>
         this.field178 = Maps.newHashMap();
         this.field180 = Lists.newArrayList();
         this.field179 = field179;
-        this.field178.put((Class<?>)field179, (List<?>)this.field180);
+        this.field178.put((Class<?>)field179, this.field180);
     }
     
     @Override
@@ -61,7 +61,7 @@ public class Class80<T> extends AbstractCollection<T>
     
     public <S> Collection<S> method443(final Class<S> clazz) {
         if (this.field179.isAssignableFrom(clazz)) {
-            return Collections.unmodifiableCollection((Collection<? extends S>)this.field178.computeIfAbsent((Class<?>)clazz, clazz2 -> this.field180.stream().filter(clazz2::isInstance).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())));
+            return Collections.unmodifiableCollection((Collection<? extends S>)this.field178.computeIfAbsent(clazz, clazz2 -> this.field180.stream().filter(clazz2::isInstance).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList())));
         }
         throw new IllegalArgumentException("Don't know how to search for " + clazz);
     }

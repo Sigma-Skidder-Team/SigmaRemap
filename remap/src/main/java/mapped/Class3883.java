@@ -28,9 +28,7 @@ public class Class3883 extends Class3882
         final Block method21696 = class7096.getBlock();
         if (!super.method11943(class7096, class7097, class7098)) {
             if (method21696 != Blocks.field29338) {
-                if (method21696 != Blocks.field29339) {
-                    return false;
-                }
+                return method21696 == Blocks.field29339;
             }
         }
         return true;

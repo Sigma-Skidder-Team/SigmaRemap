@@ -68,7 +68,7 @@ public class Class613 extends Class608<Class639>
             identityHashSet.add(class872.method11704());
         }
         identityHashSet.remove(Items.AIR);
-        this.field3579 = Lists.newArrayList((Iterable)identityHashSet);
+        this.field3579 = Lists.newArrayList(identityHashSet);
         for (int i = 0; i < this.field3579.size(); ++i) {
             this.method3536(new Class639(this, null));
         }
@@ -123,7 +123,7 @@ public class Class613 extends Class608<Class639>
     }
     
     private Class2248<?> method3585(final int n) {
-        return (Class2248<?>)((n >= this.field3575.size()) ? ((Class2248<Item>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Block>)this.field3575.get(n)));
+        return (n >= this.field3575.size()) ? ((Class2248<Item>)this.field3576.get(n - this.field3575.size())) : ((Class2248<Block>)this.field3575.get(n));
     }
     
     private int method3586(final Class2248<?> class2248) {
@@ -147,7 +147,7 @@ public class Class613 extends Class608<Class639>
                     for (int i = 0; i < this.field3577.length; ++i) {
                         final int method3868 = Class691.method3868(this.field3583, i);
                         if (n4 >= method3868 - 18 && n4 <= method3868) {
-                            class640 = new Class2259(this.method3585(i).method8450(), new Object[0]);
+                            class640 = new Class2259(this.method3585(i).method8450());
                             break;
                         }
                     }

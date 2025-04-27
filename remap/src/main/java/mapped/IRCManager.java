@@ -32,13 +32,13 @@ import java.util.List;
 
 public class IRCManager
 {
-    private Minecraft field38982;
+    private final Minecraft field38982;
     private String field38983;
     private Thread field38984;
-    private List<UUID> field38985;
-    private HashMap<UUID, Class6538> field38986;
-    private HttpClient field38987;
-    private LicenseManager field38988;
+    private final List<UUID> field38985;
+    private final HashMap<UUID, Class6538> field38986;
+    private final HttpClient field38987;
+    private final LicenseManager field38988;
     private Class4960 field38989;
     public Class9194 field38990;
     
@@ -47,7 +47,7 @@ public class IRCManager
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
         Client.getInstance().getEventBus().registerInstance(this);
-        this.field38987 = (HttpClient)HttpClients.createDefault();
+        this.field38987 = HttpClients.createDefault();
         this.field38988 = field38988;
         this.field38990 = new Class9194(this);
     }
@@ -161,7 +161,7 @@ public class IRCManager
     
     private void method33664(final GameProfile gameProfile, final String s) throws AuthenticationException, IOException {
         final String method33693 = this.field38982.field4642.method33693();
-        ((YggdrasilMinecraftSessionService)new YggdrasilAuthenticationService(Proxy.NO_PROXY, method33693).createMinecraftSessionService()).joinServer(gameProfile, method33693, s);
+        new YggdrasilAuthenticationService(Proxy.NO_PROXY, method33693).createMinecraftSessionService().joinServer(gameProfile, method33693, s);
         Client.getInstance();
         Client.getLogger2().info("Jello Connect: successfully reached out mojangs servers " + s);
         System.out.println("https://sessionserver.mojang.com/session/minecraft/hasJoined?serverId=" + s + "&username=" + this.field38982.field4642.method33692());
@@ -172,7 +172,7 @@ public class IRCManager
             final byte[] digest = MessageDigest.getInstance("MD5").digest(s.getBytes());
             final StringBuffer sb = new StringBuffer();
             for (int i = 0; i < digest.length; ++i) {
-                sb.append(Integer.toHexString((digest[i] & 0xFF) | 0x100).substring(1, 3));
+                sb.append(Integer.toHexString((digest[i] & 0xFF) | 0x100), 1, 3);
             }
             return sb.toString();
         }

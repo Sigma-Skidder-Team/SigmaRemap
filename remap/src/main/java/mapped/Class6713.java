@@ -36,11 +36,11 @@ public class Class6713 extends DataFix
     }
     
     private Dynamic<?> method20390(Dynamic<?> set) {
-        final Optional map = set.get("ench").asStreamOpt().map(stream -> stream.map(dynamic -> dynamic.set("id", dynamic.createString((String)Class6713.field26445.getOrDefault(dynamic.get("id").asInt(0), (Object)"null"))))).map(set::createList);
+        final Optional map = set.get("ench").asStreamOpt().map(stream -> stream.map(dynamic -> dynamic.set("id", dynamic.createString(Class6713.field26445.getOrDefault(dynamic.get("id").asInt(0), (Object)"null"))))).map(set::createList);
         if (map.isPresent()) {
             set = set.remove("ench").set("Enchantments", (Dynamic)map.get());
         }
-        return (Dynamic<?>)set.update("StoredEnchantments", dynamic2 -> DataFixUtils.orElse((Optional)dynamic2.asStreamOpt().map(stream2 -> stream2.map(dynamic3 -> dynamic3.set("id", dynamic3.createString((String)Class6713.field26445.getOrDefault(dynamic3.get("id").asInt(0), (Object)"null"))))).map(dynamic2::createList), (Object)dynamic2));
+        return set.update("StoredEnchantments", dynamic2 -> DataFixUtils.orElse((Optional)dynamic2.asStreamOpt().map(stream2 -> stream2.map(dynamic3 -> dynamic3.set("id", dynamic3.createString(Class6713.field26445.getOrDefault(dynamic3.get("id").asInt(0), (Object)"null"))))).map(dynamic2::createList), (Object)dynamic2));
     }
     
     static {

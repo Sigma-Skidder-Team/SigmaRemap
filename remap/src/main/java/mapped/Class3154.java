@@ -30,9 +30,9 @@ public class Class3154 extends Class3090
         Class9218.method33983(this);
         Class9218.method33984(this);
         Class9218.method33996(this);
-        this.method9849(Class2108.field12228, Class4535.field20019.method13527(new Class5134((List<Class8530<?, ?>>)ImmutableList.of((Object)Class4535.field20009.method13527(Class5113.field22059), (Object)Class4535.field20011.method13527(Class5113.field22059), (Object)Class4535.field20010.method13527(Class5113.field22059)))).method28610(Class7133.field27805.method21889((Object)new Class6931(20, 400.0, 0.0, HeightmapType.field11523))));
+        this.method9849(Class2108.field12228, Class4535.field20019.method13527(new Class5134((List<Class8530<?, ?>>)ImmutableList.of(Class4535.field20009.method13527(Class5113.field22059), Class4535.field20011.method13527(Class5113.field22059), (Object)Class4535.field20010.method13527(Class5113.field22059)))).method28610(Class7133.field27805.method21889(new Class6931(20, 400.0, 0.0, HeightmapType.field11523))));
         Class9218.method33993(this);
-        this.method9849(Class2108.field12228, Class4535.field20012.method13527(new Class5123(20)).method28610(Class7133.field27793.method21889((Object)new Class6928(16))));
+        this.method9849(Class2108.field12228, Class4535.field20012.method13527(new Class5123(20)).method28610(Class7133.field27793.method21889(new Class6928(16))));
         Class9218.method33999(this);
         this.method9839(Class1976.field10951, new Class6828(EntityType.field29031, 10, 4, 4));
         this.method9839(Class1976.field10951, new Class6828(EntityType.field29013, 15, 1, 3));

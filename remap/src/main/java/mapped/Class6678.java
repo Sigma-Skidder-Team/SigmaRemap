@@ -28,10 +28,10 @@ public class Class6678 implements Class6672<FloatArgumentType>
     
     public void method20317(final FloatArgumentType floatArgumentType, final JsonObject jsonObject) {
         if (floatArgumentType.getMinimum() != -3.4028235E38f) {
-            jsonObject.addProperty("min", (Number)floatArgumentType.getMinimum());
+            jsonObject.addProperty("min", floatArgumentType.getMinimum());
         }
         if (floatArgumentType.getMaximum() != Float.MAX_VALUE) {
-            jsonObject.addProperty("max", (Number)floatArgumentType.getMaximum());
+            jsonObject.addProperty("max", floatArgumentType.getMaximum());
         }
     }
 }

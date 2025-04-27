@@ -25,7 +25,7 @@ public class Class6879 extends Class6880
     public Class6879(final ITextComponent class2250, final Class2200 class2251, final Class342 class2252) {
         super(MathHelper.method35691(), class2250, class2251, class2252);
         this.field26952 = Sets.newHashSet();
-        this.field26953 = Collections.unmodifiableSet((Set<? extends Class513>)this.field26952);
+        this.field26953 = Collections.unmodifiableSet(this.field26952);
         this.field26954 = true;
     }
     
@@ -82,7 +82,7 @@ public class Class6879 extends Class6880
     
     @Override
     public void method21070(final ITextComponent class2250) {
-        if (!Objects.equal((Object)class2250, (Object)this.field26956)) {
+        if (!Objects.equal(class2250, this.field26956)) {
             super.method21070(class2250);
             this.method21071(Class1994.field11172);
         }

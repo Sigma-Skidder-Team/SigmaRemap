@@ -63,7 +63,7 @@ public class Class8841<U>
     }
     
     public U method30877(final Random random) {
-        return (U)this.method30874(random).method30875().findFirst().orElseThrow((Supplier<? extends Throwable>)RuntimeException::new);
+        return this.method30874(random).method30875().findFirst().orElseThrow((Supplier<? extends Throwable>)RuntimeException::new);
     }
     
     @Override

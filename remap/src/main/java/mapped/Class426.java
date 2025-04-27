@@ -173,7 +173,7 @@ public class Class426 extends Entity
             if (this.ticksExisted % 5 == 0) {
                 final Iterator<Map.Entry<Entity, Integer>> iterator = this.field2603.entrySet().iterator();
                 while (iterator.hasNext()) {
-                    if (this.ticksExisted < ((Map.Entry<K, Integer>)iterator.next()).getValue()) {
+                    if (this.ticksExisted < iterator.next().getValue()) {
                         continue;
                     }
                     iterator.remove();
@@ -184,7 +184,7 @@ public class Class426 extends Entity
                 }
                 arrayList.addAll(this.field2602);
                 if (!arrayList.isEmpty()) {
-                    final List<Entity> method2093 = this.world.method7128((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox());
+                    final List<Entity> method2093 = this.world.method7128(LivingEntity.class, this.getBoundingBox());
                     if (!method2093.isEmpty()) {
                         for (final LivingEntity class1949 : method2093) {
                             if (this.field2603.containsKey(class1949)) {
@@ -315,7 +315,7 @@ public class Class426 extends Entity
                 this.method2089(Class7384.method22674(new StringReader(class51.getString("Particle"))));
             }
             catch (final CommandSyntaxException ex) {
-                Class426.field2596.warn("Couldn't load custom particle {}", (Object)class51.getString("Particle"), (Object)ex);
+                Class426.field2596.warn("Couldn't load custom particle {}", class51.getString("Particle"), ex);
             }
         }
         if (class51.contains("Color", 99)) {
@@ -362,7 +362,7 @@ public class Class426 extends Entity
             final ListNBT class52 = new ListNBT();
             final Iterator<Class1948> iterator = this.field2602.iterator();
             while (iterator.hasNext()) {
-                ((AbstractList<CompoundNBT>)class52).add(iterator.next().method7916(new CompoundNBT()));
+                class52.add(iterator.next().method7916(new CompoundNBT()));
             }
             class51.put("Effects", class52);
         }

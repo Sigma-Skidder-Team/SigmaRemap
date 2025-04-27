@@ -41,7 +41,7 @@ public class Class688 extends AbstractGui
     }
     
     public void method3821(final int n, final Class6516 class6516, final Class9290 class6517) {
-        final List sortedCopy = Class688.field3784.sortedCopy((Iterable)this.field3785.player.field4069.method17370());
+        final List sortedCopy = Class688.field3784.sortedCopy(this.field3785.player.field4069.method17370());
         int max = 0;
         int max2 = 0;
         for (final Class9081 class6518 : sortedCopy) {

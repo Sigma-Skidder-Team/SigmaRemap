@@ -53,7 +53,7 @@ public class Class3859 extends Block implements Class3857
     
     @Override
     public IFluidState method11864(final BlockState class7096) {
-        return this.field17482.get(Math.min(class7096.get((IProperty<Integer>)Class3859.field17480), 8));
+        return this.field17482.get(Math.min(class7096.get(Class3859.field17480), 8));
     }
     
     @Override
@@ -140,7 +140,7 @@ public class Class3859 extends Block implements Class3857
     
     @Override
     public Fluid method11922(final Class1851 class1851, final BlockPos class1852, final BlockState class1853) {
-        if (class1853.get((IProperty<Integer>)Class3859.field17480) != 0) {
+        if (class1853.get(Class3859.field17480) != 0) {
             return Class7558.field29974;
         }
         class1851.setBlockState(class1852, Blocks.AIR.getDefaultState(), 11);

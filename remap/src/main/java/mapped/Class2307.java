@@ -270,7 +270,7 @@ public class Class2307 implements Serializable, Cloneable
     
     @Override
     public int hashCode() {
-        final long n = 31L * (31L * (31L * (31L * 1L + Class9427.method35030(this.field13985)) + Class9427.method35030(this.field13986)) + Class9427.method35030(this.field13987)) + Class9427.method35030(this.field13988);
+        final long n = 31L * (31L * (31L * (31L + Class9427.method35030(this.field13985)) + Class9427.method35030(this.field13986)) + Class9427.method35030(this.field13987)) + Class9427.method35030(this.field13988);
         return (int)(n ^ n >> 32);
     }
     

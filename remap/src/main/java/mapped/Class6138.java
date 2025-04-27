@@ -22,7 +22,7 @@ public class Class6138 extends Class6132
     public Typed<?> method18357(final Typed<?> typed) {
         final Type fieldType = this.getInputSchema().getChoiceType(Class9451.field40621, "minecraft:jukebox").findFieldType("RecordItem");
         final OpticFinder fieldFinder = DSL.fieldFinder("RecordItem", fieldType);
-        final Dynamic dynamic = (Dynamic)typed.get(DSL.remainderFinder());
+        final Dynamic dynamic = typed.get(DSL.remainderFinder());
         final int int1 = dynamic.get("Record").asInt(0);
         if (int1 > 0) {
             dynamic.remove("Record");
@@ -30,7 +30,7 @@ public class Class6138 extends Class6132
             if (method31988 != null) {
                 final Dynamic emptyMap = dynamic.emptyMap();
                 final Dynamic set = emptyMap.set("id", emptyMap.createString(method31988));
-                return (Typed<?>)typed.set(fieldFinder, (Typed)((Optional)fieldType.readTyped(set.set("Count", set.createByte((byte)1))).getSecond()).orElseThrow(() -> new IllegalStateException("Could not create record item stack."))).set(DSL.remainderFinder(), (Object)dynamic);
+                return (Typed<?>)typed.set(fieldFinder, (Typed)((Optional)fieldType.readTyped(set.set("Count", set.createByte((byte)1))).getSecond()).orElseThrow(() -> new IllegalStateException("Could not create record item stack."))).set(DSL.remainderFinder(), dynamic);
             }
         }
         return typed;

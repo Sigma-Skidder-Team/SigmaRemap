@@ -14,7 +14,7 @@ public class Class5433 extends Class5419<LivingEntity>
     private static String[] field22630;
     
     public Class5433() {
-        super((Map)ImmutableMap.of());
+        super(ImmutableMap.of());
     }
     
     @Override

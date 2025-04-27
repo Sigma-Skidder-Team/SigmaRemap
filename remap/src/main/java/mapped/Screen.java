@@ -10,17 +10,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 
 import java.io.File;
-import java.util.Locale;
+import java.util.*;
 import java.net.URISyntaxException;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.ArrayList;
 import com.google.common.collect.Lists;
 import java.net.URI;
-import java.util.List;
-import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -106,7 +101,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
     }
     
     public void renderTooltip(final String s, final int n, final int n2) {
-        this.renderTooltip(Arrays.asList(s), n, n2);
+        this.renderTooltip(Collections.singletonList(s), n, n2);
     }
     
     public void renderTooltip(final List<String> list, final int n, final int n2) {
@@ -248,7 +243,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
                     }
                 }
                 catch (final URISyntaxException ex) {
-                    Screen.LOGGER.error("Can't open url for {}", (Object)method30410, (Object)ex);
+                    Screen.LOGGER.error("Can't open url for {}", method30410, ex);
                 }
             }
             else if (method30410.method35309() == Class2075.field11972) {
@@ -264,7 +259,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
                 this.minecraft.field4651.method22508(method30410.method35310());
             }
             else {
-                Screen.LOGGER.error("Don't know how to handle {}", (Object)method30410);
+                Screen.LOGGER.error("Don't know how to handle {}", method30410);
             }
             return true;
         }
@@ -374,9 +369,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
         if (n == 88) {
             if (method3046()) {
                 if (!hasShiftDown()) {
-                    if (!method3048()) {
-                        return true;
-                    }
+                    return !method3048();
                 }
             }
         }
@@ -387,9 +380,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
         if (n == 86) {
             if (method3046()) {
                 if (!hasShiftDown()) {
-                    if (!method3048()) {
-                        return true;
-                    }
+                    return !method3048();
                 }
             }
         }
@@ -400,9 +391,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
         if (n == 67) {
             if (method3046()) {
                 if (!hasShiftDown()) {
-                    if (!method3048()) {
-                        return true;
-                    }
+                    return !method3048();
                 }
             }
         }
@@ -413,9 +402,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
         if (n == 65) {
             if (method3046()) {
                 if (!hasShiftDown()) {
-                    if (!method3048()) {
-                        return true;
-                    }
+                    return !method3048();
                 }
             }
         }
@@ -442,9 +429,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
         final int index2 = s.indexOf(47);
         if (c == ':') {
             if (index2 == -1 || n <= index2) {
-                if (index == -1) {
-                    return true;
-                }
+                return index == -1;
             }
             return false;
         }
@@ -453,9 +438,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
                 if (c != '-') {
                     if (c < 'a' || c > 'z') {
                         if (c < '0' || c > '9') {
-                            if (c != '.') {
-                                return false;
-                            }
+                            return c == '.';
                         }
                     }
                 }

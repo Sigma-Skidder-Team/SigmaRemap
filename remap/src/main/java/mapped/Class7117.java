@@ -6,9 +6,9 @@ package mapped;
 
 public class Class7117
 {
-    private byte field27750;
-    private String field27751;
-    private String field27752;
+    private final byte field27750;
+    private final String field27751;
+    private final String field27752;
     
     public Class7117(final byte field27750, final String field27751, final String s) {
         this.field27750 = field27750;

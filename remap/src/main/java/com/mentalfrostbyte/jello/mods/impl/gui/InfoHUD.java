@@ -20,7 +20,7 @@ public class InfoHUD extends Module
     public InfoHUD() {
         super(Category.GUI, "Info HUD", "Shows a bunch of usefull stuff");
         this.field15926 = 0.0f;
-        this.addSetting(new StringSetting("Cords", "Coordinate display type", 1, new String[] { "None", "Normal", "Precise" }));
+        this.addSetting(new StringSetting("Cords", "Coordinate display type", 1, "None", "Normal", "Precise"));
         this.addSetting(new BooleanSetting("Show Player", "Renders a miniature version of your character", true));
         this.addSetting(new BooleanSetting("Show Armor", "Shows your armor's status", true));
         this.method9915(false);

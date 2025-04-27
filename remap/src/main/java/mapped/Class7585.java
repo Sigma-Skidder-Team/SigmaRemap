@@ -61,7 +61,7 @@ public class Class7585
     
     public void method23862(final Consumer<Class9435> action) {
         if (this.field30104 == null) {
-            (this.field30104 = CompletableFuture.supplyAsync(() -> this.method23864(0))).thenAccept((Consumer<? super Class9435>)action);
+            (this.field30104 = CompletableFuture.supplyAsync(() -> this.method23864(0))).thenAccept(action);
         }
     }
     
@@ -84,10 +84,10 @@ public class Class7585
         Class9435 method23871;
         try {
             this.method23866(httpPost);
-            final CloseableHttpResponse execute = build.execute((HttpUriRequest)httpPost);
-            final long method23870 = this.method23870((HttpResponse)execute);
+            final CloseableHttpResponse execute = build.execute(httpPost);
+            final long method23870 = this.method23870(execute);
             if (!this.method23868(method23870, n)) {
-                this.method23867((HttpResponse)execute, class8612);
+                this.method23867(execute, class8612);
                 return class8612.method29207();
             }
             method23871 = this.method23869(method23870, n);
@@ -95,7 +95,7 @@ public class Class7585
         }
         catch (final Exception ex) {
             if (!this.field30103.get()) {
-                Class7585.field30094.error("Caught exception while uploading: ", (Throwable)ex);
+                Class7585.field30094.error("Caught exception while uploading: ", ex);
             }
             return class8612.method29207();
         }
@@ -121,7 +121,7 @@ public class Class7585
         httpPost.setHeader("Cookie", "sid=" + this.field30099 + ";token=" + this.field30098.method22891() + ";user=" + this.field30100 + ";version=" + this.field30101);
         final Class9534 entity = new Class9534(new FileInputStream(this.field30095), this.field30095.length(), this.field30102);
         entity.setContentType("application/octet-stream");
-        httpPost.setEntity((HttpEntity)entity);
+        httpPost.setEntity(entity);
     }
     
     private void method23867(final HttpResponse httpResponse, final Class8612 class8612) throws IOException {

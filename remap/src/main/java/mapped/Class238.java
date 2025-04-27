@@ -263,14 +263,14 @@ public enum Class238
     private final boolean field1164;
     private static Map<String, Class238> field1165;
     
-    private Class238(final String field1161, final String field1162, final Class1991 field1163) {
+    Class238(final String field1161, final String field1162, final Class1991 field1163) {
         this.field1163 = field1163;
         this.field1162 = field1162;
         this.field1161 = field1161;
         this.field1164 = field1161.startsWith("dig.");
     }
     
-    private Class238(final String field1161, final String field1162, final Class1991 field1163, final boolean b) {
+    Class238(final String field1161, final String field1162, final Class1991 field1163, final boolean b) {
         this.field1163 = field1163;
         this.field1162 = field1162;
         this.field1161 = field1161;

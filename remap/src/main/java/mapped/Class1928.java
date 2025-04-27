@@ -6,8 +6,8 @@ package mapped;
 
 public class Class1928 implements Comparable
 {
-    private int field10521;
-    private int field10522;
+    private final int field10521;
+    private final int field10522;
     private float field10523;
     private Class1928 field10524;
     private float field10525;

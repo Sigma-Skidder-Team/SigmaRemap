@@ -106,7 +106,7 @@ public class Class9130
     }
     
     public CompletableFuture<Class1742> method33126(final ResourceLocation class1932) {
-        return (CompletableFuture<Class1742>)CompletableFuture.supplyAsync(() -> {
+        return CompletableFuture.supplyAsync(() -> {
             try {
                 return new Class1743(this.field38693.method19933(class1933).method5887());
             }
@@ -122,6 +122,6 @@ public class Class9130
     }
     
     public CompletableFuture<?> method33128(final Collection<Class7832> collection) {
-        return CompletableFuture.allOf((CompletableFuture<?>[])collection.stream().map(class7832 -> this.method33125(class7832.method25305())).toArray(CompletableFuture[]::new));
+        return CompletableFuture.allOf(collection.stream().map(class7832 -> this.method33125(class7832.method25305())).toArray(CompletableFuture[]::new));
     }
 }

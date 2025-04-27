@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Class6638 extends Class6635
 {
-    private Map<Long, Class7803<byte[], Class8110>> field26251;
+    private final Map<Long, Class7803<byte[], Class8110>> field26251;
     private static Constructor<?> field26252;
     private static HashMap<Short, Short> field26253;
     
@@ -120,7 +120,7 @@ public class Class6638 extends Class6635
                 return (Map)Class6638.field26252.newInstance(new Object[0]);
             }
             catch (final IllegalAccessException | InstantiationException | InvocationTargetException ex) {
-                ((Throwable)ex).printStackTrace();
+                ex.printStackTrace();
             }
         }
         return new HashMap<Long, T>();
@@ -128,7 +128,7 @@ public class Class6638 extends Class6635
     
     static {
         try {
-            Class6638.field26252 = Class.forName("it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap").getConstructor((Class<?>[])new Class[0]);
+            Class6638.field26252 = Class.forName("it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap").getConstructor(new Class[0]);
             Class8563.method28793().method34742().info("Using FastUtil Long2ObjectOpenHashMap for block connections");
         }
         catch (final ClassNotFoundException | NoSuchMethodException ex) {}

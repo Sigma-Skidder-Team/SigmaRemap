@@ -48,9 +48,7 @@ public class Class4231 extends Class4211
                     n = 1;
                     break;
                 }
-                if (n == 0) {
-                    return false;
-                }
+                return n != 0;
             }
             return true;
         }
@@ -63,6 +61,6 @@ public class Class4231 extends Class4211
         jsonObject.add("rod", this.field19037.method34629());
         jsonObject.add("entity", this.field19038.method27019());
         jsonObject.add("item", this.field19039.method34629());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

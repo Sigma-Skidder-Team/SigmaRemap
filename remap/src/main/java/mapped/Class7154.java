@@ -29,7 +29,7 @@ public class Class7154 extends Class7133<Class6936>
                 return null;
             }
             else {
-                return (BlockPos)(BlockPos)new BlockPos(n2, n4 - 1, n3);
+                return new BlockPos(n2, n4 - 1, n3);
             }
         }).filter(Objects::nonNull);
     }

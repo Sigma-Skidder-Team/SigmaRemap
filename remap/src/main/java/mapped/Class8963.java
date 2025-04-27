@@ -16,11 +16,11 @@ public class Class8963
     }
     
     public static BiMap<String, String> method31800() {
-        return (BiMap<String, String>)Class8963.field37668.inverse();
+        return Class8963.field37668.inverse();
     }
     
     public static String method31801(final String s) {
-        final String s2 = (String)Class8963.field37668.get((Object)s);
+        final String s2 = Class8963.field37668.get(s);
         if (s2 == null) {
             return s;
         }
@@ -28,7 +28,7 @@ public class Class8963
     }
     
     static {
-        Class8963.field37668 = (BiMap<String, String>)HashBiMap.create();
+        Class8963.field37668 = HashBiMap.create();
         method31799("Furnace", "furnace");
         method31799("Chest", "chest");
         method31799("EnderChest", "ender_chest");

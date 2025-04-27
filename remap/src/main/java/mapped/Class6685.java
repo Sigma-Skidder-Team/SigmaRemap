@@ -81,9 +81,7 @@ public class Class6685 implements Class6686, Class6691, Class6690
                 break;
             }
             case 3: {
-                for (int k = 0; k < this.field26379; ++k) {
-                    array5[k] = Class6685.field26375[n2][k];
-                }
+                if (this.field26379 >= 0) System.arraycopy(Class6685.field26375[n2], 0, array5, 0, this.field26379);
                 for (int l = 0; l < this.field26381; ++l) {
                     array5[l + this.field26379] = 1.0f;
                 }
@@ -99,9 +97,8 @@ public class Class6685 implements Class6686, Class6691, Class6690
                 for (int n6 = 0; n6 < this.field26381; ++n6) {
                     array5[n6] = 0.0f;
                 }
-                for (int n7 = 0; n7 < this.field26380; ++n7) {
-                    array5[n7 + this.field26381] = Class6685.field26376[n2][n7];
-                }
+                if (this.field26380 >= 0)
+                    System.arraycopy(Class6685.field26376[n2], 0, array5, 0 + this.field26381, this.field26380);
                 for (int n8 = 0; n8 < this.field26381; ++n8) {
                     array5[n8 + this.field26381 + this.field26380] = 1.0f;
                 }
@@ -129,9 +126,7 @@ public class Class6685 implements Class6686, Class6691, Class6690
             }
         }
         else {
-            for (int n13 = 0; n13 < this.field26379; ++n13) {
-                array3[n13] = array[n3 * this.field26379 + n13];
-            }
+            System.arraycopy(array, n3 * this.field26379 + 0, array3, 0, this.field26379);
             this.method20337(array3, array4, array5, this.field26379);
             for (int n14 = 0; n14 < this.field26379 * 2; ++n14) {
                 array2[n3 * this.field26379 * 2 + n14] = array4[n14] / 256.0f;

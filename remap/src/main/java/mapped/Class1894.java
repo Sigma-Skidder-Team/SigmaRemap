@@ -18,7 +18,7 @@ public class Class1894 extends Class1892
     public Class1894(final Class8730 field10292, final int field10293) {
         this.field10292 = field10292;
         super(field10293 + 2, 16, 256);
-        this.field10290 = (Long2ByteMap)new Long2ByteOpenHashMap();
+        this.field10290 = new Long2ByteOpenHashMap();
         this.field10291 = field10293;
         this.field10290.defaultReturnValue((byte)(field10293 + 2));
     }

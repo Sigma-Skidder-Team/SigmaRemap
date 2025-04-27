@@ -118,11 +118,11 @@ public abstract class Class865 implements ICommandSource
         if (method6679 != null && method6679.method1493() && method6679.method1531() && !Class8272.method27500(this.field4615)) {
             try {
                 this.field4614 = null;
-                method6679.method1573().method24998(this.method5223().method23238((ResultConsumer<Class7492>)((commandContext, b, n) -> {
+                method6679.method1573().method24998(this.method5223().method23238((commandContext, b, n) -> {
                     if (b) {
                         ++this.field4612;
                     }
-                })), this.field4615);
+                }), this.field4615);
             }
             catch (final Throwable t) {
                 final CrashReport method6680 = CrashReport.makeCrashReport(t, "Executing command block");

@@ -43,15 +43,15 @@ public class Class1774 extends Class1666 implements Class1664
     private final Map<ResourceLocation, TextureAtlasSprite> field9857;
     private final ResourceLocation field9858;
     private final int field9859;
-    private Map<ResourceLocation, TextureAtlasSprite> field9860;
-    private Map<ResourceLocation, TextureAtlasSprite> field9861;
+    private final Map<ResourceLocation, TextureAtlasSprite> field9860;
+    private final Map<ResourceLocation, TextureAtlasSprite> field9861;
     private TextureAtlasSprite[] field9862;
     private int field9863;
     private int field9864;
     private int field9865;
     private double field9866;
     private double field9867;
-    private Class8891 field9868;
+    private final Class8891 field9868;
     public int field9869;
     public int field9870;
     private int field9871;
@@ -92,7 +92,7 @@ public class Class1774 extends Class1666 implements Class1664
     public void method6331(final Class9430 class9430) {
         this.field9856.clear();
         this.field9856.addAll(class9430.field40452);
-        Class1774.field9852.info("Created: {}x{}x{} {}-atlas", (Object)class9430.field40453, (Object)class9430.field40454, (Object)class9430.field40455, (Object)this.field9858);
+        Class1774.field9852.info("Created: {}x{}x{} {}-atlas", class9430.field40453, class9430.field40454, class9430.field40455, this.field9858);
         Class8995.method32105(this.method5869(), class9430.field40455, class9430.field40453, class9430.field40454);
         this.field9869 = class9430.field40453;
         this.field9870 = class9430.field40454;
@@ -188,7 +188,6 @@ public class Class1774 extends Class1666 implements Class1664
         class6583.startSection("preparing");
         final Set<? super ResourceLocation> set = stream.peek(class6587 -> {
             if (class6587 != null) {
-                return;
             }
             else {
                 throw new IllegalArgumentException("Location cannot be null!");
@@ -233,7 +232,7 @@ public class Class1774 extends Class1666 implements Class1664
                 min = Math.min(min, Math.min(class6585.method34592(), class6585.method34593()));
                 final int min2 = Math.min(Integer.lowestOneBit(class6585.method34592()), Integer.lowestOneBit(class6585.method34593()));
                 if (min2 < b) {
-                    Class1774.field9852.warn("Texture {} with size {}x{} limits mip level from {} to {}", (Object)class6585.method34591(), (Object)class6585.method34592(), (Object)class6585.method34593(), (Object) MathHelper.log2(b), (Object) MathHelper.log2(min2));
+                    Class1774.field9852.warn("Texture {} with size {}x{} limits mip level from {} to {}", class6585.method34591(), class6585.method34592(), class6585.method34593(), MathHelper.log2(b), MathHelper.log2(min2));
                     b = min2;
                 }
                 class6584.method23341(class6585);
@@ -249,7 +248,7 @@ public class Class1774 extends Class1666 implements Class1664
         }
         int n3;
         if (method6355 < i) {
-            Class1774.field9852.warn("{}: dropping miplevel from {} to {}, because of minimum power of two: {}", (Object)this.field9858, (Object)i, (Object)method6355, (Object)min3);
+            Class1774.field9852.warn("{}: dropping miplevel from {} to {}, because of minimum power of two: {}", this.field9858, i, method6355, min3);
             n3 = method6355;
         }
         else {
@@ -291,7 +290,7 @@ public class Class1774 extends Class1666 implements Class1664
                     try {
                         final Class1671 class6587;
                         final Class8736 class6586 = new Class8736(class6587.toString(), class6587.method5887());
-                        Class8637 field36232 = class6587.method5888((Class5092<Class8637>)Class8637.field36231);
+                        Class8637 field36232 = class6587.method5888(Class8637.field36231);
                         if (field36232 == null) {
                             field36232 = Class8637.field36232;
                         }
@@ -322,18 +321,17 @@ public class Class1774 extends Class1666 implements Class1664
                 }
                 catch (final RuntimeException ex) {
                     final ResourceLocation class6585;
-                    Class1774.field9852.error("Unable to parse metadata from {} : {}", (Object)class6585, (Object)ex);
+                    Class1774.field9852.error("Unable to parse metadata from {} : {}", class6585, ex);
                     this.method6362(class6583);
                     return;
                 }
                 catch (final IOException ex2) {
                     final ResourceLocation class6585;
-                    Class1774.field9852.error("Using missing texture, unable to load {} : {}", (Object)class6585, (Object)ex2);
+                    Class1774.field9852.error("Using missing texture, unable to load {} : {}", class6585, ex2);
                     this.method6362(class6583);
                     return;
                 }
                 concurrentLinkedQueue2.add(e);
-                return;
             }, Util.method27841()));
         }
         CompletableFuture.allOf((CompletableFuture<?>[])arrayList.toArray(new CompletableFuture[0])).join();
@@ -360,7 +358,7 @@ public class Class1774 extends Class1666 implements Class1664
             }
         });
         CompletableFuture.allOf((CompletableFuture<?>[])arrayList.toArray(new CompletableFuture[0])).join();
-        return Lists.newArrayList((Iterable)concurrentLinkedQueue);
+        return Lists.newArrayList(concurrentLinkedQueue);
     }
     
     @Nullable
@@ -372,11 +370,11 @@ public class Class1774 extends Class1666 implements Class1664
             return class6584;
         }
         catch (final RuntimeException ex) {
-            Class1774.field9852.error("Unable to parse metadata from {}", (Object)method6336, (Object)ex);
+            Class1774.field9852.error("Unable to parse metadata from {}", method6336, ex);
             return null;
         }
         catch (final IOException ex2) {
-            Class1774.field9852.error("Using missing texture, unable to load {}", (Object)method6336, (Object)ex2);
+            Class1774.field9852.error("Using missing texture, unable to load {}", method6336, ex2);
             return null;
         }
     }
@@ -612,7 +610,7 @@ public class Class1774 extends Class1666 implements Class1664
         final TreeSet set2 = new TreeSet(hashMap.keySet());
         final Iterator iterator2 = set2.iterator();
         while (iterator2.hasNext()) {
-            n2 += (int)hashMap.get((int)iterator2.next());
+            n2 += (int)hashMap.get(iterator2.next());
         }
         int n3 = 16;
         int n4 = 0;

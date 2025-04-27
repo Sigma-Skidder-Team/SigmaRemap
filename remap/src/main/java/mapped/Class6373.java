@@ -10,8 +10,8 @@ import java.util.function.Consumer;
 @FunctionalInterface
 public interface Class6373
 {
-    public static final Class6373 field25479 = (class7529, consumer) -> false;
-    public static final Class6373 field25480 = (class7529, consumer) -> true;
+    Class6373 field25479 = (class7529, consumer) -> false;
+    Class6373 field25480 = (class7529, consumer) -> true;
     
     boolean method19016(final Class7529 p0, final Consumer<Class7182> p1);
     

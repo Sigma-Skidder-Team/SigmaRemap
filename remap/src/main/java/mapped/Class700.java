@@ -12,13 +12,13 @@ public class Class700 extends Class698
     private Class606 field3849;
     private static Class6469[] field3850;
     private int field3851;
-    private Screen field3852;
-    private Class5760 field3853;
+    private final Screen field3852;
+    private final Class5760 field3853;
     private static Class6469[] field3854;
-    private Class8297 field3855;
-    private List<Widget> field3856;
+    private final Class8297 field3855;
+    private final List<Widget> field3856;
     private Widget field3857;
-    private Class5760 field3858;
+    private final Class5760 field3858;
     
     @Override
     public boolean mouseClicked(final double n, final double n2, final int n3) {
@@ -33,7 +33,7 @@ public class Class700 extends Class698
     }
     
     public Class700(final Screen field3852, final Class5760 field3853) {
-        super(new Class2259("options.videoTitle", new Object[0]));
+        super(new Class2259("options.videoTitle"));
         this.field3855 = new Class8297(this, new Class7298());
         this.field3856 = this.buttons;
         this.field3858 = Minecraft.getInstance().gameSettings;
@@ -54,15 +54,15 @@ public class Class700 extends Class698
             }
         }
         final int n = this.height / 6 + 21 * (Class700.field3854.length / 2) - 12;
-        this.addButton(new Class678(231, this.width / 2 - 155 + 0, n, Class4647.method13876("of.options.shaders")));
+        this.addButton(new Class678(231, this.width / 2 - 155, n, Class4647.method13876("of.options.shaders")));
         this.addButton(new Class678(202, this.width / 2 - 155 + 160, n, Class4647.method13876("of.options.quality")));
         final int n2 = n + 21;
-        this.addButton(new Class678(201, this.width / 2 - 155 + 0, n2, Class4647.method13876("of.options.details")));
+        this.addButton(new Class678(201, this.width / 2 - 155, n2, Class4647.method13876("of.options.details")));
         this.addButton(new Class678(212, this.width / 2 - 155 + 160, n2, Class4647.method13876("of.options.performance")));
         final int n3 = n2 + 21;
-        this.addButton(new Class678(211, this.width / 2 - 155 + 0, n3, Class4647.method13876("of.options.animations")));
+        this.addButton(new Class678(211, this.width / 2 - 155, n3, Class4647.method13876("of.options.animations")));
         this.addButton(new Class678(222, this.width / 2 - 155 + 160, n3, Class4647.method13876("of.options.other")));
-        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done", new Object[0])));
+        this.addButton(new Class673(200, this.width / 2 - 100, this.height / 6 + 168 + 11, Class8822.method30773("gui.done")));
     }
     
     @Override

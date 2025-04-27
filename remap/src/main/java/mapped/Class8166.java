@@ -37,7 +37,7 @@ public class Class8166 extends DataFix
         if (!(fieldType instanceof List$ListType)) {
             throw new IllegalStateException("Tile entity type is not a list type.");
         }
-        DSL.fieldFinder("TileEntities", (Type)fieldType);
+        DSL.fieldFinder("TileEntities", fieldType);
         final Type type = this.getInputSchema().getType(Class9451.field40613);
         if (type.findField("Level").type().findField("Sections").type() instanceof List$ListType) {
             return TypeRewriteRule.seq(new Class8481(this.getOutputSchema(), "AddTrappedChestFix", Class9451.field40621).makeRule(), this.fixTypeEverywhereTyped("Trapped Chest fix", type, typed -> {
@@ -48,7 +48,7 @@ public class Class8166 extends DataFix
                     final Optional optional;
                     if (optional.isPresent()) {
                         optional.get().getAllTyped(opticFinder3);
-                        final IntSet set = (IntSet)new IntOpenHashSet();
+                        final IntSet set = new IntOpenHashSet();
                         final List list;
                         list.iterator();
                         final Iterator iterator;
@@ -60,21 +60,21 @@ public class Class8166 extends DataFix
                             else {
                                 int i = 0;
                                 while (i < 4096) {
-                                    if (!(!class8186.method27102(class8186.method27106(i)))) {
+                                    if (class8186.method27102(class8186.method27106(i))) {
                                         set.add(class8186.method27108() << 12 | i);
                                     }
                                     ++i;
                                 }
                             }
                         }
-                        final Dynamic dynamic2 = (Dynamic)typed2.get(DSL.remainderFinder());
+                        final Dynamic dynamic2 = typed2.get(DSL.remainderFinder());
                         return typed2.updateTyped(opticFinder4, typed3 -> {
                             this.getInputSchema().findChoiceType(Class9451.field40621);
                             final Dynamic dynamic2;
                             dynamic2.get("xPos").asInt(0);
                             dynamic2.get("zPos").asInt(0);
                             return typed3.updateTyped(taggedChoice$TaggedChoiceType.finder(), typed4 -> {
-                                final Dynamic dynamic3 = (Dynamic)typed4.getOrCreate(DSL.remainderFinder());
+                                final Dynamic dynamic3 = typed4.getOrCreate(DSL.remainderFinder());
                                 return set2.contains(Class8463.method28237(dynamic3.get("x").asInt(0) - (n << 4), dynamic3.get("y").asInt(0), dynamic3.get("z").asInt(0) - (n2 << 4))) ? typed4.update(taggedChoice$TaggedChoiceType2.finder(), pair -> pair.mapFirst(a -> {
                                     if (!Objects.equals(a, "minecraft:chest")) {
                                         Class8166.field33649.warn("Block Entity was expected to be a chest");

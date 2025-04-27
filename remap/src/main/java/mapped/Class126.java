@@ -16,7 +16,7 @@ public abstract class Class126 implements Class125
     
     public Class126(final Class122[] field383) {
         this.field383 = field383;
-        this.field384 = Class7454.method22943((Predicate<Class7529>[])field383);
+        this.field384 = Class7454.method22943(field383);
     }
     
     @Override

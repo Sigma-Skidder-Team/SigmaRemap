@@ -9,12 +9,12 @@ import java.util.HashMap;
 
 public class Class7862
 {
-    private float field32300;
-    private float field32301;
-    private float field32302;
-    private float field32303;
-    private HashMap field32304;
-    private ArrayList field32305;
+    private final float field32300;
+    private final float field32301;
+    private final float field32302;
+    private final float field32303;
+    private final HashMap field32304;
+    private final ArrayList field32305;
     private float field32306;
     
     public Class7862(final float field32300, final float field32301, final float field32302, final float field32303) {
@@ -97,9 +97,7 @@ public class Class7862
                 return true;
             }
             if (class7862.field32300 + class7862.field32302 >= this.field32300) {
-                if (class7862.field32300 + class7862.field32302 <= this.field32300 + this.field32302) {
-                    return true;
-                }
+                return class7862.field32300 + class7862.field32302 <= this.field32300 + this.field32302;
             }
         }
         return false;
@@ -135,9 +133,7 @@ public class Class7862
         if (n >= this.field32300) {
             if (n < this.field32300 + this.field32302) {
                 if (n2 >= this.field32301) {
-                    if (n2 < this.field32301 + this.field32303) {
-                        return true;
-                    }
+                    return n2 < this.field32301 + this.field32303;
                 }
             }
         }

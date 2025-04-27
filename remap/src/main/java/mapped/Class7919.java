@@ -21,7 +21,7 @@ public class Class7919
     private boolean field32513;
     
     public Class7919(final String s, final double n, final Class2157 class2157) {
-        this(MathHelper.method35690((Random)ThreadLocalRandom.current()), () -> s2, n, class2157);
+        this(MathHelper.method35690(ThreadLocalRandom.current()), () -> s2, n, class2157);
     }
     
     public Class7919(final UUID uuid, final String s, final double n, final Class2157 class2157) {

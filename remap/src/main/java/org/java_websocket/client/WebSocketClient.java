@@ -118,7 +118,7 @@ public abstract class WebSocketClient extends AbstractWebSocket implements Runna
     /**
      * The draft to use
      */
-    private Draft draft;
+    private final Draft draft;
 
     /**
      * The additional headers to use
@@ -480,7 +480,7 @@ public abstract class WebSocketClient extends AbstractWebSocket implements Runna
 
     @Override
     protected Collection<WebSocket> getConnections() {
-        return Collections.singletonList((WebSocket) engine);
+        return Collections.singletonList(engine);
     }
 
     @Override

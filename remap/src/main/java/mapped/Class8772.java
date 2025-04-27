@@ -93,9 +93,7 @@ public final class Class8772
             if (this.field36877.equals(class8772.field36877)) {
                 if (this.field36878.equals(class8772.field36878)) {
                     if (this.field36879.equals(class8772.field36879)) {
-                        if (this.field36880.equals(class8772.field36880)) {
-                            return true;
-                        }
+                        return this.field36880.equals(class8772.field36880);
                     }
                 }
             }

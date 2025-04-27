@@ -62,7 +62,7 @@ public class Class841 extends Class785 implements IMob
         this.field4114.method22062(4, new Class3458(this));
         this.field4114.method22062(7, new Class3455(this, null));
         this.field4114.method22062(8, new Class3503(this));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[0]).method11100(new Class[0]));
         this.field4115.method22062(2, new Class3568(this, this));
         this.field4115.method22062(3, new Class3563(this));
     }
@@ -166,7 +166,7 @@ public class Class841 extends Class785 implements IMob
                             this.method5016();
                         }
                         else {
-                            final Direction class355 = method6701.get((IProperty<Direction>)Class3835.field17415);
+                            final Direction class355 = method6701.get(Class3835.field17415);
                             if (!this.world.method6961(class354.method1149(class355))) {
                                 this.method5016();
                             }
@@ -177,7 +177,7 @@ public class Class841 extends Class785 implements IMob
                         }
                     }
                     else {
-                        final Direction class356 = method6701.get((IProperty<Direction>)Class3836.field17415);
+                        final Direction class356 = method6701.get(Class3836.field17415);
                         if (!this.world.method6961(class354.method1149(class356))) {
                             this.method5016();
                         }

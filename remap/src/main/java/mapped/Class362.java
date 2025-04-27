@@ -34,7 +34,7 @@ public class Class362 extends Class357
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
         builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field218.getKey(this.field2184).toString()));
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
+        return (T)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
     
     static {

@@ -52,7 +52,7 @@ public class Class3941 extends Class3841
     
     @Override
     public BlockState method11846(final Class7074 class7074) {
-        return ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3941.field17831, Class102.field308);
+        return this.getDefaultState().with(Class3941.field17831, Class102.field308);
     }
     
     @Override

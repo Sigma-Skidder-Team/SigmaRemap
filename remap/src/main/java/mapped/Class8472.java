@@ -19,6 +19,6 @@ public class Class8472<T>
         this.field34782 = field34781;
         this.field34780 = field34780;
         this.field34781 = true;
-        this.field34783 = ARBShaderObjects.glGetUniformLocationARB(class9034.field38208, (CharSequence)s);
+        this.field34783 = ARBShaderObjects.glGetUniformLocationARB(class9034.field38208, s);
     }
 }

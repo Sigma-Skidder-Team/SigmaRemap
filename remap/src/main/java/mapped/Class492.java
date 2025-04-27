@@ -173,7 +173,7 @@ public class Class492 extends TileEntity implements Class439
         final int method1074 = this.field2657.getX();
         final int method1075 = this.field2657.getY();
         final int method1076 = this.field2657.getZ();
-        final List<Entity> method1077 = this.field2656.method7128((Class<? extends Entity>) PlayerEntity.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).intersect(n).expand(0.0, this.field2656.getHeight(), 0.0));
+        final List<Entity> method1077 = this.field2656.method7128(PlayerEntity.class, new AxisAlignedBB(method1074, method1075, method1076, method1074 + 1, method1075 + 1, method1076 + 1).intersect(n).expand(0.0, this.field2656.getHeight(), 0.0));
         if (!method1077.isEmpty()) {
             for (final PlayerEntity playerEntity : method1077) {
                 if (!this.field2657.withinDistance(new BlockPos(playerEntity), n)) {
@@ -200,7 +200,7 @@ public class Class492 extends TileEntity implements Class439
                 }
             }
             else {
-                final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511 instanceof IMob && class511.method1709());
+                final List<Entity> method6739 = this.field2656.method6739(LivingEntity.class, this.method2491(), class511 -> class511 instanceof IMob && class511.method1709());
                 if (!method6739.isEmpty()) {
                     this.field2832 = (LivingEntity)method6739.get(this.field2656.rand.nextInt(method6739.size()));
                 }
@@ -242,7 +242,7 @@ public class Class492 extends TileEntity implements Class439
     
     @Nullable
     private LivingEntity method2492() {
-        final List<Entity> method6739 = this.field2656.method6739((Class<? extends Entity>) LivingEntity.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
+        final List<Entity> method6739 = this.field2656.method6739(LivingEntity.class, this.method2491(), class511 -> class511.method1865().equals(this.field2833));
         return (method6739.size() != 1) ? null : ((LivingEntity)method6739.get(0));
     }
     

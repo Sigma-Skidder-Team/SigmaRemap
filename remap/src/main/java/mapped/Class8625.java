@@ -30,8 +30,8 @@ public final class Class8625
             this.field36195 = field36195;
             this.field36197 = field36196;
             this.field36196 = field36197;
-            this.field36202 = (byte[])(field36195 ? new byte[4] : null);
-            this.field36203 = (byte[])(field36195 ? new byte[8192] : null);
+            this.field36202 = field36195 ? new byte[4] : null;
+            this.field36203 = field36195 ? new byte[8192] : null;
             return;
         }
         throw new NullPointerException("random == null");

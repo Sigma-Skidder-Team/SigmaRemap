@@ -24,7 +24,7 @@ public class Class4365 implements IPacket<IClientPlayNetHandler>
         this.field19559 = field19559;
         this.field19560 = NonNullList.withSize(class2265.size(), ItemStack.EMPTY);
         for (int i = 0; i < this.field19560.size(); ++i) {
-            this.field19560.set(i, ((ItemStack)class2265.get(i)).method27641());
+            this.field19560.set(i, class2265.get(i).method27641());
         }
     }
     

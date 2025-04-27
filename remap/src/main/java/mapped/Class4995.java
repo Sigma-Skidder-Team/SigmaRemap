@@ -359,9 +359,7 @@ public class Class4995
             final Class824 class401 = (Class824)class399;
             if (this.field21486 != null) {
                 final Class8562 method4870 = class401.method4870();
-                if (!Class9449.method35104(method4870.method28781(), method4870.method28782(), this.field21486)) {
-                    return false;
-                }
+                return Class9449.method35104(method4870.method28781(), method4870.method28782(), this.field21486);
             }
             return true;
         }
@@ -378,9 +376,7 @@ public class Class4995
         }
         if (this.field21488 != null) {
             if (class401 instanceof Class815) {
-                if (!Config.method28977(((Class815)class401).method4792(), this.field21488)) {
-                    return false;
-                }
+                return Config.method28977(((Class815) class401).method4792(), this.field21488);
             }
         }
         return true;

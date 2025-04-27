@@ -28,6 +28,6 @@ public class Class5971 implements JsonDeserializer<Class9299>, JsonSerializer<Cl
         if (Class9299.method34382(class9299) != null) {
             jsonObject.addProperty("min", (Number)Class9299.method34382(class9299));
         }
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

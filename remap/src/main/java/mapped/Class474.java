@@ -16,7 +16,7 @@ public class Class474 extends Class466
     
     @Override
     public ITextComponent method2243() {
-        return new Class2259("container.blast_furnace", new Object[0]);
+        return new Class2259("container.blast_furnace");
     }
     
     @Override

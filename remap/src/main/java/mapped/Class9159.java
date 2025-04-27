@@ -10,7 +10,7 @@ public class Class9159
 {
     private static String[] field38805;
     private float field38806;
-    private float field38807;
+    private final float field38807;
     public float field38808;
     public float field38809;
     public float field38810;
@@ -18,8 +18,8 @@ public class Class9159
     private float field38812;
     private float field38813;
     private boolean field38814;
-    private float field38815;
-    private Class2315 field38816;
+    private final float field38815;
+    private final Class2315 field38816;
     public float field38817;
     public Color field38818;
     public int field38819;

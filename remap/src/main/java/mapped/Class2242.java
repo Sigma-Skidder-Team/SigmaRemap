@@ -76,7 +76,7 @@ public enum Class2242
                             class1849.method6690(iterator.next(), false);
                         }
                         class1849.createExplosion(null, class1852.method34619() + 0.5f, class1852.method34622(), class1852.method34620() + 0.5f, 5.0f, Explosion.Mode.field13367);
-                        Class4535.field20004.method13527(new Class5143(true, (List<Class9341>)ImmutableList.of((Object)class1852), new BlockPos(0, 128, 0))).method28613(class1849, (Class6346<? extends Class7065>)class1849.method6904().method7438(), new Random(), new BlockPos(class1852.method34619(), 45, class1852.method34620()));
+                        Class4535.field20004.method13527(new Class5143(true, (List<Class9341>)ImmutableList.of((Object)class1852), new BlockPos(0, 128, 0))).method28613(class1849, class1849.method6904().method7438(), new Random(), new BlockPos(class1852.method34619(), 45, class1852.method34620()));
                     }
                     else {
                         final Iterator<Class858> iterator2 = list.iterator();

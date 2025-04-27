@@ -20,9 +20,7 @@ public class Class3468 extends Class3467
     public boolean method11017() {
         if (this.field16347) {
             if (this.field16348 > 0) {
-                if (super.method11017()) {
-                    return true;
-                }
+                return super.method11017();
             }
         }
         return false;

@@ -17,10 +17,10 @@ public enum Class222
     field776(0, -1, 0, Class2149.field12774);
     
     private static Map<Class222, Class222> field777;
-    private int field778;
-    private int field779;
-    private int field780;
-    private Class2149 field781;
+    private final int field778;
+    private final int field779;
+    private final int field780;
+    private final Class2149 field781;
     
     public Class222 method851() {
         return Class222.field777.get(this);
@@ -42,7 +42,7 @@ public enum Class222
         return this.field781;
     }
     
-    private Class222(final int field778, final int field779, final int field780, final Class2149 field781) {
+    Class222(final int field778, final int field779, final int field780, final Class2149 field781) {
         this.field778 = field778;
         this.field779 = field779;
         this.field780 = field780;

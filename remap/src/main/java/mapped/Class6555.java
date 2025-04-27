@@ -46,7 +46,7 @@ public class Class6555 extends DataFix
             if (!"flat".equalsIgnoreCase(dynamic.get("generatorName").asString(""))) {
                 final Optional optional;
                 if ("buffet".equalsIgnoreCase(dynamic.get("generatorName").asString("")) && optional.isPresent()) {
-                    dynamic2 = dynamic.set("generatorOptions", new Dynamic((DynamicOps)JsonOps.INSTANCE, (Object)Class9583.method35930(optional.get(), true)).convert(dynamic.getOps()));
+                    dynamic2 = dynamic.set("generatorOptions", new Dynamic(JsonOps.INSTANCE, Class9583.method35930(optional.get(), true)).convert(dynamic.getOps()));
                 }
                 else {
                     dynamic2 = dynamic;
@@ -61,7 +61,7 @@ public class Class6555 extends DataFix
     }
     
     private static <T> Dynamic<T> method19864(final String s, final DynamicOps<T> dynamicOps) {
-        final Iterator iterator = Splitter.on(';').split((CharSequence)s).iterator();
+        final Iterator iterator = Splitter.on(';').split(s).iterator();
         String s2 = "minecraft:plains";
         final HashMap hashMap = Maps.newHashMap();
         List<Pair<Integer, String>> list;
@@ -105,7 +105,7 @@ public class Class6555 extends DataFix
             list.add(Pair.of((Object)1, (Object)"minecraft:grass_block"));
             hashMap.put("village", Maps.newHashMap());
         }
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)list.stream().map(pair -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt((int)pair.getFirst()), dynamicOps2.createString("block"), dynamicOps2.createString((String)pair.getSecond()))))), dynamicOps.createString("biome"), dynamicOps.createString(s2), dynamicOps.createString("structures"), dynamicOps.createMap((Map)hashMap.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("layers"), dynamicOps.createList((Stream)list.stream().map(pair -> dynamicOps2.createMap((Map)ImmutableMap.of(dynamicOps2.createString("height"), dynamicOps2.createInt((int)pair.getFirst()), dynamicOps2.createString("block"), dynamicOps2.createString((String)pair.getSecond()))))), dynamicOps.createString("biome"), dynamicOps.createString(s2), dynamicOps.createString("structures"), dynamicOps.createMap((Map)hashMap.entrySet().stream().map(entry -> Pair.of(dynamicOps3.createString(entry.getKey().toLowerCase(Locale.ROOT)), dynamicOps3.createMap((Map)((Map)entry.getValue()).entrySet().stream().map(entry2 -> Pair.of(dynamicOps4.createString((String)entry2.getKey()), dynamicOps4.createString((String)entry2.getValue()))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))).collect(Collectors.toMap((Function<? super Object, ?>)Pair::getFirst, (Function<? super Object, ?>)Pair::getSecond))))));
     }
     
     @Nullable

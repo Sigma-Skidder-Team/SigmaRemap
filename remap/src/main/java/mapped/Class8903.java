@@ -15,7 +15,7 @@ public class Class8903
     private double field37426;
     private double field37427;
     private double field37428;
-    private Class2239 field37429;
+    private final Class2239 field37429;
     
     public Class8903(final Class8422 field37423, final Class8903 field37424, final ArrayList<Class8422> field37425, final double field37426, final Class2239 field37427, final double field37428, final double field37429) {
         this.field37423 = null;

@@ -174,7 +174,7 @@ public class DamageSource
         final LivingEntity method2700 = class511.method2700();
         final String string = "death.attack." + this.field32593;
         final String string2 = string + ".player";
-        return (method2700 == null) ? new Class2259(string, new Object[] { class511.getDisplayName() }) : new Class2259(string2, new Object[] { class511.getDisplayName(), method2700.getDisplayName() });
+        return (method2700 == null) ? new Class2259(string, class511.getDisplayName()) : new Class2259(string2, class511.getDisplayName(), method2700.getDisplayName());
     }
     
     public boolean method25719() {

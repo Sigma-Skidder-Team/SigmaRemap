@@ -56,7 +56,7 @@ public class Class7450
         final String[] array = collection.stream().filter(s2 -> !Class8272.method27500(s2)).toArray(String[]::new);
         if (!class394.method1518()) {
             for (final String s : array) {
-                profileLookupCallback.onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile((UUID)null, s)), s));
+                profileLookupCallback.onProfileLookupSucceeded(new GameProfile(PlayerEntity.method2893(new GameProfile(null, s)), s));
             }
         }
         else {
@@ -72,23 +72,23 @@ public class Class7450
                     class395.method26218();
                 }
                 catch (final FileNotFoundException ex) {
-                    Class7450.field28749.warn("Could not load existing file {}", (Object)class395.method26205().getName(), (Object)ex);
+                    Class7450.field28749.warn("Could not load existing file {}", class395.method26205().getName(), ex);
                 }
             }
             try {
                 final HashMap hashMap = Maps.newHashMap();
                 method22918(Class7450.field28751, hashMap);
-                method22919(class394, hashMap.keySet(), (ProfileLookupCallback)new Class6578(class394, hashMap, class395));
+                method22919(class394, hashMap.keySet(), new Class6578(class394, hashMap, class395));
                 class395.method26217();
                 method22931(Class7450.field28751);
                 return true;
             }
             catch (final IOException ex2) {
-                Class7450.field28749.warn("Could not read old user banlist to convert it!", (Throwable)ex2);
+                Class7450.field28749.warn("Could not read old user banlist to convert it!", ex2);
                 return false;
             }
             catch (final Class2371 class396) {
-                Class7450.field28749.error("Conversion failed, please try again later", (Throwable)class396);
+                Class7450.field28749.error("Conversion failed, please try again later", class396);
                 return false;
             }
         }
@@ -103,7 +103,7 @@ public class Class7450
                     class395.method26218();
                 }
                 catch (final FileNotFoundException ex) {
-                    Class7450.field28749.warn("Could not load existing file {}", (Object)class395.method26205().getName(), (Object)ex);
+                    Class7450.field28749.warn("Could not load existing file {}", class395.method26205().getName(), ex);
                 }
             }
             try {
@@ -111,14 +111,14 @@ public class Class7450
                 method22918(Class7450.field28750, hashMap);
                 for (final String s : hashMap.keySet()) {
                     final String[] array = (String[])hashMap.get(s);
-                    ((Class8006<K, Class6026>)class395).method26206(new Class6026(s, (array.length > 1) ? method22932(array[1], null) : null, (array.length > 2) ? array[2] : null, (array.length > 3) ? method22932(array[3], null) : null, (array.length > 4) ? array[4] : null));
+                    class395.method26206(new Class6026(s, (array.length > 1) ? method22932(array[1], null) : null, (array.length > 2) ? array[2] : null, (array.length > 3) ? method22932(array[3], null) : null, (array.length > 4) ? array[4] : null));
                 }
                 class395.method26217();
                 method22931(Class7450.field28750);
                 return true;
             }
             catch (final IOException ex2) {
-                Class7450.field28749.warn("Could not parse old ip banlist to convert it!", (Throwable)ex2);
+                Class7450.field28749.warn("Could not parse old ip banlist to convert it!", ex2);
                 return false;
             }
         }
@@ -133,21 +133,21 @@ public class Class7450
                     class395.method26218();
                 }
                 catch (final FileNotFoundException ex) {
-                    Class7450.field28749.warn("Could not load existing file {}", (Object)class395.method26205().getName(), (Object)ex);
+                    Class7450.field28749.warn("Could not load existing file {}", class395.method26205().getName(), ex);
                 }
             }
             try {
-                method22919(class394, Files.readLines(Class7450.field28752, StandardCharsets.UTF_8), (ProfileLookupCallback)new Class8358(class394, class395));
+                method22919(class394, Files.readLines(Class7450.field28752, StandardCharsets.UTF_8), new Class8358(class394, class395));
                 class395.method26217();
                 method22931(Class7450.field28752);
                 return true;
             }
             catch (final IOException ex2) {
-                Class7450.field28749.warn("Could not read old oplist to convert it!", (Throwable)ex2);
+                Class7450.field28749.warn("Could not read old oplist to convert it!", ex2);
                 return false;
             }
             catch (final Class2371 class396) {
-                Class7450.field28749.error("Conversion failed, please try again later", (Throwable)class396);
+                Class7450.field28749.error("Conversion failed, please try again later", class396);
                 return false;
             }
         }
@@ -162,21 +162,21 @@ public class Class7450
                     class395.method26218();
                 }
                 catch (final FileNotFoundException ex) {
-                    Class7450.field28749.warn("Could not load existing file {}", (Object)class395.method26205().getName(), (Object)ex);
+                    Class7450.field28749.warn("Could not load existing file {}", class395.method26205().getName(), ex);
                 }
             }
             try {
-                method22919(class394, Files.readLines(Class7450.field28753, StandardCharsets.UTF_8), (ProfileLookupCallback)new Class7973(class394, class395));
+                method22919(class394, Files.readLines(Class7450.field28753, StandardCharsets.UTF_8), new Class7973(class394, class395));
                 class395.method26217();
                 method22931(Class7450.field28753);
                 return true;
             }
             catch (final IOException ex2) {
-                Class7450.field28749.warn("Could not read old whitelist to convert it!", (Throwable)ex2);
+                Class7450.field28749.warn("Could not read old whitelist to convert it!", ex2);
                 return false;
             }
             catch (final Class2371 class396) {
-                Class7450.field28749.error("Conversion failed, please try again later", (Throwable)class396);
+                Class7450.field28749.error("Conversion failed, please try again later", class396);
                 return false;
             }
         }
@@ -196,7 +196,7 @@ public class Class7450
             method22919(class394, Lists.newArrayList((Object[])new String[] { s }), (ProfileLookupCallback)new Class8994(class394, arrayList));
             return (!arrayList.isEmpty() && ((GameProfile)arrayList.get(0)).getId() != null) ? ((GameProfile)arrayList.get(0)).getId().toString() : "";
         }
-        return PlayerEntity.method2893(new GameProfile((UUID)null, s)).toString();
+        return PlayerEntity.method2893(new GameProfile(null, s)).toString();
     }
     
     public static boolean method22925(final Class395 class395) {
@@ -222,7 +222,7 @@ public class Class7450
                 return true;
             }
             catch (final Class2371 class396) {
-                Class7450.field28749.error("Conversion failed, please try again later", (Throwable)class396);
+                Class7450.field28749.error("Conversion failed, please try again later", class396);
                 return false;
             }
         }
@@ -281,16 +281,16 @@ public class Class7450
         Class7450.field28749.warn("**** FAILED TO START THE SERVER AFTER ACCOUNT CONVERSION!");
         Class7450.field28749.warn("** please remove the following files and restart the server:");
         if (b) {
-            Class7450.field28749.warn("* {}", (Object)Class7450.field28751.getName());
+            Class7450.field28749.warn("* {}", Class7450.field28751.getName());
         }
         if (b2) {
-            Class7450.field28749.warn("* {}", (Object)Class7450.field28750.getName());
+            Class7450.field28749.warn("* {}", Class7450.field28750.getName());
         }
         if (b3) {
-            Class7450.field28749.warn("* {}", (Object)Class7450.field28752.getName());
+            Class7450.field28749.warn("* {}", Class7450.field28752.getName());
         }
         if (b4) {
-            Class7450.field28749.warn("* {}", (Object)Class7450.field28753.getName());
+            Class7450.field28749.warn("* {}", Class7450.field28753.getName());
         }
         return false;
     }
@@ -302,7 +302,7 @@ public class Class7450
                 if (method22930.list().length > 0 || !method22930.delete()) {
                     Class7450.field28749.warn("**** DETECTED OLD PLAYER DIRECTORY IN THE WORLD SAVE");
                     Class7450.field28749.warn("**** THIS USUALLY HAPPENS WHEN THE AUTOMATIC CONVERSION FAILED IN SOME WAY");
-                    Class7450.field28749.warn("** please restart the server and if the problem persists, remove the directory '{}'", (Object)method22930.getPath());
+                    Class7450.field28749.warn("** please restart the server and if the problem persists, remove the directory '{}'", method22930.getPath());
                     return false;
                 }
             }

@@ -57,7 +57,7 @@ public class Class8691
         for (int i = 0; i < this.field36528; ++i) {
             for (int j = 0; j < this.field36527; ++j) {
                 for (int k = 0; k < this.field36526; ++k) {
-                    if (!this.field36525[k][j][i].test((Class7990)loadingCache.getUnchecked((Object)method29798(class354, class355, class356, i, j, k)))) {
+                    if (!this.field36525[k][j][i].test(loadingCache.getUnchecked(method29798(class354, class355, class356, i, j, k)))) {
                         return null;
                     }
                 }

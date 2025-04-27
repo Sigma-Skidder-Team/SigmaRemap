@@ -12,7 +12,7 @@ public enum AxisDirection
     private final int offset;
     private final String description;
     
-    private AxisDirection(final int offset, final String description) {
+    AxisDirection(final int offset, final String description) {
         this.offset = offset;
         this.description = description;
     }

@@ -23,7 +23,7 @@ public class Class5442<E extends LivingEntity, T extends LivingEntity> extends C
     private final Class8233<T> field22657;
     
     public Class5442(final EntityType<? extends T> field22653, final int n, final Predicate<E> field22654, final Predicate<T> field22655, final Class8233<T> field22656, final float field22657, final int field22658) {
-        super((Map)ImmutableMap.of((Object)Class8233.field33810, (Object)Class1952.field10630, (Object)Class8233.field33809, (Object)Class1952.field10629, (Object)field22656, (Object)Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
+        super((Map)ImmutableMap.of(Class8233.field33810, Class1952.field10630, Class8233.field33809, Class1952.field10629, field22656, Class1952.field10629, (Object)Class8233.field33805, (Object)Class1952.field10628));
         this.field22653 = field22653;
         this.field22652 = field22657;
         this.field22654 = n * n;

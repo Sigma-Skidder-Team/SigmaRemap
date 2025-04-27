@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 public class Class6695 extends Class6693
 {
     public Class6695() {
-        super("toggle", "Toggle a module", new String[] { "t" });
+        super("toggle", "Toggle a module", "t");
         this.method20351("module");
     }
     

@@ -14,7 +14,7 @@ public class Class9310
 {
     private String field39951;
     private ResourceLocation field39952;
-    private int field39953;
+    private final int field39953;
     private int[] field39954;
     private ResourceLocation[] field39955;
     private int[] field39956;
@@ -272,9 +272,7 @@ public class Class9310
         if (this.field39969 != null) {
             final ClientWorld field4685 = Config.method28894().world;
             if (field4685 != null) {
-                if (!Class9008.method32231(this.field39969, Class2185.method8352(field4685, 0.0f))) {
-                    return false;
-                }
+                return Class9008.method32231(this.field39969, Class2185.method8352(field4685, 0.0f));
             }
         }
         return true;

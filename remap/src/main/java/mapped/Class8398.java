@@ -62,9 +62,7 @@ public class Class8398
         if (this.method28003(n - 1, n2) != n3) {
             if (this.method28003(n + 1, n2) != n3) {
                 if (this.method28003(n, n2 + 1) != n3) {
-                    if (this.method28003(n, n2 - 1) != n3) {
-                        return false;
-                    }
+                    return this.method28003(n, n2 - 1) == n3;
                 }
             }
         }

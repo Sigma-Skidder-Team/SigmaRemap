@@ -24,7 +24,7 @@ public class Class7112 extends Class7110<Integer>
             for (int j = i; j <= n; ++j) {
                 hashSet.add(j);
             }
-            this.field27741 = (ImmutableSet<Integer>)ImmutableSet.copyOf((Collection)hashSet);
+            this.field27741 = (ImmutableSet<Integer>)ImmutableSet.copyOf(hashSet);
             return;
         }
         throw new IllegalArgumentException("Max value of " + s + " must be greater than min (" + i + ")");
@@ -32,12 +32,12 @@ public class Class7112 extends Class7110<Integer>
     
     @Override
     public Collection<Integer> getAllowedValues() {
-        return (Collection<Integer>)this.field27741;
+        return this.field27741;
     }
     
     @Override
     public boolean equals(final Object o) {
-        return this == o || (o instanceof Class7112 && super.equals(o) && this.field27741.equals((Object)((Class7112)o).field27741));
+        return this == o || (o instanceof Class7112 && super.equals(o) && this.field27741.equals(((Class7112)o).field27741));
     }
     
     @Override
@@ -53,7 +53,7 @@ public class Class7112 extends Class7110<Integer>
     public Optional<Integer> parseValue(final String s) {
         try {
             final Integer value = Integer.valueOf(s);
-            return this.field27741.contains((Object)value) ? Optional.of(value) : Optional.empty();
+            return this.field27741.contains(value) ? Optional.of(value) : Optional.empty();
         }
         catch (final NumberFormatException ex) {
             return Optional.empty();

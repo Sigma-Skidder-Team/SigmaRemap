@@ -19,6 +19,6 @@ public interface Class9276
     }
     
     default Collection<ResourceLocation> method34222() {
-        return (Collection<ResourceLocation>)ImmutableList.of();
+        return ImmutableList.of();
     }
 }

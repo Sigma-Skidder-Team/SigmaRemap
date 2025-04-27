@@ -149,58 +149,58 @@ public class Class8099 implements BuiltInExceptionProvider
     }
     
     static {
-        field33335 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.double.low", new Object[] { o2, o }));
-        field33336 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.double.big", new Object[] { o2, o }));
-        field33337 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.float.low", new Object[] { o2, o }));
-        field33338 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.float.big", new Object[] { o2, o }));
-        field33339 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.integer.low", new Object[] { o2, o }));
-        field33340 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.integer.big", new Object[] { o2, o }));
-        field33341 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.long.low", new Object[] { o2, o }));
-        field33342 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.long.big", new Object[] { o2, o }));
+        field33335 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.double.low", o2, o));
+        field33336 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.double.big", o2, o));
+        field33337 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.float.low", o2, o));
+        field33338 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.float.big", o2, o));
+        field33339 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.integer.low", o2, o));
+        field33340 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.integer.big", o2, o));
+        field33341 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.long.low", o2, o));
+        field33342 = new Dynamic2CommandExceptionType((o, o2) -> new Class2259("argument.long.big", o2, o));
         field33343 = new DynamicCommandExceptionType(o -> {
-            new Class2259("argument.literal.incorrect", new Object[] { o });
+            new Class2259("argument.literal.incorrect", o);
             return;
         });
-        field33344 = new SimpleCommandExceptionType((Message)new Class2259("parsing.quote.expected.start", new Object[0]));
-        field33345 = new SimpleCommandExceptionType((Message)new Class2259("parsing.quote.expected.end", new Object[0]));
+        field33344 = new SimpleCommandExceptionType(new Class2259("parsing.quote.expected.start", new Object[0]));
+        field33345 = new SimpleCommandExceptionType(new Class2259("parsing.quote.expected.end", new Object[0]));
         field33346 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("parsing.quote.escape", new Object[] { o3 });
+            new Class2259("parsing.quote.escape", o3);
             return;
         });
         field33347 = new DynamicCommandExceptionType(o5 -> {
-            new Class2259("parsing.bool.invalid", new Object[] { o5 });
+            new Class2259("parsing.bool.invalid", o5);
             return;
         });
         field33348 = new DynamicCommandExceptionType(o7 -> {
-            new Class2259("parsing.int.invalid", new Object[] { o7 });
+            new Class2259("parsing.int.invalid", o7);
             return;
         });
-        field33349 = new SimpleCommandExceptionType((Message)new Class2259("parsing.int.expected", new Object[0]));
+        field33349 = new SimpleCommandExceptionType(new Class2259("parsing.int.expected", new Object[0]));
         field33350 = new DynamicCommandExceptionType(o9 -> {
-            new Class2259("parsing.long.invalid", new Object[] { o9 });
+            new Class2259("parsing.long.invalid", o9);
             return;
         });
-        field33351 = new SimpleCommandExceptionType((Message)new Class2259("parsing.long.expected", new Object[0]));
+        field33351 = new SimpleCommandExceptionType(new Class2259("parsing.long.expected", new Object[0]));
         field33352 = new DynamicCommandExceptionType(o11 -> {
-            new Class2259("parsing.double.invalid", new Object[] { o11 });
+            new Class2259("parsing.double.invalid", o11);
             return;
         });
-        field33353 = new SimpleCommandExceptionType((Message)new Class2259("parsing.double.expected", new Object[0]));
+        field33353 = new SimpleCommandExceptionType(new Class2259("parsing.double.expected", new Object[0]));
         field33354 = new DynamicCommandExceptionType(o13 -> {
-            new Class2259("parsing.float.invalid", new Object[] { o13 });
+            new Class2259("parsing.float.invalid", o13);
             return;
         });
-        field33355 = new SimpleCommandExceptionType((Message)new Class2259("parsing.float.expected", new Object[0]));
-        field33356 = new SimpleCommandExceptionType((Message)new Class2259("parsing.bool.expected", new Object[0]));
+        field33355 = new SimpleCommandExceptionType(new Class2259("parsing.float.expected", new Object[0]));
+        field33356 = new SimpleCommandExceptionType(new Class2259("parsing.bool.expected", new Object[0]));
         field33357 = new DynamicCommandExceptionType(o15 -> {
-            new Class2259("parsing.expected", new Object[] { o15 });
+            new Class2259("parsing.expected", o15);
             return;
         });
-        field33358 = new SimpleCommandExceptionType((Message)new Class2259("command.unknown.command", new Object[0]));
-        field33359 = new SimpleCommandExceptionType((Message)new Class2259("command.unknown.argument", new Object[0]));
-        field33360 = new SimpleCommandExceptionType((Message)new Class2259("command.expected.separator", new Object[0]));
+        field33358 = new SimpleCommandExceptionType(new Class2259("command.unknown.command", new Object[0]));
+        field33359 = new SimpleCommandExceptionType(new Class2259("command.unknown.argument", new Object[0]));
+        field33360 = new SimpleCommandExceptionType(new Class2259("command.expected.separator", new Object[0]));
         field33361 = new DynamicCommandExceptionType(o17 -> {
-            new Class2259("command.exception", new Object[] { o17 });
+            new Class2259("command.exception", o17);
             return;
         });
     }

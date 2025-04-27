@@ -89,7 +89,7 @@ public abstract class Class788 extends Class787
         if (n2 > 0) {
             n2 = 0;
         }
-        final int n3 = n2 - n2;
+        final int n3 = 0;
         this.method4354(n2);
         if (b) {
             this.field4200 += n3;

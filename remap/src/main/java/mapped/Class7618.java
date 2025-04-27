@@ -16,6 +16,6 @@ public class Class7618
     }
     
     static {
-        field30185 = LogManager.getLogger((Class)Class987.class);
+        field30185 = LogManager.getLogger(Class987.class);
     }
 }

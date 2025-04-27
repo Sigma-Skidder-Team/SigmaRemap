@@ -11,7 +11,7 @@ public class Class2376 extends ArithmeticException implements Class2375
     private final Class2413 field14172;
     
     public Class2376() {
-        (this.field14172 = new Class2413(this)).method9652(Class2189.field13305, new Object[0]);
+        (this.field14172 = new Class2413(this)).method9652(Class2189.field13305);
     }
     
     public Class2376(final Class2190 class2190, final Object... array) {

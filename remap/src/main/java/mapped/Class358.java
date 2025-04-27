@@ -26,7 +26,7 @@ public class Class358 extends Class357
     }
     
     public <T> Class358(final Dynamic<T> dynamic) {
-        this(new Class8841<BlockState>((Dynamic<T>)dynamic.get("entries").orElseEmptyList(), BlockState::deserialize));
+        this(new Class8841<BlockState>(dynamic.get("entries").orElseEmptyList(), BlockState::deserialize));
     }
     
     public Class358 method1165(final BlockState class7096, final int n) {
@@ -42,7 +42,7 @@ public class Class358 extends Class357
     @Override
     public <T> T serialize(final DynamicOps<T> dynamicOps) {
         final ImmutableMap$Builder builder = ImmutableMap.builder();
-        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field218.getKey(this.field2184).toString())).put(dynamicOps.createString("entries"), this.field2185.method30871((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps, class7097 -> BlockState.serialize((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps2, class7097)));
-        return (T)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
+        builder.put(dynamicOps.createString("type"), dynamicOps.createString(Registry.field218.getKey(this.field2184).toString())).put(dynamicOps.createString("entries"), this.field2185.method30871(dynamicOps, class7097 -> BlockState.serialize(dynamicOps2, class7097)));
+        return (T)new Dynamic(dynamicOps, dynamicOps.createMap((Map)builder.build())).getValue();
     }
 }

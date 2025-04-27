@@ -10,9 +10,9 @@ public enum Class2103
     field12196("\r"), 
     field12197("\n");
     
-    private String field12198;
+    private final String field12198;
     
-    private Class2103(final String field12198) {
+    Class2103(final String field12198) {
         this.field12198 = field12198;
     }
     

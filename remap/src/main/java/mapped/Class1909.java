@@ -416,16 +416,16 @@ public class Class1909 extends AbstractChunkProvider
             this.field10354.method1342().forEach(class355 -> {
                 class355.method34343().getNow(Class9298.field39873).left();
                 final Optional optional;
-                if (!(!optional.isPresent())) {
+                if (optional.isPresent()) {
                     final Chunk class356 = optional.get();
                     this.field10350.method6796().startSection("broadcast");
                     class355.method34351(class356);
                     this.field10350.method6796().endSection();
                     if (!this.field10354.method1346(class355.method34357())) {
                         class356.method7040(class356.method7041() + n2);
-                        if (!(!b3)) {
+                        if (b3) {
                             if (this.field10357 || this.field10358) {
-                                if (!(!this.field10350.getWorldBorder().method34780(class356.method7019()))) {
+                                if (this.field10350.getWorldBorder().method34780(class356.method7019())) {
                                     this.field10350.method6796().startSection("spawner");
                                     int i = 0;
                                     for (int length = array.length; i < length; ++i) {
@@ -449,7 +449,6 @@ public class Class1909 extends AbstractChunkProvider
                         this.field10350.method6864(class356, n4);
                     }
                 }
-                return;
             });
             this.field10350.method6796().startSection("customSpawners");
             if (method6756) {

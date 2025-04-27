@@ -73,6 +73,6 @@ public class Class4210 extends Class4211
         final JsonObject jsonObject = new JsonObject();
         jsonObject.add("victims", Class8172.method27020(this.field19001));
         jsonObject.add("unique_entity_types", this.field19002.method29745());
-        return (JsonElement)jsonObject;
+        return jsonObject;
     }
 }

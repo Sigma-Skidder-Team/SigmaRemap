@@ -10,7 +10,7 @@ import java.util.Set;
 public interface Class124
 {
     default Set<Class7915<?>> method635() {
-        return (Set<Class7915<?>>)ImmutableSet.of();
+        return ImmutableSet.of();
     }
     
     default void method636(final Class7790 class7790) {

@@ -43,7 +43,7 @@ public class NBTPathArgument implements ArgumentType<NBTPath>
         while (stringReader.canRead() && stringReader.peek() != ' ') {
             final INode method27405 = method27405(stringReader, b);
             arrayList.add(method27405);
-            ((Object2IntMap)object2IntOpenHashMap).put((Object)method27405, stringReader.getCursor() - cursor);
+            object2IntOpenHashMap.put(method27405, stringReader.getCursor() - cursor);
             b = false;
             if (!stringReader.canRead()) {
                 continue;
@@ -86,7 +86,7 @@ public class NBTPathArgument implements ArgumentType<NBTPath>
             }
             case '{': {
                 if (!b) {
-                    throw NBTPathArgument.field33908.createWithContext((ImmutableStringReader)stringReader);
+                    throw NBTPathArgument.field33908.createWithContext(stringReader);
                 }
                 return new Class6104(new Class5704(stringReader).method16945());
             }
@@ -111,7 +111,7 @@ public class NBTPathArgument implements ArgumentType<NBTPath>
         if (stringReader.getCursor() != cursor) {
             return stringReader.getString().substring(cursor, stringReader.getCursor());
         }
-        throw NBTPathArgument.field33908.createWithContext((ImmutableStringReader)stringReader);
+        throw NBTPathArgument.field33908.createWithContext(stringReader);
     }
     
     public Collection<String> getExamples() {
@@ -125,9 +125,7 @@ public class NBTPathArgument implements ArgumentType<NBTPath>
                     if (c != ']') {
                         if (c != '.') {
                             if (c != '{') {
-                                if (c != '}') {
-                                    return true;
-                                }
+                                return c != '}';
                             }
                         }
                     }
@@ -143,9 +141,9 @@ public class NBTPathArgument implements ArgumentType<NBTPath>
     
     static {
         field33907 = Arrays.asList("foo", "foo.bar", "foo[0]", "[0]", "[]", "{foo=bar}");
-        field33908 = new SimpleCommandExceptionType((Message)new Class2259("arguments.nbtpath.node.invalid", new Object[0]));
+        field33908 = new SimpleCommandExceptionType(new Class2259("arguments.nbtpath.node.invalid", new Object[0]));
         NOTHING_FOUND = new DynamicCommandExceptionType(o -> {
-            new Class2259("arguments.nbtpath.nothing_found", new Object[] { o });
+            new Class2259("arguments.nbtpath.nothing_found", o);
             return;
         });
     }

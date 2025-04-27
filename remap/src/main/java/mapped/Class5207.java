@@ -49,7 +49,7 @@ public abstract class Class5207
     
     public void method16314(final Class2044 class2044, final int n, final int i, final Class2780 class2045, final boolean b) {
         final Class5104 class2046 = new Class5104(this, class2044, n, i, class2045);
-        final Class7803 obj = new Class7803((X)class2044, (Y)i);
+        final Class7803 obj = new Class7803(class2044, i);
         if (!b) {
             if (this.field22221.containsKey(obj)) {
                 Class8563.method28793().method34742().log(Level.WARNING, obj + " already registered! If this override is intentional, set override to true. Stacktrace: ", new Exception());
@@ -68,7 +68,7 @@ public abstract class Class5207
     
     public void method16317(final Class2044 class2044, final int i, final int n, final Class2780 class2045, final boolean b) {
         final Class5104 class2046 = new Class5104(this, class2044, i, n, class2045);
-        final Class7803 obj = new Class7803((X)class2044, (Y)i);
+        final Class7803 obj = new Class7803(class2044, i);
         if (!b) {
             if (this.field22222.containsKey(obj)) {
                 Class8563.method28793().method34742().log(Level.WARNING, obj + " already registered! If override is intentional, set override to true. Stacktrace: ", new Exception());

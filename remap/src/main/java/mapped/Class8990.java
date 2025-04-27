@@ -285,7 +285,7 @@ public class Class8990
                 final int method6645 = class1848.method6645();
                 for (int j = 0; j < method6644; ++j) {
                     for (int k = 0; k < method6645; ++k) {
-                        class1848.method6648(j, k, method32060(class1847.method6647(j * 2 + 0, k * 2 + 0), class1847.method6647(j * 2 + 1, k * 2 + 0), class1847.method6647(j * 2 + 0, k * 2 + 1), class1847.method6647(j * 2 + 1, k * 2 + 1)));
+                        class1848.method6648(j, k, method32060(class1847.method6647(j * 2, k * 2), class1847.method6647(j * 2 + 1, k * 2), class1847.method6647(j * 2, k * 2 + 1), class1847.method6647(j * 2 + 1, k * 2 + 1)));
                     }
                 }
                 array[i] = class1848;

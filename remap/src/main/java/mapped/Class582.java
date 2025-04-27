@@ -55,7 +55,7 @@ public abstract class Class582 extends Class581
     
     @Override
     public String method3429() {
-        return Class8822.method30773(this.field3469.method3692() ? this.method3452() : "gui.recipebook.toggleRecipes.all", new Object[0]);
+        return Class8822.method30773(this.field3469.method3692() ? this.method3452() : "gui.recipebook.toggleRecipes.all");
     }
     
     public abstract String method3452();

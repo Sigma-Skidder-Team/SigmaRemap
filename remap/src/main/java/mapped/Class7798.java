@@ -33,11 +33,11 @@ public class Class7798
     private static final DynamicCommandExceptionType field31961;
     
     public static void method25156(final CommandDispatcher<Class7492> commandDispatcher) {
-        commandDispatcher.register((LiteralArgumentBuilder)method25157((LiteralArgumentBuilder)Class7788.method25001("loot").requires(class7492 -> class7492.method23210(2)), (argumentBuilder, class8917) -> argumentBuilder.then(Class7788.method25001("fish").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), ItemStack.EMPTY, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25173((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))).then(Class7788.method25001("loot").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests((SuggestionProvider)Class7798.field31959).executes(commandContext -> method25172((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), class8917)))).then(Class7788.method25001("kill").then(Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method25171((CommandContext<Class7492>)commandContext, Class6886.method21144((CommandContext<Class7492>)commandContext, "target"), class8917)))).then(Class7788.method25001("mine").then(((RequiredArgumentBuilder)((RequiredArgumentBuilder)((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), ItemStack.EMPTY, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), Class6767.method20639((com.mojang.brigadier.context.CommandContext<Object>)commandContext, "tool").method772(1, false), class8917)))).then(Class7788.method25001("mainhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13600), class8917)))).then(Class7788.method25001("offhand").executes(commandContext -> method25170((CommandContext<Class7492>)commandContext, Class8330.method27768((CommandContext<Class7492>)commandContext, "pos"), method25169((Class7492)commandContext.getSource(), Class2215.field13601), class8917)))))));
+        commandDispatcher.register(method25157((LiteralArgumentBuilder)Class7788.method25001("loot").requires(class7492 -> class7492.method23210(2)), (argumentBuilder, class8917) -> argumentBuilder.then(Class7788.method25001("fish").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests(Class7798.field31959).then(((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25173(commandContext, Class7000.method21433(commandContext, "loot_table"), Class8330.method27768(commandContext, "pos"), ItemStack.EMPTY, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25173(commandContext, Class7000.method21433(commandContext, "loot_table"), Class8330.method27768(commandContext, "pos"), Class6767.method20639((CommandContext<Object>)commandContext, "tool").method772(1, false), class8917))).then(Class7788.method25001("mainhand").executes(commandContext -> method25173(commandContext, Class7000.method21433(commandContext, "loot_table"), Class8330.method27768(commandContext, "pos"), method25169(commandContext.getSource(), Class2215.field13600), class8917))).then(Class7788.method25001("offhand").executes(commandContext -> method25173(commandContext, Class7000.method21433(commandContext, "loot_table"), Class8330.method27768(commandContext, "pos"), method25169(commandContext.getSource(), Class2215.field13601), class8917)))))).then(Class7788.method25001("loot").then(Class7788.method25002("loot_table", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests(Class7798.field31959).executes(commandContext -> method25172((CommandContext<Class7492>)commandContext, Class7000.method21433((CommandContext<Class7492>)commandContext, "loot_table"), class8917)))).then(Class7788.method25001("kill").then(Class7788.method25002("target", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21143()).executes(commandContext -> method25171(commandContext, Class6886.method21144(commandContext, "target"), class8917)))).then(Class7788.method25001("mine").then(((RequiredArgumentBuilder)Class7788.method25002("pos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).executes(commandContext -> method25170(commandContext, Class8330.method27768(commandContext, "pos"), ItemStack.EMPTY, class8917))).then(Class7788.method25002("tool", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6767.method20638()).executes(commandContext -> method25170(commandContext, Class8330.method27768(commandContext, "pos"), Class6767.method20639((CommandContext<Object>)commandContext, "tool").method772(1, false), class8917))).then(Class7788.method25001("mainhand").executes(commandContext -> method25170(commandContext, Class8330.method27768(commandContext, "pos"), method25169(commandContext.getSource(), Class2215.field13600), class8917))).then(Class7788.method25001("offhand").executes(commandContext -> method25170(commandContext, Class8330.method27768(commandContext, "pos"), method25169(commandContext.getSource(), Class2215.field13601), class8917)))))));
     }
     
     private static <T extends ArgumentBuilder<Class7492, T>> T method25157(final T t, final Class8618 class8618) {
-        return (T)t.then(((LiteralArgumentBuilder)Class7788.method25001("replace").then(Class7788.method25001("entity").then(Class7788.method25002("entities", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25165(Class6886.method21146((CommandContext<Class7492>)commandContext, "entities"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("block").then(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).then(class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), Class8631.method29296((CommandContext<Class7492>)commandContext, "slot"), list.size(), list, class7945)).then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25161((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), IntegerArgumentType.getInteger(commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("insert").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()), (commandContext, list, class7945) -> method25159((Class7492)commandContext.getSource(), Class8330.method27768((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945)))).then(Class7788.method25001("give").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("players", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()), (commandContext, list, class7945) -> method25163(Class6886.method21152((CommandContext<Class7492>)commandContext, "players"), list, class7945)))).then(Class7788.method25001("spawn").then((ArgumentBuilder)class8618.method29233((ArgumentBuilder<Class7492, ?>)Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()), (commandContext, list, class7945) -> method25166((Class7492)commandContext.getSource(), Class7555.method23721((CommandContext<Class7492>)commandContext, "targetPos"), list, class7945))));
+        return (T)t.then(Class7788.method25001("replace").then(Class7788.method25001("entity").then(Class7788.method25002("entities", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21145()).then(class8618.method29233(Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25165(Class6886.method21146(commandContext, "entities"), Class8631.method29296(commandContext, "slot"), list.size(), list, class7945)).then(class8618.method29233(Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25165(Class6886.method21146(commandContext, "entities"), Class8631.method29296(commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945)))))).then(Class7788.method25001("block").then(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()).then(class8618.method29233(Class7788.method25002("slot", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8631.method29295()), (commandContext, list, class7945) -> method25161(commandContext.getSource(), Class8330.method27768(commandContext, "targetPos"), Class8631.method29296(commandContext, "slot"), list.size(), list, class7945)).then(class8618.method29233(Class7788.method25002("count", (com.mojang.brigadier.arguments.ArgumentType<Object>)IntegerArgumentType.integer(0)), (commandContext, list, class7945) -> method25161(commandContext.getSource(), Class8330.method27768(commandContext, "targetPos"), IntegerArgumentType.getInteger(commandContext, "slot"), IntegerArgumentType.getInteger(commandContext, "count"), list, class7945))))))).then(Class7788.method25001("insert").then(class8618.method29233(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class8330.method27767()), (commandContext, list, class7945) -> method25159(commandContext.getSource(), Class8330.method27768(commandContext, "targetPos"), list, class7945)))).then(Class7788.method25001("give").then(class8618.method29233(Class7788.method25002("players", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class6886.method21151()), (commandContext, list, class7945) -> method25163(Class6886.method21152(commandContext, "players"), list, class7945)))).then(Class7788.method25001("spawn").then(class8618.method29233(Class7788.method25002("targetPos", (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7555.method23719()), (commandContext, list, class7945) -> method25166(commandContext.getSource(), Class7555.method23721(commandContext, "targetPos"), list, class7945))));
     }
     
     private static IInventory method25158(final Class7492 class7492, final BlockPos class7493) throws CommandSyntaxException {
@@ -102,16 +102,14 @@ public class Class7798
             class7494.method25768(arrayListWithCapacity);
             return arrayListWithCapacity.size();
         }
-        throw Class9302.field39909.create((Object)i);
+        throw Class9302.field39909.create(i);
     }
     
     private static boolean method25162(final ItemStack class8321, final ItemStack class8322) {
         if (class8321.getItem() == class8322.getItem()) {
             if (class8321.method27632() == class8322.method27632()) {
                 if (class8321.method27690() <= class8321.method27628()) {
-                    if (Objects.equals(class8321.method27657(), class8322.method27657())) {
-                        return true;
-                    }
+                    return Objects.equals(class8321.method27657(), class8322.method27657());
                 }
             }
         }
@@ -165,7 +163,6 @@ public class Class7798
             final Class427 class7499 = new Class427(class7496, class7497.field22770, class7497.field22771, class7497.field22772, class7498.method27641());
             class7499.method2114();
             class7496.method6886(class7499);
-            return;
         });
         class7494.method25768(list);
         return list.size();
@@ -173,34 +170,34 @@ public class Class7798
     
     private static void method25167(final Class7492 class7492, final List<ItemStack> list) {
         if (list.size() != 1) {
-            class7492.method23257(new Class2259("commands.drop.success.multiple", new Object[] { list.size() }), false);
+            class7492.method23257(new Class2259("commands.drop.success.multiple", list.size()), false);
         }
         else {
             final ItemStack class7493 = list.get(0);
-            class7492.method23257(new Class2259("commands.drop.success.single", new Object[] { class7493.method27690(), class7493.method27684() }), false);
+            class7492.method23257(new Class2259("commands.drop.success.single", class7493.method27690(), class7493.method27684()), false);
         }
     }
     
     private static void method25168(final Class7492 class7492, final List<ItemStack> list, final ResourceLocation class7493) {
         if (list.size() != 1) {
-            class7492.method23257(new Class2259("commands.drop.success.multiple_with_table", new Object[] { list.size(), class7493 }), false);
+            class7492.method23257(new Class2259("commands.drop.success.multiple_with_table", list.size(), class7493), false);
         }
         else {
             final ItemStack class7494 = list.get(0);
-            class7492.method23257(new Class2259("commands.drop.success.single_with_table", new Object[] { class7494.method27690(), class7494.method27684(), class7493 }), false);
+            class7492.method23257(new Class2259("commands.drop.success.single_with_table", class7494.method27690(), class7494.method27684(), class7493), false);
         }
     }
     
     private static ItemStack method25169(final Class7492 class7492, final Class2215 class7493) throws CommandSyntaxException {
         final Entity method23252 = class7492.method23252();
         if (!(method23252 instanceof LivingEntity)) {
-            throw Class7798.field31960.create((Object)method23252.getDisplayName());
+            throw Class7798.field31960.create(method23252.getDisplayName());
         }
         return ((LivingEntity)method23252).method2718(class7493);
     }
     
     private static int method25170(final CommandContext<Class7492> commandContext, final BlockPos class354, final ItemStack class355, final Class8917 class356) throws CommandSyntaxException {
-        final Class7492 class357 = (Class7492)commandContext.getSource();
+        final Class7492 class357 = commandContext.getSource();
         final Class1849 method23250 = class357.method23250();
         final Class7096 method23251 = method23250.getBlockState(class354);
         return class356.method31443(commandContext, method23251.method21743(new Class9098(method23250).method32877(Class6683.field26367, class354).method32877(Class6683.field26368, method23251).method32878(Class6683.field26369, method23250.getTileEntity(class354)).method32878(Class6683.field26362, class357.method23251()).method32877(Class6683.field26370, class355)), list -> method25168(class357, list, method23251.method21696().method11832()));
@@ -209,7 +206,7 @@ public class Class7798
     private static int method25171(final CommandContext<Class7492> commandContext, final Entity class399, final Class8917 class400) throws CommandSyntaxException {
         if (class399 instanceof LivingEntity) {
             final ResourceLocation method2679 = ((LivingEntity)class399).method2679();
-            final Class7492 class401 = (Class7492)commandContext.getSource();
+            final Class7492 class401 = commandContext.getSource();
             final Class9098 class402 = new Class9098(class401.method23250());
             final Entity method2680 = class401.method23251();
             if (method2680 instanceof PlayerEntity) {
@@ -222,31 +219,31 @@ public class Class7798
             class402.method32877(Class6683.field26367, new BlockPos(class401.method23249()));
             return class400.method31443(commandContext, class401.method23255().method1581().method6402(method2679).method34485(class402.method32883(Class7104.field27715)), list -> method25168(class401, list, method2679));
         }
-        throw Class7798.field31961.create((Object)class399.getDisplayName());
+        throw Class7798.field31961.create(class399.getDisplayName());
     }
     
     private static int method25172(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final Class8917 class1933) throws CommandSyntaxException {
-        final Class7492 class1934 = (Class7492)commandContext.getSource();
+        final Class7492 class1934 = commandContext.getSource();
         return method25174(commandContext, class1932, new Class9098(class1934.method23250()).method32878(Class6683.field26362, class1934.method23251()).method32877(Class6683.field26367, new BlockPos(class1934.method23249())).method32883(Class7104.field27711), class1933);
     }
     
     private static int method25173(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final BlockPos class1933, final ItemStack class1934, final Class8917 class1935) throws CommandSyntaxException {
-        return method25174(commandContext, class1932, new Class9098(((Class7492)commandContext.getSource()).method23250()).method32877(Class6683.field26367, class1933).method32877(Class6683.field26370, class1934).method32883(Class7104.field27714), class1935);
+        return method25174(commandContext, class1932, new Class9098(commandContext.getSource().method23250()).method32877(Class6683.field26367, class1933).method32877(Class6683.field26370, class1934).method32883(Class7104.field27714), class1935);
     }
     
     private static int method25174(final CommandContext<Class7492> commandContext, final ResourceLocation class1932, final Class7529 class1933, final Class8917 class1934) throws CommandSyntaxException {
-        final Class7492 class1935 = (Class7492)commandContext.getSource();
+        final Class7492 class1935 = commandContext.getSource();
         return class1934.method31443(commandContext, class1935.method23255().method1581().method6402(class1932).method34485(class1933), list -> method25167(class1935, list));
     }
     
     static {
-        field31959 = ((commandContext, suggestionsBuilder) -> Class7491.method23220(((Class7492)commandContext.getSource()).method23255().method1581().method6405(), suggestionsBuilder));
+        field31959 = ((commandContext, suggestionsBuilder) -> Class7491.method23220(commandContext.getSource().method23255().method1581().method6405(), suggestionsBuilder));
         field31960 = new DynamicCommandExceptionType(o -> {
-            new Class2259("commands.drop.no_held_items", new Object[] { o });
+            new Class2259("commands.drop.no_held_items", o);
             return;
         });
         field31961 = new DynamicCommandExceptionType(o3 -> {
-            new Class2259("commands.drop.no_loot_table", new Object[] { o3 });
+            new Class2259("commands.drop.no_loot_table", o3);
             return;
         });
     }

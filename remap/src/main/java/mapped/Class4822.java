@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class Class4822 extends Class4817
 {
-    private Module field20634;
+    private final Module field20634;
     public TrueTypeFont field20496;
     public Animation field20635;
     public HashMap<Module, CustomGuiScreen> field20636;
@@ -42,7 +42,7 @@ public class Class4822 extends Class4817
         switch (Class8559.field35939[class4804.method15197().ordinal()]) {
             case 1: {
                 final Class4864 class4807 = new Class4864(customGuiScreen, class4804.method15204() + "checkbox", n + 135, n2 + 4, 40, 18);
-                class4807.method14590((Boolean)(Object)class4804.method15198(), false);
+                class4807.method14590((Boolean) class4804.method15198(), false);
                 class4804.method15195(class4865 -> {
                     if (class4807.method14588() != class4865.method15198()) {
                         class4807.method14590(class4865.method15198(), false);
@@ -57,14 +57,14 @@ public class Class4822 extends Class4817
                 final NumberSetting class4808 = (NumberSetting)class4804;
                 final Class4848 class4809 = new Class4848(customGuiScreen, class4804.method15204() + "slider", n, n2 + 31, 240, 4);
                 class4809.setTypedText(Float.toString((float)class4804.method15198()));
-                class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                class4805.setTypedText(class4804.method15204() + ": " + class4804.method15198());
                 class4809.method14540(Class4892.method14671(class4808.method15187(), class4808.method15189(), (float)class4808.method15198()), false);
                 final int method15185 = class4808.method15185();
                 class4808.method15195(class4852 -> {
                     if (Class4848.method14535(class4809.method14538(), class4808.method15187(), class4808.method15189(), class4808.method15191(), method15185) != class4852.method15198()) {
                         class4809.setTypedText(Float.toString(class4852.method15198()));
                         class4809.method14540(Class4848.method14534(class4808.method15187(), class4808.method15189(), class4852.method15198()), false);
-                        class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                        class4805.setTypedText(class4804.method15204() + ": " + class4804.method15198());
                     }
                 });
                 class4809.method14516(class5000 -> {
@@ -73,7 +73,7 @@ public class Class4822 extends Class4817
                         class4809.setTypedText(Float.toString(method14535));
                         class4804.method15199(method14535);
                     }
-                    class4805.setTypedText(class4804.method15204() + ": " + Float.toString(class4804.method15198()));
+                    class4805.setTypedText(class4804.method15204() + ": " + class4804.method15198());
                 });
                 customGuiScreen.addToList(class4809);
                 n2 += 54;
@@ -107,7 +107,7 @@ public class Class4822 extends Class4817
                 break;
             }
             case 5: {
-                final Class4875 class4812 = new Class4875(customGuiScreen, class4804.method15204() + "btn", customGuiScreen.method14276() - n3, n2 + 6, 123, 27, ((ButtonSetting)class4804).method15223(), (Integer)(Object)class4804.method15198());
+                final Class4875 class4812 = new Class4875(customGuiScreen, class4804.method15204() + "btn", customGuiScreen.method14276() - n3, n2 + 6, 123, 27, ((ButtonSetting)class4804).method15223(), (Integer) class4804.method15198());
                 class4804.method15195(class4876 -> {
                     if (class4812.method14610() != class4876.method15198()) {
                         class4812.method14612(class4876.method15198(), false);

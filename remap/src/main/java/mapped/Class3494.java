@@ -45,9 +45,7 @@ public class Class3494 extends Class3446
         if (class1855.method21706()) {
             if (!class1856.method21706()) {
                 if (class1856.isCollisionShapeOpaque(class1852, class1857)) {
-                    if (class1854.method21752(class1852, class1853)) {
-                        return true;
-                    }
+                    return class1854.method21752(class1852, class1853);
                 }
             }
         }

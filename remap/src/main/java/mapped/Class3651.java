@@ -12,8 +12,8 @@ import java.util.Set;
 public abstract class Class3651 extends Class3643
 {
     private final String field16927;
-    private Set<Integer> field16928;
-    private Map<Byte, Integer> field16929;
+    private final Set<Integer> field16928;
+    private final Map<Byte, Integer> field16929;
     private static final Class3649 field16930;
     
     public Class3651(final String field16927) {
@@ -76,9 +76,7 @@ public abstract class Class3651 extends Class3643
         if (!this.field16928.contains(i)) {
             if (this.field16927 != null) {
                 if (Class8881.field37362.containsKey(i)) {
-                    if (Class8881.field37362.get(i).method29216(this.field16927, class222.method851(), b)) {
-                        return true;
-                    }
+                    return Class8881.field37362.get(i).method29216(this.field16927, class222.method851(), b);
                 }
             }
             return false;

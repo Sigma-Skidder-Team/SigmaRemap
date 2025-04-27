@@ -101,7 +101,7 @@ public class Class3736 implements Class3746
     
     @Override
     public List<Class3746> method11500() {
-        return Collections.unmodifiableList((List<? extends Class3746>)this.field17140);
+        return Collections.unmodifiableList(this.field17140);
     }
     
     @Override

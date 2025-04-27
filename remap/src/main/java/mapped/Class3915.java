@@ -50,9 +50,9 @@ public class Class3915 extends Block implements Class3867
         if (class7096.method21752(class7097, class7098)) {
             final BlockPos method1137 = class7098.method1137();
             if (class7097.getBlockState(method1137).method21696() == Blocks.field29173) {
-                if (class7096.get((IProperty<Integer>)Class3915.field17729) < 25) {
+                if (class7096.get(Class3915.field17729) < 25) {
                     if (random.nextDouble() < 0.14) {
-                        class7097.method6692(method1137, ((StateHolder<O, BlockState>)class7096).method21768((IProperty<Comparable>)Class3915.field17729));
+                        class7097.method6692(method1137, class7096.method21768((IProperty<Comparable>)Class3915.field17729));
                     }
                 }
             }
@@ -70,9 +70,7 @@ public class Class3915 extends Block implements Class3867
         if (method1141 != Blocks.MAGMA_BLOCK) {
             if (method1141 != this) {
                 if (method1141 != Blocks.KELP_PLANT) {
-                    if (!method1140.isSolidSide(class7097, method1139, Direction.UP)) {
-                        return false;
-                    }
+                    return method1140.isSolidSide(class7097, method1139, Direction.UP);
                 }
             }
             return true;

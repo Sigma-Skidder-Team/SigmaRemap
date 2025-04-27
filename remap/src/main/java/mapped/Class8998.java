@@ -189,7 +189,7 @@ public class Class8998
             return null;
         }
         if (class41 instanceof StringNBT) {
-            final String method267 = ((StringNBT)class41).getString();
+            final String method267 = class41.getString();
             if (method267.startsWith("{")) {
                 final Matcher matcher = Class8998.field37977.matcher(method267);
                 if (matcher.matches()) {

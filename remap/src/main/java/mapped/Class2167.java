@@ -84,7 +84,7 @@ public enum Class2167 implements Class2168
                         list.add(new ObjectOpenHashSet());
                     }
                 }
-                ((ObjectSet)list.get(intValue)).add((Object)class7100.toImmutable());
+                ((ObjectSet)list.get(intValue)).add(class7100.toImmutable());
             }
             return class7096;
         }
@@ -99,7 +99,7 @@ public enum Class2167 implements Class2168
                 final ObjectSet set2 = (ObjectSet)list.get(i);
                 for (final BlockPos class1853 : set) {
                     final Class7096 method6701 = class1851.getBlockState(class1853);
-                    if (((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class8970.field37778) < j) {
+                    if (((StateHolder<Object, Class7096>)method6701).get(Class8970.field37778) < j) {
                         continue;
                     }
                     class1851.setBlockState(class1853, ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class8970.field37778, j), 18);
@@ -110,8 +110,8 @@ public enum Class2167 implements Class2168
                     for (int length = field12893.length, k = 0; k < length; ++k) {
                         class1852.method1287(class1853).method1290(field12893[k]);
                         if (class1851.getBlockState(class1852).method21771((IProperty<Comparable>)Class8970.field37778)) {
-                            if (((StateHolder<Object, Class7096>)method6701).get((IProperty<Integer>)Class8970.field37778) > i) {
-                                set2.add((Object)class1852.toImmutable());
+                            if (((StateHolder<Object, Class7096>)method6701).get(Class8970.field37778) > i) {
+                                set2.add(class1852.toImmutable());
                             }
                         }
                     }
@@ -138,11 +138,11 @@ public enum Class2167 implements Class2168
     
     public static final Direction[] field12893;
     
-    private Class2167(final Block[] array) {
+    Class2167(final Block[] array) {
         this(false, array);
     }
     
-    private Class2167(final boolean b, final Block[] array) {
+    Class2167(final boolean b, final Block[] array) {
         for (int length = array.length, i = 0; i < length; ++i) {
             Class8288.method27553().put(array[i], this);
         }

@@ -42,7 +42,7 @@ public class Class8922<T> extends Class8923<T>
         if (index >= 0) {
             final List<T> method26809 = this.field37511.method26809(s.substring(0, index).trim());
             final String trim = s.substring(index + 1).trim();
-            return Lists.newArrayList((Iterator)new Class7250((Iterator<Object>)method26809.iterator(), (Iterator<Object>)new Class7249((Iterator<Object>)this.field37512.method26809(trim).iterator(), (Iterator<Object>)this.field37508.method26809(trim).iterator(), this::method31460), this::method31460));
+            return Lists.newArrayList(new Class7250((Iterator<Object>)method26809.iterator(), (Iterator<Object>)new Class7249((Iterator<Object>)this.field37512.method26809(trim).iterator(), (Iterator<Object>)this.field37508.method26809(trim).iterator(), this::method31460), this::method31460));
         }
         return this.field37508.method26809(s);
     }

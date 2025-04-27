@@ -44,7 +44,7 @@ public class Class5031
     public static JSONObject method15314(final String spec) throws IOException, JSONException {
         final InputStream openStream = new URL(spec).openStream();
         try {
-            return new JSONObject(method15313(new BufferedReader(new InputStreamReader(openStream, Charset.forName("UTF-8")))));
+            return new JSONObject(method15313(new BufferedReader(new InputStreamReader(openStream, StandardCharsets.UTF_8))));
         }
         finally {
             openStream.close();

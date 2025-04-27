@@ -20,7 +20,7 @@ public class Class3870 extends Class3874
     
     public Class3870(final Properties class9288) {
         super(class9288);
-        this.method11877(((StateHolder<O, BlockState>)this.field17406.method32903()).with(Class3870.field17513, Class182.field565));
+        this.method11877(this.field17406.method32903().with(Class3870.field17513, Class182.field565));
     }
     
     @Override
@@ -52,7 +52,7 @@ public class Class3870 extends Class3874
     
     @Override
     public void method11853(final World class1847, final BlockPos class1848, final BlockState class1849, final LivingEntity class1850, final ItemStack class1851) {
-        class1847.setBlockState(class1848.method1137(), ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3870.field17513, Class182.field564), 3);
+        class1847.setBlockState(class1848.method1137(), this.getDefaultState().with(Class3870.field17513, Class182.field564), 3);
     }
     
     @Override
@@ -65,8 +65,8 @@ public class Class3870 extends Class3874
     }
     
     public void method11944(final Class1851 class1851, final BlockPos class1852, final int n) {
-        class1851.setBlockState(class1852, ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3870.field17513, Class182.field565), n);
-        class1851.setBlockState(class1852.method1137(), ((StateHolder<O, BlockState>)this.getDefaultState()).with(Class3870.field17513, Class182.field564), n);
+        class1851.setBlockState(class1852, this.getDefaultState().with(Class3870.field17513, Class182.field565), n);
+        class1851.setBlockState(class1852.method1137(), this.getDefaultState().with(Class3870.field17513, Class182.field564), n);
     }
     
     @Override

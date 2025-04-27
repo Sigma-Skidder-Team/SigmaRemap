@@ -28,10 +28,10 @@ public class Class6675 implements Class6672<DoubleArgumentType>
     
     public void method20308(final DoubleArgumentType doubleArgumentType, final JsonObject jsonObject) {
         if (doubleArgumentType.getMinimum() != -1.7976931348623157E308) {
-            jsonObject.addProperty("min", (Number)doubleArgumentType.getMinimum());
+            jsonObject.addProperty("min", doubleArgumentType.getMinimum());
         }
         if (doubleArgumentType.getMaximum() != Double.MAX_VALUE) {
-            jsonObject.addProperty("max", (Number)doubleArgumentType.getMaximum());
+            jsonObject.addProperty("max", doubleArgumentType.getMaximum());
         }
     }
 }

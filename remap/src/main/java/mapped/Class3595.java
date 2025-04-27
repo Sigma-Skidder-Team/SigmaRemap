@@ -39,9 +39,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
     public boolean method11017() {
         if (this.method11125()) {
             if (this.method11013() || !this.field16745.method4150().method24731()) {
-                if (this.method11124()) {
-                    return true;
-                }
+                return this.method11124();
             }
         }
         return false;

@@ -192,7 +192,7 @@ public abstract class Class428 extends Entity
             else {
                 this.method2128(class354, method35647);
                 if (method35647.getBlock() == Blocks.field29480) {
-                    this.method2126(method35644, method35645, method35646, method35647.get((IProperty<Boolean>)Class4019.field18101));
+                    this.method2126(method35644, method35645, method35646, method35647.get(Class4019.field18101));
                 }
             }
             this.method1689();
@@ -295,7 +295,7 @@ public abstract class Class428 extends Entity
         int n2 = 0;
         final Class4017 class356 = (Class4017)class355.getBlock();
         if (class356 == Blocks.field29237) {
-            booleanValue = class355.get((IProperty<Boolean>)Class4019.field18101);
+            booleanValue = class355.get(Class4019.field18101);
             n2 = (booleanValue ? 0 : 1);
         }
         final Vec3d method1942 = this.getMotion();
@@ -324,8 +324,8 @@ public abstract class Class428 extends Entity
         }
         final Vec3d method1943 = this.getMotion();
         final Pair<Vec3i, Vec3i> method1944 = method2124(class357);
-        final Vec3i class358 = (Vec3i)method1944.getFirst();
-        final Vec3i class359 = (Vec3i)method1944.getSecond();
+        final Vec3i class358 = method1944.getFirst();
+        final Vec3i class359 = method1944.getSecond();
         double n3 = class359.getX() - class358.getX();
         double n4 = class359.getZ() - class358.getZ();
         final double sqrt = Math.sqrt(n3 * n3 + n4 * n4);
@@ -459,8 +459,8 @@ public abstract class Class428 extends Entity
             n2 = method35645 + 1;
         }
         final Pair<Vec3i, Vec3i> method35648 = method2124(class104);
-        final Vec3i class105 = (Vec3i)method35648.getFirst();
-        final Vec3i class106 = (Vec3i)method35648.getSecond();
+        final Vec3i class105 = method35648.getFirst();
+        final Vec3i class106 = method35648.getSecond();
         final double n5 = class106.getX() - class105.getX();
         final double n6 = class106.getZ() - class105.getZ();
         final double sqrt = Math.sqrt(n5 * n5 + n6 * n6);
@@ -499,8 +499,8 @@ public abstract class Class428 extends Entity
             return null;
         }
         final Pair<Vec3i, Vec3i> method35648 = method2124(method35647.get(((Class4017)method35647.getBlock()).method12205()));
-        final Vec3i class352 = (Vec3i)method35648.getFirst();
-        final Vec3i class353 = (Vec3i)method35648.getSecond();
+        final Vec3i class352 = method35648.getFirst();
+        final Vec3i class353 = method35648.getSecond();
         final double n4 = method35644 + 0.5 + class352.getX() * 0.5;
         final double n5 = method35645 + 0.0625 + class352.getY() * 0.5;
         final double n6 = method35646 + 0.5 + class352.getZ() * 0.5;

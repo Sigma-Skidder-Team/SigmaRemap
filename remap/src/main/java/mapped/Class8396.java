@@ -25,9 +25,9 @@ public class Class8396
     
     public ListNBT method27996() {
         final ListNBT class52 = new ListNBT();
-        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34419));
-        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34420));
-        ((AbstractList<FloatNBT>)class52).add(FloatNBT.method281(this.field34421));
+        class52.add(FloatNBT.method281(this.field34419));
+        class52.add(FloatNBT.method281(this.field34420));
+        class52.add(FloatNBT.method281(this.field34421));
         return class52;
     }
     
@@ -37,9 +37,7 @@ public class Class8396
             final Class8396 class8396 = (Class8396)o;
             if (this.field34419 == class8396.field34419) {
                 if (this.field34420 == class8396.field34420) {
-                    if (this.field34421 == class8396.field34421) {
-                        return true;
-                    }
+                    return this.field34421 == class8396.field34421;
                 }
             }
             return false;

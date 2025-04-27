@@ -18,7 +18,7 @@ public enum Class2215
     private final int field13608;
     private final String field13609;
     
-    private Class2215(final Group field13606, final int field13607, final int field13608, final String field13609) {
+    Class2215(final Group field13606, final int field13607, final int field13608, final String field13609) {
         this.field13606 = field13606;
         this.field13607 = field13607;
         this.field13608 = field13608;

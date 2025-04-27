@@ -14,8 +14,8 @@ public class Class7668
 {
     public static final int field30458 = 4096;
     public static final int field30459 = 2048;
-    private List<Integer> field30460;
-    private Map<Integer, Integer> field30461;
+    private final List<Integer> field30460;
+    private final Map<Integer, Integer> field30461;
     private final int[] field30462;
     private Class8110 field30463;
     private Class8110 field30464;
@@ -154,7 +154,7 @@ public class Class7668
     }
     
     public byte[] method24336() {
-        return (byte[])((this.field30463 != null) ? this.field30463.method26661() : null);
+        return (this.field30463 != null) ? this.field30463.method26661() : null;
     }
     
     public Class8110 method24337() {
@@ -162,7 +162,7 @@ public class Class7668
     }
     
     public byte[] method24338() {
-        return (byte[])((this.field30464 != null) ? this.field30464.method26661() : null);
+        return (this.field30464 != null) ? this.field30464.method26661() : null;
     }
     
     public Class8110 method24339() {

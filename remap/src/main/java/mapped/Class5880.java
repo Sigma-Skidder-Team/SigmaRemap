@@ -50,7 +50,7 @@ public class Class5880<T extends Entity> extends Class5846<T>
     
     @Override
     public Iterable<Class6300> method17570() {
-        return (Iterable<Class6300>)ImmutableList.of((Object)this.field24112, (Object)this.field24113, (Object)this.field24114, (Object)this.field24115, (Object)this.field24116, (Object)this.field24117, (Object)this.field24118, (Object)this.field24119, (Object)this.field24120, (Object)this.field24121, (Object)this.field24122);
+        return (Iterable<Class6300>)ImmutableList.of(this.field24112, this.field24113, this.field24114, this.field24115, this.field24116, this.field24117, this.field24118, this.field24119, this.field24120, this.field24121, (Object)this.field24122);
     }
     
     @Override

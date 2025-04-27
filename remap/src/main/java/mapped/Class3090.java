@@ -192,9 +192,7 @@ public abstract class Class3090
                                     }
                                     b2 = false;
                                 }
-                                if (!b2) {
-                                    return true;
-                                }
+                                return !b2;
                             }
                         }
                     }
@@ -211,9 +209,7 @@ public abstract class Class3090
                 if (class1853.getY() < 256) {
                     if (class1852.method6992(Class237.field912, class1853) < 10) {
                         if (class1852.getBlockState(class1853).method21706()) {
-                            if (Blocks.field29329.getDefaultState().method21752(class1852, class1853)) {
-                                return true;
-                            }
+                            return Blocks.field29329.getDefaultState().method21752(class1852, class1853);
                         }
                     }
                 }
@@ -231,7 +227,7 @@ public abstract class Class3090
     }
     
     public <C extends Class5118> void method9850(final Class2126 key, final Class8312<C> class8312) {
-        this.field15455.computeIfAbsent(key, p0 -> Lists.newArrayList()).add((Object)class8312);
+        this.field15455.computeIfAbsent(key, p0 -> Lists.newArrayList()).add(class8312);
     }
     
     public List<Class8312<?>> method9851(final Class2126 key) {
@@ -239,7 +235,7 @@ public abstract class Class3090
     }
     
     public <C extends Class5113> void method9852(final Class8530<C, ? extends Class4574<C>> class8530) {
-        this.field15458.put((Class4574<?>)class8530.field35804, class8530.field35805);
+        this.field15458.put(class8530.field35804, class8530.field35805);
     }
     
     public <C extends Class5113> boolean method9853(final Class4574<C> class4574) {
@@ -307,7 +303,7 @@ public abstract class Class3090
     }
     
     public ITextComponent method9864() {
-        return new Class2259(this.method9865(), new Object[0]);
+        return new Class2259(this.method9865());
     }
     
     public String method9865() {
@@ -342,7 +338,7 @@ public abstract class Class3090
     }
     
     public Class4407 method9872() {
-        return (Class4407)this.field15452.method27604();
+        return this.field15452.method27604();
     }
     
     @Nullable

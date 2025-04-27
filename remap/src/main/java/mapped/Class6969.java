@@ -58,9 +58,9 @@ public class Class6969
             jsonObject.add("feet", this.field27254.method34629());
             jsonObject.add("mainhand", this.field27255.method34629());
             jsonObject.add("offhand", this.field27256.method34629());
-            return (JsonElement)jsonObject;
+            return jsonObject;
         }
-        return (JsonElement)JsonNull.INSTANCE;
+        return JsonNull.INSTANCE;
     }
     
     static {

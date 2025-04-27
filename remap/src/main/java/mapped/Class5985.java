@@ -29,7 +29,7 @@ public class Class5985 implements JsonDeserializer<Class7685>
         final boolean method17918 = this.method17914(asJsonObject);
         Class7503 field29079 = Class7503.field29079;
         if (asJsonObject.has("display")) {
-            field29079 = (Class7503)jsonDeserializationContext.deserialize((JsonElement)Class9583.method35914(asJsonObject, "display"), (Type)Class7503.class);
+            field29079 = jsonDeserializationContext.deserialize(Class9583.method35914(asJsonObject, "display"), Class7503.class);
         }
         final List<Class6559> method17919 = this.method17910(jsonDeserializationContext, asJsonObject);
         Class240 method17920 = null;
@@ -44,7 +44,7 @@ public class Class5985 implements JsonDeserializer<Class7685>
         if (jsonObject.has("overrides")) {
             final Iterator iterator = Class9583.method35917(jsonObject, "overrides").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), (Type)Class6559.class));
+                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), Class6559.class));
             }
         }
         return arrayList;
@@ -85,7 +85,7 @@ public class Class5985 implements JsonDeserializer<Class7685>
         if (jsonObject.has("elements")) {
             final Iterator iterator = Class9583.method35917(jsonObject, "elements").iterator();
             while (iterator.hasNext()) {
-                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), (Type)Class9219.class));
+                arrayList.add(jsonDeserializationContext.deserialize((JsonElement)iterator.next(), Class9219.class));
             }
         }
         return arrayList;

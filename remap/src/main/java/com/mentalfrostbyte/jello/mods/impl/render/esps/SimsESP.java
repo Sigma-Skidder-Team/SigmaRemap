@@ -73,12 +73,12 @@ public class SimsESP extends Module
         GL11.glDepthMask(false);
         GL11.glPushMatrix();
         GL11.glTranslated(n - SimsESP.mc.field4644.method5833().method18161().getX(), n2 - SimsESP.mc.field4644.method5833().method18161().getY(), n3 - SimsESP.mc.field4644.method5833().method18161().getZ());
-        GL11.glRotated((double)(class399.ticksExisted % 180 * 2), 0.0, -1.0, 0.0);
+        GL11.glRotated(class399.ticksExisted % 180 * 2, 0.0, -1.0, 0.0);
         float n4 = (float)(class399.ticksExisted % 100 - 50);
         if (n4 < 0.0f) {
             n4 *= -1.0f;
         }
-        GL11.glTranslated(0.0, (double)(0.7f + n4 / 500.0f), 0.0);
+        GL11.glTranslated(0.0, 0.7f + n4 / 500.0f, 0.0);
         method10798();
         GL11.glPopMatrix();
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);

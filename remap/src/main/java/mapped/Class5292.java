@@ -20,7 +20,7 @@ public class Class5292 extends Class5291
     }
     
     public void method16428(final ByteBuf byteBuf, final Class7276 class7276) throws Exception {
-        byteBuf.writeByte((int)(byte)(class7276.method22295().method7968() << 5 | (class7276.method22294() & 0x1F)));
+        byteBuf.writeByte((byte)(class7276.method22295().method7968() << 5 | (class7276.method22294() & 0x1F)));
         class7276.method22295().method7969().method16379(byteBuf, class7276.method22296());
     }
 }

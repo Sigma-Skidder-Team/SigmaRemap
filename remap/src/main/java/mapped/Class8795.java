@@ -67,7 +67,7 @@ public class Class8795
     }
     
     static {
-        field36977 = new Class8795(new ResourceLocation("empty"), new ResourceLocation("empty"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
-        field36978 = new Class8795(new ResourceLocation("invalid"), new ResourceLocation("invalid"), (List<Pair<Class8228, Integer>>)ImmutableList.of(), Class261.field1247);
+        field36977 = new Class8795(new ResourceLocation("empty"), new ResourceLocation("empty"), ImmutableList.of(), Class261.field1247);
+        field36978 = new Class8795(new ResourceLocation("invalid"), new ResourceLocation("invalid"), ImmutableList.of(), Class261.field1247);
     }
 }

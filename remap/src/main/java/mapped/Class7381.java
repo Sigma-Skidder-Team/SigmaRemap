@@ -28,7 +28,7 @@ public final class Class7381 implements LongSupplier
             return (long)this.field28436.invoke(this.field28437, new Object[0]);
         }
         catch (final Throwable t) {
-            Config.warn("" + t.getClass().getName() + ": " + t.getMessage());
+            Config.warn(t.getClass().getName() + ": " + t.getMessage());
             this.field28435 = true;
             return -1L;
         }

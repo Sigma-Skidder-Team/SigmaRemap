@@ -11,8 +11,8 @@ import java.util.Date;
 
 public class Class8848
 {
-    private String field37203;
-    private Date field37204;
+    private final String field37203;
+    private final Date field37204;
     
     public Class8848(final String field37203, final Date field37204) {
         this.field37203 = field37203;

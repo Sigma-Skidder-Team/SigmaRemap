@@ -91,12 +91,12 @@ public class Class3939 extends Class3841
     
     @Override
     public BlockState method11790(final BlockState class7096, final Class2052 class7097) {
-        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3939.field17824, class7097.method8142(class7096.get((IProperty<Direction>)Class3939.field17824)));
+        return ((StateHolder<O, BlockState>)class7096).with((IProperty<Comparable>)Class3939.field17824, class7097.method8142(class7096.get(Class3939.field17824)));
     }
     
     @Override
     public BlockState method11791(final BlockState class7096, final Class2181 class7097) {
-        return class7096.method21708(class7097.method8344(class7096.get((IProperty<Direction>)Class3939.field17824)));
+        return class7096.method21708(class7097.method8344(class7096.get(Class3939.field17824)));
     }
     
     @Override

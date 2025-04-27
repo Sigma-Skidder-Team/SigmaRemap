@@ -30,13 +30,13 @@ public class Class6232 extends Class6227<Class140>
         while (iterator.hasNext()) {
             jsonArray.add(Class5953.method17870((ITextComponent)iterator.next()));
         }
-        jsonObject.add("lore", (JsonElement)jsonArray);
+        jsonObject.add("lore", jsonArray);
         if (Class140.method689(class140) != null) {
             jsonObject.add("entity", jsonSerializationContext.serialize((Object)Class140.method689(class140)));
         }
     }
     
     public Class140 method18551(final JsonObject jsonObject, final JsonDeserializationContext jsonDeserializationContext, final Class122[] array) {
-        return new Class140(array, Class9583.method35901(jsonObject, "replace", false), Streams.stream((Iterable)Class9583.method35917(jsonObject, "lore")).map(Class5953::method17872).collect((Collector<? super Object, Object, List<ITextComponent>>)ImmutableList.toImmutableList()), Class9583.method35921(jsonObject, "entity", (Class2065)null, jsonDeserializationContext, Class2065.class));
+        return new Class140(array, Class9583.method35901(jsonObject, "replace", false), Streams.stream((Iterable)Class9583.method35917(jsonObject, "lore")).map(Class5953::method17872).collect(ImmutableList.toImmutableList()), Class9583.method35921(jsonObject, "entity", null, jsonDeserializationContext, Class2065.class));
     }
 }

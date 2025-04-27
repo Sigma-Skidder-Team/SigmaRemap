@@ -66,9 +66,7 @@ public class Class3509 extends Class3446
     private boolean method11069(final Class1852 class1852, final BlockPos class1853) {
         final BlockState method6701 = class1852.getBlockState(class1853);
         if (class1852.getFluidState(class1853).isEmpty() || method6701.getBlock() == Blocks.BUBBLE_COLUMN) {
-            if (method6701.method21749(class1852, class1853, Class2084.field12051)) {
-                return true;
-            }
+            return method6701.method21749(class1852, class1853, Class2084.field12051);
         }
         return false;
     }

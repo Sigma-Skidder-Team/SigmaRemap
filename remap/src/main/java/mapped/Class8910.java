@@ -22,7 +22,7 @@ public class Class8910
             return class3090;
         }
         if (!Class9528.field41021) {
-            Class8910.field37453.warn("Unknown biome id: ", (Object)n);
+            Class8910.field37453.warn("Unknown biome id: ", n);
             return Class7102.field27632;
         }
         throw Util.pauseDevMode(new IllegalStateException("Unknown biome id: " + n));

@@ -56,10 +56,10 @@ public class Class1879 extends Class1880 implements AutoCloseable
     @Override
     public void close() {
         if (this.field10233 != null) {
-            MemoryUtil.memFree((Buffer)this.field10233);
+            MemoryUtil.memFree(this.field10233);
         }
         if (this.field10234 != null) {
-            MemoryUtil.memFree((Buffer)this.field10234);
+            MemoryUtil.memFree(this.field10234);
         }
     }
     
@@ -188,7 +188,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
             this.method7159();
         }
         else {
-            Class1879.field10229.warn("Uniform.set called with a too-small value array (expected {}, got {}). Ignoring.", (Object)this.field10231, (Object)src.length);
+            Class1879.field10229.warn("Uniform.set called with a too-small value array (expected {}, got {}). Ignoring.", this.field10231, src.length);
         }
     }
     
@@ -205,7 +205,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
         if (this.field10232 > 3) {
             if (this.field10232 > 7) {
                 if (this.field10232 > 10) {
-                    Class1879.field10229.warn("Uniform.upload called, but type value ({}) is not a valid type. Ignoring.", (Object)this.field10232);
+                    Class1879.field10229.warn("Uniform.upload called, but type value ({}) is not a valid type. Ignoring.", this.field10232);
                     return;
                 }
                 this.method7174();
@@ -239,7 +239,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
                 break;
             }
             default: {
-                Class1879.field10229.warn("Uniform.upload called, but count value ({}) is  not in the range of 1 to 4. Ignoring.", (Object)this.field10231);
+                Class1879.field10229.warn("Uniform.upload called, but count value ({}) is  not in the range of 1 to 4. Ignoring.", this.field10231);
                 break;
             }
         }
@@ -265,7 +265,7 @@ public class Class1879 extends Class1880 implements AutoCloseable
                 break;
             }
             default: {
-                Class1879.field10229.warn("Uniform.upload called, but count value ({}) is not in the range of 1 to 4. Ignoring.", (Object)this.field10231);
+                Class1879.field10229.warn("Uniform.upload called, but count value ({}) is not in the range of 1 to 4. Ignoring.", this.field10231);
                 break;
             }
         }

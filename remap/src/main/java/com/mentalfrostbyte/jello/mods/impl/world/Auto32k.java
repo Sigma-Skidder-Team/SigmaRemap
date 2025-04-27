@@ -87,9 +87,7 @@ public class Auto32k extends Module
         final BlockState method6703 = Auto32k.mc.world.getBlockState(class354.method1138(2));
         if (method6701.isSolid()) {
             if (method6702.method21706()) {
-                if (method6703.method21706()) {
-                    return true;
-                }
+                return method6703.method21706();
             }
         }
         return false;

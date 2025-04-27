@@ -24,6 +24,6 @@ public final class Class6596 implements Class6595
     
     @Override
     public ArgumentBuilder<Class7492, ?> method20042(final ArgumentBuilder<Class7492, ?> argumentBuilder, final Function<ArgumentBuilder<Class7492, ?>, ArgumentBuilder<Class7492, ?>> function) {
-        return (ArgumentBuilder<Class7492, ?>)argumentBuilder.then(Class7788.method25001("storage").then((ArgumentBuilder)function.apply((ArgumentBuilder<Class7492, ?>)Class7788.method25002(this.field26157, (com.mojang.brigadier.arguments.ArgumentType<Object>)Class7000.method21429()).suggests(Class5415.method16536()))));
+        return (ArgumentBuilder<Class7492, ?>)argumentBuilder.then(Class7788.method25001("storage").then(function.apply(Class7788.method25002(this.field26157, (ArgumentType<Object>)Class7000.method21429()).suggests(Class5415.method16536()))));
     }
 }

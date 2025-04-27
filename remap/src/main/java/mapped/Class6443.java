@@ -9,9 +9,9 @@ import java.util.Arrays;
 public class Class6443 implements Class6441
 {
     private static String[] field25575;
-    private float[] field25576;
+    private final float[] field25576;
     private int field25577;
-    private int field25578;
+    private final int field25578;
     
     public Class6443(final int field25578) {
         this.field25578 = field25578;

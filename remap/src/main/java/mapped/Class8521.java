@@ -12,8 +12,8 @@ import java.util.Arrays;
 
 public class Class8521
 {
-    private ResourceLocation field35774;
-    private float[] field35775;
+    private final ResourceLocation field35774;
+    private final float[] field35775;
     
     public Class8521(final ResourceLocation field35774, final float[] array) {
         this.field35774 = field35774;

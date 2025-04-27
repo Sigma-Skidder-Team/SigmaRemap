@@ -13,7 +13,7 @@ public enum Class1998
     
     public final TextFormatting field11190;
     
-    private Class1998(final TextFormatting field11190) {
+    Class1998(final TextFormatting field11190) {
         this.field11190 = field11190;
     }
 }

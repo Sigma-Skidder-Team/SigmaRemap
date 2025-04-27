@@ -27,7 +27,7 @@ public class BowAimbot extends Module
     public BowAimbot() {
         super(Category.COMBAT, "BowAimbot", "Automatically aims at players while using a bow");
         this.field15703 = new ArrayList<Entity>();
-        this.addSetting(new StringSetting("Sort mode", "Sort mode", 0, new String[] { "Angle", "Range" }));
+        this.addSetting(new StringSetting("Sort mode", "Sort mode", 0, "Angle", "Range"));
         this.addSetting(new NumberSetting("Range", "Range value", 70.0f, Float.class, 10.0f, 100.0f, 1.0f));
         this.addSetting(new BooleanSetting("Silent", "Server-sided rotations.", false));
         this.addSetting(new BooleanSetting("Teams", "Target team", true));

@@ -10,10 +10,10 @@ import java.util.Map;
 
 public class Structure$LayoutInfo
 {
-    private int size;
-    private int alignment;
+    private final int size;
+    private final int alignment;
     private final Map<String, Structure$StructField> fields;
-    private int alignType;
+    private final int alignType;
     private TypeMapper typeMapper;
     private boolean variable;
     private Structure$StructField typeInfoField;

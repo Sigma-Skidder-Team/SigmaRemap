@@ -21,7 +21,7 @@ public class Class5255
     
     public static Class7845 method16358(final Class9041 field32127) {
         final ArrayList list = new ArrayList();
-        field32127.field38266 = (T)method16359(field32127.field38266, list);
+        field32127.field38266 = method16359(field32127.field38266, list);
         field32127.field38267 = list.size();
         final Class7845 class7845 = new Class7845();
         class7845.field32127 = field32127;
@@ -80,7 +80,7 @@ public class Class5255
     }
     
     public static Class9041 method16360(final Class9041 class9041, final byte[][] array) {
-        class9041.field38266 = (T)method16361(class9041.field38266, array);
+        class9041.field38266 = method16361(class9041.field38266, array);
         class9041.field38267 = -1;
         return class9041;
     }

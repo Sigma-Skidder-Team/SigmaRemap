@@ -83,7 +83,7 @@ public final class Class7265 extends Class7266
         while (matcher.find(end)) {
             final int start = matcher.start();
             if (start != end) {
-                sb.append(method25737.substring(end, start));
+                sb.append(method25737, end, start);
             }
             end = matcher.end();
             switch (matcher.group(2).charAt(0)) {
@@ -100,7 +100,7 @@ public final class Class7265 extends Class7266
             }
         }
         if (method25737.length() != end) {
-            sb.append(method25737.substring(end, method25737.length()));
+            sb.append(method25737, end, method25737.length());
         }
         super.method22216(sb);
     }
@@ -115,7 +115,7 @@ public final class Class7265 extends Class7266
             final int start = matcher.start();
             if (start != end) {
                 this.method22218(sb);
-                sb.append(method25737.substring(end, start));
+                sb.append(method25737, end, start);
             }
             end = matcher.end();
             switch (matcher.group(2).charAt(0)) {
@@ -134,7 +134,7 @@ public final class Class7265 extends Class7266
         }
         if (method25737.length() != end) {
             this.method22218(sb);
-            sb.append(method25737.substring(end, method25737.length()));
+            sb.append(method25737, end, method25737.length());
         }
         super.method22217(sb);
     }

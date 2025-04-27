@@ -8,5 +8,5 @@ public enum Class2182
 {
     field12921, 
     field12922, 
-    field12923;
+    field12923
 }

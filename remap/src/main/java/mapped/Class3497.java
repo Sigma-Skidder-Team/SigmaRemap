@@ -32,9 +32,7 @@ public class Class3497 extends Class3496
             if (this.field16452.world.method6703()) {
                 if (this.field16452.world.method6994(class354)) {
                     if (!((Class1849)this.field16452.world).method6922(class354)) {
-                        if (this.method11059()) {
-                            return true;
-                        }
+                        return this.method11059();
                     }
                 }
             }

@@ -33,7 +33,7 @@ public class Class7412 implements Class7410
         if (b) {
             s = s.substring(1);
         }
-        final List list2 = Class7412.field28548.splitToList((CharSequence)s);
+        final List list2 = Class7412.field28548.splitToList(s);
         if (!list2.isEmpty()) {
             Predicate<BlockState> method32907;
             if (list2.size() != 1) {
@@ -60,7 +60,7 @@ public class Class7412 implements Class7410
     
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper((Object)this).add("key", (Object)this.field28549).add("value", (Object)this.field28550).toString();
+        return MoreObjects.toStringHelper(this).add("key", this.field28549).add("value", this.field28550).toString();
     }
     
     static {

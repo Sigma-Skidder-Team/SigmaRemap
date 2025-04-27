@@ -188,7 +188,7 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public static String getLocalizedString(final String s) {
-        return Realms.method25379(s, new Object[0]);
+        return Realms.method25379(s);
     }
     
     public static String method15439(final String s, final Object... array) {
@@ -196,7 +196,7 @@ public abstract class RealmsScreen extends RealmsGuiEventListener implements Rea
     }
     
     public List<String> method15440(final String s, final int n) {
-        return this.minecraft.fontRenderer.method6626(Class8822.method30773(s, new Object[0]), n);
+        return this.minecraft.fontRenderer.method6626(Class8822.method30773(s), n);
     }
     
     public Class7417 method15441() {

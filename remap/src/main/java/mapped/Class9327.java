@@ -27,43 +27,43 @@ public class Class9327 extends Schema
     }
     
     public static void method34552(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final String s) {
-        schema.register((Map)map, s, () -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema2))));
+        schema.register(map, s, () -> DSL.optionalFields("Items", DSL.list(Class9451.field40622.in(schema2))));
     }
     
     public Type<?> getChoiceType(final DSL$TypeReference dsl$TypeReference, final String s) {
-        return (Type<?>)(Objects.equals(dsl$TypeReference.typeName(), Class9451.field40621.typeName()) ? super.getChoiceType(dsl$TypeReference, Class5174.method16141(s)) : super.getChoiceType(dsl$TypeReference, s));
+        return Objects.equals(dsl$TypeReference.typeName(), Class9451.field40621.typeName()) ? super.getChoiceType(dsl$TypeReference, Class5174.method16141(s)) : super.getChoiceType(dsl$TypeReference, s);
     }
     
     public Map<String, Supplier<TypeTemplate>> registerBlockEntities(final Schema schema) {
         final HashMap hashMap = Maps.newHashMap();
         method34552(schema, hashMap, "minecraft:furnace");
         method34552(schema, hashMap, "minecraft:chest");
-        schema.registerSimple((Map)hashMap, "minecraft:ender_chest");
-        schema.register((Map)hashMap, "minecraft:jukebox", p1 -> DSL.optionalFields("RecordItem", Class9451.field40622.in(schema2)));
+        schema.registerSimple(hashMap, "minecraft:ender_chest");
+        schema.register(hashMap, "minecraft:jukebox", p1 -> DSL.optionalFields("RecordItem", Class9451.field40622.in(schema2)));
         method34552(schema, hashMap, "minecraft:dispenser");
         method34552(schema, hashMap, "minecraft:dropper");
-        schema.registerSimple((Map)hashMap, "minecraft:sign");
-        schema.register((Map)hashMap, "minecraft:mob_spawner", p1 -> Class9451.field40629.in(schema3));
-        schema.registerSimple((Map)hashMap, "minecraft:noteblock");
-        schema.registerSimple((Map)hashMap, "minecraft:piston");
+        schema.registerSimple(hashMap, "minecraft:sign");
+        schema.register(hashMap, "minecraft:mob_spawner", p1 -> Class9451.field40629.in(schema3));
+        schema.registerSimple(hashMap, "minecraft:noteblock");
+        schema.registerSimple(hashMap, "minecraft:piston");
         method34552(schema, hashMap, "minecraft:brewing_stand");
-        schema.registerSimple((Map)hashMap, "minecraft:enchanting_table");
-        schema.registerSimple((Map)hashMap, "minecraft:end_portal");
-        schema.registerSimple((Map)hashMap, "minecraft:beacon");
-        schema.registerSimple((Map)hashMap, "minecraft:skull");
-        schema.registerSimple((Map)hashMap, "minecraft:daylight_detector");
+        schema.registerSimple(hashMap, "minecraft:enchanting_table");
+        schema.registerSimple(hashMap, "minecraft:end_portal");
+        schema.registerSimple(hashMap, "minecraft:beacon");
+        schema.registerSimple(hashMap, "minecraft:skull");
+        schema.registerSimple(hashMap, "minecraft:daylight_detector");
         method34552(schema, hashMap, "minecraft:hopper");
-        schema.registerSimple((Map)hashMap, "minecraft:comparator");
-        schema.register((Map)hashMap, "minecraft:flower_pot", p1 -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), Class9451.field40628.in(schema4))));
-        schema.registerSimple((Map)hashMap, "minecraft:banner");
-        schema.registerSimple((Map)hashMap, "minecraft:structure_block");
-        schema.registerSimple((Map)hashMap, "minecraft:end_gateway");
-        schema.registerSimple((Map)hashMap, "minecraft:command_block");
+        schema.registerSimple(hashMap, "minecraft:comparator");
+        schema.register(hashMap, "minecraft:flower_pot", p1 -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), Class9451.field40628.in(schema4))));
+        schema.registerSimple(hashMap, "minecraft:banner");
+        schema.registerSimple(hashMap, "minecraft:structure_block");
+        schema.registerSimple(hashMap, "minecraft:end_gateway");
+        schema.registerSimple(hashMap, "minecraft:command_block");
         return hashMap;
     }
     
     public void registerTypes(final Schema schema, final Map<String, Supplier<TypeTemplate>> map, final Map<String, Supplier<TypeTemplate>> map2) {
-        super.registerTypes(schema, (Map)map, (Map)map2);
+        super.registerTypes(schema, map, map2);
         schema.registerType(false, Class9451.field40621, () -> DSL.taggedChoiceLazy("id", DSL.namespacedString(), map3));
         schema.registerType(true, Class9451.field40622, () -> DSL.hook(DSL.optionalFields("id", Class9451.field40628.in(schema2), "tag", DSL.optionalFields("EntityTag", Class9451.field40625.in(schema2), "BlockEntityTag", Class9451.field40621.in(schema2), "CanDestroy", DSL.list(Class9451.field40627.in(schema2)), "CanPlaceOn", DSL.list(Class9451.field40627.in(schema2)))), Class9327.field40037, Hook$HookFunction.IDENTITY));
     }
@@ -141,7 +141,6 @@ public class Class9327 extends Schema
             hashMap.put("minecraft:end_gateway", "minecraft:end_gateway");
             hashMap.put("minecraft:sign", "minecraft:sign");
             hashMap.put("minecraft:shield", "minecraft:banner");
-            return;
         });
         field40037 = (Hook$HookFunction)new Class9235();
     }

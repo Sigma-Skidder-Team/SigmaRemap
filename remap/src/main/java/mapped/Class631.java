@@ -31,7 +31,7 @@ public class Class631 extends Class624
             this.method3637(n5, n2 - 3, n3, n4);
         }
         if (!class7426.changeList.isEmpty()) {
-            this.method3638(n6, n2 + 0, n3, n4);
+            this.method3638(n6, n2, n3, n4);
         }
     }
     

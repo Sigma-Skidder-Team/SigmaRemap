@@ -27,7 +27,7 @@ public class Class720 extends Screen
     private boolean field3941;
     
     public Class720(final Screen field3931) {
-        super(new Class2259("multiplayer.title", new Object[0]));
+        super(new Class2259("multiplayer.title"));
         this.field3930 = new Class8115();
         this.field3931 = field3931;
     }
@@ -47,21 +47,21 @@ public class Class720 extends Screen
                 (this.field3940 = new Class929(this.field3939)).start();
             }
             catch (final Exception ex) {
-                Class720.field3146.warn("Unable to start LAN server detection: {}", (Object)ex.getMessage());
+                Class720.field3146.warn("Unable to start LAN server detection: {}", ex.getMessage());
             }
             (this.field3932 = new Class612(this, this.minecraft, this.width, this.height, 32, this.height - 64, 36)).method3576(this.field3933);
         }
         this.children.add(this.field3932);
-        this.field3935 = this.addButton(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select", new Object[0]), class654 -> this.method3948()));
-        this.addButton(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct", new Object[0]), class654 -> {
-            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
+        this.field3935 = this.addButton(new Class654(this.width / 2 - 154, this.height - 52, 100, 20, Class8822.method30773("selectServer.select"), class654 -> this.method3948()));
+        this.addButton(new Class654(this.width / 2 - 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.direct"), class654 -> {
+            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName"), "", false);
             this.minecraft.displayGuiScreen(new Class529(this, this::method3947, this.field3938));
         }));
-        this.addButton(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add", new Object[0]), class654 -> {
-            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName", new Object[0]), "", false);
+        this.addButton(new Class654(this.width / 2 + 4 + 50, this.height - 52, 100, 20, Class8822.method30773("selectServer.add"), class654 -> {
+            this.field3938 = new ServerData(Class8822.method30773("selectServer.defaultName"), "", false);
             this.minecraft.displayGuiScreen(new Class538(this, this::method3946, this.field3938));
         }));
-        this.field3934 = this.addButton(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit", new Object[0]), class654 -> {
+        this.field3934 = this.addButton(new Class654(this.width / 2 - 154, this.height - 28, 70, 20, Class8822.method30773("selectServer.edit"), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final ServerData method3658 = ((Class634)class655).method3658();
@@ -69,17 +69,17 @@ public class Class720 extends Screen
                 this.minecraft.displayGuiScreen(new Class538(this, this::method3945, this.field3938));
             }
         }));
-        this.field3936 = this.addButton(new Class654(this.width / 2 - 74, this.height - 28, 70, 20, Class8822.method30773("selectServer.delete", new Object[0]), class654 -> {
+        this.field3936 = this.addButton(new Class654(this.width / 2 - 74, this.height - 28, 70, 20, Class8822.method30773("selectServer.delete"), class654 -> {
             final Class633 class655 = this.field3932.method3530();
             if (class655 instanceof Class634) {
                 final String field41612 = ((Class634)class655).method3658().field41612;
                 if (field41612 != null) {
-                    this.minecraft.displayGuiScreen(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion", new Object[0]), new Class2259("selectServer.deleteWarning", new Object[] { field41612 }), Class8822.method30773("selectServer.deleteButton", new Object[0]), Class8822.method30773("gui.cancel", new Object[0])));
+                    this.minecraft.displayGuiScreen(new Class546(this::method3944, new Class2259("selectServer.deleteQuestion"), new Class2259("selectServer.deleteWarning", field41612), Class8822.method30773("selectServer.deleteButton"), Class8822.method30773("gui.cancel")));
                 }
             }
         }));
-        this.addButton(new Class654(this.width / 2 + 4, this.height - 28, 70, 20, Class8822.method30773("selectServer.refresh", new Object[0]), class654 -> this.method3943()));
-        this.addButton(new Class654(this.width / 2 + 4 + 76, this.height - 28, 75, 20, Class8822.method30773("gui.cancel", new Object[0]), class654 -> this.minecraft.displayGuiScreen(this.field3931)));
+        this.addButton(new Class654(this.width / 2 + 4, this.height - 28, 70, 20, Class8822.method30773("selectServer.refresh"), class654 -> this.method3943()));
+        this.addButton(new Class654(this.width / 2 + 4 + 76, this.height - 28, 75, 20, Class8822.method30773("gui.cancel"), class654 -> this.minecraft.displayGuiScreen(this.field3931)));
         this.method3951();
     }
     
@@ -182,7 +182,7 @@ public class Class720 extends Screen
         this.drawCenteredString(this.font, this.title.getFormattedText(), this.width / 2, 20, 16777215);
         super.render(n, n2, n3);
         if (this.field3937 != null) {
-            this.renderTooltip(Lists.newArrayList(Splitter.on("\n").split((CharSequence)this.field3937)), n, n2);
+            this.renderTooltip(Lists.newArrayList(Splitter.on("\n").split(this.field3937)), n, n2);
         }
     }
     

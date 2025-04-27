@@ -13,7 +13,7 @@ public class Class706 extends Class703
     private static final Class6469[] field3879;
     
     public Class706(final Screen class527, final Class5760 class528) {
-        super(class527, class528, new Class2259("options.mouse_settings.title", new Object[0]));
+        super(class527, class528, new Class2259("options.mouse_settings.title"));
     }
     
     @Override
@@ -23,10 +23,10 @@ public class Class706 extends Class703
             this.field3878.method3567(Class706.field3879);
         }
         else {
-            this.field3878.method3567(Stream.concat((Stream<?>)Arrays.stream(Class706.field3879), (Stream<?>)Stream.of(Class6469.field25716)).toArray(Class6469[]::new));
+            this.field3878.method3567(Stream.concat(Arrays.stream(Class706.field3879), (Stream<?>)Stream.of(Class6469.field25716)).toArray(Class6469[]::new));
         }
         this.children.add(this.field3878);
-        this.addButton(new Class654(this.width / 2 - 100, this.height - 27, 200, 20, Class8822.method30773("gui.done", new Object[0]), class654 -> {
+        this.addButton(new Class654(this.width / 2 - 100, this.height - 27, 200, 20, Class8822.method30773("gui.done"), class654 -> {
             this.field3869.method17121();
             this.minecraft.displayGuiScreen(this.field3868);
         }));

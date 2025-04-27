@@ -50,7 +50,7 @@ public class Class4918 extends Class4825
         }
         final Iterator<Map.Entry<Long, Double>> iterator = this.field21047.entrySet().iterator();
         while (iterator.hasNext()) {
-            if (((Map.Entry<Long, V>)iterator.next()).getKey() >= System.currentTimeMillis() - n * 2) {
+            if (iterator.next().getKey() >= System.currentTimeMillis() - n * 2) {
                 continue;
             }
             iterator.remove();

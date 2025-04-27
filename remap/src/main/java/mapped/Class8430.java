@@ -33,7 +33,7 @@ public class Class8430
             s += this.field34596[this.field34595.nextInt(this.field34596.length)];
         }
         final List<String> method6626 = class1844.method6626(s, n);
-        return StringUtils.join((Iterable)((method6626.size() < 2) ? method6626 : method6626.subList(0, 2)), " ");
+        return StringUtils.join((method6626.size() < 2) ? method6626 : method6626.subList(0, 2), " ");
     }
     
     public void method28153(final long seed) {

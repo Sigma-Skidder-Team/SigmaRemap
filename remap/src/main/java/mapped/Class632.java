@@ -122,7 +122,7 @@ public class Class632 extends Class623<Class632>
         this.field3619.fontRenderer.drawStringWithShadow(s, (float)(n3 + 32 + 2), (float)(n2 + 1), 16777215);
         final List<String> method3643 = this.field3619.fontRenderer.method6626(s2, 157);
         for (int n11 = 0; n11 < 2 && n11 < method3643.size(); ++n11) {
-            this.field3619.fontRenderer.drawStringWithShadow((String)method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
+            this.field3619.fontRenderer.drawStringWithShadow(method3643.get(n11), (float)(n3 + 32 + 2), (float)(n2 + 12 + 10 * n11), 8421504);
         }
     }
     
@@ -141,7 +141,7 @@ public class Class632 extends Class623<Class632>
     public boolean method3649() {
         final List<Class632> method3040 = this.field3618.children();
         final int index = method3040.indexOf(this);
-        return index > 0 && !((Class632)method3040.get(index - 1)).field3621.method7623();
+        return index > 0 && !method3040.get(index - 1).field3621.method7623();
     }
     
     public boolean method3650() {
@@ -149,9 +149,7 @@ public class Class632 extends Class623<Class632>
         final int index = method3040.indexOf(this);
         if (index >= 0) {
             if (index < method3040.size() - 1) {
-                if (!((Class632)method3040.get(index + 1)).field3621.method7623()) {
-                    return true;
-                }
+                return !method3040.get(index + 1).field3621.method7623();
             }
         }
         return false;

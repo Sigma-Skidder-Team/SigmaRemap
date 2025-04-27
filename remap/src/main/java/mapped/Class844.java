@@ -284,9 +284,7 @@ public class Class844 extends Class763
     public static boolean method5064(final EntityType<? extends Class844> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
         if (random.nextInt(20) == 0 || !class7500.method6962(class7502)) {
             if (class7500.method6954() != Class2113.field12290) {
-                if (class7501 == Class2101.field12176 || class7500.getFluidState(class7502).isTagged(Class7324.field28319)) {
-                    return true;
-                }
+                return class7501 == Class2101.field12176 || class7500.getFluidState(class7502).isTagged(Class7324.field28319);
             }
         }
         return false;

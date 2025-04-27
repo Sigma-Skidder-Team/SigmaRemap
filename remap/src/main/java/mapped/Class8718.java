@@ -50,14 +50,13 @@ public class Class8718
     }
     
     public static JSONObject method29941(final String s, final String s2) throws JSONException, IOException {
-        final StringBuffer sb = new StringBuffer();
-        sb.append("http://musicbrainz.org/ws/2/");
-        sb.append("release/?query=");
-        sb.append(method29942(Class5031.method15320(s)));
-        sb.append("%20AND%20artist:%20");
-        sb.append(method29942(Class5031.method15320(s2)));
-        sb.append("&fmt=json");
-        return Class5031.method15314(sb.toString());
+        String sb = "http://musicbrainz.org/ws/2/" +
+                "release/?query=" +
+                method29942(Class5031.method15320(s)) +
+                "%20AND%20artist:%20" +
+                method29942(Class5031.method15320(s2)) +
+                "&fmt=json";
+        return Class5031.method15314(sb);
     }
     
     public static String method29942(final String s) {

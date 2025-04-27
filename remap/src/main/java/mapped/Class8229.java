@@ -64,12 +64,12 @@ public class Class8229 extends Class8228
     
     @Override
     public boolean method27255(final Class1795 class1795, final Class1851 class1796, final Class6346<?> class1797, final BlockPos class1798, final Class2052 class1799, final MutableBoundingBox class1800, final Random random) {
-        return this.field33792.method28613(class1796, (Class6346<? extends Class7065>)class1797, random, class1798);
+        return this.field33792.method28613(class1796, class1797, random, class1798);
     }
     
     @Override
     public <T> Dynamic<T> method27258(final DynamicOps<T> dynamicOps) {
-        return (Dynamic<T>)new Dynamic((DynamicOps)dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("feature"), this.field33792.method28612((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
+        return (Dynamic<T>)new Dynamic(dynamicOps, dynamicOps.createMap((Map)ImmutableMap.of(dynamicOps.createString("feature"), this.field33792.method28612((com.mojang.datafixers.types.DynamicOps<Object>)dynamicOps).getValue())));
     }
     
     @Override
@@ -79,6 +79,6 @@ public class Class8229 extends Class8228
     
     @Override
     public String toString() {
-        return "Feature[" + Registry.field215.getKey((Class4535<?>)this.field33792.field35804) + "]";
+        return "Feature[" + Registry.field215.getKey(this.field33792.field35804) + "]";
     }
 }

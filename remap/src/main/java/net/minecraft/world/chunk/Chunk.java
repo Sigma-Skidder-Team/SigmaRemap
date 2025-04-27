@@ -63,7 +63,7 @@ public class Chunk implements IChunk
     private volatile boolean field10163;
     
     public Chunk(final World class1847, final ChunkPos class1848, final Class1873 class1849) {
-        this(class1847, class1848, class1849, Class8288.field34078, (Class6952<Block>)Class6954.method21355(), (Class6952<Fluid>)Class6954.method21355(), 0L, null, null);
+        this(class1847, class1848, class1849, Class8288.field34078, Class6954.method21355(), Class6954.method21355(), 0L, null, null);
     }
     
     public Chunk(final World field10146, final ChunkPos field10147, final Class1873 field10148, final Class8288 field10149, final Class6952<Block> field10150, final Class6952<Fluid> field10151, final long field10152, final Class8199[] array, final Consumer<Chunk> field10153) {
@@ -93,7 +93,7 @@ public class Chunk implements IChunk
         this.field10161 = field10153;
         if (array != null) {
             if (this.field10142.length != array.length) {
-                Chunk.field10140.warn("Could not set level chunk sections, array length is {} instead of {}", (Object)array.length, (Object)this.field10142.length);
+                Chunk.field10140.warn("Could not set level chunk sections, array length is {} instead of {}", array.length, this.field10142.length);
             }
             else {
                 System.arraycopy(array, 0, this.field10142, 0, this.field10142.length);
@@ -105,7 +105,7 @@ public class Chunk implements IChunk
         this(class1847, class1848.method7019(), class1848.method7024(), class1848.method7039(), class1848.method7102(), class1848.method7103(), class1848.method7041(), class1848.method7014(), null);
         final Iterator<CompoundNBT> iterator = class1848.method7096().iterator();
         while (iterator.hasNext()) {
-            EntityType.method23378((CompoundNBT)iterator.next(), class1847, class1850 -> {
+            EntityType.method23378(iterator.next(), class1847, class1850 -> {
                 this.method7010(class1850);
                 return class1850;
             });
@@ -275,7 +275,7 @@ public class Chunk implements IChunk
         final int method35644 = MathHelper.floor(class399.getPosX() / 16.0);
         final int method35645 = MathHelper.floor(class399.getPosZ() / 16.0);
         if (method35644 != this.field10162.field32290 || method35645 != this.field10162.field32291) {
-            Chunk.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", (Object)method35644, (Object)method35645, (Object)this.field10162.field32290, (Object)this.field10162.field32291, (Object)class399);
+            Chunk.field10140.warn("Wrong location! ({}, {}) should be ({}, {}), {}", method35644, method35645, this.field10162.field32290, this.field10162.field32291, class399);
             class399.removed = true;
         }
         int method35646 = MathHelper.floor(class399.getPosY() / 16.0);
@@ -652,7 +652,7 @@ public class Chunk implements IChunk
         for (int i = 0; i < this.field10153.length; ++i) {
             if (this.field10153[i] != null) {
                 final ShortListIterator iterator = this.field10153[i].iterator();
-                while (((Iterator)iterator).hasNext()) {
+                while (iterator.hasNext()) {
                     final BlockPos method7020 = Class1865.method7101((short)((Iterator)iterator).next(), i, method7019);
                     this.field10146.setBlockState(method7020, Block.method11786(this.getBlockState(method7020), this.field10146, method7020), 20);
                 }
@@ -678,14 +678,14 @@ public class Chunk implements IChunk
             final Block method21696 = this.getBlockState(class354).getBlock();
             if (!(method21696 instanceof Class3840)) {
                 class356 = null;
-                Chunk.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", (Object)class354, (Object)this.getBlockState(class354));
+                Chunk.field10140.warn("Tried to load a DUMMY block entity @ {} but found not block entity block {} at location", class354, this.getBlockState(class354));
             }
             else {
                 class356 = ((Class3840)method21696).method11898(this.field10146);
             }
         }
         if (class356 == null) {
-            Chunk.field10140.warn("Tried to load a block entity for block {} but failed at location {}", (Object)this.getBlockState(class354), (Object)class354);
+            Chunk.field10140.warn("Tried to load a block entity for block {} but failed at location {}", this.getBlockState(class354), class354);
         }
         else {
             class356.method2187(this.field10146, class354);
@@ -708,22 +708,22 @@ public class Chunk implements IChunk
         if (!(this.field10154 instanceof Class6951)) {
             if (this.field10154 instanceof Class6956) {
                 this.field10146.method6833().method21343(((Class6956)this.field10154).method21357());
-                this.field10154 = (Class6952<Block>)Class6954.method21355();
+                this.field10154 = Class6954.method21355();
             }
         }
         else {
             ((Class6951)this.field10154).method21339(this.field10146.method6833(), class354 -> this.getBlockState(class354).getBlock());
-            this.field10154 = (Class6952<Block>)Class6954.method21355();
+            this.field10154 = Class6954.method21355();
         }
         if (!(this.field10155 instanceof Class6951)) {
             if (this.field10155 instanceof Class6956) {
                 this.field10146.method6834().method21343(((Class6956)this.field10155).method21357());
-                this.field10155 = (Class6952<Fluid>)Class6954.method21355();
+                this.field10155 = Class6954.method21355();
             }
         }
         else {
             ((Class6951)this.field10155).method21339(this.field10146.method6834(), class355 -> this.getFluidState(class355).getFluid());
-            this.field10155 = (Class6952<Fluid>)Class6954.method21355();
+            this.field10155 = Class6954.method21355();
         }
     }
     

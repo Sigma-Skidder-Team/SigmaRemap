@@ -74,7 +74,7 @@ public class WorldInfo
     private int field36383;
     private int field36384;
     private UUID field36385;
-    private Set<String> field36386;
+    private final Set<String> field36386;
     private boolean field36387;
     private final Class8878 field36388;
     private final Class7858<MinecraftServer> field36389;
@@ -369,13 +369,13 @@ public class WorldInfo
         final ListNBT class57 = new ListNBT();
         final Iterator<String> iterator2 = this.field36380.iterator();
         while (iterator2.hasNext()) {
-            ((AbstractList<StringNBT>)class57).add(StringNBT.method290(iterator2.next()));
+            class57.add(StringNBT.method290(iterator2.next()));
         }
         class56.put("Enabled", class57);
         final ListNBT class58 = new ListNBT();
         final Iterator<String> iterator3 = this.field36379.iterator();
         while (iterator3.hasNext()) {
-            ((AbstractList<StringNBT>)class58).add(StringNBT.method290(iterator3.next()));
+            class58.add(StringNBT.method290(iterator3.next()));
         }
         class56.put("Disabled", class58);
         class51.put("DataPacks", class56);

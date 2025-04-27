@@ -21,7 +21,7 @@ public class Class2765 extends Class2437
             if (Class8563.method28792().method23305() > 0) {
                 final Class6654 class8700 = class8699.method29841().method18207(Class6654.class);
                 class8699.method29839();
-                class8700.method20235(System.currentTimeMillis() + Class8563.method28792().method23305() * 50);
+                class8700.method20235(System.currentTimeMillis() + Class8563.method28792().method23305() * 50L);
                 class8700.method20234(class8699.method29818(Class5260.field22308, 0));
             }
         }

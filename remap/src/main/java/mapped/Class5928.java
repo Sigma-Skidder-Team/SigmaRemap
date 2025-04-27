@@ -127,7 +127,7 @@ public class Class5928<T extends Class806> extends Class5844<T>
     
     @Override
     public Iterable<Class6300> method17560() {
-        return (Iterable<Class6300>)ImmutableList.of((Object)this.field24375, (Object)this.field24377, (Object)this.field24378, (Object)this.field24379, (Object)this.field24380, (Object)this.field24381, (Object)this.field24382, (Object)this.field24383, (Object)this.field24384);
+        return (Iterable<Class6300>)ImmutableList.of(this.field24375, this.field24377, this.field24378, this.field24379, this.field24380, this.field24381, this.field24382, this.field24383, (Object)this.field24384);
     }
     
     public void method17802(final T t, final float n, final float n2, final float n3) {

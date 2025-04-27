@@ -61,7 +61,7 @@ public class Block implements Class3832
     public static int method11774(final BlockState class7096) {
         if (class7096 != null) {
             final boolean method563 = Block.field17391.method563(class7096) != 0;
-            return (((method563 ? 1 : 0) != -1) ? method563 : false) ? 1 : 0;
+            return ((method563 ? 1 : 0) != -1 && method563) ? 1 : 0;
         }
         return 0;
     }
@@ -168,7 +168,7 @@ public class Block implements Class3832
     }
     
     public Block(final Properties class9288) {
-        final Class9500 class9289 = new Class9500((O)this);
+        final Class9500 class9289 = new Class9500(this);
         this.method11875(class9289);
         this.field17401 = Properties.method34297(class9288);
         this.field17402 = Properties.method34298(class9288);
@@ -195,9 +195,7 @@ public class Block implements Class3832
                     if (class3833 != Blocks.field29343) {
                         if (class3833 != Blocks.field29383) {
                             if (class3833 != Blocks.field29337) {
-                                if (!class3833.method11785(Class7188.field27914)) {
-                                    return false;
-                                }
+                                return class3833.method11785(Class7188.field27914);
                             }
                         }
                     }
@@ -211,9 +209,7 @@ public class Block implements Class3832
     public boolean method11793(final BlockState class7096, final IBlockReader class7097, final BlockPos class7098) {
         if (class7096.getMaterial().method26443()) {
             if (class7096.isCollisionShapeOpaque(class7097, class7098)) {
-                if (!class7096.method21714()) {
-                    return true;
-                }
+                return !class7096.method21714();
             }
         }
         return false;
@@ -296,13 +292,13 @@ public class Block implements Class3832
         }
         final Class8266 class7100 = new Class8266(class7096, method1150, class7099);
         final Object2ByteLinkedOpenHashMap object2ByteLinkedOpenHashMap = Block.field17414.get();
-        final byte andMoveToFirst = object2ByteLinkedOpenHashMap.getAndMoveToFirst((Object)class7100);
+        final byte andMoveToFirst = object2ByteLinkedOpenHashMap.getAndMoveToFirst(class7100);
         if (andMoveToFirst == 127) {
             final boolean method1151 = VoxelShapes.method24496(class7096.getFaceOcclusionShape(class7097, class7098, class7099), method1150.getFaceOcclusionShape(class7097, method1149, class7099.getOpposite()), IBooleanFunction.ONLY_FIRST);
             if (object2ByteLinkedOpenHashMap.size() == 2048) {
                 object2ByteLinkedOpenHashMap.removeLastByte();
             }
-            object2ByteLinkedOpenHashMap.putAndMoveToFirst((Object)class7100, (byte)(byte)(method1151 ? 1 : 0));
+            object2ByteLinkedOpenHashMap.putAndMoveToFirst(class7100, (byte)(method1151 ? 1 : 0));
             return method1151;
         }
         return andMoveToFirst != 0;
@@ -357,7 +353,7 @@ public class Block implements Class3832
     }
     
     public static boolean isOpaque(final VoxelShape class7702) {
-        return (boolean) Block.field17393.getUnchecked((Object)class7702);
+        return Block.field17393.getUnchecked(class7702);
     }
     
     @Deprecated
@@ -571,7 +567,7 @@ public class Block implements Class3832
     }
     
     public ITextComponent method11855() {
-        return new Class2259(this.getTranslationKey(), new Object[0]);
+        return new Class2259(this.getTranslationKey());
     }
     
     public String getTranslationKey() {
