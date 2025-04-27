@@ -7,8 +7,9 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.auth.CaptchaChecker;
 
-public class LoginScreen extends Class4841 {
+public class LoginScreen extends Panel {
     private final TextField inputUsername;
     private final TextField inputEmail;
     private final TextField inputPassword;
@@ -26,7 +27,7 @@ public class LoginScreen extends Class4841 {
         this.addToList(this.loginButton = new UIButton(this, "RegisterButton", 468, 291, ClientFonts.JelloLight25.getWidth("Register"), 70, ColorHelper.field25964, "Register", ClientFonts.JelloLight25));
         this.addToList(this.registerButton = new UIButton(this, "LoginButton", 98, 333, ClientFonts.JelloLight14.getWidth("Login"), 14, ColorHelper.field25964, "Login", ClientFonts.JelloLight14));
         this.addToList(this.loadingThingy = new LoadingIndicator(this, "loading", 530, 314, 30, 30));
-        this.loadingThingy.method14305(false);
+        this.loadingThingy.setVisible(false);
         this.loadingThingy.method14303(true);
         final int n5 = 50;
         final int n6 = 320;
@@ -71,7 +72,7 @@ public class LoginScreen extends Class4841 {
 
     public void method14596() {
         new Thread(() -> {
-            this.loadingThingy.method14305(true);
+            this.loadingThingy.setVisible(true);
             this.loginButton.setEnabled(false);
 
             final CaptchaChecker captchaChecker = Client.getInstance().getNetworkManager().getChallengeResponse();
@@ -83,13 +84,13 @@ public class LoginScreen extends Class4841 {
             final RegisterScreen var5 = (RegisterScreen) this.getParent();
             final String s = Client.getInstance().getNetworkManager().login(this.inputUsername.getTypedText());
             if (s != null) {
-                var5.method14781("Error", s);
+                var5.show("Error", s);
                 this.inputCatcha.setTypedText("");
             } else {
-                var5.method14781("Success", "You can now login.");
+                var5.show("Success", "You can now login.");
                 var5.method14780();
             }
-            this.loadingThingy.method14305(false);
+            this.loadingThingy.setVisible(false);
             this.loginButton.setEnabled(true);
         }).start();
     }

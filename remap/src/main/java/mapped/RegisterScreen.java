@@ -22,7 +22,7 @@ public class RegisterScreen extends Class4800
     private float field21072;
     private float field21073;
     private final Texture field21074;
-    private final Class4887 field21075;
+    private final LoginPanel field21075;
     private final LoginScreen field21076;
     private Class4907 field21077;
     private final UIButton field21078;
@@ -40,7 +40,7 @@ public class RegisterScreen extends Class4800
         this.field21080 = new Animation(250, 250, Direction.FORWARDS);
         this.setListening(false);
         this.field21074 = ClientAssets.method25396("com/mentalfrostbyte/gui/resources/" + ClientAssets.getPanorama(), 0.075f, 8);
-        this.addToList(this.field21075 = new Class4887(this, "login", (this.field20480 - Class4887.field20896) / 2, (this.field20481 - Class4887.field20895) / 2, Class4887.field20896, Class4887.field20895));
+        this.addToList(this.field21075 = new LoginPanel(this, "login", (this.field20480 - LoginPanel.field20896) / 2, (this.field20481 - LoginPanel.field20895) / 2, LoginPanel.field20896, LoginPanel.field20895));
         this.addToList(this.field21076 = new LoginScreen(this, "register", (this.field20480 - LoginScreen.field20842) / 2, (this.field20481 - LoginScreen.field20841) / 2, LoginScreen.field20842, LoginScreen.field20841));
         this.method14780();
         this.addToList(this.field21078 = new UIButton(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
@@ -62,7 +62,7 @@ public class RegisterScreen extends Class4800
         this.field21076.setEnabled(false);
     }
     
-    public void method14781(final String s, final String s2) {
+    public void show(final String s, final String s2) {
         if (this.field21077 == null) {
             this.runThisOnDimensionUpdate(() -> {
                 final ArrayList list = new ArrayList();

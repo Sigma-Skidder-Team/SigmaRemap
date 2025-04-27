@@ -7,7 +7,7 @@ package mapped;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 
-public class UglyClickGUICategoryIcon extends Class4841
+public class UglyClickGUICategoryIcon extends Panel
 {
     private static String[] field20591;
     public Texture field20795;

@@ -5,6 +5,7 @@
 package com.mentalfrostbyte;
 
 import com.mentalfrostbyte.jello.ClientAssets;
+import com.mentalfrostbyte.jello.auth.AESFixer;
 import com.mentalfrostbyte.jello.auth.AgoraManager;
 import com.mentalfrostbyte.jello.auth.NetworkManager;
 import mapped.*;

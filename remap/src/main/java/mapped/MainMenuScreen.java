@@ -55,28 +55,28 @@ public class MainMenuScreen extends Class4800 {
         this.addToList(this.field21091 = new Class4811(this, "main", 0, 0, this.field20480, this.field20481));
         this.addToList(this.field21092 = new Class4812(this, "changelog", 0, 0, this.field20480, this.field20481));
         this.addToList(this.field21093 = new RedeemKeyScreen(this, "redeem", 0, 0, this.field20480, this.field20481));
-        this.field21092.method14305(false);
+        this.field21092.setVisible(false);
         this.field21092.method14303(true);
-        this.field21093.method14305(false);
+        this.field21093.setVisible(false);
         this.field21093.method14303(true);
     }
 
     public void goOut() {
         this.field21094.changeDirection(Direction.FORWARDS);
-        this.field21092.method14305(false);
-        this.field21093.method14305(false);
+        this.field21092.setVisible(false);
+        this.field21093.setVisible(false);
         this.field21093.method14301(false);
         this.field21093.method14303(true);
     }
 
     public void method14791() {
         this.field21094.changeDirection(Direction.BACKWARDS);
-        this.field21092.method14305(true);
+        this.field21092.setVisible(true);
     }
 
     public void method14792() {
         this.field21094.changeDirection(Direction.BACKWARDS);
-        this.field21093.method14305(true);
+        this.field21093.setVisible(true);
         this.field21093.method14301(true);
         this.field21093.method14303(false);
     }
@@ -98,7 +98,7 @@ public class MainMenuScreen extends Class4800 {
         }
         final float n3 = 0.07f * n2;
         this.field21091.method14288(1.0f - n3, 1.0f - n3);
-        this.field21091.method14305(this.field21094.calcPercent() == 0.0f);
+        this.field21091.setVisible(this.field21094.calcPercent() == 0.0f);
         MainMenuScreen.field21099 = Math.min(10.0f, Math.max(0.0f, (System.nanoTime() - MainMenuScreen.field21087) / 1.810361E7f / 2.0f));
         MainMenuScreen.field21087 = System.nanoTime();
         final int field21089 = -this.method14320();

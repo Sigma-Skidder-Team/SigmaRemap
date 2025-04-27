@@ -6,6 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.auth.CaptchaChecker;
 
 public class RedeemKeyScreen extends CustomGuiScreen
 {

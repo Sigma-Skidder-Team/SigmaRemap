@@ -5,7 +5,6 @@
 package com.mentalfrostbyte.jello.auth;
 
 import com.mentalfrostbyte.Client;
-import mapped.CaptchaChecker;
 import mapped.IRCManager;
 import mapped.PremiumChecker;
 import org.apache.commons.io.FileUtils;

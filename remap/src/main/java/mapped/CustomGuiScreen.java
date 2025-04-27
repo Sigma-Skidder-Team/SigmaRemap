@@ -14,7 +14,6 @@ import totalcross.json.JSONObject;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -847,7 +846,7 @@ public class CustomGuiScreen implements Class4925
         return this.field20487;
     }
     
-    public void method14305(final boolean field20487) {
+    public void setVisible(final boolean field20487) {
         this.field20487 = field20487;
     }
     

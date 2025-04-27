@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import org.newdawn.slick.TrueTypeFont;
 
-public class UIButton extends Class4841
+public class UIButton extends Panel
 {
     private static String[] field20591;
     public Animation field20818;

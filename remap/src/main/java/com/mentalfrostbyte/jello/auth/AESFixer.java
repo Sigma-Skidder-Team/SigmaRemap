@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.auth;
 
 import java.lang.reflect.Field;
 import javax.crypto.Cipher;

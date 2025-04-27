@@ -2,9 +2,10 @@
 // Decompiled by Procyon v0.6.0
 // 
 
-package mapped;
+package com.mentalfrostbyte.jello.auth;
 
 import com.mentalfrostbyte.Client;
+import mapped.BufferedImageUtil;
 import slick2d.Texture;
 
 import java.io.IOException;
