@@ -38,7 +38,7 @@ public class Class840 extends Class832
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.setAir(this.getMaxAir());
         this.rotationPitch = 0.0f;
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
@@ -220,8 +220,8 @@ public class Class840 extends Class832
                         final float n2 = MathHelper.sin(this.rotationYaw * 0.017453292f) * 0.3f;
                         final float n3 = 1.2f - this.rand.nextFloat() * 0.7f;
                         for (int i = 0; i < 2; ++i) {
-                            this.world.method6709(Class8432.field34652, this.getPosX() - method1741.x * n3 + n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 + n2, 0.0, 0.0, 0.0);
-                            this.world.method6709(Class8432.field34652, this.getPosX() - method1741.x * n3 - n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 - n2, 0.0, 0.0, 0.0);
+                            this.world.addParticle(Class8432.field34652, this.getPosX() - method1741.x * n3 + n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 + n2, 0.0, 0.0, 0.0);
+                            this.world.addParticle(Class8432.field34652, this.getPosX() - method1741.x * n3 - n, this.getPosY() - method1741.y, this.getPosZ() - method1741.z * n3 - n2, 0.0, 0.0, 0.0);
                         }
                     }
                 }
@@ -241,7 +241,7 @@ public class Class840 extends Class832
     
     private void method5008(final IParticleData IParticleData) {
         for (int i = 0; i < 7; ++i) {
-            this.world.method6709(IParticleData, this.method1940(1.0), this.method1943() + 0.2, this.method1947(1.0), this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01);
+            this.world.addParticle(IParticleData, this.method1940(1.0), this.method1943() + 0.2, this.method1947(1.0), this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01, this.rand.nextGaussian() * 0.01);
         }
     }
     

@@ -19,7 +19,7 @@ public class Class4995
     private Class2005 field21476;
     private Map<ResourceLocation, ResourceLocation> field21477;
     private Class8998 field21478;
-    private Class3090[] field21479;
+    private Biome[] field21479;
     private Class7740 field21480;
     private Boolean field21481;
     private Boolean field21482;

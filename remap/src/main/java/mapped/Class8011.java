@@ -32,7 +32,7 @@ public class Class8011
             return 0;
         }
         int n = 0;
-        for (final PlayerEntity class1850 : class1849.method6840()) {
+        for (final PlayerEntity class1850 : class1849.getPlayers()) {
             if (class1850.isSpectator()) {
                 continue;
             }
@@ -56,7 +56,7 @@ public class Class8011
             if (!Class8532.method28620(class1849, method6785, class1849.getBlockState(method6785), class1849.getFluidState(method6785))) {
                 continue;
             }
-            Class5496 method6786 = null;
+            ILivingEntityData method6786 = null;
             final int n2 = 1 + field10062.nextInt(method6784.method35972().method8235() + 1);
             for (int i = 0; i < n2; ++i) {
                 final Class851 class1852 = EntityType.field29055.method23371(class1849);

@@ -35,7 +35,7 @@ public class Class9432
             if (b) {
                 n2 = method24640 * 16 * 2;
             }
-            float n3 = 1.1666666f * (clientWorld.method6842(1.0f) - 0.2f);
+            float n3 = 1.1666666f * (clientWorld.getSunBrightness(1.0f) - 0.2f);
             if (clientWorld.method6848() > 0) {
                 n3 = 1.0f;
             }

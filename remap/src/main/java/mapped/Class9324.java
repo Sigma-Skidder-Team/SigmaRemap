@@ -70,7 +70,7 @@ public class Class9324
     
     private static void method34543(final Class1849 class1849, final PacketBuffer class1850, final ResourceLocation class1851) {
         final Class4376 class1852 = new Class4376(class1851, class1850);
-        final Iterator<? extends PlayerEntity> iterator = class1849.method6744().method6840().iterator();
+        final Iterator<? extends PlayerEntity> iterator = class1849.method6744().getPlayers().iterator();
         while (iterator.hasNext()) {
             ((Class513)iterator.next()).field3039.method17469(class1852);
         }

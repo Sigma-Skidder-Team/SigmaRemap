@@ -43,7 +43,7 @@ public class Weather extends Module
     }
     
     @EventListener
-    private void method10619(final EventPlayerTickI eventPlayerTick) {
+    private void method10619(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (!this.getBooleanValueFromSettingName("Disable rain")) {
                 if (this.field15984) {

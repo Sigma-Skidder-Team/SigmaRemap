@@ -147,7 +147,7 @@ public class Class835 extends Class834
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1854 != null && class1854.contains("BucketVariantTag", 3)) {
             this.method4977(class1854.getInt("BucketVariantTag"));

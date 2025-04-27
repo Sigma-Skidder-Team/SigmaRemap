@@ -41,7 +41,7 @@ public class Class3883 extends Class3882
         final double n2 = class7098.getZ() + method18517.z;
         for (int i = 0; i < 3; ++i) {
             if (random.nextBoolean()) {
-                class7097.method6709(Class8432.field34639, n + random.nextFloat() / 5.0f, class7098.getY() + (0.5 - random.nextFloat()), n2 + random.nextFloat() / 5.0f, 0.0, 0.0, 0.0);
+                class7097.addParticle(Class8432.field34639, n + random.nextFloat() / 5.0f, class7098.getY() + (0.5 - random.nextFloat()), n2 + random.nextFloat() / 5.0f, 0.0, 0.0, 0.0);
             }
         }
     }

@@ -31,7 +31,7 @@ public abstract class Class4582<C extends Class5113> extends Class4574<C>
     }
     
     @Override
-    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
+    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Biome class5509) {
         final ChunkPos method13593 = this.method13593(class5508, random, n, n2, 0, 0);
         if (n == method13593.field32290) {
             if (n2 == method13593.field32291) {

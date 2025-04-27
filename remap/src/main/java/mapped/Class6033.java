@@ -25,7 +25,7 @@ public class Class6033 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final BlockState class1862, final BlockState class1863, final int n3, final long n4, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int a, final double a2, final BlockState class1862, final BlockState class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         double n6 = 0.0;
         final Mutable class1865 = new Mutable();

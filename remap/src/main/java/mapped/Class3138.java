@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public final class Class3138 extends Class3090
+public final class Class3138 extends Biome
 {
     public Class3138() {
         super(new Class8927().method31462(Class6032.field24552, Class6032.field24541).method31464(Class2145.field12629).method31465(Class2140.field12588).method31466(0.2f).method31467(0.4f).method31468(0.95f).method31469(0.9f).method31470(4159204).method31471(329011).method31472("jungle"));

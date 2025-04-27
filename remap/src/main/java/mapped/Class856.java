@@ -16,7 +16,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import java.time.temporal.ChronoField;
 import java.time.LocalDate;
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -147,7 +146,7 @@ public class Class856 extends Class855
         }
         else if (!this.world.getBlockState(method1137).method21713(this.world, class354)) {
             this.method5145(false);
-            this.world.method6839(null, 1025, class354, 0);
+            this.world.playEvent(null, 1025, class354, 0);
         }
         else {
             if (this.rand.nextInt(200) == 0) {
@@ -155,7 +154,7 @@ public class Class856 extends Class855
             }
             if (this.world.method7135(Class856.field4563, this) != null) {
                 this.method5145(false);
-                this.world.method6839(null, 1025, class354, 0);
+                this.world.playEvent(null, 1025, class354, 0);
             }
         }
     }

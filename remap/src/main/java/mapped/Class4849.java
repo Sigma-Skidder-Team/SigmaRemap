@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Module;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.util.TreeMap;
 import java.util.Iterator;

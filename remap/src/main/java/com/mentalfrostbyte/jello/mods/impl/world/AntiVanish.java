@@ -44,7 +44,7 @@ public class AntiVanish extends Module
             if (this.field15919 != null) {
                 try {
                     for (final UUID uuid : this.field15919) {
-                        final Class9081 method17371 = AntiVanish.mc.method5269().method17371(uuid);
+                        final NetworkPlayerInfo method17371 = AntiVanish.mc.method5269().method17371(uuid);
                         final ITextComponent class5745 = (method17371 == null) ? null : method17371.method32732();
                         if (method17371 != null && this.field15919.contains(uuid)) {
                             if (class5745 == null) {

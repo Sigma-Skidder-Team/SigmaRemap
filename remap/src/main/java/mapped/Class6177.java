@@ -39,7 +39,7 @@ public class Class6177 extends Class6175
             final double n2 = this.field24949.nextFloat() * 2.0f - 1.0f;
             final double n3 = this.field24949.nextFloat() * 2.0f - 1.0f;
             if (n * n + n2 * n2 + n3 * n3 <= 1.0) {
-                this.field24932.method6710(this.field24975, false, this.field24972.method1939(n / 4.0), this.field24972.method1942(0.5 + n2 / 4.0), this.field24972.method1946(n3 / 4.0), n, n2 + 0.2, n3);
+                this.field24932.addParticle(this.field24975, false, this.field24972.method1939(n / 4.0), this.field24972.method1942(0.5 + n2 / 4.0), this.field24972.method1946(n3 / 4.0), n, n2 + 0.2, n3);
             }
         }
         ++this.field24973;

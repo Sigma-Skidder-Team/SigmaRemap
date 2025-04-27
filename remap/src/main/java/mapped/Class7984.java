@@ -12,15 +12,15 @@ public class Class7984
 {
     private static String[] field32856;
     
-    public static ResourceLocation method26041(final Class3090 class3090) {
-        return Registry.field217.getKey(class3090);
+    public static ResourceLocation method26041(final Biome biome) {
+        return Registry.field217.getKey(biome);
     }
     
-    public static Class3090 method26042(final ResourceLocation class1932) {
+    public static Biome method26042(final ResourceLocation class1932) {
         return Registry.field217.method510(class1932) ? Registry.field217.getOrDefault(class1932) : null;
     }
     
-    public static Class3090 method26043(final ResourceLocation class1932) {
+    public static Biome method26043(final ResourceLocation class1932) {
         return Registry.field217.getOrDefault(class1932);
     }
     
@@ -28,8 +28,8 @@ public class Class7984
         return Registry.field217.method507();
     }
     
-    public static Class3090 method26045(final Class1856 class1856, final BlockPos class1857) {
-        Class3090 class1858 = Class7102.field27633;
+    public static Biome method26045(final Class1856 class1856, final BlockPos class1857) {
+        Biome class1858 = Class7102.field27633;
         if (!(class1856 instanceof Class1857)) {
             if (class1856 instanceof Class1852) {
                 class1858 = ((Class1852)class1856).method6959(class1857);

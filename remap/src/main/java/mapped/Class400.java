@@ -33,7 +33,7 @@ public class Class400 extends Entity implements Class401
         this.setPosition(n, n2, n3);
         for (int i = 0; i < 7; ++i) {
             final double n7 = 0.4 + 0.1 * i;
-            class1847.method6709(Class8432.field34641, n, n2, n3, n4 * n7, n5, n6 * n7);
+            class1847.addParticle(Class8432.field34641, n, n2, n3, n4 * n7, n5, n6 * n7);
         }
         this.setMotion(n4, n5, n6);
     }

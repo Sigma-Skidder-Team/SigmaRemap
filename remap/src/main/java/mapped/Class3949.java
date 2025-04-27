@@ -41,7 +41,7 @@ public class Class3949 extends Class3948
             if (random.nextDouble() < 0.1) {
                 class7097.method6708(n, n2, n3, Class8520.field35594, Class286.field1582, 1.0f, 1.0f, false);
             }
-            class7097.method6709(Class8432.field34639, n, n2 + 1.1, n3, 0.0, 0.0, 0.0);
+            class7097.addParticle(Class8432.field34639, n, n2 + 1.1, n3, 0.0, 0.0, 0.0);
         }
     }
 }

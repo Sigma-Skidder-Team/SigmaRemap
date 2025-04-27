@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 import java.io.InputStream;

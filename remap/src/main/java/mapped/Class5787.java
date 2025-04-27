@@ -33,7 +33,7 @@ public class Class5787 extends Class5784
             final double n2 = method16740 + method16742.nextGaussian() / 2.0;
             final double n3 = method16741 + method16742.nextGaussian() / 2.0;
             final Vec3d method16743 = this.field23764.getMotion();
-            this.field23764.world.method6709(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 + method16743.x, -method16738.y * 0.30000001192092896 + method16743.y, -method16738.z * 0.07999999821186066 + method16743.z);
+            this.field23764.world.addParticle(Class8432.field34605, n, n2, n3, -method16738.x * 0.07999999821186066 + method16743.x, -method16738.y * 0.30000001192092896 + method16743.y, -method16738.z * 0.07999999821186066 + method16743.z);
             method16738.rotateYaw(0.19634955f);
         }
     }

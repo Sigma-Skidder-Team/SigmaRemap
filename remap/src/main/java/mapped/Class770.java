@@ -83,8 +83,8 @@ public abstract class Class770 extends Class772
                 final float n4 = this.field2951 * 0.017453292f + MathHelper.cos(this.ticksExisted * 0.6662f) * 0.25f;
                 final float method4268 = MathHelper.cos(n4);
                 final float method4269 = MathHelper.sin(n4);
-                this.world.method6709(Class8432.field34617, this.getPosX() + method4268 * 0.6, this.getPosY() + 1.8, this.getPosZ() + method4269 * 0.6, n, n2, n3);
-                this.world.method6709(Class8432.field34617, this.getPosX() - method4268 * 0.6, this.getPosY() + 1.8, this.getPosZ() - method4269 * 0.6, n, n2, n3);
+                this.world.addParticle(Class8432.field34617, this.getPosX() + method4268 * 0.6, this.getPosY() + 1.8, this.getPosZ() + method4269 * 0.6, n, n2, n3);
+                this.world.addParticle(Class8432.field34617, this.getPosX() - method4268 * 0.6, this.getPosY() + 1.8, this.getPosZ() - method4269 * 0.6, n, n2, n3);
             }
         }
     }

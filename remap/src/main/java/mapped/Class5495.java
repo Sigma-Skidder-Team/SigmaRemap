@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5495 implements Class5496
+public class Class5495 implements ILivingEntityData
 {
     private static String[] field22783;
     public final boolean field22784;

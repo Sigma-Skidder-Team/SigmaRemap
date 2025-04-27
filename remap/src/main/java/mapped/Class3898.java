@@ -132,7 +132,7 @@ public class Class3898 extends Class3892
             class7096 = ((StateHolder<O, Class7096>)class7096).with((IProperty<Comparable>)Class3898.field17585, false);
             class7097.setBlockState(class7098, class7096, 10);
         }
-        class7097.method6839(class7099, ((boolean)class7096.method21772((IProperty<Boolean>)Class3898.field17585)) ? 1008 : 1014, class7098, 0);
+        class7097.playEvent(class7099, ((boolean)class7096.method21772((IProperty<Boolean>)Class3898.field17585)) ? 1008 : 1014, class7098, 0);
         return Class2201.field13400;
     }
     
@@ -143,7 +143,7 @@ public class Class3898 extends Class3892
             if (class7096.method21772((IProperty<Boolean>)Class3898.field17586) != method6749) {
                 class7097.setBlockState(class7098, (Class7096)((StateHolder<Object, Object>)((StateHolder<Object, Object>)class7096).with((IProperty<Comparable>)Class3898.field17586, method6749)).with((IProperty<Comparable>)Class3898.field17585, method6749), 2);
                 if (class7096.method21772((IProperty<Boolean>)Class3898.field17585) != method6749) {
-                    class7097.method6839(null, method6749 ? 1008 : 1014, class7098, 0);
+                    class7097.playEvent(null, method6749 ? 1008 : 1014, class7098, 0);
                 }
             }
         }

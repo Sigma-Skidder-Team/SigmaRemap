@@ -90,7 +90,7 @@ public class Class561 extends Screen
         this.field3348.field3431 = (b || this.field3349.method3378().length() > 1);
     }
     
-    private static void method3273(final String s, final Class3832 class3832, final Class3090 class3833, final List<String> list, final Class9127... array) {
+    private static void method3273(final String s, final Class3832 class3832, final Biome class3833, final List<String> list, final Class9127... array) {
         final Class7067 class3834 = Class8705.field36578.method29874();
         for (int i = array.length - 1; i >= 0; --i) {
             class3834.method21590().add(array[i]);

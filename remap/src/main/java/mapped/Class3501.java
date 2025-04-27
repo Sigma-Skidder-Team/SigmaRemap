@@ -29,7 +29,7 @@ public class Class3501 extends Class3446
         if (this.field16461.method4205() || this.field16461.method4800()) {
             return false;
         }
-        final List<Entity> method6737 = this.field16461.world.method6737(this.field16461, this.field16461.getBoundingBox().grow(9.0, 4.0, 9.0), class818 -> {
+        final List<Entity> method6737 = this.field16461.world.getEntitiesInAABBexcluding(this.field16461, this.field16461.getBoundingBox().grow(9.0, 4.0, 9.0), class818 -> {
             class818.getType();
             final EntityType class819;
             return class819 == EntityType.field28996 || class819 == EntityType.field29033;

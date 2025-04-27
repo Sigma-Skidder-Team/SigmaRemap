@@ -29,7 +29,7 @@ public class Class5107 implements Class5106
             final Class325 class325 = values2[j];
             this.field22048.put(class325.method1005(), class325);
         }
-        for (final Class3090 class326 : Registry.field217) {
+        for (final Biome class326 : Registry.field217) {
             this.method16004("BIOME_" + Class7984.method26041(class326).method7797().trim().toUpperCase().replace(' ', '_'), new Class337((float) Registry.field217.getId(class326)));
         }
         final String[] array = { "NONE", "TAIGA", "EXTREME_HILLS", "JUNGLE", "MESA", "PLAINS", "SAVANNA", "ICY", "THEEND", "BEACH", "FOREST", "OCEAN", "DESERT", "RIVER", "SWAMP", "MUSHROOM", "NETHER" };

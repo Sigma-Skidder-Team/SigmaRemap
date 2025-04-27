@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 public class Class4872 extends Class4871

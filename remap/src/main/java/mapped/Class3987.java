@@ -47,7 +47,7 @@ public class Class3987 extends Class3986
                 else {
                     for (int j = 0; j < 128; ++j) {
                         final double nextDouble = class7097.rand.nextDouble();
-                        class7097.method6709(Class8432.field34637, MathHelper.lerp(nextDouble, method1134.getX(), class7098.getX()) + (class7097.rand.nextDouble() - 0.5) + 0.5, MathHelper.lerp(nextDouble, method1134.getY(), class7098.getY()) + class7097.rand.nextDouble() - 0.5, MathHelper.lerp(nextDouble, method1134.getZ(), class7098.getZ()) + (class7097.rand.nextDouble() - 0.5) + 0.5, (class7097.rand.nextFloat() - 0.5f) * 0.2f, (class7097.rand.nextFloat() - 0.5f) * 0.2f, (class7097.rand.nextFloat() - 0.5f) * 0.2f);
+                        class7097.addParticle(Class8432.field34637, MathHelper.lerp(nextDouble, method1134.getX(), class7098.getX()) + (class7097.rand.nextDouble() - 0.5) + 0.5, MathHelper.lerp(nextDouble, method1134.getY(), class7098.getY()) + class7097.rand.nextDouble() - 0.5, MathHelper.lerp(nextDouble, method1134.getZ(), class7098.getZ()) + (class7097.rand.nextDouble() - 0.5) + 0.5, (class7097.rand.nextFloat() - 0.5f) * 0.2f, (class7097.rand.nextFloat() - 0.5f) * 0.2f, (class7097.rand.nextFloat() - 0.5f) * 0.2f);
                     }
                 }
                 return;

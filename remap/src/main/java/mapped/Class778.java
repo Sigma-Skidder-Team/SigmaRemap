@@ -185,7 +185,7 @@ public class Class778 extends Class776 implements Class768
         }
         else {
             for (int i = 0; i < this.rand.nextInt(35) + 10; ++i) {
-                this.world.method6709(Class8432.field34647, this.getPosX() + this.rand.nextGaussian() * 0.12999999523162842, this.getBoundingBox().maxY + 0.5 + this.rand.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.rand.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34647, this.getPosX() + this.rand.nextGaussian() * 0.12999999523162842, this.getBoundingBox().maxY + 0.5 + this.rand.nextGaussian() * 0.12999999523162842, this.getPosZ() + this.rand.nextGaussian() * 0.12999999523162842, 0.0, 0.0, 0.0);
             }
         }
     }

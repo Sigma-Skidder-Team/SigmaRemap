@@ -28,7 +28,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    public void method10030(final EventPlayerTickI eventPlayerTick) {
+    public void method10030(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             ElytraFly.mc.gameSettings.field23440.field2162 = false;
             if (ElytraFly.mc.player.getMotion().y < 0.08 && !ElytraFly.mc.player.onGround) {

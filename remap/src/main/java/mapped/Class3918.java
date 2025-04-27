@@ -123,7 +123,7 @@ public class Class3918 extends Class3841 implements Class3856
             }
             if (random.nextInt(5) == 0) {
                 for (int i = 0; i < random.nextInt(1) + 1; ++i) {
-                    class7097.method6709(Class8432.field34633, class7098.getX() + 0.5f, class7098.getY() + 0.5f, class7098.getZ() + 0.5f, random.nextFloat() / 2.0f, 5.0E-5, random.nextFloat() / 2.0f);
+                    class7097.addParticle(Class8432.field34633, class7098.getX() + 0.5f, class7098.getY() + 0.5f, class7098.getZ() + 0.5f, random.nextFloat() / 2.0f, 5.0E-5, random.nextFloat() / 2.0f);
                 }
             }
         }
@@ -191,9 +191,9 @@ public class Class3918 extends Class3841 implements Class3856
     
     public static void method12032(final World class1847, final BlockPos class1848, final boolean b, final boolean b2) {
         final Random method6790 = class1847.method6790();
-        class1847.method6712(b ? Class8432.field34654 : Class8432.field34653, true, class1848.getX() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), class1848.getY() + method6790.nextDouble() + method6790.nextDouble(), class1848.getZ() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), 0.0, 0.07, 0.0);
+        class1847.addOptionalParticle(b ? Class8432.field34654 : Class8432.field34653, true, class1848.getX() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), class1848.getY() + method6790.nextDouble() + method6790.nextDouble(), class1848.getZ() + 0.5 + method6790.nextDouble() / 3.0 * (method6790.nextBoolean() ? 1 : -1), 0.0, 0.07, 0.0);
         if (b2) {
-            class1847.method6709(Class8432.field34639, class1848.getX() + 0.25 + method6790.nextDouble() / 2.0 * (method6790.nextBoolean() ? 1 : -1), class1848.getY() + 0.4, class1848.getZ() + 0.25 + method6790.nextDouble() / 2.0 * (method6790.nextBoolean() ? 1 : -1), 0.0, 0.005, 0.0);
+            class1847.addParticle(Class8432.field34639, class1848.getX() + 0.25 + method6790.nextDouble() / 2.0 * (method6790.nextBoolean() ? 1 : -1), class1848.getY() + 0.4, class1848.getZ() + 0.25 + method6790.nextDouble() / 2.0 * (method6790.nextBoolean() ? 1 : -1), 0.0, 0.005, 0.0);
         }
     }
     

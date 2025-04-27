@@ -18,7 +18,7 @@ public class Class9310
     private int[] field39954;
     private ResourceLocation[] field39955;
     private int[] field39956;
-    private Class3090[] field39957;
+    private Biome[] field39957;
     private Class7740 field39958;
     private Class7740 field39959;
     private boolean field39960;

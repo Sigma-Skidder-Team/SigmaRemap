@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Color;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.net.URL;
 

@@ -22,7 +22,7 @@ public class Class5789 extends Class5784
     @Override
     public void method17246() {
         if (this.field23783++ % 10 == 0) {
-            this.field23764.world.method6709(Class8432.field34618, this.field23764.getPosX() + (this.field23764.method2633().nextFloat() - 0.5f) * 8.0f, this.field23764.getPosY() + 2.0 + (this.field23764.method2633().nextFloat() - 0.5f) * 4.0f, this.field23764.getPosZ() + (this.field23764.method2633().nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
+            this.field23764.world.addParticle(Class8432.field34618, this.field23764.getPosX() + (this.field23764.method2633().nextFloat() - 0.5f) * 8.0f, this.field23764.getPosY() + 2.0 + (this.field23764.method2633().nextFloat() - 0.5f) * 4.0f, this.field23764.getPosZ() + (this.field23764.method2633().nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
         }
     }
     

@@ -14,7 +14,7 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class688 extends AbstractGui
 {
-    private static final Ordering<Class9081> field3784;
+    private static final Ordering<NetworkPlayerInfo> field3784;
     private final Minecraft field3785;
     private final Class685 field3786;
     private ITextComponent field3787;
@@ -27,8 +27,8 @@ public class Class688 extends AbstractGui
         this.field3786 = field3786;
     }
     
-    public ITextComponent method3819(final Class9081 class9081) {
-        return (class9081.method32732() == null) ? Class6749.method20549(class9081.method32729(), new StringTextComponent(class9081.method32719().getName())) : class9081.method32732();
+    public ITextComponent method3819(final NetworkPlayerInfo networkPlayerInfo) {
+        return (networkPlayerInfo.method32732() == null) ? Class6749.method20549(networkPlayerInfo.method32729(), new StringTextComponent(networkPlayerInfo.method32719().getName())) : networkPlayerInfo.method32732();
     }
     
     public void method3820(final boolean field3790) {
@@ -44,7 +44,7 @@ public class Class688 extends AbstractGui
         final List sortedCopy = Class688.field3784.sortedCopy(this.field3785.player.field4069.method17370());
         int max = 0;
         int max2 = 0;
-        for (final Class9081 class6518 : sortedCopy) {
+        for (final NetworkPlayerInfo class6518 : sortedCopy) {
             max = Math.max(max, this.field3785.fontRenderer.getStringWidth(this.method3819(class6518).getFormattedText()));
             if (class6517 == null) {
                 continue;
@@ -113,10 +113,10 @@ public class Class688 extends AbstractGui
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             if (j < subList.size()) {
-                final Class9081 class6519 = (Class9081)subList.get(j);
+                final NetworkPlayerInfo class6519 = (NetworkPlayerInfo)subList.get(j);
                 final GameProfile method6629 = class6519.method32719();
                 if (b) {
-                    final PlayerEntity method6630 = this.field3785.world.method7143(method6629.getId());
+                    final PlayerEntity method6630 = this.field3785.world.getPlayerByUuid(method6629.getId());
                     boolean b2 = false;
                     Label_1032: {
                         if (method6630 != null) {
@@ -168,15 +168,15 @@ public class Class688 extends AbstractGui
         }
     }
     
-    public void method3822(final int n, final int n2, final int n3, final Class9081 class9081) {
+    public void method3822(final int n, final int n2, final int n3, final NetworkPlayerInfo networkPlayerInfo) {
         RenderSystem.method30068(1.0f, 1.0f, 1.0f, 1.0f);
         this.field3785.method5290().method5849(Class688.GUI_ICONS_LOCATION);
         int n4;
-        if (class9081.method32722() >= 0) {
-            if (class9081.method32722() >= 150) {
-                if (class9081.method32722() >= 300) {
-                    if (class9081.method32722() >= 600) {
-                        if (class9081.method32722() >= 1000) {
+        if (networkPlayerInfo.method32722() >= 0) {
+            if (networkPlayerInfo.method32722() >= 150) {
+                if (networkPlayerInfo.method32722() >= 300) {
+                    if (networkPlayerInfo.method32722() >= 600) {
+                        if (networkPlayerInfo.method32722() >= 1000) {
                             n4 = 4;
                         }
                         else {
@@ -203,7 +203,7 @@ public class Class688 extends AbstractGui
         this.setBlitOffset(this.getBlitOffset() - 100);
     }
     
-    private void method3823(final Class9290 class9290, final int n, final String s, final int n2, final int n3, final Class9081 class9291) {
+    private void method3823(final Class9290 class9290, final int n, final String s, final int n2, final int n3, final NetworkPlayerInfo class9291) {
         final int method23969 = class9290.method34311().method19636(s, class9290).method23969();
         if (class9290.method34317() != Class263.field1257) {
             final String string = TextFormatting.YELLOW + "" + method23969;

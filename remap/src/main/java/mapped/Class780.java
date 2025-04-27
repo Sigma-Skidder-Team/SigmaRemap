@@ -14,7 +14,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
-import java.time.temporal.ChronoField;
 import java.time.LocalDate;
 
 public abstract class Class780 extends Class763 implements Class768
@@ -99,7 +98,7 @@ public abstract class Class780 extends Class763 implements Class768
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         this.method4184(class1852);
         this.method4187(class1852);

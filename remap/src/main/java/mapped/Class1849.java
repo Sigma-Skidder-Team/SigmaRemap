@@ -106,7 +106,7 @@ public class Class1849 extends World
     }
     
     @Override
-    public Class3090 method6841(final int n, final int n2, final int n3) {
+    public Biome getNoiseBiomeRaw(final int n, final int n2, final int n3) {
         return this.method6904().method7438().method18879().method6960(n, n2, n3);
     }
     
@@ -334,7 +334,7 @@ public class Class1849 extends World
         if (this.rand.nextInt(16) == 0) {
             final BlockPos method7026 = this.method6958(HeightmapType.field11525, this.method6794(method7021, 0, method7022, 15));
             final BlockPos method7027 = method7026.method1139();
-            final Class3090 method7028 = this.method6959(method7026);
+            final Biome method7028 = this.method6959(method7026);
             if (method7028.method9846(this, method7027)) {
                 this.method6692(method7027, Blocks.field29330.getDefaultState());
             }
@@ -928,7 +928,7 @@ public class Class1849 extends World
     }
     
     @Override
-    public void method6839(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
+    public void playEvent(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
         this.field10090.method1537().method20599(playerEntity, class513.getX(), class513.getY(), class513.getZ(), 64.0, this.dimension.getType(), new Class4395(n, class513, n2, false));
     }
     
@@ -1142,7 +1142,7 @@ public class Class1849 extends World
     }
     
     @Override
-    public List<Class513> method6840() {
+    public List<Class513> getPlayers() {
         return this.field10088;
     }
     

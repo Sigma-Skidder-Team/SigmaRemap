@@ -158,7 +158,7 @@ public class Class406 extends Entity implements Class407, Class401
         ++this.field2497;
         if (this.world.isRemote) {
             if (this.field2497 % 2 < 2) {
-                this.world.method6709(Class8432.field34621, this.getPosX(), this.getPosY() - 0.3, this.getPosZ(), this.rand.nextGaussian() * 0.05, -this.getMotion().y * 0.5, this.rand.nextGaussian() * 0.05);
+                this.world.addParticle(Class8432.field34621, this.getPosX(), this.getPosY() - 0.3, this.getPosZ(), this.rand.nextGaussian() * 0.05, -this.getMotion().y * 0.5, this.rand.nextGaussian() * 0.05);
             }
         }
         if (!this.world.isRemote) {
@@ -257,7 +257,7 @@ public class Class406 extends Entity implements Class407, Class401
                 }
                 else {
                     for (int i = 0; i < this.rand.nextInt(3) + 2; ++i) {
-                        this.world.method6709(Class8432.field34636, this.getPosX(), this.getPosY(), this.getPosZ(), this.rand.nextGaussian() * 0.05, 0.005, this.rand.nextGaussian() * 0.05);
+                        this.world.addParticle(Class8432.field34636, this.getPosX(), this.getPosY(), this.getPosZ(), this.rand.nextGaussian() * 0.05, 0.005, this.rand.nextGaussian() * 0.05);
                     }
                 }
             }

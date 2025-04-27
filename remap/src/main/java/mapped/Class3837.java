@@ -65,7 +65,7 @@ public class Class3837 extends Class3834
         final double n3 = class7098.getZ() + 0.55 - random.nextFloat() * 0.1f;
         final double n4 = 0.4f - (random.nextFloat() + random.nextFloat()) * 0.4f;
         if (random.nextInt(5) == 0) {
-            class7097.method6709(Class8432.field34616, n + class7099.getXOffset() * n4, n2 + class7099.getYOffset() * n4, n3 + class7099.getZOffset() * n4, random.nextGaussian() * 0.005, random.nextGaussian() * 0.005, random.nextGaussian() * 0.005);
+            class7097.addParticle(Class8432.field34616, n + class7099.getXOffset() * n4, n2 + class7099.getYOffset() * n4, n3 + class7099.getZOffset() * n4, random.nextGaussian() * 0.005, random.nextGaussian() * 0.005, random.nextGaussian() * 0.005);
         }
     }
     

@@ -35,7 +35,7 @@ public class Class7490 implements Class7491
     @Override
     public Collection<String> method23205() {
         final ArrayList arrayList = Lists.newArrayList();
-        final Iterator<Class9081> iterator = this.field28922.method17370().iterator();
+        final Iterator<NetworkPlayerInfo> iterator = this.field28922.method17370().iterator();
         while (iterator.hasNext()) {
             arrayList.add(iterator.next().method32719().getName());
         }

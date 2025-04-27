@@ -17,14 +17,14 @@ public class Class8697
     private final Class8683 field36545;
     private final Class8683 field36546;
     private final Class8683 field36547;
-    private final Class3090 field36548;
+    private final Biome field36548;
     private final Class4574<?> field36549;
     private final DimensionType field36550;
     private final Class8355 field36551;
     private final Class7854 field36552;
     private final Class8744 field36553;
     
-    public Class8697(final Class8683 field36545, final Class8683 field36546, final Class8683 field36547, final Class3090 field36548, final Class4574<?> field36549, final DimensionType field36550, final Class8355 field36551, final Class7854 field36552, final Class8744 field36553) {
+    public Class8697(final Class8683 field36545, final Class8683 field36546, final Class8683 field36547, final Biome field36548, final Class4574<?> field36549, final DimensionType field36550, final Class8355 field36551, final Class7854 field36552, final Class8744 field36553) {
         this.field36545 = field36545;
         this.field36546 = field36546;
         this.field36547 = field36547;
@@ -36,8 +36,8 @@ public class Class8697
         this.field36553 = field36553;
     }
     
-    public static Class8697 method29808(final Class3090 class3090) {
-        return new Class8697(Class8683.field36492, Class8683.field36492, Class8683.field36492, class3090, null, null, Class8355.field34288, Class7854.field32229, Class8744.field36724);
+    public static Class8697 method29808(final Biome biome) {
+        return new Class8697(Class8683.field36492, Class8683.field36492, Class8683.field36492, biome, null, null, Class8355.field34288, Class7854.field32229, Class8744.field36724);
     }
     
     public static Class8697 method29809(final DimensionType class383) {
@@ -113,7 +113,7 @@ public class Class8697
             final Class8683 method35917 = Class8683.method29738(method35914.get("z"));
             final DimensionType class383 = method35913.has("dimension") ? DimensionType.method1275(new ResourceLocation(Class9583.method35895(method35913, "dimension"))) : null;
             final Class4574 class384 = method35913.has("feature") ? Class4535.field20023.get(Class9583.method35895(method35913, "feature")) : null;
-            Class3090 class385 = null;
+            Biome class385 = null;
             if (method35913.has("biome")) {
                 class385 = Registry.field217.method506(new ResourceLocation(Class9583.method35895(method35913, "biome"))).orElseThrow(() -> {
                     new JsonSyntaxException("Unknown biome '" + obj + "'");

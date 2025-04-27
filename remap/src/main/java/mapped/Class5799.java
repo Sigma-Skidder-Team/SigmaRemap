@@ -51,7 +51,7 @@ public class Class5799 implements IClientPlayNetHandler
     private Minecraft field23808;
     private ClientWorld field23809;
     private boolean field23810;
-    private final Map<UUID, Class9081> field23811;
+    private final Map<UUID, NetworkPlayerInfo> field23811;
     private final Class8840 field23812;
     private final Class7490 field23813;
     private Class1792 field23814;
@@ -1101,7 +1101,7 @@ public class Class5799 implements IClientPlayNetHandler
                                                 }
                                             }
                                             else {
-                                                this.field23809.method6709(Class8432.field34613, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), 0.0, 0.0, 0.0);
+                                                this.field23809.addParticle(Class8432.field34613, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), 0.0, 0.0, 0.0);
                                                 this.field23809.method6706(field4684, field4684.getPosX(), field4684.getPosY(), field4684.getPosZ(), Class8520.field35143, Class286.field1583, 1.0f, 1.0f);
                                             }
                                         }
@@ -1441,9 +1441,9 @@ public class Class5799 implements IClientPlayNetHandler
                 this.field23811.remove(class4331.method13869().getId());
             }
             else {
-                Class9081 class4332 = this.field23811.get(class4331.method13869().getId());
+                NetworkPlayerInfo class4332 = this.field23811.get(class4331.method13869().getId());
                 if (class4330.method13002() == Class2156.field12803) {
-                    class4332 = new Class9081(class4331);
+                    class4332 = new NetworkPlayerInfo(class4331);
                     this.field23811.put(class4332.method32719().getId(), class4332);
                 }
                 if (class4332 == null) {
@@ -1893,7 +1893,7 @@ public class Class5799 implements IClientPlayNetHandler
             final double n2 = class4278.method12851() * class4278.method12849();
             final double n3 = class4278.method12851() * class4278.method12850();
             try {
-                this.field23809.method6710(class4278.method12853(), class4278.method12844(), class4278.method12845(), class4278.method12846(), class4278.method12847(), n, n2, n3);
+                this.field23809.addParticle(class4278.method12853(), class4278.method12844(), class4278.method12845(), class4278.method12846(), class4278.method12847(), n, n2, n3);
             }
             catch (final Throwable t) {
                 Class5799.field23804.warn("Could not spawn particle effect {}", class4278.method12853());
@@ -1908,7 +1908,7 @@ public class Class5799 implements IClientPlayNetHandler
                 final double n8 = this.field23817.nextGaussian() * class4278.method12851();
                 final double n9 = this.field23817.nextGaussian() * class4278.method12851();
                 try {
-                    this.field23809.method6710(class4278.method12853(), class4278.method12844(), class4278.method12845() + n4, class4278.method12846() + n5, class4278.method12847() + n6, n7, n8, n9);
+                    this.field23809.addParticle(class4278.method12853(), class4278.method12844(), class4278.method12845() + n4, class4278.method12846() + n5, class4278.method12847() + n6, n7, n8, n9);
                 }
                 catch (final Throwable t2) {
                     Class5799.field23804.warn("Could not spawn particle effect {}", class4278.method12853());
@@ -2018,22 +2018,22 @@ public class Class5799 implements IClientPlayNetHandler
         return this.field23805;
     }
     
-    public Collection<Class9081> method17370() {
+    public Collection<NetworkPlayerInfo> method17370() {
         return this.field23811.values();
     }
     
     @Nullable
-    public Class9081 method17371(final UUID uuid) {
+    public NetworkPlayerInfo method17371(final UUID uuid) {
         return this.field23811.get(uuid);
     }
     
     @Nullable
-    public Class9081 method17372(final String anObject) {
-        for (final Class9081 class9081 : this.field23811.values()) {
-            if (!class9081.method32719().getName().equals(anObject)) {
+    public NetworkPlayerInfo method17372(final String anObject) {
+        for (final NetworkPlayerInfo networkPlayerInfo : this.field23811.values()) {
+            if (!networkPlayerInfo.method32719().getName().equals(anObject)) {
                 continue;
             }
-            return class9081;
+            return networkPlayerInfo;
         }
         return null;
     }

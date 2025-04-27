@@ -126,7 +126,7 @@ public class Class798 extends Class789 implements Class797
         final String method323 = class51.getString("HurtBy");
         if (!method323.isEmpty()) {
             this.field4261 = UUID.fromString(method323);
-            final PlayerEntity method324 = this.world.method7143(this.field4261);
+            final PlayerEntity method324 = this.world.getPlayerByUuid(this.field4261);
             this.method2636(method324);
             if (method324 != null) {
                 this.field2956 = method324;
@@ -178,7 +178,7 @@ public class Class798 extends Class789 implements Class797
     }
     
     private void method4507(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData class1848) {
-        class1847.method6709(class1848, MathHelper.lerp(class1847.rand.nextDouble(), n, n2), n5, MathHelper.lerp(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        class1847.addParticle(class1848, MathHelper.lerp(class1847.rand.nextDouble(), n, n2), n5, MathHelper.lerp(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     private void method4508(final BlockPos class354) {

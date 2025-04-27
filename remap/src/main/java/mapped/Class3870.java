@@ -82,7 +82,7 @@ public class Class3870 extends Class3874
         if (method6701.getBlock() == this) {
             if (method6701.get(Class3870.field17513) != class1851) {
                 class1847.setBlockState(class1852, Blocks.AIR.getDefaultState(), 35);
-                class1847.method6839(class1850, 2001, class1852, Block.method11774(method6701));
+                class1847.playEvent(class1850, 2001, class1852, Block.method11774(method6701));
                 if (!class1847.isRemote) {
                     if (!class1850.method2889()) {
                         Block.spawnAsEntity(class1849, class1847, class1848, null, class1850, class1850.getHeldItemMainhand());

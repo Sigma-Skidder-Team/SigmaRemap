@@ -65,7 +65,7 @@ public class Class7665
             catch (final InsecureTextureException ex) {}
             if (hashMap.isEmpty()) {
                 gameProfile2.getProperties().clear();
-                if (gameProfile2.getId().equals(Minecraft.getInstance().method5287().method33694().getId())) {
+                if (gameProfile2.getId().equals(Minecraft.getInstance().method5287().getProfile().getId())) {
                     gameProfile2.getProperties().putAll((Multimap) Minecraft.getInstance().method5288());
                     hashMap.putAll(this.field30446.getTextures(gameProfile2, false));
                 }

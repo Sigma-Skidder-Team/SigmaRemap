@@ -108,7 +108,7 @@ public class NotificationManager {
     }
 
     @EventListener
-    private void method25780(final EventPlayerTickI eventPlayerTick) {
+    private void method25780(final EventPlayerTick eventPlayerTick) {
         final Iterator<Notification> iterator = this.field32655.iterator();
         while (iterator.hasNext()) {
             final Notification class5744 = iterator.next();

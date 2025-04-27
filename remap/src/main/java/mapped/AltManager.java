@@ -79,7 +79,7 @@ public class AltManager
     
     public boolean method25463(final Class7971 class7971) {
         try {
-            Minecraft.getInstance().field4642 = class7971.method25903();
+            Minecraft.getInstance().session = class7971.method25903();
             this.field32298 = class7971.method25888();
             return true;
         }
@@ -147,6 +147,6 @@ public class AltManager
         if (this.method25469() != null) {
             return class7971.method25888().equals(this.method25469());
         }
-        return class7971.method25889().equals(Minecraft.getInstance().method5287().method33692());
+        return class7971.method25889().equals(Minecraft.getInstance().method5287().getUsername());
     }
 }

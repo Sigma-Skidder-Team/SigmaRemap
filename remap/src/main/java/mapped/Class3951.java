@@ -48,8 +48,8 @@ public class Class3951 extends Class3948
             final double n5 = (method790 != Direction.Axis.X) ? n4 : (class7099.getXOffset() * 0.52);
             final double n6 = random.nextDouble() * 6.0 / 16.0;
             final double n7 = (method790 != Direction.Axis.Z) ? n4 : (class7099.getZOffset() * 0.52);
-            class7097.method6709(Class8432.field34639, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
-            class7097.method6709(Class8432.field34623, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
+            class7097.addParticle(Class8432.field34639, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
+            class7097.addParticle(Class8432.field34623, n + n5, n2 + n6, n3 + n7, 0.0, 0.0, 0.0);
         }
     }
 }

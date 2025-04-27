@@ -226,10 +226,10 @@ public class Class852 extends Class759 implements IMob
                 this.method5109(this.field4542, method35650 * -4.5f, 2.0, method35649 * -4.5f);
                 if (!this.world.isRemote) {
                     if (this.field2938 == 0) {
-                        this.method5112(this.world.method6737(this, this.field4541.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
-                        this.method5112(this.world.method6737(this, this.field4542.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
-                        this.method5113(this.world.method6737(this, this.field4535.getBoundingBox().intersect(1.0), Class9170.field38849));
-                        this.method5113(this.world.method6737(this, this.field4536.getBoundingBox().intersect(1.0), Class9170.field38849));
+                        this.method5112(this.world.getEntitiesInAABBexcluding(this, this.field4541.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
+                        this.method5112(this.world.getEntitiesInAABBexcluding(this, this.field4542.getBoundingBox().grow(4.0, 2.0, 4.0).offset(0.0, -2.0, 0.0), Class9170.field38849));
+                        this.method5113(this.world.getEntitiesInAABBexcluding(this, this.field4535.getBoundingBox().intersect(1.0), Class9170.field38849));
+                        this.method5113(this.world.getEntitiesInAABBexcluding(this, this.field4536.getBoundingBox().intersect(1.0), Class9170.field38849));
                     }
                 }
                 final float method35651 = MathHelper.sin(this.rotationYaw * 0.017453292f - this.field4547 * 0.01f);
@@ -276,7 +276,7 @@ public class Class852 extends Class759 implements IMob
             }
         }
         else {
-            this.world.method6709(Class8432.field34619, this.getPosX() + (this.rand.nextFloat() - 0.5f) * 8.0f, this.getPosY() + 2.0 + (this.rand.nextFloat() - 0.5f) * 4.0f, this.getPosZ() + (this.rand.nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34619, this.getPosX() + (this.rand.nextFloat() - 0.5f) * 8.0f, this.getPosY() + 2.0 + (this.rand.nextFloat() - 0.5f) * 4.0f, this.getPosZ() + (this.rand.nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
         }
     }
     
@@ -452,7 +452,7 @@ public class Class852 extends Class759 implements IMob
         ++this.field4546;
         if (this.field4546 >= 180) {
             if (this.field4546 <= 200) {
-                this.world.method6709(Class8432.field34618, this.getPosX() + (this.rand.nextFloat() - 0.5f) * 8.0f, this.getPosY() + 2.0 + (this.rand.nextFloat() - 0.5f) * 4.0f, this.getPosZ() + (this.rand.nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34618, this.getPosX() + (this.rand.nextFloat() - 0.5f) * 8.0f, this.getPosY() + 2.0 + (this.rand.nextFloat() - 0.5f) * 4.0f, this.getPosZ() + (this.rand.nextFloat() - 0.5f) * 8.0f, 0.0, 0.0, 0.0);
             }
         }
         final boolean method31216 = this.world.method6765().method31216(Class8878.field37319);

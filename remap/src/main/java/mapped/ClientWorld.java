@@ -39,9 +39,9 @@ public class ClientWorld extends World
     private final List<Entity> field10071;
     public final Int2ObjectMap<Entity> field10072;
     private final Class5799 field10073;
-    private final Class1656 field10074;
+    private final Class1656 worldRenderer;
     private final Minecraft field10075;
-    private final List<Class754> field10076;
+    private final List<AbstractClientPlayerEntity> players;
     private int field10077;
     private Class6516 field10078;
     private final Map<String, Class6356> field10079;
@@ -49,12 +49,12 @@ public class ClientWorld extends World
     private final Object2ObjectArrayMap<Class8895, Class8141> field10081;
     private boolean field10082;
     
-    public ClientWorld(final Class5799 field10073, final Class8511 class8511, final DimensionType class8512, final int n, final IProfiler class8513, final Class1656 field10074) {
+    public ClientWorld(final Class5799 field10073, final Class8511 class8511, final DimensionType class8512, final int n, final IProfiler class8513, final Class1656 worldRenderer) {
         super(new WorldInfo(class8511, "MpServer"), class8512, (class8515, p2) -> new Class1907((ClientWorld)class8515, n2), class8513, true);
         this.field10071 = Lists.newArrayList();
         this.field10072 = (Int2ObjectMap<Entity>)new Int2ObjectOpenHashMap();
         this.field10075 = Minecraft.getInstance();
-        this.field10076 = Lists.newArrayList();
+        this.players = Lists.newArrayList();
         this.field10077 = this.rand.nextInt(12000);
         this.field10078 = new Class6516();
         this.field10079 = Maps.newHashMap();
@@ -65,7 +65,7 @@ public class ClientWorld extends World
         });
         this.field10082 = false;
         this.field10073 = field10073;
-        this.field10074 = field10074;
+        this.worldRenderer = worldRenderer;
         this.setSpawnPoint(new BlockPos(8, 64, 8));
         this.method6733();
         this.method6735();
@@ -269,9 +269,9 @@ public class ClientWorld extends World
         this.field10071.add(class422);
     }
     
-    public void method6818(final int n, final Class754 class754) {
-        this.method6820(n, class754);
-        this.field10076.add(class754);
+    public void method6818(final int n, final AbstractClientPlayerEntity abstractClientPlayerEntity) {
+        this.method6820(n, abstractClientPlayerEntity);
+        this.players.add(abstractClientPlayerEntity);
     }
     
     public void method6819(final int n, final Entity class399) {
@@ -303,7 +303,7 @@ public class ClientWorld extends World
         if (class399.addedToChunk) {
             this.method6686(class399.chunkCoordX, class399.chunkCoordZ).method7053(class399);
         }
-        this.field10076.remove(class399);
+        this.players.remove(class399);
         if (Class9570.field41254.method22605()) {
             Class9570.method35826(class399, Class9570.field41254);
         }
@@ -382,7 +382,7 @@ public class ClientWorld extends World
         }
         if (b) {
             if (method6701.method21696() == Blocks.field29517) {
-                this.method6709(Class8432.field34599, n5 + 0.5, n6 + 0.5, n7 + 0.5, 0.0, 0.0, 0.0);
+                this.addParticle(Class8432.field34599, n5 + 0.5, n6 + 0.5, n7 + 0.5, 0.0, 0.0, 0.0);
             }
         }
     }
@@ -418,7 +418,7 @@ public class ClientWorld extends World
     }
     
     private void method6829(final double n, final double n2, final double n3, final double n4, final double n5, final IParticleData IParticleData) {
-        this.method6709(IParticleData, MathHelper.lerp(this.rand.nextDouble(), n, n2), n5, MathHelper.lerp(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        this.addParticle(IParticleData, MathHelper.lerp(this.rand.nextDouble(), n, n2), n5, MathHelper.lerp(this.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     public void method6830() {
@@ -578,32 +578,32 @@ public class ClientWorld extends World
     
     @Override
     public void method6693(final BlockPos class354, final Class7096 class355, final Class7096 class356, final int n) {
-        this.field10074.method5735(this, class354, class355, class356, n);
+        this.worldRenderer.method5735(this, class354, class355, class356, n);
     }
     
     @Override
     public void method6695(final BlockPos class354, final Class7096 class355, final Class7096 class356) {
-        this.field10074.method5738(class354, class355, class356);
+        this.worldRenderer.method5738(class354, class355, class356);
     }
     
     public void method6838(final int n, final int n2, final int n3) {
-        this.field10074.method5739(n, n2, n3);
+        this.worldRenderer.method5739(n, n2, n3);
     }
     
     @Override
     public void method6780(final int n, final BlockPos class354, final int n2) {
-        this.field10074.method5753(n, class354, n2);
+        this.worldRenderer.method5753(n, class354, n2);
     }
     
     @Override
     public void method6777(final int n, final BlockPos class354, final int n2) {
-        this.field10074.method5751(n, class354, n2);
+        this.worldRenderer.method5751(n, class354, n2);
     }
     
     @Override
-    public void method6839(final PlayerEntity playerEntity, final int i, final BlockPos class513, final int j) {
+    public void playEvent(final PlayerEntity playerEntity, final int i, final BlockPos class513, final int j) {
         try {
-            this.field10074.method5752(playerEntity, i, class513, j);
+            this.worldRenderer.method5752(playerEntity, i, class513, j);
         }
         catch (final Throwable t) {
             final CrashReport method24421 = CrashReport.makeCrashReport(t, "Playing level event");
@@ -617,40 +617,40 @@ public class ClientWorld extends World
     }
     
     @Override
-    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5744(IParticleData, IParticleData.method21272().method21270(), n, n2, n3, n4, n5, n6);
+    public void addParticle(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.worldRenderer.method5744(IParticleData, IParticleData.method21272().method21270(), n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6710(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5744(IParticleData, IParticleData.method21272().method21270() || b, n, n2, n3, n4, n5, n6);
+    public void addParticle(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.worldRenderer.method5744(IParticleData, IParticleData.method21272().method21270() || b, n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6711(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5745(IParticleData, false, true, n, n2, n3, n4, n5, n6);
+    public void addOptionalParticle(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.worldRenderer.method5745(IParticleData, false, true, n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public void method6712(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
-        this.field10074.method5745(IParticleData, IParticleData.method21272().method21270() || b, true, n, n2, n3, n4, n5, n6);
+    public void addOptionalParticle(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+        this.worldRenderer.method5745(IParticleData, IParticleData.method21272().method21270() || b, true, n, n2, n3, n4, n5, n6);
     }
     
     @Override
-    public List<Class754> method6840() {
-        return this.field10076;
+    public List<AbstractClientPlayerEntity> getPlayers() {
+        return this.players;
     }
     
     @Override
-    public Class3090 method6841(final int n, final int n2, final int n3) {
+    public Biome getNoiseBiomeRaw(final int n, final int n2, final int n3) {
         return Class7102.field27633;
     }
     
-    public float method6842(final float n) {
+    public float getSunBrightness(final float n) {
         return (float)((float)((1.0f - MathHelper.clamp(1.0f - (MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.2f), 0.0f, 1.0f)) * (1.0 - this.method6768(n) * 5.0f / 16.0)) * (1.0 - this.method6766(n) * 5.0f / 16.0)) * 0.8f + 0.2f;
     }
     
-    public Vec3d method6843(final BlockPos class354, final float n) {
+    public Vec3d getSkyColor(final BlockPos class354, final float n) {
         final float method35653 = MathHelper.clamp(MathHelper.cos(this.method6952(n) * 6.2831855f) * 2.0f + 0.5f, 0.0f, 1.0f);
         final int method35654 = this.method6959(class354).method9838();
         final float n2 = (method35654 >> 16 & 0xFF) / 255.0f;

@@ -42,7 +42,7 @@ public class Class6168 extends Class6159
         this.field24934 = this.field24937;
         this.field24935 = this.field24938;
         if (this.field24949.nextFloat() > this.field24950 / (float)this.field24951) {
-            this.field24932.method6709(Class8432.field34639, this.field24936, this.field24937, this.field24938, this.field24939, this.field24940, this.field24941);
+            this.field24932.addParticle(Class8432.field34639, this.field24936, this.field24937, this.field24938, this.field24939, this.field24940, this.field24941);
         }
         if (this.field24950++ < this.field24951) {
             this.field24940 -= 0.03;

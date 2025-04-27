@@ -36,7 +36,7 @@ public class Class6345 extends Class6343<Class7068>
     public void method18868(final Class1878 class1878) {
         final int method7150 = class1878.method7150();
         final int method7151 = class1878.method7151();
-        final Class3090 method7152 = class1878.method6959(new ChunkPos(method7150, method7151).method25435());
+        final Biome method7152 = class1878.method6959(new ChunkPos(method7150, method7151).method25435());
         final Class2317 class1879 = new Class2317();
         class1879.method9438(class1878.method6753(), method7150 << 4, method7151 << 4);
         Class8532.method28622(class1878, method7152, method7150, method7151, class1879);
@@ -66,7 +66,7 @@ public class Class6345 extends Class6343<Class7068>
         final float method18854 = this.field25385.method6960(n, method18853, n2).method9862();
         for (int i = -2; i <= 2; ++i) {
             for (int j = -2; j <= 2; ++j) {
-                final Class3090 method18855 = this.field25385.method6960(n + i, method18853, n2 + j);
+                final Biome method18855 = this.field25385.method6960(n + i, method18853, n2 + j);
                 float method18856 = method18855.method9862();
                 float method18857 = method18855.method9866();
                 if (this.field25378) {

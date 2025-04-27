@@ -76,7 +76,7 @@ public final class Class7476
         double n2 = n;
         Entity class402 = null;
         Vec3d class403 = null;
-        for (final Entity class404 : field2391.method6737(class399, class401, predicate)) {
+        for (final Entity class404 : field2391.getEntitiesInAABBexcluding(class399, class401, predicate)) {
             final AxisAlignedBB method18496 = class404.getBoundingBox().intersect(class404.method1790());
             final Optional<Vec3d> method18497 = method18496.rayTrace(other, class400);
             if (!method18496.contains(other)) {
@@ -117,7 +117,7 @@ public final class Class7476
     public static EntityRayTraceResult method23097(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n) {
         double n2 = n;
         Entity class1852 = null;
-        for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
+        for (final Entity class1853 : class1847.getEntitiesInAABBexcluding(class1848, class1851, predicate)) {
             final Optional<Vec3d> method18512 = class1853.getBoundingBox().intersect(0.30000001192092896).rayTrace(class1849, class1850);
             if (!method18512.isPresent()) {
                 continue;

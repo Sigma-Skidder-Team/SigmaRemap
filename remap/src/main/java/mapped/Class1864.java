@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 public class Class1864 extends Chunk
 {
     private static String[] field10166;
-    private static final Class3090[] field10167;
+    private static final Biome[] field10167;
     
     public Class1864(final World class1847, final ChunkPos class1848) {
         super(class1847, class1848, new Class1873(Class1864.field10167));
@@ -111,6 +111,6 @@ public class Class1864 extends Chunk
     }
     
     static {
-        field10167 = Util.method27851(new Class3090[Class1873.field10210], a -> Arrays.fill(a, Class7102.field27633));
+        field10167 = Util.method27851(new Biome[Class1873.field10210], a -> Arrays.fill(a, Class7102.field27633));
     }
 }

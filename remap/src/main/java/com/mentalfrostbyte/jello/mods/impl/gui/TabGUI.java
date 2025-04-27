@@ -179,7 +179,7 @@ public class TabGUI extends Module
     }
     
     @EventListener
-    private void method10065(final EventPlayerTickI eventPlayerTick) {
+    private void method10065(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.field15641 <= 0) {
                 TabGUI.field15637.changeDirection(Direction.FORWARDS);

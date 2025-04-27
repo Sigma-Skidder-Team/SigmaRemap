@@ -18,7 +18,7 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 import java.awt.FontFormatException;

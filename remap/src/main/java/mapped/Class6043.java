@@ -16,11 +16,11 @@ public class Class6043 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final int n5, final long n6, final Class4408 class1864) {
         this.method17965(random, class1860, class1861, n, n2, n3, n4, class1862, class1863, class1864.method13338(), class1864.method13339(), class1864.method13340(), n5);
     }
     
-    public void method17965(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final Class7096 class1864, final Class7096 class1865, final Class7096 class1866, final int n5) {
+    public void method17965(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int n3, final double n4, final Class7096 class1862, final Class7096 class1863, final Class7096 class1864, final Class7096 class1865, final Class7096 class1866, final int n5) {
         Class7096 class1867 = class1864;
         Class7096 class1868 = class1865;
         final Mutable class1869 = new Mutable();

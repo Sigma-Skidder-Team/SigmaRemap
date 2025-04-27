@@ -38,7 +38,7 @@ public abstract class Class7261 extends Class7257
                     final double n = class1848.getX() + random.nextFloat();
                     final double n2 = class1848.getY() + 1;
                     final double n3 = class1848.getZ() + random.nextFloat();
-                    class1847.method6709(Class8432.field34633, n, n2, n3, 0.0, 0.0, 0.0);
+                    class1847.addParticle(Class8432.field34633, n, n2, n3, 0.0, 0.0, 0.0);
                     class1847.method6708(n, n2, n3, Class8520.field35340, Class286.field1582, 0.2f + random.nextFloat() * 0.2f, 0.9f + random.nextFloat() * 0.15f, false);
                 }
                 if (random.nextInt(200) == 0) {

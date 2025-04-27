@@ -9,7 +9,7 @@ import com.google.common.hash.Hashing;
 import javax.annotation.Nullable;
 import com.mojang.authlib.GameProfile;
 
-public class Class758 extends Class754
+public class Class758 extends AbstractClientPlayerEntity
 {
     public Class758(final ClientWorld clientWorld, final GameProfile gameProfile) {
         super(clientWorld, gameProfile);
@@ -33,7 +33,7 @@ public class Class758 extends Class754
     
     @Nullable
     @Override
-    public Class9081 method4095() {
+    public NetworkPlayerInfo method4095() {
         return null;
     }
     
@@ -44,14 +44,14 @@ public class Class758 extends Class754
     
     @Override
     public ResourceLocation method4097() {
-        final Class9081 method4095 = this.method4095();
+        final NetworkPlayerInfo method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32726() : Class7634.method24004(this.getUniqueID());
     }
     
     @Nullable
     @Override
     public ResourceLocation method4098() {
-        final Class9081 method4095 = this.method4095();
+        final NetworkPlayerInfo method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32727() : null;
     }
     
@@ -63,7 +63,7 @@ public class Class758 extends Class754
     @Nullable
     @Override
     public ResourceLocation method4100() {
-        final Class9081 method4095 = this.method4095();
+        final NetworkPlayerInfo method4095 = this.method4095();
         return (method4095 != null) ? method4095.method32728() : null;
     }
     

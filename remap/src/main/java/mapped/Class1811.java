@@ -27,12 +27,12 @@ public class Class1811 extends Class1799
     
     public void method6571(final Entity class399, final MatrixStack class400, final IRenderTypeBuffer class401, final int n, final int n2) {
         if (Config.method28948()) {
-            if (class399 instanceof Class754) {
-                final Class754 class402 = (Class754)class399;
+            if (class399 instanceof AbstractClientPlayerEntity) {
+                final AbstractClientPlayerEntity class402 = (AbstractClientPlayerEntity)class399;
                 Class8933.method31646(1.0f, 1.0f, 1.0f, 1.0f);
                 Class8933.method31623();
                 Class8933.method31592();
-                Class7569.method23789(((Class4710<T, Class5853>)this.field9982).method13979(), class402, class400, class401, n, n2);
+                PlayerConfigurations.method23789(((Class4710<T, Class5853>)this.field9982).method13979(), class402, class400, class401, n, n2);
                 Class8933.method31593();
             }
         }

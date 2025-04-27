@@ -12,7 +12,7 @@ public class Class7600
     private final Class8683 field30139;
     private final Class8683 field30140;
     private final Class8683 field30141;
-    private Class3090 field30142;
+    private Biome field30142;
     private Class4574<?> field30143;
     private DimensionType field30144;
     private final Class8355 field30145;
@@ -32,7 +32,7 @@ public class Class7600
         return new Class7600();
     }
     
-    public Class7600 method23899(final Class3090 field30142) {
+    public Class7600 method23899(final Biome field30142) {
         this.field30142 = field30142;
         return this;
     }

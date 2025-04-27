@@ -181,10 +181,10 @@ public class Class8551
     }
     
     public <T extends Entity> Class4703<? super T> method28699(final T t) {
-        if (!(t instanceof Class754)) {
+        if (!(t instanceof AbstractClientPlayerEntity)) {
             return (Class4703)this.field35900.get(t.getType());
         }
-        final Class4711 class4711 = this.field35901.get(((Class754)t).method4103());
+        final Class4711 class4711 = this.field35901.get(((AbstractClientPlayerEntity)t).method4103());
         return (Class4703<? super T>)((class4711 == null) ? this.field35902 : class4711);
     }
     

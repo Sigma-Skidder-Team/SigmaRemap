@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.misc;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTickI;
+import mapped.EventPlayerTick;
 import mapped.ColorUtils;
 import mapped.EventListener;
 import net.minecraft.util.math.Vec3d;
@@ -28,7 +28,7 @@ public class DebugSpeed extends Module
     }
     
     @EventListener
-    public void method10042(final EventPlayerTickI eventPlayerTick) {
+    public void method10042(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             final Vec3d field15620 = new Vec3d(DebugSpeed.mc.player.posX, 0.0, DebugSpeed.mc.player.posZ);
             if (DebugSpeed.mc.player.onGround) {

@@ -56,7 +56,7 @@ public class Class4025 extends Class4024
     public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
         if (class7096.method21772((IProperty<Boolean>)Class4025.field18116)) {
             final Direction method782 = class7096.method21772((IProperty<Direction>)Class4025.field18115).getOpposite();
-            class7097.method6709(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getXOffset(), class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
+            class7097.addParticle(Class6912.field27101, class7098.getX() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getXOffset(), class7098.getY() + 0.7 + (random.nextDouble() - 0.5) * 0.2 + 0.22, class7098.getZ() + 0.5 + (random.nextDouble() - 0.5) * 0.2 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
         }
     }
     

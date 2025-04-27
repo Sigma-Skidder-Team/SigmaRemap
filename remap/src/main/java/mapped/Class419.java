@@ -95,12 +95,12 @@ public abstract class Class419 extends Entity
         float method23094 = this.method2035();
         if (this.method1706()) {
             for (int i = 0; i < 4; ++i) {
-                this.world.method6709(Class8432.field34601, n - method23093.x * 0.25, n2 - method23093.y * 0.25, n3 - method23093.z * 0.25, method23093.x, method23093.y, method23093.z);
+                this.world.addParticle(Class8432.field34601, n - method23093.x * 0.25, n2 - method23093.y * 0.25, n3 - method23093.z * 0.25, method23093.x, method23093.y, method23093.z);
             }
             method23094 = 0.8f;
         }
         this.method1936(method23093.add(this.field2530, this.field2531, this.field2532).scale(method23094));
-        this.world.method6709(this.method2034(), n, n2 + 0.5, n3, 0.0, 0.0, 0.0);
+        this.world.addParticle(this.method2034(), n, n2 + 0.5, n3, 0.0, 0.0, 0.0);
         this.setPosition(n, n2, n3);
     }
     

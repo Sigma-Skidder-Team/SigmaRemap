@@ -54,7 +54,7 @@ public class Class3602 extends Class3446
                 this.field16778.method4999((float)class5487.x / 20.0f, (float)class5487.y / 20.0f, (float)class5487.z / 20.0f);
             }
             if (this.field16777 % 10 == 5) {
-                this.field16778.world.method6709(Class8432.field34601, this.field16778.getPosX(), this.field16778.getPosY(), this.field16778.getPosZ(), 0.0, 0.0, 0.0);
+                this.field16778.world.addParticle(Class8432.field34601, this.field16778.getPosX(), this.field16778.getPosY(), this.field16778.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

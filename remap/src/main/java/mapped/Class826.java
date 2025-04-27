@@ -182,14 +182,14 @@ public class Class826 extends Class827 implements Class825
         class1850.method1851(this.method1850());
         class1849.method6886(class1850);
         if (this.field4419 != null) {
-            final PlayerEntity method2719 = class1849.method7143(this.field4419);
+            final PlayerEntity method2719 = class1849.getPlayerByUuid(this.field4419);
             if (method2719 instanceof Class513) {
                 Class7770.field31792.method13734((Class513)method2719, this, class1850);
                 class1849.method6929(Class8156.field33590, method2719, class1850);
             }
         }
         class1850.method2655(new Class1948(Class9439.field40482, 200, 0));
-        class1849.method6839(null, 1027, new BlockPos(this), 0);
+        class1849.playEvent(null, 1027, new BlockPos(this), 0);
     }
     
     private int method4916() {
@@ -257,7 +257,7 @@ public class Class826 extends Class827 implements Class825
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method4921(this.method4870().method28783(Class7611.method23913(class1851.method6959(new BlockPos(this)))));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }

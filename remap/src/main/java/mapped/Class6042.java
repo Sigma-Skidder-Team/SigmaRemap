@@ -21,7 +21,7 @@ public class Class6042 extends Class6040
     }
     
     @Override
-    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int a, final double a2, final Class7096 class1862, final Class7096 class1863, final int n3, final long n4, final Class4408 class1864) {
         double n5 = 0.0;
         final double min = Math.min(Math.abs(a2), this.field24588.method29027(n * 0.25, n2 * 0.25, false) * 15.0);
         if (min > 0.0) {

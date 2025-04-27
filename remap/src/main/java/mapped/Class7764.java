@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class7764 implements Class7763
 {

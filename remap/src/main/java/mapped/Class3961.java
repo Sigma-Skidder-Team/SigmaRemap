@@ -176,7 +176,7 @@ public class Class3961 extends Class3841
     }
     
     private void method12089(final World class1847, final double n, final double n2, final double n3, final double n4, final double n5) {
-        class1847.method6709(Class8432.field34655, MathHelper.lerp(class1847.rand.nextDouble(), n, n2), n5, MathHelper.lerp(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
+        class1847.addParticle(Class8432.field34655, MathHelper.lerp(class1847.rand.nextDouble(), n, n2), n5, MathHelper.lerp(class1847.rand.nextDouble(), n3, n4), 0.0, 0.0, 0.0);
     }
     
     @Override

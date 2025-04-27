@@ -71,7 +71,7 @@ public class Class3984 extends Block
     public boolean method11857(final Class7096 class7096, final World class7097, final BlockPos class7098, final int n, final int n2) {
         final int intValue = class7096.method21772((IProperty<Integer>)Class3984.field17993);
         class7097.method6705(null, class7098, class7096.method21772(Class3984.field17991).method825(), Class286.field1580, 3.0f, (float)Math.pow(2.0, (intValue - 12) / 12.0));
-        class7097.method6709(Class8432.field34635, class7098.getX() + 0.5, class7098.getY() + 1.2, class7098.getZ() + 0.5, intValue / 24.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34635, class7098.getX() + 0.5, class7098.getY() + 1.2, class7098.getZ() + 0.5, intValue / 24.0, 0.0, 0.0);
         return true;
     }
     

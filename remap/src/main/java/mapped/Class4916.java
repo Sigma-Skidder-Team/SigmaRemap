@@ -15,7 +15,7 @@ import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import org.apache.commons.codec.binary.Base64;
 import java.util.Date;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 

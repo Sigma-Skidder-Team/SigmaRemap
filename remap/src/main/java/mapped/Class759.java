@@ -221,7 +221,7 @@ public abstract class Class759 extends LivingEntity
                 final double n = this.rand.nextGaussian() * 0.02;
                 final double n2 = this.rand.nextGaussian() * 0.02;
                 final double n3 = this.rand.nextGaussian() * 0.02;
-                this.world.method6709(Class8432.field34636, this.method1939(1.0) - n * 10.0, this.method1943() - n2 * 10.0, this.method1947(1.0) - n3 * 10.0, n, n2, n3);
+                this.world.addParticle(Class8432.field34636, this.method1939(1.0) - n * 10.0, this.method1943() - n2 * 10.0, this.method1947(1.0) - n3 * 10.0, n, n2, n3);
             }
         }
     }
@@ -929,7 +929,7 @@ public abstract class Class759 extends LivingEntity
     }
     
     @Nullable
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method2710(Class8107.field33406).method23946(new Class7919("Random spawn bonus", this.rand.nextGaussian() * 0.05, Class2157.field12810));
         this.method4212(!(this.rand.nextFloat() >= 0.05f));
         return class1854;
@@ -1334,12 +1334,12 @@ public abstract class Class759 extends LivingEntity
     private List method4220(final World class1847) {
         final World method1896 = this.method1896();
         if (method1896 instanceof ClientWorld) {
-            return ((ClientWorld)method1896).method6840();
+            return ((ClientWorld)method1896).getPlayers();
         }
         if (!(method1896 instanceof Class1849)) {
             return null;
         }
-        return ((Class1849)method1896).method6840();
+        return ((Class1849)method1896).getPlayers();
     }
     
     private void method4221() {

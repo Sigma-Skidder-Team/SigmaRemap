@@ -112,7 +112,7 @@ public class Class1858 implements Class1856
         return this.field10137.method6849(class354, class355);
     }
     
-    public Class3090 method7007(final BlockPos class354) {
+    public Biome method7007(final BlockPos class354) {
         return this.field10137.method6959(class354);
     }
 }

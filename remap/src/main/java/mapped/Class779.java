@@ -161,7 +161,7 @@ public class Class779 extends Class776
     
     private void method4321() {
         if (this.rand.nextInt(6) == 0) {
-            this.world.method6709(Class8432.field34617, this.getPosX() - this.method1930() * Math.sin(this.field2951 * 0.017453292f) + (this.rand.nextDouble() * 0.6 - 0.3), this.getPosY() + this.method1931() - 0.3, this.getPosZ() + this.method1930() * Math.cos(this.field2951 * 0.017453292f) + (this.rand.nextDouble() * 0.6 - 0.3), 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
+            this.world.addParticle(Class8432.field34617, this.getPosX() - this.method1930() * Math.sin(this.field2951 * 0.017453292f) + (this.rand.nextDouble() * 0.6 - 0.3), this.getPosY() + this.method1931() - 0.3, this.getPosZ() + this.method1930() * Math.cos(this.field2951 * 0.017453292f) + (this.rand.nextDouble() * 0.6 - 0.3), 0.4980392156862745, 0.5137254901960784, 0.5725490196078431);
         }
     }
     
@@ -208,7 +208,7 @@ public class Class779 extends Class776
             }
             final Vec3d method18517 = this.getBoundingBox().getCenter();
             for (int i = 0; i < 40; ++i) {
-                this.world.method6709(Class8432.field34636, method18517.x, method18517.y, method18517.z, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2);
+                this.world.addParticle(Class8432.field34636, method18517.x, method18517.y, method18517.z, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2, this.rand.nextGaussian() * 0.2);
             }
         }
     }

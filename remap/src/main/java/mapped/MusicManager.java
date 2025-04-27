@@ -29,7 +29,7 @@ import javax.sound.sampled.AudioFormat;
 import java.io.IOException;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import totalcross.json.JSONObject;
 
 import javax.sound.sampled.SourceDataLine;
@@ -214,7 +214,7 @@ public class MusicManager {
     }
 
     @EventListener
-    private void method24164(final EventPlayerTickI eventPlayerTick) {
+    private void method24164(final EventPlayerTick eventPlayerTick) {
         if (!this.playing) {
             this.visualizerData.clear();
             this.field30354.clear();

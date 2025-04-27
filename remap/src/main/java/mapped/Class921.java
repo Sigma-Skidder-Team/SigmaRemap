@@ -40,7 +40,7 @@ public class Class921 extends Thread
             if (Class9019.method32310(this.field4900)) {
                 return;
             }
-            Class9019.method32312(this.field4900).method11174(new Class4327(Minecraft.getInstance().method5287().method33694()));
+            Class9019.method32312(this.field4900).method11174(new Class4327(Minecraft.getInstance().method5287().getProfile()));
         }
         catch (final UnknownHostException ex) {
             Realms.method25371();

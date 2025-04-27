@@ -32,7 +32,7 @@ public class EntityDataManager
     private final ReadWriteLock field38918;
     private boolean field38919;
     private boolean field38920;
-    public Class3090 field38921;
+    public Biome field38921;
     public BlockPos field38922;
     
     public EntityDataManager(final Entity field38916) {

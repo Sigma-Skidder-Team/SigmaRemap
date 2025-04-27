@@ -27,7 +27,7 @@ public class Class9111
         if (!method18169.isTagged(Class7324.field28319)) {
             if (!method18169.isTagged(Class7324.field28320)) {
                 final float n3 = 1.0f - (float)Math.pow(0.25f + 0.75f * n / 32.0f, 0.25);
-                final Vec3d method18170 = Class8763.method30363(class6093.method6843(class6092.method18162(), f), class6093, class6092.method18166(), f);
+                final Vec3d method18170 = Class8763.method30363(class6093.getSkyColor(class6092.method18162(), f), class6093, class6092.method18166(), f);
                 final float n4 = (float)method18170.x;
                 final float n5 = (float)method18170.y;
                 final float n6 = (float)method18170.z;
@@ -258,7 +258,7 @@ public class Class9111
                     if (method18170 instanceof ClientPlayerEntity) {
                         final ClientPlayerEntity class6094 = (ClientPlayerEntity)method18170;
                         n3 -= class6094.method4140() * class6094.method4140() * 0.03f;
-                        final Class3090 method18173 = class6094.world.method6959(new BlockPos(class6094));
+                        final Biome method18173 = class6094.world.method6959(new BlockPos(class6094));
                         if (method18173 == Class7102.field27638 || method18173 == Class7102.field27689) {
                             n3 += 0.005f;
                         }

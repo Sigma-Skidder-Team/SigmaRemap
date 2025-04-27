@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.auth;
 
 import com.mentalfrostbyte.Client;
 import mapped.BufferedImageUtil;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;

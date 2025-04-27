@@ -29,7 +29,7 @@ public class Class4575 extends Class4574<Class5122>
     }
     
     @Override
-    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Class3090 class5509) {
+    public boolean method13594(final BiomeManager class5507, final Class6346<?> class5508, final Random random, final int n, final int n2, final Biome class5509) {
         if (this.field20068 != class5508.method18880()) {
             this.method13598();
         }
@@ -102,7 +102,7 @@ public class Class4575 extends Class4574<Class5122>
     private void method13599(final Class6346<?> class6346) {
         this.field20068 = class6346.method18880();
         final ArrayList arrayList = Lists.newArrayList();
-        for (final Class3090 class6347 : Registry.field217) {
+        for (final Biome class6347 : Registry.field217) {
             if (class6347 == null) {
                 continue;
             }

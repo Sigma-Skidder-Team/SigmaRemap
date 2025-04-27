@@ -432,7 +432,7 @@ public class Class8792
     
     private void method30642(final BlockPos class354) {
         final Collection<Class513> method21074 = this.field36965.method21074();
-        for (final Class513 class355 : this.field36958.method6840()) {
+        for (final Class513 class355 : this.field36958.getPlayers()) {
             final Vec3d method21075 = class355.method1934();
             final Vec3d class356 = new Vec3d(class354);
             final float method21076 = MathHelper.sqrt((class356.x - method21075.x) * (class356.x - method21075.x) + (class356.z - method21075.z) * (class356.z - method21075.z));

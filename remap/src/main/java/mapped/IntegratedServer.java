@@ -43,7 +43,7 @@ public class IntegratedServer extends MinecraftServer
         this.field9276 = null;
         this.field9277 = null;
         this.field9278 = null;
-        this.method1499(field9269.method5287().method33692());
+        this.method1499(field9269.method5287().getUsername());
         this.method1502(s2);
         this.method1510(field9269.method5268());
         this.method1511(class8511.method28434());

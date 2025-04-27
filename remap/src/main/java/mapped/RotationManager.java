@@ -116,7 +116,7 @@ public class RotationManager {
 
     @EventListener
     @HighestPriority
-    public void method28371(final EventPlayerTickI eventPlayerTick) {
+    public void method28371(final EventPlayerTick eventPlayerTick) {
         if (!this.method28375()) {
             return;
         }

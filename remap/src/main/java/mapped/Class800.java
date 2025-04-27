@@ -301,7 +301,7 @@ public class Class800 extends Class794
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6951() <= 0.9f) {
             this.method4608(this.rand.nextInt(10));

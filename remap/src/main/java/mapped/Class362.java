@@ -27,7 +27,7 @@ public class Class362 extends Class357
     
     @Override
     public BlockState method1164(final Random random, final BlockPos class354) {
-        return Class362.field2190[(int)(MathHelper.clamp((1.0 + Class3090.field15442.method29027(class354.getX() / 48.0, class354.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
+        return Class362.field2190[(int)(MathHelper.clamp((1.0 + Biome.field15442.method29027(class354.getX() / 48.0, class354.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999) * Class362.field2190.length)];
     }
     
     @Override

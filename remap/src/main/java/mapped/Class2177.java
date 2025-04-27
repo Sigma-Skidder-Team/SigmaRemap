@@ -15,7 +15,7 @@ public enum Class2177 implements Class2178
     }
     
     @Override
-    public Class3090 method8338(final long n, final int n2, final int n3, final int n4, final Class1867 class1867) {
+    public Biome method8338(final long n, final int n2, final int n3, final int n4, final Class1867 class1867) {
         final int n5 = n2 - 2;
         final int n6 = n3 - 2;
         final int n7 = n4 - 2;

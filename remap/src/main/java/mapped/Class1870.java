@@ -14,7 +14,7 @@ public class Class1870 extends Class1868
     private static String[] field10197;
     private final Class8820 field10198;
     private final Class2317 field10199;
-    private static final Set<Class3090> field10200;
+    private static final Set<Biome> field10200;
     
     public Class1870(final Class5473 class5473) {
         super(Class1870.field10200);
@@ -23,7 +23,7 @@ public class Class1870 extends Class1868
     }
     
     @Override
-    public Class3090 method6960(final int n, final int n2, final int n3) {
+    public Biome method6960(final int n, final int n2, final int n3) {
         final int n4 = n >> 2;
         final int n5 = n3 >> 2;
         if (n4 * (long)n4 + n5 * (long)n5 <= 4096L) {

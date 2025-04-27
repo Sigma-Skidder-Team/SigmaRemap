@@ -375,9 +375,9 @@ public class ColorUtils
     }
     
     public static int method19135() {
-        for (final Class9081 class9081 : ColorUtils.field25541.method5269().method17370()) {
-            if (class9081.method32719().getId().equals(ColorUtils.field25541.player.getUniqueID()) && !ColorUtils.field25541.method5283()) {
-                return class9081.method32722();
+        for (final NetworkPlayerInfo networkPlayerInfo : ColorUtils.field25541.method5269().method17370()) {
+            if (networkPlayerInfo.method32719().getId().equals(ColorUtils.field25541.player.getUniqueID()) && !ColorUtils.field25541.method5283()) {
+                return networkPlayerInfo.method32722();
             }
         }
         return 0;
@@ -433,7 +433,7 @@ public class ColorUtils
     public static EntityRayTraceResult method19143(final World class1847, final Entity class1848, final Vec3d class1849, final Vec3d class1850, final AxisAlignedBB class1851, final Predicate<Entity> predicate, final double n, final double n2) {
         double n3 = n;
         Entity class1852 = null;
-        for (final Entity class1853 : class1847.method6737(class1848, class1851, predicate)) {
+        for (final Entity class1853 : class1847.getEntitiesInAABBexcluding(class1848, class1851, predicate)) {
             final AxisAlignedBB method18496 = class1853.getBoundingBox().intersect(n2);
             final Optional<Vec3d> method18497 = method18496.rayTrace(class1849, class1850);
             if (!method18497.isPresent()) {
@@ -465,7 +465,7 @@ public class ColorUtils
         final Vec3d class401 = new Vec3d(ColorUtils.field25541.player.posX, ColorUtils.field25541.player.posY + ColorUtils.field25541.player.method1892(), ColorUtils.field25541.player.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
-        for (final Entity class402 : ColorUtils.field25541.world.method6737(ColorUtils.field25541.player, ColorUtils.field25541.player.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
+        for (final Entity class402 : ColorUtils.field25541.world.getEntitiesInAABBexcluding(ColorUtils.field25541.player, ColorUtils.field25541.player.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
             final Optional<Vec3d> method16745 = class402.getBoundingBox().rayTrace(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
@@ -609,13 +609,13 @@ public class ColorUtils
         return list;
     }
     
-    public static Class9212 method19162(final String username, final String password) {
+    public static Session method19162(final String username, final String password) {
         final YggdrasilUserAuthentication yggdrasilUserAuthentication = (YggdrasilUserAuthentication)new YggdrasilAuthenticationService(Proxy.NO_PROXY, "").createUserAuthentication(Agent.MINECRAFT);
         yggdrasilUserAuthentication.setUsername(username);
         yggdrasilUserAuthentication.setPassword(password);
         try {
             yggdrasilUserAuthentication.logIn();
-            return new Class9212(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), "mojang");
+            return new Session(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), "mojang");
         }
         catch (final AuthenticationException ex) {
             ex.printStackTrace();
@@ -922,7 +922,7 @@ public class ColorUtils
         if (!b && class399 instanceof PlayerEntity) {
             return false;
         }
-        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
+        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(class399)) {
             return false;
         }
         if (!b3 && class399.method1823()) {

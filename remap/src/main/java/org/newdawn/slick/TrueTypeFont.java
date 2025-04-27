@@ -9,7 +9,6 @@ import mapped.*;
 import org.newdawn.slick.opengl.GLUtils;
 import org.newdawn.slick.opengl.renderer.Renderer;
 import org.newdawn.slick.opengl.renderer.SGL;
-import slick2d.Texture;
 
 import java.io.IOException;
 import java.awt.RenderingHints;

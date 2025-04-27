@@ -64,7 +64,7 @@ public class Class5786 extends Class5784
                             final double n8 = this.field23772.getPosX() - n5;
                             final double n9 = this.field23772.method1942(0.5) - n6;
                             final double n10 = this.field23772.getPosZ() - n7;
-                            this.field23764.world.method6839(null, 1017, new BlockPos(this.field23764), 0);
+                            this.field23764.world.playEvent(null, 1017, new BlockPos(this.field23764), 0);
                             final Class420 class420 = new Class420(this.field23764.world, this.field23764, n8, n9, n10);
                             class420.method1730(n5, n6, n7, 0.0f, 0.0f);
                             this.field23764.world.method6886(class420);

@@ -259,12 +259,12 @@ public class Class492 extends TileEntity implements Class439
             final float n4 = -0.5f + field10062.nextFloat();
             final BlockPos method1136 = class5488.method1136(this.field2657);
             final Vec3d method1137 = new Vec3d(n2, n3, n4).add(method1136.getX(), method1136.getY(), method1136.getZ());
-            this.field2656.method6709(Class8432.field34651, class5487.x, class5487.y, class5487.z, method1137.x, method1137.y, method1137.z);
+            this.field2656.addParticle(Class8432.field34651, class5487.x, class5487.y, class5487.z, method1137.x, method1137.y, method1137.z);
         }
         if (this.field2832 != null) {
             final Vec3d class5489 = new Vec3d(this.field2832.getPosX(), this.field2832.method1944(), this.field2832.getPosZ());
             final Vec3d class5490 = new Vec3d((-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()), -1.0f + field10062.nextFloat() * this.field2832.method1931(), (-0.5f + field10062.nextFloat()) * (3.0f + this.field2832.method1930()));
-            this.field2656.method6709(Class8432.field34651, class5489.x, class5489.y, class5489.z, class5490.x, class5490.y, class5490.z);
+            this.field2656.addParticle(Class8432.field34651, class5489.x, class5489.y, class5489.z, class5490.x, class5490.y, class5490.z);
         }
     }
     

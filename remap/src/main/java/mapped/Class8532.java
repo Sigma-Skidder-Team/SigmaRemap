@@ -37,7 +37,7 @@ public final class Class8532
                 int n2 = method7440;
                 int n3 = method7442;
                 Class6828 method7443 = null;
-                Class5496 method7444 = null;
+                ILivingEntityData method7444 = null;
                 int method7445 = MathHelper.ceil(Math.random() * 4.0);
                 int n4 = 0;
                 for (int j = 0; j < method7445; ++j) {
@@ -152,7 +152,7 @@ public final class Class8532
         }
     }
     
-    public static void method28622(final Class1851 class1851, final Class3090 class1852, final int n, final int n2, final Random random) {
+    public static void method28622(final Class1851 class1851, final Biome class1852, final int n, final int n2, final Random random) {
         final List<Class6828> method9840 = class1852.method9840(Class1976.field10949);
         if (!method9840.isEmpty()) {
             final int n3 = n << 4;
@@ -160,7 +160,7 @@ public final class Class8532
             while (random.nextFloat() < class1852.method9843()) {
                 final Class6828 class1853 = Class8223.method27251(random, method9840);
                 final int n5 = class1853.field26821 + random.nextInt(1 + class1853.field26822 - class1853.field26821);
-                Class5496 method9841 = null;
+                ILivingEntityData method9841 = null;
                 int n6 = n3 + random.nextInt(16);
                 int n7 = n4 + random.nextInt(16);
                 final int n8 = n6;

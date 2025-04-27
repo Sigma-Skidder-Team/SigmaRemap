@@ -146,7 +146,7 @@ public class Class3900 extends Class3892 implements Class3840
         if (method1150.getBlock() == this) {
             if (method1150.get(Class3900.field17599) != class1851) {
                 class1847.setBlockState(method1149, Blocks.AIR.getDefaultState(), 35);
-                class1847.method6839(class1850, 2001, method1149, Block.method11774(method1150));
+                class1847.playEvent(class1850, 2001, method1149, Block.method11774(method1150));
                 if (!class1847.isRemote) {
                     if (!class1850.method2889()) {
                         final ItemStack method1151 = class1850.getHeldItemMainhand();

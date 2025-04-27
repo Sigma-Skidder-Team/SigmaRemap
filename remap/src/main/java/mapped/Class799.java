@@ -192,7 +192,7 @@ public class Class799 extends Class794
                             final int n2 = (int)(MathHelper.sin((this.field4283 - 0.4f) * 3.1415927f) * 7.0f);
                             final Vec3d method1935 = this.getMotion();
                             for (int i = 0; i < n2; ++i) {
-                                this.world.method6709(Class8432.field34646, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, n + 0.8f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, method1935.x, method1935.y, method1935.z);
+                                this.world.addParticle(Class8432.field34646, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, n + 0.8f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.method1930() * 0.5f, method1935.x, method1935.y, method1935.z);
                             }
                         }
                     }

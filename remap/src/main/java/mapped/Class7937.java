@@ -4,14 +4,12 @@
 
 package mapped;
 
-import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
 
 import java.util.ArrayList;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import java.util.Locale;
 import java.io.InputStream;
@@ -72,8 +70,8 @@ public class Class7937 implements Class7938
     
     public static Map<String, String> method25741() {
         final HashMap hashMap = Maps.newHashMap();
-        hashMap.put("X-Minecraft-Username", Minecraft.getInstance().method5287().method33692());
-        hashMap.put("X-Minecraft-UUID", Minecraft.getInstance().method5287().method33691());
+        hashMap.put("X-Minecraft-Username", Minecraft.getInstance().method5287().getUsername());
+        hashMap.put("X-Minecraft-UUID", Minecraft.getInstance().method5287().getPlayerID());
         hashMap.put("X-Minecraft-Version", Class9528.method35579().getName());
         hashMap.put("X-Minecraft-Version-ID", Class9528.method35579().getId());
         hashMap.put("X-Minecraft-Pack-Format", String.valueOf(Class9528.method35579().getPackVersion()));

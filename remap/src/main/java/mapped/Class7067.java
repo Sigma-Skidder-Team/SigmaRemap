@@ -50,7 +50,7 @@ public class Class7067 extends Class7065
     public static final Map<Class8530<?, ?>, Class5113> field27516;
     private final List<Class9127> field27517;
     private final Map<String, Map<String, String>> field27518;
-    private Class3090 field27519;
+    private Biome field27519;
     private final BlockState[] field27520;
     private boolean field27521;
     private int field27522;
@@ -72,11 +72,11 @@ public class Class7067 extends Class7065
         }
     }
     
-    public Class3090 method21587() {
+    public Biome method21587() {
         return this.field27519;
     }
     
-    public void method21588(final Class3090 field27519) {
+    public void method21588(final Biome field27519) {
         this.field27519 = field27519;
     }
     
@@ -238,7 +238,7 @@ public class Class7067 extends Class7065
         }
         class7067.method21590().addAll(method21593);
         class7067.method21591();
-        Class3090 field27633 = Class7102.field27633;
+        Biome field27633 = Class7102.field27633;
         if (iterator.hasNext()) {
             try {
                 field27633 = Registry.field217.method506(new ResourceLocation((String)iterator.next())).orElseThrow(() -> {

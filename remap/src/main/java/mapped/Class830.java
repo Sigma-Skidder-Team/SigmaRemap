@@ -47,7 +47,7 @@ public class Class830 extends Class827 implements Class768
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (this.method2718(Class2215.field13601).method27620()) {
             if (this.rand.nextFloat() < 0.03f) {
@@ -59,7 +59,7 @@ public class Class830 extends Class827 implements Class768
     }
     
     public static boolean method4942(final EntityType<Class830> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        final Class3090 method6959 = class7500.method6959(class7502);
+        final Biome method6959 = class7500.method6959(class7502);
         boolean b = false;
         Label_0078: {
             if (class7500.method6954() != Class2113.field12290) {

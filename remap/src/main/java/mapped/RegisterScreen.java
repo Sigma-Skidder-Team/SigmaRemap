@@ -10,7 +10,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.util.ArrayList;
 

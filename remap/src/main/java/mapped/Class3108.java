@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class3108 extends Class3090
+public class Class3108 extends Biome
 {
     private static String[] field15475;
     public final /* synthetic */ Class6347 field15476;

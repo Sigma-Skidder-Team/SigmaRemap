@@ -23,7 +23,7 @@ public class BiomeManager
         return new BiomeManager(class1868, this.field22807, this.field22808);
     }
     
-    public Class3090 method16810(final BlockPos class354) {
+    public Biome method16810(final BlockPos class354) {
         return this.field22808.method8338(this.field22807, class354.getX(), class354.getY(), class354.getZ(), this.field22806);
     }
 }

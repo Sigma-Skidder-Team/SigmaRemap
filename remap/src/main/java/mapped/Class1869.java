@@ -15,26 +15,26 @@ import net.minecraft.util.math.BlockPos;
 public class Class1869 extends Class1868
 {
     private static String[] field10195;
-    private final Class3090 field10196;
+    private final Biome field10196;
     
     public Class1869(final Class5471 class5471) {
-        super((Set<Class3090>)ImmutableSet.of((Object)class5471.method16710()));
+        super((Set<Biome>)ImmutableSet.of((Object)class5471.method16710()));
         this.field10196 = class5471.method16710();
     }
     
     @Override
-    public Class3090 method6960(final int n, final int n2, final int n3) {
+    public Biome method6960(final int n, final int n2, final int n3) {
         return this.field10196;
     }
     
     @Nullable
     @Override
-    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
+    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Biome> list, final Random random) {
         return list.contains(this.field10196) ? new BlockPos(n - n4 + random.nextInt(n4 * 2 + 1), n2, n3 - n4 + random.nextInt(n4 * 2 + 1)) : null;
     }
     
     @Override
-    public Set<Class3090> method7118(final int n, final int n2, final int n3, final int n4) {
-        return Sets.newHashSet((Object[])new Class3090[] { this.field10196 });
+    public Set<Biome> method7118(final int n, final int n2, final int n3, final int n4) {
+        return Sets.newHashSet((Object[])new Biome[] { this.field10196 });
     }
 }

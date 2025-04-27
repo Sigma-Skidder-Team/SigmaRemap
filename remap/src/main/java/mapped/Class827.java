@@ -16,7 +16,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.time.temporal.ChronoField;
 import java.time.LocalDate;
 import java.util.function.Predicate;
 import java.util.UUID;
@@ -209,7 +208,7 @@ public class Class827 extends Class763
     
     public void method4929() {
         this.method4930(EntityType.field28973);
-        this.world.method6839(null, 1040, new BlockPos(this), 0);
+        this.world.playEvent(null, 1040, new BlockPos(this), 0);
     }
     
     public void method4930(final EntityType<? extends Class827> class7499) {
@@ -433,7 +432,7 @@ public class Class827 extends Class763
                 }
                 class513.method1851(this.method1850());
                 this.world.method6886(class513);
-                this.world.method6839(null, 1026, new BlockPos(this), 0);
+                this.world.playEvent(null, 1026, new BlockPos(this), 0);
             }
         }
     }
@@ -457,7 +456,7 @@ public class Class827 extends Class763
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         final float method4189 = class1852.method35975();
         this.method4193(this.rand.nextFloat() < 0.55f * method4189);

@@ -35,7 +35,7 @@ import java.io.FileOutputStream;
 import java.util.HashSet;
 import org.lwjgl.opengl.GL11;
 import org.apache.commons.io.IOUtils;
-import java.util.Collection;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -3072,7 +3072,7 @@ public class Class9216
                         Class9216.field39106 = Config.method28866(class6093.method2654(Class9439.field40488).method7907() / 20.0f, 0.0f, 1.0f);
                     }
                 }
-                final Vec3d method18168 = Class8763.method30363(field39032.method6843(method18166.method1894(), n), field39032, method18166, n);
+                final Vec3d method18168 = Class8763.method30363(field39032.getSkyColor(method18166.method1894(), n), field39032, method18166, n);
                 Class9216.field39072 = (float)method18168.x;
                 Class9216.field39073 = (float)method18168.y;
                 Class9216.field39074 = (float)method18168.z;

@@ -960,10 +960,10 @@ public abstract class Entity implements INameable, ICommandSource {
         }
         final float n3 = (float) MathHelper.floor(this.getPosY());
         for (int n4 = 0; n4 < 1.0f + this.size.field34097 * 20.0f; ++n4) {
-            this.world.method6709(Class8432.field34601, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, n3 + 1.0f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, method1935.x, method1935.y - this.rand.nextFloat() * 0.2f, method1935.z);
+            this.world.addParticle(Class8432.field34601, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, n3 + 1.0f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, method1935.x, method1935.y - this.rand.nextFloat() * 0.2f, method1935.z);
         }
         for (int n5 = 0; n5 < 1.0f + this.size.field34097 * 20.0f; ++n5) {
-            this.world.method6709(Class8432.field34646, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, n3 + 1.0f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, method1935.x, method1935.y, method1935.z);
+            this.world.addParticle(Class8432.field34646, this.getPosX() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, n3 + 1.0f, this.getPosZ() + (this.rand.nextFloat() * 2.0f - 1.0f) * this.size.field34097, method1935.x, method1935.y, method1935.z);
         }
     }
 
@@ -979,7 +979,7 @@ public abstract class Entity implements INameable, ICommandSource {
         final BlockState method6701 = this.world.getBlockState(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
         if (method6701.method21710() != Class2115.field12305) {
             final Vec3d method6702 = this.getMotion();
-            this.world.method6709(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.size.field34097, this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.size.field34097, method6702.x * -4.0, 1.5, method6702.z * -4.0);
+            this.world.addParticle(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.size.field34097, this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.size.field34097, method6702.x * -4.0, 1.5, method6702.z * -4.0);
         }
     }
 

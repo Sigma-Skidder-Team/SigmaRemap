@@ -24,7 +24,7 @@ public abstract class Class788 extends Class787
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
         }
@@ -166,7 +166,7 @@ public abstract class Class788 extends Class787
         }
         else if (this.field4201 > 0) {
             if (this.field4201 % 4 == 0) {
-                this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
             }
             --this.field4201;
         }

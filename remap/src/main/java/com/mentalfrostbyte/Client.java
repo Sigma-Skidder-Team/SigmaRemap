@@ -6,15 +6,16 @@ package com.mentalfrostbyte;
 
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.auth.AESFixer;
-import com.mentalfrostbyte.jello.auth.AgoraManager;
-import com.mentalfrostbyte.jello.auth.NetworkManager;
+import com.mentalfrostbyte.jello.auth.managers.AgoraManager;
+import com.mentalfrostbyte.jello.auth.managers.IRCManager;
+import com.mentalfrostbyte.jello.auth.managers.NetworkManager;
 import mapped.*;
 import org.lwjgl.opengl.GL11;
 import club.minnced.discord.rpc.DiscordRichPresence;
 import club.minnced.discord.rpc.DiscordEventHandlers;
 import club.minnced.discord.rpc.DiscordRPC;
 import org.lwjgl.glfw.GLFW;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import totalcross.json.JSONObject;
 
 import java.io.IOException;

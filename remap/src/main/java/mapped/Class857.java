@@ -15,7 +15,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-import java.util.AbstractList;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Predicate;
@@ -292,7 +291,7 @@ public class Class857 extends LivingEntity
     
     @Override
     public void method2739() {
-        final List<Entity> method6737 = this.world.method6737(this, this.getBoundingBox(), Class857.field4578);
+        final List<Entity> method6737 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), Class857.field4578);
         for (int i = 0; i < method6737.size(); ++i) {
             final Entity class399 = method6737.get(i);
             if (this.method1734(class399) <= 0.2) {

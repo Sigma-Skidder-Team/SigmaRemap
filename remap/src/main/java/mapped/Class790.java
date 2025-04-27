@@ -66,7 +66,7 @@ public class Class790 extends Class789
     }
     
     public static boolean method4366(final EntityType<Class790> class7499, final Class1851 class7500, final Class2101 class7501, final BlockPos class7502, final Random random) {
-        final Class3090 method6959 = class7500.method6959(class7502);
+        final Biome method6959 = class7500.method6959(class7502);
         if (method6959 != Class7102.field27642 && method6959 != Class7102.field27682) {
             return Class789.method4356(class7499, class7500, class7501, class7502, random);
         }
@@ -161,7 +161,7 @@ public class Class790 extends Class789
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16803(1.0f);

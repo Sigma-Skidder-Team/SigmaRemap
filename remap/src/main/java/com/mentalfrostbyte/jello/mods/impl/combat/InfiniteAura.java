@@ -53,7 +53,7 @@ public class InfiniteAura extends Module
     
     @EventListener
     @LowerPriority
-    public void method10091(final EventPlayerTickI eventPlayerTick) {
+    public void method10091(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -173,7 +173,7 @@ public class InfiniteAura extends Module
                                         if (!this.getBooleanValueFromSettingName("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.getBooleanValueFromSettingName("Invisible") && method26798.method1823()) {

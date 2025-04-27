@@ -36,8 +36,8 @@ public class Class4900 extends Panel
     public void method14204(final int n) {
         super.method14204(n);
         if (n == 257) {
-            ((Class4930)this.getParent()).method14804(this.field20956.getTypedText());
-            Client.getInstance().getNetworkManager().IRCManager.method33660("SF4FSERFERF", this.field20956.getTypedText());
+            ((JelloChat)this.getParent()).method14804(this.field20956.getTypedText());
+            Client.getInstance().getNetworkManager().IRCManager.sendMessage("SF4FSERFERF", this.field20956.getTypedText());
             this.field20956.setTypedText("");
             this.field20956.method14307(true);
         }

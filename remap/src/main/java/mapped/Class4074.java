@@ -47,7 +47,7 @@ public class Class4074 extends Class4072
         }
         else if (method21656.getBlock() instanceof Class3918) {
             if (method21656.get(Class3918.field17760)) {
-                method21654.method6839(null, 1009, method21655, 0);
+                method21654.playEvent(null, 1009, method21655, 0);
                 class7077 = ((StateHolder<Object, BlockState>)method21656).with((IProperty<Comparable>)Class3918.field17760, false);
             }
         }

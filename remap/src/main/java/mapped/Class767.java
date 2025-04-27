@@ -173,16 +173,16 @@ public class Class767 extends Class763 implements Class766, Class768
             final double method6749 = this.method4246(k);
             final double method6750 = this.method4247(k);
             final double method6751 = this.method4248(k);
-            this.world.method6709(Class8432.field34639, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34639, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.0, 0.0, 0.0);
             if (method6748) {
                 if (this.world.rand.nextInt(4) == 0) {
-                    this.world.method6709(Class8432.field34617, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.699999988079071, 0.699999988079071, 0.5);
+                    this.world.addParticle(Class8432.field34617, method6749 + this.rand.nextGaussian() * 0.30000001192092896, method6750 + this.rand.nextGaussian() * 0.30000001192092896, method6751 + this.rand.nextGaussian() * 0.30000001192092896, 0.699999988079071, 0.699999988079071, 0.5);
                 }
             }
         }
         if (this.method4255() > 0) {
             for (int l = 0; l < 3; ++l) {
-                this.world.method6709(Class8432.field34617, this.getPosX() + this.rand.nextGaussian(), this.getPosY() + this.rand.nextFloat() * 3.3f, this.getPosZ() + this.rand.nextGaussian(), 0.699999988079071, 0.699999988079071, 0.8999999761581421);
+                this.world.addParticle(Class8432.field34617, this.getPosX() + this.rand.nextGaussian(), this.getPosY() + this.rand.nextFloat() * 3.3f, this.getPosZ() + this.rand.nextGaussian(), 0.699999988079071, 0.699999988079071, 0.8999999761581421);
             }
         }
     }
@@ -278,7 +278,7 @@ public class Class767 extends Class763 implements Class766, Class768
                             }
                         }
                         if (b) {
-                            this.world.method6839(null, 1022, new BlockPos(this), 0);
+                            this.world.playEvent(null, 1022, new BlockPos(this), 0);
                         }
                     }
                 }
@@ -360,7 +360,7 @@ public class Class767 extends Class763 implements Class766, Class768
     }
     
     private void method4251(final int n, final double n2, final double n3, final double n4, final boolean b) {
-        this.world.method6839(null, 1024, new BlockPos(this), 0);
+        this.world.playEvent(null, 1024, new BlockPos(this), 0);
         final double method4246 = this.method4246(n);
         final double method4247 = this.method4247(n);
         final double method4248 = this.method4248(n);

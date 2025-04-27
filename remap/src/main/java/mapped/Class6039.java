@@ -23,7 +23,7 @@ public class Class6039 extends Class6032<Class4408>
         super(function);
     }
     
-    public void method17959(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
+    public void method17959(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6, final Class4408 class1864) {
         final int n7 = n5 + 1;
         final int n8 = n & 0xF;
         final int n9 = n2 & 0xF;

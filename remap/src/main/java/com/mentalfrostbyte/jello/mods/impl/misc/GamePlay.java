@@ -57,7 +57,7 @@ public class GamePlay extends ModuleWithSettings
     }
     
     @EventListener
-    private void method10293(final EventPlayerTickI eventPlayerTick) {
+    private void method10293(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

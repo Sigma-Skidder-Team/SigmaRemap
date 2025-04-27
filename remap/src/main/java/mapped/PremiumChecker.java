@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.auth.NetworkManager;
+import com.mentalfrostbyte.jello.auth.managers.NetworkManager;
 
 public class PremiumChecker implements Runnable
 {

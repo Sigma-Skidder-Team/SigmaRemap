@@ -129,7 +129,7 @@ public class KillAura extends Module
     }
     
     @EventListener
-    public void onTick2(final EventPlayerTickI eventPlayerTick) {
+    public void onTick2(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

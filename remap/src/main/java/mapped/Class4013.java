@@ -66,7 +66,7 @@ public class Class4013 extends Block
                     n5 = n + random.nextDouble();
                     n6 = n3 + random.nextDouble();
                 }
-                class7097.method6709(Class8432.field34609, n5, n4, n6, 0.0, 0.0, 0.0);
+                class7097.addParticle(Class8432.field34609, n5, n4, n6, 0.0, 0.0, 0.0);
             }
         }
     }

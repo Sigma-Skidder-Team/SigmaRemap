@@ -217,7 +217,7 @@ public abstract class Class402 extends Entity implements Class401
             final double field22772 = method1998.z;
             if (this.method1981()) {
                 for (int i = 0; i < 4; ++i) {
-                    this.world.method6709(Class8432.field34603, this.getPosX() + field22770 * i / 4.0, this.getPosY() + field22771 * i / 4.0, this.getPosZ() + field22772 * i / 4.0, -field22770, -field22771 + 0.2, -field22772);
+                    this.world.addParticle(Class8432.field34603, this.getPosX() + field22770 * i / 4.0, this.getPosY() + field22771 * i / 4.0, this.getPosZ() + field22772 * i / 4.0, -field22770, -field22771 + 0.2, -field22772);
                 }
             }
             final double n = this.getPosX() + field22770;
@@ -248,7 +248,7 @@ public abstract class Class402 extends Entity implements Class401
             float method2000 = 0.99f;
             if (this.method1706()) {
                 for (int j = 0; j < 4; ++j) {
-                    this.world.method6709(Class8432.field34601, n - field22770 * 0.25, n2 - field22771 * 0.25, n3 - field22772 * 0.25, field22770, field22771, field22772);
+                    this.world.addParticle(Class8432.field34601, n - field22770 * 0.25, n2 - field22771 * 0.25, n3 - field22772 * 0.25, field22770, field22771, field22772);
                 }
                 method2000 = this.method1985();
             }

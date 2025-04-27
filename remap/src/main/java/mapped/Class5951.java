@@ -15,7 +15,7 @@ public class Class5951 extends Class5936
     }
     
     @Override
-    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
+    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Biome class6348) {
         Class5172.method16137(class6347, new BlockPos(n * 16, 90, n2 * 16), Class2052.values()[this.field24436.nextInt(Class2052.values().length)], this.field24431, this.field24436, class6346.method18878(class6348, Class4535.field19963));
         this.method17854();
     }

@@ -16,7 +16,7 @@ import net.minecraft.world.chunk.IChunk;
 
 public class Class6347 extends Class6346<Class7067>
 {
-    private final Class3090 field25387;
+    private final Biome field25387;
     private final Class8011 field25388;
     private final Class8615 field25389;
     
@@ -27,8 +27,8 @@ public class Class6347 extends Class6346<Class7067>
         this.field25387 = this.method18886();
     }
     
-    private Class3090 method18886() {
-        final Class3090 method21587 = this.field25386.method21587();
+    private Biome method18886() {
+        final Biome method21587 = this.field25386.method21587();
         final Class3108 class3108 = new Class3108(method21587.method9871(), method21587.method9841(), method21587.method9870(), method21587.method9862(), method21587.method9866(), method21587.method9867(), method21587.method9863(), method21587.method9868(), method21587.method9869(), method21587.method9873());
         final Map<String, Map<String, String>> method21588 = this.field25386.method21589();
         final Iterator<String> iterator = method21588.keySet().iterator();
@@ -93,7 +93,7 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public Class3090 method18872(final BiomeManager class5507, final BlockPos class5508) {
+    public Biome method18872(final BiomeManager class5507, final BlockPos class5508) {
         return this.field25387;
     }
     
@@ -136,13 +136,13 @@ public class Class6347 extends Class6346<Class7067>
     }
     
     @Override
-    public boolean method18877(final Class3090 class3090, final Class4574<? extends Class5113> class3091) {
+    public boolean method18877(final Biome biome, final Class4574<? extends Class5113> class3091) {
         return this.field25387.method9853(class3091);
     }
     
     @Nullable
     @Override
-    public <C extends Class5113> C method18878(final Class3090 class3090, final Class4574<C> class3091) {
+    public <C extends Class5113> C method18878(final Biome biome, final Class4574<C> class3091) {
         return this.field25387.method9854(class3091);
     }
     

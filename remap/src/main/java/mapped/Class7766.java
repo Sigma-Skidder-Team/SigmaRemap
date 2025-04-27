@@ -12,7 +12,7 @@ import org.lwjgl.BufferUtils;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class7766 extends Class7764
 {

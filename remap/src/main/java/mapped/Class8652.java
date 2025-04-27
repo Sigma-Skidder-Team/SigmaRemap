@@ -25,7 +25,7 @@ public class Class8652
     private String field36317;
     public static final Class9449[] field36318;
     public static final Class181[] field36319;
-    private static Map<ResourceLocation, Class3090> field36320;
+    private static Map<ResourceLocation, Biome> field36320;
     private static final Class6786<Enum> field36321;
     private static final Class6786<Class181> field36322;
     
@@ -261,7 +261,7 @@ public class Class8652
         return true;
     }
     
-    public Class3090[] method29454(String s) {
+    public Biome[] method29454(String s) {
         if (s != null) {
             s = s.trim();
             boolean b = false;
@@ -273,7 +273,7 @@ public class Class8652
             ArrayList list = new ArrayList();
             for (int i = 0; i < method28937.length; ++i) {
                 final String str = method28937[i];
-                final Class3090 method28938 = this.method29455(str);
+                final Biome method28938 = this.method29455(str);
                 if (method28938 != null) {
                     list.add(method28938);
                 }
@@ -286,23 +286,23 @@ public class Class8652
                 arrayList.removeAll(list);
                 list = arrayList;
             }
-            return (Class3090[])list.toArray(new Class3090[list.size()]);
+            return (Biome[])list.toArray(new Biome[list.size()]);
         }
         return null;
     }
     
-    public Class3090 method29455(String lowerCase) {
+    public Biome method29455(String lowerCase) {
         lowerCase = lowerCase.toLowerCase();
-        final Class3090 method26042 = Class7984.method26042(new ResourceLocation(lowerCase));
+        final Biome method26042 = Class7984.method26042(new ResourceLocation(lowerCase));
         if (method26042 == null) {
             final ResourceLocation class1932 = new ResourceLocation(lowerCase.replace(" ", "").replace("_", ""));
             if (Class8652.field36320 == null) {
-                Class8652.field36320 = new HashMap<ResourceLocation, Class3090>();
+                Class8652.field36320 = new HashMap<ResourceLocation, Biome>();
                 for (final ResourceLocation class1933 : Class7984.method26044()) {
                     Class8652.field36320.put(new ResourceLocation(class1933.method7798(), class1933.method7797().replace(" ", "").replace("_", "").toLowerCase()), Class7984.method26042(class1933));
                 }
             }
-            final Class3090 class1934 = Class8652.field36320.get(class1932);
+            final Biome class1934 = Class8652.field36320.get(class1932);
             return class1934;
         }
         return method26042;

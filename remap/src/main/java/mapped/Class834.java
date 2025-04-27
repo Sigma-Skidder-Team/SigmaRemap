@@ -99,7 +99,7 @@ public abstract class Class834 extends Class833
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         super.method4188(class1851, class1852, class1853, class1854, class1855);
         if (class1854 != null) {
             this.method4961(((Class5503)class1854).field22797);

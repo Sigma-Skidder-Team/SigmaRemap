@@ -94,7 +94,7 @@ public class Class392 implements AutoCloseable
                     this.field2287 = true;
                     return;
                 }
-                final float method6842 = field4683.method6842(1.0f);
+                final float method6842 = field4683.getSunBrightness(1.0f);
                 float n;
                 if (field4683.method6848() <= 0) {
                     n = method6842 * 0.95f + 0.05f;

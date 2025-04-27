@@ -130,20 +130,20 @@ public enum Class289
                 return (float) Registry.field217.getId(Class9216.method33918().method6959(Class9216.method33919()));
             }
             case 2: {
-                final Class3090 method6959 = Class9216.method33918().method6959(Class9216.method33919());
+                final Biome method6959 = Class9216.method33918().method6959(Class9216.method33919());
                 return (method6959 != null) ? ((float)method6959.method9870().ordinal()) : 0.0f;
             }
             case 3: {
-                final Class3090 method6960 = Class9216.method33918().method6959(Class9216.method33919());
+                final Biome method6960 = Class9216.method33918().method6959(Class9216.method33919());
                 return (method6960 != null) ? ((float)method6960.method9841().ordinal()) : 0.0f;
             }
             case 4: {
                 final BlockPos method6961 = Class9216.method33919();
-                final Class3090 method6962 = Class9216.method33918().method6959(method6961);
+                final Biome method6962 = Class9216.method33918().method6959(method6961);
                 return (method6962 != null) ? method6962.method9845(method6961) : 0.0f;
             }
             case 5: {
-                final Class3090 method6963 = Class9216.method33918().method6959(Class9216.method33919());
+                final Biome method6963 = Class9216.method33918().method6959(Class9216.method33919());
                 return (method6963 != null) ? method6963.method9863() : 0.0f;
             }
             default: {

@@ -40,7 +40,7 @@ public abstract class Class789 extends Class788
         if (this.field4202 > 0) {
             --this.field4202;
             if (this.field4202 % 10 == 0) {
-                this.world.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+                this.world.addParticle(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
             }
         }
     }
@@ -151,7 +151,7 @@ public abstract class Class789 extends Class788
     @Nullable
     public Class513 method4362() {
         if (this.field4203 != null) {
-            final PlayerEntity method7143 = this.world.method7143(this.field4203);
+            final PlayerEntity method7143 = this.world.getPlayerByUuid(this.field4203);
             return (method7143 instanceof Class513) ? ((Class513)method7143) : null;
         }
         return null;
@@ -176,7 +176,7 @@ public abstract class Class789 extends Class788
         }
         else {
             for (int i = 0; i < 7; ++i) {
-                this.world.method6709(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+                this.world.addParticle(Class8432.field34627, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
             }
         }
     }

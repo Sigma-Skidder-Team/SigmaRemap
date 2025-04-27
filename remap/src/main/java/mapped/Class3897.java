@@ -68,7 +68,7 @@ public class Class3897 extends Class3895
                 n4 = (float)(class7096.get(Class3897.field17583) * 2 - 1);
             }
             final float n5 = n4 / 16.0f;
-            class7097.method6709(Class6912.field27101, n + n5 * class7099.getXOffset(), n2, n3 + n5 * class7099.getZOffset(), 0.0, 0.0, 0.0);
+            class7097.addParticle(Class6912.field27101, n + n5 * class7099.getXOffset(), n2, n3 + n5 * class7099.getZOffset(), 0.0, 0.0, 0.0);
         }
     }
     

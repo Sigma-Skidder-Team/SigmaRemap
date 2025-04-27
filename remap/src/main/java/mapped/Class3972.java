@@ -86,7 +86,7 @@ public class Class3972 extends Block
                 final BlockPos method1139 = class7098.method1139();
                 final BlockState method1140 = class7097.getBlockState(method1139);
                 if (!method1140.isSolid() || !method1140.isSolidSide(class7097, method1139, Direction.UP)) {
-                    class7097.method6709(Class8432.field34609, class7098.getX() + random.nextFloat(), class7098.getY() - 0.05, class7098.getZ() + random.nextFloat(), 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34609, class7098.getX() + random.nextFloat(), class7098.getY() - 0.05, class7098.getZ() + random.nextFloat(), 0.0, 0.0, 0.0);
                 }
             }
         }

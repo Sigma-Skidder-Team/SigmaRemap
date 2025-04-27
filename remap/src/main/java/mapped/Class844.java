@@ -214,7 +214,7 @@ public class Class844 extends Class763
                     if (this.method1706()) {
                         final Vec3d method1936 = this.method1741(0.0f);
                         for (int i = 0; i < 2; ++i) {
-                            this.world.method6709(Class8432.field34601, this.method1940(0.5) - method1936.x * 1.5, this.method1943() - method1936.y * 1.5, this.method1947(0.5) - method1936.z * 1.5, 0.0, 0.0, 0.0);
+                            this.world.addParticle(Class8432.field34601, this.method1940(0.5) - method1936.x * 1.5, this.method1943() - method1936.y * 1.5, this.method1947(0.5) - method1936.z * 1.5, 0.0, 0.0, 0.0);
                         }
                     }
                 }
@@ -237,7 +237,7 @@ public class Class844 extends Class763
                         double nextDouble = this.rand.nextDouble();
                         while (nextDouble < sqrt) {
                             nextDouble += 1.8 - n + this.rand.nextDouble() * (1.7 - n);
-                            this.world.method6709(Class8432.field34601, this.getPosX() + n5 * nextDouble, this.method1944() + n6 * nextDouble, this.getPosZ() + n7 * nextDouble, 0.0, 0.0, 0.0);
+                            this.world.addParticle(Class8432.field34601, this.getPosX() + n5 * nextDouble, this.method1944() + n6 * nextDouble, this.getPosZ() + n7 * nextDouble, 0.0, 0.0, 0.0);
                         }
                     }
                 }

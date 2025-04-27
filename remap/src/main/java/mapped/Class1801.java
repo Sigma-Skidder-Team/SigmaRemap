@@ -21,14 +21,14 @@ public class Class1801<T extends LivingEntity, M extends Class5845<T>> extends C
         final ItemStack method2718 = t.method2718(Class2215.field13604);
         if (method2718.getItem() == Items.field31584) {
             ResourceLocation class7353 = null;
-            if (!(t instanceof Class754)) {
+            if (!(t instanceof AbstractClientPlayerEntity)) {
                 class7353 = Class1801.field9968;
                 if (Config.method28987()) {
                     class7353 = Class9404.method34969(method2718, class7353);
                 }
             }
             else {
-                final Class754 class7354 = (Class754)t;
+                final AbstractClientPlayerEntity class7354 = (AbstractClientPlayerEntity)t;
                 Label_0166: {
                     if (class7354.method4099() && class7354.method4100() != null) {
                         class7353 = class7354.method4100();

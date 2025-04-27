@@ -26,7 +26,7 @@ public class Class8312<WC extends Class5118>
         return this.field34149.method22402(random, n, n2, this.field34150);
     }
     
-    public boolean method27601(final IChunk class1860, final Function<BlockPos, Class3090> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set) {
+    public boolean method27601(final IChunk class1860, final Function<BlockPos, Biome> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set) {
         return this.field34149.method22403(class1860, function, random, n, n2, n3, n4, n5, set, this.field34150);
     }
 }

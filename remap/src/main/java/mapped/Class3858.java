@@ -92,14 +92,14 @@ public class Class3858 extends Block implements Class3857
         final double n2 = class7098.getY();
         final double n3 = class7098.getZ();
         if (!class7096.method21772((IProperty<Boolean>)Class3858.field17478)) {
-            class7097.method6711(Class8432.field34650, n + 0.5, n2, n3 + 0.5, 0.0, 0.04, 0.0);
-            class7097.method6711(Class8432.field34650, n + random.nextFloat(), n2 + random.nextFloat(), n3 + random.nextFloat(), 0.0, 0.04, 0.0);
+            class7097.addOptionalParticle(Class8432.field34650, n + 0.5, n2, n3 + 0.5, 0.0, 0.04, 0.0);
+            class7097.addOptionalParticle(Class8432.field34650, n + random.nextFloat(), n2 + random.nextFloat(), n3 + random.nextFloat(), 0.0, 0.04, 0.0);
             if (random.nextInt(200) == 0) {
                 class7097.method6708(n, n2, n3, Class8520.field35045, Class286.field1582, 0.2f + random.nextFloat() * 0.2f, 0.9f + random.nextFloat() * 0.15f, false);
             }
         }
         else {
-            class7097.method6711(Class8432.field34649, n + 0.5, n2 + 0.8, n3, 0.0, 0.0, 0.0);
+            class7097.addOptionalParticle(Class8432.field34649, n + 0.5, n2 + 0.8, n3, 0.0, 0.0, 0.0);
             if (random.nextInt(200) == 0) {
                 class7097.method6708(n, n2, n3, Class8520.field35047, Class286.field1582, 0.2f + random.nextFloat() * 0.2f, 0.9f + random.nextFloat() * 0.15f, false);
             }

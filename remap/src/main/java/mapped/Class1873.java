@@ -17,21 +17,21 @@ public class Class1873 implements Class1867
     public static final int field10210;
     public static final int field10211;
     public static final int field10212;
-    private final Class3090[] field10213;
+    private final Biome[] field10213;
     
-    public Class1873(final Class3090[] field10213) {
+    public Class1873(final Biome[] field10213) {
         this.field10213 = field10213;
     }
     
     private Class1873() {
-        this(new Class3090[Class1873.field10210]);
+        this(new Biome[Class1873.field10210]);
     }
     
     public Class1873(final PacketBuffer class8654) {
         this();
         for (int i = 0; i < this.field10213.length; ++i) {
             final int int1 = class8654.readInt();
-            final Class3090 class8655 = Registry.field217.method499(int1);
+            final Biome class8655 = Registry.field217.method499(int1);
             if (class8655 != null) {
                 this.field10213[i] = class8655;
             }
@@ -79,7 +79,7 @@ public class Class1873 implements Class1867
     }
     
     public void method7126(final PacketBuffer class8654) {
-        final Class3090[] field10213 = this.field10213;
+        final Biome[] field10213 = this.field10213;
         for (int length = field10213.length, i = 0; i < length; ++i) {
             class8654.writeInt(Registry.field217.getId(field10213[i]));
         }
@@ -90,7 +90,7 @@ public class Class1873 implements Class1867
     }
     
     @Override
-    public Class3090 method6960(final int n, final int n2, final int n3) {
+    public Biome method6960(final int n, final int n2, final int n3) {
         return this.field10213[MathHelper.method35651(n2, 0, Class1873.field10212) << Class1873.field10208 + Class1873.field10208 | (n3 & Class1873.field10211) << Class1873.field10208 | (n & Class1873.field10211)];
     }
     

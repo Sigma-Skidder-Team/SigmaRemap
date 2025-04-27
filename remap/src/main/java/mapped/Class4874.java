@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.ClientAssets;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 public class Class4874 extends Class4873 implements Class4870

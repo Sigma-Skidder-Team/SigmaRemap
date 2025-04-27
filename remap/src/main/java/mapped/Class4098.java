@@ -30,7 +30,7 @@ public class Class4098 extends Item
         if (method2716.getType() == RayTraceResult.Type.MISS) {
             return Class9355.method34676(method2715);
         }
-        final List<Entity> method2717 = class1847.method6737(class1848, class1848.getBoundingBox().expand(class1848.method1741(1.0f).scale(5.0)).intersect(1.0), Class4098.field18199);
+        final List<Entity> method2717 = class1847.getEntitiesInAABBexcluding(class1848, class1848.getBoundingBox().expand(class1848.method1741(1.0f).scale(5.0)).intersect(1.0), Class4098.field18199);
         if (!method2717.isEmpty()) {
             final Vec3d method2718 = class1848.method1747(1.0f);
             for (final Entity class1850 : method2717) {

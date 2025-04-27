@@ -6,7 +6,6 @@ package mapped;
 
 import java.util.List;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 import com.google.common.collect.LinkedHashMultiset;
 import net.minecraft.entity.Entity;
@@ -203,7 +202,7 @@ public class Class4094 extends Class4093
         return (!method21756.isEmpty() && !class1848.method21761(class1847, class1849, Direction.UP)) ? method21756.getBlockState() : class1848;
     }
     
-    private static boolean method12334(final Class3090[] array, final int n, final int n2, final int n3) {
+    private static boolean method12334(final Biome[] array, final int n, final int n2, final int n3) {
         return array[n2 * n + n3 * n * 128 * n].method9862() >= 0.0f;
     }
     
@@ -214,7 +213,7 @@ public class Class4094 extends Class4093
                 final int n = 1 << method12328.field25425;
                 final int field25420 = method12328.field25420;
                 final int field25421 = method12328.field25421;
-                final Class3090[] array = new Class3090[128 * n * 128 * n];
+                final Biome[] array = new Biome[128 * n * 128 * n];
                 for (int i = 0; i < 128 * n; ++i) {
                     for (int j = 0; j < 128 * n; ++j) {
                         array[i * 128 * n + j] = class1849.method6959(new BlockPos((field25420 / n - 64) * n + j, 0, (field25421 / n - 64) * n + i));
@@ -226,7 +225,7 @@ public class Class4094 extends Class4093
                             if (l > 0) {
                                 if (k < 127) {
                                     if (l < 127) {
-                                        final Class3090 class1851 = array[k * n + l * n * 128 * n];
+                                        final Biome class1851 = array[k * n + l * n * 128 * n];
                                         int n2 = 8;
                                         if (method12334(array, n, k - 1, l - 1)) {
                                             --n2;

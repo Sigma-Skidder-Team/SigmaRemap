@@ -52,12 +52,12 @@ public abstract class Class7814 implements Class7813
         return this.field32016;
     }
     
-    public List<Class754> method25247() {
-        return Class7814.field32015.world.method6840();
+    public List<AbstractClientPlayerEntity> method25247() {
+        return Class7814.field32015.world.getPlayers();
     }
     
-    public List<Class754> method25248() {
-        return Class7814.field32015.world.method6840();
+    public List<AbstractClientPlayerEntity> method25248() {
+        return Class7814.field32015.world.getPlayers();
     }
     
     public PlayerEntity method25249(final String obj) {

@@ -26,13 +26,13 @@ public class Class7305 extends Class7304<Class5117>
         return random.nextFloat() <= class5117.field22066;
     }
     
-    public boolean method22398(final IChunk class1860, final Function<BlockPos, Class3090> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set, final Class5117 class1861) {
+    public boolean method22398(final IChunk class1860, final Function<BlockPos, Biome> function, final Random random, final int n, final int n2, final int n3, final int n4, final int n5, final BitSet set, final Class5117 class1861) {
         final int n6 = (this.method22405() * 2 - 1) * 16;
         this.method22412(class1860, function, random.nextLong(), n, n4, n5, n2 * 16 + random.nextInt(16), random.nextInt(random.nextInt(40) + 8) + 20, n3 * 16 + random.nextInt(16), (random.nextFloat() * 2.0f + random.nextFloat()) * 2.0f, random.nextFloat() * 6.2831855f, (random.nextFloat() - 0.5f) * 2.0f / 8.0f, 0, n6 - random.nextInt(n6 / 4), 3.0, set);
         return true;
     }
     
-    private void method22412(final IChunk class1860, final Function<BlockPos, Class3090> function, final long seed, final int n, final int n2, final int n3, double n4, double n5, double n6, final float n7, float n8, float n9, final int n10, final int n11, final double n12, final BitSet set) {
+    private void method22412(final IChunk class1860, final Function<BlockPos, Biome> function, final long seed, final int n, final int n2, final int n3, double n4, double n5, double n6, final float n7, float n8, float n9, final int n10, final int n11, final double n12, final BitSet set) {
         final Random random = new Random(seed);
         float n13 = 1.0f;
         for (int i = 0; i < 256; ++i) {

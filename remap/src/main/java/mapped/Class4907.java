@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 import java.util.HashMap;

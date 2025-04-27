@@ -55,7 +55,7 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10038(final EventPlayerTickI eventPlayerTick) {
+    public void method10038(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

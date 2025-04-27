@@ -54,7 +54,7 @@ public class Class9280
         method34255(Registry.field207, Class5328::method16455, set);
         method34255(Registry.field211, Item::getTranslationKey, set);
         method34255(Registry.field209, Class6257::method18598, set);
-        method34255(Registry.field217, Class3090::method9865, set);
+        method34255(Registry.field217, Biome::method9865, set);
         method34255(Registry.BLOCK, Block::getTranslationKey, set);
         method34255(Registry.field228, class1932 -> "stat." + class1932.toString().replace(':', '.'), (Set<String>)set);
         return set;

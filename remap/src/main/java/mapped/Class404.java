@@ -33,7 +33,7 @@ public class Class404 extends Class402
         super.method1659();
         if (this.world.isRemote) {
             if (!this.field2472) {
-                this.world.method6709(Class8432.field34628, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34628, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

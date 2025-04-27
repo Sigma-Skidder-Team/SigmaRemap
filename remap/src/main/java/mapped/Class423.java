@@ -148,7 +148,7 @@ public class Class423 extends Entity
                 this.method2059(60);
             }
         }
-        this.world.method6709(Class8432.field34646, this.getPosX() + this.rand.nextFloat(), this.getPosY() + 0.7, this.getPosZ() + this.rand.nextFloat(), 0.0, 0.0, 0.0);
+        this.world.addParticle(Class8432.field34646, this.getPosX() + this.rand.nextFloat(), this.getPosY() + 0.7, this.getPosZ() + this.rand.nextFloat(), 0.0, 0.0, 0.0);
         if (this.rand.nextInt(20) == 0) {
             this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), this.method1687(), this.method1922(), 1.0f, 0.8f + 0.4f * this.rand.nextFloat(), false);
         }
@@ -274,7 +274,7 @@ public class Class423 extends Entity
             }
         }
         this.method1689();
-        final List<Entity> method2044 = this.world.method6737(this, this.getBoundingBox().grow(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
+        final List<Entity> method2044 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.20000000298023224, -0.009999999776482582, 0.20000000298023224), Class9170.method33474(this));
         if (!method2044.isEmpty()) {
             final boolean b = !this.world.isRemote && !(this.method1907() instanceof PlayerEntity);
             for (int j = 0; j < method2044.size(); ++j) {

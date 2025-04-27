@@ -86,7 +86,7 @@ public class Class448 extends TileEntity implements Class447, Class439
                         final double n2 = method2187.getY() + 0.5;
                         final double n3 = method2187.getZ() + 0.5 - method2189.getZOffset() * 0.3125f + method2189.rotateY().getZOffset() * 0.3125f;
                         for (int k = 0; k < 4; ++k) {
-                            method2186.method6709(Class8432.field34639, n, n2, n3, 0.0, 5.0E-4, 0.0);
+                            method2186.addParticle(Class8432.field34639, n, n2, n3, 0.0, 5.0E-4, 0.0);
                         }
                     }
                 }

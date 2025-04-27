@@ -68,10 +68,10 @@ public class Class7980
         return true;
     }
     
-    public static boolean method26019(final Class3090 class3090, final Class3090[] array) {
+    public static boolean method26019(final Biome biome, final Biome[] array) {
         if (array != null) {
             for (int i = 0; i < array.length; ++i) {
-                if (array[i] == class3090) {
+                if (array[i] == biome) {
                     return true;
                 }
             }

@@ -28,7 +28,7 @@ public interface Class1852 extends Class1856, Class1853, Class1867
     
     BiomeManager method6797();
     
-    default Class3090 method6959(final BlockPos class354) {
+    default Biome method6959(final BlockPos class354) {
         return this.method6797().method16810(class354);
     }
     
@@ -36,12 +36,12 @@ public interface Class1852 extends Class1856, Class1853, Class1867
         return class355.method31308(this.method6959(class354), class354.getX(), class354.getZ());
     }
     
-    default Class3090 method6960(final int n, final int n2, final int n3) {
+    default Biome method6960(final int n, final int n2, final int n3) {
         final IChunk method6687 = this.getChunk(n >> 2, n3 >> 2, ChunkStatus.BIOMES, false);
-        return (method6687 != null && method6687.method7024() != null) ? method6687.method7024().method6960(n, n2, n3) : this.method6841(n, n2, n3);
+        return (method6687 != null && method6687.method7024() != null) ? method6687.method7024().method6960(n, n2, n3) : this.getNoiseBiomeRaw(n, n2, n3);
     }
     
-    Class3090 method6841(final int p0, final int p1, final int p2);
+    Biome getNoiseBiomeRaw(final int p0, final int p1, final int p2);
     
     boolean isRemote();
     

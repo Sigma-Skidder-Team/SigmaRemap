@@ -6,7 +6,7 @@ package mapped;
 
 import java.util.Random;
 
-public class Class5502 implements Class5496
+public class Class5502 implements ILivingEntityData
 {
     private static String[] field22794;
     public Class5328 field22795;

@@ -15,7 +15,7 @@ import java.nio.FloatBuffer;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.BufferUtils;
 import org.newdawn.slick.Color;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 import java.awt.Rectangle;

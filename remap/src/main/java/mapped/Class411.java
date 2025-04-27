@@ -42,7 +42,7 @@ public class Class411 extends Class409
         if (b == 3) {
             final IParticleData method2017 = this.method2017();
             for (int i = 0; i < 8; ++i) {
-                this.world.method6709(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+                this.world.addParticle(method2017, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

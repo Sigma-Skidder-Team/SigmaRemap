@@ -634,7 +634,7 @@ public class Block implements Class3832
     }
     
     public void method11870(final World class1847, final BlockPos class1848, final BlockState class1849, final PlayerEntity class1850) {
-        class1847.method6839(class1850, 2001, class1848, method11774(class1849));
+        class1847.playEvent(class1850, 2001, class1848, method11774(class1849));
     }
     
     public void method11871(final World class1847, final BlockPos class1848) {

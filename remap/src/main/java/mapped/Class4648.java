@@ -4,8 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -141,8 +139,8 @@ public abstract class Class4648
                 final double n5 = method13896.getX() + (double)method13895.rand.nextFloat();
                 final double n6 = method13896.getY() + (double)method13895.rand.nextFloat();
                 final double n7 = method13896.getZ() + (double)method13895.rand.nextFloat();
-                method13895.method6709(Class8432.field34639, n5, n6, n7, 0.0, 0.0, 0.0);
-                method13895.method6709(Class8432.field34623, n5, n6, n7, 0.0, 0.0, 0.0);
+                method13895.addParticle(Class8432.field34639, n5, n6, n7, 0.0, 0.0, 0.0);
+                method13895.addParticle(Class8432.field34623, n5, n6, n7, 0.0, 0.0, 0.0);
                 if (this.field20120 > 0) {
                     --this.field20120;
                 }

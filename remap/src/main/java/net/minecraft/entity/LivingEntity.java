@@ -4,12 +4,9 @@
 
 package net.minecraft.entity;
 
-import java.util.AbstractList;
-
 import com.mentalfrostbyte.Client;
 import mapped.*;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.INBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
@@ -32,7 +29,6 @@ import com.google.common.base.Objects;
 
 import java.util.Collection;
 import com.google.common.collect.ImmutableList;
-import com.mojang.datafixers.types.DynamicOps;
 import com.mojang.datafixers.Dynamic;
 import com.google.common.collect.Maps;
 import java.util.Map;
@@ -245,7 +241,7 @@ public abstract class LivingEntity extends Entity
                                 this.setAir(0);
                                 final Vec3d method34803 = this.getMotion();
                                 for (int i = 0; i < 8; ++i) {
-                                    this.world.method6709(Class8432.field34601, this.getPosX() + (this.rand.nextFloat() - this.rand.nextFloat()), this.getPosY() + (this.rand.nextFloat() - this.rand.nextFloat()), this.getPosZ() + (this.rand.nextFloat() - this.rand.nextFloat()), method34803.x, method34803.y, method34803.z);
+                                    this.world.addParticle(Class8432.field34601, this.getPosX() + (this.rand.nextFloat() - this.rand.nextFloat()), this.getPosY() + (this.rand.nextFloat() - this.rand.nextFloat()), this.getPosZ() + (this.rand.nextFloat() - this.rand.nextFloat()), method34803.x, method34803.y, method34803.z);
                                 }
                                 this.attackEntityFrom(DamageSource.field32569, 2.0f);
                             }
@@ -343,7 +339,7 @@ public abstract class LivingEntity extends Entity
         if (this.field2941 == 20) {
             this.method1652();
             for (int i = 0; i < 20; ++i) {
-                this.world.method6709(Class8432.field34636, this.method1940(1.0), this.method1943(), this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+                this.world.addParticle(Class8432.field34636, this.method1940(1.0), this.method1943(), this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
             }
         }
     }
@@ -548,7 +544,7 @@ public abstract class LivingEntity extends Entity
                 nextBoolean &= (this.rand.nextInt(5) == 0);
             }
             if (nextBoolean && intValue > 0) {
-                this.world.method6709(booleanValue ? Class8432.field34597 : Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), (intValue >> 16 & 0xFF) / 255.0, (intValue >> 8 & 0xFF) / 255.0, (intValue >> 0 & 0xFF) / 255.0);
+                this.world.addParticle(booleanValue ? Class8432.field34597 : Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), (intValue >> 16 & 0xFF) / 255.0, (intValue >> 8 & 0xFF) / 255.0, (intValue >> 0 & 0xFF) / 255.0);
             }
         }
     }
@@ -1409,7 +1405,7 @@ public abstract class LivingEntity extends Entity
             case 46: {
                 for (int i = 0; i < 128; ++i) {
                     final double n = i / 127.0;
-                    this.world.method6709(Class8432.field34637, MathHelper.lerp(n, this.prevPosX, this.getPosX()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, MathHelper.lerp(n, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * this.method1931(), MathHelper.lerp(n, this.prevPosZ, this.getPosZ()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f);
+                    this.world.addParticle(Class8432.field34637, MathHelper.lerp(n, this.prevPosX, this.getPosX()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, MathHelper.lerp(n, this.prevPosY, this.getPosY()) + this.rand.nextDouble() * this.method1931(), MathHelper.lerp(n, this.prevPosZ, this.getPosZ()) + (this.rand.nextDouble() - 0.5) * this.method1930() * 2.0, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f, (this.rand.nextFloat() - 0.5f) * 0.2f);
                 }
                 break;
             }
@@ -2201,7 +2197,7 @@ public abstract class LivingEntity extends Entity
     }
     
     public void method2739() {
-        final List<Entity> method6737 = this.world.method6737(this, this.getBoundingBox(), Class9170.method33474(this));
+        final List<Entity> method6737 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), Class9170.method33474(this));
         if (!method6737.isEmpty()) {
             final int method6738 = this.world.method6765().method31217(Class8878.field37333);
             if (method6738 > 0) {
@@ -2521,7 +2517,7 @@ public abstract class LivingEntity extends Entity
         for (int i = 0; i < n; ++i) {
             final Vec3d method16755 = new Vec3d((this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0).rotatePitch(-this.rotationPitch * 0.017453292f).rotateYaw(-this.rotationYaw * 0.017453292f);
             final Vec3d method16756 = new Vec3d((this.rand.nextFloat() - 0.5) * 0.3, -this.rand.nextFloat() * 0.6 - 0.3, 0.6).rotatePitch(-this.rotationPitch * 0.017453292f).rotateYaw(-this.rotationYaw * 0.017453292f).add(this.getPosX(), this.method1944(), this.getPosZ());
-            this.world.method6709(new Class6910(Class8432.field34629, class8321), method16756.x, method16756.y, method16756.z, method16755.x, method16755.y + 0.05, method16755.z);
+            this.world.addParticle(new Class6910(Class8432.field34629, class8321), method16756.x, method16756.y, method16756.z, method16755.x, method16755.y + 0.05, method16755.z);
         }
     }
     

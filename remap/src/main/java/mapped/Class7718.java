@@ -275,11 +275,11 @@ public class Class7718 implements Class7712
         return this.field30683 == 2;
     }
     
-    public int method24633(final Class3090 class3090, final BlockPos class3091) {
+    public int method24633(final Biome biome, final BlockPos class3091) {
         if (this.field30683 != 0) {
-            return (this.field30683 != 1) ? this.field30686 : this.method24636(class3090, class3091);
+            return (this.field30683 != 1) ? this.field30686 : this.method24636(biome, class3091);
         }
-        return this.method24635(class3090, class3091);
+        return this.method24635(biome, class3091);
     }
     
     public int method24634(final Class1856 class1856, final double n, final double n2, final double n3, final int n4) {
@@ -307,13 +307,13 @@ public class Class7718 implements Class7712
         return this.field30686;
     }
     
-    private int method24635(final Class3090 class3090, final BlockPos class3091) {
-        final double n = MathHelper.clamp(class3090.method9845(class3091), 0.0f, 1.0f);
-        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - MathHelper.clamp(class3090.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
+    private int method24635(final Biome biome, final BlockPos class3091) {
+        final double n = MathHelper.clamp(biome.method9845(class3091), 0.0f, 1.0f);
+        return this.method24630((int)((1.0 - n) * (this.field30689 - 1)), (int)((1.0 - MathHelper.clamp(biome.method9863(), 0.0f, 1.0f) * n) * (this.field30690 - 1)));
     }
     
-    private int method24636(final Class3090 class3090, final BlockPos class3091) {
-        final int method504 = Registry.field217.getId(class3090);
+    private int method24636(final Biome biome, final BlockPos class3091) {
+        final int method504 = Registry.field217.getId(biome);
         int n = class3091.getY() - this.field30688;
         if (this.field30687 > 0) {
             n += (Config.method28967(class3091.getX() << 16 + class3091.getZ()) & 0xFF) % (this.field30687 * 2 + 1) - this.field30687;

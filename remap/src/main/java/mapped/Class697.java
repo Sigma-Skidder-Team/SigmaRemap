@@ -6,7 +6,7 @@ package mapped;
 
 import org.apache.logging.log4j.LogManager;
 import java.io.InputStream;
-import java.io.Closeable;
+
 import org.apache.commons.io.IOUtils;
 
 import java.util.Random;
@@ -75,7 +75,7 @@ public class Class697 extends Screen
                     while ((line = bufferedReader.readLine()) != null) {
                         String s;
                         int index;
-                        for (s = line.replaceAll("PLAYERNAME", this.minecraft.method5287().method33692()); s.contains(string); s = s.substring(0, index) + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + s.substring(index + string.length())) {
+                        for (s = line.replaceAll("PLAYERNAME", this.minecraft.method5287().getUsername()); s.contains(string); s = s.substring(0, index) + TextFormatting.WHITE + TextFormatting.OBFUSCATED + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + s.substring(index + string.length())) {
                             index = s.indexOf(string);
                         }
                         this.field3838.addAll(this.minecraft.fontRenderer.method6626(s, 274));
@@ -89,7 +89,7 @@ public class Class697 extends Screen
                 final InputStream method19935 = this.minecraft.method5291().method19933(new ResourceLocation("texts/credits.txt")).method5887();
                 String line2;
                 while ((line2 = new BufferedReader(new InputStreamReader(method19935, StandardCharsets.UTF_8)).readLine()) != null) {
-                    this.field3838.addAll(this.minecraft.fontRenderer.method6626(line2.replaceAll("PLAYERNAME", this.minecraft.method5287().method33692()).replaceAll("\t", "    "), 274));
+                    this.field3838.addAll(this.minecraft.fontRenderer.method6626(line2.replaceAll("PLAYERNAME", this.minecraft.method5287().getUsername()).replaceAll("\t", "    "), 274));
                     this.field3838.add("");
                 }
                 method19935.close();

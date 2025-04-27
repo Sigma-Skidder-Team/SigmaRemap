@@ -31,7 +31,7 @@ public class Class913 extends Thread
             Class694.method3876(this.field4875, NetworkManager.method11183(byName, this.field4874, this.field4875.minecraft.gameSettings.method17129()));
             Class694.method3877(this.field4875).method11173(new ClientLoginNetHandler(Class694.method3877(this.field4875), this.field4875.minecraft, Class694.method3878(this.field4875), class2250 -> Class694.method3880(this.field4875, class2250)));
             Class694.method3877(this.field4875).method11174(new Class4398(this.field4873, this.field4874, Class2208.field13457));
-            Class694.method3877(this.field4875).method11174(new Class4327(this.field4875.minecraft.method5287().method33694()));
+            Class694.method3877(this.field4875).method11174(new Class4327(this.field4875.minecraft.method5287().getProfile()));
         }
         catch (final UnknownHostException ex) {
             if (Class694.method3875(this.field4875)) {

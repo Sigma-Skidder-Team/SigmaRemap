@@ -138,11 +138,11 @@ public class Class408 extends Entity implements Class407
             this.method1936(method1935);
         }
         if (!this.method1706()) {
-            this.world.method6709(Class8432.field34637, n - method1935.x * 0.25 + this.rand.nextDouble() * 0.6 - 0.3, n2 - method1935.y * 0.25 - 0.5, n3 - method1935.z * 0.25 + this.rand.nextDouble() * 0.6 - 0.3, method1935.x, method1935.y, method1935.z);
+            this.world.addParticle(Class8432.field34637, n - method1935.x * 0.25 + this.rand.nextDouble() * 0.6 - 0.3, n2 - method1935.y * 0.25 - 0.5, n3 - method1935.z * 0.25 + this.rand.nextDouble() * 0.6 - 0.3, method1935.x, method1935.y, method1935.z);
         }
         else {
             for (int i = 0; i < 4; ++i) {
-                this.world.method6709(Class8432.field34601, n - method1935.x * 0.25, n2 - method1935.y * 0.25, n3 - method1935.z * 0.25, method1935.x, method1935.y, method1935.z);
+                this.world.addParticle(Class8432.field34601, n - method1935.x * 0.25, n2 - method1935.y * 0.25, n3 - method1935.z * 0.25, method1935.x, method1935.y, method1935.z);
             }
         }
         if (this.world.isRemote) {

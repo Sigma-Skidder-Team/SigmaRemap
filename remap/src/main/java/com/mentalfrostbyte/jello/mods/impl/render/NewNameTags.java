@@ -9,6 +9,7 @@ import java.awt.Color;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
+import com.mentalfrostbyte.jello.auth.agora.PlayerInfo;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.impl.player.Blink;
@@ -19,7 +20,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
@@ -55,7 +56,7 @@ public class NewNameTags extends Module {
     }
 
     @EventListener
-    private void method10329(final EventPlayerTickI eventPlayerTick) {
+    private void method10329(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (!(this.field15784 = this.getBooleanValueFromSettingName("Furnaces"))) {
                 this.field15778.clear();
@@ -83,7 +84,7 @@ public class NewNameTags extends Module {
                 if (class5744.method1823()) {
                     continue;
                 }
-                if (Client.getInstance().getBotManager().method31751(class5744)) {
+                if (Client.getInstance().getBotManager().isBot(class5744)) {
                     continue;
                 }
                 this.field15783.add(class5744);
@@ -321,11 +322,11 @@ public class NewNameTags extends Module {
         GL11.glDisable(3042);
     }
 
-    public void method10336(final double n, final double n2, final double n3, final Entity class399, final float n4, final String s) {
+    public void method10336(final double n, final double n2, final double n3, final Entity entity, final float n4, final String s) {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
-        String method9887 = (s == null) ? class399.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
+        String method9887 = (s == null) ? entity.getName().getUnformattedComponentText().replaceAll("§.", "") : s;
         if (Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).isEnabled()) {
-            if (method9887.equals(NewNameTags.mc.method5287().method33692())) {
+            if (method9887.equals(NewNameTags.mc.method5287().getUsername())) {
                 method9887 = Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username");
             }
         }
@@ -339,8 +340,8 @@ public class NewNameTags extends Module {
             GL11.glDisable(2929);
             GL11.glDisable(2896);
             GL11.glDepthMask(false);
-            final String string = Math.round(((LivingEntity) class399).method2664() * 10.0f) / 10.0f + "";
-            final float min = Math.min(((LivingEntity) class399).method2664() / ((LivingEntity) class399).method2701(), 1.0f);
+            final String string = Math.round(((LivingEntity) entity).method2664() * 10.0f) / 10.0f + "";
+            final float min = Math.min(((LivingEntity) entity).method2664() / ((LivingEntity) entity).method2701(), 1.0f);
             GL11.glPushMatrix();
             GL11.glAlphaFunc(519, 0.0f);
             GL11.glTranslated(n5, n6 + 0.6f - 0.33333334f * (1.0f - n4), n7);
@@ -348,14 +349,14 @@ public class NewNameTags extends Module {
             GL11.glRotatef(NewNameTags.mc.field4644.method5833().method18163(), 1.0f, 0.0f, 0.0f);
             GL11.glScalef(-0.009f * n4, -0.009f * n4, -0.009f * n4);
             int n8 = this.field15786;
-            if (!Client.getInstance().getFriendManager().method29878(class399)) {
-                if (Client.getInstance().getFriendManager().method29880(class399)) {
+            if (!Client.getInstance().getFriendManager().method29878(entity)) {
+                if (Client.getInstance().getFriendManager().method29880(entity)) {
                     n8 = ColorUtils.applyAlpha(-6750208, 0.5f);
                 }
             } else {
                 n8 = ColorUtils.applyAlpha(-16171506, 0.5f);
             }
-            final int method9888 = ColorUtils.applyAlpha((class399 instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity) class399)).getRGB() : ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f);
+            final int method9888 = ColorUtils.applyAlpha((entity instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity) entity)).getRGB() : ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f);
             final int n9 = field40314.getWidth(method9887) / 2;
             if (!NewNameTags.field15781.containsKey(method9887)) {
                 RenderUtil.method26913((float) (-n9 - 10), -25.0f, (float) (n9 * 2 + 20), (float) (field40314.getHeight() + 27), 20.0f, 0.5f);
@@ -366,7 +367,7 @@ public class NewNameTags extends Module {
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }
             RenderUtil.method26876((float) (-n9 - 10), -25.0f, (float) (n9 + 10), (float) (field40314.getHeight() + 2), n8);
-            RenderUtil.method26876((float) (-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity) class399).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float) (n9 + 10)), (float) (field40314.getHeight() + 2), method9888);
+            RenderUtil.method26876((float) (-n9 - 10), field40314.getHeight() - 1 - ((LivingEntity) entity).field2938 / 3.0f, Math.min((n9 * 2 + 20) * (min - 0.5f), (float) (n9 + 10)), (float) (field40314.getHeight() + 2), method9888);
             GL11.glPushMatrix();
             GL11.glTranslated(-field40314.getWidth(method9887) / 2, 0.0, 0.0);
             final int method9889 = ClientFonts.JelloLight14.getWidth("Health: 20.0");
@@ -376,9 +377,9 @@ public class NewNameTags extends Module {
             }
             RenderUtil.drawString(field40314, 0.0f, -20.0f, method9887, ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, 10.0f, str + string, ClientColors.LIGHT_GREYISH_BLUE.color);
-            final Class6538 method9890 = Client.getInstance().getNetworkManager().IRCManager.method33657(class399);
-            if (method9890 != null) {
-                RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, method9890.field25986, ClientColors.LIGHT_GREYISH_BLUE.color);
+            final PlayerInfo playerInfo = Client.getInstance().getNetworkManager().IRCManager.getPlayerInfo(entity);
+            if (playerInfo != null) {
+                RenderUtil.drawString(ClientFonts.JelloLight14, 0.0f, -30.0f, playerInfo.username, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
             GL11.glPopMatrix();
             GL11.glPopMatrix();

@@ -82,7 +82,7 @@ public abstract class Class794 extends Class789
             class6908 = Class8432.field34639;
         }
         for (int i = 0; i < 7; ++i) {
-            this.world.method6709(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+            this.world.addParticle(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     
@@ -154,7 +154,7 @@ public abstract class Class794 extends Class789
     public LivingEntity method4488() {
         try {
             final UUID method4485 = this.method4485();
-            return (method4485 == null) ? null : this.world.method7143(method4485);
+            return (method4485 == null) ? null : this.world.getPlayerByUuid(method4485);
         }
         catch (final IllegalArgumentException ex) {
             return null;

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public final class Class3140 extends Class3090
+public final class Class3140 extends Biome
 {
     private static String[] field15495;
     

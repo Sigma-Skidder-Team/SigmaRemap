@@ -94,7 +94,7 @@ public class Class828 extends Class827
         if (this.method4938()) {
             if (this.field4438 != null) {
                 if (method2711 == null) {
-                    final PlayerEntity method2712 = this.world.method7143(this.field4438);
+                    final PlayerEntity method2712 = this.world.getPlayerByUuid(this.field4438);
                     this.method2636(method2712);
                     this.field2956 = method2712;
                     this.field2957 = this.method2635();
@@ -132,7 +132,7 @@ public class Class828 extends Class827
         final String method323 = class51.getString("HurtBy");
         if (!method323.isEmpty()) {
             this.field4438 = UUID.fromString(method323);
-            final PlayerEntity method324 = this.world.method7143(this.field4438);
+            final PlayerEntity method324 = this.world.getPlayerByUuid(this.field4438);
             this.method2636(method324);
             if (method324 != null) {
                 this.field2956 = method324;

@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Module;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class4895 extends Panel
 {

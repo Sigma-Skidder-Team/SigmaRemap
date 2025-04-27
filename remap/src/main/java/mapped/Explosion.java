@@ -190,10 +190,10 @@ public class Explosion
         final boolean b2 = this.mode != Mode.field13365;
         if (b) {
             if (this.size >= 2.0f && b2) {
-                this.world.method6709(Class8432.field34618, this.x, this.y, this.z, 1.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34618, this.x, this.y, this.z, 1.0, 0.0, 0.0);
             }
             else {
-                this.world.method6709(Class8432.field34619, this.x, this.y, this.z, 1.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34619, this.x, this.y, this.z, 1.0, 0.0, 0.0);
             }
         }
         if (b2) {

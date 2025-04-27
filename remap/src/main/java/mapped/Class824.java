@@ -590,7 +590,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         if (class1853 == Class2101.field12178) {
             this.method4869(this.method4870().method28784(Class9334.field40060));
         }

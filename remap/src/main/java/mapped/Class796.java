@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 
-public class Class796 extends Class795 implements Class797
+public class Class796 extends ShoulderRidingEntity implements Class797
 {
     private static final DataParameter<Integer> field4247;
     private static final Predicate<Class759> field4248;
@@ -55,7 +55,7 @@ public class Class796 extends Class795 implements Class797
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method4503(this.rand.nextInt(5));
         if (class1854 == null) {
             class1854 = new Class5497();

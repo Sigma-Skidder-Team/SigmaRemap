@@ -148,7 +148,7 @@ public class Class850 extends Class763
     public void method2736() {
         if (this.world.isRemote) {
             for (int i = 0; i < 2; ++i) {
-                this.world.method6709(Class8432.field34637, this.method1940(0.5), this.method1943() - 0.25, this.method1947(0.5), (this.rand.nextDouble() - 0.5) * 2.0, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5) * 2.0);
+                this.world.addParticle(Class8432.field34637, this.method1940(0.5), this.method1943() - 0.25, this.method1947(0.5), (this.rand.nextDouble() - 0.5) * 2.0, -this.rand.nextDouble(), (this.rand.nextDouble() - 0.5) * 2.0);
             }
         }
         this.field2967 = false;

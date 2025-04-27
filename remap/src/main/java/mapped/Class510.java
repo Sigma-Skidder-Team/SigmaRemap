@@ -64,7 +64,7 @@ public class Class510 extends Entity
         if (this.field2917 > 0) {
             this.method1715();
             if (this.world.isRemote) {
-                this.world.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
         else {

@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public final class Class3114 extends Class3090
+public final class Class3114 extends Biome
 {
     public Class3114() {
         super(new Class8927().method31462(Class6032.field24559, Class6032.field24548).method31464(Class2145.field12628).method31465(Class2140.field12589).method31466(0.45f).method31467(0.3f).method31468(2.0f).method31469(0.0f).method31470(4159204).method31471(329011).method31472("wooded_badlands_plateau"));

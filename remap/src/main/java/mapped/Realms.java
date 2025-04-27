@@ -28,13 +28,13 @@ public class Realms
     }
     
     public static String method25353() {
-        final Class9212 method5287 = Minecraft.getInstance().method5287();
-        return (method5287 != null) ? method5287.method33690() : null;
+        final Session method5287 = Minecraft.getInstance().method5287();
+        return (method5287 != null) ? method5287.getSessionID() : null;
     }
     
     public static String method25354() {
-        final Class9212 method5287 = Minecraft.getInstance().method5287();
-        return (method5287 != null) ? method5287.method33692() : null;
+        final Session method5287 = Minecraft.getInstance().method5287();
+        return (method5287 != null) ? method5287.getUsername() : null;
     }
     
     public static long method25355() {
@@ -42,15 +42,15 @@ public class Realms
     }
     
     public static String method25356() {
-        return Minecraft.getInstance().method5287().method33690();
+        return Minecraft.getInstance().method5287().getSessionID();
     }
     
     public static String method25357() {
-        return Minecraft.getInstance().method5287().method33691();
+        return Minecraft.getInstance().method5287().getPlayerID();
     }
     
     public static String method25358() {
-        return Minecraft.getInstance().method5287().method33692();
+        return Minecraft.getInstance().method5287().getUsername();
     }
     
     public static String method25359(final String s) {

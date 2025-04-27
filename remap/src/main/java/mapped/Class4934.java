@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import totalcross.json.JSONObject;
 
 import java.io.IOException;

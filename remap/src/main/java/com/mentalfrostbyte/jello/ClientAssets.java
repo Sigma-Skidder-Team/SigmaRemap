@@ -15,7 +15,7 @@ import com.mentalfrostbyte.jello.util.system.network.ImageUtil;
 import mapped.BufferedImageUtil;
 import mapped.Class9577;
 import org.apache.commons.codec.digest.DigestUtils;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.InputStream;
 

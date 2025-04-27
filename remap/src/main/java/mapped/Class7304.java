@@ -48,7 +48,7 @@ public abstract class Class7304<C extends Class5118>
         return 4;
     }
     
-    public boolean method22406(final IChunk class1860, final Function<BlockPos, Class3090> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
+    public boolean method22406(final IChunk class1860, final Function<BlockPos, Biome> function, final long n, final int n2, final int n3, final int n4, final double n5, final double n6, final double n7, final double n8, final double n9, final BitSet set) {
         final Random random = new Random(n + n3 + n4);
         final double n10 = n3 * 16 + 8;
         final double n11 = n4 * 16 + 8;
@@ -93,7 +93,7 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public boolean method22396(final IChunk class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final IChunk class1860, final Function<BlockPos, Biome> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         final int n9 = n6 | n8 << 4 | n7 << 8;
         if (set.get(n9)) {
             return false;
@@ -123,7 +123,7 @@ public abstract class Class7304<C extends Class5118>
         return false;
     }
     
-    public abstract boolean method22403(final IChunk p0, final Function<BlockPos, Class3090> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
+    public abstract boolean method22403(final IChunk p0, final Function<BlockPos, Biome> p1, final Random p2, final int p3, final int p4, final int p5, final int p6, final int p7, final BitSet p8, final C p9);
     
     public abstract boolean method22402(final Random p0, final int p1, final int p2, final C p3);
     

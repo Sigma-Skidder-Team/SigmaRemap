@@ -72,7 +72,7 @@ public class Class829 extends Class827
     @Override
     public void method4929() {
         this.method4930(EntityType.field29052);
-        this.world.method6839(null, 1041, new BlockPos(this), 0);
+        this.world.playEvent(null, 1041, new BlockPos(this), 0);
     }
     
     @Override

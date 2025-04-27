@@ -85,7 +85,7 @@ public class Class3969 extends Block
         if (method6701.getBlock() == this) {
             if (method6701.get(Class3969.field17935) != class1851) {
                 class1847.setBlockState(class1852, Blocks.AIR.getDefaultState(), 35);
-                class1847.method6839(class1850, 2001, class1852, Block.method11774(method6701));
+                class1847.playEvent(class1850, 2001, class1852, Block.method11774(method6701));
                 final ItemStack method6702 = class1850.getHeldItemMainhand();
                 if (!class1847.isRemote) {
                     if (!class1850.method2889()) {
@@ -192,7 +192,7 @@ public class Class3969 extends Block
         if (this.field17401 != Material.IRON) {
             class7096 = class7096.method21768((IProperty<Comparable>)Class3969.field17932);
             class7097.setBlockState(class7098, class7096, 10);
-            class7097.method6839(class7099, class7096.get(Class3969.field17932) ? this.method12108() : this.method12107(), class7098, 0);
+            class7097.playEvent(class7099, class7096.get(Class3969.field17932) ? this.method12108() : this.method12107(), class7098, 0);
             return Class2201.field13400;
         }
         return Class2201.field13402;
@@ -232,7 +232,7 @@ public class Class3969 extends Block
     }
     
     private void method12111(final World class1847, final BlockPos class1848, final boolean b) {
-        class1847.method6839(null, b ? this.method12108() : this.method12107(), class1848, 0);
+        class1847.playEvent(null, b ? this.method12108() : this.method12107(), class1848, 0);
     }
     
     @Override

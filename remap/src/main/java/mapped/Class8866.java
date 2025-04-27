@@ -123,7 +123,7 @@ public class Class8866
                                         if (!this.field37268.getBooleanValueFromSettingName("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
-                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(method26798)) {
+                                        else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(method26798)) {
                                             iterator2.remove();
                                         }
                                         else if (!this.field37268.getBooleanValueFromSettingName("Invisible") && method26798.method1823()) {

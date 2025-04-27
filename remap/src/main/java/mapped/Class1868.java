@@ -19,22 +19,22 @@ import java.util.List;
 
 public abstract class Class1868 implements Class1867
 {
-    private static final List<Class3090> field10191;
+    private static final List<Biome> field10191;
     public final Map<Class4574<?>, Boolean> field10192;
     public final Set<BlockState> field10193;
-    public final Set<Class3090> field10194;
+    public final Set<Biome> field10194;
     
-    public Class1868(final Set<Class3090> field10194) {
+    public Class1868(final Set<Biome> field10194) {
         this.field10192 = Maps.newHashMap();
         this.field10193 = Sets.newHashSet();
         this.field10194 = field10194;
     }
     
-    public List<Class3090> method7117() {
+    public List<Biome> method7117() {
         return Class1868.field10191;
     }
     
-    public Set<Class3090> method7118(final int n, final int n2, final int n3, final int n4) {
+    public Set<Biome> method7118(final int n, final int n2, final int n3, final int n4) {
         final int n5 = n - n4 >> 2;
         final int n6 = n2 - n4 >> 2;
         final int n7 = n3 - n4 >> 2;
@@ -56,7 +56,7 @@ public abstract class Class1868 implements Class1867
     }
     
     @Nullable
-    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Class3090> list, final Random random) {
+    public BlockPos method7119(final int n, final int n2, final int n3, final int n4, final List<Biome> list, final Random random) {
         final int n5 = n - n4 >> 2;
         final int n6 = n3 - n4 >> 2;
         final int n7 = n + n4 >> 2;
@@ -91,7 +91,7 @@ public abstract class Class1868 implements Class1867
     
     public Set<BlockState> method7122() {
         if (this.field10193.isEmpty()) {
-            final Iterator<Class3090> iterator = this.field10194.iterator();
+            final Iterator<Biome> iterator = this.field10194.iterator();
             while (iterator.hasNext()) {
                 this.field10193.add(iterator.next().method9872().method13338());
             }
@@ -100,6 +100,6 @@ public abstract class Class1868 implements Class1867
     }
     
     static {
-        field10191 = Lists.newArrayList((Object[])new Class3090[] { Class7102.field27636, Class7102.field27633, Class7102.field27637, Class7102.field27651, Class7102.field27650, Class7102.field27653, Class7102.field27654 });
+        field10191 = Lists.newArrayList((Object[])new Biome[] { Class7102.field27636, Class7102.field27633, Class7102.field27637, Class7102.field27651, Class7102.field27650, Class7102.field27653, Class7102.field27654 });
     }
 }

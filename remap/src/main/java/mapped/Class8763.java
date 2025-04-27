@@ -597,8 +597,8 @@ public class Class8763
         return -1;
     }
     
-    public static Class3090 method30337(final Class1856 class1856, final BlockPos class1857) {
-        Class3090 class1858 = Class7984.method26045(class1856, class1857);
+    public static Biome method30337(final Class1856 class1856, final BlockPos class1857) {
+        Biome class1858 = Class7984.method26045(class1856, class1857);
         if (class1858 == Class7102.field27638 || class1858 == Class7102.field27689) {
             if (!Config.method28940()) {
                 class1858 = Class7102.field27633;

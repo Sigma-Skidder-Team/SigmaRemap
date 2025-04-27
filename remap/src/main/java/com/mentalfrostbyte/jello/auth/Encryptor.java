@@ -4,6 +4,7 @@
 
 package com.mentalfrostbyte.jello.auth;
 
+import com.mentalfrostbyte.jello.auth.hwid.SerialNumberUtil;
 import totalcross.json.JSONException;
 import totalcross.json.JSONObject;
 

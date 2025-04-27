@@ -45,7 +45,7 @@ public class Class432 extends Class428
         }
         else {
             --this.field2644;
-            this.world.method6709(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34639, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
         }
         if (this.collidedHorizontally) {
             final double method1680 = Entity.horizontalMag(this.getMotion());

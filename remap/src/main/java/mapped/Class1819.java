@@ -7,15 +7,15 @@ package mapped;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.util.math.MathHelper;
 
-public class Class1819 extends Class1799<Class754, Class5860<Class754>>
+public class Class1819 extends Class1799<AbstractClientPlayerEntity, Class5860<AbstractClientPlayerEntity>>
 {
     private static String[] field9999;
     
-    public Class1819(final Class4778<Class754, Class5860<Class754>> class4778) {
+    public Class1819(final Class4778<AbstractClientPlayerEntity, Class5860<AbstractClientPlayerEntity>> class4778) {
         super(class4778);
     }
     
-    public void method6584(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final Class754 class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
+    public void method6584(final MatrixStack class7351, final IRenderTypeBuffer class7352, final int n, final AbstractClientPlayerEntity class7353, final float n2, final float n3, final float n4, final float n5, final float n6, final float n7) {
         if (class7353.method4094()) {
             if (!class7353.method1823()) {
                 if (class7353.method2895(Class189.field610)) {

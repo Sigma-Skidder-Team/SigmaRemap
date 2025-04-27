@@ -16,10 +16,10 @@ public class Class8910
         this.field37454 = class7538.method23618();
     }
     
-    private Class3090 method31392(final int n) {
-        final Class3090 class3090 = Registry.field217.method499(n);
-        if (class3090 != null) {
-            return class3090;
+    private Biome method31392(final int n) {
+        final Biome biome = Registry.field217.method499(n);
+        if (biome != null) {
+            return biome;
         }
         if (!Class9528.field41021) {
             Class8910.field37453.warn("Unknown biome id: ", n);
@@ -28,7 +28,7 @@ public class Class8910
         throw Util.pauseDevMode(new IllegalStateException("Unknown biome id: " + n));
     }
     
-    public Class3090 method31393(final int n, final int n2) {
+    public Biome method31393(final int n, final int n2) {
         return this.method31392(this.field37454.method20074(n, n2));
     }
     

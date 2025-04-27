@@ -76,7 +76,7 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10776(final EventPlayerTickI eventPlayerTick) {
+    public void method10776(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
         }
     }
@@ -243,7 +243,7 @@ public class Test extends Module
                             if (Test.mc.player.method1732(class399) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class399)) {
                                     if (!(class399 instanceof Class857) && !(class399 instanceof PlayerEntity)) {
-                                        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
+                                        if (class399 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(class399)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class399)) {
@@ -307,7 +307,7 @@ public class Test extends Module
                             if (Test.mc.player.method1732(class400) <= n) {
                                 if (Test.mc.player.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class400)) {
+                                        if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(class400)) {
                                             iterator.remove();
                                         }
                                         else if (Test.mc.player.method1920() != null && Test.mc.player.method1920().equals(class400)) {

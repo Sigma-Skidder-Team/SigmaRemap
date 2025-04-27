@@ -7,7 +7,7 @@ package mapped;
 import org.newdawn.slick.SlickException;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public abstract class Class8093
 {

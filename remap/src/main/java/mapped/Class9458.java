@@ -227,13 +227,13 @@ public class Class9458
         class7352.finish();
     }
     
-    private void method35154(final Class754 class754, final float n, final float n2, final Class316 class755, final float n3, final ItemStack class756, final float n4, final MatrixStack class757, final IRenderTypeBuffer class758, final int n5) {
+    private void method35154(final AbstractClientPlayerEntity abstractClientPlayerEntity, final float n, final float n2, final Class316 class755, final float n3, final ItemStack class756, final float n4, final MatrixStack class757, final IRenderTypeBuffer class758, final int n5) {
         if (!Config.method28955() || !Class9216.method33907(class755)) {
             final boolean b = class755 == Class316.field1877;
-            final Class2226 class759 = b ? class754.method2755() : class754.method2755().method8419();
+            final Class2226 class759 = b ? abstractClientPlayerEntity.method2755() : abstractClientPlayerEntity.method2755().method8419();
             class757.method22567();
             if (class756.method27620()) {
-                if (b && !class754.method1823()) {
+                if (b && !abstractClientPlayerEntity.method1823()) {
                     this.method35149(class757, class758, n5, n4, n3, class759);
                 }
             }
@@ -249,7 +249,7 @@ public class Class9458
                 final boolean method12296 = Class4086.method12296(class756);
                 final boolean b2 = class759 == Class2226.field13698;
                 final int n6 = b2 ? 1 : -1;
-                if (class754.method2756() && class754.method2767() > 0 && class754.method2757() == class755) {
+                if (abstractClientPlayerEntity.method2756() && abstractClientPlayerEntity.method2767() > 0 && abstractClientPlayerEntity.method2757() == class755) {
                     this.method35152(class757, class759, n4);
                     class757.method22564(n6 * -0.4785682f, -0.0943870022892952, 0.05731530860066414);
                     class757.method22566(Vector3f.XP.rotationDegrees(-11.935f));
@@ -277,13 +277,13 @@ public class Class9458
                         class757.method22566(Vector3f.YP.rotationDegrees(n6 * 10.0f));
                     }
                 }
-                this.method35143(class754, class756, b2 ? Class2016.field11490 : Class2016.field11489, !b2, class757, class758, n5);
+                this.method35143(abstractClientPlayerEntity, class756, b2 ? Class2016.field11490 : Class2016.field11489, !b2, class757, class758, n5);
             }
             else {
                 final boolean b3 = class759 == Class2226.field13698;
                 final Class5716 class760 = new Class5716(true, n3, n4, class759, class756, class757);
                 Client.getInstance().getEventBus().post(class760);
-                if (class754.method2756() && class754.method2767() > 0 && class754.method2757() == class755) {
+                if (abstractClientPlayerEntity.method2756() && abstractClientPlayerEntity.method2767() > 0 && abstractClientPlayerEntity.method2757() == class755) {
                     final int n10 = b3 ? 1 : -1;
                     switch (Class8442.field34698[class756.method27653().ordinal()]) {
                         case 1: {
@@ -343,7 +343,7 @@ public class Class9458
                         }
                     }
                 }
-                else if (class754.method2744()) {
+                else if (abstractClientPlayerEntity.method2744()) {
                     this.method35152(class757, class759, n4);
                     final int n18 = b3 ? 1 : -1;
                     class757.method22564(n18 * -0.4f, 0.800000011920929, 0.30000001192092896);
@@ -356,7 +356,7 @@ public class Class9458
                     this.method35151(class757, class759, n3);
                 }
                 if (class760 == null || class760.method16970()) {
-                    this.method35143(class754, class756, b3 ? Class2016.field11490 : Class2016.field11489, !b3, class757, class758, n5);
+                    this.method35143(abstractClientPlayerEntity, class756, b3 ? Class2016.field11490 : Class2016.field11489, !b3, class757, class758, n5);
                 }
                 Client.getInstance().getEventBus().post(new Class5716(false, n3, n4, class759, class756, class757));
             }

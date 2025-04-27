@@ -6,5 +6,5 @@ package mapped;
 
 public interface Class8895
 {
-    int method31308(final Class3090 p0, final double p1, final double p2);
+    int method31308(final Biome p0, final double p1, final double p2);
 }

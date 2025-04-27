@@ -7,11 +7,11 @@ package mapped;
 public class Class3445 extends Class3446
 {
     private static String[] field16267;
-    private final Class795 field16268;
+    private final ShoulderRidingEntity field16268;
     private Class513 field16269;
     private boolean field16270;
     
-    public Class3445(final Class795 field16268) {
+    public Class3445(final ShoulderRidingEntity field16268) {
         this.field16268 = field16268;
     }
     

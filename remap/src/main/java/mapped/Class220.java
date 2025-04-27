@@ -139,10 +139,10 @@ public enum Class220 implements Class193
         if (Class7983.method26037(n, n2)) {
             return true;
         }
-        final Class3090 class3090 = Registry.field217.method499(n);
-        final Class3090 class3091 = Registry.field217.method499(n2);
-        if (class3090 != null && class3091 != null) {
-            final Class2081 method9861 = class3090.method9861();
+        final Biome biome = Registry.field217.method499(n);
+        final Biome class3091 = Registry.field217.method499(n2);
+        if (biome != null && class3091 != null) {
+            final Class2081 method9861 = biome.method9861();
             final Class2081 method9862 = class3091.method9861();
             if (method9861 != method9862) {
                 if (method9861 != Class2081.field12034) {

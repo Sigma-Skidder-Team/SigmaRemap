@@ -8,7 +8,7 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.EntityType;
 
-public final class Class3159 extends Class3090
+public final class Class3159 extends Biome
 {
     private static String[] field15509;
     

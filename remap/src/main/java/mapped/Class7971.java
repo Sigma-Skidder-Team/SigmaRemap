@@ -6,13 +6,11 @@ package mapped;
 
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
-import java.nio.charset.Charset;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import org.apache.commons.codec.binary.Base64;
 
-import java.io.OutputStream;
 import org.apache.commons.codec.binary.Base64OutputStream;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import java.net.URL;
@@ -28,7 +26,7 @@ import com.mojang.authlib.Agent;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import java.net.Proxy;
 import com.mojang.authlib.exceptions.AuthenticationException;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -52,20 +50,20 @@ public class Class7971
     private Thread field32798;
     private static Date field32799;
     
-    public static Class9212 method25884(final String s, final String s2) throws AuthenticationException {
+    public static Session method25884(final String s, final String s2) throws AuthenticationException {
         return method25885(new Class7971(s, s2));
     }
     
-    public static Class9212 method25885(final Class7971 class7971) throws AuthenticationException {
+    public static Session method25885(final Class7971 class7971) throws AuthenticationException {
         if (!class7971.method25912()) {
             final YggdrasilUserAuthentication yggdrasilUserAuthentication = new YggdrasilUserAuthentication(new YggdrasilAuthenticationService(Proxy.NO_PROXY, "-"), Agent.MINECRAFT);
             yggdrasilUserAuthentication.setUsername(class7971.method25888());
             yggdrasilUserAuthentication.setPassword(class7971.method25892());
             yggdrasilUserAuthentication.logIn();
             class7971.method25886();
-            return new Class9212(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), class7971.method25902().name());
+            return new Session(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), class7971.method25902().name());
         }
-        return new Class9212(class7971.method25888(), "", "", "mojang");
+        return new Session(class7971.method25888(), "", "", "mojang");
     }
     
     public Class7971(final String field32789, final String field32790, final ArrayList<Class8848> field32791, final String field32792) {
@@ -262,11 +260,11 @@ public class Class7971
         }
     }
     
-    public Class2105 method25902() {
-        return this.field32789.contains("@") ? Class2105.field12205 : Class2105.field12204;
+    public Session.Type method25902() {
+        return this.field32789.contains("@") ? Session.Type.MOJANG : Session.Type.LEGACY;
     }
     
-    public Class9212 method25903() throws AuthenticationException {
+    public Session method25903() throws AuthenticationException {
         if (!this.method25912()) {
             final YggdrasilUserAuthentication yggdrasilUserAuthentication = new YggdrasilUserAuthentication(new YggdrasilAuthenticationService(Proxy.NO_PROXY, "-"), Agent.MINECRAFT);
             yggdrasilUserAuthentication.setUsername(this.method25888());
@@ -276,10 +274,10 @@ public class Class7971
             this.method25898(yggdrasilUserAuthentication.getSelectedProfile().getId().toString());
             this.method25901();
             this.field32792 = System.currentTimeMillis();
-            return new Class9212(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), this.method25902().name());
+            return new Session(yggdrasilUserAuthentication.getSelectedProfile().getName(), yggdrasilUserAuthentication.getSelectedProfile().getId().toString(), yggdrasilUserAuthentication.getAuthenticatedToken(), this.method25902().name());
         }
         this.method25897(this.method25888());
-        return new Class9212(this.method25888(), "", "", "mojang");
+        return new Session(this.method25888(), "", "", "mojang");
     }
     
     public JSONObject method25904() {

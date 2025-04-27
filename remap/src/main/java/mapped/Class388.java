@@ -758,7 +758,7 @@ public class Class388 extends Class387 implements Class389
                 class514.method34986(class513);
             }
             else {
-                class514.method34988(this.field2254.method6840());
+                class514.method34988(this.field2254.getPlayers());
             }
         }
         final int n = MathHelper.floor(class513.getPosX()) >> 4;
@@ -844,7 +844,7 @@ public class Class388 extends Class387 implements Class389
                 }
                 final Class9406 class400 = new Class9406(this, class399, n, method1643, method1642.method23382());
                 this.field2271.put(class399.getEntityId(), (Object)class400);
-                class400.method34988(this.field2254.method6840());
+                class400.method34988(this.field2254.getPlayers());
                 if (class399 instanceof Class513) {
                     final Class513 class401 = (Class513)class399;
                     this.method1348(class401, true);
@@ -876,7 +876,7 @@ public class Class388 extends Class387 implements Class389
     
     public void method1354() {
         final ArrayList arrayList = Lists.newArrayList();
-        final List<Class513> method6840 = this.field2254.method6840();
+        final List<Class513> method6840 = this.field2254.getPlayers();
         for (final Class9406 class9406 : this.field2271.values()) {
             final Class353 method6841 = Class9406.method34990(class9406);
             final Class353 method6842 = Class353.method1091(Class9406.method34989(class9406));

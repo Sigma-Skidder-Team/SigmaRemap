@@ -101,7 +101,7 @@ public class BowAimbot extends Module
             else if (!this.getBooleanValueFromSettingName("Players") && class399 instanceof PlayerEntity) {
                 iterator.remove();
             }
-            else if (this.getBooleanValueFromSettingName("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
+            else if (this.getBooleanValueFromSettingName("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(class399)) {
                 iterator.remove();
             }
             else if (!this.getBooleanValueFromSettingName("Invisible") && class399.method1823()) {

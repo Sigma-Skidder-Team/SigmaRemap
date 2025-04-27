@@ -9,7 +9,7 @@ import java.nio.IntBuffer;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.newdawn.slick.SlickException;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class8518 extends Class8519
 {

@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.*;
 import net.minecraft.entity.Entity;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 import java.io.IOException;

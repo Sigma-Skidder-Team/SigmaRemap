@@ -99,7 +99,7 @@ public class Class3904 extends Class3902
     private static void method12007(final Class7096 class7096, final Class1851 class7097, final BlockPos class7098, final float n) {
         final Direction method782 = class7096.method21772((IProperty<Direction>)Class3904.field17564).getOpposite();
         final Direction method783 = Class3902.method12003(class7096).getOpposite();
-        class7097.method6709(new Class6912(1.0f, 0.0f, 0.0f, n), class7098.getX() + 0.5 + 0.1 * method782.getXOffset() + 0.2 * method783.getXOffset(), class7098.getY() + 0.5 + 0.1 * method782.getYOffset() + 0.2 * method783.getYOffset(), class7098.getZ() + 0.5 + 0.1 * method782.getZOffset() + 0.2 * method783.getZOffset(), 0.0, 0.0, 0.0);
+        class7097.addParticle(new Class6912(1.0f, 0.0f, 0.0f, n), class7098.getX() + 0.5 + 0.1 * method782.getXOffset() + 0.2 * method783.getXOffset(), class7098.getY() + 0.5 + 0.1 * method782.getYOffset() + 0.2 * method783.getYOffset(), class7098.getZ() + 0.5 + 0.1 * method782.getZOffset() + 0.2 * method783.getZOffset(), 0.0, 0.0, 0.0);
     }
     
     @Override

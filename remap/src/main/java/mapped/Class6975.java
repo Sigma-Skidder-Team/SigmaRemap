@@ -24,7 +24,7 @@ public class Class6975 implements Class6974
                 final Class6554 method26155 = new Class7993(this.field27272).method26155(new JsonParser().parse(new String(bytes, StandardCharsets.US_ASCII)));
                 if (method26155 != null) {
                     method26155.method19861(true);
-                    Class7569.method23791(this.field27272, method26155);
+                    PlayerConfigurations.method23791(this.field27272, method26155);
                 }
             }
             catch (final Exception ex) {

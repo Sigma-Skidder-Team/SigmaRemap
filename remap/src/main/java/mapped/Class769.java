@@ -56,7 +56,7 @@ public class Class769 extends Class770 implements Class768
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method1803(Class2215.field13600, new ItemStack(Items.field31279));
         return super.method4188(class1851, class1852, class1853, class1854, class1855);
     }
@@ -96,7 +96,7 @@ public class Class769 extends Class770 implements Class768
                         this.field4160[1][j] = new Vec3d((-6.0f + this.rand.nextInt(13)) * 0.5, Math.max(0, this.rand.nextInt(6) - 4), (-6.0f + this.rand.nextInt(13)) * 0.5);
                     }
                     for (int k = 0; k < 16; ++k) {
-                        this.world.method6709(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
+                        this.world.addParticle(Class8432.field34602, this.method1940(0.5), this.method1943(), this.method1946(0.5), 0.0, 0.0, 0.0);
                     }
                     this.world.method6708(this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35308, this.method1922(), 1.0f, 1.0f, false);
                 }

@@ -19,7 +19,7 @@ public class Class6714 implements GameSession
         this.field26446 = class1850.method17370().size();
         this.field26447 = !class1850.getNetworkManager().method11182();
         this.field26448 = clientWorld.method6954().method8239();
-        final Class9081 method17371 = class1850.method17371(class1849.getUniqueID());
+        final NetworkPlayerInfo method17371 = class1850.method17371(class1849.getUniqueID());
         if (method17371 == null) {
             this.field26449 = "unknown";
         }

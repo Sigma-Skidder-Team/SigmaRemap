@@ -4,7 +4,7 @@
 
 package mapped;
 
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class7920
 {

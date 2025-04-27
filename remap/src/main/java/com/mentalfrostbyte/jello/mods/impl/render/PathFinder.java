@@ -68,7 +68,7 @@ public class PathFinder extends Module
             final Iterator iterator = arrayList.iterator();
             while (iterator.hasNext()) {
                 final Entity class5751 = (Entity)iterator.next();
-                if (!(class5751 instanceof PlayerEntity) || Client.getInstance().getBotManager().method31751(class5751)) {
+                if (!(class5751 instanceof PlayerEntity) || Client.getInstance().getBotManager().isBot(class5751)) {
                     iterator.remove();
                 }
             }

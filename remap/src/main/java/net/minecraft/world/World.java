@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.util.function.Consumer;
 import java.util.Iterator;
 import java.util.Collection;
-import org.apache.logging.log4j.util.Supplier;
 import javax.annotation.Nullable;
 import com.google.common.collect.Lists;
 import java.util.function.BiFunction;
@@ -349,16 +348,16 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void addParticle(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6710(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void addParticle(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6711(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void addOptionalParticle(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
-    public void method6712(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void addOptionalParticle(final IParticleData IParticleData, final boolean b, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
     public float method6713(final float n) {
@@ -578,7 +577,7 @@ public abstract class World implements Class1851, AutoCloseable
         if (this.getBlockState(method1149).getBlock() != Blocks.FIRE) {
             return false;
         }
-        this.method6839(playerEntity, 1009, method1149, 0);
+        this.playEvent(playerEntity, 1009, method1149, 0);
         this.method6690(method1149, false);
         return true;
     }
@@ -703,7 +702,7 @@ public abstract class World implements Class1851, AutoCloseable
     }
     
     @Override
-    public List<Entity> method6737(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
+    public List<Entity> getEntitiesInAABBexcluding(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
         this.method6796().method15302("getEntities");
         final ArrayList arrayList = Lists.newArrayList();
         final int method35644 = MathHelper.floor((class400.minX - 2.0) / 16.0);
@@ -973,7 +972,7 @@ public abstract class World implements Class1851, AutoCloseable
     
     public CrashReportCategory method6779(final CrashReport class7689) {
         final CrashReportCategory method24419 = class7689.makeCategoryDepth("Affected level", 1);
-        method24419.addDetail("All players", () -> this.method6840().size() + " total; " + this.method6840());
+        method24419.addDetail("All players", () -> this.getPlayers().size() + " total; " + this.getPlayers());
         method24419.addDetail("Chunk stats", this.chunkProvider::makeString);
         method24419.addDetail("Level dimension", () -> this.dimension.getType().toString());
         try {

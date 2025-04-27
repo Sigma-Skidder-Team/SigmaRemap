@@ -66,7 +66,7 @@ public class Class9049
                 final ItemStack method1909 = ((Class862)this.field38301).method5198();
                 if (method1909.getItem() instanceof Class4094) {
                     final Class6356 method1910 = Class4094.method12328(method1909, this.field38300);
-                    for (final Class513 class513 : this.field38300.method6840()) {
+                    for (final Class513 class513 : this.field38300.getPlayers()) {
                         method1910.method18916(class513, method1909);
                         final IPacket<?> method1911 = ((Class4094)method1909.getItem()).method12325(method1909, this.field38300, class513);
                         if (method1911 == null) {

@@ -268,33 +268,33 @@ public class Class4011 extends Block
         if (!this.method12191(method1140) && !method1140.isSolidSide(class7097, method1139, Direction.UP)) {
             if (this.method12191(class7097.getBlockState(class7098.method1145()))) {
                 for (int i = 0; i < 2; ++i) {
-                    class7097.method6709(Class8432.field34632, class7098.getX() + random.nextDouble() * 0.10000000149011612, class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34632, class7098.getX() + random.nextDouble() * 0.10000000149011612, class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
                 }
             }
             if (this.method12191(class7097.getBlockState(class7098.method1147()))) {
                 for (int j = 0; j < 2; ++j) {
-                    class7097.method6709(Class8432.field34632, class7098.getX() + 1 - random.nextDouble() * 0.10000000149011612, class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34632, class7098.getX() + 1 - random.nextDouble() * 0.10000000149011612, class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
                 }
             }
             if (this.method12191(class7097.getBlockState(class7098.method1141()))) {
                 for (int k = 0; k < 2; ++k) {
-                    class7097.method6709(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble() * 0.10000000149011612, 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble(), class7098.getZ() + random.nextDouble() * 0.10000000149011612, 0.0, 0.0, 0.0);
                 }
             }
             if (this.method12191(class7097.getBlockState(class7098.method1143()))) {
                 for (int l = 0; l < 2; ++l) {
-                    class7097.method6709(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble(), class7098.getZ() + 1 - random.nextDouble() * 0.10000000149011612, 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble(), class7098.getZ() + 1 - random.nextDouble() * 0.10000000149011612, 0.0, 0.0, 0.0);
                 }
             }
             if (this.method12191(class7097.getBlockState(class7098.method1137()))) {
                 for (int n = 0; n < 2; ++n) {
-                    class7097.method6709(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + 1 - random.nextDouble() * 0.10000000149011612, class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
+                    class7097.addParticle(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + 1 - random.nextDouble() * 0.10000000149011612, class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
                 }
             }
         }
         else {
             for (int n2 = 0; n2 < 3; ++n2) {
-                class7097.method6709(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble() * 0.5 + 0.5, class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
+                class7097.addParticle(Class8432.field34632, class7098.getX() + random.nextDouble(), class7098.getY() + random.nextDouble() * 0.5 + 0.5, class7098.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
             }
         }
     }

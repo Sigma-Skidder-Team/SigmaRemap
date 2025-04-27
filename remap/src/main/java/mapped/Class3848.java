@@ -120,7 +120,7 @@ public class Class3848 extends Class3846
         if (class399.world.isRemote) {
             final BlockState method11878 = Blocks.HONEY_BLOCK.getDefaultState();
             for (int i = 0; i < n; ++i) {
-                class399.world.method6709(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
+                class399.world.addParticle(new Class6911(Class8432.field34600, method11878), class399.getPosX(), class399.getPosY(), class399.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

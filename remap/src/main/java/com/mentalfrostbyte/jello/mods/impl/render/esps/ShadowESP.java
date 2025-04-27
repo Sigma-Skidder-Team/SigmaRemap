@@ -158,7 +158,7 @@ public class ShadowESP extends Module
     }
     
     private boolean method10725(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !class399.method1823() && !Client.getInstance().getBotManager().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !class399.method1823() && !Client.getInstance().getBotManager().isBot(class399);
     }
     
     private void method10726() {

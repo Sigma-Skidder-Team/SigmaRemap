@@ -29,7 +29,7 @@ public class Class410 extends Class409
     public void method1798(final byte b) {
         if (b == 3) {
             for (int i = 0; i < 8; ++i) {
-                this.world.method6709(new Class6910(Class8432.field34629, this.method2005()), this.getPosX(), this.getPosY(), this.getPosZ(), (this.rand.nextFloat() - 0.5) * 0.08, (this.rand.nextFloat() - 0.5) * 0.08, (this.rand.nextFloat() - 0.5) * 0.08);
+                this.world.addParticle(new Class6910(Class8432.field34629, this.method2005()), this.getPosX(), this.getPosY(), this.getPosZ(), (this.rand.nextFloat() - 0.5) * 0.08, (this.rand.nextFloat() - 0.5) * 0.08, (this.rand.nextFloat() - 0.5) * 0.08);
             }
         }
     }

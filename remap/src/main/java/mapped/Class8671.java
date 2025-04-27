@@ -60,7 +60,7 @@ public class Class8671
     }
     
     private boolean method29681(final Class1849 class1849) {
-        for (final PlayerEntity class1850 : class1849.method6840()) {
+        for (final PlayerEntity class1850 : class1849.getPlayers()) {
             if (class1850.isSpectator()) {
                 continue;
             }

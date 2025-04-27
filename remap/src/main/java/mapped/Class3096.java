@@ -7,7 +7,7 @@ package mapped;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 
-public final class Class3096 extends Class3090
+public final class Class3096 extends Biome
 {
     private static String[] field15465;
     public static final Class8575 field15466;

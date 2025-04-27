@@ -26,7 +26,7 @@ public class Class4555 extends Class4535<Class5122>
                 final int n2 = class1853.getZ() + j;
                 class1855.setPos(n, class1851.method6699(HeightmapType.field11525, n, n2), n2);
                 class1856.method1287(class1855).method1291(Direction.DOWN, 1);
-                final Class3090 method6959 = class1851.method6959(class1855);
+                final Biome method6959 = class1851.method6959(class1855);
                 if (method6959.method9847(class1851, class1856, false)) {
                     class1851.setBlockState(class1856, Blocks.field29330.getDefaultState(), 2);
                 }

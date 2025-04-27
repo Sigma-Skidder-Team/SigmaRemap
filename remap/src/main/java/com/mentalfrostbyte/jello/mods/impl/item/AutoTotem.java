@@ -18,7 +18,7 @@ public class AutoTotem extends Module
     }
     
     @EventListener
-    private void method10473(final EventPlayerTickI eventPlayerTick) {
+    private void method10473(final EventPlayerTick eventPlayerTick) {
         this.method10475();
     }
     

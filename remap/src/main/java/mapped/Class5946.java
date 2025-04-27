@@ -11,6 +11,6 @@ public final class Class5946 extends Class5936
     }
     
     @Override
-    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
+    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Biome class6348) {
     }
 }

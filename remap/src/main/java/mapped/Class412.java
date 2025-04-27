@@ -65,7 +65,7 @@ public class Class412 extends Class409
             }
         }
         for (int i = 0; i < 32; ++i) {
-            this.world.method6709(Class8432.field34637, this.getPosX(), this.getPosY() + this.rand.nextDouble() * 2.0, this.getPosZ(), this.rand.nextGaussian(), 0.0, this.rand.nextGaussian());
+            this.world.addParticle(Class8432.field34637, this.getPosX(), this.getPosY() + this.rand.nextDouble() * 2.0, this.getPosZ(), this.rand.nextGaussian(), 0.0, this.rand.nextGaussian());
         }
         if (!this.world.isRemote) {
             if (!(method2019 instanceof Class513)) {

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.HashSet;
 import com.google.common.collect.Sets;
@@ -34,7 +33,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16801(false);
@@ -189,7 +188,7 @@ public abstract class Class819 extends Class788 implements Class820, Class822
     
     public void method4836(final IParticleData IParticleData) {
         for (int i = 0; i < 5; ++i) {
-            this.world.method6709(IParticleData, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+            this.world.addParticle(IParticleData, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     

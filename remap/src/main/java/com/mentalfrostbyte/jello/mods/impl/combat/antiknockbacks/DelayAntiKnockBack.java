@@ -36,7 +36,7 @@ public class DelayAntiKnockBack extends Module
                     final List<Entity> method6739 = DelayAntiKnockBack.mc.world.method6739((Class<? extends Entity>) PlayerEntity.class, DelayAntiKnockBack.mc.player.getBoundingBox().intersect(14.0), class5725 -> {
                         if (class5725.method1732(DelayAntiKnockBack.mc.player) < 6.0f) {
                             if (DelayAntiKnockBack.mc.player != class5725) {
-                                if (!Client.getInstance().getBotManager().method31751(class5725)) {
+                                if (!Client.getInstance().getBotManager().isBot(class5725)) {
                                     return;
                                 }
                             }
@@ -67,7 +67,7 @@ public class DelayAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10520(final EventPlayerTickI eventPlayerTick) {
+    private void method10520(final EventPlayerTick eventPlayerTick) {
         if (this.field15923 != 0) {
             if (this.field15923 > 0) {
                 --this.field15923;

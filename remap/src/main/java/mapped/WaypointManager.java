@@ -139,7 +139,7 @@ public class WaypointManager {
     }
 
     @EventListener
-    private void method24268(final EventPlayerTickI eventPlayerTick) {
+    private void method24268(final EventPlayerTick eventPlayerTick) {
         if (this.field30396.world == null) {
             return;
         }

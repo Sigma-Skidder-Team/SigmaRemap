@@ -7,11 +7,11 @@ package mapped;
 public class Class1112 implements Runnable
 {
     private static String[] field5995;
-    private Class754 field5996;
+    private AbstractClientPlayerEntity field5996;
     private final ResourceLocation field5997;
     private boolean field5998;
     
-    public Class1112(final Class754 field5996, final ResourceLocation field5997) {
+    public Class1112(final AbstractClientPlayerEntity field5996, final ResourceLocation field5997) {
         this.field5996 = field5996;
         this.field5997 = field5997;
     }
@@ -21,8 +21,8 @@ public class Class1112 implements Runnable
     }
     
     public Class1846 method5610(final Class1846 class1846) {
-        final Class1846 method17111 = Class5759.method17111(class1846);
-        this.field5998 = Class5759.method17112(class1846, method17111);
+        final Class1846 method17111 = CapeUtils.method17111(class1846);
+        this.field5998 = CapeUtils.method17112(class1846, method17111);
         return method17111;
     }
     

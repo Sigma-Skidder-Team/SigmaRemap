@@ -103,7 +103,7 @@ public class Class3821 extends Item
                 final int method6706 = class514.getZ();
                 class513.method6705(playerEntity, class514, Class8520.field35199, Class286.field1582, 0.5f, 2.6f + (class513.rand.nextFloat() - class513.rand.nextFloat()) * 0.8f);
                 for (int i = 0; i < 8; ++i) {
-                    class513.method6709(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
+                    class513.addParticle(Class8432.field34632, method6704 + Math.random(), method6705 + Math.random(), method6706 + Math.random(), 0.0, 0.0, 0.0);
                 }
             }
             else if (method6701.getBlock() instanceof Class3867 && this.field17373 == Class7558.field29976) {

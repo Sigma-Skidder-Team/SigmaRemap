@@ -286,7 +286,7 @@ public class Class509 extends Entity
             }
         }
         else {
-            this.world.method6709(Class8432.field34616, this.getPosX() - method1937.x, this.getPosY() - method1937.y + 0.15, this.getPosZ() - method1937.z, 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34616, this.getPosX() - method1937.x, this.getPosY() - method1937.y + 0.15, this.getPosZ() - method1937.z, 0.0, 0.0, 0.0);
         }
     }
     

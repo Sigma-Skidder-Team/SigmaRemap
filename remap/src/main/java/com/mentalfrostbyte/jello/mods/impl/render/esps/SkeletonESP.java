@@ -177,7 +177,7 @@ public class SkeletonESP extends Module
     }
     
     private boolean method10564(final PlayerEntity playerEntity) {
-        return !SkeletonESP.mc.world.method6840().contains(playerEntity);
+        return !SkeletonESP.mc.world.getPlayers().contains(playerEntity);
     }
     
     private void method10565(final boolean b) {

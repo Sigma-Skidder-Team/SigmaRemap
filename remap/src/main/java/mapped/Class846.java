@@ -129,7 +129,7 @@ public class Class846 extends Class763
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 method4188, final CompoundNBT class1854) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData method4188, final CompoundNBT class1854) {
         method4188 = super.method4188(class1851, class1852, class1853, method4188, class1854);
         if (class1851.method6790().nextInt(100) == 0) {
             final Class782 class1855 = EntityType.field29023.method23371(this.world);

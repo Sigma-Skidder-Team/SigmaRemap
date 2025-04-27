@@ -303,7 +303,7 @@ public class Class808 extends Class806
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         int n;
         if (!(class1854 instanceof Class5500)) {
             n = this.rand.nextInt(7);

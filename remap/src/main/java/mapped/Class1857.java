@@ -134,7 +134,7 @@ public class Class1857 implements Class1856
         this.field10121 = null;
     }
     
-    public Class3090 method6999(final BlockPos class354) {
+    public Biome method6999(final BlockPos class354) {
         return this.field10111.method7007(class354);
     }
     

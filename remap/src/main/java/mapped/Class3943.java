@@ -53,7 +53,7 @@ public class Class3943 extends Class3841
                             if (!class7097.method6961(class7098.add(i / 2, 0, j / 2))) {
                                 break;
                             }
-                            class7097.method6709(Class8432.field34615, class7098.getX() + 0.5, class7098.getY() + 2.0, class7098.getZ() + 0.5, i + random.nextFloat() - 0.5, k - random.nextFloat() - 1.0f, j + random.nextFloat() - 0.5);
+                            class7097.addParticle(Class8432.field34615, class7098.getX() + 0.5, class7098.getY() + 2.0, class7098.getZ() + 0.5, i + random.nextFloat() - 0.5, k - random.nextFloat() - 1.0f, j + random.nextFloat() - 0.5);
                         }
                     }
                 }

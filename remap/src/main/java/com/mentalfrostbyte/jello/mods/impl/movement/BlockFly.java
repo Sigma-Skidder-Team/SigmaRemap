@@ -322,7 +322,7 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     @EventListener
-    public void method10288(final EventPlayerTickI eventPlayerTick) {
+    public void method10288(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

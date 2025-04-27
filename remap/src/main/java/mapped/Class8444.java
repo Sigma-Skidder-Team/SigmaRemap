@@ -12,7 +12,7 @@ public interface Class8444
     
     BlockPos method28178();
     
-    Class3090 method28179();
+    Biome method28179();
     
     String method28180();
     

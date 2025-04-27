@@ -13,20 +13,20 @@ import net.minecraft.util.text.ITextComponent;
 
 public class Class6987 implements Class6988, Class6991
 {
-    private static final Ordering<Class9081> field27279;
+    private static final Ordering<NetworkPlayerInfo> field27279;
     private final List<Class6991> field27280;
     
     public Class6987() {
         this(Class6987.field27279.sortedCopy(Minecraft.getInstance().method5269().method17370()));
     }
     
-    public Class6987(final Collection<Class9081> collection) {
+    public Class6987(final Collection<NetworkPlayerInfo> collection) {
         this.field27280 = Lists.newArrayList();
-        for (final Class9081 class9081 : Class6987.field27279.sortedCopy(collection)) {
-            if (class9081.method32720() == Class101.field301) {
+        for (final NetworkPlayerInfo networkPlayerInfo : Class6987.field27279.sortedCopy(collection)) {
+            if (networkPlayerInfo.method32720() == Class101.field301) {
                 continue;
             }
-            this.field27280.add(new Class6993(class9081.method32719()));
+            this.field27280.add(new Class6993(networkPlayerInfo.method32719()));
         }
     }
     

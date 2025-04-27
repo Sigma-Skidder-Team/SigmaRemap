@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.jello.ClientAssets;
 import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.util.Optional;
 import java.util.function.Consumer;

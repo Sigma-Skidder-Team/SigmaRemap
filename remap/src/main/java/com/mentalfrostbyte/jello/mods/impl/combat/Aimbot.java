@@ -6,7 +6,6 @@ package com.mentalfrostbyte.jello.mods.impl.combat;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.mods.impl.combat.aimbots.BasicAimbot;
 import com.mentalfrostbyte.jello.mods.impl.combat.aimbots.CANDCAimbot;
@@ -47,7 +46,7 @@ public class Aimbot extends ModuleWithSettings
                                         if (!this.getBooleanValueFromSettingName("Players") && class400 instanceof PlayerEntity) {
                                             iterator.remove();
                                         }
-                                        else if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class400)) {
+                                        else if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().isBot(class400)) {
                                             iterator.remove();
                                         }
                                         else if (!this.getBooleanValueFromSettingName("Invisible") && class400.method1823()) {

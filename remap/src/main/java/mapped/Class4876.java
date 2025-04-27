@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class4876 extends Class4868
 {

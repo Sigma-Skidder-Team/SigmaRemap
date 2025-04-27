@@ -21,7 +21,7 @@ public class StaffRepealer extends Module
     }
     
     @EventListener
-    private void method10812(final EventPlayerTickI eventPlayerTick) {
+    private void method10812(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -49,7 +49,7 @@ public class StaffRepealer extends Module
                     final Iterator iterator;
                     while (iterator.hasNext()) {
                         final Class4646 class5727 = iterator.next();
-                        if (StaffRepealer.mc.world.method7143(class5727.method13869().getId()) == null && class5727.method13871() != null) {
+                        if (StaffRepealer.mc.world.getPlayerByUuid(class5727.method13869().getId()) == null && class5727.method13871() != null) {
                             ColorUtils.method19106("Detected an anomaly " + class5727 + class5727.method13869());
                         }
                         else {

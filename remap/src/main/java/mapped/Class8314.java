@@ -19,7 +19,7 @@ public class Class8314<SC extends Class4407>
         this.field34155 = field34155;
     }
     
-    public void method27602(final Random random, final IChunk class1860, final Class3090 class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6) {
+    public void method27602(final Random random, final IChunk class1860, final Biome class1861, final int n, final int n2, final int n3, final double n4, final BlockState class1862, final BlockState class1863, final int n5, final long n6) {
         this.field34154.method17960(random, class1860, class1861, n, n2, n3, n4, class1862, class1863, n5, n6, this.field34155);
     }
     

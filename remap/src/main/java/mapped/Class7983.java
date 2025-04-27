@@ -58,20 +58,20 @@ public class Class7983
         if (n == n2) {
             return true;
         }
-        final Class3090 class3090 = Registry.field217.method499(n);
-        final Class3090 class3091 = Registry.field217.method499(n2);
-        if (class3090 == null || class3091 == null) {
+        final Biome biome = Registry.field217.method499(n);
+        final Biome class3091 = Registry.field217.method499(n2);
+        if (biome == null || class3091 == null) {
             return false;
         }
-        if (class3090 != Class7102.field27670 && class3090 != Class7102.field27671) {
-            if (class3090.method9870() != Class2140.field12585) {
+        if (biome != Class7102.field27670 && biome != Class7102.field27671) {
+            if (biome.method9870() != Class2140.field12585) {
                 if (class3091.method9870() != Class2140.field12585) {
-                    if (class3090.method9870() == class3091.method9870()) {
+                    if (biome.method9870() == class3091.method9870()) {
                         return true;
                     }
                 }
             }
-            return class3090 == class3091;
+            return biome == class3091;
         }
         return class3091 == Class7102.field27670 || class3091 == Class7102.field27671;
     }

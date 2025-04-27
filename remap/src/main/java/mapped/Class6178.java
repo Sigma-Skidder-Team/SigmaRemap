@@ -29,7 +29,7 @@ public class Class6178 extends Class6175
             final double n6 = n3;
             final float n7 = (float)this.field24976;
             this.getClass();
-            field24932.method6709(field24933, n4, n5, n6, n7 / 8.0f, 0.0, 0.0);
+            field24932.addParticle(field24933, n4, n5, n6, n7 / 8.0f, 0.0, 0.0);
         }
         ++this.field24976;
         final int field24934 = this.field24976;

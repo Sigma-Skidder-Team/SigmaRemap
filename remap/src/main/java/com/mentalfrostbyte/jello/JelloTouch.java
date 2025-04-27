@@ -140,7 +140,7 @@ public class JelloTouch
     }
     
     @EventListener
-    public void method21965(final EventPlayerTickI eventPlayerTick) {
+    public void method21965(final EventPlayerTick eventPlayerTick) {
         if (Minecraft.getInstance().world == null && this.field27850) {
             this.method21969();
         }

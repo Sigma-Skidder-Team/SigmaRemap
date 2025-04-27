@@ -10,7 +10,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class755 extends Class754
+public class Class755 extends AbstractClientPlayerEntity
 {
     public Class755(final ClientWorld clientWorld, final GameProfile gameProfile) {
         super(clientWorld, gameProfile);

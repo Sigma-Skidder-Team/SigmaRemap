@@ -33,7 +33,7 @@ public enum Class192 implements Class193
     
     @Override
     public int method832(final Class6433 class6433, final int n, final int n2, final int n3, final int n4, final int n5) {
-        final Class3090 class6434 = Registry.field217.method499(n5);
+        final Biome class6434 = Registry.field217.method499(n5);
         if (n5 == Class192.field648) {
             if (!Class7983.method26039(n)) {
                 if (!Class7983.method26039(n2)) {

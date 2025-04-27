@@ -23,7 +23,7 @@ public class BotManager {
         Client.getInstance().getEventBus().registerInstance(this);
     }
 
-    public boolean method31751(final Entity class399) {
+    public boolean isBot(final Entity class399) {
         return this.field37639.contains(class399);
     }
 
@@ -39,7 +39,7 @@ public class BotManager {
 
     @EventListener
     @HighestPriority
-    private void method31754(final EventPlayerTickI eventPlayerTick) {
+    private void method31754(final EventPlayerTick eventPlayerTick) {
         if (this.field37638 != null) {
             for (final PlayerEntity class5744 : ColorUtils.method19108()) {
                 if (!this.field37638.method25239(class5744)) {

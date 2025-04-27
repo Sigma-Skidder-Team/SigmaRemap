@@ -61,7 +61,7 @@ public abstract class Class6032<C extends Class4407>
         this.field24564 = field24564;
     }
     
-    public abstract void method17960(final Random p0, final IChunk p1, final Class3090 p2, final int p3, final int p4, final int p5, final double p6, final Class7096 p7, final Class7096 p8, final int p9, final long p10, final C p11);
+    public abstract void method17960(final Random p0, final IChunk p1, final Biome p2, final int p3, final int p4, final int p5, final double p6, final Class7096 p7, final Class7096 p8, final int p9, final long p10, final C p11);
     
     public void method17962(final long n) {
     }

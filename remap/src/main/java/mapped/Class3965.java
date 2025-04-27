@@ -110,7 +110,7 @@ public class Class3965 extends Block implements Class3966
         final double n = method6701.method21725(class1847, class1848).method24547(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
         final Random method6702 = class1847.method6790();
         for (int i = 0; i < 10; ++i) {
-            class1847.method6709(Class8432.field34626, class1848.getX() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), class1848.getY() + n + method6702.nextFloat() * (1.0 - n), class1848.getZ() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02);
+            class1847.addParticle(Class8432.field34626, class1848.getX() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), class1848.getY() + n + method6702.nextFloat() * (1.0 - n), class1848.getZ() + 0.13124999403953552 + 0.737500011920929 * method6702.nextFloat(), method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02, method6702.nextGaussian() * 0.02);
         }
     }
     

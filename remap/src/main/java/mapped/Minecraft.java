@@ -72,7 +72,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     private final Class9458 field4639;
     public final Class1793 field4640;
     private final Class1659 field4641;
-    public Class9212 field4642;
+    public Session session;
     public final FontRenderer fontRenderer;
     public final Class1660 field4644;
     public final Class7282 field4645;
@@ -175,9 +175,9 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4663.method7613(new Class7940(this.field4627));
         this.field4655 = class9408.field40377.field34930;
         this.field4672 = new YggdrasilAuthenticationService(this.field4655, UUID.randomUUID().toString()).createMinecraftSessionService();
-        this.field4642 = class9408.field40377.field34927;
-        Minecraft.field4622.info("Setting user: {}", this.field4642.method33692());
-        Minecraft.field4622.debug("(Session ID is {})", this.field4642.method33690());
+        this.session = class9408.field40377.field34927;
+        Minecraft.field4622.info("Setting user: {}", this.session.getUsername());
+        Minecraft.field4622.debug("(Session ID is {})", this.session.getSessionID());
         this.method5279();
         this.field4659 = class9408.field40380.field23927;
         this.field4658 = method5233();
@@ -239,7 +239,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         this.field4656 = new Class7952(this.field4652.toPath().resolve("saves"), this.field4652.toPath().resolve("backups"), this.field4630);
         this.field4668 = new Class1784(this.field4661, this.gameSettings);
         this.field4661.method19930(this.field4668);
-        this.field4671 = new Class1791(this.field4642);
+        this.field4671 = new Class1791(this.session);
         this.field4661.method19930(this.field4671);
         this.field4669 = new Class8086(this);
         this.field4670 = new Class1903(this.field4629, this.method5240());
@@ -1288,7 +1288,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         final NetworkManager method25792 = NetworkManager.method11184(method25791);
         method25792.method11173(new ClientLoginNetHandler(method25792, this, null, p0 -> {}));
         method25792.method11174(new Class4398(method25791.toString(), 0, Class2208.field13457));
-        method25792.method11174(new Class4327(this.method5287().method33694()));
+        method25792.method11174(new Class4327(this.method5287().getProfile()));
         this.field4687 = method25792;
     }
     
@@ -1665,13 +1665,13 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
         return this.field4634;
     }
     
-    public Class9212 method5287() {
-        return this.field4642;
+    public Session method5287() {
+        return this.session;
     }
     
     public PropertyMap method5288() {
         if (this.field4628.isEmpty()) {
-            this.field4628.putAll(this.method5301().fillProfileProperties(this.field4642.method33694(), false).getProperties());
+            this.field4628.putAll(this.method5301().fillProfileProperties(this.session.getProfile(), false).getProperties());
         }
         return this.field4628;
     }

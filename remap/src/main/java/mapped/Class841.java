@@ -46,7 +46,7 @@ public class Class841 extends Class785 implements IMob
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.field2951 = 180.0f;
         this.field2952 = 180.0f;
         this.rotationYaw = 180.0f;

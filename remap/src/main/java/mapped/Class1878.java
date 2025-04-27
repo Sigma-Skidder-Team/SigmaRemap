@@ -144,8 +144,8 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public Class3090 method6841(final int n, final int n2, final int n3) {
-        return this.field10219.method6841(n, n2, n3);
+    public Biome getNoiseBiomeRaw(final int n, final int n2, final int n3) {
+        return this.field10219.getNoiseBiomeRaw(n, n2, n3);
     }
     
     @Override
@@ -316,11 +316,11 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public void method6709(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
+    public void addParticle(final IParticleData IParticleData, final double n, final double n2, final double n3, final double n4, final double n5, final double n6) {
     }
     
     @Override
-    public void method6839(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
+    public void playEvent(final PlayerEntity playerEntity, final int n, final BlockPos class513, final int n2) {
     }
     
     @Override
@@ -344,12 +344,12 @@ public class Class1878 implements Class1851
     }
     
     @Override
-    public List<Entity> method6737(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
+    public List<Entity> getEntitiesInAABBexcluding(final Entity class399, final AxisAlignedBB class400, final Predicate<? super Entity> predicate) {
         return Collections.emptyList();
     }
     
     @Override
-    public List<PlayerEntity> method6840() {
+    public List<PlayerEntity> getPlayers() {
         return Collections.emptyList();
     }
     

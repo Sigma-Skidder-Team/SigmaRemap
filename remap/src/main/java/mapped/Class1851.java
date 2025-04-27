@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import java.util.Set;
 import java.util.Random;
 
-public interface Class1851 extends Class1874, Class1852, Class1875
+public interface Class1851 extends IEntityReader, Class1852, Class1875
 {
     long method6753();
     
@@ -59,12 +59,12 @@ public interface Class1851 extends Class1874, Class1852, Class1875
     
     void method6705(final PlayerEntity p0, final BlockPos p1, final Class7795 p2, final Class286 p3, final float p4, final float p5);
     
-    void method6709(final IParticleData p0, final double p1, final double p2, final double p3, final double p4, final double p5, final double p6);
+    void addParticle(final IParticleData p0, final double p1, final double p2, final double p3, final double p4, final double p5, final double p6);
     
-    void method6839(final PlayerEntity p0, final int p1, final BlockPos p2, final int p3);
+    void playEvent(final PlayerEntity p0, final int p1, final BlockPos p2, final int p3);
     
     default void method6955(final int n, final BlockPos class354, final int n2) {
-        this.method6839(null, n, class354, n2);
+        this.playEvent(null, n, class354, n2);
     }
     
     default Stream<VoxelShape> method6956(final Entity class399, final AxisAlignedBB class400, final Set<Entity> set) {

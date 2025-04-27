@@ -34,7 +34,7 @@ public abstract class Class6346<C extends Class7065>
         ((Class1865)class1860).method7097(new Class1873(class1860.method7019(), this.field25385));
     }
     
-    public Class3090 method18872(final BiomeManager class5507, final BlockPos class5508) {
+    public Biome method18872(final BiomeManager class5507, final BlockPos class5508) {
         return class5507.method16810(class5508);
     }
     
@@ -43,7 +43,7 @@ public abstract class Class6346<C extends Class7065>
         final ChunkPos method7019 = class5508.method7019();
         final int field32290 = method7019.field32290;
         final int field32291 = method7019.field32291;
-        final Class3090 method7020 = this.method18872(class5507, method7019.method25435());
+        final Biome method7020 = this.method18872(class5507, method7019.method25435());
         final BitSet method7021 = class5508.method7038(class5509);
         for (int i = field32290 - 8; i <= field32290 + 8; ++i) {
             for (int j = field32291 - 8; j <= field32291 + 8; ++j) {
@@ -73,7 +73,7 @@ public abstract class Class6346<C extends Class7065>
         final int n = method7150 * 16;
         final int n2 = method7151 * 16;
         final BlockPos class1879 = new BlockPos(n, 0, n2);
-        final Class3090 method7152 = this.method18872(class1878.method6797(), class1879.add(8, 8, 8));
+        final Biome method7152 = this.method18872(class1878.method6797(), class1879.add(8, 8, 8));
         final Class2317 class1880 = new Class2317();
         final long method7153 = class1880.method9438(class1878.method6753(), n, n2);
         for (final Class2108 class1881 : Class2108.values()) {
@@ -102,13 +102,13 @@ public abstract class Class6346<C extends Class7065>
     public void method18870(final Class1849 class1849, final boolean b, final boolean b2) {
     }
     
-    public boolean method18877(final Class3090 class3090, final Class4574<? extends Class5113> class3091) {
-        return class3090.method9853(class3091);
+    public boolean method18877(final Biome biome, final Class4574<? extends Class5113> class3091) {
+        return biome.method9853(class3091);
     }
     
     @Nullable
-    public <C extends Class5113> C method18878(final Class3090 class3090, final Class4574<C> class3091) {
-        return class3090.method9854(class3091);
+    public <C extends Class5113> C method18878(final Biome biome, final Class4574<C> class3091) {
+        return biome.method9854(class3091);
     }
     
     public Class1868 method18879() {
@@ -137,7 +137,7 @@ public abstract class Class6346<C extends Class7065>
             final Class2317 class5512 = new Class2317();
             final ChunkPos method7046 = class5508.method7019();
             Class5936 field24429 = Class5936.field24429;
-            final Class3090 method7047 = class5507.method16810(new BlockPos(method7046.method25426() + 9, 0, method7046.method25427() + 9));
+            final Biome method7047 = class5507.method16810(new BlockPos(method7046.method25426() + 9, 0, method7046.method25427() + 9));
             if (class5511.method13594(class5507, class5509, class5512, method7046.field32290, method7046.field32291, method7047)) {
                 final Class5936 method7048 = class5511.method13595().method19048(class5511, method7046.field32290, method7046.field32291, MutableBoundingBox.getNewBoundingBox(), n, class5509.method18880());
                 method7048.method17850(this, class5510, method7046.field32290, method7046.field32291, method7047);

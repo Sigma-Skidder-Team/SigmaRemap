@@ -29,7 +29,7 @@ public class Class6741
     private boolean field26513;
     private boolean field26514;
     private boolean field26515;
-    public Class3090[] field26516;
+    public Biome[] field26516;
     public Class7740 field26517;
     private float field26518;
     private Class8690 field26519;
@@ -280,7 +280,7 @@ public class Class6741
         if (method5303 != null) {
             final BlockPos method5304 = method5303.method1894();
             if (this.field26516 != null) {
-                final Class3090 method5305 = class1847.method6959(method5304);
+                final Biome method5305 = class1847.method6959(method5304);
                 if (method5305 == null) {
                     return 0.0f;
                 }

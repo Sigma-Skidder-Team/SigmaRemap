@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public final class Class3136 extends Class3090
+public final class Class3136 extends Biome
 {
     public Class3136() {
         super(new Class8927().method31462(Class6032.field24552, new Class4408(Blocks.field29331.getDefaultState(), Blocks.DIRT.getDefaultState(), Blocks.field29177.getDefaultState())).method31464(Class2145.field12630).method31465(Class2140.field12592).method31466(0.425f).method31467(0.45000002f).method31468(0.0f).method31469(0.5f).method31470(4159204).method31471(329011).method31472("snowy_tundra"));

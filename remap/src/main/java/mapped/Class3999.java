@@ -441,7 +441,7 @@ public class Class3999 extends Block
             final double n2 = class7098.getY() + 0.0625f;
             final double n3 = class7098.getZ() + 0.5 + (random.nextFloat() - 0.5) * 0.2;
             final float n4 = intValue / 15.0f;
-            class7097.method6709(new Class6912(n4 * 0.6f + 0.4f, Math.max(0.0f, n4 * n4 * 0.7f - 0.5f), Math.max(0.0f, n4 * n4 * 0.6f - 0.7f), 1.0f), n, n2, n3, 0.0, 0.0, 0.0);
+            class7097.addParticle(new Class6912(n4 * 0.6f + 0.4f, Math.max(0.0f, n4 * n4 * 0.7f - 0.5f), Math.max(0.0f, n4 * n4 * 0.6f - 0.7f), 1.0f), n, n2, n3, 0.0, 0.0, 0.0);
         }
     }
     

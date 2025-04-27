@@ -17,7 +17,7 @@ public class Class6994 implements Class6991
     private static String[] field27286;
     private final Class6749 field27287;
     private final ResourceLocation field27288;
-    private final List<Class9081> field27289;
+    private final List<NetworkPlayerInfo> field27289;
     public final /* synthetic */ Class6990 field27290;
     
     public Class6994(final Class6990 field27290, final Class6749 field27291) {
@@ -26,7 +26,7 @@ public class Class6994 implements Class6991
         this.field27289 = Lists.newArrayList();
         final Iterator<String> iterator = field27291.method20547().iterator();
         while (iterator.hasNext()) {
-            final Class9081 method17372 = Minecraft.getInstance().method5269().method17372(iterator.next());
+            final NetworkPlayerInfo method17372 = Minecraft.getInstance().method5269().method17372(iterator.next());
             if (method17372 == null) {
                 continue;
             }
@@ -34,7 +34,7 @@ public class Class6994 implements Class6991
         }
         if (!this.field27289.isEmpty()) {
             final String name = this.field27289.get(new Random().nextInt(this.field27289.size())).method32719().getName();
-            Class754.method4101(this.field27288 = Class754.method4102(name), name);
+            AbstractClientPlayerEntity.method4101(this.field27288 = AbstractClientPlayerEntity.method4102(name), name);
         }
         else {
             this.field27288 = Class7634.method24003();

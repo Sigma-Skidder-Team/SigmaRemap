@@ -100,7 +100,7 @@ public class Class507 extends Entity
             --this.field2893;
             if (this.field2893 == 14) {
                 for (int i = 0; i < 12; ++i) {
-                    this.world.method6709(Class8432.field34603, this.getPosX() + (this.rand.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, this.getPosY() + 0.05 + this.rand.nextDouble() + 1.0, this.getPosZ() + (this.rand.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, (this.rand.nextDouble() * 2.0 - 1.0) * 0.3, 0.3 + this.rand.nextDouble() * 0.3, (this.rand.nextDouble() * 2.0 - 1.0) * 0.3);
+                    this.world.addParticle(Class8432.field34603, this.getPosX() + (this.rand.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, this.getPosY() + 0.05 + this.rand.nextDouble() + 1.0, this.getPosZ() + (this.rand.nextDouble() * 2.0 - 1.0) * this.method1930() * 0.5, (this.rand.nextDouble() * 2.0 - 1.0) * 0.3, 0.3 + this.rand.nextDouble() * 0.3, (this.rand.nextDouble() * 2.0 - 1.0) * 0.3);
                 }
             }
         }

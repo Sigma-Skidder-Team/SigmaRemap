@@ -29,7 +29,7 @@ public class Class7307 extends Class7303
     }
     
     @Override
-    public boolean method22396(final IChunk class1860, final Function<BlockPos, Class3090> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
+    public boolean method22396(final IChunk class1860, final Function<BlockPos, Biome> function, final BitSet set, final Random random, final Mutable class1861, final Mutable class1862, final Mutable class1863, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8, final AtomicBoolean atomicBoolean) {
         return method22413(this, class1860, set, random, class1861, n, n2, n3, n4, n5, n6, n7, n8);
     }
     

@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.Random;
 import com.google.common.collect.Lists;
@@ -34,7 +33,7 @@ public abstract class Class5936
         this.field24432 = field24433;
     }
     
-    public abstract void method17850(final Class6346<?> p0, final Class1795 p1, final int p2, final int p3, final Class3090 p4);
+    public abstract void method17850(final Class6346<?> p0, final Class1795 p1, final int p2, final int p3, final Biome p4);
     
     public MutableBoundingBox method17851() {
         return this.field24432;

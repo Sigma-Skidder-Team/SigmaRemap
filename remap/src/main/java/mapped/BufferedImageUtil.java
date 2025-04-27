@@ -7,7 +7,7 @@ package mapped;
 import java.nio.ByteBuffer;
 import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.io.IOException;
 import java.awt.image.BufferedImage;

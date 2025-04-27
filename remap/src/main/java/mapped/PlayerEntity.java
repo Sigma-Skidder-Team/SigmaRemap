@@ -386,7 +386,7 @@ public abstract class PlayerEntity extends LivingEntity
     
     private void method2813(final IParticleData IParticleData) {
         for (int i = 0; i < 5; ++i) {
-            this.world.method6709(IParticleData, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+            this.world.addParticle(IParticleData, this.method1940(1.0), this.method1943() + 1.0, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     

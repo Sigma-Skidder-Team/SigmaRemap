@@ -25,9 +25,9 @@ public class Class1791 extends Class1776<List<String>>
     private static final ResourceLocation field9914;
     private static final Random field9915;
     private final List<String> field9916;
-    private final Class9212 field9917;
+    private final Session field9917;
     
-    public Class1791(final Class9212 field9917) {
+    public Class1791(final Session field9917) {
         this.field9916 = Lists.newArrayList();
         this.field9917 = field9917;
     }
@@ -61,7 +61,7 @@ public class Class1791 extends Class1776<List<String>>
             return "OOoooOOOoooo! Spooky!";
         }
         if (!this.field9916.isEmpty()) {
-            return (this.field9917 != null && Class1791.field9915.nextInt(this.field9916.size()) == 42) ? (this.field9917.method33692().toUpperCase(Locale.ROOT) + " IS YOU") : this.field9916.get(Class1791.field9915.nextInt(this.field9916.size()));
+            return (this.field9917 != null && Class1791.field9915.nextInt(this.field9916.size()) == 42) ? (this.field9917.getUsername().toUpperCase(Locale.ROOT) + " IS YOU") : this.field9916.get(Class1791.field9915.nextInt(this.field9916.size()));
         }
         return null;
     }

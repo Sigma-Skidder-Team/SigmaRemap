@@ -75,7 +75,7 @@ public class Class3863 extends Class3864<Class477> implements Class3856
         for (int i = 0; i < 3; ++i) {
             final int n = random.nextInt(2) * 2 - 1;
             final int n2 = random.nextInt(2) * 2 - 1;
-            class7097.method6709(Class8432.field34637, class7098.getX() + 0.5 + 0.25 * n, class7098.getY() + random.nextFloat(), class7098.getZ() + 0.5 + 0.25 * n2, random.nextFloat() * n, (random.nextFloat() - 0.5) * 0.125, random.nextFloat() * n2);
+            class7097.addParticle(Class8432.field34637, class7098.getX() + 0.5 + 0.25 * n, class7098.getY() + random.nextFloat(), class7098.getZ() + 0.5 + 0.25 * n2, random.nextFloat() * n, (random.nextFloat() - 0.5) * 0.125, random.nextFloat() * n2);
         }
     }
     

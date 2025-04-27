@@ -87,7 +87,7 @@ public class Class849 extends Class763
                 }
             }
             for (int i = 0; i < 2; ++i) {
-                this.world.method6709(Class8432.field34632, this.method1940(0.5), this.method1943(), this.method1947(0.5), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34632, this.method1940(0.5), this.method1943(), this.method1947(0.5), 0.0, 0.0, 0.0);
             }
         }
         super.method2736();

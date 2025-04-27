@@ -63,7 +63,7 @@ public class Class4088 extends Item
         Label_0053:
             while (i < 128) {
                 BlockPos method1134 = class8323;
-                Class3090 class8325 = class8322.method6959(class8323);
+                Biome class8325 = class8322.method6959(class8323);
                 Class7096 class8326 = Blocks.field29244.getDefaultState();
                 while (true) {
                     for (int j = 0; j < i / 16; ++j) {
@@ -127,7 +127,7 @@ public class Class4088 extends Item
         final Class7096 method6701 = class1851.getBlockState(class1852);
         if (!method6701.method21706()) {
             for (int i = 0; i < n; ++i) {
-                class1851.method6709(Class8432.field34625, class1852.getX() + Class4088.field17363.nextFloat(), class1852.getY() + Class4088.field17363.nextFloat() * method6701.method21725(class1851, class1852).method24536(Direction.Axis.Y), class1852.getZ() + Class4088.field17363.nextFloat(), Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02);
+                class1851.addParticle(Class8432.field34625, class1852.getX() + Class4088.field17363.nextFloat(), class1852.getY() + Class4088.field17363.nextFloat() * method6701.method21725(class1851, class1852).method24536(Direction.Axis.Y), class1852.getZ() + Class4088.field17363.nextFloat(), Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02, Class4088.field17363.nextGaussian() * 0.02);
             }
         }
     }

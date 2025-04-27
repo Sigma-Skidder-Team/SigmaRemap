@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.combat.wtaps;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.EventPlayerTickI;
+import mapped.EventPlayerTick;
 import mapped.Class8341;
 import mapped.EventListener;
 import mapped.Minecraft;
@@ -18,7 +18,7 @@ public class Legit extends Module
     }
     
     @EventListener
-    private void method10546(final EventPlayerTickI eventPlayerTick) {
+    private void method10546(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             Legit.mc.gameSettings.field23441.field2162 = true;
             if (Legit.mc.player.field2935 != 1) {

@@ -34,7 +34,7 @@ public class RearView extends PremiumModule
     }
     
     @EventListener
-    public void method10622(final EventPlayerTickI eventPlayerTick) {
+    public void method10622(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -53,7 +53,7 @@ public class RearView extends PremiumModule
                 if (class5744.method1732(RearView.mc.player) < 12.0f) {
                     if (!this.method10623(class5744)) {
                         if (RearView.mc.player != class5744) {
-                            if (!Client.getInstance().getBotManager().method31751(class5744)) {
+                            if (!Client.getInstance().getBotManager().isBot(class5744)) {
                                 return b;
                             }
                         }

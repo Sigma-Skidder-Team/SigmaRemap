@@ -45,7 +45,7 @@ public class Tracers extends Module
                 if (class5740.ticksExisted <= 30) {
                     continue;
                 }
-                if (Client.getInstance().getBotManager().method31751(class5740)) {
+                if (Client.getInstance().getBotManager().isBot(class5740)) {
                     continue;
                 }
                 this.method10024(class5740);

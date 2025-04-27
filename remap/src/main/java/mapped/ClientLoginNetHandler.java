@@ -63,7 +63,7 @@ public class ClientLoginNetHandler implements IClientLoginNetHandler
     @Nullable
     private ITextComponent method17409(final String s) {
         try {
-            this.method17410().joinServer(this.field23839.method5287().method33694(), this.field23839.method5287().method33693(), s);
+            this.method17410().joinServer(this.field23839.method5287().getProfile(), this.field23839.method5287().getToken(), s);
             return null;
         }
         catch (final AuthenticationUnavailableException ex) {

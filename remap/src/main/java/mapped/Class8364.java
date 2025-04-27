@@ -30,7 +30,7 @@ public class Class8364
     }
     
     static {
-        field34301 = Class3090::method9858;
+        field34301 = Biome::method9858;
         field34302 = ((class3090, n, n2) -> class3090.method9859());
         field34303 = ((class3090, n, n2) -> class3090.method9868());
     }

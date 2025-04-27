@@ -96,7 +96,7 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10819(final EventPlayerTickI eventPlayerTick) {
+    public void method10819(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

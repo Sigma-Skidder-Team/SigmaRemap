@@ -432,7 +432,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
         if (this.method2625()) {
             if (n2 > 0) {
-                this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
                 if (!this.world.isRemote) {
                     this.method4353(n2);
                 }
@@ -892,7 +892,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     public void method4762(final boolean b) {
         final Class6908 class6908 = b ? Class8432.field34627 : Class8432.field34639;
         for (int i = 0; i < 7; ++i) {
-            this.world.method6709(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
+            this.world.addParticle(class6908, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02, this.rand.nextGaussian() * 0.02);
         }
     }
     
@@ -992,7 +992,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         if (class1854 == null) {
             class1854 = new Class5497();
             ((Class5497)class1854).method16803(0.2f);

@@ -177,7 +177,7 @@ public class Class415 extends Class414 implements Class407
         if (method6702 != Blocks.FIRE) {
             if (method6702 == Blocks.CAMPFIRE) {
                 if (((StateHolder<Object, Class7096>)method6701).get(Class3918.field17760)) {
-                    this.world.method6839(null, 1009, class354, 0);
+                    this.world.playEvent(null, 1009, class354, 0);
                     this.world.method6692(class354, ((StateHolder<Object, Class7096>)method6701).with((IProperty<Comparable>)Class3918.field17760, false));
                 }
             }

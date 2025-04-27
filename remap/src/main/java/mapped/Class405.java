@@ -4,7 +4,6 @@
 
 package mapped;
 
-import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.List;
 import com.google.common.collect.Sets;
@@ -128,7 +127,7 @@ public class Class405 extends Class402
                 final double n3 = (method1997 >> 8 & 0xFF) / 255.0;
                 final double n4 = (method1997 >> 0 & 0xFF) / 255.0;
                 for (int i = 0; i < n; ++i) {
-                    this.world.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n2, n3, n4);
+                    this.world.addParticle(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n2, n3, n4);
                 }
             }
         }
@@ -222,7 +221,7 @@ public class Class405 extends Class402
                 final double n2 = (method1997 >> 8 & 0xFF) / 255.0;
                 final double n3 = (method1997 >> 0 & 0xFF) / 255.0;
                 for (int i = 0; i < 20; ++i) {
-                    this.world.method6709(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n, n2, n3);
+                    this.world.addParticle(Class8432.field34617, this.method1940(0.5), this.method1943(), this.method1947(0.5), n, n2, n3);
                 }
             }
         }

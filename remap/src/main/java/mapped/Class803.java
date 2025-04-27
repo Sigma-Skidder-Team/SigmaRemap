@@ -207,7 +207,7 @@ public class Class803 extends Class789
             if (!method2718.method27620()) {
                 for (int i = 0; i < 8; ++i) {
                     final Vec3d method2719 = new Vec3d((this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0).rotatePitch(-this.rotationPitch * 0.017453292f).rotateYaw(-this.rotationYaw * 0.017453292f);
-                    this.world.method6709(new Class6910(Class8432.field34629, method2718), this.getPosX() + this.method1791().x / 2.0, this.getPosY(), this.getPosZ() + this.method1791().z / 2.0, method2719.x, method2719.y + 0.05, method2719.z);
+                    this.world.addParticle(new Class6910(Class8432.field34629, method2718), this.getPosX() + this.method1791().x / 2.0, this.getPosY(), this.getPosZ() + this.method1791().z / 2.0, method2719.x, method2719.y + 0.05, method2719.z);
                 }
             }
         }
@@ -230,7 +230,7 @@ public class Class803 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         Class2074 class1856 = Class2074.method8173(class1851.method6959(new BlockPos(this)));
         int n = 0;
         if (!(class1854 instanceof Class5498)) {

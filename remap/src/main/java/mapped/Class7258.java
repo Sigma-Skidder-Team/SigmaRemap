@@ -37,7 +37,7 @@ public abstract class Class7258 extends Class7257
             }
         }
         else if (random.nextInt(10) == 0) {
-            class1847.method6709(Class8432.field34645, class1848.getX() + (double)random.nextFloat(), class1848.getY() + (double)random.nextFloat(), class1848.getZ() + (double)random.nextFloat(), 0.0, 0.0, 0.0);
+            class1847.addParticle(Class8432.field34645, class1848.getX() + (double)random.nextFloat(), class1848.getY() + (double)random.nextFloat(), class1848.getZ() + (double)random.nextFloat(), 0.0, 0.0, 0.0);
         }
     }
     

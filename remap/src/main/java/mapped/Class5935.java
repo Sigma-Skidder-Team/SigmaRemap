@@ -15,7 +15,7 @@ public class Class5935 extends Class5936
     }
     
     @Override
-    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Class3090 class6348) {
+    public void method17850(final Class6346<?> class6346, final Class1795 class6347, final int n, final int n2, final Biome class6348) {
         int n3 = 0;
         final long method18880 = class6346.method18880();
         Class4507 class6349;

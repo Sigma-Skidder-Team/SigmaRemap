@@ -42,8 +42,8 @@ public class Class4022 extends Block
         final double n = class7098.getX() + 0.5;
         final double n2 = class7098.getY() + 0.7;
         final double n3 = class7098.getZ() + 0.5;
-        class7097.method6709(Class8432.field34639, n, n2, n3, 0.0, 0.0, 0.0);
-        class7097.method6709(Class8432.field34623, n, n2, n3, 0.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34639, n, n2, n3, 0.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34623, n, n2, n3, 0.0, 0.0, 0.0);
     }
     
     static {

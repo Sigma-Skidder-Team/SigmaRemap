@@ -55,19 +55,19 @@ public class Class5923<T extends LivingEntity> extends Class5844<T>
         }
         this.field24337.field25180 = 5.0f;
         this.field24337.field25181 = field25185;
-        if (!(t instanceof Class754)) {
+        if (!(t instanceof AbstractClientPlayerEntity)) {
             this.field24337.field25183 = field25183;
             this.field24337.field25185 = field25184;
             this.field24337.field25184 = field25186;
         }
         else {
-            final Class754 class754 = (Class754)t;
-            class754.field4057 += (float)((field25183 - class754.field4057) * 0.1);
-            class754.field4058 += (float)((field25186 - class754.field4058) * 0.1);
-            class754.field4059 += (float)((field25184 - class754.field4059) * 0.1);
-            this.field24337.field25183 = class754.field4057;
-            this.field24337.field25184 = class754.field4058;
-            this.field24337.field25185 = class754.field4059;
+            final AbstractClientPlayerEntity abstractClientPlayerEntity = (AbstractClientPlayerEntity)t;
+            abstractClientPlayerEntity.rotateElytraX += (float)((field25183 - abstractClientPlayerEntity.rotateElytraX) * 0.1);
+            abstractClientPlayerEntity.rotateElytraY += (float)((field25186 - abstractClientPlayerEntity.rotateElytraY) * 0.1);
+            abstractClientPlayerEntity.rotateElytraZ += (float)((field25184 - abstractClientPlayerEntity.rotateElytraZ) * 0.1);
+            this.field24337.field25183 = abstractClientPlayerEntity.rotateElytraX;
+            this.field24337.field25184 = abstractClientPlayerEntity.rotateElytraY;
+            this.field24337.field25185 = abstractClientPlayerEntity.rotateElytraZ;
         }
         this.field24336.field25180 = -this.field24337.field25180;
         this.field24336.field25184 = -this.field24337.field25184;

@@ -20,7 +20,7 @@ public class Class6779
     public String[] field26617;
     public int field26618;
     public int field26619;
-    public Class3090[] field26620;
+    public Biome[] field26620;
     public Class7740 field26621;
     public int field26622;
     public boolean field26623;
@@ -879,8 +879,8 @@ public class Class6779
         return "CTM name: " + this.field26611 + ", basePath: " + this.field26612 + ", matchBlocks: " + Config.method28888(this.field26613) + ", matchTiles: " + Config.method28888(this.field26615);
     }
     
-    public boolean method20735(final Class3090 class3090) {
-        return Class7980.method26019(class3090, this.field26620);
+    public boolean method20735(final Biome biome) {
+        return Class7980.method26019(biome, this.field26620);
     }
     
     private static int method20736(final int[] array, int n) {

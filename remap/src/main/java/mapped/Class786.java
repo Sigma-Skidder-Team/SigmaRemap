@@ -86,7 +86,7 @@ public class Class786 extends Class785
             if (this.rand.nextInt(5) == 0) {
                 final Class7096 method6701 = this.world.getBlockState(new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY() - 0.20000000298023224), MathHelper.floor(this.getPosZ())));
                 if (!method6701.method21706()) {
-                    this.world.method6709(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.method1930(), this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.rand.nextFloat() - 0.5), 0.5, (this.rand.nextFloat() - 0.5) * 4.0);
+                    this.world.addParticle(new Class6911(Class8432.field34600, method6701), this.getPosX() + (this.rand.nextFloat() - 0.5) * this.method1930(), this.getPosY() + 0.1, this.getPosZ() + (this.rand.nextFloat() - 0.5) * this.method1930(), 4.0 * (this.rand.nextFloat() - 0.5), 0.5, (this.rand.nextFloat() - 0.5) * 4.0);
                 }
             }
         }

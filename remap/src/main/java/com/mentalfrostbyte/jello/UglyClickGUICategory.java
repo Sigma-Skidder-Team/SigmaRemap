@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import mapped.*;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.util.ArrayList;
 import java.util.List;

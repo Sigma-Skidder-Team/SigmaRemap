@@ -86,10 +86,10 @@ public class Class3894 extends Class3892 implements Class3856
     
     public void method11965(final PlayerEntity playerEntity, final World class513, final BlockPos class514, final boolean b) {
         if (!b) {
-            class513.method6839(playerEntity, (this.field17401 != Material.IRON) ? 1013 : 1036, class514, 0);
+            class513.playEvent(playerEntity, (this.field17401 != Material.IRON) ? 1013 : 1036, class514, 0);
         }
         else {
-            class513.method6839(playerEntity, (this.field17401 != Material.IRON) ? 1007 : 1037, class514, 0);
+            class513.playEvent(playerEntity, (this.field17401 != Material.IRON) ? 1007 : 1037, class514, 0);
         }
     }
     

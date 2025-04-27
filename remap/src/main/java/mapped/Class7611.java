@@ -17,7 +17,7 @@ public interface Class7611
     Class7611 field30167 = method23912("snow");
     Class7611 field30168 = method23912("swamp");
     Class7611 field30169 = method23912("taiga");
-    Map<Class3090, Class7611> field30170 = Util.method27851(Maps.newHashMap(), hashMap -> {
+    Map<Biome, Class7611> field30170 = Util.method27851(Maps.newHashMap(), hashMap -> {
         hashMap.put(Class7102.field27669, Class7611.field30163);
         hashMap.put(Class7102.field27671, Class7611.field30163);
         hashMap.put(Class7102.field27634, Class7611.field30163);
@@ -68,7 +68,7 @@ public interface Class7611
         return Registry.method512(Registry.field239, new ResourceLocation(s), new Class7612(s));
     }
     
-    default Class7611 method23913(final Class3090 key) {
+    default Class7611 method23913(final Biome key) {
         return Class7611.field30170.getOrDefault(key, Class7611.field30165);
     }
 }

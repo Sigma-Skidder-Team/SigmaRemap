@@ -7,7 +7,7 @@ package mapped;
 import org.lwjgl.BufferUtils;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.nio.ByteOrder;
 import java.nio.ByteBuffer;

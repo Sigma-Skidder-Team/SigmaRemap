@@ -78,8 +78,8 @@ public class Class4023 extends Class4022
         final double n2 = class7098.getY() + 0.7;
         final double n3 = class7098.getZ() + 0.5;
         final Direction method782 = class7099.getOpposite();
-        class7097.method6709(Class8432.field34639, n + 0.27 * method782.getXOffset(), n2 + 0.22, n3 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
-        class7097.method6709(Class8432.field34623, n + 0.27 * method782.getXOffset(), n2 + 0.22, n3 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34639, n + 0.27 * method782.getXOffset(), n2 + 0.22, n3 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34623, n + 0.27 * method782.getXOffset(), n2 + 0.22, n3 + 0.27 * method782.getZOffset(), 0.0, 0.0, 0.0);
     }
     
     @Override

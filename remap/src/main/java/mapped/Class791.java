@@ -362,7 +362,7 @@ public class Class791 extends Class789
             for (int i = 0; i < 6; ++i) {
                 final Vec3d method16755 = new Vec3d((this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, (this.rand.nextFloat() - 0.5) * 0.1).rotatePitch(-this.rotationPitch * 0.017453292f).rotateYaw(-this.rotationYaw * 0.017453292f);
                 final Vec3d method16756 = new Vec3d((this.rand.nextFloat() - 0.5) * 0.8, -this.rand.nextFloat() * 0.6 - 0.3, 1.0 + (this.rand.nextFloat() - 0.5) * 0.4).rotateYaw(-this.field2951 * 0.017453292f).add(this.getPosX(), this.method1944() + 1.0, this.getPosZ());
-                this.world.method6709(new Class6910(Class8432.field34629, this.method2718(Class2215.field13600)), method16756.x, method16756.y, method16756.z, method16755.x, method16755.y + 0.05, method16755.z);
+                this.world.addParticle(new Class6910(Class8432.field34629, this.method2718(Class2215.field13600)), method16756.x, method16756.y, method16756.z, method16755.x, method16755.y + 0.05, method16755.z);
             }
         }
     }
@@ -440,7 +440,7 @@ public class Class791 extends Class789
     
     private void method4408() {
         final Vec3d method1935 = this.getMotion();
-        this.world.method6709(Class8432.field34640, this.getPosX() - (this.method1930() + 1.0f) * 0.5 * MathHelper.sin(this.field2951 * 0.017453292f), this.method1944() - 0.10000000149011612, this.getPosZ() + (this.method1930() + 1.0f) * 0.5 * MathHelper.cos(this.field2951 * 0.017453292f), method1935.x, 0.0, method1935.z);
+        this.world.addParticle(Class8432.field34640, this.getPosX() - (this.method1930() + 1.0f) * 0.5 * MathHelper.sin(this.field2951 * 0.017453292f), this.method1944() - 0.10000000149011612, this.getPosZ() + (this.method1930() + 1.0f) * 0.5 * MathHelper.cos(this.field2951 * 0.017453292f), method1935.x, 0.0, method1935.z);
         this.method1695(Class8520.field35410, 1.0f, 1.0f);
         for (final Class791 class791 : this.world.method7128((Class<? extends Class791>)Class791.class, this.getBoundingBox().intersect(10.0))) {
             if (class791.method2625()) {
@@ -487,7 +487,7 @@ public class Class791 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method4386(Class1965.method7964(this.rand));
         this.method4388(Class1965.method7964(this.rand));
         this.method4411();

@@ -212,7 +212,7 @@ public abstract class Class428 extends Entity
             }
             this.method1655(this.rotationYaw, this.rotationPitch);
             if (this.method2139() == Class2080.field12024 && Entity.horizontalMag(this.getMotion()) > 0.01) {
-                final List<Entity> method35648 = this.world.method6737(this, this.getBoundingBox().grow(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
+                final List<Entity> method35648 = this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox().grow(0.20000000298023224, 0.0, 0.20000000298023224), Class9170.method33474(this));
                 if (!method35648.isEmpty()) {
                     for (int i = 0; i < method35648.size(); ++i) {
                         final Entity class355 = method35648.get(i);

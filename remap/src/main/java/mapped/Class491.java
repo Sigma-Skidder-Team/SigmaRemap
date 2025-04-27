@@ -162,7 +162,7 @@ public class Class491 extends TileEntity implements Class439
             if (method2476.getAxis().isHorizontal()) {
                 final AxisAlignedBB method2477 = this.method2479(new AxisAlignedBB(0.0, this.field2818.getCollisionShape(this.field2656, this.field2657).getEnd(Direction.Axis.Y), 0.0, 1.0, 1.5000000999999998, 1.0));
                 final double n2 = n - this.field2823;
-                final Iterator<Entity> iterator = this.field2656.method6737(null, method2477, class6222 -> method2474(class6221, class6222)).iterator();
+                final Iterator<Entity> iterator = this.field2656.getEntitiesInAABBexcluding(null, method2477, class6222 -> method2474(class6221, class6222)).iterator();
                 while (iterator.hasNext()) {
                     method2472(method2476, iterator.next(), n2, method2476);
                 }

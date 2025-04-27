@@ -50,9 +50,9 @@ public enum Class197 implements Class198, Class196
         if (!Class7983.method26039(method20074)) {
             if (method20075 >= 2) {
                 if (n3 == 1) {
-                    final Class3090 class6436 = Registry.field217.method499(method20074);
+                    final Biome class6436 = Registry.field217.method499(method20074);
                     if (class6436 == null || !class6436.method9836()) {
-                        final Class3090 method20076 = Class3090.method9834(class6436);
+                        final Biome method20076 = Biome.method9834(class6436);
                         return (method20076 != null) ? Registry.field217.getId(method20076) : method20074;
                     }
                 }
@@ -166,7 +166,7 @@ public enum Class197 implements Class198, Class196
             }
             if (n3 == 0) {
                 if (n4 != method20074) {
-                    final Class3090 method20077 = Class3090.method9834(Registry.field217.method499(n4));
+                    final Biome method20077 = Biome.method9834(Registry.field217.method499(n4));
                     n4 = ((method20077 != null) ? Registry.field217.getId(method20077) : method20074);
                 }
             }

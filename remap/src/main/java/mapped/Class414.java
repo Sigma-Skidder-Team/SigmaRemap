@@ -97,7 +97,7 @@ public abstract class Class414 extends Entity implements Class401
             this.method1936(this.getMotion().mul(this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f, this.rand.nextFloat() * 0.2f));
         }
         final AxisAlignedBB method18496 = this.getBoundingBox().expand(this.getMotion()).intersect(1.0);
-        for (final Entity field2519 : this.world.method6737(this, method18496, class399 -> !class399.isSpectator() && class399.method1749())) {
+        for (final Entity field2519 : this.world.getEntitiesInAABBexcluding(this, method18496, class399 -> !class399.isSpectator() && class399.method1749())) {
             if (field2519 == this.field2519) {
                 ++this.field2520;
                 break;
@@ -166,7 +166,7 @@ public abstract class Class414 extends Entity implements Class401
         }
         else {
             for (int i = 0; i < 4; ++i) {
-                this.world.method6709(Class8432.field34601, n - method18498.x * 0.25, n2 - method18498.y * 0.25, n3 - method18498.z * 0.25, method18498.x, method18498.y, method18498.z);
+                this.world.addParticle(Class8432.field34601, n - method18498.x * 0.25, n2 - method18498.y * 0.25, n3 - method18498.z * 0.25, method18498.x, method18498.y, method18498.z);
             }
             n4 = 0.8f;
         }

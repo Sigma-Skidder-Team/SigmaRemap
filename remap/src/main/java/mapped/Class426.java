@@ -239,11 +239,11 @@ public class Class426 extends Entity
                     final float n7 = MathHelper.cos(n5) * n6;
                     final float n8 = MathHelper.sin(n5) * n6;
                     if (method2094.method21272() != Class8432.field34617) {
-                        this.world.method6711(method2094, this.getPosX() + n7, this.getPosY(), this.getPosZ() + n8, (0.5 - this.rand.nextDouble()) * 0.15, 0.009999999776482582, (0.5 - this.rand.nextDouble()) * 0.15);
+                        this.world.addOptionalParticle(method2094, this.getPosX() + n7, this.getPosY(), this.getPosZ() + n8, (0.5 - this.rand.nextDouble()) * 0.15, 0.009999999776482582, (0.5 - this.rand.nextDouble()) * 0.15);
                     }
                     else {
                         final int method2095 = this.method2086();
-                        this.world.method6711(method2094, this.getPosX() + n7, this.getPosY(), this.getPosZ() + n8, (method2095 >> 16 & 0xFF) / 255.0f, (method2095 >> 8 & 0xFF) / 255.0f, (method2095 & 0xFF) / 255.0f);
+                        this.world.addOptionalParticle(method2094, this.getPosX() + n7, this.getPosY(), this.getPosZ() + n8, (method2095 >> 16 & 0xFF) / 255.0f, (method2095 >> 8 & 0xFF) / 255.0f, (method2095 & 0xFF) / 255.0f);
                     }
                 }
             }
@@ -254,11 +254,11 @@ public class Class426 extends Entity
                     final float n11 = MathHelper.cos(n9) * n10;
                     final float n12 = MathHelper.sin(n9) * n10;
                     if (method2094.method21272() != Class8432.field34617) {
-                        this.world.method6711(method2094, this.getPosX() + n11, this.getPosY(), this.getPosZ() + n12, 0.0, 0.0, 0.0);
+                        this.world.addOptionalParticle(method2094, this.getPosX() + n11, this.getPosY(), this.getPosZ() + n12, 0.0, 0.0, 0.0);
                     }
                     else {
                         final int n13 = this.rand.nextBoolean() ? 16777215 : this.method2086();
-                        this.world.method6711(method2094, this.getPosX() + n11, this.getPosY(), this.getPosZ() + n12, (n13 >> 16 & 0xFF) / 255.0f, (n13 >> 8 & 0xFF) / 255.0f, (n13 & 0xFF) / 255.0f);
+                        this.world.addOptionalParticle(method2094, this.getPosX() + n11, this.getPosY(), this.getPosZ() + n12, (n13 >> 16 & 0xFF) / 255.0f, (n13 >> 8 & 0xFF) / 255.0f, (n13 & 0xFF) / 255.0f);
                     }
                 }
             }

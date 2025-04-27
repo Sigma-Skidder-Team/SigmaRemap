@@ -65,7 +65,7 @@ public class Class3954 extends Class3841
     
     @Override
     public void method11823(final Class7096 class7096, final World class7097, final BlockPos class7098, final Random random) {
-        class7097.method6709(Class8432.field34639, class7098.getX() + 0.4 + random.nextFloat() * 0.2, class7098.getY() + 0.7 + random.nextFloat() * 0.3, class7098.getZ() + 0.4 + random.nextFloat() * 0.2, 0.0, 0.0, 0.0);
+        class7097.addParticle(Class8432.field34639, class7098.getX() + 0.4 + random.nextFloat() * 0.2, class7098.getY() + 0.7 + random.nextFloat() * 0.3, class7098.getZ() + 0.4 + random.nextFloat() * 0.2, 0.0, 0.0, 0.0);
     }
     
     @Override

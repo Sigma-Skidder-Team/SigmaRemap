@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import totalcross.json.JSONObject;
 
 import java.util.List;
@@ -125,7 +125,7 @@ public class Class4936 extends Class4800
     public void draw(final float n) {
         this.method14850();
         super.draw(n);
-        RenderUtil.drawString(ClientFonts.Default, 20.0f, 20.0f, Minecraft.getInstance().method5287().method33692(), -2236963);
+        RenderUtil.drawString(ClientFonts.Default, 20.0f, 20.0f, Minecraft.getInstance().method5287().getUsername(), -2236963);
         RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
         RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21185, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, false);
     }

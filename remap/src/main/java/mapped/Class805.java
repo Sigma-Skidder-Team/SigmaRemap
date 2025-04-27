@@ -91,7 +91,7 @@ public class Class805 extends Class804
             }
         }
         if (method2715.getItem() == Items.field31426 && !this.method2625()) {
-            this.world.method6709(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34619, this.getPosX(), this.method1942(0.5), this.getPosZ(), 0.0, 0.0, 0.0);
             if (!this.world.isRemote) {
                 this.method1652();
                 final Class804 class516 = EntityType.field28968.method23371(this.world);
@@ -123,7 +123,7 @@ public class Class805 extends Class804
                         method2715.method27693(1);
                     }
                     for (int j = 0; j < 4; ++j) {
-                        this.world.method6709(Class8432.field34612, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
+                        this.world.addParticle(Class8432.field34612, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
                     }
                     this.field4328 = method2716.getLeft();
                     this.field4329 = method2716.getRight();
@@ -131,7 +131,7 @@ public class Class805 extends Class804
                 }
                 else {
                     for (int k = 0; k < 2; ++k) {
-                        this.world.method6709(Class8432.field34639, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
+                        this.world.addParticle(Class8432.field34639, this.getPosX() + this.rand.nextFloat() / 2.0f, this.method1942(0.5), this.getPosZ() + this.rand.nextFloat() / 2.0f, 0.0, this.rand.nextFloat() / 5.0f, 0.0);
                     }
                 }
             }

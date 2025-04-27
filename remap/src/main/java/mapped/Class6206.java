@@ -20,7 +20,7 @@ public class Class6206 extends Class6205
     public void method18422() {
         if (this.field24943) {
             this.method18439();
-            this.field24932.method6709(this.field25041, this.field24936, this.field24937, this.field24938, 0.0, 0.0, 0.0);
+            this.field24932.addParticle(this.field25041, this.field24936, this.field24937, this.field24938, 0.0, 0.0, 0.0);
         }
     }
 }

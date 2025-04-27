@@ -27,7 +27,7 @@ public class Class359 extends Class357
     
     @Override
     public BlockState method1164(final Random random, final BlockPos class354) {
-        if (Class3090.field15442.method29027(class354.getX() / 200.0, class354.getZ() / 200.0, false) >= -0.8) {
+        if (Biome.field15442.method29027(class354.getX() / 200.0, class354.getZ() / 200.0, false) >= -0.8) {
             return (random.nextInt(3) <= 0) ? Blocks.DANDELION.getDefaultState() : Class359.field2187[random.nextInt(Class359.field2187.length)];
         }
         return Class359.field2186[random.nextInt(Class359.field2186.length)];

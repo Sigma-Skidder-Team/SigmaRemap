@@ -163,7 +163,7 @@ public class Class815 extends Class812 implements Class768
         }
         if (this.method2625()) {
             if (n > 0) {
-                this.world.method6709(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34625, this.method1940(1.0), this.method1943() + 0.5, this.method1947(1.0), 0.0, 0.0, 0.0);
                 if (!this.world.isRemote) {
                     this.method4353(n);
                 }
@@ -195,7 +195,7 @@ public class Class815 extends Class812 implements Class768
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         this.method4786();
         int n;
         if (!(class1854 instanceof Class5501)) {

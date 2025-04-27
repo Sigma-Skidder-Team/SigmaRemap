@@ -103,8 +103,8 @@ public class Class851 extends FlyingEntity implements IMob
             final float n = MathHelper.cos(this.rotationYaw * 0.017453292f) * (1.3f + 0.21f * method35641);
             final float n2 = MathHelper.sin(this.rotationYaw * 0.017453292f) * (1.3f + 0.21f * method35641);
             final float n3 = (0.3f + method35639 * 0.45f) * (method35641 * 0.2f + 1.0f);
-            this.world.method6709(Class8432.field34634, this.getPosX() + n, this.getPosY() + n3, this.getPosZ() + n2, 0.0, 0.0, 0.0);
-            this.world.method6709(Class8432.field34634, this.getPosX() - n, this.getPosY() + n3, this.getPosZ() - n2, 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34634, this.getPosX() + n, this.getPosY() + n3, this.getPosZ() + n2, 0.0, 0.0, 0.0);
+            this.world.addParticle(Class8432.field34634, this.getPosX() - n, this.getPosY() + n3, this.getPosZ() - n2, 0.0, 0.0, 0.0);
         }
     }
     
@@ -124,7 +124,7 @@ public class Class851 extends FlyingEntity implements IMob
     }
     
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         this.field4528 = new BlockPos(this).method1138(5);
         this.method5087(0);
         return super.method4188(class1851, class1852, class1853, class1854, class1855);

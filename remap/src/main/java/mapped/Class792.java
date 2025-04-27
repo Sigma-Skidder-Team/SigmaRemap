@@ -313,7 +313,7 @@ public class Class792 extends Class789
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, ILivingEntityData class1854, final CompoundNBT class1855) {
         int n = this.method4446(class1851);
         if (!(class1854 instanceof Class5499)) {
             class1854 = new Class5499(n);
@@ -326,7 +326,7 @@ public class Class792 extends Class789
     }
     
     private int method4446(final Class1851 class1851) {
-        final Class3090 method6959 = class1851.method6959(new BlockPos(this));
+        final Biome method6959 = class1851.method6959(new BlockPos(this));
         final int nextInt = this.rand.nextInt(100);
         if (method6959.method9841() == Class2145.field12630) {
             return (nextInt >= 80) ? 3 : 1;

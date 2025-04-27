@@ -126,7 +126,7 @@ public class Class3998 extends Block
                 n3 = class7098.getZ() + 0.5 + 0.25 * n7;
                 n6 = random.nextFloat() * 2.0f * n7;
             }
-            class7097.method6709(Class8432.field34637, n, n2, n3, n4, n5, n6);
+            class7097.addParticle(Class8432.field34637, n, n2, n3, n4, n5, n6);
         }
     }
     

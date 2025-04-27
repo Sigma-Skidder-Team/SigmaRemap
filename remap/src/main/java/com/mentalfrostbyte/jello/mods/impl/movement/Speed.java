@@ -22,7 +22,7 @@ public class Speed extends ModuleWithSettings
     }
     
     @EventListener
-    public void method10267(final EventPlayerTickI eventPlayerTick) {
+    public void method10267(final EventPlayerTick eventPlayerTick) {
         ++Speed.field15748;
     }
     

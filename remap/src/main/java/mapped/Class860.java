@@ -113,7 +113,7 @@ public abstract class Class860 extends Entity
                     }
                 }
             }
-            return this.world.method6737(this, this.getBoundingBox(), Class860.field4597).isEmpty();
+            return this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), Class860.field4597).isEmpty();
         }
         return false;
     }

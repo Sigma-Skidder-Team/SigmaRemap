@@ -7,7 +7,7 @@ package mapped;
 import org.newdawn.slick.opengl.renderer.LineStripRenderer;
 import org.newdawn.slick.opengl.renderer.SGL;
 import org.newdawn.slick.opengl.renderer.Renderer;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public final class Class6044
 {

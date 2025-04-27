@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.client.renderer.Matrix4f;
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.awt.image.BufferedImage;
 import java.net.URL;

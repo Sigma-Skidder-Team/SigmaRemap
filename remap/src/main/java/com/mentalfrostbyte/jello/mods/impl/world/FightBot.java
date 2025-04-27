@@ -10,7 +10,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.PremiumModule;
 import mapped.Class4609;
-import mapped.EventPlayerTickI;
+import mapped.EventPlayerTick;
 import mapped.EventListener;
 import mapped.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -31,7 +31,7 @@ public class FightBot extends PremiumModule
     }
     
     @EventListener
-    public void method10639(final EventPlayerTickI eventPlayerTick) {
+    public void method10639(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
         }
     }
@@ -42,7 +42,7 @@ public class FightBot extends PremiumModule
         final Iterator iterator = arrayList.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = (Entity)iterator.next();
-            if (class399 instanceof PlayerEntity && !Client.getInstance().getBotManager().method31751(class399)) {
+            if (class399 instanceof PlayerEntity && !Client.getInstance().getBotManager().isBot(class399)) {
                 continue;
             }
             iterator.remove();

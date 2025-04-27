@@ -116,7 +116,7 @@ public class Class3242 extends Module
     }
     
     private boolean method10244(final Entity class399) {
-        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !Client.getInstance().getBotManager().method31751(class399);
+        return class399 instanceof LivingEntity && class399 instanceof PlayerEntity && !(class399 instanceof ClientPlayerEntity) && !Client.getInstance().getBotManager().isBot(class399);
     }
     
     private void method10245() {

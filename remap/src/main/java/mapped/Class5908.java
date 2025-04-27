@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 public class Class5908 implements Consumer<Consumer<Class8863>>
 {
-    private static final Class3090[] field24289;
+    private static final Biome[] field24289;
     private static final EntityType<?>[] field24290;
     
     @Override
@@ -41,14 +41,14 @@ public class Class5908 implements Consumer<Consumer<Class8863>>
     }
     
     private Class6056 method17762(final Class6056 class6056) {
-        for (final Class3090 class6057 : Class5908.field24289) {
+        for (final Biome class6057 : Class5908.field24289) {
             class6056.method18009(Registry.field217.getKey(class6057).toString(), Class4217.method12695(Class8697.method29808(class6057)));
         }
         return class6056;
     }
     
     static {
-        field24289 = new Class3090[] { Class7102.field27660, Class7102.field27639, Class7102.field27638, Class7102.field27634, Class7102.field27650, Class7102.field27665, Class7102.field27662, Class7102.field27669, Class7102.field27636, Class7102.field27657, Class7102.field27644, Class7102.field27651, Class7102.field27645, Class7102.field27670, Class7102.field27667, Class7102.field27633, Class7102.field27643, Class7102.field27664, Class7102.field27658, Class7102.field27654, Class7102.field27655, Class7102.field27647, Class7102.field27635, Class7102.field27649, Class7102.field27653, Class7102.field27648, Class7102.field27668, Class7102.field27663, Class7102.field27671, Class7102.field27661, Class7102.field27637, Class7102.field27659, Class7102.field27646, Class7102.field27666, Class7102.field27676, Class7102.field27677, Class7102.field27678, Class7102.field27680, Class7102.field27681, Class7102.field27682, Class7102.field27705, Class7102.field27706 };
+        field24289 = new Biome[] { Class7102.field27660, Class7102.field27639, Class7102.field27638, Class7102.field27634, Class7102.field27650, Class7102.field27665, Class7102.field27662, Class7102.field27669, Class7102.field27636, Class7102.field27657, Class7102.field27644, Class7102.field27651, Class7102.field27645, Class7102.field27670, Class7102.field27667, Class7102.field27633, Class7102.field27643, Class7102.field27664, Class7102.field27658, Class7102.field27654, Class7102.field27655, Class7102.field27647, Class7102.field27635, Class7102.field27649, Class7102.field27653, Class7102.field27648, Class7102.field27668, Class7102.field27663, Class7102.field27671, Class7102.field27661, Class7102.field27637, Class7102.field27659, Class7102.field27646, Class7102.field27666, Class7102.field27676, Class7102.field27677, Class7102.field27678, Class7102.field27680, Class7102.field27681, Class7102.field27682, Class7102.field27705, Class7102.field27706 };
         field24290 = new EntityType[] { EntityType.field28965, EntityType.field29030, EntityType.field29014, EntityType.field28977, EntityType.field28962, EntityType.field28969, EntityType.field28980, EntityType.field28986, EntityType.field28988, EntityType.field28990, EntityType.field28998, EntityType.field29020, EntityType.field29022, EntityType.field29023, EntityType.field29025, EntityType.field29032, EntityType.field29044, EntityType.field29047, EntityType.field29049, EntityType.field29052, EntityType.field29054, EntityType.field29055, EntityType.field28973, EntityType.field29045, EntityType.field29056 };
     }
 }

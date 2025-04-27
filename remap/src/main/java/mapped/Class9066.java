@@ -45,42 +45,42 @@ public class Class9066
             final EntityDataManager method1650 = class399.method1650();
             method1650.field38922 = class399.method1894();
             method1650.field38921 = class400.method6959(method1650.field38922);
-            if (class399 instanceof Class795) {
-                method32641((Class795)class399, false);
+            if (class399 instanceof ShoulderRidingEntity) {
+                method32641((ShoulderRidingEntity)class399, false);
             }
         }
     }
     
     public static void method32640(final Entity class399, final World class400) {
-        if (class399 instanceof Class795) {
-            method32641((Class795)class399, true);
+        if (class399 instanceof ShoulderRidingEntity) {
+            method32641((ShoulderRidingEntity)class399, true);
         }
     }
     
-    private static void method32641(final Class795 class795, final boolean b) {
-        LivingEntity class796 = class795.method4488();
+    private static void method32641(final ShoulderRidingEntity shoulderRidingEntity, final boolean b) {
+        LivingEntity class796 = shoulderRidingEntity.method4488();
         if (class796 == null) {
             class796 = Config.method28894().player;
         }
-        if (class796 instanceof Class754) {
-            final Class754 class797 = (Class754)class796;
-            final UUID method1865 = class795.getUniqueID();
+        if (class796 instanceof AbstractClientPlayerEntity) {
+            final AbstractClientPlayerEntity class797 = (AbstractClientPlayerEntity)class796;
+            final UUID method1865 = shoulderRidingEntity.getUniqueID();
             if (!b) {
-                final EntityDataManager method1866 = class795.method1650();
-                if (class797.field4065 != null) {
-                    if (Config.equals(class797.field4065.getUniqueID(), method1865)) {
-                        final EntityDataManager method1867 = class797.field4065.method1650();
+                final EntityDataManager method1866 = shoulderRidingEntity.method1650();
+                if (class797.entityShoulderLeft != null) {
+                    if (Config.equals(class797.entityShoulderLeft.getUniqueID(), method1865)) {
+                        final EntityDataManager method1867 = class797.entityShoulderLeft.method1650();
                         method1866.field38922 = method1867.field38922;
                         method1866.field38921 = method1867.field38921;
-                        class797.field4065 = null;
+                        class797.entityShoulderLeft = null;
                     }
                 }
-                if (class797.field4066 != null) {
-                    if (Config.equals(class797.field4066.getUniqueID(), method1865)) {
-                        final EntityDataManager method1868 = class797.field4066.method1650();
+                if (class797.entityShoulderRight != null) {
+                    if (Config.equals(class797.entityShoulderRight.getUniqueID(), method1865)) {
+                        final EntityDataManager method1868 = class797.entityShoulderRight.method1650();
                         method1866.field38922 = method1868.field38922;
                         method1866.field38921 = method1868.field38921;
-                        class797.field4066 = null;
+                        class797.entityShoulderRight = null;
                     }
                 }
             }
@@ -88,13 +88,13 @@ public class Class9066
                 final CompoundNBT method1869 = class797.method2899();
                 if (method1869 != null) {
                     if (Config.equals(method1869.getUniqueId("UUID"), method1865)) {
-                        class797.field4065 = class795;
+                        class797.entityShoulderLeft = shoulderRidingEntity;
                     }
                 }
                 final CompoundNBT method1870 = class797.method2901();
                 if (method1870 != null) {
                     if (Config.equals(method1870.getUniqueId("UUID"), method1865)) {
-                        class797.field4066 = class795;
+                        class797.entityShoulderRight = shoulderRidingEntity;
                     }
                 }
             }

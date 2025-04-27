@@ -273,8 +273,8 @@ public class Class1660 implements AutoCloseable, Class1657
     
     private void method5808() {
         float method4104 = 1.0f;
-        if (this.field9380.method5303() instanceof Class754) {
-            method4104 = ((Class754)this.field9380.method5303()).method4104();
+        if (this.field9380.method5303() instanceof AbstractClientPlayerEntity) {
+            method4104 = ((AbstractClientPlayerEntity)this.field9380.method5303()).method4104();
         }
         this.field9389 = this.field9388;
         this.field9388 += (method4104 - this.field9388) * 0.5f;

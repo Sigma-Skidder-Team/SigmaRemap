@@ -36,7 +36,7 @@ public class Class7816 extends Class7814
     }
     
     @EventListener
-    private void method25251(final EventPlayerTickI eventPlayerTick) {
+    private void method25251(final EventPlayerTick eventPlayerTick) {
         if (Class7816.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
         }

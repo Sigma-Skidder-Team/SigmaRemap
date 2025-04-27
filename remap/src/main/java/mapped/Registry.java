@@ -39,7 +39,7 @@ public abstract class Registry<T> implements Class89<T>
     public static final Registry<Class6032<?>> field214;
     public static final Registry<Class4535<?>> field215;
     public static final Registry<Class7133<?>> field216;
-    public static final Registry<Class3090> field217;
+    public static final Registry<Biome> field217;
     public static final Registry<Class8804<?>> field218;
     public static final Registry<Class8372<?>> field219;
     public static final Registry<Class7944<?>> field220;

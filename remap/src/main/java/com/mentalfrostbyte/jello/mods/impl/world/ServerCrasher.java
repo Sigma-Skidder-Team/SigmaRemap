@@ -25,7 +25,7 @@ public class ServerCrasher extends PremiumModule
     }
     
     @EventListener
-    private void method10629(final EventPlayerTickI eventPlayerTick) {
+    private void method10629(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

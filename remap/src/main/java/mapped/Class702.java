@@ -44,11 +44,11 @@ public class Class702 extends Class698
                 }
                 if (class574.field3708 == 210) {
                     try {
-                        final String name = this.minecraft.method5287().method33694().getName();
-                        final String replace = this.minecraft.method5287().method33694().getId().toString().replace("-", "");
-                        final String method33693 = this.minecraft.method5287().method33693();
+                        final String name = this.minecraft.method5287().getProfile().getName();
+                        final String replace = this.minecraft.method5287().getProfile().getId().toString().replace("-", "");
+                        final String method33693 = this.minecraft.method5287().getToken();
                         final String string = new BigInteger(128, new Random()).xor(new BigInteger(128, new Random(System.identityHashCode(new Object())))).toString(16);
-                        this.minecraft.method5301().joinServer(this.minecraft.method5287().method33694(), method33693, string);
+                        this.minecraft.method5301().joinServer(this.minecraft.method5287().getProfile(), method33693, string);
                         final String string2 = "https://optifine.net/capeChange?u=" + replace + "&n=" + name + "&s=" + string;
                         if (Config.method29012(new URI(string2))) {
                             this.method3903(Class4647.method13876("of.message.capeOF.openEditor"), 10000L);

@@ -5,7 +5,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.ClientAssets;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 import java.util.Iterator;
 import java.util.Map;

@@ -5,7 +5,7 @@
 package mapped;
 
 import org.lwjgl.opengl.GL11;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
 public class Class4873 extends Class4868

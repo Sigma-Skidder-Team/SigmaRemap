@@ -26,7 +26,7 @@ import net.minecraft.world.dimension.DimensionType;
 
 import java.util.List;
 
-public class ClientPlayerEntity extends Class754
+public class ClientPlayerEntity extends AbstractClientPlayerEntity
 {
     private static String[] field4068;
     public final Class5799 field4069;

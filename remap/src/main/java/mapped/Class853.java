@@ -109,7 +109,7 @@ public class Class853 extends Class759 implements IMob
             for (int method5130 = this.method5130(), i = 0; i < method5130 * 8; ++i) {
                 final float n = this.rand.nextFloat() * 6.2831855f;
                 final float n2 = this.rand.nextFloat() * 0.5f + 0.5f;
-                this.world.method6709(this.method5132(), this.getPosX() + MathHelper.sin(n) * method5130 * 0.5f * n2, this.getPosY(), this.getPosZ() + MathHelper.cos(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
+                this.world.addParticle(this.method5132(), this.getPosX() + MathHelper.sin(n) * method5130 * 0.5f * n2, this.getPosY(), this.getPosZ() + MathHelper.cos(n) * method5130 * 0.5f * n2, 0.0, 0.0, 0.0);
             }
             this.method1695(this.method5138(), this.method2720(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2f + 1.0f) / 0.8f);
             this.field4557 = -0.5f;
@@ -304,7 +304,7 @@ public class Class853 extends Class759 implements IMob
     
     @Nullable
     @Override
-    public Class5496 method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final Class5496 class1854, final CompoundNBT class1855) {
+    public ILivingEntityData method4188(final Class1851 class1851, final Class9592 class1852, final Class2101 class1853, final ILivingEntityData class1854, final CompoundNBT class1855) {
         int nextInt = this.rand.nextInt(3);
         if (nextInt < 2) {
             if (this.rand.nextFloat() < 0.5f * class1852.method35975()) {

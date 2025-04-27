@@ -57,10 +57,10 @@ public class Class6736 extends Dimension
                     if (asJsonObject2.has("options")) {
                         final Class7768 class1869 = Registry.field223.getOrDefault(new ResourceLocation(asJsonObject2.getAsJsonPrimitive("type").getAsString()));
                         final JsonObject asJsonObject3 = asJsonObject2.getAsJsonObject("options");
-                        Class3090[] array = { Class7102.field27631 };
+                        Biome[] array = { Class7102.field27631 };
                         if (asJsonObject3.has("biomes")) {
                             final JsonArray asJsonArray = asJsonObject3.getAsJsonArray("biomes");
-                            array = ((asJsonArray.size() <= 0) ? new Class3090[] { Class7102.field27631 } : new Class3090[asJsonArray.size()]);
+                            array = ((asJsonArray.size() <= 0) ? new Biome[] { Class7102.field27631 } : new Biome[asJsonArray.size()]);
                             for (int i = 0; i < asJsonArray.size(); ++i) {
                                 array[i] = Registry.field217.method506(new ResourceLocation(asJsonArray.get(i).getAsString())).orElse(Class7102.field27631);
                             }

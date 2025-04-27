@@ -27,7 +27,7 @@ public class Class8445 implements Class8444
     }
     
     @Override
-    public Class3090 method28179() {
+    public Biome method28179() {
         return this.field34702.method2186().method6959(this.field34702.getPos());
     }
     

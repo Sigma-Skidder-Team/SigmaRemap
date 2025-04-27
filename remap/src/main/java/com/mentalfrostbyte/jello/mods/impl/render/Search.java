@@ -127,7 +127,7 @@ public class Search extends Module
     }
     
     @EventListener
-    public void method10375(final EventPlayerTickI eventPlayerTick) {
+    public void method10375(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

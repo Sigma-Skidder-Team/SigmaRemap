@@ -61,7 +61,7 @@ public class MineplexGamePlay extends Module
     }
     
     @EventListener
-    private void method9977(final EventPlayerTickI eventPlayerTick) {
+    private void method9977(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("AutoGG")) {
                 if (this.field15566.getElapsedTime() > 5000L) {

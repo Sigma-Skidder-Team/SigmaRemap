@@ -6,7 +6,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 
-public final class Class3112 extends Class3090
+public final class Class3112 extends Biome
 {
     public Class3112() {
         super(new Class8927().method31462(Class6032.field24552, Class6032.field24541).method31464(Class2145.field12630).method31465(Class2140.field12586).method31466(0.3f).method31467(0.4f).method31468(-0.5f).method31469(0.4f).method31470(4020182).method31471(329011).method31472("snowy_taiga"));

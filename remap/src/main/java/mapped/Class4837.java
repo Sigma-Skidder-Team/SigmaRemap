@@ -62,7 +62,7 @@ public class Class4837 extends Class4825
         if (this.field20735 == null) {
             this.field20735 = new Class755(Class4837.field20737, new GameProfile(fromString, this.field20738.method25889()));
         }
-        final ResourceLocation method4102 = Class754.method4102(this.field20738.method25889());
+        final ResourceLocation method4102 = AbstractClientPlayerEntity.method4102(this.field20738.method25889());
         if (this.field20739 != null && this.field20736.method5290().method5853(method4102) != null) {
             this.field20736.method5290().method5849(method4102);
         }

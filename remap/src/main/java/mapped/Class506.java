@@ -58,7 +58,7 @@ public class Class506 extends Class428
         }
         if (this.method2598()) {
             if (this.rand.nextInt(4) == 0) {
-                this.world.method6709(Class8432.field34632, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
+                this.world.addParticle(Class8432.field34632, this.getPosX(), this.getPosY() + 0.8, this.getPosZ(), 0.0, 0.0, 0.0);
             }
         }
     }

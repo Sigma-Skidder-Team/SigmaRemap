@@ -31,7 +31,7 @@ public class TickManager {
     }
 
     @EventListener
-    private void method29224(final EventPlayerTickI eventPlayerTick) {
+    private void method29224(final EventPlayerTick eventPlayerTick) {
         ++this.field36156;
         ++this.field36157;
         ++this.field36158;

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.auth.Encryptor;
-import slick2d.Texture;
+import org.newdawn.slick.Texture;
 
 public class Class4897 extends Panel
 {
