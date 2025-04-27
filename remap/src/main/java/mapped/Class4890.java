@@ -7,7 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4890 extends Class4841
+public class Class4890 extends Panel
 {
     public static final ColorHelper field20903;
     public List<String> field20904;

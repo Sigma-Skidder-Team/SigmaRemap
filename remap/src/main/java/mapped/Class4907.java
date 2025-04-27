@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Class4907 extends Class4841
+public class Class4907 extends Panel
 {
     public CustomGuiScreen field20987;
     public String field20988;
@@ -36,7 +36,7 @@ public class Class4907 extends Class4841
         this.field20995 = new ArrayList<Class8214>();
         this.field20991 = field20991;
         this.field20988 = field20992;
-        this.method14305(false);
+        this.setVisible(false);
         this.method14301(false);
         this.method14252();
         TextField class4804 = null;
@@ -109,7 +109,7 @@ public class Class4907 extends Class4841
     }
     
     @Override
-    public void method14305(final boolean b) {
+    public void setVisible(final boolean b) {
         if (b) {
             for (final CustomGuiScreen customGuiScreen : this.field20987.method14250()) {
                 if (!(customGuiScreen instanceof TextField)) {
@@ -120,7 +120,7 @@ public class Class4907 extends Class4841
             }
         }
         this.field20990.changeDirection(b ? Direction.BACKWARDS : Direction.FORWARDS);
-        super.method14305(b);
+        super.setVisible(b);
     }
     
     public CustomGuiScreen method14739() {
@@ -222,7 +222,7 @@ public class Class4907 extends Class4841
         if (this.isHovered() != b && !b) {
             this.method14746();
         }
-        this.method14305(b);
+        this.setVisible(b);
         if (b) {
             this.setEnabled(true);
         }
@@ -249,5 +249,10 @@ public class Class4907 extends Class4841
         while (iterator.hasNext()) {
             iterator.next().method27215(this);
         }
+    }
+
+    public static interface Class8214
+    {
+        void method27215(final Panel p0);
     }
 }

@@ -44,7 +44,7 @@ public class Class4830 extends Class4825
         this.field20660.addToList(class4804 = new Class4881(this.field20660, "rename", 0, 0, this.field20667 / 2, field20668, method19739, "Rename"));
         final Class4881 class4805;
         this.field20660.addToList(class4805 = new Class4881(this.field20660, "remove", this.field20667 / 2, 0, this.field20667 / 2, field20668, method19740, "Delete"));
-        this.field20660.method14305(false);
+        this.field20660.setVisible(false);
         this.addToList(this.field20665 = new TextField(this, "profileName", 16, 8, this.method14276() - 60, 50, new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.color, Class2056.field11734, Class2056.field11738), field20669.field33839));
         this.field20665.method14478(false);
         this.field20665.setFont(ClientFonts.JelloLight24);
@@ -139,7 +139,7 @@ public class Class4830 extends Class4825
         if (this.field20662.getDirection().equals(Direction.FORWARDS)) {
             n2 = Class8468.method28269(this.field20662.calcPercent(), 0.0f, 1.0f, 1.0f);
         }
-        this.field20660.method14305(this.field20662.calcPercent() == 1.0f);
+        this.field20660.setVisible(this.field20662.calcPercent() == 1.0f);
         this.field20660.method14277(Math.max(0, (int)(this.field20667 * n2)));
         this.field20660.method14293((int)(this.field20667 * (1.0f - n2)));
         RenderUtil.method26865(this);

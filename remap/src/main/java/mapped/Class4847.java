@@ -17,7 +17,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4847 extends Class4841
+public class Class4847 extends Panel
 {
     public int field20767;
     public List<Class7015> field20768;

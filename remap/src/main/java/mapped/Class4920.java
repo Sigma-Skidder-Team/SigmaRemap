@@ -21,7 +21,7 @@ public class Class4920 extends Class4825
         this.field21053 = new Class8338();
         this.field21054 = new Class2315();
         this.method14307(false);
-        this.method14305(false);
+        this.setVisible(false);
         this.method14301(false);
         this.method14303(true);
     }

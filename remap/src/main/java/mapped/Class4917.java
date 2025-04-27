@@ -36,7 +36,7 @@ public class Class4917 extends Class4825
         this.field21041 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
         this.field21031 = field21031;
         this.addToList(this.field21034 = new LoadingIndicator(this, "loading", n3 - 50, 35, 30, 30));
-        this.field21034.method14305(false);
+        this.field21034.setVisible(false);
     }
     
     public void method14761(final boolean b) {
@@ -126,6 +126,6 @@ public class Class4917 extends Class4825
     }
     
     public void method14769(final boolean b) {
-        this.field21034.method14305(b);
+        this.field21034.setVisible(b);
     }
 }

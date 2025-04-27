@@ -104,7 +104,7 @@ public class Class4821 extends Class4817 implements Class4820
                     this.field20631 = false;
                     this.method14301(this.field20632 = true);
                     this.method14307(true);
-                    this.method14305(true);
+                    this.setVisible(true);
                     class4924.field21063 = 1.0f;
                 }
             }
@@ -112,7 +112,7 @@ public class Class4821 extends Class4817 implements Class4820
                 this.field20631 = false;
                 this.method14301(this.field20632 = false);
                 this.method14307(false);
-                this.method14305(false);
+                this.setVisible(false);
                 class4924.field21063 = 0.0f;
             }
         }

@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.ClientFonts;
 
-public class Class4856 extends Class4841
+public class Class4856 extends Panel
 {
     private static String[] field20591;
     public float field20805;

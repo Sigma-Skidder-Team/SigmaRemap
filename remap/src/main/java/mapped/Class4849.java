@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4849 extends Class4841
+public class Class4849 extends Panel
 {
     public Animation field20774;
     public int field20775;

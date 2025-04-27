@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4865 extends Class4841
+public class Class4865 extends Panel
 {
     private static String[] field20591;
     private float field20831;

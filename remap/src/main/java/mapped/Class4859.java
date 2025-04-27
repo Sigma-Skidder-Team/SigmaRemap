@@ -7,7 +7,7 @@ package mapped;
 import org.lwjgl.opengl.GL11;
 import slick2d.Texture;
 
-public class Class4859 extends Class4841
+public class Class4859 extends Panel
 {
     private static String[] field20591;
     public Animation field20815;

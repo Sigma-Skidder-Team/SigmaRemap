@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4889 extends Class4841
+public class Class4889 extends Panel
 {
     private final List<Class4868> field20898;
     public final Animation field20899;

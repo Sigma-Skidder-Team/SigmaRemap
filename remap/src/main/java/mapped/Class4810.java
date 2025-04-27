@@ -50,10 +50,10 @@ public class Class4810 extends CustomGuiScreen
     }
     
     @Override
-    public void method14305(final boolean b) {
-        this.field20565.method14305(b);
-        this.field20567.method14305(b);
-        this.field20563.method14305(b);
+    public void setVisible(final boolean b) {
+        this.field20565.setVisible(b);
+        this.field20567.setVisible(b);
+        this.field20563.setVisible(b);
     }
     
     public boolean method14340() {

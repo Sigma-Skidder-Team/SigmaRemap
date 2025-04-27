@@ -6,7 +6,7 @@ package mapped;
 
 import java.awt.Color;
 
-public class Class4885 extends Class4841
+public class Class4885 extends Panel
 {
     public int field20881;
     public boolean field20882;

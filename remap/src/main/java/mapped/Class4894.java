@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
 
-public class Class4894 extends Class4841
+public class Class4894 extends Panel
 {
     public static final ColorHelper field20919;
     public List<String> field20920;

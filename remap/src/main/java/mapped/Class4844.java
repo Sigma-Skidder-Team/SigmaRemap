@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class4844 extends Class4841
+public class Class4844 extends Panel
 {
     public Class4824 field20756;
     

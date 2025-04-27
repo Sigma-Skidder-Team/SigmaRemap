@@ -9,7 +9,7 @@ import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 
-public class Class4857 extends Class4841
+public class Class4857 extends Panel
 {
     public final int field20807;
     private float field20808;

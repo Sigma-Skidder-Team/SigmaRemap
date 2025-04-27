@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.ClientFonts;
 
 import java.util.Date;
 
-public class Class4896 extends Class4841
+public class Class4896 extends Panel
 {
     public float field20937;
     public Class8799 field20938;

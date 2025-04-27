@@ -6,7 +6,7 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 
-public class Class4848 extends Class4841
+public class Class4848 extends Panel
 {
     private static String[] field20591;
     private float field20772;

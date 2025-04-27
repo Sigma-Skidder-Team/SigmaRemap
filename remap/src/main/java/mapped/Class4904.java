@@ -6,7 +6,7 @@ package mapped;
 
 import java.awt.Color;
 
-public class Class4904 extends Class4841
+public class Class4904 extends Panel
 {
     private static String[] field20978;
     public float field20979;

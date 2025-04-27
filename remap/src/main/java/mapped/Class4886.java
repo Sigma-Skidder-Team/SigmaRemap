@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.UglyClickGUICategory;
 
-public class Class4886 extends Class4841
+public class Class4886 extends Panel
 {
     private static String[] field20591;
     public Animation field20886;

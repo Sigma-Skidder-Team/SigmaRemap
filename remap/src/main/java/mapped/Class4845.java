@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4845 extends Class4841
+public class Class4845 extends Panel
 {
     private static String[] field20591;
     public static final ColorHelper field20757;

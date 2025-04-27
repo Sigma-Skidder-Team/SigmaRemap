@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Class4862 extends Class4841
+public class Class4862 extends Panel
 {
     private final List<Class4868> field20819;
     private final Date field20820;

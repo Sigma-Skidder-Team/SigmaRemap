@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4854 extends Class4841
+public class Class4854 extends Panel
 {
     private final List<String> field20797;
     private Class4817 field20798;

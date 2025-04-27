@@ -20,7 +20,7 @@ public class Class4912 extends Class4825
         this.field21013 = new Class8338();
         this.field21014 = new Class2315();
         this.method14307(false);
-        this.method14305(false);
+        this.setVisible(false);
         this.method14301(false);
         this.method14303(true);
         this.setListening(false);

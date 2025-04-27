@@ -65,7 +65,7 @@ public class Class4936 extends Class4800
         this.field21183.method14473(class4831 -> this.method14851());
         this.method14852();
         this.addToList(this.field21184 = new Class4810(this, "toolbar", (Minecraft.getInstance().window.method7694() - n) / 2 + 16, this.method14278() - 94));
-        this.field21184.method14305(false);
+        this.field21184.setVisible(false);
     }
     
     private void method14844(final Class7971 class7971) {
@@ -79,7 +79,7 @@ public class Class4936 extends Class4800
                     method14855.method14505(false);
                 }
                 class7972.method14505(true);
-                this.field21184.method14305(true);
+                this.field21184.setVisible(true);
                 if (method14855 != null) {
                     if (method14855.equals(class7972)) {
                         this.method14847(class7972);
@@ -100,7 +100,7 @@ public class Class4936 extends Class4800
         final Class4836 method14855 = this.method14855();
         if (method14855 != null) {
             this.field21178.method25460(method14855.field20723);
-            this.field21184.method14305(false);
+            this.field21184.setVisible(false);
             this.method14851();
         }
     }

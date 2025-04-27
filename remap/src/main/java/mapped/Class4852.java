@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.settings.Setting;
 
-public class Class4852 extends Class4841
+public class Class4852 extends Panel
 {
     private static String[] field20591;
     public final Setting field20794;

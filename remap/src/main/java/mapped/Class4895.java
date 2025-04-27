@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.mods.Module;
 import slick2d.Texture;
 
-public class Class4895 extends Class4841
+public class Class4895 extends Panel
 {
     public Animation field20926;
     public Animation field20927;

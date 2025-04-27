@@ -7,7 +7,7 @@ package mapped;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4905 extends Class4841
+public class Class4905 extends Panel
 {
     private final List<Class4868> field20983;
     public int field20984;

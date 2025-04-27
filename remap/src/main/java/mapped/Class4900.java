@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
 
-public class Class4900 extends Class4841
+public class Class4900 extends Panel
 {
     public TextField field20956;
     

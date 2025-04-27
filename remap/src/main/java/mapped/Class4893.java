@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class4893 extends Class4841
+public class Class4893 extends Panel
 {
     private static String[] field20591;
     public float field20918;

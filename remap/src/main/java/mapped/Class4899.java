@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 
 import java.util.ArrayList;
 
-public class Class4899 extends Class4841
+public class Class4899 extends Panel
 {
     public TextField field20954;
     public String field20955;

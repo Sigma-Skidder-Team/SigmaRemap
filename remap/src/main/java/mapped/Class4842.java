@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 
-public class Class4842 extends Class4841
+public class Class4842 extends Panel
 {
     private static String[] field20591;
     private final MusicManager field20748;

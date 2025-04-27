@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.jello.ClientFonts;
 import org.newdawn.slick.TrueTypeFont;
 
-public class Class4892 extends Class4841
+public class Class4892 extends Panel
 {
     private static String[] field20591;
     private float field20914;

@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.mods.Module;
 
-public class Class4883 extends Class4841
+public class Class4883 extends Panel
 {
     public Module field20878;
     

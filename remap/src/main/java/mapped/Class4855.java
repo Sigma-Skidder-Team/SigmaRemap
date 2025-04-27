@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Class4855 extends Class4841
+public class Class4855 extends Panel
 {
     private final Class4911 field20801;
     private final Class4911 field20802;

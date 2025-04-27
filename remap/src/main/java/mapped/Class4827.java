@@ -89,7 +89,7 @@ public class Class4827 extends Class4825 implements Class4828
         }
         final boolean b2 = b;
         this.setEnabled(b2);
-        this.method14305(b2);
+        this.setVisible(b2);
     }
     
     @Override

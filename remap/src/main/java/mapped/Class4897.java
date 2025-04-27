@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.ClientFonts;
 import com.mentalfrostbyte.jello.auth.Encryptor;
 import slick2d.Texture;
 
-public class Class4897 extends Class4841
+public class Class4897 extends Panel
 {
     public float field20943;
     private final int field20944 = 10;
