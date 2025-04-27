@@ -33,7 +33,7 @@ public class Client {
     private JSONObject config;
     private boolean thing = true;
     private Logger logger;
-    private TrustManager trustManager;
+    private CustomTrustManager customTrustManager;
     private EventBus eventBus;
     private ModuleManager moduleManager;
     private CommandManager commandManager;
@@ -84,7 +84,7 @@ public class Client {
         } catch (final IOException ex) {
             ex.printStackTrace();
         }
-        this.trustManager = TrustManager.method29718();
+        this.customTrustManager = CustomTrustManager.createAndInstall();
         this.eventBus = new EventBus();
         (this.commandManager = new CommandManager()).method32666();
         ClientAssets.decryptTextures();
@@ -301,8 +301,8 @@ public class Client {
         return this.networkManager;
     }
 
-    public TrustManager getTrustManager() {
-        return this.trustManager;
+    public CustomTrustManager getTrustManager() {
+        return this.customTrustManager;
     }
 
     public AgoraManager getAgoraManager() {

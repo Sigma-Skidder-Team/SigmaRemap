@@ -40,7 +40,7 @@ public class IRCManager {
     private Socket socket;
     public MessageManager messageManager;
 
-    public IRCManager(final NetworkManager field38988) {
+    public IRCManager() {
         Client.getInstance().getEventBus().registerInstance(this);
         this.messageManager = new MessageManager();
     }
