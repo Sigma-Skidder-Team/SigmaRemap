@@ -50,7 +50,7 @@ public class Class799 extends Class794
         this.field4114.method22062(10, new Class3503(this));
         this.field4115.method22062(1, new Class3554(this));
         this.field4115.method22062(2, new Class3569(this));
-        this.field4115.method22062(3, new Class3547(this, (Class<?>[])new Class[0]).method11100((Class<?>[])new Class[0]));
+        this.field4115.method22062(3, new Class3547(this, new Class[0]).method11100(new Class[0]));
         this.field4115.method22062(4, new Class3560<Object>(this, Class789.class, false, Class799.field4278));
         this.field4115.method22062(4, new Class3560<Object>(this, Class793.class, false, Class793.field4242));
         this.field4115.method22062(5, new Class3555<Object>(this, Class780.class, false));
@@ -165,7 +165,7 @@ public class Class799 extends Class794
     @Override
     public void method1659() {
         super.method1659();
-        if (this.method1768()) {
+        if (this.isAlive()) {
             this.field4280 = this.field4279;
             if (!this.method4603()) {
                 this.field4279 += (0.0f - this.field4279) * 0.4f;

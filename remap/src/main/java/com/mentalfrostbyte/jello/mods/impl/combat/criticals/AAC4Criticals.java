@@ -24,7 +24,7 @@ public class AAC4Criticals extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method9939(final Class5745 class5745) {
         if (this.isEnabled() && class5745.method17049() >= 0.625) {
             AAC4Criticals.field15534 = 0;
@@ -39,13 +39,13 @@ public class AAC4Criticals extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method9941(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled()) {
             AAC4Criticals.field15534 = 0;
             return;
         }
-        if (updateWalkingEvent.method17046()) {
+        if (updateWalkingEvent.isPre()) {
             if (AAC4Criticals.mc.playerController.method27337()) {
                 AAC4Criticals.field15534 = 0;
             }

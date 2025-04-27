@@ -39,7 +39,7 @@ public class NCPSpeed extends Module
             if (NCPSpeed.mc.player != null) {
                 if (!Jesus.method10433()) {
                     if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
-                        if (updateWalkingEvent.method17046()) {
+                        if (updateWalkingEvent.isPre()) {
                             if (Speed.field15748 > 1) {
                                 final double n = NCPSpeed.mc.player.posX - NCPSpeed.mc.player.field4074;
                                 final double n2 = NCPSpeed.mc.player.posZ - NCPSpeed.mc.player.field4076;
@@ -71,9 +71,9 @@ public class NCPSpeed extends Module
                     ++this.field15847;
                     double n = this.field15849;
                     if (this.field15847 > 1) {
-                        n = Math.max(Class7482.method23137(), this.field15849 - (0.004 - Class7482.method23137() * 0.003) - Math.random() * 1.0E-10);
+                        n = Math.max(MovementUtil.method23137(), this.field15849 - (0.004 - MovementUtil.method23137() * 0.003) - Math.random() * 1.0E-10);
                     }
-                    Class7482.method23149(class5717, n);
+                    MovementUtil.method23149(class5717, n);
                     if (class5717.method16974() >= -0.008744698139753596 && class5717.method16974() <= -0.008724698139753597) {
                         class5717.method16975(0.001);
                     }
@@ -85,7 +85,7 @@ public class NCPSpeed extends Module
                 }
             }
             else if (this.field15848 > 1) {
-                if ((this.method9883("Auto Jump") && ColorUtils.method19114()) || NCPSpeed.mc.gameSettings.field23439.method1056()) {
+                if ((this.getBooleanValueFromSettingName("Auto Jump") && ColorUtils.method19114()) || NCPSpeed.mc.gameSettings.field23439.method1056()) {
                     this.field15847 = 0;
                     NCPSpeed.mc.player.method2725();
                     class5717.method16973(NCPSpeed.mc.player.getMotion().x);
@@ -99,7 +99,7 @@ public class NCPSpeed extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10414(final Class5722 class5722) {
         if (!this.isEnabled() || Jesus.method10433()) {
             return;
@@ -110,12 +110,12 @@ public class NCPSpeed extends Module
         if (NCPSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
             return;
         }
-        double b = 0.56 + Class7482.method23139() * 0.1;
-        class5722.method16995(0.407 + Class7482.method23140() * 0.1 + Math.random() * 1.0E-5);
+        double b = 0.56 + MovementUtil.method23139() * 0.1;
+        class5722.method16995(0.407 + MovementUtil.method23140() * 0.1 + Math.random() * 1.0E-5);
         if (Speed.field15748 < 2) {
             b /= 2.5;
         }
-        final double max = Math.max(Class7482.method23137(), b);
+        final double max = Math.max(MovementUtil.method23137(), b);
         class5722.method16996(max);
         this.field15849 = max;
     }

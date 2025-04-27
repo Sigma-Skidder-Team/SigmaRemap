@@ -175,7 +175,7 @@ public abstract class PlayerEntity extends LivingEntity
         if (!this.world.isRemote) {
             this.field3010.method33488(this);
             this.method2857(Class8276.field33989);
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 this.method2857(Class8276.field33990);
             }
             if (this.method1812()) {
@@ -1024,7 +1024,7 @@ public abstract class PlayerEntity extends LivingEntity
                 if (n3 > 0.0f || n4 > 0.0f) {
                     final boolean b = method2904 > 0.9f;
                     boolean b2 = false;
-                    int n5 = 0 + Class8742.method30207(this);
+                    int n5 = Class8742.method30207(this);
                     if (this.method1815()) {
                         if (b) {
                             this.world.method6706(null, this.getPosX(), this.getPosY(), this.getPosZ(), Class8520.field35472, this.method1922(), 1.0f, 1.0f);
@@ -1066,7 +1066,7 @@ public abstract class PlayerEntity extends LivingEntity
                             if (!b2) {
                                 if (this.onGround) {
                                     if (n7 < this.method2732()) {
-                                        if (this.method2715(Class316.field1877).getItem() instanceof Class4077) {
+                                        if (this.method2715(Class316.field1877).getItem() instanceof SwordItem) {
                                             b5 = true;
                                         }
                                     }
@@ -1245,7 +1245,7 @@ public abstract class PlayerEntity extends LivingEntity
     public Either<Class2048, Class315> method2845(final BlockPos class354) {
         final Direction class355 = this.world.getBlockState(class354).method21772((IProperty<Direction>)Class3892.field17564);
         if (!this.world.isRemote) {
-            if (this.method2783() || !this.method1768()) {
+            if (this.method2783() || !this.isAlive()) {
                 return (Either<Class2048, Class315>)Either.left((Object)Class2048.field11672);
             }
             if (!this.world.dimension.method20492()) {
@@ -1291,9 +1291,7 @@ public abstract class PlayerEntity extends LivingEntity
         final Vec3d class355 = new Vec3d(class354.getX() + 0.5, class354.getY(), class354.getZ() + 0.5);
         if (Math.abs(this.getPosX() - class355.getX()) <= 3.0) {
             if (Math.abs(this.getPosY() - class355.getY()) <= 2.0) {
-                if (Math.abs(this.getPosZ() - class355.getZ()) <= 3.0) {
-                    return true;
-                }
+                return Math.abs(this.getPosZ() - class355.getZ()) <= 3.0;
             }
         }
         return false;
@@ -1359,7 +1357,7 @@ public abstract class PlayerEntity extends LivingEntity
         else {
             if (b) {
                 if (!field3023.equals(this.field3023)) {
-                    this.sendMessage(new Class2259("block.minecraft.bed.set_spawn", new Object[0]));
+                    this.sendMessage(new Class2259("block.minecraft.bed.set_spawn"));
                 }
             }
             this.field3023 = field3023;
@@ -1695,9 +1693,7 @@ public abstract class PlayerEntity extends LivingEntity
     public boolean method2878(final boolean b) {
         if (!this.field3025.field27301) {
             if (!b) {
-                if (!this.field3010.method33492()) {
-                    return false;
-                }
+                return this.field3010.method33492();
             }
         }
         return true;
@@ -1834,7 +1830,7 @@ public abstract class PlayerEntity extends LivingEntity
         if (!this.world.isRemote) {
             if (!class51.method331()) {
                 EntityType.method23373(class51, this.world).ifPresent(class52 -> {
-                    if (!(!(class52 instanceof Class794))) {
+                    if (class52 instanceof Class794) {
                         ((Class794)class52).method4486(this.entityUniqueID);
                     }
                     class52.setPosition(this.getPosX(), this.getPosY() + 0.699999988079071, this.getPosZ());
@@ -1851,9 +1847,7 @@ public abstract class PlayerEntity extends LivingEntity
     public boolean method1817() {
         if (!this.field3025.field27302) {
             if (!this.isSpectator()) {
-                if (super.method1817()) {
-                    return true;
-                }
+                return super.method1817();
             }
         }
         return false;
@@ -2101,7 +2095,7 @@ public abstract class PlayerEntity extends LivingEntity
     
     static {
         field2997 = EntitySize.method27563(0.6f, 1.8f);
-        field2998 = (Map)ImmutableMap.builder().put((Object) Pose.field1663, (Object) PlayerEntity.field2997).put((Object) Pose.field1665, (Object) PlayerEntity.field2927).put((Object) Pose.field1664, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1666, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1667, (Object) EntitySize.method27563(0.6f, 0.6f)).put((Object) Pose.field1668, (Object) EntitySize.method27563(0.6f, 1.5f)).put((Object) Pose.field1669, (Object) EntitySize.method27564(0.2f, 0.2f)).build();
+        field2998 = (Map)ImmutableMap.builder().put(Pose.field1663, PlayerEntity.field2997).put(Pose.field1665, PlayerEntity.field2927).put(Pose.field1664, EntitySize.method27563(0.6f, 0.6f)).put(Pose.field1666, EntitySize.method27563(0.6f, 0.6f)).put(Pose.field1667, EntitySize.method27563(0.6f, 0.6f)).put(Pose.field1668, EntitySize.method27563(0.6f, 1.5f)).put(Pose.field1669, EntitySize.method27564(0.2f, 0.2f)).build();
         field2999 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30655);
         field3000 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30654);
         field3001 = EntityDataManager.method33564(PlayerEntity.class, Class7709.field30653);

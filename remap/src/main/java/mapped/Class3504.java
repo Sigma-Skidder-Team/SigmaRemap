@@ -22,7 +22,7 @@ public class Class3504 extends Class3446
     @Override
     public boolean method11013() {
         final LivingEntity method4152 = this.field16479.method4152();
-        return method4152 != null && method4152.method1768() && (!(method4152 instanceof PlayerEntity) || !((PlayerEntity)method4152).field3025.field27301) && this.field16479.method4148() instanceof Class6567;
+        return method4152 != null && method4152.isAlive() && (!(method4152 instanceof PlayerEntity) || !((PlayerEntity)method4152).field3025.field27301) && this.field16479.method4148() instanceof Class6567;
     }
     
     @Override
@@ -37,7 +37,7 @@ public class Class3504 extends Class3446
         if (method4152 == null) {
             return false;
         }
-        if (!method4152.method1768()) {
+        if (!method4152.isAlive()) {
             return false;
         }
         if (method4152 instanceof PlayerEntity && ((PlayerEntity)method4152).field3025.field27301) {

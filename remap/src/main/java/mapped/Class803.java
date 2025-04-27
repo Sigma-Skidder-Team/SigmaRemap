@@ -105,7 +105,7 @@ public class Class803 extends Class789
     @Override
     public void method2736() {
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (this.method2749()) {
                     ++this.field4325;
                     final ItemStack method2718 = this.method2718(Class2215.field13600);
@@ -127,7 +127,7 @@ public class Class803 extends Class789
                         }
                     }
                     final LivingEntity method2720 = this.method4152();
-                    if (method2720 == null || !method2720.method1768()) {
+                    if (method2720 == null || !method2720.isAlive()) {
                         this.method4668(false);
                         this.method4669(false);
                     }
@@ -642,7 +642,7 @@ public class Class803 extends Class789
         field4311 = EntityDataManager.method33564(Class803.class, Class7709.field30653);
         field4312 = EntityDataManager.method33564(Class803.class, Class7709.field30667);
         field4313 = EntityDataManager.method33564(Class803.class, Class7709.field30667);
-        field4314 = (class427 -> !class427.method2118() && class427.method1768());
+        field4314 = (class427 -> !class427.method2118() && class427.isAlive());
         field4315 = (class428 -> {
             if (class428 instanceof LivingEntity) {
                 final LivingEntity class429 = (LivingEntity)class428;

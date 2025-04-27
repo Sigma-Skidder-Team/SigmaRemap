@@ -59,7 +59,7 @@ public class Class767 extends Class763 implements Class766, Class768
         this.field4114.method22062(5, new Class3517(this, 1.0));
         this.field4114.method22062(6, new Class3628(this, PlayerEntity.class, 8.0f));
         this.field4114.method22062(7, new Class3503(this));
-        this.field4115.method22062(1, new Class3547(this, (Class<?>[])new Class[0]));
+        this.field4115.method22062(1, new Class3547(this, new Class[0]));
         this.field4115.method22062(2, new Class3555<Object>(this, Class759.class, 0, false, false, Class767.field4156));
     }
     
@@ -205,14 +205,14 @@ public class Class767 extends Class763 implements Class766, Class768
                     }
                     final int method4257 = this.method4257(i);
                     if (method4257 <= 0) {
-                        final List<LivingEntity> method4258 = this.world.method7142((Class<? extends LivingEntity>) LivingEntity.class, Class767.field4157, (LivingEntity)this, this.getBoundingBox().grow(20.0, 8.0, 20.0));
+                        final List<LivingEntity> method4258 = this.world.method7142(LivingEntity.class, Class767.field4157, this, this.getBoundingBox().grow(20.0, 8.0, 20.0));
                         for (int j = 0; j < 10; ++j) {
                             if (method4258.isEmpty()) {
                                 break;
                             }
                             final LivingEntity class511 = method4258.get(this.rand.nextInt(method4258.size()));
                             if (class511 != this) {
-                                if (class511.method1768()) {
+                                if (class511.isAlive()) {
                                     if (this.method2747(class511)) {
                                         if (!(class511 instanceof PlayerEntity)) {
                                             this.method4258(i, class511.getEntityId());
@@ -233,7 +233,7 @@ public class Class767 extends Class763 implements Class766, Class768
                         final Entity method4259 = this.world.getEntityByID(method4257);
                         Label_0591: {
                             if (method4259 != null) {
-                                if (method4259.method1768()) {
+                                if (method4259.isAlive()) {
                                     if (this.method1734(method4259) <= 900.0) {
                                         if (this.method2747(method4259)) {
                                             if (method4259 instanceof PlayerEntity && ((PlayerEntity)method4259).field3025.field27301) {
@@ -503,7 +503,7 @@ public class Class767 extends Class763 implements Class766, Class768
         field4143 = EntityDataManager.method33564(Class767.class, Class7709.field30654);
         field4144 = EntityDataManager.method33564(Class767.class, Class7709.field30654);
         field4145 = EntityDataManager.method33564(Class767.class, Class7709.field30654);
-        field4146 = (List)ImmutableList.of((Object)Class767.field4143, (Object)Class767.field4144, (Object)Class767.field4145);
+        field4146 = (List)ImmutableList.of(Class767.field4143, Class767.field4144, (Object)Class767.field4145);
         field4147 = EntityDataManager.method33564(Class767.class, Class7709.field30654);
         field4156 = (class511 -> class511.method2712() != Class6363.field25461 && class511.method2777());
         field4157 = new Class7843().method25337(20.0).method25343(Class767.field4156);

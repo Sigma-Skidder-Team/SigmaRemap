@@ -110,7 +110,7 @@ public class Class851 extends FlyingEntity implements IMob
     
     @Override
     public void method2736() {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.method4217()) {
                 this.setFire(8);
             }

@@ -59,7 +59,7 @@ public abstract class Module
         return this.field15525.get(s).method15198();
     }
     
-    public boolean method9883(final String s) {
+    public boolean getBooleanValueFromSettingName(final String s) {
         try {
             return Boolean.parseBoolean(this.method9882(s).toString());
         }
@@ -210,7 +210,7 @@ public abstract class Module
         return this.isEnabled();
     }
     
-    public Map<String, Setting> method9899() {
+    public Map<String, Setting> getSettingMap() {
         return this.field15525;
     }
     
@@ -277,12 +277,12 @@ public abstract class Module
                 Client.getInstance().getEventBus().unregister(this);
                 if (!(this instanceof ModuleWithSettings)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
-                        if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                        if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                             Client.getInstance().getAudioManager().method32830("deactivate");
                         }
                     }
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
-                        if (Client.getInstance().moduleManager().getModuleByClass(ActiveMods.class).method9883("Sound")) {
+                        if (Client.getInstance().moduleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                             Minecraft.getInstance().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.6f));
                         }
                     }
@@ -292,12 +292,12 @@ public abstract class Module
             else {
                 Client.getInstance().getEventBus().register(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
-                    if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).method9883("Sound")) {
+                    if (Client.getInstance().moduleManager().getModuleByClass(com.mentalfrostbyte.jello.mods.impl.gui.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                         Client.getInstance().getAudioManager().method32830("activate");
                     }
                 }
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC) {
-                    if (Client.getInstance().moduleManager().getModuleByClass(ActiveMods.class).method9883("Sound")) {
+                    if (Client.getInstance().moduleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                         Minecraft.getInstance().method5299().method6422(Class6836.method20933(Class8520.field35617, 0.7f));
                     }
                 }
@@ -308,7 +308,7 @@ public abstract class Module
         Client.getInstance().moduleManager().getJelloTouch().method21968(this);
     }
     
-    public void method9910() {
+    public void toggle() {
         if (this.isEnabled()) {
             this.method9909(false);
         }

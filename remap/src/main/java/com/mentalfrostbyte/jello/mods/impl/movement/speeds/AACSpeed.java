@@ -33,13 +33,13 @@ public class AACSpeed extends Module
         this.field15686 = -1;
         this.field15687 = 0;
         this.field15691 = AACSpeed.mc.player.posY;
-        this.field15692 = Class7482.method23144()[0];
+        this.field15692 = MovementUtil.method23144()[0];
         this.field15688 = 0;
     }
     
     @Override
     public void onDisable() {
-        Class7482.method23154(0.27, Class7482.method23144()[0], this.field15692, 45.0f);
+        MovementUtil.method23154(0.27, MovementUtil.method23144()[0], this.field15692, 45.0f);
     }
     
     @EventListener
@@ -65,7 +65,7 @@ public class AACSpeed extends Module
                 this.field15687 = 0;
                 this.field15686 = -1;
             }
-            if (ColorUtils.method19114() && this.method9883("Auto Jump")) {
+            if (ColorUtils.method19114() && this.getBooleanValueFromSettingName("Auto Jump")) {
                 AACSpeed.mc.player.method2725();
                 class5717.method16975(AACSpeed.mc.player.getMotion().y);
             }
@@ -102,7 +102,7 @@ public class AACSpeed extends Module
             this.field15689 = ((this.field15689 * 0.9 < 0.27) ? 0.27 : (this.field15689 * 0.9));
         }
         if (this.field15686 >= 0) {
-            this.field15692 = Class7482.method23153(class5717, this.field15689, Class7482.method23144()[0], this.field15692, 45.0f);
+            this.field15692 = MovementUtil.method23153(class5717, this.field15689, MovementUtil.method23144()[0], this.field15692, 45.0f);
         }
         ColorUtils.method19155(class5717.method16974());
     }
@@ -112,7 +112,7 @@ public class AACSpeed extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (!this.method9883("Fluid Fix")) {
+        if (!this.getBooleanValueFromSettingName("Fluid Fix")) {
             return;
         }
         if (AACSpeed.mc.player.collided) {
@@ -141,7 +141,7 @@ public class AACSpeed extends Module
     public void method10169(final Class5722 class5722) {
         this.field15686 = 0;
         this.field15688 = 0;
-        this.field15692 = Class7482.method23144()[0];
+        this.field15692 = MovementUtil.method23144()[0];
         final String method9887 = this.getStringSettingValueByName("Mode");
         switch (method9887) {
             case "Basic": {

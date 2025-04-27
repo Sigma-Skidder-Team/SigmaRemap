@@ -58,7 +58,7 @@ public class EntitySpeed extends Module
             class5718.method16985(0.0);
             return;
         }
-        final float method23147 = Class7482.method23147();
+        final float method23147 = MovementUtil.method23147();
         final double cos = Math.cos(Math.toRadians(method23147));
         final double sin = Math.sin(Math.toRadians(method23147));
         this.field15763 = 2.75f;

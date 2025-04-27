@@ -46,7 +46,7 @@ public class Class757 extends ClientPlayerEntity
     
     @Override
     public void method1659() {
-        final Class5743 class5743 = new Class5743();
+        final EventPlayerTick eventPlayerTick = new EventPlayerTick();
         if (ModuleSettingInitializr.field8977) {
             try {
                 if (this.ticksExisted % 150 == 0) {
@@ -58,8 +58,8 @@ public class Class757 extends ClientPlayerEntity
             }
             catch (final InterruptedException ex) {}
         }
-        Client.getInstance().getEventBus().post(class5743);
-        if (class5743.isCancelled()) {
+        Client.getInstance().getEventBus().post(eventPlayerTick);
+        if (eventPlayerTick.isCancelled()) {
             return;
         }
         super.method1659();

@@ -82,7 +82,7 @@ public class Class826 extends Class827 implements Class825
     @Override
     public void method1659() {
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (this.method4913()) {
                     this.field4418 -= this.method4916();
                     if (this.field4418 <= 0) {

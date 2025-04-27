@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.ClientFonts;
 public class Class4932 extends Class4800
 {
     public Minecraft field21122;
-    public Class7617 field21123;
+    public TimerUtil field21123;
     public Class4915 field21124;
     public Animation field21125;
     public int field21126;
@@ -18,10 +18,10 @@ public class Class4932 extends Class4800
     public Class4932() {
         super("SnakeGameScreen");
         this.field21122 = Minecraft.getInstance();
-        this.field21123 = new Class7617();
+        this.field21123 = new TimerUtil();
         this.field21127 = 14;
         this.setListening(false);
-        this.field21123.method23932();
+        this.field21123.start();
         this.field21125 = new Animation(200, 0);
         ColorUtils.method19169();
         final int n = 48;

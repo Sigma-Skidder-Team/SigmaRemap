@@ -487,7 +487,7 @@ public abstract class Class3418
     }
     
     public void method10881(final PlayerEntity playerEntity, final World class513, final IInventory class514) {
-        if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
+        if (playerEntity.isAlive() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
             for (int i = 0; i < class514.getSizeInventory(); ++i) {
                 playerEntity.inventory.method2364(class513, class514.method2159(i));
             }

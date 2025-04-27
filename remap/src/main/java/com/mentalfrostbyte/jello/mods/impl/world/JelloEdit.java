@@ -73,7 +73,7 @@ public class JelloEdit extends Module
         final File file = new File(Client.getInstance().getFile() + "/shematics/" + (String)this.method9882("Shematics"));
         if (!file.exists()) {
             ColorUtils.method19106("Schematic does not exist");
-            this.method9910();
+            this.toggle();
             return;
         }
         this.field15542 = new Class7838(file);
@@ -84,7 +84,7 @@ public class JelloEdit extends Module
             return;
         }
         ColorUtils.method19106("Unable to load schematic");
-        this.method9910();
+        this.toggle();
     }
     
     @EventListener

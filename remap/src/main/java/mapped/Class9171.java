@@ -19,12 +19,12 @@ public class Class9171
     
     public Class9171() {
         this.field38851 = Minecraft.getInstance();
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
     
     @EventListener
     @Class6754
-    public void method33483(final Class5732 class5732) {
+    public void method33483(final EventLoadWorld eventLoadWorld) {
         final ModuleWithSettings class5733 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Fly.class);
         final ModuleWithSettings class5734 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Disabler.class);
         final ModuleWithSettings class5735 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(LongJump.class);

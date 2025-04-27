@@ -24,7 +24,7 @@ public class Streaming extends Module
     @EventListener
     public void method10401(final Class5727 class5727) {
         if (this.isEnabled()) {
-            if (this.method9883("Hide server name")) {
+            if (this.getBooleanValueFromSettingName("Hide server name")) {
                 if (this.getStringSettingValueByName("Server name").length() > 1) {
                     class5727.method17002(class5727.method17001().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
                     class5727.method17002(class5727.method17001().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));

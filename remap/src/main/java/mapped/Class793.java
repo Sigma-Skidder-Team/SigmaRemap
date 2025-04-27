@@ -258,7 +258,7 @@ public class Class793 extends Class789
     @Override
     public void method2736() {
         super.method2736();
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.method4458()) {
                 if (this.field4241 >= 1) {
                     if (this.field4241 % 5 == 0) {

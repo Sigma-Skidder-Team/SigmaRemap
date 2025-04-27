@@ -55,7 +55,7 @@ public class NoteblockPlayer extends PremiumModule
     }
     
     @EventListener
-    private void method10704(final Class5743 class5743) {
+    private void method10704(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

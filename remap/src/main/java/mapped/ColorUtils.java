@@ -964,7 +964,7 @@ public class ColorUtils
         final double field2395 = ColorUtils.field25541.player.posX;
         final double field2396 = ColorUtils.field25541.player.posY;
         final double field2397 = ColorUtils.field25541.player.posZ;
-        for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
+        for (int n = 49 + MovementUtil.method23140() * 17, i = 0; i < n; ++i) {
             final double n2 = b ? method19180() : 0.0;
             ColorUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.06248 + method19180(), field2397 + n2, false));
             if (method19146()) {

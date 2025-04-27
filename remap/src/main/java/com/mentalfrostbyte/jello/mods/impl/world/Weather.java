@@ -19,7 +19,7 @@ public class Weather extends Module
         super(Category.WORLD, "Weather", "Removes rain and changes the world's time");
         this.addSetting(new BooleanSetting("Custom time", "Set the world time", true));
         this.addSetting(new NumberSetting("Time", "Time to set the world to", 12000.0f, Float.class, 0.0f, 24000.0f, 1.0f).method15195(class4997 -> {
-            if (this.method9883("Custom time")) {
+            if (this.getBooleanValueFromSettingName("Custom time")) {
                 if (this.isEnabled()) {
                     Weather.mc.world.method6756(-(long)this.getNumberSettingValueByName("Time"));
                 }
@@ -43,9 +43,9 @@ public class Weather extends Module
     }
     
     @EventListener
-    private void method10619(final Class5743 class5743) {
+    private void method10619(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            if (!this.method9883("Disable rain")) {
+            if (!this.getBooleanValueFromSettingName("Disable rain")) {
                 if (this.field15984) {
                     if (this.field15983 >= 1.0f) {
                         if (this.field15983 > 1.0f) {
@@ -85,7 +85,7 @@ public class Weather extends Module
                         else {
                             this.field15984 = true;
                         }
-                        if (!this.method9883("Disable rain")) {
+                        if (!this.getBooleanValueFromSettingName("Disable rain")) {
                             this.field15983 = class5724.method12949();
                         }
                         else {
@@ -95,7 +95,7 @@ public class Weather extends Module
                     }
                 }
             }
-            else if (this.method9883("Custom time")) {
+            else if (this.getBooleanValueFromSettingName("Custom time")) {
                 class5723.method16999(new Class4345(-(long)this.getNumberSettingValueByName("Time"), -(long)this.getNumberSettingValueByName("Time"), true));
             }
         }

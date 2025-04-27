@@ -86,7 +86,7 @@ public class NewTabGUI extends Module
     }
     
     @EventListener
-    @Class6763
+    @HighestPriority
     private void method10388(final Class5741 class5741) {
         if (!this.isEnabled() || NewTabGUI.mc.player == null) {
             return;
@@ -106,7 +106,7 @@ public class NewTabGUI extends Module
     }
     
     @EventListener
-    @Class6763
+    @HighestPriority
     private void method10389(final Class5740 class5740) {
         if (this.isEnabled()) {
             if (NewTabGUI.mc.player != null) {
@@ -324,14 +324,14 @@ public class NewTabGUI extends Module
             case 262: {
                 this.field15827.add(new Class8479(this, this.field15819));
                 if (this.field15819) {
-                    this.field15823.method9910();
+                    this.field15823.toggle();
                 }
                 this.field15819 = true;
                 break;
             }
             case 257: {
                 if (this.field15819) {
-                    this.field15823.method9910();
+                    this.field15823.toggle();
                     this.field15827.add(new Class8479(this, this.field15819));
                     break;
                 }

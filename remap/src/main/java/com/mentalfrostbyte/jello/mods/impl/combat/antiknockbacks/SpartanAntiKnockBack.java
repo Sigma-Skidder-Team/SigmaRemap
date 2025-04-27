@@ -19,12 +19,12 @@ public class SpartanAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10495(final Class5743 class5743) {
+    private void method10495(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.field15900 < 10) {
                 ++this.field15900;
                 if (this.field15900 == (int)this.getNumberSettingValueByName("Ticks")) {
-                    Class7482.method23151(0.0);
+                    MovementUtil.method23151(0.0);
                 }
             }
         }

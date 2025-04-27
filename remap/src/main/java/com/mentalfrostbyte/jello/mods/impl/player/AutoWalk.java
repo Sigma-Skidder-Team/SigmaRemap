@@ -6,7 +6,7 @@ package com.mentalfrostbyte.jello.mods.impl.player;
 
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
-import mapped.Class5743;
+import mapped.EventPlayerTick;
 import mapped.EventListener;
 import org.lwjgl.glfw.GLFW;
 
@@ -17,7 +17,7 @@ public class AutoWalk extends Module
     }
     
     @EventListener
-    private void method10462(final Class5743 class5743) {
+    private void method10462(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             AutoWalk.mc.gameSettings.field23435.field2162 = true;
         }

@@ -39,7 +39,7 @@ public abstract class Class3545 extends Class3446
         if (class511 == null) {
             return false;
         }
-        if (!class511.method1768()) {
+        if (!class511.isAlive()) {
             return false;
         }
         final Team method1825 = this.field16602.getTeam();

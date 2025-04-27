@@ -6,12 +6,12 @@ package mapped;
 
 import totalcross.json.JSONObject;
 
-public class Class5736 implements Class5730
+public class EventWriter implements CancellableEvent
 {
     private static String[] field23301;
     private final JSONObject field23302;
     
-    public Class5736(final JSONObject field23302) {
+    public EventWriter(final JSONObject field23302) {
         this.field23302 = field23302;
     }
     

@@ -31,7 +31,7 @@ public class MineplexSpeed extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136() * 0.7);
+        MovementUtil.method23151(MovementUtil.method23136() * 0.7);
         if (MineplexSpeed.mc.player.inventory.field2743 != this.field15677) {
             MineplexSpeed.mc.method5269().method17292(new Class4321(MineplexSpeed.mc.player.inventory.field2743));
             this.field15677 = MineplexSpeed.mc.player.inventory.field2743;
@@ -47,7 +47,7 @@ public class MineplexSpeed extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     public void method10150(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
@@ -65,7 +65,7 @@ public class MineplexSpeed extends Module
                         if (this.field15678 < 0.3) {
                             this.field15678 = 0.3;
                         }
-                        Class7482.method23149(class5717, this.field15678);
+                        MovementUtil.method23149(class5717, this.field15678);
                     }
                     else {
                         if (this.field15675 > 1) {
@@ -74,21 +74,21 @@ public class MineplexSpeed extends Module
                         else {
                             ++this.field15675;
                         }
-                        if (this.method9883("AutoJump")) {
+                        if (this.getBooleanValueFromSettingName("AutoJump")) {
                             if (ColorUtils.method19114()) {
                                 MineplexSpeed.mc.player.method2725();
                                 class5717.method16975(MineplexSpeed.mc.player.getMotion().y);
                             }
                         }
                         if (class5717.method16974() == 0.4199998) {
-                            Class7482.method23149(class5717, 0.0);
+                            MovementUtil.method23149(class5717, 0.0);
                             return;
                         }
-                        if (!this.method9883("OnGround")) {
+                        if (!this.getBooleanValueFromSettingName("OnGround")) {
                             return;
                         }
                         if (this.method10154() == -1) {
-                            Class7482.method23149(class5717, 0.2);
+                            MovementUtil.method23149(class5717, 0.2);
                             return;
                         }
                         MineplexSpeed.mc.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(MineplexSpeed.mc.player).add(0, -1, 0), false)));
@@ -102,7 +102,7 @@ public class MineplexSpeed extends Module
                         if (this.field15678 < 0.3) {
                             this.field15678 = 0.3;
                         }
-                        Class7482.method23149(class5717, this.field15678);
+                        MovementUtil.method23149(class5717, this.field15678);
                     }
                 }
             }

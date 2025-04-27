@@ -35,7 +35,7 @@ public class LibreCraftFly extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (LibreCraftFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
@@ -62,7 +62,7 @@ public class LibreCraftFly extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10735(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (this.field16046 <= 0) {
@@ -70,25 +70,25 @@ public class LibreCraftFly extends Module
                     if (this.field16046 == 0) {
                         class5717.method16975(0.0);
                         ColorUtils.method19155(class5717.method16974());
-                        Class7482.method23149(class5717, 0.35);
+                        MovementUtil.method23149(class5717, 0.35);
                     }
                 }
                 else {
                     class5717.method16975(0.299);
                     ColorUtils.method19155(class5717.method16974());
-                    Class7482.method23149(class5717, this.getNumberSettingValueByName("Speed"));
+                    MovementUtil.method23149(class5717, this.getNumberSettingValueByName("Speed"));
                 }
             }
             else {
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
     
     @EventListener
     public void method10736(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field16046;
             if (this.field16046 != 2) {
                 if (this.field16046 > 2) {

@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5731 implements Class5730
+public class Class5731 implements CancellableEvent
 {
     private static String[] field23294;
     private double field23295;

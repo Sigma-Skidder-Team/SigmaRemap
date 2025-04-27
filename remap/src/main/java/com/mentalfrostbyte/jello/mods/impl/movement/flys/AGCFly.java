@@ -57,35 +57,35 @@ public class AGCFly extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (AGCFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10081(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (this.field15643 <= ((this.field15644 != 3) ? this.field15644 : 1) - 2) {
                 if (this.field15643 == -1) {
                     class5717.method16975((this.field15644 != 3) ? 0.001 : 0.095);
                     if (this.field15644 != 3) {
-                        Class7482.method23149(class5717, 0.32);
+                        MovementUtil.method23149(class5717, 0.32);
                     }
                     ColorUtils.method19155(class5717.method16974());
                 }
             }
             else {
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
     
     @EventListener
     public void method10082(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15643;
             if (this.field15643 != ((this.field15644 != 3) ? this.field15644 : 1)) {
                 if (this.field15643 > ((this.field15644 != 3) ? this.field15644 : 1)) {

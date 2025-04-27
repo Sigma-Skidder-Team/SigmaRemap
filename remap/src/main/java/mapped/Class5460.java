@@ -32,8 +32,8 @@ public class Class5460 extends Class5419<Class824>
         if (method2618.method1198(Class8233.field33811).isPresent()) {
             final LivingEntity class1851 = method2618.method1198(Class8233.field33811).get();
             if (class1851.getType() == EntityType.field29058) {
-                if (class1850.method1768()) {
-                    if (class1851.method1768()) {
+                if (class1850.isAlive()) {
+                    if (class1851.isAlive()) {
                         if (!class1850.method2625()) {
                             if (class1850.method1734(class1851) <= 17.0) {
                                 return true;

@@ -665,7 +665,7 @@ public class Class791 extends Class789
             final Item class428;
             final boolean b;
             if (class428 == Blocks.BAMBOO.method11704() || class428 == Blocks.field29344.method11704()) {
-                if (!(!class427.method1768())) {
+                if (!(!class427.isAlive())) {
                     if (!class427.method2118()) {
                         return b;
                     }

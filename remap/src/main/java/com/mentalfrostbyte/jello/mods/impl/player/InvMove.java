@@ -37,7 +37,7 @@ public class InvMove extends Module
         if (this.isEnabled()) {
             if (this.field15567) {
                 if (class5721.method16990() instanceof Class4336) {
-                    if (this.method9883("AACP")) {
+                    if (this.getBooleanValueFromSettingName("AACP")) {
                         if (((Class4336)class5721.method16990()).method13018() == Class287.field1594) {
                             class5721.setCancelled(true);
                         }
@@ -48,9 +48,9 @@ public class InvMove extends Module
     }
     
     @EventListener
-    private void method9980(final Class5743 class5743) {
+    private void method9980(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            if (this.method9883("AACP")) {
+            if (this.getBooleanValueFromSettingName("AACP")) {
                 final boolean b = !(InvMove.mc.currentScreen instanceof Class518) || !(InvMove.mc.currentScreen instanceof Class726);
                 if (this.field15567 && !b) {
                     this.field15567 = !this.field15567;

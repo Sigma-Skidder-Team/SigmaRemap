@@ -67,7 +67,7 @@ public class DelayAntiKnockBack extends Module
     }
     
     @EventListener
-    private void method10520(final Class5743 class5743) {
+    private void method10520(final EventPlayerTick eventPlayerTick) {
         if (this.field15923 != 0) {
             if (this.field15923 > 0) {
                 --this.field15923;

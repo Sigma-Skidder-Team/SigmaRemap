@@ -11,27 +11,26 @@ import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
 import mapped.*;
 
-public class CubecraftFly extends Module
-{
+public class CubecraftFly extends Module {
     private boolean field15693;
     private boolean field15694;
     private int field15695;
     private static int field15696;
-    private Class7617 field15697;
+    private TimerUtil timer;
     private double field15698;
-    
+
     public CubecraftFly() {
         super(Category.MOVEMENT, "Cubecraft", "Fly for Cubecraft");
-        this.field15697 = new Class7617();
-        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "Fast", "Test" }));
+        this.timer = new TimerUtil();
+        this.addSetting(new StringSetting("Mode", "Mode", 0, new String[]{"Basic", "Fast", "Test"}));
         this.addSetting(new BooleanSetting("Damage", "Allows you to go up.", true));
         this.addSetting(new BooleanSetting("Smooth fly", "Better look.", true));
     }
-    
+
     public static boolean method10177() {
         return CubecraftFly.field15696 == 1;
     }
-    
+
     @Override
     public void onEnable() {
         this.field15695 = 0;
@@ -43,39 +42,35 @@ public class CubecraftFly extends Module
             }
             this.field15694 = true;
             this.method10182();
-        }
-        else {
-            this.field15694 = (ViaManager.method34762() != Class7906.field32452.method25613() && !this.method9883("Damage"));
+        } else {
+            this.field15694 = (ViaManager.method34762() != Class7906.field32452.method25613() && !this.getBooleanValueFromSettingName("Damage"));
         }
     }
-    
+
     @Override
     public void onDisable() {
-        this.field15697.method23934();
-        this.field15697.method23933();
+        this.timer.reset();
+        this.timer.stop();
         if (ViaManager.method34762() != Class7906.field32452.method25613()) {
             if (this.field15695 != 0) {
                 this.field15695 = -2;
-            }
-            else {
+            } else {
                 ColorUtils.method19155(-0.078);
-                Class7482.method23151(0.2);
+                MovementUtil.method23151(0.2);
             }
-        }
-        else if (CubecraftFly.field15696 == 1) {
+        } else if (CubecraftFly.field15696 == 1) {
             if (this.field15695 == 0) {
                 this.field15695 = -2;
-            }
-            else {
+            } else {
                 ColorUtils.method19155(-0.078);
-                Class7482.method23151(0.2);
+                MovementUtil.method23151(0.2);
                 this.field15695 = 0;
             }
         }
         CubecraftFly.mc.timer.timerSpeed = 1.0f;
         CubecraftFly.field15696 = 0;
     }
-    
+
     @EventListener
     @Class6754
     public void method10178(final Class5717 class5717) {
@@ -83,12 +78,11 @@ public class CubecraftFly extends Module
             if (this.field15695 < 0) {
                 if (this.field15695 == -2) {
                     class5717.method16975(0.53);
-                }
-                else {
+                } else {
                     CubecraftFly.mc.timer.timerSpeed = 1.0f;
                     class5717.method16975(-0.078);
                 }
-                Class7482.method23149(class5717, 0.26);
+                MovementUtil.method23149(class5717, 0.26);
                 ++this.field15695;
             }
             return;
@@ -177,34 +171,31 @@ public class CubecraftFly extends Module
                         break;
                     }
                 }
-                if (this.field15697.method23935() > 2000L) {
-                    if (this.field15697.method23937()) {
+                if (this.timer.getElapsedTime() > 2000L) {
+                    if (this.timer.isRunning()) {
                         CubecraftFly.mc.method5269().method17292(new Class4354(CubecraftFly.mc.player.posX, 3.2E7, CubecraftFly.mc.player.posZ, false));
                         Client.getInstance().getNotificationManager().send(new Notification("Cubecraft fly", "Lagbacked you to avoid ban"));
-                        this.field15697.method23933();
+                        this.timer.stop();
                     }
                     class5717.method16975(0.0);
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                     return;
                 }
                 CubecraftFly.mc.timer.timerSpeed = field26532;
                 if (Math.abs(a) < 1.0E-5) {
                     CubecraftFly.mc.player.setPosition(CubecraftFly.mc.player.posX, CubecraftFly.mc.player.posY + a, CubecraftFly.mc.player.posZ);
                     class5717.method16975(0.0);
-                }
-                else {
+                } else {
                     class5717.method16975(a);
                 }
-                Class7482.method23149(class5717, n);
+                MovementUtil.method23149(class5717, n);
             }
             if (CubecraftFly.field15696 == 1) {
                 ++this.field15695;
+            } else {
+                MovementUtil.method23149(class5717, 0.0);
             }
-            else {
-                Class7482.method23149(class5717, 0.0);
-            }
-        }
-        else {
+        } else {
             double n3 = 0.0;
             double n4 = 0.0;
             float field26533 = 0.3f;
@@ -274,37 +265,36 @@ public class CubecraftFly extends Module
                     break;
                 }
             }
-            if (this.field15697.method23935() > 2000L) {
-                this.field15697.method23933();
+            if (this.timer.getElapsedTime() > 2000L) {
+                this.timer.stop();
                 Client.getInstance().getNotificationManager().send(new Notification("Cubecraft fly", "Lagbacked you to avoid ban"));
                 CubecraftFly.mc.method5269().method17292(new Class4354(CubecraftFly.mc.player.posX, 3.2E7, CubecraftFly.mc.player.posZ, false));
             }
             if (!ColorUtils.method19160(CubecraftFly.mc.player, 0.01f) && (CubecraftFly.mc.method5282() == null || !CubecraftFly.mc.method5282().field41613.equalsIgnoreCase("play.cubecraft.net"))) {
                 n3 = -0.01;
             }
-            if (!ColorUtils.method19160(CubecraftFly.mc.player, (float)(-n3))) {
+            if (!ColorUtils.method19160(CubecraftFly.mc.player, (float) (-n3))) {
                 class5717.method16975(n3);
-            }
-            else {
+            } else {
                 class5717.method16975(-0.07);
             }
             CubecraftFly.mc.timer.timerSpeed = field26533;
-            Class7482.method23149(class5717, n4);
+            MovementUtil.method23149(class5717, n4);
         }
     }
-    
+
     @EventListener
     public void method10179(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || !this.field15694) {
             return;
         }
         updateWalkingEvent.method17033(true);
-        if (ViaManager.method34762() == Class7906.field32452.method25613() && (CubecraftFly.field15696 == 0 || (CubecraftFly.field15696 == 1 && this.field15697.method23935() > 2000L)) && this.field15694) {
+        if (ViaManager.method34762() == Class7906.field32452.method25613() && (CubecraftFly.field15696 == 0 || (CubecraftFly.field15696 == 1 && this.timer.getElapsedTime() > 2000L)) && this.field15694) {
             updateWalkingEvent.setCancelled(true);
         }
         updateWalkingEvent.method17045(true);
     }
-    
+
     @EventListener
     public void method10180(final Class5723 class5723) {
         if (!this.isEnabled() || CubecraftFly.mc.world == null || CubecraftFly.mc.method5269() == null) {
@@ -312,25 +302,25 @@ public class CubecraftFly extends Module
         }
         final IPacket method16998 = class5723.method16998();
         if (method16998 instanceof Class4328) {
-            final Class4328 class5724 = (Class4328)method16998;
+            final Class4328 class5724 = (Class4328) method16998;
             if (ViaManager.method34762() != Class7906.field32452.method25613()) {
                 class5724.field19381 = CubecraftFly.mc.player.rotationPitch;
                 class5724.field19380 = CubecraftFly.mc.player.rotationYaw;
                 return;
             }
             if (CubecraftFly.field15696 == 0) {
-                this.field15697.method23934();
-                this.field15697.method23932();
+                this.timer.reset();
+                this.timer.start();
                 class5723.setCancelled(true);
-                CubecraftFly.mc.method5269().method17292(new Class4355(class5724.field19377, class5724.field19378, class5724.field19379, class5724.field19380, class5724.field19381, this.method9883("Damage")));
+                CubecraftFly.mc.method5269().method17292(new Class4355(class5724.field19377, class5724.field19378, class5724.field19379, class5724.field19380, class5724.field19381, this.getBooleanValueFromSettingName("Damage")));
             }
             ++CubecraftFly.field15696;
         }
     }
-    
+
     @EventListener
     public void method10181(final Class5741 class5741) {
-        if (!this.isEnabled() || !this.field15694 || !this.method9883("Smooth fly")) {
+        if (!this.isEnabled() || !this.field15694 || !this.getBooleanValueFromSettingName("Smooth fly")) {
             return;
         }
         if (CubecraftFly.mc.player.onGround && ColorUtils.method19160(CubecraftFly.mc.player, 0.001f)) {
@@ -340,11 +330,11 @@ public class CubecraftFly extends Module
         CubecraftFly.mc.player.lastTickPosY = this.field15698;
         CubecraftFly.mc.player.field3019 = this.field15698;
         CubecraftFly.mc.player.prevPosY = this.field15698;
-        if (Class7482.method23148()) {
+        if (MovementUtil.isMoving()) {
             CubecraftFly.mc.player.field3013 = 0.099999994f;
         }
     }
-    
+
     private void method10182() {
         if (ColorUtils.method19150()) {
             return;
@@ -354,24 +344,23 @@ public class CubecraftFly extends Module
             final double field2395 = CubecraftFly.mc.player.posX;
             final double field2396 = CubecraftFly.mc.player.posY;
             final double field2397 = CubecraftFly.mc.player.posZ;
-            double n = this.method9883("Damage") ? (field2396 - 3.0000001192093) : 3.2E7;
+            double n = this.getBooleanValueFromSettingName("Damage") ? (field2396 - 3.0000001192093) : 3.2E7;
             if (!ColorUtils.method19148()) {
                 n = field2396 - 3.0000001192093;
             }
             CubecraftFly.mc.method5269().method17292(new Class4354(field2395, n, field2397, false));
-        }
-        else {
-            if (this.method9883("Damage")) {
+        } else {
+            if (this.getBooleanValueFromSettingName("Damage")) {
                 final double field2398 = CubecraftFly.mc.player.posX;
                 final double field2399 = CubecraftFly.mc.player.posY;
                 final double field2400 = CubecraftFly.mc.player.posZ;
-                for (int n2 = 49 + Class7482.method23140() * 17, i = 0; i < n2; ++i) {
+                for (int n2 = 49 + MovementUtil.method23140() * 17, i = 0; i < n2; ++i) {
                     CubecraftFly.mc.method5269().method17292(new Class4354(field2398, field2399 + 0.06248 + (Math.random() - 0.5) * 1.0E-8, field2400, false));
                     CubecraftFly.mc.method5269().method17292(new Class4354(field2398, field2399 + 1.0E-14 + (Math.random() - 0.5) * 1.0E-8, field2400, false));
                 }
                 CubecraftFly.mc.method5269().method17292(new Class4354(field2398, field2399, field2400, true));
             }
-            this.field15697.method23932();
+            this.timer.start();
         }
     }
 }

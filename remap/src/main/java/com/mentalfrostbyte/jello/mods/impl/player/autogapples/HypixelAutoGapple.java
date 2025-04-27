@@ -34,7 +34,7 @@ public class HypixelAutoGapple extends PremiumModule
     @EventListener
     public void method10697(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (updateWalkingEvent.method17046()) {
+            if (updateWalkingEvent.isPre()) {
                 if (!(HypixelAutoGapple.mc.currentScreen instanceof Class726)) {
                     if (this.field16028 < 20) {
                         ++this.field16028;
@@ -52,7 +52,7 @@ public class HypixelAutoGapple extends PremiumModule
                                     }
                                 }
                                 if (this.field16026 == -1) {
-                                    if (this.method9883("Fire resistance potions")) {
+                                    if (this.getBooleanValueFromSettingName("Fire resistance potions")) {
                                         if (!HypixelAutoGapple.mc.player.method2653(Class5328.method16450(12))) {
                                             this.field16029 = ((AutoGapple)this.method9914()).method10292(true);
                                             if (this.field16029 >= 0) {

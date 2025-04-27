@@ -15,11 +15,11 @@ import net.minecraft.util.Direction;
 public class BowFly extends Module
 {
     private int field15760;
-    private Class7617 field15761;
+    private TimerUtil field15761;
     
     public BowFly() {
         super(Category.MOVEMENT, "Bow", "Fly for Bow");
-        this.field15761 = new Class7617();
+        this.field15761 = new TimerUtil();
     }
     
     @Override
@@ -34,11 +34,11 @@ public class BowFly extends Module
     }
     
     @EventListener
-    public void method10304(final Class5751 class5751) {
+    public void method10304(final EventStopUseItem eventStopUseItem) {
         if (this.isEnabled()) {
             if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
                 if (this.field15760 >= 1) {
-                    class5751.setCancelled(true);
+                    eventStopUseItem.setCancelled(true);
                 }
             }
         }
@@ -53,9 +53,9 @@ public class BowFly extends Module
         class5717.method16978().y = 0.0;
         final double method16752 = class5717.method16978().length();
         class5717.method16978().y = field22771;
-        final float n = Class7482.method23143()[1];
-        final float n2 = Class7482.method23143()[2];
-        final float n3 = Class7482.method23143()[0];
+        final float n = MovementUtil.method23143()[1];
+        final float n2 = MovementUtil.method23143()[2];
+        final float n3 = MovementUtil.method23143()[0];
         System.out.println(method16752);
         if ((n != 0.0f || n2 != 0.0f) && class5717.method16978().y >= -0.5) {
             final double cos = Math.cos(Math.toRadians(n3));
@@ -72,11 +72,11 @@ public class BowFly extends Module
     
     @EventListener
     public void method10306(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
+        if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
-        if (!this.field15761.method23937()) {
-            this.field15761.method23932();
+        if (!this.field15761.isRunning()) {
+            this.field15761.start();
         }
         final int method10307 = this.method10307();
         if (method10307 < 0 && method10307 > 8) {
@@ -84,9 +84,9 @@ public class BowFly extends Module
         }
         if (BowFly.mc.player.method2715(Class316.field1877).getItem() == Items.field31279) {
             if (InvManager.method10673(Items.field31280) == 0) {
-                if (this.field15761.method23935() > 5000L) {
+                if (this.field15761.getElapsedTime() > 5000L) {
                     Client.getInstance().getNotificationManager().send(new Notification("BowFly", "You have no arrows"));
-                    this.field15761.method23934();
+                    this.field15761.reset();
                 }
                 if (BowFly.mc.timer.timerSpeed == 0.1f) {
                     BowFly.mc.timer.timerSpeed = 1.0f;

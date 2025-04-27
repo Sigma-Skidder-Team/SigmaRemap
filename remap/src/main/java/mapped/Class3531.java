@@ -21,14 +21,14 @@ public abstract class Class3531 extends Class3446
     @Override
     public boolean method11013() {
         final LivingEntity method4152 = this.field16562.method4152();
-        return method4152 != null && method4152.method1768() && !this.field16562.method4265() && this.field16562.ticksExisted >= this.field16561;
+        return method4152 != null && method4152.isAlive() && !this.field16562.method4265() && this.field16562.ticksExisted >= this.field16561;
     }
     
     @Override
     public boolean method11017() {
         final LivingEntity method4152 = this.field16562.method4152();
         if (method4152 != null) {
-            if (method4152.method1768()) {
+            if (method4152.isAlive()) {
                 if (this.field16560 > 0) {
                     return true;
                 }

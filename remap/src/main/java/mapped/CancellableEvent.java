@@ -4,6 +4,6 @@
 
 package mapped;
 
-public interface Class5730
+public interface CancellableEvent
 {
 }

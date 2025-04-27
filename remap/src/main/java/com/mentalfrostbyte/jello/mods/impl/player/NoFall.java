@@ -31,11 +31,11 @@ public class NoFall extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10828(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (class5717.method16974() < -0.5) {
-                if (NoFall.mc.player.fallDistance > 2.0 + Class7482.method23140() * 0.5) {
+                if (NoFall.mc.player.fallDistance > 2.0 + MovementUtil.method23140() * 0.5) {
                     if (!NoFall.mc.player.onGround) {
                         if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
                             if (ColorUtils.method19146()) {
@@ -47,7 +47,7 @@ public class NoFall extends Module
                                     final double a2 = (int)(field2396 + class5717.method16974()) - field2396 - class5717.method16974() + n;
                                     double n2 = 0.02;
                                     final double n3 = -0.05;
-                                    if (class5717.method16974() > -0.5 + Class7482.method23140() * 1) {
+                                    if (class5717.method16974() > -0.5 + MovementUtil.method23140() * 1) {
                                         n2 = 0.0;
                                     }
                                     if (a2 > n3) {
@@ -91,7 +91,7 @@ public class NoFall extends Module
         final String s = method9887;
         switch (s) {
             case "Test": {
-                if (updateWalkingEvent.method17046()) {
+                if (updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
@@ -109,7 +109,7 @@ public class NoFall extends Module
                 break;
             }
             case "OldHypixel": {
-                if (!updateWalkingEvent.method17046()) {
+                if (!updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
@@ -130,7 +130,7 @@ public class NoFall extends Module
                 break;
             }
             case "Hypixel": {
-                if (!updateWalkingEvent.method17046()) {
+                if (!updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (NoFall.mc.player.getMotion().y < 0.0 && !NoFall.mc.player.onGround && ColorUtils.method19146()) {
@@ -146,7 +146,7 @@ public class NoFall extends Module
                 break;
             }
             case "AAC": {
-                if (!updateWalkingEvent.method17046()) {
+                if (!updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (NoFall.mc.player.ticksExisted == 1) {
@@ -160,7 +160,7 @@ public class NoFall extends Module
                 break;
             }
             case "Vanilla": {
-                if (!updateWalkingEvent.method17046()) {
+                if (!updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (NoFall.mc.player.getMotion().y < -0.1) {
@@ -190,7 +190,7 @@ public class NoFall extends Module
                 break;
             }
             case "NCPSpigot": {
-                if (!updateWalkingEvent.method17046()) {
+                if (!updateWalkingEvent.isPre()) {
                     break;
                 }
                 if (NoFall.mc.player.fallDistance > 3.0f) {

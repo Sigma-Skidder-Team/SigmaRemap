@@ -114,9 +114,7 @@ public class Class8792
     public boolean method30619() {
         if (this.method30620()) {
             if (this.method30648() == 0) {
-                if (this.field36967 > 0) {
-                    return true;
-                }
+                return this.field36967 > 0;
             }
         }
         return false;
@@ -153,7 +151,7 @@ public class Class8792
     private Predicate<Class513> method30627() {
         return class513 -> {
             final BlockPos class514 = new BlockPos(class513);
-            return class513.method1768() && this.field36958.method6927(class514) == this;
+            return class513.isAlive() && this.field36958.method6927(class514) == this;
         };
     }
     
@@ -295,7 +293,7 @@ public class Class8792
                         this.field36965.method21070(Class8792.field36948);
                     }
                     else {
-                        this.field36965.method21070(Class8792.field36948.method8495().appendText(" - ").appendSibling(new Class2259("event.minecraft.raid.raiders_remaining", new Object[] { method30648 })));
+                        this.field36965.method21070(Class8792.field36948.method8495().appendText(" - ").appendSibling(new Class2259("event.minecraft.raid.raiders_remaining", method30648)));
                     }
                 }
                 int n3 = 0;
@@ -390,9 +388,7 @@ public class Class8792
     private boolean method30640() {
         if (this.method30637()) {
             if (this.method30648() == 0) {
-                if (this.method30638()) {
-                    return true;
-                }
+                return this.method30638();
             }
         }
         return false;
@@ -536,9 +532,7 @@ public class Class8792
     private boolean method30647() {
         if (this.field36967 == 0) {
             if (this.field36964 < this.field36969 || this.method30640()) {
-                if (this.method30648() == 0) {
-                    return true;
-                }
+                return this.method30648() == 0;
             }
         }
         return false;
@@ -569,7 +563,7 @@ public class Class8792
     public static ItemStack method30651() {
         final ItemStack class8321 = new ItemStack(Items.field31556);
         class8321.method27659("BlockEntityTag").put("Patterns", new Class9142().method33336(Class230.field837, Class181.field546).method33336(Class230.field817, Class181.field545).method33336(Class230.field821, Class181.field544).method33336(Class230.field842, Class181.field545).method33336(Class230.field822, Class181.field552).method33336(Class230.field839, Class181.field545).method33336(Class230.field836, Class181.field545).method33336(Class230.field842, Class181.field552).method33337());
-        class8321.method27665(new Class2259("block.minecraft.ominous_banner", new Object[0]).applyTextStyle(TextFormatting.GOLD));
+        class8321.method27665(new Class2259("block.minecraft.ominous_banner").applyTextStyle(TextFormatting.GOLD));
         return class8321;
     }
     
@@ -720,7 +714,7 @@ public class Class8792
         for (final UUID uuid : this.field36955) {
             final CompoundNBT e = new CompoundNBT();
             e.putUniqueId("UUID", uuid);
-            ((AbstractList<CompoundNBT>)class52).add(e);
+            class52.add(e);
         }
         class51.put("HeroesOfTheVillage", class52);
         return class51;
@@ -762,9 +756,9 @@ public class Class8792
     }
     
     static {
-        field36948 = new Class2259("event.minecraft.raid", new Object[0]);
-        field36949 = new Class2259("event.minecraft.raid.victory", new Object[0]);
-        field36950 = new Class2259("event.minecraft.raid.defeat", new Object[0]);
+        field36948 = new Class2259("event.minecraft.raid");
+        field36949 = new Class2259("event.minecraft.raid.victory");
+        field36950 = new Class2259("event.minecraft.raid.defeat");
         field36951 = Class8792.field36948.method8495().appendText(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).appendSibling(Class8792.field36949);
         field36952 = Class8792.field36948.method8495().appendText(Class8792.\ub327\u3df9\u97e7\u6a3c\u5691\uca70[16]).appendSibling(Class8792.field36950);
     }

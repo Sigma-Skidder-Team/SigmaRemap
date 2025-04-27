@@ -36,7 +36,7 @@ public class BoxChestESP extends Module
             Label_0129: {
                 if (tileEntity instanceof Class475) {
                     if (!(tileEntity instanceof Class478)) {
-                        if (this.method9914().method9883("Show Regular Chests")) {
+                        if (this.method9914().getBooleanValueFromSettingName("Show Regular Chests")) {
                             b = true;
                             break Label_0129;
                         }
@@ -45,8 +45,8 @@ public class BoxChestESP extends Module
                 b = false;
             }
             final boolean b2 = b;
-            final boolean b3 = tileEntity instanceof Class477 && this.method9914().method9883("Show Ender Chests");
-            final boolean b4 = tileEntity instanceof Class478 && this.method9914().method9883("Show Trapped Chests");
+            final boolean b3 = tileEntity instanceof Class477 && this.method9914().getBooleanValueFromSettingName("Show Ender Chests");
+            final boolean b4 = tileEntity instanceof Class478 && this.method9914().getBooleanValueFromSettingName("Show Trapped Chests");
             if (!b2) {
                 if (!b3) {
                     if (!b4) {

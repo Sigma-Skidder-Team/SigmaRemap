@@ -75,7 +75,7 @@ public class Class818 extends Class789
         }
         this.field4381 += this.field4385 * 2.0f;
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (!this.method2625()) {
                     if (!this.method4817()) {
                         if (--this.field4386 <= 0) {

@@ -36,7 +36,7 @@ public class MovementManager {
     }
 
     public void method26554() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
 
     public void method26555() {
@@ -120,7 +120,7 @@ public class MovementManager {
         final Vec3d method16746 = class5743.field36684.method30686().subtract(this.field33313.player.method1934());
         final double n5 = Math.abs(method16746.x) + Math.abs(method16746.z);
         final float field33315 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
-        final double n6 = Math.min(method16745 * 0.75, Class7482.method23137()) * 0.8999999761581421;
+        final double n6 = Math.min(method16745 * 0.75, MovementUtil.method23137()) * 0.8999999761581421;
         this.field33315 = field33315;
         if (class5743.field36684.method30692().add(0, -class5743.field36684.method30692().getY(), 0).equals(this.field33313.player.method1894().add(0, -this.field33313.player.method1894().getY(), 0)) && this.field33313.player.fallDistance > 0.0f) {
         }
@@ -214,7 +214,7 @@ public class MovementManager {
 
     @EventListener
     private void method26564(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!updateWalkingEvent.method17046()) {
+        if (!updateWalkingEvent.isPre()) {
             return;
         }
         if (this.method26560()) {

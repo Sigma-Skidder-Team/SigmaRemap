@@ -150,7 +150,7 @@ public class Class3423 extends Class3418
         super.method10859(playerEntity);
         this.field16182.method4822(null);
         if (!this.field16182.method4838().isRemote) {
-            if (playerEntity.method1768() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
+            if (playerEntity.isAlive() && (playerEntity instanceof Class513 && ((Class513) playerEntity).method2936())) {
                 playerEntity.inventory.method2364(playerEntity.world, this.field16183.method2159(0));
                 playerEntity.inventory.method2364(playerEntity.world, this.field16183.method2159(1));
             }

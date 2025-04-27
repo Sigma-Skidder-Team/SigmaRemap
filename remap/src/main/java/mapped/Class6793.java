@@ -27,7 +27,7 @@ public class Class6793
     }
     
     public static boolean method20786(final Class365<?> class365, final Class8233<? extends LivingEntity> class366, final EntityType<?> class367) {
-        return class365.method1198((Class8233<Object>)class366).filter(class369 -> class369.method1642() == class368).filter(LivingEntity::method1768).filter(class371 -> method20785(class370, class371)).isPresent();
+        return class365.method1198((Class8233<Object>)class366).filter(class369 -> class369.method1642() == class368).filter(LivingEntity::isAlive).filter(class371 -> method20785(class370, class371)).isPresent();
     }
     
     public static void method20787(final LivingEntity class511, final LivingEntity class512) {

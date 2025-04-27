@@ -21,7 +21,7 @@ public class CubecraftLongJump extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136() * 0.8);
+        MovementUtil.method23151(MovementUtil.method23136() * 0.8);
         CubecraftLongJump.mc.timer.timerSpeed = 1.0f;
     }
     
@@ -32,7 +32,7 @@ public class CubecraftLongJump extends Module
     }
     
     @EventListener
-    public void method10016(final Class5743 class5743) {
+    public void method10016(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled() && CubecraftLongJump.mc.player != null) {
             if (!ColorUtils.method19160(CubecraftLongJump.mc.player, 0.001f)) {
                 ++this.field15596;
@@ -40,28 +40,28 @@ public class CubecraftLongJump extends Module
                 if (this.field15597 < 0.26 || this.field15596 > 6) {
                     this.field15597 = 0.26;
                 }
-                Class7482.method23151(this.field15597);
+                MovementUtil.method23151(this.field15597);
                 if (this.field15596 > 5) {
-                    this.method9914().method9910();
+                    this.method9914().toggle();
                 }
             }
             else {
                 if (this.field15596 > 0) {
-                    Class7482.method23151(0.0);
-                    this.method9914().method9910();
+                    MovementUtil.method23151(0.0);
+                    this.method9914().toggle();
                     this.field15596 = 0;
                 }
                 final double field2395 = CubecraftLongJump.mc.player.posX;
                 final double field2396 = CubecraftLongJump.mc.player.posY;
                 final double field2397 = CubecraftLongJump.mc.player.posZ;
-                for (int n = 49 + Class7482.method23140() * 17, i = 0; i < n; ++i) {
+                for (int n = 49 + MovementUtil.method23140() * 17, i = 0; i < n; ++i) {
                     CubecraftLongJump.mc.method5269().method17292(new Class4354(field2395, field2396 + 0.06248, field2397, false));
                     CubecraftLongJump.mc.method5269().method17292(new Class4354(field2395, field2396, field2397, false));
                 }
                 CubecraftLongJump.mc.method5269().method17292(new Class4354(field2395, field2396, field2397, true));
-                ColorUtils.method19155(Class7482.method23141());
+                ColorUtils.method19155(MovementUtil.method23141());
                 this.field15596 = 0;
-                Class7482.method23151(this.field15597 = this.getNumberSettingValueByName("Boost") / 2.0f);
+                MovementUtil.method23151(this.field15597 = this.getNumberSettingValueByName("Boost") / 2.0f);
             }
         }
     }

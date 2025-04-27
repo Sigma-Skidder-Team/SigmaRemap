@@ -17,13 +17,13 @@ public class NCPStep extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10532(final Class5745 class5745) {
         if (!this.isEnabled() || class5745.isCancelled()) {
             return;
         }
         final double method17049 = class5745.method17049();
-        if (ColorUtils.method19160(NCPStep.mc.player, 1.0E-4f) && !Class7482.method23142()) {
+        if (ColorUtils.method19160(NCPStep.mc.player, 1.0E-4f) && !MovementUtil.method23142()) {
             if (method17049 >= 0.625) {
                 final double field2395 = NCPStep.mc.player.posX;
                 final double field2396 = NCPStep.mc.player.posY;

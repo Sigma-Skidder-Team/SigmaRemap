@@ -49,7 +49,7 @@ public class Class3466 extends Class3446
     @Override
     public boolean method11017() {
         if (!this.field16333.method4150().method24731()) {
-            if (this.field16334.method1768()) {
+            if (this.field16334.isAlive()) {
                 if (this.field16334.method1734(this.field16333) < this.field16339 * this.field16339) {
                     return true;
                 }

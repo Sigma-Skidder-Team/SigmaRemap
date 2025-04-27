@@ -36,7 +36,7 @@ public class JartexGamePlay extends Module
                 final String lowerCase = JartexGamePlay.mc.player.getName().getFormattedText().toLowerCase();
                 final String method16999 = class5724.method13164().getFormattedText();
                 Label_0100: {
-                    if (this.field15759.method9883("AutoL")) {
+                    if (this.field15759.getBooleanValueFromSettingName("AutoL")) {
                         if (!method16999.toLowerCase().contains("§r§7 has been killed by §r§a§l" + lowerCase)) {
                             if (!method16999.toLowerCase().contains("§r§7 was shot by §r§a§l" + lowerCase)) {
                                 if (!string.toLowerCase().contains("§r§7 was killed with dynamite by §r§a§l" + lowerCase)) {
@@ -48,10 +48,10 @@ public class JartexGamePlay extends Module
                     }
                 }
                 if (method16999.contains("§e§lPlay Again? §r§7Click here!§r")) {
-                    if (this.field15759.method9883("AutoGG")) {
+                    if (this.field15759.getBooleanValueFromSettingName("AutoGG")) {
                         this.field15759.method10295();
                     }
-                    if (this.field15759.method9883("Auto Join")) {
+                    if (this.field15759.getBooleanValueFromSettingName("Auto Join")) {
                         final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
                             final Class9485 method17000 = iterator.next().getStyle().method30410();

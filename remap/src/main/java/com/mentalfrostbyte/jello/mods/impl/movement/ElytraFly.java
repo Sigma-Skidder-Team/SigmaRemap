@@ -28,7 +28,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    public void method10030(final Class5743 class5743) {
+    public void method10030(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             ElytraFly.mc.gameSettings.field23440.field2162 = false;
             if (ElytraFly.mc.player.getMotion().y < 0.08 && !ElytraFly.mc.player.onGround) {
@@ -49,21 +49,21 @@ public class ElytraFly extends Module
     @EventListener
     public void method10031(final Class5717 class5717) {
         if (this.isEnabled()) {
-            double method23136 = Class7482.method23136();
+            double method23136 = MovementUtil.method23136();
             ColorUtils.method19114();
-            if (!this.method9883("NCP")) {
+            if (!this.getBooleanValueFromSettingName("NCP")) {
                 if (ElytraFly.mc.player.method1809()) {
                     method23136 *= 2.5;
                 }
             }
-            Class7482.method23149(class5717, 0.0);
+            MovementUtil.method23149(class5717, 0.0);
             if (!ElytraFly.mc.player.method2773()) {
                 this.field15608 = 0;
             }
             else {
                 if (this.field15608 > 0) {
                     if (this.field15608 > 7) {
-                        Class7482.method23149(class5717, method23136 * 6.300000190734863);
+                        MovementUtil.method23149(class5717, method23136 * 6.300000190734863);
                     }
                     ColorUtils.method19155(-0.071);
                     class5717.method16975(-1.0001000191550702E-4);
@@ -72,16 +72,16 @@ public class ElytraFly extends Module
             }
             if (this.field15610 > 1.0001E-4f) {
                 if (ElytraFly.mc.player.field2967) {
-                    Class7482.method23149(class5717, method23136 * 6.300000190734863);
+                    MovementUtil.method23149(class5717, method23136 * 6.300000190734863);
                     class5717.method16975(this.field15610);
                 }
             }
-            if (GLFW.glfwGetKey(ElytraFly.mc.window.getHandle(), ElytraFly.mc.gameSettings.field23440.field2161.field32860) == 1 && this.method9883("NCP")) {
+            if (GLFW.glfwGetKey(ElytraFly.mc.window.getHandle(), ElytraFly.mc.gameSettings.field23440.field2161.field32860) == 1 && this.getBooleanValueFromSettingName("NCP")) {
                 class5717.method16975(-0.8999999761581421);
             }
             else if (!ElytraFly.mc.player.method1809()) {
                 if (ElytraFly.mc.player.field2967) {
-                    if (!this.method9883("NCP")) {
+                    if (!this.getBooleanValueFromSettingName("NCP")) {
                         class5717.method16975(1.399999976158142);
                     }
                 }
@@ -150,7 +150,7 @@ public class ElytraFly extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10034(final Class5721 class5721) {
         if (this.isEnabled()) {
             return;
@@ -173,7 +173,7 @@ public class ElytraFly extends Module
     
     @Override
     public void onDisable() {
-        if (!Class7482.method23148()) {
+        if (!MovementUtil.isMoving()) {
             ColorUtils.method19154(0.0);
             ColorUtils.method19156(0.0);
         }

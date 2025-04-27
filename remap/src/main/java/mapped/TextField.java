@@ -31,7 +31,7 @@ public class TextField extends Class4825
     private boolean field20682;
     private boolean field20683;
     private String field20684;
-    private Class7617 field20685;
+    private TimerUtil field20685;
     private final List<Class8992> field20686;
     private boolean field20687;
     
@@ -40,10 +40,10 @@ public class TextField extends Class4825
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
-        this.field20685 = new Class7617();
+        this.field20685 = new TimerUtil();
         this.field20686 = new ArrayList<Class8992>();
         this.field20687 = true;
-        this.field20685.method23932();
+        this.field20685.start();
     }
     
     public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
@@ -51,10 +51,10 @@ public class TextField extends Class4825
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
-        this.field20685 = new Class7617();
+        this.field20685 = new TimerUtil();
         this.field20686 = new ArrayList<Class8992>();
         this.field20687 = true;
-        this.field20685.method23932();
+        this.field20685.start();
     }
     
     public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
@@ -62,10 +62,10 @@ public class TextField extends Class4825
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
-        this.field20685 = new Class7617();
+        this.field20685 = new TimerUtil();
         this.field20686 = new ArrayList<Class8992>();
         this.field20687 = true;
-        this.field20685.method23932();
+        this.field20685.start();
     }
     
     public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final String field20672) {
@@ -73,11 +73,11 @@ public class TextField extends Class4825
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
-        this.field20685 = new Class7617();
+        this.field20685 = new TimerUtil();
         this.field20686 = new ArrayList<Class8992>();
         this.field20687 = true;
         this.field20672 = field20672;
-        this.field20685.method23932();
+        this.field20685.start();
     }
     
     public TextField(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final String field20672, final TrueTypeFont class4805) {
@@ -85,11 +85,11 @@ public class TextField extends Class4825
         this.field20672 = "";
         this.field20683 = false;
         this.field20684 = Character.toString('·');
-        this.field20685 = new Class7617();
+        this.field20685 = new TimerUtil();
         this.field20686 = new ArrayList<Class8992>();
         this.field20687 = true;
         this.field20672 = field20672;
-        this.field20685.method23932();
+        this.field20685.start();
     }
     
     @Override
@@ -351,9 +351,9 @@ public class TextField extends Class4825
     public void draw(final float n) {
         this.method14228();
         final float n2 = 1000.0f;
-        final boolean b = this.field20488 && this.field20685.method23935() > n2 / 2.0f;
-        if (this.field20685.method23935() > n2) {
-            this.field20685.method23934();
+        final boolean b = this.field20488 && this.field20685.getElapsedTime() > n2 / 2.0f;
+        if (this.field20685.getElapsedTime() > n2) {
+            this.field20685.reset();
         }
         String s = this.field20495;
         if (this.field20683) {

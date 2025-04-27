@@ -19,7 +19,7 @@ public class SpartanSpider extends Module
     
     @EventListener
     private void method10523(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
+        if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
         final int method10264 = ((Spider)this.method9914()).method10264();

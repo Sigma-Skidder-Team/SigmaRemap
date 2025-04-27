@@ -20,7 +20,7 @@ public class BotManager {
     }
 
     public void method31750() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
 
     public boolean method31751(final Entity class399) {
@@ -32,14 +32,14 @@ public class BotManager {
     }
 
     @EventListener
-    @Class6763
-    private void method31753(final Class5732 class5732) {
+    @HighestPriority
+    private void method31753(final EventLoadWorld eventLoadWorld) {
         this.field37639.clear();
     }
 
     @EventListener
-    @Class6763
-    private void method31754(final Class5743 class5743) {
+    @HighestPriority
+    private void method31754(final EventPlayerTick eventPlayerTick) {
         if (this.field37638 != null) {
             for (final PlayerEntity class5744 : ColorUtils.method19108()) {
                 if (!this.field37638.method25239(class5744)) {

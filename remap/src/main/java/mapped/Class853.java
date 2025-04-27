@@ -205,7 +205,7 @@ public class Class853 extends Class759 implements IMob
     }
     
     public void method5135(final LivingEntity class511) {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             final int method5130 = this.method5130();
             if (this.method1734(class511) < 0.6 * method5130 * 0.6 * method5130) {
                 if (this.method2747(class511)) {

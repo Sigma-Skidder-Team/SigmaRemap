@@ -24,7 +24,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
     public boolean field20600;
     public boolean field20601;
     public boolean field20602;
-    public final Class7617 field20603;
+    public final TimerUtil field20603;
     public int field20604;
     public int field20605;
     private final List<Class9073> field20606;
@@ -36,7 +36,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
         this.field20600 = true;
         this.field20601 = true;
         this.field20602 = false;
-        this.field20603 = new Class7617();
+        this.field20603 = new TimerUtil();
         this.field20604 = 300;
         this.field20605 = 2;
         this.field20606 = new ArrayList<Class9073>();
@@ -50,7 +50,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
         this.field20600 = true;
         this.field20601 = true;
         this.field20602 = false;
-        this.field20603 = new Class7617();
+        this.field20603 = new TimerUtil();
         this.field20604 = 300;
         this.field20605 = 2;
         this.field20606 = new ArrayList<Class9073>();
@@ -64,7 +64,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
         this.field20600 = true;
         this.field20601 = true;
         this.field20602 = false;
-        this.field20603 = new Class7617();
+        this.field20603 = new TimerUtil();
         this.field20604 = 300;
         this.field20605 = 2;
         this.field20606 = new ArrayList<Class9073>();
@@ -78,7 +78,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
         this.field20600 = true;
         this.field20601 = true;
         this.field20602 = false;
-        this.field20603 = new Class7617();
+        this.field20603 = new TimerUtil();
         this.field20604 = 300;
         this.field20605 = 2;
         this.field20606 = new ArrayList<Class9073>();
@@ -108,7 +108,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
     public boolean method14211(final int field20594, final int field20595, final int n) {
         if (!super.method14211(field20594, field20595, n)) {
             if (this.method14384()) {
-                this.field20603.method23932();
+                this.field20603.start();
                 this.field20594 = field20594;
                 this.field20595 = field20595;
                 this.field20596 = this.field20594 - this.method14280();
@@ -123,8 +123,8 @@ public class Class4815 extends CustomGuiScreen implements Class4816
     public void method14233(final int n, final int n2, final int n3) {
         super.method14233(n, n2, n3);
         if (this.method14384()) {
-            this.field20603.method23933();
-            this.field20603.method23934();
+            this.field20603.stop();
+            this.field20603.reset();
         }
         this.method14387(false);
     }
@@ -133,7 +133,7 @@ public class Class4815 extends CustomGuiScreen implements Class4816
     public void method14383(final int n, final int n2) {
         final boolean field20593 = this.field20593;
         if (!this.method14386() && this.method14384()) {
-            final boolean b = this.field20600 && this.field20603.method23935() >= this.field20604;
+            final boolean b = this.field20600 && this.field20603.getElapsedTime() >= this.field20604;
             boolean b2 = false;
             Label_0143: {
                 if (this.field20601) {
@@ -197,8 +197,8 @@ public class Class4815 extends CustomGuiScreen implements Class4816
         }
         if (this.method14386()) {
             if (!field20593) {
-                this.field20603.method23933();
-                this.field20603.method23934();
+                this.field20603.stop();
+                this.field20603.reset();
             }
         }
     }

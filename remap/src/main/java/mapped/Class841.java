@@ -282,7 +282,7 @@ public class Class841 extends Class785 implements IMob
     }
     
     public boolean method5016() {
-        if (!this.method4214() && this.method1768()) {
+        if (!this.method4214() && this.isAlive()) {
             final BlockPos class354 = new BlockPos(this);
             for (int i = 0; i < 5; ++i) {
                 final BlockPos method1134 = class354.add(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
@@ -373,7 +373,7 @@ public class Class841 extends Class785 implements IMob
     @Nullable
     @Override
     public AxisAlignedBB method1702() {
-        return this.method1768() ? this.getBoundingBox() : null;
+        return this.isAlive() ? this.getBoundingBox() : null;
     }
     
     public Direction method5018() {

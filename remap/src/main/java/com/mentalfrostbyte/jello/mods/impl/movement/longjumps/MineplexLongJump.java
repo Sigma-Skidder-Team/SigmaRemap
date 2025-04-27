@@ -24,7 +24,7 @@ public class MineplexLongJump extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136() * 0.7);
+        MovementUtil.method23151(MovementUtil.method23136() * 0.7);
     }
     
     @Override
@@ -38,7 +38,7 @@ public class MineplexLongJump extends Module
     @EventListener
     public void method10729(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (updateWalkingEvent.method17046()) {
+            if (updateWalkingEvent.isPre()) {
                 if (this.field16042 >= 0) {
                     updateWalkingEvent.method17033(true);
                 }
@@ -87,7 +87,7 @@ public class MineplexLongJump extends Module
                     if (this.field16040 < 0.3) {
                         this.field16040 = 0.3;
                     }
-                    Class7482.method23149(class5717, this.field16040);
+                    MovementUtil.method23149(class5717, this.field16040);
                     class5717.method16975(this.field16041);
                 }
             }
@@ -100,18 +100,18 @@ public class MineplexLongJump extends Module
                 }
                 if (this.field16042 > 0) {
                     this.field16042 = -1;
-                    if (this.method9914().method9883("Auto Disable")) {
-                        this.method9914().method9910();
+                    if (this.method9914().getBooleanValueFromSettingName("Auto Disable")) {
+                        this.method9914().toggle();
                         return;
                     }
                 }
                 this.field16045 = ColorUtils.method19114();
                 final BlockPos class5718 = new BlockPos(MineplexLongJump.mc.player.posX, MineplexLongJump.mc.player.posY - 0.4, MineplexLongJump.mc.player.posZ);
                 if (ColorUtils.method19114()) {
-                    if ((this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().method9883("Auto Jump")) {
+                    if ((this.method9914().getBooleanValueFromSettingName("BorderJump") && !Class4609.method13708(class5718)) || this.method9914().getBooleanValueFromSettingName("Auto Jump")) {
                         MineplexLongJump.mc.player.method2725();
                         class5717.method16975(MineplexLongJump.mc.player.getMotion().y);
-                        Class7482.method23149(class5717, 0.0);
+                        MovementUtil.method23149(class5717, 0.0);
                     }
                 }
             }

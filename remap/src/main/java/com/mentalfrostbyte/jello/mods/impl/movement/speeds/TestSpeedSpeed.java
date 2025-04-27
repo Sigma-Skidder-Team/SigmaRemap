@@ -37,7 +37,7 @@ public class TestSpeedSpeed extends Module
             if (TestSpeedSpeed.mc.player != null) {
                 if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                     if (TestSpeedSpeed.mc.player.onGround) {
-                        if (updateWalkingEvent.method17046()) {
+                        if (updateWalkingEvent.isPre()) {
                             updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                         }
                     }
@@ -52,7 +52,7 @@ public class TestSpeedSpeed extends Module
             if (TestSpeedSpeed.mc.player.onGround) {
                 if (TestSpeedSpeed.mc.player.collidedVertically) {
                     if (TestSpeedSpeed.mc.player.field2970 != 0.0f || TestSpeedSpeed.mc.player.field2968 != 0.0f) {
-                        if (this.method9883("AutoJump")) {
+                        if (this.getBooleanValueFromSettingName("AutoJump")) {
                             TestSpeedSpeed.mc.player.method2725();
                             class5717.method16973(TestSpeedSpeed.mc.player.getMotion().x);
                             class5717.method16975(TestSpeedSpeed.mc.player.getMotion().y);
@@ -65,7 +65,7 @@ public class TestSpeedSpeed extends Module
             class5717.method16978().y = 0.0;
             final double method16752 = class5717.method16978().length();
             class5717.method16978().y = field22771;
-            this.field15671 = Class7482.method23153(class5717, method16752, Class7482.method23144()[0], this.field15671, 45.0f);
+            this.field15671 = MovementUtil.method23153(class5717, method16752, MovementUtil.method23144()[0], this.field15671, 45.0f);
             if (this.field15668 != 0.0f || this.field15669 != 0.0f) {
                 this.field15668 *= (float)0.85;
                 this.field15669 *= (float)0.85;
@@ -84,7 +84,7 @@ public class TestSpeedSpeed extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10143(final Class5722 class5722) {
         if (this.isEnabled()) {
             if (!Jesus.method10433()) {
@@ -92,7 +92,7 @@ public class TestSpeedSpeed extends Module
                     if (TestSpeedSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                         return;
                     }
-                    this.field15671 = Class7482.method23144()[0];
+                    this.field15671 = MovementUtil.method23144()[0];
                     this.field15673 = 0;
                     class5722.method16996(class5722.method16994().length() * 1.0499999523162842);
                 }

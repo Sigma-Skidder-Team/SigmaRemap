@@ -46,7 +46,7 @@ public class HypixelFly extends Module {
         this.field16075 = -1.0;
         this.field16081 = -1;
         if (HypixelFly.mc.player.onGround || ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
-            if (this.method9883("Timer boost")) {
+            if (this.getBooleanValueFromSettingName("Timer boost")) {
                 this.field16078 = 2.55f;
             }
             this.field16075 = HypixelFly.mc.player.posY;
@@ -88,19 +88,19 @@ public class HypixelFly extends Module {
 
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136() * 0.7);
+        MovementUtil.method23151(MovementUtil.method23136() * 0.7);
         this.field16078 = 1.0f;
         HypixelFly.mc.timer.timerSpeed = 1.0f;
     }
 
     @EventListener
-    public void method10770(final Class5732 class5732) {
+    public void method10770(final EventLoadWorld eventLoadWorld) {
         this.field16075 = -1.0;
     }
 
     @EventListener
     public void method10771(final UpdateWalkingEvent updateWalkingEvent) {
-        if (updateWalkingEvent.method17046()) {
+        if (updateWalkingEvent.isPre()) {
             if (!ColorUtils.method19160(HypixelFly.mc.player, 1.0E-5f)) {
                 Label_0031:
                 {
@@ -195,8 +195,8 @@ public class HypixelFly extends Module {
                 }
             }
             this.field16076 = field2397;
-            if (Class7482.method23140() > 0) {
-                this.field16076 = 0.6 + Class7482.method23140() * 0.1;
+            if (MovementUtil.method23140() > 0) {
+                this.field16076 = 0.6 + MovementUtil.method23140() * 0.1;
             }
             final String s = method19178;
             switch (s) {
@@ -207,34 +207,34 @@ public class HypixelFly extends Module {
                 }
                 case "Fast": {
                     if (!ColorUtils.method19146()) {
-                        this.field16076 = Class7482.method23141();
+                        this.field16076 = MovementUtil.method23141();
                     }
                     class5717.method16975(0.39999994);
-                    if (Class7482.method23140() > 0) {
+                    if (MovementUtil.method23140() > 0) {
                         class5717.method16975(this.field16076);
                     }
-                    Class7482.method23149(class5717, n3);
+                    MovementUtil.method23149(class5717, n3);
                     this.field16079 = !this.field16079;
                     this.field16074 = 0.66 + this.getNumberSettingValueByName("Speed") / 6.0f;
                     break;
                 }
                 case "Old": {
-                    class5717.method16975(this.field16076 = Class7482.method23141());
-                    Class7482.method23149(class5717, n3);
+                    class5717.method16975(this.field16076 = MovementUtil.method23141());
+                    MovementUtil.method23149(class5717, n3);
                     this.field16079 = !this.field16079;
                     this.field16074 = 0.65 + this.getNumberSettingValueByName("Speed") / 6.0f;
                     break;
                 }
                 case "NoDmg": {
                     class5717.method16975(this.field16076);
-                    Class7482.method23149(class5717, n3);
+                    MovementUtil.method23149(class5717, n3);
                     this.field16079 = !this.field16079;
                     this.field16074 = n3 * 0.987;
                     break;
                 }
                 case "Funcraft": {
-                    class5717.method16975(this.field16076 = Class7482.method23141());
-                    Class7482.method23149(class5717, n3);
+                    class5717.method16975(this.field16076 = MovementUtil.method23141());
+                    MovementUtil.method23149(class5717, n3);
                     this.field16079 = !this.field16079;
                     this.field16074 = 0.65 + this.getNumberSettingValueByName("Speed") / 6.0f;
                     break;
@@ -257,13 +257,13 @@ public class HypixelFly extends Module {
         if (HypixelFly.mc.player.collided) {
             this.field16074 = 0.0;
         }
-        final double n7 = method19178.equals("Basic") ? Class7482.method23137() : (Class7482.method23137() - 0.008);
+        final double n7 = method19178.equals("Basic") ? MovementUtil.method23137() : (MovementUtil.method23137() - 0.008);
         if (this.field16074 < n7) {
             this.field16074 = n7;
         } else if (!ColorUtils.method19114()) {
             this.field16074 = n7;
         }
-        Class7482.method23149(class5717, this.field16074);
+        MovementUtil.method23149(class5717, this.field16074);
         if (!HypixelFly.mc.player.onGround || !ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
             ++this.field16081;
             if (!ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
@@ -296,9 +296,9 @@ public class HypixelFly extends Module {
         }
         final Vec3d method19180 = HypixelFly.mc.player.getAllowedMovement(class5717.method16978().add(0.0, -class5717.method16978().getY(), 0.0));
         final boolean b = Math.abs(Math.sqrt(method19180.lengthSquared()) - this.field16074) < 1.0E-4;
-        if (this.method9883("No Collision") && this.field16074 > n7) {
+        if (this.getBooleanValueFromSettingName("No Collision") && this.field16074 > n7) {
             final ArrayList list = new ArrayList();
-            final float method19181 = MathHelper.method35668(Class7482.method23147());
+            final float method19181 = MathHelper.method35668(MovementUtil.method23147());
             if (method19181 > 0.0f && method19181 < 90.0f) {
                 list.add(new Vec3d(1.0, 0.0, 0.0));
                 list.add(new Vec3d(0.0, 0.0, 1.0));
@@ -321,7 +321,7 @@ public class HypixelFly extends Module {
                 list.add(new Vec3d(-1.0, 0.0, 0.0));
             }
             class5717.method16979(method19180);
-            if (!b && HypixelFly.mc.player.posY % 1.0 > 0.10000000149011612 && Class7482.method23148()) {
+            if (!b && HypixelFly.mc.player.posY % 1.0 > 0.10000000149011612 && MovementUtil.isMoving()) {
                 for (final Vec3d class5719 : list) {
                     final Vec3d class5718 = class5719;
                     class5719.x *= this.field16074;
@@ -362,7 +362,7 @@ public class HypixelFly extends Module {
                             if (!HypixelFly.mc.player.onGround) {
                                 if (!ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
                                     if (!method9887.equals("Basic")) {
-                                        final double n = 0.42 + Class7482.method23140() * 0.1;
+                                        final double n = 0.42 + MovementUtil.method23140() * 0.1;
                                         HypixelFly.mc.player.posY = this.field16075 + n;
                                         HypixelFly.mc.player.lastTickPosY = this.field16075 + n;
                                         HypixelFly.mc.player.field3019 = this.field16075 + n;

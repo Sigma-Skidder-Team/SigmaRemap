@@ -36,10 +36,10 @@ public class TargetStrafe extends Module
     public void method10227(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             Entity class5740 = null;
-            if ((Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.method9883("Only speed")) {
+            if ((Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() && !HypixelSpeed.field15955) || !this.getBooleanValueFromSettingName("Only speed")) {
                 if (KillAura.field16061 == null) {
-                    if (KillAura.field16060 != null) {
-                        class5740 = KillAura.field16060;
+                    if (KillAura.targetEntity != null) {
+                        class5740 = KillAura.targetEntity;
                     }
                 }
                 else {
@@ -51,18 +51,18 @@ public class TargetStrafe extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10228(final Class5717 class5717) {
         if (!this.isEnabled()) {
             return;
         }
         Entity class5718 = null;
-        if ((Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() || !this.method9883("Only speed")) && !HypixelSpeed.field15955) {
+        if ((Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() || !this.getBooleanValueFromSettingName("Only speed")) && !HypixelSpeed.field15955) {
             if (KillAura.field16061 != null) {
                 class5718 = KillAura.field16061.method26798();
             }
-            else if (KillAura.field16060 != null) {
-                class5718 = KillAura.field16060;
+            else if (KillAura.targetEntity != null) {
+                class5718 = KillAura.targetEntity;
             }
         }
         if (class5718 != null) {
@@ -109,7 +109,7 @@ public class TargetStrafe extends Module
         class400.method16973(-MathHelper.sin(n6) * n);
         class400.method16977(MathHelper.cos(n6) * n);
         final Vec3d class401 = new Vec3d(TargetStrafe.mc.player.posX + class400.method16972(), TargetStrafe.mc.player.posY + class400.method16974(), TargetStrafe.mc.player.posZ + class400.method16976());
-        if (this.method9883("Avoid void")) {
+        if (this.getBooleanValueFromSettingName("Avoid void")) {
             if (!this.field15728 && this.method10230(class401)) {
                 this.field15727 *= -1;
                 this.field15728 = true;

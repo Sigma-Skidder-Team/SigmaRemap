@@ -35,11 +35,11 @@ public class Murderer extends Module
         if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4402) {
                 final Class4402 class5724 = (Class4402)class5723.method16998();
-                if (class5724.method13247().getItem() instanceof Class4077) {
+                if (class5724.method13247().getItem() instanceof SwordItem) {
                     if (Murderer.mc.world.getEntityByID(class5724.method13248()) instanceof PlayerEntity) {
                         final Entity method6741 = Murderer.mc.world.getEntityByID(class5724.method13248());
                         if (!this.field15732.toString().equalsIgnoreCase(method6741.getName().getUnformattedComponentText())) {
-                            if (this.method9883("Chat Message")) {
+                            if (this.getBooleanValueFromSettingName("Chat Message")) {
                                 Murderer.mc.player.method4114("Murderer is " + method6741.getName() + ", detected by Jello client");
                             }
                             this.field15732 = method6741.getName().getUnformattedComponentText();
@@ -64,7 +64,7 @@ public class Murderer extends Module
         if (!this.field15735) {
             return;
         }
-        if (this.method9883("GUI")) {
+        if (this.getBooleanValueFromSettingName("GUI")) {
             final TrueTypeFont field40313 = ClientFonts.JelloLight20;
             final int method7694 = Minecraft.getInstance().window.method7694();
             final int method7695 = Minecraft.getInstance().window.method7695();

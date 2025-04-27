@@ -23,7 +23,7 @@ public class Class3522 extends Class3446
         if (!this.field16525.method2783()) {
             final LivingEntity method4152 = this.field16525.method4152();
             if (method4152 != null) {
-                if (method4152.method1768()) {
+                if (method4152.isAlive()) {
                     if (Class803.method4693().test(method4152)) {
                         if (this.field16525.method1734(method4152) > 36.0) {
                             if (!this.field16525.method1814()) {

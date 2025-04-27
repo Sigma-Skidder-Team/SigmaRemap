@@ -180,7 +180,7 @@ public class TabGUI extends Module
     }
     
     @EventListener
-    private void method10065(final Class5743 class5743) {
+    private void method10065(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (this.field15641 <= 0) {
                 TabGUI.field15637.changeDirection(Direction.FORWARDS);
@@ -193,7 +193,7 @@ public class TabGUI extends Module
     }
     
     @EventListener
-    @Class6763
+    @HighestPriority
     private void method10066(final Class5740 class5740) {
         if (!this.isEnabled() || TabGUI.mc.player == null) {
             return;
@@ -357,12 +357,12 @@ public class TabGUI extends Module
     }
     
     public List<Setting> method10075(final Module class3167) {
-        final ArrayList list = new ArrayList((Collection<? extends E>)class3167.method9899().values());
+        final ArrayList list = new ArrayList((Collection<? extends E>)class3167.getSettingMap().values());
         if (class3167 instanceof ModuleWithSettings) {
             final ModuleWithSettings class3168 = (ModuleWithSettings)class3167;
             class3168.method10258();
             if (class3168.method10260() != null) {
-                list.addAll(class3168.method10260().method9899().values());
+                list.addAll(class3168.method10260().getSettingMap().values());
             }
         }
         final Iterator iterator = list.iterator();

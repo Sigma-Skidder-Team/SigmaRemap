@@ -93,7 +93,7 @@ public class Class454 extends Class433 implements Class453
     public void method1659() {
         super.method1659();
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (this.method2289()) {
                     if (!new BlockPos(this).equals(this.field2706)) {
                         this.method2292(0);
@@ -115,7 +115,7 @@ public class Class454 extends Class433 implements Class453
     
     public boolean method2291() {
         if (!Class455.method2300(this)) {
-            final List<Entity> method6739 = this.world.method6739((Class<? extends Entity>)Class427.class, this.getBoundingBox().grow(0.25, 0.0, 0.25), (Predicate<? super Entity>)Class9170.field38845);
+            final List<Entity> method6739 = this.world.method6739(Class427.class, this.getBoundingBox().grow(0.25, 0.0, 0.25), Class9170.field38845);
             if (!method6739.isEmpty()) {
                 Class455.method2302(this, (Class427)method6739.get(0));
             }

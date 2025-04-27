@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class AgoraManager {
     private Class959 field23930;
     private static Thread field23931;
-    public Class7679 field23932;
+    public DeferredEventState deferredState;
 
     public void method17548() {
         this.method17549();
@@ -35,7 +35,7 @@ public class AgoraManager {
         neaders.put("Referer", "https://agora.sigmaclient.info");
         final String replaceAll = Client.getInstance().getNetworkManager().getToken().replaceAll("-", "");
         try {
-            (this.field23930 = new Class959(this, "wss://wsprg.sigmaclient.info/ws/agora/" + replaceAll, neaders)).method5487(HttpsURLConnection.getDefaultSSLSocketFactory());
+            (this.field23930 = new Class959(this, "wss://wsprg.sigmaclient.info/ws/agora/" + replaceAll, neaders)).setSocketFactory(HttpsURLConnection.getDefaultSSLSocketFactory());
             this.field23930.connect();
         } catch (final URISyntaxException exc) {
             exc.printStackTrace();
@@ -60,73 +60,77 @@ public class AgoraManager {
         }
     }
 
-    public void method17552(final Class7679 field23932) {
-        if (this.field23932 != null) {
+    public void setupDeferredState(final DeferredEventState deferredState) {
+        if (this.deferredState != null) {
             return;
         }
-        while (!Class9146.field38766) {
+        while (!DeferredEventRegistry.modulesLoaded) {
             try {
                 Thread.sleep(1000L);
             } catch (final InterruptedException ex) {
                 ex.printStackTrace();
             }
         }
-        this.field23932 = field23932;
-        if (!(field23932 instanceof Class7678)) {
-            if (field23932 instanceof Class7680) {
-                for (final Object next : Class9146.field38765) {
+        this.deferredState = deferredState;
+        if (!(deferredState instanceof DeferredFalseState)) {
+            if (deferredState instanceof DeferredTrueState) {
+                for (final Object next : DeferredEventRegistry.pendingRegistrations) {
                     for (Class<?> key = next.getClass(); key != null; key = key.getSuperclass()) {
                         for (final Method method : key.getDeclaredMethods()) {
-                            if (Client.getInstance().getEventBus().method21087(method)) {
+                            if (Client.getInstance().getEventBus().isValidEventHandler(method)) {
                                 method.setAccessible(true);
-                                final Class2046 method2 = Client.getInstance().getEventBus().method21091(method);
+                                final EventPriority method2 = Client.getInstance().getEventBus().getPriority(method);
                                 final Class<?> clazz = method.getParameterTypes()[0];
-                                final Class7557 class7557 = new Class7557(next, key, method, method2);
-                                final Map<Class<? extends Class5730>, List<Class7557>> map = Client.getInstance().getEventBus().field26968.getOrDefault(key, new HashMap<Class<? extends Class5730>, List<Class7557>>());
-                                List<Class7557> list = map.get(clazz);
+                                final EventHandler eventHandler = new EventHandler(next, key, method, method2);
+                                final Map<Class<? extends CancellableEvent>, List<EventHandler>> map = Client.getInstance().getEventBus().moduleHandlers.getOrDefault(key, new HashMap<Class<? extends CancellableEvent>, List<EventHandler>>());
+                                List<EventHandler> list = map.get(clazz);
                                 if (list == null) {
-                                    map.put((Class<? extends Class5730>) clazz, (ArrayList) (list = new ArrayList<Class7557>()));
+                                    map.put((Class<? extends CancellableEvent>) clazz, (ArrayList) (list = new ArrayList<EventHandler>()));
                                 }
-                                list.add(class7557);
-                                map.put((Class<? extends Class5730>) clazz, (ArrayList) list);
-                                Client.getInstance().getEventBus().field26968.put((Class) key, map);
+                                list.add(eventHandler);
+                                map.put((Class<? extends CancellableEvent>) clazz, (ArrayList) list);
+                                Client.getInstance().getEventBus().moduleHandlers.put((Class) key, map);
                             }
                         }
                     }
                 }
-                Client.getInstance().getEventBus().method21096();
-                for (final Module class7558 : Client.getInstance().moduleManager().getModuleMap().values()) {
-                    final Iterator<Setting> iterator3 = class7558.method9899().values().iterator();
-                    while (iterator3.hasNext()) {
-                        iterator3.next().method15201();
+
+                Client.getInstance().getEventBus().cleanEmptyHandlers();
+
+                for (final Module mod : Client.getInstance().moduleManager().getModuleMap().values()) {
+                    final Iterator<Setting> settingIterator = mod.getSettingMap().values().iterator();
+                    while (settingIterator.hasNext()) {
+                        settingIterator.next().method15201();
                     }
-                    if (class7558 instanceof ModuleWithSettings) {
-                        final Module[] field23933 = ((ModuleWithSettings) class7558).moduleArray;
+                    if (mod instanceof ModuleWithSettings) {
+                        final Module[] field23933 = ((ModuleWithSettings) mod).moduleArray;
                         for (int length2 = field23933.length, j = 0; j < length2; ++j) {
-                            final Iterator<Setting> iterator4 = field23933[j].method9899().values().iterator();
+                            final Iterator<Setting> iterator4 = field23933[j].getSettingMap().values().iterator();
                             while (iterator4.hasNext()) {
                                 iterator4.next().method15201();
                             }
                         }
                     }
-                    if (class7558.isEnabled()) {
-                        Client.getInstance().getEventBus().register(class7558);
-                        if (!(class7558 instanceof ModuleWithSettings)) {
+
+                    if (mod.isEnabled()) {
+                        Client.getInstance().getEventBus().register(mod);
+                        if (!(mod instanceof ModuleWithSettings)) {
                             continue;
                         }
-                        final ModuleWithSettings class7559 = (ModuleWithSettings) class7558;
-                        if (class7559.parentModule == null) {
+                        final ModuleWithSettings modWithSettings = (ModuleWithSettings) mod;
+                        if (modWithSettings.parentModule == null) {
                             continue;
                         }
-                        Client.getInstance().getEventBus().register(class7559.parentModule);
+                        Client.getInstance().getEventBus().register(modWithSettings.parentModule);
                     } else {
-                        Client.getInstance().getEventBus().unregister(class7558);
-                        if (!(class7558 instanceof ModuleWithSettings)) {
+                        Client.getInstance().getEventBus().unregister(mod);
+                        if (!(mod instanceof ModuleWithSettings)) {
                             continue;
                         }
-                        final Module[] field23934 = ((ModuleWithSettings) class7558).moduleArray;
-                        for (int length3 = field23934.length, k = 0; k < length3; ++k) {
-                            Client.getInstance().getEventBus().unregister(field23934[k]);
+
+                        final Module[] modArray = ((ModuleWithSettings) mod).moduleArray;
+                        for (int length3 = modArray.length, k = 0; k < length3; ++k) {
+                            Client.getInstance().getEventBus().unregister(modArray[k]);
                         }
                     }
                 }

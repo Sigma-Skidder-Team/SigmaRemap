@@ -57,8 +57,8 @@ public class SpartanFly extends Module
     @EventListener
     public void method10577(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (updateWalkingEvent.method17046()) {
-                if (this.method9883("Ground Spoof")) {
+            if (updateWalkingEvent.isPre()) {
+                if (this.getBooleanValueFromSettingName("Ground Spoof")) {
                     if (this.field15947) {
                         this.field15947 = !this.field15947;
                         updateWalkingEvent.method17045(true);
@@ -93,14 +93,14 @@ public class SpartanFly extends Module
                         SpartanFly.mc.player.method2725();
                         class5717.method16975(SpartanFly.mc.player.getMotion().y);
                         this.field15946 = (SpartanFly.mc.gameSettings.field23439.method1056() ? (this.field15948 ? SpartanFly.mc.player.posY : (SpartanFly.mc.player.posY + 1.0)) : (this.field15948 ? (SpartanFly.mc.player.posY - 1.0) : SpartanFly.mc.player.posY));
-                        Class7482.method23149(class5717, 0.35);
+                        MovementUtil.method23149(class5717, 0.35);
                     }
                 }
             }
             else {
                 SpartanFly.mc.player.method2725();
                 class5717.method16975(SpartanFly.mc.player.getMotion().y);
-                Class7482.method23149(class5717, 0.35);
+                MovementUtil.method23149(class5717, 0.35);
                 this.field15946 = (SpartanFly.mc.gameSettings.field23439.method1056() ? (this.field15948 ? SpartanFly.mc.player.posY : (SpartanFly.mc.player.posY + 1.0)) : (this.field15948 ? (SpartanFly.mc.player.posY - 1.0) : SpartanFly.mc.player.posY));
             }
             ColorUtils.method19154(class5717.method16972());

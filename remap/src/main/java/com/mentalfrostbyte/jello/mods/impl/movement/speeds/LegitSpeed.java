@@ -30,7 +30,7 @@ public class LegitSpeed extends Module
             if (LegitSpeed.mc.player.onGround) {
                 if (LegitSpeed.mc.player.collidedVertically) {
                     if (LegitSpeed.mc.player.field2970 != 0.0f || LegitSpeed.mc.player.field2968 != 0.0f) {
-                        if (this.method9883("AutoJump")) {
+                        if (this.getBooleanValueFromSettingName("AutoJump")) {
                             LegitSpeed.mc.player.method2725();
                             class5717.method16975(LegitSpeed.mc.player.getMotion().y);
                         }
@@ -42,9 +42,9 @@ public class LegitSpeed extends Module
             final double method16752 = class5717.method16978().length();
             class5717.method16978().y = field22771;
             this.field15859 = method16752;
-            final float n = Class7482.method23143()[1];
-            final float n2 = Class7482.method23143()[2];
-            final float n3 = Class7482.method23143()[0];
+            final float n = MovementUtil.method23143()[1];
+            final float n2 = MovementUtil.method23143()[2];
+            final float n3 = MovementUtil.method23143()[0];
             if (n == 0.0f) {
                 if (n2 == 0.0f) {
                     class5717.method16973(0.0);

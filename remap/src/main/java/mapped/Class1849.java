@@ -382,7 +382,7 @@ public class Class1849 extends World
         final List<Entity> method6739 = this.method6739((Class<? extends Entity>) LivingEntity.class, new AxisAlignedBB(class355, new BlockPos(class355.getX(), this.getHeight(), class355.getZ())).intersect(3.0), class356 -> {
             final boolean b;
             if (class356 != null) {
-                if (!(!class356.method1768())) {
+                if (!(!class356.isAlive())) {
                     if (!(!this.method6994(class356.method1894()))) {
                         return b;
                     }
@@ -679,7 +679,7 @@ public class Class1849 extends World
             if (!(class399 instanceof Class852)) {
                 continue;
             }
-            if (!class399.method1768()) {
+            if (!class399.isAlive()) {
                 continue;
             }
             arrayList.add(class399);
@@ -700,7 +700,7 @@ public class Class1849 extends World
     
     @Nullable
     public Class513 method6884() {
-        final List<Class513> method6883 = this.method6883(LivingEntity::method1768);
+        final List<Class513> method6883 = this.method6883(LivingEntity::isAlive);
         return method6883.isEmpty() ? null : ((Class513)method6883.get(this.rand.nextInt(method6883.size())));
     }
     
@@ -1239,7 +1239,7 @@ public class Class1849 extends World
         final Class8308 method22418 = Class8308.method27594().method22417("x").method22417("y").method22417("z").method22417("uuid").method22417("type").method22417("alive").method22417("display_name").method22417("custom_name").method22418(writer);
         for (final Entity class399 : iterable) {
             final ITextComponent method22419 = class399.getCustomName();
-            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.method1865(), Registry.field210.getKey(class399.getType()), class399.method1768(), class399.getDisplayName().getString(), (method22419 == null) ? null : method22419.getString());
+            method22418.method27595(class399.getPosX(), class399.getPosY(), class399.getPosZ(), class399.method1865(), Registry.field210.getKey(class399.getType()), class399.isAlive(), class399.getDisplayName().getString(), (method22419 == null) ? null : method22419.getString());
         }
     }
     

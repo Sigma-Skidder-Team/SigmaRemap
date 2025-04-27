@@ -60,7 +60,7 @@ public class AACBlockFly extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10098(final Class5721 class5721) {
         if (this.isEnabled() && AACBlockFly.mc.player != null) {
             if (class5721.method16990() instanceof Class4321) {
@@ -96,19 +96,19 @@ public class AACBlockFly extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (this.method9914().method9883("No Sprint")) {
+        if (this.method9914().getBooleanValueFromSettingName("No Sprint")) {
             AACBlockFly.mc.player.method1816(false);
         }
-        if (!this.method9883("Haphe (AACAP)")) {
+        if (!this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
             AACBlockFly.mc.gameSettings.field23441.field2162 = false;
             AACBlockFly.mc.player.method1816(false);
         }
         ((BlockFly)this.method9914()).method10287(class5717);
-        if (this.method9883("Haphe (AACAP)")) {
+        if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
             if (AACBlockFly.mc.player.onGround && (AACBlockFly.mc.player.field2970 != 0.0f || AACBlockFly.mc.player.field2968 != 0.0f)) {
                 this.field15654 = 0;
                 AACBlockFly.mc.player.method2725();
-                class5717.method16975(0.419998 + Class7482.method23140() * 0.1);
+                class5717.method16975(0.419998 + MovementUtil.method23140() * 0.1);
                 if (this.field15655 < 3) {
                     ++this.field15655;
                 }
@@ -121,7 +121,7 @@ public class AACBlockFly extends Module
             }
             this.field15656 = AACSpeed.method10174(this.field15654, this.field15655, () -> this.field15655 = 0);
             if (this.field15654 >= 0) {
-                Class7482.method23149(class5717, this.field15656);
+                MovementUtil.method23149(class5717, this.field15656);
             }
         }
     }
@@ -131,8 +131,8 @@ public class AACBlockFly extends Module
         if (this.isEnabled()) {
             if (AACBlockFly.mc.world != null) {
                 if (AACBlockFly.mc.player != null) {
-                    if (this.method9883("Haphe (AACAP)")) {
-                        if (Class7482.method23148()) {
+                    if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
+                        if (MovementUtil.isMoving()) {
                             if (!AACBlockFly.mc.player.method1815()) {
                                 class5735.field23300 *= 1.14f;
                             }
@@ -154,7 +154,7 @@ public class AACBlockFly extends Module
                         return false;
                     }
                 }
-                if (this.method9883("Haphe (AACAP)")) {
+                if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                     if (!AACBlockFly.mc.player.field2967) {
                         if (!AACBlockFly.mc.player.onGround) {
                             if (blockRayTraceResult.getFace() == Direction.UP) {
@@ -186,7 +186,7 @@ public class AACBlockFly extends Module
                     AACBlockFly.mc.player.inventory.field2743 = field2743;
                 }
                 if (method27319 == Class2201.field13400) {
-                    if (!this.method9914().method9883("NoSwing")) {
+                    if (!this.method9914().getBooleanValueFromSettingName("NoSwing")) {
                         AACBlockFly.mc.player.method2707(Class316.field1877);
                     }
                     else {
@@ -211,26 +211,26 @@ public class AACBlockFly extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (this.method9883("Haphe (AACAP)")) {
+        if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
             return;
         }
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     private void method10106(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (!updateWalkingEvent.method17046()) {
-                if (Class7482.method23148()) {
+            if (!updateWalkingEvent.isPre()) {
+                if (MovementUtil.isMoving()) {
                     if (AACBlockFly.mc.player.onGround) {
-                        if (this.method9883("Haphe (AACAP)")) {
+                        if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                             if (!AACBlockFly.mc.player.field2967) {
                                 AACBlockFly.mc.player.method2725();
                             }
                         }
                     }
                 }
-                if (!this.method9883("Haphe (AACAP)")) {
+                if (!this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                     if (!this.method10103()) {
                         for (float n = 0.0f; n < 0.7f; n += 0.1f) {
                             if (this.method10103()) {
@@ -246,7 +246,7 @@ public class AACBlockFly extends Module
             else {
                 double field2396 = AACBlockFly.mc.player.posY;
                 if (!AACBlockFly.mc.player.field2967) {
-                    if (this.method9883("Haphe (AACAP)")) {
+                    if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                         field2396 = this.field15652;
                     }
                 }
@@ -270,7 +270,7 @@ public class AACBlockFly extends Module
     public void method10107(final Class5722 class5722) {
         if (this.isEnabled()) {
             if (this.method9914().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
-                if (!ColorUtils.method19114() || this.method9914().method9883("Tower while moving")) {
+                if (!ColorUtils.method19114() || this.method9914().getBooleanValueFromSettingName("Tower while moving")) {
                     class5722.setCancelled(true);
                 }
             }

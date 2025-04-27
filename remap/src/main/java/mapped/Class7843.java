@@ -67,7 +67,7 @@ public class Class7843
         if (class512.isSpectator()) {
             return false;
         }
-        if (!class512.method1768()) {
+        if (!class512.isAlive()) {
             return false;
         }
         if (!this.field32119 && class512.method1850()) {

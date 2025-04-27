@@ -38,7 +38,7 @@ public class ReloadedFly extends Module {
 
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (ReloadedFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
@@ -65,19 +65,19 @@ public class ReloadedFly extends Module {
     }
 
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method9995(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (this.field15585 != -1) {
                 if (this.field15585 == 0) {
                     if (Math.abs(class5717.method16974()) < 0.08) {
-                        class5717.method16975(this.method9883("Offset") ? -0.01 : 0.0);
+                        class5717.method16975(this.getBooleanValueFromSettingName("Offset") ? -0.01 : 0.0);
                     }
                     ColorUtils.method19155(class5717.method16974());
-                    Class7482.method23149(class5717, 0.35);
+                    MovementUtil.method23149(class5717, 0.35);
                 }
             } else {
-                double n = this.method9883("Offset") ? 0.01 : 0.0;
+                double n = this.getBooleanValueFromSettingName("Offset") ? 0.01 : 0.0;
                 if (this.field15587) {
                     n -= this.getNumberSettingValueByName("Speed") / 2.0f;
                 }
@@ -86,14 +86,14 @@ public class ReloadedFly extends Module {
                 }
                 class5717.method16975(n);
                 ColorUtils.method19155(class5717.method16974());
-                Class7482.method23149(class5717, this.getNumberSettingValueByName("Speed"));
+                MovementUtil.method23149(class5717, this.getNumberSettingValueByName("Speed"));
             }
         }
     }
 
     @EventListener
     public void method9996(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15585;
             if (this.field15585 != 2) {
                 if (this.field15585 > 2) {
@@ -106,7 +106,7 @@ public class ReloadedFly extends Module {
             } else {
                 updateWalkingEvent.method17037(-150.0 - Math.random() * 150.0);
             }
-            if (this.method9883("NoFall")) {
+            if (this.getBooleanValueFromSettingName("NoFall")) {
                 updateWalkingEvent.method17045(true);
             }
             updateWalkingEvent.method17033(true);
@@ -136,7 +136,7 @@ public class ReloadedFly extends Module {
             if (method16990 instanceof Class4353) {
                 final Class4353 class5722 = (Class4353) method16990;
                 if (this.field15585 == -1) {
-                    if (this.method9883("NoFall")) {
+                    if (this.getBooleanValueFromSettingName("NoFall")) {
                         class5722.field19504 = true;
                     }
                 }

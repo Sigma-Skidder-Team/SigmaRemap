@@ -42,7 +42,7 @@ public class Class3574 extends Class3446
         if (method6755 == null) {
             return false;
         }
-        if (method6755.method1768()) {
+        if (method6755.isAlive()) {
             this.field16689 = this.field16685.method4150().method24722(method6755, 0);
             return this.field16689 != null || this.method11117(method6755) >= this.field16685.method1733(method6755.getPosX(), method6755.getPosY(), method6755.getPosZ());
         }
@@ -55,7 +55,7 @@ public class Class3574 extends Class3446
         if (method4152 == null) {
             return false;
         }
-        if (!method4152.method1768()) {
+        if (!method4152.isAlive()) {
             return false;
         }
         if (this.field16688) {

@@ -72,19 +72,19 @@ public class AntiVoid extends Module
                 }
             }
             else {
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
                 class5717.method16975(0.0);
                 --this.field15664;
             }
             if (this.field15662 > this.getNumberSettingValueByName("Fall Distance")) {
-                if (this.method10137() || !this.method9883("Void")) {
+                if (this.method10137() || !this.getBooleanValueFromSettingName("Void")) {
                     this.field15662 = 0.0;
                     this.method10138(this.getStringSettingValueByName("Mode"), class5717);
                 }
             }
             if (this.field15663 > 0) {
                 --this.field15663;
-                Class7482.method23149(class5717, 0.1);
+                MovementUtil.method23149(class5717, 0.1);
             }
         }
     }
@@ -92,7 +92,7 @@ public class AntiVoid extends Module
     @EventListener
     private void method10135(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
-            if (updateWalkingEvent.method17046()) {
+            if (updateWalkingEvent.isPre()) {
                 if (this.field15664 != 0) {
                     updateWalkingEvent.setCancelled(true);
                 }

@@ -19,14 +19,14 @@ public class Class7920
     private boolean field32522;
     private Class226 field32523;
     private Class267 field32524;
-    private Class7617 field32525;
+    private TimerUtil field32525;
     private int field32526;
     private int field32527;
     private Animation field32528;
     
     public Class7920(final Texture field32514, final int field32515, final int field32516, final int field32517, final Class267 field32518, final int field32519, final int field32520) {
         this.field32522 = true;
-        this.field32525 = new Class7617();
+        this.field32525 = new TimerUtil();
         this.field32527 = 1;
         this.field32514 = field32514;
         this.field32516 = field32515;
@@ -41,7 +41,7 @@ public class Class7920
     }
     
     public void method25643() {
-        this.field32525.method23932();
+        this.field32525.start();
         this.field32521 = true;
         if (this.field32528.getDirection() != Direction.FORWARDS) {
             this.field32528.changeDirection(Direction.FORWARDS);
@@ -56,16 +56,16 @@ public class Class7920
     }
     
     public void method25645() {
-        this.field32525.method23933();
+        this.field32525.stop();
         this.field32521 = false;
     }
     
     public void method25646() {
-        this.field32525.method23934();
+        this.field32525.reset();
     }
     
     public void method25647() {
-        this.field32525.method23935();
+        this.field32525.getElapsedTime();
         if (this.field32521) {
             ++this.field32526;
         }

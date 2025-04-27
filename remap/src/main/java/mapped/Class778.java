@@ -97,7 +97,7 @@ public class Class778 extends Class776 implements Class768
     @Override
     public void method2736() {
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 this.field4183.method11111();
                 if (this.field4183.method11110() > 0) {
                     this.field4184.method11107(false);

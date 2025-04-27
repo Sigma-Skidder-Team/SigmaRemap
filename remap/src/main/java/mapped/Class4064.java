@@ -24,7 +24,7 @@ public class Class4064 extends Item
         final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class426.class, class1848.getBoundingBox().intersect(2.0), class1851 -> {
             final boolean b;
             if (class1851 != null) {
-                if (!(!class1851.method1768())) {
+                if (!(!class1851.isAlive())) {
                     if (!(!(class1851.method2098() instanceof Class852))) {
                         return b;
                     }

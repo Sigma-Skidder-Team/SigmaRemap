@@ -88,7 +88,7 @@ public class Class403 extends Class402
     
     private boolean method1990() {
         final Entity method1973 = this.method1973();
-        return method1973 != null && method1973.method1768() && (!(method1973 instanceof Class513) || !method1973.isSpectator());
+        return method1973 != null && method1973.isAlive() && (!(method1973 instanceof Class513) || !method1973.isSpectator());
     }
     
     @Override

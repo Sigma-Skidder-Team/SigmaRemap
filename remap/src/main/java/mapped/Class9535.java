@@ -61,7 +61,7 @@ public class Class9535
         this.field41042 = true;
         if (class7930.method30539()) {
             if (!this.field41041) {
-                if (this.field41037.method1768()) {
+                if (this.field41037.isAlive()) {
                     this.field41041 = true;
                     this.field41039 = this.field41037.ticksExisted;
                     this.field41040 = this.field41039;
@@ -191,7 +191,7 @@ public class Class9535
     public void method35601() {
         final int n = this.field41041 ? 300 : 100;
         if (this.field41042) {
-            if (!this.field41037.method1768() || this.field41037.ticksExisted - this.field41038 > n) {
+            if (!this.field41037.isAlive() || this.field41037.ticksExisted - this.field41038 > n) {
                 final boolean field41041 = this.field41041;
                 this.field41042 = false;
                 this.field41041 = false;

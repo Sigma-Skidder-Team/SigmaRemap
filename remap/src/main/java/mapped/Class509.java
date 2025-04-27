@@ -229,7 +229,7 @@ public class Class509 extends Entity
             }
             Label_0104: {
                 if (this.field2905 != null) {
-                    if (this.field2905.method1768()) {
+                    if (this.field2905.isAlive()) {
                         if (!(this.field2905 instanceof PlayerEntity) || !((PlayerEntity)this.field2905).isSpectator()) {
                             this.field2908 = MathHelper.clamp(this.field2908 * 1.025, -1.0, 1.0);
                             this.field2909 = MathHelper.clamp(this.field2909 * 1.025, -1.0, 1.0);

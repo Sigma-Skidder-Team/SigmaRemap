@@ -115,7 +115,7 @@ public class Class779 extends Class776
     @Override
     public void method2736() {
         super.method2736();
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (!this.method2722()) {
                 this.method2710(Class8107.field33408).method23941(MathHelper.lerp(0.1, this.method2710(Class8107.field33408).method23940(), (this.method4152() == null) ? 0.3 : 0.35));
             }
@@ -201,7 +201,7 @@ public class Class779 extends Class776
     }
     
     private void method4322() {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             for (final Entity class399 : this.world.method6739((Class<? extends Entity>) LivingEntity.class, this.getBoundingBox().intersect(4.0), (Predicate<? super Entity>)Class779.field4185)) {
                 if (!(class399 instanceof Class772)) {
                     class399.attackEntityFrom(DamageSource.method25693(this), 6.0f);
@@ -292,6 +292,6 @@ public class Class779 extends Class776
     }
     
     static {
-        field4185 = (class399 -> class399.method1768() && !(class399 instanceof Class779));
+        field4185 = (class399 -> class399.isAlive() && !(class399 instanceof Class779));
     }
 }

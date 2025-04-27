@@ -22,20 +22,20 @@ public class SlowHop extends Module
     
     @Override
     public void onEnable() {
-        this.field15589 = Class7482.method23136();
+        this.field15589 = MovementUtil.method23136();
         this.field15588 = 2;
     }
     
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136());
+        MovementUtil.method23151(MovementUtil.method23136());
     }
     
     @EventListener
     public void method10000(final Class5717 class5717) {
         if (this.isEnabled()) {
-            this.method9883("AutoJump");
-            final double method23136 = Class7482.method23136();
+            this.getBooleanValueFromSettingName("AutoJump");
+            final double method23136 = MovementUtil.method23136();
             ColorUtils.method19114();
             if (!SlowHop.mc.player.onGround) {
                 ++this.field15588;
@@ -43,7 +43,7 @@ public class SlowHop extends Module
                 if (this.field15589 < method23136) {
                     this.field15589 = method23136;
                 }
-                Class7482.method23149(class5717, this.field15589);
+                MovementUtil.method23149(class5717, this.field15589);
             }
             else {
                 this.field15588 = 0;
@@ -56,7 +56,7 @@ public class SlowHop extends Module
     @EventListener
     public void method10001(final Class5722 class5722) {
         if (this.isEnabled()) {
-            class5722.method16995(0.407 + 0.1 * Class7482.method23140());
+            class5722.method16995(0.407 + 0.1 * MovementUtil.method23140());
             this.field15588 = 0;
             class5722.method16996(1.8);
         }

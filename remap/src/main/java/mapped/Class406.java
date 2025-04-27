@@ -122,7 +122,7 @@ public class Class406 extends Entity implements Class407, Class401
         final RayTraceResult method1794 = Class7476.method23093(this, this.getBoundingBox().expand(method1793).intersect(1.0), class512 -> {
             final boolean b;
             if (!class512.isSpectator()) {
-                if (!(!class512.method1768())) {
+                if (!(!class512.isAlive())) {
                     if (!(!class512.method1749())) {
                         return b;
                     }

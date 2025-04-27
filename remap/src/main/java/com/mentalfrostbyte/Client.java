@@ -143,11 +143,11 @@ public class Client {
             if (this.moduleManager != null) {
                 this.moduleManager.saveModProfiles(this.config);
             }
-            final Class5736 class5736 = new Class5736(this.config);
+            final EventWriter eventWriter = new EventWriter(this.config);
             if (this.eventBus != null) {
-                this.eventBus.post(class5736);
+                this.eventBus.post(eventWriter);
             }
-            ConfigJsonUtil.saveJSONToFile(class5736.method17022(), new File(this.file + "/config.json"));
+            ConfigJsonUtil.saveJSONToFile(eventWriter.method17022(), new File(this.file + "/config.json"));
         } catch (final IOException ex) {
             this.logger.error("Unable to shutdown correctly. Config may be corrupt?");
             ex.printStackTrace();

@@ -180,7 +180,7 @@ public class Class7793
                             this.field31904 = Integer.MAX_VALUE;
                             this.field31905 = true;
                             this.field31918 = Class7793.field31897;
-                            this.field31917 = Entity::method1768;
+                            this.field31917 = Entity::isAlive;
                         }
                         else {
                             this.field31904 = 1;

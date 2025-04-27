@@ -171,7 +171,7 @@ public class Class844 extends Class763
     
     @Override
     public void method2736() {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.world.isRemote) {
                 this.field4500 = this.field4499;
                 if (this.method1706()) {

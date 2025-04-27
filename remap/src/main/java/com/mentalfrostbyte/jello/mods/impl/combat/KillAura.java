@@ -33,17 +33,17 @@ import java.util.List;
 public class KillAura extends Module
 {
     public static boolean field16049;
-    private Class8866 field16050;
+    private Class8866 autoBlock;
     private int field16051;
     private int field16052;
     private int field16053;
     private int field16054;
     private int field16055;
     private int field16056;
-    private int field16057;
+    private int animationProgress;
     private int field16058;
     private int field16059;
-    public static Entity field16060;
+    public static Entity targetEntity;
     public static Class8131 field16061;
     private List<Class8131> field16062;
     public static Class7988 field16063;
@@ -52,7 +52,7 @@ public class KillAura extends Module
     public static int field16066;
     private double field16067;
     private float field16068;
-    private float field16069;
+    private float targetPitch;
     private float field16070;
     private boolean field16071;
     private double[] field16072;
@@ -68,8 +68,8 @@ public class KillAura extends Module
         this.addSetting(new StringSetting("Rotation Mode", "The way you will look at entities", 0, new String[] { "NCP", "AAC", "Smooth", "Test", "None" }));
         this.addSetting(new NumberSetting("Range", "Range value", 4.0f, Float.class, 2.8f, 8.0f, 0.01f));
         this.addSetting(new NumberSetting("Block Range", "Block Range value", 4.0f, Float.class, 2.8f, 8.0f, 0.2f));
-        this.addSetting(new NumberSetting("Min CPS", "Min CPS value", 8.0f, Float.class, 1.0f, 20.0f, 1.0f).method15195(class4997 -> this.field16050.method31133()));
-        this.addSetting(new NumberSetting("Max CPS", "Max CPS value", 8.0f, Float.class, 1.0f, 20.0f, 1.0f).method15195(class4997 -> this.field16050.method31133()));
+        this.addSetting(new NumberSetting("Min CPS", "Min CPS value", 8.0f, Float.class, 1.0f, 20.0f, 1.0f).method15195(class4997 -> this.autoBlock.method31133()));
+        this.addSetting(new NumberSetting("Max CPS", "Max CPS value", 8.0f, Float.class, 1.0f, 20.0f, 1.0f).method15195(class4997 -> this.autoBlock.method31133()));
         this.addSetting(new NumberSetting("Hit box expand", "Hit Box expand", 0.05f, Float.class, 0.0f, 1.0f, 0.01f));
         this.addSetting(new NumberSetting("Hit Chance", "Hit Chance", 100.0f, Float.class, 25.0f, 100.0f, 1.0f));
         this.addSetting(new BooleanSetting("Interact autoblock", "Send interact packet when blocking", true));
@@ -88,24 +88,24 @@ public class KillAura extends Module
     @Override
     public void initialize() {
         this.field16062 = new ArrayList<Class8131>();
-        this.field16050 = new Class8866(this);
+        this.autoBlock = new Class8866(this);
         super.initialize();
     }
     
     @Override
     public void onEnable() {
         this.field16062 = new ArrayList<Class8131>();
-        KillAura.field16060 = null;
+        KillAura.targetEntity = null;
         KillAura.field16061 = null;
-        this.field16051 = (int)this.field16050.method31134(0);
+        this.field16051 = (int)this.autoBlock.method31134(0);
         this.field16052 = 0;
         this.field16054 = 0;
         KillAura.field16066 = 0;
         this.field16065 = new Class7988(KillAura.mc.player.field4077, KillAura.mc.player.field4078);
         this.field16064 = new Class7988(KillAura.mc.player.rotationYaw, KillAura.mc.player.rotationPitch);
         KillAura.field16063 = new Class7988(KillAura.mc.player.rotationYaw, KillAura.mc.player.rotationPitch);
-        this.field16069 = -1.0f;
-        this.field16050.method31129(KillAura.mc.player.method2715(Class316.field1877).getItem() instanceof Class4077 && KillAura.mc.gameSettings.field23445.method1056());
+        this.targetPitch = -1.0f;
+        this.autoBlock.method31129(KillAura.mc.player.method2715(Class316.field1877).getItem() instanceof SwordItem && KillAura.mc.gameSettings.field23445.method1056());
         this.field16071 = false;
         this.field16058 = -1;
         super.onEnable();
@@ -113,7 +113,7 @@ public class KillAura extends Module
     
     @Override
     public void onDisable() {
-        KillAura.field16060 = null;
+        KillAura.targetEntity = null;
         KillAura.field16061 = null;
         this.field16062 = null;
         KillAura.field16049 = false;
@@ -121,76 +121,76 @@ public class KillAura extends Module
     }
     
     @EventListener
-    public void method10743(final Class5732 class5732) {
-        if (this.isEnabled() && this.method9883("Disable on death")) {
+    public void onLoadWorld(final EventLoadWorld eventLoadWorld) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Disable on death")) {
             Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to respawn"));
-            this.method9910();
+            this.toggle();
         }
     }
     
     @EventListener
-    public void method10744(final Class5743 class5743) {
+    public void onTick2(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
-        if (this.field16069 != -1.0f) {
-            ++this.field16069;
+        if (this.targetPitch != -1.0f) {
+            ++this.targetPitch;
         }
-        if (!this.method9883("Disable on death")) {
+        if (!this.getBooleanValueFromSettingName("Disable on death")) {
             return;
         }
-        if (KillAura.mc.player.method1768()) {
+        if (KillAura.mc.player.isAlive()) {
             return;
         }
-        this.method9910();
+        this.toggle();
         Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to death"));
     }
     
     @EventListener
-    public void method10745(final Class5751 class5751) {
+    public void onStopUseItem(final EventStopUseItem eventStopUseItem) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")) {
-                if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof Class4077 || this.field16055 != KillAura.mc.player.inventory.field2743) {
-                    if (KillAura.field16060 != null) {
-                        class5751.setCancelled(true);
+                if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem || this.field16055 != KillAura.mc.player.inventory.field2743) {
+                    if (KillAura.targetEntity != null) {
+                        eventStopUseItem.setCancelled(true);
                         return;
                     }
                 }
             }
-            if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof Class4077) {
-                this.field16057 = 2;
+            if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
+                this.animationProgress = 2;
             }
         }
     }
     
     @EventListener
-    @Class6755
-    public void method10746(final UpdateWalkingEvent updateWalkingEvent) {
+    @LowestPriority
+    public void onUpdateWalking(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() || KillAura.mc.player == null) {
             return;
         }
-        if (updateWalkingEvent.method17046()) {
-            if (this.field16057 > 0) {
-                --this.field16057;
+        if (updateWalkingEvent.isPre()) {
+            if (this.animationProgress > 0) {
+                --this.animationProgress;
             }
-            if (KillAura.field16060 != null) {
-                if (this.field16050.method31128()) {
-                    if (Class7482.method23148()) {
+            if (KillAura.targetEntity != null) {
+                if (this.autoBlock.isBlocking()) {
+                    if (MovementUtil.isMoving()) {
                         if (this.getStringSettingValueByName("Autoblock Mode").equals("NCP")) {
-                            this.field16050.method31131();
+                            this.autoBlock.stopAutoBlock();
                         }
                     }
                 }
             }
-            if (this.field16050.method31128()) {
-                if (!(KillAura.mc.player.getHeldItemMainhand().getItem() instanceof Class4077) || KillAura.field16060 == null) {
-                    this.field16050.method31129(false);
+            if (this.autoBlock.isBlocking()) {
+                if (!(KillAura.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || KillAura.targetEntity == null) {
+                    this.autoBlock.method31129(false);
                 }
             }
             if (this.field16058 >= 0) {
                 if (this.field16058 == 0) {
-                    this.field16050.method31131();
-                    this.field16050.method31129(true);
+                    this.autoBlock.stopAutoBlock();
+                    this.autoBlock.method31129(true);
                 }
                 --this.field16058;
             }
@@ -201,7 +201,7 @@ public class KillAura extends Module
                     final ModuleWithSettings class5745 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Criticals.class);
                     if (class5745.isEnabled()) {
                         if (class5745.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                            this.method10751(updateWalkingEvent, class5745.method10260().method9883("Hypixel"), class5745.method10260().method9883("Avoid Fall Damage"));
+                            this.method10751(updateWalkingEvent, class5745.method10260().getBooleanValueFromSettingName("Hypixel"), class5745.method10260().getBooleanValueFromSettingName("Avoid Fall Damage"));
                         }
                     }
                     this.method10754();
@@ -212,14 +212,14 @@ public class KillAura extends Module
                     updateWalkingEvent.method17043(this.field16064.field32884);
                     updateWalkingEvent.method17041(this.field16064.field32885);
                     ++this.field16051;
-                    final boolean method9887 = this.field16050.method31135(this.field16051);
+                    final boolean method9887 = this.autoBlock.method31135(this.field16051);
                     final float n = (KillAura.mc.player.method2903() >= 1.26) ? KillAura.mc.player.method2904(0.0f) : 1.0f;
                     boolean b = false;
                     Label_0596: {
                         if (class5745.isEnabled()) {
                             if (class5745.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
                                 if (this.field16052 != 0) {
-                                    if (this.field16050.method31134(0) >= 2.0f) {
+                                    if (this.autoBlock.method31134(0) >= 2.0f) {
                                         b = false;
                                         break Label_0596;
                                     }
@@ -233,7 +233,7 @@ public class KillAura extends Module
                         if (b) {
                             if (KillAura.field16066 == 0) {
                                 if (method9887) {
-                                    if (n >= 1.0f || !this.method9883("Cooldown")) {
+                                    if (n >= 1.0f || !this.getBooleanValueFromSettingName("Cooldown")) {
                                         n2 = 1;
                                         break Label_0656;
                                     }
@@ -254,7 +254,7 @@ public class KillAura extends Module
                         }
                     }
                     if (method9887) {
-                        this.field16050.method31136();
+                        this.autoBlock.method31136();
                     }
                     if (n3 != 0) {
                         final Class1590 class5747 = new Class1590(this, method9886);
@@ -277,10 +277,10 @@ public class KillAura extends Module
             return;
         }
         this.field16055 = KillAura.mc.player.inventory.field2743;
-        if (KillAura.field16060 != null) {
-            if (this.field16050.method31132()) {
+        if (KillAura.targetEntity != null) {
+            if (this.autoBlock.method31132()) {
                 if (this.field16064 != null) {
-                    this.field16050.method31130(KillAura.field16060, this.field16064.field32884, this.field16064.field32885);
+                    this.autoBlock.method31130(KillAura.targetEntity, this.field16064.field32884, this.field16064.field32885);
                 }
             }
         }
@@ -331,7 +331,7 @@ public class KillAura extends Module
         GL11.glEnable(2929);
         GL11.glLineWidth(1.4f);
         double n = Minecraft.getInstance().timer.field26528;
-        if (!key.method1768()) {
+        if (!key.isAlive()) {
             n = 0.0;
         }
         GL11.glTranslated(key.lastTickPosX + (key.posX - key.lastTickPosX) * n, key.lastTickPosY + (key.posY - key.lastTickPosY) * n, key.lastTickPosZ + (key.posZ - key.lastTickPosZ) * n);
@@ -397,9 +397,9 @@ public class KillAura extends Module
     }
     
     public boolean method10750() {
-        if (KillAura.field16060 != null) {
+        if (KillAura.targetEntity != null) {
             if (KillAura.mc.player.getHeldItemMainhand() != null) {
-                if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof Class4077) {
+                if (KillAura.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
                     if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")) {
                         return true;
                     }
@@ -418,7 +418,7 @@ public class KillAura extends Module
         double n = b ? 1.0E-14 : 0.0;
         boolean b3 = true;
         Label_0077: {
-            if (KillAura.mc.player.method2903() > 1.26f && this.method9883("Cooldown")) {
+            if (KillAura.mc.player.method2903() > 1.26f && this.getBooleanValueFromSettingName("Cooldown")) {
                 if (this.field16052 != 1) {
                     if (this.field16052 == 0) {
                         boolean b4 = false;
@@ -453,7 +453,7 @@ public class KillAura extends Module
                 }
             }
             else {
-                int n2 = (int)this.field16050.method31134(0);
+                int n2 = (int)this.autoBlock.method31134(0);
                 final boolean equals = this.getStringSettingValueByName("Attack Mode").equals("Pre");
                 if (!equals) {
                     ++n2;
@@ -462,9 +462,9 @@ public class KillAura extends Module
                     if (this.field16052 == 0) {
                         if (this.field16053 >= 1) {
                             if (Step.field15758 > 1) {
-                                final float method31134 = this.field16050.method31134(0);
-                                final float method31135 = this.field16050.method31134(1);
-                                final float n3 = equals ? this.field16050.method31134(2) : 0.0f;
+                                final float method31134 = this.autoBlock.method31134(0);
+                                final float method31135 = this.autoBlock.method31134(1);
+                                final float n3 = equals ? this.autoBlock.method31134(2) : 0.0f;
                                 final int n4 = (int)(method31135 + method31134 - (int)method31134);
                                 Label_0523: {
                                     if (this.field16051 != n2 - 3) {
@@ -541,7 +541,7 @@ public class KillAura extends Module
     }
     
     private Entity method10752(final List<Class8131> list) {
-        final List<Class8131> method31138 = this.field16050.method31138(list);
+        final List<Class8131> method31138 = this.autoBlock.method31138(list);
         if (!method31138.isEmpty() && ((Class8131)method31138.get(0)).method26798().method1732(KillAura.mc.player) <= this.getNumberSettingValueByName("Block Range")) {
             return ((Class8131)method31138.get(0)).method26798();
         }
@@ -552,22 +552,22 @@ public class KillAura extends Module
         final float method9886 = this.getNumberSettingValueByName("Block Range");
         final float method9887 = this.getNumberSettingValueByName("Range");
         final String method9888 = this.getStringSettingValueByName("Mode");
-        final List<Class8131> method9889 = this.field16050.method31138(this.field16050.method31137(Math.max(method9886, method9887)));
+        final List<Class8131> method9889 = this.autoBlock.method31138(this.autoBlock.method31137(Math.max(method9886, method9887)));
         if (this.field16064 == null) {
             this.onEnable();
         }
         if (method9889 != null) {
             if (method9889.size() != 0) {
                 if (!KillAura.mc.gameSettings.field23446.method1058()) {
-                    KillAura.field16060 = this.method10752(method9889);
-                    List<Class8131> field16062 = this.field16050.method31137(method9887);
+                    KillAura.targetEntity = this.method10752(method9889);
+                    List<Class8131> field16062 = this.autoBlock.method31137(method9887);
                     if (method9888.equals("Single") || method9888.equals("Multi")) {
-                        field16062 = this.field16050.method31138(field16062);
+                        field16062 = this.autoBlock.method31138(field16062);
                     }
                     if (field16062.size() != 0) {
-                        if (this.field16069 == -1.0f) {
+                        if (this.targetPitch == -1.0f) {
                             this.field16068 = Math.abs(this.method10755(((Class8131)field16062.get(0)).method26799().field32884, KillAura.field16063.field32884)) * 1.95f / 50.0f;
-                            ++this.field16069;
+                            ++this.targetPitch;
                             this.field16067 = Math.random();
                         }
                         this.field16062 = field16062;
@@ -596,7 +596,7 @@ public class KillAura extends Module
                                     if (method9888.equals("Single")) {
                                         if (!this.field16062.isEmpty() && (KillAura.field16061 == null || KillAura.field16061.method26798() != this.field16062.get(0).method26798())) {
                                             KillAura.field16061 = this.field16062.get(0);
-                                            if (!this.method9883("Through walls")) {
+                                            if (!this.getBooleanValueFromSettingName("Through walls")) {
                                                 final Class7988 method9892 = Class8845.method30924(KillAura.field16061.method26798());
                                                 if (method9892 == null) {
                                                     KillAura.field16061 = new Class8131(this.field16062.get(0).method26798(), method9892, new Class6938(270L));
@@ -608,7 +608,7 @@ public class KillAura extends Module
                                         }
                                         else {
                                             Class7988 class7988 = Class8845.method30922(this.field16062.get(0).method26798());
-                                            if (!this.method9883("Through walls")) {
+                                            if (!this.getBooleanValueFromSettingName("Through walls")) {
                                                 class7988 = Class8845.method30924(KillAura.field16061.method26798());
                                             }
                                             KillAura.field16061.method26802(class7988);
@@ -628,7 +628,7 @@ public class KillAura extends Module
                                         if (!KillAura.field16061.method26800()) {
                                             if (this.field16062.contains(KillAura.field16061)) {
                                                 if (KillAura.mc.player.method1732(KillAura.field16061.method26798()) <= method9887) {
-                                                    if (this.method9883("Through walls")) {
+                                                    if (this.getBooleanValueFromSettingName("Through walls")) {
                                                         KillAura.field16061.method26802(Class8845.method30922(KillAura.field16061.method26798()));
                                                         break Label_0355;
                                                     }
@@ -673,7 +673,7 @@ public class KillAura extends Module
                                     while (j < size2) {
                                         final Class7988 method9895 = Class8845.method30924(this.field16062.get(this.field16054).method26798());
                                         if (method9895 == null) {
-                                            if (this.method9883("Through walls")) {
+                                            if (this.getBooleanValueFromSettingName("Through walls")) {
                                                 KillAura.field16061 = new Class8131(this.field16062.get(this.field16054).method26798(), Class8845.method30922(this.field16062.get(this.field16054).method26798()), new Class6938(this.getStringSettingValueByName("Rotation Mode").equals("NCP") ? 270L : 500L));
                                             }
                                             ++this.field16054;
@@ -708,14 +708,14 @@ public class KillAura extends Module
                     }
                     KillAura.field16061 = null;
                     this.field16062.clear();
-                    this.field16051 = (int)this.field16050.method31134(0);
+                    this.field16051 = (int)this.autoBlock.method31134(0);
                     this.field16052 = 0;
                     KillAura.field16049 = false;
                     this.field16064.field32884 = KillAura.mc.player.rotationYaw;
                     this.field16064.field32885 = KillAura.mc.player.rotationPitch;
                     KillAura.field16063.field32884 = this.field16064.field32884;
                     KillAura.field16063.field32885 = this.field16064.field32885;
-                    this.field16069 = -1.0f;
+                    this.targetPitch = -1.0f;
                     this.field16067 = Math.random();
                     this.field16058 = -1;
                     return;
@@ -723,18 +723,18 @@ public class KillAura extends Module
             }
         }
         KillAura.field16061 = null;
-        KillAura.field16060 = null;
+        KillAura.targetEntity = null;
         if (this.field16062 != null) {
             this.field16062.clear();
         }
-        this.field16051 = (int)this.field16050.method31134(0);
+        this.field16051 = (int)this.autoBlock.method31134(0);
         this.field16052 = 0;
         KillAura.field16049 = false;
         this.field16064.field32884 = KillAura.mc.player.rotationYaw;
         this.field16064.field32885 = KillAura.mc.player.rotationPitch;
         KillAura.field16063.field32884 = this.field16064.field32884;
         KillAura.field16063.field32885 = this.field16064.field32885;
-        this.field16069 = -1.0f;
+        this.targetPitch = -1.0f;
         this.field16067 = Math.random();
         this.field16058 = -1;
     }
@@ -803,7 +803,7 @@ public class KillAura extends Module
             case "AAC": {
                 final Class7988 method26805 = this.method10756(method26800);
                 if (!Class8845.method30923(new Vec3d(method26800.posX, method26800.posY - 1.6 - this.field16067 + method26800.method1892(), method26800.posZ))) {}
-                final float n4 = this.field16069 / Math.max(1.0f, this.field16068);
+                final float n4 = this.targetPitch / Math.max(1.0f, this.field16068);
                 final double n5 = method26800.posX - method26800.lastTickPosX;
                 final double n6 = method26800.posZ - method26800.lastTickPosZ;
                 final float n7 = (float)Math.sqrt(n5 * n5 + n6 * n6);
@@ -822,7 +822,7 @@ public class KillAura extends Module
                 if (n4 == 0.0f || n4 >= 1.0f || (n7 > 0.1 && this.field16068 < 4.0f)) {
                     this.field16068 = (float)Math.round(Math.abs(this.method10755(method26805.field32884, KillAura.field16063.field32884)) * 1.8f / 50.0f);
                     if (this.field16068 > 1.0f || Math.abs(this.method10755(method26805.field32884, this.field16064.field32884)) > 10.0f) {}
-                    this.field16069 = 0.0f;
+                    this.targetPitch = 0.0f;
                     if (KillAura.mc.field4690 == null && n4 != 1.0f) {
                         this.field16067 = Math.random() * 0.5 + 0.25;
                     }

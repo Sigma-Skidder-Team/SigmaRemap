@@ -48,7 +48,7 @@ public class CakeEater extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10146(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
@@ -57,26 +57,26 @@ public class CakeEater extends Module
         if (class5745.method10260() instanceof MineplexFly && ((MineplexFly)class5745.method10260()).method10632()) {
             return;
         }
-        if (!updateWalkingEvent.method17046()) {
+        if (!updateWalkingEvent.isPre()) {
             if (CakeEater.field15674 != null) {
-                if (this.method9883("No Swing") && !this.method9883("Mineplex")) {
+                if (this.getBooleanValueFromSettingName("No Swing") && !this.getBooleanValueFromSettingName("Mineplex")) {
                     CakeEater.mc.method5269().method17292(new Class4380(Class316.field1877));
                 }
-                else if (!this.method9883("No Swing")) {
+                else if (!this.getBooleanValueFromSettingName("No Swing")) {
                     CakeEater.mc.player.method2707(Class316.field1877);
                 }
                 CakeEater.mc.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(CakeEater.field15674.getX() + 0.4 + Math.random() * 0.2, CakeEater.field15674.getY() + 0.5, CakeEater.field15674.getZ() + 0.4 + Math.random() * 0.2), Direction.UP, CakeEater.field15674, false)));
             }
         }
         else {
-            final List<BlockPos> method10147 = this.method10147(this.method9883("Mineplex") ? 6.0f : CakeEater.mc.playerController.method27315());
+            final List<BlockPos> method10147 = this.method10147(this.getBooleanValueFromSettingName("Mineplex") ? 6.0f : CakeEater.mc.playerController.method27315());
             if (method10147.isEmpty()) {
                 CakeEater.field15674 = null;
             }
             else {
                 Collections.sort((List<Object>)method10147, (Comparator<? super Object>)new Class4468(this));
                 CakeEater.field15674 = method10147.get(0);
-                if (!this.method9883("Mineplex")) {
+                if (!this.getBooleanValueFromSettingName("Mineplex")) {
                     final float[] method10148 = Class8845.method30919(CakeEater.field15674.getX() + 0.5, CakeEater.field15674.getZ() + 0.5, CakeEater.field15674.getY());
                     updateWalkingEvent.method17043(method10148[0]);
                     updateWalkingEvent.method17041(method10148[1]);

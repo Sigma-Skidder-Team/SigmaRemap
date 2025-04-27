@@ -53,9 +53,9 @@ public class HypixelSpeed extends Module
                 if (!Jesus.method10433()) {
                     if (!Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                         if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
-                            if (updateWalkingEvent.method17046()) {
+                            if (updateWalkingEvent.isPre()) {
                                 if (!HypixelSpeed.mc.player.onGround) {
-                                    if (updateWalkingEvent.method17046()) {
+                                    if (updateWalkingEvent.isPre()) {
                                         if (Speed.field15748 > 1) {
                                             final double n = HypixelSpeed.mc.player.posX - HypixelSpeed.mc.player.field4074;
                                             final double n2 = HypixelSpeed.mc.player.posZ - HypixelSpeed.mc.player.field4076;
@@ -74,7 +74,7 @@ public class HypixelSpeed extends Module
                                     Label_0166: {
                                         if (method21551.isEnabled()) {
                                             if (method21551.getStringSettingValueByName("Type").equals("NoGround")) {
-                                                if (method21551.method9883("Hypixel")) {
+                                                if (method21551.getBooleanValueFromSettingName("Hypixel")) {
                                                     b = true;
                                                     break Label_0166;
                                                 }
@@ -99,7 +99,7 @@ public class HypixelSpeed extends Module
         if (!this.isEnabled() || HypixelSpeed.mc.player == null) {
             return;
         }
-        if (!this.method9883("Auto Jump") && !HypixelSpeed.mc.player.field2967) {
+        if (!this.getBooleanValueFromSettingName("Auto Jump") && !HypixelSpeed.mc.player.field2967) {
             this.onDisable();
             HypixelSpeed.field15955 = true;
             return;
@@ -114,7 +114,7 @@ public class HypixelSpeed extends Module
                         if (!HypixelSpeed.mc.player.onGround) {
                             if (this.field15951 >= 0) {
                                 ++this.field15951;
-                                if (Class7482.method23140() == 0) {
+                                if (MovementUtil.method23140() == 0) {
                                     if (this.field15951 != 1) {
                                         if (this.field15951 != 2) {
                                             if (this.field15951 != 3) {
@@ -145,13 +145,13 @@ public class HypixelSpeed extends Module
                                 }
                                 double n = this.field15954;
                                 if (this.field15951 > 0) {
-                                    n = Math.max(Class7482.method23138() - Math.min(5, this.field15953) / 5 * this.field15953, this.field15954 * 0.99);
+                                    n = Math.max(MovementUtil.method23138() - Math.min(5, this.field15953) / 5 * this.field15953, this.field15954 * 0.99);
                                 }
-                                Class7482.method23149(class5717, n);
+                                MovementUtil.method23149(class5717, n);
                             }
                         }
                         else if (this.field15953 <= 0 && Step.field15758 >= 3) {
-                            if (((this.method9883("Auto Jump") || HypixelSpeed.mc.player.field2967) && ColorUtils.method19114()) || HypixelSpeed.mc.gameSettings.field23439.method1056()) {
+                            if (((this.getBooleanValueFromSettingName("Auto Jump") || HypixelSpeed.mc.player.field2967) && ColorUtils.method19114()) || HypixelSpeed.mc.gameSettings.field23439.method1056()) {
                                 this.field15951 = 0;
                                 HypixelSpeed.mc.player.method2725();
                                 class5717.method16973(HypixelSpeed.mc.player.getMotion().x);
@@ -160,7 +160,7 @@ public class HypixelSpeed extends Module
                             }
                         }
                         else {
-                            Class7482.method23149(class5717, Class7482.method23137());
+                            MovementUtil.method23149(class5717, MovementUtil.method23137());
                             this.field15953 = 0;
                         }
                         return;
@@ -173,7 +173,7 @@ public class HypixelSpeed extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10590(final Class5722 class5722) {
         if (this.isEnabled()) {
             if (!Jesus.method10433()) {
@@ -182,14 +182,14 @@ public class HypixelSpeed extends Module
                         if (HypixelSpeed.mc.gameSettings.field23439.method1056() && Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled()) {
                             return;
                         }
-                        if (!this.method9883("Auto Jump") && !HypixelSpeed.mc.player.field2967) {
+                        if (!this.getBooleanValueFromSettingName("Auto Jump") && !HypixelSpeed.mc.player.field2967) {
                             return;
                         }
                         if (this.field15951 != 0) {
                             class5722.setCancelled(true);
                         }
-                        class5722.method16995(Class7482.method23141() + 1.0E-14);
-                        double field15954 = 0.644348756324588 + Math.random() * 1.0E-5 + Class7482.method23139() * 0.13;
+                        class5722.method16995(MovementUtil.method23141() + 1.0E-14);
+                        double field15954 = 0.644348756324588 + Math.random() * 1.0E-5 + MovementUtil.method23139() * 0.13;
                         if (this.field15952 >= 5) {
                             this.field15952 = 0;
                         }
@@ -201,7 +201,7 @@ public class HypixelSpeed extends Module
                         }
                         class5722.method16996(field15954);
                         this.field15954 = field15954;
-                        if (this.method9883("Timer")) {
+                        if (this.getBooleanValueFromSettingName("Timer")) {
                             if (!Client.getInstance().moduleManager().getModuleByClass(Timer.class).isEnabled()) {
                                 HypixelSpeed.mc.timer.timerSpeed = 1.4123f;
                             }

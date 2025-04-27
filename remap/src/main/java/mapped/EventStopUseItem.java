@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5751 extends Class5714
+public class EventStopUseItem extends Class5714
 {
     private static String[] field23344;
 }

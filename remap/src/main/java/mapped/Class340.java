@@ -49,7 +49,7 @@ public enum Class340 implements Class326
             }
             switch (Class8067.field33235[this.ordinal()]) {
                 case 1: {
-                    return field35913.method1768();
+                    return field35913.isAlive();
                 }
                 case 2: {
                     return field35913.method1804();

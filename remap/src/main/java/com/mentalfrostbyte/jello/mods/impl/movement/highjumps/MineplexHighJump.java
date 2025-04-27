@@ -42,12 +42,12 @@ public class MineplexHighJump extends Module
         if (this.isEnabled()) {
             if (this.field15704) {
                 if (MineplexHighJump.mc.player.posY + 0.42 < this.field15707) {
-                    this.method9914().method9910();
+                    this.method9914().toggle();
                 }
             }
             if (!MineplexHighJump.mc.player.onGround) {
                 if (this.field15704) {
-                    Class7482.method23149(class5717, this.field15705 = Math.max(this.field15705, 0.499));
+                    MovementUtil.method23149(class5717, this.field15705 = Math.max(this.field15705, 0.499));
                     this.field15705 -= 0.007;
                     double n = 0.5;
                     if (this.getNumberSettingValueByName("Motion") > 3.0f) {
@@ -71,9 +71,9 @@ public class MineplexHighJump extends Module
             if (MineplexHighJump.mc.player.onGround) {
                 if (this.field15704) {
                     this.field15704 = !this.field15704;
-                    Class7482.method23151(0.0);
-                    if (this.method9883("Disable")) {
-                        this.method9914().method9910();
+                    MovementUtil.method23151(0.0);
+                    if (this.getBooleanValueFromSettingName("Disable")) {
+                        this.method9914().toggle();
                     }
                     return;
                 }
@@ -109,7 +109,7 @@ public class MineplexHighJump extends Module
     public void method10203(final Class5723 class5723) {
         if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
-                this.method9914().method9910();
+                this.method9914().toggle();
             }
         }
     }
@@ -119,12 +119,12 @@ public class MineplexHighJump extends Module
         if (this.isEnabled()) {
             if (this.field15704) {
                 if (MineplexHighJump.mc.player.posY >= this.field15707) {
-                    if (this.method9883("Fake fly")) {
+                    if (this.getBooleanValueFromSettingName("Fake fly")) {
                         MineplexHighJump.mc.player.posY = this.field15707;
                         MineplexHighJump.mc.player.lastTickPosY = this.field15707;
                         MineplexHighJump.mc.player.field3019 = this.field15707;
                         MineplexHighJump.mc.player.prevPosY = this.field15707;
-                        if (Class7482.method23148()) {
+                        if (MovementUtil.isMoving()) {
                             MineplexHighJump.mc.player.field3013 = 0.099999994f;
                         }
                     }

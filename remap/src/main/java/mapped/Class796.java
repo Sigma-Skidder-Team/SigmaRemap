@@ -149,7 +149,7 @@ public class Class796 extends Class795 implements Class797
     }
     
     private static boolean method4496(final World class1847, final Entity class1848) {
-        if (class1848.method1768()) {
+        if (class1848.isAlive()) {
             if (!class1848.method1696()) {
                 if (class1847.rand.nextInt(50) == 0) {
                     final List<Entity> method6739 = class1847.method6739((Class<? extends Entity>)Class759.class, class1848.getBoundingBox().intersect(20.0), (Predicate<? super Entity>)Class796.field4248);

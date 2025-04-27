@@ -71,7 +71,7 @@ public enum Class242
         
         @Override
         public boolean method894(final Item class3820) {
-            return class3820 instanceof Class4077;
+            return class3820 instanceof SwordItem;
         }
     }, 
     field1197("DIGGER", 7) {

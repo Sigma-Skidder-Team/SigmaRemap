@@ -58,7 +58,7 @@ public class WaypointManager {
     }
 
     public void method24261() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         final int n = -7687425;
         for (int i = 0; i < 16; ++i) {
             for (int j = 0; j < 16; ++j) {
@@ -123,7 +123,7 @@ public class WaypointManager {
     }
 
     @EventListener
-    public void method24267(final Class5732 class5732) {
+    public void method24267(final EventLoadWorld eventLoadWorld) {
         try {
             this.method24264();
             this.method24270();
@@ -139,7 +139,7 @@ public class WaypointManager {
     }
 
     @EventListener
-    private void method24268(final Class5743 class5743) {
+    private void method24268(final EventPlayerTick eventPlayerTick) {
         if (this.field30396.world == null) {
             return;
         }

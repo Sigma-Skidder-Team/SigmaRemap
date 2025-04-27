@@ -41,7 +41,7 @@ public abstract class Class832 extends Class787
     }
     
     public void method4951(final int n) {
-        if (this.method1768() && !this.method1711()) {
+        if (this.isAlive() && !this.method1711()) {
             this.setAir(n - 1);
             if (this.getAir() == -20) {
                 this.setAir(0);

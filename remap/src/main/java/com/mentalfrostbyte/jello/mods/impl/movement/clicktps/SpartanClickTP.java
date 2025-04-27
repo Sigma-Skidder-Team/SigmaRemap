@@ -28,13 +28,13 @@ public class SpartanClickTP extends Module
     @Override
     public void onDisable() {
         ColorUtils.method19155(-0.08);
-        Class7482.method23151(Class7482.method23136());
+        MovementUtil.method23151(MovementUtil.method23136());
         SpartanClickTP.mc.timer.timerSpeed = 1.0f;
     }
     
     @EventListener
     private void method10366(final Class5748 class5748) {
-        if (this.isEnabled() && (SpartanClickTP.mc.player.method1809() || !this.method9914().method9883("Sneak"))) {
+        if (this.isEnabled() && (SpartanClickTP.mc.player.method1809() || !this.method9914().getBooleanValueFromSettingName("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
                 final BlockRayTraceResult method13697 = Class4609.method13697(SpartanClickTP.mc.player.rotationYaw, SpartanClickTP.mc.player.rotationPitch, this.method9914().getNumberSettingValueByName("Maximum range"));
                 BlockPos method13698 = null;
@@ -60,7 +60,7 @@ public class SpartanClickTP extends Module
                     if (class5724.field19378 == this.field15792.getY() + 1) {
                         if (class5724.field19379 == this.field15792.getZ() + 0.5) {
                             Client.getInstance().getNotificationManager().send(new Notification("ClickTP", "Successfully teleported"));
-                            this.method9914().method9910();
+                            this.method9914().toggle();
                         }
                     }
                 }

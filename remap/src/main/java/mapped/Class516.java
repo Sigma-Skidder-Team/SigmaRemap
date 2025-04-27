@@ -651,7 +651,7 @@ public abstract class Class516<T extends Class3418> extends Screen implements Cl
     @Override
     public void tick() {
         super.tick();
-        if (!this.minecraft.player.method1768() || this.minecraft.player.removed) {
+        if (!this.minecraft.player.isAlive() || this.minecraft.player.removed) {
             this.minecraft.player.method2814();
         }
     }

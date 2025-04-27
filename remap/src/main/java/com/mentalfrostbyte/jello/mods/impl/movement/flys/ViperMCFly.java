@@ -39,7 +39,7 @@ public class ViperMCFly extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (ViperMCFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
@@ -66,7 +66,7 @@ public class ViperMCFly extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10058(final Class5717 class5717) {
         if (this.isEnabled()) {
             final double n = this.getNumberSettingValueByName("Speed");
@@ -75,38 +75,38 @@ public class ViperMCFly extends Module
                     if (this.field15632 == 0) {
                         if (!ViperMCFly.mc.gameSettings.field23439.method1056()) {
                             if (class5717.method16974() > 0.0) {
-                                class5717.method16975(-Class7482.method23141());
+                                class5717.method16975(-MovementUtil.method23141());
                             }
                         }
                         ColorUtils.method19155(class5717.method16974());
-                        Class7482.method23149(class5717, Class7482.method23136());
+                        MovementUtil.method23149(class5717, MovementUtil.method23136());
                     }
                 }
                 else {
                     if (!ViperMCFly.mc.gameSettings.field23439.method1056()) {
-                        class5717.method16975((this.field15636 && !ColorUtils.method19160(ViperMCFly.mc.player, 0.01f)) ? (-n / 2.0) : Class7482.method23141());
+                        class5717.method16975((this.field15636 && !ColorUtils.method19160(ViperMCFly.mc.player, 0.01f)) ? (-n / 2.0) : MovementUtil.method23141());
                         this.field15635 = this.field15634;
                         this.field15634 = ((this.field15636 && !ColorUtils.method19160(ViperMCFly.mc.player, 0.01f)) ? (ViperMCFly.mc.player.posY + class5717.method16974()) : this.field15634);
                     }
                     else {
-                        class5717.method16975(this.field15636 ? Class7482.method23141() : (n / 2.0));
+                        class5717.method16975(this.field15636 ? MovementUtil.method23141() : (n / 2.0));
                         this.field15635 = this.field15634;
                         this.field15634 = (this.field15636 ? this.field15634 : (ViperMCFly.mc.player.posY + class5717.method16974()));
                     }
                     ColorUtils.method19155(class5717.method16974());
-                    Class7482.method23149(class5717, n);
+                    MovementUtil.method23149(class5717, n);
                 }
             }
             else {
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
     
     @EventListener
     public void method10059(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15632;
             if (this.field15632 != 2) {
                 if (this.field15632 > 2) {

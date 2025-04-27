@@ -44,16 +44,16 @@ public class Aimbot extends ModuleWithSettings
                             if (Aimbot.mc.player.method1732(class400) <= n) {
                                 if (Aimbot.mc.player.method2646((LivingEntity)class400)) {
                                     if (!(class400 instanceof Class857)) {
-                                        if (!this.method9883("Players") && class400 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSettingName("Players") && class400 instanceof PlayerEntity) {
                                             iterator.remove();
                                         }
                                         else if (class400 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class400)) {
                                             iterator.remove();
                                         }
-                                        else if (!this.method9883("Invisible") && class400.method1823()) {
+                                        else if (!this.getBooleanValueFromSettingName("Invisible") && class400.method1823()) {
                                             iterator.remove();
                                         }
-                                        else if (!this.method9883("Animals/Monsters") && !(class400 instanceof PlayerEntity)) {
+                                        else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(class400 instanceof PlayerEntity)) {
                                             iterator.remove();
                                         }
                                         else if (Aimbot.mc.player.method1920() != null && Aimbot.mc.player.method1920().equals(class400)) {

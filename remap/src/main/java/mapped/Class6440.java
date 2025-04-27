@@ -33,7 +33,7 @@ public class Class6440 implements Class6438
     @Override
     public boolean method19206(final LivingEntity class511) {
         final Optional<List<LivingEntity>> method1198 = class511.method2618().method1198(Class8233.field33805);
-        if (this.field25568.method1768()) {
+        if (this.field25568.isAlive()) {
             if (method1198.isPresent()) {
                 if (method1198.get().contains(this.field25568)) {
                     return true;

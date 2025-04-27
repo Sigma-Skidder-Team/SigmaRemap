@@ -127,7 +127,7 @@ public abstract class Class833 extends Class832
     @Override
     public boolean method4195(final PlayerEntity playerEntity, final Class316 class513) {
         final ItemStack method2715 = playerEntity.method2715(class513);
-        if (method2715.getItem() == Items.field31350 && this.method1768()) {
+        if (method2715.getItem() == Items.field31350 && this.isAlive()) {
             this.method1695(Class8520.field35053, 1.0f, 1.0f);
             method2715.method27693(1);
             final ItemStack method2716 = this.method4956();

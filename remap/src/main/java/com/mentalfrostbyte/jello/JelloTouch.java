@@ -35,7 +35,7 @@ public class JelloTouch
         this.field27849 = new LinkedHashSet<Class8879>();
         this.field27850 = false;
         this.field27851 = new HashMap<Module, TouchBarButton>();
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         if (ConfigJsonUtil.field41028) {
             this.field27849.add(new Class8879(344, ClickGuiHolder.class));
         }
@@ -140,7 +140,7 @@ public class JelloTouch
     }
     
     @EventListener
-    public void method21965(final Class5743 class5743) {
+    public void method21965(final EventPlayerTick eventPlayerTick) {
         if (Minecraft.getInstance().world == null && this.field27850) {
             this.method21969();
         }

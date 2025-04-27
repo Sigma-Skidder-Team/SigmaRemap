@@ -23,7 +23,7 @@ public class Speed extends ModuleWithSettings
     }
     
     @EventListener
-    public void method10267(final Class5743 class5743) {
+    public void method10267(final EventPlayerTick eventPlayerTick) {
         ++Speed.field15748;
     }
     
@@ -32,11 +32,11 @@ public class Speed extends ModuleWithSettings
         if (class5723.method16998() instanceof Class4328) {
             if (Speed.mc.player != null) {
                 Speed.field15748 = 0;
-                if (this.method9883("Lag back checker")) {
+                if (this.getBooleanValueFromSettingName("Lag back checker")) {
                     if (this.isEnabled()) {
                         if (Speed.mc.player.ticksExisted > 2) {
                             Client.getInstance().getNotificationManager().send(new Notification("Speed", "Disabled speed due to lagback."));
-                            this.method9910();
+                            this.toggle();
                         }
                     }
                 }

@@ -26,7 +26,7 @@ public class FullBlockPhase extends Module
         if (this.isEnabled()) {
             if (!method10834()) {
                 if (FullBlockPhase.mc.player.collidedHorizontally) {
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                     this.method10833(1.1920931E-8);
                 }
             }

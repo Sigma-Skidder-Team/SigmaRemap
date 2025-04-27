@@ -36,7 +36,7 @@ public class NCPPhase extends PremiumModule
     
     @EventListener
     private void method10698(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (NCPPhase.mc.gameSettings.field23440.method1056()) {
                 final double field2395 = NCPPhase.mc.player.posX;
                 final double field2396 = NCPPhase.mc.player.posY;
@@ -92,18 +92,18 @@ public class NCPPhase extends PremiumModule
             if (this.field16031 != 0) {
                 if (!method10703()) {
                     this.field16030 = false;
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                     return;
                 }
                 if (!this.field16030) {
-                    Class7482.method23149(class5717, this.method9883("Hypixel") ? 0.03 : 0.0031);
+                    MovementUtil.method23149(class5717, this.getBooleanValueFromSettingName("Hypixel") ? 0.03 : 0.0031);
                 }
                 else {
-                    Class7482.method23149(class5717, 0.617);
+                    MovementUtil.method23149(class5717, 0.617);
                 }
             }
             else {
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
                 this.method10702(6.000000238415E-4);
             }
             ++this.field16031;

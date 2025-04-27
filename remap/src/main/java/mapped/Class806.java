@@ -513,7 +513,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
         }
         super.method2736();
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (this.rand.nextInt(900) == 0) {
                     if (this.field2941 == 0) {
                         this.method2663(1.0f);
@@ -677,7 +677,7 @@ public abstract class Class806 extends Class789 implements Class807, Class810
     
     @Override
     public void method2729(final Vec3d class5487) {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.isBeingRidden()) {
                 if (this.method4189()) {
                     if (this.method4736()) {

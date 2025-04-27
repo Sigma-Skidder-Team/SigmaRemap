@@ -45,7 +45,7 @@ public class Class3507 extends Class3446
     @Override
     public boolean method11013() {
         final LivingEntity method4152 = this.field16488.method4152();
-        if (method4152 != null && method4152.method1768()) {
+        if (method4152 != null && method4152.isAlive()) {
             this.field16490 = method4152;
             return true;
         }

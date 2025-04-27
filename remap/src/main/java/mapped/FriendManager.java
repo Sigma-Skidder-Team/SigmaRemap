@@ -25,7 +25,7 @@ public class FriendManager {
     }
 
     public void method29876() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         this.method29892();
     }
 

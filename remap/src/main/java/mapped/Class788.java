@@ -150,7 +150,7 @@ public abstract class Class788 extends Class787
     public void method2736() {
         super.method2736();
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 int method4351 = this.method4351();
                 if (method4351 >= 0) {
                     if (method4351 > 0) {

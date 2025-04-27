@@ -34,7 +34,7 @@ public class RearView extends PremiumModule
     }
     
     @EventListener
-    public void method10622(final Class5743 class5743) {
+    public void method10622(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -47,7 +47,7 @@ public class RearView extends PremiumModule
                 this.onEnable();
             }
         }
-        if (this.method9883("Smart Visibility")) {
+        if (this.getBooleanValueFromSettingName("Smart Visibility")) {
             if (RearView.mc.world.method6739((Class<? extends Entity>) PlayerEntity.class, RearView.mc.player.getBoundingBox().intersect(14.0), class5744 -> {
                 final boolean b;
                 if (class5744.method1732(RearView.mc.player) < 12.0f) {
@@ -89,8 +89,8 @@ public class RearView extends PremiumModule
             return;
         }
         if (!Minecraft.getInstance().gameSettings.field23464) {
-            if (!this.method9883("Smart Visibility")) {
-                this.field15985.changeDirection((RearView.mc.currentScreen != null && !this.method9883("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
+            if (!this.getBooleanValueFromSettingName("Smart Visibility")) {
+                this.field15985.changeDirection((RearView.mc.currentScreen != null && !this.getBooleanValueFromSettingName("Show in GUI")) ? Direction.FORWARDS : Direction.BACKWARDS);
             }
             else {
                 this.field15985.changeDirection((this.field15990 <= 0) ? Direction.FORWARDS : Direction.BACKWARDS);
@@ -175,7 +175,7 @@ public class RearView extends PremiumModule
         }
         if (RearView.field15986 != null) {
             if (RearView.mc.currentScreen != null) {
-                if (!this.method9883("Show in GUI")) {
+                if (!this.getBooleanValueFromSettingName("Show in GUI")) {
                     if (this.field15990 == 0) {
                         return;
                     }

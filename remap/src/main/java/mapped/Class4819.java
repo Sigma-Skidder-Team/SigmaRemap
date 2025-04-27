@@ -203,7 +203,7 @@ public class Class4819 extends Class4817 implements Class4820
     
     private void method14390() {
         int b = 20;
-        final Iterator<Setting> iterator = this.field20620.method9899().values().iterator();
+        final Iterator<Setting> iterator = this.field20620.getSettingMap().values().iterator();
         while (iterator.hasNext()) {
             b = this.method14402(this, iterator.next(), 20, b, 20);
         }
@@ -214,7 +214,7 @@ public class Class4819 extends Class4817 implements Class4820
                 int a = 0;
                 final CustomGuiScreen value = new CustomGuiScreen(this, key.getName() + "SubView", 0, n, this.field20480, this.field20481 - b);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));
-                final Iterator<Setting> iterator2 = key.method9899().values().iterator();
+                final Iterator<Setting> iterator2 = key.getSettingMap().values().iterator();
                 while (iterator2.hasNext()) {
                     a = this.method14402(value, iterator2.next(), 20, a, 20);
                 }

@@ -15,14 +15,14 @@ public class AACStep extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10530(final Class5745 class5745) {
         if (!this.isEnabled() || class5745.isCancelled()) {
             return;
         }
         final double method17049 = class5745.method17049();
         if (ColorUtils.method19160(AACStep.mc.player, 1.0E-4f)) {
-            if (!Class7482.method23142()) {
+            if (!MovementUtil.method23142()) {
                 if (method17049 >= 0.625) {
                     final double field2395 = AACStep.mc.player.posX;
                     final double field2396 = AACStep.mc.player.posY;

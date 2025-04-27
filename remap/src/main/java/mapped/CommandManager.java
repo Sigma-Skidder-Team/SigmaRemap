@@ -23,7 +23,7 @@ public class CommandManager {
     }
 
     public void method32666() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         this.method32669(new Class6709());
         this.method32669(new Class6700());
         this.method32669(new Class6694());
@@ -91,7 +91,7 @@ public class CommandManager {
     }
 
     @EventListener
-    private void method32673(final Class5743 class5743) {
+    private void method32673(final EventPlayerTick eventPlayerTick) {
         final Iterator<Runnable> iterator = CommandManager.field38415.iterator();
         while (iterator.hasNext()) {
             iterator.next().run();

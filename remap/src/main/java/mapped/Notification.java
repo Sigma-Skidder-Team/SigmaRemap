@@ -18,13 +18,13 @@ public class Notification
     public String field25086;
     public Texture field25087;
     public int field25088;
-    public Class7617 field25089;
+    public TimerUtil field25089;
     public Color[] field25090;
     public Color[] field25091;
     public int field25092;
     
     public Notification(final String field25085, final String field25086, final int field25087, final Texture field25088) {
-        this.field25089 = new Class7617();
+        this.field25089 = new TimerUtil();
         this.field25090 = new Color[3];
         this.field25091 = new Color[3];
         this.field25092 = 0;
@@ -32,7 +32,7 @@ public class Notification
         this.field25086 = field25086;
         this.field25087 = field25088;
         this.field25088 = field25087;
-        this.field25089.method23932();
+        this.field25089.start();
     }
     
     public Notification(final String s, final String s2, final Texture class7776) {

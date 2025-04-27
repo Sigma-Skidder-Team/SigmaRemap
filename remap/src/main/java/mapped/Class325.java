@@ -44,7 +44,7 @@ public enum Class325 implements Class326
             final LivingEntity class511 = (LivingEntity)method5303;
             switch (Class7475.field28873[this.ordinal()]) {
                 case 1: {
-                    return class511.method1768();
+                    return class511.isAlive();
                 }
                 case 2: {
                     return class511.method1804();

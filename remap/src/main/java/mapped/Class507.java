@@ -108,7 +108,7 @@ public class Class507 extends Entity
     
     private void method2602(final LivingEntity class511) {
         final LivingEntity method2601 = this.method2601();
-        if (class511.method1768()) {
+        if (class511.isAlive()) {
             if (!class511.method1850()) {
                 if (class511 != method2601) {
                     if (method2601 != null) {

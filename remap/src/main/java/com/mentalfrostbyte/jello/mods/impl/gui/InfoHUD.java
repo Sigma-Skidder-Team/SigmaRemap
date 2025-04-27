@@ -41,10 +41,10 @@ public class InfoHUD extends Module
             final Minecraft field15927 = InfoHUD.mc;
             this.field15926 = field15926 + n2 / Minecraft.method5338() * 1.5f;
             int n3 = 14;
-            if (this.method9883("Show Player")) {
+            if (this.getBooleanValueFromSettingName("Show Player")) {
                 n3 += this.method10541(0, InfoHUD.mc.window.method7695() - 23, 114);
             }
-            if (this.method9883("Show Armor")) {
+            if (this.getBooleanValueFromSettingName("Show Armor")) {
                 n3 += this.method16695(n3, InfoHUD.mc.window.method7695() - 14) + 10;
             }
             if (!this.getStringSettingValueByName("Cords").equals("None")) {

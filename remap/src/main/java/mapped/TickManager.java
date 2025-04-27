@@ -27,11 +27,11 @@ public class TickManager {
     }
 
     public void method29223() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
 
     @EventListener
-    private void method29224(final Class5743 class5743) {
+    private void method29224(final EventPlayerTick eventPlayerTick) {
         ++this.field36156;
         ++this.field36157;
         ++this.field36158;
@@ -41,7 +41,7 @@ public class TickManager {
         if (this.field36162.currentScreen != null) {
             this.field36156 = 0;
         }
-        if (!Class7482.method23148()) {
+        if (!MovementUtil.isMoving()) {
             this.field36158 = 0;
             this.field36159 = true;
         }

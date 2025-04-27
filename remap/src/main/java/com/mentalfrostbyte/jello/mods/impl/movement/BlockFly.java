@@ -45,7 +45,7 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     public boolean method10278() {
-        return this.method9883("No Sprint") && this.isEnabled();
+        return this.getBooleanValueFromSettingName("No Sprint") && this.isEnabled();
     }
 
     public static boolean method10279(final Item class3820) {
@@ -120,7 +120,7 @@ public class BlockFly extends ModuleWithSettings {
         final String method9887 = this.getStringSettingValueByName("Picking mode");
         if ((!method9887.equals("OpenInv") || BlockFly.mc.currentScreen instanceof Class518) && this.method10281() != 0) {
             int n = 43;
-            if (!this.method9883("Intelligent Block Picker")) {
+            if (!this.getBooleanValueFromSettingName("Intelligent Block Picker")) {
                 if (!this.method10284()) {
                     int n2 = -1;
                     for (int i = 9; i < 36; ++i) {
@@ -245,12 +245,12 @@ public class BlockFly extends ModuleWithSettings {
             BlockFly.mc.timer.timerSpeed = 1.0f;
         }
         if (this.method10281() != 0 && (!BlockFly.mc.player.collidedVertically || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
-            if (!ColorUtils.method19114() || this.method9883("Tower while moving")) {
+            if (!ColorUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 final String method9887 = this.getStringSettingValueByName("Tower Mode");
                 switch (method9887) {
                     case "NCP": {
                         if (class5717.method16974() > 0.0) {
-                            if (Class7482.method23140() == 0) {
+                            if (MovementUtil.method23140() == 0) {
                                 if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
                                     class5717.method16975((int) (BlockFly.mc.player.posY + class5717.method16974()) - BlockFly.mc.player.posY);
                                 }
@@ -266,10 +266,10 @@ public class BlockFly extends ModuleWithSettings {
                         }
                         if (BlockFly.mc.gameSettings.field23439.field2162) {
                             if (!ColorUtils.method19114()) {
-                                Class7482.method23151(0.0);
-                                Class7482.method23149(class5717, 0.0);
+                                MovementUtil.method23151(0.0);
+                                MovementUtil.method23149(class5717, 0.0);
                             }
-                            class5717.method16975(Class7482.method23141());
+                            class5717.method16975(MovementUtil.method23141());
                             break;
                         }
                         class5717.method16975(-1.0E-5);
@@ -279,8 +279,8 @@ public class BlockFly extends ModuleWithSettings {
                         if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
                             class5717.method16975((int) (BlockFly.mc.player.posY + class5717.method16974()) - BlockFly.mc.player.posY);
                             if (BlockFly.mc.gameSettings.field23439.field2162 && !ColorUtils.method19114()) {
-                                Class7482.method23151(0.0);
-                                Class7482.method23149(class5717, 0.0);
+                                MovementUtil.method23151(0.0);
+                                MovementUtil.method23149(class5717, 0.0);
                                 break;
                             }
                             break;
@@ -297,7 +297,7 @@ public class BlockFly extends ModuleWithSettings {
                         if (BlockFly.mc.gameSettings.field23439.field2162 && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.world.method6981(BlockFly.mc.player, BlockFly.mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             BlockFly.mc.player.setPosition(BlockFly.mc.player.posX, BlockFly.mc.player.posY + 1.0, BlockFly.mc.player.posZ);
                             class5717.method16975(0.0);
-                            Class7482.method23149(class5717, 0.0);
+                            MovementUtil.method23149(class5717, 0.0);
                             BlockFly.mc.timer.timerSpeed = 0.8038576f;
                             break;
                         }
@@ -306,15 +306,15 @@ public class BlockFly extends ModuleWithSettings {
                 }
             }
         } else if (this.getStringSettingValueByName("Tower Mode").equals("AAC") && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
-            if (!ColorUtils.method19114() || this.method9883("Tower while moving")) {
+            if (!ColorUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 BlockFly.mc.player.field2985 = 0;
                 BlockFly.mc.player.method2725();
-                Class7482.method23149(class5717, Class7482.method23136());
-                Class7482.method23151(Class7482.method23136());
+                MovementUtil.method23149(class5717, MovementUtil.method23136());
+                MovementUtil.method23151(MovementUtil.method23136());
             }
         } else if (!this.getStringSettingValueByName("Tower Mode").equals("NCP") && !this.getStringSettingValueByName("Tower Mode").equals("Cubecraft") && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
             BlockFly.mc.player.field2985 = 20;
-            class5717.method16975(Class7482.method23141());
+            class5717.method16975(MovementUtil.method23141());
         }
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
             ColorUtils.method19155(class5717.method16974());
@@ -330,11 +330,11 @@ public class BlockFly extends ModuleWithSettings {
     }
 
     @EventListener
-    public void method10288(final Class5743 class5743) {
+    public void method10288(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
-        if (this.method9883("Show Block Amount")) {
+        if (this.getBooleanValueFromSettingName("Show Block Amount")) {
             this.field15752 = this.method10281();
         }
     }
@@ -351,7 +351,7 @@ public class BlockFly extends ModuleWithSettings {
         if (this.field15751.calcPercent() == 0.0f) {
             return;
         }
-        if (this.method9883("Show Block Amount")) {
+        if (this.getBooleanValueFromSettingName("Show Block Amount")) {
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 this.method10290(BlockFly.mc.window.method7694() / 2, BlockFly.mc.window.method7695() / 2 + 15 - (int) (10.0f * this.field15751.calcPercent()), this.field15751.calcPercent());
             } else {

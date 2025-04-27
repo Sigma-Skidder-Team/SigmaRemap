@@ -16,10 +16,10 @@ public class Class8074
     }
     
     public void method26494() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
     
     @EventListener
-    private void method26495(final Class5743 class5743) {
+    private void method26495(final EventPlayerTick eventPlayerTick) {
     }
 }

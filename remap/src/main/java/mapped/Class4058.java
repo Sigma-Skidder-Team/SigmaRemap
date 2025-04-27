@@ -18,7 +18,7 @@ public class Class4058 extends Item
     @Override
     public boolean method11714(final ItemStack class8321, final PlayerEntity class8322, final LivingEntity class8323, final Class316 class8324) {
         if (class8321.method27667() && !(class8323 instanceof PlayerEntity)) {
-            if (class8323.method1768()) {
+            if (class8323.isAlive()) {
                 class8323.method1872(class8321.method27664());
                 if (class8323 instanceof Class759) {
                     ((Class759)class8323).method4190();

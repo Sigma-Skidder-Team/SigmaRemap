@@ -30,37 +30,37 @@ public class Class1590 implements Runnable
         else {
             class7007 = ColorUtils.rayTraceFromPlayer(KillAura.method10764(this.field8873).field32884, KillAura.method10764(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872 + Math.sqrt(KillAura.method10760().field4684.method1935().field22770 * KillAura.method10761().field4684.method1935().field22770 + KillAura.method10762().field4684.method1935().field22772 * KillAura.method10763().field4684.method1935().field22772));
         }
-        if (KillAura.field16060 != null) {
+        if (KillAura.targetEntity != null) {
             if (KillAura.method10766(this.field8873).method31128()) {
                 if (!this.field8873.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
                     KillAura.method10766(this.field8873).method31131();
                 }
             }
         }
-        if (b && (class7007 != null || !this.field8873.method9883("Raytrace"))) {
+        if (b && (class7007 != null || !this.field8873.getBooleanValueFromSettingName("Raytrace"))) {
             final Iterator iterator = KillAura.method10767(this.field8873).iterator();
             while (iterator.hasNext()) {
                 Entity class7008 = ((Class8131)iterator.next()).method26798();
                 if (class7007 != null) {
-                    if (this.field8873.method9883("Raytrace")) {
+                    if (this.field8873.getBooleanValueFromSettingName("Raytrace")) {
                         class7008 = class7007.getEntity();
                     }
                 }
                 final Class5750 class7009 = new Class5750(class7008, true);
                 Client.getInstance().getEventBus().post(class7009);
                 if (!class7009.isCancelled()) {
-                    ColorUtils.method19165(class7008, !this.field8873.method9883("No swing"));
+                    ColorUtils.method19165(class7008, !this.field8873.getBooleanValueFromSettingName("No swing"));
                 }
                 class7009.method17060();
             }
         }
-        else if (!this.field8873.method9883("No swing")) {
+        else if (!this.field8873.getBooleanValueFromSettingName("No swing")) {
             KillAura.method10768().field4684.method2707(Class316.field1877);
         }
-        if (KillAura.field16060 != null) {
+        if (KillAura.targetEntity != null) {
             if (KillAura.method10766(this.field8873).method31132()) {
                 if (this.field8873.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
-                    KillAura.method10766(this.field8873).method31130(KillAura.field16060, KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885);
+                    KillAura.method10766(this.field8873).method31130(KillAura.targetEntity, KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885);
                 }
             }
         }

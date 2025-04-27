@@ -47,17 +47,17 @@ public class AutoMLG extends PremiumModule
         if (this.isEnabled()) {
             if (AutoMLG.field16007 > 0) {
                 if (!AutoMLG.mc.player.onGround) {
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                 }
             }
         }
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10647(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled() && AutoMLG.mc.playerController.method27330()) {
-            if (updateWalkingEvent.method17046()) {
+            if (updateWalkingEvent.isPre()) {
                 if (AutoMLG.field16007 >= 0) {
                     ++AutoMLG.field16007;
                     final float[] method30919 = Class8845.method30919(this.field16008.getX() + 0.5, this.field16008.getZ() + 0.5, this.field16008.getY() + 0.5);
@@ -65,7 +65,7 @@ public class AutoMLG extends PremiumModule
                     updateWalkingEvent.method17041(method30919[1]);
                 }
             }
-            if (AutoMLG.field16007 == (this.method9883("Cubecraft") ? 5 : 3)) {
+            if (AutoMLG.field16007 == (this.getBooleanValueFromSettingName("Cubecraft") ? 5 : 3)) {
                 if (AutoMLG.mc.player.inventory.field2743 != this.field16005) {
                     this.field16006 = AutoMLG.mc.player.inventory.field2743;
                     AutoMLG.mc.player.inventory.field2743 = this.field16005;
@@ -84,7 +84,7 @@ public class AutoMLG extends PremiumModule
                         if (AutoMLG.mc.player.fallDistance > 3.0f) {
                             final BlockPos method30921 = this.method10649();
                             if (method30921 != null) {
-                                if (updateWalkingEvent.method17046() && AutoMLG.field16007 == -1) {
+                                if (updateWalkingEvent.isPre() && AutoMLG.field16007 == -1) {
                                     final float[] method30922 = Class8845.method30919(method30921.getX() + 0.5, method30921.getZ() + 0.5, method30921.getY() + 0.5);
                                     updateWalkingEvent.method17043(method30922[0]);
                                     updateWalkingEvent.method17041(method30922[1]);

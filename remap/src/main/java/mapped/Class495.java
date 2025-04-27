@@ -97,7 +97,7 @@ public class Class495 extends TileEntity implements Class439
         }
         if (!this.field2656.isRemote) {
             for (final LivingEntity class511 : this.field2846) {
-                if (!class511.method1768()) {
+                if (!class511.isAlive()) {
                     continue;
                 }
                 if (class511.removed) {
@@ -114,7 +114,7 @@ public class Class495 extends TileEntity implements Class439
     private boolean method2513() {
         final BlockPos method2193 = this.getPos();
         for (final LivingEntity class511 : this.field2846) {
-            if (!class511.method1768()) {
+            if (!class511.isAlive()) {
                 continue;
             }
             if (class511.removed) {
@@ -160,7 +160,7 @@ public class Class495 extends TileEntity implements Class439
     }
     
     private boolean method2516(final LivingEntity class511) {
-        if (class511.method1768()) {
+        if (class511.isAlive()) {
             if (!class511.removed) {
                 if (this.getPos().withinDistance(class511.method1934(), 48.0)) {
                     if (class511.getType().method23383(Class8039.field33100)) {

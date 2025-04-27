@@ -171,7 +171,7 @@ public class Class427 extends Entity
     
     private boolean method2101() {
         final ItemStack method2107 = this.method2107();
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.field2615 != 32767) {
                 if (this.field2614 != -32768) {
                     if (this.field2614 < 6000) {

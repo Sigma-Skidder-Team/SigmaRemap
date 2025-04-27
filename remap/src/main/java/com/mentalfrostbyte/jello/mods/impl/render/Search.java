@@ -70,7 +70,7 @@ public class Search extends Module
     }
     
     @EventListener
-    public void method10372(final Class5732 class5732) {
+    public void method10372(final EventLoadWorld eventLoadWorld) {
         this.field15793.clear();
         this.field15794.clear();
     }
@@ -103,7 +103,7 @@ public class Search extends Module
                 }
                 list.add(class7860);
             }
-            if (this.method9883("Holes")) {
+            if (this.getBooleanValueFromSettingName("Holes")) {
             Label_0145:
                 for (final BlockPos class7861 : this.method10373(class7859)) {
                     if (Search.mc.world.getBlockState(class7861).method21696() != Blocks.AIR) {
@@ -127,7 +127,7 @@ public class Search extends Module
     }
     
     @EventListener
-    public void method10375(final Class5743 class5743) {
+    public void method10375(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

@@ -36,7 +36,7 @@ public class CubecraftGamePlay extends Module
                 final String method16999 = class5724.method13164().getFormattedText();
                 final String lowerCase = CubecraftGamePlay.mc.player.getName().getFormattedText().toLowerCase();
                 Label_0100: {
-                    if (this.field15666.method9883("AutoL")) {
+                    if (this.field15666.getBooleanValueFromSettingName("AutoL")) {
                         if (!string.toLowerCase().contains("was slain by " + lowerCase)) {
                             if (!string.toLowerCase().contains("burned to death while fighting " + lowerCase)) {
                                 if (!string.toLowerCase().contains("was shot by " + lowerCase)) {
@@ -58,7 +58,7 @@ public class CubecraftGamePlay extends Module
                     }
                 }
                 if (method16999.contains("§a§lPlay Again §r§8\u2022 §r§6§lAuto Mode §r§8\u2022 §r§c§lLeave")) {
-                    if (this.field15666.method9883("Auto Join")) {
+                    if (this.field15666.getBooleanValueFromSettingName("Auto Join")) {
                         final Iterator<ITextComponent> iterator = class5724.method13164().iterator();
                         while (iterator.hasNext()) {
                             final Class9485 method17000 = iterator.next().getStyle().method30410();
@@ -77,7 +77,7 @@ public class CubecraftGamePlay extends Module
                         }
                     }
                 }
-                if (this.field15666.method9883("AutoGG")) {
+                if (this.field15666.getBooleanValueFromSettingName("AutoGG")) {
                     if (method16999.equalsIgnoreCase("§e" + CubecraftGamePlay.mc.player.getName().getFormattedText() + "§r§a won the game!§r")) {
                         this.field15666.method10295();
                     }

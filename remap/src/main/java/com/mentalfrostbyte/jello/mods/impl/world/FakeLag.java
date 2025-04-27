@@ -16,26 +16,26 @@ import java.util.ArrayList;
 public class FakeLag extends Module
 {
     private ArrayList<IPacket<?>> field15553;
-    private Class7617 field15554;
+    private TimerUtil field15554;
     private boolean field15555;
     
     public FakeLag() {
         super(Category.WORLD, "FakeLag", "Other players will see you lagging !");
         this.field15553 = new ArrayList<IPacket<?>>();
-        this.field15554 = new Class7617();
+        this.field15554 = new TimerUtil();
         this.addSetting(new NumberSetting("Lag duration", "The lags duration", 0.3f, Float.class, 0.1f, 2.0f, 0.01f));
         this.addSetting(new NumberSetting("Delay", "The lags cooldown", 0.4f, Float.class, 0.1f, 2.0f, 0.01f));
         this.addSetting(new BooleanSetting("Combat", "Delay combat packets", true));
         this.addSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
         this.addSetting(new BooleanSetting("Ping", "Delay ping packets", true));
-        this.field15554.method23932();
+        this.field15554.start();
     }
     
     @Override
     public void onEnable() {
         this.field15553.clear();
         this.field15555 = false;
-        this.field15554.method23934();
+        this.field15554.reset();
     }
     
     @Override
@@ -47,11 +47,11 @@ public class FakeLag extends Module
     }
     
     @EventListener
-    private void method9970(final Class5732 class5732) {
+    private void method9970(final EventLoadWorld eventLoadWorld) {
         if (this.isEnabled()) {
             this.field15553.clear();
             this.field15555 = false;
-            this.field15554.method23934();
+            this.field15554.reset();
         }
     }
     
@@ -59,12 +59,12 @@ public class FakeLag extends Module
     private void method9971(final Class5721 class5721) {
         if (this.isEnabled() && FakeLag.mc.method5269() != null) {
             if (!this.field15555) {
-                if (this.field15554.method23935() > this.getNumberSettingValueByName("Delay") * 1000.0f) {
+                if (this.field15554.getElapsedTime() > this.getNumberSettingValueByName("Delay") * 1000.0f) {
                     this.field15555 = true;
-                    this.field15554.method23934();
+                    this.field15554.reset();
                 }
             }
-            else if (this.field15554.method23935() <= this.getNumberSettingValueByName("Lag duration") * 1000.0f) {
+            else if (this.field15554.getElapsedTime() <= this.getNumberSettingValueByName("Lag duration") * 1000.0f) {
                 if (!(class5721.method16990() instanceof Class4353)) {
                     if (!(class5721.method16990() instanceof Class4303) && !(class5721.method16990() instanceof Class4255)) {
                         if (!(class5721.method16990() instanceof Class4381) && !(class5721.method16990() instanceof Class4380)) {
@@ -75,15 +75,15 @@ public class FakeLag extends Module
                                     }
                                 }
                             }
-                            if (!this.method9883("Blocks")) {
+                            if (!this.getBooleanValueFromSettingName("Blocks")) {
                                 return;
                             }
                         }
-                        else if (!this.method9883("Combat")) {
+                        else if (!this.getBooleanValueFromSettingName("Combat")) {
                             return;
                         }
                     }
-                    else if (!this.method9883("Ping")) {
+                    else if (!this.getBooleanValueFromSettingName("Ping")) {
                         return;
                     }
                 }
@@ -92,7 +92,7 @@ public class FakeLag extends Module
             }
             else {
                 this.field15555 = false;
-                this.field15554.method23934();
+                this.field15554.reset();
                 final Iterator<IPacket<?>> iterator = this.field15553.iterator();
                 while (iterator.hasNext()) {
                     FakeLag.mc.method5269().getNetworkManager().method11176(iterator.next());

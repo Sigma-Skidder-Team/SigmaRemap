@@ -29,10 +29,10 @@ public class Derp extends Module
     
     @EventListener
     public void method10456(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
+        if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
-        if (this.method9883("Sneak")) {
+        if (this.getBooleanValueFromSettingName("Sneak")) {
             if (this.field15870) {
                 Derp.mc.method5269().method17292(new Class4336(Derp.mc.player, Class287.field1592));
             }
@@ -42,7 +42,7 @@ public class Derp extends Module
         }
         this.field15870 = !this.field15870;
         ++this.field15871;
-        if (this.method9883("Hit") && this.field15871 > this.field15869.nextInt(5) + 3) {
+        if (this.getBooleanValueFromSettingName("Hit") && this.field15871 > this.field15869.nextInt(5) + 3) {
             this.field15871 = 0;
             Derp.mc.player.method2707(Class316.values()[this.field15869.nextInt(1)]);
         }

@@ -16,12 +16,12 @@ import java.util.List;
 public class BasicClickTP extends Module
 {
     private List<Class9407> field15867;
-    private Class7617 field15868;
+    private TimerUtil field15868;
     
     public BasicClickTP() {
         super(Category.MOVEMENT, "Basic", "Basic click tp");
         this.field15867 = new ArrayList<Class9407>();
-        this.field15868 = new Class7617();
+        this.field15868 = new TimerUtil();
     }
     
     @Override
@@ -36,7 +36,7 @@ public class BasicClickTP extends Module
     
     @EventListener
     private void method10454(final Class5748 class5748) {
-        if (this.isEnabled() && (BasicClickTP.mc.player.method1809() || !this.method9914().method9883("Sneak"))) {
+        if (this.isEnabled() && (BasicClickTP.mc.player.method1809() || !this.method9914().getBooleanValueFromSettingName("Sneak"))) {
             if (class5748.method17055() == Class1958.field10672) {
                 final BlockRayTraceResult method13697 = Class4609.method13697(BasicClickTP.mc.player.rotationYaw, BasicClickTP.mc.player.rotationPitch, this.method9914().getNumberSettingValueByName("Maximum range"));
                 Vec3i method13698 = null;
@@ -73,8 +73,8 @@ public class BasicClickTP extends Module
                 }
                 this.field15867.add(new Class9407(n, n2, n3));
                 BasicClickTP.mc.player.setPosition(n, n2, n3);
-                this.field15868.method23934();
-                this.field15868.method23932();
+                this.field15868.reset();
+                this.field15868.start();
             }
         }
     }
@@ -84,9 +84,9 @@ public class BasicClickTP extends Module
         if (this.isEnabled()) {
             if (this.field15867 != null) {
                 if (this.field15867.size() != 0) {
-                    if (this.field15868.method23935() > 4000L) {
-                        this.field15868.method23933();
-                        this.field15868.method23934();
+                    if (this.field15868.getElapsedTime() > 4000L) {
+                        this.field15868.stop();
+                        this.field15868.reset();
                         this.field15867.clear();
                     }
                     GL11.glPushMatrix();

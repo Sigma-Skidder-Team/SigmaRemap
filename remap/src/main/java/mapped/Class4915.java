@@ -11,24 +11,24 @@ public class Class4915 extends Class4825
     private static String[] field20591;
     public Minecraft field21021;
     public Class5146 field21022;
-    public Class7617 field21023;
+    public TimerUtil field21023;
     public int field21024;
     
     public Class4915(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final int field21024) {
         super(customGuiScreen, s, n, n2, 100, 100, false);
         this.field21021 = Minecraft.getInstance();
-        this.field21023 = new Class7617();
+        this.field21023 = new TimerUtil();
         this.field21022 = new Class5146(n3, n4);
         this.field20480 = n3 * field21024;
         this.field20481 = n4 * field21024;
         this.field21024 = field21024;
-        this.field21023.method23932();
+        this.field21023.start();
     }
     
     @Override
     public void draw(final float n) {
-        if (this.field21023.method23935() > 70L) {
-            this.field21023.method23934();
+        if (this.field21023.getElapsedTime() > 70L) {
+            this.field21023.reset();
             this.field21022.method16068();
         }
         GL11.glPushMatrix();

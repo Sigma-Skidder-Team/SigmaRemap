@@ -31,7 +31,7 @@ public class Class3460<T extends Class776> extends Class3446
                 if (this.field16314.method4308()) {
                     if (!ItemStack.method27643(this.field16314.method2718(Class2215.field13605), Class8792.method30651())) {
                         final Class776 method4293 = method4292.method30652(this.field16314.method4295());
-                        if (method4293 == null || !method4293.method1768()) {
+                        if (method4293 == null || !method4293.isAlive()) {
                             final List<Entity> method4294 = this.field16314.world.method6739((Class<? extends Entity>)Class427.class, this.field16314.getBoundingBox().grow(16.0, 8.0, 16.0), (Predicate<? super Entity>)Class776.method4307());
                             if (!method4294.isEmpty()) {
                                 return this.field16314.method4150().method24725((Entity)method4294.get(0), 1.149999976158142);

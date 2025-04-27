@@ -30,8 +30,8 @@ public class OldAACSpeed extends Module
     @Override
     public void onEnable() {
         this.field15768 = ((Client.getInstance().getTickManager().method29228() <= 0) ? 1 : 0);
-        this.field15765 = Class7482.method23136();
-        this.field15766 = Class7482.method23144()[0];
+        this.field15765 = MovementUtil.method23136();
+        this.field15766 = MovementUtil.method23144()[0];
     }
     
     @EventListener
@@ -52,24 +52,24 @@ public class OldAACSpeed extends Module
                             }
                         }
                         if (OldAACSpeed.mc.player.collidedHorizontally) {
-                            this.field15765 = Class7482.method23136();
+                            this.field15765 = MovementUtil.method23136();
                         }
-                        this.field15766 = Class7482.method23153(class5717, this.field15765, Class7482.method23144()[0], this.field15766, 45.0f);
+                        this.field15766 = MovementUtil.method23153(class5717, this.field15765, MovementUtil.method23144()[0], this.field15766, 45.0f);
                     }
                 }
             }
-            else if (this.method9883("Auto Jump") && ColorUtils.method19114()) {
+            else if (this.getBooleanValueFromSettingName("Auto Jump") && ColorUtils.method19114()) {
                 this.field15767 = 0;
                 OldAACSpeed.mc.player.method2725();
                 class5717.method16973(OldAACSpeed.mc.player.getMotion().x);
                 class5717.method16975(OldAACSpeed.mc.player.getMotion().y);
                 class5717.method16977(OldAACSpeed.mc.player.getMotion().z);
             }
-            else if (class5717.method16974() != 0.4 + Class7482.method23140() * 0.1) {
+            else if (class5717.method16974() != 0.4 + MovementUtil.method23140() * 0.1) {
                 this.field15768 = 0;
             }
             else {
-                Class7482.method23149(class5717, this.field15765);
+                MovementUtil.method23149(class5717, this.field15765);
             }
         }
     }
@@ -88,9 +88,9 @@ public class OldAACSpeed extends Module
             else {
                 this.field15765 = 0.5;
             }
-            this.field15766 = Class7482.method23144()[0];
+            this.field15766 = MovementUtil.method23144()[0];
             class5722.method16996(this.field15765);
-            class5722.method16995(0.4 + Class7482.method23140() * 0.1);
+            class5722.method16995(0.4 + MovementUtil.method23140() * 0.1);
             this.field15767 = 0;
         }
     }
@@ -100,7 +100,7 @@ public class OldAACSpeed extends Module
         if (this.isEnabled()) {
             if (class5723.method16998() instanceof Class4328) {
                 this.field15768 = 0;
-                this.field15765 = Class7482.method23136();
+                this.field15765 = MovementUtil.method23136();
             }
         }
     }

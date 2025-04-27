@@ -42,7 +42,7 @@ public abstract class Class834 extends Class833
     }
     
     public boolean method4960() {
-        return this.field4445 != null && this.field4445.method1768();
+        return this.field4445 != null && this.field4445.isAlive();
     }
     
     public Class834 method4961(final Class834 field4445) {

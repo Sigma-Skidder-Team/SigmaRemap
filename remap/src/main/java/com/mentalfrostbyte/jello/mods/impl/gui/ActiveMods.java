@@ -42,7 +42,7 @@ public class ActiveMods extends Module
         this.addSetting(new StringSetting("Size", "The font size", 0, new String[] { "Normal", "Small", "Tiny" }));
         this.addSetting(new BooleanSetting("Animations", "Scale in animation", true));
         this.addSetting(new BooleanSetting("Sound", "Toggle sound", true));
-        this.method9899().get("Size").method15195(class4997 -> this.method10476());
+        this.getSettingMap().get("Size").method15195(class4997 -> this.method10476());
         this.method9915(false);
     }
     
@@ -76,7 +76,7 @@ public class ActiveMods extends Module
             if (class3167.getCategoryBasedOnMode() != Category.GUI) {
                 this.field15890.add(class3167);
                 this.field15893.put(class3167, new Animation(150, 150, Direction.FORWARDS));
-                if (!this.method9883("Animations")) {
+                if (!this.getBooleanValueFromSettingName("Animations")) {
                     continue;
                 }
                 this.field15893.get(class3167).changeDirection(class3167.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
@@ -132,7 +132,7 @@ public class ActiveMods extends Module
             return;
         }
         for (final Module key : this.field15893.keySet()) {
-            if (!this.method9883("Animations")) {
+            if (!this.getBooleanValueFromSettingName("Animations")) {
                 continue;
             }
             this.field15893.get(key).changeDirection(key.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
@@ -154,7 +154,7 @@ public class ActiveMods extends Module
             for (final Module key2 : this.field15890) {
                 float n4 = 1.0f;
                 float method7696 = 1.0f;
-                if (!this.method9883("Animations")) {
+                if (!this.getBooleanValueFromSettingName("Animations")) {
                     if (!key2.isEnabled()) {
                         continue;
                     }

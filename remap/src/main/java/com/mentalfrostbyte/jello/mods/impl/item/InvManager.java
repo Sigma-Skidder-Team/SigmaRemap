@@ -23,14 +23,14 @@ public class InvManager extends PremiumModule
     public static int field16014;
     public static int field16015;
     public static int field16016;
-    private Class7617 field16017;
+    private TimerUtil field16017;
     private boolean field16018;
     private boolean field16019;
     public ArrayList<Integer> field16020;
     
     public InvManager() {
         super("InvManager", "Drops all useless items from your inventory", Category.ITEM);
-        this.field16017 = new Class7617();
+        this.field16017 = new TimerUtil();
         this.field16020 = new ArrayList<Integer>();
         this.addSetting(new StringSetting("Mode", "Mode", 0, new String[] { "Basic", "OpenInv", "FakeInv" }));
         this.addSetting(new NumberSetting("Delay", "Inventory clicks delay", 0.3f, Float.class, 0.01f, 1.0f, 0.01f));
@@ -53,9 +53,9 @@ public class InvManager extends PremiumModule
     }
     
     @EventListener
-    public void method10666(final Class5743 class5743) {
-        if (!this.field16017.method23937()) {
-            this.field16017.method23932();
+    public void method10666(final EventPlayerTick eventPlayerTick) {
+        if (!this.field16017.isRunning()) {
+            this.field16017.start();
         }
         if (!this.isEnabled() || AutoArmor.field15966) {
             return;
@@ -68,11 +68,11 @@ public class InvManager extends PremiumModule
         if (InvManager.mc.currentScreen instanceof Class518) {
             this.field16018 = false;
         }
-        if (this.field16019 && this.field16017.method23935() >= n) {
+        if (this.field16019 && this.field16017.getElapsedTime() >= n) {
             this.field16019 = !this.field16019;
             this.method10682(this.field16018);
             InvManagerUtil.method29367(InvManager.mc.player.container.field16154, 45, 0, Class2133.field12437, InvManager.mc.player, true);
-            this.field16017.method23934();
+            this.field16017.reset();
             return;
         }
         Label_0189: {
@@ -83,7 +83,7 @@ public class InvManager extends PremiumModule
                     }
                 }
             }
-            if (this.field16017.method23935() > n) {
+            if (this.field16017.getElapsedTime() > n) {
                 if (InvManager.field16013 >= 36) {
                     if (InvManager.mc.player.container.getSlot(InvManager.field16013).method20054()) {
                         if (!method10667(InvManager.mc.player.container.getSlot(InvManager.field16013).method20053())) {
@@ -96,40 +96,40 @@ public class InvManager extends PremiumModule
                 }
             }
             final boolean equals = this.getStringSettingValueByName("Tools").equals("Organize");
-            if (this.field16017.method23935() >= n) {
+            if (this.field16017.getElapsedTime() >= n) {
                 if (InvManager.field16014 >= 36) {
                     if (equals) {
                         this.method10674(InvManager.field16014, method9887.equals("FakeInv"));
                     }
                 }
             }
-            if (this.field16017.method23935() >= n) {
+            if (this.field16017.getElapsedTime() >= n) {
                 if (InvManager.field16016 >= 36) {
                     if (equals) {
                         this.method10675(InvManager.field16016, method9887.equals("FakeInv"));
                     }
                 }
             }
-            if (this.field16017.method23935() >= n) {
+            if (this.field16017.getElapsedTime() >= n) {
                 if (InvManager.field16015 >= 36) {
                     if (equals) {
                         this.method10676(InvManager.field16015, method9887.equals("FakeInv"));
                     }
                 }
             }
-            if (this.field16017.method23935() >= n) {
-                if (this.method9883("Auto Shield")) {
+            if (this.field16017.getElapsedTime() >= n) {
+                if (this.getBooleanValueFromSettingName("Auto Shield")) {
                     this.method10677(method9887.equals("FakeInv"));
                 }
             }
-            if (this.field16017.method23935() >= n) {
-                if (this.method9883("Cleaner")) {
+            if (this.field16017.getElapsedTime() >= n) {
+                if (this.getBooleanValueFromSettingName("Cleaner")) {
                     for (int i = 9; i < 45; ++i) {
                         if (InvManager.mc.player.container.getSlot(i).method20054()) {
                             if (this.method10670(InvManager.mc.player.container.getSlot(i).method20053(), i)) {
                                 this.method10682(method9887.equals("FakeInv"));
                                 InvManagerUtil.method29368(i);
-                                this.field16017.method23934();
+                                this.field16017.reset();
                                 if (n > 0L) {
                                     break;
                                 }
@@ -141,7 +141,7 @@ public class InvManager extends PremiumModule
         }
         if (!this.field16018) {
             if (!(InvManager.mc.currentScreen instanceof Class518)) {
-                if (this.field16017.method23935() > 0L) {
+                if (this.field16017.getElapsedTime() > 0L) {
                     if (!this.field16019) {
                         this.field16018 = true;
                         InvManager.mc.method5269().method17292(new Class4389(-1));
@@ -158,13 +158,13 @@ public class InvManager extends PremiumModule
             if (InvManager.mc.player.container.getSlot(i).method20054()) {
                 final ItemStack method10671 = InvManager.mc.player.container.getSlot(i).method20053();
                 if (method10669(method10671) > method10669) {
-                    if (method10671.getItem() instanceof Class4077 || !method10670.method9883("Sword")) {
+                    if (method10671.getItem() instanceof SwordItem || !method10670.getBooleanValueFromSettingName("Sword")) {
                         return false;
                     }
                 }
             }
         }
-        return class8321.getItem() instanceof Class4077 || !method10670.method9883("Sword");
+        return class8321.getItem() instanceof SwordItem || !method10670.getBooleanValueFromSettingName("Sword");
     }
     
     public void method10668(final int n, final boolean b) {
@@ -173,10 +173,10 @@ public class InvManager extends PremiumModule
                 final ItemStack method20053 = InvManager.mc.player.container.getSlot(i).method20053();
                 if (method10667(method20053)) {
                     if (method10669(method20053) > 0.0f) {
-                        if (method20053.getItem() instanceof Class4077 || !this.method9883("Sword")) {
+                        if (method20053.getItem() instanceof SwordItem || !this.getBooleanValueFromSettingName("Sword")) {
                             this.method10682(b);
                             InvManagerUtil.method29370(i, n - 36);
-                            this.field16017.method23934();
+                            this.field16017.reset();
                             break;
                         }
                     }
@@ -191,8 +191,8 @@ public class InvManager extends PremiumModule
         if (method27622 instanceof Class4072) {
             n += ((Class4072)method27622).method11709();
         }
-        if (method27622 instanceof Class4077) {
-            n += ((Class4077)method27622).method12281();
+        if (method27622 instanceof SwordItem) {
+            n += ((SwordItem)method27622).method12281();
         }
         return n + (Class8742.method30195(Class7882.field32358, class8321) * 1.25f + Class8742.method30195(Class7882.field32362, class8321) * 0.01f);
     }
@@ -208,7 +208,7 @@ public class InvManager extends PremiumModule
                     if (n == InvManager.field16013 && method10667(InvManager.mc.player.container.getSlot(n).method20053())) {
                         return false;
                     }
-                    if (method27622 instanceof Class4100 && this.method9883("Auto Shield")) {
+                    if (method27622 instanceof Class4100 && this.getBooleanValueFromSettingName("Auto Shield")) {
                         return false;
                     }
                     Label_0126: {
@@ -263,7 +263,7 @@ public class InvManager extends PremiumModule
                     }
                     if (method27622 != Items.field31342) {
                         if (method27622.method11743()) {
-                            if (this.method9883("Food")) {
+                            if (this.getBooleanValueFromSettingName("Food")) {
                                 if (method27622.method11744() != Class9582.field41767) {
                                     return true;
                                 }
@@ -271,14 +271,14 @@ public class InvManager extends PremiumModule
                         }
                         if (!(method27622 instanceof Class4076)) {
                             if (!(method27622 instanceof Class4072)) {
-                                if (!(method27622 instanceof Class4077)) {
+                                if (!(method27622 instanceof SwordItem)) {
                                     if (!(method27622 instanceof Class4055)) {
                                         if (method27622 instanceof Class4087 || method27622 instanceof Class3824) {
-                                            if (this.method9883("Archery")) {
+                                            if (this.getBooleanValueFromSettingName("Archery")) {
                                                 return true;
                                             }
                                         }
-                                        if (method27622 instanceof Class4046 && this.method9883("Heads")) {
+                                        if (method27622 instanceof Class4046 && this.getBooleanValueFromSettingName("Heads")) {
                                             return true;
                                         }
                                         if (!method27622.method11715().getFormattedText().toLowerCase().contains("tnt")) {
@@ -394,7 +394,7 @@ public class InvManager extends PremiumModule
                                 if (!method10678(InvManager.mc.player.container.getSlot(InvManager.field16014).method20053())) {
                                     this.method10682(b);
                                     InvManagerUtil.method29370(i, InvManager.field16014 - 36);
-                                    this.field16017.method23934();
+                                    this.field16017.reset();
                                     if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                         return;
                                     }
@@ -403,7 +403,7 @@ public class InvManager extends PremiumModule
                             else {
                                 this.method10682(b);
                                 InvManagerUtil.method29370(i, InvManager.field16014 - 36);
-                                this.field16017.method23934();
+                                this.field16017.reset();
                                 if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                     return;
                                 }
@@ -426,7 +426,7 @@ public class InvManager extends PremiumModule
                                 if (!method10679(InvManager.mc.player.container.getSlot(InvManager.field16016).method20053())) {
                                     this.method10682(b);
                                     InvManagerUtil.method29370(i, InvManager.field16016 - 36);
-                                    this.field16017.method23934();
+                                    this.field16017.reset();
                                     if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                         return;
                                     }
@@ -435,7 +435,7 @@ public class InvManager extends PremiumModule
                             else {
                                 this.method10682(b);
                                 InvManagerUtil.method29370(i, InvManager.field16016 - 36);
-                                this.field16017.method23934();
+                                this.field16017.reset();
                                 if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                     return;
                                 }
@@ -458,7 +458,7 @@ public class InvManager extends PremiumModule
                                 if (!method10680(InvManager.mc.player.container.getSlot(InvManager.field16015).method20053())) {
                                     this.method10682(b);
                                     InvManagerUtil.method29370(i, InvManager.field16015 - 36);
-                                    this.field16017.method23934();
+                                    this.field16017.reset();
                                     if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                         return;
                                     }
@@ -467,7 +467,7 @@ public class InvManager extends PremiumModule
                             else {
                                 this.method10682(b);
                                 InvManagerUtil.method29370(i, InvManager.field16015 - 36);
-                                this.field16017.method23934();
+                                this.field16017.reset();
                                 if (this.getNumberSettingValueByName("Delay") > 0.0f) {
                                     return;
                                 }
@@ -484,7 +484,7 @@ public class InvManager extends PremiumModule
             for (int i = 9; i < 45; ++i) {
                 if (InvManager.mc.player.container.getSlot(i).method20053().getItem() instanceof Class4100) {
                     this.method10682(b);
-                    this.field16017.method23934();
+                    this.field16017.reset();
                     InvManagerUtil.method29367(InvManager.mc.player.container.field16154, i, 0, Class2133.field12437, InvManager.mc.player, true);
                     this.field16019 = true;
                     return;

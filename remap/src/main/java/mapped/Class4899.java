@@ -59,7 +59,7 @@ public class Class4899 extends Class4841
         if (n == 257) {
             final ArrayList<Module> method14713 = this.method14713();
             if (method14713.size() > 0) {
-                method14713.get(0).method9910();
+                method14713.get(0).toggle();
             }
             Minecraft.getInstance().displayGuiScreen(null);
         }

@@ -31,7 +31,7 @@ public class Class8866
         this.method31133();
     }
     
-    public boolean method31128() {
+    public boolean isBlocking() {
         return this.field37270;
     }
     
@@ -40,8 +40,8 @@ public class Class8866
     }
     
     public void method31130(final Entity class399, final float n, final float n2) {
-        if (this.field37268.method9883("Interact autoblock")) {
-            final EntityRayTraceResult method19144 = ColorUtils.method19144(this.field37268.method9883("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
+        if (this.field37268.getBooleanValueFromSettingName("Interact autoblock")) {
+            final EntityRayTraceResult method19144 = ColorUtils.method19144(this.field37268.getBooleanValueFromSettingName("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
             if (method19144 != null) {
                 this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877, method19144.getHitVec()));
                 this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877));
@@ -51,15 +51,15 @@ public class Class8866
         this.method31129(true);
     }
     
-    public void method31131() {
+    public void stopAutoBlock() {
         ColorUtils.method19164();
         this.method31129(false);
     }
     
     public boolean method31132() {
         if (!this.field37268.getStringSettingValueByName("Autoblock Mode").equals("None")) {
-            if (this.field37269.player.getHeldItemMainhand().getItem() instanceof Class4077) {
-                if (!this.method31128()) {
+            if (this.field37269.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
+                if (!this.isBlocking()) {
                     return true;
                 }
             }
@@ -122,16 +122,16 @@ public class Class8866
                             if (this.field37269.player.method1732(method26798) <= n) {
                                 if (this.field37269.player.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
-                                        if (!this.field37268.method9883("Players") && method26798 instanceof PlayerEntity) {
+                                        if (!this.field37268.getBooleanValueFromSettingName("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
                                         else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(method26798)) {
                                             iterator2.remove();
                                         }
-                                        else if (!this.field37268.method9883("Invisible") && method26798.method1823()) {
+                                        else if (!this.field37268.getBooleanValueFromSettingName("Invisible") && method26798.method1823()) {
                                             iterator2.remove();
                                         }
-                                        else if (!this.field37268.method9883("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
+                                        else if (!this.field37268.getBooleanValueFromSettingName("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
                                             iterator2.remove();
                                         }
                                         else if (this.field37269.player.method1920() != null && this.field37269.player.method1920().equals(method26798)) {
@@ -146,7 +146,7 @@ public class Class8866
                                                     }
                                                 }
                                             }
-                                            if (this.field37268.method9883("Through walls")) {
+                                            if (this.field37268.getBooleanValueFromSettingName("Through walls")) {
                                                 continue;
                                             }
                                             final Class7988 method26799 = Class8845.method30924(method26798);

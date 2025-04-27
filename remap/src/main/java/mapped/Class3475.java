@@ -35,7 +35,7 @@ public class Class3475 extends Class3446
     
     @Override
     public boolean method11017() {
-        return this.field16378.method1768() && this.field16377.method1734(this.field16378) <= 225.0 && (!this.field16377.method4150().method24731() || this.method11013());
+        return this.field16378.isAlive() && this.field16377.method1734(this.field16378) <= 225.0 && (!this.field16377.method4150().method24731() || this.method11013());
     }
     
     @Override

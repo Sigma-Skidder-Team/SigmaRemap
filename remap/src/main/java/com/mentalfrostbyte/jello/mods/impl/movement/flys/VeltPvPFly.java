@@ -39,7 +39,7 @@ public class VeltPvPFly extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (VeltPvPFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
@@ -66,7 +66,7 @@ public class VeltPvPFly extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10383(final Class5717 class5717) {
         if (this.isEnabled()) {
             final double n = this.getNumberSettingValueByName("Speed");
@@ -75,36 +75,36 @@ public class VeltPvPFly extends Module
                     if (this.field15795 == 0) {
                         if (!VeltPvPFly.mc.gameSettings.field23439.method1056()) {
                             if (class5717.method16974() > 0.0) {
-                                class5717.method16975(-Class7482.method23141());
+                                class5717.method16975(-MovementUtil.method23141());
                             }
                         }
                         ColorUtils.method19155(class5717.method16974());
-                        Class7482.method23149(class5717, n - 0.1);
+                        MovementUtil.method23149(class5717, n - 0.1);
                     }
                 }
                 else {
                     if (!VeltPvPFly.mc.gameSettings.field23439.method1056()) {
-                        class5717.method16975(this.field15799 ? (-n / 2.0) : Class7482.method23141());
+                        class5717.method16975(this.field15799 ? (-n / 2.0) : MovementUtil.method23141());
                     }
                     else {
-                        class5717.method16975(this.field15799 ? Class7482.method23141() : (n / 2.0));
+                        class5717.method16975(this.field15799 ? MovementUtil.method23141() : (n / 2.0));
                         this.field15798 = this.field15797;
                         this.field15797 = (this.field15799 ? this.field15797 : (VeltPvPFly.mc.player.posY + class5717.method16974()));
                     }
                     ColorUtils.method19155(class5717.method16974());
-                    Class7482.method23149(class5717, n);
+                    MovementUtil.method23149(class5717, n);
                 }
             }
             else {
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
     
     @EventListener
     public void method10384(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15795;
             if (this.field15795 != 2) {
                 if (this.field15795 > 2) {

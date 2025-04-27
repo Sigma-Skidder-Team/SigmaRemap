@@ -19,7 +19,7 @@ public class AutoClicker extends Module
     }
     
     @EventListener
-    private void method10568(final Class5743 class5743) {
+    private void method10568(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             ++this.field15940;
             final Random random = new Random();

@@ -40,7 +40,7 @@ public class Breadcrumbs extends Module
     }
     
     @EventListener
-    public void method10417(final Class5732 class5732) {
+    public void method10417(final EventLoadWorld eventLoadWorld) {
         if (this.isEnabled()) {
             this.field15850.clear();
         }
@@ -71,7 +71,7 @@ public class Breadcrumbs extends Module
             for (final Vec3d class5741 : this.field15850) {
                 final Vec3d method10418 = this.method10418(class5741);
                 final double method10419 = class5741.distanceTo(class5740);
-                final double n = this.method9883("Fade Out") ? (1.0 - Math.min(1.0, method10419 / 14.0)) : 0.6000000238418579;
+                final double n = this.getBooleanValueFromSettingName("Fade Out") ? (1.0 - Math.min(1.0, method10419 / 14.0)) : 0.6000000238418579;
                 if (method10419 <= 24.0) {
                     GL11.glColor4fv(ColorUtils.method19139(ColorUtils.applyAlpha(this.method9885("Color"), (float)n)));
                     GL11.glVertex3d(method10418.x, method10418.y, method10418.z);

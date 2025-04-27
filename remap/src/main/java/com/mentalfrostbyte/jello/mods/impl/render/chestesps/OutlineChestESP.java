@@ -48,7 +48,7 @@ public class OutlineChestESP extends Module
             Label_0130: {
                 if (tileEntity instanceof Class475) {
                     if (!(tileEntity instanceof Class478)) {
-                        if (this.method9914().method9883("Show Regular Chests")) {
+                        if (this.method9914().getBooleanValueFromSettingName("Show Regular Chests")) {
                             b2 = true;
                             break Label_0130;
                         }
@@ -57,8 +57,8 @@ public class OutlineChestESP extends Module
                 b2 = false;
             }
             final boolean b3 = b2;
-            final boolean b4 = tileEntity instanceof Class477 && this.method9914().method9883("Show Ender Chests");
-            final boolean b5 = tileEntity instanceof Class478 && this.method9914().method9883("Show Trapped Chests");
+            final boolean b4 = tileEntity instanceof Class477 && this.method9914().getBooleanValueFromSettingName("Show Ender Chests");
+            final boolean b5 = tileEntity instanceof Class478 && this.method9914().getBooleanValueFromSettingName("Show Trapped Chests");
             if (!b3) {
                 if (!b4) {
                     if (!b5) {

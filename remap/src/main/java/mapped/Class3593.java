@@ -25,7 +25,7 @@ public class Class3593 extends Class3592
             return false;
         }
         final LivingEntity method4152 = this.field16738.method4152();
-        if (method4152 == null || !method4152.method1768()) {
+        if (method4152 == null || !method4152.isAlive()) {
             return false;
         }
         if (method4152.method1883() == method4152.method1882()) {
@@ -43,7 +43,7 @@ public class Class3593 extends Class3592
     @Override
     public boolean method11017() {
         final LivingEntity method4152 = this.field16738.method4152();
-        if (method4152 != null && method4152.method1768()) {
+        if (method4152 != null && method4152.isAlive()) {
             final double field22771 = this.field16738.getMotion().y;
             if (field22771 * field22771 < 0.05000000074505806) {
                 if (Math.abs(this.field16738.rotationPitch) < 15.0f) {

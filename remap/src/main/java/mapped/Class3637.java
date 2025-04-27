@@ -21,7 +21,7 @@ public class Class3637 extends Class3446
     @Override
     public boolean method11013() {
         final Class8792 method4292 = this.field16879.method4292();
-        if (this.field16879.method1768()) {
+        if (this.field16879.isAlive()) {
             if (this.field16879.method4152() == null) {
                 if (method4292 != null) {
                     if (method4292.method30623()) {

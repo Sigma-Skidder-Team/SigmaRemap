@@ -124,7 +124,7 @@ public abstract class Class4710<T extends LivingEntity, M extends Class5845<T>> 
             float method35714 = 0.0f;
             float field20306 = 0.0f;
             if (!field20303.isPassenger()) {
-                if (field20303.method1768()) {
+                if (field20303.isAlive()) {
                     method35714 = MathHelper.method35700(f, field20303.field2945, field20303.field2946);
                     field20306 = field20303.field2947 - field20303.field2946 * (1.0f - f);
                     if (field20303.method2625()) {

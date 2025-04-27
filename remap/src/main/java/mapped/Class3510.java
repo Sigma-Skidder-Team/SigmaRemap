@@ -36,7 +36,7 @@ public class Class3510 extends Class3446
         if (this.field16503.method4148().method19905()) {
             if (this.field16503.method5041()) {
                 if (this.field16503.method4152() != null) {
-                    if (this.field16503.method4152().method1768()) {
+                    if (this.field16503.method4152().isAlive()) {
                         return true;
                     }
                 }

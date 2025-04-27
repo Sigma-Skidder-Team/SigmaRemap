@@ -26,14 +26,14 @@ public class ChestStealer extends Module
 {
     public boolean field15737;
     private ConcurrentHashMap<Class475, Boolean> field15738;
-    private Class7617 field15739;
-    private Class7617 field15740;
+    private TimerUtil field15739;
+    private TimerUtil field15740;
     private Class475 field15741;
     
     public ChestStealer() {
         super(Category.ITEM, "ChestStealer", "Steals items from chest");
-        this.field15739 = new Class7617();
-        this.field15740 = new Class7617();
+        this.field15739 = new TimerUtil();
+        this.field15740 = new TimerUtil();
         this.addSetting(new BooleanSetting("Aura", "Automatically open chests near you.", false));
         this.addSetting(new BooleanSetting("Ignore Junk", "Ignores useless items.", true));
         this.addSetting(new BooleanSetting("Fix ViaVersion", "Fixes ViaVersion delay.", true));
@@ -54,23 +54,23 @@ public class ChestStealer extends Module
     
     @EventListener
     public void method10251(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
+        if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
-        if (this.method9883("Aura")) {
-            if (this.field15740.method23935() > 2000L) {
+        if (this.getBooleanValueFromSettingName("Aura")) {
+            if (this.field15740.getElapsedTime() > 2000L) {
                 if (this.field15737) {
-                    this.field15740.method23934();
+                    this.field15740.reset();
                     this.field15737 = false;
                 }
             }
-            if (!this.field15740.method23937()) {
-                this.field15740.method23932();
+            if (!this.field15740.isRunning()) {
+                this.field15740.start();
             }
             this.method10256();
             if (this.field15741 != null) {
                 if (ChestStealer.mc.currentScreen == null) {
-                    if (this.field15740.method23935() > 1000L) {
+                    if (this.field15740.getElapsedTime() > 1000L) {
                         final BlockRayTraceResult class5745 = (BlockRayTraceResult)Class4609.method13700(this.field15741.getPos());
                         if (class5745.getPos().getX() == this.field15741.getPos().getX()) {
                             if (class5745.getPos().getY() == this.field15741.getPos().getY()) {
@@ -78,7 +78,7 @@ public class ChestStealer extends Module
                                     this.field15737 = true;
                                     ChestStealer.mc.method5269().method17292(new Class4329(Class316.field1877, class5745));
                                     ChestStealer.mc.method5269().method17292(new Class4380(Class316.field1877));
-                                    this.field15740.method23934();
+                                    this.field15740.reset();
                                 }
                             }
                         }
@@ -104,7 +104,7 @@ public class ChestStealer extends Module
                 if (Math.sqrt(ChestStealer.mc.player.method1733(n2, n3, n4)) >= 5.0) {
                     continue;
                 }
-                if (this.field15740.method23935() <= 1000L) {
+                if (this.field15740.getElapsedTime() <= 1000L) {
                     continue;
                 }
                 if (ChestStealer.mc.currentScreen != null) {
@@ -138,7 +138,7 @@ public class ChestStealer extends Module
     }
     
     @EventListener
-    public void method10252(final Class5732 class5732) {
+    public void method10252(final EventLoadWorld eventLoadWorld) {
         if (!this.field15738.isEmpty()) {
             this.field15738.clear();
         }
@@ -151,23 +151,23 @@ public class ChestStealer extends Module
         }
         if (!(ChestStealer.mc.currentScreen instanceof Class726)) {
             this.field15737 = false;
-            this.field15739.method23933();
-            this.field15739.method23934();
+            this.field15739.stop();
+            this.field15739.reset();
             if (ChestStealer.mc.currentScreen == null) {
                 if (InvManagerUtil.method29372()) {
-                    this.field15740.method23934();
+                    this.field15740.reset();
                 }
             }
             return;
         }
-        if (!this.field15739.method23937()) {
-            this.field15739.method23932();
+        if (!this.field15739.isRunning()) {
+            this.field15739.start();
         }
-        if (this.field15739.method23935() < this.getNumberSettingValueByName("Delay") * 1000.0f) {
+        if (this.field15739.getElapsedTime() < this.getNumberSettingValueByName("Delay") * 1000.0f) {
             return;
         }
         if (InvManagerUtil.method29372()) {
-            if (this.method9883("Close")) {
+            if (this.getBooleanValueFromSettingName("Close")) {
                 ChestStealer.mc.player.method2814();
             }
             return;
@@ -186,18 +186,18 @@ public class ChestStealer extends Module
                     continue;
                 }
                 if (!this.field15737) {
-                    if (this.field15739.method23935() < this.getNumberSettingValueByName("First Item") * 1000.0f) {
+                    if (this.field15739.getElapsedTime() < this.getNumberSettingValueByName("First Item") * 1000.0f) {
                         return;
                     }
                     this.field15737 = !this.field15737;
                 }
-                if (!this.method9883("Fix ViaVersion")) {
+                if (!this.getBooleanValueFromSettingName("Fix ViaVersion")) {
                     InvManagerUtil.method29366(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player);
                 }
                 else {
                     InvManagerUtil.method29367(((Class3438)class5741.field3077).field16154, class5742.field26174, 0, Class2133.field12438, ChestStealer.mc.player, true);
                 }
-                this.field15739.method23934();
+                this.field15739.reset();
                 n = 0;
                 if (this.getNumberSettingValueByName("Delay") <= 0.0f) {
                     continue;
@@ -208,7 +208,7 @@ public class ChestStealer extends Module
                 if (this.field15737) {
                     this.field15737 = !this.field15737;
                 }
-                if (this.method9883("Close")) {
+                if (this.getBooleanValueFromSettingName("Close")) {
                     ChestStealer.mc.player.method2814();
                 }
                 for (final Class475 key : this.field15738.keySet()) {
@@ -247,10 +247,10 @@ public class ChestStealer extends Module
     
     private boolean method10255(final ItemStack class8321) {
         final Item method27622 = class8321.getItem();
-        if (!this.method9883("Ignore Junk")) {
+        if (!this.getBooleanValueFromSettingName("Ignore Junk")) {
             return false;
         }
-        if (method27622 instanceof Class4077) {
+        if (method27622 instanceof SwordItem) {
             return !InvManager.method10667(class8321);
         }
         if (method27622 instanceof Class4073) {
@@ -268,7 +268,7 @@ public class ChestStealer extends Module
         if (method27622 instanceof Class4036) {
             return !BlockFly.method10279(method27622);
         }
-        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.getInstance().moduleManager().getModuleByClass(InvManager.class).method9883("Archery"))) {
+        if (method27622 instanceof Class3824 || (method27622 instanceof Class4087 && Client.getInstance().moduleManager().getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
             return true;
         }
         if (method27622 == Items.field31350 && Client.getInstance().moduleManager().getModuleByClass(AutoMLG.class).isEnabled()) {

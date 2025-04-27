@@ -42,15 +42,15 @@ public class RotationManager {
     }
 
     public void method28365() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         new ViaManager(null);
     }
 
     @EventListener
-    public void method28366(final Class5751 class5751) {
+    public void method28366(final EventStopUseItem eventStopUseItem) {
         if (ViaManager.method34762() == Class7906.field32452.method25613()) {
             if (this.field34856.player.method2768() <= 1) {
-                class5751.setCancelled(true);
+                eventStopUseItem.setCancelled(true);
             }
         }
     }
@@ -75,14 +75,14 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
-    public void method28368(final Class5732 class5732) {
+    @HighestPriority
+    public void method28368(final EventLoadWorld eventLoadWorld) {
         RotationManager.field34859 = 0;
         this.field34860.method23919();
     }
 
     @EventListener
-    @Class6763
+    @HighestPriority
     public void method28369(final Class5740 class5740) {
         if (this.field34856.player != null) {
             if (this.field34856.player.method1654() == Pose.field1666) {
@@ -94,7 +94,7 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
+    @HighestPriority
     public void method28370(final Class5753 class5753) {
         if (this.field34856.world != null && this.field34856.player != null) {
             final Block method21696 = this.field34856.world.getBlockState(class5753.method17064()).method21696();
@@ -115,8 +115,8 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
-    public void method28371(final Class5743 class5743) {
+    @HighestPriority
+    public void method28371(final EventPlayerTick eventPlayerTick) {
         if (!this.method28375()) {
             return;
         }
@@ -130,7 +130,7 @@ public class RotationManager {
                 final Iterator<ItemStack> iterator = class5744.method1800().iterator();
                 boolean b = false;
                 while (iterator.hasNext()) {
-                    if (iterator.next().getItem() instanceof Class4077) {
+                    if (iterator.next().getItem() instanceof SwordItem) {
                         b = true;
                     }
                 }
@@ -174,7 +174,7 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
+    @HighestPriority
     public void method28373(final Class5723 class5723) {
         if (!Client.getInstance().moduleManager().getModuleByClass(OldHitting.class).isEnabled() && ViaManager.method34762() != Class7906.field32452.method25613()) {
             if (!RotationManager.field34858.isEmpty()) {
@@ -255,7 +255,7 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
+    @HighestPriority
     public void method28374(final Class5717 class5717) {
         if (ViaManager.method34762() < Class7906.field32463.method25613() || ColorUtils.method19146()) {
             if (this.field34856.player.method1706()) {
@@ -335,7 +335,7 @@ public class RotationManager {
     }
 
     @EventListener
-    @Class6763
+    @HighestPriority
     public void method28376(final Class5729 class5729) {
         if (class5729.method17016() != this.field34856.player) {
             if (class5729.method17016() != Freecam.field15901) {

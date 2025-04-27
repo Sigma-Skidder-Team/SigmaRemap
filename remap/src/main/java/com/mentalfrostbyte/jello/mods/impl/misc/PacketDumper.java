@@ -16,7 +16,7 @@ import java.io.FileWriter;
 
 public class PacketDumper extends Module
 {
-    public FileWriter field15729;
+    public FileWriter packetWriter;
     
     public PacketDumper() {
         super(Category.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
@@ -25,7 +25,7 @@ public class PacketDumper extends Module
             if (!file.exists()) {
                 file.createNewFile();
             }
-            this.field15729 = new FileWriter(file);
+            this.packetWriter = new FileWriter(file);
         }
         catch (final IOException ex) {
             ex.printStackTrace();
@@ -63,10 +63,10 @@ public class PacketDumper extends Module
     
     private void method10235(final IPacket class4252, final boolean b) {
         try {
-            this.field15729.write((b ? "-->" : "<--") + "\t" + class4252.getClass().getSimpleName() + "\n");
+            this.packetWriter.write((b ? "-->" : "<--") + "\t" + class4252.getClass().getSimpleName() + "\n");
             for (final Field field : FieldUtils.getAllFields((Class)class4252.getClass())) {
                 try {
-                    this.field15729.write("\t\t" + field.getName() + "=" + this.method10234(field, class4252) + "\n");
+                    this.packetWriter.write("\t\t" + field.getName() + "=" + this.method10234(field, class4252) + "\n");
                 }
                 catch (final Exception ex) {
                     ex.printStackTrace();
@@ -93,9 +93,9 @@ public class PacketDumper extends Module
     }
     
     @EventListener
-    private void method10238(final Class5736 class5736) {
+    private void onWrite(final EventWriter eventWriter) {
         try {
-            this.field15729.close();
+            this.packetWriter.close();
         }
         catch (final IOException ex) {
             ex.printStackTrace();

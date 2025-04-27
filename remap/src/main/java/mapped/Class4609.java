@@ -338,7 +338,7 @@ public class Class4609
     }
     
     public static float[] method13695() {
-        final BlockRayTraceResult method13696 = method13696(Class7482.method23147() - 270.0f);
+        final BlockRayTraceResult method13696 = method13696(MovementUtil.method23147() - 270.0f);
         if (method13696.getType() != RayTraceResult.Type.MISS) {
             final double n = method13696.getHitVec().x - method13696.getPos().getX();
             final double n2 = method13696.getHitVec().z - method13696.getPos().getZ();
@@ -388,7 +388,7 @@ public class Class4609
     }
     
     public static RayTraceResult method13699(float n, float n2, float method27315, final float n3) {
-        final Vec3d class5487 = new Vec3d(Class4609.field20075.player.posX + Math.cos(Class7482.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.player.posY + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ + Math.sin(Class7482.method23147() * 3.141592653589793 / 180.0) * n3);
+        final Vec3d class5487 = new Vec3d(Class4609.field20075.player.posX + Math.cos(MovementUtil.method23147() * 3.141592653589793 / 180.0) * n3, Class4609.field20075.player.posY + Class4609.field20075.player.method1892(), Class4609.field20075.player.posZ + Math.sin(MovementUtil.method23147() * 3.141592653589793 / 180.0) * n3);
         n = (float)Math.toRadians(n);
         n2 = (float)Math.toRadians(n2);
         final float n4 = -MathHelper.sin(n) * MathHelper.cos(n2);

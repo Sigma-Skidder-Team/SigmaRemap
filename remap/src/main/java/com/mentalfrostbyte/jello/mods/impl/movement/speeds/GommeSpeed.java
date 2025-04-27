@@ -23,12 +23,12 @@ public class GommeSpeed extends Module
     public void onEnable() {
         this.field15929 = 0;
         this.field15930 = 0;
-        this.field15932 = Class7482.method23144()[0];
+        this.field15932 = MovementUtil.method23144()[0];
     }
     
     @Override
     public void onDisable() {
-        Class7482.method23154(0.27, Class7482.method23144()[0], this.field15932, 45.0f);
+        MovementUtil.method23154(0.27, MovementUtil.method23144()[0], this.field15932, 45.0f);
     }
     
     @EventListener
@@ -45,14 +45,14 @@ public class GommeSpeed extends Module
         if (this.isEnabled()) {
             if (GommeSpeed.mc.player.onGround && ColorUtils.method19114()) {
                 this.field15929 = 0;
-                class5717.method16975(Class7482.method23141());
+                class5717.method16975(MovementUtil.method23141());
                 final double[] array = { 0.549, 0.625 };
                 this.field15931 = array[Math.min(this.field15930, array.length - 1)];
                 if (this.field15930 < array.length) {
                     ++this.field15930;
                 }
-                Class7482.method23149(class5717, this.field15931);
-                this.field15932 = Class7482.method23144()[0];
+                MovementUtil.method23149(class5717, this.field15931);
+                this.field15932 = MovementUtil.method23144()[0];
                 Class9274.method34209("§6" + this.field15931);
             }
             else if (this.field15931 > 0.0) {
@@ -88,7 +88,7 @@ public class GommeSpeed extends Module
                         }
                         Class9274.method34209("§2" + array4[this.field15930 - 1]);
                     }
-                    Class7482.method23149(class5717, this.field15931);
+                    MovementUtil.method23149(class5717, this.field15931);
                 }
             }
         }

@@ -32,7 +32,7 @@ public class ModuleWithSettings extends Module
         this.field15746 = new ArrayList<Class8510>();
         this.moduleArray = moduleArray;
         for (final Module class8014 : this.moduleArray) {
-            Client.getInstance().getEventBus().register2(class8014);
+            Client.getInstance().getEventBus().registerInstance(class8014);
             this.field15744.add(class8014.getName());
             class8014.method9913(this);
         }

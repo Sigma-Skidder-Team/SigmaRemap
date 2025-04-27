@@ -397,7 +397,7 @@ public abstract class Class402 extends Entity implements Class401
                         }
                     }
                 }
-                if (!method21452.method1768()) {
+                if (!method21452.isAlive()) {
                     if (this.field2483 != null) {
                         this.field2483.add(class7009);
                     }
@@ -408,7 +408,7 @@ public abstract class Class402 extends Entity implements Class401
                         if (this.field2483 != null && this.method1982()) {
                             Class7770.field31807.method13831(class7010, this.field2483, this.field2483.size());
                         }
-                        else if (!method21452.method1768()) {
+                        else if (!method21452.isAlive()) {
                             if (this.method1982()) {
                                 Class7770.field31807.method13831(class7010, Arrays.asList(method21452), 0);
                             }
@@ -439,7 +439,7 @@ public abstract class Class402 extends Entity implements Class401
         return Class7476.method23094(this.world, this, class5487, class5488, this.getBoundingBox().expand(this.getMotion()).intersect(1.0), class5489 -> {
             final boolean b;
             if (!class5489.isSpectator()) {
-                if (!(!class5489.method1768())) {
+                if (!(!class5489.isAlive())) {
                     if (!(!class5489.method1749())) {
                         if (class5489 != this.method1973() || this.field2478 >= 5) {
                             if (this.field2482 == null || !this.field2482.contains(class5489.getEntityId())) {

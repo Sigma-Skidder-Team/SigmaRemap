@@ -101,7 +101,7 @@ public class UpdateWalkingEvent extends Class5714
         this.field23322 = field23322;
     }
     
-    public boolean method17046() {
+    public boolean isPre() {
         return this.field23330;
     }
     

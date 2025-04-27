@@ -58,8 +58,8 @@ public class Class4921 extends Class4825
             else {
                 this.field21056.field20650 = 0;
             }
-            this.field21056.field20654.method23934();
-            this.field21056.field20654.method23932();
+            this.field21056.field20654.reset();
+            this.field21056.field20654.start();
         }
     }
     

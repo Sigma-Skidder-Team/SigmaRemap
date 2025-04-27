@@ -55,7 +55,7 @@ public class Class4821 extends Class4817 implements Class4820
                     }
                 }
                 else {
-                    class3167.method9910();
+                    class3167.toggle();
                     final ColorHelper method19734 = new ColorHelper(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.DEEP_TEAL.color);
                     if (!class3167.isEnabled()) {
                         class3169.method14603(22);

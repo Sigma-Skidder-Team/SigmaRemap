@@ -42,8 +42,8 @@ public class Class3335 extends Module
         if (!this.isEnabled()) {
             return;
         }
-        final boolean method9883 = this.method9914().method9883("Show Invisibles");
-        final boolean method9884 = this.method9883("Show Health");
+        final boolean method9883 = this.method9914().getBooleanValueFromSettingName("Show Invisibles");
+        final boolean method9884 = this.getBooleanValueFromSettingName("Show Health");
         RenderSystem.pushMatrix();
         for (final Entity class5735 : Class3335.field15934.keySet()) {
             final double[] array = Class3335.field15934.get(class5735);

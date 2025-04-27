@@ -29,7 +29,7 @@ public class Class959 extends WebSocketClient {
         if (JSONObject.has("action")) {
             switch (JSONObject.getInt("action")) {
                 case 1: {
-                    this.field5102.method17552(Class7679.method24379(String.valueOf(JSONObject.getBoolean("variation"))));
+                    this.field5102.setupDeferredState(DeferredEventState.fromString(String.valueOf(JSONObject.getBoolean("variation"))));
                     break;
                 }
                 case 2: {

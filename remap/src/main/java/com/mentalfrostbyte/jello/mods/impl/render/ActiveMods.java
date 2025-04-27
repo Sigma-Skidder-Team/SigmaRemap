@@ -146,9 +146,9 @@ public class ActiveMods extends Module
                 final Animation value = new Animation(200, 200, key.isEnabled() ? Direction.FORWARDS : Direction.BACKWARDS);
                 value.method35856(key.isEnabled() ? 0.0f : 1.0f);
                 this.field15896.put(key, value);
-                final Setting class4997 = key.method9899().get("Type");
+                final Setting class4997 = key.getSettingMap().get("Type");
                 if (class4997 == null) {
-                    final Setting class4998 = key.method9899().get("Mode");
+                    final Setting class4998 = key.getSettingMap().get("Mode");
                     if (class4998 == null) {
                         continue;
                     }

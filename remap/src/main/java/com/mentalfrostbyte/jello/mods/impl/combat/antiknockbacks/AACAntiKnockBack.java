@@ -35,9 +35,9 @@ public class AACAntiKnockBack extends Module
             if (AACAntiKnockBack.field15956 < 7) {
                 ++AACAntiKnockBack.field15956;
                 if (AACAntiKnockBack.field15956 > 1) {
-                    final float n = Class7482.method23143()[1];
-                    final float n2 = Class7482.method23143()[2];
-                    final float n3 = Class7482.method23143()[0];
+                    final float n = MovementUtil.method23143()[1];
+                    final float n2 = MovementUtil.method23143()[2];
+                    final float n3 = MovementUtil.method23143()[0];
                     final double cos = Math.cos(Math.toRadians(n3));
                     final double sin = Math.sin(Math.toRadians(n3));
                     final double n4 = (7 - AACAntiKnockBack.field15956) * this.getNumberSettingValueByName("Strengh") * 0.04 * this.field15958 * 0.2;

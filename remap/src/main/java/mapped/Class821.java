@@ -59,7 +59,7 @@ public class Class821 extends Class819
         final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31552) {
             if (method2715.getItem() != Items.field31500) {
-                if (this.method1768()) {
+                if (this.isAlive()) {
                     if (!this.method4824()) {
                         if (!this.method2625()) {
                             if (class513 == Class316.field1877) {

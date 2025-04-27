@@ -45,12 +45,12 @@ public class AutoCrystal extends PremiumModule
         if (!this.isEnabled() || AutoCrystal.mc.world == null) {
             return;
         }
-        if (updateWalkingEvent.method17046()) {
+        if (updateWalkingEvent.isPre()) {
             this.field16009 = this.method10651();
         }
         switch (this.field16009.ordinal()) {
             case 1: {
-                if (updateWalkingEvent.method17046()) {
+                if (updateWalkingEvent.isPre()) {
                     this.method10659(updateWalkingEvent);
                     break;
                 }
@@ -58,7 +58,7 @@ public class AutoCrystal extends PremiumModule
                 break;
             }
             case 2: {
-                if (updateWalkingEvent.method17046()) {
+                if (updateWalkingEvent.isPre()) {
                     this.method10661(updateWalkingEvent);
                     break;
                 }
@@ -69,7 +69,7 @@ public class AutoCrystal extends PremiumModule
     }
     
     public Class2089 method10651() {
-        if (!this.method9883("Near Players")) {
+        if (!this.getBooleanValueFromSettingName("Near Players")) {
             if (this.method10658().size() > 0) {
                 return Class2089.field12079;
             }
@@ -179,7 +179,7 @@ public class AutoCrystal extends PremiumModule
         if (method10658.size() != 0) {
             if (!this.field16010.containsKey(method10658.get(0))) {
                 this.field16010.put((Class858)method10658.get(0), 4);
-                if (!this.method9883("Rotations")) {
+                if (!this.getBooleanValueFromSettingName("Rotations")) {
                     this.method10660();
                     this.field16010.remove(method10658.get(0));
                 }

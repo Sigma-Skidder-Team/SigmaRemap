@@ -18,7 +18,7 @@ public class Class3604 extends Class3446
     
     @Override
     public boolean method11013() {
-        if (!this.field16785.method1768()) {
+        if (!this.field16785.isAlive()) {
             return false;
         }
         if (this.field16785.method1706()) {

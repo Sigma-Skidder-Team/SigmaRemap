@@ -69,7 +69,7 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10817(final Class5732 class5732) {
+    public void method10817(final EventLoadWorld eventLoadWorld) {
         this.field16103.clear();
         this.field16104.clear();
     }
@@ -96,7 +96,7 @@ public class AutoMiner extends Module
     }
     
     @EventListener
-    public void method10819(final Class5743 class5743) {
+    public void method10819(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

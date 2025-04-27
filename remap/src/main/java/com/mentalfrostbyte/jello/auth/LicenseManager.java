@@ -56,7 +56,7 @@ public class LicenseManager
     }
     
     public void init() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         this.IRCManager = new IRCManager(this);
     }
 

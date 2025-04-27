@@ -20,7 +20,7 @@ public class FastEat extends Module
     }
     
     @EventListener
-    public void method10319(final Class5743 class5743) {
+    public void method10319(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled() || FastEat.mc.player == null) {
             return;
         }

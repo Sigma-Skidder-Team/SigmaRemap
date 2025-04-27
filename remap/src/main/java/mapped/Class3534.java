@@ -57,7 +57,7 @@ public class Class3534 extends Class3531
     public void method11082() {
         final Class802 method4272 = Class771.method4272(this.field16570);
         if (method4272 != null) {
-            if (method4272.method1768()) {
+            if (method4272.isAlive()) {
                 method4272.method4635(Class181.field551);
             }
         }

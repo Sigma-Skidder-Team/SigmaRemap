@@ -153,7 +153,7 @@ public class Class827 extends Class763
     @Override
     public void method1659() {
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (!this.method4923()) {
                     if (this.method4912()) {
                         if (!this.method1720(Class7324.field28319)) {
@@ -180,7 +180,7 @@ public class Class827 extends Class763
     
     @Override
     public void method2736() {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             int n = (this.method4931() && this.method4217()) ? 1 : 0;
             if (n != 0) {
                 final ItemStack method2718 = this.method2718(Class2215.field13605);

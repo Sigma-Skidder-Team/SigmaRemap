@@ -29,10 +29,10 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10036(final Class5751 class5751) {
+    public void method10036(final EventStopUseItem eventStopUseItem) {
         if (this.isEnabled()) {
             if (this.field15614 >= 0) {
-                class5751.setCancelled(true);
+                eventStopUseItem.setCancelled(true);
             }
         }
     }
@@ -55,7 +55,7 @@ public class BaicAutoGapple extends Module
     }
     
     @EventListener
-    public void method10038(final Class5743 class5743) {
+    public void method10038(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

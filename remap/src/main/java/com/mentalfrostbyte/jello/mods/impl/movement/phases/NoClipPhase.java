@@ -31,7 +31,7 @@ public class NoClipPhase extends Module
     }
     
     @EventListener
-    public void method10717(final Class5743 class5743) {
+    public void method10717(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

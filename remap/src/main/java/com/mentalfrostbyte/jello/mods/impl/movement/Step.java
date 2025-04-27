@@ -42,7 +42,7 @@ public class Step extends ModuleWithSettings
     @EventListener
     @Class6754
     private void method10298(final UpdateWalkingEvent updateWalkingEvent) {
-        if (updateWalkingEvent.method17046()) {
+        if (updateWalkingEvent.isPre()) {
             ++Step.field15758;
         }
     }

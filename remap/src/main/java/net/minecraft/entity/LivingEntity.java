@@ -213,7 +213,7 @@ public abstract class LivingEntity extends Entity
         super.method1660();
         this.world.method6796().startSection("livingEntityBaseTick");
         final boolean b = this instanceof PlayerEntity;
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (!this.method1769()) {
                 if (b) {
                     if (!this.world.getWorldBorder().method34781(this.getBoundingBox())) {
@@ -235,7 +235,7 @@ public abstract class LivingEntity extends Entity
             this.method1667();
         }
         final boolean b2 = b && ((PlayerEntity)this).field3025.field27301;
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.method1720(Class7324.field28319) && this.world.getBlockState(new BlockPos(this.getPosX(), this.method1944(), this.getPosZ())).method21696() != Blocks.BUBBLE_COLUMN) {
                 if (!this.method2622()) {
                     if (!Class9434.method35060(this)) {
@@ -272,7 +272,7 @@ public abstract class LivingEntity extends Entity
                 }
             }
         }
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.method1710()) {
                 this.method1667();
             }
@@ -295,12 +295,12 @@ public abstract class LivingEntity extends Entity
             --this.field2957;
         }
         if (this.field2982 != null) {
-            if (!this.field2982.method1768()) {
+            if (!this.field2982.isAlive()) {
                 this.field2982 = null;
             }
         }
         if (this.field2980 != null) {
-            if (this.field2980.method1768()) {
+            if (this.field2980.isAlive()) {
                 if (this.ticksExisted - this.field2981 > 100) {
                     this.method2636(null);
                 }
@@ -1166,7 +1166,7 @@ public abstract class LivingEntity extends Entity
     }
     
     @Override
-    public boolean method1768() {
+    public boolean isAlive() {
         return !this.removed && this.method2664() > 0.0f;
     }
     
@@ -2359,7 +2359,7 @@ public abstract class LivingEntity extends Entity
     
     @Override
     public boolean method1750() {
-        return this.method1768() && !this.method2688();
+        return this.isAlive() && !this.method2688();
     }
     
     @Override

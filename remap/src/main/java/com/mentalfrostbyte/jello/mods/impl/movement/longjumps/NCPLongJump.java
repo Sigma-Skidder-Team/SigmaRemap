@@ -34,7 +34,7 @@ public class NCPLongJump extends Module
     public void onDisable() {
         this.field15528 = false;
         NCPLongJump.mc.timer.timerSpeed = 1.0f;
-        Class7482.method23151(Class7482.method23137() * 0.7);
+        MovementUtil.method23151(MovementUtil.method23137() * 0.7);
     }
     
     @Override
@@ -51,20 +51,20 @@ public class NCPLongJump extends Module
         if (NCPLongJump.mc.player.onGround) {
             this.field15527 = 0;
             ++this.field15526;
-            if (this.field15528 && class5717.method16974() != 0.599 && this.method9914().method9883("Auto Disable")) {
-                this.method9914().method9910();
-                Class7482.method23149(class5717, Class7482.method23137() * 0.8);
+            if (this.field15528 && class5717.method16974() != 0.599 && this.method9914().getBooleanValueFromSettingName("Auto Disable")) {
+                this.method9914().toggle();
+                MovementUtil.method23149(class5717, MovementUtil.method23137() * 0.8);
                 return;
             }
             final BlockPos class5718 = new BlockPos(NCPLongJump.mc.player.posX, NCPLongJump.mc.player.posY - 0.4, NCPLongJump.mc.player.posZ);
             if (Step.field15758 > 1) {
-                if (this.method9914().method9883("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && ColorUtils.method19114()) {
+                if (this.method9914().getBooleanValueFromSettingName("BorderJump") && !Class4609.method13708(class5718) && this.field15526 > 0 && ColorUtils.method19114()) {
                     NCPLongJump.mc.player.method2725();
                     class5717.method16973(NCPLongJump.mc.player.getMotion().x);
                     class5717.method16975(NCPLongJump.mc.player.getMotion().y);
                     class5717.method16977(NCPLongJump.mc.player.getMotion().z);
                 }
-                else if (this.method9914().method9883("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && ColorUtils.method19114()) {
+                else if (this.method9914().getBooleanValueFromSettingName("Auto Jump") && this.field15526 > (this.field15528 ? 1 : 0) && ColorUtils.method19114()) {
                     NCPLongJump.mc.player.method2725();
                     class5717.method16973(NCPLongJump.mc.player.getMotion().x);
                     class5717.method16975(NCPLongJump.mc.player.getMotion().y);
@@ -76,11 +76,11 @@ public class NCPLongJump extends Module
             ++this.field15527;
             this.field15526 = 0;
             if (this.field15528) {
-                final double field15529 = Class7482.method23137() * 0.95;
+                final double field15529 = MovementUtil.method23137() * 0.95;
                 if (this.field15527 == 1) {
-                    this.field15529 = this.getNumberSettingValueByName("Boost") * 0.4 + Class7482.method23139() * 0.05;
+                    this.field15529 = this.getNumberSettingValueByName("Boost") * 0.4 + MovementUtil.method23139() * 0.05;
                 }
-                else if (this.field15527 > this.getNumberSettingValueByName("Duration") + Class7482.method23139()) {
+                else if (this.field15527 > this.getNumberSettingValueByName("Duration") + MovementUtil.method23139()) {
                     this.field15529 = field15529;
                 }
                 else if (this.field15529 > field15529) {
@@ -106,8 +106,8 @@ public class NCPLongJump extends Module
                 if (NCPLongJump.mc.player.collidedHorizontally || !ColorUtils.method19114()) {
                     this.field15529 = field15529;
                 }
-                Class7482.method23149(class5717, this.field15529);
-                if (Class7482.method23140() == 0) {
+                MovementUtil.method23149(class5717, this.field15529);
+                if (MovementUtil.method23140() == 0) {
                     final String method9888 = this.getStringSettingValueByName("Glide Mode");
                     switch (method9888) {
                         case "Basic": {
@@ -135,8 +135,8 @@ public class NCPLongJump extends Module
                     }
                 }
             }
-            if (this.field15526 == 1 && NCPLongJump.mc.player.getMotion().y < 0.0 && this.method9914().method9883("Auto Jump")) {
-                Class7482.method23149(class5717, Class7482.method23137() * 0.2);
+            if (this.field15526 == 1 && NCPLongJump.mc.player.getMotion().y < 0.0 && this.method9914().getBooleanValueFromSettingName("Auto Jump")) {
+                MovementUtil.method23149(class5717, MovementUtil.method23137() * 0.2);
             }
         }
         ColorUtils.method19155(class5717.method16974());
@@ -146,14 +146,14 @@ public class NCPLongJump extends Module
     public void method9920(final Class5722 class5722) {
         if (this.isEnabled() && NCPLongJump.mc.player != null) {
             this.field15528 = true;
-            class5722.method16996(this.field15529 = Class7482.method23137());
-            class5722.method16995(0.425 + Class7482.method23140() * 0.1);
+            class5722.method16996(this.field15529 = MovementUtil.method23137());
+            class5722.method16995(0.425 + MovementUtil.method23140() * 0.1);
             if (this.getStringSettingValueByName("Glide Mode").equals("High")) {
-                if (Class7482.method23140() == 0) {
+                if (MovementUtil.method23140() == 0) {
                     class5722.method16995(0.599);
                     class5722.method16996(0.0);
                     if (this.getNumberSettingValueByName("Boost") > 1.5) {
-                        class5722.method16996(0.28 + this.getNumberSettingValueByName("Boost") * 0.1 + Class7482.method23139() * 0.05);
+                        class5722.method16996(0.28 + this.getNumberSettingValueByName("Boost") * 0.1 + MovementUtil.method23139() * 0.05);
                     }
                     if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel")) {
                         if (this.getNumberSettingValueByName("Boost") > 1.75) {

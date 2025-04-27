@@ -30,8 +30,8 @@ public class AltManager
     }
     
     public void method25457() {
-        Client.getInstance().getEventBus().register2(this);
-        Client.getInstance().getEventBus().register2(this.field32299);
+        Client.getInstance().getEventBus().registerInstance(this);
+        Client.getInstance().getEventBus().registerInstance(this.field32299);
     }
     
     @Deprecated

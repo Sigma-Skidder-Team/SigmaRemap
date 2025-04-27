@@ -31,7 +31,7 @@ public class SpiderStep extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10362(final Class5745 class5745) {
         if (!this.isEnabled() || class5745.isCancelled()) {
             return;
@@ -43,15 +43,15 @@ public class SpiderStep extends Module
             return;
         }
         if (method17050 != Class2166.field12885) {
-            if (!Class7482.method23142()) {
+            if (!MovementUtil.method23142()) {
                 if (method17049 >= 0.625) {
                     this.field15789 = method17049;
-                    double method17051 = Class7482.method23141();
+                    double method17051 = MovementUtil.method23141();
                     if (method17049 < 1.1) {
                         method17051 *= method17049;
                     }
                     class5745.method17050((method17051 <= 0.42) ? method17051 : 0.4199998);
-                    this.field15790 = Class7482.method23144()[0] - 90.0f;
+                    this.field15790 = MovementUtil.method23144()[0] - 90.0f;
                     this.field15787 = 1;
                     this.field15788 = SpiderStep.mc.player.posY;
                     class5745.method17049();
@@ -64,7 +64,7 @@ public class SpiderStep extends Module
     private void method10363(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (SpiderStep.mc.player != null) {
-                if (updateWalkingEvent.method17046()) {
+                if (updateWalkingEvent.isPre()) {
                     if (this.field15787 != 1) {
                         if (this.field15787 == 3) {
                             final Module method21551 = Client.getInstance().moduleManager().getModuleByClass(Criticals.class);
@@ -91,21 +91,21 @@ public class SpiderStep extends Module
                 if (this.field15787 != 2) {
                     if (this.field15787 == 3) {
                         if (!ColorUtils.method19160(SpiderStep.mc.player, 0.001f)) {
-                            Class7482.method23149(class5717, 0.25);
+                            MovementUtil.method23149(class5717, 0.25);
                         }
                         else {
                             class5717.method16975(-0.078);
-                            Class7482.method23149(class5717, this.method9883("AAC") ? 0.301 : Class7482.method23136());
+                            MovementUtil.method23149(class5717, this.getBooleanValueFromSettingName("AAC") ? 0.301 : MovementUtil.method23136());
                         }
                         if (!ColorUtils.method19114()) {
-                            Class7482.method23149(class5717, 0.0);
+                            MovementUtil.method23149(class5717, 0.0);
                         }
                         this.field15787 = 0;
                     }
                 }
                 else {
                     class5717.method16975(this.field15788 + this.field15789 - SpiderStep.mc.player.posY);
-                    final double n = this.method9883("AAC") ? 0.301 : Class7482.method23136();
+                    final double n = this.getBooleanValueFromSettingName("AAC") ? 0.301 : MovementUtil.method23136();
                     final float n2 = this.field15790 * 0.017453292f;
                     class5717.method16973(-MathHelper.sin(n2) * n);
                     class5717.method16977(MathHelper.cos(n2) * n);
@@ -113,12 +113,12 @@ public class SpiderStep extends Module
                 }
             }
             else {
-                double method23141 = Class7482.method23141();
+                double method23141 = MovementUtil.method23141();
                 if (this.field15789 < 1.1) {
                     method23141 *= this.field15789;
                 }
                 class5717.method16975(((method23141 <= 0.42) ? method23141 : 0.4199998) * 0.797);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
                 ++this.field15787;
             }
         }

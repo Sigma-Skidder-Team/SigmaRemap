@@ -59,7 +59,7 @@ public abstract class Class776 extends Class777
     @Override
     public void method2736() {
         if (this.world instanceof Class1849) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 final Class8792 method4292 = this.method4292();
                 if (this.method4288()) {
                     if (method4292 != null) {
@@ -279,7 +279,7 @@ public abstract class Class776 extends Class777
         field4171 = (class427 -> {
             final boolean b;
             if (!class427.method2118()) {
-                if (!(!class427.method1768())) {
+                if (!(!class427.isAlive())) {
                     if (!(!ItemStack.method27643(class427.method2107(), Class8792.method30651()))) {
                         return b;
                     }

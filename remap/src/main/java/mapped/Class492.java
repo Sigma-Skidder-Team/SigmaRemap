@@ -195,7 +195,7 @@ public class Class492 extends TileEntity implements Class439
                 this.field2833 = null;
             }
             else if (this.field2832 != null) {
-                if (!this.field2832.method1768() || !this.field2657.withinDistance(new BlockPos(this.field2832), 8.0)) {
+                if (!this.field2832.isAlive() || !this.field2657.withinDistance(new BlockPos(this.field2832), 8.0)) {
                     this.field2832 = null;
                 }
             }

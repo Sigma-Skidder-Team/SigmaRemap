@@ -36,7 +36,7 @@ public class NoGroundCriticals extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10469(final Class5745 class5745) {
         if (this.isEnabled() && class5745.method17049() >= 0.625) {
             if (this.field15884 == 0) {
@@ -58,7 +58,7 @@ public class NoGroundCriticals extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10471(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled()) {
             return;
@@ -119,8 +119,8 @@ public class NoGroundCriticals extends Module
             updateWalkingEvent.method17045(b);
         }
         else {
-            this.field15884 = ((this.method9883("Avoid Fall Damage") && !this.field15885) ? 3 : 0);
-            if (this.method9883("Avoid Fall Damage") && this.field15885 && !this.field15887 && NoGroundCriticals.mc.player.getMotion().y < -0.1) {
+            this.field15884 = ((this.getBooleanValueFromSettingName("Avoid Fall Damage") && !this.field15885) ? 3 : 0);
+            if (this.getBooleanValueFromSettingName("Avoid Fall Damage") && this.field15885 && !this.field15887 && NoGroundCriticals.mc.player.getMotion().y < -0.1) {
                 this.field15887 = !this.field15887;
                 updateWalkingEvent.method17045(true);
             }

@@ -268,7 +268,7 @@ public class Class513 extends PlayerEntity implements Class514
         }
         final Entity method2951 = this.method2951();
         if (method2951 != this) {
-            if (!method2951.method1768()) {
+            if (!method2951.isAlive()) {
                 this.method2952(this);
             }
             else {
@@ -1182,7 +1182,7 @@ public class Class513 extends PlayerEntity implements Class514
     }
     
     public void method2960(final ChunkPos class7859) {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             this.field3039.method17469(new Class4288(class7859.field32290, class7859.field32291));
         }
     }

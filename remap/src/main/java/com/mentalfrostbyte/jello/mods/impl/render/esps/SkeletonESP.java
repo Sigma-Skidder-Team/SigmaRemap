@@ -39,7 +39,7 @@ public class SkeletonESP extends Module
         if (!class5740.method1823()) {
             final float[][] array = SkeletonESP.field15939.get(class5740);
             if (array != null) {
-                if (class5740.method1768()) {
+                if (class5740.isAlive()) {
                     if (class5740 != SkeletonESP.mc.player) {
                         if (!class5740.method2783()) {
                             GL11.glPushMatrix();

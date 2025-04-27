@@ -27,7 +27,7 @@ public class Class3599 extends Class3446
     public boolean method11013() {
         final LivingEntity method4152 = this.field16763.method4152();
         if (method4152 != null) {
-            if (method4152.method1768()) {
+            if (method4152.isAlive()) {
                 if (this.field16763.method2646(method4152)) {
                     return true;
                 }

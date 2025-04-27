@@ -21,7 +21,7 @@ public class Cords extends Module
     }
     
     @EventListener
-    private void method10528(final Class5743 class5743) {
+    private void method10528(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (ColorUtils.method19135() > this.field15924) {
                 if (Cords.mc.player.ticksExisted % 3 == 0) {
@@ -35,7 +35,7 @@ public class Cords extends Module
             }
             boolean b = false;
             Label_0141: {
-                if (!Class7482.method23148()) {
+                if (!MovementUtil.isMoving()) {
                     if (!Cords.mc.player.field2967) {
                         if (!Cords.mc.player.method1809()) {
                             b = false;
@@ -59,7 +59,7 @@ public class Cords extends Module
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     private void method10529(final Class5740 class5740) {
         if (!this.isEnabled()) {
             return;

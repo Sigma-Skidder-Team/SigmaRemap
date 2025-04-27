@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Custom2DRenderEvent implements Class5730
+public class Custom2DRenderEvent implements CancellableEvent
 {
     private static String[] field23298;
 }

@@ -160,7 +160,7 @@ public class Class3913 extends Block implements Class3872
     
     @Override
     public float getPlayerRelativeBlockHardness(final BlockState class7096, final PlayerEntity class7097, final IBlockReader class7098, final BlockPos class7099) {
-        return (class7097.getHeldItemMainhand().getItem() instanceof Class4077) ? 1.0f : super.getPlayerRelativeBlockHardness(class7096, class7097, class7098, class7099);
+        return (class7097.getHeldItemMainhand().getItem() instanceof SwordItem) ? 1.0f : super.getPlayerRelativeBlockHardness(class7096, class7097, class7098, class7099);
     }
     
     public void method12017(final BlockState class7096, final World class7097, final BlockPos class7098, final Random random, final int n) {

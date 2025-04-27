@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.Class5717;
-import mapped.Class7482;
+import mapped.MovementUtil;
 import mapped.EventListener;
 
 public class InvadedSpeed extends Module
@@ -26,7 +26,7 @@ public class InvadedSpeed extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.2800000011920929);
+        MovementUtil.method23151(0.2800000011920929);
         InvadedSpeed.mc.timer.timerSpeed = 1.0f;
     }
     
@@ -39,17 +39,17 @@ public class InvadedSpeed extends Module
                     if (this.field15617 >= 3) {
                         this.field15617 = 0;
                         InvadedSpeed.mc.timer.timerSpeed = 0.25f;
-                        Class7482.method23149(class5717, this.getNumberSettingValueByName("Speed"));
+                        MovementUtil.method23149(class5717, this.getNumberSettingValueByName("Speed"));
                     }
                 }
                 else {
                     InvadedSpeed.mc.timer.timerSpeed = 2.0f;
-                    Class7482.method23149(class5717, Class7482.method23136() + 0.05);
+                    MovementUtil.method23149(class5717, MovementUtil.method23136() + 0.05);
                 }
             }
             else {
                 InvadedSpeed.mc.timer.timerSpeed = 2.0f;
-                Class7482.method23149(class5717, Class7482.method23136() + 0.05);
+                MovementUtil.method23149(class5717, MovementUtil.method23136() + 0.05);
             }
         }
     }

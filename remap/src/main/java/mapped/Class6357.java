@@ -62,7 +62,7 @@ public class Class6357 extends Class6354
         if (class776 != null) {
             if (class777 != null) {
                 if (class777.method30624() != null) {
-                    if (class776.method1768()) {
+                    if (class776.isAlive()) {
                         if (class776.method4288()) {
                             if (class776.method2640() <= 2400) {
                                 if (class776.world.method6789().getType() == class777.method30624().method6789().getType()) {

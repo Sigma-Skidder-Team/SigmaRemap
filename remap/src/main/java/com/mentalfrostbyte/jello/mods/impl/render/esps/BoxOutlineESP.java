@@ -51,8 +51,8 @@ public class BoxOutlineESP extends Module
     private void method9933() {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             BoxOutlineESP.mc.world.field10072.forEach((p0, class399) -> {
-                final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
-                final boolean b2 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
+                final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
+                final boolean b2 = !class399.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                 if (!Client.getInstance().getBotManager().method31751(class399)) {
                     if (!(!b)) {
                         if (!(!b2)) {
@@ -81,10 +81,10 @@ public class BoxOutlineESP extends Module
     private void method9934(final boolean b) {
         for (final Entity class399 : BoxOutlineESP.mc.world.method6806()) {
             if (!Client.getInstance().getBotManager().method31751(class399)) {
-                final boolean b2 = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().method9883("Show Players");
-                final boolean b3 = ColorUtils.method19174(class399) == Class2068.field11838 && this.method9914().method9883("Show Mobs");
-                final boolean b4 = ColorUtils.method19174(class399) == Class2068.field11840 && this.method9914().method9883("Show Passives");
-                final boolean b5 = !class399.method1823() || this.method9914().method9883("Show Invisibles");
+                final boolean b2 = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
+                final boolean b3 = ColorUtils.method19174(class399) == Class2068.field11838 && this.method9914().getBooleanValueFromSettingName("Show Mobs");
+                final boolean b4 = ColorUtils.method19174(class399) == Class2068.field11840 && this.method9914().getBooleanValueFromSettingName("Show Passives");
+                final boolean b5 = !class399.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                 if (!b3) {
                     if (!b2) {
                         if (!b4) {

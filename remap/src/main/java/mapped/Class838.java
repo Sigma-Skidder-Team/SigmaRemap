@@ -75,7 +75,7 @@ public class Class838 extends Class833
     @Override
     public void method1659() {
         if (!this.world.isRemote) {
-            if (this.method1768()) {
+            if (this.isAlive()) {
                 if (this.method2749()) {
                     if (this.field4456 <= 0) {
                         if (this.method4988() != 0) {
@@ -116,10 +116,10 @@ public class Class838 extends Class833
     @Override
     public void method2736() {
         super.method2736();
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.method4988() > 0) {
                 for (final Class759 class759 : this.world.method6739((Class<? extends Class759>)Class759.class, this.getBoundingBox().intersect(0.3), (Predicate<? super Class759>)Class838.field4458)) {
-                    if (!class759.method1768()) {
+                    if (!class759.isAlive()) {
                         continue;
                     }
                     this.method4990(class759);

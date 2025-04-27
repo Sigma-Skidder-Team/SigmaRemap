@@ -30,7 +30,7 @@ public class AntiVanish extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (updateWalkingEvent.method17046() && AntiVanish.mc.method5282() != null) {
+        if (updateWalkingEvent.isPre() && AntiVanish.mc.method5282() != null) {
             if (!this.field15919.isEmpty()) {
                 if (this.field15920 > 3200) {
                     this.field15919.clear();

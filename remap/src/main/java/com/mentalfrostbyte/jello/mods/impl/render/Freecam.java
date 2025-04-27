@@ -72,7 +72,7 @@ public class Freecam extends Module
             Freecam.mc.player.lastTickPosZ = n3;
             Freecam.mc.player.field3020 = n3;
             Freecam.mc.player.prevPosZ = n3;
-            if (Class7482.method23148()) {
+            if (MovementUtil.isMoving()) {
                 Freecam.mc.player.field3013 = 0.099999994f;
             }
         }
@@ -235,12 +235,12 @@ public class Freecam extends Module
     
     @EventListener
     public void method10504(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             updateWalkingEvent.method17043(this.field15908 % 360.0f);
             updateWalkingEvent.method17041(this.field15909);
             Freecam.mc.player.field4077 = this.field15908;
             Freecam.mc.player.field4078 = this.field15909;
-            final float[] method23145 = Class7482.method23145(this.field15912, this.field15911);
+            final float[] method23145 = MovementUtil.method23145(this.field15912, this.field15911);
             final float n = method23145[1];
             final float n2 = method23145[2];
             final float n3 = method23145[0];
@@ -306,7 +306,7 @@ public class Freecam extends Module
     }
     
     @EventListener
-    private void method10508(final Class5732 class5732) {
+    private void method10508(final EventLoadWorld eventLoadWorld) {
         if (this.isEnabled()) {
             this.method9907(false);
         }

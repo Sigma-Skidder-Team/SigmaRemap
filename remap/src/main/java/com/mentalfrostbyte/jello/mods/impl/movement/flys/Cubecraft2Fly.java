@@ -12,12 +12,12 @@ import mapped.*;
 public class Cubecraft2Fly extends PremiumModule
 {
     private int field16023;
-    private Class7617 field16024;
+    private TimerUtil field16024;
     private boolean field16025;
     
     public Cubecraft2Fly() {
         super("Cubecraft2", "A fly for 1.9+ cubecraft", Category.MOVEMENT);
-        this.field16024 = new Class7617();
+        this.field16024 = new TimerUtil();
     }
     
     @Override
@@ -39,21 +39,21 @@ public class Cubecraft2Fly extends PremiumModule
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.2);
+        MovementUtil.method23151(0.2);
         ColorUtils.method19155(-0.0789);
         if (ColorUtils.method19160(Cubecraft2Fly.mc.player, 0.001f)) {
-            Class7482.method23151(0.0);
+            MovementUtil.method23151(0.0);
             ColorUtils.method19155(-0.0789);
         }
         else {
             final double field2395 = Cubecraft2Fly.mc.player.posX;
             final double field2396 = Cubecraft2Fly.mc.player.posY;
             Cubecraft2Fly.mc.method5269().method17292(new Class4354(field2395, -150.0, Cubecraft2Fly.mc.player.posZ, false));
-            Class7482.method23151(0.0);
+            MovementUtil.method23151(0.0);
             ColorUtils.method19155(0.0);
             this.field16023 = -3;
-            this.field16024.method23934();
-            this.field16024.method23932();
+            this.field16024.reset();
+            this.field16024.start();
         }
     }
     
@@ -78,23 +78,23 @@ public class Cubecraft2Fly extends PremiumModule
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10694(final Class5717 class5717) {
         if (this.isEnabled()) {
             ++this.field16023;
             if (this.field16023 != 1) {
                 if (this.field16023 != 2) {
                     class5717.method16975(0.0);
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                 }
                 else {
                     class5717.method16975(-9.999999999E-5);
-                    Class7482.method23149(class5717, 0.28);
+                    MovementUtil.method23149(class5717, 0.28);
                 }
             }
             else {
                 class5717.method16975(Cubecraft2Fly.mc.gameSettings.field23439.method1056() ? (this.field16025 ? 1.0E-4 : 0.99) : (this.field16025 ? -0.99 : 1.0E-4));
-                Class7482.method23149(class5717, 2.4);
+                MovementUtil.method23149(class5717, 2.4);
             }
             ColorUtils.method19155(class5717.method16974());
             return;
@@ -105,23 +105,23 @@ public class Cubecraft2Fly extends PremiumModule
                     if (this.field16023 == -1) {
                         ++this.field16023;
                         class5717.method16975(-0.4);
-                        Class7482.method23149(class5717, 0.0);
+                        MovementUtil.method23149(class5717, 0.0);
                     }
                 }
                 else {
                     class5717.method16975(0.4);
                     ++this.field16023;
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                 }
             }
             else {
-                if (this.field16024.method23935() > 1000L) {
+                if (this.field16024.getElapsedTime() > 1000L) {
                     ++this.field16023;
-                    this.field16024.method23934();
-                    this.field16024.method23933();
+                    this.field16024.reset();
+                    this.field16024.stop();
                 }
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
@@ -131,7 +131,7 @@ public class Cubecraft2Fly extends PremiumModule
         if (this.field16023 == -3) {
             updateWalkingEvent.setCancelled(true);
         }
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             updateWalkingEvent.method17033(true);
             updateWalkingEvent.method17045(true);
             if (this.field16023 != 3) {

@@ -19,7 +19,7 @@ public class Class5424 extends Class5419<Class824>
     
     public boolean method16559(final Class1849 class1849, final Class824 class1850) {
         final PlayerEntity method4823 = class1850.method4823();
-        if (class1850.method1768()) {
+        if (class1850.isAlive()) {
             if (method4823 != null) {
                 if (!class1850.method1706()) {
                     if (!class1850.velocityChanged) {

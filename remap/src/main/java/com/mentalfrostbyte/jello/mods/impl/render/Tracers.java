@@ -36,7 +36,7 @@ public class Tracers extends Module
                 if (class5740 == Tracers.mc.player) {
                     continue;
                 }
-                if (!class5740.method1768()) {
+                if (!class5740.isAlive()) {
                     continue;
                 }
                 if (class5740.boundingBox.getAverageEdgeLength() <= 0.8) {

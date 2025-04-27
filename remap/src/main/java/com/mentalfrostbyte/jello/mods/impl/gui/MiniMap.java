@@ -59,7 +59,7 @@ public class MiniMap extends Module
     }
     
     @EventListener
-    public void method10404(final Class5732 class5732) {
+    public void method10404(final EventLoadWorld eventLoadWorld) {
         this.field15844.clear();
     }
     
@@ -69,7 +69,7 @@ public class MiniMap extends Module
     }
     
     @EventListener
-    private void method10405(final Class5743 class5743) {
+    private void method10405(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             if (MiniMap.mc.player != null) {
                 if (MiniMap.mc.world != null) {
@@ -132,7 +132,7 @@ public class MiniMap extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10406(final Class5740 class5740) throws IOException {
         if (this.isEnabled()) {
             if (MiniMap.mc.player != null) {

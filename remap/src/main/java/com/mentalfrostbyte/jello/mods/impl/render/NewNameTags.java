@@ -56,9 +56,9 @@ public class NewNameTags extends Module
     }
     
     @EventListener
-    private void method10329(final Class5743 class5743) {
+    private void method10329(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            if (!(this.field15784 = this.method9883("Furnaces"))) {
+            if (!(this.field15784 = this.getBooleanValueFromSettingName("Furnaces"))) {
                 this.field15778.clear();
             }
             else {
@@ -190,7 +190,7 @@ public class NewNameTags extends Module
     public void method10333(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
             RenderSystem.method30084(33986, 240.0f, 240.0f);
-            final boolean method9883 = this.method9883("Magnify");
+            final boolean method9883 = this.getBooleanValueFromSettingName("Magnify");
             for (final Entity class5740 : this.field15783) {
                 float n = 1.0f;
                 if (method9883) {
@@ -206,7 +206,7 @@ public class NewNameTags extends Module
                 }
                 this.method10335(entry.getKey(), (Class6312)entry.getValue(), n2);
             }
-            if (this.method9883("Mob Owners")) {
+            if (this.getBooleanValueFromSettingName("Mob Owners")) {
                 for (final Entity class5741 : NewNameTags.mc.world.method6806()) {
                     if (class5741 != NewNameTags.mc.player) {
                         continue;
@@ -238,7 +238,7 @@ public class NewNameTags extends Module
                         continue;
                     }
                     float n3 = 1.0f;
-                    if (this.method9883("Magnify")) {
+                    if (this.getBooleanValueFromSettingName("Magnify")) {
                         n3 = (float)Math.max(1.0, Math.sqrt(Class8591.method29091(class5741) / 30.0));
                     }
                     this.method10336(Class8591.method29093(class5741).field38854, Class8591.method29093(class5741).field38855 + class5741.method1931(), Class8591.method29093(class5741).field38856, class5741, n3, this.field15785.get(uuid));

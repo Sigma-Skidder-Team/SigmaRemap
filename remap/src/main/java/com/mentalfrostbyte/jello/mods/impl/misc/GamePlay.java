@@ -24,7 +24,7 @@ public class GamePlay extends ModuleWithSettings
     private ArrayList<String> field15753;
     private ArrayList<String> field15754;
     private Class7674 field15755;
-    private Class7617 field15756;
+    private TimerUtil field15756;
     private int field15757;
     
     public GamePlay() {
@@ -37,13 +37,13 @@ public class GamePlay extends ModuleWithSettings
         this.addSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
         this.addSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));
         this.addSetting(new NumberSetting("Auto Join delay", "Seconds before joining a new game", 4.0f, Float.class, 1.0f, 10.0f, 1.0f));
-        this.field15756 = new Class7617();
+        this.field15756 = new TimerUtil();
     }
     
     @Override
     public void onEnable() {
-        if (!this.field15756.method23937()) {
-            this.field15756.method23932();
+        if (!this.field15756.isRunning()) {
+            this.field15756.start();
         }
         this.field15755 = null;
         this.field15753.clear();
@@ -52,13 +52,13 @@ public class GamePlay extends ModuleWithSettings
     
     @Override
     public void onDisable() {
-        this.field15756.method23934();
-        this.field15756.method23933();
+        this.field15756.reset();
+        this.field15756.stop();
         this.field15755 = null;
     }
     
     @EventListener
-    private void method10293(final Class5743 class5743) {
+    private void method10293(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -76,8 +76,8 @@ public class GamePlay extends ModuleWithSettings
                 Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Joining a new game in " + this.field15757 + " second" + ((this.field15757 > 1) ? "s" : "") + ".", 2000));
             }
         }
-        if (!this.field15756.method23937()) {
-            this.field15756.method23932();
+        if (!this.field15756.isRunning()) {
+            this.field15756.start();
         }
         if (!this.field15754.isEmpty()) {
             final String method9887 = this.getStringSettingValueByName("Type");
@@ -98,8 +98,8 @@ public class GamePlay extends ModuleWithSettings
                 if (method9887.equalsIgnoreCase("Jartex")) {
                     n = 3200L;
                 }
-                if (this.field15756.method23935() > n && !this.field15754.isEmpty()) {
-                    this.field15756.method23934();
+                if (this.field15756.getElapsedTime() > n && !this.field15754.isEmpty()) {
+                    this.field15756.reset();
                     ColorUtils.method19107(this.field15754.get(0));
                     this.field15754.remove(0);
                 }

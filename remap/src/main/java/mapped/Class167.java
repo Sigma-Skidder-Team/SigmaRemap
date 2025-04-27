@@ -22,7 +22,7 @@ public class Class167 implements Predicate<Entity>
     public boolean apply(final Entity class399) {
         if (class399 != null) {
             if (class399 instanceof LivingEntity) {
-                if (class399.method1768()) {
+                if (class399.isAlive()) {
                     if (class399.method1732(AutoCrystal.method10663().field4684) <= 9.0f) {
                         if (!(class399 instanceof ClientPlayerEntity)) {
                             if (!Client.getInstance().getFriendManager().method29878(class399)) {

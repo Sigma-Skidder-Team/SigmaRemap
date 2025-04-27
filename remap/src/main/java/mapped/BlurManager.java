@@ -22,7 +22,7 @@ public class BlurManager {
     public static int field36593;
 
     public void method29895() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
 
     public static void method29896(final int a, final int a2, final int n, final int n2) {
@@ -40,7 +40,7 @@ public class BlurManager {
     }
 
     @EventListener
-    @Class6755
+    @LowestPriority
     public void method29898(final Custom3DRenderEvent custom3DRenderEvent) {
         if (Client.getInstance().getScreenManager().method32146() && BlurManager.field36590 < BlurManager.field36592 && BlurManager.field36591 < BlurManager.field36593) {
             if (BlurManager.field36588 == null) {

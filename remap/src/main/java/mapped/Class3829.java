@@ -28,7 +28,7 @@ public class Class3829 extends Item
             return false;
         }
         final Class802 class8325 = (Class802)class8323;
-        if (class8325.method1768()) {
+        if (class8325.isAlive()) {
             if (!class8325.method4636()) {
                 if (class8325.method4634() != this.field17384) {
                     class8325.method4635(this.field17384);

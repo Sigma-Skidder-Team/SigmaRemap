@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class5743 extends Class5714
+public class EventPlayerTick extends Class5714
 {
     private static String[] field23315;
 }

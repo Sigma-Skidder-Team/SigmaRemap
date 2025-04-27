@@ -10,7 +10,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.PremiumModule;
 import mapped.Class4609;
-import mapped.Class5743;
+import mapped.EventPlayerTick;
 import mapped.EventListener;
 import mapped.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -31,7 +31,7 @@ public class FightBot extends PremiumModule
     }
     
     @EventListener
-    public void method10639(final Class5743 class5743) {
+    public void method10639(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             return;
         }

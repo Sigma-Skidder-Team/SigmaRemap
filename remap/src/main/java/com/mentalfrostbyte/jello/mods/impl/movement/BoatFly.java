@@ -21,17 +21,17 @@ public class BoatFly extends PremiumModule
     }
     
     @EventListener
-    public void method10641(final Class5743 class5743) {
+    public void method10641(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
         if (BoatFly.mc.player.method1920() != null) {
             final Vec3d method1935 = BoatFly.mc.player.method1920().getMotion();
             if (Math.sqrt(method1935.x * method1935.x + method1935.z * method1935.z) >= 1.399999976158142) {}
-            final float method1936 = Class7482.method23147();
+            final float method1936 = MovementUtil.method23147();
             double n = Math.cos(Math.toRadians(method1936)) * 5.0;
             double n2 = Math.sin(Math.toRadians(method1936)) * 5.0;
-            if (!Class7482.method23148()) {
+            if (!MovementUtil.isMoving()) {
                 n = 0.0;
                 n2 = 0.0;
             }
@@ -59,13 +59,13 @@ public class BoatFly extends PremiumModule
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10643(final Class5721 class5721) {
         if (this.isEnabled()) {
             if (!class5721.method16990().toString().contains(".play.client.")) {}
             if (!(class5721.method16990() instanceof Class4303)) {
                 if (class5721.method16990() instanceof Class4323) {
-                    if (!BoatFly.mc.player.method1768()) {}
+                    if (!BoatFly.mc.player.isAlive()) {}
                 }
             }
         }

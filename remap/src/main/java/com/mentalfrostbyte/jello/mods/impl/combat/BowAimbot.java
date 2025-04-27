@@ -44,7 +44,7 @@ public class BowAimbot extends Module
     
     @EventListener
     private void method10191(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (!(BowAimbot.mc.player.method2766().getItem() instanceof Class4087)) {
                 this.field15703.clear();
             }
@@ -52,7 +52,7 @@ public class BowAimbot extends Module
                 this.field15703 = this.method10193(this.method9914().getNumberSettingValueByName("Range"));
             }
             if (!this.field15703.isEmpty()) {
-                if (this.method9883("Silent")) {
+                if (this.getBooleanValueFromSettingName("Silent")) {
                     final float[] method30921 = Class8845.method30921(this.field15703.get(0));
                     updateWalkingEvent.method17043(method30921[0]);
                     updateWalkingEvent.method17041(method30921[1]);
@@ -63,7 +63,7 @@ public class BowAimbot extends Module
     
     @EventListener
     private void method10192(final Class5740 class5740) {
-        if (this.isEnabled() && !this.method9883("Silent")) {
+        if (this.isEnabled() && !this.getBooleanValueFromSettingName("Silent")) {
             if (!this.field15703.isEmpty()) {
                 final float[] method30921 = Class8845.method30921(this.field15703.get(0));
                 BowAimbot.mc.player.rotationYaw = method30921[0];
@@ -98,16 +98,16 @@ public class BowAimbot extends Module
             else if (class399 instanceof Class857) {
                 iterator.remove();
             }
-            else if (!this.method9883("Players") && class399 instanceof PlayerEntity) {
+            else if (!this.getBooleanValueFromSettingName("Players") && class399 instanceof PlayerEntity) {
                 iterator.remove();
             }
-            else if (this.method9883("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
+            else if (this.getBooleanValueFromSettingName("Anti-Bot") && class399 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(class399)) {
                 iterator.remove();
             }
-            else if (!this.method9883("Invisible") && class399.method1823()) {
+            else if (!this.getBooleanValueFromSettingName("Invisible") && class399.method1823()) {
                 iterator.remove();
             }
-            else if (!this.method9883("Animals/Monsters") && !(class399 instanceof PlayerEntity)) {
+            else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(class399 instanceof PlayerEntity)) {
                 iterator.remove();
             }
             else if (BowAimbot.mc.player.method1920() != null && BowAimbot.mc.player.method1920().equals(class399)) {
@@ -117,7 +117,7 @@ public class BowAimbot extends Module
                 iterator.remove();
             }
             else {
-                if (!(class399 instanceof PlayerEntity) || !Class9011.method32262((PlayerEntity)class399) || this.method9883("Teams")) {
+                if (!(class399 instanceof PlayerEntity) || !Class9011.method32262((PlayerEntity)class399) || this.getBooleanValueFromSettingName("Teams")) {
                     continue;
                 }
                 iterator.remove();

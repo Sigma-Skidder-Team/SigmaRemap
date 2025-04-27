@@ -25,14 +25,14 @@ public class NCPSpigotFly extends Module
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.0);
+        MovementUtil.method23151(0.0);
         if (NCPSpigotFly.mc.player.getMotion().y > 0.0) {
             ColorUtils.method19155(-0.0789);
         }
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10583(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (this.field15949 <= 1) {
@@ -40,31 +40,31 @@ public class NCPSpigotFly extends Module
                     if (this.field15949 != 0) {
                         if (this.field15949 == 1) {
                             class5717.method16975(-1.0E-7);
-                            Class7482.method23149(class5717, Class7482.method23136());
+                            MovementUtil.method23149(class5717, MovementUtil.method23136());
                             ColorUtils.method19155(class5717.method16974());
                         }
                     }
                     else {
                         class5717.method16975(-1.0E-7);
-                        Class7482.method23149(class5717, Class7482.method23136());
+                        MovementUtil.method23149(class5717, MovementUtil.method23136());
                         ColorUtils.method19155(class5717.method16974());
                     }
                 }
                 else {
                     class5717.method16975(0.0);
                     ColorUtils.method19155(class5717.method16974());
-                    Class7482.method23149(class5717, Class7482.method23136());
+                    MovementUtil.method23149(class5717, MovementUtil.method23136());
                 }
             }
             else {
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
             }
         }
     }
     
     @EventListener
     public void method10584(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             ++this.field15949;
             if (this.field15949 != 3) {
                 if (this.field15949 > 3) {

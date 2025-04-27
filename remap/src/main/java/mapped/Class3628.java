@@ -57,7 +57,7 @@ public class Class3628 extends Class3446
     
     @Override
     public boolean method11017() {
-        return this.field16859.method1768() && this.field16858.method1734(this.field16859) <= this.field16860 * this.field16860 && this.field16861 > 0;
+        return this.field16859.isAlive() && this.field16858.method1734(this.field16859) <= this.field16860 * this.field16860 && this.field16861 > 0;
     }
     
     @Override

@@ -72,7 +72,7 @@ public class Jesus extends Module
     public void method10427(final UpdateWalkingEvent updateWalkingEvent) {
         if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
-                if (updateWalkingEvent.method17046()) {
+                if (updateWalkingEvent.isPre()) {
                     if (Jesus.mc.method5282() != null) {
                         if (method10433() && !this.method10432(Jesus.mc.player.boundingBox)) {
                             ++this.field15856;
@@ -98,7 +98,7 @@ public class Jesus extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10428(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (Jesus.mc.world != null) {
@@ -108,7 +108,7 @@ public class Jesus extends Module
                         if (method6701 != null) {
                             if (!method6701.getFluidState().isEmpty()) {
                                 if (method6701.getFluidState().getHeight() > 0.4) {
-                                    if (this.method9883("Swim up")) {
+                                    if (this.getBooleanValueFromSettingName("Swim up")) {
                                         class5717.method16975(0.13);
                                     }
                                     if (!this.method10432(Jesus.mc.player.boundingBox.offset(0.0, class5717.method16974(), 0.0))) {
@@ -123,7 +123,7 @@ public class Jesus extends Module
                     }
                     if (method10433()) {
                         if (class5717.method16974() != -0.0784000015258789) {
-                            if (class5717.method16974() != Class7482.method23141()) {
+                            if (class5717.method16974() != MovementUtil.method23141()) {
                                 class5717.method16975(-0.078);
                             }
                         }
@@ -139,7 +139,7 @@ public class Jesus extends Module
                                     return;
                                 }
                                 if (this.field15855 > 0) {
-                                    Class7482.method23149(class5717, 0.25 + Class7482.method23139() * 0.05);
+                                    MovementUtil.method23149(class5717, 0.25 + MovementUtil.method23139() * 0.05);
                                     ++this.field15855;
                                 }
                                 final double method6702 = this.method10434(this.field15855);
@@ -153,7 +153,7 @@ public class Jesus extends Module
                             if (this.field15854 % 2 == 0) {
                                 ++this.field15855;
                                 final double method6703 = this.method10434(this.field15855);
-                                Class7482.method23149(class5717, 0.25);
+                                MovementUtil.method23149(class5717, 0.25);
                                 if (method6703 != -999.0) {
                                     class5717.method16975(method6703);
                                 }
@@ -204,7 +204,7 @@ public class Jesus extends Module
     }
     
     public boolean method10431() {
-        return Class7482.method23142();
+        return MovementUtil.method23142();
     }
     
     public boolean method10432(final AxisAlignedBB class6221) {

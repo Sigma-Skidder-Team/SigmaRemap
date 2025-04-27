@@ -35,7 +35,7 @@ public class Waypoints extends Module
     }
     
     @EventListener
-    public void method10005(final Class5732 class5732) {
+    public void method10005(final EventLoadWorld eventLoadWorld) {
         this.field15594.clear();
     }
     
@@ -94,7 +94,7 @@ public class Waypoints extends Module
     
     public List<Class8124> method10007(final List<Class8124> c) {
         final ArrayList list = new ArrayList((Collection<? extends E>)c);
-        if (this.method9883("Unspawn Positions")) {
+        if (this.getBooleanValueFromSettingName("Unspawn Positions")) {
             list.addAll(this.field15594.values());
         }
         list.sort((class8124, class8125) -> (Waypoints.mc.player.method1733(class8124.field33469, class8124.field33472, class8124.field33470) >= Waypoints.mc.player.method1733(class8125.field33469, class8125.field33472, class8125.field33470)) ? -1 : 1);

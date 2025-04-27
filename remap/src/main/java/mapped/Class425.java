@@ -188,7 +188,7 @@ public class Class425 extends Entity
         final boolean b = method2713.getItem() == Items.field31376;
         final boolean b2 = method2714.getItem() == Items.field31376;
         if (!this.field2586.removed) {
-            if (this.field2586.method1768()) {
+            if (this.field2586.isAlive()) {
                 if (b || b2) {
                     if (this.method1734(this.field2586) <= 1024.0) {
                         return false;

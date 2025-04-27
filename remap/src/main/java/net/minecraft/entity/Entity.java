@@ -1412,7 +1412,7 @@ public abstract class Entity implements INameable, ICommandSource {
         return null;
     }
 
-    public boolean method1768() {
+    public boolean isAlive() {
         return !this.removed;
     }
 

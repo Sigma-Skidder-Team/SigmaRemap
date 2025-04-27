@@ -177,7 +177,7 @@ public class Class850 extends Class763
     }
     
     public boolean method5076() {
-        return !this.world.isRemote() && this.method1768() && this.method5078(this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0, this.getPosY() + (this.rand.nextInt(64) - 32), this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0);
+        return !this.world.isRemote() && this.isAlive() && this.method5078(this.getPosX() + (this.rand.nextDouble() - 0.5) * 64.0, this.getPosY() + (this.rand.nextInt(64) - 32), this.getPosZ() + (this.rand.nextDouble() - 0.5) * 64.0);
     }
     
     private boolean method5077(final Entity class399) {

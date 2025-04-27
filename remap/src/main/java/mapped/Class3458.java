@@ -22,7 +22,7 @@ public class Class3458 extends Class3446
     @Override
     public boolean method11013() {
         final LivingEntity method4152 = this.field16307.method4152();
-        return method4152 != null && method4152.method1768() && this.field16307.world.method6954() != Class2113.field12290;
+        return method4152 != null && method4152.isAlive() && this.field16307.world.method6954() != Class2113.field12290;
     }
     
     @Override

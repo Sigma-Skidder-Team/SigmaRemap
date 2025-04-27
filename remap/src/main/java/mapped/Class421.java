@@ -56,7 +56,7 @@ public class Class421 extends Class419
                     method21452.attackEntityFrom(DamageSource.field32576, 5.0f);
                 }
                 else if (method21452.attackEntityFrom(DamageSource.method25693(this.field2527), 8.0f)) {
-                    if (!method21452.method1768()) {
+                    if (!method21452.isAlive()) {
                         this.field2527.method2663(5.0f);
                     }
                     else {

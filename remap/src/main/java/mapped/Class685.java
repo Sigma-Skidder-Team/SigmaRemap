@@ -334,7 +334,7 @@ public class Class685 extends AbstractGui
                     if (this.field3753.field4690 != null) {
                         if (this.field3753.field4690 instanceof LivingEntity) {
                             if (method5834 >= 1.0f) {
-                                b = (this.field3753.player.method2903() > 5.0f & this.field3753.field4690.method1768());
+                                b = (this.field3753.player.method2903() > 5.0f & this.field3753.field4690.isAlive());
                             }
                         }
                     }

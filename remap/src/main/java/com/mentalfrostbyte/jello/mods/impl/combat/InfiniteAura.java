@@ -52,8 +52,8 @@ public class InfiniteAura extends Module
     }
     
     @EventListener
-    @Class6759
-    public void method10091(final Class5743 class5743) {
+    @LowerPriority
+    public void method10091(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -83,7 +83,7 @@ public class InfiniteAura extends Module
                 this.field15649.add(method10096);
                 Collections.reverse(method10096);
                 this.method10092(method10096, Client.getInstance().moduleManager().getModuleByClass(Criticals.class).isEnabled());
-                ColorUtils.method19165(method10095, !this.method9883("No Swing"));
+                ColorUtils.method19165(method10095, !this.getBooleanValueFromSettingName("No Swing"));
                 Collections.reverse(method10096);
                 this.method10092(method10096, false);
             }
@@ -170,16 +170,16 @@ public class InfiniteAura extends Module
                             if (InfiniteAura.mc.player.method1732(method26798) <= n) {
                                 if (InfiniteAura.mc.player.method2646((LivingEntity)method26798)) {
                                     if (!(method26798 instanceof Class857)) {
-                                        if (!this.method9883("Players") && method26798 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSettingName("Players") && method26798 instanceof PlayerEntity) {
                                             iterator2.remove();
                                         }
                                         else if (method26798 instanceof PlayerEntity && Client.getInstance().getBotManager().method31751(method26798)) {
                                             iterator2.remove();
                                         }
-                                        else if (!this.method9883("Invisible") && method26798.method1823()) {
+                                        else if (!this.getBooleanValueFromSettingName("Invisible") && method26798.method1823()) {
                                             iterator2.remove();
                                         }
-                                        else if (!this.method9883("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
+                                        else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(method26798 instanceof PlayerEntity)) {
                                             iterator2.remove();
                                         }
                                         else if (InfiniteAura.mc.player.method1920() != null && InfiniteAura.mc.player.method1920().equals(method26798)) {
@@ -236,7 +236,7 @@ public class InfiniteAura extends Module
     public boolean method10095() {
         if (this.field15647) {
             if (Minecraft.getInstance().player.getHeldItemMainhand() != null) {
-                if (Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof Class4077) {
+                if (Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof SwordItem) {
                     return true;
                 }
             }

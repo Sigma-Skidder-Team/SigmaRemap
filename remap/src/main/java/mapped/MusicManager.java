@@ -85,7 +85,7 @@ public class MusicManager {
     }
 
     public void method24158() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         this.method24160();
         if (!this.method24195()) {
             this.method24196();
@@ -215,7 +215,7 @@ public class MusicManager {
     }
 
     @EventListener
-    private void method24164(final Class5743 class5743) {
+    private void method24164(final EventPlayerTick eventPlayerTick) {
         if (!this.playing) {
             this.visualizerData.clear();
             this.field30354.clear();

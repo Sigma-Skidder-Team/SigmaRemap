@@ -48,7 +48,7 @@ public class NotificationManager {
             if (!class6225.equals(class6224)) {
                 continue;
             }
-            class6225.field25089.method23936(Math.min(class6225.field25089.method23935(), this.field32658 + 1));
+            class6225.field25089.setElapsedTime(Math.min(class6225.field25089.getElapsedTime(), this.field32658 + 1));
             class6225.field25086 = class6224.field25086;
             final Notification class6226 = class6225;
             ++class6226.field25092;
@@ -59,7 +59,7 @@ public class NotificationManager {
     }
 
     public float method25777(final Notification class6224) {
-        final float n = (float) Math.min(class6224.field25089.method23935(), class6224.field25088);
+        final float n = (float) Math.min(class6224.field25089.getElapsedTime(), class6224.field25088);
         if (n < this.field32658 * 1.4f) {
             return Class7791.method25030(n / (this.field32658 * 1.4f), 0.0f, 1.0f, 1.0f);
         }
@@ -108,11 +108,11 @@ public class NotificationManager {
     }
 
     @EventListener
-    private void method25780(final Class5743 class5743) {
+    private void method25780(final EventPlayerTick eventPlayerTick) {
         final Iterator<Notification> iterator = this.field32655.iterator();
         while (iterator.hasNext()) {
             final Notification class5744 = iterator.next();
-            if (class5744.field25089.method23935() <= class5744.field25088) {
+            if (class5744.field25089.getElapsedTime() <= class5744.field25088) {
                 continue;
             }
             iterator.remove();
@@ -140,6 +140,6 @@ public class NotificationManager {
     }
 
     public void method25783() {
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
     }
 }

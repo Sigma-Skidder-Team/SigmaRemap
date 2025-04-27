@@ -22,7 +22,7 @@ public class Class2435 implements TouchBarViewAction
     
     @Override
     public void onCall(final TouchBarView touchBarView) {
-        this.field14378.method31234().method9910();
+        this.field14378.method31234().toggle();
         ((TouchBarButton)touchBarView).setBezelColor(this.field14379.method21971(this.field14378.method31234()));
     }
 }

@@ -70,7 +70,7 @@ public class Test extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     public void method10775(final Class5717 class5717) {
         if (this.isEnabled()) {
             return;
@@ -78,7 +78,7 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10776(final Class5743 class5743) {
+    public void method10776(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
             return;
         }
@@ -92,7 +92,7 @@ public class Test extends Module
     }
     
     @EventListener
-    public void method10778(final Class5751 class5751) {
+    public void method10778(final EventStopUseItem eventStopUseItem) {
         if (this.isEnabled()) {
             return;
         }
@@ -100,7 +100,7 @@ public class Test extends Module
     
     @EventListener
     public void method10779(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             final Entity method10786 = this.method10786(3.3f);
             if (this.method10786(8.0f) != null) {
                 if (this.field16087 < 1.0) {
@@ -132,12 +132,12 @@ public class Test extends Module
     }
     
     @EventListener
-    @Class6755
-    public void method10780(final Class5732 class5732) {
+    @LowestPriority
+    public void method10780(final EventLoadWorld eventLoadWorld) {
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     public void method10781(final Class5752 class5752) {
         if (this.isEnabled()) {
             return;
@@ -145,7 +145,7 @@ public class Test extends Module
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     public void method10782(final Class5748 class5748) {
         if (this.isEnabled() && Test.mc.currentScreen == null) {
             if (this.field16099 != null) {
@@ -155,7 +155,7 @@ public class Test extends Module
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     public void method10783(final Class5721 class5721) {
         final IPacket method16990 = class5721.method16990();
         if (this.isEnabled() && Test.mc.player != null) {

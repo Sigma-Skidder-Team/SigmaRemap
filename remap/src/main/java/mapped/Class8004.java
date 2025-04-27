@@ -25,7 +25,7 @@ public class Class8004
             if (class8879 != null && class8879.method31228()) {
                 switch (Class9204.field38998[class8879.method31231().ordinal()]) {
                     case 1: {
-                        class8879.method31234().method9910();
+                        class8879.method31234().toggle();
                         continue;
                     }
                     case 2: {

@@ -21,12 +21,12 @@ public class AGCSpeed extends Module
     
     @Override
     public void onEnable() {
-        this.field15593 = Class7482.method23143()[0];
+        this.field15593 = MovementUtil.method23143()[0];
     }
     
     @Override
     public void onDisable() {
-        Class7482.method23151(0.2800000011920929);
+        MovementUtil.method23151(0.2800000011920929);
     }
     
     @EventListener
@@ -61,13 +61,13 @@ public class AGCSpeed extends Module
                 if (this.field15592 < 0.17) {
                     this.field15592 = 0.17;
                 }
-                this.field15593 = Class7482.method23153(class5717, this.field15592, Class7482.method23144()[0], this.field15593, 45.0f);
+                this.field15593 = MovementUtil.method23153(class5717, this.field15592, MovementUtil.method23144()[0], this.field15593, 45.0f);
             }
             else {
-                this.field15592 = 0.67 + Math.random() * 1.0E-10 + Class7482.method23139() * 0.12;
-                this.field15593 = Class7482.method23153(class5717, this.field15592, Class7482.method23144()[0], this.field15593, 45.0f);
+                this.field15592 = 0.67 + Math.random() * 1.0E-10 + MovementUtil.method23139() * 0.12;
+                this.field15593 = MovementUtil.method23153(class5717, this.field15592, MovementUtil.method23144()[0], this.field15593, 45.0f);
                 this.field15592 = 0.39;
-                class5717.method16975(Class7482.method23141());
+                class5717.method16975(MovementUtil.method23141());
                 ColorUtils.method19155(class5717.method16974());
             }
         }

@@ -70,7 +70,7 @@ public class LightningBoltEntity extends Entity
         if (this.field2537 >= 0) {
             if (!this.world.isRemote) {
                 if (!this.field2540) {
-                    final List<Entity> method6737 = this.world.method6737(this, new AxisAlignedBB(this.getPosX() - 3.0, this.getPosY() - 3.0, this.getPosZ() - 3.0, this.getPosX() + 3.0, this.getPosY() + 6.0 + 3.0, this.getPosZ() + 3.0), Entity::method1768);
+                    final List<Entity> method6737 = this.world.method6737(this, new AxisAlignedBB(this.getPosX() - 3.0, this.getPosY() - 3.0, this.getPosZ() - 3.0, this.getPosX() + 3.0, this.getPosY() + 6.0 + 3.0, this.getPosZ() + 3.0), Entity::isAlive);
                     final Iterator<Entity> iterator = method6737.iterator();
                     while (iterator.hasNext()) {
                         iterator.next().onStruckByLightning(this);

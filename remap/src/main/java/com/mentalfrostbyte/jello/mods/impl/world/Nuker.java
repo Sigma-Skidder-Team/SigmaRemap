@@ -34,7 +34,7 @@ public class Nuker extends Module
     
     @EventListener
     private void method10609(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             this.field15978 = this.method10612(this.getNumberSettingValueByName("Range") / 2.0f);
             if (this.field15978.isEmpty()) {
                 this.field15977 = null;
@@ -49,7 +49,7 @@ public class Nuker extends Module
                     updateWalkingEvent.method17041(method30919[1]);
                     Client.getInstance().getEventBus().post(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
-                    if (!this.method9883("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
                     }
                     else {
@@ -63,7 +63,7 @@ public class Nuker extends Module
                     updateWalkingEvent.method17041(method30920[1]);
                     Client.getInstance().getEventBus().post(new Class5752(0, false, this.field15977));
                     Nuker.mc.playerController.method27314(this.field15977, Class4609.method13710(this.field15977));
-                    if (!this.method9883("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
                     }
                     else {
@@ -74,7 +74,7 @@ public class Nuker extends Module
             else {
                 for (final BlockPos class5745 : this.field15978) {
                     Nuker.mc.method5269().method17292(new Class4399(Class2003.field11240, class5745, Class4609.method13710(class5745)));
-                    if (!this.method9883("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         Nuker.mc.player.method2707(Class316.field1877);
                     }
                     else {

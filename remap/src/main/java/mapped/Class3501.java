@@ -82,7 +82,7 @@ public class Class3501 extends Class3446
     @Override
     public boolean method11017() {
         if (this.field16461.method4800()) {
-            if (this.field16461.method4801().method1768()) {
+            if (this.field16461.method4801().isAlive()) {
                 if (this.method11065(this.field16461, 0)) {
                     if (this.field16461.method1734(this.field16461.method4801()) > 676.0) {
                         if (this.field16462 <= 3.0) {

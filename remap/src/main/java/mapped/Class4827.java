@@ -15,11 +15,11 @@ public class Class4827 extends Class4825 implements Class4828
     public float field20651;
     public boolean field20652;
     public final Class4921 field20653;
-    public Class7617 field20654;
+    public TimerUtil field20654;
     
     public Class4827(final CustomGuiScreen customGuiScreen, final int n) {
         super(customGuiScreen, "verticalScrollBar", customGuiScreen.method14276() - n - 5, 5, n, customGuiScreen.method14278() - 10, false);
-        this.field20654 = new Class7617();
+        this.field20654 = new TimerUtil();
         this.method14270((class4803, class4804) -> {
             class4803.method14273(class4804.method14276() - n - 5);
             class4803.method14275(5);
@@ -43,8 +43,8 @@ public class Class4827 extends Class4825 implements Class4828
                 return;
             }
             this.field20650 -= Math.round((n >= 0.0f) ? (((Class4817)this.field20475).field20613 * n) : (1.0f * ((Class4817)this.field20475).field20613 * n));
-            this.field20654.method23934();
-            this.field20654.method23932();
+            this.field20654.reset();
+            this.field20654.start();
         }
     }
     
@@ -61,7 +61,7 @@ public class Class4827 extends Class4825 implements Class4828
             else {
                 if (!this.method14308()) {
                     if (!this.field20653.method14386()) {
-                        if (!this.field20654.method23937() || this.field20654.method23935() >= 500L) {
+                        if (!this.field20654.isRunning() || this.field20654.getElapsedTime() >= 500L) {
                             n3 = -0.05f;
                             break Label_0107;
                         }

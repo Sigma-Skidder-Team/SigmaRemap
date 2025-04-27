@@ -334,7 +334,7 @@ public class Class840 extends Class832
         field4478 = (class427 -> {
             final boolean b;
             if (!class427.method2118()) {
-                if (!(!class427.method1768())) {
+                if (!(!class427.isAlive())) {
                     if (!(!class427.method1706())) {
                         return b;
                     }

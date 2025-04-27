@@ -45,7 +45,7 @@ public class Class3587 extends Class3446
     
     @Override
     public boolean method11017() {
-        if (this.field16722.method1768()) {
+        if (this.field16722.isAlive()) {
             if (this.field16722.method4363()) {
                 if (this.field16723 < 60) {
                     return true;

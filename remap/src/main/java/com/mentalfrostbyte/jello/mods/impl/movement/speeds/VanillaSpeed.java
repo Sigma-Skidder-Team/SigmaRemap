@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import mapped.Class5717;
-import mapped.Class7482;
+import mapped.MovementUtil;
 import mapped.EventListener;
 
 public class VanillaSpeed extends Module
@@ -21,7 +21,7 @@ public class VanillaSpeed extends Module
     @EventListener
     public void method10547(final Class5717 class5717) {
         if (this.isEnabled()) {
-            Class7482.method23149(class5717, Class7482.method23136() * this.getNumberSettingValueByName("Speed"));
+            MovementUtil.method23149(class5717, MovementUtil.method23136() * this.getNumberSettingValueByName("Speed"));
         }
     }
 }

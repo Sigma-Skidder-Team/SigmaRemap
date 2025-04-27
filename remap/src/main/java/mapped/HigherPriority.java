@@ -11,5 +11,5 @@ import java.lang.annotation.Retention;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD })
-public @interface Class6759 {
+public @interface HigherPriority {
 }

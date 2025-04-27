@@ -21,7 +21,7 @@ public class StaffRepealer extends Module
     }
     
     @EventListener
-    private void method10812(final Class5743 class5743) {
+    private void method10812(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }

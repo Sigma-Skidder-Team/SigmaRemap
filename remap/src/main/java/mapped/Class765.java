@@ -105,7 +105,7 @@ public class Class765 extends Class763 implements Class766
     
     @Override
     public void method1659() {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             this.field4138 = this.field4139;
             if (this.method4239()) {
                 this.method4236(1);

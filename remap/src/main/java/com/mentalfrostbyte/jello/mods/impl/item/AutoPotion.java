@@ -42,21 +42,21 @@ public class AutoPotion extends Module
     }
     
     @EventListener
-    @Class6755
+    @LowestPriority
     private void method10613(final UpdateWalkingEvent updateWalkingEvent) {
-        if (!this.isEnabled() || !updateWalkingEvent.method17046()) {
+        if (!this.isEnabled() || !updateWalkingEvent.isPre()) {
             return;
         }
-        if (!this.method9883("In fight") && (KillAura.field16061 != null || KillAura.field16060 != null)) {
+        if (!this.getBooleanValueFromSettingName("In fight") && (KillAura.field16061 != null || KillAura.targetEntity != null)) {
             return;
         }
         final int method10615 = this.method10615();
         ++this.field15979;
         final int[] array = { 6, -1, -1 };
-        if (this.method9883("Regen")) {
+        if (this.getBooleanValueFromSettingName("Regen")) {
             array[1] = 10;
         }
-        if (this.method9883("Speed")) {
+        if (this.getBooleanValueFromSettingName("Speed")) {
             array[2] = 1;
         }
         if (!AutoPotion.mc.player.onGround) {
@@ -99,7 +99,7 @@ public class AutoPotion extends Module
         final double n = AutoPotion.mc.player.posX + AutoPotion.mc.player.getMotion().x * 26.0;
         final double n2 = AutoPotion.mc.player.boundingBox.minY - 3.6;
         final double n3 = AutoPotion.mc.player.posZ + AutoPotion.mc.player.getMotion().z * 26.0;
-        if (!this.method9883("Predict")) {
+        if (!this.getBooleanValueFromSettingName("Predict")) {
             return new float[] { AutoPotion.mc.player.rotationYaw, 90.0f };
         }
         return Class8845.method30919(n, n3, n2);
@@ -129,7 +129,7 @@ public class AutoPotion extends Module
                     final int method20055 = this.method10617(method20054);
                     if (method20054 != null) {
                         if (!method20054.isEmpty()) {
-                            if (this.method9883("Custom potion") || method20055 == 1) {
+                            if (this.getBooleanValueFromSettingName("Custom potion") || method20055 == 1) {
                                 for (final Class1948 class1948 : method20054) {
                                     final int method20056 = Class5328.method16451(class1948.method7906());
                                     final int method20057 = class1948.method7908();
@@ -200,7 +200,7 @@ public class AutoPotion extends Module
                 final float[] method10617 = this.method10614();
                 AutoPotion.mc.player.inventory.field2743 = method10616 - 36;
                 AutoPotion.mc.playerController.method27318();
-                if (!this.method9883("Instant")) {
+                if (!this.getBooleanValueFromSettingName("Instant")) {
                     this.field15982 = 1;
                     updateWalkingEvent.method17043(method10617[0]);
                     updateWalkingEvent.method17041(method10617[1]);

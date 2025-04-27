@@ -34,7 +34,7 @@ public class MineplexFly extends PremiumModule
     @Override
     public void onEnable() {
         this.field15992 = -1;
-        this.field15995 = Class7482.method23136();
+        this.field15995 = MovementUtil.method23136();
         this.field15993 = 0;
         this.field15999 = false;
         this.field15994 = -1;
@@ -44,7 +44,7 @@ public class MineplexFly extends PremiumModule
     
     @Override
     public void onDisable() {
-        Class7482.method23151(Class7482.method23136() * 0.5);
+        MovementUtil.method23151(MovementUtil.method23136() * 0.5);
         if (this.field15994 != -1) {
             MineplexFly.mc.method5269().method17292(new Class4321(MineplexFly.mc.player.inventory.field2743));
             this.field15994 = MineplexFly.mc.player.inventory.field2743;
@@ -54,13 +54,13 @@ public class MineplexFly extends PremiumModule
     
     @EventListener
     public void method10630(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             updateWalkingEvent.method17033(true);
         }
     }
     
     @EventListener
-    public void method10631(final Class5732 class5732) {
+    public void method10631(final EventLoadWorld eventLoadWorld) {
         if (this.isEnabled()) {
             final int n = -1;
             this.field15994 = n;
@@ -68,7 +68,7 @@ public class MineplexFly extends PremiumModule
             this.field15997 = n;
             this.field15993 = 0;
             this.field15999 = false;
-            this.field15995 = Class7482.method23136();
+            this.field15995 = MovementUtil.method23136();
         }
     }
     
@@ -137,13 +137,13 @@ public class MineplexFly extends PremiumModule
                     if (MineplexFly.mc.player.collidedHorizontally || !ColorUtils.method19114()) {
                         this.field15995 = 0.35;
                     }
-                    Class7482.method23149(class5717, this.field15995);
+                    MovementUtil.method23149(class5717, this.field15995);
                 }
             }
             else {
                 if (this.field15993 > 0) {
-                    Class7482.method23149(class5717, 0.0);
-                    this.method9914().method9910();
+                    MovementUtil.method23149(class5717, 0.0);
+                    this.method9914().toggle();
                     return;
                 }
                 if (this.field15992 == -1) {
@@ -157,7 +157,7 @@ public class MineplexFly extends PremiumModule
                 }
                 MineplexFly.mc.method5269().method17292(new Class4329(Class316.field1877, new BlockRayTraceResult(new Vec3d(0.475 + Math.random() * 0.05, 1.0, 0.475 + Math.random() * 0.05), Direction.UP, new BlockPos(MineplexFly.mc.player).add(0, -1, 0), false)));
                 if (this.field15995 >= this.getNumberSettingValueByName("Boost")) {
-                    Class7482.method23149(class5717, 0.0);
+                    MovementUtil.method23149(class5717, 0.0);
                     MineplexFly.mc.player.method2725();
                     this.field15996 = 0.4299999;
                     this.field15993 = 0;
@@ -184,7 +184,7 @@ public class MineplexFly extends PremiumModule
             }
             return;
         }
-        Class7482.method23149(class5717, 0.01);
+        MovementUtil.method23149(class5717, 0.01);
     }
     
     @EventListener
@@ -246,14 +246,14 @@ public class MineplexFly extends PremiumModule
     @EventListener
     public void method10638(final Class5741 class5741) {
         if (this.isEnabled()) {
-            if (this.method9883("Fake")) {
+            if (this.getBooleanValueFromSettingName("Fake")) {
                 if (this.field15997 >= 0.0) {
                     if (MineplexFly.mc.player.posY >= this.field15997) {
                         MineplexFly.mc.player.posY = this.field15997;
                         MineplexFly.mc.player.lastTickPosY = this.field15997;
                         MineplexFly.mc.player.field3019 = this.field15997;
                         MineplexFly.mc.player.prevPosY = this.field15997;
-                        if (Class7482.method23148()) {
+                        if (MovementUtil.isMoving()) {
                             MineplexFly.mc.player.field3013 = 0.099999994f;
                         }
                     }

@@ -68,11 +68,11 @@ public final class Class9170
     }
     
     static {
-        field38845 = Entity::method1768;
-        field38846 = LivingEntity::method1768;
+        field38845 = Entity::isAlive;
+        field38846 = LivingEntity::isAlive;
         field38847 = (class399 -> {
             final boolean b;
-            if (!(!class399.method1768())) {
+            if (!(!class399.isAlive())) {
                 if (!class399.isBeingRidden()) {
                     if (!class399.isPassenger()) {
                         return b;
@@ -81,7 +81,7 @@ public final class Class9170
             }
             return b;
         });
-        field38848 = (class400 -> class400 instanceof IInventory && class400.method1768());
+        field38848 = (class400 -> class400 instanceof IInventory && class400.isAlive());
         field38849 = (class401 -> !(class401 instanceof PlayerEntity) || (!class401.isSpectator() && !((PlayerEntity)class401).method2889()));
         field38850 = (class402 -> !class402.isSpectator());
     }

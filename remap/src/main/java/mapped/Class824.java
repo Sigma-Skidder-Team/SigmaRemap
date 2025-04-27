@@ -67,7 +67,7 @@ public class Class824 extends Class819 implements Class831, Class825
         this.method4150().method24741(true);
         this.method4193(true);
         this.method4869(this.method4870().method28783(class7501).method28784(Class9334.field40060));
-        this.field2996 = this.method2619((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)new CompoundNBT()));
+        this.field2996 = this.method2619((Dynamic<?>)new Dynamic(Class8453.field34721, new CompoundNBT()));
     }
     
     @Override
@@ -77,7 +77,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public Class365<?> method2619(final Dynamic<?> dynamic) {
-        final Class365 class365 = new Class365((Collection<Class8233<?>>)Class824.field4413, (Collection<Class8033<? extends Class6851<? super E>>>)Class824.field4414, dynamic);
+        final Class365 class365 = new Class365(Class824.field4413, Class824.field4414, dynamic);
         this.method4857(class365);
         return class365;
     }
@@ -187,7 +187,7 @@ public class Class824 extends Class819 implements Class831, Class825
         final ItemStack method2715 = playerEntity.method2715(class513);
         if (method2715.getItem() != Items.field31552) {
             if (method2715.getItem() != Items.field31500) {
-                if (this.method1768()) {
+                if (this.isAlive()) {
                     if (!this.method4824()) {
                         if (!this.method2783()) {
                             if (this.method2625()) {
@@ -350,7 +350,7 @@ public class Class824 extends Class819 implements Class831, Class825
     @Override
     public void method1761(final CompoundNBT class51) {
         super.method1761(class51);
-        class51.put("VillagerData", this.method4870().method28786((com.mojang.datafixers.types.DynamicOps<INBT>)Class8453.field34721));
+        class51.put("VillagerData", this.method4870().method28786(Class8453.field34721));
         class51.putByte("FoodLevel", this.field4405);
         class51.put("Gossips", (INBT)this.field4406.method35243((com.mojang.datafixers.types.DynamicOps<Object>)Class8453.field34721).getValue());
         class51.putInt("Xp", this.field4409);
@@ -363,7 +363,7 @@ public class Class824 extends Class819 implements Class831, Class825
     public void method1760(final CompoundNBT class51) {
         super.method1760(class51);
         if (class51.contains("VillagerData", 10)) {
-            this.method4869(new Class8562((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.get("VillagerData"))));
+            this.method4869(new Class8562((Dynamic<?>)new Dynamic(Class8453.field34721, class51.get("VillagerData"))));
         }
         if (class51.contains("Offers", 10)) {
             this.field4390 = new Class57(class51.getCompound("Offers"));
@@ -371,7 +371,7 @@ public class Class824 extends Class819 implements Class831, Class825
         if (class51.contains("FoodLevel", 1)) {
             this.field4405 = class51.getByte("FoodLevel");
         }
-        this.field4406.method35244((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class51.getList("Gossips", 10)));
+        this.field4406.method35244((Dynamic<?>)new Dynamic(Class8453.field34721, class51.getList("Gossips", 10)));
         if (class51.contains("Xp", 3)) {
             this.field4409 = class51.getInt("Xp");
         }
@@ -447,7 +447,7 @@ public class Class824 extends Class819 implements Class831, Class825
         if (class511 != null) {
             if (this.world instanceof Class1849) {
                 ((Class1849)this.world).method6929(Class8156.field33592, class511, this);
-                if (this.method1768()) {
+                if (this.isAlive()) {
                     if (class511 instanceof PlayerEntity) {
                         this.world.method6761(this, (byte)13);
                     }
@@ -459,7 +459,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public void method2673(final DamageSource class7929) {
-        Class824.LOGGER.info("Villager {} died, message: '{}'", (Object)this, (Object)class7929.method25690(this).getString());
+        Class824.LOGGER.info("Villager {} died, message: '{}'", this, class7929.method25690(this).getString());
         final Entity method25714 = class7929.method25714();
         if (method25714 != null) {
             this.method4871(method25714);
@@ -493,8 +493,8 @@ public class Class824 extends Class819 implements Class831, Class825
                 class8238.method7210(class8236.method1170());
                 final BiPredicate biPredicate = Class824.field4415.get(class8235);
                 final Optional optional;
-                if (!(!optional.isPresent())) {
-                    if (!(!biPredicate.test(this, optional.get()))) {
+                if (optional.isPresent()) {
+                    if (biPredicate.test(this, optional.get())) {
                         class8238.method7208(class8236.method1170());
                         Class9324.method34534(class8237, class8236.method1170());
                     }
@@ -562,7 +562,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     @Override
     public ITextComponent method1842() {
-        return new Class2259(this.getType().method23366() + '.' + Registry.field240.getKey(this.method4870().method28781()).method7797(), new Object[0]);
+        return new Class2259(this.getType().method23366() + '.' + Registry.field240.getKey(this.method4870().method28781()).method7797());
     }
     
     @Override
@@ -679,7 +679,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public boolean method4883(final Item class3820) {
-        return Class824.field4401.contains(class3820) || this.method4870().method28781().method34576().contains((Object)class3820);
+        return Class824.field4401.contains(class3820) || this.method4870().method28781().method34576().contains(class3820);
     }
     
     public boolean method4884() {
@@ -710,7 +710,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public boolean method4888() {
-        return this.method4837().method2266((Set<Item>)ImmutableSet.of((Object) Items.field31314, (Object) Items.field31518, (Object) Items.field31517, (Object) Items.field31576));
+        return this.method4837().method2266((Set<Item>)ImmutableSet.of(Items.field31314, Items.field31518, Items.field31517, (Object) Items.field31576));
     }
     
     @Override
@@ -752,7 +752,7 @@ public class Class824 extends Class819 implements Class831, Class825
     
     public void method4891(final long n, final int n2) {
         if (this.method4894(n)) {
-            final List<Entity> method7128 = this.world.method7128((Class<? extends Entity>)Class824.class, this.getBoundingBox().grow(10.0, 10.0, 10.0));
+            final List<Entity> method7128 = this.world.method7128(Class824.class, this.getBoundingBox().grow(10.0, 10.0, 10.0));
             if (method7128.stream().filter(class824 -> class824.method4894(n3)).limit(5L).collect((Collector<? super Object, ?, List<? super Object>>)Collectors.toList()).size() >= n2) {
                 if (this.method4895() != null) {
                     method7128.forEach(class825 -> class825.method4892(n4));
@@ -845,7 +845,7 @@ public class Class824 extends Class819 implements Class831, Class825
     }
     
     public void method4900(final INBT class41) {
-        this.field4406.method35244((Dynamic<?>)new Dynamic((DynamicOps)Class8453.field34721, (Object)class41));
+        this.field4406.method35244((Dynamic<?>)new Dynamic(Class8453.field34721, class41));
     }
     
     @Override
@@ -874,8 +874,8 @@ public class Class824 extends Class819 implements Class831, Class825
     
     static {
         field4399 = EntityDataManager.method33564(Class824.class, Class7709.field30669);
-        field4400 = (Map)ImmutableMap.of((Object) Items.field31316, (Object)4, (Object) Items.field31518, (Object)1, (Object) Items.field31517, (Object)1, (Object) Items.field31575, (Object)1);
-        field4401 = (Set)ImmutableSet.of((Object) Items.field31316, (Object) Items.field31518, (Object) Items.field31517, (Object) Items.field31315, (Object) Items.field31314, (Object) Items.field31575, (Object[])new Item[] { Items.field31576 });
+        field4400 = (Map)ImmutableMap.of(Items.field31316, 4, Items.field31518, 1, Items.field31517, 1, (Object) Items.field31575, (Object)1);
+        field4401 = (Set)ImmutableSet.of(Items.field31316, Items.field31518, Items.field31517, Items.field31315, Items.field31314, Items.field31575, (Object[])new Item[] { Items.field31576 });
         field4413 = ImmutableList.of((Object)Class8233.field33800, (Object)Class8233.field33801, (Object)Class8233.field33802, (Object)Class8233.field33804, (Object)Class8233.field33805, (Object)Class8233.field33806, (Object)Class8233.field33807, (Object)Class8233.field33808, (Object)Class8233.field33809, (Object)Class8233.field33810, (Object)Class8233.field33811, (Object)Class8233.field33812, (Object[])new Class8233[] { Class8233.field33813, Class8233.field33814, Class8233.field33815, Class8233.field33816, Class8233.field33817, Class8233.field33818, Class8233.field33819, Class8233.field33803, Class8233.field33820, Class8233.field33821, Class8233.field33822, Class8233.field33824, Class8233.field33825, Class8233.field33826, Class8233.field33823 });
         field4414 = ImmutableList.of((Object)Class8033.field33064, (Object)Class8033.field33065, (Object)Class8033.field33066, (Object)Class8033.field33067, (Object)Class8033.field33068, (Object)Class8033.field33069, (Object)Class8033.field33070, (Object)Class8033.field33071, (Object)Class8033.field33072);
         field4415 = (Map)ImmutableMap.of((Object)Class8233.field33800, (p0, class8912) -> class8912 == Class8912.field37476, (Object)Class8233.field33801, (class8913, class8914) -> class8913.method4870().method28781().method34575() == class8914, (Object)Class8233.field33802, (p0, class8915) -> class8915 == Class8912.field37477);

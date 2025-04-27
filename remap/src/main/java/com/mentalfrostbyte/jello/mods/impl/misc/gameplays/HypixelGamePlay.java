@@ -47,7 +47,7 @@ public class HypixelGamePlay extends Module
             if (Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).isEnabled()) {
                 s = Client.getInstance().moduleManager().getModuleByClass(NameProtect.class).getStringSettingValueByName("Username").toLowerCase();
             }
-            if (this.field15682.method9883("AutoL")) {
+            if (this.field15682.getBooleanValueFromSettingName("AutoL")) {
                 final String[] array = { "MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", "" };
                 boolean b = false;
                 for (int i = 0; i < 6; ++i) {
@@ -97,7 +97,7 @@ public class HypixelGamePlay extends Module
                 }
             }
             if (method16999.contains("§r§eWant to play again?§r§b§l Click here! §r") || replaceAll.contains("coins! (Win)")) {
-                if (this.field15682.method9883("Auto Join")) {
+                if (this.field15682.getBooleanValueFromSettingName("Auto Join")) {
                     final Iterator<ITextComponent> iterator3 = class5724.method13164().iterator();
                     while (iterator3.hasNext()) {
                         final Class9485 method17005 = iterator3.next().getStyle().method30410();
@@ -106,7 +106,7 @@ public class HypixelGamePlay extends Module
                         }
                     }
                 }
-                if (this.field15682.method9883("AutoGG")) {
+                if (this.field15682.getBooleanValueFromSettingName("AutoGG")) {
                     this.field15682.method10295();
                 }
             }

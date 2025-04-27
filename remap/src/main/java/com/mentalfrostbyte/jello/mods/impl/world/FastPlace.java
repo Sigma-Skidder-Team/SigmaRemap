@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import mapped.Class4036;
-import mapped.Class5743;
+import mapped.EventPlayerTick;
 import mapped.EventListener;
 import mapped.Minecraft;
 
@@ -20,7 +20,7 @@ public class FastPlace extends Module
     }
     
     @EventListener
-    private void method10040(final Class5743 class5743) {
+    private void method10040(final EventPlayerTick eventPlayerTick) {
         if (!this.isEnabled()) {
             return;
         }
@@ -28,7 +28,7 @@ public class FastPlace extends Module
             return;
         }
         if (FastPlace.mc.player.getHeldItemMainhand().getItem() instanceof Class4036) {
-            if (!this.method9883("Reduce Delay")) {
+            if (!this.getBooleanValueFromSettingName("Reduce Delay")) {
                 FastPlace.mc.field4692 = 0;
             }
             else {

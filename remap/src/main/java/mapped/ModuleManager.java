@@ -51,12 +51,12 @@ public class ModuleManager
     }
 
     private void sortBySuffixAndRegisterEvents() {
-        this.modules.sort(new Class4450(this));
+        this.modules.sort(new ModuleNameComparator());
         for (final Module mod : this.modules) {
-            Client.getInstance().getEventBus().register2(mod);
+            Client.getInstance().getEventBus().registerInstance(mod);
             this.moduleMap.put(mod.getClass(), mod);
         }
-        Class9146.field38766 = true;
+        DeferredEventRegistry.modulesLoaded = true;
     }
     
     public void register(final ClientMode clientMode) {

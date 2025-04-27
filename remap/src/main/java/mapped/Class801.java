@@ -174,7 +174,7 @@ public class Class801 extends Class789
     
     @Override
     public void method2729(final Vec3d class5487) {
-        if (this.method1768()) {
+        if (this.isAlive()) {
             final Entity class5488 = this.method1908().isEmpty() ? null : this.method1908().get(0);
             if (this.isBeingRidden() && this.method4189()) {
                 this.rotationYaw = class5488.rotationYaw;

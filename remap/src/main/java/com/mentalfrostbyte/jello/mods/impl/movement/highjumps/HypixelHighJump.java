@@ -46,7 +46,7 @@ public class HypixelHighJump extends Module
             if (this.field15851 >= 0) {
                 ++this.field15851;
                 class5717.method16975(0.0);
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
                 class5717.method16975(this.getNumberSettingValueByName("Motion"));
                 this.field15852 = true;
                 this.field15853 = HypixelHighJump.mc.player.posY;

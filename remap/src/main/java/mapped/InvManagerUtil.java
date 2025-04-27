@@ -181,8 +181,8 @@ public class InvManagerUtil
         for (int i = 9; i <= 44; ++i) {
             final ItemStack method20053 = InvManagerUtil.mc.player.container.getSlot(i).method20053();
             if (!method29316(i)) {
-                if (method20053.getItem() instanceof Class4077) {
-                    final float n3 = ((Class4077)method20053.getItem()).method12281() + Class8742.method30195(Class7882.field32358, method20053) + Class8742.method30195(Class7882.field32362, method20053);
+                if (method20053.getItem() instanceof SwordItem) {
+                    final float n3 = ((SwordItem)method20053.getItem()).method12281() + Class8742.method30195(Class7882.field32358, method20053) + Class8742.method30195(Class7882.field32362, method20053);
                     if (n3 <= n2) {
                         if (n3 != n2) {
                             continue;
@@ -219,10 +219,10 @@ public class InvManagerUtil
             if (method20053 != null) {
                 float n3;
                 if (class7096 == null) {
-                    if (!(method20053.getItem() instanceof Class4077)) {
+                    if (!(method20053.getItem() instanceof SwordItem)) {
                         continue;
                     }
-                    n3 = ((Class4077)method20053.getItem()).method12281();
+                    n3 = ((SwordItem)method20053.getItem()).method12281();
                 }
                 else {
                     n3 = method20053.method27624(class7096);
@@ -439,8 +439,8 @@ public class InvManagerUtil
     }
     
     public static float method29350(final ItemStack class8321) {
-        if (class8321 != null && class8321.getItem() instanceof Class4077) {
-            return ((Class4077)class8321.getItem()).method12281() + Class8742.method30195(Class7882.field32358, class8321) + Class8742.method30195(Class7882.field32362, class8321);
+        if (class8321 != null && class8321.getItem() instanceof SwordItem) {
+            return ((SwordItem)class8321.getItem()).method12281() + Class8742.method30195(Class7882.field32358, class8321) + Class8742.method30195(Class7882.field32362, class8321);
         }
         return 1.0f;
     }
@@ -450,7 +450,7 @@ public class InvManagerUtil
             return -1.0f;
         }
         final Item method27622 = class8321.getItem();
-        if (method27622 instanceof Class4077) {
+        if (method27622 instanceof SwordItem) {
             return 2.0f;
         }
         if (method27622 instanceof Class3821) {

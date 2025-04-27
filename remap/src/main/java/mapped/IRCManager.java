@@ -46,7 +46,7 @@ public class IRCManager
         this.field38982 = Minecraft.getInstance();
         this.field38985 = new ArrayList<UUID>();
         this.field38986 = new HashMap<UUID, Class6538>();
-        Client.getInstance().getEventBus().register2(this);
+        Client.getInstance().getEventBus().registerInstance(this);
         this.field38987 = (HttpClient)HttpClients.createDefault();
         this.field38988 = field38988;
         this.field38990 = new Class9194(this);
@@ -69,7 +69,7 @@ public class IRCManager
     }
     
     @EventListener
-    private void method33658(final Class5743 class5743) {
+    private void method33658(final EventPlayerTick eventPlayerTick) {
         if (this.field38982.player.ticksExisted % 100 != 0) {
             return;
         }

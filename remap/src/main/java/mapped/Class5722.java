@@ -29,7 +29,7 @@ public class Class5722 extends Class5714
     }
     
     public void method16996(final double n) {
-        final float[] method23143 = Class7482.method23143();
+        final float[] method23143 = MovementUtil.method23143();
         final float n2 = method23143[1];
         final float n3 = method23143[2];
         final float n4 = method23143[0];

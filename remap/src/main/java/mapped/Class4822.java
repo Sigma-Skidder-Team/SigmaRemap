@@ -126,7 +126,7 @@ public class Class4822 extends Class4817
     private void method14390() {
         this.addToList(new Class4834(this, "settingsname", 12, 2, this.field20480, 20, Class4834.field20719, this.field20634.getFormattedName() + " Settings", this.field20496));
         int method14434 = 35;
-        final Iterator<Setting> iterator = this.field20634.method9899().values().iterator();
+        final Iterator<Setting> iterator = this.field20634.getSettingMap().values().iterator();
         while (iterator.hasNext()) {
             method14434 = this.method14434(this, iterator.next(), 30, method14434, 20);
         }
@@ -136,7 +136,7 @@ public class Class4822 extends Class4817
                 int method14435 = 10;
                 final CustomGuiScreen value = new CustomGuiScreen(this, key.getName() + "SubView", 0, method14434, this.field20480, this.field20481 - method14434);
                 value.method14270((class4803, class4804) -> class4803.method14277(class4804.method14276()));
-                final Iterator<Setting> iterator2 = key.method9899().values().iterator();
+                final Iterator<Setting> iterator2 = key.getSettingMap().values().iterator();
                 while (iterator2.hasNext()) {
                     method14435 = this.method14434(value, iterator2.next(), 30, method14435, 20);
                 }

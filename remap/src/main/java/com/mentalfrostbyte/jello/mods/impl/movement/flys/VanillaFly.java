@@ -42,7 +42,7 @@ public class VanillaFly extends Module
     @Override
     public void onDisable() {
         ColorUtils.method19155(-0.08);
-        Class7482.method23151(Class7482.method23136());
+        MovementUtil.method23151(MovementUtil.method23136());
     }
     
     @EventListener
@@ -70,7 +70,7 @@ public class VanillaFly extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (!VanillaFly.mc.player.onGround && this.method9883("Kick bypass")) {
+        if (!VanillaFly.mc.player.onGround && this.getBooleanValueFromSettingName("Kick bypass")) {
             if (this.field15874 > 0) {
                 if (this.field15874 % 30 == 0) {
                     if (!ColorUtils.method19160(VanillaFly.mc.player, 0.01f)) {
@@ -122,7 +122,7 @@ public class VanillaFly extends Module
             else {
                 this.field15874 = 0;
             }
-            final double n = Class7482.method23136() * this.getNumberSettingValueByName("Speed");
+            final double n = MovementUtil.method23136() * this.getNumberSettingValueByName("Speed");
             double n2 = VanillaFly.mc.gameSettings.field23439.field2162 ? (n / 2.0) : 0.0;
             if (VanillaFly.mc.gameSettings.field23439.field2162 && VanillaFly.mc.gameSettings.field23440.field2162) {
                 n2 = 0.0;
@@ -135,7 +135,7 @@ public class VanillaFly extends Module
             else {
                 n2 = -n / 2.0;
             }
-            Class7482.method23149(class5717, n);
+            MovementUtil.method23149(class5717, n);
             class5717.method16975(n2);
         }
     }

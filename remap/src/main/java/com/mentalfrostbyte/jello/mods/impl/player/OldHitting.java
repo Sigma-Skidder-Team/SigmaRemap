@@ -28,13 +28,13 @@ public class OldHitting extends Module
     }
     
     @EventListener
-    @Class6757
+    @HigherPriority
     private void method10435(final UpdateWalkingEvent updateWalkingEvent) {
         if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
         }
-        if (updateWalkingEvent.method17046()) {
-            final boolean b = OldHitting.mc.player.getHeldItemMainhand() != null && OldHitting.mc.player.getHeldItemMainhand().getItem() instanceof Class4077;
+        if (updateWalkingEvent.isPre()) {
+            final boolean b = OldHitting.mc.player.getHeldItemMainhand() != null && OldHitting.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
             final boolean method9898 = Client.getInstance().moduleManager().getModuleByClass(KillAura.class).method9898();
             boolean b2 = true;
             Label_0104: {
@@ -103,7 +103,7 @@ public class OldHitting extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10436(final Class5723 class5723) {
         if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;
@@ -123,7 +123,7 @@ public class OldHitting extends Module
     }
     
     @EventListener
-    @Class6759
+    @LowerPriority
     private void method10437(final Class5716 class5716) {
         if (!this.isEnabled() && ViaManager.field40167 != Class7906.field32452) {
             return;

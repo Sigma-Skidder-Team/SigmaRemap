@@ -55,7 +55,7 @@ public class Class3456 extends Class3446
         if (this.field16299.method4351() >= 0) {
             return false;
         }
-        if (this.field16300.method1768()) {
+        if (this.field16300.isAlive()) {
             final double method1734 = this.field16299.method1734(this.field16300);
             return method1734 >= 9.0 && method1734 <= 256.0;
         }

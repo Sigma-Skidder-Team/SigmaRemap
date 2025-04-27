@@ -48,7 +48,7 @@ public class Class3595<T extends Class763 & Class768 & Class774> extends Class34
     }
     
     private boolean method11125() {
-        return this.field16745.method4152() != null && this.field16745.method4152().method1768();
+        return this.field16745.method4152() != null && this.field16745.method4152().isAlive();
     }
     
     @Override

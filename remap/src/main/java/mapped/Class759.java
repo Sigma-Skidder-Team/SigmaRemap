@@ -171,7 +171,7 @@ public abstract class Class759 extends LivingEntity
     public void method1660() {
         super.method1660();
         this.world.method6796().startSection("mobBaseTick");
-        if (this.method1768()) {
+        if (this.isAlive()) {
             if (this.rand.nextInt(1000) < this.field4107++) {
                 this.method4157();
                 this.method4156();
@@ -429,7 +429,7 @@ public abstract class Class759 extends LivingEntity
         }
         if (!this.world.isRemote) {
             if (this.method4192()) {
-                if (this.method1768()) {
+                if (this.isAlive()) {
                     if (!this.field2958) {
                         if (b) {
                             for (final Class427 class427 : this.world.method7128((Class<? extends Class427>)Class427.class, this.getBoundingBox().grow(1.0, 0.0, 1.0))) {
@@ -504,12 +504,12 @@ public abstract class Class759 extends LivingEntity
                     b = false;
                 }
             }
-            else if (class8321.getItem() instanceof Class4077 && !(class8322.getItem() instanceof Class4077)) {
+            else if (class8321.getItem() instanceof SwordItem && !(class8322.getItem() instanceof SwordItem)) {
                 b = true;
             }
-            else if (class8321.getItem() instanceof Class4077 && class8322.getItem() instanceof Class4077) {
-                final Class4077 class8326 = (Class4077)class8321.getItem();
-                final Class4077 class8327 = (Class4077)class8322.getItem();
+            else if (class8321.getItem() instanceof SwordItem && class8322.getItem() instanceof SwordItem) {
+                final SwordItem class8326 = (SwordItem)class8321.getItem();
+                final SwordItem class8327 = (SwordItem)class8322.getItem();
                 if (class8326.method12281() != class8327.method12281()) {
                     b = (class8326.method12281() > class8327.method12281());
                 }
@@ -981,7 +981,7 @@ public abstract class Class759 extends LivingEntity
     
     @Override
     public final boolean method1770(final PlayerEntity playerEntity, final Class316 class513) {
-        if (!this.method1768()) {
+        if (!this.isAlive()) {
             return false;
         }
         if (this.method4206() == playerEntity) {
@@ -1031,7 +1031,7 @@ public abstract class Class759 extends LivingEntity
             this.method4209();
         }
         if (this.field4127 != null) {
-            if (!this.method1768() || !this.field4127.method1768()) {
+            if (!this.isAlive() || !this.field4127.isAlive()) {
                 this.method4203(true, true);
             }
         }

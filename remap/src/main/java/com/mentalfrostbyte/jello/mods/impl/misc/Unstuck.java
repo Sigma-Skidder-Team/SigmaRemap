@@ -29,7 +29,7 @@ public class Unstuck extends Module
     public void method10542(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
-                Class7482.method23149(class5717, 0.0);
+                MovementUtil.method23149(class5717, 0.0);
                 class5717.method16975(0.0);
                 Unstuck.mc.player.setMotion(0.0, 0.0, 0.0);
             }
@@ -37,7 +37,7 @@ public class Unstuck extends Module
     }
     
     @EventListener
-    public void method10543(final Class5732 class5732) {
+    public void method10543(final EventLoadWorld eventLoadWorld) {
         if (this.isEnabled()) {
             this.field15927 = 0;
         }
@@ -45,7 +45,7 @@ public class Unstuck extends Module
     
     @EventListener
     public void method10544(final UpdateWalkingEvent updateWalkingEvent) {
-        if (this.isEnabled() && updateWalkingEvent.method17046()) {
+        if (this.isEnabled() && updateWalkingEvent.isPre()) {
             if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
