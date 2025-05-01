@@ -414,10 +414,10 @@ public class WaypointManager {
             final Material method1142 = this.field30396.world.getBlockState(method1139.method1143()).method21697();
             if (method1141 != Material.AIR && method1141 != Material.SNOW) {
                 if (method1142 == Material.AIR || method1142 == Material.SNOW) {
-                    rgba = ColorUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
+                    rgba = AllUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
                 }
             } else {
-                rgba = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
+                rgba = AllUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
             }
         }
         int rgb;

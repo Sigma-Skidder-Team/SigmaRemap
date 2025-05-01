@@ -4,8 +4,6 @@
 
 package com.mentalfrostbyte.jello.auth.managers;
 
-import mapped.MessageHistory;
-
 import java.util.HashMap;
 
 public class MessageManager {

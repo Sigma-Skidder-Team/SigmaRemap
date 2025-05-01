@@ -16,12 +16,12 @@ public class Class4884 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)this.field20480, ColorUtils.applyAlpha(ColorUtils.method19120(this.field20880, ClientColors.DEEP_TEAL.color, 0.8f), n));
-        RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)(this.field20480 - 2), ColorUtils.applyAlpha(this.field20880, n));
+    public void draw(final float partialTicks) {
+        RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)this.field20480, AllUtils.applyAlpha(AllUtils.method19120(this.field20880, ClientColors.DEEP_TEAL.color, 0.8f), partialTicks));
+        RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)(this.field20480 - 2), AllUtils.applyAlpha(this.field20880, partialTicks));
         if (this.method14309()) {
-            RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)(this.field20480 - 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.2f));
+            RenderUtil.method26888(this.x + this.field20480 / 2.0f, this.y + this.field20480 / 2.0f, (float)(this.field20480 - 2), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.2f));
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

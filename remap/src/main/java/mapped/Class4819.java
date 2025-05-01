@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.HashMap;
 
-public class Class4819 extends Class4817 implements Class4820
+public class Class4819 extends ScrollablePane implements Class4820
 {
     private final Module field20620;
     private boolean field20621;
@@ -242,7 +242,7 @@ public class Class4819 extends Class4817 implements Class4820
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         boolean b = false;
         for (final Map.Entry<Class4834, V> entry : this.field20624.entrySet()) {
             final Class4834 class4834 = entry.getKey();
@@ -255,12 +255,12 @@ public class Class4819 extends Class4817 implements Class4820
             }
         }
         GL11.glPushMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
         GL11.glPopMatrix();
         this.field20626.changeDirection((!b) ? Direction.FORWARDS : Direction.BACKWARDS);
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 10), (float)(this.method14274() + this.method14278() + 24), this.field20628, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 11), (float)(this.method14274() + this.method14278() + 24), this.field20628, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 14 + ClientFonts.JelloLight14.getWidth(this.field20628) + 2), (float)(this.method14274() + this.method14278() + 24), this.field20627, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 10), (float)(this.method14274() + this.method14278() + 24), this.field20628, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 11), (float)(this.method14274() + this.method14278() + 24), this.field20628, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + 14 + ClientFonts.JelloLight14.getWidth(this.field20628) + 2), (float)(this.method14274() + this.method14278() + 24), this.field20627, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * this.field20626.calcPercent()));
     }
     
     @Override

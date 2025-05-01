@@ -17,7 +17,7 @@ public class Class4852 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), -3618616);
         RenderUtil.drawString(ClassicAssets.field40808, (float)(this.method14272() + 5), (float)(this.method14274() - 2), this.field20794.method15205(), -14540254);
     }

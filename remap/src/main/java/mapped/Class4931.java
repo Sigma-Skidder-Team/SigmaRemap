@@ -67,19 +67,19 @@ public class Class4931 extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
-        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.PALE_RED.color, 0.1f));
-        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95f));
+    public void draw(final float partialTicks) {
+        RenderUtil.drawImage(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.PALE_RED.color, 0.1f));
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.95f));
         RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 38.0f, "Add Login", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
         RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 58.0f, this.field21121, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, true);
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Client.getInstance().getScreenManager().method32156(new Class4936());
         }
     }

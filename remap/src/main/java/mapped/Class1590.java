@@ -25,10 +25,10 @@ public class Class1590 implements Runnable
         final boolean b = Math.round((float)Math.random() * 100.0f) < this.field8873.getNumberSettingValueByName("Hit Chance");
         EntityRayTraceResult class7007;
         if (!this.field8873.getStringSettingValueByName("Attack Mode").equals("Pre")) {
-            class7007 = ColorUtils.rayTraceFromPlayer(KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872);
+            class7007 = AllUtils.rayTraceFromPlayer(KillAura.method10765(this.field8873).field32884, KillAura.method10765(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872);
         }
         else {
-            class7007 = ColorUtils.rayTraceFromPlayer(KillAura.method10764(this.field8873).field32884, KillAura.method10764(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872 + Math.sqrt(KillAura.method10760().field4684.method1935().field22770 * KillAura.method10761().field4684.method1935().field22770 + KillAura.method10762().field4684.method1935().field22772 * KillAura.method10763().field4684.method1935().field22772));
+            class7007 = AllUtils.rayTraceFromPlayer(KillAura.method10764(this.field8873).field32884, KillAura.method10764(this.field8873).field32885, this.field8873.getNumberSettingValueByName("Range"), this.field8872 + Math.sqrt(KillAura.method10760().field4684.method1935().field22770 * KillAura.method10761().field4684.method1935().field22770 + KillAura.method10762().field4684.method1935().field22772 * KillAura.method10763().field4684.method1935().field22772));
         }
         if (KillAura.targetEntity != null) {
             if (KillAura.method10766(this.field8873).method31128()) {
@@ -49,7 +49,7 @@ public class Class1590 implements Runnable
                 final Class5750 class7009 = new Class5750(class7008, true);
                 Client.getInstance().getEventBus().post(class7009);
                 if (!class7009.isCancelled()) {
-                    ColorUtils.method19165(class7008, !this.field8873.getBooleanValueFromSettingName("No swing"));
+                    AllUtils.method19165(class7008, !this.field8873.getBooleanValueFromSettingName("No swing"));
                 }
                 class7009.method17060();
             }

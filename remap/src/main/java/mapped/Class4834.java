@@ -19,9 +19,9 @@ public class Class4834 extends Class4825 {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20495 != null) {
-            RenderUtil.drawString(this.method14316(), (float) this.method14272(), (float) this.method14274(), this.getTypedText(), ColorUtils.applyAlpha(this.field20497.method19733(), n * ColorUtils.method19140(this.field20497.method19733())));
+            RenderUtil.drawString(this.method14316(), (float) this.method14272(), (float) this.method14274(), this.getTypedText(), AllUtils.applyAlpha(this.field20497.method19733(), partialTicks * AllUtils.method19140(this.field20497.method19733())));
         }
     }
 

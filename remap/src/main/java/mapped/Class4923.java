@@ -21,17 +21,17 @@ public class Class4923 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         int n2 = this.x + 20;
         final int n3 = this.y + 5;
         final int method29097 = this.field21058.method29097();
         final int n4 = this.field20481 - 10 - Class4824.method14454();
-        int n5 = ColorUtils.applyAlpha(this.field21059, n);
-        int n6 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n);
+        int n5 = AllUtils.applyAlpha(this.field21059, partialTicks);
+        int n6 = AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks);
         if (this.field21058.field36094) {
-            n5 = ColorUtils.applyAlpha(-15038729, n);
+            n5 = AllUtils.applyAlpha(-15038729, partialTicks);
             n2 += 402 - method29097;
-            n6 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n);
+            n6 = AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks);
         }
         RenderUtil.method26924((float)n2, (float)n3, (float)method29097, (float)n4, 9.0f, n5);
         int n7 = 0;
@@ -40,6 +40,6 @@ public class Class4923 extends Class4825
             RenderUtil.drawString(ClientFonts.JelloLight18, (float)(n2 + 10), (float)(n3 + 5 + n7 * ClientFonts.JelloLight18.getHeight()), field36095[i], n6);
             ++n7;
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

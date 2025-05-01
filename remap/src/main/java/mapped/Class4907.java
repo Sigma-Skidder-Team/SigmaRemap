@@ -162,7 +162,7 @@ public class Class4907 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20990.calcPercent() != 0.0f) {
             final int n2 = this.field20992 + 60;
             final int n3 = this.field20993 + 60;
@@ -170,10 +170,10 @@ public class Class4907 extends Panel
             final float method14743 = this.method14743(this.field20990.calcPercent(), 1.0f);
             final int n5 = (int)(n2 * method14743);
             final int n6 = (int)(n3 * method14743);
-            RenderUtil.method26898(-5.0f, -5.0f, (float)(this.method14276() + 10), (float)(this.method14278() + 10), this.field20989, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
-            RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
+            RenderUtil.method26898(-5.0f, -5.0f, (float)(this.method14276() + 10), (float)(this.method14278() + 10), this.field20989, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+            RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
             if (n5 > 0) {
-                RenderUtil.method26915((this.field20480 - n5) / 2, (this.field20481 - n6) / 2, n5, n6, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+                RenderUtil.method26915((this.field20480 - n5) / 2, (this.field20481 - n6) / 2, n5, n6, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
             }
             super.method14288(method14743, method14743);
             super.method14227();

@@ -43,7 +43,7 @@ public class RegisterScreen extends Class4800
         this.addToList(this.field21075 = new LoginPanel(this, "login", (this.field20480 - LoginPanel.field20896) / 2, (this.field20481 - LoginPanel.field20895) / 2, LoginPanel.field20896, LoginPanel.field20895));
         this.addToList(this.field21076 = new LoginScreen(this, "register", (this.field20480 - LoginScreen.field20842) / 2, (this.field20481 - LoginScreen.field20841) / 2, LoginScreen.field20842, LoginScreen.field20841));
         this.method14780();
-        this.addToList(this.field21078 = new UIButton(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
+        this.addToList(this.field21078 = new UIButton(this, "continue", this.field20480 / 2 - 120, this.field20481 / 2 + 120, 240, 60, new ColorHelper(AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f)), "Continue", ClientFonts.JelloLight25));
         this.field21078.setEnabled(false);
         this.field21075.method14516(class4841 -> {
             this.field21079 = true;
@@ -67,7 +67,7 @@ public class RegisterScreen extends Class4800
             this.runThisOnDimensionUpdate(() -> {
                 final ArrayList list = new ArrayList();
                 list.add(new Class7976(Class294.field1678, s3, 45));
-                ColorUtils.method19175(s4, 240, ClientFonts.JelloLight20);
+                AllUtils.method19175(s4, 240, ClientFonts.JelloLight20);
                 int i = 0;
                 final String[] array;
                 while (i < array.length) {
@@ -98,7 +98,7 @@ public class RegisterScreen extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         ClientAssets.cancel.bind();
         this.field21072 = Math.max(0.0f, Math.min(this.field21072 + 0.075f, 1.0f));
         if (this.field21079) {
@@ -118,7 +118,7 @@ public class RegisterScreen extends Class4800
             rectangle = RenderUtil.method26863(RenderUtil.method26864(this.field21076), this.field21076.method14282(), this.field21076.method14284());
         }
         if (n2 > 0.1) {
-            RenderUtil.method26915((int)(this.field20480 - rectangle.getWidth()) / 2, (int)(this.field20481 - rectangle.getHeight()) / 2, (int)rectangle.getWidth(), (int)rectangle.getHeight(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - this.field21080.calcPercent()));
+            RenderUtil.method26915((int)(this.field20480 - rectangle.getWidth()) / 2, (int)(this.field20481 - rectangle.getHeight()) / 2, (int)rectangle.getWidth(), (int)rectangle.getHeight(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 1.0f - this.field21080.calcPercent()));
         }
         if (this.field21079) {
             if (this.field21080.calcPercent() == 1.0f) {
@@ -131,7 +131,7 @@ public class RegisterScreen extends Class4800
             final int n3 = 100;
             final int n4 = (this.field20480 - (n3 + Math.max(ClientFonts.JelloMedium40.getWidth(s), ClientFonts.JelloLight36.getWidth(field32930)) + 10 * 10)) / 2;
             final int n5 = (this.field20481 - n3 * 2) / 2;
-            RenderUtil.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * this.field21080.calcPercent()));
+            RenderUtil.method26876(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * this.field21080.calcPercent()));
             RenderUtil.method26904((float)(n4 + 20), (float)(n5 + 40), (float)(n3 + 30), (float)(n3 + 30), ClientAssets.sigma, this.field21080.calcPercent());
             final int n6 = 165;
             final int n7 = 54;
@@ -160,7 +160,7 @@ public class RegisterScreen extends Class4800
         GL11.glTranslatef(this.field20480 / 2.0f, this.field20480 / 2.0f, 0.0f);
         GL11.glScalef(1.0f + n4 * 0.2f, 1.0f + n4 * 0.2f, 0.0f);
         GL11.glTranslatef(-this.field20480 / 2.0f, -this.field20480 / 2.0f, 0.0f);
-        RenderUtil.method26898((float)this.field21070, (float)this.field21069, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21074, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21072));
+        RenderUtil.method26898((float)this.field21070, (float)this.field21069, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21074, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21072));
         GL11.glPopMatrix();
         final float n5 = 0.5f;
         if (n != this.field21069) {
@@ -172,9 +172,9 @@ public class RegisterScreen extends Class4800
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }

@@ -25,10 +25,10 @@ public class Class4860 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         RenderUtil.startScissor((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481);
-        RenderUtil.drawImage((float)(this.x - this.field20817.field1232 * this.field20480), (float)this.y, (float)(this.field20480 * 3), (float)this.field20481, ClientAssets.repeat, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.35f));
+        RenderUtil.drawImage((float)(this.x - this.field20817.field1232 * this.field20480), (float)this.y, (float)(this.field20480 * 3), (float)this.field20481, ClientAssets.repeat, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.35f));
         RenderUtil.endScissor();
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

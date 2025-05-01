@@ -19,7 +19,7 @@ public class BoxOutlineESP extends Module
     
     public BoxOutlineESP() {
         super(Category.RENDER, "Box Outline", "Draws a line arround players");
-        this.field15532 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
+        this.field15532 = AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
         this.addSetting(new ColorSetting("Color", "The tracers color", ClientColors.LIGHT_GREYISH_BLUE.color));
     }
     
@@ -51,7 +51,7 @@ public class BoxOutlineESP extends Module
     private void method9933() {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             BoxOutlineESP.mc.world.field10072.forEach((p0, class399) -> {
-                final boolean b = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
+                final boolean b = AllUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
                 final boolean b2 = !class399.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                 if (!Client.getInstance().getBotManager().isBot(class399)) {
                     if (b) {
@@ -81,9 +81,9 @@ public class BoxOutlineESP extends Module
     private void method9934(final boolean b) {
         for (final Entity class399 : BoxOutlineESP.mc.world.method6806()) {
             if (!Client.getInstance().getBotManager().isBot(class399)) {
-                final boolean b2 = ColorUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
-                final boolean b3 = ColorUtils.method19174(class399) == Class2068.field11838 && this.method9914().getBooleanValueFromSettingName("Show Mobs");
-                final boolean b4 = ColorUtils.method19174(class399) == Class2068.field11840 && this.method9914().getBooleanValueFromSettingName("Show Passives");
+                final boolean b2 = AllUtils.method19174(class399) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
+                final boolean b3 = AllUtils.method19174(class399) == Class2068.field11838 && this.method9914().getBooleanValueFromSettingName("Show Mobs");
+                final boolean b4 = AllUtils.method19174(class399) == Class2068.field11840 && this.method9914().getBooleanValueFromSettingName("Show Passives");
                 final boolean b5 = !class399.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                 if (!b3) {
                     if (!b2) {
@@ -105,7 +105,7 @@ public class BoxOutlineESP extends Module
                 final int method9885 = this.method9885("Color");
                 final Class7644 method9886 = new Class7644(class399.getBoundingBox().offset((class399.posX - class399.lastTickPosX) * BoxOutlineESP.mc.timer.field26528 - (class399.posX - class399.lastTickPosX), (class399.posY - class399.lastTickPosY) * BoxOutlineESP.mc.timer.field26528 - (class399.posY - class399.lastTickPosY), (class399.posZ - class399.lastTickPosZ) * BoxOutlineESP.mc.timer.field26528 - (class399.posZ - class399.lastTickPosZ))).method24204(0.10000000149011612);
                 if (b) {
-                    RenderUtil.method26912(method9886, 3.0f, ColorUtils.applyAlpha(method9885, (Client.getInstance().getClientMode() != ClientMode.JELLO) ? 0.8f : 0.35f));
+                    RenderUtil.method26912(method9886, 3.0f, AllUtils.applyAlpha(method9885, (Client.getInstance().getClientMode() != ClientMode.JELLO) ? 0.8f : 0.35f));
                 }
                 else {
                     RenderUtil.method26909(method9886, ClientColors.LIGHT_GREYISH_BLUE.color);

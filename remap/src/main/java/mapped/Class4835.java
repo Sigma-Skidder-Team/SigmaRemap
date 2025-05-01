@@ -35,14 +35,14 @@ public class Class4835 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (!this.field20720) {
-            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         }
         else {
-            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(-3487030, n * 0.5f));
+            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(-3487030, partialTicks * 0.5f));
         }
-        RenderUtil.method26878((float)(this.x - 1), (float)(this.y - 1), (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(-921103, n));
+        RenderUtil.method26878((float)(this.x - 1), (float)(this.y - 1), (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(-921103, partialTicks));
         if (this.field20721.getItem() != null) {
             this.method14504();
         }

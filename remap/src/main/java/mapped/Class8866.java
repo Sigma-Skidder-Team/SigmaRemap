@@ -41,18 +41,18 @@ public class Class8866
     
     public void method31130(final Entity class399, final float n, final float n2) {
         if (this.field37268.getBooleanValueFromSettingName("Interact autoblock")) {
-            final EntityRayTraceResult method19144 = ColorUtils.method19144(this.field37268.getBooleanValueFromSettingName("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
+            final EntityRayTraceResult method19144 = AllUtils.method19144(this.field37268.getBooleanValueFromSettingName("Raytrace") ? null : class399, n, n2, p0 -> true, this.field37268.getNumberSettingValueByName("Range"));
             if (method19144 != null) {
                 this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877, method19144.getHitVec()));
                 this.field37269.method5269().method17292(new Class4381(method19144.getEntity(), Class316.field1877));
             }
         }
-        ColorUtils.method19163();
+        AllUtils.method19163();
         this.method31129(true);
     }
     
     public void stopAutoBlock() {
-        ColorUtils.method19164();
+        AllUtils.method19164();
         this.method31129(false);
     }
     
@@ -106,7 +106,7 @@ public class Class8866
     
     public List<Class8131> method31137(final float n) {
         final ArrayList list = new ArrayList();
-        for (final Entity class399 : ColorUtils.method19138()) {
+        for (final Entity class399 : AllUtils.method19138()) {
             list.add(new Class8131(class399, Class8845.method30922(class399)));
         }
         final Iterator iterator2 = list.iterator();

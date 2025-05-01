@@ -66,9 +66,9 @@ public class Class4814 extends CustomGuiScreen
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
-        RenderUtil.method26905((float)(this.x + (this.method14276() - 300) / 2), (float)(this.y + 30), 300.0f, 97.0f, ClassicAssets.field40802);
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        this.translate();
+        RenderUtil.drawImage((float)(this.x + (this.method14276() - 300) / 2), (float)(this.y + 30), 300.0f, 97.0f, ClassicAssets.field40802);
+        super.draw(partialTicks);
     }
 }

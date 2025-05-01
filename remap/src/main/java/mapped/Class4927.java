@@ -16,9 +16,9 @@ public class Class4927 extends Class4800
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Class4927.field21081.displayGuiScreen(null);
         }
     }

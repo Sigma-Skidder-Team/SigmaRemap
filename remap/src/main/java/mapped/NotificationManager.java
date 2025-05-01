@@ -102,7 +102,7 @@ public class NotificationManager {
                 RenderUtil.drawString(this.field32665, (float) (n2 + this.field32660 + this.field32663 - 2), (float) (n3 + this.field32663), class5741.field25085, rgb3);
                 RenderUtil.drawString(this.field32664, (float) (n2 + this.field32660 + this.field32663 - 2), (float) (n3 + this.field32663 + this.field32665.getHeight(class5741.field25085)), class5741.field25086, rgb3);
                 RenderUtil.endScissor();
-                RenderUtil.method26905((float) (n2 + this.field32663 / 2), (float) (n3 + this.field32663 / 2), (float) (this.field32660 - this.field32663), (float) (this.field32660 - this.field32663), class5741.field25087);
+                RenderUtil.drawImage((float) (n2 + this.field32663 / 2), (float) (n3 + this.field32663 / 2), (float) (this.field32660 - this.field32663), (float) (this.field32660 - this.field32663), class5741.field25087);
             }
         }
     }

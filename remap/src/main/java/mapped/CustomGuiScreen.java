@@ -193,12 +193,12 @@ public class CustomGuiScreen implements Class4925
         GL11.glTranslatef((float)(-this.method14272() - this.method14276() / 2), (float)(-this.method14274() - this.method14278() / 2), 0.0f);
     }
     
-    public void method14228() {
+    public void translate() {
         GL11.glTranslatef((float)this.method14289(), (float)this.method14291(), 0.0f);
     }
     
-    public void draw(final float n) {
-        this.method14229(n);
+    public void draw(final float partialTicks) {
+        this.method14229(partialTicks);
     }
     
     public final void method14229(final float n) {
@@ -255,7 +255,7 @@ public class CustomGuiScreen implements Class4925
     }
     
     @Override
-    public void method14204(final int n) {
+    public void onKeyPress(final int n) {
         for (final CustomGuiScreen customGuiScreen : this.field20476) {
             if (!customGuiScreen.isHovered()) {
                 continue;
@@ -263,7 +263,7 @@ public class CustomGuiScreen implements Class4925
             if (!customGuiScreen.method14296()) {
                 continue;
             }
-            customGuiScreen.method14204(n);
+            customGuiScreen.onKeyPress(n);
         }
         this.method14263(n);
     }
@@ -276,7 +276,7 @@ public class CustomGuiScreen implements Class4925
             boolean b2 = false;
             Label_0140: {
                 if (customGuiScreen.getParent() != null) {
-                    if (customGuiScreen.getParent() instanceof Class4817) {
+                    if (customGuiScreen.getParent() instanceof ScrollablePane) {
                         if (customGuiScreen.getParent().method14236(n, n2)) {
                             if (customGuiScreen.getParent().method14296()) {
                                 if (customGuiScreen.getParent().isHovered()) {

@@ -54,7 +54,7 @@ public class Class4858 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.draw(partialTicks);
     }
 }

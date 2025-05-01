@@ -92,7 +92,7 @@ public class Client {
         (this.agoraManager = new AgoraManager()).connect();
         this.screenManager = new ScreenManager();
         (this.friendManager = new FriendManager()).method29876();
-        (this.botManager = new BotManager()).method31750();
+        (this.botManager = new BotManager()).init();
         (this.rotationManager = new RotationManager()).method28365();
         (this.tickManager = new TickManager()).method29223();
         (this.timeManager = new TimeManager()).init();

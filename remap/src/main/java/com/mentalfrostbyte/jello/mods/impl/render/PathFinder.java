@@ -32,7 +32,7 @@ public class PathFinder extends Module
     }
     
     public void method10466() {
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.color, 0.14f);
+        final int method19118 = AllUtils.applyAlpha(ClientColors.PALE_YELLOW.color, 0.14f);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
         final Iterator<Class8733> iterator = this.field15879.iterator();
@@ -55,7 +55,7 @@ public class PathFinder extends Module
         if (!this.isEnabled()) {
             return;
         }
-        ColorUtils.method19106("calc");
+        AllUtils.method19106("calc");
         if (Client.getInstance().getMovementManager().method26559()) {
             Client.getInstance().getMovementManager().method26555();
             return;
@@ -89,7 +89,7 @@ public class PathFinder extends Module
             class5752.field27268 = true;
             this.field15879 = class5749.method35017(class5752);
             Client.getInstance().getMovementManager().method26556(this.field15879);
-            ColorUtils.method19106("calc" + this.field15879.size());
+            AllUtils.method19106("calc" + this.field15879.size());
         }
         catch (final Exception ex) {
             ex.printStackTrace();

@@ -38,8 +38,8 @@ public class Class4911 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26888((float)(this.x + 5), (float)(this.y + 5), 10.0f, ColorUtils.applyAlpha(this.method14386() ? ClientColors.DARK_BLUE_GREY.color : ClientColors.DARK_GREEN.color, n));
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26888((float)(this.x + 5), (float)(this.y + 5), 10.0f, AllUtils.applyAlpha(this.method14386() ? ClientColors.DARK_BLUE_GREY.color : ClientColors.DARK_GREEN.color, partialTicks));
+        super.draw(partialTicks);
     }
 }

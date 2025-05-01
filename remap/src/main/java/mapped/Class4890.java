@@ -78,12 +78,12 @@ public class Class4890 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), -14540254);
         RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), ClientColors.DEEP_TEAL.color);
         if (this.method14236(this.method14320(), this.method14321())) {
             if (this.method14321() - this.method14281() < this.method14278()) {
-                RenderUtil.method26878((float)(this.method14272() + 1), (float)(this.method14274() + 1), (float)(this.method14272() + this.method14276() - 1), (float)(this.method14274() + this.method14278() - 1), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
+                RenderUtil.method26878((float)(this.method14272() + 1), (float)(this.method14274() + 1), (float)(this.method14272() + this.method14276() - 1), (float)(this.method14274() + this.method14278() - 1), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
             }
         }
         final int n2 = this.method14272() + this.method14276() - 11;
@@ -102,13 +102,13 @@ public class Class4890 extends Panel
         }
         if (this.getTypedText() != null) {
             RenderUtil.method26865(this);
-            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.getTypedText(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * 0.5f));
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 7), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2), this.getTypedText(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks * 0.5f));
             RenderUtil.endScissor();
         }
         if (!this.method14656()) {
             RenderUtil.method26865(this);
         }
-        super.draw(n);
+        super.draw(partialTicks);
         if (!this.method14656()) {
             RenderUtil.endScissor();
         }

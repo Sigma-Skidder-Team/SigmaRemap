@@ -124,7 +124,7 @@ public class Class4830 extends Class4825
     }
     
     @Override
-    public void draw(float n) {
+    public void draw(float partialTicks) {
         if (this.field20663.calcPercent() == 1.0f) {
             if (!this.field20669) {
                 this.field20669 = true;
@@ -134,7 +134,7 @@ public class Class4830 extends Class4825
             }
         }
         this.method14279(Math.round((1.0f - MathUtils.lerp(this.field20663.calcPercent(), 0.1, 0.81, 0.14, 1.0)) * this.field20668));
-        n *= 1.0f - this.field20663.calcPercent();
+        partialTicks *= 1.0f - this.field20663.calcPercent();
         float n2 = MathUtils.lerp(this.field20662.calcPercent(), 0.28, 1.26, 0.33, 1.04);
         if (this.field20662.getDirection().equals(Direction.FORWARDS)) {
             n2 = Class8468.method28269(this.field20662.calcPercent(), 0.0f, 1.0f, 1.0f);
@@ -143,15 +143,15 @@ public class Class4830 extends Class4825
         this.field20660.method14277(Math.max(0, (int)(this.field20667 * n2)));
         this.field20660.method14293((int)(this.field20667 * (1.0f - n2)));
         RenderUtil.method26865(this);
-        RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f * this.field20661.calcPercent() + ((this.method14309() && this.field20662.getDirection().equals(Direction.FORWARDS)) ? 0.03f : 0.0f)));
+        RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f * this.field20661.calcPercent() + ((this.method14309() && this.field20662.getDirection().equals(Direction.FORWARDS)) ? 0.03f : 0.0f)));
         if (!this.field20665.method14306()) {
-            RenderUtil.drawString(ClientFonts.JelloLight24, this.x + 20 - n2 * this.field20480, (float)(this.y + 18), this.field20664.field33839, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.9f * n));
+            RenderUtil.drawString(ClientFonts.JelloLight24, this.x + 20 - n2 * this.field20480, (float)(this.y + 18), this.field20664.field33839, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.9f * partialTicks));
         }
         this.field20665.method14293(Math.round(-n2 * this.field20480));
         if (Client.getInstance().moduleManager().getProfile().method32707() == this.field20664) {
-            RenderUtil.drawImage(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, ClientAssets.active, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0f - this.field20662.calcPercent()) * n));
+            RenderUtil.drawImage(this.method14272() + this.method14276() - 35 - n2 * this.field20480, (float)(this.method14274() + 27), 17.0f, 13.0f, ClientAssets.active, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0f - this.field20662.calcPercent()) * partialTicks));
         }
-        super.draw(n);
+        super.draw(partialTicks);
         RenderUtil.endScissor();
     }
 }

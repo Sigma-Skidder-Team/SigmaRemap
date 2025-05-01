@@ -13,8 +13,8 @@ public class Class4881 extends Class4868
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14269().get(0).method19597(this, this.field20475);
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

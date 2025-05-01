@@ -80,29 +80,29 @@ public class Class4891 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14662()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14662()), 6.0f, n * 0.21f);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14662()), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14662()), 6.0f, partialTicks * 0.21f);
         if (this.getTypedText() != null) {
             RenderUtil.method26865(this);
-            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.field20495, ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f));
+            RenderUtil.drawString(this.method14316(), (float)(this.method14272() + 10), (float)(this.method14274() + (this.method14278() - this.method14316().getHeight()) / 2 + 1), this.field20495, AllUtils.applyAlpha(this.field20497.method19729(), partialTicks * 0.7f));
             RenderUtil.endScissor();
         }
         RenderUtil.method26870(this.method14280(), this.method14281(), this.method14280() + this.method14276(), this.method14281() + this.method14278() + this.method14662());
         GL11.glPushMatrix();
         if (this.field20913 > 0.0f) {
-            super.draw(n);
+            super.draw(partialTicks);
         }
         GL11.glPopMatrix();
         RenderUtil.endScissor();
-        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14662()), ColorUtils.applyAlpha(this.field20497.method19731(), n * 0.08f));
+        RenderUtil.method26878((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14662()), AllUtils.applyAlpha(this.field20497.method19731(), partialTicks * 0.08f));
         final int n2 = this.method14276() - (int)(this.method14278() / 2.0f + 0.5f);
         final int n3 = (int)(this.method14278() / 2.0f + 0.5f) + 1;
         final int n4 = (int)(this.method14278() / 6.0f + 0.5f);
         GL11.glTranslatef((float)(this.method14272() + n2), (float)(this.method14274() + n3), 0.0f);
         GL11.glRotatef(90.0f * this.field20913, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-this.method14272() - n2), (float)(-this.method14274() - n3), 0.0f);
-        RenderUtil.drawString(this.field20496, (float)(this.method14272() + n2 - 6), (float)(this.method14274() + n3 - 14), ">", ColorUtils.applyAlpha(this.field20497.method19729(), n * 0.7f * (this.method14236(this.method14320(), this.method14321()) ? 1.0f : 0.5f)));
+        RenderUtil.drawString(this.field20496, (float)(this.method14272() + n2 - 6), (float)(this.method14274() + n3 - 14), ">", AllUtils.applyAlpha(this.field20497.method19729(), partialTicks * 0.7f * (this.method14236(this.method14320(), this.method14321()) ? 1.0f : 0.5f)));
     }
     
     public List<Integer> method14663() {

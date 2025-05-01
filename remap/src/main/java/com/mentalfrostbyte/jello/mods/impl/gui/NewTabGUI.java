@@ -77,10 +77,10 @@ public class NewTabGUI extends Module
         this.field15824 = 170;
         this.field15825 = 0.0f;
         this.field15827 = new ArrayList<Class8479>();
-        this.field15828 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0625f);
-        this.field15829 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f);
+        this.field15828 = AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.0625f);
+        this.field15829 = AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f);
         this.field15830 = this.getCategories();
-        this.field15831 = ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.05f);
+        this.field15831 = AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.05f);
         this.method9915(false);
         NewTabGUI.field15826 = this;
     }
@@ -257,9 +257,9 @@ public class NewTabGUI extends Module
             final Class8479 class8479 = iterator.next();
             if (class8479.field34795 == b) {
                 final float method35858 = class8479.field34796.calcPercent();
-                int n10 = ColorUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
+                int n10 = AllUtils.applyAlpha(-5658199, (1.0f - method35858 * (0.5f + method35858 * 0.5f)) * 0.8f);
                 if (Client.getInstance().getScreenManager().method32146()) {
-                    n10 = ColorUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
+                    n10 = AllUtils.applyAlpha(-1, (1.0f - method35858) * 0.14f);
                 }
                 RenderUtil.method26886((float)n, (n7 >= 0) ? ((float)(n7 + n2 + 14)) : ((float)n2), n4 * Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f) + 4.0f, n10);
                 if (class8479.field34796.calcPercent() != 1.0f) {
@@ -359,12 +359,12 @@ public class NewTabGUI extends Module
     
     private void method10398(final int n, final int n2, final int n3, final int n4, final Color[] array, final Color[] array2, final Color[] array3, final float n5) {
         final boolean method32146 = Client.getInstance().getScreenManager().method32146();
-        int n6 = ColorUtils.method19110(array).getRGB();
-        int n7 = ColorUtils.method19110(array3).getRGB();
+        int n6 = AllUtils.method19110(array).getRGB();
+        int n7 = AllUtils.method19110(array3).getRGB();
         if (array2 != null) {
-            final int rgb = ColorUtils.method19110(array2).getRGB();
-            n6 = ColorUtils.method19120(n6, rgb, 0.75f);
-            n7 = ColorUtils.method19120(n7, rgb, 0.75f);
+            final int rgb = AllUtils.method19110(array2).getRGB();
+            n6 = AllUtils.method19120(n6, rgb, 0.75f);
+            n7 = AllUtils.method19120(n7, rgb, 0.75f);
         }
         if (!method32146) {
             RenderUtil.method26881(n, n2, n + n3, n2 + n4, n6, n7);
@@ -399,7 +399,7 @@ public class NewTabGUI extends Module
     private Color method10400(final int n, final int n2, final Color color) {
         Color color2 = RenderUtil.method26930(n, n2, color);
         if (color != null) {
-            color2 = ColorUtils.method19109(color2, color, 0.08f * this.field15818);
+            color2 = AllUtils.method19109(color2, color, 0.08f * this.field15818);
         }
         return color2;
     }

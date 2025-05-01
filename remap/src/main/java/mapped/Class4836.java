@@ -31,7 +31,7 @@ public class Class4836 extends Class4825
         this.field20729 = 0.0f;
         this.field20730 = 0;
         this.field20731 = 0;
-        this.field20732 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
+        this.field20732 = AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
         this.field20723 = field20723;
         this.addToList(this.field20727 = new LoadingIndicator(this, "loading", n3 - 50, 35, 30, 30));
         this.field20727.setVisible(false);
@@ -53,11 +53,11 @@ public class Class4836 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
+    public void draw(final float partialTicks) {
+        this.translate();
         this.field20726 += (float)(this.field20728 ? 0.2 : -0.2);
         this.field20726 = Math.min(1.0f, Math.max(0.0f, this.field20726));
-        this.field20732 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0f);
+        this.field20732 = AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0f);
         Label_0141: {
             if (!this.field20728) {
                 if (!this.method14309()) {
@@ -66,23 +66,23 @@ public class Class4836 extends Class4825
                     }
                 }
             }
-            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.05f));
+            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.05f));
         }
         if (!this.method14309()) {
             if (this.method14308() && this.field20728) {
-                RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.5f));
+                RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.5f));
             }
             else if (!this.method14308()) {
                 if (this.field20728) {
-                    RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.3f));
+                    RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.3f));
                 }
             }
             else {
-                RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
+                RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
             }
         }
         else {
-            RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.65f));
+            RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.65f));
         }
         RenderUtil.method26871(this.x, this.y, this.x + this.field20480, this.y + this.field20481, true);
         if (this.field20723 != null) {
@@ -93,7 +93,7 @@ public class Class4836 extends Class4825
                     RenderUtil.drawImage((float)(this.x + this.method14276()), this.y + 26 * this.field20481 / 100.0f, 18.0f * this.field20726 * this.field20481 / 100.0f, 47 * this.field20481 / 100.0f, ClientAssets.select, this.method14309() ? this.field20732 : ClientColors.LIGHT_GREYISH_BLUE.color);
                 }
             }
-            super.draw(n);
+            super.draw(partialTicks);
         }
     }
     
@@ -108,7 +108,7 @@ public class Class4836 extends Class4825
         if (s.equals("Unknown name")) {
             s = this.field20723.method25888();
         }
-        RenderUtil.method26890(ClientFonts.Default, (float)(this.x + this.field20480 / 2), (float)(this.y + 20), s, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f), Class2056.field11738, Class2056.field11738);
+        RenderUtil.method26890(ClientFonts.Default, (float)(this.x + this.field20480 / 2), (float)(this.y + 20), s, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f), Class2056.field11738, Class2056.field11738);
         RenderUtil.method26890(ClientFonts.Default, (float)(this.x + this.field20480 / 2), (float)(this.y + 18), s, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11738);
         if (!this.field20723.method25912()) {
             RenderUtil.method26891(ClientFonts.Default, (float)(this.x + this.field20480 / 2), (float)(this.y + 32), this.field20723.method25892().replaceAll(".", "*"), -8355712, Class2056.field11738, Class2056.field11735, true);

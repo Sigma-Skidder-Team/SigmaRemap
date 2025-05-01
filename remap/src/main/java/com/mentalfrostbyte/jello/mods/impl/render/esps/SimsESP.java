@@ -21,7 +21,7 @@ public class SimsESP extends Module
     @EventListener
     public void method10797(final Custom3DRenderEvent custom3DRenderEvent) {
         if (this.isEnabled()) {
-            for (final Entity class5740 : Class4609.method13679(ColorUtils.method19108())) {
+            for (final Entity class5740 : Class4609.method13679(AllUtils.getPlayerEntities())) {
                 if (class5740 != SimsESP.mc.player) {
                     if (Client.getInstance().getBotManager().isBot(class5740)) {
                         continue;
@@ -46,7 +46,7 @@ public class SimsESP extends Module
             GL11.glPushMatrix();
             GL11.glRotatef((float)j, 0.0f, 1.0f, 0.0f);
             GL11.glRotatef(180.0f, 1.0f, 0.0f, 0.0f);
-            final Color color = new Color(ColorUtils.method19121(array[j / 45].getRGB(), 0.2f), false);
+            final Color color = new Color(AllUtils.method19121(array[j / 45].getRGB(), 0.2f), false);
             method10799(color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f);
             GL11.glPopMatrix();
         }

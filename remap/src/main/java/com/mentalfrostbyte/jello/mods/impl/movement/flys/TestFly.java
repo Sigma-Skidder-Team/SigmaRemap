@@ -37,7 +37,7 @@ public class TestFly extends Module
     public void onDisable() {
         MovementUtil.method23151(0.0);
         if (TestFly.mc.player.getMotion().y > 0.0) {
-            ColorUtils.method19155(-0.0789);
+            AllUtils.method19155(-0.0789);
         }
         TestFly.mc.timer.timerSpeed = 1.0f;
     }
@@ -63,7 +63,7 @@ public class TestFly extends Module
                             if (this.field15599 % 3 != 1) {}
                         }
                     }
-                    ColorUtils.method19155(class5717.method16974());
+                    AllUtils.method19155(class5717.method16974());
                     MovementUtil.method23149(class5717, 1.0);
                 }
             }

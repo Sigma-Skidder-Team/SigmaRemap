@@ -35,7 +35,7 @@ public class BlurManager {
     @EventListener
     public void method29897(final EventReceivePacket eventReceivePacket) {
         if (eventReceivePacket.getPacket() instanceof Class4284) {
-            ColorUtils.method19172();
+            AllUtils.method19172();
         }
     }
 

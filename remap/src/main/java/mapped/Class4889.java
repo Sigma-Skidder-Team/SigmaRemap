@@ -16,7 +16,7 @@ public class Class4889 extends Panel
 {
     private final List<Class4868> field20898;
     public final Animation field20899;
-    public Class4817 field20900;
+    public ScrollablePane field20900;
     public Class4898 field20901;
     private final List<Class4830> field20902;
     
@@ -92,7 +92,7 @@ public class Class4889 extends Panel
             method14392 = this.field20900.method14392();
             this.method14245(this.field20900);
         }
-        this.addToList(this.field20900 = new Class4817(this, "profileScrollView", 10, 80, this.field20480 - 20, this.field20481 - 80 - 10));
+        this.addToList(this.field20900 = new ScrollablePane(this, "profileScrollView", 10, 80, this.field20480 - 20, this.field20481 - 80 - 10));
         this.field20900.method14391(method14392);
         this.field20902.clear();
         int i = 0;
@@ -116,30 +116,30 @@ public class Class4889 extends Panel
     }
     
     @Override
-    public void draw(float method35858) {
-        method35858 = this.field20899.calcPercent();
+    public void draw(float partialTicks) {
+        partialTicks = this.field20899.calcPercent();
         this.method14641();
-        float n = MathUtils.lerp(method35858, 0.37, 1.48, 0.17, 0.99);
+        float n = MathUtils.lerp(partialTicks, 0.37, 1.48, 0.17, 0.99);
         if (this.field20899.getDirection() == Direction.FORWARDS) {
-            n = MathUtils.lerp(method35858, 0.38, 0.73, 0.0, 1.0);
+            n = MathUtils.lerp(partialTicks, 0.38, 0.73, 0.0, 1.0);
         }
         this.method14288(0.8f + n * 0.2f, 0.8f + n * 0.2f);
         this.drawBackground((int)(this.field20480 * 0.25f * (1.0f - n)));
         this.method14293((int)(this.field20480 * 0.14f * (1.0f - n)));
         super.method14227();
-        super.method14228();
+        super.translate();
         final int n2 = 10;
-        final int method35859 = ColorUtils.applyAlpha(-723724, Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f));
-        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 35.0f, method35858);
-        RenderUtil.method26876((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.x - n2 / 2 + this.field20480), (float)(this.y - n2 / 2 + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.25f));
+        final int method35859 = AllUtils.applyAlpha(-723724, Class7791.method25030(partialTicks, 0.0f, 1.0f, 1.0f));
+        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 35.0f, partialTicks);
+        RenderUtil.method26876((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.x - n2 / 2 + this.field20480), (float)(this.y - n2 / 2 + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.25f));
         RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, (float)n2, method35859);
         float n3 = 0.9f + (1.0f - MathUtils.lerp(this.field20901.field20949.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1f;
         if (this.field20901.field20949.getDirection() == Direction.FORWARDS) {
             n3 = 0.9f + (1.0f - MathUtils.lerp(this.field20901.field20949.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1f;
         }
         this.field20900.method14288(n3, n3);
-        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.x + 25), (float)(this.y + 20), "Profiles", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f * method35858));
-        RenderUtil.method26876((float)(this.x + 25), (float)(this.y + 69), (float)(this.x + this.field20480 - 25), (float)(this.y + 70), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * method35858));
-        super.draw(method35858);
+        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(this.x + 25), (float)(this.y + 20), "Profiles", AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f * partialTicks));
+        RenderUtil.method26876((float)(this.x + 25), (float)(this.y + 69), (float)(this.x + this.field20480 - 25), (float)(this.y + 70), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * partialTicks));
+        super.draw(partialTicks);
     }
 }

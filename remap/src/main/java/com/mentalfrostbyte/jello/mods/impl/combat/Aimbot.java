@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.mods.impl.combat.aimbots.BasicAimbot;
 import com.mentalfrostbyte.jello.mods.impl.combat.aimbots.CANDCAimbot;
 import com.mentalfrostbyte.jello.mods.impl.combat.aimbots.SmoothAimbot;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.Class857;
 import mapped.Class9011;
 import mapped.PlayerEntity;
@@ -31,7 +31,7 @@ public class Aimbot extends ModuleWithSettings
     }
     
     public Entity method10266(final float n) {
-        final List<Entity> method19138 = ColorUtils.method19138();
+        final List<Entity> method19138 = AllUtils.method19138();
         Entity class399 = null;
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {

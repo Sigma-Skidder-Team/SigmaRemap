@@ -70,8 +70,8 @@ public class CommandManager {
     }
 
     public void method32670(final String str) {
-        ColorUtils.method19106(this.method32671() + " Invalid command \"" + "." + str + "\"");
-        ColorUtils.method19106(this.method32671() + " Use \"" + "." + "help\" for a list of commands.");
+        AllUtils.method19106(this.method32671() + " Invalid command \"" + "." + str + "\"");
+        AllUtils.method19106(this.method32671() + " Use \"" + "." + "help\" for a list of commands.");
     }
 
     public String method32671() {
@@ -128,16 +128,16 @@ public class CommandManager {
                 for (int i = 1; i < split.length; ++i) {
                     list.add(new Class8025(split[i]));
                 }
-                ColorUtils.method19106(" ");
+                AllUtils.method19106(" ");
                 try {
-                    method12974.run(method12973, (Class8025[]) list.toArray(new Class8025[0]), str -> ColorUtils.method19106(this.method32671() + " " + str));
+                    method12974.run(method12973, (Class8025[]) list.toArray(new Class8025[0]), str -> AllUtils.method19106(this.method32671() + " " + str));
                 } catch (final Class2332 class5723) {
                     if (class5723.field14074.length() > 0) {
-                        ColorUtils.method19106(this.method32671() + " Error: " + class5723.field14074);
+                        AllUtils.method19106(this.method32671() + " Error: " + class5723.field14074);
                     }
-                    ColorUtils.method19106(this.method32671() + " Usage: " + "." + method12974.method20347() + " " + method12974.method20349());
+                    AllUtils.method19106(this.method32671() + " Usage: " + "." + method12974.method20347() + " " + method12974.method20349());
                 }
-                ColorUtils.method19106(" ");
+                AllUtils.method19106(" ");
             }
         }
         if (class5721.method16990() instanceof Class4265 && ((Class4265) class5721.method16990()).method12802().startsWith(".")) {

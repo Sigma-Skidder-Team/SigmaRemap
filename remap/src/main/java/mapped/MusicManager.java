@@ -173,7 +173,7 @@ public class MusicManager {
             for (int index = 0; index < n; ++index) {
                 final float n3 = 1.0f - (index + 1) / n;
                 final float n4 = ((float) (Math.sqrt(this.field30354.get(index)) / 12.0) - 5.0f) * (MusicManager.field30332.window.method7695() / 1080.0f);
-                RenderUtil.method26874(index * n2, MusicManager.field30332.window.method7695() - n4, n2, n4, ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.2f * n3));
+                RenderUtil.method26874(index * n2, MusicManager.field30332.window.method7695() - n4, n2, n4, AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.2f * n3));
             }
             RenderUtil.method26926();
             for (int index2 = 0; index2 < n; ++index2) {
@@ -197,18 +197,18 @@ public class MusicManager {
             GL11.glTranslated(60.0, MusicManager.field30332.window.method7695() - 55, 0.0);
             GL11.glScalef(n7, n7, 0.0f);
             GL11.glTranslated(-60.0, -(MusicManager.field30332.window.method7695() - 55), 0.0);
-            RenderUtil.method26905(10.0f, (float) (MusicManager.field30332.window.method7695() - 110), 100.0f, 100.0f, this.notificationImage);
+            RenderUtil.drawImage(10.0f, (float) (MusicManager.field30332.window.method7695() - 110), 100.0f, 100.0f, this.notificationImage);
             RenderUtil.method26913(10.0f, (float) (MusicManager.field30332.window.method7695() - 110), 100.0f, 100.0f, 14.0f, 0.3f);
             GL11.glPopMatrix();
             final String[] split = this.songTitle.split(" - ");
             if (split.length <= 1) {
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float) (MusicManager.field30332.window.method7695() - 70), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 70), split[0], AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float) (MusicManager.field30332.window.method7695() - 70), split[0], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             } else {
-                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f));
-                RenderUtil.drawString(ClientFonts.JelloMedium20, 130.0f, (float) (MusicManager.field30332.window.method7695() - 81), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
-                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float) (MusicManager.field30332.window.method7695() - 56), split[1], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 81), split[0], AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20, 130.0f, (float) (MusicManager.field30332.window.method7695() - 81), split[0], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+                RenderUtil.drawString(ClientFonts.JelloLight18_AA, 130.0f, (float) (MusicManager.field30332.window.method7695() - 56), split[1], AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, 130.0f, (float) (MusicManager.field30332.window.method7695() - 56), split[1], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f));
             }
         }
     }
@@ -552,7 +552,7 @@ public class MusicManager {
                 this.method24197();
             }
         } catch (final MalformedURLException ex) {
-            ColorUtils.method19106("URL E " + ex);
+            AllUtils.method19106("URL E " + ex);
             ex.printStackTrace();
         }
         return null;

@@ -51,12 +51,12 @@ public class Class4845 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14525()), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 6.0f, n * 0.1f);
-        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 20.0f, n * 0.2f);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278() + this.method14525()), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 6.0f, partialTicks * 0.1f);
+        RenderUtil.method26913((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)(this.method14278() + this.method14525() - 1), 20.0f, partialTicks * 0.2f);
         GL11.glPushMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
         GL11.glPopMatrix();
     }
     

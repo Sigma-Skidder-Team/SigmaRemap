@@ -17,17 +17,17 @@ public class Class4807 extends CustomGuiScreen
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         GL11.glAlphaFunc(518, 0.1f);
         final float method31033 = MathUtils.lerp(1.0f - this.field20527.calcPercent(), 0.9, 0.0, 0.9, 0.0);
         final float n2 = this.method14276() * method31033 / 2.0f;
         final float n3 = (this.method14278() + 10) * method31033 / 2.0f;
         RenderUtil.method26868(this.method14280() + n2, this.method14281() + n3, this.method14280() + this.method14276() - n2, this.method14281() + this.method14278() - n3);
         if (method31033 != 0.0f) {
-            RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(-2500135, 0.9f));
+            RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(-2500135, 0.9f));
         }
         else {
-            RenderUtil.method26925((float)this.x, (float)this.y, (float)(this.field20480 - 1), (float)(this.field20481 - 1), 3.0f, ColorUtils.applyAlpha(-2500135, 0.9f));
+            RenderUtil.method26925((float)this.x, (float)this.y, (float)(this.field20480 - 1), (float)(this.field20481 - 1), 3.0f, AllUtils.applyAlpha(-2500135, 0.9f));
         }
         final TrueTypeFont class7524 = this.field20474.equals("Sigma") ? ClassicAssets.field40805 : ClassicAssets.field40806;
         if (!this.field20474.equals("Sigma")) {
@@ -36,7 +36,7 @@ public class Class4807 extends CustomGuiScreen
         else {
             RenderUtil.drawString(class7524, this.x + (this.method14276() - class7524.getWidth(this.field20474)) / 2.0f, (float)(this.y + 10), this.field20474, -13619152);
         }
-        super.draw(n);
+        super.draw(partialTicks);
         RenderUtil.endScissor();
     }
 }

@@ -41,9 +41,9 @@ public class Class4863 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14583().method25648(this.method14272(), this.method14274(), this.method14276(), this.method14278(), n);
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        this.method14583().method25648(this.method14272(), this.method14274(), this.method14276(), this.method14278(), partialTicks);
+        super.draw(partialTicks);
     }
     
     public Class7920 method14583() {

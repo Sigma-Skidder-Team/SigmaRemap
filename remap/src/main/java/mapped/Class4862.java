@@ -71,16 +71,16 @@ public class Class4862 extends Panel
     }
     
     @Override
-    public void draw(float method35859) {
-        method35859 = Animation.method35859(this.field20820, this.field20822, 250.0f, 120.0f);
-        final float method35860 = Class7707.method24584(method35859, 0.0f, 1.0f, 1.0f);
+    public void draw(float partialTicks) {
+        partialTicks = Animation.method35859(this.field20820, this.field20822, 250.0f, 120.0f);
+        final float method35860 = Class7707.method24584(partialTicks, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method35860 * 0.2f, 0.8f + method35860 * 0.2f);
         this.method14293((int)(this.field20480 * 0.2f * (1.0f - method35860)) * (this.field20821 ? -1 : 1));
         super.method14227();
         final int n = 10;
-        final int method35861 = ColorUtils.applyAlpha(-723724, Class7791.method25030(method35859, 0.0f, 1.0f, 1.0f));
-        RenderUtil.method26913((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, method35859);
-        RenderUtil.method26876((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.x - n / 2 + this.field20480), (float)(this.y - n / 2 + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35859 * 0.25f));
+        final int method35861 = AllUtils.applyAlpha(-723724, Class7791.method25030(partialTicks, 0.0f, 1.0f, 1.0f));
+        RenderUtil.method26913((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.field20480 - n), (float)(this.field20481 - n), 35.0f, partialTicks);
+        RenderUtil.method26876((float)(this.x + n / 2), (float)(this.y + n / 2), (float)(this.x - n / 2 + this.field20480), (float)(this.y - n / 2 + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.25f));
         RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, (float)n, method35861);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)this.x, (float)this.y, 0.0f);
@@ -88,8 +88,8 @@ public class Class4862 extends Panel
         GL11.glTranslatef((float)(-this.x), (float)(-this.y), 0.0f);
         RenderUtil.drawImage((float)(this.x + (this.field20821 ? this.field20481 : 0)), this.y + (this.field20480 - 47) / 2 * (this.field20821 ? -1.58f : 1.0f), 18.0f, 47.0f, ClientAssets.select, method35861);
         GL11.glPopMatrix();
-        RenderUtil.method26876((float)(this.x + 25), (float)(this.y + 68), (float)(this.x + this.field20480 - 25), (float)(this.y + 69), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * method35859));
-        super.draw(method35859);
+        RenderUtil.method26876((float)(this.x + 25), (float)(this.y + 68), (float)(this.x + this.field20480 - 25), (float)(this.y + 69), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * partialTicks));
+        super.draw(partialTicks);
     }
     
     public final void method14580(final Class8197 class8197) {

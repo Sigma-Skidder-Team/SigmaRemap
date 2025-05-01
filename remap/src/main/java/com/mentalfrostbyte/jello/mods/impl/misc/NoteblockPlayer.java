@@ -63,7 +63,7 @@ public class NoteblockPlayer extends PremiumModule
             return;
         }
         if (NoteblockPlayer.mc.playerController.method27332()) {
-            ColorUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
+            AllUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
             this.method9909(false);
             return;
         }
@@ -254,7 +254,7 @@ public class NoteblockPlayer extends PremiumModule
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
+        RenderUtil.method26876((float)(-field40314.getWidth(s) / 2 - 10), 0.0f, (float)(field40314.getWidth(s) / 2 + 10), (float)(field40314.getHeight() + 2), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
         GL11.glTranslated(-field40314.getWidth(s) / 2, 0.0, 0.0);
         RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ClientColors.LIGHT_GREYISH_BLUE.color);
         GL11.glPopMatrix();
@@ -270,11 +270,11 @@ public class NoteblockPlayer extends PremiumModule
     public void onEnable() {
         if (!NoteblockPlayer.mc.playerController.method27332()) {
             if (this.field16035.isEmpty()) {
-                ColorUtils.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
-                ColorUtils.method19106("§cPlaying the only integrated demo song!");
+                AllUtils.method19106("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                AllUtils.method19106("§cPlaying the only integrated demo song!");
                 this.field16034 = Class9377.method34815(ClientAssets.method25394("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field16034 == null) {
-                    ColorUtils.method19106("§cError loading included song, wtf!");
+                    AllUtils.method19106("§cError loading included song, wtf!");
                     this.method9909(false);
                     return;
                 }
@@ -282,15 +282,15 @@ public class NoteblockPlayer extends PremiumModule
             else {
                 this.field16034 = Class9377.method34814(new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song")));
                 if (this.field16034 == null) {
-                    ColorUtils.method19106("§cError loading song! Make sure song is saved as <= V3 format");
+                    AllUtils.method19106("§cError loading song! Make sure song is saved as <= V3 format");
                     this.method9909(false);
                     return;
                 }
             }
             System.out.println(this.field16034.method9378());
-            ColorUtils.method19106("Now Playing: " + this.field16034.method9378());
+            AllUtils.method19106("Now Playing: " + this.field16034.method9378());
             if (Math.floor(20.0f / this.field16034.method9383()) != 20.0f / this.field16034.method9383()) {
-                ColorUtils.method19106("§cNBS Error! Invalid tempo! (" + this.field16034.method9383() + ") Unpredictable results!");
+                AllUtils.method19106("§cNBS Error! Invalid tempo! (" + this.field16034.method9383() + ") Unpredictable results!");
             }
             this.field16033 = 0;
             this.field16036.clear();
@@ -307,7 +307,7 @@ public class NoteblockPlayer extends PremiumModule
             this.method10707(this.field16036);
             return;
         }
-        ColorUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
+        AllUtils.method19106("§cNoteBlockPlayer isn't available in creative mode!");
         this.method9909(false);
     }
     

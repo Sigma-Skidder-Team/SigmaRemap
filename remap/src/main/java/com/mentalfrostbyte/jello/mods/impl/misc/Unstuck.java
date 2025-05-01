@@ -46,7 +46,7 @@ public class Unstuck extends Module
     @EventListener
     public void method10544(final UpdateWalkingEventI updateWalkingEvent) {
         if (this.isEnabled() && updateWalkingEvent.isPre()) {
-            if (!Unstuck.mc.player.onGround && !ColorUtils.method19160(Unstuck.mc.player, 0.001f)) {
+            if (!Unstuck.mc.player.onGround && !AllUtils.method19160(Unstuck.mc.player, 0.001f)) {
                 if (this.field15927 >= this.getNumberSettingValueByName("Flags")) {
                     if (this.field15928 == 0) {
                         this.field15928 = 60;
@@ -74,7 +74,7 @@ public class Unstuck extends Module
         }
         if (Unstuck.mc.player != null) {
             if (eventReceivePacket.getPacket() instanceof SPlayerPositionLookPacket) {
-                if (!ColorUtils.method19160(Unstuck.mc.player, 0.3f)) {
+                if (!AllUtils.method19160(Unstuck.mc.player, 0.3f)) {
                     if (Unstuck.mc.player.ticksExisted > 10) {
                         ++this.field15927;
                         if (this.field15927 > this.getNumberSettingValueByName("Flags")) {

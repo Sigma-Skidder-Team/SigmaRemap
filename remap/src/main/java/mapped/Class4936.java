@@ -122,9 +122,9 @@ public class Class4936 extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14850();
-        super.draw(n);
+        super.draw(partialTicks);
         RenderUtil.drawString(ClientFonts.Default, 20.0f, 20.0f, Minecraft.getInstance().method5287().getUsername(), -2236963);
         RenderUtil.method26890(ClientFonts.Default, (float)(this.method14276() / 2), 20.0f, "Account Manager - " + this.method14849() + " alts", ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734);
         RenderUtil.method26891(ClientFonts.Default, (float)(this.method14276() / 2), 40.0f, this.field21185, ClientColors.LIGHT_GREYISH_BLUE.color, Class2056.field11738, Class2056.field11734, false);
@@ -143,14 +143,14 @@ public class Class4936 extends Class4800
     }
     
     private void method14850() {
-        RenderUtil.method26905(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
-        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.23f));
+        RenderUtil.drawImage(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ClassicAssets.field40801);
+        RenderUtil.method26874(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.23f));
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }

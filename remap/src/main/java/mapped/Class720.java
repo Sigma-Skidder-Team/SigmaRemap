@@ -205,7 +205,7 @@ public class Class720 extends Screen
                 ViaManager.field40167 = ViaManager.field40168;
             }
         }
-        ColorUtils.method19176(class9575);
+        AllUtils.method19176(class9575);
         this.minecraft.displayGuiScreen(new Class694(this, this.minecraft, class9575));
     }
     

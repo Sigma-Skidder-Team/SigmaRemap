@@ -34,7 +34,7 @@ public class Class4897 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.field20948 = Client.getInstance().getNetworkManager().getEncryptor();
         String field32930 = "Log in";
         final Texture field32931 = ClientAssets.account;
@@ -44,12 +44,12 @@ public class Class4897 extends Panel
         this.method14277(this.field20496.getWidth(field32930) + 50 + 60);
         this.method14273(Minecraft.getInstance().window.method7694() - this.field20480 - 20);
         this.field20943 = Math.max(0.0f, Math.min(1.0f, this.field20943 + ((this.field20508 >= this.x && this.field20509 <= this.y + this.method14278()) ? 0.1f : -0.1f)));
-        RenderUtil.method26913((float)this.x, (float)this.y, (float)this.method14276(), (float)this.method14278(), 20.0f, this.field20943 * 0.2f * n);
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.method14276()), (float)(this.y + this.method14278()), ColorUtils.applyAlpha(ClientColors.DULL_GREEN.color, (0.2f * this.field20943 + (this.method14309() ? 0.2f : 0.0f)) * n));
+        RenderUtil.method26913((float)this.x, (float)this.y, (float)this.method14276(), (float)this.method14278(), 20.0f, this.field20943 * 0.2f * partialTicks);
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.method14276()), (float)(this.y + this.method14278()), AllUtils.applyAlpha(ClientColors.DULL_GREEN.color, (0.2f * this.field20943 + (this.method14309() ? 0.2f : 0.0f)) * partialTicks));
         final float n2 = (float)(this.x + this.field20480 - 60 - 10);
         final float n3 = (float)(this.y + 10);
-        RenderUtil.drawImage((float)(this.x + this.field20480 - 60 - 10), (float)(this.y + 10), 60.0f, 60.0f, field32931, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5f + 0.5f * this.field20943) * n));
-        RenderUtil.drawString(this.field20496, (float)(this.x + this.field20480 - 90 - this.field20496.getWidth(field32930)), (float)(this.y + 27), field32930, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5f + 0.5f * this.field20943) * n));
-        super.draw(n);
+        RenderUtil.drawImage((float)(this.x + this.field20480 - 60 - 10), (float)(this.y + 10), 60.0f, 60.0f, field32931, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5f + 0.5f * this.field20943) * partialTicks));
+        RenderUtil.drawString(this.field20496, (float)(this.x + this.field20480 - 90 - this.field20496.getWidth(field32930)), (float)(this.y + 27), field32930, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (0.5f + 0.5f * this.field20943) * partialTicks));
+        super.draw(partialTicks);
     }
 }

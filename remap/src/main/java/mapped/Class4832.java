@@ -18,10 +18,10 @@ public class Class4832 extends TextField
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.setFont(ClientFonts.Default);
         RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ClientColors.DEEP_TEAL.color);
-        RenderUtil.method26879((float)(this.x - 2), (float)this.y, (float)(this.x + this.field20480 + 2), (float)(this.y + this.field20481), 2, ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 625.0f));
-        super.draw(n);
+        RenderUtil.method26879((float)(this.x - 2), (float)this.y, (float)(this.x + this.field20480 + 2), (float)(this.y + this.field20481), 2, AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 625.0f));
+        super.draw(partialTicks);
     }
 }

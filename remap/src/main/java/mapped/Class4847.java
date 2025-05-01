@@ -72,14 +72,14 @@ public class Class4847 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final Iterator<Class7015> iterator = this.field20768.iterator();
         final int n2 = 8;
         try {
             if (this.field20770) {
                 final java.awt.image.BufferedImage method20833 = ImageUtil.method20833(this.method14280(), this.method14281(), this.field20480, this.field20481, 3, 10, true);
-                this.field20767 = ColorUtils.method19110(new Color(method20833.getRGB(6, 7)), new Color(method20833.getRGB(6, 22))).getRGB();
-                this.field20767 = ColorUtils.method19121(this.field20767, 0.25f);
+                this.field20767 = AllUtils.method19110(new Color(method20833.getRGB(6, 7)), new Color(method20833.getRGB(6, 22))).getRGB();
+                this.field20767 = AllUtils.method19121(this.field20767, 0.25f);
                 if (this.field20771 != null) {
                     this.field20771.release();
                 }
@@ -87,8 +87,8 @@ public class Class4847 extends Panel
                 this.field20770 = false;
             }
             if (this.field20771 != null) {
-                RenderUtil.method26913((float)(this.x + n2), (float)(this.y + n2), (float)(this.field20480 - n2 * 2), (float)(this.field20481 - n2 * 2), 20.0f, n * 0.5f);
-                RenderUtil.method26913((float)(this.x + n2), (float)(this.y + n2), (float)(this.field20480 - n2 * 2), (float)(this.field20481 - n2 * 2), 14.0f, n);
+                RenderUtil.method26913((float)(this.x + n2), (float)(this.y + n2), (float)(this.field20480 - n2 * 2), (float)(this.field20481 - n2 * 2), 20.0f, partialTicks * 0.5f);
+                RenderUtil.method26913((float)(this.x + n2), (float)(this.y + n2), (float)(this.field20480 - n2 * 2), (float)(this.field20481 - n2 * 2), 14.0f, partialTicks);
                 GL11.glPushMatrix();
                 RenderUtil.method26926();
                 RenderUtil.method26924((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 8.0f, ClientColors.LIGHT_GREYISH_BLUE.color);
@@ -100,7 +100,7 @@ public class Class4847 extends Panel
                     final int n4 = this.y + (class7015.field27351 ? 0 : n3);
                     final int n5 = this.field20480 / 2;
                     RenderUtil.method26871(this.x, n4, this.x + this.field20480, n4 + n3, true);
-                    RenderUtil.method26886((float)(this.x + n5), (float)(n4 + this.field20481 / 4), (n5 * 2 - 4) * class7015.field27350 + 4.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0f - class7015.field27350 * (0.5f + class7015.field27350 * 0.5f)) * 0.4f));
+                    RenderUtil.method26886((float)(this.x + n5), (float)(n4 + this.field20481 / 4), (n5 * 2 - 4) * class7015.field27350 + 4.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, (1.0f - class7015.field27350 * (0.5f + class7015.field27350 * 0.5f)) * 0.4f));
                     RenderUtil.endScissor();
                     class7015.field27350 = Math.min(class7015.field27350 + 3.0f / Minecraft.method5338(), 1.0f);
                     if (class7015.field27350 == 1.0f) {
@@ -108,13 +108,13 @@ public class Class4847 extends Panel
                     }
                 }
                 RenderUtil.method26928();
-                RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 6.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
+                RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 6.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
                 GL11.glPopMatrix();
-                RenderUtil.drawString(ClientFonts.JelloMedium20, (float)(this.x + 14), (float)(this.y + 8), "+", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
-                RenderUtil.method26874((float)(this.x + 16), (float)(this.y + 65), 8.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
+                RenderUtil.drawString(ClientFonts.JelloMedium20, (float)(this.x + 14), (float)(this.y + 8), "+", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
+                RenderUtil.method26874((float)(this.x + 16), (float)(this.y + 65), 8.0f, 2.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
             }
         }
         catch (final IOException ex) {}
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

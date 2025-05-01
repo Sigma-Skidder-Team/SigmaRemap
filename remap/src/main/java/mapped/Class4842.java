@@ -28,7 +28,7 @@ public class Class4842 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int n2 = (int)this.field20748.method24186();
         final double method24187 = this.field20748.method24187();
         final int method24188 = this.field20748.method24192();
@@ -43,14 +43,14 @@ public class Class4842 extends Panel
             }
         }
         if (n2 == 0 && !this.field20748.method24184()) {
-            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * partialTicks));
         }
         else {
-            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.075f));
-            RenderUtil.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * n));
-            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.075f));
+            RenderUtil.method26874(this.method14272() + this.method14276() * max, (float)this.method14274(), this.method14276() * (1.0f - max), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.43f * partialTicks));
+            RenderUtil.method26874((float)this.method14272(), (float)this.method14274(), this.method14276() * n3, (float)this.method14278(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks * partialTicks));
             if (n3 != 0.0f) {
-                RenderUtil.method26905(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);
+                RenderUtil.drawImage(this.method14272() + this.method14276() * n3, (float)this.method14274(), 5.0f, 5.0f, ClientAssets.shadow_right);
             }
         }
     }

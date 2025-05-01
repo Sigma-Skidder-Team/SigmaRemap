@@ -26,7 +26,7 @@ public class Class4915 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field21023.getElapsedTime() > 70L) {
             this.field21023.reset();
             this.field21022.method16068();
@@ -39,7 +39,7 @@ public class Class4915 extends Class4825
             RenderUtil.method26874((float)(class9469.field40723 * this.field21024), (float)(class9469.field40724 * this.field21024), (float)this.field21024, (float)this.field21024, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
         GL11.glPopMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public int method14756() {
@@ -47,8 +47,8 @@ public class Class4915 extends Class4825
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
+    public void onKeyPress(final int n) {
+        super.onKeyPress(n);
         if (n != this.field21021.gameSettings.field23435.field2161.field32860) {
             if (n != this.field21021.gameSettings.field23437.field2161.field32860) {
                 if (n != this.field21021.gameSettings.field23436.field2161.field32860) {

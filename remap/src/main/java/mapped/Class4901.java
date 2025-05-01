@@ -105,14 +105,14 @@ public class Class4901 extends Panel {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final Minecraft method5277 = Minecraft.getInstance();
         final ChunkPos class7859;
         final ChunkPos field20970 = class7859 = new ChunkPos(this.field20960.field32290, this.field20960.field32291);
         class7859.field32290 -= (int) Math.floor(this.field20963);
         final ChunkPos class7860 = field20970;
         class7860.field32291 -= (int) Math.floor(this.field20962);
-        if (n != 1.0f) {
+        if (partialTicks != 1.0f) {
             this.field20959.field20770 = true;
         }
         Label_0145:
@@ -168,12 +168,12 @@ public class Class4901 extends Panel {
         }
         RenderUtil.endScissor();
         final String string = Math.round(this.field20960.field32290 * 16 - this.field20963 * 16.0f) + "  " + Math.round(this.field20960.field32291 * 16 - this.field20962 * 16.0f);
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float) (this.x - ClientFonts.JelloLight14.getWidth(string) - 23), (float) (this.y + 35), string, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float) (this.x - ClientFonts.JelloLight14.getWidth(string) - 23), (float) (this.y + 35), string, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.4f));
         this.field20968 = this.field20962;
         this.field20969 = this.field20963;
         this.field20967 = this.field20961;
         this.field20970 = field20970;
-        super.draw(n);
+        super.draw(partialTicks);
     }
 
     public final void method14719(final Class8058 class8058) {

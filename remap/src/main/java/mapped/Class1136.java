@@ -26,8 +26,8 @@ public class Class1136 implements Runnable
         if (!Class4833.method14496(this.field6143).method14240(this.field6140.field38864)) {
             final Class4868 class4868;
             Class4833.method14496(this.field6143).method14239(class4868 = new Class4868(Class4833.method14496(this.field6143), this.field6140.field38864, 0, Class4833.method14496(this.field6143).method14396().method14250().size() * Class4833.method14497(this.field6143), Class4833.method14498(this.field6143), Class4833.method14497(this.field6143), this.field6141, this.field6140.field38863, ClientFonts.JelloLight14));
-            final Class4817 class4869;
-            this.field6142.addToList(class4869 = new Class4817(this.field6142, this.field6140.field38864, Class4833.method14498(this.field6143), 0, this.field6142.method14276() - Class4833.method14498(this.field6143), this.field6142.method14278() - Class4833.method14499(this.field6143), ColorHelper.field25964, this.field6140.field38863));
+            final ScrollablePane class4869;
+            this.field6142.addToList(class4869 = new ScrollablePane(this.field6142, this.field6140.field38864, Class4833.method14498(this.field6143), 0, this.field6142.method14276() - Class4833.method14498(this.field6143), this.field6142.method14278() - Class4833.method14499(this.field6143), ColorHelper.field25964, this.field6140.field38863));
             class4869.method14393(true);
             class4869.setEnabled(false);
             class4869.setListening(false);

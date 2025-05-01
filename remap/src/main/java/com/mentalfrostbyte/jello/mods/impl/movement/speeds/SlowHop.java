@@ -36,7 +36,7 @@ public class SlowHop extends Module
         if (this.isEnabled()) {
             this.getBooleanValueFromSettingName("AutoJump");
             final double method23136 = MovementUtil.method23136();
-            ColorUtils.method19114();
+            AllUtils.method19114();
             if (!SlowHop.mc.player.onGround) {
                 ++this.field15588;
                 this.field15589 = 0.36 - this.field15588 / 250.0;

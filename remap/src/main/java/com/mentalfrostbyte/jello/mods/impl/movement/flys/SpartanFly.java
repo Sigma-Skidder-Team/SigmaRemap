@@ -71,7 +71,7 @@ public class SpartanFly extends Module
     @EventListener
     public void method10578(final Class5717 class5717) {
         if (this.isEnabled()) {
-            if (!SpartanFly.mc.player.onGround && !ColorUtils.method19160(SpartanFly.mc.player, 0.001f)) {
+            if (!SpartanFly.mc.player.onGround && !AllUtils.method19160(SpartanFly.mc.player, 0.001f)) {
                 if (class5717.method16974() < 0.0) {
                     if (this.field15946 != SpartanFly.mc.player.posY) {
                         if (SpartanFly.mc.player.posY + class5717.method16974() < this.field15946) {
@@ -103,9 +103,9 @@ public class SpartanFly extends Module
                 MovementUtil.method23149(class5717, 0.35);
                 this.field15946 = (SpartanFly.mc.gameSettings.field23439.method1056() ? (this.field15948 ? SpartanFly.mc.player.posY : (SpartanFly.mc.player.posY + 1.0)) : (this.field15948 ? (SpartanFly.mc.player.posY - 1.0) : SpartanFly.mc.player.posY));
             }
-            ColorUtils.method19154(class5717.method16972());
-            ColorUtils.method19155(class5717.method16974());
-            ColorUtils.method19156(class5717.method16976());
+            AllUtils.method19154(class5717.method16972());
+            AllUtils.method19155(class5717.method16974());
+            AllUtils.method19156(class5717.method16976());
         }
     }
     

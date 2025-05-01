@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4818 extends Class4817
+public class Class4818 extends ScrollablePane
 {
     private final List<Class4846> field20615;
     public final int field20616;
@@ -105,7 +105,7 @@ public class Class4818 extends Class4817
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final float min = Math.min(1.0f, 0.21f * (60.0f / Minecraft.method5338()));
         for (final Class4846 class4846 : this.field20615) {
             if (!class4846.method14386()) {
@@ -121,7 +121,7 @@ public class Class4818 extends Class4817
                 class4846.method14275(Math.round(class4846.method14274() - n2));
             }
         }
-        super.draw(n);
-        RenderUtil.method26900((float)(this.x - Math.round(Class7791.method25029(1.0f - this.field20617.calcPercent(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, ColorUtils.applyAlpha(this.field20618 ? ClientColors.PALE_YELLOW.color : ClientColors.DEEP_TEAL.color, this.field20617.calcPercent() * 0.5f), false);
+        super.draw(partialTicks);
+        RenderUtil.method26900((float)(this.x - Math.round(Class7791.method25029(1.0f - this.field20617.calcPercent(), 0.0f, 1.0f, 1.0f) * 30.0f) + 18), (float)(this.field20481 - 46), 22.0f, 26.0f, ClientAssets.trashcan, AllUtils.applyAlpha(this.field20618 ? ClientColors.PALE_YELLOW.color : ClientColors.DEEP_TEAL.color, this.field20617.calcPercent() * 0.5f), false);
     }
 }

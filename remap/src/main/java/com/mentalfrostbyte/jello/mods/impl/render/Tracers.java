@@ -32,7 +32,7 @@ public class Tracers extends Module
             GL11.glLineWidth(2.0f * ScreenManager.guiScale);
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
-            for (final Entity class5740 : ColorUtils.method19108()) {
+            for (final Entity class5740 : AllUtils.getPlayerEntities()) {
                 if (class5740 == Tracers.mc.player) {
                     continue;
                 }
@@ -65,9 +65,9 @@ public class Tracers extends Module
         final Vec3d method16755 = new Vec3d(0.0, 0.0, 10.0).rotatePitch(-(float)Math.toRadians(Minecraft.getInstance().player.rotationPitch)).rotateYaw(-(float)Math.toRadians(Minecraft.getInstance().player.rotationYaw));
         final int method16756 = this.method9885("Color");
         GL11.glBegin(1);
-        GL11.glColor4fv(ColorUtils.method19139(ColorUtils.applyAlpha(method16756, 0.45f)));
+        GL11.glColor4fv(AllUtils.method19139(AllUtils.applyAlpha(method16756, 0.45f)));
         GL11.glVertex3d(method16755.x, method16755.y, method16755.z);
-        GL11.glColor4fv(ColorUtils.method19139(ColorUtils.applyAlpha(method16756, 0.0f)));
+        GL11.glColor4fv(AllUtils.method19139(AllUtils.applyAlpha(method16756, 0.0f)));
         GL11.glVertex3d(field38854, n, field38855);
         GL11.glEnd();
     }

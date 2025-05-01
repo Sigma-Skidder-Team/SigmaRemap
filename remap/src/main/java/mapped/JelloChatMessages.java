@@ -21,9 +21,9 @@ public class JelloChatMessages extends Panel {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         super.method14227();
-        super.method14228();
-        super.draw(n);
+        super.translate();
+        super.draw(partialTicks);
     }
 }

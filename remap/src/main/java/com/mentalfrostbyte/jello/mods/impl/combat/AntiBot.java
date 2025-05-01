@@ -8,8 +8,8 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.StringSetting;
-import mapped.Class7815;
-import mapped.Class7816;
+import mapped.HypixelAntiBot;
+import mapped.AdvancedAntiBot;
 
 public class AntiBot extends Module
 {
@@ -32,20 +32,20 @@ public class AntiBot extends Module
     
     @Override
     public void onDisable() {
-        Client.getInstance().getBotManager().field37638 = null;
-        Client.getInstance().getBotManager().field37639.clear();
+        Client.getInstance().getBotManager().antiBot = null;
+        Client.getInstance().getBotManager().bots.clear();
     }
     
     private void method10302() {
-        Client.getInstance().getBotManager().field37639.clear();
-        final String method9887 = this.getStringSettingValueByName("Mode");
-        switch (method9887) {
+        Client.getInstance().getBotManager().bots.clear();
+        final String mode = this.getStringSettingValueByName("Mode");
+        switch (mode) {
             case "Advanced": {
-                Client.getInstance().getBotManager().field37638 = new Class7816();
+                Client.getInstance().getBotManager().antiBot = new AdvancedAntiBot();
                 break;
             }
             case "Hypixel": {
-                Client.getInstance().getBotManager().field37638 = new Class7815();
+                Client.getInstance().getBotManager().antiBot = new HypixelAntiBot();
                 break;
             }
         }

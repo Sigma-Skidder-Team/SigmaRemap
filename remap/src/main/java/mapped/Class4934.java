@@ -24,8 +24,8 @@ public class Class4934 extends Class4800
     private final float field21136;
     private boolean field21137;
     public UIButton field21138;
-    private final Class4817 field21139;
-    private final Class4817 field21140;
+    private final ScrollablePane field21139;
+    private final ScrollablePane field21140;
     private Class4907 field21141;
     private Class4907 field21142;
     private final float field21143;
@@ -70,8 +70,8 @@ public class Class4934 extends Class4800
         }
         this.method14813();
         this.method14814();
-        this.addToList(this.field21139 = new Class4817(this, "alts", 0, 114, (int)(Minecraft.getInstance().window.method7694() * this.field21143) - 4, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
-        this.addToList(this.field21140 = new Class4817(this, "altView", (int)(Minecraft.getInstance().window.method7694() * this.field21143), 114, (int)(Minecraft.getInstance().window.method7694() * this.field21144) - this.field21145, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
+        this.addToList(this.field21139 = new ScrollablePane(this, "alts", 0, 114, (int)(Minecraft.getInstance().window.method7694() * this.field21143) - 4, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
+        this.addToList(this.field21140 = new ScrollablePane(this, "altView", (int)(Minecraft.getInstance().window.method7694() * this.field21143), 114, (int)(Minecraft.getInstance().window.method7694() * this.field21144) - this.field21145, Minecraft.getInstance().window.method7695() - 119 - this.field21145));
         this.field21139.setListening(false);
         this.field21140.setListening(false);
         this.field21139.method14394(false);
@@ -213,13 +213,13 @@ public class Class4934 extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14822();
         RenderUtil.method26915((int)(Minecraft.getInstance().window.method7694() * this.field21143), 114, (int)(Minecraft.getInstance().window.method7694() * this.field21144) - this.field21145, Minecraft.getInstance().window.method7695() - 119 - this.field21145, ClientColors.LIGHT_GREYISH_BLUE.color);
         this.method14816();
         this.method14818();
         this.method14817();
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     private void method14815() {
@@ -234,7 +234,7 @@ public class Class4934 extends Class4800
         final float n = (this.field21150 < 25.0f) ? (this.field21150 / 25.0f) : 1.0f;
         GL11.glTexParameteri(3553, 10241, 9728);
         if (this.field21149 != null) {
-            RenderUtil.drawImage(0.0f, 0.0f, (float)((int)(Minecraft.getInstance().window.method7694() * this.field21143) - 15), 114.0f, this.field21149, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.drawImage(0.0f, 0.0f, (float)((int)(Minecraft.getInstance().window.method7694() * this.field21143) - 15), 114.0f, this.field21149, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         }
         this.field21150 = (float)this.field21139.method14392();
     }
@@ -245,7 +245,7 @@ public class Class4934 extends Class4800
     private void method14817() {
         final int n = this.x + this.field21145;
         final int n2 = this.y + this.field21145;
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f);
+        final int method19118 = AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f);
         RenderUtil.drawString(ClientFonts.JelloLight40, (float)n, (float)n2, "Jello", method19118);
         RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + 87), (float)(n2 + 15), "Alt Manager", method19118);
     }
@@ -321,7 +321,7 @@ public class Class4934 extends Class4800
         }
         final float n2 = n - this.field21135;
         final float n3 = (float)(field21134 - this.field21134);
-        RenderUtil.method26905((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
+        RenderUtil.drawImage((float)this.field21134, this.field21135, (float)(this.method14276() * 2), (float)(this.method14278() + 114), ClientAssets.getBlurredPanorama);
         final float n4 = 0.5f;
         if (n != this.field21135) {
             this.field21135 += n2 * n4;
@@ -329,13 +329,13 @@ public class Class4934 extends Class4800
         if (field21134 != this.field21134) {
             this.field21134 += (int)(n3 * n4);
         }
-        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.95f));
+        RenderUtil.method26876(0.0f, 0.0f, (float)this.method14276(), (float)this.method14278(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.95f));
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Minecraft.getInstance().displayGuiScreen(new MainMenu());
         }
     }

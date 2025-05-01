@@ -28,9 +28,9 @@ public class BoxChestESP extends Module
     }
     
     private void method10087() {
-        final int method19118 = ColorUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.14f);
-        final int method19119 = ColorUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.14f);
-        final int method19120 = ColorUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.14f);
+        final int method19118 = AllUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.14f);
+        final int method19119 = AllUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.14f);
+        final int method19120 = AllUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.14f);
         for (final TileEntity tileEntity : BoxChestESP.mc.world.loadedTileEntityList) {
             boolean b = false;
             Label_0129: {

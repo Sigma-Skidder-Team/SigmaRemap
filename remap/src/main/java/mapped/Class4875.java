@@ -62,8 +62,8 @@ public class Class4875 extends Class4873
     }
     
     @Override
-    public void draw(final float n) {
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.draw(partialTicks);
     }
     
     public int method14610() {

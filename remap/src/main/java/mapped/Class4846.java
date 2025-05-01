@@ -48,19 +48,19 @@ public class Class4846 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ColorUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.03f), this.field20761.calcPercent()));
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.x + 68), (float)(this.y + 14), this.field20763, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f));
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.x + 68), (float)(this.y + 38), "x:" + this.field20764.getX() + " z:" + this.field20764.getZ(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+    public void draw(final float partialTicks) {
+        RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(AllUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.03f), this.field20761.calcPercent()));
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.x + 68), (float)(this.y + 14), this.field20763, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.8f));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.x + 68), (float)(this.y + 38), "x:" + this.field20764.getX() + " z:" + this.field20764.getZ(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
         final int n2 = 27;
         final int n3 = this.field20480 - 43;
         final float n4 = this.method14386() ? 0.4f : 0.2f;
-        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2), 20.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
-        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2 + 5), 20.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
-        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2 + 10), 20.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
-        RenderUtil.method26888((float)(this.x + 35), (float)(this.y + this.field20481 / 2), 20.0f, ColorUtils.method19120(this.field20765, ClientColors.DEEP_TEAL.color, 0.9f));
+        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2), 20.0f, 2.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
+        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2 + 5), 20.0f, 2.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
+        RenderUtil.method26874((float)(this.x + n3), (float)(this.y + n2 + 10), 20.0f, 2.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n4));
+        RenderUtil.method26888((float)(this.x + 35), (float)(this.y + this.field20481 / 2), 20.0f, AllUtils.method19120(this.field20765, ClientColors.DEEP_TEAL.color, 0.9f));
         RenderUtil.method26888((float)(this.x + 35), (float)(this.y + this.field20481 / 2), 17.0f, this.field20765);
-        RenderUtil.method26913((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 14.0f, n * 0.2f * this.field20761.calcPercent());
-        super.draw(n);
+        RenderUtil.method26913((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 14.0f, partialTicks * 0.2f * this.field20761.calcPercent());
+        super.draw(partialTicks);
     }
 }

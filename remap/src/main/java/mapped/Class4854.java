@@ -14,7 +14,7 @@ import java.util.List;
 public class Class4854 extends Panel
 {
     private final List<String> field20797;
-    private Class4817 field20798;
+    private ScrollablePane field20798;
     private final TextField field20799;
     private final boolean field20800;
     
@@ -34,7 +34,7 @@ public class Class4854 extends Panel
             if (this.field20798 != null) {
                 this.method14245(this.field20798);
             }
-            final Class4817 field20798 = new Class4817(this, "scrollview", 0, 40, this.field20480, this.field20481 - 40);
+            final ScrollablePane field20798 = new ScrollablePane(this, "scrollview", 0, 40, this.field20480, this.field20481 - 40);
             this.addToList(this.field20798 = field20798);
             final ArrayList list = new ArrayList();
             Registry.field211.iterator();
@@ -68,7 +68,7 @@ public class Class4854 extends Panel
                         else {
                             str = class4039.toString();
                         }
-                        final Class4817 field20799 = this.field20798;
+                        final ScrollablePane field20799 = this.field20798;
                         final int n;
                         new Class4902(this, "btn" + str, 0, 0, n, n, class4038.method11741());
                         final CustomGuiScreen class4040;
@@ -121,8 +121,8 @@ public class Class4854 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.draw(partialTicks);
     }
     
     public void method14562(final String... a) {

@@ -8,7 +8,7 @@ import org.newdawn.slick.TrueTypeFont;
 
 import java.util.Iterator;
 
-public class Class4817 extends Class4815
+public class ScrollablePane extends Class4815
 {
     private boolean field20607;
     private boolean field20608;
@@ -19,7 +19,7 @@ public class Class4817 extends Class4815
     public int field20613;
     public boolean field20614;
     
-    public Class4817(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
+    public ScrollablePane(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
         super(customGuiScreen, s, n, n2, n3, n4, false);
         this.field20609 = false;
         this.field20612 = true;
@@ -28,7 +28,7 @@ public class Class4817 extends Class4815
         this.method14390();
     }
     
-    public Class4817(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
+    public ScrollablePane(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804) {
         super(customGuiScreen, s, n, n2, n3, n4, class4804, false);
         this.field20609 = false;
         this.field20612 = true;
@@ -37,7 +37,7 @@ public class Class4817 extends Class4815
         this.method14390();
     }
     
-    public Class4817(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
+    public ScrollablePane(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2) {
         super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, false);
         this.field20609 = false;
         this.field20612 = true;
@@ -46,7 +46,7 @@ public class Class4817 extends Class4815
         this.method14390();
     }
     
-    public Class4817(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final TrueTypeFont class4805) {
+    public ScrollablePane(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4, final ColorHelper class4804, final String s2, final TrueTypeFont class4805) {
         super(customGuiScreen, s, n, n2, n3, n4, class4804, s2, class4805, false);
         this.field20609 = false;
         this.field20612 = true;
@@ -101,7 +101,7 @@ public class Class4817 extends Class4815
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14227();
         if (this.field20609 && !this.method14296()) {
             return;
@@ -109,7 +109,7 @@ public class Class4817 extends Class4815
         if (this.field20612) {
             RenderUtil.method26865(this);
         }
-        super.draw(n);
+        super.draw(partialTicks);
         if (this.field20612) {
             RenderUtil.endScissor();
         }

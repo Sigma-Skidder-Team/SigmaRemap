@@ -71,18 +71,18 @@ public class Class4892 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int n2 = this.method14278() / 4;
         final int n3 = this.method14276() - this.field20916.method14276() / 2 - 3;
         final int n4 = this.method14272() + this.field20916.method14276() / 4 + 3;
         final int n5 = this.method14274() + this.method14278() / 2 - n2 / 2;
         final int n6 = this.field20916.method14272() + this.field20916.method14276() / 2 - 6;
-        RenderUtil.method26925((float)n4, (float)n5, (float)n6, (float)n2, (float)(n2 / 2), ColorUtils.applyAlpha(this.field20497.method19729(), n * n * n));
-        RenderUtil.method26925((float)(n4 + n6), (float)n5, (float)(n3 - n6), (float)n2, (float)(n2 / 2), ColorUtils.applyAlpha(ColorUtils.method19122(this.field20497.method19729(), 0.8f), n * n * n));
+        RenderUtil.method26925((float)n4, (float)n5, (float)n6, (float)n2, (float)(n2 / 2), AllUtils.applyAlpha(this.field20497.method19729(), partialTicks * partialTicks * partialTicks));
+        RenderUtil.method26925((float)(n4 + n6), (float)n5, (float)(n3 - n6), (float)n2, (float)(n2 / 2), AllUtils.applyAlpha(AllUtils.method19122(this.field20497.method19729(), 0.8f), partialTicks * partialTicks * partialTicks));
         if (this.getTypedText() != null) {
-            RenderUtil.drawString(ClientFonts.JelloLight14, (float)(n4 - ClientFonts.JelloLight14.getWidth(this.getTypedText()) - 10 - Math.max(0, 9 - this.field20916.method14272())), (float)(n5 - 5), this.getTypedText(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * this.field20917.calcPercent() * n));
+            RenderUtil.drawString(ClientFonts.JelloLight14, (float)(n4 - ClientFonts.JelloLight14.getWidth(this.getTypedText()) - 10 - Math.max(0, 9 - this.field20916.method14272())), (float)(n5 - 5), this.getTypedText(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * this.field20917.calcPercent() * partialTicks));
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     @Override

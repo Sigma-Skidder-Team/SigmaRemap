@@ -250,7 +250,7 @@ public class Class7971
             if (this.field32798 == null) {
                 (this.field32798 = new Thread(() -> {
                     try {
-                        this.field32795 = ImageIO.read(new URL(ColorUtils.method19129(this.method25891().replaceAll("-", ""))));
+                        this.field32795 = ImageIO.read(new URL(AllUtils.method19129(this.method25891().replaceAll("-", ""))));
                     }
                     catch (final Exception ex) {
                         ex.printStackTrace();

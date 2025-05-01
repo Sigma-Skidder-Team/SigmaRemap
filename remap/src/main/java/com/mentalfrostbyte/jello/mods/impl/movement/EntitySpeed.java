@@ -36,7 +36,7 @@ public class EntitySpeed extends Module
         final float field4087 = field4085.field24721;
         if (!EntitySpeed.mc.player.method1920().collidedHorizontally) {
             if (!EntitySpeed.mc.player.method1920().onGround) {
-                if (ColorUtils.method19160(EntitySpeed.mc.player.method1920(), 5.0f)) {
+                if (AllUtils.method19160(EntitySpeed.mc.player.method1920(), 5.0f)) {
                     if (!EntitySpeed.mc.player.method1920().method1706()) {
                         if (EntitySpeed.mc.world.getBlockState(EntitySpeed.mc.player.method1920().method1894()).method21696() != Blocks.field29173) {
                             class5718.method16983(-2.0);

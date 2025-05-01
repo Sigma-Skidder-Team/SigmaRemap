@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
-import com.mentalfrostbyte.jello.auth.CaptchaChecker;
+import com.mentalfrostbyte.jello.auth.Challenge;
 
 public class LoginScreen extends Panel {
     private final TextField inputUsername;
@@ -48,26 +48,26 @@ public class LoginScreen extends Panel {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         super.method14227();
-        super.method14228();
+        super.translate();
         final int n2 = 28;
-        RenderUtil.method26904((float) (this.x + n2), (float) (this.y + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, n);
+        RenderUtil.method26904((float) (this.x + n2), (float) (this.y + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, partialTicks);
         final int n3 = 305;
         final int n4 = 316;
-        final CaptchaChecker method19344 = Client.getInstance().getNetworkManager().getChallengeResponse();
+        final Challenge method19344 = Client.getInstance().getNetworkManager().getChallengeResponse();
         if (method19344 != null) {
-            this.inputCatcha.setEnabled(method19344.method30471());
-            if (method19344.method30471()) {
-                RenderUtil.method26874((float) (this.x + n4), (float) (this.y + n3), 114.0f, 40.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f));
+            this.inputCatcha.setEnabled(method19344.isCaptcha());
+            if (method19344.isCaptcha()) {
+                RenderUtil.method26874((float) (this.x + n4), (float) (this.y + n3), 114.0f, 40.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f));
             }
-            if (method19344.method30470() != null) {
+            if (method19344.getCaptcha() != null) {
                 RenderUtil.startScissor((float) (this.x + n4), (float) (this.y + n3), 190.0f, 50.0f);
-                RenderUtil.method26905((float) (this.x + n4), (float) (this.y + n3), 190.0f, 190.0f, method19344.method30470());
+                RenderUtil.drawImage((float) (this.x + n4), (float) (this.y + n3), 190.0f, 190.0f, method19344.getCaptcha());
                 RenderUtil.endScissor();
             }
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 
     public void method14596() {
@@ -75,12 +75,12 @@ public class LoginScreen extends Panel {
             this.loadingThingy.setVisible(true);
             this.loginButton.setEnabled(false);
 
-            final CaptchaChecker captchaChecker = Client.getInstance().getNetworkManager().getChallengeResponse();
-            if (captchaChecker != null) {
-                captchaChecker.setChallengeAnswer(this.inputCatcha.getTypedText());
+            final Challenge challenge = Client.getInstance().getNetworkManager().getChallengeResponse();
+            if (challenge != null) {
+                challenge.setAnswer(this.inputCatcha.getTypedText());
             }
             Client.getInstance().getNetworkManager().resetLicense();
-            Client.getInstance().getNetworkManager().register(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), this.inputEmail.getTypedText(), captchaChecker);
+            Client.getInstance().getNetworkManager().register(this.inputUsername.getTypedText(), this.inputPassword.getTypedText(), this.inputEmail.getTypedText(), challenge);
             final RegisterScreen var5 = (RegisterScreen) this.getParent();
             final String s = Client.getInstance().getNetworkManager().login(this.inputUsername.getTypedText());
             if (s != null) {

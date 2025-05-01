@@ -25,17 +25,17 @@ public class Class4880 extends Class4868
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14286(1.0f + this.field20875.calcPercent());
         this.method14287(1.0f + this.field20875.calcPercent());
         this.method14227();
         RenderUtil.drawString(this.method14316(), (float)this.method14272(), (float)this.method14274(), "" + this.field20875.calcPercent(), ClientColors.DEEP_TEAL.color);
         GL11.glPushMatrix();
-        super.method14229(n);
+        super.method14229(partialTicks);
         GL11.glPopMatrix();
     }
     
     static {
-        field20873 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ColorUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.1f));
+        field20873 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, AllUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.1f));
     }
 }

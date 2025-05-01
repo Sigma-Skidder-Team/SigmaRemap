@@ -5,7 +5,7 @@
 package com.mentalfrostbyte.jello.auth.managers;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.auth.CaptchaChecker;
+import com.mentalfrostbyte.jello.auth.Challenge;
 import com.mentalfrostbyte.jello.auth.Encryptor;
 import com.mentalfrostbyte.jello.auth.PremiumJSONObject;
 import mapped.PremiumChecker;
@@ -37,7 +37,7 @@ import org.apache.http.client.HttpClient;
 
 public class NetworkManager {
     public HttpClient httpClient;
-    public CaptchaChecker captcha;
+    public Challenge captcha;
     public Encryptor encryptor;
     public String mainURL;
     public String loginUrl;
@@ -64,7 +64,7 @@ public class NetworkManager {
         this.irc = new IRCManager();
     }
 
-    public String login(String var1, String var2, CaptchaChecker var3) {
+    public String login(String var1, String var2, Challenge var3) {
         String error = "Unexpected error";
 
         try {
@@ -72,10 +72,10 @@ public class NetworkManager {
             List<BasicNameValuePair> requests = new ArrayList<>();
             requests.add(new BasicNameValuePair("username", var1));
             requests.add(new BasicNameValuePair("password", var2));
-            requests.add(new BasicNameValuePair("challengeUid", var3.getChallengeUid()));
-            requests.add(new BasicNameValuePair("challengeAnswer", var3.getChallengeAnswer()));
+            requests.add(new BasicNameValuePair("challengeUid", var3.getUid()));
+            requests.add(new BasicNameValuePair("challengeAnswer", var3.getAnswer()));
             requests.add(new BasicNameValuePair("token", this.token));
-            var3.method30473(false);
+            var3.setValid(false);
             httpPost.setEntity(new UrlEncodedFormEntity(requests, "UTF-8"));
             HttpResponse response = this.httpClient.execute(httpPost);
             HttpEntity entity = response.getEntity();
@@ -110,7 +110,7 @@ public class NetworkManager {
         return error;
     }
 
-    public void register(final String s, final String s2, String s3, final CaptchaChecker captchaChecker) {
+    public void register(final String s, final String s2, String s3, final Challenge challenge) {
         if (s3 == null) {
             s3 = "";
         }
@@ -121,10 +121,10 @@ public class NetworkManager {
             list.add(new BasicNameValuePair("username", s));
             list.add(new BasicNameValuePair("password", s2));
             list.add(new BasicNameValuePair("email", s3));
-            list.add(new BasicNameValuePair("challengeUid", captchaChecker.getChallengeUid()));
-            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.getChallengeAnswer()));
+            list.add(new BasicNameValuePair("challengeUid", challenge.getUid()));
+            list.add(new BasicNameValuePair("challengeAnswer", challenge.getAnswer()));
             list.add(new BasicNameValuePair("token", this.token));
-            captchaChecker.method30473(false);
+            challenge.setValid(false);
             httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
@@ -171,16 +171,16 @@ public class NetworkManager {
         }
     }
 
-    public String redeemPremium(final String s, final CaptchaChecker captchaChecker) {
-        String s2 = "Unexpected error";
+    public String redeemPremium(final String s, final Challenge challenge) {
+        String msg = "Unexpected error";
         try {
             final HttpPost httpPost = new HttpPost(this.claimPremiumUrl);
             final ArrayList list = new ArrayList();
             list.add(new BasicNameValuePair("key", s));
-            list.add(new BasicNameValuePair("challengeUid", captchaChecker.getChallengeUid()));
-            list.add(new BasicNameValuePair("challengeAnswer", captchaChecker.getChallengeAnswer()));
+            list.add(new BasicNameValuePair("challengeUid", challenge.getUid()));
+            list.add(new BasicNameValuePair("challengeAnswer", challenge.getAnswer()));
             list.add(new BasicNameValuePair("token", this.token));
-            captchaChecker.method30473(false);
+            challenge.setValid(false);
             httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
@@ -191,27 +191,27 @@ public class NetworkManager {
                         return null;
                     }
                     if (class8774.has("error")) {
-                        s2 = class8774.getString("error");
+                        msg = class8774.getString("error");
                     }
-                    return s2;
+                    return msg;
                 }
             }
-        } catch (final IOException ex) {
-            s2 = ex.getMessage();
-            ex.printStackTrace();
+        } catch (final IOException e) {
+            msg = e.getMessage();
+            e.printStackTrace();
         }
-        return s2;
+        return msg;
     }
 
-    public CaptchaChecker getChallengeResponse() {
-        if (this.captcha != null && this.captcha.isCompleted()) {
+    public Challenge getChallengeResponse() {
+        if (this.captcha != null && this.captcha.isValid()) {
             return this.captcha;
         }
         try {
             final HttpPost httpPost = new HttpPost(this.challengeUrl);
-            final List<BasicNameValuePair> list = new ArrayList<>();
-            list.add(new BasicNameValuePair("token", this.token));
-            httpPost.setEntity(new UrlEncodedFormEntity(list, "UTF-8"));
+            final List<BasicNameValuePair> pairs = new ArrayList<>();
+            pairs.add(new BasicNameValuePair("token", this.token));
+            httpPost.setEntity(new UrlEncodedFormEntity(pairs, "UTF-8"));
             final HttpEntity entity = this.httpClient.execute(httpPost).getEntity();
             if (entity != null) {
                 try (final InputStream content = entity.getContent()) {
@@ -223,14 +223,14 @@ public class NetworkManager {
                         if (premiumJsonObject.has("captcha")) {
                             completed = premiumJsonObject.getBoolean("captcha");
                         }
-                        this.captcha = new CaptchaChecker(uid, completed);
+                        this.captcha = new Challenge(uid, completed);
                         return this.captcha;
                     }
                     return null;
                 }
             }
-        } catch (final IOException ex) {
-            ex.printStackTrace();
+        } catch (final IOException e) {
+            e.printStackTrace();
         }
         return null;
     }

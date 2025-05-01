@@ -33,7 +33,7 @@ public class YPortSpeed extends Module
                 if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                     if (YPortSpeed.mc.player.onGround) {
                         if (updateWalkingEvent.isPre()) {
-                            if (ColorUtils.method19146()) {
+                            if (AllUtils.method19146()) {
                                 updateWalkingEvent.method17037(updateWalkingEvent.method17036() + 1.0E-14);
                             }
                         }
@@ -55,7 +55,7 @@ public class YPortSpeed extends Module
     public void onDisable() {
         this.field15959 = false;
         if (YPortSpeed.mc.player.getMotion().y > 0.33) {
-            ColorUtils.method19155(-0.43 + MovementUtil.method23140() * 0.1);
+            AllUtils.method19155(-0.43 + MovementUtil.method23140() * 0.1);
             MovementUtil.method23151(MovementUtil.method23136());
         }
     }
@@ -79,11 +79,11 @@ public class YPortSpeed extends Module
                     YPortSpeed.mc.player.stepHeight = 0.5f;
                     break;
                 }
-                if (this.field15959 && ColorUtils.method19160(YPortSpeed.mc.player, (float)(MovementUtil.method23141() + MovementUtil.method23140() * 0.1 + 0.0010000000474974513))) {
+                if (this.field15959 && AllUtils.method19160(YPortSpeed.mc.player, (float)(MovementUtil.method23141() + MovementUtil.method23140() * 0.1 + 0.0010000000474974513))) {
                     this.field15959 = !this.field15959;
                     MovementUtil.method23149(class5717, 0.312);
                     class5717.method16975(-0.43 + MovementUtil.method23140() * 0.1);
-                    ColorUtils.method19155(class5717.method16974());
+                    AllUtils.method19155(class5717.method16974());
                     YPortSpeed.mc.player.stepHeight = 0.0f;
                     break;
                 }
@@ -95,10 +95,10 @@ public class YPortSpeed extends Module
                 break;
             }
             case "OldNCP": {
-                if (YPortSpeed.mc.player.onGround && ColorUtils.method19114()) {
+                if (YPortSpeed.mc.player.onGround && AllUtils.method19114()) {
                     this.field15963 = 2;
                 }
-                if (this.field15963 == 1 && ColorUtils.method19114()) {
+                if (this.field15963 == 1 && AllUtils.method19114()) {
                     this.field15963 = 2;
                     this.field15961 = 1.38 * MovementUtil.method23136() - 0.01;
                 }
@@ -119,7 +119,7 @@ public class YPortSpeed extends Module
                 }
                 MovementUtil.method23149(class5717, this.field15961 = Math.max(this.field15961, MovementUtil.method23136()));
                 YPortSpeed.mc.player.stepHeight = 0.6f;
-                ColorUtils.method19155(class5717.method16974());
+                AllUtils.method19155(class5717.method16974());
                 break;
             }
         }
@@ -137,10 +137,10 @@ public class YPortSpeed extends Module
                                     if (!YPortSpeed.mc.player.method2688()) {
                                         if (!MovementUtil.method23142()) {
                                             if (!YPortSpeed.mc.player.method1706()) {
-                                                if (ColorUtils.method19160(YPortSpeed.mc.player, 1.0f)) {
+                                                if (AllUtils.method19160(YPortSpeed.mc.player, 1.0f)) {
                                                     if (!YPortSpeed.mc.player.onGround) {
                                                         if (this.field15963 == 3) {
-                                                            ColorUtils.method19155(-0.3994);
+                                                            AllUtils.method19155(-0.3994);
                                                         }
                                                     }
                                                 }
@@ -162,13 +162,13 @@ public class YPortSpeed extends Module
     @EventListener
     public void method10599(final Class5741 class5741) {
         if (this.isEnabled()) {
-            if (ColorUtils.method19160(YPortSpeed.mc.player, 0.43f)) {
+            if (AllUtils.method19160(YPortSpeed.mc.player, 0.43f)) {
                 if (YPortSpeed.mc.player.fallDistance <= 0.09) {
                     if (this.getBooleanValueFromSettingName("OnGround")) {
                         if (!YPortSpeed.mc.gameSettings.field23439.field2162) {
                             if (!Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
                                 if (YPortSpeed.mc.player.onGround) {
-                                    if (ColorUtils.method19160(YPortSpeed.mc.player, 0.001f)) {
+                                    if (AllUtils.method19160(YPortSpeed.mc.player, 0.001f)) {
                                         this.field15960 = YPortSpeed.mc.player.posY;
                                     }
                                 }

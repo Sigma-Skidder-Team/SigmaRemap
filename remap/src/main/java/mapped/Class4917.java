@@ -33,7 +33,7 @@ public class Class4917 extends Class4825
         this.field21038 = new Animation(300, 300, Direction.FORWARDS);
         this.field21039 = 0;
         this.field21040 = 0;
-        this.field21041 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
+        this.field21041 = AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 20.0f);
         this.field21031 = field21031;
         this.addToList(this.field21034 = new LoadingIndicator(this, "loading", n3 - 50, 35, 30, 30));
         this.field21034.setVisible(false);
@@ -55,10 +55,10 @@ public class Class4917 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
-        this.field21041 = ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0f);
-        final int method14392 = ((Class4817)this.field20475.getParent()).method14392();
+    public void draw(final float partialTicks) {
+        this.translate();
+        this.field21041 = AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 2.0f);
+        final int method14392 = ((ScrollablePane)this.field20475.getParent()).method14392();
         final int max = Math.max(0, this.y - method14392);
         final int max2 = Math.max(0, this.field20481 + Math.min(100, this.y - method14392 - max));
         final float n2 = Math.min(50, max2) / 50.0f;
@@ -72,7 +72,7 @@ public class Class4917 extends Class4825
         if (n2 == 0.0f) {
             return;
         }
-        RenderUtil.method26917(this.x, n5, this.field20480, Math.max(20, max2), ColorUtils.applyAlpha(this.method14309() ? this.field21041 : ClientColors.LIGHT_GREYISH_BLUE.color, n2));
+        RenderUtil.draw(this.x, n5, this.field20480, Math.max(20, max2), AllUtils.applyAlpha(this.method14309() ? this.field21041 : ClientColors.LIGHT_GREYISH_BLUE.color, n2));
         RenderUtil.method26871(this.x, n5, this.x + this.field20480 + 20, n5 + max2, true);
         if (this.field21031 != null) {
             this.method14764();
@@ -83,7 +83,7 @@ public class Class4917 extends Class4825
                     RenderUtil.drawImage((float)(this.x + this.method14276()), n5 + 26 * max2 / 100.0f, 18.0f * this.field21036.calcPercent() * max2 / 100.0f, 47 * max2 / 100.0f, ClientAssets.select, this.method14309() ? this.field21041 : ClientColors.LIGHT_GREYISH_BLUE.color);
                 }
             }
-            super.draw(n * n2);
+            super.draw(partialTicks * n2);
             RenderUtil.endScissor();
         }
     }
@@ -112,8 +112,8 @@ public class Class4917 extends Class4825
         this.field21037 = Math.min(1.0f, Math.max(0.0f, this.field21037));
         this.field21039 = Math.max(0, this.field21039 - 1);
         final float n2 = (this.field21039 <= 20) ? 20.0f : -20.0f;
-        RenderUtil.drawImage((float)(this.x + this.field20480 - 45), (float)(this.y + 42), 17.0f, 17.0f, ClientAssets.errors, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, ((this.field21039 >= n2 && this.field21039 <= this.field21040 - n2) ? 1.0f : (this.field21039 % n2 / n2)) * n));
-        RenderUtil.drawImage((float)(this.x + this.field20480 - 45), (float)(this.y + 45), 17.0f, 13.0f, ClientAssets.active, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21037 * n));
+        RenderUtil.drawImage((float)(this.x + this.field20480 - 45), (float)(this.y + 42), 17.0f, 17.0f, ClientAssets.errors, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, ((this.field21039 >= n2 && this.field21039 <= this.field21040 - n2) ? 1.0f : (this.field21039 % n2 / n2)) * n));
+        RenderUtil.drawImage((float)(this.x + this.field20480 - 45), (float)(this.y + 45), 17.0f, 13.0f, ClientAssets.active, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field21037 * n));
     }
     
     public void method14767(final boolean field21035) {

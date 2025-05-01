@@ -65,11 +65,11 @@ public class Class4829 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int n2 = 20;
-        if (n >= 0.6) {
-            RenderUtil.method26915(this.x + n2, this.y + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
-            super.draw(n);
+        if (partialTicks >= 0.6) {
+            RenderUtil.method26915(this.x + n2, this.y + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * partialTicks));
+            super.draw(partialTicks);
         }
     }
 }

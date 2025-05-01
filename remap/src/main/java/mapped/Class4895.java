@@ -82,21 +82,21 @@ public class Class4895 extends Panel
     }
     
     @Override
-    public void draw(float method35858) {
-        method35858 = this.field20926.calcPercent();
-        float n = Class7707.method24584(method35858, 0.0f, 1.0f, 1.0f);
+    public void draw(float partialTicks) {
+        partialTicks = this.field20926.calcPercent();
+        float n = Class7707.method24584(partialTicks, 0.0f, 1.0f, 1.0f);
         if (this.field20936) {
-            n = Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f);
+            n = Class7791.method25030(partialTicks, 0.0f, 1.0f, 1.0f);
         }
         this.method14288(0.8f + n * 0.2f, 0.8f + n * 0.2f);
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * method35858));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * partialTicks));
         super.method14227();
-        RenderUtil.method26925((float)this.field20929, (float)this.field20928, (float)this.field20930, (float)this.field20931, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
-        RenderUtil.drawString(ClientFonts.JelloMedium40, (float)this.field20929, (float)(this.field20928 - 60), this.field20934.getName(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
+        RenderUtil.method26925((float)this.field20929, (float)this.field20928, (float)this.field20930, (float)this.field20931, 10.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.drawString(ClientFonts.JelloMedium40, (float)this.field20929, (float)(this.field20928 - 60), this.field20934.getName(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         final int n2 = 30;
         RenderUtil.startScissor((float)this.field20929, (float)this.field20928, (float)(this.field20930 - 30), (float)this.field20931);
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.7f));
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(n2 + this.field20929), (float)(n2 + this.field20928), this.field20934.getDesc(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.7f));
         RenderUtil.endScissor();
-        super.draw(method35858);
+        super.draw(partialTicks);
     }
 }

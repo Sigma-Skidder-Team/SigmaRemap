@@ -4,7 +4,7 @@
 
 package mapped;
 
-public class Class4823 extends Class4817
+public class Class4823 extends ScrollablePane
 {
     private static String[] field20637;
     
@@ -13,9 +13,9 @@ public class Class4823 extends Class4817
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.35f));
-        RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.14f));
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.35f));
+        RenderUtil.method26879((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), 2, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.14f));
+        super.draw(partialTicks);
     }
 }

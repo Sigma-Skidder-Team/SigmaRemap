@@ -37,17 +37,17 @@ public class Class4882 extends Panel
     }
     
     @Override
-    public void method14204(final int field20877) {
+    public void onKeyPress(final int field20877) {
         final Class283[] values = Class283.values();
         for (int length = values.length, i = 0; i < length; ++i) {
             if (values[i].field1563 == field20877) {
-                super.method14204(field20877);
+                super.onKeyPress(field20877);
                 return;
             }
         }
         this.field20877 = field20877;
         this.method14517();
-        super.method14204(field20877);
+        super.onKeyPress(field20877);
     }
     
     public void method14614() {
@@ -74,15 +74,15 @@ public class Class4882 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int n2 = 20;
         final int n3 = 14;
         final int n4 = this.x - n2;
         final int n5 = this.y - n2;
         final int n6 = this.field20480 + n2 * 2;
         final int n7 = this.field20481 + 5 + n2 * 2;
-        RenderUtil.method26913((float)(n4 + n3 / 2), (float)(n5 + n3 / 2), (float)(n6 - n3), (float)(n7 - n3), 20.0f, n * 0.5f);
+        RenderUtil.method26913((float)(n4 + n3 / 2), (float)(n5 + n3 / 2), (float)(n6 - n3), (float)(n7 - n3), 20.0f, partialTicks * 0.5f);
         RenderUtil.method26924((float)n4, (float)n5, (float)n6, (float)n7, 14.0f, ClientColors.LIGHT_GREYISH_BLUE.color);
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

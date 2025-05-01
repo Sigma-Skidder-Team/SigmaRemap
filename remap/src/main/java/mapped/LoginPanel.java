@@ -7,7 +7,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientAssets;
 import com.mentalfrostbyte.jello.ClientFonts;
-import com.mentalfrostbyte.jello.auth.CaptchaChecker;
+import com.mentalfrostbyte.jello.auth.Challenge;
 
 public class LoginPanel extends Panel {
     private final TextField username;
@@ -47,24 +47,24 @@ public class LoginPanel extends Panel {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         super.method14227();
-        super.method14228();
+        super.translate();
         final int n2 = 28;
-        RenderUtil.method26904((float) (this.x + n2), (float) (this.y + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, n);
-        final CaptchaChecker method19344 = Client.getInstance().getNetworkManager().getChallengeResponse();
-        if (method19344 != null) {
-            this.captchaAnswer.setEnabled(method19344.method30471());
-            if (method19344.method30471()) {
-                RenderUtil.method26874((float) (this.x + 330), (float) (this.y + 255), 114.0f, 40.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f));
+        RenderUtil.method26904((float) (this.x + n2), (float) (this.y + n2 + 10), 160.0f, 160.0f, ClientAssets.sigma, partialTicks);
+        final Challenge challenge = Client.getInstance().getNetworkManager().getChallengeResponse();
+        if (challenge != null) {
+            this.captchaAnswer.setEnabled(challenge.isCaptcha());
+            if (challenge.isCaptcha()) {
+                RenderUtil.method26874((float) (this.x + 330), (float) (this.y + 255), 114.0f, 40.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.04f));
             }
-            if (method19344.method30470() != null) {
+            if (challenge.getCaptcha() != null) {
                 RenderUtil.startScissor((float) (this.x + 316), (float) (this.y + 255), 190.0f, 50.0f);
-                RenderUtil.method26905((float) (this.x + 316), (float) (this.y + 255), 190.0f, 190.0f, method19344.method30470());
+                RenderUtil.drawImage((float) (this.x + 316), (float) (this.y + 255), 190.0f, 190.0f, challenge.getCaptcha());
                 RenderUtil.endScissor();
             }
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 
     public void method14630() {
@@ -72,14 +72,14 @@ public class LoginPanel extends Panel {
             this.loadingThing.setVisible(true);
             this.loginButton.setEnabled(false);
             Client.getInstance().getNetworkManager().getChallengeResponse();
-            final CaptchaChecker captchaChecker = new CaptchaChecker("", true);
-            if (captchaChecker != null) {
-                captchaChecker.setChallengeAnswer(this.captchaAnswer.getTypedText());
+            final Challenge challenge = new Challenge("", true);
+            if (challenge != null) {
+                challenge.setAnswer(this.captchaAnswer.getTypedText());
             }
             Client.getInstance().getNetworkManager().resetLicense();
-            final String s = Client.getInstance().getNetworkManager().login(this.username.getTypedText(), this.password.getTypedText(), captchaChecker);
-            if (s != null) {
-                ((RegisterScreen) this.getParent()).show("Error", s);
+            final String msg = Client.getInstance().getNetworkManager().login(this.username.getTypedText(), this.password.getTypedText(), challenge);
+            if (msg != null) {
+                ((RegisterScreen) this.getParent()).show("Error", msg);
                 this.captchaAnswer.setTypedText("");
             } else {
                 this.method14517();

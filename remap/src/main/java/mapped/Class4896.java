@@ -39,7 +39,7 @@ public class Class4896 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20941 != null) {
             final float method25030 = Class7791.method25030(Animation.method35860(this.field20941, 150.0f), 0.0f, 1.0f, 1.0f);
             this.method14279((int)(55.0f * method25030));
@@ -55,10 +55,10 @@ public class Class4896 extends Panel
             }
         }
         RenderUtil.method26871(this.x, this.y, this.x + this.field20480, this.y + this.field20481, true);
-        RenderUtil.drawString(ClientFonts.Regular20, (float)(this.x + 25), this.y + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n));
-        RenderUtil.drawString(ClientFonts.JelloLight12, (float)(this.x + 25), this.y + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n));
+        RenderUtil.drawString(ClientFonts.Regular20, (float)(this.x + 25), this.y + this.field20481 / 2.0f - 17.5f, this.field20938.method30702(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * partialTicks));
+        RenderUtil.drawString(ClientFonts.JelloLight12, (float)(this.x + 25), this.y + this.field20481 / 2.0f + 7.5f, this.field20938.method30703(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * partialTicks));
         this.field20942.method14275((int)(this.field20481 / 2.0f - 7.5f));
-        super.draw(n);
+        super.draw(partialTicks);
         RenderUtil.endScissor();
     }
 }

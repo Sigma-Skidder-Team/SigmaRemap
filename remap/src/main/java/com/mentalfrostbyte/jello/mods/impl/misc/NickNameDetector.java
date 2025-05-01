@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.EventPlayerTick;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.EventListener;
 import net.minecraft.entity.Entity;
 
@@ -21,7 +21,7 @@ public class NickNameDetector extends Module
     @EventListener
     private void method10838(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            for (final Entity class5744 : ColorUtils.method19108()) {
+            for (final Entity class5744 : AllUtils.getPlayerEntities()) {
                 if (Client.getInstance().getBotManager().isBot(class5744)) {
                     continue;
                 }
@@ -31,7 +31,7 @@ public class NickNameDetector extends Module
                 if (!class5744.hasCustomName()) {
                     continue;
                 }
-                ColorUtils.method19106(class5744.getName().getUnformattedComponentText() + " might have a custom nametag");
+                AllUtils.method19106(class5744.getName().getUnformattedComponentText() + " might have a custom nametag");
             }
         }
     }

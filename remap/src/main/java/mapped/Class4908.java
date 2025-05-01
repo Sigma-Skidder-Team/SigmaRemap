@@ -34,7 +34,7 @@ public class Class4908 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final double max = Math.max(-1.0, Math.min(1.0, (Minecraft.getInstance().field4650.method26959() - Minecraft.getInstance().window.method7694() / 2) / (Minecraft.getInstance().window.method7694() / 2)));
         final double max2 = Math.max(-1.0, Math.min(1.0, (Minecraft.getInstance().field4650.method26960() - Minecraft.getInstance().window.method7695() / 2) / (Minecraft.getInstance().window.method7695() / 2)));
         GL11.glPushMatrix();
@@ -49,7 +49,7 @@ public class Class4908 extends Class4825
         GL11.glDisable(2929);
         RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientColors.PALE_YELLOW.color);
         GL11.glPopMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     static {

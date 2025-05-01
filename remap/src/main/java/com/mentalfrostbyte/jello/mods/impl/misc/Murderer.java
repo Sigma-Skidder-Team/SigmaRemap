@@ -75,7 +75,7 @@ public class Murderer extends Module
             }
             if (this.field15733 != null) {
                 RenderUtil.method26876((float)(method7694 - field40313.getWidth(this.field15732) - 90), (float)(method7695 - 130), (float)(method7694 - 10), (float)(method7695 - 10), 1342177280);
-                RenderUtil.method26905((float)(method7694 - field40313.getWidth(this.field15732) - 80), (float)(method7695 - 120), 50.0f, 100.0f, this.field15733);
+                RenderUtil.drawImage((float)(method7694 - field40313.getWidth(this.field15732) - 80), (float)(method7695 - 120), 50.0f, 100.0f, this.field15733);
                 RenderUtil.drawString(field40313, (float)(method7694 - field40313.getWidth(this.field15732) - 20), (float)(method7695 - field40313.getHeight(this.field15732) - 60), this.field15732, -1);
             }
         }

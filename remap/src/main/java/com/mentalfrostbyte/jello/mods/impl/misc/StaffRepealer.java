@@ -25,7 +25,7 @@ public class StaffRepealer extends Module
         if (!this.isEnabled()) {
             return;
         }
-        if (ColorUtils.method19146()) {
+        if (AllUtils.method19146()) {
             StaffRepealer.mc.gameSettings.method17124();
         }
     }
@@ -50,7 +50,7 @@ public class StaffRepealer extends Module
                     while (iterator.hasNext()) {
                         final Class4646 class5727 = iterator.next();
                         if (StaffRepealer.mc.world.getPlayerByUuid(class5727.method13869().getId()) == null && class5727.method13871() != null) {
-                            ColorUtils.method19106("Detected an anomaly " + class5727 + class5727.method13869());
+                            AllUtils.method19106("Detected an anomaly " + class5727 + class5727.method13869());
                         }
                         else {
                             System.out.println("all seems good " + class5727 + class5727.method13869());

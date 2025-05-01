@@ -9,7 +9,7 @@ import com.mentalfrostbyte.Client;
 import java.util.UUID;
 import java.util.List;
 
-public abstract class Class7814 implements Class7813
+public abstract class AntiBotBase implements IBotDetector
 {
     public static final Minecraft field32015;
     private boolean field32016;
@@ -17,7 +17,7 @@ public abstract class Class7814 implements Class7813
     public String field32018;
     public Class304 field32019;
     
-    public Class7814(final String field32017, final String field32018, final Class304 field32019) {
+    public AntiBotBase(final String field32017, final String field32018, final Class304 field32019) {
         this.field32016 = true;
         this.field32017 = field32017;
         this.field32018 = field32018;
@@ -53,11 +53,11 @@ public abstract class Class7814 implements Class7813
     }
     
     public List<AbstractClientPlayerEntity> method25247() {
-        return Class7814.field32015.world.getPlayers();
+        return AntiBotBase.field32015.world.getPlayers();
     }
     
     public List<AbstractClientPlayerEntity> method25248() {
-        return Class7814.field32015.world.getPlayers();
+        return AntiBotBase.field32015.world.getPlayers();
     }
     
     public PlayerEntity method25249(final String obj) {

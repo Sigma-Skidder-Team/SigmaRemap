@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4824 extends Class4817
+public class Class4824 extends ScrollablePane
 {
     private final List<Class4868> field20638;
     private boolean field20639;
@@ -75,8 +75,8 @@ public class Class4824 extends Class4817
     }
     
     @Override
-    public void draw(final float n) {
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.draw(partialTicks);
     }
     
     static {

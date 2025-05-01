@@ -21,7 +21,7 @@ public class LoadingIndicator extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.field20746 += (this.isHovered() ? 0.2f : -0.2f);
         this.field20746 = Math.min(1.0f, Math.max(0.0f, this.field20746));
         final float n2 = (float)(this.field20745.getElapsedTime() / 75L % 12L);
@@ -30,7 +30,7 @@ public class LoadingIndicator extends Class4825
             GL11.glTranslatef((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 0.0f);
             GL11.glRotatef(n2 * 30.0f, 0.0f, 0.0f, 1.0f);
             GL11.glTranslatef((float)(-this.x - this.field20480 / 2), (float)(-this.y - this.field20481 / 2), 0.0f);
-            RenderUtil.drawImage((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20746 * n));
+            RenderUtil.drawImage((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ClientAssets.loading_indicator, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20746 * partialTicks));
             GL11.glPopMatrix();
         }
     }

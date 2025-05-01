@@ -18,13 +18,13 @@ public class Class4902 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int n2 = 5;
         if (this.method14723() || this.method14308()) {
-            RenderUtil.method26914((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * n) : (0.3f * n));
+            RenderUtil.method26914((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, 14.0f, this.method14723() ? (0.8f * partialTicks) : (0.3f * partialTicks));
         }
         RenderUtil.method26929(this.field20973, this.x + n2, this.y + n2, this.field20480 - n2 * 2, this.field20481 - n2 * 2);
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public boolean method14723() {

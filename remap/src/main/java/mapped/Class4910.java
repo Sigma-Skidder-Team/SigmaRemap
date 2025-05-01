@@ -69,10 +69,10 @@ public class Class4910 extends Class4825
         if (this.getParent() != null) {
             if (this.getParent().getParent() != null) {
                 final CustomGuiScreen method14267 = this.getParent().getParent();
-                if (method14267 instanceof Class4817) {
-                    final Class4817 class4817 = (Class4817)method14267;
-                    final int n = class4817.method14392() + class4817.method14278() + this.method14278();
-                    final int n2 = class4817.method14392() - this.method14278();
+                if (method14267 instanceof ScrollablePane) {
+                    final ScrollablePane scrollablePane = (ScrollablePane)method14267;
+                    final int n = scrollablePane.method14392() + scrollablePane.method14278() + this.method14278();
+                    final int n2 = scrollablePane.method14392() - this.method14278();
                     return this.method14274() <= n && this.method14274() >= n2;
                 }
             }
@@ -81,7 +81,7 @@ public class Class4910 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (!this.method14750()) {
             if (this.field21008 != null) {
                 this.field21008.release();
@@ -121,7 +121,7 @@ public class Class4910 extends Class4825
         final float n3 = (float)Math.round(this.method14274() + 15 - 5.0f * method35858);
         final float n4 = (float)Math.round(this.method14276() - 30 + 10.0f * method35858);
         final float n5 = (float)Math.round(this.method14276() - 30 + 10.0f * method35858);
-        RenderUtil.method26913(this.method14272() + 15 - 5.0f * method35858, this.method14274() + 15 - 5.0f * method35858, this.method14276() - 30 + 10.0f * method35858, this.method14276() - 30 + 10.0f * method35858, 20.0f, n);
+        RenderUtil.method26913(this.method14272() + 15 - 5.0f * method35858, this.method14274() + 15 - 5.0f * method35858, this.method14276() - 30 + 10.0f * method35858, this.method14276() - 30 + 10.0f * method35858, 20.0f, partialTicks);
         if (this.field21008 != null || this.field21006 != null) {
             if (this.field21008 == null) {
                 try {
@@ -148,15 +148,15 @@ public class Class4910 extends Class4825
             else if (method35858 == 0.0f && this.field21009 != null) {
                 this.field21009 = null;
             }
-            RenderUtil.drawImage(n2, n3, n4, n5, this.field21008, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * (1.0f - method35858)));
+            RenderUtil.drawImage(n2, n3, n4, n5, this.field21008, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks * (1.0f - method35858)));
             if (this.field21009 != null) {
-                RenderUtil.drawImage(n2, n3, n4, n5, this.field21009, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * n));
+                RenderUtil.drawImage(n2, n3, n4, n5, this.field21009, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * partialTicks));
             }
         }
         else {
-            RenderUtil.drawImage(n2, n3, n4, n5, ClientAssets.artwork, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * (1.0f - method35858)));
+            RenderUtil.drawImage(n2, n3, n4, n5, ClientAssets.artwork, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks * (1.0f - method35858)));
             if (this.field21009 != null) {
-                RenderUtil.drawImage(n2, n3, n4, n5, ClientAssets.artwork, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * n));
+                RenderUtil.drawImage(n2, n3, n4, n5, ClientAssets.artwork, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * partialTicks));
             }
         }
         int n6 = 50;
@@ -164,17 +164,17 @@ public class Class4910 extends Class4825
             n6 = 40;
         }
         final float n7 = 0.5f + method35858 / 2.0f;
-        RenderUtil.drawImage(this.method14272() + this.method14276() / 2 - n6 / 2 * n7, this.method14274() + this.method14276() / 2 - n6 / 2 * n7, n6 * n7, n6 * n7, ClientAssets.play, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * n));
+        RenderUtil.drawImage(this.method14272() + this.method14276() / 2 - n6 / 2 * n7, this.method14274() + this.method14276() / 2 - n6 / 2 * n7, n6 * n7, n6 * n7, ClientAssets.play, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858 * partialTicks));
         final TrueTypeFont field40310 = ClientFonts.JelloLight12;
         if (this.field20495 != null) {
             RenderUtil.method26865(this);
             final String[] split = this.getTypedText().replaceAll("\\(.*\\)", "").replaceAll("\\[.*\\]", "").split(" - ");
             if (split.length > 1) {
-                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[1])) / 2), (float)(this.method14274() + this.method14276() - 2), split[1], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 13), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[1])) / 2), (float)(this.method14274() + this.method14276() - 2), split[1], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 13), split[0], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
             }
             else {
-                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 6), split[0], ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+                RenderUtil.drawString(field40310, (float)(this.method14272() + (this.method14276() - field40310.getWidth(split[0])) / 2), (float)(this.method14274() + this.method14276() - 2 + 6), split[0], AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
             }
             RenderUtil.endScissor();
         }

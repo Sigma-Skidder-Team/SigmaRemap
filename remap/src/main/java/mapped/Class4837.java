@@ -31,7 +31,7 @@ public class Class4837 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20738 == null) {
             return;
         }

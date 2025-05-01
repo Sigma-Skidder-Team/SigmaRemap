@@ -58,8 +58,8 @@ public class Class4808 extends Class4807
     }
     
     @Override
-    public void draw(final float n) {
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.draw(partialTicks);
         if (this.field20528 == null) {
             for (final CustomGuiScreen customGuiScreen : this.method14250()) {
                 if (!(customGuiScreen instanceof Class4883)) {
@@ -73,7 +73,7 @@ public class Class4808 extends Class4807
                 }
                 RenderUtil.drawString(ClassicAssets.field40808, 20.0f, (float)(this.method14278() - 26), ((Class4883) customGuiScreen).field20878.getDesc(), -14540254);
                 RenderUtil.startScissor(5.0f, (float)(this.method14278() - 27), 12.0f, 24.0f);
-                RenderUtil.method26905(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
+                RenderUtil.drawImage(5.0f, (float)(this.method14278() - 27), 24.0f, 24.0f, UglyClickGUICategory.xmark);
                 RenderUtil.endScissor();
                 break;
             }

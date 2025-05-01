@@ -179,7 +179,7 @@ public class Search extends Module
     }
     
     public void method10377() {
-        final int method19118 = ColorUtils.applyAlpha(this.method9885("Color"), 0.14f);
+        final int method19118 = AllUtils.applyAlpha(this.method9885("Color"), 0.14f);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
         final Iterator<Class6731> iterator = this.field15793.iterator();

@@ -58,19 +58,19 @@ public class Class4918 extends Class4825
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
+    public void onKeyPress(final int n) {
+        super.onKeyPress(n);
         if (n == 32) {
             this.field21049 = 0.045f;
         }
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14771();
         RenderUtil.method26865(this);
         for (int i = 0; i < 3; ++i) {
-            RenderUtil.method26905((float)(this.x + 288 * i), (float)this.y, 288.0f, 512.0f, this.field21042);
+            RenderUtil.drawImage((float)(this.x + 288 * i), (float)this.y, 288.0f, 512.0f, this.field21042);
         }
         final float n2 = 0.026f * (60.0f / Minecraft.method5338());
         this.field21048 = Math.max(Math.min(1.0f, this.field21048 + this.field21049 - n2), 0.0f);
@@ -97,11 +97,11 @@ public class Class4918 extends Class4825
         final int n9 = 3400;
         final float n10 = System.currentTimeMillis() % n9 / (float)n9;
         for (int j = 0; j < 4; ++j) {
-            RenderUtil.method26905(this.x + 288 * j - 288.0f * n10, (float)(this.y + n5), 288.0f, 112.0f, this.field21043);
+            RenderUtil.drawImage(this.x + 288 * j - 288.0f * n10, (float)(this.y + n5), 288.0f, 112.0f, this.field21043);
         }
         RenderUtil.method26886(this.x + n4 / 12.0f, this.y + n5 * (1.0f - this.field21048), 10.0f, ClientColors.PALE_YELLOW.color);
         RenderUtil.endScissor();
         this.field21050 = System.currentTimeMillis();
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

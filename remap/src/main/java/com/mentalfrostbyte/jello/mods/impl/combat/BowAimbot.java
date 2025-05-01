@@ -73,7 +73,7 @@ public class BowAimbot extends Module
     }
     
     public List<Entity> method10193(final float n) {
-        final List<Entity> method19138 = ColorUtils.method19138();
+        final List<Entity> method19138 = AllUtils.method19138();
         final Iterator<Entity> iterator = method19138.iterator();
         while (iterator.hasNext()) {
             final Entity class399 = iterator.next();

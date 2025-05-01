@@ -254,7 +254,7 @@ public class TabGUI extends Module
             final float n2 = class8225.method27234() + (float)class8225.method27233() + 14.0f * method10077;
             final float n3 = class8225.method27235() + 16.0f;
             class8225.getClass();
-            RenderUtil.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
+            RenderUtil.method26885(n2, n3 + 25 * class8225.field33778, 24.0f * method10077, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
             final int n4 = class8225.method27234() + class8225.method27233() + 4 + Math.round(method10077 * 28.0f);
             final int method10078 = class8225.method27235();
             class8225.getClass();
@@ -265,13 +265,13 @@ public class TabGUI extends Module
             final float n8 = (float)n5;
             final float n9 = n6 * method10079;
             class8225.getClass();
-            RenderUtil.method26874(n7, n8, n9, 25.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
+            RenderUtil.method26874(n7, n8, n9, 25.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n * 0.6f));
             final float n10 = (float)n4;
             final float n11 = (float)n5;
             final float n12 = n6 * method10079;
             class8225.getClass();
             RenderUtil.startScissor(n10, n11, n12, 25.0f);
-            RenderUtil.drawString(class8225.field33770, (float)(n4 + 4), (float)(n5 + 2), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n * 1.7f)));
+            RenderUtil.drawString(class8225.field33770, (float)(n4 + 4), (float)(n5 + 2), s, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n * 1.7f)));
             RenderUtil.endScissor();
         }
     }

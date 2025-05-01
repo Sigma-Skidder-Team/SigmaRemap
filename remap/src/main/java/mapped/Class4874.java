@@ -47,18 +47,18 @@ public class Class4874 extends Class4873 implements Class4870
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final float n2 = 1.0f + this.field20859.calcPercent() * 0.2f;
         final float n3 = this.method14309() ? 0.1f : 0.0f;
         final int n4 = (int)(this.method14276() * n2);
         final int n5 = (int)(this.method14278() * n2);
         final int n6 = this.method14272() - (n4 - this.method14276()) / 2;
         final int n7 = (int)(this.method14274() - (n5 - this.method14278()) / 2 - this.method14278() / 2 * (n2 - 1.0f));
-        final float[] method19131 = ColorUtils.method19131(this.method14607().getWidth(), this.method14607().getHeight(), (float)n4, (float)n5);
+        final float[] method19131 = AllUtils.method19131(this.method14607().getWidth(), this.method14607().getHeight(), (float)n4, (float)n5);
         RenderUtil.method26870(this.method14280() + n6 - this.x, this.method14281() + n7 - this.y, this.method14280() + n6 - this.x + n4, this.method14281() + n7 - this.y + n5);
-        RenderUtil.drawImage(n6 + method19131[0], n7 + method19131[1], method19131[2], method19131[3], this.method14607(), ColorUtils.applyAlpha(ColorUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - n3), n));
+        RenderUtil.drawImage(n6 + method19131[0], n7 + method19131[1], method19131[2], method19131[3], this.method14607(), AllUtils.applyAlpha(AllUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - n3), partialTicks));
         if (this.getTypedText() != null) {
-            RenderUtil.method26890(this.method14316(), (float)(n6 + n4 / 2), (float)(n7 + n5 / 2), this.getTypedText(), ColorUtils.applyAlpha(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26890(this.method14316(), (float)(n6 + n4 / 2), (float)(n7 + n5 / 2), this.getTypedText(), AllUtils.applyAlpha(this.field20497.method19733(), partialTicks), this.field20497.method19735(), this.field20497.method19737());
         }
         RenderUtil.endScissor();
         final TrueTypeFont method19132 = this.method14316();
@@ -70,10 +70,10 @@ public class Class4874 extends Class4873 implements Class4870
             GL11.glScalef(n2 / this.method14605(), n2 / this.method14605(), n2 / this.method14605());
             GL11.glAlphaFunc(519, 0.0f);
             RenderUtil.method26904((1.0f - n2 / this.method14605()) * method19132.getWidth(s) / 2.0f + 1.0f - method19132.getWidth(s) / 2.0f, method19132.getHeight(s) / 3.0f, (float)(method19132.getWidth(s) * 2), method19132.getHeight(s) * 3.0f, ClientAssets.shadow, n8 * 0.6f);
-            RenderUtil.drawString(method19132, (1.0f - n2 / this.method14605()) * method19132.getWidth(s) / 2.0f + 1.0f, 40.0f, s, ColorUtils.applyAlpha(this.method14318().method19729(), n8 * 0.6f));
+            RenderUtil.drawString(method19132, (1.0f - n2 / this.method14605()) * method19132.getWidth(s) / 2.0f + 1.0f, 40.0f, s, AllUtils.applyAlpha(this.method14318().method19729(), n8 * 0.6f));
             GL11.glPopMatrix();
         }
-        super.method14229(n);
+        super.method14229(partialTicks);
     }
     
     @Override

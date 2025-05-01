@@ -1,11 +1,6 @@
-// 
-// Decompiled by Procyon v0.6.0
-// 
-
 package com.mentalfrostbyte.jello.auth.agora;
 
-public class PlayerInfo
-{
+public class PlayerInfo {
     public String username;
     public String uuidString;
     public String accountId;

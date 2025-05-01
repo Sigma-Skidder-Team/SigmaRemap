@@ -23,20 +23,20 @@ public class Class4899 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.field20954.method14307(true);
         final int n2 = 10;
-        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 9.0f, n * 0.9f);
-        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 30.0f, n * 0.4f);
-        RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, (float)n2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.97f));
-        RenderUtil.drawImage((float)(this.x + 20), (float)(this.y + 20), 20.0f, 20.0f, ClientAssets.search, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
+        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 9.0f, partialTicks * 0.9f);
+        RenderUtil.method26913((float)(this.x + n2 / 2), (float)(this.y + n2 / 2), (float)(this.field20480 - n2), (float)(this.field20481 - n2), 30.0f, partialTicks * 0.4f);
+        RenderUtil.method26925((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, (float)n2, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.97f));
+        RenderUtil.drawImage((float)(this.x + 20), (float)(this.y + 20), 20.0f, 20.0f, ClientAssets.search, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f));
         final ArrayList<Module> method14713 = this.method14713();
         if (method14713.size() > 0) {
             if (this.method14715(this.field20955, method14713.get(0).getName())) {
-                RenderUtil.drawString(this.field20954.method14316(), (float)(this.x + 54), (float)(this.y + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length()) + (method14713.get(0).isEnabled() ? " - Enabled" : " - Disabled"), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f));
+                RenderUtil.drawString(this.field20954.method14316(), (float)(this.x + 54), (float)(this.y + 14), this.field20955 + method14713.get(0).getName().substring(this.field20955.length()) + (method14713.get(0).isEnabled() ? " - Enabled" : " - Disabled"), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f));
             }
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public ArrayList<Module> method14713() {
@@ -54,8 +54,8 @@ public class Class4899 extends Panel
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
+    public void onKeyPress(final int n) {
+        super.onKeyPress(n);
         if (n == 257) {
             final ArrayList<Module> method14713 = this.method14713();
             if (method14713.size() > 0) {

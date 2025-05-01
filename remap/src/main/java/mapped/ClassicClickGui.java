@@ -19,7 +19,7 @@ public class ClassicClickGui extends Class4800
         super("ClassicScreen");
         ClassicClickGui.field20455 = new Animation(250, 200, Direction.BACKWARDS);
         this.method14199();
-        ColorUtils.method19169();
+        AllUtils.method19169();
     }
     
     public void method14197() {
@@ -49,14 +49,14 @@ public class ClassicClickGui extends Class4800
     }
     
     @Override
-    public int method14201() {
+    public int getFPS() {
         final Minecraft field20454 = ClassicClickGui.field20454;
         return Minecraft.method5338();
     }
     
     @Override
     public JSONObject method14202(final JSONObject JSONObject) {
-        ColorUtils.method19172();
+        AllUtils.method19172();
         return super.method14202(JSONObject);
     }
     
@@ -66,17 +66,17 @@ public class ClassicClickGui extends Class4800
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             ClassicClickGui.field20454.displayGuiScreen(null);
         }
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, ClassicClickGui.field20455.calcPercent() * 0.35f));
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, ClassicClickGui.field20455.calcPercent() * 0.35f));
+        super.draw(partialTicks);
     }
     
     static {

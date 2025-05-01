@@ -26,7 +26,7 @@ public class Class4805 extends CustomGuiScreen
         this.addToList(new Class4834(this, "title", 0, n, 0, 0, ColorHelper.field25964, method13268, ClientFonts.JelloMedium40));
         n += 55;
         for (int i = 0; i < method13269.length(); ++i) {
-            this.addToList(new Class4834(this, "change" + i, 0, n, 0, 0, new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.getString(i), ClientFonts.JelloLight20));
+            this.addToList(new Class4834(this, "change" + i, 0, n, 0, 0, new ColorHelper(0, 0, 0, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f)), " - " + method13269.getString(i), ClientFonts.JelloLight20));
             n += 22;
         }
         n += 75;
@@ -34,10 +34,10 @@ public class Class4805 extends CustomGuiScreen
     }
     
     @Override
-    public void draw(float n) {
+    public void draw(float partialTicks) {
         this.drawBackground((int)((1.0f - MathUtils.lerp(this.field20522.calcPercent(), 0.17, 1.0, 0.51, 1.0)) * 100.0f));
-        this.method14228();
-        n *= this.field20522.calcPercent();
-        super.draw(n);
+        this.translate();
+        partialTicks *= this.field20522.calcPercent();
+        super.draw(partialTicks);
     }
 }

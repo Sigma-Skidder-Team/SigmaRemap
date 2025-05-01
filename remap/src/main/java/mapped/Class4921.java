@@ -9,14 +9,14 @@ import com.mentalfrostbyte.jello.ClientAssets;
 
 public class Class4921 extends Class4825
 {
-    private final Class4817 field21055;
+    private final ScrollablePane field21055;
     public final /* synthetic */ Class4827 field21056;
     
     public Class4921(final Class4827 field21056, final Class4827 class4827, final int n) {
         this.field21056 = field21056;
         super(class4827, "verticalScrollBarButton", 0, 0, n, 10, true);
         this.field20602 = true;
-        this.field21055 = (Class4817)class4827.getParent();
+        this.field21055 = (ScrollablePane)class4827.getParent();
         this.setListening(false);
     }
     
@@ -64,22 +64,22 @@ public class Class4921 extends Class4825
     }
     
     @Override
-    public void draw(float n) {
+    public void draw(float partialTicks) {
         final int n2 = 5;
-        n *= (this.field20593 ? 0.75f : (this.field20491 ? 0.7f : 0.3f));
+        partialTicks *= (this.field20593 ? 0.75f : (this.field20491 ? 0.7f : 0.3f));
         int field20478 = this.x;
         int field20479 = this.field20480;
         if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
             final int n3 = 0;
             field20479 -= 7;
             field20478 += 7;
-            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n3), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, n));
+            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n3), AllUtils.applyAlpha(ClientColors.MID_GREY.color, partialTicks));
         }
         else {
-            RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, n);
-            RenderUtil.method26904((float)field20478, (float)(this.y + this.field20481 - n2), (float)field20479, (float)n2, ClientAssets.verticalscrollbarbottom, n);
-            RenderUtil.method26876((float)field20478, (float)(this.y + n2), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * n));
+            RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, (float)n2, ClientAssets.verticalscrollbartop, partialTicks);
+            RenderUtil.method26904((float)field20478, (float)(this.y + this.field20481 - n2), (float)field20479, (float)n2, ClientAssets.verticalscrollbarbottom, partialTicks);
+            RenderUtil.method26876((float)field20478, (float)(this.y + n2), (float)(field20478 + field20479), (float)(this.y + this.method14278() - n2), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.45f * partialTicks));
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

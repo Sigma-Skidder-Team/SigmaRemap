@@ -345,7 +345,7 @@ public class RenderUtil
         RenderSystem.enableBlend();
         RenderSystem.disableTexture();
         RenderSystem.method30016(770, 771, 1, 0);
-        GL11.glColor4fv(ColorUtils.method19139(n4));
+        GL11.glColor4fv(AllUtils.method19139(n4));
         GL11.glEnable(2881);
         GL11.glBegin(4);
         GL11.glVertex2f(n + n3 / 2.0f, n2 + n3 / 2.0f);
@@ -353,7 +353,7 @@ public class RenderUtil
         GL11.glVertex2f(n - n3 / 2.0f, n2);
         GL11.glEnd();
         GL11.glLineWidth(2.0f);
-        GL11.glColor4fv(ColorUtils.method19139(n5));
+        GL11.glColor4fv(AllUtils.method19139(n5));
         GL11.glBegin(3);
         GL11.glVertex2f(n + n3 / 2.0f, n2 + n3 / 2.0f);
         GL11.glVertex2f(n + n3 / 2.0f, n2 - n3 / 2.0f);
@@ -711,10 +711,10 @@ public class RenderUtil
     }
     
     public static void method26904(final float n, final float n2, final float n3, final float n4, final Texture class7776, final float n5) {
-        drawImage(n, n2, n3, n4, class7776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5));
+        drawImage(n, n2, n3, n4, class7776, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5));
     }
     
-    public static void method26905(final float n, final float n2, final float n3, final float n4, final Texture class7776) {
+    public static void drawImage(final float n, final float n2, final float n3, final float n4, final Texture class7776) {
         drawImage(n, n2, n3, n4, class7776, -1);
     }
     
@@ -723,7 +723,7 @@ public class RenderUtil
         GL11.glTranslatef(n + n3 / 2.0f, n2 + n4 / 2.0f, 0.0f);
         GL11.glRotatef(n5, n6, n7, n8);
         GL11.glTranslatef(-n - n3 / 2.0f, -n2 - n4 / 2.0f, 0.0f);
-        method26905(n, n2, n3, n4, class7776);
+        drawImage(n, n2, n3, n4, class7776);
         GL11.glPopMatrix();
     }
     
@@ -938,7 +938,7 @@ public class RenderUtil
     
     public static void method26913(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
         GL11.glAlphaFunc(519, 0.0f);
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
+        final int method19118 = AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
         drawImage(n - n5, n2 - n5, n5, n5, ClientAssets.shadow_corner, method19118);
         drawImage(n + n3, n2 - n5, n5, n5, ClientAssets.shadow_corner_2, method19118);
         drawImage(n - n5, n2 + n4, n5, n5, ClientAssets.shadow_corner_3, method19118);
@@ -950,7 +950,7 @@ public class RenderUtil
     }
     
     public static void method26914(final float n, final float n2, final float n3, final float n4, final float n5, final float n6) {
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
+        final int method19118 = AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n6);
         method26900(n, n2, n5, n4, ClientAssets.shadow_right, method19118, false);
         method26900(n + n3 - n5, n2, n5, n4, ClientAssets.shadow_left, method19118, false);
         method26900(n, n2, n3, n5, ClientAssets.shadow_bottom, method19118, false);
@@ -1022,7 +1022,7 @@ public class RenderUtil
         endScissor();
     }
     
-    public static void method26917(final int n, final int n2, final int n3, final int n4, final int n5) {
+    public static void draw(final int n, final int n2, final int n3, final int n4, final int n5) {
         final int n6 = 36;
         final int n7 = 10;
         final int n8 = n6 - n7;
@@ -1249,7 +1249,7 @@ public class RenderUtil
         GL11.glGetFloatv(2982, floatBuffer2);
         GL11.glGetFloatv(2983, floatBuffer3);
         GL11.glGetIntegerv(2978, intBuffer);
-        if (!ColorUtils.method19167((float)n, (float)n2, (float)n3, floatBuffer2, floatBuffer3, intBuffer, floatBuffer)) {
+        if (!AllUtils.method19167((float)n, (float)n2, (float)n3, floatBuffer2, floatBuffer3, intBuffer, floatBuffer)) {
             return null;
         }
         return new double[] { floatBuffer.get(0) / ScreenManager.guiScale, (RenderUtil.field33582.field4667.field24887 - floatBuffer.get(1)) / ScreenManager.guiScale, floatBuffer.get(2) };

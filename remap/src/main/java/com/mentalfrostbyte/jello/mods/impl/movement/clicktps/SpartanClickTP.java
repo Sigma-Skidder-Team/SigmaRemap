@@ -27,7 +27,7 @@ public class SpartanClickTP extends Module
     
     @Override
     public void onDisable() {
-        ColorUtils.method19155(-0.08);
+        AllUtils.method19155(-0.08);
         MovementUtil.method23151(MovementUtil.method23136());
         SpartanClickTP.mc.timer.timerSpeed = 1.0f;
     }

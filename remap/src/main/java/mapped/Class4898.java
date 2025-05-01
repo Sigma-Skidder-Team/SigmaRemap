@@ -12,7 +12,7 @@ public class Class4898 extends Panel
 {
     public Animation field20949;
     private final int field20950;
-    private final Class4817 field20951;
+    private final ScrollablePane field20951;
     public static Class8784 field20952;
     private final LoadingIndicator field20953;
     
@@ -26,7 +26,7 @@ public class Class4898 extends Panel
         this.addToList(class4805 = new UIButton(this, "dupeButton", n3 - 25 - ClientFonts.JelloLight20.getWidth("Duplicate"), 0, ClientFonts.JelloLight20.getWidth("Duplicate"), 30, ColorHelper.field25964, "Duplicate", ClientFonts.JelloLight20));
         class4805.doThis((class4803, n) -> ((Class4889)this.getParent()).method14635());
         this.addToList(this.field20953 = new LoadingIndicator(this, "loading", (n3 - 30) / 2, 100, 30, 30));
-        this.addToList(this.field20951 = new Class4817(this, "defaultProfiles", 0, 40, n3, field20950 - 40));
+        this.addToList(this.field20951 = new ScrollablePane(this, "defaultProfiles", 0, 40, n3, field20950 - 40));
         Class4898.field20952 = new Class8784(list -> {
             this.field20953.setEnabled(false);
             final Class4889 class4889 = (Class4889)this.getParent();
@@ -66,16 +66,16 @@ public class Class4898 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         float n2 = MathUtils.lerp(this.field20949.calcPercent(), 0.1, 0.81, 0.14, 1.0);
         if (this.field20949.getDirection() == Direction.FORWARDS) {
             n2 = MathUtils.lerp(this.field20949.calcPercent(), 0.61, 0.01, 0.87, 0.16);
         }
         this.method14279((int)(this.field20950 * n2));
         if (this.field20949.calcPercent() != 0.0f) {
-            RenderUtil.drawImage((float)this.x, (float)(this.y + this.field20481), (float)this.field20480, 50.0f, ClientAssets.shadow_bottom, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20949.calcPercent() * n * 0.3f));
+            RenderUtil.drawImage((float)this.x, (float)(this.y + this.field20481), (float)this.field20480, 50.0f, ClientAssets.shadow_bottom, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, this.field20949.calcPercent() * partialTicks * 0.3f));
             RenderUtil.method26865(this);
-            RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(-723724, n));
+            RenderUtil.method26874((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(-723724, partialTicks));
             if (Class4898.field20952 != null) {
                 final Class8784 field20952 = Class4898.field20952;
                 if (Class8784.field36931 != null) {
@@ -85,7 +85,7 @@ public class Class4898 extends Panel
                     }
                 }
             }
-            super.draw(n);
+            super.draw(partialTicks);
             RenderUtil.endScissor();
         }
     }

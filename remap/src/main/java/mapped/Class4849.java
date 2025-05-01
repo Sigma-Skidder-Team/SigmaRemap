@@ -23,7 +23,7 @@ public class Class4849 extends Panel
     public int field20777;
     public int field20778;
     public String field20779;
-    public Class4817 field20780;
+    public ScrollablePane field20780;
     public Class8799 field20781;
     public Texture field20782;
     public boolean field20783;
@@ -45,13 +45,13 @@ public class Class4849 extends Panel
             this.field20780.method14391(0);
         });
         class4804.method14251();
-        this.addToList(this.field20780 = new Class4817(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
+        this.addToList(this.field20780 = new ScrollablePane(this, "mods", this.field20776 + n5, this.field20775 + n5 + 120, this.field20777 - n5 * 2, this.field20778 - n5 * 2 - 120));
         int n6 = 10;
         final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = ScreenManager.field37983.entrySet().iterator();
         while (iterator.hasNext()) {
             final Class8799 class4805 = new Class8799(iterator.next().getKey());
             final Class4868 class4806;
-            this.field20780.addToList(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.02f), -986896).method19734(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
+            this.field20780.addToList(class4806 = new Class4868(this.field20780, class4805.method30702(), 0, n6++ * 55, this.field20780.method14276(), 55, new ColorHelper(AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.02f), -986896).method19734(AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f)).method19736(Class2056.field11738), class4805.method30702()));
             class4806.doThis((class4869, n) -> {
                 final Iterator<Map.Entry<Class<? extends Screen>, String>> iterator = ScreenManager.field37983.entrySet().iterator();
                 while (iterator.hasNext()) {
@@ -187,24 +187,24 @@ public class Class4849 extends Panel
     }
     
     @Override
-    public void draw(float method35858) {
-        method35858 = this.field20774.calcPercent();
-        float n = Class7707.method24584(method35858, 0.0f, 1.0f, 1.0f);
+    public void draw(float partialTicks) {
+        partialTicks = this.field20774.calcPercent();
+        float n = Class7707.method24584(partialTicks, 0.0f, 1.0f, 1.0f);
         if (this.field20783) {
-            n = Class7791.method25030(method35858, 0.0f, 1.0f, 1.0f);
+            n = Class7791.method25030(partialTicks, 0.0f, 1.0f, 1.0f);
         }
         this.method14288(0.8f + n * 0.2f, 0.8f + n * 0.2f);
-        if (method35858 == 0.0f) {
+        if (partialTicks == 0.0f) {
             if (this.field20783) {
                 this.method14544(this.field20781);
             }
         }
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f * method35858));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f * partialTicks));
         super.method14227();
-        RenderUtil.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method35858));
+        RenderUtil.method26925((float)this.field20776, (float)this.field20775, (float)this.field20777, (float)this.field20778, 10.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         final int n2 = 30;
-        RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, method35858 * 0.7f));
-        super.draw(method35858);
+        RenderUtil.drawString(ClientFonts.JelloLight36, (float)(n2 + this.field20776), (float)(n2 + this.field20775), "Select mod to bind", AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, partialTicks * 0.7f));
+        super.draw(partialTicks);
     }
     
     public final void method14543(final Class7390 class7390) {

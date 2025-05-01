@@ -18,7 +18,7 @@ public class Class4888 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.field20897.changeDirection(this.method14308() ? Direction.BACKWARDS : Direction.FORWARDS);
         if (this.field20897.calcPercent() == 1.0f) {
             if (this.method14308()) {
@@ -31,8 +31,8 @@ public class Class4888 extends Panel
         GL11.glTranslatef((float)n2, (float)n3, 0.0f);
         GL11.glRotatef(this.field20897.calcPercent() * 360.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float)(-n2), (float)(-n3), 0.0f);
-        RenderUtil.method26905((float)this.x, (float)this.y, 20.0f, 20.0f, this.method14308() ? UglyClickGUICategory.gear2 : UglyClickGUICategory.gear);
+        RenderUtil.drawImage((float)this.x, (float)this.y, 20.0f, 20.0f, this.method14308() ? UglyClickGUICategory.gear2 : UglyClickGUICategory.gear);
         GL11.glPopMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

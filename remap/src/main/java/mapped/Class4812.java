@@ -20,14 +20,14 @@ import java.util.Iterator;
 public class Class4812 extends CustomGuiScreen
 {
     public Animation animation;
-    public Class4817 field20582;
+    public ScrollablePane field20582;
     private static JSONArray cachedChangelog;
     
     public Class4812(final CustomGuiScreen customGuiScreen, final String s, final int n, final int n2, final int n3, final int n4) {
         super(customGuiScreen, s, n, n2, n3, n4);
         this.animation = new Animation(380, 200, Direction.FORWARDS);
         this.setListening(false);
-        (this.field20582 = new Class4817(this, "scroll", 100, 200, n3 - 200, n4 - 200)).method14397(true);
+        (this.field20582 = new ScrollablePane(this, "scroll", 100, 200, n3 - 200, n4 - 200)).method14397(true);
         this.method14242(this.field20582);
         new Thread(() -> this.method14363(this.getChangelog())).start();
     }
@@ -69,9 +69,9 @@ public class Class4812 extends CustomGuiScreen
             fadeFactor = 1.0f;
         }
         this.drawBackground((int)(150.0f * (1.0f - fadeFactor)));
-        this.method14228();
-        RenderUtil.drawString(ClientFonts.JelloLight36, 100.0f, 100.0f, "Changelog", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
-        RenderUtil.drawString(ClientFonts.JelloLight25, 100.0f, 150.0f, "You're currently using Sigma 5.0.0", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
+        this.translate();
+        RenderUtil.drawString(ClientFonts.JelloLight36, 100.0f, 100.0f, "Changelog", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.drawString(ClientFonts.JelloLight25, 100.0f, 150.0f, "You're currently using Sigma 5.0.0", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
         super.draw(partialTicks);
     }
     

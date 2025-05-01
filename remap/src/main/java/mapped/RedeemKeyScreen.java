@@ -6,7 +6,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.ClientFonts;
-import com.mentalfrostbyte.jello.auth.CaptchaChecker;
+import com.mentalfrostbyte.jello.auth.Challenge;
 
 public class RedeemKeyScreen extends CustomGuiScreen
 {
@@ -27,9 +27,9 @@ public class RedeemKeyScreen extends CustomGuiScreen
         this.captchaField.setFont(ClientFonts.JelloLight18);
         this.captchaField.setEnabled(false);
         redeemButton.doThis((var2x, var3x) -> new Thread(() -> {
-            final CaptchaChecker captcha = Client.getInstance().getNetworkManager().getChallengeResponse();
+            final Challenge captcha = Client.getInstance().getNetworkManager().getChallengeResponse();
             if (captcha != null) {
-                captcha.setChallengeAnswer(this.captchaField.getTypedText());
+                captcha.setAnswer(this.captchaField.getTypedText());
             }
             this.field20523 = Client.getInstance().getNetworkManager().redeemPremium(redeemBox.getTypedText(), Client.getInstance().getNetworkManager().getChallengeResponse());
             if (this.field20523 == null) {
@@ -46,12 +46,12 @@ public class RedeemKeyScreen extends CustomGuiScreen
         this.animation.changeDirection(this.isHovered() ? Direction.BACKWARDS : Direction.FORWARDS);
         partialTicks = 1.0f;
         partialTicks *= this.animation.calcPercent();
-        final CaptchaChecker captchaChecker = Client.getInstance().getNetworkManager().getChallengeResponse();
-        if (captchaChecker != null) {
-            this.captchaField.setEnabled(captchaChecker.method30471());
-            if (captchaChecker.method30470() != null) {
+        final Challenge challenge = Client.getInstance().getNetworkManager().getChallengeResponse();
+        if (challenge != null) {
+            this.captchaField.setEnabled(challenge.isCaptcha());
+            if (challenge.getCaptcha() != null) {
                 RenderUtil.startScissor((float)(this.x + 295), (float)(this.y + 280), 190.0f, 50.0f);
-                RenderUtil.drawImage((float)(this.x + 316), (float)(this.y + 255), 190.0f, 190.0f, captchaChecker.method30470(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+                RenderUtil.drawImage((float)(this.x + 316), (float)(this.y + 255), 190.0f, 190.0f, challenge.getCaptcha(), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
                 RenderUtil.endScissor();
             }
         }
@@ -60,10 +60,10 @@ public class RedeemKeyScreen extends CustomGuiScreen
             method19345 = 1.0f;
         }
         this.drawBackground((int)(150.0f * (1.0f - method19345)));
-        this.method14228();
-        RenderUtil.drawString(ClientFonts.JelloLight36, 100.0f, 100.0f, "Redeem Premium", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
-        RenderUtil.drawString(ClientFonts.JelloLight25, 100.0f, 150.0f, "Visit http://sigmaclient.info for more info", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
-        RenderUtil.drawString(ClientFonts.JelloLight18, 100.0f, 263.0f, this.field20523, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
+        this.translate();
+        RenderUtil.drawString(ClientFonts.JelloLight36, 100.0f, 100.0f, "Redeem Premium", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.drawString(ClientFonts.JelloLight25, 100.0f, 150.0f, "Visit http://sigmaclient.info for more info", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
+        RenderUtil.drawString(ClientFonts.JelloLight18, 100.0f, 263.0f, this.field20523, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
         super.draw(partialTicks);
     }
 }

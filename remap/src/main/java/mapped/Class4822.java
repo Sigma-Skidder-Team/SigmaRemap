@@ -17,7 +17,7 @@ import org.newdawn.slick.TrueTypeFont;
 import java.util.Iterator;
 import java.util.HashMap;
 
-public class Class4822 extends Class4817
+public class Class4822 extends ScrollablePane
 {
     private final Module field20634;
     public TrueTypeFont field20496;
@@ -163,14 +163,14 @@ public class Class4822 extends Class4817
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         int n2 = Math.round(this.method14278() * Class8468.method28270(this.field20635.calcPercent(), 0.0f, 1.0f, 1.0f));
         if (this.field20635.getDirection() == Direction.FORWARDS) {
             n2 = Math.round(this.method14278() * Class8468.method28269(this.field20635.calcPercent(), 0.0f, 1.0f, 1.0f));
         }
         RenderUtil.startScissor((float)this.x, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2);
         RenderUtil.method26874((float)this.x, (float)(70 + this.method14278() - n2), (float)this.method14276(), (float)n2, -2631721);
-        super.draw(n);
+        super.draw(partialTicks);
         RenderUtil.endScissor();
     }
 }

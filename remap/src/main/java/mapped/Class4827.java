@@ -32,8 +32,8 @@ public class Class4827 extends Class4825 implements Class4828
     @Override
     public void method14235(final float n) {
         super.method14235(n);
-        if ((this.field20475 != null && this.field20475.method14237(this.method14320(), this.method14321(), false)) || ((Class4817)this.field20475).field20614) {
-            final float n2 = (float)((Class4817)this.getParent()).method14396().method14278();
+        if ((this.field20475 != null && this.field20475.method14237(this.method14320(), this.method14321(), false)) || ((ScrollablePane)this.field20475).field20614) {
+            final float n2 = (float)((ScrollablePane)this.getParent()).method14396().method14278();
             final float n3 = (float)this.getParent().method14278();
             final float n4 = (float)this.method14278();
             if (n2 == 0.0f) {
@@ -42,7 +42,7 @@ public class Class4827 extends Class4825 implements Class4828
             if (n3 / n2 >= 1.0f) {
                 return;
             }
-            this.field20650 -= Math.round((n >= 0.0f) ? (((Class4817)this.field20475).field20613 * n) : (1.0f * ((Class4817)this.field20475).field20613 * n));
+            this.field20650 -= Math.round((n >= 0.0f) ? (((ScrollablePane)this.field20475).field20613 * n) : (1.0f * ((ScrollablePane)this.field20475).field20613 * n));
             this.field20654.reset();
             this.field20654.start();
         }
@@ -72,7 +72,7 @@ public class Class4827 extends Class4825 implements Class4828
         }
         this.field20651 = field20651 + n3;
         this.field20651 = Math.min(Math.max(0.0f, this.field20651), 1.0f);
-        final float n4 = (float)((Class4817)this.getParent()).method14396().method14278();
+        final float n4 = (float)((ScrollablePane)this.getParent()).method14396().method14278();
         final float n5 = (float)this.getParent().method14278();
         final float n6 = (float)this.method14278();
         boolean b = false;
@@ -93,24 +93,24 @@ public class Class4827 extends Class4825 implements Class4828
     }
     
     @Override
-    public void draw(float n) {
-        n *= this.field20651;
+    public void draw(float partialTicks) {
+        partialTicks *= this.field20651;
         final int n2 = 5;
-        final int method19118 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f * n);
+        final int method19118 = AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f * partialTicks);
         int field20478 = this.x;
         int field20479 = this.field20480;
         if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
             final int n3 = 0;
             field20479 -= 8;
             field20478 += 8;
-            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.field20481 - n3), ColorUtils.applyAlpha(ClientColors.MID_GREY.color, 0.1f * n));
+            RenderUtil.method26876((float)field20478, (float)(this.y + n3), (float)(field20478 + field20479), (float)(this.y + this.field20481 - n3), AllUtils.applyAlpha(ClientColors.MID_GREY.color, 0.1f * partialTicks));
         }
         else {
-            RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * n);
-            RenderUtil.method26904((float)field20478, (float)(this.y + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * n);
+            RenderUtil.method26904((float)field20478, (float)this.y, (float)field20479, 5.0f, ClientAssets.verticalscrollbartop, 0.45f * partialTicks);
+            RenderUtil.method26904((float)field20478, (float)(this.y + this.field20481 - n2), (float)field20479, 5.0f, ClientAssets.verticalscrollbarbottom, 0.45f * partialTicks);
             RenderUtil.method26876((float)field20478, (float)(this.y + n2), (float)(field20478 + field20479), (float)(this.y + this.field20481 - n2), method19118);
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     @Override
@@ -121,11 +121,11 @@ public class Class4827 extends Class4825 implements Class4828
                 final int n4 = n2 - this.method14281();
                 if (n4 <= this.field20653.method14274() + this.field20653.method14278()) {
                     if (n4 < this.field20653.method14274()) {
-                        this.field20650 -= (int)(((Class4817)this.field20475).method14396().method14278() / 4.0f);
+                        this.field20650 -= (int)(((ScrollablePane)this.field20475).method14396().method14278() / 4.0f);
                     }
                 }
                 else {
-                    this.field20650 += (int)(((Class4817)this.field20475).method14396().method14278() / 4.0f);
+                    this.field20650 += (int)(((ScrollablePane)this.field20475).method14396().method14278() / 4.0f);
                 }
             }
             return false;

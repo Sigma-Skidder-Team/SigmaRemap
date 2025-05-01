@@ -34,25 +34,25 @@ public class Class4813 extends CustomGuiScreen
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14366(this.x + (this.method14276() - 202) / 2, this.y + 10, n);
+    public void draw(final float partialTicks) {
+        this.method14366(this.x + (this.method14276() - 202) / 2, this.y + 10, partialTicks);
         final StringBuilder append = new StringBuilder().append("You're currently using Sigma ");
         Client.getInstance();
         final String string = append.append("5.0.0b6").toString();
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.x + (this.method14276() - ClientFonts.JelloLight20.getWidth(string)) / 2), (float)(this.y + 70), string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * n));
-        final String string2 = "Click GUI is currently bound to: " + ColorUtils.method19166(Client.getInstance().moduleManager().getJelloTouch().method21959(ClickGuiHolder.class)) + " Key";
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(string2)) / 2), (float)(this.method14274() + this.method14278() - 180), string2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * n));
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.x + (this.method14276() - ClientFonts.JelloLight20.getWidth(string)) / 2), (float)(this.y + 70), string, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * partialTicks));
+        final String string2 = "Click GUI is currently bound to: " + AllUtils.method19166(Client.getInstance().moduleManager().getJelloTouch().method21959(ClickGuiHolder.class)) + " Key";
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(string2)) / 2), (float)(this.method14274() + this.method14278() - 180), string2, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * partialTicks));
         final String s = "Configure all your keybinds in the keybind manager!";
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight14.getWidth(s)) / 2), (float)(this.method14274() + this.method14278() - 150), s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * n));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight14.getWidth(s)) / 2), (float)(this.method14274() + this.method14278() - 150), s, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.4f * partialTicks));
         final String s2 = "GUI Blur: ";
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(s2)) / 2 - 114), (float)(this.method14274() + this.method14278() - 221), s2, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * n));
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(s2)) / 2 - 114), (float)(this.method14274() + this.method14278() - 221), s2, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * partialTicks));
         final String s3 = "GPU Accelerated: ";
-        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(s3)) / 2 + 52), (float)(this.method14274() + this.method14278() - 221), s3, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * n));
-        super.draw(n);
+        RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.method14272() + (this.method14276() - ClientFonts.JelloLight20.getWidth(s3)) / 2 + 52), (float)(this.method14274() + this.method14278() - 221), s3, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * partialTicks));
+        super.draw(partialTicks);
     }
     
     private void method14366(final int n, final int n2, final float n3) {
-        RenderUtil.drawString(ClientFonts.JelloMedium40, (float)n, (float)(n2 + 1), "Jello", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3));
-        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + 95), (float)(n2 + 14), "for Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.86f * n3));
+        RenderUtil.drawString(ClientFonts.JelloMedium40, (float)n, (float)(n2 + 1), "Jello", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3));
+        RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + 95), (float)(n2 + 14), "for Sigma", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.86f * n3));
     }
 }

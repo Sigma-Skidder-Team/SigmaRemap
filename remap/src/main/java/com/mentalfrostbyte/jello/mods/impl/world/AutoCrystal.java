@@ -96,10 +96,10 @@ public class AutoCrystal extends PremiumModule
         final TreeMap treeMap = new TreeMap();
         for (final BlockPos value : this.method10656(class399)) {
             treeMap.put(this.method10655(class399, value), value);
-            ColorUtils.method19106("Dmg: " + this.method10655(class399, value));
+            AllUtils.method19106("Dmg: " + this.method10655(class399, value));
         }
         if (!treeMap.isEmpty()) {
-            ColorUtils.method19106("Dmgs: " + treeMap);
+            AllUtils.method19106("Dmgs: " + treeMap);
             final BlockPos class400 = treeMap.lastEntry().getValue();
             final ArrayList list = new ArrayList();
             for (final Map.Entry entry : treeMap.entrySet()) {
@@ -184,7 +184,7 @@ public class AutoCrystal extends PremiumModule
                 }
                 else {
                     final float[] method10659 = Class8845.method30912(method10658.get(0));
-                    final EntityRayTraceResult method10660 = ColorUtils.rayTraceFromPlayer(updateWalkingEvent.method17042(), updateWalkingEvent.method17040(), 5.0f, 0.0);
+                    final EntityRayTraceResult method10660 = AllUtils.rayTraceFromPlayer(updateWalkingEvent.method17042(), updateWalkingEvent.method17040(), 5.0f, 0.0);
                     if (method10660 == null || !method10658.get(0).equals(method10660.getEntity())) {
                         updateWalkingEvent.method17043(method10659[0]);
                         updateWalkingEvent.method17041(method10659[1]);
@@ -199,7 +199,7 @@ public class AutoCrystal extends PremiumModule
         while (iterator.hasNext()) {
             final Map.Entry<K, Integer> entry = (Map.Entry<K, Integer>)iterator.next();
             if (entry.getValue() == 2) {
-                ColorUtils.method19165((Entity)entry.getKey(), true);
+                AllUtils.method19165((Entity)entry.getKey(), true);
             }
             entry.setValue(entry.getValue() - 1);
             if (entry.getValue() != 0) {

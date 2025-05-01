@@ -45,8 +45,8 @@ public class Class4868 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        final int method19118 = ColorUtils.applyAlpha(ColorUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * n);
+    public void draw(final float partialTicks) {
+        final int method19118 = AllUtils.applyAlpha(AllUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(partialTicks * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * partialTicks);
         if (this.field20847 <= 0) {
             RenderUtil.method26876((float)this.method14272(), (float)this.method14274(), (float)(this.method14272() + this.method14276()), (float)(this.method14274() + this.method14278()), method19118);
         }
@@ -56,9 +56,9 @@ public class Class4868 extends Panel
         final int n2 = this.method14272() + ((this.field20497.method19735() != Class2056.field11738) ? 0 : ((this.field20497.method19735() != Class2056.field11736) ? (this.method14276() / 2) : this.method14276()));
         final int n3 = this.method14274() + ((this.field20497.method19737() != Class2056.field11738) ? 0 : ((this.field20497.method19737() != Class2056.field11737) ? (this.method14278() / 2) : this.method14278()));
         if (this.getTypedText() != null) {
-            RenderUtil.method26890(this.method14316(), (float)(this.field20846 + n2), (float)n3, this.getTypedText(), ColorUtils.applyAlpha(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26890(this.method14316(), (float)(this.field20846 + n2), (float)n3, this.getTypedText(), AllUtils.applyAlpha(this.field20497.method19733(), partialTicks), this.field20497.method19735(), this.field20497.method19737());
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public void method14603(final int field20846) {

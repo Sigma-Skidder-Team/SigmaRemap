@@ -38,7 +38,7 @@ public class NoSlow extends Module
                         if (!this.field15679) {
                             if (!method9898) {
                                 if (this.getStringSettingValueByName("Mode").equals("NCP")) {
-                                    ColorUtils.method19163();
+                                    AllUtils.method19163();
                                     this.field15679 = true;
                                     return;
                                 }
@@ -63,7 +63,7 @@ public class NoSlow extends Module
                 if (NoSlow.mc.gameSettings.field23445.method1056()) {
                     if (!method9898) {
                         if (b) {
-                            ColorUtils.method19164();
+                            AllUtils.method19164();
                         }
                         this.field15679 = false;
                     }

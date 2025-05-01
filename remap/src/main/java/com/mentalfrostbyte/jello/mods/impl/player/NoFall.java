@@ -38,8 +38,8 @@ public class NoFall extends Module
                 if (NoFall.mc.player.fallDistance > 2.0 + MovementUtil.method23140() * 0.5) {
                     if (!NoFall.mc.player.onGround) {
                         if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
-                            if (ColorUtils.method19146()) {
-                                final double[] method19177 = ColorUtils.method19177();
+                            if (AllUtils.method19146()) {
+                                final double[] method19177 = AllUtils.method19177();
                                 final int length = method19177.length;
                                 double a = Double.MAX_VALUE;
                                 for (final double n : method19177) {
@@ -54,7 +54,7 @@ public class NoFall extends Module
                                         if (a2 < n2) {
                                             if (NoFall.mc.world.method6981(NoFall.mc.player, NoFall.mc.player.boundingBox.offset(class5717.method16972(), class5717.method16974() + a2 + n3, class5717.method16976())).count() != 0L) {
                                                 class5717.method16975(class5717.method16974() + (a2 - 1.0E-5));
-                                                ColorUtils.method19155(class5717.method16974());
+                                                AllUtils.method19155(class5717.method16974());
                                                 a = Double.MAX_VALUE;
                                                 break;
                                             }
@@ -66,7 +66,7 @@ public class NoFall extends Module
                                 }
                                 if (Math.abs(a) < 0.1) {
                                     class5717.method16975(class5717.method16974() + a);
-                                    ColorUtils.method19155(class5717.method16974());
+                                    AllUtils.method19155(class5717.method16974());
                                 }
                             }
                         }
@@ -85,7 +85,7 @@ public class NoFall extends Module
             return;
         }
         String method9887 = this.getStringSettingValueByName("Mode");
-        if (!ColorUtils.method19146() && method9887.equals("Hypixel")) {
+        if (!AllUtils.method19146() && method9887.equals("Hypixel")) {
             method9887 = "OldHypixel";
         }
         final String s = method9887;
@@ -94,7 +94,7 @@ public class NoFall extends Module
                 if (updateWalkingEvent.isPre()) {
                     break;
                 }
-                if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
+                if (AllUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
                     this.field16113 = 0.0;
                     return;
                 }
@@ -112,7 +112,7 @@ public class NoFall extends Module
                 if (!updateWalkingEvent.isPre()) {
                     break;
                 }
-                if (ColorUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
+                if (AllUtils.method19160(NoFall.mc.player, 1.0E-4f)) {
                     this.field16113 = 0.0;
                     return;
                 }
@@ -133,8 +133,8 @@ public class NoFall extends Module
                 if (!updateWalkingEvent.isPre()) {
                     break;
                 }
-                if (NoFall.mc.player.getMotion().y < 0.0 && !NoFall.mc.player.onGround && ColorUtils.method19146()) {
-                    final double[] method9888 = ColorUtils.method19177();
+                if (NoFall.mc.player.getMotion().y < 0.0 && !NoFall.mc.player.onGround && AllUtils.method19146()) {
+                    final double[] method9888 = AllUtils.method19177();
                     for (int length = method9888.length, i = 0; i < length; ++i) {
                         if ((int) updateWalkingEvent.method17036() - updateWalkingEvent.method17036() + method9888[i] == 0.0) {
                             updateWalkingEvent.method17045(true);

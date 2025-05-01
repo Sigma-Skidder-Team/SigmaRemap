@@ -49,7 +49,7 @@ public class Class4940 extends Class4800
             }
             else {
                 final int[] method14615 = this.field21213.method14615(this.field21213.field20877);
-                (this.field21212 = new Class4850(class4940, "popover", this.field21213.method14272() + method14615[0], this.field21213.method14274() + method14615[1], this.field21213.field20877, ColorUtils.method19166(this.field21213.field20877))).method14516(class4841 -> this.method14875(this.field21213));
+                (this.field21212 = new Class4850(class4940, "popover", this.field21213.method14272() + method14615[0], this.field21213.method14274() + method14615[1], this.field21213.field20877, AllUtils.method19166(this.field21213.field20877))).method14516(class4841 -> this.method14875(this.field21213));
                 this.field21212.method14550(class4850 -> {
                     class4850.method14301(false);
                     this.method14877();
@@ -57,7 +57,7 @@ public class Class4940 extends Class4800
                 this.field21217 = this.field21213.field20877;
             }
         });
-        ColorUtils.method19169();
+        AllUtils.method19169();
     }
     
     public static ArrayList<Class8799> method14874() {
@@ -112,28 +112,28 @@ public class Class4940 extends Class4800
     }
     
     @Override
-    public int method14201() {
+    public int getFPS() {
         return 60;
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
-            ColorUtils.method19172();
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
+            AllUtils.method19172();
             Class4940.field21209.displayGuiScreen(null);
         }
     }
     
     @Override
-    public void draw(float n) {
-        n = Math.min(200L, new Date().getTime() - this.field21211.getTime()) / 200.0f;
-        final float method24584 = Class7707.method24584(n, 0.0f, 1.0f, 1.0f);
+    public void draw(float partialTicks) {
+        partialTicks = Math.min(200L, new Date().getTime() - this.field21211.getTime()) / 200.0f;
+        final float method24584 = Class7707.method24584(partialTicks, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * n));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * partialTicks));
         super.method14227();
         RenderUtil.drawString(ClientFonts.JelloMedium40, (float)((this.field20480 - 1060) / 2), (float)((this.field20481 - 357) / 2 - 90), "Keybind Manager", ClientColors.LIGHT_GREYISH_BLUE.color);
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     static {

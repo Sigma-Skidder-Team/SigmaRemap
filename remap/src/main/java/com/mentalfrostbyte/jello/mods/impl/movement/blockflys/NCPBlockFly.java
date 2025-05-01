@@ -90,7 +90,7 @@ public class NCPBlockFly extends Module
         NCPBlockFly.mc.timer.timerSpeed = 1.0f;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft")) {
             if (this.field15626 == 0) {
-                ColorUtils.method19155(-0.0789);
+                AllUtils.method19155(-0.0789);
             }
         }
     }
@@ -241,7 +241,7 @@ public class NCPBlockFly extends Module
         if (!this.isEnabled() || this.field15628.method10281() == 0) {
             return;
         }
-        if (NCPBlockFly.mc.player.onGround || ColorUtils.method19160(NCPBlockFly.mc.player, 0.01f)) {
+        if (NCPBlockFly.mc.player.onGround || AllUtils.method19160(NCPBlockFly.mc.player, 0.01f)) {
             this.field15631 = NCPBlockFly.mc.player.posY;
         }
         if (this.method9914().getBooleanValueFromSettingName("No Sprint")) {
@@ -259,7 +259,7 @@ public class NCPBlockFly extends Module
         final String method9887 = this.getStringSettingValueByName("Speed Mode");
         switch (method9887) {
             case "Jump": {
-                if (NCPBlockFly.mc.player.onGround && ColorUtils.method19114() && !NCPBlockFly.mc.player.method1809() && !this.field15629) {
+                if (NCPBlockFly.mc.player.onGround && AllUtils.method19114() && !NCPBlockFly.mc.player.method1809() && !this.field15629) {
                     this.field15630 = false;
                     NCPBlockFly.mc.player.method2725();
                     ((Speed) Client.getInstance().moduleManager().getModuleByClass(Speed.class)).method10269();
@@ -285,7 +285,7 @@ public class NCPBlockFly extends Module
                     NCPBlockFly.mc.timer.timerSpeed = 1.0f;
                 }
                 else if (NCPBlockFly.mc.player.onGround) {
-                    if (ColorUtils.method19114() && !NCPBlockFly.mc.player.method1809() && !this.field15629) {
+                    if (AllUtils.method19114() && !NCPBlockFly.mc.player.method1809() && !this.field15629) {
                         class5717.method16975(1.00000000000001);
                     }
                 }
@@ -319,13 +319,13 @@ public class NCPBlockFly extends Module
                 else if (this.field15626 == 6) {
                     class5717.method16975(-1.023456987345906);
                 }
-                if (!ColorUtils.method19114()) {
+                if (!AllUtils.method19114()) {
                     n2 = 0.0;
                 }
                 if (NCPBlockFly.mc.player.fallDistance < 1.0f) {
                     MovementUtil.method23153(class5717, n2, method9888, method9888, 360.0f);
                 }
-                ColorUtils.method19155(class5717.method16974());
+                AllUtils.method19155(class5717.method16974());
                 break;
             }
             case "Slow": {
@@ -368,7 +368,7 @@ public class NCPBlockFly extends Module
     public void method10050(final Class5722 class5722) {
         if (this.isEnabled() && this.field15630) {
             if (this.method9914().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
-                if (!ColorUtils.method19114() || this.method9914().getBooleanValueFromSettingName("Tower while moving")) {
+                if (!AllUtils.method19114() || this.method9914().getBooleanValueFromSettingName("Tower while moving")) {
                     class5722.setCancelled(true);
                 }
             }

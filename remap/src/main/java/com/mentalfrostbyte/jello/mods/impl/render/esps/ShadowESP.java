@@ -55,7 +55,7 @@ public class ShadowESP extends Module
     
     private void method10720() {
         ShadowESP.mc.world.field10072.forEach((p1, class399) -> {
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
+            AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f);
             if (this.method10725(class399)) {
                 final double field38854 = Class8591.method29094(class399).field38854;
                 final double field38855 = Class8591.method29094(class399).field38855;

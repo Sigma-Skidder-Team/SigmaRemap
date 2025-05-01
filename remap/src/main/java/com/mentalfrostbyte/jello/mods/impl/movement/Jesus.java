@@ -130,7 +130,7 @@ public class Jesus extends Module
                     }
                     if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
                         if (this.field15855 > 0) {
-                            if (ColorUtils.method19160(Jesus.mc.player, 0.001f)) {
+                            if (AllUtils.method19160(Jesus.mc.player, 0.001f)) {
                                 this.field15855 = 0;
                             }
                             else {
@@ -160,7 +160,7 @@ public class Jesus extends Module
                             }
                         }
                     }
-                    ColorUtils.method19155(class5717.method16974());
+                    AllUtils.method19155(class5717.method16974());
                 }
             }
         }

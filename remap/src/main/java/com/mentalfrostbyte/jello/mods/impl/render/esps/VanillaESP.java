@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class2068;
 import mapped.EventPlayerTick;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.EventListener;
 import net.minecraft.entity.Entity;
 
@@ -26,9 +26,9 @@ public class VanillaESP extends Module
         if (this.isEnabled()) {
             for (final Entity class5744 : VanillaESP.mc.world.method6806()) {
                 if (!Client.getInstance().getBotManager().isBot(class5744)) {
-                    final boolean b = ColorUtils.method19174(class5744) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
-                    final boolean b2 = ColorUtils.method19174(class5744) == Class2068.field11838 && this.method9914().getBooleanValueFromSettingName("Show Mobs");
-                    final boolean b3 = ColorUtils.method19174(class5744) == Class2068.field11840 && this.method9914().getBooleanValueFromSettingName("Show Passives");
+                    final boolean b = AllUtils.method19174(class5744) == Class2068.field11839 && this.method9914().getBooleanValueFromSettingName("Show Players");
+                    final boolean b2 = AllUtils.method19174(class5744) == Class2068.field11838 && this.method9914().getBooleanValueFromSettingName("Show Mobs");
+                    final boolean b3 = AllUtils.method19174(class5744) == Class2068.field11840 && this.method9914().getBooleanValueFromSettingName("Show Passives");
                     final boolean b4 = !class5744.method1823() || this.method9914().getBooleanValueFromSettingName("Show Invisibles");
                     Label_0222: {
                         if (!b2) {

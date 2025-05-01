@@ -30,7 +30,7 @@ public class HawkFly extends Module { //Hawk tuah
     public void onDisable() {
         MovementUtil.method23151(0.0);
         if (HawkFly.mc.player.getMotion().y > 0.0) {
-            ColorUtils.method19155(-0.0789);
+            AllUtils.method19155(-0.0789);
         }
     }
 
@@ -47,9 +47,9 @@ public class HawkFly extends Module { //Hawk tuah
                 class5717.method16975(0.015);
                 MovementUtil.method23149(class5717, n);
             }
-            ColorUtils.method19155(class5717.method16974());
-            ColorUtils.method19154(class5717.method16972());
-            ColorUtils.method19156(class5717.method16976());
+            AllUtils.method19155(class5717.method16974());
+            AllUtils.method19154(class5717.method16972());
+            AllUtils.method19156(class5717.method16976());
         }
     }
 

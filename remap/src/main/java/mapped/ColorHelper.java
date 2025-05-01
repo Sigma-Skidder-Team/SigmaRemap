@@ -16,7 +16,7 @@ public class ColorHelper
     public Class2056 field25970;
     
     public ColorHelper(final int n) {
-        this(n, ColorUtils.method19121(n, 0.05f));
+        this(n, AllUtils.method19121(n, 0.05f));
     }
     
     public ColorHelper(final int n, final int n2) {

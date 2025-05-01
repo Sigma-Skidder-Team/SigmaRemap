@@ -44,7 +44,7 @@ public class Class4855 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.field20804.changeDirection(Direction.BACKWARDS);
         if (this.field20804.calcPercent() == 1.0f) {
             this.field20804 = new Animation(1500, 0);
@@ -56,19 +56,19 @@ public class Class4855 extends Panel
         final float n4 = method14567[1];
         final float n5 = method14567[2];
         final float n6 = method14567[3];
-        RenderUtil.method26925((float)(this.x + field20803), (float)(this.y + field20803), (float)(this.field20480 - field20803 * 2), (float)(this.field20481 - field20803 * 2), 3.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * n));
+        RenderUtil.method26925((float)(this.x + field20803), (float)(this.y + field20803), (float)(this.field20480 - field20803 * 2), (float)(this.field20481 - field20803 * 2), 3.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * partialTicks));
         final ArrayList list = new ArrayList();
         list.add(new Class7202(0.0, 0.0));
         list.add(new Class7202(n3, n4));
         list.add(new Class7202(n5, n6));
         list.add(new Class7202(1.0, 1.0));
         final MathUtils mathUtils = new MathUtils(1.0f / n2 * 2.0f);
-        RenderUtil.method26888((float)(this.x + n2 * mathUtils.method31031(list, Math.min(0.8f, this.field20804.calcPercent()) * 1.25f) + field20803), (float)(this.y - field20803 / 2 + this.field20481), 14.0f, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.color, n));
+        RenderUtil.method26888((float)(this.x + n2 * mathUtils.method31031(list, Math.min(0.8f, this.field20804.calcPercent()) * 1.25f) + field20803), (float)(this.y - field20803 / 2 + this.field20481), 14.0f, AllUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.color, partialTicks));
         final List<Class7202> method14568 = mathUtils.method31032(list);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)(this.x + field20803), (float)(this.y + field20803), 0.0f);
         GL11.glLineWidth(1.0f);
-        GL11.glColor4d(0.0, 0.0, 0.0, 0.6f * n);
+        GL11.glColor4d(0.0, 0.0, 0.0, 0.6f * partialTicks);
         GL11.glAlphaFunc(519, 0.0f);
         RenderSystem.enableBlend();
         RenderSystem.disableTexture();
@@ -94,6 +94,6 @@ public class Class4855 extends Panel
         RenderSystem.disableBlend();
         RenderSystem.enableTexture();
         GL11.glPopMatrix();
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

@@ -91,7 +91,7 @@ public class MainMenuScreen extends Class4800 {
     }
 
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         float n2 = Class8468.method28270(this.field21094.calcPercent(), 0.0f, 1.0f, 1.0f);
         if (this.field21094.getDirection() == Direction.FORWARDS) {
             n2 = Class8468.method28269(this.field21094.calcPercent(), 0.0f, 1.0f, 1.0f);
@@ -120,22 +120,22 @@ public class MainMenuScreen extends Class4800 {
             final int n11 = (int) (600.0f * n10);
             final int n12 = (int) (450.0f * n10);
             final int n13 = 0;
-            RenderUtil.method26905(this.field21089 - n11 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n11), (float) (this.method14278() + 114), ClientAssets.background);
-            RenderUtil.method26905(this.field21089 - n12 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n12), (float) (this.method14278() + 114), ClientAssets.middle);
+            RenderUtil.drawImage(this.field21089 - n11 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n11), (float) (this.method14278() + 114), ClientAssets.background);
+            RenderUtil.drawImage(this.field21089 - n12 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n12), (float) (this.method14278() + 114), ClientAssets.middle);
             for (final CustomGuiScreen customGuiScreen : this.field21098) {
                 GL11.glPushMatrix();
-                customGuiScreen.draw(n);
+                customGuiScreen.draw(partialTicks);
                 GL11.glPopMatrix();
             }
-            RenderUtil.method26905(this.field21089 - n13 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n13), (float) (this.method14278() + 114), ClientAssets.foreground);
+            RenderUtil.drawImage(this.field21089 - n13 * n7, (float) this.field21088, (float) (this.method14276() * 2 + n13), (float) (this.method14278() + 114), ClientAssets.foreground);
             final Texture field21090 = ClientAssets.logo_large;
             field21090.getImageWidth();
             field21090.getImageHeight();
             if (ScreenManager.guiScale > 1.0f) {
                 final Texture field21091 = ClientAssets.logo_large2x;
             }
-            RenderUtil.method26900((float) this.field21089, (float) (this.field21088 - 50), (float) (this.method14276() * 2), (float) (this.method14278() + 200), MainMenuScreen.field21097, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2), false);
-            RenderUtil.method26874(0.0f, 0.0f, (float) this.method14276(), (float) this.method14278(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n2 * 0.3f));
+            RenderUtil.method26900((float) this.field21089, (float) (this.field21088 - 50), (float) (this.method14276() * 2), (float) (this.method14278() + 200), MainMenuScreen.field21097, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n2), false);
+            RenderUtil.method26874(0.0f, 0.0f, (float) this.method14276(), (float) this.method14278(), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n2 * 0.3f));
             for (final CustomGuiScreen class4804 : this.method14250()) {
                 if (!class4804.method14296()) {
                     continue;
@@ -143,10 +143,10 @@ public class MainMenuScreen extends Class4800 {
                 GL11.glPushMatrix();
                 if (class4804 instanceof Class4812) {
                     if (n2 > 0.0f) {
-                        class4804.draw(n);
+                        class4804.draw(partialTicks);
                     }
                 } else {
-                    class4804.draw(n * (1.0f - n2));
+                    class4804.draw(partialTicks * (1.0f - n2));
                 }
                 GL11.glPopMatrix();
             }
@@ -181,9 +181,9 @@ public class MainMenuScreen extends Class4800 {
     }
 
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             this.goOut();
         }
     }

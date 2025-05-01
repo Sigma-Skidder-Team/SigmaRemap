@@ -161,10 +161,10 @@ public class MiniMap extends Module
                             final float n5 = this.field15838 * n;
                             final float n6 = this.field15837 * n;
                             RenderUtil.method26870(this.field15839, this.field15840, this.field15839 + this.field15838, this.field15840 + this.field15837);
-                            RenderUtil.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.shout);
+                            RenderUtil.drawImage(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.shout);
                             final float n7 = -n5 / 2.0f + this.field15838 / 2 + n3;
                             final float n8 = -n6 / 2.0f + this.field15837 / 2 + n4;
-                            RenderUtil.method26905(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
+                            RenderUtil.drawImage(0.0f, 0.0f, 0.0f, 0.0f, ClientAssets.gingerbread);
                             RenderUtil.method26903(n7, n8, n5, n6, field15832, ClientColors.LIGHT_GREYISH_BLUE.color, 0.0f, 0.0f, (float)(this.field15843 * 16), (float)(this.field15843 * 16), true, false);
                             RenderUtil.endScissor();
                             GL11.glPopMatrix();
@@ -269,15 +269,15 @@ public class MiniMap extends Module
         final Material method1142 = MiniMap.mc.world.getBlockState(method1139.method1143()).method21697();
         if (method1141 != Material.AIR && method1141 != Material.SNOW) {
             if (method1142 == Material.AIR || method1142 == Material.SNOW) {
-                rgba = ColorUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
+                rgba = AllUtils.method19109(new Color(rgba, true), Color.WHITE, 0.6f).getRGB();
             }
         }
         else {
-            rgba = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
+            rgba = AllUtils.method19109(new Color(rgba, true), Color.BLACK, 0.6f).getRGB();
         }
         int rgb;
         if (rgba != -16777216) {
-            rgb = ColorUtils.method19109(new Color(rgba, true), Color.BLACK, n).getRGB();
+            rgb = AllUtils.method19109(new Color(rgba, true), Color.BLACK, n).getRGB();
         }
         else {
             rgb = -7687425;

@@ -45,7 +45,7 @@ public class HypixelFly extends Module {
         this.field16078 = 1.0f;
         this.field16075 = -1.0;
         this.field16081 = -1;
-        if (HypixelFly.mc.player.onGround || ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+        if (HypixelFly.mc.player.onGround || AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
             if (this.getBooleanValueFromSettingName("Timer boost")) {
                 this.field16078 = 2.55f;
             }
@@ -62,12 +62,12 @@ public class HypixelFly extends Module {
                     break;
                 }
                 case "Fast": {
-                    ColorUtils.method19179(true);
+                    AllUtils.method19179(true);
                     this.field16079 = true;
                     break;
                 }
                 case "Old": {
-                    ColorUtils.method19179(true);
+                    AllUtils.method19179(true);
                     this.field16079 = true;
                     break;
                 }
@@ -101,11 +101,11 @@ public class HypixelFly extends Module {
     @EventListener
     public void method10771(final UpdateWalkingEventI updateWalkingEvent) {
         if (updateWalkingEvent.isPre()) {
-            if (!ColorUtils.method19160(HypixelFly.mc.player, 1.0E-5f)) {
+            if (!AllUtils.method19160(HypixelFly.mc.player, 1.0E-5f)) {
                 Label_0031:
                 {
-                    if (ColorUtils.method19146()) {
-                        if (HypixelFly.field16077 == 0.0 || ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+                    if (AllUtils.method19146()) {
+                        if (HypixelFly.field16077 == 0.0 || AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
                             String method9887 = this.getStringSettingValueByName("Mode");
                             if (method9887.equals("Fast") || method9887.equals("NoDmg")) {
                                 if (!Class9171.field38852) {
@@ -119,7 +119,7 @@ public class HypixelFly extends Module {
                                     }
                                 }
                             }
-                            final double[] method9888 = ColorUtils.method19177();
+                            final double[] method9888 = AllUtils.method19177();
                             final int length = method9888.length;
                             int n = 0;
                             for (int i = 0; i < length; ++i) {
@@ -142,11 +142,11 @@ public class HypixelFly extends Module {
 
     @EventListener
     public void method10772(final Class5717 class5717) {
-        if (HypixelFly.mc.player.onGround || ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+        if (HypixelFly.mc.player.onGround || AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
             this.field16075 = HypixelFly.mc.player.posY;
         }
         if (this.field16075 == -1.0) {
-            final double[] method19177 = ColorUtils.method19177();
+            final double[] method19177 = AllUtils.method19177();
             final int length = method19177.length;
             double a = Double.MAX_VALUE;
             for (final double n : method19177) {
@@ -159,7 +159,7 @@ public class HypixelFly extends Module {
             }
             if (Math.abs(a) < 0.1) {
                 class5717.method16975(class5717.method16974() + a);
-                ColorUtils.method19155(class5717.method16974());
+                AllUtils.method19155(class5717.method16974());
                 this.field16075 = HypixelFly.mc.player.posY + class5717.method16974();
                 HypixelFly.field16077 = 0.0;
                 this.field16079 = false;
@@ -184,7 +184,7 @@ public class HypixelFly extends Module {
                 n3 -= 0.04;
             }
             HypixelFly.field16077 = 0.0;
-            final double[] method19179 = ColorUtils.method19177();
+            final double[] method19179 = AllUtils.method19177();
             double field2397 = 0.0;
             final int length2 = method19179.length;
             final double n4 = HypixelFly.mc.player.posY - (int) HypixelFly.mc.player.posY;
@@ -206,7 +206,7 @@ public class HypixelFly extends Module {
                     break;
                 }
                 case "Fast": {
-                    if (!ColorUtils.method19146()) {
+                    if (!AllUtils.method19146()) {
                         this.field16076 = MovementUtil.method23141();
                     }
                     class5717.method16975(0.39999994);
@@ -260,15 +260,15 @@ public class HypixelFly extends Module {
         final double n7 = method19178.equals("Basic") ? MovementUtil.method23137() : (MovementUtil.method23137() - 0.008);
         if (this.field16074 < n7) {
             this.field16074 = n7;
-        } else if (!ColorUtils.method19114()) {
+        } else if (!AllUtils.method19114()) {
             this.field16074 = n7;
         }
         MovementUtil.method23149(class5717, this.field16074);
-        if (!HypixelFly.mc.player.onGround || !ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+        if (!HypixelFly.mc.player.onGround || !AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
             ++this.field16081;
-            if (!ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+            if (!AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
                 class5717.method16975(0.0);
-                ColorUtils.method19155(0.0);
+                AllUtils.method19155(0.0);
             }
             if (this.field16080) {
                 return;
@@ -280,7 +280,7 @@ public class HypixelFly extends Module {
             if (HypixelFly.field16077 == 1.0) {
                 HypixelFly.mc.player.setPosition(field2398, n8 - 1.0E-4, field2399);
             } else if (HypixelFly.field16077 >= 3.0) {
-                if (ColorUtils.method19146()) {
+                if (AllUtils.method19146()) {
                     HypixelFly.mc.player.setPosition(field2398, n8, field2399);
                 } else {
                     HypixelFly.mc.player.setPosition(field2398, n8 + 1.0E-4, field2399);
@@ -360,7 +360,7 @@ public class HypixelFly extends Module {
                     if (!method9887.equals("Old")) {
                         if (this.field16075 >= 0.0) {
                             if (!HypixelFly.mc.player.onGround) {
-                                if (!ColorUtils.method19160(HypixelFly.mc.player, 0.001f)) {
+                                if (!AllUtils.method19160(HypixelFly.mc.player, 0.001f)) {
                                     if (!method9887.equals("Basic")) {
                                         final double n = 0.42 + MovementUtil.method23140() * 0.1;
                                         HypixelFly.mc.player.posY = this.field16075 + n;

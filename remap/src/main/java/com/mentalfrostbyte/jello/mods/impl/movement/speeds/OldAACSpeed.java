@@ -38,7 +38,7 @@ public class OldAACSpeed extends Module
     public void method10316(final Class5717 class5717) {
         if (this.isEnabled()) {
             if (!OldAACSpeed.mc.player.onGround) {
-                if (ColorUtils.method19114()) {
+                if (AllUtils.method19114()) {
                     if (AACAntiKnockBack.field15956 >= 7) {
                         ++this.field15767;
                         if (this.field15767 == 1) {
@@ -58,7 +58,7 @@ public class OldAACSpeed extends Module
                     }
                 }
             }
-            else if (this.getBooleanValueFromSettingName("Auto Jump") && ColorUtils.method19114()) {
+            else if (this.getBooleanValueFromSettingName("Auto Jump") && AllUtils.method19114()) {
                 this.field15767 = 0;
                 OldAACSpeed.mc.player.method2725();
                 class5717.method16973(OldAACSpeed.mc.player.getMotion().x);

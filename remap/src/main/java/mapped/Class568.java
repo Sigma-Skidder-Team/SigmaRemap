@@ -103,7 +103,7 @@ public class Class568 extends Class566
         GL11.glEnable(3008);
         GL11.glEnable(3042);
         RenderUtil.method26904(0.0f, 0.0f, (float) Minecraft.getInstance().window.method7694(), (float) Minecraft.getInstance().window.method7695(), Class568.field3392, n);
-        RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.getInstance().window.method7694(), (float) Minecraft.getInstance().window.method7695(), ColorUtils.applyAlpha(0, 0.75f));
+        RenderUtil.method26874(0.0f, 0.0f, (float) Minecraft.getInstance().window.method7694(), (float) Minecraft.getInstance().window.method7695(), AllUtils.applyAlpha(0, 0.75f));
         final int n3 = 455;
         final int n4 = 78;
         final int n5 = (Minecraft.getInstance().window.method7694() - n3) / 2;
@@ -113,14 +113,14 @@ public class Class568 extends Class566
         GL11.glTranslatef((float)(Minecraft.getInstance().window.method7694() / 2), (float)(Minecraft.getInstance().window.method7695() / 2), 0.0f);
         GL11.glScalef(n6, n6, 0.0f);
         GL11.glTranslatef((float)(-Minecraft.getInstance().window.method7694() / 2), (float)(-Minecraft.getInstance().window.method7695() / 2), 0.0f);
-        RenderUtil.drawImage((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.drawImage((float)n5, (float)round, (float)n3, (float)n4, Class568.field3390, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         final float min = Math.min(1.0f, n2 * 1.02f);
         final int n7 = 80;
         if (n == 1.0f) {
-            RenderUtil.method26925((float)n5, (float)(round + n4 + n7), (float)n3, 20.0f, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f * n));
-            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n));
+            RenderUtil.method26925((float)n5, (float)(round + n4 + n7), (float)n3, 20.0f, 10.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f * n));
+            RenderUtil.method26925((float)(n5 + 1), (float)(round + n4 + n7 + 1), (float)(n3 - 2), 18.0f, 9.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n));
         }
-        RenderUtil.method26925((float)(n5 + 2), (float)(round + n4 + n7 + 2), (float)(int)((n3 - 4) * min), 16.0f, 8.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
+        RenderUtil.method26925((float)(n5 + 2), (float)(round + n4 + n7 + 2), (float)(int)((n3 - 4) * min), 16.0f, 8.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f * n));
         GL11.glPopMatrix();
     }
     

@@ -54,8 +54,8 @@ public class Class4916 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
+    public void draw(final float partialTicks) {
+        this.translate();
         float n2 = Class7707.method24584(this.field21030.calcPercent(), 0.0f, 1.0f, 1.0f);
         final float method25029 = Class7791.method25029(this.field21030.calcPercent(), 0.0f, 1.0f, 1.0f);
         if (this.method14308()) {
@@ -90,11 +90,11 @@ public class Class4916 extends Class4825
             GL11.glScaled(1.0 + 0.4 * n2, 1.0 + 0.4 * n2, 0.0);
             GL11.glTranslatef((float)(-this.method14272() - n3), (float)(-this.method14274() - n4), 0.0f);
             if (this.field21028 != null) {
-                RenderUtil.drawImage((float)this.x, (float)(this.y - (this.field20480 - this.field20481) / 2), (float)this.field20480, (float)this.field20480, this.field21028, ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 0.7f), 0.8f));
+                RenderUtil.drawImage((float)this.x, (float)(this.y - (this.field20480 - this.field20481) / 2), (float)this.field20480, (float)this.field20480, this.field21028, AllUtils.applyAlpha(AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 0.7f), 0.8f));
             }
             GL11.glPopMatrix();
             RenderUtil.endScissor();
-            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f + 0.3f * this.field21030.calcPercent()));
+            RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.3f + 0.3f * this.field21030.calcPercent()));
         }
         if (this.field21025 == null) {
             return;
@@ -106,7 +106,7 @@ public class Class4916 extends Class4825
         this.method14758();
         ClientAssets.shout.bind();
         ClientAssets.shout.bind();
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public void method14757() {
@@ -145,22 +145,22 @@ public class Class4916 extends Class4825
         GL11.glTranslatef((float)(this.method14272() + 76), (float)(this.method14274() + 44), 0.0f);
         GL11.glScaled(1.0 - 0.1 * n2, 1.0 - 0.1 * n2, 0.0);
         GL11.glTranslatef((float)(-this.method14272() - 76), (float)(-this.method14274() - 44), 0.0f);
-        RenderUtil.drawString(ClientFonts.JelloMedium25, (float)(this.x + 94), (float)(this.y + 16), this.field21026.field41612.equals("Minecraft Server") ? (this.field21026.field41613.substring(0, 1).toUpperCase() + this.field21026.field41613.substring(1)) : this.field21026.field41612, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f));
+        RenderUtil.drawString(ClientFonts.JelloMedium25, (float)(this.x + 94), (float)(this.y + 16), this.field21026.field41612.equals("Minecraft Server") ? (this.field21026.field41613.substring(0, 1).toUpperCase() + this.field21026.field41613.substring(1)) : this.field21026.field41612, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.9f));
         final int n3 = 94;
         final int n4 = 46;
         if (this.field21025.method30981().getTime() != 9223372036854775806L) {
             if (n > 0L && this.field21025.method30981().getTime() != Long.MAX_VALUE) {
-                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Unban: " + l + " days, " + k + "h " + j + "m " + i + "s", ColorUtils.method19120(ClientColors.DEEP_TEAL.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.2f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Unban: " + l + " days, " + k + "h " + j + "m " + i + "s", AllUtils.method19120(ClientColors.DEEP_TEAL.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.2f));
             }
             else if (this.field21025.method30981().getTime() != Long.MAX_VALUE) {
-                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Unbanned!", ColorUtils.method19120(ClientColors.DARK_SLATE_GREY.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Unbanned!", AllUtils.method19120(ClientColors.DARK_SLATE_GREY.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
             }
             else {
-                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Permanently banned!", ColorUtils.method19120(ClientColors.PALE_YELLOW.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
+                RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Permanently banned!", AllUtils.method19120(ClientColors.PALE_YELLOW.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
             }
         }
         else {
-            RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Compromised ban (unbannable)!", ColorUtils.method19120(ClientColors.DARK_OLIVE.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
+            RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.x + n3), (float)(this.y + n4), "Compromised ban (unbannable)!", AllUtils.method19120(ClientColors.DARK_OLIVE.color, ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         }
         GL11.glPopMatrix();
         RenderUtil.endScissor();

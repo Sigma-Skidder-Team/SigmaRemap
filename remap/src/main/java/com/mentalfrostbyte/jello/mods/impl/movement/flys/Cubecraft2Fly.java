@@ -30,7 +30,7 @@ public class Cubecraft2Fly extends PremiumModule
             Cubecraft2Fly.mc.gameSettings.field23440.field2162 = false;
             this.field16025 = true;
         }
-        if (ColorUtils.method19148()) {
+        if (AllUtils.method19148()) {
             if (ViaManager.method34762() == Class7906.field32452.method25613()) {
                 Client.getInstance().getNotificationManager().send(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
             }
@@ -40,17 +40,17 @@ public class Cubecraft2Fly extends PremiumModule
     @Override
     public void onDisable() {
         MovementUtil.method23151(0.2);
-        ColorUtils.method19155(-0.0789);
-        if (ColorUtils.method19160(Cubecraft2Fly.mc.player, 0.001f)) {
+        AllUtils.method19155(-0.0789);
+        if (AllUtils.method19160(Cubecraft2Fly.mc.player, 0.001f)) {
             MovementUtil.method23151(0.0);
-            ColorUtils.method19155(-0.0789);
+            AllUtils.method19155(-0.0789);
         }
         else {
             final double field2395 = Cubecraft2Fly.mc.player.posX;
             final double field2396 = Cubecraft2Fly.mc.player.posY;
             Cubecraft2Fly.mc.method5269().method17292(new Class4354(field2395, -150.0, Cubecraft2Fly.mc.player.posZ, false));
             MovementUtil.method23151(0.0);
-            ColorUtils.method19155(0.0);
+            AllUtils.method19155(0.0);
             this.field16023 = -3;
             this.field16024.reset();
             this.field16024.start();
@@ -96,7 +96,7 @@ public class Cubecraft2Fly extends PremiumModule
                 class5717.method16975(Cubecraft2Fly.mc.gameSettings.field23439.method1056() ? (this.field16025 ? 1.0E-4 : 0.99) : (this.field16025 ? -0.99 : 1.0E-4));
                 MovementUtil.method23149(class5717, 2.4);
             }
-            ColorUtils.method19155(class5717.method16974());
+            AllUtils.method19155(class5717.method16974());
             return;
         }
         if (this.field16023 < 0) {

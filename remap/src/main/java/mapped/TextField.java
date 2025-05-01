@@ -154,8 +154,8 @@ public class TextField extends Class4825
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
+    public void onKeyPress(final int n) {
+        super.onKeyPress(n);
         if (this.field20488) {
             switch (n) {
                 case 256: {
@@ -348,8 +348,8 @@ public class TextField extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
+    public void draw(final float partialTicks) {
+        this.translate();
         final float n2 = 1000.0f;
         final boolean b = this.field20488 && this.field20685.getElapsedTime() > n2 / 2.0f;
         if (this.field20685.getElapsedTime() > n2) {
@@ -364,7 +364,7 @@ public class TextField extends Class4825
         final int n4 = this.field20480 - 4;
         final float n5 = n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20678));
         if (this.method14306()) {
-            RenderUtil.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), ColorUtils.applyAlpha(this.field20497.method19733(), b ? 0.8f : (0.1f * n)));
+            RenderUtil.method26876(n5 + (s.isEmpty() ? 0 : -1), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2 + 2), n5 + (float)(s.isEmpty() ? 1 : 0), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2 - 1), AllUtils.applyAlpha(this.field20497.method19733(), b ? 0.8f : (0.1f * partialTicks)));
             final float n6 = n3 + this.field20496.getWidth(s.substring(0, this.field20678)) + this.field20676;
             if (n6 < n3) {
                 this.field20676 += n3 - n6;
@@ -377,13 +377,13 @@ public class TextField extends Class4825
         this.field20675 += (this.field20676 - this.field20675) / 2.0f;
         this.field20679 = Math.min(Math.max(0, this.field20679), s.length());
         this.field20680 = Math.min(Math.max(0, this.field20680), s.length());
-        RenderUtil.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2), ColorUtils.applyAlpha(-5516546, n));
-        RenderUtil.method26890(this.field20496, n3 + this.field20675, (float)(this.y + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, ColorUtils.applyAlpha(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * n * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
+        RenderUtil.method26876(n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20679)), (float)(this.y + this.field20481 / 2 - this.field20496.getHeight(s) / 2), n3 + this.field20675 + this.field20496.getWidth(s.substring(0, this.field20680)), (float)(this.y + this.field20481 / 2 + this.field20496.getHeight(s) / 2), AllUtils.applyAlpha(-5516546, partialTicks));
+        RenderUtil.method26890(this.field20496, n3 + this.field20675, (float)(this.y + this.field20481 / 2), (s.length() != 0 || (this.field20488 && s.length() > 0)) ? s : this.field20672, AllUtils.applyAlpha(this.field20497.method19733(), (this.field20673 / 2.0f + 0.4f) * partialTicks * ((this.field20488 && s.length() > 0) ? 1.0f : 0.5f)), this.field20497.method19735(), this.field20497.method19737());
         RenderUtil.endScissor();
         if (this.field20687) {
-            RenderUtil.method26876((float)this.x, (float)(this.y + this.field20481 - 2), (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * n));
+            RenderUtil.method26876((float)this.x, (float)(this.y + this.field20481 - 2), (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(this.field20497.method19729(), (this.field20673 / 2.0f + 0.5f) * partialTicks));
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     public final void method14473(final Class8992 class8992) {

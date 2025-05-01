@@ -15,9 +15,9 @@ public class Class4839 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.method14296()) {
-            RenderUtil.drawImage((float)(this.x + 30), (float)(this.y + 30), 187.0f, 36.0f, ClientAssets.gem, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+            RenderUtil.drawImage((float)(this.x + 30), (float)(this.y + 30), 187.0f, 36.0f, ClientAssets.gem, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         }
     }
 }

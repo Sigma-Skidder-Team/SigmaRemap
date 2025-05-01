@@ -23,8 +23,6 @@ import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.Texture;
 import org.newdawn.slick.TrueTypeFont;
 
-import java.util.Iterator;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.UUID;
 import java.util.List;
@@ -47,7 +45,7 @@ public class NewNameTags extends Module {
         this.field15783 = new ArrayList<Entity>();
         this.field15784 = false;
         this.field15785 = new HashMap<UUID, String>();
-        this.field15786 = ColorUtils.applyAlpha(ColorUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.5f);
+        this.field15786 = AllUtils.applyAlpha(AllUtils.method19120(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color, 75.0f), 0.5f);
         this.addSetting(new BooleanSetting("Magnify", "Scales nametags to keep them readable", true));
         this.addSetting(new BooleanSetting("Furnaces", "Shows furnaces info once open", true));
         this.addSetting(new BooleanSetting("Mob Owners", "Shows mob owners", true));
@@ -62,7 +60,7 @@ public class NewNameTags extends Module {
                 this.field15778.clear();
             }
             this.field15783.clear();
-            for (final Entity class5744 : Class4609.method13679(ColorUtils.method19108())) {
+            for (final Entity class5744 : Class4609.method13679(AllUtils.getPlayerEntities())) {
                 if (class5744 == NewNameTags.mc.player) {
                     continue;
                 }
@@ -260,7 +258,7 @@ public class NewNameTags extends Module {
         RenderUtil.method26913(0.0f, 0.0f, (float) n7, (float) n8, 20.0f, 0.5f);
         RenderUtil.drawString(field40314, (float) n5, (float) (n5 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.color);
         if (method18690 == null) {
-            RenderUtil.drawString(ClientFonts.JelloLight20, (float) (n5 + 15), (float) (n5 + 40), "Empty", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+            RenderUtil.drawString(ClientFonts.JelloLight20, (float) (n5 + 15), (float) (n5 + 40), "Empty", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
         }
         final ItemStack method18691 = class355.method18690();
         if (method18691 != null) {
@@ -268,8 +266,8 @@ public class NewNameTags extends Module {
             RenderUtil.drawString(ClientFonts.JelloLight20, (float) (n5 + 51), 40.0f, method18691.method27664().getUnformattedComponentText(), ClientColors.LIGHT_GREYISH_BLUE.color);
             RenderUtil.drawString(ClientFonts.JelloLight14, (float) (n5 + 51), 62.0f, "Count: " + method18691.field34176, ClientColors.LIGHT_GREYISH_BLUE.color);
         }
-        RenderUtil.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float) n7), n8 - 6.0f, ColorUtils.applyAlpha(-106750, 0.3f));
-        RenderUtil.method26876(0.0f, n8 - 6.0f, Math.min(n7 * min, (float) n7), (float) n8, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f));
+        RenderUtil.method26876(0.0f, n8 - 12.0f, Math.min(n7 * min2, (float) n7), n8 - 6.0f, AllUtils.applyAlpha(-106750, 0.3f));
+        RenderUtil.method26876(0.0f, n8 - 6.0f, Math.min(n7 * min, (float) n7), (float) n8, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);
@@ -309,18 +307,18 @@ public class NewNameTags extends Module {
             int n8 = this.field15786;
             if (!Client.getInstance().getFriendManager().method29878(entity)) {
                 if (Client.getInstance().getFriendManager().method29880(entity)) {
-                    n8 = ColorUtils.applyAlpha(-6750208, 0.5f);
+                    n8 = AllUtils.applyAlpha(-6750208, 0.5f);
                 }
             } else {
-                n8 = ColorUtils.applyAlpha(-16171506, 0.5f);
+                n8 = AllUtils.applyAlpha(-16171506, 0.5f);
             }
-            final int method9888 = ColorUtils.applyAlpha((entity instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity) entity)).getRGB() : ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f);
+            final int method9888 = AllUtils.applyAlpha((entity instanceof PlayerEntity) ? new Color(Class9011.method32263((PlayerEntity) entity)).getRGB() : ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f);
             final int n9 = field40314.getWidth(method9887) / 2;
             if (!NewNameTags.field15781.containsKey(method9887)) {
                 RenderUtil.method26913((float) (-n9 - 10), -25.0f, (float) (n9 * 2 + 20), (float) (field40314.getHeight() + 27), 20.0f, 0.5f);
             } else {
-                RenderUtil.drawImage((float) (-n9 - 10 - 31), -25.0f, (float) (field40314.getHeight() + 27), (float) (field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), ColorUtils.applyAlpha(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
-                RenderUtil.drawImage((float) (-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float) (field40314.getHeight() + 27), ClientAssets.shadow_right, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
+                RenderUtil.drawImage((float) (-n9 - 10 - 31), -25.0f, (float) (field40314.getHeight() + 27), (float) (field40314.getHeight() + 27), NewNameTags.field15781.get(method9887), AllUtils.applyAlpha(Color.getHSBColor(System.currentTimeMillis() % 10000L / 10000.0f, 0.5f, 1.0f).getRGB(), 0.7f));
+                RenderUtil.drawImage((float) (-n9 - 10 - 31 + field40314.getHeight() + 27), -25.0f, 14.0f, (float) (field40314.getHeight() + 27), ClientAssets.shadow_right, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f));
                 RenderUtil.method26913((float) (-n9 - 10 - 31), -25.0f, (float) (n9 * 2 + 20 + 31 + 27), (float) (field40314.getHeight() + 27), 20.0f, 0.5f);
                 GL11.glTranslatef(27.0f, 0.0f, 0.0f);
             }

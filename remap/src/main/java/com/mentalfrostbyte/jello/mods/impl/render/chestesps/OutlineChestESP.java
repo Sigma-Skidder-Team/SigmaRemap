@@ -40,9 +40,9 @@ public class OutlineChestESP extends Module
     }
     
     private void method10423(final boolean b) {
-        final int method19118 = ColorUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.7f);
-        final int method19119 = ColorUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.7f);
-        final int method19120 = ColorUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.7f);
+        final int method19118 = AllUtils.applyAlpha(this.method9914().method9885("Regular Color"), 0.7f);
+        final int method19119 = AllUtils.applyAlpha(this.method9914().method9885("Ender Color"), 0.7f);
+        final int method19120 = AllUtils.applyAlpha(this.method9914().method9885("Trapped Color"), 0.7f);
         for (final TileEntity tileEntity : OutlineChestESP.mc.world.loadedTileEntityList) {
             boolean b2 = false;
             Label_0130: {

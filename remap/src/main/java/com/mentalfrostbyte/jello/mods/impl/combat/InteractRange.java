@@ -20,7 +20,7 @@ public class InteractRange extends Module
     @EventListener
     private void method10085(final Class5748 class5748) {
         if (this.isEnabled()) {
-            final Entity method19141 = ColorUtils.getEntityFromRayTrace(InteractRange.mc.player.rotationYaw, InteractRange.mc.player.rotationPitch, this.getNumberSettingValueByName("Range"), 0.0);
+            final Entity method19141 = AllUtils.getEntityFromRayTrace(InteractRange.mc.player.rotationYaw, InteractRange.mc.player.rotationPitch, this.getNumberSettingValueByName("Range"), 0.0);
             final BlockRayTraceResult method19142 = Class4609.method13697(InteractRange.mc.player.rotationYaw, InteractRange.mc.player.rotationPitch, this.getNumberSettingValueByName("Range"));
             if (method19141 != null) {
                 if (InteractRange.mc.field4691.getType() == RayTraceResult.Type.MISS) {

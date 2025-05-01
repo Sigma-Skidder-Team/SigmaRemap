@@ -17,8 +17,8 @@ public class Class4886 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26905((float)this.x, (float)this.y, 30.0f, 30.0f, this.method14308() ? UglyClickGUICategory.xmark2 : UglyClickGUICategory.xmark);
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        RenderUtil.drawImage((float)this.x, (float)this.y, 30.0f, 30.0f, this.method14308() ? UglyClickGUICategory.xmark2 : UglyClickGUICategory.xmark);
+        super.draw(partialTicks);
     }
 }

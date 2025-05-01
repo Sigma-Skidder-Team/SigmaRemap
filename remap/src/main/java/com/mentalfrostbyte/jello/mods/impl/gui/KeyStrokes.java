@@ -78,7 +78,7 @@ public class KeyStrokes extends Module
                     n2 = 0.5f;
                     n = 0.5f;
                 }
-                String method8212 = ColorUtils.method19166(class5742.field12093.field2161.field32860);
+                String method8212 = AllUtils.method19166(class5742.field12093.field2161.field32860);
                 if (class5742.field12093 != KeyStrokes.mc.gameSettings.field23446) {
                     if (class5742.field12093 == KeyStrokes.mc.gameSettings.field23445) {
                         method8212 = "R";
@@ -87,7 +87,7 @@ public class KeyStrokes extends Module
                 else {
                     method8212 = "L";
                 }
-                RenderUtil.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n));
+                RenderUtil.method26876((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)(this.field15538 + method8210.field37368 + method8211.field37368), (float)(this.field15539 + method8210.field37369 + method8211.field37369), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n));
                 RenderUtil.method26913((float)(this.field15538 + method8210.field37368), (float)(this.field15539 + method8210.field37369), (float)method8211.field37368, (float)method8211.field37369, 10.0f, 0.75f * n2);
                 RenderUtil.drawString(ClientFonts.JelloLight18, (float)(this.field15538 + method8210.field37368 + (method8211.field37368 - ClientFonts.JelloLight18.getWidth(method8212)) / 2), (float)(this.field15539 + method8210.field37369 + 12), method8212, ClientColors.LIGHT_GREYISH_BLUE.color);
             }
@@ -115,9 +115,9 @@ public class KeyStrokes extends Module
                     }
                 }
                 final float method8215 = class5743.field38782.calcPercent();
-                int n5 = ColorUtils.applyAlpha(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
+                int n5 = AllUtils.applyAlpha(-5658199, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 if (Client.getInstance().getScreenManager().method32146()) {
-                    n5 = ColorUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
+                    n5 = AllUtils.applyAlpha(-1, (1.0f - method8215 * (0.5f + method8215 * 0.5f)) * 0.8f);
                 }
                 RenderUtil.method26886((float)(this.field15538 + method8213.field37368 + method8214.method31267() / 2), (float)(this.field15539 + method8213.field37369 + method8214.field37369 / 2), (method8214.method31267() - 4) * method8215 + 4.0f, n5);
                 RenderUtil.endScissor();

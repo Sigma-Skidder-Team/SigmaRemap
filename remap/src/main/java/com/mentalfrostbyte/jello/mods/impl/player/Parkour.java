@@ -7,7 +7,7 @@ package com.mentalfrostbyte.jello.mods.impl.player;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.Class5747;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.EventListener;
 
 public class Parkour extends Module
@@ -24,7 +24,7 @@ public class Parkour extends Module
         if (!Parkour.mc.player.onGround) {
             return;
         }
-        if (!ColorUtils.method19159()) {
+        if (!AllUtils.method19159()) {
             Parkour.mc.player.method2725();
         }
     }

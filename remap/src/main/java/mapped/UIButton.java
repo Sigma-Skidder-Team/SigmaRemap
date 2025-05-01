@@ -29,7 +29,7 @@ public class UIButton extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.getTypedText() != null) {
             final int method19729 = this.field20497.method19729();
             final int n2 = this.method14272() + ((this.field20497.method19735() != Class2056.field11738) ? 0 : ((this.field20497.method19735() != Class2056.field11736) ? (this.method14276() / 2) : this.method14276()));
@@ -37,9 +37,9 @@ public class UIButton extends Panel
             final int method19730 = this.method14316().getWidth(this.getTypedText());
             final int n4 = 18;
             final float n5 = (float)Math.pow(this.field20818.calcPercent(), 3.0);
-            RenderUtil.method26890(this.method14316(), (float)n2, (float)n3, this.getTypedText(), ColorUtils.applyAlpha(method19729, n * ColorUtils.method19140(method19729)), this.field20497.method19735(), this.field20497.method19737());
-            RenderUtil.method26876(n2 - method19730 / 2 * n5, (float)(n3 + n4), n2 + method19730 / 2 * n5, (float)(n3 + n4 + 2), ColorUtils.applyAlpha(method19729, n * ColorUtils.method19140(method19729)));
-            super.draw(n);
+            RenderUtil.method26890(this.method14316(), (float)n2, (float)n3, this.getTypedText(), AllUtils.applyAlpha(method19729, partialTicks * AllUtils.method19140(method19729)), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26876(n2 - method19730 / 2 * n5, (float)(n3 + n4), n2 + method19730 / 2 * n5, (float)(n3 + n4 + 2), AllUtils.applyAlpha(method19729, partialTicks * AllUtils.method19140(method19729)));
+            super.draw(partialTicks);
         }
     }
 }

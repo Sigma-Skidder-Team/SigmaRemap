@@ -42,14 +42,14 @@ public class Class4941 extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         float n2 = 1.3f - Class7707.method24584(Class4941.field21224.calcPercent(), 0.0f, 1.0f, 1.0f) * 0.3f;
         float method35858 = 1.0f;
         if (Class4941.field21224.getDirection() == Direction.FORWARDS) {
             n2 = 0.7f + Class7791.method25030(Class4941.field21224.calcPercent(), 0.0f, 1.0f, 1.0f) * 0.3f;
             method35858 = Class4941.field21224.calcPercent();
         }
-        RenderUtil.method26881(0, 0, this.method14276(), this.method14278(), ColorUtils.method19120(-1072689136, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858), ColorUtils.method19120(-804253680, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858));
+        RenderUtil.method26881(0, 0, this.method14276(), this.method14278(), AllUtils.method19120(-1072689136, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858), AllUtils.method19120(-804253680, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f), method35858));
         this.method14288(n2, n2);
         this.method14227();
         super.draw(Class4941.field21224.calcPercent());
@@ -66,7 +66,7 @@ public class Class4941 extends Class4800
         final float n3 = n2 - this.field21221;
         final float n4 = (float)(field21222 - this.field21222);
         GL11.glPushMatrix();
-        RenderUtil.method26898((float)this.field21222, (float)this.field21221, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21225, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.method26898((float)this.field21222, (float)this.field21221, (float)(this.method14276() * 2), (float)(this.method14278() + 114), this.field21225, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
         GL11.glPopMatrix();
         final float n5 = 0.5f;
         if (n2 != this.field21221) {
@@ -83,9 +83,9 @@ public class Class4941 extends Class4800
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Minecraft.getInstance().displayGuiScreen(null);
         }
     }

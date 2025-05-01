@@ -94,8 +94,8 @@ public class MovementManager {
         if (equals && !b) {
             this.field33314.remove(n);
             if (this.field33314.size() == 0) {
-                ColorUtils.method19154(0.0);
-                ColorUtils.method19156(0.0);
+                AllUtils.method19154(0.0);
+                AllUtils.method19156(0.0);
                 this.method26555();
                 return;
             }
@@ -105,14 +105,14 @@ public class MovementManager {
                 final float n2 = Class8845.method30920(this.field33313.player.method1934(), class5743.field36684.method30686())[0];
                 final double n3 = Math.cos(Math.toRadians(n2 + 90.0f)) * sqrt;
                 final double n4 = Math.sin(Math.toRadians(n2 + 90.0f)) * sqrt;
-                ColorUtils.method19154(n3);
-                ColorUtils.method19156(n4);
+                AllUtils.method19154(n3);
+                AllUtils.method19156(n4);
             }
         }
         if (!this.field33313.player.onGround && this.method26563(class5743.field36684.method30692())) {
             this.field33313.player.field2970 = 0.0f;
             this.field33313.player.field2968 = 0.0f;
-            ColorUtils.method19106("STOPED");
+            AllUtils.method19106("STOPED");
             return;
         }
         this.field33313.player.method1816(true);
@@ -166,19 +166,19 @@ public class MovementManager {
         }
         this.field33313.player.rotationYaw = field33316;
         if (b4 && !this.field33313.player.onGround && !Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled()) {
-            ColorUtils.method19154(0.0);
-            ColorUtils.method19156(0.0);
+            AllUtils.method19154(0.0);
+            AllUtils.method19156(0.0);
             return;
         }
-        if (Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method19160(this.field33313.player, 5.0f)) {
+        if (Client.getInstance().moduleManager().getModuleByClass(Fly.class).isEnabled() && !AllUtils.method19160(this.field33313.player, 5.0f)) {
             b4 = true;
         }
         Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).method9907(b3);
         Client.getInstance().moduleManager().getModuleByClass(Fly.class).method9907(b4);
         if (b && equals) {
-            ColorUtils.method19154(0.0);
-            ColorUtils.method19156(0.0);
-            ColorUtils.method19106("qzd: " + n5 % 1.0);
+            AllUtils.method19154(0.0);
+            AllUtils.method19156(0.0);
+            AllUtils.method19106("qzd: " + n5 % 1.0);
             return;
         }
         if (this.field33317 != null) {
@@ -293,8 +293,8 @@ public class MovementManager {
         if (Class4609.method13694(this.field33313.player.rotationYaw, this.field33313.player.rotationPitch, 100.0f) != null) {
             if (this.field33314 != null) {
                 if (this.field33314.size() > 0) {
-                    final int method19118 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.02f);
-                    final int method19119 = ColorUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.color, 0.02f);
+                    final int method19118 = AllUtils.applyAlpha(ClientColors.PALE_ORANGE.color, 0.02f);
+                    final int method19119 = AllUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.color, 0.02f);
                     GL11.glPushMatrix();
                     GL11.glDisable(2929);
                     final Iterator<Long> iterator2 = this.field33314.get(0).field36694.iterator();
@@ -341,9 +341,9 @@ public class MovementManager {
         final TrueTypeFont field40314 = ClientFonts.JelloLight25;
         GL11.glPushMatrix();
         GL11.glScalef(-0.01f, -0.01f, -0.01f);
-        RenderUtil.method26876((float) (-field40314.getWidth(s) / 2 - 10), 0.0f, (float) (field40314.getWidth(s) / 2 + 10), (float) (field40314.getHeight() + 2), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
+        RenderUtil.method26876((float) (-field40314.getWidth(s) / 2 - 10), 0.0f, (float) (field40314.getWidth(s) / 2 + 10), (float) (field40314.getHeight() + 2), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f));
         GL11.glTranslated(-field40314.getWidth(s) / 2, 0.0, 0.0);
-        RenderUtil.drawString(field40314, 0.0f, 0.0f, s, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
+        RenderUtil.drawString(field40314, 0.0f, 0.0f, s, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
         GL11.glEnable(3553);

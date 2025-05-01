@@ -14,7 +14,7 @@ public abstract class Class4800 extends CustomGuiScreen
         super(null, s, 0, 0, Minecraft.getInstance().window.method7694(), Minecraft.getInstance().window.method7695());
     }
     
-    public int method14201() {
+    public int getFPS() {
         return 30;
     }
     
@@ -26,12 +26,12 @@ public abstract class Class4800 extends CustomGuiScreen
     }
     
     @Override
-    public void method14204(final int n) {
-        if (n == Minecraft.getInstance().gameSettings.field23454.field2161.field32860) {
+    public void onKeyPress(final int key) {
+        if (key == Minecraft.getInstance().gameSettings.field23454.field2161.field32860) {
             Minecraft.getInstance().window.method7685();
             Minecraft.getInstance().gameSettings.field23430 = Minecraft.getInstance().window.method7691();
         }
-        super.method14204(n);
+        super.onKeyPress(key);
     }
     
     static {

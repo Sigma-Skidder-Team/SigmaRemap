@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.settings.impl.NumberSetting;
 import com.mentalfrostbyte.jello.settings.impl.TextInputSetting;
 import mapped.EventPlayerTick;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.EventListener;
 
 public class Spammer extends Module
@@ -28,7 +28,7 @@ public class Spammer extends Module
             ++this.field15877;
             if (this.field15877 > this.getNumberSettingValueByName("Messages delay") * 20.0f) {
                 this.field15877 = 0;
-                ColorUtils.method19107(this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0f + (float)Math.random() * 89.0f))));
+                AllUtils.method19107(this.getStringSettingValueByName("Message").replaceAll("%r", Integer.toString(Math.round(10.0f + (float)Math.random() * 89.0f))));
             }
         }
     }

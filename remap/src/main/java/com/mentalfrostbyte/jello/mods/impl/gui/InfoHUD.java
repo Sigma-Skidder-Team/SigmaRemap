@@ -63,7 +63,7 @@ public class InfoHUD extends Module
     public int method16694(final int n, final int n2) {
         final String s = "Facing South";
         final String method10538 = this.method10538(this.getStringSettingValueByName("Cords").equals("Precise"));
-        RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.window.method7695() - n2), method10538, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
+        RenderUtil.drawString(ClientFonts.JelloMedium20, (float)n, (float)(InfoHUD.mc.window.method7695() - n2), method10538, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f));
         return Math.max(ClientFonts.JelloLight20.getWidth(s), ClientFonts.JelloMedium20.getWidth(method10538));
     }
     
@@ -78,8 +78,8 @@ public class InfoHUD extends Module
                 GL11.glDisable(2896);
                 final float n5 = 1.0f - class8321.method27632() / (float)class8321.method27634();
                 if (n5 != 1.0f) {
-                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, ColorUtils.applyAlpha((n5 > 0.2) ? ClientColors.DARK_SLATE_GREY.color : ClientColors.PALE_YELLOW.color, 0.9f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f, 5.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                    RenderUtil.method26874((float)(n + 2), (float)(n4 + 28), 28.0f * n5, 3.0f, AllUtils.applyAlpha((n5 > 0.2) ? ClientColors.DARK_SLATE_GREY.color : ClientColors.PALE_YELLOW.color, 0.9f));
                 }
             }
         }

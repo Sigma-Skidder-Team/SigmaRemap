@@ -32,7 +32,7 @@ public class Class4935 extends Class4800
         this.addToList(this.field21159 = new Class4843(this, "mapView", (this.field20480 - max) / 2, (this.field20481 - max2) / 2, max, max2));
         this.field21159.field20752.method14719((class4936, n, n2, class4937) -> class4935.method14225(new Class1271(this, class4935, n, n2, class4937)));
         this.field21159.field20752.method14721(class4901 -> this.method14839());
-        ColorUtils.method19169();
+        AllUtils.method19169();
     }
     
     private void method14838(final Class4862 class4862) {
@@ -60,27 +60,27 @@ public class Class4935 extends Class4800
     }
     
     @Override
-    public int method14201() {
+    public int getFPS() {
         return 60;
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
-            ColorUtils.method19172();
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
+            AllUtils.method19172();
             Class4935.field21156.displayGuiScreen(null);
         }
     }
     
     @Override
-    public void draw(float n) {
-        n = Math.min(200L, new Date().getTime() - this.field21158.getTime()) / 200.0f;
-        final float method24584 = Class7707.method24584(n, 0.0f, 1.0f, 1.0f);
+    public void draw(float partialTicks) {
+        partialTicks = Math.min(200L, new Date().getTime() - this.field21158.getTime()) / 200.0f;
+        final float method24584 = Class7707.method24584(partialTicks, 0.0f, 1.0f, 1.0f);
         this.method14288(0.8f + method24584 * 0.2f, 0.8f + method24584 * 0.2f);
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * n));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.25f * partialTicks));
         super.method14227();
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     static {

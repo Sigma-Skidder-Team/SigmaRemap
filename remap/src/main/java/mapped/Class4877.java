@@ -20,19 +20,19 @@ public class Class4877 extends Class4868
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20867) {
-            if (n == 1.0f) {
+            if (partialTicks == 1.0f) {
                 this.field20868.changeDirection(Direction.BACKWARDS);
             }
         }
         final int n2 = (int)(Class7707.method24587(this.field20868.calcPercent(), 0.0f, 1.0f, 1.0f, 7.0f) * 3.0f);
-        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 25.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.025f * n * this.field20868.calcPercent()));
-        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 23.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * n * this.field20868.calcPercent()));
-        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)(18 + n2), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * this.field20868.calcPercent()));
-        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)(18 - n2), ColorUtils.applyAlpha(this.field20866.field13388, n));
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 25.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.025f * partialTicks * this.field20868.calcPercent()));
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), 23.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f * partialTicks * this.field20868.calcPercent()));
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)(18 + n2), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks * this.field20868.calcPercent()));
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)(18 - n2), AllUtils.applyAlpha(this.field20866.field13388, partialTicks));
         GL11.glPushMatrix();
-        super.method14229(n);
+        super.method14229(partialTicks);
         GL11.glPopMatrix();
     }
 }

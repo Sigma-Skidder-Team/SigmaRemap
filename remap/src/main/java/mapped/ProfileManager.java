@@ -133,7 +133,7 @@ public class ProfileManager
     
     public void method32708(final Class8241 field38429) {
         Client.getInstance().method35179();
-        ModuleSettingInitializr.field8978 = new HashMap<Object, Integer>();
+        ModuleSettingInitializr.field8978 = new HashMap<>();
         if (Client.getInstance().getClientMode() != ClientMode.CLASSIC) {
             this.field38429.field33838 = Client.getInstance().moduleManager().saveCurrentConfigToJSON(new JSONObject());
             this.field38429 = field38429;

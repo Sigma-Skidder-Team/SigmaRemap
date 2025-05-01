@@ -18,13 +18,13 @@ public class Class4906 extends Panel
     }
     
     @Override
-    public void draw(float n) {
+    public void draw(float partialTicks) {
         this.field20986.changeDirection(this.method14308() ? Direction.BACKWARDS : Direction.FORWARDS);
-        n *= 0.09f + 0.25f * this.field20986.calcPercent() + (this.field20985 ? 0.0f : 0.2f);
-        RenderUtil.method26874((float)(this.x + 10), (float)(this.y + 16), 5.0f, 14.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        RenderUtil.method26874((float)(this.x + 17), (float)(this.y + 10), 5.0f, 20.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        RenderUtil.method26874((float)(this.x + 24), (float)(this.y + 20), 5.0f, 10.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        super.draw(n);
+        partialTicks *= 0.09f + 0.25f * this.field20986.calcPercent() + (this.field20985 ? 0.0f : 0.2f);
+        RenderUtil.method26874((float)(this.x + 10), (float)(this.y + 16), 5.0f, 14.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.method26874((float)(this.x + 17), (float)(this.y + 10), 5.0f, 20.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        RenderUtil.method26874((float)(this.x + 24), (float)(this.y + 20), 5.0f, 10.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        super.draw(partialTicks);
     }
     
     public void method14738(final boolean field20985) {

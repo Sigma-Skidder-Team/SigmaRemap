@@ -38,13 +38,13 @@ public class CubecraftSpeed extends Module
         CubecraftSpeed.mc.timer.timerSpeed = 1.0f;
         MovementUtil.method23151(0.2);
         if (CubecraftSpeed.mc.player.getMotion().y > 0.0) {
-            ColorUtils.method19155(-0.078);
+            AllUtils.method19155(-0.078);
         }
     }
     
     @EventListener
     public void method10569(final Class5717 class5717) {
-        if (!this.isEnabled() || Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled() || ColorUtils.method19112(CubecraftSpeed.mc.player)) {
+        if (!this.isEnabled() || Client.getInstance().moduleManager().getModuleByClass(BlockFly.class).isEnabled() || AllUtils.method19112(CubecraftSpeed.mc.player)) {
             return;
         }
         final String method9887 = this.getStringSettingValueByName("Mode");
@@ -53,7 +53,7 @@ public class CubecraftSpeed extends Module
                 ++this.field15941;
                 this.field15942 = 0.27;
                 CubecraftSpeed.mc.timer.timerSpeed = 0.7f;
-                if (ColorUtils.method19160(CubecraftSpeed.mc.player, 0.01f)) {
+                if (AllUtils.method19160(CubecraftSpeed.mc.player, 0.01f)) {
                     if (this.getBooleanValueFromSettingName("AutoJump")) {
                         CubecraftSpeed.mc.player.method2725();
                         class5717.method16975(CubecraftSpeed.mc.player.getMotion().y);
@@ -89,7 +89,7 @@ public class CubecraftSpeed extends Module
                 break;
             }
             case "Hop": {
-                if (!CubecraftSpeed.mc.player.collidedVertically || !ColorUtils.method19160(CubecraftSpeed.mc.player, 0.001f) || !MovementUtil.isMoving()) {
+                if (!CubecraftSpeed.mc.player.collidedVertically || !AllUtils.method19160(CubecraftSpeed.mc.player, 0.001f) || !MovementUtil.isMoving()) {
                     ++this.field15941;
                     if (this.field15941 == 1) {
                         this.field15942 = 0.4 + MovementUtil.method23139() * 0.1;
@@ -111,7 +111,7 @@ public class CubecraftSpeed extends Module
             }
             case "YPort": {
                 if (CubecraftSpeed.mc.player.onGround) {
-                    if (ColorUtils.method19114()) {
+                    if (AllUtils.method19114()) {
                         class5717.method16975(0.53000000000001);
                         MovementUtil.method23149(class5717, 3.67 * this.getNumberSettingValueByName("Speed"));
                         this.field15941 = 0;
@@ -129,7 +129,7 @@ public class CubecraftSpeed extends Module
                         this.field15941 = 1;
                         MovementUtil.method23149(class5717, 0.286);
                         class5717.method16975(-0.265);
-                        ColorUtils.method19155(class5717.method16974());
+                        AllUtils.method19155(class5717.method16974());
                         break;
                     }
                     if (this.field15941 == 1) {
@@ -150,7 +150,7 @@ public class CubecraftSpeed extends Module
             if (this.field15943 >= 0.0) {
                 if (this.getStringSettingValueByName("Mode").equals("YPort")) {
                     if (CubecraftSpeed.mc.player.onGround) {
-                        if (ColorUtils.method19160(CubecraftSpeed.mc.player, 0.001f)) {
+                        if (AllUtils.method19160(CubecraftSpeed.mc.player, 0.001f)) {
                             this.field15943 = CubecraftSpeed.mc.player.posY;
                         }
                     }

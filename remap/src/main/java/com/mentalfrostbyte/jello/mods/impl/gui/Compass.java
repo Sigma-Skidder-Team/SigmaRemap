@@ -36,7 +36,7 @@ public class Compass extends Module
                 }
             }
             final double n3 = (7.0f + this.method10809(Compass.mc.player.rotationYaw) - intValue) / 15.0f * n;
-            RenderUtil.drawImage(Compass.mc.window.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), ClientAssets.shadow, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
+            RenderUtil.drawImage(Compass.mc.window.method7694() / 2 - index * n * 1.5f, -40.0f, index * n * 2 * 1.5f, (float)(220 + n2), ClientAssets.shadow, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.25f));
             int n4 = 0;
             for (final int intValue2 : method10807) {
                 ++n4;
@@ -87,15 +87,15 @@ public class Compass extends Module
         }
         if (!string.matches(".*\\d+.*")) {
             if (string.length() != 1) {
-                RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + (n3 - ClientFonts.JelloLight25.getWidth(string)) / 2), (float)(n2 + 20), string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+                RenderUtil.drawString(ClientFonts.JelloLight25, (float)(n + (n3 - ClientFonts.JelloLight25.getWidth(string)) / 2), (float)(n2 + 20), string, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
             }
             else {
-                RenderUtil.drawString(ClientFonts.JelloMedium40, (float)(n + (n3 - ClientFonts.JelloMedium40.getWidth(string)) / 2), (float)(n2 + 10), string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+                RenderUtil.drawString(ClientFonts.JelloMedium40, (float)(n + (n3 - ClientFonts.JelloMedium40.getWidth(string)) / 2), (float)(n2 + 10), string, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
             }
         }
         else {
-            RenderUtil.method26876((float)(n + n3 / 2 - 1), (float)(n2 + 28), (float)(n + n3 / 2 + 1), (float)(n2 + 38), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4 * 0.5f));
-            RenderUtil.drawString(ClientFonts.JelloLight18, (float)(n + (n3 - ClientFonts.JelloLight18.getWidth(string)) / 2), (float)(n2 + 40), string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+            RenderUtil.method26876((float)(n + n3 / 2 - 1), (float)(n2 + 28), (float)(n + n3 / 2 + 1), (float)(n2 + 38), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4 * 0.5f));
+            RenderUtil.drawString(ClientFonts.JelloLight18, (float)(n + (n3 - ClientFonts.JelloLight18.getWidth(string)) / 2), (float)(n2 + 40), string, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
         }
     }
     

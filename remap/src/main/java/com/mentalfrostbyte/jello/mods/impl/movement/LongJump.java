@@ -5,11 +5,10 @@
 package com.mentalfrostbyte.jello.mods.impl.movement;
 
 import com.mentalfrostbyte.jello.mods.Category;
-import com.mentalfrostbyte.jello.mods.Module;
 import com.mentalfrostbyte.jello.mods.ModuleWithSettings;
 import com.mentalfrostbyte.jello.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.mods.impl.movement.longjumps.*;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 
 public class LongJump extends ModuleWithSettings
 {
@@ -26,7 +25,7 @@ public class LongJump extends ModuleWithSettings
         if (--n < 0 || n >= array.length) {
             return LongJump.mc.player.getMotion().y;
         }
-        if (ColorUtils.method19114() && !LongJump.mc.player.collidedHorizontally) {
+        if (AllUtils.method19114() && !LongJump.mc.player.collidedHorizontally) {
             return array[n];
         }
         return array2[n];

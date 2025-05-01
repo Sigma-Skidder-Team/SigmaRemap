@@ -49,29 +49,29 @@ public class Class4802 extends Class4800
         this.field20473.add(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[17]);
         this.field20473.add(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[16]);
         this.field20473.add(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[16]);
-        final Class4817 class4817;
-        this.addToList(class4817 = new Class4817(this, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[18], 0, 100, this.field20480, this.field20481 - 100));
+        final ScrollablePane scrollablePane;
+        this.addToList(scrollablePane = new ScrollablePane(this, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[18], 0, 100, this.field20480, this.field20481 - 100));
         int i = 0;
         final int n = 20;
         final Iterator<String> iterator = this.field20473.iterator();
         while (iterator.hasNext()) {
             for (final String s : iterator.next().split(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[19])) {
-                class4817.addToList(new Class4834(class4817, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, ColorHelper.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? ClientFonts.JelloMedium20 : ClientFonts.JelloLight20));
+                scrollablePane.addToList(new Class4834(scrollablePane, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[20] + i, 40, 40 + n * i++, 0, 0, ColorHelper.field25964, s, s.startsWith(Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[21]) ? ClientFonts.JelloMedium20 : ClientFonts.JelloLight20));
             }
         }
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26874(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20472.calcPercent() * 0.95f));
+    public void draw(final float partialTicks) {
+        RenderUtil.method26874(0.0f, 0.0f, (float)this.field20480, (float)this.field20481, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, this.field20472.calcPercent() * 0.95f));
         RenderUtil.drawString(ClientFonts.JelloMedium40, 40.0f, 40.0f, Class4802.\u5a21\u3fd9\u4989\u4c39\u156e[22], ClientColors.LIGHT_GREYISH_BLUE.color);
         super.draw(this.field20472.calcPercent());
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 256) {
             Minecraft.getInstance().displayGuiScreen(new Class555());
         }
     }

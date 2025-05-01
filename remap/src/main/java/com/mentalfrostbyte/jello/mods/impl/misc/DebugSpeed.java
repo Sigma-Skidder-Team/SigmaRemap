@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.mods.Category;
 import com.mentalfrostbyte.jello.mods.Module;
 import mapped.EventPlayerTick;
-import mapped.ColorUtils;
+import mapped.AllUtils;
 import mapped.EventListener;
 import net.minecraft.util.math.Vec3d;
 
@@ -44,7 +44,7 @@ public class DebugSpeed extends Module
                     }
                     String s;
                     for (s = Float.toString(floatValue); s.length() < 6; s += "0") {}
-                    ColorUtils.method19106(Client.getInstance().getCommandManager().method32671() + "(" + s + "x faster " + (b ? "walking" : "jumping") + ")  Speed: " + d);
+                    AllUtils.method19106(Client.getInstance().getCommandManager().method32671() + "(" + s + "x faster " + (b ? "walking" : "jumping") + ")  Speed: " + d);
                 }
             }
             int field15621;

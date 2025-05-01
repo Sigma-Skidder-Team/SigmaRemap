@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Class7816 extends Class7814
+public class AdvancedAntiBot extends AntiBotBase
 {
     public List<Integer> field32021;
     public HashMap<Entity, Integer> field32022;
     public HashMap<Entity, ArrayList<Integer>> field32023;
     public int field32024;
     
-    public Class7816() {
+    public AdvancedAntiBot() {
         super("Movement", "Detects bots based on movement patterns", Class304.field1771);
         this.field32021 = new CopyOnWriteArrayList<Integer>();
         this.field32022 = new HashMap<Entity, Integer>();
@@ -31,22 +31,22 @@ public class Class7816 extends Class7814
     }
     
     @Override
-    public boolean method25239(final Entity key) {
+    public boolean isBot(final Entity key) {
         return this.field32022.getOrDefault(key, 0) < this.field32024;
     }
     
     @EventListener
     private void method25251(final EventPlayerTick eventPlayerTick) {
-        if (Class7816.field32015.player.ticksExisted < 10) {
+        if (AdvancedAntiBot.field32015.player.ticksExisted < 10) {
             this.field32022.clear();
         }
-        for (final PlayerEntity class5744 : ColorUtils.method19108()) {
-            if (class5744 != Class7816.field32015.player) {
+        for (final PlayerEntity class5744 : AllUtils.getPlayerEntities()) {
+            if (class5744 != AdvancedAntiBot.field32015.player) {
                 Label_0079: {
                     if (class5744 != null) {
-                        if (ColorUtils.method19160(class5744, 0.01f)) {
+                        if (AllUtils.method19160(class5744, 0.01f)) {
                             if (!class5744.method1823()) {
-                                if (class5744.method1732(Class7816.field32015.player) <= 5.0f) {
+                                if (class5744.method1732(AdvancedAntiBot.field32015.player) <= 5.0f) {
                                     if (class5744.posX != class5744.lastTickPosX) {
                                         break Label_0079;
                                     }
@@ -73,17 +73,17 @@ public class Class7816 extends Class7814
     
     @EventListener
     private void method25252(final EventReceivePacket eventReceivePacket) {
-        if (Class7816.field32015.player != null && this.field32022 != null) {
-            if (Class7816.field32015.player.ticksExisted < 10) {
+        if (AdvancedAntiBot.field32015.player != null && this.field32022 != null) {
+            if (AdvancedAntiBot.field32015.player.ticksExisted < 10) {
                 this.field32022.clear();
             }
             if (eventReceivePacket.getPacket() instanceof Class4372) {
                 final Class4372 class5724 = (Class4372) eventReceivePacket.getPacket();
-                if (!(class5724.getEntity(Class7816.field32015.world) instanceof PlayerEntity)) {
+                if (!(class5724.getEntity(AdvancedAntiBot.field32015.world) instanceof PlayerEntity)) {
                     return;
                 }
-                final Entity method13142 = class5724.getEntity(Class7816.field32015.world);
-                final boolean method13143 = ColorUtils.method19160(method13142, 0.5f);
+                final Entity method13142 = class5724.getEntity(AdvancedAntiBot.field32015.world);
+                final boolean method13143 = AllUtils.method19160(method13142, 0.5f);
                 final short method13144 = class5724.getY();
                 if (!this.field32023.containsKey(method13142)) {
                     this.field32023.put(method13142, new ArrayList<Integer>());
@@ -144,10 +144,10 @@ public class Class7816 extends Class7814
     }
     
     public boolean method25255(final Entity class399) {
-        if (!Class7816.field32015.world.getBlockState(class399.method1894()).method21723()) {
+        if (!AdvancedAntiBot.field32015.world.getBlockState(class399.method1894()).method21723()) {
             final AxisAlignedBB class400 = new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - 0.5, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ);
             for (final BlockPos class401 : method25256(class399)) {
-                final VoxelShape method21725 = Class7816.field32015.world.getBlockState(class401).method21725(Class7816.field32015.world, class401);
+                final VoxelShape method21725 = AdvancedAntiBot.field32015.world.getBlockState(class401).method21725(AdvancedAntiBot.field32015.world, class401);
                 if (!method21725.isEmpty() && class400.intersects(method21725.getBoundingBox().offset(class401))) {
                     return true;
                 }
@@ -169,7 +169,7 @@ public class Class7816 extends Class7814
     }
     
     @Override
-    public boolean method25240(final Entity key) {
+    public boolean isNotBot(final Entity key) {
         return this.field32022.getOrDefault(key, 0) >= this.field32024;
     }
 }

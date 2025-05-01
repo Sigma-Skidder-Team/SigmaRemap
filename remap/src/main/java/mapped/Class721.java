@@ -35,7 +35,7 @@ public class Class721 extends Class720
         RenderUtil.endScissor();
         this.field3944.render(n, n2, n3);
         this.drawString(this.font, this.title.getFormattedText(), this.width / 2 - 146, 13, 16777215);
-        this.drawString(this.font, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
+        this.drawString(this.font, "Jello Portal:", this.width / 2 - 30, 13, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
     }
     
     private int method3962() {

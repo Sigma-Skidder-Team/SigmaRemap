@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.mods.Module;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4821 extends Class4817 implements Class4820
+public class Class4821 extends ScrollablePane implements Class4820
 {
     public final Category field20629;
     private final List<Class4868> field20630;
@@ -35,7 +35,7 @@ public class Class4821 extends Class4817 implements Class4820
     public void method14390() {
         int n = 0;
         for (final Module class3167 : Client.getInstance().moduleManager().getModulesByCategory(this.field20629)) {
-            final int method19118 = ColorUtils.applyAlpha(-3487030, 0.0f);
+            final int method19118 = AllUtils.applyAlpha(-3487030, 0.0f);
             final ColorHelper method19119 = new ColorHelper(class3167.isEnabled() ? -14047489 : 1895167477, class3167.isEnabled() ? -14042881 : method19118).method19734(class3167.isEnabled() ? ClientColors.LIGHT_GREYISH_BLUE.color : ClientColors.DEEP_TEAL.color);
             method19119.method19736(Class2056.field11734);
             final Class4868 class3168;
@@ -119,9 +119,9 @@ public class Class4821 extends Class4817 implements Class4820
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
-        super.draw(n * ((Class4924)this.field20475).field21063);
+    public void draw(final float partialTicks) {
+        this.translate();
+        super.draw(partialTicks * ((Class4924)this.field20475).field21063);
     }
     
     @Override

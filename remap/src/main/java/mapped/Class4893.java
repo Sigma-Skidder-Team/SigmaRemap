@@ -21,9 +21,9 @@ public class Class4893 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)this.field20480, ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.color, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * n));
-        RenderUtil.method26874((float)(this.x + (this.field20480 - 10) / 2), (float)(this.y + this.field20481 / 2 - 1), 10.0f, 2.0f, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f * n));
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        RenderUtil.method26888((float)(this.x + this.field20480 / 2), (float)(this.y + this.field20481 / 2), (float)this.field20480, AllUtils.applyAlpha(ClientColors.PALE_YELLOW.color, (0.5f + this.field20918 * 0.3f + (this.field20492 ? 0.2f : 0.0f)) * partialTicks));
+        RenderUtil.method26874((float)(this.x + (this.field20480 - 10) / 2), (float)(this.y + this.field20481 / 2 - 1), 10.0f, 2.0f, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.75f * partialTicks));
+        super.draw(partialTicks);
     }
 }

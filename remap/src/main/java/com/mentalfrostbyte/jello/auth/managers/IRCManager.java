@@ -76,7 +76,7 @@ public class IRCManager {
             final AbstractClientPlayerEntity player = iterator.next();
             if (!this.seenPlayers.contains(player.getUniqueID())) {
                 if (!Client.getInstance().getBotManager().isBot(player)) {
-                    if (!player.getName().getUnformattedComponentText().equals("")) {
+                    if (!player.getName().getUnformattedComponentText().isEmpty()) {
                         continue;
                     }
                 }
@@ -84,7 +84,7 @@ public class IRCManager {
             iterator.remove();
         }
 
-        if (playerList.size() != 0) {
+        if (!playerList.isEmpty()) {
             final Iterator<AbstractClientPlayerEntity> sendIterator = playerList.iterator();
             int sent = 0;
             final JsonArray jsonArray = new JsonArray();

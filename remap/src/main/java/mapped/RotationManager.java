@@ -86,7 +86,7 @@ public class RotationManager {
     public void method28369(final Class5740 class5740) {
         if (this.field34856.player != null) {
             if (this.field34856.player.method1654() == Pose.field1666) {
-                if (ViaManager.method34762() < Class7906.field32463.method25613() || ColorUtils.method19146()) {
+                if (ViaManager.method34762() < Class7906.field32463.method25613() || AllUtils.method19146()) {
                     this.field34856.player.method1653(Pose.field1663);
                 }
             }
@@ -122,7 +122,7 @@ public class RotationManager {
         }
         for (int size = RotationManager.field34858.size(), i = 0; i < size; ++i) {
             final Entity class5744 = RotationManager.field34858.get(i);
-            if (!ColorUtils.method19138().contains(class5744)) {
+            if (!AllUtils.method19138().contains(class5744)) {
                 RotationManager.field34858.remove(class5744);
                 --size;
                 --i;
@@ -191,7 +191,7 @@ public class RotationManager {
                         } else {
                             final Entity method6742 = this.field34856.world.getEntityByID(class5724.method13248());
                             if (!RotationManager.field34858.contains(method6742)) {
-                                if (!ColorUtils.method19149()) {
+                                if (!AllUtils.method19149()) {
                                     RotationManager.field34858.add(method6742);
                                 }
                             }
@@ -204,7 +204,7 @@ public class RotationManager {
         if (this.method28375()) {
             Class8090.method26583(eventReceivePacket, this.field34860);
             if (!(eventReceivePacket.getPacket() instanceof Class4388)) {
-                if (eventReceivePacket.getPacket() instanceof Class4288 && ColorUtils.method19147()) {
+                if (eventReceivePacket.getPacket() instanceof Class4288 && AllUtils.method19147()) {
                     eventReceivePacket.setCancelled(true);
                 } else if (!(eventReceivePacket.getPacket() instanceof Class4289)) {
                     if (eventReceivePacket.getPacket() instanceof Class4379 && this.field34856.player != null) {
@@ -255,7 +255,7 @@ public class RotationManager {
     @EventListener
     @HighestPriority
     public void method28374(final Class5717 class5717) {
-        if (ViaManager.method34762() < Class7906.field32463.method25613() || ColorUtils.method19146()) {
+        if (ViaManager.method34762() < Class7906.field32463.method25613() || AllUtils.method19146()) {
             if (this.field34856.player.method1706()) {
                 this.field34863 = true;
                 final double field2396 = this.field34856.player.posY;
@@ -304,7 +304,7 @@ public class RotationManager {
                 Class9379.field40222 = this.field34856.player.getMotion().y;
                 if (this.field34863) {
                     if (Class9379.method34828()) {
-                        ColorUtils.method19155(Class9379.field40222 = 0.20000000298023224);
+                        AllUtils.method19155(Class9379.field40222 = 0.20000000298023224);
                     }
                 }
                 Class9379.field40221 = this.field34856.player.getMotion().x;
@@ -315,15 +315,15 @@ public class RotationManager {
         if (ViaManager.method34762() == Class7906.field32452.method25613()) {
             if (Math.abs(class5717.method16972()) < 0.005) {
                 class5717.method16973(0.0);
-                ColorUtils.method19154(class5717.method16972());
+                AllUtils.method19154(class5717.method16972());
             }
             if (Math.abs(class5717.method16974()) < 0.005) {
                 class5717.method16975(0.0);
-                ColorUtils.method19155(class5717.method16974());
+                AllUtils.method19155(class5717.method16974());
             }
             if (Math.abs(class5717.method16976()) < 0.005) {
                 class5717.method16977(0.0);
-                ColorUtils.method19156(class5717.method16976());
+                AllUtils.method19156(class5717.method16976());
             }
         }
     }

@@ -25,16 +25,16 @@ public class JelloChatInput extends Panel {
     }
 
     @Override
-    public void draw(final float n) {
-        super.method14228();
-        RenderUtil.method26917(this.x, this.y, this.field20480, this.field20481, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        super.draw(n);
+    public void draw(final float partialTicks) {
+        super.translate();
+        RenderUtil.draw(this.x, this.y, this.field20480, this.field20481, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        super.draw(partialTicks);
     }
 
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 257) {
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+        if (key == 257) {
             ((JelloChat) this.getParent()).method14804(this.message.getTypedText());
             Client.getInstance().getNetworkManager().irc.sendMessage("SF4FSERFERF", this.message.getTypedText());
             this.message.setTypedText("");

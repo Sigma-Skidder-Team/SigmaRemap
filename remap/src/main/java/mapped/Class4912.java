@@ -37,7 +37,7 @@ public class Class4912 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int method7696 = Minecraft.getInstance().window.method7696();
         final int method7697 = Minecraft.getInstance().window.method7697();
         final int n2 = method7696 / 2;
@@ -75,8 +75,8 @@ public class Class4912 extends Class4825
             else {
                 class9159.field38809 = (float)method7697;
             }
-            class9159.method33439(n);
+            class9159.method33439(partialTicks);
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

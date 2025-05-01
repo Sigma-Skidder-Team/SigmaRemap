@@ -246,7 +246,7 @@ public class KillAura extends Module
                     final ModuleWithSettings class5746 = (ModuleWithSettings) Client.getInstance().moduleManager().getModuleByClass(Fly.class);
                     if (class5746.isEnabled()) {
                         if (class5746.getStringSettingValueByName("Type").equals("Hypixel")) {
-                            if (ColorUtils.method19146()) {
+                            if (AllUtils.method19146()) {
                                 if (HypixelFly.field16077 != 0.0) {
                                     n3 = 0;
                                 }
@@ -442,7 +442,7 @@ public class KillAura extends Module
                     this.field16052 = 0;
                     b3 = false;
                 }
-                if (!Jesus.method10433() && (!KillAura.mc.player.onGround && !ColorUtils.method19160(KillAura.mc.player, 0.001f))) {
+                if (!Jesus.method10433() && (!KillAura.mc.player.onGround && !AllUtils.method19160(KillAura.mc.player, 0.001f))) {
                     ++this.field16053;
                 }
                 else {
@@ -509,7 +509,7 @@ public class KillAura extends Module
                 }
             }
         }
-        final boolean b5 = !Jesus.method10433() && (KillAura.mc.player.onGround || ColorUtils.method19160(KillAura.mc.player, 0.001f));
+        final boolean b5 = !Jesus.method10433() && (KillAura.mc.player.onGround || AllUtils.method19160(KillAura.mc.player, 0.001f));
         if (b5) {
             ++this.field16053;
             if (!Client.getInstance().moduleManager().getModuleByClass(Speed.class).isEnabled() || Client.getInstance().moduleManager().getModuleByClass(Speed.class).getStringSettingValueByName("Type").equalsIgnoreCase("Cubecraft")) {
@@ -569,13 +569,13 @@ public class KillAura extends Module
                                 if (KillAura.field16061 != null && KillAura.field16061.method26798() != this.field16062.get(0).method26798()) {
                                     this.field16068 = Math.abs(this.method10755(this.field16062.get(0).method26799().field32884, KillAura.field16063.field32884)) * 1.95f / 50.0f;
                                     this.field16067 = Math.random();
-                                    final EntityRayTraceResult method9890 = ColorUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
+                                    final EntityRayTraceResult method9890 = AllUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
                                     if (method9890 == null || method9890.getEntity() != KillAura.field16061.method26798()) {
                                         KillAura.field16066 = 1;
                                     }
                                 }
                                 else if (KillAura.field16061 == null) {
-                                    final EntityRayTraceResult method9891 = ColorUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
+                                    final EntityRayTraceResult method9891 = AllUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
                                     if (method9891 == null || method9891.getEntity() != this.field16062.get(0).method26798()) {
                                         KillAura.field16066 = 1;
                                     }
@@ -680,7 +680,7 @@ public class KillAura extends Module
                                             if (!this.getStringSettingValueByName("Attack Mode").equals("Pre")) {
                                                 break;
                                             }
-                                            final EntityRayTraceResult method9896 = ColorUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
+                                            final EntityRayTraceResult method9896 = AllUtils.rayTraceFromPlayer(this.field16064.field32884, this.field16064.field32885, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
                                             if (method9896 == null || method9896.getEntity() != KillAura.field16061.method26798()) {
                                                 KillAura.field16066 = 1;
                                             }
@@ -755,7 +755,7 @@ public class KillAura extends Module
                     this.field16070 = field16072;
                 }
                 else if (Math.abs(method26801) > 10.0f) {
-                    final double n2 = (ColorUtils.getEntityFromRayTrace(this.field16064.field32885, this.field16064.field32884, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand")) == null) ? 13.4 : 3.4;
+                    final double n2 = (AllUtils.getEntityFromRayTrace(this.field16064.field32885, this.field16064.field32884, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand")) == null) ? 13.4 : 3.4;
                     this.field16070 *= (float)0.5296666666666666;
                     if (Math.abs(method26801) < 20.0f) {
                         this.field16070 = method26801 * 0.5f;
@@ -779,10 +779,10 @@ public class KillAura extends Module
                     final Class7988 field16078 = this.field16064;
                     field16078.field32885 += (float)(method26802 * 0.81 + this.method10757(-2.0, 2.0));
                 }
-                final Entity method26804 = ColorUtils.getEntityFromRayTrace(this.field16065.field32885, this.field16065.field32884, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
+                final Entity method26804 = AllUtils.getEntityFromRayTrace(this.field16065.field32885, this.field16065.field32884, this.getNumberSettingValueByName("Range"), this.getNumberSettingValueByName("Hit box expand"));
                 if (method26804 != null && this.field16059 > this.method10757(2.0, 5.0)) {
                     this.field16059 = 0;
-                    ColorUtils.method19165(method26804, true);
+                    AllUtils.method19165(method26804, true);
                     break;
                 }
                 break;

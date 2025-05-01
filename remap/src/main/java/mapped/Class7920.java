@@ -108,7 +108,7 @@ public class Class7920
     }
     
     public void method25648(final int n, final int n2, final int n3, final int n4, final float n5) {
-        RenderUtil.method26901((float)n, (float)n2, (float)n3, (float)n4, this.field32514, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5), (float)(this.field32515 % this.field32520 * this.field32517), (float)(this.field32515 / this.field32520 * this.field32518), (float)this.field32517, (float)this.field32518);
+        RenderUtil.method26901((float)n, (float)n2, (float)n3, (float)n4, this.field32514, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n5), (float)(this.field32515 % this.field32520 * this.field32517), (float)(this.field32515 / this.field32520 * this.field32518), (float)this.field32517, (float)this.field32518);
     }
     
     public Texture method25649() {

@@ -43,17 +43,17 @@ public class Class4873 extends Class4868
     }
     
     @Override
-    public void draw(final float n) {
-        RenderUtil.drawImage((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), this.method14607(), ColorUtils.applyAlpha(ColorUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * n));
+    public void draw(final float partialTicks) {
+        RenderUtil.drawImage((float)this.method14272(), (float)this.method14274(), (float)this.method14276(), (float)this.method14278(), this.method14607(), AllUtils.applyAlpha(AllUtils.method19120(this.field20497.method19729(), this.field20497.method19727(), 1.0f - (this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(partialTicks * this.field20845, 0.0f))) : 0.3f)), (this.field20497.method19729() >> 24 & 0xFF) / 255.0f * partialTicks));
         if (this.getTypedText() != null) {
-            RenderUtil.method26890(this.method14316(), (float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14278() / 2), this.getTypedText(), ColorUtils.applyAlpha(this.field20497.method19733(), n), this.field20497.method19735(), this.field20497.method19737());
+            RenderUtil.method26890(this.method14316(), (float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14278() / 2), this.getTypedText(), AllUtils.applyAlpha(this.field20497.method19733(), partialTicks), this.field20497.method19735(), this.field20497.method19737());
         }
         GL11.glPushMatrix();
-        super.method14229(n);
+        super.method14229(partialTicks);
         GL11.glPopMatrix();
     }
     
     static {
-        field20856 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ColorUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.1f));
+        field20856 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, AllUtils.method19121(ClientColors.LIGHT_GREYISH_BLUE.color, 0.1f));
     }
 }

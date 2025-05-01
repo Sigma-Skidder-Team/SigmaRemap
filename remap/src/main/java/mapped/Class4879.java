@@ -40,14 +40,14 @@ public class Class4879 extends Class4868
     }
     
     @Override
-    public void draw(final float n) {
-        final float n2 = this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(n * this.field20845, 0.0f))) : 0.3f;
+    public void draw(final float partialTicks) {
+        final float n2 = this.isHovered() ? (this.method14386() ? 0.0f : (this.method14309() ? 1.5f : Math.max(partialTicks * this.field20845, 0.0f))) : 0.3f;
         final int n3 = 5;
         final float n4 = (float)this.method14276();
-        RenderUtil.method26913((float)(this.method14272() + n3), (float)(this.method14274() + n3), (float)(this.method14276() - n3 * 2), (float)(this.method14278() - n3 * 2), 10.0f, n * 0.8f);
-        RenderUtil.method26888((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14276() / 2), n4, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
+        RenderUtil.method26913((float)(this.method14272() + n3), (float)(this.method14274() + n3), (float)(this.method14276() - n3 * 2), (float)(this.method14278() - n3 * 2), 10.0f, partialTicks * 0.8f);
+        RenderUtil.method26888((float)(this.method14272() + this.method14276() / 2), (float)(this.method14274() + this.method14276() / 2), n4, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         if (this.getTypedText() == null) {}
         final TrueTypeFont field40310 = ClientFonts.JelloLight12;
-        super.method14229(n);
+        super.method14229(partialTicks);
     }
 }

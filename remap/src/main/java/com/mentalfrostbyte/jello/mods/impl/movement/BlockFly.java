@@ -237,7 +237,7 @@ public class BlockFly extends ModuleWithSettings {
             BlockFly.mc.timer.timerSpeed = 1.0f;
         }
         if (this.method10281() != 0 && (!BlockFly.mc.player.collidedVertically || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft"))) {
-            if (!ColorUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
+            if (!AllUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 final String method9887 = this.getStringSettingValueByName("Tower Mode");
                 switch (method9887) {
                     case "NCP": {
@@ -253,11 +253,11 @@ public class BlockFly extends ModuleWithSettings {
                                 }
                             }
                         }
-                        if (BlockFly.mc.player.posY != (int) BlockFly.mc.player.posY || !ColorUtils.method19160(BlockFly.mc.player, 0.001f)) {
+                        if (BlockFly.mc.player.posY != (int) BlockFly.mc.player.posY || !AllUtils.method19160(BlockFly.mc.player, 0.001f)) {
                             break;
                         }
                         if (BlockFly.mc.gameSettings.field23439.field2162) {
-                            if (!ColorUtils.method19114()) {
+                            if (!AllUtils.method19114()) {
                                 MovementUtil.method23151(0.0);
                                 MovementUtil.method23149(class5717, 0.0);
                             }
@@ -270,14 +270,14 @@ public class BlockFly extends ModuleWithSettings {
                     case "AAC": {
                         if (class5717.method16974() > 0.247 && class5717.method16974() < 0.249) {
                             class5717.method16975((int) (BlockFly.mc.player.posY + class5717.method16974()) - BlockFly.mc.player.posY);
-                            if (BlockFly.mc.gameSettings.field23439.field2162 && !ColorUtils.method19114()) {
+                            if (BlockFly.mc.gameSettings.field23439.field2162 && !AllUtils.method19114()) {
                                 MovementUtil.method23151(0.0);
                                 MovementUtil.method23149(class5717, 0.0);
                                 break;
                             }
                             break;
                         } else {
-                            if (BlockFly.mc.player.posY == (int) BlockFly.mc.player.posY && ColorUtils.method19160(BlockFly.mc.player, 0.001f)) {
+                            if (BlockFly.mc.player.posY == (int) BlockFly.mc.player.posY && AllUtils.method19160(BlockFly.mc.player, 0.001f)) {
                                 class5717.method16975(-1.0E-10);
                                 break;
                             }
@@ -286,7 +286,7 @@ public class BlockFly extends ModuleWithSettings {
                         break;
                     }
                     case "Cubecraft": {
-                        if (BlockFly.mc.gameSettings.field23439.field2162 && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.world.method6981(BlockFly.mc.player, BlockFly.mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
+                        if (BlockFly.mc.gameSettings.field23439.field2162 && AllUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.world.method6981(BlockFly.mc.player, BlockFly.mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             BlockFly.mc.player.setPosition(BlockFly.mc.player.posX, BlockFly.mc.player.posY + 1.0, BlockFly.mc.player.posZ);
                             class5717.method16975(0.0);
                             MovementUtil.method23149(class5717, 0.0);
@@ -297,19 +297,19 @@ public class BlockFly extends ModuleWithSettings {
                     }
                 }
             }
-        } else if (this.getStringSettingValueByName("Tower Mode").equals("AAC") && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
-            if (!ColorUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
+        } else if (this.getStringSettingValueByName("Tower Mode").equals("AAC") && AllUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
+            if (!AllUtils.method19114() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 BlockFly.mc.player.field2985 = 0;
                 BlockFly.mc.player.method2725();
                 MovementUtil.method23149(class5717, MovementUtil.method23136());
                 MovementUtil.method23151(MovementUtil.method23136());
             }
-        } else if (!this.getStringSettingValueByName("Tower Mode").equals("NCP") && !this.getStringSettingValueByName("Tower Mode").equals("Cubecraft") && ColorUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
+        } else if (!this.getStringSettingValueByName("Tower Mode").equals("NCP") && !this.getStringSettingValueByName("Tower Mode").equals("Cubecraft") && AllUtils.method19160(BlockFly.mc.player, 0.001f) && BlockFly.mc.gameSettings.field23439.field2162) {
             BlockFly.mc.player.field2985 = 20;
             class5717.method16975(MovementUtil.method23141());
         }
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Cubecraft")) {
-            ColorUtils.method19155(class5717.method16974());
+            AllUtils.method19155(class5717.method16974());
         }
     }
 
@@ -355,8 +355,8 @@ public class BlockFly extends ModuleWithSettings {
     public void method10290(final int n, final int n2, float n3) {
         n3 = (float) (0.5 + 0.5 * n3);
         GL11.glAlphaFunc(518, 0.1f);
-        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n3 * 0.3f));
-        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 4), this.field15752 + " Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3 * 0.8f));
+        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 5), this.field15752 + " Blocks", AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, n3 * 0.3f));
+        RenderUtil.drawString(ClassicAssets.field40815, (float) (n + 10), (float) (n2 + 4), this.field15752 + " Blocks", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3 * 0.8f));
         GL11.glAlphaFunc(519, 0.0f);
     }
 
@@ -367,16 +367,16 @@ public class BlockFly extends ModuleWithSettings {
         final int n7 = 32;
         n -= n6 / 2;
         GL11.glPushMatrix();
-        RenderUtil.method26915(n, n2, n6, n7, ColorUtils.applyAlpha(-15461356, 0.8f * n3));
-        RenderUtil.drawString(ClientFonts.JelloLight18, (float) (n + 10), (float) (n2 + 4), this.field15752 + "", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3));
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float) (n + 10 + n5), (float) (n2 + 8), "Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * n3));
+        RenderUtil.method26915(n, n2, n6, n7, AllUtils.applyAlpha(-15461356, 0.8f * n3));
+        RenderUtil.drawString(ClientFonts.JelloLight18, (float) (n + 10), (float) (n2 + 4), this.field15752 + "", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n3));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float) (n + 10 + n5), (float) (n2 + 8), "Blocks", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.6f * n3));
         n += 11 + n6 / 2;
         n2 += n7;
         GL11.glPushMatrix();
         GL11.glTranslatef((float) n, (float) n2, 0.0f);
         GL11.glRotatef(90.0f, 0.0f, 0.0f, 1.0f);
         GL11.glTranslatef((float) (-n), (float) (-n2), 0.0f);
-        RenderUtil.drawImage((float) n, (float) n2, 9.0f, 23.0f, ClientAssets.select, ColorUtils.applyAlpha(-15461356, 0.8f * n3));
+        RenderUtil.drawImage((float) n, (float) n2, 9.0f, 23.0f, ClientAssets.select, AllUtils.applyAlpha(-15461356, 0.8f * n3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

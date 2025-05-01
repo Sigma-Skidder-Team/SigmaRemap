@@ -37,8 +37,8 @@ public class Class4920 extends Class4825
     }
     
     @Override
-    public void draw(final float n) {
-        this.method14228();
+    public void draw(final float partialTicks) {
+        this.translate();
         final int method7696 = Minecraft.getInstance().window.method7696();
         final int method7697 = Minecraft.getInstance().window.method7697();
         final int n2 = (int)(method7696 / 4.0f);
@@ -65,7 +65,7 @@ public class Class4920 extends Class4825
                     if (class9096.field38519 >= -50.0f) {
                         if (class9096.field38519 <= method7697 + 50) {
                             if (Class9096.method32870(class9096) != 0.0f) {
-                                class9096.method32867(n);
+                                class9096.method32867(partialTicks);
                                 continue;
                             }
                         }
@@ -74,6 +74,6 @@ public class Class4920 extends Class4825
             }
             iterator.remove();
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

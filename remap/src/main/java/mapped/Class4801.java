@@ -63,7 +63,7 @@ public class Class4801 extends Class4800
         this.field20465.method14385(true);
         final Class4873 class3169;
         this.addToList(class3169 = new Class4873(this, "more", this.method14276() - 69, this.method14278() - 55, 55, 41, ClientAssets.options2));
-        class3169.method14318().method19730(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
+        class3169.method14318().method19730(AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.3f));
         class3169.setListening(false);
         this.field20465.setEnabled(Class4801.field20470);
         class3169.doThis((class4803, n) -> this.runThisOnDimensionUpdate(() -> {
@@ -78,8 +78,8 @@ public class Class4801 extends Class4800
         }));
         Class4801.field20461 = new Animation(450, 125);
         this.field20459 = new Class4919(this, this, "overlay");
-        ColorUtils.method19169();
-        ColorUtils.method19170(Class4801.field20461.calcPercent());
+        AllUtils.method19169();
+        AllUtils.method19170(Class4801.field20461.calcPercent());
     }
     
     public boolean method14208() {
@@ -138,7 +138,7 @@ public class Class4801 extends Class4800
     public void method14200(final int n, final int n2) {
         this.field20465.setEnabled(this.field20465.method14276() < this.method14276() && this.field20465.method14278() < this.method14278());
         super.method14200(n, n2);
-        ColorUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
+        AllUtils.method19170(Math.min(1.0f, Class4801.field20461.calcPercent() * 4.0f));
         this.field20466.setEnabled(Client.getInstance().moduleManager().getModuleByClass(BrainFreeze.class).isEnabled());
         if (this.field20467 != null) {
             final int n3 = n - this.field20467.method14280();
@@ -171,7 +171,7 @@ public class Class4801 extends Class4800
             }
         }
         if (Class4801.field20463) {
-            final float n5 = (float)(0.029999999329447746 * (60.0 / this.method14201()));
+            final float n5 = (float)(0.029999999329447746 * (60.0 / this.getFPS()));
             final Direction method35857 = Class4801.field20461.getDirection();
             Class4801.field20461.changeDirection(Class4801.field20462 ? Direction.FORWARDS : Direction.BACKWARDS);
             if (Class4801.field20461.calcPercent() <= 0.0f && Class4801.field20462) {
@@ -185,20 +185,20 @@ public class Class4801 extends Class4800
         }
         if (Class4801.field20463) {
             if (Class4801.field20462) {
-                ColorUtils.method19172();
+                AllUtils.method19172();
             }
         }
     }
     
     @Override
-    public int method14201() {
+    public int getFPS() {
         final Minecraft field20460 = Class4801.field20460;
         return Minecraft.method5338();
     }
     
     @Override
     public JSONObject method14202(final JSONObject JSONObject) {
-        ColorUtils.method19172();
+        AllUtils.method19172();
         this.method14243(this.field20459);
         return super.method14202(JSONObject);
     }
@@ -220,16 +220,16 @@ public class Class4801 extends Class4800
         if (n3 <= 1) {
             return super.method14211(n, n2, n3);
         }
-        this.method14204(n3);
+        this.onKeyPress(n3);
         return false;
     }
     
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
         final int method21959 = Client.getInstance().moduleManager().getJelloTouch().method21959(ClickGuiHolder.class);
-        if (n != 256) {
-            if (n != method21959) {
+        if (key != 256) {
+            if (key != method21959) {
                 return;
             }
             if (this.field20468 != null) {
@@ -253,9 +253,9 @@ public class Class4801 extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         float n2 = (Class4801.field20463 && !Class4801.field20462) ? (this.method14212(Class4801.field20461.calcPercent(), 0.8f) * 0.5f + 0.5f) : (Class4801.field20463 ? this.method14212(Class4801.field20461.calcPercent(), 1.0f) : 1.0f);
-        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f * n * n2));
+        RenderUtil.method26876((float)this.x, (float)this.y, (float)(this.x + this.field20480), (float)(this.y + this.field20481), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.2f * partialTicks * n2));
         float n3 = 1.0f;
         if (this.field20468 != null) {
             float n4 = Class7707.method24584(this.field20468.field20927.calcPercent(), 0.0f, 1.0f, 1.0f);
@@ -267,13 +267,13 @@ public class Class4801 extends Class4800
         }
         if (Client.getInstance().moduleManager().getProfile().method32707() != null) {
             final String field33839 = Client.getInstance().moduleManager().getProfile().method32707().field33839;
-            RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
+            RenderUtil.drawString(ClientFonts.JelloLight20, (float)(this.field20480 - ClientFonts.JelloLight20.getWidth(field33839) - 80), (float)(this.field20481 - 47), field33839, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f * Math.max(0.0f, Math.min(1.0f, n2))));
         }
         for (final CustomGuiScreen customGuiScreen : this.method14250()) {
             customGuiScreen.method14295((int)((customGuiScreen.method14272() + customGuiScreen.method14276() / 2 - Class4801.field20460.window.method7694() / 2) * (1.0f - n2) * 0.5f), (int)((customGuiScreen.method14274() + customGuiScreen.method14278() / 2 - Class4801.field20460.window.method7695() / 2) * (1.0f - n2) * 0.5f));
             customGuiScreen.method14288(1.5f - n2 * 0.5f, 1.5f - n2 * 0.5f);
         }
-        super.draw(n * Math.min(1.0f, n2) * n3);
+        super.draw(partialTicks * Math.min(1.0f, n2) * n3);
         if (this.field20471 != null) {
             this.field20471.method14301(false);
         }

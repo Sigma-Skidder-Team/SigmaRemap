@@ -208,7 +208,7 @@ public class ScreenManager {
 
     public void method32137(final int n) {
         if (this.field37997 != null) {
-            this.field37997.method14204(n);
+            this.field37997.onKeyPress(n);
         }
     }
 
@@ -225,15 +225,15 @@ public class ScreenManager {
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 final float n4 = 0.5f + TabGUI.field15637.calcPercent() * 0.5f;
                 GL11.glAlphaFunc(516, 0.1f);
-                RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n4));
-                RenderUtil.drawString(ClassicAssets.field40811, 9.0f, 2.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n4));
-                RenderUtil.drawString(ClassicAssets.field40811, 8.0f, 1.0f, "Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n4 * 1.2f)));
+                RenderUtil.method26874(4.0f, 2.0f, 106.0f, 28.0f, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.6f * n4));
+                RenderUtil.drawString(ClassicAssets.field40811, 9.0f, 2.0f, "Sigma", AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f * n4));
+                RenderUtil.drawString(ClassicAssets.field40811, 8.0f, 1.0f, "Sigma", AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, Math.min(1.0f, n4 * 1.2f)));
                 final int rgb = Color.getHSBColor(System.currentTimeMillis() % 4000L / 4000.0f, 1.0f, 1.0f).getRGB();
-                RenderUtil.drawString(ClassicAssets.field40814, 73.0f, 2.0f, "5.0.0", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
-                RenderUtil.drawString(ClassicAssets.field40814, 72.0f, 1.0f, "5.0.0", ColorUtils.applyAlpha(rgb, Math.min(1.0f, n4 * 1.4f)));
+                RenderUtil.drawString(ClassicAssets.field40814, 73.0f, 2.0f, "5.0.0", AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.5f));
+                RenderUtil.drawString(ClassicAssets.field40814, 72.0f, 1.0f, "5.0.0", AllUtils.applyAlpha(rgb, Math.min(1.0f, n4 * 1.4f)));
             } else {
                 GL11.glAlphaFunc(519, 0.0f);
-                RenderUtil.method26905((float) n, (float) n2, 170.0f, 104.0f, (ScreenManager.guiScale <= 1.0f) ? ClientAssets.jello_watermark : ClientAssets.jello_watermark2x);
+                RenderUtil.drawImage((float) n, (float) n2, 170.0f, 104.0f, (ScreenManager.guiScale <= 1.0f) ? ClientAssets.jello_watermark : ClientAssets.jello_watermark2x);
             }
             Client.getInstance().getEventBus().post(new Class5740());
         }

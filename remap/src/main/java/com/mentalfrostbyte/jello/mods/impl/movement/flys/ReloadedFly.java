@@ -40,7 +40,7 @@ public class ReloadedFly extends Module {
     public void onDisable() {
         MovementUtil.method23151(0.0);
         if (ReloadedFly.mc.player.getMotion().y > 0.0) {
-            ColorUtils.method19155(-0.0789);
+            AllUtils.method19155(-0.0789);
         }
     }
 
@@ -73,7 +73,7 @@ public class ReloadedFly extends Module {
                     if (Math.abs(class5717.method16974()) < 0.08) {
                         class5717.method16975(this.getBooleanValueFromSettingName("Offset") ? -0.01 : 0.0);
                     }
-                    ColorUtils.method19155(class5717.method16974());
+                    AllUtils.method19155(class5717.method16974());
                     MovementUtil.method23149(class5717, 0.35);
                 }
             } else {
@@ -85,7 +85,7 @@ public class ReloadedFly extends Module {
                     n += this.getNumberSettingValueByName("Speed") / 2.0f;
                 }
                 class5717.method16975(n);
-                ColorUtils.method19155(class5717.method16974());
+                AllUtils.method19155(class5717.method16974());
                 MovementUtil.method23149(class5717, this.getNumberSettingValueByName("Speed"));
             }
         }

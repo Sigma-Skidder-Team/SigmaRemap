@@ -50,7 +50,7 @@ public class Class4811 extends CustomGuiScreen
         this.addToList(this.field20574 = new Class4871(this, "Alt Manager", this.method14352(i13++), this.method14353(), 128, 128, ClientAssets.alt, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color, ClientColors.DEEP_TEAL.color)));
         this.addToList(this.field20577 = new Class4834(this, "Copyright", 10, this.method14278() - 31, v15.getWidth(v17), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), v17, v15));
         this.addToList(this.field20576 = new Class4834(this, "Version", this.method14276() - v15.getWidth(v18) - 9, this.method14278() - 31, 128, 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), v18, v15));
-        this.addToList(this.field20579 = new UIButton(this, "changelog", 232, 24, 110, 50, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f)), "                                                                                                        Changelog                                                                   ", ClientFonts.JelloLight20));
+        this.addToList(this.field20579 = new UIButton(this, "changelog", 232, 24, 110, 50, new ColorHelper(AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.7f)), "                                                                                                        Changelog                                                                   ", ClientFonts.JelloLight20));
         this.field20579.doThis((class4803, n) -> ((MainMenuScreen)this.getParent()).method14791());
         this.addToList(this.field20578 = new Class4897(this, "Account", 0, i15, 0, i14, "Log in"));
         this.addToList(this.field20575 = new Class4839(this, "pre", 0, 0, 240, 100));
@@ -88,7 +88,7 @@ public class Class4811 extends CustomGuiScreen
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         this.method14227();
         final Texture field32160 = ClientAssets.logo_large;
         final int method24918 = field32160.getImageWidth();
@@ -96,8 +96,8 @@ public class Class4811 extends CustomGuiScreen
         if (ScreenManager.guiScale > 1.0f) {
             final Texture field32161 = ClientAssets.logo_large2x;
         }
-        RenderUtil.drawImage((float)(this.method14276() / 2 - method24918 / 2), (float)(this.method14278() / 2 - method24919), (float)method24918, (float)method24919, ClientAssets.logo_large, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n));
-        super.draw(n);
+        RenderUtil.drawImage((float)(this.method14276() / 2 - method24918 / 2), (float)(this.method14278() / 2 - method24919), (float)method24918, (float)method24919, ClientAssets.logo_large, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
+        super.draw(partialTicks);
     }
     
     @Override

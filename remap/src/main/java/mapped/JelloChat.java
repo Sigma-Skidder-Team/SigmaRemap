@@ -14,19 +14,18 @@ import java.util.Map;
 import java.util.UUID;
 
 public class JelloChat extends Class4800 {
-    private static Minecraft field21102;
-    private static float field21103;
+    private static Minecraft mc;
     private float field21104;
-    private final JelloChatInput field21105;
-    private final Class4817 field21106;
-    private final JelloChatMessages field21107;
+    private final JelloChatInput chat;
+    private final ScrollablePane scrollablePane;
+    private final JelloChatMessages messages;
     private final int field21108;
     private int field21109;
     private final int field21110;
     private final int field21111;
     private final int field21112;
     public boolean field21113;
-    private Texture field21114;
+    private Texture blur;
 
     public JelloChat() {
         super("JelloChat");
@@ -36,14 +35,13 @@ public class JelloChat extends Class4800 {
         this.field21111 = 55;
         this.field21112 = 200;
         this.field21113 = true;
-        this.addToList(this.field21105 = new JelloChatInput(this, "input", this.field21108, this.method14278() - this.field21111 - this.field21108, this.field21109, this.field21111));
-        this.addToList(this.field21106 = new Class4817(this, "navbar", this.field21108, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110 + 80, this.field21112, this.field21110 - 90));
-        this.addToList(this.field21107 = new JelloChatMessages(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
-        final int n = 55;
+        this.addToList(this.chat = new JelloChatInput(this, "input", this.field21108, this.method14278() - this.field21111 - this.field21108, this.field21109, this.field21111));
+        this.addToList(this.scrollablePane = new ScrollablePane(this, "navbar", this.field21108, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110 + 80, this.field21112, this.field21110 - 90));
+        this.addToList(this.messages = new JelloChatMessages(this, "chatView", this.field21108 + this.field21112, this.method14278() - this.field21111 - this.field21108 * 2 - this.field21110, this.field21109 - this.field21112, this.field21110));
         System.out.println("loading");
         for (final Map.Entry<UUID, PlayerInfo> entry : Client.getInstance().getNetworkManager().irc.getPlayerInfoMap().entrySet()) {
             System.out.println("added " + entry.getValue().accountId);
-            this.field21106.addToList(new Class4856(this.field21106, entry.getValue().uuidString + "_" + this.field21106.method14250().size(), 0, 0, this.field21106.method14276(), n, entry.getValue().username, entry.getValue().tag));
+            this.scrollablePane.addToList(new IRCMessage(this.scrollablePane, entry.getValue().uuidString + "_" + this.scrollablePane.method14250().size(), 0, 0, this.scrollablePane.method14276(), 55, entry.getValue().username, entry.getValue().tag));
         }
     }
 
@@ -52,63 +50,64 @@ public class JelloChat extends Class4800 {
         super.method14200(n, n2);
         this.setListening(false);
         this.field21109 = 642;
-        this.field21105.method14277(this.field21109);
+        this.chat.method14277(this.field21109);
     }
 
     @Override
-    public int method14201() {
+    public int getFPS() {
         return 60;
     }
 
     public void method14804(final String s) {
-        this.field21107.method14522(s);
+        this.messages.method14522(s);
     }
 
     @Override
-    public void method14204(final int n) {
-        super.method14204(n);
-        if (n == 256) {
-            JelloChat.field21102.displayGuiScreen(null);
+    public void onKeyPress(final int key) {
+        super.onKeyPress(key);
+
+        if (key == 256) {
+            JelloChat.mc.displayGuiScreen(null);
         }
     }
 
     @Override
-    public void draw(float method25031) {
+    public void draw(float partialTicks) {
         this.field21104 = Math.min(1.0f, this.field21104 + 0.1f);
-        this.field21105.drawBackground(this.field21111 + this.field21108 - (int) (Class7707.method24584(this.field21104, 0.0f, 1.0f, 1.0f) * (this.field21111 + this.field21108)));
+        this.chat.drawBackground(this.field21111 + this.field21108 - (int) (Class7707.method24584(this.field21104, 0.0f, 1.0f, 1.0f) * (this.field21111 + this.field21108)));
         this.drawBackground((int) ((1.0f - this.field21104) * 10.0f));
-        this.method14228();
+        this.translate();
         final int field21108 = this.field21108;
         final int n = this.method14278() - this.field21111 - this.field21108 * 2 - 410;
         final int field21109 = this.field21109;
         final int field21110 = this.field21110;
         try {
             if (this.field21113) {
-                this.field21114 = BufferedImageUtil.getTexture("blur", ImageUtil.method20836(ImageUtil.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
+                this.blur = BufferedImageUtil.getTexture("blur", ImageUtil.method20836(ImageUtil.method20830(field21108, n, 200, field21110, 10, 14, 0, true), 0.0f, 1.1f, 1.3f));
             }
         } catch (final IOException ex) {
             ex.printStackTrace();
         }
         this.field21113 = !this.field21113;
-        method25031 = Class7791.method25031(this.field21104, 0.0f, 1.0f, 1.0f);
-        RenderUtil.method26913((float) (field21108 + 5), (float) (n + 5), (float) (this.field21112 - 10), (float) (field21110 - 10), 25.0f, method25031 * 0.4f);
+        partialTicks = Class7791.method25031(this.field21104, 0.0f, 1.0f, 1.0f);
+        RenderUtil.method26913((float) (field21108 + 5), (float) (n + 5), (float) (this.field21112 - 10), (float) (field21110 - 10), 25.0f, partialTicks * 0.4f);
         RenderUtil.method26921((float) field21108, (float) n, (float) field21109, (float) field21110, 10.0f);
-        if (this.field21114 != null) {
-            RenderUtil.drawImage((float) field21108, (float) n, (float) this.field21112, (float) field21110, this.field21114, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method25031));
+        if (this.blur != null) {
+            RenderUtil.drawImage((float) field21108, (float) n, (float) this.field21112, (float) field21110, this.blur, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         }
-        RenderUtil.method26876((float) field21108, (float) n, (float) (field21108 + this.field21112), (float) (n + 80), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f));
+        RenderUtil.method26876((float) field21108, (float) n, (float) (field21108 + this.field21112), (float) (n + 80), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f));
         RenderUtil.method26928();
         RenderUtil.method26870(field21108 + this.field21112, n - this.field21108, field21108 + field21109 + this.field21108, n + field21110 + this.field21108);
-        RenderUtil.method26917(field21108, n, field21109, field21110, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, method25031));
+        RenderUtil.draw(field21108, n, field21109, field21110, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, partialTicks));
         RenderUtil.endScissor();
         RenderUtil.method26870(field21108 - this.field21108, n - this.field21108, field21108 + this.field21112, n + field21110 + this.field21108);
-        RenderUtil.method26917(field21108, n, field21109, field21110, ColorUtils.applyAlpha(-2236963, method25031 * 0.75f));
-        RenderUtil.method26876((float) (field21108 + this.field21112 - 1), (float) n, (float) (field21108 + this.field21112), (float) (n + field21110), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f));
+        RenderUtil.draw(field21108, n, field21109, field21110, AllUtils.applyAlpha(-2236963, partialTicks * 0.75f));
+        RenderUtil.method26876((float) (field21108 + this.field21112 - 1), (float) n, (float) (field21108 + this.field21112), (float) (n + field21110), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.05f));
         RenderUtil.endScissor();
-        super.draw(method25031);
+        super.draw(partialTicks);
     }
 
     static {
-        JelloChat.field21102 = Minecraft.getInstance();
+        JelloChat.mc = Minecraft.getInstance();
     }
 }

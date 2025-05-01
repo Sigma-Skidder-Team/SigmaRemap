@@ -54,7 +54,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColorUtils
+public class AllUtils
 {
     private static final Minecraft field25541;
     public static final float field25542 = 0.3f;
@@ -64,16 +64,16 @@ public class ColorUtils
     private static boolean field25546;
     
     public static void method19106(final String s) {
-        ColorUtils.field25541.field4647.method3807().method3761(new StringTextComponent(s));
+        AllUtils.field25541.field4647.method3807().method3761(new StringTextComponent(s));
     }
     
     public static void method19107(final String s) {
-        ColorUtils.field25541.method5269().method17292(new Class4317(s));
+        AllUtils.field25541.method5269().method17292(new Class4317(s));
     }
     
-    public static List<PlayerEntity> method19108() {
+    public static List<PlayerEntity> getPlayerEntities() {
         final ArrayList list = new ArrayList();
-        ColorUtils.field25541.world.field10072.forEach((p1, class399) -> {
+        AllUtils.field25541.world.field10072.forEach((p1, class399) -> {
             if (class399 instanceof PlayerEntity) {
                 list2.add(class399);
             }
@@ -124,7 +124,7 @@ public class ColorUtils
     }
     
     public static final boolean method19112(final Entity class399) {
-        return ColorUtils.field25541.world.method6968(class399.boundingBox);
+        return AllUtils.field25541.world.method6968(class399.boundingBox);
     }
     
     public static final boolean method19113(final Entity class399) {
@@ -140,7 +140,7 @@ public class ColorUtils
     }
     
     public static final boolean method19114() {
-        return ColorUtils.field25541.player.field2968 != 0.0f || ColorUtils.field25541.player.field2970 != 0.0f;
+        return AllUtils.field25541.player.field2968 != 0.0f || AllUtils.field25541.player.field2970 != 0.0f;
     }
     
     public static float[] method19115(final BlockPos class354, final Direction class355) {
@@ -149,7 +149,7 @@ public class ColorUtils
     
     public static float[] method19116(final double n, final double n2, final double n3, final Direction class179) {
         final Class411 class181;
-        final Class411 class180 = class181 = new Class411(ColorUtils.field25541.world, n + 0.5, n2 + 0.5, n3 + 0.5);
+        final Class411 class180 = class181 = new Class411(AllUtils.field25541.world, n + 0.5, n2 + 0.5, n3 + 0.5);
         class181.posX += class179.getDirectionVec().getX() * 0.25;
         final Class411 class182 = class180;
         class182.posY += class179.getDirectionVec().getY() * 0.25;
@@ -159,10 +159,10 @@ public class ColorUtils
     }
     
     public static float[] method19117(final double n, final double n2, final double n3) {
-        final double x = n - ColorUtils.field25541.player.posX;
-        final double y = n2 - (ColorUtils.field25541.player.posY + ColorUtils.field25541.player.method1892());
-        final double y2 = n3 - ColorUtils.field25541.player.posZ;
-        return new float[] { ColorUtils.field25541.player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - ColorUtils.field25541.player.rotationYaw), ColorUtils.field25541.player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - ColorUtils.field25541.player.rotationPitch) };
+        final double x = n - AllUtils.field25541.player.posX;
+        final double y = n2 - (AllUtils.field25541.player.posY + AllUtils.field25541.player.method1892());
+        final double y2 = n3 - AllUtils.field25541.player.posZ;
+        return new float[] { AllUtils.field25541.player.rotationYaw + MathHelper.method35668((float)(Math.atan2(y2, x) * 180.0 / 3.141592653589793) - 90.0f - AllUtils.field25541.player.rotationYaw), AllUtils.field25541.player.rotationPitch + MathHelper.method35668((float)(-(Math.atan2(y, MathHelper.sqrt(x * x + y2 * y2)) * 180.0 / 3.141592653589793)) - AllUtils.field25541.player.rotationPitch) };
     }
     
     public static int applyAlpha(final int n, final float n2) {
@@ -375,8 +375,8 @@ public class ColorUtils
     }
     
     public static int method19135() {
-        for (final NetworkPlayerInfo networkPlayerInfo : ColorUtils.field25541.method5269().method17370()) {
-            if (networkPlayerInfo.method32719().getId().equals(ColorUtils.field25541.player.getUniqueID()) && !ColorUtils.field25541.method5283()) {
+        for (final NetworkPlayerInfo networkPlayerInfo : AllUtils.field25541.method5269().method17370()) {
+            if (networkPlayerInfo.method32719().getId().equals(AllUtils.field25541.player.getUniqueID()) && !AllUtils.field25541.method5283()) {
                 return networkPlayerInfo.method32722();
             }
         }
@@ -396,7 +396,7 @@ public class ColorUtils
     
     public static List<Entity> method19138() {
         final ArrayList list = new ArrayList();
-        ColorUtils.field25541.world.field10072.forEach((p1, class399) -> list2.add(class399));
+        AllUtils.field25541.world.field10072.forEach((p1, class399) -> list2.add(class399));
         return list;
     }
     
@@ -417,15 +417,15 @@ public class ColorUtils
     }
     
     public static EntityRayTraceResult rayTraceFromPlayer(final float n, final float n2, final float n3, final double n4) {
-        final Vec3d class5487 = new Vec3d(ColorUtils.field25541.player.posX, ColorUtils.field25541.player.posY + ColorUtils.field25541.player.method1892(), ColorUtils.field25541.player.posZ);
-        final Entity method5303 = ColorUtils.field25541.method5303();
-        if (method5303 != null && ColorUtils.field25541.world != null) {
-            double n5 = ColorUtils.field25541.playerController.method27315();
+        final Vec3d class5487 = new Vec3d(AllUtils.field25541.player.posX, AllUtils.field25541.player.posY + AllUtils.field25541.player.method1892(), AllUtils.field25541.player.posZ);
+        final Entity method5303 = AllUtils.field25541.method5303();
+        if (method5303 != null && AllUtils.field25541.world != null) {
+            double n5 = AllUtils.field25541.playerController.method27315();
             if (n3 != 0.0f) {
                 n5 = n3;
             }
             final Vec3d method5304 = method19151(n2, n);
-            return method19143(ColorUtils.field25541.world, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.getBoundingBox().expand(method5304.scale(n5)).grow(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
+            return method19143(AllUtils.field25541.world, method5303, class5487, class5487.add(method5304.x * n5, method5304.y * n5, method5304.z * n5), method5303.getBoundingBox().expand(method5304.scale(n5)).grow(1.0, 1.0, 1.0), class5488 -> class5488 instanceof LivingEntity, n3 * n3, n4);
         }
         return null;
     }
@@ -462,10 +462,10 @@ public class ColorUtils
         double n4 = n3 * n3;
         Entity class400 = null;
         Vec3d method16742 = null;
-        final Vec3d class401 = new Vec3d(ColorUtils.field25541.player.posX, ColorUtils.field25541.player.posY + ColorUtils.field25541.player.method1892(), ColorUtils.field25541.player.posZ);
+        final Vec3d class401 = new Vec3d(AllUtils.field25541.player.posX, AllUtils.field25541.player.posY + AllUtils.field25541.player.method1892(), AllUtils.field25541.player.posZ);
         final Vec3d method16743 = method19151(n2, n);
         final Vec3d method16744 = class401.add(method16743.x * n4, method16743.y * n4, method16743.z * n4);
-        for (final Entity class402 : ColorUtils.field25541.world.getEntitiesInAABBexcluding(ColorUtils.field25541.player, ColorUtils.field25541.player.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
+        for (final Entity class402 : AllUtils.field25541.world.getEntitiesInAABBexcluding(AllUtils.field25541.player, AllUtils.field25541.player.getBoundingBox().expand(method16743.scale(n4)).grow(1.0, 1.0, 1.0), predicate)) {
             final Optional<Vec3d> method16745 = class402.getBoundingBox().rayTrace(class401, method16744);
             if (!method16745.isPresent()) {
                 continue;
@@ -500,10 +500,10 @@ public class ColorUtils
     }
     
     public static boolean method19146() {
-        if (!ColorUtils.field25546) {
-            if (ColorUtils.field25541.method5285() == null) {
-                if (ColorUtils.field25541.method5282() != null) {
-                    return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("hypixel.net");
+        if (!AllUtils.field25546) {
+            if (AllUtils.field25541.method5285() == null) {
+                if (AllUtils.field25541.method5282() != null) {
+                    return AllUtils.field25541.method5282().field41613.toLowerCase().contains("hypixel.net");
                 }
             }
         }
@@ -511,34 +511,34 @@ public class ColorUtils
     }
     
     public static boolean method19147() {
-        if (ColorUtils.field25541.method5285() == null) {
-            if (ColorUtils.field25541.method5282() != null) {
-                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("minemen.club");
+        if (AllUtils.field25541.method5285() == null) {
+            if (AllUtils.field25541.method5282() != null) {
+                return AllUtils.field25541.method5282().field41613.toLowerCase().contains("minemen.club");
             }
         }
         return false;
     }
     
     public static boolean method19148() {
-        if (ColorUtils.field25541.method5285() == null) {
-            if (ColorUtils.field25541.method5282() != null) {
-                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("play.cubecraft.net");
+        if (AllUtils.field25541.method5285() == null) {
+            if (AllUtils.field25541.method5282() != null) {
+                return AllUtils.field25541.method5282().field41613.toLowerCase().contains("play.cubecraft.net");
             }
         }
         return false;
     }
     
     public static boolean method19149() {
-        if (ColorUtils.field25541.method5285() == null) {
-            if (ColorUtils.field25541.method5282() != null) {
-                return ColorUtils.field25541.method5282().field41613.toLowerCase().contains("mineplex.com");
+        if (AllUtils.field25541.method5285() == null) {
+            if (AllUtils.field25541.method5282() != null) {
+                return AllUtils.field25541.method5282().field41613.toLowerCase().contains("mineplex.com");
             }
         }
         return false;
     }
     
     public static boolean method19150() {
-        return ColorUtils.field25541.method5282() == null || ColorUtils.field25541.method5282().field41613.toLowerCase().contains("localhost");
+        return AllUtils.field25541.method5282() == null || AllUtils.field25541.method5282().field41613.toLowerCase().contains("localhost");
     }
     
     public static Vec3d method19151(final float n, final float n2) {
@@ -560,26 +560,26 @@ public class ColorUtils
     }
     
     public static double method19154(final double n) {
-        ColorUtils.field25541.player.setMotion(n, ColorUtils.field25541.player.getMotion().y, ColorUtils.field25541.player.getMotion().z);
+        AllUtils.field25541.player.setMotion(n, AllUtils.field25541.player.getMotion().y, AllUtils.field25541.player.getMotion().z);
         return n;
     }
     
     public static double method19155(final double n) {
-        ColorUtils.field25541.player.setMotion(ColorUtils.field25541.player.getMotion().x, n, ColorUtils.field25541.player.getMotion().z);
+        AllUtils.field25541.player.setMotion(AllUtils.field25541.player.getMotion().x, n, AllUtils.field25541.player.getMotion().z);
         return n;
     }
     
     public static double method19156(final double n) {
-        ColorUtils.field25541.player.setMotion(ColorUtils.field25541.player.getMotion().x, ColorUtils.field25541.player.getMotion().y, n);
+        AllUtils.field25541.player.setMotion(AllUtils.field25541.player.getMotion().x, AllUtils.field25541.player.getMotion().y, n);
         return n;
     }
     
     public static boolean method19157(final double n, final double n2, final boolean b) {
-        AxisAlignedBB class6221 = ColorUtils.field25541.player.boundingBox;
+        AxisAlignedBB class6221 = AllUtils.field25541.player.boundingBox;
         if (b) {
             class6221 = class6221.grow(1.2350000143051147, 0.0, 1.2350000143051147);
         }
-        return ColorUtils.field25541.world.method6980(ColorUtils.field25541.player, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
+        return AllUtils.field25541.world.method6980(AllUtils.field25541.player, new AxisAlignedBB(class6221.minX + n, class6221.minY - 1.5, class6221.minZ + n2, class6221.maxX + n, class6221.maxY, class6221.maxZ + n2), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19158(final double n, final double n2) {
@@ -587,15 +587,15 @@ public class ColorUtils
     }
     
     public static boolean method19159() {
-        AxisAlignedBB class6221 = ColorUtils.field25541.player.boundingBox.offset(0.0, -1.0, 0.0);
-        if (ColorUtils.field25541.player.method1920() != null) {
-            class6221 = ColorUtils.field25541.player.method1920().boundingBox.expand(Math.abs(ColorUtils.field25541.player.method1920().prevPosX - ColorUtils.field25541.player.method1920().posX), 1.0, Math.abs(ColorUtils.field25541.player.method1920().prevPosZ - ColorUtils.field25541.player.method1920().posZ));
+        AxisAlignedBB class6221 = AllUtils.field25541.player.boundingBox.offset(0.0, -1.0, 0.0);
+        if (AllUtils.field25541.player.method1920() != null) {
+            class6221 = AllUtils.field25541.player.method1920().boundingBox.expand(Math.abs(AllUtils.field25541.player.method1920().prevPosX - AllUtils.field25541.player.method1920().posX), 1.0, Math.abs(AllUtils.field25541.player.method1920().prevPosZ - AllUtils.field25541.player.method1920().posZ));
         }
-        return ColorUtils.field25541.world.method6980(ColorUtils.field25541.player, class6221, Collections.EMPTY_SET).count() != 0L;
+        return AllUtils.field25541.world.method6980(AllUtils.field25541.player, class6221, Collections.EMPTY_SET).count() != 0L;
     }
     
     public static boolean method19160(final Entity class399, final float n) {
-        return ColorUtils.field25541.world.method6980(ColorUtils.field25541.player, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
+        return AllUtils.field25541.world.method6980(AllUtils.field25541.player, new AxisAlignedBB(class399.boundingBox.minX, class399.boundingBox.minY - n, class399.boundingBox.minZ, class399.boundingBox.maxX, class399.boundingBox.maxY, class399.boundingBox.maxZ), Collections.EMPTY_SET).count() != 0L;
     }
     
     public static List<BlockPos> method19161(final Entity class399) {
@@ -624,12 +624,12 @@ public class ColorUtils
     }
     
     public static void method19163() {
-        ColorUtils.field25541.method5269().method17292(new Class4307(Class316.field1877));
-        ColorUtils.field25541.method5269().method17292(new Class4307(Class316.field1878));
+        AllUtils.field25541.method5269().method17292(new Class4307(Class316.field1877));
+        AllUtils.field25541.method5269().method17292(new Class4307(Class316.field1878));
     }
     
     public static void method19164() {
-        ColorUtils.field25541.method5269().method17292(new Class4399(Class2003.field11245, new BlockPos(0, 0, 0), Direction.DOWN));
+        AllUtils.field25541.method5269().method17292(new Class4399(Class2003.field11245, new BlockPos(0, 0, 0), Direction.DOWN));
     }
     
     public static void method19165(final Entity class399, final boolean b) {
@@ -639,22 +639,22 @@ public class ColorUtils
         if (!class400.isCancelled()) {
             if (equals) {
                 if (b) {
-                    ColorUtils.field25541.player.method2707(Class316.field1877);
+                    AllUtils.field25541.player.method2707(Class316.field1877);
                 }
             }
-            ColorUtils.field25541.method5269().method17292(new Class4381(class400.method17057()));
-            if (Class8742.method30195(Class6257.method18590(11), ColorUtils.field25541.player.method2715(Class316.field1877)) > 0) {
-                ColorUtils.field25541.field4640.method6476(class400.method17057(), Class8432.field34614);
+            AllUtils.field25541.method5269().method17292(new Class4381(class400.method17057()));
+            if (Class8742.method30195(Class6257.method18590(11), AllUtils.field25541.player.method2715(Class316.field1877)) > 0) {
+                AllUtils.field25541.field4640.method6476(class400.method17057(), Class8432.field34614);
             }
             boolean b2 = false;
             Label_0290: {
-                if (ColorUtils.field25541.player.method2904(0.5f) > 0.9 || equals) {
-                    if (ColorUtils.field25541.player.fallDistance > 0.0f) {
-                        if (!ColorUtils.field25541.player.onGround) {
-                            if (!ColorUtils.field25541.player.method2688()) {
-                                if (!ColorUtils.field25541.player.method1706()) {
-                                    if (!ColorUtils.field25541.player.method2653(Class9439.field40488)) {
-                                        if (!ColorUtils.field25541.player.isPassenger()) {
+                if (AllUtils.field25541.player.method2904(0.5f) > 0.9 || equals) {
+                    if (AllUtils.field25541.player.fallDistance > 0.0f) {
+                        if (!AllUtils.field25541.player.onGround) {
+                            if (!AllUtils.field25541.player.method2688()) {
+                                if (!AllUtils.field25541.player.method1706()) {
+                                    if (!AllUtils.field25541.player.method2653(Class9439.field40488)) {
+                                        if (!AllUtils.field25541.player.isPassenger()) {
                                             b2 = true;
                                             break Label_0290;
                                         }
@@ -668,19 +668,19 @@ public class ColorUtils
             }
             Label_0330: {
                 if (!b2) {
-                    if (!ColorUtils.field25541.player.onGround) {
+                    if (!AllUtils.field25541.player.onGround) {
                         break Label_0330;
                     }
                     if (!Client.getInstance().moduleManager().getModuleByClass(Criticals.class).isEnabled()) {
                         break Label_0330;
                     }
                 }
-                ColorUtils.field25541.field4640.method6476(class400.method17057(), Class8432.field34603);
+                AllUtils.field25541.field4640.method6476(class400.method17057(), Class8432.field34603);
             }
-            ColorUtils.field25541.player.method2905();
+            AllUtils.field25541.player.method2905();
             if (!equals) {
                 if (b) {
-                    ColorUtils.field25541.player.method2707(Class316.field1877);
+                    AllUtils.field25541.player.method2707(Class316.field1877);
                 }
             }
             class400.method17060();
@@ -710,8 +710,8 @@ public class ColorUtils
     }
     
     public static boolean method19167(final float n, final float n2, final float n3, final FloatBuffer floatBuffer, final FloatBuffer floatBuffer2, final IntBuffer intBuffer, final FloatBuffer floatBuffer3) {
-        final float[] field25543 = ColorUtils.field25543;
-        final float[] field25544 = ColorUtils.field25544;
+        final float[] field25543 = AllUtils.field25543;
+        final float[] field25544 = AllUtils.field25544;
         field25543[0] = n;
         field25543[1] = n2;
         field25543[2] = n3;
@@ -738,12 +738,12 @@ public class ColorUtils
     }
     
     public static void method19169() {
-        if (ColorUtils.field25541.method5303() instanceof PlayerEntity) {
+        if (AllUtils.field25541.method5303() instanceof PlayerEntity) {
             if (Client.getInstance().getScreenManager().method32144()) {
-                if (ColorUtils.field25541.field4644.field9406 != null) {
-                    ColorUtils.field25541.field4644.field9406.close();
+                if (AllUtils.field25541.field4644.field9406 != null) {
+                    AllUtils.field25541.field4644.field9406.close();
                 }
-                ColorUtils.field25541.field4644.method5803(ColorUtils.field25545);
+                AllUtils.field25541.field4644.method5803(AllUtils.field25545);
             }
         }
         method19171(20);
@@ -754,18 +754,18 @@ public class ColorUtils
     }
     
     public static void method19171(final int n) {
-        if (ColorUtils.field25541.field4644.field9406 != null) {
-            ColorUtils.field25541.field4644.field9406.field10255.get(0).method7605().method7715("Radius").method7163((float)n);
-            ColorUtils.field25541.field4644.field9406.field10255.get(1).method7605().method7715("Radius").method7163((float)n);
+        if (AllUtils.field25541.field4644.field9406 != null) {
+            AllUtils.field25541.field4644.field9406.field10255.get(0).method7605().method7715("Radius").method7163((float)n);
+            AllUtils.field25541.field4644.field9406.field10255.get(1).method7605().method7715("Radius").method7163((float)n);
         }
     }
     
     public static void method19172() {
-        if (ColorUtils.field25541.field4644.field9409 == Class1660.field9408) {
-            ColorUtils.field25541.field4644.field9406 = null;
+        if (AllUtils.field25541.field4644.field9409 == Class1660.field9408) {
+            AllUtils.field25541.field4644.field9406 = null;
         }
         else {
-            ColorUtils.field25541.field4644.method5803(Class1660.field9407[ColorUtils.field25541.field4644.field9409]);
+            AllUtils.field25541.field4644.method5803(Class1660.field9407[AllUtils.field25541.field4644.field9409]);
         }
     }
     
@@ -844,7 +844,7 @@ public class ColorUtils
     }
     
     public static void method19176(final ServerData class9575) {
-        if (ColorUtils.field25546 = class9575.field41613.toLowerCase().contains("hypixel.net")) {
+        if (AllUtils.field25546 = class9575.field41613.toLowerCase().contains("hypixel.net")) {
             new Thread(() -> {
                 try {
                     InetAddress.getByName("hypixel.net");
@@ -862,7 +862,7 @@ public class ColorUtils
                                 final HttpEntity httpEntity;
                                 if (httpEntity != null) {
                                     if (EntityUtils.toString(httpEntity).contains("1003")) {
-                                        ColorUtils.field25546 = false;
+                                        AllUtils.field25546 = false;
                                     }
                                 }
                             }
@@ -901,7 +901,7 @@ public class ColorUtils
     }
     
     public static boolean method19178(final Entity class399, final boolean b, final boolean b2, final boolean b3) {
-        if (class399 == ColorUtils.field25541.player || class399 == Blink.field15771) {
+        if (class399 == AllUtils.field25541.player || class399 == Blink.field15771) {
             return false;
         }
         if (Client.getInstance().getFriendManager().method29878(class399)) {
@@ -913,7 +913,7 @@ public class ColorUtils
         if (((LivingEntity)class399).method2664() == 0.0f) {
             return false;
         }
-        if (!ColorUtils.field25541.player.method2646((LivingEntity)class399)) {
+        if (!AllUtils.field25541.player.method2646((LivingEntity)class399)) {
             return false;
         }
         if (class399 instanceof Class857) {
@@ -931,7 +931,7 @@ public class ColorUtils
         if (!b2 && !(class399 instanceof PlayerEntity)) {
             return false;
         }
-        if (ColorUtils.field25541.player.method1920() != null && ColorUtils.field25541.player.method1920().equals(class399)) {
+        if (AllUtils.field25541.player.method1920() != null && AllUtils.field25541.player.method1920().equals(class399)) {
             return false;
         }
         if (!class399.method1850()) {
@@ -946,18 +946,18 @@ public class ColorUtils
     }
     
     public static void method19179(final boolean b) {
-        final double field2395 = ColorUtils.field25541.player.posX;
-        final double field2396 = ColorUtils.field25541.player.posY;
-        final double field2397 = ColorUtils.field25541.player.posZ;
+        final double field2395 = AllUtils.field25541.player.posX;
+        final double field2396 = AllUtils.field25541.player.posY;
+        final double field2397 = AllUtils.field25541.player.posZ;
         for (int n = 49 + MovementUtil.method23140() * 17, i = 0; i < n; ++i) {
             final double n2 = b ? method19180() : 0.0;
-            ColorUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.06248 + method19180(), field2397 + n2, false));
+            AllUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.06248 + method19180(), field2397 + n2, false));
             if (method19146()) {
-                ColorUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.05 + method19180(), field2397 + n2, false));
+                AllUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 0.05 + method19180(), field2397 + n2, false));
             }
-            ColorUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 1.0E-14 + method19180(), field2397 + n2, false));
+            AllUtils.field25541.method5269().method17292(new Class4354(field2395 + n2, field2396 + 1.0E-14 + method19180(), field2397 + n2, false));
         }
-        ColorUtils.field25541.method5269().method17292(new Class4353(true));
+        AllUtils.field25541.method5269().method17292(new Class4353(true));
     }
     
     public static double method19180() {
@@ -969,6 +969,6 @@ public class ColorUtils
         field25543 = new float[4];
         field25544 = new float[4];
         field25545 = new ResourceLocation("shaders/post/blur.json");
-        ColorUtils.field25546 = false;
+        AllUtils.field25546 = false;
     }
 }

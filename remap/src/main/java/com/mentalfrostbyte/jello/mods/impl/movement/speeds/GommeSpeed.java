@@ -43,7 +43,7 @@ public class GommeSpeed extends Module
     @EventListener
     public void method10549(final Class5717 class5717) {
         if (this.isEnabled()) {
-            if (GommeSpeed.mc.player.onGround && ColorUtils.method19114()) {
+            if (GommeSpeed.mc.player.onGround && AllUtils.method19114()) {
                 this.field15929 = 0;
                 class5717.method16975(MovementUtil.method23141());
                 final double[] array = { 0.549, 0.625 };

@@ -8,17 +8,17 @@ import net.minecraft.entity.Entity;
 
 import java.util.HashMap;
 
-public class Class7815 extends Class7814
+public class HypixelAntiBot extends AntiBotBase
 {
     public HashMap<Entity, Boolean> field32020;
     
-    public Class7815() {
+    public HypixelAntiBot() {
         super("Hypixel", "Detects bots on Hypixel based on entity names", Class304.field1770);
         this.field32020 = new HashMap<Entity, Boolean>();
     }
     
     @Override
-    public boolean method25239(final Entity class399) {
+    public boolean isBot(final Entity class399) {
         final String method8461 = class399.getDisplayName().getFormattedText();
         final String s = (class399.getCustomName() != null) ? class399.getCustomName().getFormattedText() : null;
         final String method8462 = class399.getName().getFormattedText();
@@ -26,9 +26,9 @@ public class Class7815 extends Class7814
             if (!method8461.startsWith("§c")) {
                 if (method8461.endsWith("§r")) {
                     if (s == null || s.equals(method8462)) {
-                        final double abs = Math.abs(class399.posX - Class7815.field32015.player.posX);
-                        final double abs2 = Math.abs(class399.posY - Class7815.field32015.player.posY);
-                        final double abs3 = Math.abs(class399.posZ - Class7815.field32015.player.posZ);
+                        final double abs = Math.abs(class399.posX - HypixelAntiBot.field32015.player.posX);
+                        final double abs2 = Math.abs(class399.posY - HypixelAntiBot.field32015.player.posY);
+                        final double abs3 = Math.abs(class399.posZ - HypixelAntiBot.field32015.player.posZ);
                         final double sqrt = Math.sqrt(abs * abs + abs3 * abs3);
                         if (abs2 < 13.0) {
                             if (abs2 > 10.0) {
@@ -72,7 +72,7 @@ public class Class7815 extends Class7814
     }
     
     @Override
-    public boolean method25240(final Entity class399) {
+    public boolean isNotBot(final Entity class399) {
         return true;
     }
 }

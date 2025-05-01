@@ -41,7 +41,7 @@ public class VanillaFly extends Module
     
     @Override
     public void onDisable() {
-        ColorUtils.method19155(-0.08);
+        AllUtils.method19155(-0.08);
         MovementUtil.method23151(MovementUtil.method23136());
     }
     
@@ -73,7 +73,7 @@ public class VanillaFly extends Module
         if (!VanillaFly.mc.player.onGround && this.getBooleanValueFromSettingName("Kick bypass")) {
             if (this.field15874 > 0) {
                 if (this.field15874 % 30 == 0) {
-                    if (!ColorUtils.method19160(VanillaFly.mc.player, 0.01f)) {
+                    if (!AllUtils.method19160(VanillaFly.mc.player, 0.01f)) {
                         if (ViaManager.method34762() != Class7906.field32452.method25613()) {
                             updateWalkingEvent.method17037(updateWalkingEvent.method17036() - 0.04);
                         }
@@ -116,7 +116,7 @@ public class VanillaFly extends Module
     @EventListener
     public void method10460(final Class5717 class5717) {
         if (this.isEnabled()) {
-            if (!ColorUtils.method19160(VanillaFly.mc.player, 0.01f)) {
+            if (!AllUtils.method19160(VanillaFly.mc.player, 0.01f)) {
                 ++this.field15874;
             }
             else {

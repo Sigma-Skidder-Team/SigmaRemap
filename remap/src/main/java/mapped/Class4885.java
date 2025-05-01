@@ -70,11 +70,11 @@ public class Class4885 extends Panel
     
     public static void method14626(final int n, final int n2, final int n3, final float n4) {
         final int n5 = 14;
-        RenderUtil.method26888((float)n, (float)n2, (float)n5, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 1), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f * n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 2), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 6), ColorUtils.applyAlpha(ColorUtils.method19120(n3, ClientColors.DEEP_TEAL.color, 0.7f), n4));
-        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 7), ColorUtils.applyAlpha(n3, n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)n5, AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.1f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 1), AllUtils.applyAlpha(ClientColors.DEEP_TEAL.color, 0.14f * n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 2), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 6), AllUtils.applyAlpha(AllUtils.method19120(n3, ClientColors.DEEP_TEAL.color, 0.7f), n4));
+        RenderUtil.method26888((float)n, (float)n2, (float)(n5 - 7), AllUtils.applyAlpha(n3, n4));
     }
     
     @Override
@@ -83,11 +83,11 @@ public class Class4885 extends Panel
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         if (this.field20882) {
             this.field20884.method14728(System.currentTimeMillis() % 4000L / 4000.0f, false);
             this.method14625();
         }
-        super.draw(n);
+        super.draw(partialTicks);
     }
 }

@@ -64,8 +64,8 @@ public class ClassicMainMenu extends Class4800
         final int n = 480;
         this.addToList(this.field21195 = new Class4814(this, "group", (this.method14276() - n) / 2, this.method14278() / 2 - 230, n, 480));
         this.addToList(this.field21187 = new Class4834(this, "Copyright", 10, 8, field40807.getWidth(s), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.color), s, ClientFonts.JelloLight18));
-        final ColorHelper colorHelper = new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
-        colorHelper.method19734(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
+        final ColorHelper colorHelper = new ColorHelper(AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
+        colorHelper.method19734(AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.5f));
         final ArrayList list = new ArrayList();
         list.add("LeakedPvP");
         list.add("Tomygames");
@@ -102,17 +102,17 @@ public class ClassicMainMenu extends Class4800
     }
     
     @Override
-    public void draw(final float n) {
+    public void draw(final float partialTicks) {
         final int round = Math.round((1.0f - Class7791.method25030(this.field21192.calcPercent(), 0.0f, 1.0f, 1.0f)) * 5.0f);
         this.drawBackground(round);
-        this.method14228();
+        this.translate();
         GL11.glPushMatrix();
         GL11.glTranslated((int)(-this.method14276() / 200 + this.field21196 / 200.0f), (int)(-this.method14278() / 100 + this.field21197 / 100.0f) - round, 0.0);
-        RenderUtil.method26905(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), ClassicAssets.field40801);
+        RenderUtil.drawImage(-10.0f, -10.0f, (float)(this.method14276() + 20), (float)(this.method14278() + 20), ClassicAssets.field40801);
         GL11.glPopMatrix();
         this.field21195.method14295((int)(-this.method14276() / 40 + this.field21196 / 40.0f), (int)(-this.method14278() / 40 + this.field21197 / 40.0f) + round);
         this.field21194.method14295((int)(-this.method14276() / 12 + this.field21196 / 12.0f), (int)(-this.method14278() / 12 + this.field21197 / 12.0f));
-        super.draw(n);
+        super.draw(partialTicks);
     }
     
     static {

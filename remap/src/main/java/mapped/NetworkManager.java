@@ -8,7 +8,7 @@ import com.mentalfrostbyte.Client;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.MarkerManager;
 import org.apache.logging.log4j.LogManager;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
+
 import javax.annotation.Nullable;
 import javax.crypto.SecretKey;
 import java.io.Serializable;
@@ -21,8 +21,6 @@ import io.netty.channel.epoll.Epoll;
 import java.net.InetAddress;
 import io.netty.channel.local.LocalServerChannel;
 import io.netty.channel.local.LocalChannel;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelFutureListener;
 import org.apache.commons.lang3.Validate;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
@@ -111,20 +109,20 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>>
     
     public void channelRead0(final ChannelHandlerContext channelHandlerContext, final IPacket<?> class4252) throws Exception {
         if (this.field16899.isOpen()) {
-            final EventReceivePacket class4253 = new EventReceivePacket(class4252);
-            Client.getInstance().getEventBus().post(class4253);
-            if (class4253.isCancelled()) {
+            final EventReceivePacket event = new EventReceivePacket(class4252);
+            Client.getInstance().getEventBus().post(event);
+            if (event.isCancelled()) {
                 return;
             }
             try {
-                method11172((IPacket<INetHandler>)class4253.getPacket(), this.field16901);
+                processPacket((IPacket<INetHandler>)event.getPacket(), this.field16901);
             }
             catch (final Class2382 class4254) {}
             ++this.field16905;
         }
     }
     
-    private static <T extends INetHandler> void method11172(final IPacket<T> class4252, final INetHandler class4253) {
+    private static <T extends INetHandler> void processPacket(final IPacket<T> class4252, final INetHandler class4253) {
         class4252.processPacket((T)class4253);
     }
     

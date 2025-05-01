@@ -23,12 +23,12 @@ public class Cords extends Module
     @EventListener
     private void method10528(final EventPlayerTick eventPlayerTick) {
         if (this.isEnabled()) {
-            if (ColorUtils.method19135() > this.field15924) {
+            if (AllUtils.method19135() > this.field15924) {
                 if (Cords.mc.player.ticksExisted % 3 == 0) {
                     ++this.field15924;
                 }
             }
-            if (ColorUtils.method19135() < this.field15924) {
+            if (AllUtils.method19135() < this.field15924) {
                 if (Cords.mc.player.ticksExisted % 3 == 0) {
                     --this.field15924;
                 }
@@ -87,8 +87,8 @@ public class Cords extends Module
             GL11.glTranslatef((float)n, (float)(method17028 + 10), 0.0f);
             GL11.glScalef(n2, n2, 1.0f);
             GL11.glTranslatef((float)(-n), (float)(-method17028 - 10), 0.0f);
-            RenderUtil.method26890(ClientFonts.JelloLight18_AA, (float)n, (float)method17028, string, ColorUtils.applyAlpha(-16777216, 0.5f * min), Class2056.field11738, Class2056.field11734);
-            RenderUtil.method26890(ClientFonts.JelloLight18, (float)n, (float)method17028, string, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f * min), Class2056.field11738, Class2056.field11734);
+            RenderUtil.method26890(ClientFonts.JelloLight18_AA, (float)n, (float)method17028, string, AllUtils.applyAlpha(-16777216, 0.5f * min), Class2056.field11738, Class2056.field11734);
+            RenderUtil.method26890(ClientFonts.JelloLight18, (float)n, (float)method17028, string, AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, 0.8f * min), Class2056.field11738, Class2056.field11734);
             GL11.glPopMatrix();
         }
     }
