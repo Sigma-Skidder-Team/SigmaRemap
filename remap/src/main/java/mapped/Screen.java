@@ -347,7 +347,7 @@ public abstract class Screen extends FocusableGui implements IRenderable
     }
     
     private void method3045(final URI uri) {
-        Util.method27845().method977(uri);
+        Util.getOS().method977(uri);
     }
     
     public static boolean method3046() {

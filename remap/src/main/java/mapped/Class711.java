@@ -7,7 +7,7 @@ package mapped;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.ArrayList;
-import java.util.List;
+
 import com.google.common.collect.Lists;
 
 public class Class711 extends Class703
@@ -22,7 +22,7 @@ public class Class711 extends Class703
     
     @Override
     public void init() {
-        this.addButton(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder"), class654 -> Util.method27845().method978(this.minecraft.method5294())));
+        this.addButton(new Class654(this.width / 2 - 154, this.height - 48, 150, 20, Class8822.method30773("resourcePack.openFolder"), class654 -> Util.getOS().method978(this.minecraft.method5294())));
         this.addButton(new Class654(this.width / 2 + 4, this.height - 48, 150, 20, Class8822.method30773("gui.done"), class654 -> {
             if (!this.field3887) {
                 this.minecraft.displayGuiScreen(this.field3868);

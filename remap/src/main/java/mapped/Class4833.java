@@ -282,8 +282,8 @@ public class Class4833 extends Class4825
     private void method14482(final float n) {
         final int n2 = (int)this.field20698.method24186();
         final int method24192 = this.field20698.method24192();
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + this.field20689 + 14), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(n2), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
-        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + this.method14276() - 14 - ClientFonts.JelloLight14.getWidth(Class5031.method15312(method24192))), this.method14274() + this.method14278() - 10 - 22.0f * n, Class5031.method15312(method24192), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + this.field20689 + 14), this.method14274() + this.method14278() - 10 - 22.0f * n, YoutubeUtil.method15312(n2), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
+        RenderUtil.drawString(ClientFonts.JelloLight14, (float)(this.method14272() + this.method14276() - 14 - ClientFonts.JelloLight14.getWidth(YoutubeUtil.method15312(method24192))), this.method14274() + this.method14278() - 10 - 22.0f * n, YoutubeUtil.method15312(method24192), AllUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.color, n * n));
     }
     
     private void method14483(final float n) {

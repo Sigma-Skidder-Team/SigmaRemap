@@ -87,7 +87,7 @@ public class MusicManager {
     public void method24158() {
         Client.getInstance().getEventBus().registerInstance(this);
         this.method24160();
-        if (!this.method24195()) {
+        if (!this.doesYoutubeDLExist()) {
             this.method24196();
         }
         this.field30353 = false;
@@ -266,7 +266,7 @@ public class MusicManager {
                     this.field30348 = 0;
                 }
                 for (int i = this.field30348; i < this.field30334.field38866.size(); ++i) {
-                    Class5031.method15317(this.field30334.field38866.get(i).field36486);
+                    YoutubeUtil.getVideoStreamURL(this.field30334.field38866.get(i).field36486);
                     final URL url;
                     Client.getLogger2().setThreadName(url.toString());
                     this.field30346 = i;
@@ -594,9 +594,9 @@ public class MusicManager {
         this.field30358 = true;
     }
 
-    public boolean method24195() {
+    public boolean doesYoutubeDLExist() {
         File file = new File(Client.getInstance().getFile() + "/music/youtube-dl");
-        if (Util.method27845() == Class306.field1833) {
+        if (Util.getOS() == OS.WINDOWS) {
             file = new File(Client.getInstance().getFile() + "/music/youtube-dl.exe");
         }
         return file.exists();
@@ -612,7 +612,7 @@ public class MusicManager {
             return;
         }
         Client.getInstance().getLogger().setThreadName("Updating dependencies");
-        if (Util.method27845() == Class306.field1833) {
+        if (Util.getOS() == OS.WINDOWS) {
             try {
                 FileUtils.copyURLToFile(new URL("https://yt-dl.org/downloads/latest/youtube-dl.exe"), new File(Client.getInstance().getFile() + "/music/youtube-dl.exe"));
             } catch (final IOException ex) {
@@ -631,7 +631,7 @@ public class MusicManager {
 
     public String method24198() {
         String s = Client.getInstance().getFile().getAbsolutePath() + "/music/youtube-dl";
-        if (Util.method27845() != Class306.field1833) {
+        if (Util.getOS() != OS.WINDOWS) {
             new File(s).setExecutable(true);
         } else {
             s += ".exe";
@@ -640,7 +640,7 @@ public class MusicManager {
     }
 
     public boolean method24199() {
-        if (Util.method27845() == Class306.field1833) {
+        if (Util.getOS() == OS.WINDOWS) {
             return true;
         }
         if (new File("/usr/local/bin/python").exists()) {
@@ -662,7 +662,7 @@ public class MusicManager {
     }
 
     public boolean method24200() {
-        if (Util.method27845() != Class306.field1833) {
+        if (Util.getOS() != OS.WINDOWS) {
             return true;
         }
         boolean b = false;

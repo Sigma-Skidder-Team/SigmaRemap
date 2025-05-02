@@ -1921,7 +1921,7 @@ public class Minecraft extends Class871<Runnable> implements Class868, Class870
     
     static {
         field4622 = LogManager.getLogger();
-        field4623 = (Util.method27845() == Class306.field1834);
+        field4623 = (Util.getOS() == OS.field1834);
         field4624 = new ResourceLocation("default");
         field4625 = new ResourceLocation("alt");
         field4626 = CompletableFuture.completedFuture(Class315.field1875);

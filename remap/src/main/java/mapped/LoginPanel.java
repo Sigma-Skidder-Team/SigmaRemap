@@ -43,7 +43,7 @@ public class LoginPanel extends Panel {
         this.captchaAnswer.setEnabled(false);
         this.loginButton.doThis((a, b) -> this.method14630());
         this.registerButton.doThis((a, b) -> ((RegisterScreen) this.getParent()).method14779());
-        this.forgotButton.doThis((a, b) -> Util.method27845().method980("https://sigmaclient.info/pwdreset.php"));
+        this.forgotButton.doThis((a, b) -> Util.getOS().method980("https://sigmaclient.info/pwdreset.php"));
     }
 
     @Override

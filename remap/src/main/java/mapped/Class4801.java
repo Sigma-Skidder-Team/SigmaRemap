@@ -102,10 +102,10 @@ public class Class4801 extends Class4800
                 this.method14242(this.field20469 = field20469);
                 this.field20469.method14516(class4841 -> {
                     if (!Client.getInstance().getMusicManager().method24199()) {
-                        Util.method27845().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
+                        Util.getOS().method980("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
                     }
                     if (!Client.getInstance().getMusicManager().method24200()) {
-                        Util.method27845().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
+                        Util.getOS().method980("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
                     }
                 });
                 this.field20469.method14745(class4841 -> new Thread(() -> {

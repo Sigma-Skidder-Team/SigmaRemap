@@ -10,7 +10,6 @@ import org.apache.commons.io.FileUtils;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.io.IOException;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 
@@ -39,7 +38,7 @@ public class Class532 extends Screen
             FileUtils.deleteQuietly(this.minecraft.method5243().method25800(this.field3180, "icon.png"));
             class654.field3431 = false;
         }));
-        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder"), class654 -> Util.method27845().method978(this.minecraft.method5243().method25800(this.field3180, "icon.png").getParentFile())));
+        this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 48 + 5, 200, 20, Class8822.method30773("selectWorld.edit.openFolder"), class654 -> Util.getOS().method978(this.minecraft.method5243().method25800(this.field3180, "icon.png").getParentFile())));
         this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 72 + 5, 200, 20, Class8822.method30773("selectWorld.edit.backup"), class654 -> {
             method3066(this.minecraft.method5243(), this.field3180);
             this.field3178.accept(false);
@@ -52,7 +51,7 @@ public class Class532 extends Screen
             catch (final IOException cause) {
                 throw new RuntimeException(cause);
             }
-            Util.method27845().method978(method25802.toFile());
+            Util.getOS().method978(method25802.toFile());
         }));
         this.addButton(new Class654(this.width / 2 - 100, this.height / 4 + 120 + 5, 200, 20, Class8822.method30773("selectWorld.edit.optimize"), class654 -> this.minecraft.displayGuiScreen(new Class554(this, (b2, b4) -> {
             if (b2) {

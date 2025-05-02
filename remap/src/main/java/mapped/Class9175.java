@@ -26,17 +26,17 @@ public class Class9175
     
     public void method33499() {
         this.field38866 = new ArrayList<Class8681>();
-        Class7357[] array = new Class7357[0];
+        YoutubeJPGThumbnail[] array = new YoutubeJPGThumbnail[0];
         if (this.field38865 != Class2057.field11741) {
             if (this.field38865 == Class2057.field11740) {
-                array = Class6109.method18249(this.field38864);
+                array = ThumbnailUtil.getFromPlaylist(this.field38864);
             }
         }
         else {
-            array = Class6109.method18248(this.field38864);
+            array = ThumbnailUtil.getFromChannel(this.field38864);
         }
-        for (final Class7357 class7357 : array) {
-            this.field38866.add(new Class8681(class7357.field28389, class7357.field28390, class7357.field28391));
+        for (final YoutubeJPGThumbnail youtubeJPGThumbnail : array) {
+            this.field38866.add(new Class8681(youtubeJPGThumbnail.field28389, youtubeJPGThumbnail.field28390, youtubeJPGThumbnail.field28391));
         }
     }
     

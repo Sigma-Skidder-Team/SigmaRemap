@@ -16,7 +16,7 @@ public class Class562 extends Screen
     public void init() {
         this.addButton(new Class654(this.width / 2 - 116, this.height / 2 + 62 - 16, 114, 20, Class8822.method30773("demo.help.buy"), class654 -> {
             class654.field3431 = false;
-            Util.method27845().method980("http://www.minecraft.net/store?source=demo");
+            Util.getOS().method980("http://www.minecraft.net/store?source=demo");
         }));
         this.addButton(new Class654(this.width / 2 + 2, this.height / 2 + 62 - 16, 114, 20, Class8822.method30773("demo.help.later"), class654 -> {
             this.minecraft.displayGuiScreen(null);

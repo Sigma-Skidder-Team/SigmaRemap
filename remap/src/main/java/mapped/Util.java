@@ -123,24 +123,24 @@ public class Util
         throw (cause instanceof RuntimeException) ? cause : new RuntimeException(cause);
     }
     
-    public static Class306 method27845() {
+    public static OS getOS() {
         final String lowerCase = System.getProperty("os.name").toLowerCase(Locale.ROOT);
         if (lowerCase.contains("win")) {
-            return Class306.field1833;
+            return OS.WINDOWS;
         }
         if (lowerCase.contains("mac")) {
-            return Class306.field1834;
+            return OS.field1834;
         }
         if (lowerCase.contains("solaris")) {
-            return Class306.field1832;
+            return OS.field1832;
         }
         if (lowerCase.contains("sunos")) {
-            return Class306.field1832;
+            return OS.field1832;
         }
         if (!lowerCase.contains("linux")) {
-            return lowerCase.contains("unix") ? Class306.field1831 : Class306.field1835;
+            return lowerCase.contains("unix") ? OS.field1831 : OS.field1835;
         }
-        return Class306.field1831;
+        return OS.field1831;
     }
     
     public static Stream<String> method27846() {

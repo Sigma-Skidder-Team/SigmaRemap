@@ -120,7 +120,7 @@ public class Class716 extends Class698
                             }
                             boolean b = false;
                             try {
-                                Util.method27845().method977(new File(this.minecraft.field4652, "shaderpacks").toURI());
+                                Util.getOS().method977(new File(this.minecraft.field4652, "shaderpacks").toURI());
                             }
                             catch (final Throwable t) {
                                 t.printStackTrace();
@@ -128,7 +128,7 @@ public class Class716 extends Class698
                             }
                             if (b) {
                                 Config.method28847("Opening via system class!");
-                                Util.method27845().method980("file://" + Class9216.field39331.getAbsolutePath());
+                                Util.getOS().method980("file://" + Class9216.field39331.getAbsolutePath());
                                 break;
                             }
                             break;
@@ -145,7 +145,7 @@ public class Class716 extends Class698
                         }
                         case 210: {
                             try {
-                                Util.method27845().method977(new URI("http://optifine.net/shaderPacks"));
+                                Util.getOS().method977(new URI("http://optifine.net/shaderPacks"));
                             }
                             catch (final Throwable t2) {
                                 t2.printStackTrace();

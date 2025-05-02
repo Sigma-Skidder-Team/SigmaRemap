@@ -123,7 +123,7 @@ public class Class1735 extends Class1732
     
     static {
         field9683 = LogManager.getLogger();
-        field9684 = (Util.method27845() == Class306.field1833);
+        field9684 = (Util.getOS() == OS.WINDOWS);
         field9685 = CharMatcher.is('\\');
     }
 }

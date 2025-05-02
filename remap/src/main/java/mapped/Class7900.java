@@ -47,7 +47,7 @@ public class Class7900
             sb.append(line);
         }
         bufferedReader.close();
-        return Class5031.method15315(sb.toString());
+        return YoutubeUtil.method15315(sb.toString());
     }
     
     static {

@@ -35,12 +35,12 @@ public class Class4838 extends Class4825
                 this.field20742.method14307(false);
                 new Thread(() -> {
                     this.field20743 = new ArrayList<Class8681>();
-                    Class6109.method18247(this.field20742.getTypedText());
-                    final Class7357[] array;
+                    ThumbnailUtil.search(this.field20742.getTypedText());
+                    final YoutubeJPGThumbnail[] array;
                     int i = 0;
                     for (int length = array.length; i < length; ++i) {
-                        final Class7357 class7357 = array[i];
-                        this.field20743.add(new Class8681(class7357.field28389, class7357.field28390, class7357.field28391));
+                        final YoutubeJPGThumbnail youtubeJPGThumbnail = array[i];
+                        this.field20743.add(new Class8681(youtubeJPGThumbnail.field28389, youtubeJPGThumbnail.field28390, youtubeJPGThumbnail.field28391));
                     }
                     this.runThisOnDimensionUpdate(() -> {
                         this.method14245(this.field20741);

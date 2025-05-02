@@ -12,7 +12,6 @@ import java.nio.file.FileSystems;
 import java.io.File;
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
-import java.nio.file.FileVisitOption;
 import java.net.URI;
 import java.util.Enumeration;
 import java.util.HashSet;
@@ -25,9 +24,7 @@ import java.util.Collection;
 import java.util.function.Predicate;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.OpenOption;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.io.InputStream;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
@@ -271,7 +268,7 @@ public class Class1728 implements Class1727
                 }
             }
         });
-        field9664 = (Util.method27845() == Class306.field1833);
+        field9664 = (Util.getOS() == OS.WINDOWS);
         field9665 = Class9570.field41282.method22623();
     }
 }

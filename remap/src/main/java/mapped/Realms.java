@@ -130,7 +130,7 @@ public class Realms
     }
     
     public static void method25375(final String s) {
-        Util.method27845().method980(s);
+        Util.getOS().method980(s);
     }
     
     public static void method25376(final String s) {

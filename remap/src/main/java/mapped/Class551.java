@@ -29,13 +29,13 @@ public class Class551 extends Screen
         this.addButton(new Class654(this.width / 2 + 4, this.height / 4 + 48 - 16, 98, 20, Class8822.method30773("gui.stats"), class654 -> this.minecraft.displayGuiScreen(new Class691(this, this.minecraft.player.method4121()))));
         this.addButton(new Class654(this.width / 2 - 102, this.height / 4 + 72 - 16, 98, 20, Class8822.method30773("menu.sendFeedback"), class654 -> this.minecraft.displayGuiScreen(new Class547(b -> {
             if (b) {
-                Util.method27845().method980(s);
+                Util.getOS().method980(s);
             }
             this.minecraft.displayGuiScreen(this);
         }, s, true))));
         this.addButton(new Class654(this.width / 2 + 4, this.height / 4 + 72 - 16, 98, 20, Class8822.method30773("menu.reportBugs"), class654 -> this.minecraft.displayGuiScreen(new Class547(b -> {
             if (b) {
-                Util.method27845().method980("https://aka.ms/snapshotbugs?ref=game");
+                Util.getOS().method980("https://aka.ms/snapshotbugs?ref=game");
             }
             this.minecraft.displayGuiScreen(this);
         }, "https://aka.ms/snapshotbugs?ref=game", true))));

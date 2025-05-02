@@ -1494,7 +1494,7 @@ public class Config
     
     public static boolean method29012(final URI uri) {
         Util.method27862(null);
-        Util.method27845().method977(uri);
+        Util.getOS().method977(uri);
         return Util.method27861() == null;
     }
     

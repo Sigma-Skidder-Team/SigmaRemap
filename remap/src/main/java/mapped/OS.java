@@ -8,11 +8,11 @@ import java.io.File;
 import java.net.URI;
 import java.net.URL;
 
-public enum Class306
+public enum OS
 {
     field1831, 
-    field1832, 
-    field1833,
+    field1832,
+    WINDOWS,
     field1834,
     field1835;
     
