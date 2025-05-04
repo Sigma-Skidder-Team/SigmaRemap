@@ -39,7 +39,7 @@ import java.util.List;
 public class MusicManager {
     private static Minecraft field30332;
     private boolean playing;
-    private Class9175 field30334;
+    private Thumbnails field30334;
     private int field30335;
     private long field30336;
     private final Thread field30337;
@@ -497,9 +497,9 @@ public class MusicManager {
         }
     }
 
-    public void method24182(Class9175 field30334, final Class8681 class8681) {
+    public void method24182(Thumbnails field30334, final Class8681 class8681) {
         if (field30334 == null) {
-            field30334 = new Class9175("temp", "temp", Class2057.field11740);
+            field30334 = new Thumbnails("temp", "temp", YoutubeContentType.PLAYLIST);
             field30334.field38866.add(class8681);
         }
         this.field30334 = field30334;

@@ -9,12 +9,12 @@ import com.mentalfrostbyte.jello.ClientFonts;
 public class Class1136 implements Runnable
 {
     private static String[] field6139;
-    public final /* synthetic */ Class9175 field6140;
+    public final /* synthetic */ Thumbnails field6140;
     public final /* synthetic */ ColorHelper field6141;
     public final /* synthetic */ Class4833 field6142;
     public final /* synthetic */ Class4833 field6143;
     
-    public Class1136(final Class4833 field6143, final Class9175 field6144, final ColorHelper field6145, final Class4833 field6146) {
+    public Class1136(final Class4833 field6143, final Thumbnails field6144, final ColorHelper field6145, final Class4833 field6146) {
         this.field6143 = field6143;
         this.field6140 = field6144;
         this.field6141 = field6145;

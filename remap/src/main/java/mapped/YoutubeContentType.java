@@ -4,9 +4,9 @@
 
 package mapped;
 
-public enum Class2057
+public enum YoutubeContentType
 {
-    field11740, 
+    PLAYLIST,
     field11741, 
     field11742
 }
