@@ -20,7 +20,7 @@ public class BasicAimbot extends Module {
       if (this.isEnabled()) {
          Entity range = ((Aimbot)this.access()).getTarget(this.getNumberValueBySettingName("Range"));
          if (range != null) {
-            float[] rotation = RotationHelper.doBasicRotation(range);
+            float[] rotation = RotationHelper.getRotationsToEntityInterpolated(range);
             mc.player.rotationYaw = rotation[0];
             mc.player.rotationPitch = rotation[1];
          }

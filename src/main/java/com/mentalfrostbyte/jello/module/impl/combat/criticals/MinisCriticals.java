@@ -20,7 +20,7 @@ public class MinisCriticals extends Module {
     @EventTarget
     private void method16126(JumpEvent var1) {
         if (this.isEnabled()) {
-            if (KillAura.field23937) {
+            if (KillAura.criticalSpoofActive) {
                 mc.getConnection()
                         .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), true));
             }
@@ -30,7 +30,7 @@ public class MinisCriticals extends Module {
     @EventTarget
     private void method16127(EventStep var1) {
         if (this.isEnabled()) {
-            if (KillAura.field23937) {
+            if (KillAura.criticalSpoofActive) {
                 var1.setCancelled(true);
             }
         }

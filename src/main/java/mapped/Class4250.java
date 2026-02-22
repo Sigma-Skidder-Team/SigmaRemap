@@ -73,10 +73,10 @@ public class Class4250 extends Class4247 {
             3.0F,
             MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.05F * partialTicks));
       ArrayList var11 = new ArrayList();
-      var11.add(new Class9778(0.0, 0.0));
-      var11.add(new Class9778((double) var7, (double) var8));
-      var11.add(new Class9778((double) var9, (double) var10));
-      var11.add(new Class9778(1.0, 1.0));
+      var11.add(new Vec2d(0.0, 0.0));
+      var11.add(new Vec2d((double) var7, (double) var8));
+      var11.add(new Vec2d((double) var9, (double) var10));
+      var11.add(new Vec2d(1.0, 1.0));
       MathUtils var12 = new MathUtils((double) (1.0F / var6 * 2.0F));
       double var13 = var12.method30789(var11, Math.min(0.8F, this.field20611.calcPercent()) * 1.25F);
       RenderUtil.method11438(
@@ -84,7 +84,7 @@ public class Class4250 extends Class4247 {
             (float) (this.yA - var5 / 2 + this.heightA),
             14.0F,
             MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor(), partialTicks));
-      List<Class9778> var15 = var12.method30790(var11);
+      List<Vec2d> var15 = var12.method30790(var11);
       GL11.glPushMatrix();
       GL11.glTranslatef((float) (this.xA + var5), (float) (this.yA + var5), 0.0F);
       GL11.glLineWidth(1.0F);
@@ -98,8 +98,8 @@ public class Class4250 extends Class4247 {
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);
 
-      for (Class9778 var17 : var15) {
-         GL11.glVertex2d(var17.method38553() * (double) var6, (1.0 - var17.method38554()) * (double) var6);
+      for (Vec2d var17 : var15) {
+         GL11.glVertex2d(var17.getX() * (double) var6, (1.0 - var17.getY()) * (double) var6);
       }
 
       GL11.glVertex2f(var6, 0.0F);

@@ -47,7 +47,7 @@ public class InteractAutoBlock {
 
    public void block(Entity var1, float var2, float var3) {
       if (this.parent.getBooleanValueFromSettingName("Interact autoblock")) {
-         EntityRayTraceResult var6 = MultiUtilities.method17714(
+         EntityRayTraceResult var6 = MultiUtilities.rayTraceEntities(
             !this.parent.getBooleanValueFromSettingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
@@ -194,7 +194,7 @@ public class InteractAutoBlock {
          } else if (!(ent instanceof PlayerEntity)
             || !Class8781.method31662((PlayerEntity)ent)
             || !Client.getInstance().moduleManager.getModuleByClass(Teams.class).isEnabled()) {
-            Vector3d var10 = MultiUtilities.method17751(ent);
+            Vector3d var10 = MultiUtilities.getBestVisiblePoint(ent);
             if (!(this.mc.player.getDistance(ent) < 40.0F)) {
                if (this.field44349.containsKey(ent)) {
                   this.field44349.remove(ent);
@@ -246,7 +246,7 @@ public class InteractAutoBlock {
                if (var26 && MultiUtilities.method17754(var10) > (double)var1) {
                   entities.remove();
                } else if (!this.parent.getBooleanValueFromSettingName("Through walls")) {
-                  Rotations rotations = RotationHelper.getRotations(ent, true);
+                  Rotations rotations = RotationHelper.getRotationsToTarget(ent, true);
                   if (rotations == null) {
                      entities.remove();
                   }

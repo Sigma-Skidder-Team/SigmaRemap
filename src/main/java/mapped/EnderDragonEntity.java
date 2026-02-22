@@ -213,7 +213,7 @@ public class EnderDragonEntity extends MobEntity implements IMob {
                   double var20 = MathHelper.clamp(
                      MathHelper.wrapDegrees(180.0 - MathHelper.method37814(var9, var13) * 180.0F / (float)Math.PI - (double)this.rotationYaw), -50.0, 50.0
                   );
-                  Vector3d var22 = var6.method11337(this.getPosX(), this.getPosY(), this.getPosZ()).normalize();
+                  Vector3d var22 = var6.subtract(this.getPosX(), this.getPosY(), this.getPosZ()).normalize();
                   Vector3d var23 = new Vector3d(
                         (double) MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)),
                         this.getMotion().y,

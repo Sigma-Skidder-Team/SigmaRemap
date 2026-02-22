@@ -69,7 +69,7 @@ public class Nuker extends Module {
                         this.field23566 = this.field23567.get(0);
                     }
 
-                    float[] var4 = RotationHelper.method34144(
+                    float[] var4 = RotationHelper.getRotationsToCoordinates(
                             (double) this.field23566.getX(), (double) this.field23566.getZ(),
                             (double) this.field23566.getY());
                     var1.setYaw(var4[0]);
@@ -84,7 +84,7 @@ public class Nuker extends Module {
                     }
                 } else {
                     this.field23566 = this.field23567.get(0);
-                    float[] var6 = RotationHelper.method34144(
+                    float[] var6 = RotationHelper.getRotationsToCoordinates(
                             (double) this.field23566.getX() + 0.5, (double) this.field23566.getZ(),
                             (double) this.field23566.getY() + 0.5);
                     var1.setYaw(var6[0]);

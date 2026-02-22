@@ -362,32 +362,59 @@ public class MultiUtilities {
         return false;
     }
 
-    public static EntityRayTraceResult method17714(Entity var0, float var1, float var2, Predicate<Entity> var3,
-                                                   double var4) {
-        double var8 = var4 * var4;
-        Entity var10 = null;
-        Vector3d var11 = null;
-        Vector3d var12 = new Vector3d(
-                mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ());
-        Vector3d var13 = getLookVector(var2, var1);
-        Vector3d var14 = var12.add(var13.x * var8, var13.y * var8, var13.z * var8);
+    public static EntityRayTraceResult rayTraceEntities(
+            Entity sourceEntity,
+            float yaw,
+            float pitch,
+            Predicate<Entity> filter,
+            double reachDistance
+    ) {
+        var maxDistanceSq = reachDistance * reachDistance;
 
-        for (Entity var16 : mc.world
-                .getEntitiesInAABBexcluding(mc.player,
-                        mc.player.getBoundingBox().expand(var13.scale(var8)).grow(1.0, 1.0, 1.0), var3)) {
-            AxisAlignedBB var17 = var16.getBoundingBox();
-            Optional<Vector3d> var18 = var17.rayTrace(var12, var14);
-            if (var18.isPresent()) {
-                double var19 = var12.squareDistanceTo(var18.get());
-                if (var19 < var8 && (var16 == var0 || var0 == null)) {
-                    var11 = var18.get().method11337(var16.getPosX(), var16.getPosY(), var16.getPosZ());
-                    var10 = var16;
-                    var8 = var19;
+        Entity hitEntity = null;
+        Vector3d hitOffset = null;
+
+        var eyePosition = new Vector3d(
+                mc.player.getPosX(),
+                mc.player.getPosY() + (double) mc.player.getEyeHeight(),
+                mc.player.getPosZ()
+        );
+
+        var lookVector = getLookVector(pitch, yaw);
+        var reachVector = eyePosition.add(
+                lookVector.x * maxDistanceSq,
+                lookVector.y * maxDistanceSq,
+                lookVector.z * maxDistanceSq
+        );
+
+        for (Entity candidate : mc.world.getEntitiesInAABBexcluding(
+                mc.player,
+                mc.player.getBoundingBox()
+                        .expand(lookVector.scale(maxDistanceSq))
+                        .grow(1.0, 1.0, 1.0),
+                filter
+        )) {
+            var boundingBox = candidate.getBoundingBox();
+            var intercept = boundingBox.rayTrace(eyePosition, reachVector);
+
+            if (intercept.isPresent()) {
+                var distanceSq = eyePosition.squareDistanceTo(intercept.get());
+
+                if (distanceSq < maxDistanceSq && (candidate == sourceEntity || sourceEntity == null)) {
+                    hitOffset = intercept.get().subtract(
+                            candidate.getPosX(),
+                            candidate.getPosY(),
+                            candidate.getPosZ()
+                    );
+                    hitEntity = candidate;
+                    maxDistanceSq = distanceSq;
                 }
             }
         }
 
-        return var10 != null && var11 != null ? new EntityRayTraceResult(var10, var11) : null;
+        return hitEntity != null && hitOffset != null
+                ? new EntityRayTraceResult(hitEntity, hitOffset)
+                : null;
     }
 
     public static boolean method17715(Vector3d var0, AxisAlignedBB var1) {
@@ -470,27 +497,20 @@ public class MultiUtilities {
                 new BlockPos(0, 0, 0), Direction.DOWN));
     }
 
-    public static void swing(Entity var0, boolean swing) {
-        if (var0 == null) {
+    public static void attack(Entity target, boolean swing) {
+        if (target == null) {
             return;
         }
 
-        boolean isOnePointEight = false;
-
-        if (isOnePointEight && swing) {
+        if (swing) {
             mc.player.swingArm(Hand.MAIN_HAND);
         }
 
-        mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(var0, mc.player.isSneaking()));
-
-        boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
+        mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(target, mc.player.isSneaking()));
 
         mc.player.resetCooldown();
-        if (!isOnePointEight && swing) {
-            mc.player.swingArm(Hand.MAIN_HAND);
-        }
 
-        mc.playerController.attackEntity(mc.player, var0);
+        mc.playerController.attackEntity(mc.player, target);
     }
 
     public static String getKeyName(int var0) {
@@ -745,21 +765,26 @@ public class MultiUtilities {
         return Math.random() * 1.0E-8;
     }
 
-    public static Vector3d method17751(Entity var0) {
-        return method17752(var0.boundingBox);
+    public static Vector3d getBestVisiblePoint(Entity target) {
+        return getBestVisiblePoint(target.boundingBox);
     }
 
-    public static Vector3d method17752(AxisAlignedBB var0) {
-        double var3 = var0.getCenter().x;
-        double var5 = var0.minY;
-        double var7 = var0.getCenter().z;
-        double var9 = (var0.maxY - var5) * 0.95;
-        double var11 = (var0.maxX - var0.minX) * 0.95;
-        double var13 = (var0.maxZ - var0.minZ) * 0.95;
-        double var15 = Math.max(var5, Math.min(var5 + var9, mc.player.getPosY() + (double) mc.player.getEyeHeight()));
-        double var17 = Math.max(var3 - var11 / 2.0, Math.min(var3 + var11 / 2.0, mc.player.getPosX()));
-        double var19 = Math.max(var7 - var13 / 2.0, Math.min(var7 + var13 / 2.0, mc.player.getPosZ()));
-        return new Vector3d(var17, var15, var19);
+    public static Vector3d getBestVisiblePoint(AxisAlignedBB bounds) {
+        var centerX = bounds.getCenter().x;
+        var minY = bounds.minY;
+        var centerZ = bounds.getCenter().z;
+
+        var usableHeight = (bounds.maxY - minY) * 0.95;
+        var usableWidthX = (bounds.maxX - bounds.minX) * 0.95;
+        var usableWidthZ = (bounds.maxZ - bounds.minZ) * 0.95;
+
+        var eyeY = mc.player.getPosY() + (double) mc.player.getEyeHeight();
+
+        var y = Math.max(minY, Math.min(minY + usableHeight, eyeY));
+        var x = Math.max(centerX - usableWidthX / 2.0, Math.min(centerX + usableWidthX / 2.0, mc.player.getPosX()));
+        var z = Math.max(centerZ - usableWidthZ / 2.0, Math.min(centerZ + usableWidthZ / 2.0, mc.player.getPosZ()));
+
+        return new Vector3d(x, y, z);
     }
 
     public static double method17754(Vector3d var0) {
@@ -770,23 +795,33 @@ public class MultiUtilities {
     }
 
     public static double method17755(AxisAlignedBB var0) {
-        Vector3d var3 = method17752(var0);
+        Vector3d var3 = getBestVisiblePoint(var0);
         return method17754(var3);
     }
 
-    public static float method17756(float var0, float var1) {
-        var0 %= 360.0F;
-        var1 %= 360.0F;
-        if (var0 < 0.0F) {
-            var0 += 360.0F;
+    public static float getNormalizedAngleDelta(float fromAngle, float toAngle) {
+        fromAngle %= 360.0F;
+        toAngle %= 360.0F;
+
+        if (fromAngle < 0.0F) {
+            fromAngle += 360.0F;
         }
 
-        if (var1 < 0.0F) {
-            var1 += 360.0F;
+        if (toAngle < 0.0F) {
+            toAngle += 360.0F;
         }
 
-        float var4 = var1 - var0;
-        return !(var4 > 180.0F) ? (!(var4 < -180.0F) ? var4 : var4 + 360.0F) : var4 - 360.0F;
+        var delta = toAngle - fromAngle;
+
+        if (delta > 180.0F) {
+            return delta - 360.0F;
+        }
+
+        if (delta < -180.0F) {
+            return delta + 360.0F;
+        }
+
+        return delta;
     }
 
     public static Class9629<Direction, Vector3d> method17760(double var0) {

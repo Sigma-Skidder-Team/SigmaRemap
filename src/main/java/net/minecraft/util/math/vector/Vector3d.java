@@ -67,10 +67,10 @@ public class Vector3d implements IPosition {
    }
 
    public Vector3d subtract(Vector3d var1) {
-      return this.method11337(var1.x, var1.y, var1.z);
+      return this.subtract(var1.x, var1.y, var1.z);
    }
 
-   public Vector3d method11337(double var1, double var3, double var5) {
+   public Vector3d subtract(double var1, double var3, double var5) {
       return this.add(-var1, -var3, -var5);
    }
 

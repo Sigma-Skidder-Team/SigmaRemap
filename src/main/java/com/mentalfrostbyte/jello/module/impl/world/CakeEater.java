@@ -106,7 +106,7 @@ public class CakeEater extends Module {
                     Collections.sort(var8, new Class3593(this));
                     field23588 = (BlockPos) var8.get(0);
                     if (!this.getBooleanValueFromSettingName("Mineplex")) {
-                        float[] rots = RotationHelper.method34144(
+                        float[] rots = RotationHelper.getRotationsToCoordinates(
                                 (double) field23588.getX() + 0.5, (double) field23588.getZ() + 0.5, field23588.getY()
                         );
 

@@ -37,7 +37,7 @@ public class FightBot extends PremiumModule {
         if (this.isEnabled() && !event.isPre()) {
             this.updateTarget();
             if (this.targetEntity != null) {
-                Rotations rots = RotationHelper.getRotations(this.targetEntity, false);
+                Rotations rots = RotationHelper.getRotationsToTarget(this.targetEntity, false);
                 if (rots != null) {
                     float reachDistance = mc.playerController.getBlockReachDistance();
 

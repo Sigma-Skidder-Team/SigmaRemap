@@ -15,7 +15,7 @@ public class Class540 implements Runnable {
 
    @Override
    public void run() {
-      MultiUtilities.swing(this.field2586, true);
+      MultiUtilities.attack(this.field2586, true);
 
       for (int var3 = 0; var3 < 10; var3++) {
          AutoCrystal.method16394().particles.addParticleEmitter(this.field2586, ParticleTypes.CRIT);

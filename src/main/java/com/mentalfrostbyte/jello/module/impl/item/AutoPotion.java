@@ -49,7 +49,7 @@ public class AutoPotion extends Module {
     @LowestPriority
     private void method16629(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSettingName("In fight") || KillAura.timedEntityIdk == null && KillAura.target == null) {
+            if (this.getBooleanValueFromSettingName("In fight") || KillAura.timedTarget == null && KillAura.target == null) {
                 int var4 = this.method16631();
                 this.field23808++;
                 int[] var5 = new int[]{6, -1, -1};
@@ -101,7 +101,7 @@ public class AutoPotion extends Module {
         double var3 = mc.player.getPosX() + mc.player.getMotion().x * 26.0;
         double var5 = mc.player.boundingBox.minY - 3.6;
         double var7 = mc.player.getPosZ() + mc.player.getMotion().z * 26.0;
-        return !this.getBooleanValueFromSettingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : RotationHelper.method34144(var3, var7, var5);
+        return !this.getBooleanValueFromSettingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : RotationHelper.getRotationsToCoordinates(var3, var7, var5);
     }
 
     public int method16631() {
@@ -198,7 +198,7 @@ public class AutoPotion extends Module {
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
                     mc.player.inventory.currentItem = var7;
                     mc.playerController.syncCurrentPlayItem();
-                    KillAura.field23954 = 1;
+                    KillAura.attackDelayTicks = 1;
                 }
 
                 this.field23810 = var7;

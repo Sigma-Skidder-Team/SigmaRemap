@@ -55,32 +55,32 @@ public class KillAuraAttackLambda implements Runnable {
             .getNumberValueBySettingName("Hit Chance");
 
       // Get range based on player distance or "Range" setting
-      float range = Math.max(KillAura.mc.player.getDistance(KillAura.timedEntityIdk.getEntity()),
+      float range = Math.max(KillAura.mc.player.getDistance(KillAura.timedTarget.getEntity()),
             this.killauraModule.getNumberValueBySettingName("Range"));
 
       EntityRayTraceResult rayTraceResult;
       if (!this.killauraModule.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          rayTraceResult = MultiUtilities.rayTraceFromPlayer(
-               KillAura.getRotations(this.killauraModule).yaw, KillAura.getRotations(this.killauraModule).pitch, range,
+               KillAura.getAimRotations(this.killauraModule).yaw, KillAura.getAimRotations(this.killauraModule).pitch, range,
                (double) this.field1477);
       } else {
          double motionSpeed = Math.sqrt(
                KillAura.mc.player.getMotion().x * KillAura.mc.player.getMotion().x
                      + KillAura.mc.player.getMotion().z * KillAura.mc.player.getMotion().z);
-         rayTraceResult = MultiUtilities.rayTraceFromPlayer(KillAura.getRotations2(this.killauraModule).yaw,
-               KillAura.getRotations2(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
+         rayTraceResult = MultiUtilities.rayTraceFromPlayer(KillAura.getRenderRotations(this.killauraModule).yaw,
+               KillAura.getRenderRotations(this.killauraModule).pitch, range, (double) this.field1477 + motionSpeed);
       }
 
       // Handle autoblocking mode
-      if (KillAura.target != null && KillAura.interactAB.isBlocking()
+      if (KillAura.target != null && KillAura.autoblockController.isBlocking()
             && !this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
-         KillAura.interactAB.method36816();
+         KillAura.autoblockController.method36816();
       }
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
       if (var3 && (rayTraceResult != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace")
             || mode.equals("Multi"))) {
-         for (TimedEntity timedEnt : KillAura.entities) {
+         for (TimedEntity timedEnt : KillAura.targets) {
             Entity entity = timedEnt.getEntity();
             if (rayTraceResult != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace")
                   && !mode.equals("Multi")) {
@@ -112,8 +112,8 @@ public class KillAuraAttackLambda implements Runnable {
                         .sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
                } else {
                   KillAura.target = null;
-                  KillAura.entities = null;
-                  KillAura.timedEntityIdk = null;
+                  KillAura.targets = null;
+                  KillAura.timedTarget = null;
                }
             } else {
                // Non-raytrace handling
@@ -130,17 +130,17 @@ public class KillAuraAttackLambda implements Runnable {
          }
 
          if (mode.equals("Multi2")) {
-            KillAura.method16847(this.killauraModule, KillAura.method16846(this.killauraModule) + 1);
+            KillAura.setTargetIndex(this.killauraModule, KillAura.getTargetIndex(this.killauraModule) + 1);
          }
       } else if (!this.killauraModule.getBooleanValueFromSettingName("No swing")) {
          KillAura.mc.player.swingArm(Hand.MAIN_HAND);
       }
 
       // Handle autoblocking
-      if (KillAura.target != null && KillAura.interactAB.canBlock()
+      if (KillAura.target != null && KillAura.autoblockController.canBlock()
             && this.killauraModule.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
-         KillAura.interactAB.block(KillAura.target, KillAura.getRotations(this.killauraModule).yaw,
-               KillAura.getRotations(this.killauraModule).pitch);
+         KillAura.autoblockController.block(KillAura.target, KillAura.getAimRotations(this.killauraModule).yaw,
+               KillAura.getAimRotations(this.killauraModule).pitch);
       }
    }
 }

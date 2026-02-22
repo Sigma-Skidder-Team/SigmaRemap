@@ -52,7 +52,7 @@ public class BowAimbot extends Module {
             }
 
             if (!this.field23754.isEmpty() && this.getBooleanValueFromSettingName("Silent")) {
-                float[] rots = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
+                float[] rots = RotationHelper.getLeadRotationsToEntity((LivingEntity) this.field23754.get(0));
                 Rots.rotating = true;
                 Rots.prevYaw = rots[0];
                 Rots.prevPitch = rots[1];
@@ -73,7 +73,7 @@ public class BowAimbot extends Module {
     private void method16570(EventRender var1) {
         if (this.isEnabled() && !this.getBooleanValueFromSettingName("Silent")) {
             if (!this.field23754.isEmpty()) {
-                float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
+                float[] var4 = RotationHelper.getLeadRotationsToEntity((LivingEntity) this.field23754.get(0));
                 mc.player.rotationYaw = var4[0];
                 mc.player.rotationPitch = var4[1];
             }

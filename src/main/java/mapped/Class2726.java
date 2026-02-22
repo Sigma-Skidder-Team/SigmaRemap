@@ -70,7 +70,7 @@ public class Class2726 extends Class2595 {
             }
 
             if (var5.isAir()) {
-               var4 = var4.method11337(0.0, var4.y, 0.0);
+               var4 = var4.subtract(0.0, var4.y, 0.0);
             }
 
             this.field17232.method4840((float)var4.x / 20.0F, (float)var4.y / 20.0F, (float)var4.z / 20.0F);

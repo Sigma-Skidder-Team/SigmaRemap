@@ -104,7 +104,7 @@ public class InfiniteAura extends Module {
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
                                 this.method16773(var11, Client.getInstance().moduleManager.getModuleByClass(Criticals.class).isEnabled());
-                                MultiUtilities.swing(var8, !this.getBooleanValueFromSettingName("No Swing"));
+                                MultiUtilities.attack(var8, !this.getBooleanValueFromSettingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
                             }

@@ -38,25 +38,25 @@ public class Class8037 {
 
    @Nullable
    public static Vector3d method27586(CreatureEntity var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
+      Vector3d var6 = var3.subtract(var0.getPosX(), var0.getPosY(), var0.getPosZ());
       return method27592(var0, var1, var2, 0, var6, false, (float) (Math.PI / 2), var0::getBlockPathWeight, true, 0, 0, true);
    }
 
    @Nullable
    public static Vector3d method27587(CreatureEntity var0, int var1, int var2, Vector3d var3) {
-      Vector3d var6 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
+      Vector3d var6 = var3.subtract(var0.getPosX(), var0.getPosY(), var0.getPosZ());
       return method27592(var0, var1, var2, 0, var6, true, (float) (Math.PI / 2), var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
    public static Vector3d method27588(CreatureEntity var0, int var1, int var2, Vector3d var3, double var4) {
-      Vector3d var8 = var3.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
+      Vector3d var8 = var3.subtract(var0.getPosX(), var0.getPosY(), var0.getPosZ());
       return method27592(var0, var1, var2, 0, var8, true, var4, var0::getBlockPathWeight, false, 0, 0, true);
    }
 
    @Nullable
    public static Vector3d method27589(CreatureEntity var0, int var1, int var2, int var3, Vector3d var4, double var5) {
-      Vector3d var9 = var4.method11337(var0.getPosX(), var0.getPosY(), var0.getPosZ());
+      Vector3d var9 = var4.subtract(var0.getPosX(), var0.getPosY(), var0.getPosZ());
       return method27592(var0, var1, var2, var3, var9, false, var5, var0::getBlockPathWeight, true, 0, 0, false);
    }
 

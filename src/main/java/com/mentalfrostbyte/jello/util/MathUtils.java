@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.util;
 
-import mapped.Class9778;
+import mapped.Vec2d;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,37 +21,37 @@ public class MathUtils {
     }
 
     public static float lerp(float var0, double... var1) {
-        ArrayList<Class9778> var4 = new ArrayList<>();
-        var4.add(new Class9778(0.0, 0.0));
-        var4.add(new Class9778(var1[0], var1[1]));
-        var4.add(new Class9778(var1[2], var1[3]));
-        var4.add(new Class9778(1.0, 1.0));
+        List<Vec2d> vectors = new ArrayList<>();
+        vectors.add(new Vec2d(0.0, 0.0));
+        vectors.add(new Vec2d(var1[0], var1[1]));
+        vectors.add(new Vec2d(var1[2], var1[3]));
+        vectors.add(new Vec2d(1.0, 1.0));
         MathUtils var5 = new MathUtils(0.0055555557F);
-        return (float) var5.method30789(var4, var0);
+        return (float) var5.method30789(vectors, var0);
     }
 
-    public Class9778 method30787(Class9778 var1, Class9778 var2, Class9778 var3, double var4) {
-        double var8 = (1.0 - var4) * (1.0 - var4) * var1.method38553() + 2.0 * var4 * (1.0 - var4) * var2.method38553() + var4 * var4 * var3.method38553();
-        double var10 = (1.0 - var4) * (1.0 - var4) * var1.method38554() + 2.0 * var4 * (1.0 - var4) * var2.method38554() + var4 * var4 * var3.method38554();
-        return new Class9778(var8, var10);
+    public Vec2d method30787(Vec2d var1, Vec2d var2, Vec2d var3, double var4) {
+        double var8 = (1.0 - var4) * (1.0 - var4) * var1.getX() + 2.0 * var4 * (1.0 - var4) * var2.getX() + var4 * var4 * var3.getX();
+        double var10 = (1.0 - var4) * (1.0 - var4) * var1.getY() + 2.0 * var4 * (1.0 - var4) * var2.getY() + var4 * var4 * var3.getY();
+        return new Vec2d(var8, var10);
     }
 
-    public Class9778 method30788(Class9778 var1, Class9778 var2, Class9778 var3, Class9778 var4, double var5) {
+    public Vec2d method30788(Vec2d var1, Vec2d var2, Vec2d var3, Vec2d var4, double var5) {
         double var9 = 1.0 - var5;
         double var11 = var9 * var9;
         double var13 = var11 * var9;
-        double var15 = var1.method38553() * var13
-                + var2.method38553() * 3.0 * var5 * var11
-                + var3.method38553() * 3.0 * var5 * var5 * var9
-                + var4.method38553() * var5 * var5 * var5;
-        double var17 = var1.method38554() * var13
-                + var2.method38554() * 3.0 * var5 * var11
-                + var3.method38554() * 3.0 * var5 * var5 * var9
-                + var4.method38554() * var5 * var5 * var5;
-        return new Class9778(var15, var17);
+        double var15 = var1.getX() * var13
+                + var2.getX() * 3.0 * var5 * var11
+                + var3.getX() * 3.0 * var5 * var5 * var9
+                + var4.getX() * var5 * var5 * var5;
+        double var17 = var1.getY() * var13
+                + var2.getY() * 3.0 * var5 * var11
+                + var3.getY() * 3.0 * var5 * var5 * var9
+                + var4.getY() * var5 * var5 * var5;
+        return new Vec2d(var15, var17);
     }
 
-    public double method30789(List<Class9778> var1, float var2) {
+    public double method30789(List<Vec2d> var1, float var2) {
         if (var2 == 0.0F) {
             return 0.0;
         } else {
@@ -59,20 +59,20 @@ public class MathUtils {
             double var6 = 1.0;
 
             for (int var8 = 0; var8 < var5.size(); var8++) {
-                Class9778 var9 = (Class9778) var5.get(var8);
-                if (!(var9.method38553() <= (double) var2)) {
+                Vec2d var9 = (Vec2d) var5.get(var8);
+                if (!(var9.getX() <= (double) var2)) {
                     break;
                 }
 
-                var6 = var9.method38554();
-                Class9778 var10 = new Class9778(1.0, 1.0);
+                var6 = var9.getY();
+                Vec2d var10 = new Vec2d(1.0, 1.0);
                 if (var8 + 1 < var5.size()) {
-                    var10 = (Class9778) var5.get(var8 + 1);
+                    var10 = (Vec2d) var5.get(var8 + 1);
                 }
 
-                double var11 = var10.method38553() - var9.method38553();
-                double var13 = var10.method38554() - var9.method38554();
-                double var15 = (double) var2 - var9.method38553();
+                double var11 = var10.getX() - var9.getX();
+                double var13 = var10.getY() - var9.getY();
+                double var15 = (double) var2 - var9.getX();
                 double var17 = var15 / var11;
                 var6 += var13 * var17;
             }
@@ -81,15 +81,15 @@ public class MathUtils {
         }
     }
 
-    public List<Class9778> method30790(List<Class9778> var1) {
+    public List<Vec2d> method30790(List<Vec2d> var1) {
         if (var1 != null) {
             if (var1.size() >= 3) {
-                Class9778 var4 = var1.get(0);
-                Class9778 var5 = var1.get(1);
-                Class9778 var6 = var1.get(2);
-                Class9778 var7 = var1.size() != 4 ? null : var1.get(3);
-                ArrayList<Class9778> var11 = new ArrayList<>();
-                Class9778 var8 = var4;
+                Vec2d var4 = var1.get(0);
+                Vec2d var5 = var1.get(1);
+                Vec2d var6 = var1.get(2);
+                Vec2d var7 = var1.size() != 4 ? null : var1.get(3);
+                ArrayList<Vec2d> var11 = new ArrayList<>();
+                Vec2d var8 = var4;
                 double var9 = 0.0;
 
                 while (var9 < 1.0) {

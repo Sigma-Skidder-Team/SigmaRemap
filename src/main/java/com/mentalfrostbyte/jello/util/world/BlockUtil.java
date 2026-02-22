@@ -625,7 +625,7 @@ public class BlockUtil {
             double var9 = (double) (-MathHelper.sin(var8)) / 2.1;
             double var11 = (double) MathHelper.cos(var8) / 2.1;
             var7 = var7.add(var9, 0.0, var11);
-            float[] var13 = RotationHelper.method34144(var7.x, var7.z, var7.y);
+            float[] var13 = RotationHelper.getRotationsToCoordinates(var7.x, var7.z, var7.y);
             float var14 = var13[0];
             float var15 = var13[1];
             var8 = (var6 - 90.0F) * (float) (Math.PI / 180.0);
@@ -635,11 +635,11 @@ public class BlockUtil {
                     (double) var2.field33646.getX() + 0.5, (double) var2.field33646.getY() + 0.5, (double) var2.field33646.getZ() + 0.5
             );
             var7 = var7.add(var9, 0.0, var11);
-            float[] var16 = RotationHelper.method34144(var7.x, var7.z, var7.y);
+            float[] var16 = RotationHelper.getRotationsToCoordinates(var7.x, var7.z, var7.y);
             float var17 = var16[0];
             float var18 = var16[1];
-            float var19 = Math.abs(RotationHelper.method34142(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var14)));
-            float var20 = Math.abs(RotationHelper.method34142(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var17)));
+            float var19 = Math.abs(RotationHelper.getSignedAngleDelta(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var14)));
+            float var20 = Math.abs(RotationHelper.getSignedAngleDelta(MathHelper.wrapDegrees(var0), MathHelper.wrapDegrees(var17)));
             return !(var19 < var20) ? new float[]{var17, var18} : new float[]{var14, var15};
         }
     }

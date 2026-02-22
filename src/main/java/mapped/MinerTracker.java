@@ -139,11 +139,11 @@ public class MinerTracker {
                     var7 = this.field39613.size() - 1;
                     var8 = this.field39613.get(var7);
                     var9 = var8.field44279;
-                    float var18 = RotationHelper.method34145(this.mc.player.getPositionVec(),
+                    float var18 = RotationHelper.getRotationsBetween(this.mc.player.getPositionVec(),
                             var8.field44271.method33972())[0];
-                    float var19 = RotationHelper.method34145(new Vector3d(0.0, 0.0, 0.0),
+                    float var19 = RotationHelper.getRotationsBetween(new Vector3d(0.0, 0.0, 0.0),
                             this.mc.player.getMotion().normalize())[0];
-                    float var20 = Math.abs(MultiUtilities.method17756(var19, var18));
+                    float var20 = Math.abs(MultiUtilities.getNormalizedAngleDelta(var19, var18));
                     if (!this.mc.player.onGround && var20 > 60.0F
                             || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getMotion().length() > 0.24
                             || var20 > 110.0F) {
@@ -159,7 +159,7 @@ public class MinerTracker {
                     MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
                 }
 
-                float var43 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
+                float var43 = RotationHelper.getRotationsBetween(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
                 this.yaw = var43;
                 double var21 = Math.cos(Math.toRadians((double) (this.mc.player.rotationYaw - var43)));
                 double var23 = Math.sin(Math.toRadians((double) (this.mc.player.rotationYaw - var43)));

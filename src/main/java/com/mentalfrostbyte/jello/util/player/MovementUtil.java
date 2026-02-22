@@ -271,7 +271,7 @@ public class MovementUtil {
    }
 
    public static float setMotion(EventMove var0, double var1, float var3, float var4, float var5) {
-      float var8 = RotationHelper.angleDiff(var4, var3);
+      float var8 = RotationHelper.getAngleDistance(var4, var3);
       if (!(var8 > var5)) {
          var4 = var3;
       } else {
@@ -287,7 +287,7 @@ public class MovementUtil {
    }
 
    public static float method37093(double var0, float var2, float var3, float var4) {
-      float var7 = RotationHelper.angleDiff(var3, var2);
+      float var7 = RotationHelper.getAngleDistance(var3, var2);
       if (!(var7 > var4)) {
          var3 = var2;
       } else {

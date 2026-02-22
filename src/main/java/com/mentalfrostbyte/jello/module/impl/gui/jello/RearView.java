@@ -69,7 +69,7 @@ public class RearView extends Module {
     }
 
     public boolean isEntityWithinViewAngle(LivingEntity targetEntity) {
-        float rotations = RotationHelper.calculateEntityRotations(targetEntity, mc.player.getPosX(),
+        float rotations = RotationHelper.getRotationsToEntityFrom(targetEntity, mc.player.getPosX(),
                 mc.player.getPosY(), mc.player.getPosZ())[0];
         return this.calculateAngleDifference(mc.player.rotationYaw, rotations) <= 90.0F;
     }

@@ -15,8 +15,8 @@ public class AngleSorter implements Comparator<TimedEntity> {
    public int compare(TimedEntity var1, TimedEntity var2) {
       Entity var5 = var1.getEntity();
       Entity var6 = var2.getEntity();
-      float var7 = RotationHelper.angleDiff(RotationHelper.method34147(var5).yaw, this.field19529.mc.player.rotationYaw);
-      float var8 = RotationHelper.angleDiff(RotationHelper.method34147(var6).yaw, this.field19529.mc.player.rotationYaw);
+      float var7 = RotationHelper.getAngleDistance(RotationHelper.getRotationsToEntity(var5).yaw, this.field19529.mc.player.rotationYaw);
+      float var8 = RotationHelper.getAngleDistance(RotationHelper.getRotationsToEntity(var6).yaw, this.field19529.mc.player.rotationYaw);
       if (!(var7 - var8 < 0.0F)) {
          if (var7 - var8 != 0.0F) {
             return 1;

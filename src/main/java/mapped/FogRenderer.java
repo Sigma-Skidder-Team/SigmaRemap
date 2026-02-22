@@ -41,7 +41,7 @@ public class FogRenderer {
             float var12 = (float)var9.z;
             float var13 = MathHelper.clamp(MathHelper.cos(var2.method7001(var1) * (float) (Math.PI * 2)) * 2.0F + 0.5F, 0.0F, 1.0F);
             BiomeManager var14 = var2.getBiomeManager();
-            Vector3d var15 = var0.getPos().method11337(2.0, 2.0, 2.0).scale(0.25);
+            Vector3d var15 = var0.getPos().subtract(2.0, 2.0, 2.0).scale(0.25);
             Vector3d var16 = Class8430.method29626(
                var15, (var3x, var4x, var5) -> var2.func_239132_a_().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).getFogColor()), var13)
             );
