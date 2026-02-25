@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -163,9 +163,9 @@ public class SigmaClassicAltManager extends Screen {
    private int method13400() {
       int var3 = 0;
 
-      for (CustomGuiScreen var5 : this.field21055.method13241()) {
+      for (GuiComponent var5 : this.field21055.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (CustomGuiScreen var7 : var5.method13241()) {
+            for (GuiComponent var7 : var5.method13241()) {
                var3++;
             }
          }
@@ -197,9 +197,9 @@ public class SigmaClassicAltManager extends Screen {
 
    @Override
    public void loadConfig(JSONObject var1) {
-      for (CustomGuiScreen var5 : this.field21055.method13241()) {
+      for (GuiComponent var5 : this.field21055.method13241()) {
          if (!(var5 instanceof Class4292)) {
-            for (CustomGuiScreen var7 : var5.method13241()) {
+            for (GuiComponent var7 : var5.method13241()) {
                this.field21055.method13234(var7);
             }
          }
@@ -221,7 +221,7 @@ public class SigmaClassicAltManager extends Screen {
          this.method13236(this.field21055);
       }
 
-      CustomGuiScreen var6 = this.method13221("alts");
+      GuiComponent var6 = this.method13221("alts");
       if (var6 != null) {
          this.method13236(var6);
       }
@@ -250,9 +250,9 @@ public class SigmaClassicAltManager extends Screen {
    }
 
    public Class4349 method13406() {
-      for (CustomGuiScreen var4 : this.field21055.method13241()) {
+      for (GuiComponent var4 : this.field21055.method13241()) {
          if (!(var4 instanceof Class4292)) {
-            for (CustomGuiScreen var6 : var4.method13241()) {
+            for (GuiComponent var6 : var4.method13241()) {
                if (var6 instanceof Class4349) {
                   Class4349 var7 = (Class4349) var6;
                   if (var7.method13582()) {

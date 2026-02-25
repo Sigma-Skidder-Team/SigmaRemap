@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -135,7 +135,7 @@ public class JelloMainMenuScreen extends Screen {
 
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
-      for (CustomGuiScreen var6 : this.field20977) {
+      for (GuiComponent var6 : this.field20977) {
          var6.updatePanelDimensions(newHeight, newWidth);
       }
 
@@ -201,7 +201,7 @@ public class JelloMainMenuScreen extends Screen {
                (float) (this.getHeightA() + 114),
                ResourceList.middlePNG);
 
-         for (CustomGuiScreen var21 : this.field20977) {
+         for (GuiComponent var21 : this.field20977) {
             GL11.glPushMatrix();
             var21.draw(partialTicks);
             GL11.glPopMatrix();
@@ -232,7 +232,7 @@ public class JelloMainMenuScreen extends Screen {
                0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), var4 * 0.3F));
 
-         for (CustomGuiScreen var24 : this.method13241()) {
+         for (GuiComponent var24 : this.method13241()) {
             if (var24.isVisible()) {
                GL11.glPushMatrix();
                if (var24 instanceof ChangelogScreen) {

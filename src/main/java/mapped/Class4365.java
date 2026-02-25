@@ -3,20 +3,20 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import net.minecraft.client.Minecraft;
 
-public class Class4365 extends Class4247 {
+public class Class4365 extends InteractiveWidget {
    public float field21334 = 0.0F;
    public int field21337;
    public int field21338;
    private Account account;
 
-   public Class4365(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public Class4365(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.font = ResourceRegistry.JelloLightFont20;
    }
@@ -49,7 +49,7 @@ public class Class4365 extends Class4247 {
             (float) (this.xA + this.getWidthA()),
             (float) (this.yA + this.getHeightA()),
             MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor(),
-                  (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * partialTicks));
+                  (0.2F * this.field21334 + (!this.isMouseDownOverComponent() ? 0.0F : 0.2F)) * partialTicks));
       RenderUtil.drawImage(
             (float) (this.xA + this.widthA - 60 - 10),
             (float) (this.yA + 10),

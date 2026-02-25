@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -15,8 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public class Class4351 extends Class4278 {
-   public CustomGuiScreen buttonList;
+public class Class4351 extends Widget2 {
+   public GuiComponent buttonList;
    public Animation field21264;
    public Animation field21265;
    public Animation animation;
@@ -27,8 +27,8 @@ public class Class4351 extends Class4278 {
    public final int field21271;
    public boolean field21272 = false;
 
-   public Class4351(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Configuration config,
-         int var8) {
+   public Class4351(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Configuration config,
+                    int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21270 = (int) ((float) var5 * 0.8F);
       this.currentConfig = config;
@@ -199,7 +199,7 @@ public class Class4351 extends Class4278 {
       this.buttonList.setWidthA(Math.max(0, (int) ((float) this.field21270 * var5)));
       this.buttonList.method13284((int) ((float) this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
-      float var6 = this.method13212() && this.field21265.getDirection().equals(Animation.Direction.BACKWARDS) ? 0.03F : 0.0F;
+      float var6 = this.isMouseDownOverComponent() && this.field21265.getDirection().equals(Animation.Direction.BACKWARDS) ? 0.03F : 0.0F;
       RenderUtil.renderBackgroundBox(
             (float) this.xA,
             (float) this.yA,

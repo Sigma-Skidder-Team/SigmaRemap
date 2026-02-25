@@ -1,16 +1,16 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
-public class Class6665 implements IWidthSetter {
+public class Class6665 implements WidthSetter {
    private static String[] field29235;
 
    @Override
-   public void setWidth(CustomGuiScreen var1, CustomGuiScreen var2) {
+   public void setWidth(GuiComponent var1, GuiComponent var2) {
       int var5 = 0;
       int var6 = 0;
 
-      for (CustomGuiScreen var8 : var1.method13241()) {
+      for (GuiComponent var8 : var1.method13241()) {
          if (var8.getXA() + var8.getWidthA() > var5) {
             var5 = var8.getXA() + var8.getWidthA();
          }

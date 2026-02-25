@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -16,14 +16,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class4375 extends Class4247 {
+public class Class4375 extends InteractiveWidget {
    private final int field21376;
    private final Animation field21377;
    private boolean field21378 = false;
    private final List<Class6601> field21379 = new ArrayList<Class6601>();
    private final List<Class9342> field21380 = new ArrayList<Class9342>();
 
-   public Class4375(CustomGuiScreen var1, String var2, int var3, int var4, int var5, String var6) {
+   public Class4375(GuiComponent var1, String var2, int var3, int var4, int var5, String var6) {
       super(var1, var2, var3 - 125, var4, 250, 330, ColorHelper.field27961, var6, false);
       if (this.yA + this.heightA <= Minecraft.getInstance().mainWindow.getHeight()) {
          this.yA += 10;
@@ -56,7 +56,7 @@ public class Class4375 extends Class4247 {
       int var3 = 1;
       ArrayList var4 = new ArrayList();
 
-      for (CustomGuiScreen var6 : this.method13241()) {
+      for (GuiComponent var6 : this.method13241()) {
          if (var6.getHeightA() != 0) {
             var4.add(var6.getName());
          }
@@ -72,9 +72,9 @@ public class Class4375 extends Class4247 {
             Class4253 var8;
             this.addToList(
                   var8 = new Class4253(this, var10.method21596(), 0, 20 + 55 * var3, this.widthA, 55, var10, var3++));
-            var8.method13036(var2 -> {
+            var8.onPress(var2 -> {
                var10.method21598(0);
-               this.method13037();
+               this.firePressHandlers();
             });
             if (var4.size() > 0 && !var4.contains(var10.method21596())) {
                var8.method13056();
@@ -87,7 +87,7 @@ public class Class4375 extends Class4247 {
    public void updatePanelDimensions(int newHeight, int newWidth) {
       Map<Integer, Class4253> var5 = new HashMap();
 
-      for (CustomGuiScreen var7 : this.method13241()) {
+      for (GuiComponent var7 : this.method13241()) {
          if (var7 instanceof Class4253) {
             var5.put(((Class4253) var7).field20626, (Class4253) var7);
          }

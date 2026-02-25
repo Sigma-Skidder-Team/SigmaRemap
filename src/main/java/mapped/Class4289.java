@@ -1,17 +1,17 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4289 extends Class4278 {
+public class Class4289 extends Widget2 {
    private static String[] field20782;
    public Class9159 field20783;
    private int field20784 = -2434342;
    private int field20785 = -6505234;
 
-   public Class4289(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Class9159 var7) {
+   public Class4289(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Class9159 var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20783 = var7;
    }

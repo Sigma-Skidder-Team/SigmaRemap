@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -12,19 +12,19 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4250 extends Class4247 {
+public class Class4250 extends InteractiveWidget {
    private Class4279 field20608;
    private Class4279 field20609;
    public int field20610 = 30;
    private Animation field20611 = new Animation(300, 300);
 
-   public Class4250(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8,
-         float var9, float var10, float var11) {
+   public Class4250(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7, float var8,
+                    float var9, float var10, float var11) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20610 = var7;
       this.addToList(this.field20608 = new Class4279(this, 10, "pos1"));
       this.addToList(this.field20609 = new Class4279(this, 10, "pos2"));
-      this.method13249((var1x, var2x) -> this.method13037());
+      this.method13249((var1x, var2x) -> this.firePressHandlers());
       this.method13041(var8, var9, var10, var11);
    }
 
@@ -79,7 +79,7 @@ public class Class4250 extends Class4247 {
       var11.add(new Vec2d(1.0, 1.0));
       MathUtils var12 = new MathUtils((double) (1.0F / var6 * 2.0F));
       double var13 = var12.method30789(var11, Math.min(0.8F, this.field20611.calcPercent()) * 1.25F);
-      RenderUtil.method11438(
+      RenderUtil.drawCircle(
             (float) ((double) this.xA + (double) var6 * var13 + (double) var5),
             (float) (this.yA - var5 / 2 + this.heightA),
             14.0F,

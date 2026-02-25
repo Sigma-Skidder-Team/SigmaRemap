@@ -1,18 +1,18 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
-public class UILoadingCircle extends Class4278 {
+public class UILoadingCircle extends Widget2 {
    private static String[] field20736;
    public TimerUtil field20769 = new TimerUtil();
    public float field20770 = 0.0F;
 
-   public UILoadingCircle(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public UILoadingCircle(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20769.start();
    }

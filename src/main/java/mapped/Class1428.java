@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.gui.screens.AltManagerScreen;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import net.minecraft.client.Minecraft;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class Class1428 implements Runnable {
          this.field7661.method13236(AltManagerScreen.method13382(this.field7664));
       }
 
-      CustomGuiScreen var4 = this.field7661.method13221("alts");
+      GuiComponent var4 = this.field7661.method13221("alts");
       if (var4 != null) {
          this.field7661.method13236(var4);
       }

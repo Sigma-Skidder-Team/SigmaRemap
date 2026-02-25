@@ -17,8 +17,8 @@ import java.util.Collections;
 
 public class ClassicMainScreen extends Screen {
         private static final long field21106 = System.nanoTime();
-        public final Class4278 field21094;
-        public final Class4278 field21095;
+        public final Widget2 field21094;
+        public final Widget2 field21095;
         private final int field21096 = 0;
         private final int field21097 = 0;
         private final boolean field21098 = true;

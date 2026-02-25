@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
@@ -9,15 +9,15 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4362 extends Class4247 {
+public class Class4362 extends InteractiveWidget {
    private static String[] field20602;
    public static final ColorHelper field21322 = new ColorHelper(1250067, -15329770)
          .method19410(ClientColors.DEEP_TEAL.getColor()).method19414(Class2218.field14492);
    public List<String> field21323 = new ArrayList<String>();
    public int field21324 = 0;
 
-   public Class4362(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
-         int var8) {
+   public Class4362(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
+                    int var8) {
       super(var1, var2, var3, var4, var5, var6, field21322, false);
       this.field21323 = var7;
       this.field21324 = var8;
@@ -50,7 +50,7 @@ public class Class4362 extends Class4247 {
          var5.method13034(10);
          var5.doThis((var2, var3) -> {
             this.method13641(this.field21323.indexOf(var4));
-            this.method13037();
+            this.firePressHandlers();
          });
       }
 
@@ -131,8 +131,8 @@ public class Class4362 extends Class4247 {
 
    @Override
    public boolean method13114(int var1, int var2) {
-      var1 -= this.method13271();
-      var2 -= this.method13272();
+      var1 -= this.getAbsoluteX();
+      var2 -= this.getAbsoluteY();
       return var1 >= -10 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.getHeightA() + this.method13635();
    }
 }

@@ -1,19 +1,19 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class PNGButtonChanging extends Class4247 {
+public class PNGButtonChanging extends InteractiveWidget {
    public AudioRepeatMode field20607;
 
-   public PNGButtonChanging(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, AudioRepeatMode var7) {
+   public PNGButtonChanging(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, AudioRepeatMode var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20607 = var7;
       this.doThis((var1x, var2x) -> {
          this.field20607 = this.field20607.method577();
-         this.method13037();
+         this.firePressHandlers();
       });
    }
 

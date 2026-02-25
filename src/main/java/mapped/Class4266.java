@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -18,14 +18,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class4266 extends Class4247 {
+public class Class4266 extends InteractiveWidget {
    public int field20684;
    public List<Class7086> field20685 = new ArrayList<Class7086>();
    public int field20686 = 0;
    public boolean field20687 = true;
    private Texture field20688;
 
-   public Class4266(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4266(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13300(false);
    }
@@ -34,7 +34,7 @@ public class Class4266 extends Class4247 {
    public void updatePanelDimensions(int newHeight, int newWidth) {
       super.updatePanelDimensions(newHeight, newWidth);
       if (this.field20909 && this.field20686 <= 0) {
-         if (newWidth >= this.method13272() + this.getHeightA() / 2) {
+         if (newWidth >= this.getAbsoluteY() + this.getHeightA() / 2) {
             ((Class4259) this.screen).method13076(false);
             this.field20685.add(new Class7086(this, false));
          } else {
@@ -73,7 +73,7 @@ public class Class4266 extends Class4247 {
 
       try {
          if (this.field20687) {
-            BufferedImage var6 = ImageUtil.method35039(this.method13271(), this.method13272(), this.widthA,
+            BufferedImage var6 = ImageUtil.method35039(this.getAbsoluteX(), this.getAbsoluteY(), this.widthA,
                   this.heightA, 3, 10, true);
             this.field20684 = MultiUtilities.method17682(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22)))
                   .getRGB();

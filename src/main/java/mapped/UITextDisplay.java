@@ -2,12 +2,12 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
 
-public class UITextDisplay extends Class4278 {
+public class UITextDisplay extends Widget2 {
    private static String[] field20736;
    public static ColorHelper field20778 = new ColorHelper(
          ClientColors.DEEP_TEAL.getColor(),
@@ -18,13 +18,13 @@ public class UITextDisplay extends Class4278 {
          Class2218.field14492);
    public boolean field20779 = false;
 
-   public UITextDisplay(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8) {
+   public UITextDisplay(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                        String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public UITextDisplay(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8, TrueTypeFont var9) {
+   public UITextDisplay(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                        String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 

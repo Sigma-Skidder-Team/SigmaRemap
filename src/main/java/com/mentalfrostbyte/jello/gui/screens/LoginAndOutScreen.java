@@ -63,7 +63,7 @@ public class LoginAndOutScreen extends Screen {
                   "Continue",
                   ResourceRegistry.JelloLightFont25));
       this.field21091.setEnabled(false);
-      this.field21088.method13036(var1 -> {
+      this.field21088.onPress(var1 -> {
          this.field21092 = true;
          this.field21091.setEnabled(true);
       });

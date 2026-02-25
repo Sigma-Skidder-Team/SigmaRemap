@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.SigmaClassicAltManager;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import net.minecraft.client.Minecraft;
@@ -11,7 +11,7 @@ import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.util.SoundEvents;
 
-public class Class4337 extends CustomGuiScreen {
+public class Class4337 extends GuiComponent {
    public final Class4254 field21186;
    public final Class4254 field21187;
    public final Class4254 field21188;
@@ -20,7 +20,7 @@ public class Class4337 extends CustomGuiScreen {
    public final Class4254 field21191;
    public final Class4254 field21192;
 
-   public Class4337(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4337(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       int var9 = 0;
       this.addToList(this.field21186 = new Class4254(this, "Singleplayer", this.method13497(var9++), this.method13496(),

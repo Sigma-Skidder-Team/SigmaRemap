@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.util.ClientColors;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4366 extends Class4247 {
+public class Class4366 extends InteractiveWidget {
    public static final ColorHelper field21342 = new ColorHelper(1250067, -15329770)
          .method19410(ClientColors.DEEP_TEAL.getColor()).method19414(Class2218.field14492);
    public List<String> field21343 = new ArrayList<String>();
@@ -16,8 +16,8 @@ public class Class4366 extends Class4247 {
    public boolean field21345;
    public boolean field21346;
 
-   public Class4366(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
-         int var8) {
+   public Class4366(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
+                    int var8) {
       super(var1, var2, var3, var4, var5, var6, field21342, false);
       this.field21343 = var7;
       this.field21344 = var8;
@@ -63,7 +63,7 @@ public class Class4366 extends Class4247 {
             this.method13672(this.field21343.indexOf(var5));
             this.method13674(false);
             if (var6x != this.method13671()) {
-               this.method13037();
+               this.firePressHandlers();
             }
          });
       }
@@ -107,7 +107,7 @@ public class Class4366 extends Class4247 {
             (float) (this.getYA() + this.getHeightA()),
             ClientColors.DEEP_TEAL.getColor());
       if (this.method13114(this.getHeightO(), this.getWidthO())
-            && this.getWidthO() - this.method13272() < this.getHeightA()) {
+            && this.getWidthO() - this.getAbsoluteY() < this.getHeightA()) {
          RenderUtil.method11428(
                (float) (this.getXA() + 1),
                (float) (this.getYA() + 1),
@@ -127,7 +127,7 @@ public class Class4366 extends Class4247 {
                (float) var5, ClientColors.MID_GREY.getColor());
       }
 
-      for (CustomGuiScreen var7 : this.method13241()) {
+      for (GuiComponent var7 : this.method13241()) {
          if (!var7.getName().equals("dropdownButton")) {
             var7.setEnabled(this.field21345);
          }
@@ -200,8 +200,8 @@ public class Class4366 extends Class4247 {
 
    @Override
    public boolean method13114(int var1, int var2) {
-      var1 -= this.method13271();
-      var2 -= this.method13272();
+      var1 -= this.getAbsoluteX();
+      var2 -= this.getAbsoluteY();
       return var1 >= 0 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.method13665();
    }
 }

@@ -4,12 +4,12 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class AccountSignUpScreen extends Class4247 {
+public class AccountSignUpScreen extends InteractiveWidget {
       private UITextDisplay stringPanel;
       private UIInput usernameInputBox;
       private UIInput emailInputBox;
@@ -21,7 +21,7 @@ public class AccountSignUpScreen extends Class4247 {
       public static int widthy = 390;
       public static int height = 590;
 
-      public AccountSignUpScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+      public AccountSignUpScreen(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
             super(var1, var2, var3, var4, var5, var6, false);
             this.addToList(
                         this.stringPanel = new UITextDisplay(

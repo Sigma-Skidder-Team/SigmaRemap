@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
 public class Class7262 implements Class7261 {
    private static String[] field31150;
@@ -16,10 +16,10 @@ public class Class7262 implements Class7261 {
       this.field31152 = var2;
    }
 
-   private CustomGuiScreen method22797(CustomGuiScreen[] var1) {
-      CustomGuiScreen var4 = var1[0];
+   private GuiComponent method22797(GuiComponent[] var1) {
+      GuiComponent var4 = var1[0];
 
-      for (CustomGuiScreen var8 : var1) {
+      for (GuiComponent var8 : var1) {
          if (var8.getHeightA() > var4.getHeightA()) {
             var4 = var8;
          }
@@ -29,24 +29,24 @@ public class Class7262 implements Class7261 {
    }
 
    @Override
-   public void method22796(CustomGuiScreen var1) {
+   public void method22796(GuiComponent var1) {
       if (var1.method13241().size() > 0) {
          int var4 = 0;
 
          while (var4 < var1.method13241().size()) {
-            CustomGuiScreen var5 = var1.method13241().get(var4);
+            GuiComponent var5 = var1.method13241().get(var4);
             if (var4 > 0 && var4 % this.field31151 == 0) {
-               CustomGuiScreen[] var6 = new CustomGuiScreen[this.field31151];
+               GuiComponent[] var6 = new GuiComponent[this.field31151];
 
                for (int var7 = 0; var7 < this.field31151; var7++) {
                   var6[var7] = var1.method13241().get(var4 - this.field31151 + var7);
                }
 
-               CustomGuiScreen var9 = this.method22797(var6);
+               GuiComponent var9 = this.method22797(var6);
                var5.setSize((var2, var3) -> var2.setYA(var9.getYA() + var2.getHeightA() + this.field31152));
             }
 
-            CustomGuiScreen[] var8 = new CustomGuiScreen[this.field31151];
+            GuiComponent[] var8 = new GuiComponent[this.field31151];
             var8[0] = var5;
 
             for (int var10 = 1; var10 < this.field31151; var10++) {

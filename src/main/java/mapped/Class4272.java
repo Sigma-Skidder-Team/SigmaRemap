@@ -2,21 +2,21 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4272 extends Class4247 {
+public class Class4272 extends InteractiveWidget {
    public Animation field20703 = new Animation(300, 200, Animation.Direction.BACKWARDS);
    private final int field20704;
    private Class4339 field20705;
    public static Class8233 field20706;
    private UILoadingCircle field20707;
 
-   public Class4272(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4272(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, 0, ColorHelper.field27961, false);
       UIButton blankButton;
       this.addToList(

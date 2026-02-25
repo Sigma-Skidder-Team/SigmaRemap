@@ -1,9 +1,9 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
-public class Class4370 extends Class4247 {
+public class Class4370 extends InteractiveWidget {
    private static String[] field21362;
    private float field21363;
    public boolean field21364 = false;
@@ -18,22 +18,22 @@ public class Class4370 extends Class4247 {
       return (float)Math.round((double)var8 * Math.pow(10.0, (double)var4)) / (float)Math.pow(10.0, (double)var4);
    }
 
-   public Class4370(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4370(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13695();
    }
 
-   public Class4370(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public Class4370(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
       this.method13695();
    }
 
-   public Class4370(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public Class4370(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.method13695();
    }
 
-   public Class4370(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+   public Class4370(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method13695();
    }
@@ -43,7 +43,7 @@ public class Class4370 extends Class4247 {
 
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
-      int var5 = this.getHeightO() - this.method13271();
+      int var5 = this.getHeightO() - this.getAbsoluteX();
       if (this.field21364) {
          this.method13698((float)var5 / (float)this.getWidthA());
       }
@@ -76,13 +76,13 @@ public class Class4370 extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       this.field21364 = true;
-      return super.onClick(mouseX, mouseY, mouseButton);
+      return super.onMouseDown(mouseX, mouseY, mouseButton);
    }
 
    @Override
-   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+   public void onMouseRelease(int mouseX, int mouseY, int mouseButton) {
       this.field21364 = false;
    }
 
@@ -99,7 +99,7 @@ public class Class4370 extends Class4247 {
       float var5 = this.field21363;
       this.field21363 = var1;
       if (var2 && var5 != var1) {
-         this.method13037();
+         this.firePressHandlers();
       }
    }
 }

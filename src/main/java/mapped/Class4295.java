@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
@@ -9,21 +9,21 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
-public class Class4295 extends Class4278 {
+public class Class4295 extends Widget2 {
    private static String[] field20736;
    public boolean field20809;
    private ItemStack field20810;
    private Minecraft field20811 = Minecraft.getInstance();
 
-   public Class4295(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4295(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20810 = new ItemStack(Item.getItemById(var7));
    }
 
    @Override
-   public void onClick3(int mouseX, int mouseY, int mouseButton) {
+   public void onMouseClick(int mouseX, int mouseY, int mouseButton) {
       this.method13176(!this.field20809);
-      super.onClick3(mouseX, mouseY, mouseButton);
+      super.onMouseClick(mouseX, mouseY, mouseButton);
    }
 
    public boolean method13175() {

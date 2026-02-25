@@ -3,13 +3,13 @@ package mapped;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4279 extends Class4278 {
+public class Class4279 extends Widget2 {
    public Class4250 field20737;
 
    public Class4279(Class4250 var1, int var2, String var3) {
       super(var1, "bezierButton-" + var3, 0, 0, var2, var2, true);
-      this.method13215(true);
-      this.field20886 = true;
+      this.setDraggable(true);
+      this.enableImmediateDrag = true;
       this.field20737 = var1;
    }
 
@@ -39,12 +39,12 @@ public class Class4279 extends Class4278 {
 
    @Override
    public void draw(float partialTicks) {
-      RenderUtil.method11438(
+      RenderUtil.drawCircle(
             (float) (this.xA + 5),
             (float) (this.yA + 5),
             10.0F,
             MultiUtilities.applyAlpha(
-                  !this.method13216() ? ClientColors.DARK_GREEN.getColor() : ClientColors.DARK_BLUE_GREY.getColor(),
+                  !this.isDragging() ? ClientColors.DARK_GREEN.getColor() : ClientColors.DARK_BLUE_GREY.getColor(),
                     partialTicks));
       super.draw(partialTicks);
    }

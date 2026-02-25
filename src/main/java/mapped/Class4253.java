@@ -1,14 +1,14 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 import java.util.Date;
 
-public class Class4253 extends Class4247 {
+public class Class4253 extends InteractiveWidget {
    public float field20623;
    public Class6984 field20624;
    public Date field20625;
@@ -16,13 +16,13 @@ public class Class4253 extends Class4247 {
    public Date field20627;
    public Class4263 field20628;
 
-   public Class4253(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Class6984 var7,
-         int var8) {
+   public Class4253(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Class6984 var7,
+                    int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.addToList(this.field20628 = new Class4263(this, "delete", 200, 20, 20, 20));
       this.field20628.doThis((var1x, var2x) -> {
          this.field20625 = new Date();
-         this.method13037();
+         this.firePressHandlers();
       });
       this.field20624 = var7;
       this.field20626 = var8;

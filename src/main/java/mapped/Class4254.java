@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -9,12 +9,12 @@ import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import org.lwjgl.opengl.GL11;
 
-public class Class4254 extends Class4247 {
+public class Class4254 extends InteractiveWidget {
    private static String[] field20629;
    public Animation field20630 = new Animation(300, 300, Animation.Direction.BACKWARDS);
    public Texture field20631;
 
-   public Class4254(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+   public Class4254(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20631 = var7;
    }

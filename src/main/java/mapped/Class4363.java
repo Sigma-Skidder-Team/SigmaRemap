@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class4363 extends Class4247 {
+public class Class4363 extends InteractiveWidget {
    public static final ColorHelper field21325 = new ColorHelper(1250067, -15329770)
          .method19410(ClientColors.DEEP_TEAL.getColor()).method19414(Class2218.field14492);
    public List<String> values;
@@ -22,8 +22,8 @@ public class Class4363 extends Class4247 {
    private Animation field21330 = new Animation(220, 220);
    private Map<Integer, Class4362> field21331 = new HashMap<Integer, Class4362>();
 
-   public Class4363(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
-         int var8) {
+   public Class4363(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, List<String> var7,
+                    int var8) {
       super(var1, var2, var3, var4, var5, var6, field21325, false);
       this.values = var7;
       this.field21327 = var8;
@@ -35,10 +35,10 @@ public class Class4363 extends Class4247 {
             this.getHeightA(), var1, 0);
       this.field21331.put(var2, var5);
       var5.setEnabled(false);
-      var5.method13036(var2x -> {
+      var5.onPress(var2x -> {
          this.method13656(var2);
          this.method13658(false);
-         this.method13037();
+         this.firePressHandlers();
       });
       this.addToList(var5);
    }
@@ -92,7 +92,7 @@ public class Class4363 extends Class4247 {
             this.method13656(this.values.indexOf(mode));
             this.method13658(false);
             if (var6x != this.method13655()) {
-               this.method13037();
+               this.firePressHandlers();
             }
          });
       }
@@ -136,12 +136,12 @@ public class Class4363 extends Class4247 {
          this.method13658(false);
       }
 
-      int var5 = (newWidth - this.method13272()) / this.getHeightA() - 1;
+      int var5 = (newWidth - this.getAbsoluteY()) / this.getHeightA() - 1;
       if (var5 >= 0
             && var5 < this.values.size()
             && this.field21330.getDirection() == Animation.Direction.FORWARDS
             && this.field21330.calcPercent() == 1.0F
-            && newHeight - this.method13271() < this.getWidthA()) {
+            && newHeight - this.getAbsoluteX() < this.getWidthA()) {
          for (Entry var9 : this.field21331.entrySet()) {
             ((Class4362) var9.getValue()).setEnabled((Integer) var9.getKey() == var5);
          }
@@ -198,8 +198,8 @@ public class Class4363 extends Class4247 {
       boolean var8 = this.field21330.calcPercent() < 1.0F;
       if (var8) {
          RenderUtil.drawBlurredBackground(
-               this.method13271(), this.method13272(), this.method13271() + this.getWidthA() + 140,
-               this.method13272() + this.getHeightA() + this.method13647());
+               this.getAbsoluteX(), this.getAbsoluteY(), this.getAbsoluteX() + this.getWidthA() + 140,
+               this.getAbsoluteY() + this.getHeightA() + this.method13647());
       }
 
       GL11.glPushMatrix();
@@ -266,8 +266,8 @@ public class Class4363 extends Class4247 {
          }
       }
 
-      var1 -= this.method13271();
-      var2 -= this.method13272();
+      var1 -= this.getAbsoluteX();
+      var2 -= this.getAbsoluteY();
       return var1 >= 0 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.getHeightA() + this.method13648();
    }
 }

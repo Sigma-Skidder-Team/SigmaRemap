@@ -1,12 +1,12 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 
-public class Class4306 extends CustomGuiScreen {
+public class Class4306 extends GuiComponent {
    private static String[] field20927;
    public float field20928;
    public float field20929;
@@ -20,7 +20,7 @@ public class Class4306 extends CustomGuiScreen {
    public int field20937;
    public int field20938 = 114;
 
-   public Class4306(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4306(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, var5, var5);
       this.field20928 = this.field20930 = (float) var6;
       this.field20929 = this.field20931 = (float) var7;
@@ -55,8 +55,8 @@ public class Class4306 extends CustomGuiScreen {
          this.field20933 = (float) Minecraft.getInstance().mainWindow.getHeight();
       }
 
-      float var5 = (float) (newHeight - this.method13271());
-      float var6 = (float) (newWidth - this.method13272());
+      float var5 = (float) (newHeight - this.getAbsoluteX());
+      float var6 = (float) (newWidth - this.getAbsoluteY());
       this.field20934 = (float) (1.0 - Math.sqrt((double) (var5 * var5 + var6 * var6)) / (double) this.field20938);
       if (!(Math.sqrt((double) (var5 * var5 + var6 * var6)) < (double) this.field20938)) {
          this.field20928 = this.field20928
@@ -88,8 +88,8 @@ public class Class4306 extends CustomGuiScreen {
             (float) this.getWidthA(),
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                   0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F)));
-      float var6 = (float) (this.field20936 - this.method13271());
-      float var7 = (float) (this.field20937 - this.method13272());
+      float var6 = (float) (this.field20936 - this.getAbsoluteX());
+      float var7 = (float) (this.field20937 - this.getAbsoluteY());
       super.draw(partialTicks);
    }
 }

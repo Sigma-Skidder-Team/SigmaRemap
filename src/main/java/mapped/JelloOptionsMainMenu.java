@@ -3,13 +3,13 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloInGameOptions;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.util.text.StringTextComponent;
 
-public class JelloOptionsMainMenu extends CustomGuiScreen {
-      public JelloOptionsMainMenu(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+public class JelloOptionsMainMenu extends GuiComponent {
+      public JelloOptionsMainMenu(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
             super(var1, var2, var3, var4, var5, var6);
             this.method13300(false);
             ColorHelper var9 = ColorHelper.field27961.method19415();
@@ -34,12 +34,12 @@ public class JelloOptionsMainMenu extends CustomGuiScreen {
                                     .method13438(new Class1133(new StringTextComponent("GuiCredits"))));
             UICheckBox var13;
             this.addToList(var13 = new UICheckBox(this, "guiBlurCheckBox", var5 / 2 - 70, var6 - 220, 25, 25));
-            var13.method13705(Client.getInstance().guiManager.getGuiBlur(), false);
-            var13.method13036(var1x -> Client.getInstance().guiManager.setGuiBlur(var13.method13703()));
+            var13.setValue(Client.getInstance().guiManager.getGuiBlur(), false);
+            var13.onPress(var1x -> Client.getInstance().guiManager.setGuiBlur(var13.getValue()));
             UICheckBox var14;
             this.addToList(var14 = new UICheckBox(this, "guiBlurIngameCheckBox", var5 / 2 + 130, var6 - 220, 25, 25));
-            var14.method13705(Client.getInstance().guiManager.getHqIngameBlur(), false);
-            var14.method13036(var1x -> Client.getInstance().guiManager.setHqIngameBlur(var14.method13703()));
+            var14.setValue(Client.getInstance().guiManager.getHqIngameBlur(), false);
+            var14.onPress(var1x -> Client.getInstance().guiManager.setHqIngameBlur(var14.getValue()));
       }
 
       @Override

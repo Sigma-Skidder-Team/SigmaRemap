@@ -1,20 +1,20 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 import java.awt.Color;
 
-public class Class4367 extends Class4247 {
+public class Class4367 extends InteractiveWidget {
    private static String[] field20602;
    public float field21347;
    private float field21348 = 0.0F;
    private float field21349 = 1.0F;
    public boolean field21350 = false;
 
-   public Class4367(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, float var7, float var8,
-         float var9) {
+   public Class4367(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, float var7, float var8,
+                    float var9) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21347 = var7;
       this.field21348 = var8;
@@ -28,9 +28,9 @@ public class Class4367 extends Class4247 {
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
       if (this.field21350) {
-         int var5 = this.getHeightO() - this.method13271();
+         int var5 = this.getHeightO() - this.getAbsoluteX();
          this.method13680((float) var5 / (float) this.getWidthA());
-         int var6 = this.getWidthO() - this.method13272();
+         int var6 = this.getWidthO() - this.getAbsoluteY();
          this.method13683(1.0F - (float) var6 / (float) this.getHeightA());
       }
 
@@ -71,13 +71,13 @@ public class Class4367 extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       this.field21350 = true;
-      return super.onClick(mouseX, mouseY, mouseButton);
+      return super.onMouseDown(mouseX, mouseY, mouseButton);
    }
 
    @Override
-   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+   public void onMouseRelease(int mouseX, int mouseY, int mouseButton) {
       this.field21350 = false;
    }
 
@@ -94,7 +94,7 @@ public class Class4367 extends Class4247 {
       float var5 = this.field21348;
       this.field21348 = var1;
       if (var2 && var5 != var1) {
-         this.method13037();
+         this.firePressHandlers();
       }
    }
 
@@ -111,7 +111,7 @@ public class Class4367 extends Class4247 {
       float var5 = this.field21349;
       this.field21349 = var1;
       if (var2 && var5 != var1) {
-         this.method13037();
+         this.firePressHandlers();
       }
    }
 

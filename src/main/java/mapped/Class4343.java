@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.settings.impl.*;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.module.settings.*;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -20,19 +20,19 @@ public class Class4343 extends Class4339 implements Class4342 {
    private boolean field21221;
    public int field21222 = 200;
    private HashMap<UITextDisplay, Setting> field21223 = new HashMap<UITextDisplay, Setting>();
-   public HashMap<Module, CustomGuiScreen> field21224 = new HashMap<Module, CustomGuiScreen>();
+   public HashMap<Module, GuiComponent> field21224 = new HashMap<Module, GuiComponent>();
    public Animation field21225 = new Animation(114, 114);
    private String field21226 = "";
    private String field21227 = "";
 
-   public Class4343(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4343(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21219 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13531(CustomGuiScreen panel, Setting setting, int var3, int var4, int var5) {
+   private int method13531(GuiComponent panel, Setting setting, int var3, int var4, int var5) {
       switch (Class8666.field39049[setting.getSettingType().ordinal()]) {
          case 1:
             UITextDisplay var37 = new UITextDisplay(panel, setting.getName() + "lbl", var3, var4, this.field21222, 24,
@@ -40,13 +40,13 @@ public class Class4343 extends Class4339 implements Class4342 {
             UICheckBox var45 = new UICheckBox(panel, setting.getName() + "checkbox", panel.getWidthA() - 24 - var5,
                   var4 + 6, 24, 24);
             this.field21223.put(var37, setting);
-            var45.method13705((Boolean) setting.getCurrentValue(), false);
+            var45.setValue((Boolean) setting.getCurrentValue(), false);
             setting.addObserver(var1x -> {
-               if (var45.method13703() != (Boolean) var1x.getCurrentValue()) {
-                  var45.method13705((Boolean) var1x.getCurrentValue(), false);
+               if (var45.getValue() != (Boolean) var1x.getCurrentValue()) {
+                  var45.setValue((Boolean) var1x.getCurrentValue(), false);
                }
             });
-            var45.method13036(var1x -> setting.setCurrentValue(((UICheckBox) var1x).method13703()));
+            var45.onPress(var1x -> setting.setCurrentValue(((UICheckBox) var1x).getValue()));
             var45.setSize((var1x, var2x) -> var1x.setXA(var2x.getWidthA() - 24 - var5));
             panel.addToList(var37);
             panel.addToList(var45);
@@ -74,7 +74,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                               (Float) var3x.getCurrentValue()), false);
                      }
                   });
-            var47.method13036(var4x -> {
+            var47.onPress(var4x -> {
                float var7 = ((Class4277) var4x).method13138();
                float var8x = Class4277.method13135(var7, numbaSetting.getMin(), numbaSetting.getMax(),
                      numbaSetting.getStep(), var13);
@@ -134,7 +134,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   var42.method13656(((ModeSetting) setting).getModeIndex());
                }
             });
-            var42.method13036(var2x -> {
+            var42.onPress(var2x -> {
                ((ModeSetting) setting).setModeByIndex(((Class4363) var2x).method13655());
                var42.method13656(((ModeSetting) setting).getModeIndex());
             });
@@ -146,7 +146,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          default:
             break;
          case 6:
-            CustomGuiScreen var17 = new CustomGuiScreen(panel, setting.getName() + "view", var3, var4,
+            GuiComponent var17 = new GuiComponent(panel, setting.getName() + "view", var3, var4,
                   panel.getWidthA(), 0);
             int var25 = 0;
 
@@ -171,7 +171,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   var40.method13722((Integer) var1x.getCurrentValue(), false);
                }
             });
-            var40.method13036(var1x -> setting.setCurrentValue(((Class4377) var1x).method13720()));
+            var40.onPress(var1x -> setting.setCurrentValue(((Class4377) var1x).method13720()));
             var40.setSize((var2x, var3x) -> var2x.setXA(panel.getWidthA() - 123 - var5));
             panel.addToList(var32);
             panel.addToList(var40);
@@ -190,7 +190,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   ((BooleanListSetting) setting).isEnabled(),
                   ((BooleanListSetting) setting).getCurrentValue().<String>toArray(new String[0]));
             this.field21223.put(var31, setting);
-            var39.method13036(var2x -> setting.setCurrentValue(var39.method13072()));
+            var39.onPress(var2x -> setting.setCurrentValue(var39.method13072()));
             var39.setSize((var2x, var3x) -> var2x.setXA(panel.getWidthA() - 175 - var5));
             panel.addToList(var31);
             panel.addToList(var39);
@@ -208,7 +208,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                var46.method13048((Integer) setting.getCurrentValue());
                var46.method13046(var30.isRainbowEnabled());
             });
-            var46.method13036(var2x -> {
+            var46.onPress(var2x -> {
                setting.updateCurrentValue(((Class4252) var2x).method13049(), false);
                var30.setRainbowEnabled(((Class4252) var2x).method13047());
             });
@@ -237,7 +237,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                SpeedRampSetting.SpeedRamp var5x = (SpeedRampSetting.SpeedRamp) setting.getCurrentValue();
                var12.method13041(var5x.startValue, var5x.middleValue, var5x.endValue, var5x.maxValue);
             });
-            var12.method13036(
+            var12.onPress(
                   var2x -> ((SpeedRampSetting) setting).updateValues(var12.method13040()[0], var12.method13040()[1],
                         var12.method13040()[2], var12.method13040()[3]));
             panel.addToList(var11);
@@ -261,7 +261,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            CustomGuiScreen var12 = new CustomGuiScreen(this, var10.getName() + "SubView", 0, var17, this.widthA,
+            GuiComponent var12 = new GuiComponent(this, var10.getName() + "SubView", 0, var17, this.widthA,
                   this.heightA - var4);
             var12.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
@@ -271,7 +271,7 @@ public class Class4343 extends Class4339 implements Class4342 {
 
             var4 = Math.max(var4 + var11, var4);
 
-            for (CustomGuiScreen var20 : var12.method13241()) {
+            for (GuiComponent var20 : var12.method13241()) {
                if (var20 instanceof Class4363) {
                   Class4363 var15 = (Class4363) var20;
                   int var16 = var15.method13649() + var15.getYA() + var15.getHeightA() + 14;
@@ -288,7 +288,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          var18.method16724();
       }
 
-      this.addToList(new CustomGuiScreen(this, "extentionhack", 0, var4, 0, 20));
+      this.addToList(new GuiComponent(this, "extentionhack", 0, var4, 0, 20));
    }
 
    @Override

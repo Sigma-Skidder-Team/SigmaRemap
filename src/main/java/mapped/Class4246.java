@@ -13,8 +13,8 @@ public class Class4246 extends ButtonPanel {
    public Class4246(Class4277 var1, int var2) {
       super(var1, "sliderButton", 0, 0, var2, var2, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor()));
       this.field20601.changeDirection(Animation.Direction.BACKWARDS);
-      this.method13215(true);
-      this.field20886 = true;
+      this.setDraggable(true);
+      this.enableImmediateDrag = true;
       this.field20600 = var1;
    }
 
@@ -23,7 +23,7 @@ public class Class4246 extends ButtonPanel {
       super.updatePanelDimensions(newHeight, newWidth);
       float var5 = this.field20600.method13138();
       float var6 = (float) this.getXA() / (float) (this.screen.getWidthA() - this.getWidthA());
-      if (!this.method13212() && !this.method13298() && !this.method13216()) {
+      if (!this.isMouseDownOverComponent() && !this.method13298() && !this.isDragging()) {
          this.field20601.changeDirection(Animation.Direction.BACKWARDS);
       } else {
          this.field20601.changeDirection(Animation.Direction.FORWARDS);
@@ -36,8 +36,8 @@ public class Class4246 extends ButtonPanel {
    public void draw(float partialTicks) {
       if (!this.isHovered()) {
          float var10000 = 0.3F;
-      } else if (!this.method13216()) {
-         if (!this.method13212()) {
+      } else if (!this.isDragging()) {
+         if (!this.isMouseDownOverComponent()) {
             Math.max(partialTicks * this.field20584, 0.0F);
          } else {
             float var8 = 1.5F;
@@ -55,7 +55,7 @@ public class Class4246 extends ButtonPanel {
             (float) (this.getHeightA() - var5 * 2),
             10.0F,
             partialTicks * 0.8F);
-      RenderUtil.method11438(
+      RenderUtil.drawCircle(
             (float) (this.getXA() + this.getWidthA() / 2),
             (float) (this.getYA() + this.getWidthA() / 2),
             var6,

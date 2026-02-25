@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeContentType;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.MusicVideoManager;
@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class MusicPlayer extends Class4278 {
+public class MusicPlayer extends Widget2 {
    private int field20845 = 250;
    private int field20846 = 40;
    private int field20847 = 64;
@@ -33,7 +33,7 @@ public class MusicPlayer extends Class4278 {
    public static URL field20850;
    private Class4339 field20851;
    private Class4339 field20852;
-   private CustomGuiScreen pngButtons;
+   private GuiComponent pngButtons;
    private MusicManager field20854 = Client.getInstance().musicManager;
    public static Map<String, MusicVideoManager> field20855 = new LinkedHashMap<String, MusicVideoManager>();
    public static String field20856;
@@ -45,7 +45,7 @@ public class MusicPlayer extends Class4278 {
    private VolumeSlider volumeSlider;
    private int field20863;
    private Texture field20864;
-   private CustomGuiScreen field20865;
+   private GuiComponent field20865;
    public SearchBoxButton searchBox;
    public Class4359 field20867;
    public static MusicVideoManager[] videos;
@@ -56,7 +56,7 @@ public class MusicPlayer extends Class4278 {
    private Animation field20873 = new Animation(80, 150, Animation.Direction.BACKWARDS);
    public boolean field20874 = false;
 
-   public MusicPlayer(CustomGuiScreen var1, String var2) {
+   public MusicPlayer(GuiComponent var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
 
       if (videos == null) {
@@ -84,7 +84,7 @@ public class MusicPlayer extends Class4278 {
             this.pngButtons = new Class4339(
                   this, "musiccontrols", this.field20845, this.getHeightA() - this.field20848,
                   this.getWidthA() - this.field20845, this.field20848));
-      this.addToList(this.field20865 = new CustomGuiScreen(this, "reShowView", 0, 0, 1, this.getHeightA()));
+      this.addToList(this.field20865 = new GuiComponent(this, "reShowView", 0, 0, 1, this.getHeightA()));
       Class4265 var5;
       this.addToList(var5 = new Class4265(this, "spectrumButton", 15, this.heightA - 140, 40, 40,
             this.field20854.method24313()));
@@ -144,7 +144,7 @@ public class MusicPlayer extends Class4278 {
       PNGButtonChanging repeat;
       this.pngButtons.addToList(
             repeat = new PNGButtonChanging(this.pngButtons, "repeat", 14, 34, 27, 20, this.field20854.method24304()));
-      repeat.method13036(var2x -> this.field20854.method24303(repeat.method13038()));
+      repeat.onPress(var2x -> this.field20854.method24303(repeat.method13038()));
       this.addToList(this.field20867 = new Class4359(this, "progress", this.field20845, this.getHeightA() - 5,
             this.getWidthA() - this.field20845, 5));
       this.field20867.method13292(true);
@@ -196,8 +196,8 @@ public class MusicPlayer extends Class4278 {
       field20870 = System.nanoTime();
       super.updatePanelDimensions(newHeight, newWidth);
       if (this.screen instanceof JelloClickGUI) {
-         if (!this.method13216()) {
-            if ((this.field20909 || this.field20874) && !this.method13214() && !this.method13216()) {
+         if (!this.isDragging()) {
+            if ((this.field20909 || this.field20874) && !this.isDraggable() && !this.isDragging()) {
                this.field20874 = true;
                int var11 = this.screen.getWidthA() - 20 - this.getWidthA();
                int var13 = (this.screen.getHeightA() - this.getHeightA()) / 2;
@@ -223,7 +223,7 @@ public class MusicPlayer extends Class4278 {
                this.setYA((int) this.field20872);
                if (Math.abs(this.field20871 - (float) var11) < 2.0F
                      && Math.abs(this.field20872 - (float) var13) < 2.0F) {
-                  this.method13215(true);
+                  this.setDraggable(true);
                   this.field20874 = false;
                }
             } else if (this.getXA() + this.getWidthA() > this.screen.getWidthA() || this.getXA() < 0
@@ -260,13 +260,13 @@ public class MusicPlayer extends Class4278 {
 
                this.setXA((int) this.field20871);
                this.setYA((int) this.field20872);
-               this.method13215(false);
-               this.method13217(false);
+               this.setDraggable(false);
+               this.setDragging(false);
             }
          } else {
-            int var12 = newHeight - this.field20880 - (this.screen == null ? 0 : this.screen.method13271());
+            int var12 = newHeight - this.dragOffsetX - (this.screen == null ? 0 : this.screen.getAbsoluteX());
             int var14 = 200;
-            if (var12 + this.getWidthA() > this.screen.getWidthA() + var14 && newHeight - this.field20878 > 70) {
+            if (var12 + this.getWidthA() > this.screen.getWidthA() + var14 && newHeight - this.dragStartMouseX > 70) {
                int var15 = var12 - this.getXA() - var14;
                this.setXA((int) ((float) this.getXA() + (float) var15 * 0.5F));
                this.field20871 = (float) this.getXA();

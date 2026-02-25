@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -12,7 +12,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JelloClickGUIPanels extends AnimatedIconPanel {
+public class JelloClickGUIPanels extends Widget {
    public final ModuleCategory category;
    public Class4341 field21194;
    public float field21195;
@@ -21,11 +21,11 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
    private int field21199;
    private final List<Class9476> field21200 = new ArrayList<>();
 
-   public JelloClickGUIPanels(CustomGuiScreen var1, String var2, int var3, int var4, ModuleCategory category) {
+   public JelloClickGUIPanels(GuiComponent var1, String var2, int var3, int var4, ModuleCategory category) {
       super(var1, var2, var3, var4, 200, 350, true);
       this.setWidthA(200);
       this.setHeightA(350);
-      this.field20886 = true;
+      this.enableImmediateDrag = true;
       this.category = category;
       this.method13505();
    }
@@ -51,12 +51,12 @@ public class JelloClickGUIPanels extends AnimatedIconPanel {
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
       if (!(this.field21195 >= 1.0F)) {
-         this.method13215(false);
+         this.setDraggable(false);
          this.field20909 = false;
       } else {
          this.field21197 = this.getXA();
          this.field21198 = this.getYA();
-         this.method13215(true);
+         this.setDraggable(true);
       }
 
       float var5 = 200.0F;

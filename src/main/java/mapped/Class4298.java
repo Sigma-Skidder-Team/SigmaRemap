@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -24,7 +24,7 @@ import org.lwjgl.opengl.GL11;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Class4298 extends Class4278 {
+public class Class4298 extends Widget2 {
    public static ColorHelper field20821 = new ColorHelper(
          ClientColors.DEEP_TEAL.getColor(),
          ClientColors.DEEP_TEAL.getColor(),
@@ -40,7 +40,7 @@ public class Class4298 extends Class4278 {
    private DynamicTexture field20827;
    private Class1118 entity;
 
-   public Class4298(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public Class4298(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, field20821, false);
       this.field20822 = var7;
    }

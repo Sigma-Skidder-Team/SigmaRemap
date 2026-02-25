@@ -1,40 +1,40 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
-public class Class4339 extends AnimatedIconPanel {
+public class Class4339 extends Widget {
    private boolean field21201;
    private boolean field21202;
    private boolean field21203 = false;
-   public CustomGuiScreen buttonList;
+   public GuiComponent buttonList;
    public Class4292 field21205;
    private boolean field21206 = true;
    public int field21207 = 35;
    public boolean field21208 = false;
 
-   public Class4339(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4339(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13511();
    }
 
-   public Class4339(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public Class4339(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
       this.method13511();
    }
 
-   public Class4339(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public Class4339(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.method13511();
    }
 
-   public Class4339(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+   public Class4339(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method13511();
    }
 
    private final void method13511() {
-      this.method13241().add(this.buttonList = new CustomGuiScreen(this, "content", 0, 0, this.widthA, this.heightA));
+      this.method13241().add(this.buttonList = new GuiComponent(this, "content", 0, 0, this.widthA, this.heightA));
       this.buttonList.setSize(new Class6665());
       this.method13241().add(this.field21205 = new Class4292(this, 11));
       this.field21205.method13292(true);
@@ -58,8 +58,8 @@ public class Class4339 extends AnimatedIconPanel {
          super.updatePanelDimensions(newHeight, newWidth);
          this.buttonList.setYA(-1 * this.field21205.method13162());
 
-         for (CustomGuiScreen var6 : this.getButton().method13241()) {
-            for (IWidthSetter var8 : var6.method13260()) {
+         for (GuiComponent var6 : this.getButton().method13241()) {
+            for (WidthSetter var8 : var6.method13260()) {
                var8.setWidth(var6, this);
             }
          }
@@ -90,12 +90,12 @@ public class Class4339 extends AnimatedIconPanel {
    }
 
    @Override
-   public void addToList(CustomGuiScreen var1) {
+   public void addToList(GuiComponent var1) {
       this.buttonList.addToList(var1);
    }
 
    @Override
-   public boolean method13239(CustomGuiScreen var1) {
+   public boolean method13239(GuiComponent var1) {
       return this.buttonList.method13239(var1);
    }
 
@@ -104,7 +104,7 @@ public class Class4339 extends AnimatedIconPanel {
       return this.buttonList.method13231(var1);
    }
 
-   public CustomGuiScreen getButton() {
+   public GuiComponent getButton() {
       return this.buttonList;
    }
 

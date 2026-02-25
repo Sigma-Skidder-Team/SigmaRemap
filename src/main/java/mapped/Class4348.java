@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -25,7 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Date;
 
-public class Class4348 extends Class4278 {
+public class Class4348 extends Widget2 {
    public Ban field21243 = null;
    public ServerData field21244 = null;
    public Texture field21245 = null;
@@ -33,7 +33,7 @@ public class Class4348 extends Class4278 {
    private BufferedImage field21247;
    private Animation field21248;
 
-   public Class4348(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Ban var7) {
+   public Class4348(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Ban var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21243 = var7;
       this.field21244 = var7.method31736();
@@ -66,8 +66,8 @@ public class Class4348 extends Class4278 {
          this.field21248.changeDirection(Animation.Direction.BACKWARDS);
       }
 
-      if (this.method13272() + this.method13282() < Minecraft.getInstance().mainWindow.getHeight() - 36
-            && this.method13272() + this.method13282() > 52) {
+      if (this.getAbsoluteY() + this.method13282() < Minecraft.getInstance().mainWindow.getHeight() - 36
+            && this.getAbsoluteY() + this.method13282() > 52) {
          if (this.field21244 != null && this.field21246 == null) {
             try {
                BufferedImage var6 = method13578(this.field21244.method25580());
@@ -169,10 +169,10 @@ public class Class4348 extends Class4278 {
       int var7 = (int) (var3 / 3600000L % 24L);
       int var8 = (int) (var3 / 86400000L);
       RenderUtil.drawBlurredBackground(
-            this.method13271() + this.method13280(),
-            this.method13272() + this.method13282(),
-            this.method13271() + this.method13280() + this.widthA,
-            this.method13272() + this.method13282() + this.heightA);
+            this.getAbsoluteX() + this.method13280(),
+            this.getAbsoluteY() + this.method13282(),
+            this.getAbsoluteX() + this.method13280() + this.widthA,
+            this.getAbsoluteY() + this.method13282() + this.heightA);
       GL11.glPushMatrix();
       byte var9 = 76;
       byte var10 = 44;
@@ -264,7 +264,7 @@ public class Class4348 extends Class4278 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       return false;
    }
 }

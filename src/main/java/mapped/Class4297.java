@@ -1,19 +1,19 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class4297 extends Class4278 {
+public class Class4297 extends Widget2 {
    private static String[] field20816;
    public Minecraft field20817 = Minecraft.getInstance();
    public Class8455 field20818;
    public TimerUtil field20819 = new TimerUtil();
    public int field20820;
 
-   public Class4297(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4297(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, 100, 100, false);
       this.field20818 = new Class8455(var5, var6);
       this.widthA = var5 * var7;

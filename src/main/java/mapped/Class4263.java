@@ -1,14 +1,14 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4263 extends Class4247 {
+public class Class4263 extends InteractiveWidget {
    private static String[] field20677;
    public float field20678;
 
-   public Class4263(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4263(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
@@ -21,7 +21,7 @@ public class Class4263 extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      RenderUtil.method11438(
+      RenderUtil.drawCircle(
             (float) (this.xA + this.widthA / 2),
             (float) (this.yA + this.heightA / 2),
             (float) this.widthA,

@@ -1,19 +1,19 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VolumeSlider extends Class4247 {
+public class VolumeSlider extends InteractiveWidget {
    private static String[] field21371;
    private float field21372 = 1.0F;
    private boolean field21373 = false;
    private final List<Class6649> field21374 = new ArrayList<Class6649>();
 
-   public VolumeSlider(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public VolumeSlider(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
@@ -35,8 +35,8 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
-      if (!super.onClick(this.xA, this.yA, mouseButton)) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onMouseDown(this.xA, this.yA, mouseButton)) {
          this.field21373 = true;
          return false;
       } else {
@@ -45,7 +45,7 @@ public class VolumeSlider extends Class4247 {
    }
 
    public float method13706(int var1) {
-      return (float) (var1 - this.method13272()) / (float) this.heightA;
+      return (float) (var1 - this.getAbsoluteY()) / (float) this.heightA;
    }
 
    @Override
@@ -58,8 +58,8 @@ public class VolumeSlider extends Class4247 {
    }
 
    @Override
-   public void onClick2(int mouseX, int mouseY, int mouseButton) {
-      super.onClick2(mouseX, mouseY, mouseButton);
+   public void onMouseRelease(int mouseX, int mouseY, int mouseButton) {
+      super.onMouseRelease(mouseX, mouseY, mouseButton);
       this.field21373 = false;
    }
 
@@ -81,7 +81,7 @@ public class VolumeSlider extends Class4247 {
       this.field21372 = Math.min(Math.max(var1, 0.0F), 1.0F);
    }
 
-   public AnimatedIconPanel method13709(Class6649 var1) {
+   public Widget method13709(Class6649 var1) {
       this.field21374.add(var1);
       return this;
    }

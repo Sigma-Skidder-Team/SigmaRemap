@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Class4296 extends Class4278 {
+public class Class4296 extends Widget2 {
    private static String[] field20812;
    private Account field20813 = null;
    private List<Class4348> field20814 = new ArrayList<Class4348>();
    private float field20815 = 0.0F;
 
-   public Class4296(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4296(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 

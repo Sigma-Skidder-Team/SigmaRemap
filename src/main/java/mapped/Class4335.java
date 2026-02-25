@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.gui.screens.ClassicScreenk;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 
@@ -11,7 +11,7 @@ public class Class4335 extends Class4333 {
    public Class4345 field21181;
    public int field21182 = 0;
 
-   public Class4335(CustomGuiScreen var1, String var2, int var3, int var4, ModuleCategory[] var5) {
+   public Class4335(GuiComponent var1, String var2, int var3, int var4, ModuleCategory[] var5) {
       super(var1, var2, var3 - 296, var4 - 346, 592, 692);
 
       for (Module var9 : Client.getInstance().moduleManager.getModuleMap().values()) {
@@ -58,7 +58,7 @@ public class Class4335 extends Class4333 {
    public void draw(float partialTicks) {
       super.draw(partialTicks);
       if (this.field21181 == null) {
-         for (CustomGuiScreen var5 : this.method13241()) {
+         for (GuiComponent var5 : this.method13241()) {
             if (var5 instanceof Class4368 && this.field21149.calcPercent() == 1.0F && var5.method13114(this.getHeightO(), this.getWidthO())) {
                Class4368 var6 = (Class4368)var5;
                RenderUtil.drawString(ResourceList.regular17, 20.0F, (float)(this.getHeightA() - 26), var6.field21351.getDescription(), -14540254);

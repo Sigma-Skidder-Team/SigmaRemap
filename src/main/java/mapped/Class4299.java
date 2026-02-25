@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-public class Class4299 extends Class4278 {
+public class Class4299 extends Widget2 {
    public Texture field20829;
    public Texture field20830;
    public Texture field20831;
@@ -21,7 +21,7 @@ public class Class4299 extends Class4278 {
    public float field20836 = 0.0F;
    public long field20837 = System.currentTimeMillis();
 
-   public Class4299(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7) {
+   public Class4299(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, 700, 512, false);
       this.field20829 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/bg.png");
       this.field20830 = ResourceList.loadTexture("com/mentalfrostbyte/gui/resources/games/fg.png");

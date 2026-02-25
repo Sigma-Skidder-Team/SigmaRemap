@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -65,11 +65,11 @@ public class RenderUtil {
         return new Rectangle(var13, var14, var9, var10);
     }
 
-    public static Rectangle method11414(CustomGuiScreen var0) {
+    public static Rectangle method11414(GuiComponent var0) {
         return new Rectangle(var0.getXA(), var0.getYA(), var0.getWidthA(), var0.getHeightA());
     }
 
-    public static void method11415(CustomGuiScreen var0) {
+    public static void method11415(GuiComponent var0) {
         method11421(var0.getXA(), var0.getYA(), var0.getWidthA() + var0.getXA(), var0.getHeightA() + var0.getYA(), true);
     }
 
@@ -88,7 +88,7 @@ public class RenderUtil {
         return (float) mc.mainWindow.getGuiScaleFactor();
     }
 
-    public static void method11418(float var0, float var1, float var2, float var3) {
+    public static void startScissorHalal(float var0, float var1, float var2, float var3) {
         method11421((int) var0, (int) var1, (int) var2, (int) var3, true);
     }
 
@@ -161,16 +161,9 @@ public class RenderUtil {
         if (buffer.isEmpty()) {
             GL11.glDisable(GL_SCISSOR_TEST);
         } else {
-            IntBuffer var2 = buffer.pop();
-            GL11.glScissor(var2.get(0), var2.get(1), var2.get(2), var2.get(3));
+            IntBuffer buffer = RenderUtil.buffer.pop();
+            GL11.glScissor(buffer.get(0), buffer.get(1), buffer.get(2), buffer.get(3));
         }
-    }
-
-    public static void method11423(float var0, float var1, float var2) {
-        field18463 = var0;
-        field18464 = var1;
-        field18465 = var2;
-        GL11.glScalef(var0, var1, var2);
     }
 
     public static void renderBackgroundBox(float var0, float var1, float var2, float var3, int var4) {
@@ -409,27 +402,21 @@ public class RenderUtil {
         method11445(var0, var1, 0.0F, 360.0F, var2 - 1.0F, var3);
     }
 
-    public static void method11437(float var0, float var1, float var2, float var3, int var4) {
-        method11446(var0, var1, 0.0F, 360.0F, var2 - 1.0F, var3 - 1.0F, var4);
-    }
-
-    public static void method11438(float var0, float var1, float var2, int var3) {
+    public static void drawCircle(float x, float y, float size, int color) {
         RenderSystem.color4f(0.0F, 0.0F, 0.0F, 0.0F);
         GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
-        float var6 = (float) (var3 >> 24 & 0xFF) / 255.0F;
-        float var7 = (float) (var3 >> 16 & 0xFF) / 255.0F;
-        float var8 = (float) (var3 >> 8 & 0xFF) / 255.0F;
-        float var9 = (float) (var3 & 0xFF) / 255.0F;
-        Tessellator var10 = Tessellator.getInstance();
-        BufferBuilder var11 = var10.getBuffer();
+        float alpha = (float) (color >> 24 & 0xFF) / 255.0F;
+        float red = (float) (color >> 16 & 0xFF) / 255.0F;
+        float green = (float) (color >> 8 & 0xFF) / 255.0F;
+        float blue = (float) (color & 0xFF) / 255.0F;
         RenderSystem.disableTexture();
         RenderSystem.blendFuncSeparate(770, 771, 1, 0);
-        RenderSystem.color4f(var7, var8, var9, var6);
+        RenderSystem.color4f(red, green, blue, alpha);
         GL11.glEnable(2832);
         GL11.glEnable(3042);
-        GL11.glPointSize(var2 * GuiManager.scaleFactor);
+        GL11.glPointSize(size * GuiManager.scaleFactor);
         GL11.glBegin(0);
-        GL11.glVertex2f(var0, var1);
+        GL11.glVertex2f(x, y);
         GL11.glEnd();
         GL11.glDisable(2832);
         GL11.glDisable(3042);
@@ -1238,27 +1225,27 @@ public class RenderUtil {
         FloatBuffer var8 = BufferUtils.createFloatBuffer(16);
         GL11.glGetFloatv(2982, var8);
         float var9 = 1.0F;
-        method11438(var0 + var4, var1 + var4, var4 * 2.0F * var9, var5);
-        method11438(var0 - var4 + var2, var1 + var4, var4 * 2.0F * var9, var5);
-        method11438(var0 + var4, var1 - var4 + var3, var4 * 2.0F * var9, var5);
-        method11438(var0 - var4 + var2, var1 - var4 + var3, var4 * 2.0F * var9, var5);
+        drawCircle(var0 + var4, var1 + var4, var4 * 2.0F * var9, var5);
+        drawCircle(var0 - var4 + var2, var1 + var4, var4 * 2.0F * var9, var5);
+        drawCircle(var0 + var4, var1 - var4 + var3, var4 * 2.0F * var9, var5);
+        drawCircle(var0 - var4 + var2, var1 - var4 + var3, var4 * 2.0F * var9, var5);
     }
 
-    public static void drawRect(float var0, float var1, float var2, float var3, float var4, int var5) {
-        drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-        drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
-        drawRect(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
-        method11418(var0, var1, var0 + var4, var1 + var4);
-        method11438(var0 + var4, var1 + var4, var4 * 2.0F, var5);
+    public static void drawRect(float x, float y, float width, float height, float size, int color) {
+        drawRect(x, y + size, x + width, y + height - size, color);
+        drawRect(x + size, y, x + width - size, y + size, color);
+        drawRect(x + size, y + height - size, x + width - size, y + height, color);
+        startScissorHalal(x, y, x + size, y + size);
+        drawCircle(x + size, y + size, size * 2.0F, color);
         endScissor();
-        method11418(var0 + var2 - var4, var1, var0 + var2, var1 + var4);
-        method11438(var0 - var4 + var2, var1 + var4, var4 * 2.0F, var5);
+        startScissorHalal(x + width - size, y, x + width, y + size);
+        drawCircle(x - size + width, y + size, size * 2.0F, color);
         endScissor();
-        method11418(var0, var1 + var3 - var4, var0 + var4, var1 + var3);
-        method11438(var0 + var4, var1 - var4 + var3, var4 * 2.0F, var5);
+        startScissorHalal(x, y + height - size, x + size, y + height);
+        drawCircle(x + size, y - size + height, size * 2.0F, color);
         endScissor();
-        method11418(var0 + var2 - var4, var1 + var3 - var4, var0 + var2, var1 + var3);
-        method11438(var0 - var4 + var2, var1 - var4 + var3, var4 * 2.0F, var5);
+        startScissorHalal(x + width - size, y + height - size, x + width, y + height);
+        drawCircle(x - size + width, y - size + height, size * 2.0F, color);
         endScissor();
     }
 

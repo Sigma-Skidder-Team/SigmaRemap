@@ -2,15 +2,15 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 public class SigmaClassicTextBox extends UIInput {
    private static String[] field20759;
 
-   public SigmaClassicTextBox(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6,
-         ColorHelper var7, String var8, String var9, TrueTypeFont var10) {
+   public SigmaClassicTextBox(GuiComponent var1, String var2, int var3, int var4, int var5, int var6,
+                              ColorHelper var7, String var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
       this.method13308(new ColorHelper(var7).method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor()));
       this.method13156(false);

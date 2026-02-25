@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
 public interface Class8446 {
-   void method29709(CustomGuiScreen var1, int var2);
+   void method29709(GuiComponent var1, int var2);
 }

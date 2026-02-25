@@ -4,13 +4,13 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import net.minecraft.util.Util;
 
-public class LoginScreen extends Class4247 {
+public class LoginScreen extends InteractiveWidget {
       private UIInput inputUsername;
       private UIInput inputPassword;
       private UIInput field21355;
@@ -21,7 +21,7 @@ public class LoginScreen extends Class4247 {
       public static int widthy = 334;
       public static int heighty = 571;
 
-      public LoginScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+      public LoginScreen(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
             super(var1, var2, var3, var4, var5, var6, false);
             this.addToList(
                         new UITextDisplay(
@@ -130,7 +130,7 @@ public class LoginScreen extends Class4247 {
                         var5.method13424("Error", var4);
                         this.field21355.method13304("");
                   } else {
-                        this.method13037();
+                        this.firePressHandlers();
                   }
 
                   this.loadingThingy.method13296(false);

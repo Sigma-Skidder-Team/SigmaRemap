@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.screens.JelloMainMenuScreen;
 import com.mentalfrostbyte.jello.gui.screens.LoginAndOutScreen;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -17,7 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.WorldSelectionScreen;
 
-public class MainmenuScreen2 extends CustomGuiScreen {
+public class MainmenuScreen2 extends GuiComponent {
    private final ButtonPanel singleplayerButton;
    private final ButtonPanel multiplayerButton;
    private final ButtonPanel realmsButton;
@@ -31,7 +31,7 @@ public class MainmenuScreen2 extends CustomGuiScreen {
    private final UIButton field21133;
    public int field21134 = 0;
 
-   public MainmenuScreen2(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public MainmenuScreen2(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       boolean var9 = false;

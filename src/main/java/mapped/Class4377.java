@@ -2,35 +2,35 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 
 public class Class4377 extends PNGIconButton {
    private String[] field21384;
    private int field21385;
 
-   public Class4377(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10, TrueTypeFont var11) {
+   public Class4377(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10, TrueTypeFont var11) {
       super(var1, var2, var3, var4, var5, var6, ResourceList.skinPNG, var9, var10, var11);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10) {
+   public Class4377(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9, String var10) {
       super(var1, var2, var3, var4, var5, var6, ResourceList.skinPNG, var9, var10);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9) {
+   public Class4377(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8, ColorHelper var9) {
       super(var1, var2, var3, var4, var5, var6, ResourceList.skinPNG, var9);
       this.field21384 = var7;
       this.field21385 = var8;
       this.method13719();
    }
 
-   public Class4377(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8) {
+   public Class4377(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String[] var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, ResourceList.skinPNG);
       this.field21384 = var7;
       this.field21385 = var8;
@@ -47,9 +47,9 @@ public class Class4377 extends PNGIconButton {
    }
 
    @Override
-   public void onClick3(int mouseX, int mouseY, int mouseButton) {
+   public void onMouseClick(int mouseX, int mouseY, int mouseButton) {
       this.method13721(this.method13720() + 1);
-      super.onClick3(mouseX, mouseY, mouseButton);
+      super.onMouseClick(mouseX, mouseY, mouseButton);
    }
 
    @Override
@@ -76,7 +76,7 @@ public class Class4377 extends PNGIconButton {
          this.field21385 = var1;
          this.method13304(this.field21384[var1]);
          if (var2) {
-            this.method13037();
+            this.firePressHandlers();
          }
       }
    }

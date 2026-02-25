@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.ClientMode;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
@@ -10,14 +10,14 @@ import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.CJsonUtils;
 import totalcross.json.JSONObject;
 
-public class Class4292 extends Class4278 implements Class4293 {
+public class Class4292 extends Widget2 implements Class4293 {
    public int field20793;
    public float field20794;
    public boolean field20795;
    public final Class4288 field20796;
    public TimerUtil field20797 = new TimerUtil();
 
-   public Class4292(CustomGuiScreen var1, int var2) {
+   public Class4292(GuiComponent var1, int var2) {
       super(var1, "verticalScrollBar", var1.getWidthA() - var2 - 5, 5, var2, var1.getHeightA() - 10, false);
       this.setSize((var1x, var2x) -> {
          var1x.setXA(var2x.getWidthA() - var2 - 5);
@@ -60,7 +60,7 @@ public class Class4292 extends Class4278 implements Class4293 {
       this.field20794 = this.field20794
             + (this.field20796.getHeightA() >= this.getHeightA()
                   ? -1.0F
-                  : (!this.method13298() && !this.field20796.method13216()
+                  : (!this.method13298() && !this.field20796.isDragging()
                         && (!this.field20797.isEnabled() || this.field20797.getElapsedTime() >= 500L)
                               ? -0.05F
                               : 0.05F));
@@ -104,11 +104,11 @@ public class Class4292 extends Class4278 implements Class4293 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
-      if (!super.onClick(mouseX, mouseY, mouseButton)) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onMouseDown(mouseX, mouseY, mouseButton)) {
          this.field20908 = this.method13228(mouseX, mouseY, false);
          if (this.method13298()) {
-            int var6 = mouseY - this.method13272();
+            int var6 = mouseY - this.getAbsoluteY();
             if (var6 <= this.field20796.getYA() + this.field20796.getHeightA()) {
                if (var6 < this.field20796.getYA()) {
                   this.field20793 = this.field20793

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.gui.jello.BrainFreeze;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -67,7 +67,7 @@ public class JelloClickGUI extends Screen {
       }
 
       this.addToList(this.musicPlayer = new MusicPlayer(this, "musicPlayer"));
-      this.musicPlayer.method13215(true);
+      this.musicPlayer.setDraggable(true);
       PNGIconButton var9;
       this.addToList(var9 = new PNGIconButton(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41,
             ResourceList.optionsPNG1));
@@ -108,7 +108,7 @@ public class JelloClickGUI extends Screen {
             var3.add(new MiniAlert(AlertType.BUTTON, "Download", 55));
             this.method13233(this.field20950 = new AlertPanel(this, "music", true, "Dependencies.",
                   var3.toArray(new MiniAlert[0])));
-            this.field20950.method13036(var0 -> {
+            this.field20950.onPress(var0 -> {
                if (!Client.getInstance().musicManager.hasPython()) {
                   Util.getOSType().openLink("https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg");
                }
@@ -145,8 +145,8 @@ public class JelloClickGUI extends Screen {
       MultiUtilities.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
       this.brainFreeze.setEnabled(Client.getInstance().moduleManager.getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.configButton != null) {
-         int var5 = newHeight - this.configButton.method13271();
-         int var6 = newWidth - this.configButton.method13272();
+         int var5 = newHeight - this.configButton.getAbsoluteX();
+         int var6 = newWidth - this.configButton.getAbsoluteY();
          boolean var7 = var5 >= -10 && var6 >= -10;
          if (!var7) {
             this.configButton.method13613();
@@ -212,9 +212,9 @@ public class JelloClickGUI extends Screen {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       if (mouseButton <= 1) {
-         return super.onClick(mouseX, mouseY, mouseButton);
+         return super.onMouseDown(mouseX, mouseY, mouseButton);
       } else {
          this.keyPressed(mouseButton);
          return false;
@@ -276,7 +276,7 @@ public class JelloClickGUI extends Screen {
                      0.5F * Math.max(0.0F, Math.min(1.0F, var4))));
       }
 
-      for (CustomGuiScreen var9 : this.method13241()) {
+      for (GuiComponent var9 : this.method13241()) {
          float var10 = (float) (var9.getYA() + var9.getHeightA() / 2 - mc.mainWindow.getHeight() / 2) * (1.0F - var4)
                * 0.5F;
          float var11 = (float) (var9.getXA() + var9.getWidthA() / 2 - mc.mainWindow.getWidth() / 2) * (1.0F - var4)

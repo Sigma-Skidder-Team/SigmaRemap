@@ -1,28 +1,28 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
-public class ButtonPanel extends Class4247 {
+public class ButtonPanel extends InteractiveWidget {
    private static String[] field20583;
    public float field20584;
    private int field20585 = 0;
    public int field20586 = 0;
 
-   public ButtonPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public ButtonPanel(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
-   public ButtonPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public ButtonPanel(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
    }
 
-   public ButtonPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public ButtonPanel(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public ButtonPanel(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+   public ButtonPanel(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
@@ -35,7 +35,7 @@ public class ButtonPanel extends Class4247 {
 
    @Override
    public void draw(float partialTicks) {
-      float var4 = !this.isHovered() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
+      float var4 = !this.isHovered() ? 0.3F : (!this.isDragging() ? (!this.isMouseDownOverComponent() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = MultiUtilities.applyAlpha(
          MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
          (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * partialTicks

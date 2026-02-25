@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -15,22 +15,22 @@ public class Class4236 extends PNGIconButton implements Class4238 {
    public boolean field20577 = false;
    public Animation field20578 = new Animation(160, 140, Animation.Direction.BACKWARDS);
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8, String var9, TrueTypeFont var10) {
+   public Class4236(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                    ColorHelper var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
    }
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8, String var9) {
+   public Class4236(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                    ColorHelper var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8) {
+   public Class4236(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                    ColorHelper var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
-   public Class4236(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+   public Class4236(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
       super(var1, var2, var3, var4, var5, var6, var7,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.LIGHT_GREYISH_BLUE.getColor()));
    }
@@ -64,7 +64,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
 
    @Override
    public void draw(float partialTicks) {
-      float var4 = !this.method13212() ? 0.0F : 0.1F;
+      float var4 = !this.isMouseDownOverComponent() ? 0.0F : 0.1F;
       float var5 = this.method13030();
       if (this.field20578.getDirection() == Animation.Direction.BACKWARDS) {
          var5 = this.method13031();

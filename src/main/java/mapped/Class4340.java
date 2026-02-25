@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.Client;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -20,10 +20,10 @@ public class Class4340 extends Class4339 {
    public boolean field21212;
    public Class4355 field21213;
 
-   public Class4340(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4340(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21211.changeDirection(Animation.Direction.BACKWARDS);
-      this.field20883 = true;
+      this.allowBottomOverflow = true;
       this.method13300(false);
       this.method13511();
    }
@@ -46,7 +46,7 @@ public class Class4340 extends Class4339 {
             Class4251 var6x = (Class4251) this.getScreen();
             var6x.field20614.method13077(var7.field21292.getX(), var7.field21292.getZ());
          });
-         var7.method13036(
+         var7.onPress(
                var3x -> {
                   Client.getInstance().waypointsManager
                         .method29993(new Class8351(var7.field21291, var7.field21292.getX(), var7.field21292.getZ(),
@@ -62,14 +62,14 @@ public class Class4340 extends Class4339 {
       super.updatePanelDimensions(newHeight, newWidth);
       this.field21209.sort((var0, var1x) -> var0.field21288 < var1x.field21288 + var0.getHeightA() / 2 ? -1 : 1);
       int var5 = 0;
-      if (this.field21213 != null && !this.field21213.method13216() && this.field21212) {
+      if (this.field21213 != null && !this.field21213.isDragging() && this.field21212) {
          this.field21213.method13608();
          this.field21213 = null;
          this.field21212 = false;
       }
 
       for (Class4355 var7 : this.field21209) {
-         if (!var7.method13216() && var7.field21290.getDirection() == Animation.Direction.BACKWARDS) {
+         if (!var7.isDragging() && var7.field21290.getDirection() == Animation.Direction.BACKWARDS) {
             var7.field21288 = var5 + 5;
          } else {
             var7.field21288 = var7.getYA();
@@ -79,12 +79,12 @@ public class Class4340 extends Class4339 {
       }
 
       for (Class4355 var11 : this.field21209) {
-         if (var11.method13216()) {
+         if (var11.isDragging()) {
             this.field21211.changeDirection(Animation.Direction.FORWARDS);
-            if (newHeight > this.method13271() + 10
-                  && newHeight < this.method13271() + 50
-                  && newWidth < this.method13272() + this.getHeightA() - 10
-                  && newWidth > this.method13272() + this.getHeightA() - 50) {
+            if (newHeight > this.getAbsoluteX() + 10
+                  && newHeight < this.getAbsoluteX() + 50
+                  && newWidth < this.getAbsoluteY() + this.getHeightA() - 10
+                  && newWidth > this.getAbsoluteY() + this.getHeightA() - 50) {
                this.field21212 = true;
                this.field21213 = var11;
             } else {
@@ -94,7 +94,7 @@ public class Class4340 extends Class4339 {
             break;
          }
 
-         if (!var11.method13216() && this.field21211.getDirection() == Animation.Direction.FORWARDS) {
+         if (!var11.isDragging() && this.field21211.getDirection() == Animation.Direction.FORWARDS) {
             Client.getInstance().waypointsManager.method29989().clear();
 
             for (Class4355 var9 : this.field21209) {
@@ -117,7 +117,7 @@ public class Class4340 extends Class4339 {
       float var4 = Math.min(1.0F, 0.21F * (60.0F / (float) Minecraft.getFps()));
 
       for (Class4355 var6 : this.field21209) {
-         if (!var6.method13216()) {
+         if (!var6.isDragging()) {
             float var7 = (float) (var6.getYA() - var6.field21288) * var4;
             if (Math.round(var7) == 0 && var7 > 0.0F) {
                var7 = 1.0F;

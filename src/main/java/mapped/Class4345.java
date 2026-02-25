@@ -10,7 +10,7 @@ import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.module.settings.*;
 import com.mentalfrostbyte.jello.module.settings.SettingType;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
@@ -21,16 +21,16 @@ public class Class4345 extends Class4339 {
    private Module field21229;
    public TrueTypeFont field21230 = ResourceList.regular20;
    public Animation field21231 = new Animation(150, 150);
-   public HashMap<Module, CustomGuiScreen> field21232 = new HashMap<Module, CustomGuiScreen>();
+   public HashMap<Module, GuiComponent> field21232 = new HashMap<Module, GuiComponent>();
 
-   public Class4345(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4345(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6);
       this.field21229 = var7;
       this.method13300(false);
       this.method13511();
    }
 
-   private int method13555(CustomGuiScreen var1, Setting var2, int var3, int var4, int var5) {
+   private int method13555(GuiComponent var1, Setting var2, int var3, int var4, int var5) {
       UITextDisplay var8 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, 0, 0, UITextDisplay.field20778, var2.getName(), this.field21230);
       Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.addToList(var8);
@@ -44,7 +44,7 @@ public class Class4345 extends Class4339 {
                   var26.method13094((Boolean)var1x.getCurrentValue(), false);
                }
             });
-            var26.method13036(var1x -> var2.setCurrentValue(((Class4262)var1x).method13092()));
+            var26.onPress(var1x -> var2.setCurrentValue(((Class4262)var1x).method13092()));
             var1.addToList(var26);
             var4 += 18 + var5;
             break;
@@ -65,7 +65,7 @@ public class Class4345 extends Class4339 {
                   }
                }
             );
-            var13.method13036(var5x -> {
+            var13.onPress(var5x -> {
                float var8x = ((Class4370)var5x).method13697();
                float var9x = Class4370.method13694(var8x, var25.getMin(), var25.getMax(), var25.getStep(), var14);
                if (var9x != (Float)var2.getCurrentValue()) {
@@ -114,7 +114,7 @@ public class Class4345 extends Class4339 {
                   var23.method13672(((ModeSetting)var2).getModeIndex());
                }
             });
-            var23.method13036(var1x -> ((ModeSetting)var2).setModeByIndex(((Class4366)var1x).method13671()));
+            var23.onPress(var1x -> ((ModeSetting)var2).setModeByIndex(((Class4366)var1x).method13671()));
             var1.addToList(var23);
             var4 += 65;
             break;
@@ -127,7 +127,7 @@ public class Class4345 extends Class4339 {
                   var12.method13722((Integer)var1x.getCurrentValue(), false);
                }
             });
-            var12.method13036(var1x -> var2.setCurrentValue(((Class4377)var1x).method13720()));
+            var12.onPress(var1x -> var2.setCurrentValue(((Class4377)var1x).method13720()));
             var12.setSize((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var12);
             var4 += 27 + var5;
@@ -157,7 +157,7 @@ public class Class4345 extends Class4339 {
 
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
-            CustomGuiScreen var13 = new CustomGuiScreen(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
+            GuiComponent var13 = new GuiComponent(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
             var13.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var15 : var11.getSettingMap().values()) {

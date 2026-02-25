@@ -2,20 +2,20 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ThumbnailUtil;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeJPGThumbnail;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 
 import java.util.ArrayList;
 
-public class SearchBoxButton extends Class4278 {
+public class SearchBoxButton extends Widget2 {
    public Class4339 field20840;
    public UIInput searchBox;
    private ArrayList<YoutubeVideoData> field20842;
    private MusicManager field20843 = Client.getInstance().musicManager;
 
-   public SearchBoxButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public SearchBoxButton(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.addToList(
             this.field20840 = new Class4339(this, "albumView", 0, 0, var5, var6, ColorHelper.field27961, "View"));

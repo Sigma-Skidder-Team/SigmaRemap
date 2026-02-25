@@ -2,12 +2,12 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4277 extends Class4247 {
+public class Class4277 extends InteractiveWidget {
    private static String[] field20602;
    private float field20732;
    private float field20733;
@@ -24,24 +24,24 @@ public class Class4277 extends Class4247 {
       return (float) Math.round((double) var8 * Math.pow(10.0, (double) var4)) / (float) Math.pow(10.0, (double) var4);
    }
 
-   public Class4277(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4277(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.method13136();
    }
 
-   public Class4277(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public Class4277(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
       this.method13136();
    }
 
-   public Class4277(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8) {
+   public Class4277(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                    String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.method13136();
    }
 
-   public Class4277(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8, TrueTypeFont var9) {
+   public Class4277(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                    String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
       this.method13136();
    }
@@ -56,8 +56,8 @@ public class Class4277 extends Class4247 {
    public void updatePanelDimensions(int newHeight, int newWidth) {
       this.field20735
             .changeDirection(
-                  !this.method13298() && !this.field20734.method13298() && !this.method13212()
-                        && !this.field20734.method13216()
+                  !this.method13298() && !this.field20734.method13298() && !this.isMouseDownOverComponent()
+                        && !this.field20734.isDragging()
                               ? Animation.Direction.BACKWARDS
                               : Animation.Direction.FORWARDS);
       super.updatePanelDimensions(newHeight, newWidth);
@@ -98,9 +98,9 @@ public class Class4277 extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
-      if (!super.onClick(mouseX, mouseY, mouseButton)) {
-         this.field20734.method13217(true);
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onMouseDown(mouseX, mouseY, mouseButton)) {
+         this.field20734.setDragging(true);
          return false;
       } else {
          return true;
@@ -133,7 +133,7 @@ public class Class4277 extends Class4247 {
       this.field20733 = var1;
       this.field20734.setXA((int) ((float) (this.getWidthA() - this.field20734.getWidthA()) * var1 + 0.5F));
       if (var2 && var5 != var1) {
-         this.method13037();
+         this.firePressHandlers();
       }
    }
 

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -14,7 +14,7 @@ import org.lwjgl.glfw.GLFW;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UIInput extends Class4278 {
+public class UIInput extends Widget2 {
    public static final ColorHelper field20741 = new ColorHelper(
          -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor(), Class2218.field14488,
          Class2218.field14492);
@@ -37,31 +37,31 @@ public class UIInput extends Class4278 {
    private final List<Class7902> field20757 = new ArrayList<Class7902>();
    private boolean field20758 = true;
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public UIInput(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20741, "", false);
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public UIInput(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, "", false);
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8) {
+   public UIInput(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                  String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8, String var9) {
+   public UIInput(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                  String var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
       this.field20756.start();
    }
 
-   public UIInput(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
-         String var8, String var9, TrueTypeFont var10) {
+   public UIInput(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7,
+                  String var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20743 = var9;
       this.field20756.start();
@@ -82,7 +82,7 @@ public class UIInput extends Class4278 {
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;
       if (this.field20905) {
          if (this.field20752) {
-            this.field20749 = ChatUtilThing.method32494(var5, this.font, (float) this.method13271(), newHeight, this.field20746);
+            this.field20749 = ChatUtilThing.method32494(var5, this.font, (float) this.getAbsoluteX(), newHeight, this.field20746);
          }
       } else {
          this.field20749 = 0;
@@ -103,15 +103,15 @@ public class UIInput extends Class4278 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
-      if (!super.onClick(mouseX, mouseY, mouseButton)) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onMouseDown(mouseX, mouseY, mouseButton)) {
          String var6 = this.typedText;
          if (this.field20754) {
             var6 = this.typedText.replaceAll(".", this.field20755);
          }
 
          this.field20752 = true;
-         this.field20749 = ChatUtilThing.method32494(var6, this.font, (float) this.method13271(), mouseX, this.field20746);
+         this.field20749 = ChatUtilThing.method32494(var6, this.font, (float) this.getAbsoluteX(), mouseX, this.field20746);
          if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
                && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
@@ -131,8 +131,8 @@ public class UIInput extends Class4278 {
    }
 
    @Override
-   public void onClick2(int mouseX, int mouseY, int mouseButton) {
-      super.onClick2(mouseX, mouseY, mouseButton);
+   public void onMouseRelease(int mouseX, int mouseY, int mouseButton) {
+      super.onMouseRelease(mouseX, mouseY, mouseButton);
       this.field20752 = false;
    }
 

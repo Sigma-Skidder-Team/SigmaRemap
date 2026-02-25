@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4259 extends Class4247 {
+public class Class4259 extends InteractiveWidget {
    public Class4266 field20647;
    public ChunkPos chunkPos;
    public int field20649 = 8;
@@ -30,7 +30,7 @@ public class Class4259 extends Class4247 {
    private final List<Class8041> field20659 = new ArrayList<>();
    private final List<Class9693> field20660 = new ArrayList<>();
 
-   public Class4259(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4259(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       int var9 = 90;
       int var10 = 40;
@@ -70,14 +70,14 @@ public class Class4259 extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       if (this.method13298() && mouseButton == 1) {
          int var6 = Math.max(this.widthA, this.heightA);
          float var7 = (float) (this.widthA - var6) / 2.0F;
          float var8 = (float) (this.heightA - var6) / 2.0F;
-         float var9 = (float) mouseX - ((float) this.method13271() + var8 + (float) (var6 / 2));
+         float var9 = (float) mouseX - ((float) this.getAbsoluteX() + var8 + (float) (var6 / 2));
          float var10 = (float) (Minecraft.getInstance().mainWindow.getHeight() - mouseY)
-               - ((float) this.method13272() + var7 + (float) (var6 / 2));
+               - ((float) this.getAbsoluteY() + var7 + (float) (var6 / 2));
          float var11 = (float) var6 / ((float) (this.field20649 - 1) * 2.0F);
          float var12 = (float) (this.chunkPos.x * 16) - this.field20651 * 16.0F;
          float var13 = (float) (this.chunkPos.z * 16) - this.field20650 * 16.0F;
@@ -87,7 +87,7 @@ public class Class4259 extends Class4247 {
          return false;
       } else {
          this.method13083();
-         return super.onClick(mouseX, mouseY, mouseButton);
+         return super.onMouseDown(mouseX, mouseY, mouseButton);
       }
    }
 

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AlertPanel extends Class4247 {
-   public CustomGuiScreen field21279;
+public class AlertPanel extends InteractiveWidget {
+   public GuiComponent field21279;
    public String field21280;
    public Texture field21281;
    private Animation field21282 = new Animation(285, 100);
@@ -28,7 +28,7 @@ public class AlertPanel extends Class4247 {
    private Map<String, String> field21286;
    private final List<Class9448> field21287 = new ArrayList<Class9448>();
 
-   public AlertPanel(CustomGuiScreen var1, String var2, boolean var3, String var4, MiniAlert... var5) {
+   public AlertPanel(GuiComponent var1, String var2, boolean var3, String var4, MiniAlert... var5) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(),
             Minecraft.getInstance().mainWindow.getHeight(), false);
       this.field21283 = var3;
@@ -45,7 +45,7 @@ public class AlertPanel extends Class4247 {
 
       this.field21285 -= 10;
       this.addToList(
-            this.field21279 = new CustomGuiScreen(
+            this.field21279 = new GuiComponent(
                   this, "modalContent", (this.widthA - this.field21284) / 2, (this.heightA - this.field21285) / 2,
                   this.field21284, this.field21285));
       int var17 = 0;
@@ -144,7 +144,7 @@ public class AlertPanel extends Class4247 {
    @Override
    public void method13296(boolean var1) {
       if (var1) {
-         for (CustomGuiScreen var5 : this.field21279.method13241()) {
+         for (GuiComponent var5 : this.field21279.method13241()) {
             if (var5 instanceof UIInput) {
                ((UIInput) var5).method13304("");
                ((UIInput) var5).method13146();
@@ -156,15 +156,15 @@ public class AlertPanel extends Class4247 {
       super.method13296(var1);
    }
 
-   public CustomGuiScreen method13598() {
+   public GuiComponent method13598() {
       return this.field21279;
    }
 
    private Map<String, String> method13599() {
       HashMap var3 = new HashMap();
 
-      for (CustomGuiScreen var5 : this.field21279.method13241()) {
-         Class4278 var6 = (Class4278) var5;
+      for (GuiComponent var5 : this.field21279.method13241()) {
+         Widget2 var6 = (Widget2) var5;
          if (var6 instanceof UIInput) {
             UIInput var7 = (UIInput) var6;
             var3.put(var7.method13153(), var7.getTypedText());
@@ -181,12 +181,12 @@ public class AlertPanel extends Class4247 {
    public void method13601() {
       this.field21286 = this.method13599();
       this.method13603(false);
-      this.method13037();
+      this.firePressHandlers();
    }
 
    @Override
-   public void onClick3(int mouseX, int mouseY, int mouseButton) {
-      super.onClick3(mouseX, mouseY, mouseButton);
+   public void onMouseClick(int mouseX, int mouseY, int mouseButton) {
+      super.onMouseClick(mouseX, mouseY, mouseButton);
    }
 
    public float method13602(float var1, float var2) {
@@ -236,8 +236,8 @@ public class AlertPanel extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
-      if (!super.onClick(mouseX, mouseY, mouseButton)) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
+      if (!super.onMouseDown(mouseX, mouseY, mouseButton)) {
          int var6 = this.field21284 + 60;
          int var7 = this.field21285 + 60;
          if (mouseX > (this.widthA - var6) / 2

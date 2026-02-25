@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
-public class Class4283 extends Class4278 {
+public class Class4283 extends Widget2 {
       private static String[] field20736;
       public static ColorHelper field20760 = new ColorHelper(
                   ClientColors.DEEP_TEAL.getColor(),
@@ -26,7 +26,7 @@ public class Class4283 extends Class4278 {
       private Texture field20765;
       private Animation field20766;
 
-      public Class4283(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+      public Class4283(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
             super(var1, var2, var3, var4, var5, var6, field20760, var2, false);
       }
 

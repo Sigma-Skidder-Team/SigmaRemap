@@ -1,13 +1,13 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import net.minecraft.client.Minecraft;
 
-public class Class6663 implements IWidthSetter {
+public class Class6663 implements WidthSetter {
    private static String[] field29234;
 
    @Override
-   public void setWidth(CustomGuiScreen var1, CustomGuiScreen var2) {
+   public void setWidth(GuiComponent var1, GuiComponent var2) {
       var1.setXA(0);
       var1.setYA(0);
       if (var2 == null) {

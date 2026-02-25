@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.lwjgl.opengl.GL11;
@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4271 extends Class4247 {
+public class Class4271 extends InteractiveWidget {
    public static final ColorHelper field20697 = new ColorHelper(1250067, -15329770)
          .method19410(ClientColors.DEEP_TEAL.getColor()).method19414(Class2218.field14492);
    public List<Integer> field20698 = new ArrayList<Integer>();
@@ -18,8 +18,8 @@ public class Class4271 extends Class4247 {
    public boolean field20701;
    private float field20702;
 
-   public Class4271(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7,
-         List<Integer> var8) {
+   public Class4271(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7,
+                    List<Integer> var8) {
       super(var1, var2, var3, var4, var5, var6, field20697, var7, false);
       this.field20698 = var8;
       this.method13107();
@@ -47,7 +47,7 @@ public class Class4271 extends Class4247 {
                var8 = new Class4295(this, var7 + "item", var5 % (this.widthA / 50) * 50,
                      this.heightA + var5 / (this.widthA / 50) * 50, 50, 50, var7));
          var8.method13176(this.field20699.contains(this.field20698.indexOf(var7)));
-         var8.doThis((var1, var2) -> this.method13037());
+         var8.doThis((var1, var2) -> this.firePressHandlers());
          var5++;
       }
    }
@@ -105,8 +105,8 @@ public class Class4271 extends Class4247 {
       }
 
       RenderUtil.drawBlurredBackground(
-            this.method13271(), this.method13272(), this.method13271() + this.getWidthA(),
-            this.method13272() + this.getHeightA() + this.method13108());
+            this.getAbsoluteX(), this.getAbsoluteY(), this.getAbsoluteX() + this.getWidthA(),
+            this.getAbsoluteY() + this.getHeightA() + this.method13108());
       GL11.glPushMatrix();
       if (this.field20702 > 0.0F) {
          super.draw(partialTicks);
@@ -160,8 +160,8 @@ public class Class4271 extends Class4247 {
 
    @Override
    public boolean method13114(int var1, int var2) {
-      var1 -= this.method13271();
-      var2 -= this.method13272();
+      var1 -= this.getAbsoluteX();
+      var2 -= this.getAbsoluteY();
       return var1 >= 0 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.getHeightA() + this.method13108();
    }
 }

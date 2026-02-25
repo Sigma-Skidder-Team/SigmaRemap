@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -12,25 +12,25 @@ public class PNGIconButton extends ButtonPanel {
          MultiUtilities.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.1F));
    public Texture field20575;
 
-   public PNGIconButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8, String var9, TrueTypeFont var10) {
+   public PNGIconButton(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                        ColorHelper var8, String var9, TrueTypeFont var10) {
       super(var1, var2, var3, var4, var5, var6, var8, var9, var10);
       this.field20575 = var7;
    }
 
-   public PNGIconButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8, String var9) {
+   public PNGIconButton(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                        ColorHelper var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var8, var9);
       this.field20575 = var7;
    }
 
-   public PNGIconButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
-         ColorHelper var8) {
+   public PNGIconButton(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7,
+                        ColorHelper var8) {
       super(var1, var2, var3, var4, var5, var6, var8);
       this.field20575 = var7;
    }
 
-   public PNGIconButton(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
+   public PNGIconButton(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Texture var7) {
       super(var1, var2, var3, var4, var5, var6, field20574);
       this.field20575 = var7;
    }
@@ -46,7 +46,7 @@ public class PNGIconButton extends ButtonPanel {
    @Override
    public void draw(float partialTicks) {
       float var4 = !this.isHovered() ? 0.3F
-            : (!this.method13216() ? (!this.method13212() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
+            : (!this.isDragging() ? (!this.isMouseDownOverComponent() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
       RenderUtil.drawImage(
             (float) this.getXA(),
             (float) this.getYA(),

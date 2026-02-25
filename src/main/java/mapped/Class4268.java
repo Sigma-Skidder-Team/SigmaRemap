@@ -3,17 +3,17 @@ package mapped;
 import com.mentalfrostbyte.jello.gui.screens.JelloKeyboardScreen;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4268 extends Class4247 {
+public class Class4268 extends InteractiveWidget {
    public final int field20690;
    private float field20691;
    private boolean field20692 = false;
    private boolean field20693 = false;
 
-   public Class4268(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
+   public Class4268(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20690 = var8;
       this.method13102();
@@ -35,7 +35,7 @@ public class Class4268 extends Class4247 {
    public void updatePanelDimensions(int newHeight, int newWidth) {
       super.updatePanelDimensions(newHeight, newWidth);
       this.field20691 = Math.max(0.0F,
-            Math.min(1.0F, this.field20691 + 0.2F * (float) (!this.method13212() && !this.field20692 ? -1 : 1)));
+            Math.min(1.0F, this.field20691 + 0.2F * (float) (!this.isMouseDownOverComponent() && !this.field20692 ? -1 : 1)));
    }
 
    @Override
@@ -52,7 +52,7 @@ public class Class4268 extends Class4247 {
             -986896);
       TrueTypeFont var4 = ResourceRegistry.JelloLightFont20;
       if (this.typedText.contains("Lock")) {
-         RenderUtil.method11438(
+         RenderUtil.drawCircle(
                (float) (this.xA + 14),
                (float) (this.yA + 11) + 3.0F * this.field20691,
                10.0F,
@@ -111,7 +111,7 @@ public class Class4268 extends Class4247 {
             } else {
                int var7 = this.xA + 32;
                int var10 = this.yA + 32 + (int) (3.0F * this.field20691);
-               RenderUtil.method11438(
+               RenderUtil.drawCircle(
                      (float) var7, (float) var10, 14.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(),
                            0.3F + (!this.field20693 ? 0.0F : 0.2F)));
             }

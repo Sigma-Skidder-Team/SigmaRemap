@@ -114,7 +114,7 @@ public class ActiveMods extends Module {
                         GL11.glTranslated((float) var19 * QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F), 0.0, 0.0);
                     }
 
-                    RenderUtil.method11418(
+                    RenderUtil.startScissorHalal(
                             (float) (var7 - var19 - 3),
                             (float) (var6 + 1),
                             (float) var7,

@@ -1,7 +1,7 @@
 package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4239 extends ButtonPanel implements Class4238 {
@@ -9,19 +9,19 @@ public class Class4239 extends ButtonPanel implements Class4238 {
    public float field20581;
    public boolean field20582 = false;
 
-   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
+   public Class4239(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, TrueTypeFont var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
    }
 
-   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public Class4239(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8);
    }
 
-   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public Class4239(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7);
    }
 
-   public Class4239(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4239(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
    }
 
@@ -35,16 +35,16 @@ public class Class4239 extends ButtonPanel implements Class4238 {
 
    @Override
    public void draw(float partialTicks) {
-      float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
+      float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.isMouseDownOverComponent() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = (int)((float)this.getWidthA() * this.field20581);
       int var6 = (int)((float)this.getHeightA() * this.field20581);
       int var7 = this.getXA() - (var5 - this.getWidthA()) / 2;
       int var8 = this.getYA() - (var6 - this.getHeightA()) / 2;
       RenderUtil.drawBlurredBackground(
-         this.method13271() + var7 - this.xA,
-         this.method13272() + var8 - this.yA,
-         this.method13271() + var7 - this.xA + var5,
-         this.method13272() + var8 - this.yA + var6
+         this.getAbsoluteX() + var7 - this.xA,
+         this.getAbsoluteY() + var8 - this.yA,
+         this.getAbsoluteX() + var7 - this.xA + var5,
+         this.getAbsoluteY() + var8 - this.yA + var6
       );
       RenderUtil.drawRect(
          (float)var7,

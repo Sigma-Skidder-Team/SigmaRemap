@@ -6,14 +6,14 @@ import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4288 extends Class4278 {
+public class Class4288 extends Widget2 {
    private final Class4339 field20780;
    public final Class4292 field20781;
 
    public Class4288(Class4292 var1, Class4292 var2, int var3) {
       super(var2, "verticalScrollBarButton", 0, 0, var3, 10, true);
       this.field20781 = var1;
-      this.field20886 = true;
+      this.enableImmediateDrag = true;
       this.field20780 = (Class4339) var2.getScreen();
       this.method13300(false);
    }
@@ -36,7 +36,7 @@ public class Class4288 extends Class4278 {
       }
 
       this.setHeightA((int) var9);
-      if (!this.field20877 && this.getHeightA() != this.screen.getHeightA()) {
+      if (!this.dragging && this.getHeightA() != this.screen.getHeightA()) {
          if (this.field20781.field20793 >= 0) {
             if (this.field20781.field20793 + this.screen.getScreen().getHeightA() > this.field20780.getButton()
                   .getHeightA()) {
@@ -52,7 +52,7 @@ public class Class4288 extends Class4278 {
          float var14 = (float) (this.screen.getHeightA() - this.getHeightA());
          float var15 = var14 * var13 + 0.5F;
          this.setYA((int) var15);
-      } else if (this.method13216()) {
+      } else if (this.isDragging()) {
          float var12 = (float) this.getYA() / (float) this.screen.getHeightA();
          this.field20781.field20793 = (int) (var12 * (float) this.field20780.getButton().getHeightA());
          if (this.field20781.field20793 >= 0) {
@@ -73,7 +73,7 @@ public class Class4288 extends Class4278 {
    @Override
    public void draw(float partialTicks) {
       byte var4 = 5;
-      partialTicks *= !this.field20877 ? (!this.field20908 ? 0.3F : 0.7F) : 0.75F;
+      partialTicks *= !this.dragging ? (!this.field20908 ? 0.3F : 0.7F) : 0.75F;
       int var5 = this.xA;
       int var6 = this.widthA;
       if (Client.getInstance().clientMode != ClientMode.JELLO) {

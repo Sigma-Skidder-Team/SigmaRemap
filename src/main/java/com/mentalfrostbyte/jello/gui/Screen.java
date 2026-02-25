@@ -1,11 +1,11 @@
 package com.mentalfrostbyte.jello.gui;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import totalcross.json.JSONObject;
 import net.minecraft.client.Minecraft;
 
 public abstract class Screen
-        extends CustomGuiScreen {
+        extends GuiComponent {
 
     public Screen(String var1) {
         super(null, var1, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight());

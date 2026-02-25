@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -11,7 +11,7 @@ import org.newdawn.slick.opengl.Texture;
 
 import java.awt.image.BufferedImage;
 
-public class Class4294 extends Class4278 {
+public class Class4294 extends Widget2 {
    public Account selectedAccount = null;
    private BufferedImage field20799;
    private Texture field20800;
@@ -25,7 +25,7 @@ public class Class4294 extends Class4278 {
    private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
          ClientColors.DEEP_TEAL.getColor(), 20.0F);
 
-   public Class4294(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
+   public Class4294(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.selectedAccount = var7;
       this.addToList(this.field20801 = new UILoadingCircle(this, "loading", var5 - 50, 35, 30, 30));
@@ -56,7 +56,7 @@ public class Class4294 extends Class4278 {
       int var5 = Math.max(0, this.yA - var4);
       int var6 = Math.max(0, this.heightA + Math.min(100, this.yA - var4 - var5));
       float var7 = (float) Math.min(50, var6) / 50.0F;
-      int var8 = this.getScreen().getScreen().getHeightA() + this.getScreen().getScreen().method13272();
+      int var8 = this.getScreen().getScreen().getHeightA() + this.getScreen().getScreen().getAbsoluteY();
       int var9 = 0;
       var5 += var4;
       if (var5 - var4 <= var8) {
@@ -67,7 +67,7 @@ public class Class4294 extends Class4278 {
                   this.widthA,
                   Math.max(20, var6),
                   MultiUtilities.applyAlpha(
-                        !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808, var7));
+                        !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808, var7));
             RenderUtil.method11421(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
                this.method13169();
@@ -80,7 +80,7 @@ public class Class4294 extends Class4278 {
                         18.0F * this.field20803.calcPercent() * (float) var6 / 100.0F,
                         (float) (47 * var6) / 100.0F,
                         ResourceList.selectPNG,
-                        !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
+                        !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
                }
 
                super.draw(partialTicks * var7);
@@ -103,7 +103,7 @@ public class Class4294 extends Class4278 {
             100.0F,
             100.0F,
             ResourceList.cerclePNG,
-            !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
+            !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808);
    }
 
    public void method13170() {

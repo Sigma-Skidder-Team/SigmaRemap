@@ -1,21 +1,21 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
-public class Class4368 extends Class4247 {
+public class Class4368 extends InteractiveWidget {
    public Module field21351;
 
-   public Class4368(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
+   public Class4368(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Module var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21351 = var7;
       Class4262 var10;
       this.addToList(var10 = new Class4262(this, "enable", 114, 9, 40, 18));
       var10.method13093(var7.isEnabled());
-      var10.method13036(var2x -> var7.setEnabled(var10.method13092()));
+      var10.onPress(var2x -> var7.setEnabled(var10.method13092()));
       if (var7.getSettingMap().size() > 0) {
          Class4364 var11;
          this.addToList(var11 = new Class4364(this, "gear", 132, 32));

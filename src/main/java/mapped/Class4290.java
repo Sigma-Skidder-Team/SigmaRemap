@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.gui.screens.JelloClickGUI;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -10,7 +10,7 @@ import net.minecraft.client.Minecraft;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4290 extends Class4278 {
+public class Class4290 extends Widget2 {
    private static String[] field20786;
    public float field20787 = 0.0F;
    public Class2059 field20788 = Class2059.field13418;
@@ -18,7 +18,7 @@ public class Class4290 extends Class4278 {
    public final List<ButtonPanel> field20790 = new ArrayList<ButtonPanel>();
    private Texture field20791;
 
-   public Class4290(CustomGuiScreen var1, String var2) {
+   public Class4290(GuiComponent var1, String var2) {
       super(var1, var2, 0, Minecraft.getInstance().mainWindow.getHeight() - 70,
             Minecraft.getInstance().mainWindow.getWidth(), 110, false);
       this.method13292(true);

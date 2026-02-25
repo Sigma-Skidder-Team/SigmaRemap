@@ -1,11 +1,11 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
-public class ChatViewBox extends Class4247 {
+public class ChatViewBox extends InteractiveWidget {
    public Class4346 field20689;
 
-   public ChatViewBox(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public ChatViewBox(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.addToList(this.field20689 = new Class4346(this, "messages", 0, 114, var5, var6 - 114));
    }

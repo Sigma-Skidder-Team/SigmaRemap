@@ -4,7 +4,7 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.youtube.YoutubeVideoData;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Class4286 extends Class4278 {
+public class Class4286 extends Widget2 {
    public static ColorHelper field20771 = new ColorHelper(
          ClientColors.DEEP_TEAL.getColor(),
          ClientColors.DEEP_TEAL.getColor(),
@@ -50,7 +50,7 @@ public class Class4286 extends Class4278 {
       }
    }
 
-   public Class4286(CustomGuiScreen var1, int var2, int var3, int var4, int var5, YoutubeVideoData var6) {
+   public Class4286(GuiComponent var1, int var2, int var3, int var4, int var5, YoutubeVideoData var6) {
       super(var1, var6.videoId, var2, var3, var4, var5, field20771, var6.title, false);
       URL var9 = null;
 
@@ -77,7 +77,7 @@ public class Class4286 extends Class4278 {
 
    public boolean method13157() {
       if (this.getScreen() != null && this.getScreen().getScreen() != null) {
-         CustomGuiScreen var3 = this.getScreen().getScreen();
+         GuiComponent var3 = this.getScreen().getScreen();
          if (var3 instanceof Class4339) {
             Class4339 var4 = (Class4339) var3;
             int var5 = var4.method13513() + var4.getHeightA() + this.getHeightA();
@@ -177,7 +177,7 @@ public class Class4286 extends Class4278 {
          }
 
          byte var9 = 50;
-         if (this.method13212()) {
+         if (this.isMouseDownOverComponent()) {
             var9 = 40;
          }
 

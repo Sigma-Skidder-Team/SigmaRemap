@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.Client;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
@@ -11,12 +11,12 @@ import com.mentalfrostbyte.jello.util.ClientColors;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException;
 
-public class ChangelogScreen extends CustomGuiScreen {
+public class ChangelogScreen extends GuiComponent {
    public Animation animation = new Animation(380, 200, Animation.Direction.BACKWARDS);
    public Class4339 field21184;
    private static JSONArray cachedChangelog;
 
-   public ChangelogScreen(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6) {
+   public ChangelogScreen(GuiComponent var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
       this.field21184 = new Class4339(this, "scroll", 100, 200, var5 - 200, var6 - 200);
@@ -36,7 +36,7 @@ public class ChangelogScreen extends CustomGuiScreen {
       super.updatePanelDimensions(newHeight, newWidth);
       if (this.field21184 != null) {
          if (this.isHovered() && this.isVisible()) {
-            for (CustomGuiScreen var9 : this.field21184.getButton().method13241()) {
+            for (GuiComponent var9 : this.field21184.getButton().method13241()) {
                Class4330 var10 = (Class4330) var9;
                var10.animation2.changeDirection(Animation.Direction.FORWARDS);
                if ((double) var10.animation2.calcPercent() < 0.5) {
@@ -44,7 +44,7 @@ public class ChangelogScreen extends CustomGuiScreen {
                }
             }
          } else {
-            for (CustomGuiScreen var6 : this.field21184.getButton().method13241()) {
+            for (GuiComponent var6 : this.field21184.getButton().method13241()) {
                Class4330 var7 = (Class4330) var6;
                var7.animation2.changeDirection(Animation.Direction.BACKWARDS);
             }

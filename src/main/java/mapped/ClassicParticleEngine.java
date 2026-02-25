@@ -1,19 +1,19 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ClassicParticleEngine extends Class4278 {
+public class ClassicParticleEngine extends Widget2 {
    private static String[] field21273;
    private List<Class9625> field21274 = new ArrayList<Class9625>();
    private AnimationManager field21275 = new AnimationManager();
    public RandomIntGenerator field21276 = new RandomIntGenerator();
 
-   public ClassicParticleEngine(CustomGuiScreen var1, String var2) {
+   public ClassicParticleEngine(GuiComponent var1, String var2) {
       super(var1, var2, 0, 0, Minecraft.getInstance().mainWindow.getWidth(), Minecraft.getInstance().mainWindow.getHeight(), false);
       this.method13145(false);
       this.method13296(false);

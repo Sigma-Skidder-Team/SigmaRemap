@@ -2,14 +2,14 @@ package mapped;
 
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4350 extends Class4278 {
+public class Class4350 extends Widget2 {
    public static ColorHelper field21259 = new ColorHelper(
          ClientColors.DEEP_TEAL.getColor(),
          ClientColors.DEEP_TEAL.getColor(),
@@ -21,7 +21,7 @@ public class Class4350 extends Class4278 {
    private int field21261;
    private int field21262;
 
-   public Class4350(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public Class4350(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, field21259, var7, false);
    }
 
@@ -142,7 +142,7 @@ public class Class4350 extends Class4278 {
       if (this.field20909) {
          String var5 = System.getProperty("line.separator");
          String[] var6 = this.typedText.split("(?<=" + var5 + ")");
-         int var7 = (newWidth - this.method13272() - ResourceRegistry.JelloLightFont18.getHeight() / 2)
+         int var7 = (newWidth - this.getAbsoluteY() - ResourceRegistry.JelloLightFont18.getHeight() / 2)
                / ResourceRegistry.JelloLightFont18.getHeight() - 1;
          if (var7 > var6.length - 1) {
             var7 = var6.length - 1;
@@ -159,7 +159,7 @@ public class Class4350 extends Class4278 {
          }
 
          this.field21260 = var8 + ChatUtilThing.method32494(var6[var7], ResourceRegistry.JelloLightFont18,
-               (float) this.method13271(), newHeight, 30.0F);
+               (float) this.getAbsoluteX(), newHeight, 30.0F);
          if (this.typedText.substring(0, this.field21260).endsWith(var5)
                && this.field21260 != this.typedText.length()) {
             this.field21260--;

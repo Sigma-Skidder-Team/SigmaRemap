@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -121,7 +121,7 @@ public class AltManagerScreen extends Screen {
         var9.method13643(var4, 1);
         var9.method13656(2);
         this.addToList(var9);
-        var9.method13036(var2 -> {
+        var9.onPress(var2 -> {
             switch (var9.method13655()) {
                 case 0:
                     this.field21023 = Class2209.field14446;
@@ -188,7 +188,7 @@ public class AltManagerScreen extends Screen {
 
         var5.method13247((var2x, var3) -> {
             if (var3 != 0) {
-                this.field21013.method13036(var2xx -> {
+                this.field21013.onPress(var2xx -> {
                     this.accountManager.removeAccountDirectly(var5.selectedAccount);
                     this.field21018.method13178(null);
                     this.field21017.method13181(null);
@@ -206,9 +206,9 @@ public class AltManagerScreen extends Screen {
                 this.field21017.method13181(var5.selectedAccount);
                 this.field21018.method13178(var5.selectedAccount);
 
-                for (CustomGuiScreen var7 : this.field21010.method13241()) {
+                for (GuiComponent var7 : this.field21010.method13241()) {
                     if (!(var7 instanceof Class4292)) {
-                        for (CustomGuiScreen var9 : var7.method13241()) {
+                        for (GuiComponent var9 : var7.method13241()) {
                             ((Class4294) var9).method13166(false);
                         }
                     }
@@ -251,7 +251,7 @@ public class AltManagerScreen extends Screen {
         MiniAlert var9 = new MiniAlert(AlertType.BUTTON, "Add alt", 50);
         this.addToList(this.field21012 = new AlertPanel(this, "Testt", true, "Add Alt", var3, var4, var5, var6, var7,
                 var8, var9));
-        this.field21012.method13036(var1 -> {
+        this.field21012.onPress(var1 -> {
             if (!this.field21012.method13600().get("Email").contains(":")) {
                 Account var11 = new Account(this.field21012.method13600().get("Email"),
                         this.field21012.method13600().get("Password"));
@@ -320,9 +320,9 @@ public class AltManagerScreen extends Screen {
     private void method13367() {
         float var3 = 1.0F;
 
-        for (CustomGuiScreen var5 : this.field21010.method13241()) {
+        for (GuiComponent var5 : this.field21010.method13241()) {
             if (!(var5 instanceof Class4292)) {
-                for (CustomGuiScreen var7 : var5.method13241()) {
+                for (GuiComponent var7 : var5.method13241()) {
                     if (var7 instanceof Class4294) {
                         Class4294 var8 = (Class4294) var7;
                         if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight()
@@ -347,9 +347,9 @@ public class AltManagerScreen extends Screen {
     private void method13368() {
         boolean var3 = false;
 
-        for (CustomGuiScreen var5 : this.field21010.method13241()) {
+        for (GuiComponent var5 : this.field21010.method13241()) {
             if (!(var5 instanceof Class4292)) {
-                for (CustomGuiScreen var7 : var5.method13241()) {
+                for (GuiComponent var7 : var5.method13241()) {
                     Class4294 var8 = (Class4294) var7;
                     var8.method13172(false);
                 }
@@ -360,9 +360,9 @@ public class AltManagerScreen extends Screen {
     private boolean method13369() {
         boolean var3 = false;
 
-        for (CustomGuiScreen var5 : this.field21010.method13241()) {
+        for (GuiComponent var5 : this.field21010.method13241()) {
             if (!(var5 instanceof Class4292)) {
-                for (CustomGuiScreen var7 : var5.method13241()) {
+                for (GuiComponent var7 : var5.method13241()) {
                     if (var7.method13280() != 0 && var7.getXA() > this.widthA) {
                         return false;
                     }
@@ -376,9 +376,9 @@ public class AltManagerScreen extends Screen {
     private int method13370() {
         int var3 = 0;
 
-        for (CustomGuiScreen var5 : this.field21010.method13241()) {
+        for (GuiComponent var5 : this.field21010.method13241()) {
             if (!(var5 instanceof Class4292)) {
-                for (CustomGuiScreen var7 : var5.method13241()) {
+                for (GuiComponent var7 : var5.method13241()) {
                     var3++;
                 }
             }
@@ -429,9 +429,9 @@ public class AltManagerScreen extends Screen {
 
     @Override
     public void loadConfig(JSONObject var1) {
-        for (CustomGuiScreen var5 : this.field21010.method13241()) {
+        for (GuiComponent var5 : this.field21010.method13241()) {
             if (!(var5 instanceof Class4292)) {
-                for (CustomGuiScreen var7 : var5.method13241()) {
+                for (GuiComponent var7 : var5.method13241()) {
                     this.field21010.method13234(var7);
                 }
             }

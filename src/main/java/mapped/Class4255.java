@@ -1,17 +1,17 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
 import org.lwjgl.opengl.GL11;
 
-public class Class4255 extends Class4247 {
+public class Class4255 extends InteractiveWidget {
    public Texture field20633;
    public Texture field20634;
 
-   public Class4255(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, String var7,
-         Texture var8, Texture var9) {
+   public Class4255(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, String var7,
+                    Texture var8, Texture var9) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.field20633 = var8;
       this.field20634 = var9;

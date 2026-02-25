@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
@@ -10,7 +10,7 @@ import org.newdawn.slick.opengl.Texture;
 
 import java.awt.image.BufferedImage;
 
-public class Class4349 extends Class4278 {
+public class Class4349 extends Widget2 {
    public Account field21249 = null;
    private BufferedImage field21250;
    private Texture field21251;
@@ -23,7 +23,7 @@ public class Class4349 extends Class4278 {
    private int field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
          ClientColors.DEEP_TEAL.getColor(), 20.0F);
 
-   public Class4349(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
+   public Class4349(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21249 = var7;
       this.addToList(this.field21253 = new UILoadingCircle(this, "loading", var5 - 50, 35, 30, 30));
@@ -52,7 +52,7 @@ public class Class4349 extends Class4278 {
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
       this.field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             ClientColors.DEEP_TEAL.getColor(), 2.0F);
-      if (this.field21254 || this.method13212() || this.method13298()) {
+      if (this.field21254 || this.isMouseDownOverComponent() || this.method13298()) {
          RenderUtil.drawRect(
                (float) this.xA,
                (float) this.yA,
@@ -61,7 +61,7 @@ public class Class4349 extends Class4278 {
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.05F));
       }
 
-      if (!this.method13212()) {
+      if (!this.isMouseDownOverComponent()) {
          if (this.method13298() && this.field21254) {
             RenderUtil.method11429(
                   (float) this.xA,
@@ -110,7 +110,7 @@ public class Class4349 extends Class4278 {
                   18.0F * this.field21252 * (float) this.heightA / 100.0F,
                   (float) (47 * this.heightA) / 100.0F,
                   ResourceList.selectPNG,
-                  !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field21258);
+                  !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field21258);
          }
 
          super.draw(partialTicks);
@@ -128,7 +128,7 @@ public class Class4349 extends Class4278 {
             100.0F,
             100.0F,
             ResourceList.cerclePNG,
-            !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field21258);
+            !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field21258);
    }
 
    public void method13584() {

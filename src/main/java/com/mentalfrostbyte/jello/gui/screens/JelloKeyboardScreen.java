@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.gui.Screen;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import org.newdawn.slick.opengl.Texture;
@@ -37,11 +37,11 @@ public class JelloKeyboardScreen extends Screen {
             this.field20957 = new Class4270(this, "keyboard", (this.widthA - 1060) / 2, (this.heightA - 357) / 2));
       this.field20957.method13279(0.4F, 0.4F);
       this.field20957
-            .method13036(
+            .onPress(
                   var2 -> {
                      boolean var5 = false;
 
-                     for (CustomGuiScreen var7 : this.method13241()) {
+                     for (GuiComponent var7 : this.method13241()) {
                         if (var7 instanceof Class4375) {
                            var5 = true;
                         }
@@ -55,7 +55,7 @@ public class JelloKeyboardScreen extends Screen {
                         this.field20956 = new Class4375(
                               this, "popover", this.field20957.getXA() + var8[0], this.field20957.getYA() + var8[1],
                               this.field20957.field20696, var9);
-                        this.field20956.method13036(var1x -> this.method13329(this.field20957));
+                        this.field20956.onPress(var1x -> this.method13329(this.field20957));
                         this.field20956.method13713(var1x -> {
                            var1x.method13292(false);
                            this.method13331();
@@ -102,7 +102,7 @@ public class JelloKeyboardScreen extends Screen {
 
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
-      if (this.method13212()) {
+      if (this.isMouseDownOverComponent()) {
          this.field20957.method13242();
          this.method13244();
          this.field20961 = 0;

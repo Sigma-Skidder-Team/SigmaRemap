@@ -1,14 +1,14 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
-public class Class4360 extends Class4247 {
+public class Class4360 extends InteractiveWidget {
    private static String[] field21316;
    private int field21317;
    private int field21318;
    public boolean field21319 = false;
 
-   public Class4360(CustomGuiScreen var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   public Class4360(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field21317 = var7;
       this.field21318 = var8;
@@ -20,7 +20,7 @@ public class Class4360 extends Class4247 {
 
    @Override
    public void updatePanelDimensions(int newHeight, int newWidth) {
-      int var5 = this.getHeightO() - this.method13271();
+      int var5 = this.getHeightO() - this.getAbsoluteX();
       if (this.field21319) {
          this.method13632((int)((float)var5 / (float)this.getWidthA() * 255.0F));
       }
@@ -35,13 +35,13 @@ public class Class4360 extends Class4247 {
    }
 
    @Override
-   public boolean onClick(int mouseX, int mouseY, int mouseButton) {
+   public boolean onMouseDown(int mouseX, int mouseY, int mouseButton) {
       this.field21319 = true;
-      return super.onClick(mouseX, mouseY, mouseButton);
+      return super.onMouseDown(mouseX, mouseY, mouseButton);
    }
 
    @Override
-   public void onClick2(int mouseX, int mouseY, int mouseButton) {
+   public void onMouseRelease(int mouseX, int mouseY, int mouseButton) {
       this.field21319 = false;
    }
 
@@ -58,7 +58,7 @@ public class Class4360 extends Class4247 {
       int var5 = this.field21318;
       this.field21318 = var1;
       if (var2 && var5 != var1) {
-         this.method13037();
+         this.firePressHandlers();
       }
    }
 }

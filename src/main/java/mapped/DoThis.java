@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.CustomGuiScreen;
+import com.mentalfrostbyte.jello.unmapped.GuiComponent;
 
 public interface DoThis {
-   void doIt(CustomGuiScreen var1, int var2);
+   void doIt(GuiComponent var1, int var2);
 }
