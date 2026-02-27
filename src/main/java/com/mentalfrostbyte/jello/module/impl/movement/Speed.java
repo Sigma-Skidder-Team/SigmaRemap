@@ -56,10 +56,10 @@ public class Speed extends ModuleWithModuleSettings {
         }
     }
 
-    public void method16764() {
+    public void resetHopStage() {
         if (this.parentModule instanceof HypixelSpeed) {
             HypixelSpeed hypixelSpeed = (HypixelSpeed) this.parentModule;
-            hypixelSpeed.method16044();
+            hypixelSpeed.resetHopStage();
         }
     }
 }

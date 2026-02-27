@@ -42,16 +42,16 @@ public class OutlineChestESP extends Module {
    }
 
    private void method16964(boolean var1) {
-      int var4 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
-      int var5 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
-      int var6 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
+      int var4 = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
+      int var5 = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
+      int var6 = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
          boolean var9 = var8 instanceof ChestTileEntity && !(var8 instanceof TrappedChestTileEntity)
-               && this.access().getBooleanValueFromSettingName("Show Regular Chests");
-         boolean var10 = var8 instanceof EnderChestTileEntity && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+               && this.getParent().getBooleanValueFromSettingName("Show Regular Chests");
+         boolean var10 = var8 instanceof EnderChestTileEntity && this.getParent().getBooleanValueFromSettingName("Show Ender Chests");
          boolean var11 = var8 instanceof TrappedChestTileEntity
-               && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
+               && this.getParent().getBooleanValueFromSettingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = PositionUtils.getRelativePosition(var8.getPos()).x;
             double var14 = PositionUtils.getRelativePosition(var8.getPos()).y;

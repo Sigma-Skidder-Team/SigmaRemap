@@ -61,7 +61,7 @@ public class InfiniteAura extends Module {
     @Override
     public void onEnable() {
         this.field23898 = false;
-        this.field23897 = (int) (20.0F / this.access().getNumberValueBySettingName("CPS"));
+        this.field23897 = (int) (20.0F / this.getParent().getNumberValueBySettingName("CPS"));
         this.field23899 = (float) this.field23897;
     }
 
@@ -79,7 +79,7 @@ public class InfiniteAura extends Module {
             List<TimedEntity> var4 = this.method16775((float) ((int) this.getNumberValueBySettingName("Range")));
             if (var4 != null && var4.size() != 0) {
                 if (this.field23899 < 1.0F) {
-                    this.field23899 = this.field23899 + 20.0F / this.access().getNumberValueBySettingName("CPS");
+                    this.field23899 = this.field23899 + 20.0F / this.getParent().getNumberValueBySettingName("CPS");
                 }
 
                 this.field23897++;

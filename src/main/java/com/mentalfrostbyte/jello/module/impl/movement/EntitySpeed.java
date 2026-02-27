@@ -57,7 +57,7 @@ public class EntitySpeed extends Module {
                 var1.setX(0.0);
                 var1.setZ(0.0);
             } else {
-                float var7 = MovementUtil.method37086();
+                float var7 = MovementUtil.getMovementDirectionYaw();
                 double var8 = Math.cos(Math.toRadians(var7));
                 double var10 = Math.sin(Math.toRadians(var7));
                 this.field23546 = 2.75F;

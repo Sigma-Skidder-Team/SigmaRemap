@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
@@ -35,7 +34,7 @@ public class HawkFly extends Module {
     public void onDisable() {
         MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            MultiUtilities.setPlayerYMotion(-0.0789);
+            MovementUtil.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -53,9 +52,9 @@ public class HawkFly extends Module {
                 MovementUtil.setMotion(var1, var4);
             }
 
-            MultiUtilities.setPlayerYMotion(var1.getY());
-            MultiUtilities.setPlayerXMotion(var1.getX());
-            MultiUtilities.setPlayerZMotion(var1.getZ());
+            MovementUtil.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerXMotion(var1.getX());
+            MovementUtil.setPlayerZMotion(var1.getZ());
         }
     }
 

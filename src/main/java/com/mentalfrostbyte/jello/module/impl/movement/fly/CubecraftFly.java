@@ -50,7 +50,7 @@ public class CubecraftFly extends Module {
 
     @Override
     public void onDisable() {
-        MultiUtilities.setPlayerYMotion(-0.078);
+        MovementUtil.setPlayerYMotion(-0.078);
         MovementUtil.strafe(0.2);
         mc.timer.timerSpeed = 1.0F;
         if (this.field23846) {
@@ -159,7 +159,7 @@ public class CubecraftFly extends Module {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10 + 3.0, var12, false));
                 }
 
-                MultiUtilities.setPlayerYMotion(var1.getY());
+                MovementUtil.setPlayerYMotion(var1.getY());
             }
         } else {
             MovementUtil.setMotion(var1, MovementUtil.getSpeed());

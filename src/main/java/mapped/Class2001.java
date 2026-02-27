@@ -81,13 +81,13 @@ public class Class2001 extends BlockPos {
 
          return var5;
       } else {
-         return super.method8350(var1, 1).toImmutable();
+         return super.offset(var1, 1).toImmutable();
       }
    }
 
    @Override
-   public BlockPos method8350(Direction var1, int var2) {
-      return var2 != 1 ? super.method8350(var1, var2).toImmutable() : this.offset(var1);
+   public BlockPos offset(Direction direction, int distance) {
+      return distance != 1 ? super.offset(direction, distance).toImmutable() : this.offset(direction);
    }
 
    public void method8386(BlockPos var1, Direction var2) {

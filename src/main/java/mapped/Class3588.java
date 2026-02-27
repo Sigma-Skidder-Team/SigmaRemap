@@ -23,8 +23,8 @@ public class Class3588 implements Comparator<Item> {
             var7 = Class1305.method6193(this.field19533.field6846).method28960(var5, var2);
          } else {
             Class49 var8 = this.field19533.field6844;
-            var6 = !(var1 instanceof BlockItem) ? -1 : Class1305.method6193(this.field19533.field6846).method28960(var8, ((BlockItem)var1).method11845());
-            var7 = !(var2 instanceof BlockItem) ? -1 : Class1305.method6193(this.field19533.field6846).method28960(var8, ((BlockItem)var2).method11845());
+            var6 = !(var1 instanceof BlockItem) ? -1 : Class1305.method6193(this.field19533.field6846).method28960(var8, ((BlockItem)var1).getBlock());
+            var7 = !(var2 instanceof BlockItem) ? -1 : Class1305.method6193(this.field19533.field6846).method28960(var8, ((BlockItem)var2).getBlock());
          }
       } else {
          var6 = 0;

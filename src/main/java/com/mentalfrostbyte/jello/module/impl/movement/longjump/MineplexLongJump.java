@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -50,7 +49,7 @@ public class MineplexLongJump extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
-                    if (this.field23807 && !MultiUtilities.isMoving()) {
+                    if (this.field23807 && !MovementUtil.isMoving()) {
                         this.field23807 = !this.field23807;
                         this.field23802 = 0.5;
                         this.field23805 = 1;
@@ -66,7 +65,7 @@ public class MineplexLongJump extends Module {
                         this.field23803 -= 0.02;
                     }
 
-                    if (this.field23804 > 6 && !MultiUtilities.isMoving()) {
+                    if (this.field23804 > 6 && !MovementUtil.isMoving()) {
                         this.field23803 -= 0.05;
                     }
 
@@ -97,16 +96,16 @@ public class MineplexLongJump extends Module {
 
                 if (this.field23804 > 0) {
                     this.field23804 = -1;
-                    if (this.access().getBooleanValueFromSettingName("Auto Disable")) {
-                        this.access().toggle();
+                    if (this.getParent().getBooleanValueFromSettingName("Auto Disable")) {
+                        this.getParent().toggle();
                         return;
                     }
                 }
 
-                this.field23807 = MultiUtilities.isMoving();
+                this.field23807 = MovementUtil.isMoving();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (MultiUtilities.isMoving()
-                        && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
+                if (MovementUtil.isMoving()
+                        && (this.getParent().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) || this.getParent().getBooleanValueFromSettingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                     MovementUtil.setMotion(var1, 0.0);

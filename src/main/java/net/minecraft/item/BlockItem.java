@@ -94,7 +94,7 @@ public class BlockItem extends Item {
 
    @Nullable
    public BlockState method11838(BlockItemUseContext var1) {
-      BlockState var4 = this.method11845().getStateForPlacement(var1);
+      BlockState var4 = this.getBlock().getStateForPlacement(var1);
       return var4 != null && this.method11841(var1, var4) ? var4 : null;
    }
 
@@ -172,27 +172,27 @@ public class BlockItem extends Item {
 
    @Override
    public String getTranslationKey() {
-      return this.method11845().getTranslationKey();
+      return this.getBlock().getTranslationKey();
    }
 
    @Override
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (this.method11738(var1)) {
-         this.method11845().method11570(var1, var2);
+         this.getBlock().method11570(var1, var2);
       }
    }
 
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       super.method11730(var1, var2, var3, var4);
-      this.method11845().method11583(var1, var2, var3, var4);
+      this.getBlock().method11583(var1, var2, var3, var4);
    }
 
-   public Block method11845() {
+   public Block getBlock() {
       return this.field18801;
    }
 
    public void method11846(Map<Block, Item> var1, Item var2) {
-      var1.put(this.method11845(), var2);
+      var1.put(this.getBlock(), var2);
    }
 }

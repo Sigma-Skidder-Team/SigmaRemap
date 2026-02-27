@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.util.math.BlockPos;
@@ -39,14 +38,14 @@ public class RedeskyLongJump extends Module {
         if (mc.player.onGround) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
-                if (this.access().getBooleanValueFromSettingName("Auto Disable")) {
-                    this.access().toggle();
+                if (this.getParent().getBooleanValueFromSettingName("Auto Disable")) {
+                    this.getParent().toggle();
                     return;
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var6) && MultiUtilities.isMoving()
-                        || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.isMoving()
+                if (this.getParent().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var6) && MovementUtil.isMoving()
+                        || this.getParent().getBooleanValueFromSettingName("Auto Jump") && MovementUtil.isMoving()
                         || var1.getY() == MovementUtil.getJumpValue()) {
                     this.field23981 = 1;
                     var1.setY(MovementUtil.getJumpValue());
@@ -91,7 +90,7 @@ public class RedeskyLongJump extends Module {
             }
         }
 
-        MultiUtilities.setPlayerYMotion(var1.getY());
+        MovementUtil.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

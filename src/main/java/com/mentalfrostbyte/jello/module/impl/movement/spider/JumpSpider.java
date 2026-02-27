@@ -53,7 +53,7 @@ public class JumpSpider extends Module {
             event.setY(mc.player.getMotion().y);
         }
 
-        MultiUtilities.setPlayerYMotion(event.getY());
+        MovementUtil.setPlayerYMotion(event.getY());
     }
 
     @EventTarget

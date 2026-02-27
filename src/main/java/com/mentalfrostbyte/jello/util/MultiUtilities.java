@@ -20,7 +20,6 @@ import net.minecraft.util.math.*;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.world.World;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -110,10 +109,6 @@ public class MultiUtilities {
         ClientWorld var3 = mc.world;
         AxisAlignedBB var4 = var0.boundingBox;
         return var3.containsAnyLiquid(var4);
-    }
-
-    public static boolean isMoving() {
-        return mc.player.moveStrafing != 0.0F || mc.player.moveForward != 0.0F;
     }
 
     public static int applyAlpha(int color, float alpha) {
@@ -297,40 +292,13 @@ public class MultiUtilities {
             AxisAlignedBB searchBox = renderViewEntity.getBoundingBox().expand(lookVector.scale(reachDistance)).grow(1.0,
                     1.0, 1.0);
 
-            return traceEntityRay(
+            return MovementUtil.traceEntityRay(
                     mc.world, renderViewEntity, playerEyesPos, rayEndPos, searchBox,
                     entity -> entity instanceof LivingEntity || entity instanceof FallingBlockEntity,
                     (double) (reachDistanceModifier * reachDistanceModifier), boundingBoxExpansion);
         } else {
             return null;
         }
-    }
-
-    public static EntityRayTraceResult traceEntityRay(
-            World world, Entity sourceEntity, Vector3d startPos, Vector3d endPos, AxisAlignedBB searchBox,
-            Predicate<Entity> entityFilter, double maxDistance, double boundingBoxExpansion) {
-        double closestDistance = maxDistance;
-        Entity closestEntity = null;
-
-        for (Entity entity : world.getEntitiesInAABBexcluding(sourceEntity, searchBox, entityFilter)) {
-            AxisAlignedBB expandedBox = entity.getBoundingBox().grow(boundingBoxExpansion);
-            Optional<Vector3d> hitResult = expandedBox.rayTrace(startPos, endPos);
-
-            if (!hitResult.isPresent()) {
-                if (method17715(sourceEntity.getPositionVec(), expandedBox)) {
-                    closestEntity = entity;
-                    break;
-                }
-            } else {
-                double distanceToHit = startPos.squareDistanceTo(hitResult.get());
-                if (distanceToHit < closestDistance) {
-                    closestEntity = entity;
-                    closestDistance = distanceToHit;
-                }
-            }
-        }
-
-        return closestEntity != null ? new EntityRayTraceResult(closestEntity) : null;
     }
 
     public static boolean rayTraceEntity(PlayerEntity player, Entity entity) {
@@ -446,21 +414,6 @@ public class MultiUtilities {
         float var8 = MathHelper.cos(var4);
         float var9 = MathHelper.sin(var4);
         return new Vector3d((double) (var7 * var8), (double) (-var9), (double) (var6 * var8));
-    }
-
-    public static double setPlayerXMotion(double var0) {
-        mc.player.setMotion(var0, mc.player.getMotion().y, mc.player.getMotion().z);
-        return var0;
-    }
-
-    public static double setPlayerYMotion(double var0) {
-        mc.player.setMotion(mc.player.getMotion().x, var0, mc.player.getMotion().z);
-        return var0;
-    }
-
-    public static double setPlayerZMotion(double var0) {
-        mc.player.setMotion(mc.player.getMotion().x, mc.player.getMotion().y, var0);
-        return var0;
     }
 
     public static boolean method17729() {

@@ -87,7 +87,7 @@ public class Class9701 {
    }
 
    private BlockPos method38009(Class8066 var1, BlockPos var2, Direction var3) {
-      return var1 == null ? var2.method8350(var3, 16) : var1.method27723(var3);
+      return var1 == null ? var2.offset(var3, 16) : var1.method27723(var3);
    }
 
    private void method38010(Class8066 var1, Set<BlockPos> var2, Set<BlockPos> var3) {

@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -42,7 +41,7 @@ public class MineplexHighJump extends Module {
    public void method16971(EventMove var1) {
       if (this.isEnabled()) {
          if (this.field24023 && mc.player.getPosY() + 0.42 < this.field24026) {
-            this.access().toggle();
+            this.getParent().toggle();
          }
 
          if (!mc.player.onGround && this.field24023) {
@@ -57,7 +56,7 @@ public class MineplexHighJump extends Module {
             if (Math.abs(var1.getY()) < var4 && Math.abs(this.field24025) < var4) {
                this.field24025 -= 0.04000000000001;
                var1.setY(this.field24025);
-               MultiUtilities.setPlayerYMotion(var1.getY());
+               MovementUtil.setPlayerYMotion(var1.getY());
             } else {
                this.field24025 = var1.getY();
             }
@@ -73,7 +72,7 @@ public class MineplexHighJump extends Module {
                this.field24023 = !this.field24023;
                MovementUtil.strafe(0.0);
                if (this.getBooleanValueFromSettingName("Disable")) {
-                  this.access().toggle();
+                  this.getParent().toggle();
                }
 
                return;
@@ -115,7 +114,7 @@ public class MineplexHighJump extends Module {
       if (this.isEnabled()) {
          IPacket var4 = var1.getPacket();
          if (var4 instanceof SPlayerPositionLookPacket) {
-            this.access().toggle();
+            this.getParent().toggle();
          }
       }
    }

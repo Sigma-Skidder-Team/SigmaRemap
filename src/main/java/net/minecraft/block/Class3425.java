@@ -102,7 +102,7 @@ public class Class3425 extends Block {
    private void method12080(World var1, BlockPos var2, BlockState var3) {
       for (Direction var9 : new Direction[]{Direction.SOUTH, Direction.WEST}) {
          for (int var10 = 1; var10 < 42; var10++) {
-            BlockPos var11 = var2.method8350(var9, var10);
+            BlockPos var11 = var2.offset(var9, var10);
             BlockState var12 = var1.getBlockState(var11);
             if (var12.isIn(this.field19173)) {
                if (var12.<Direction>get(Class3459.field19281) == var9.getOpposite()) {

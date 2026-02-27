@@ -5,7 +5,6 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -28,7 +27,7 @@ public class GommeSpeed extends Module {
 
     @Override
     public void onDisable() {
-        if (MultiUtilities.isMoving()) {
+        if (MovementUtil.isMoving()) {
             MovementUtil.method37093(0.27, MovementUtil.getDirectionArray()[0], this.field23584, 45.0F);
         } else {
             MovementUtil.strafe(0.0);
@@ -77,14 +76,14 @@ public class GommeSpeed extends Module {
                         }
                     }
 
-                    if (MultiUtilities.isMoving()) {
-                        this.field23584 = MovementUtil.setMotion(var1, Math.max(this.field23583, 0.23), MovementUtil.getDirectionArray()[0], this.field23584, 45.0F);
+                    if (MovementUtil.isMoving()) {
+                        this.field23584 = MovementUtil.setMotionWithTurnLimit(var1, Math.max(this.field23583, 0.23), MovementUtil.getDirectionArray()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
                         MovementUtil.setMotion(var1, 0.0);
                     }
                 }
-            } else if (MultiUtilities.isMoving()) {
+            } else if (MovementUtil.isMoving()) {
                 this.field23581 = 0;
                 var1.setY(MovementUtil.getJumpValue());
                 double[] var9 = new double[]{0.549, 0.625};

@@ -1527,7 +1527,7 @@ public class Items {
    }
 
    private static Item register(BlockItem blockItemIn) {
-      return register(blockItemIn.method11845(), blockItemIn);
+      return register(blockItemIn.getBlock(), blockItemIn);
    }
 
    public static Item register(Block blockIn, Item itemIn) {

@@ -38,7 +38,7 @@ public class SpiderStep extends Module {
     private void method16586(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.getHeight();
-            Class2131 var6 = ((Step) this.access()).method16748(var1);
+            Class2131 var6 = ((Step) this.getParent()).method16748(var1);
             if (var6 == Class2131.field13904) {
                 var1.setCancelled(true);
             } else if (var6 != Class2131.field13905) {
@@ -116,7 +116,7 @@ public class SpiderStep extends Module {
                     MovementUtil.setMotion(var1, 0.25);
                 }
 
-                if (!MultiUtilities.isMoving()) {
+                if (!MovementUtil.isMoving()) {
                     MovementUtil.setMotion(var1, 0.0);
                 }
 

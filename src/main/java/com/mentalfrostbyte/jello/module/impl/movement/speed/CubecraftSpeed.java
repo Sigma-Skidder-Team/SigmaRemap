@@ -38,7 +38,7 @@ public class CubecraftSpeed extends Module {
         mc.timer.timerSpeed = 1.0F;
         MovementUtil.strafe(0.2);
         if (mc.player.getMotion().y > 0.0) {
-            MultiUtilities.setPlayerYMotion(-0.078);
+            MovementUtil.setPlayerYMotion(-0.078);
         }
     }
 
@@ -108,7 +108,7 @@ public class CubecraftSpeed extends Module {
                     break;
                 case "YPort":
                     if (mc.player.onGround) {
-                        if (MultiUtilities.isMoving()) {
+                        if (MovementUtil.isMoving()) {
                             var1.setY(0.53000000000001);
                             MovementUtil.setMotion(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
                             this.field23618 = 0;
@@ -124,7 +124,7 @@ public class CubecraftSpeed extends Module {
                             this.field23618 = 1;
                             MovementUtil.setMotion(var1, 0.286);
                             var1.setY(-0.265);
-                            MultiUtilities.setPlayerYMotion(var1.getY());
+                            MovementUtil.setPlayerYMotion(var1.getY());
                         } else if (this.field23618 == 1) {
                             this.field23618 = -1;
                             MovementUtil.setMotion(var1, 0.285);

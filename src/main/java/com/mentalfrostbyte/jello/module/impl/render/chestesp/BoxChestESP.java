@@ -29,15 +29,15 @@ public class BoxChestESP extends Module {
     }
 
     private void renderChestBoxes() {
-        int regularColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
-        int enderColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
-        int trappedColor = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
+        int regularColor = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int enderColor = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int trappedColor = MultiUtilities.applyAlpha(this.getParent().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity tileEntity : mc.world.loadedTileEntityList) {
             boolean showRegularChests = tileEntity instanceof ChestTileEntity && !(tileEntity instanceof TrappedChestTileEntity)
-                    && this.access().getBooleanValueFromSettingName("Show Regular Chests");
-            boolean showEnderChests = tileEntity instanceof EnderChestTileEntity && this.access().getBooleanValueFromSettingName("Show Ender Chests");
-            boolean showTrappedChests = tileEntity instanceof TrappedChestTileEntity && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
+                    && this.getParent().getBooleanValueFromSettingName("Show Regular Chests");
+            boolean showEnderChests = tileEntity instanceof EnderChestTileEntity && this.getParent().getBooleanValueFromSettingName("Show Ender Chests");
+            boolean showTrappedChests = tileEntity instanceof TrappedChestTileEntity && this.getParent().getBooleanValueFromSettingName("Show Trapped Chests");
 
             if (showRegularChests || showEnderChests || showTrappedChests) {
                 double x = PositionUtils.getRelativePosition(tileEntity.getPos()).x;

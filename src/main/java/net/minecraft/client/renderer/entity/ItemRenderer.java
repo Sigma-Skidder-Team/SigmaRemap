@@ -112,7 +112,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          if (!var8.method22623() && (var1.getItem() != Items.TRIDENT || var11)) {
             boolean var16;
             if (var2 != ItemCameraTransformsTransformType.GUI && !var2.isFirstPerson() && var1.getItem() instanceof BlockItem) {
-               Block var13 = ((BlockItem)var1.getItem()).method11845();
+               Block var13 = ((BlockItem)var1.getItem()).getBlock();
                var16 = !(var13 instanceof Class3231) && !(var13 instanceof Class3236);
             } else {
                var16 = true;

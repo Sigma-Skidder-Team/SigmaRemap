@@ -153,7 +153,7 @@ public class Jesus extends Module {
                }
             }
 
-            MultiUtilities.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerYMotion(var1.getY());
          }
       }
    }

@@ -309,7 +309,7 @@ public class Class8928 {
       if (!(var4 instanceof BlockItem)) {
          return !var1 ? Class8624.method30908() : Class8624.method30909();
       } else {
-         Block var5 = ((BlockItem)var4).method11845();
+         Block var5 = ((BlockItem)var4).getBlock();
          return method32632(var5.getDefaultState(), var1);
       }
    }

@@ -89,7 +89,7 @@ public class NameTags extends Module {
 
             this.entities.clear();
 
-            for (Entity var7 : BlockUtil.method34549(MultiUtilities.method17680())) {
+            for (Entity var7 : BlockUtil.sortPlayersByDistanceDescending(MultiUtilities.method17680())) {
                 if (var7 != mc.player
                         && var7 != Freecam.field23814
                         && var7 != Blink.clientPlayerEntity

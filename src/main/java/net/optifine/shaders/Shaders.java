@@ -2700,7 +2700,7 @@ public class Shaders {
                 if (var4 != null) {
                     var5 = Registry.ITEM.getId(var4);
                     if (var4 instanceof BlockItem) {
-                        var6 = ((BlockItem) var4).method11845();
+                        var6 = ((BlockItem) var4).getBlock();
                     }
 
                     var5 = Class8715.method31433(var5);
@@ -2714,7 +2714,7 @@ public class Shaders {
                 if (var9 != null) {
                     var10 = Registry.ITEM.getId(var9);
                     if (var9 instanceof BlockItem) {
-                        var11 = ((BlockItem) var9).method11845();
+                        var11 = ((BlockItem) var9).getBlock();
                     }
 
                     var10 = Class8715.method31433(var10);
@@ -4625,7 +4625,7 @@ public class Shaders {
                 return false;
             } else {
                 BlockItem var2 = (BlockItem) var1;
-                Block var3 = var2.method11845();
+                Block var3 = var2.getBlock();
                 if (var3 == null) {
                     return false;
                 } else {

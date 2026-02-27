@@ -50,7 +50,7 @@ public class Class8969 {
 
    public void method32889(World var1, BlockPos var2, BlockPos var3, boolean var4, Block var5) {
       if (var3.getX() >= 1 && var3.getY() >= 1 && var3.getZ() >= 1) {
-         BlockPos var8 = var2.method8337(var3).add(-1, -1, -1);
+         BlockPos var8 = var2.add(var3).add(-1, -1, -1);
          ArrayList var9 = Lists.newArrayList();
          ArrayList var10 = Lists.newArrayList();
          ArrayList var11 = Lists.newArrayList();
@@ -151,7 +151,7 @@ public class Class8969 {
          return Collections.<Class8266>emptyList();
       } else {
          for (Class8266 var10 : var2.method36446(this.field40545, var1).method22981(var3)) {
-            BlockPos var11 = !var4 ? var10.field35530 : method32896(var2, var10.field35530).method8337(var1);
+            BlockPos var11 = !var4 ? var10.field35530 : method32896(var2, var10.field35530).add(var1);
             if (var8 == null || var8.method38396(var11)) {
                var7.add(new Class8266(var11, var10.field35531.rotate(var2.method36437()), var10.field35532));
             }
@@ -346,7 +346,7 @@ public class Class8969 {
       List<Class8266> var7 = Lists.newArrayList();
 
       for (Class8266 var9 : var4) {
-         BlockPos var10 = method32896(var3, var9.field35530).method8337(var1);
+         BlockPos var10 = method32896(var3, var9.field35530).add(var1);
          Class8266 var11 = new Class8266(var10, var9.field35531, var9.field35532 == null ? null : var9.field35532.copy());
          Iterator<Class7092> var12 = var3.method36443().iterator();
 
@@ -364,7 +364,7 @@ public class Class8969 {
 
    private void method32902(ServerWorldAccess var1, BlockPos var2, Mirror var3, Rotation var4, BlockPos var5, MutableBoundingBox var6, boolean var7) {
       for (Class9559 var11 : this.field40546) {
-         BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
+         BlockPos var12 = method32905(var11.field44528, var3, var4, var5).add(var2);
          if (var6 == null || var6.method38396(var12)) {
             CompoundNBT var13 = var11.field44529.copy();
             Vector3d var14 = method32906(var11.field44527, var3, var4, var5);
@@ -536,11 +536,11 @@ public class Class8969 {
    private void method32911(Rotation var1, int var2, int var3, MutableBoundingBox var4, Direction var5, Direction var6) {
       BlockPos var9 = BlockPos.ZERO;
       if (var1 == Rotation.CLOCKWISE_90 || var1 == Rotation.COUNTERCLOCKWISE_90) {
-         var9 = var9.method8350(var1.rotate(var5), var3);
+         var9 = var9.offset(var1.rotate(var5), var3);
       } else if (var1 != Rotation.CLOCKWISE_180) {
-         var9 = var9.method8350(var5, var2);
+         var9 = var9.offset(var5, var2);
       } else {
-         var9 = var9.method8350(var6, var2);
+         var9 = var9.offset(var6, var2);
       }
 
       var4.method38393(var9.getX(), 0, var9.getZ());

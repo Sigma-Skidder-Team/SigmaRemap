@@ -1,9 +1,15 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceContext;
@@ -53,16 +59,6 @@ public class RotationHelper {
         );
 
         return new float[]{yaw, pitch};
-    }
-
-    public static float getSignedAngleDelta(float fromAngle, float toAngle) {
-        var diff = Math.abs(fromAngle - toAngle) % 360.0F;
-        var shortest = diff > 180.0F ? 360.0F - diff : diff;
-
-        var raw = fromAngle - toAngle;
-        var sign = (raw >= 0.0F && raw <= 180.0F) || (raw <= -180.0F && raw >= -360.0F) ? -1 : 1;
-
-        return shortest * (float) sign;
     }
 
     public static float getAngleDistance(float a, float b) {
@@ -265,5 +261,260 @@ public class RotationHelper {
 
     public static float getWrappedAngleDelta(float fromAngle, float toAngle) {
         return MathHelper.wrapDegrees(-(fromAngle - toAngle));
+    }
+
+    public static float getDirection(float yaw) {
+        float directionDegrees = 0.0F;
+        float strafe = Module.mc.player.moveStrafing;
+        float forward = Module.mc.player.moveForward;
+        if (!(strafe > 0.0F)) {
+            if (strafe < 0.0F) {
+                if (!(forward > 0.0F)) {
+                    if (!(forward < 0.0F)) {
+                        yaw += 90.0F;
+                    } else {
+                        yaw -= 45.0F;
+                    }
+                } else {
+                    yaw += 45.0F;
+                }
+            }
+        } else if (!(forward > 0.0F)) {
+            if (!(forward < 0.0F)) {
+                yaw -= 90.0F;
+            } else {
+                yaw += 45.0F;
+            }
+        } else {
+            yaw -= 45.0F;
+        }
+
+        if (yaw >= 45.0F && yaw <= 135.0F) {
+            directionDegrees = 90.0F;
+        } else if (yaw >= 135.0F || yaw <= -135.0F) {
+            directionDegrees = 180.0F;
+        } else if (yaw <= -45.0F && yaw >= -135.0F) {
+            directionDegrees = -90.0F;
+        } else if (yaw >= -45.0F && yaw <= 45.0F) {
+            directionDegrees = 0.0F;
+        }
+
+        if (forward < 0.0F) {
+            directionDegrees -= 180.0F;
+        }
+
+        return directionDegrees + 90.0F;
+    }
+
+    public static float[] getBlockCenterRotations(BlockPos blockPos) {
+        double dX = (double) blockPos.getX() + 0.5 - Minecraft.getInstance().player.getPosX();
+        double dY = (double) blockPos.getY() - 0.25 - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight());
+        double dZ = (double) blockPos.getZ() + 0.5 - Minecraft.getInstance().player.getPosZ();
+        double dist = (double) MathHelper.sqrt(dX * dX + dZ * dZ);
+
+        float yaw = (float) (Math.atan2(dZ, dX) * 180.0 / Math.PI) - 90.0F;
+        float pitch = (float) (-(Math.atan2(dY, dist) * 180.0 / Math.PI));
+
+        return new float[]{
+                Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(yaw - Minecraft.getInstance().player.rotationYaw),
+                Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(pitch - Minecraft.getInstance().player.rotationPitch)
+        };
+    }
+
+    public static float[] getBlockPlacementRotations(BlockPos blockPos, Direction face) {
+        float offsetX = 0.0F;
+        float offsetZ = 0.0F;
+        float offsetY = 0.0F;
+
+        switch (face) {
+            case EAST:
+                offsetX += 0.49F;
+                break;
+            case NORTH:
+                offsetZ -= 0.49F;
+                break;
+            case SOUTH:
+                offsetZ += 0.49F;
+                break;
+            case WEST:
+                offsetX -= 0.49F;
+                break;
+            case UP:
+                offsetY += 0.0F;
+            case DOWN:
+                offsetY++;
+        }
+
+        double dX = (double) blockPos.getX() + 0.5 - Minecraft.getInstance().player.getPosX() + (double) offsetX;
+        double dY = (double) blockPos.getY()
+                - 0.02
+                - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())
+                + (double) offsetY;
+        double dZ = (double) blockPos.getZ() + 0.5 - Minecraft.getInstance().player.getPosZ() + (double) offsetZ;
+
+        double dist = MathHelper.sqrt(dX * dX + dZ * dZ);
+
+        float yaw = (float) (Math.atan2(dZ, dX) * 180.0 / Math.PI) - 90.0F;
+        float pitch = (float) (-(Math.atan2(dY, dist) * 180.0 / Math.PI));
+
+        return new float[]{
+                Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(yaw - Minecraft.getInstance().player.rotationYaw),
+                Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(pitch - Minecraft.getInstance().player.rotationPitch)
+        };
+    }
+
+    public static float[] getBlockRotations(BlockPos targetPos, Direction direction) {
+        float offsetX = 0.0F;
+        float offsetZ = 0.0F;
+        float offsetY = (float) (0.4F + Math.random() * 0.1F);
+        switch (direction) {
+            case EAST: //east
+                offsetX += 0.49F;
+                break;
+            case NORTH: //north
+                offsetZ -= 0.49F;
+                break;
+            case SOUTH: //south
+                offsetZ += 0.49F;
+                break;
+            case WEST: //west
+                offsetX -= 0.49F;
+                break;
+            case UP: //up
+                offsetY = 0.0F;
+                offsetX = 0.26F - (float) (Math.random() * 0.2F);
+                offsetZ = 0.26F - (float) (Math.random() * 0.2F);
+            case DOWN: //down
+                offsetY = 1.0F;
+                offsetX = 0.26F - (float) (Math.random() * 0.2F);
+                offsetZ = 0.26F - (float) (Math.random() * 0.2F);
+        }
+
+        if (offsetX == 0.0F) {
+            offsetX = (float) (0.1F - Math.sin((double) (System.currentTimeMillis() - 500L) / 1200.0) * 0.2);
+        }
+
+        if (offsetZ == 0.0F) {
+            offsetZ = (float) (0.1F - Math.sin((double) (System.currentTimeMillis() - 500L) / 1000.0) * 0.2);
+        }
+
+        if (offsetY == 0.0F) {
+            offsetY = (float) (0.6F - Math.sin((double) (System.currentTimeMillis() - 500L) / 1600.0) * 0.2);
+        }
+
+        double dX = (double) targetPos.getX() + 0.5 - Minecraft.getInstance().player.getPosX() + (double) offsetX;
+        double dY = (double) targetPos.getY()
+                - 0.02
+                - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())
+                + (double) offsetY;
+        double dZ = (double) targetPos.getZ() + 0.5 - Minecraft.getInstance().player.getPosZ() + (double) offsetZ;
+        double dist = (double) MathHelper.sqrt(dX * dX + dZ * dZ);
+        float targetYaw = (float) (Math.atan2(dZ, dX) * 180.0 / Math.PI) - 90.0F;
+        float targetPitch = (float) (-(Math.atan2(dY, dist) * 180.0 / Math.PI));
+        return new float[]{
+                Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(targetYaw - Minecraft.getInstance().player.rotationYaw),
+                Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(targetPitch - Minecraft.getInstance().player.rotationPitch)
+        };
+    }
+
+    public static BlockRayTraceResult rayTraceBlocksFromRotations(float yaw, float pitch, float reach, EventUpdate event) {
+        Vector3d start = new Vector3d(event.getX(), (double) mc.player.getEyeHeight() + event.getY(), event.getZ());
+        yaw = (float) Math.toRadians((double) yaw);
+        pitch = (float) Math.toRadians((double) pitch);
+        float dirX = -MathHelper.sin(yaw) * MathHelper.cos(pitch);
+        float dirY = -MathHelper.sin(pitch);
+        float dirZ = MathHelper.cos(yaw) * MathHelper.cos(pitch);
+        if (reach == 0.0F) {
+            reach = mc.playerController.getBlockReachDistance();
+        }
+
+        Vector3d end = new Vector3d(
+                mc.player.lastReportedPosX + (double) (dirX * reach),
+                mc.player.lastReportedPosY + (double) (dirY * reach) + (double) mc.player.getEyeHeight(),
+                mc.player.lastReportedPosZ + (double) (dirZ * reach)
+        );
+        Entity camera = mc.getRenderViewEntity();
+        return mc.world.rayTraceBlocks(new RayTraceContext(start, end, RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE, camera));
+    }
+
+    public static Direction getCardinalDirectionToBlock(BlockPos blockPos) {
+        // Uses rotations to the block (via UP face) to infer which cardinal direction the player is facing relative to it.
+        // Default to UP if pitch is very steep.
+        Direction direction = Direction.UP;
+
+        float yawToBlock = MathHelper.wrapDegrees(getBlockFaceRotations(blockPos, Direction.UP)[0]);
+
+        if (yawToBlock >= 45.0F && yawToBlock <= 135.0F) {
+            direction = Direction.EAST;
+        } else if ((yawToBlock >= 135.0F && yawToBlock <= 180.0F) || (yawToBlock <= -135.0F && yawToBlock >= -180.0F)) {
+            direction = Direction.SOUTH;
+        } else if (yawToBlock <= -45.0F && yawToBlock >= -135.0F) {
+            direction = Direction.WEST;
+        } else if ((yawToBlock >= -45.0F && yawToBlock <= 0.0F) || (yawToBlock >= 0.0F && yawToBlock <= 45.0F)) {
+            direction = Direction.NORTH;
+        }
+
+        // If looking almost straight up/down, return UP.
+        float pitchToBlock = MathHelper.wrapDegrees(getBlockFaceRotations(blockPos, Direction.UP)[1]);
+        if (pitchToBlock > 75.0F || pitchToBlock < -75.0F) {
+            direction = Direction.UP;
+        }
+
+        return direction;
+    }
+
+    public static float[] getBlockFaceRotations(BlockPos blockPos, Direction face) {
+        // Horizontal delta to the center of the targeted face
+        double deltaX =
+                (double) blockPos.getX() + 0.5
+                        - mc.player.getPosX()
+                        + (double) face.getXOffset() / 2.0;
+
+        double deltaZ =
+                (double) blockPos.getZ() + 0.5
+                        - mc.player.getPosZ()
+                        + (double) face.getZOffset() / 2.0;
+
+        // Vertical delta from player eye position to block center
+        double deltaY =
+                mc.player.getPosY() + (double) mc.player.getEyeHeight()
+                        - ((double) blockPos.getY() + 0.5);
+
+        double horizontalDistance = (double) MathHelper.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+
+        float yaw =
+                (float) (Math.atan2(deltaZ, deltaX) * 180.0 / Math.PI) - 90.0F;
+
+        float pitch =
+                (float) (Math.atan2(deltaY, horizontalDistance) * 180.0 / Math.PI);
+
+        if (yaw < 0.0F) {
+            yaw += 360.0F;
+        }
+
+        return new float[]{yaw, pitch};
+    }
+
+    public static float[] getMovementDirectionBlockRotations() {
+        BlockRayTraceResult result = BlockUtil.rayTraceBlocksFromFeetYaw(MovementUtil.getMovementDirectionYaw() - 270.0F);
+        if (result.getType() != RayTraceResult.Type.MISS) {
+            double hitOffsetX = result.getHitVec().x - (double) result.getPos().getX();
+            double hitOffsetY = result.getHitVec().z - (double) result.getPos().getZ();
+            double hitOffsetZ = result.getHitVec().y - (double) result.getPos().getY();
+            double dX = (double) result.getPos().getX() - Minecraft.getInstance().player.getPosX() + hitOffsetX;
+            double dY = (double) result.getPos().getY()
+                    - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())
+                    + hitOffsetZ;
+            double dZ = (double) result.getPos().getZ() - Minecraft.getInstance().player.getPosZ() + hitOffsetY;
+            double dist = (double) MathHelper.sqrt(dX * dX + dZ * dZ);
+            float yaw = (float) (Math.atan2(dZ, dX) * 180.0 / Math.PI) - 90.0F;
+            float pitch = (float) (-(Math.atan2(dY, dist) * 180.0 / Math.PI));
+            return new float[]{
+                    Minecraft.getInstance().player.rotationYaw + MathHelper.wrapDegrees(yaw - Minecraft.getInstance().player.rotationYaw),
+                    Minecraft.getInstance().player.rotationPitch + MathHelper.wrapDegrees(pitch - Minecraft.getInstance().player.rotationPitch)
+            };
+        } else {
+            return null;
+        }
     }
 }

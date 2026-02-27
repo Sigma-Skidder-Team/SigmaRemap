@@ -39,11 +39,11 @@ public class BasicClickTP extends Module {
 
     @EventTarget
     private void method16324(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.getParent().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
                         mc.player.rotationYaw, mc.player.rotationPitch,
-                        this.access().getNumberValueBySettingName("Maximum range"));
+                        this.getParent().getNumberValueBySettingName("Maximum range"));
                 BlockPos var5 = null;
                 if (var4 != null) {
                     var5 = var4.getPos();
@@ -89,8 +89,8 @@ public class BasicClickTP extends Module {
                 mc.player.setPosition(var6, var8, var10);
                 this.field23590.reset();
                 this.field23590.start();
-                if (this.access().getBooleanValueFromSettingName("Auto Disable")) {
-                    this.access().toggle();
+                if (this.getParent().getBooleanValueFromSettingName("Auto Disable")) {
+                    this.getParent().toggle();
                 }
             }
         }

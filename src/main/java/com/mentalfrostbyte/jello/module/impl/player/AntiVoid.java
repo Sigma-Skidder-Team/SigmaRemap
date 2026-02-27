@@ -135,7 +135,7 @@ public class AntiVoid extends Module {
                 break;
             case "Motion":
                 event.setY(0.1);
-                MultiUtilities.setPlayerYMotion(event.getY());
+                MovementUtil.setPlayerYMotion(event.getY());
                 break;
             case "Cubecraft":
                 double highPosition = 3.2E7;

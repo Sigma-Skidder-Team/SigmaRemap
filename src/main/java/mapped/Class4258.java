@@ -53,7 +53,7 @@ public class Class4258 extends InteractiveWidget {
                ResourceLocation var8 = Registry.ITEM.getKey(var13);
                String var9;
                if (var13 instanceof BlockItem && var8.getPath().equals("air")) {
-                  var9 = Registry.BLOCK.getKey(((BlockItem)var13).method11845()).toString();
+                  var9 = Registry.BLOCK.getKey(((BlockItem)var13).getBlock()).toString();
                } else {
                   var9 = var8.toString();
                }

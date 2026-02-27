@@ -38,7 +38,7 @@ public class Class3301 extends WallOrFloorItem {
    }
 
    public DyeColor method11849() {
-      return ((AbstractBannerBlock)this.method11845()).method11936();
+      return ((AbstractBannerBlock)this.getBlock()).method11936();
    }
 
    @Override

@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.NumberSetting;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -43,7 +42,7 @@ public class ACRFly extends Module {
     public void onDisable() {
         MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            MultiUtilities.setPlayerYMotion(-0.0789);
+            MovementUtil.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -77,7 +76,7 @@ public class ACRFly extends Module {
                         var1.setY(!this.getBooleanValueFromSettingName("Offset") ? 0.0 : -0.01);
                     }
 
-                    MultiUtilities.setPlayerYMotion(var1.getY());
+                    MovementUtil.setPlayerYMotion(var1.getY());
                     MovementUtil.setMotion(var1, 0.35);
                 }
             } else {
@@ -91,7 +90,7 @@ public class ACRFly extends Module {
                 }
 
                 var1.setY(var4);
-                MultiUtilities.setPlayerYMotion(var1.getY());
+                MovementUtil.setPlayerYMotion(var1.getY());
                 MovementUtil.setMotion(var1, this.getNumberValueBySettingName("Speed"));
             }
         }

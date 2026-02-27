@@ -104,7 +104,7 @@ public class HypixelDisabler extends Module {
                 this.field23983.clear();
                 this.field23985.reset();
                 this.field23985.stop();
-                this.access().toggle();
+                this.getParent().toggle();
                 Client.getInstance().notificationManager.send(new Notification("Hypixel disabler", "Disabler failed"));
             }
         }
@@ -134,7 +134,7 @@ public class HypixelDisabler extends Module {
         if (mc.player != null && this.field23984) {
             if (this.isEnabled() || this.getBooleanValueFromSettingName("Instant")) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
-                    this.access().toggle();
+                    this.getParent().toggle();
                     if (!this.getBooleanValueFromSettingName("Instant")) {
                         Client.getInstance().notificationManager
                                 .send(new Notification("Hypixel disabler", "You can do what you want for 5s"));

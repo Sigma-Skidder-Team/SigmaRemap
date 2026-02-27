@@ -23,7 +23,7 @@ public class CubecraftGamePlay extends Module {
 
     @Override
     public void initialize() {
-        this.field23580 = (GamePlay) this.access();
+        this.field23580 = (GamePlay) this.getParent();
     }
 
     @EventTarget

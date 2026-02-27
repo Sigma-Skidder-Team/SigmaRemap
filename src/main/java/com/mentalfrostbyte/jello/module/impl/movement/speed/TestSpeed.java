@@ -57,7 +57,7 @@ public class TestSpeed extends Module {
             var1.getVector().y = 0.0;
             double var6 = var1.getVector().length();
             var1.getVector().y = var4;
-            this.field23916 = MovementUtil.setMotion(var1, var6, MovementUtil.getDirectionArray()[0], this.field23916, 45.0F);
+            this.field23916 = MovementUtil.setMotionWithTurnLimit(var1, var6, MovementUtil.getDirectionArray()[0], this.field23916, 45.0F);
             if (this.field23913 != 0.0F || this.field23914 != 0.0F) {
                 this.field23913 = (float) ((double) this.field23913 * 0.85);
                 this.field23914 = (float) ((double) this.field23914 * 0.85);

@@ -112,7 +112,7 @@ public class JelloEdit extends Module {
                         this.pos.getX() + data.getIntegerVector().getX(),
                         this.pos.getY() + data.getIntegerVector().getY(),
                         this.pos.getZ() + data.getIntegerVector().getZ());
-                if (BlockUtil.getBlockFromPosition(block) == Blocks.AIR) {
+                if (BlockUtil.getBlockAt(block) == Blocks.AIR) {
                     double x = block.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
                     double y = block.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
                     double z = block.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();

@@ -373,7 +373,7 @@ public class Class964 extends TileEntity {
 
    public boolean method3964(boolean var1) {
       if (this.field5402 == StructureMode.field318 && !this.world.isRemote && this.field5395 != null) {
-         BlockPos var4 = this.getPos().method8337(this.field5398);
+         BlockPos var4 = this.getPos().add(this.field5398);
          ServerWorld var5 = (ServerWorld)this.world;
          TemplateManager var6 = var5.method6938();
 
@@ -448,7 +448,7 @@ public class Class964 extends TileEntity {
             var11.method36433().method36434(new Class7094(MathHelper.clamp(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
          }
 
-         BlockPos var10 = var6.method8337(this.field5398);
+         BlockPos var10 = var6.add(this.field5398);
          var3.method32897(var1, var10, var11, method3966(this.field5408));
          return true;
       }

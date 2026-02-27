@@ -31,7 +31,7 @@ public class Class9196 {
       this.field42239 = var4;
       if (!var4) {
          this.field42241 = var3.getOpposite();
-         this.field42240 = var2.method8350(var3, 2);
+         this.field42240 = var2.offset(var3, 2);
       } else {
          this.field42241 = var3;
          this.field42240 = var2.offset(var3);
@@ -92,7 +92,7 @@ public class Class9196 {
             return false;
          } else {
             while (method34465(var6)) {
-               BlockPos var8 = var1.method8350(this.field42241.getOpposite(), var7);
+               BlockPos var8 = var1.offset(this.field42241.getOpposite(), var7);
                Block var9 = var6;
                var5 = this.field42237.getBlockState(var8);
                var6 = var5.getBlock();
@@ -111,14 +111,14 @@ public class Class9196 {
             int var16 = 0;
 
             for (int var17 = var7 - 1; var17 >= 0; var17--) {
-               this.field42242.add(var1.method8350(this.field42241.getOpposite(), var17));
+               this.field42242.add(var1.offset(this.field42241.getOpposite(), var17));
                var16++;
             }
 
             int var18 = 1;
 
             while (true) {
-               BlockPos var10 = var1.method8350(this.field42241, var18);
+               BlockPos var10 = var1.offset(this.field42241, var18);
                int var11 = this.field42242.indexOf(var10);
                if (var11 > -1) {
                   this.method34468(var16, var11);

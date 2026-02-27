@@ -313,7 +313,7 @@ public class BedBlock extends HorizontalBlock implements ITileEntityProvider {
 
    @Override
    public long method11691(BlockState var1, BlockPos var2) {
-      BlockPos var5 = var2.method8350(var1.<Direction>get(HORIZONTAL_FACING), var1.get(PART) != BedPart.HEAD ? 1 : 0);
+      BlockPos var5 = var2.offset(var1.<Direction>get(HORIZONTAL_FACING), var1.get(PART) != BedPart.HEAD ? 1 : 0);
       return MathHelper.method37810(var5.getX(), var2.getY(), var5.getZ());
    }
 

@@ -42,12 +42,12 @@ public class CubecraftLongJump extends Module {
 
                 MovementUtil.strafe(this.field23502);
                 if (this.field23501 > 5) {
-                    this.access().toggle();
+                    this.getParent().toggle();
                 }
             } else {
                 if (this.field23501 > 0) {
                     MovementUtil.strafe(0.0);
-                    this.access().toggle();
+                    this.getParent().toggle();
                     this.field23501 = 0;
                 }
 
@@ -62,7 +62,7 @@ public class CubecraftLongJump extends Module {
                 }
 
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, true));
-                MultiUtilities.setPlayerYMotion(MovementUtil.getJumpValue());
+                MovementUtil.setPlayerYMotion(MovementUtil.getJumpValue());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
                 MovementUtil.strafe(this.field23502);

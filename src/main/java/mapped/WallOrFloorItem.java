@@ -32,7 +32,7 @@ public class WallOrFloorItem extends BlockItem {
 
       for (Direction var11 : var1.method18349()) {
          if (var11 != Direction.UP) {
-            BlockState var12 = var11 != Direction.DOWN ? var4 : this.method11845().getStateForPlacement(var1);
+            BlockState var12 = var11 != Direction.DOWN ? var4 : this.getBlock().getStateForPlacement(var1);
             if (var12 != null && var12.isValidPosition(var6, var7)) {
                var5 = var12;
                break;

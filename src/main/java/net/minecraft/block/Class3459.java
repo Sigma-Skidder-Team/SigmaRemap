@@ -114,7 +114,7 @@ public class Class3459 extends Block {
       BlockState[] var16 = new BlockState[42];
 
       for (int var17 = 1; var17 < 42; var17++) {
-         BlockPos var18 = var2.method8350(var10, var17);
+         BlockPos var18 = var2.offset(var10, var17);
          BlockState var19 = var1.getBlockState(var18);
          if (var19.isIn(Blocks.TRIPWIRE_HOOK)) {
             if (var19.<Direction>get(field19281) == var10.getOpposite()) {
@@ -146,7 +146,7 @@ public class Class3459 extends Block {
       var14 &= var13;
       BlockState var24 = this.getDefaultState().with(field19283, Boolean.valueOf(var13)).with(field19282, Boolean.valueOf(var14));
       if (var15 > 0) {
-         BlockPos var25 = var2.method8350(var10, var15);
+         BlockPos var25 = var2.offset(var10, var15);
          Direction var27 = var10.getOpposite();
          var1.setBlockState(var25, var24.with(field19281, var27), 3);
          this.method12136(var1, var25, var27);
@@ -163,7 +163,7 @@ public class Class3459 extends Block {
 
       if (var11 != var13) {
          for (int var26 = 1; var26 < var15; var26++) {
-            BlockPos var28 = var2.method8350(var10, var26);
+            BlockPos var28 = var2.offset(var10, var26);
             BlockState var29 = var16[var26];
             if (var29 != null) {
                var1.setBlockState(var28, var29.with(field19283, Boolean.valueOf(var13)), 3);

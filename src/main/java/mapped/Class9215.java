@@ -54,8 +54,8 @@ public class Class9215 {
       for (int var15 = 0; var15 < Class8390.method29410(var10) && !var14; var15++) {
          for (int var16 = Class8390.method29409(var10) - 1; var16 >= 0 && !var14; var16--) {
             if (Class9467.method36498(var10, var16, var15)) {
-               var13.field30487 = var13.field30487.method8350(var2.rotate(Direction.SOUTH), 8 + (var15 - this.field42408) * 8);
-               var13.field30487 = var13.field30487.method8350(var2.rotate(Direction.EAST), (var16 - this.field42407) * 8);
+               var13.field30487 = var13.field30487.offset(var2.rotate(Direction.SOUTH), 8 + (var15 - this.field42408) * 8);
+               var13.field30487 = var13.field30487.offset(var2.rotate(Direction.EAST), (var16 - this.field42407) * 8);
                this.method34525(var3, var13);
                this.method34522(var3, var13, var10, Direction.SOUTH, var16, var15, var16, var15);
                var14 = true;
@@ -80,11 +80,11 @@ public class Class9215 {
          for (int var22 = 0; var22 < Class8390.method29410(var19); var22++) {
             for (int var23 = 0; var23 < Class8390.method29409(var19); var23++) {
                if (var19.method29406(var23, var22) == 1) {
-                  BlockPos var24 = var17.method8350(var2.rotate(Direction.SOUTH), 8 + (var22 - this.field42408) * 8);
-                  var24 = var24.method8350(var2.rotate(Direction.EAST), (var23 - this.field42407) * 8);
+                  BlockPos var24 = var17.offset(var2.rotate(Direction.SOUTH), 8 + (var22 - this.field42408) * 8);
+                  var24 = var24.offset(var2.rotate(Direction.EAST), (var23 - this.field42407) * 8);
                   var3.add(new Class4187(this.field42405, "corridor_floor", var24, var2));
                   if (var19.method29406(var23, var22 - 1) == 1 || (var18.method29406(var23, var22 - 1) & 8388608) == 8388608) {
-                     var3.add(new Class4187(this.field42405, "carpet_north", var24.method8350(var2.rotate(Direction.EAST), 1).up(), var2));
+                     var3.add(new Class4187(this.field42405, "carpet_north", var24.offset(var2.rotate(Direction.EAST), 1).up(), var2));
                   }
 
                   if (var19.method29406(var23 + 1, var22) == 1 || (var18.method29406(var23 + 1, var22) & 8388608) == 8388608) {
@@ -92,7 +92,7 @@ public class Class9215 {
                         new Class4187(
                            this.field42405,
                            "carpet_east",
-                           var24.method8350(var2.rotate(Direction.SOUTH), 1).method8350(var2.rotate(Direction.EAST), 5).up(),
+                           var24.offset(var2.rotate(Direction.SOUTH), 1).offset(var2.rotate(Direction.EAST), 5).up(),
                            var2
                         )
                      );
@@ -103,7 +103,7 @@ public class Class9215 {
                         new Class4187(
                            this.field42405,
                            var20,
-                           var24.method8350(var2.rotate(Direction.SOUTH), 5).method8350(var2.rotate(Direction.WEST), 1),
+                           var24.offset(var2.rotate(Direction.SOUTH), 5).offset(var2.rotate(Direction.WEST), 1),
                            var2
                         )
                      );
@@ -114,7 +114,7 @@ public class Class9215 {
                         new Class4187(
                            this.field42405,
                            var21,
-                           var24.method8350(var2.rotate(Direction.WEST), 1).method8350(var2.rotate(Direction.NORTH), 1),
+                           var24.offset(var2.rotate(Direction.WEST), 1).offset(var2.rotate(Direction.NORTH), 1),
                            var2
                         )
                      );
@@ -153,27 +153,27 @@ public class Class9215 {
                      var42 = (Direction)var40.get(this.field42406.nextInt(var40.size()));
                   }
 
-                  BlockPos var43 = var17.method8350(var2.rotate(Direction.SOUTH), 8 + (var25 - this.field42408) * 8);
-                  var43 = var43.method8350(var2.rotate(Direction.EAST), -1 + (var26 - this.field42407) * 8);
+                  BlockPos var43 = var17.offset(var2.rotate(Direction.SOUTH), 8 + (var25 - this.field42408) * 8);
+                  var43 = var43.offset(var2.rotate(Direction.EAST), -1 + (var26 - this.field42407) * 8);
 
                   if (Class9467.method36498(var19, var26 - 1, var25) && !var4.method36499(var19, var26 - 1, var25, var36, var30)) {
                      var3.add(new Class4187(this.field42405, var42 != Direction.WEST ? var37 : var38, var43, var2));
                   }
 
                   if (var19.method29406(var26 + 1, var25) == 1 && !var27) {
-                     BlockPos var33 = var43.method8350(var2.rotate(Direction.EAST), 8);
+                     BlockPos var33 = var43.offset(var2.rotate(Direction.EAST), 8);
                      var3.add(new Class4187(this.field42405, var42 != Direction.EAST ? var37 : var38, var33, var2));
                   }
 
                   if (Class9467.method36498(var19, var26, var25 + 1) && !var4.method36499(var19, var26, var25 + 1, var36, var30)) {
-                     BlockPos var45 = var43.method8350(var2.rotate(Direction.SOUTH), 7);
-                     var45 = var45.method8350(var2.rotate(Direction.EAST), 7);
+                     BlockPos var45 = var43.offset(var2.rotate(Direction.SOUTH), 7);
+                     var45 = var45.offset(var2.rotate(Direction.EAST), 7);
                      var3.add(new Class4187(this.field42405, var42 != Direction.SOUTH ? var37 : var38, var45, var2.method250(Rotation.CLOCKWISE_90)));
                   }
 
                   if (var19.method29406(var26, var25 - 1) == 1 && !var27) {
-                     BlockPos var47 = var43.method8350(var2.rotate(Direction.NORTH), 1);
-                     var47 = var47.method8350(var2.rotate(Direction.EAST), 7);
+                     BlockPos var47 = var43.offset(var2.rotate(Direction.NORTH), 1);
+                     var47 = var47.offset(var2.rotate(Direction.EAST), 7);
                      var3.add(new Class4187(this.field42405, var42 != Direction.NORTH ? var37 : var38, var47, var2.method250(Rotation.CLOCKWISE_90)));
                   }
 
@@ -236,30 +236,30 @@ public class Class9215 {
    private void method34523(List<Class4187> var1, BlockPos var2, Rotation var3, Class8390 var4, Class8390 var5) {
       for (int var8 = 0; var8 < Class8390.method29410(var4); var8++) {
          for (int var9 = 0; var9 < Class8390.method29409(var4); var9++) {
-            BlockPos var10 = var2.method8350(var3.rotate(Direction.SOUTH), 8 + (var8 - this.field42408) * 8);
-            var10 = var10.method8350(var3.rotate(Direction.EAST), (var9 - this.field42407) * 8);
+            BlockPos var10 = var2.offset(var3.rotate(Direction.SOUTH), 8 + (var8 - this.field42408) * 8);
+            var10 = var10.offset(var3.rotate(Direction.EAST), (var9 - this.field42407) * 8);
             boolean var11 = var5 != null && Class9467.method36498(var5, var9, var8);
             if (Class9467.method36498(var4, var9, var8) && !var11) {
                var1.add(new Class4187(this.field42405, "roof", var10.up(3), var3));
                if (!Class9467.method36498(var4, var9 + 1, var8)) {
-                  BlockPos var12 = var10.method8350(var3.rotate(Direction.EAST), 6);
+                  BlockPos var12 = var10.offset(var3.rotate(Direction.EAST), 6);
                   var1.add(new Class4187(this.field42405, "roof_front", var12, var3));
                }
 
                if (!Class9467.method36498(var4, var9 - 1, var8)) {
-                  BlockPos var25 = var10.method8350(var3.rotate(Direction.EAST), 0);
-                  var25 = var25.method8350(var3.rotate(Direction.SOUTH), 7);
+                  BlockPos var25 = var10.offset(var3.rotate(Direction.EAST), 0);
+                  var25 = var25.offset(var3.rotate(Direction.SOUTH), 7);
                   var1.add(new Class4187(this.field42405, "roof_front", var25, var3.method250(Rotation.CLOCKWISE_180)));
                }
 
                if (!Class9467.method36498(var4, var9, var8 - 1)) {
-                  BlockPos var27 = var10.method8350(var3.rotate(Direction.WEST), 1);
+                  BlockPos var27 = var10.offset(var3.rotate(Direction.WEST), 1);
                   var1.add(new Class4187(this.field42405, "roof_front", var27, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
                }
 
                if (!Class9467.method36498(var4, var9, var8 + 1)) {
-                  BlockPos var28 = var10.method8350(var3.rotate(Direction.EAST), 6);
-                  var28 = var28.method8350(var3.rotate(Direction.SOUTH), 6);
+                  BlockPos var28 = var10.offset(var3.rotate(Direction.EAST), 6);
+                  var28 = var28.offset(var3.rotate(Direction.SOUTH), 6);
                   var1.add(new Class4187(this.field42405, "roof_front", var28, var3.method250(Rotation.CLOCKWISE_90)));
                }
             }
@@ -269,57 +269,57 @@ public class Class9215 {
       if (var5 != null) {
          for (int var14 = 0; var14 < Class8390.method29410(var4); var14++) {
             for (int var16 = 0; var16 < Class8390.method29409(var4); var16++) {
-               BlockPos var19 = var2.method8350(var3.rotate(Direction.SOUTH), 8 + (var14 - this.field42408) * 8);
-               var19 = var19.method8350(var3.rotate(Direction.EAST), (var16 - this.field42407) * 8);
+               BlockPos var19 = var2.offset(var3.rotate(Direction.SOUTH), 8 + (var14 - this.field42408) * 8);
+               var19 = var19.offset(var3.rotate(Direction.EAST), (var16 - this.field42407) * 8);
                boolean var23 = Class9467.method36498(var5, var16, var14);
                if (Class9467.method36498(var4, var16, var14) && var23) {
                   if (!Class9467.method36498(var4, var16 + 1, var14)) {
-                     BlockPos var30 = var19.method8350(var3.rotate(Direction.EAST), 7);
+                     BlockPos var30 = var19.offset(var3.rotate(Direction.EAST), 7);
                      var1.add(new Class4187(this.field42405, "small_wall", var30, var3));
                   }
 
                   if (!Class9467.method36498(var4, var16 - 1, var14)) {
-                     BlockPos var31 = var19.method8350(var3.rotate(Direction.WEST), 1);
-                     var31 = var31.method8350(var3.rotate(Direction.SOUTH), 6);
+                     BlockPos var31 = var19.offset(var3.rotate(Direction.WEST), 1);
+                     var31 = var31.offset(var3.rotate(Direction.SOUTH), 6);
                      var1.add(new Class4187(this.field42405, "small_wall", var31, var3.method250(Rotation.CLOCKWISE_180)));
                   }
 
                   if (!Class9467.method36498(var4, var16, var14 - 1)) {
-                     BlockPos var33 = var19.method8350(var3.rotate(Direction.WEST), 0);
-                     var33 = var33.method8350(var3.rotate(Direction.NORTH), 1);
+                     BlockPos var33 = var19.offset(var3.rotate(Direction.WEST), 0);
+                     var33 = var33.offset(var3.rotate(Direction.NORTH), 1);
                      var1.add(new Class4187(this.field42405, "small_wall", var33, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
                   }
 
                   if (!Class9467.method36498(var4, var16, var14 + 1)) {
-                     BlockPos var35 = var19.method8350(var3.rotate(Direction.EAST), 6);
-                     var35 = var35.method8350(var3.rotate(Direction.SOUTH), 7);
+                     BlockPos var35 = var19.offset(var3.rotate(Direction.EAST), 6);
+                     var35 = var35.offset(var3.rotate(Direction.SOUTH), 7);
                      var1.add(new Class4187(this.field42405, "small_wall", var35, var3.method250(Rotation.CLOCKWISE_90)));
                   }
 
                   if (!Class9467.method36498(var4, var16 + 1, var14)) {
                      if (!Class9467.method36498(var4, var16, var14 - 1)) {
-                        BlockPos var37 = var19.method8350(var3.rotate(Direction.EAST), 7);
-                        var37 = var37.method8350(var3.rotate(Direction.NORTH), 2);
+                        BlockPos var37 = var19.offset(var3.rotate(Direction.EAST), 7);
+                        var37 = var37.offset(var3.rotate(Direction.NORTH), 2);
                         var1.add(new Class4187(this.field42405, "small_wall_corner", var37, var3));
                      }
 
                      if (!Class9467.method36498(var4, var16, var14 + 1)) {
-                        BlockPos var39 = var19.method8350(var3.rotate(Direction.EAST), 8);
-                        var39 = var39.method8350(var3.rotate(Direction.SOUTH), 7);
+                        BlockPos var39 = var19.offset(var3.rotate(Direction.EAST), 8);
+                        var39 = var39.offset(var3.rotate(Direction.SOUTH), 7);
                         var1.add(new Class4187(this.field42405, "small_wall_corner", var39, var3.method250(Rotation.CLOCKWISE_90)));
                      }
                   }
 
                   if (!Class9467.method36498(var4, var16 - 1, var14)) {
                      if (!Class9467.method36498(var4, var16, var14 - 1)) {
-                        BlockPos var41 = var19.method8350(var3.rotate(Direction.WEST), 2);
-                        var41 = var41.method8350(var3.rotate(Direction.NORTH), 1);
+                        BlockPos var41 = var19.offset(var3.rotate(Direction.WEST), 2);
+                        var41 = var41.offset(var3.rotate(Direction.NORTH), 1);
                         var1.add(new Class4187(this.field42405, "small_wall_corner", var41, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
                      }
 
                      if (!Class9467.method36498(var4, var16, var14 + 1)) {
-                        BlockPos var43 = var19.method8350(var3.rotate(Direction.WEST), 1);
-                        var43 = var43.method8350(var3.rotate(Direction.SOUTH), 8);
+                        BlockPos var43 = var19.offset(var3.rotate(Direction.WEST), 1);
+                        var43 = var43.offset(var3.rotate(Direction.SOUTH), 8);
                         var1.add(new Class4187(this.field42405, "small_wall_corner", var43, var3.method250(Rotation.CLOCKWISE_180)));
                      }
                   }
@@ -330,26 +330,26 @@ public class Class9215 {
 
       for (int var15 = 0; var15 < Class8390.method29410(var4); var15++) {
          for (int var17 = 0; var17 < Class8390.method29409(var4); var17++) {
-            BlockPos var21 = var2.method8350(var3.rotate(Direction.SOUTH), 8 + (var15 - this.field42408) * 8);
-            var21 = var21.method8350(var3.rotate(Direction.EAST), (var17 - this.field42407) * 8);
+            BlockPos var21 = var2.offset(var3.rotate(Direction.SOUTH), 8 + (var15 - this.field42408) * 8);
+            var21 = var21.offset(var3.rotate(Direction.EAST), (var17 - this.field42407) * 8);
             boolean var24 = var5 != null && Class9467.method36498(var5, var17, var15);
             if (Class9467.method36498(var4, var17, var15) && !var24) {
                if (!Class9467.method36498(var4, var17 + 1, var15)) {
-                  BlockPos var45 = var21.method8350(var3.rotate(Direction.EAST), 6);
+                  BlockPos var45 = var21.offset(var3.rotate(Direction.EAST), 6);
                   if (Class9467.method36498(var4, var17, var15 + 1)) {
                      if (Class9467.method36498(var4, var17 + 1, var15 + 1)) {
-                        BlockPos var13 = var45.method8350(var3.rotate(Direction.SOUTH), 5);
+                        BlockPos var13 = var45.offset(var3.rotate(Direction.SOUTH), 5);
                         var1.add(new Class4187(this.field42405, "roof_inner_corner", var13, var3));
                      }
                   } else {
-                     BlockPos var48 = var45.method8350(var3.rotate(Direction.SOUTH), 6);
+                     BlockPos var48 = var45.offset(var3.rotate(Direction.SOUTH), 6);
                      var1.add(new Class4187(this.field42405, "roof_corner", var48, var3));
                   }
 
                   if (Class9467.method36498(var4, var17, var15 - 1)) {
                      if (Class9467.method36498(var4, var17 + 1, var15 - 1)) {
-                        BlockPos var49 = var21.method8350(var3.rotate(Direction.EAST), 9);
-                        var49 = var49.method8350(var3.rotate(Direction.NORTH), 2);
+                        BlockPos var49 = var21.offset(var3.rotate(Direction.EAST), 9);
+                        var49 = var49.offset(var3.rotate(Direction.NORTH), 2);
                         var1.add(new Class4187(this.field42405, "roof_inner_corner", var49, var3.method250(Rotation.CLOCKWISE_90)));
                      }
                   } else {
@@ -358,22 +358,22 @@ public class Class9215 {
                }
 
                if (!Class9467.method36498(var4, var17 - 1, var15)) {
-                  BlockPos var46 = var21.method8350(var3.rotate(Direction.EAST), 0);
-                  var46 = var46.method8350(var3.rotate(Direction.SOUTH), 0);
+                  BlockPos var46 = var21.offset(var3.rotate(Direction.EAST), 0);
+                  var46 = var46.offset(var3.rotate(Direction.SOUTH), 0);
                   if (Class9467.method36498(var4, var17, var15 + 1)) {
                      if (Class9467.method36498(var4, var17 - 1, var15 + 1)) {
-                        BlockPos var51 = var46.method8350(var3.rotate(Direction.SOUTH), 8);
-                        var51 = var51.method8350(var3.rotate(Direction.WEST), 3);
+                        BlockPos var51 = var46.offset(var3.rotate(Direction.SOUTH), 8);
+                        var51 = var51.offset(var3.rotate(Direction.WEST), 3);
                         var1.add(new Class4187(this.field42405, "roof_inner_corner", var51, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
                      }
                   } else {
-                     BlockPos var53 = var46.method8350(var3.rotate(Direction.SOUTH), 6);
+                     BlockPos var53 = var46.offset(var3.rotate(Direction.SOUTH), 6);
                      var1.add(new Class4187(this.field42405, "roof_corner", var53, var3.method250(Rotation.CLOCKWISE_90)));
                   }
 
                   if (Class9467.method36498(var4, var17, var15 - 1)) {
                      if (Class9467.method36498(var4, var17 - 1, var15 - 1)) {
-                        BlockPos var54 = var46.method8350(var3.rotate(Direction.SOUTH), 1);
+                        BlockPos var54 = var46.offset(var3.rotate(Direction.SOUTH), 1);
                         var1.add(new Class4187(this.field42405, "roof_inner_corner", var54, var3.method250(Rotation.CLOCKWISE_180)));
                      }
                   } else {
@@ -387,26 +387,26 @@ public class Class9215 {
 
    private void method34524(List<Class4187> var1, Class7085 var2) {
       Direction var5 = var2.field30486.rotate(Direction.WEST);
-      var1.add(new Class4187(this.field42405, "entrance", var2.field30487.method8350(var5, 9), var2.field30486));
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.SOUTH), 16);
+      var1.add(new Class4187(this.field42405, "entrance", var2.field30487.offset(var5, 9), var2.field30486));
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.SOUTH), 16);
    }
 
    private void method34525(List<Class4187> var1, Class7085 var2) {
-      var1.add(new Class4187(this.field42405, var2.field30488, var2.field30487.method8350(var2.field30486.rotate(Direction.EAST), 7), var2.field30486));
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.SOUTH), 8);
+      var1.add(new Class4187(this.field42405, var2.field30488, var2.field30487.offset(var2.field30486.rotate(Direction.EAST), 7), var2.field30486));
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.SOUTH), 8);
    }
 
    private void method34526(List<Class4187> var1, Class7085 var2) {
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.SOUTH), -1);
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.SOUTH), -1);
       var1.add(new Class4187(this.field42405, "wall_corner", var2.field30487, var2.field30486));
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.SOUTH), -7);
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.WEST), -6);
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.SOUTH), -7);
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.WEST), -6);
       var2.field30486 = var2.field30486.method250(Rotation.CLOCKWISE_90);
    }
 
    private void method34527(List<Class4187> var1, Class7085 var2) {
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.SOUTH), 6);
-      var2.field30487 = var2.field30487.method8350(var2.field30486.rotate(Direction.EAST), 8);
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.SOUTH), 6);
+      var2.field30487 = var2.field30487.offset(var2.field30486.rotate(Direction.EAST), 8);
       var2.field30486 = var2.field30486.method250(Rotation.COUNTERCLOCKWISE_90);
    }
 
@@ -438,54 +438,54 @@ public class Class9215 {
 
    private void method34529(List<Class4187> var1, BlockPos var2, Rotation var3, Direction var4, Direction var5, Class6025 var6, boolean var7) {
       if (var5 == Direction.EAST && var4 == Direction.SOUTH) {
-         BlockPos var31 = var2.method8350(var3.rotate(Direction.EAST), 1);
+         BlockPos var31 = var2.offset(var3.rotate(Direction.EAST), 1);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var31, var3));
       } else if (var5 == Direction.EAST && var4 == Direction.NORTH) {
-         BlockPos var29 = var2.method8350(var3.rotate(Direction.EAST), 1);
-         var29 = var29.method8350(var3.rotate(Direction.SOUTH), 6);
+         BlockPos var29 = var2.offset(var3.rotate(Direction.EAST), 1);
+         var29 = var29.offset(var3.rotate(Direction.SOUTH), 6);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var29, var3, Mirror.field13615));
       } else if (var5 == Direction.WEST && var4 == Direction.NORTH) {
-         BlockPos var27 = var2.method8350(var3.rotate(Direction.EAST), 7);
-         var27 = var27.method8350(var3.rotate(Direction.SOUTH), 6);
+         BlockPos var27 = var2.offset(var3.rotate(Direction.EAST), 7);
+         var27 = var27.offset(var3.rotate(Direction.SOUTH), 6);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var27, var3.method250(Rotation.CLOCKWISE_180)));
       } else if (var5 == Direction.WEST && var4 == Direction.SOUTH) {
-         BlockPos var26 = var2.method8350(var3.rotate(Direction.EAST), 7);
+         BlockPos var26 = var2.offset(var3.rotate(Direction.EAST), 7);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var26, var3, Mirror.field13616));
       } else if (var5 == Direction.SOUTH && var4 == Direction.EAST) {
-         BlockPos var25 = var2.method8350(var3.rotate(Direction.EAST), 1);
+         BlockPos var25 = var2.offset(var3.rotate(Direction.EAST), 1);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var25, var3.method250(Rotation.CLOCKWISE_90), Mirror.field13615));
       } else if (var5 == Direction.SOUTH && var4 == Direction.WEST) {
-         BlockPos var24 = var2.method8350(var3.rotate(Direction.EAST), 7);
+         BlockPos var24 = var2.offset(var3.rotate(Direction.EAST), 7);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var24, var3.method250(Rotation.CLOCKWISE_90)));
       } else if (var5 == Direction.NORTH && var4 == Direction.WEST) {
-         BlockPos var22 = var2.method8350(var3.rotate(Direction.EAST), 7);
-         var22 = var22.method8350(var3.rotate(Direction.SOUTH), 6);
+         BlockPos var22 = var2.offset(var3.rotate(Direction.EAST), 7);
+         var22 = var22.offset(var3.rotate(Direction.SOUTH), 6);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var22, var3.method250(Rotation.CLOCKWISE_90), Mirror.field13616));
       } else if (var5 == Direction.NORTH && var4 == Direction.EAST) {
-         BlockPos var20 = var2.method8350(var3.rotate(Direction.EAST), 1);
-         var20 = var20.method8350(var3.rotate(Direction.SOUTH), 6);
+         BlockPos var20 = var2.offset(var3.rotate(Direction.EAST), 1);
+         var20 = var20.offset(var3.rotate(Direction.SOUTH), 6);
          var1.add(new Class4187(this.field42405, var6.method18652(this.field42406, var7), var20, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
       } else if (var5 == Direction.SOUTH && var4 == Direction.NORTH) {
-         BlockPos var18 = var2.method8350(var3.rotate(Direction.EAST), 1);
-         var18 = var18.method8350(var3.rotate(Direction.NORTH), 8);
+         BlockPos var18 = var2.offset(var3.rotate(Direction.EAST), 1);
+         var18 = var18.offset(var3.rotate(Direction.NORTH), 8);
          var1.add(new Class4187(this.field42405, var6.method18653(this.field42406, var7), var18, var3));
       } else if (var5 == Direction.NORTH && var4 == Direction.SOUTH) {
-         BlockPos var16 = var2.method8350(var3.rotate(Direction.EAST), 7);
-         var16 = var16.method8350(var3.rotate(Direction.SOUTH), 14);
+         BlockPos var16 = var2.offset(var3.rotate(Direction.EAST), 7);
+         var16 = var16.offset(var3.rotate(Direction.SOUTH), 14);
          var1.add(new Class4187(this.field42405, var6.method18653(this.field42406, var7), var16, var3.method250(Rotation.CLOCKWISE_180)));
       } else if (var5 == Direction.WEST && var4 == Direction.EAST) {
-         BlockPos var15 = var2.method8350(var3.rotate(Direction.EAST), 15);
+         BlockPos var15 = var2.offset(var3.rotate(Direction.EAST), 15);
          var1.add(new Class4187(this.field42405, var6.method18653(this.field42406, var7), var15, var3.method250(Rotation.CLOCKWISE_90)));
       } else if (var5 == Direction.EAST && var4 == Direction.WEST) {
-         BlockPos var13 = var2.method8350(var3.rotate(Direction.WEST), 7);
-         var13 = var13.method8350(var3.rotate(Direction.SOUTH), 6);
+         BlockPos var13 = var2.offset(var3.rotate(Direction.WEST), 7);
+         var13 = var13.offset(var3.rotate(Direction.SOUTH), 6);
          var1.add(new Class4187(this.field42405, var6.method18653(this.field42406, var7), var13, var3.method250(Rotation.COUNTERCLOCKWISE_90)));
       } else if (var5 == Direction.UP && var4 == Direction.EAST) {
-         BlockPos var12 = var2.method8350(var3.rotate(Direction.EAST), 15);
+         BlockPos var12 = var2.offset(var3.rotate(Direction.EAST), 15);
          var1.add(new Class4187(this.field42405, var6.method18654(this.field42406), var12, var3.method250(Rotation.CLOCKWISE_90)));
       } else if (var5 == Direction.UP && var4 == Direction.SOUTH) {
-         BlockPos var10 = var2.method8350(var3.rotate(Direction.EAST), 1);
-         var10 = var10.method8350(var3.rotate(Direction.NORTH), 0);
+         BlockPos var10 = var2.offset(var3.rotate(Direction.EAST), 1);
+         var10 = var10.offset(var3.rotate(Direction.NORTH), 0);
          var1.add(new Class4187(this.field42405, var6.method18654(this.field42406), var10, var3));
       }
    }
@@ -528,13 +528,13 @@ public class Class9215 {
          var12 = Mirror.field13616;
       }
 
-      BlockPos var13 = var2.method8350(var3.rotate(Direction.EAST), var9);
-      var13 = var13.method8350(var3.rotate(Direction.SOUTH), var10);
+      BlockPos var13 = var2.offset(var3.rotate(Direction.EAST), var9);
+      var13 = var13.offset(var3.rotate(Direction.SOUTH), var10);
       var1.add(new Class4187(this.field42405, var6.method18655(this.field42406), var13, var11, var12));
    }
 
    private void method34531(List<Class4187> var1, BlockPos var2, Rotation var3, Class6025 var4) {
-      BlockPos var7 = var2.method8350(var3.rotate(Direction.EAST), 1);
+      BlockPos var7 = var2.offset(var3.rotate(Direction.EAST), 1);
       var1.add(new Class4187(this.field42405, var4.method18656(this.field42406), var7, var3, Mirror.field13614));
    }
 }

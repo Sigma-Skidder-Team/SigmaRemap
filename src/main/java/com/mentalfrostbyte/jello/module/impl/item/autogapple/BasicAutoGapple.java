@@ -66,8 +66,8 @@ public class BasicAutoGapple extends Module {
             }
 
             int gappleSlot = -1;
-            if (mc.player.getHealth() <= this.access().getNumberValueBySettingName("Health") * 2.0F) {
-                gappleSlot = ((AutoGapple) this.access()).findGappleSlot(false);
+            if (mc.player.getHealth() <= this.getParent().getNumberValueBySettingName("Health") * 2.0F) {
+                gappleSlot = ((AutoGapple) this.getParent()).findGappleSlot(false);
                 if (this.currentGappleSlot == -1 && this.tickCounter >= 20 && gappleSlot != -1) {
                     this.currentGappleSlot = 0;
                     this.tickCounter = 0;

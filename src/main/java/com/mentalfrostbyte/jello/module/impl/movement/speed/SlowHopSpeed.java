@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 
 public class SlowHopSpeed extends Module {
@@ -35,7 +34,7 @@ public class SlowHopSpeed extends Module {
         if (this.isEnabled()) {
             boolean var4 = this.getBooleanValueFromSettingName("AutoJump");
             double var5 = MovementUtil.getSpeed();
-            boolean var7 = MultiUtilities.isMoving();
+            boolean var7 = MovementUtil.isMoving();
             if (!mc.player.onGround) {
                 this.field23599++;
                 this.field23600 = 0.36 - (double) this.field23599 / 250.0;

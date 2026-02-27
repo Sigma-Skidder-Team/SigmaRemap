@@ -104,7 +104,7 @@ public class PistonBlock extends Class3433 {
             var1.addBlockEvent(var2, this, 0, var6.getIndex());
          }
       } else if (!var7 && var3.<Boolean>get(field19202)) {
-         BlockPos var8 = var2.method8350(var6, 2);
+         BlockPos var8 = var2.offset(var6, 2);
          BlockState var9 = var1.getBlockState(var8);
          byte var10 = 1;
          if (var9.isIn(Blocks.MOVING_PISTON) && var9.<Direction>get(field19198) == var6) {

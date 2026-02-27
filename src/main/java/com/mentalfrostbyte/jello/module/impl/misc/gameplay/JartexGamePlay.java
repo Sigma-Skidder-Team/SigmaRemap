@@ -23,7 +23,7 @@ public class JartexGamePlay extends Module {
 
     @Override
     public void initialize() {
-        this.field23527 = (GamePlay) this.access();
+        this.field23527 = (GamePlay) this.getParent();
     }
 
     @EventTarget

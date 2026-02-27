@@ -31,7 +31,7 @@ public class AutoSprint extends Module {
             ModuleWithModuleSettings getModule = (ModuleWithModuleSettings) Client.getInstance().moduleManager.getModuleByClass(BlockFly.class);
             Module BlockFly = getModule.parentModule;
             if (BlockFly == null || !BlockFly.isEnabled() || !(BlockFly instanceof BlockFlyAACMode) || BlockFly.getBooleanValueFromSettingName("Haphe (AACAP)")) {
-                mc.player.setSprinting(mc.player.moveForward > 0.0F && !((BlockFly) Client.getInstance().moduleManager.getModuleByClass(BlockFly.class)).method16732());
+                mc.player.setSprinting(mc.player.moveForward > 0.0F && ((BlockFly) Client.getInstance().moduleManager.getModuleByClass(BlockFly.class)).shouldntSprint());
             }
         }
     }
@@ -41,7 +41,7 @@ public class AutoSprint extends Module {
         if (this.isEnabled()
                 && !(mc.player.moveForward <= 0.0F)
                 && (!mc.player.isHandActive() || mc.player.getActiveItemStack().getItem() != Items.BOW)
-                && !((BlockFly) Client.getInstance().moduleManager.getModuleByClass(BlockFly.class)).method16732()) {
+                && ((BlockFly) Client.getInstance().moduleManager.getModuleByClass(BlockFly.class)).shouldntSprint()) {
             ModifiableAttributeInstance getAttribute = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
             float BlockFly = (float) (
                     (getAttribute.getBaseValue() + 0.03F + (double) (0.015F * (float) MovementUtil.getSpeedBoost())) / (double) mc.player.abilities.getWalkSpeed() + 1.0

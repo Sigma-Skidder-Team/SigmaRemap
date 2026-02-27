@@ -23,21 +23,21 @@ public class AutoFarm extends Module {
     public void method16865(EventUpdate var1) {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
-                for (BlockPos var5 : BlockUtil.method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
-                    if (BlockUtil.method34535(mc.player, var5)) {
+                for (BlockPos var5 : BlockUtil.sortBlockPositionsByDistanceToPlayer(BlockUtil.getBlockPositionsAroundPlayer(mc.playerController.getBlockReachDistance()))) {
+                    if (BlockUtil.isBlockWithinReach(mc.player, var5)) {
                         BlockState var6 = mc.world.getBlockState(var5);
                         if (var6.getBlock() instanceof WheatBlock || var6.getBlock() instanceof Class3481 || var6.getBlock() instanceof Class3483) {
                             ItemStack var14 = mc.player.getHeldItem(Hand.MAIN_HAND);
                             if (var14 != null && var14.getItem() instanceof Class3321) {
                                 if (var6.<Integer>get(BlockStateProperties.AGE5) != 7) {
-                                    float[] var18 = BlockUtil.method34542(var5, Direction.DOWN);
+                                    float[] var18 = RotationHelper.getBlockPlacementRotations(var5, Direction.DOWN);
                                     var1.setYaw(var18[0]);
                                     var1.setPitch(var18[1]);
                                     var1.attackPost(new Class1358(this, var18));
                                     return;
                                 }
                             } else if (var6.<Integer>get(BlockStateProperties.AGE5) == 7) {
-                                float[] var17 = BlockUtil.method34542(var5, Direction.DOWN);
+                                float[] var17 = RotationHelper.getBlockPlacementRotations(var5, Direction.DOWN);
                                 var1.setYaw(var17[0]);
                                 var1.setPitch(var17[1]);
                                 var1.attackPost(new Class532(this, var5));
@@ -50,7 +50,7 @@ public class AutoFarm extends Module {
                                     BlockState var7 = mc.world.getBlockState(var5.down());
                                     BlockState var8 = mc.world.getBlockState(var5.up());
                                     if (!(var7.getBlock() instanceof KelpPlantBlock) && var8.getBlock() instanceof KelpPlantBlock) {
-                                        float[] var9 = BlockUtil.method34541(var5.up());
+                                        float[] var9 = RotationHelper.getBlockCenterRotations(var5.up());
                                         var1.setYaw(var9[0]);
                                         var1.setPitch(var9[1]);
                                         var1.attackPost(new Class1431(this, var5));
@@ -61,7 +61,7 @@ public class AutoFarm extends Module {
                                 BlockState var12 = mc.world.getBlockState(var5.down());
                                 BlockState var15 = mc.world.getBlockState(var5.up());
                                 if (!(var12.getBlock() instanceof Class3408) && var15.getBlock() instanceof Class3408) {
-                                    float[] var19 = BlockUtil.method34541(var5.up());
+                                    float[] var19 = RotationHelper.getBlockCenterRotations(var5.up());
                                     var1.setYaw(var19[0]);
                                     var1.setPitch(var19[1]);
                                     var1.attackPost(new Class654(this, var5));
@@ -92,7 +92,7 @@ public class AutoFarm extends Module {
                             }
 
                             if (var16 != -1 && var13.getBlock() instanceof AirBlock) {
-                                float[] var20 = BlockUtil.method34542(var5, Direction.UP);
+                                float[] var20 = RotationHelper.getBlockPlacementRotations(var5, Direction.UP);
                                 var1.setYaw(var20[0]);
                                 var1.setPitch(var20[1]);
                                 var1.attackPost(new Class649(this, var16, var20));

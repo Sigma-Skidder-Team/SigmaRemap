@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.*;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import mapped.ArmorStandEntity;
 import mapped.Class3597;
@@ -136,7 +137,7 @@ public class Test extends Module {
     public void method16547(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
-            MultiUtilities.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerYMotion(var1.getY());
         }
     }
 

@@ -13,7 +13,6 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
@@ -76,7 +75,7 @@ public class NCPSpeed extends Module {
                             var1.setY(var1.getY() - 0.01);
                         }
                     }
-                } else if (this.field23608 > 1 && (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.isMoving() || mc.gameSettings.keyBindJump.isKeyDown())) {
+                } else if (this.field23608 > 1 && (this.getBooleanValueFromSettingName("Auto Jump") && MovementUtil.isMoving() || mc.gameSettings.keyBindJump.isKeyDown())) {
                     this.field23607 = 0;
                     mc.player.jump();
                     var1.setX(mc.player.getMotion().x);

@@ -264,7 +264,7 @@ public class ChestStealer extends Module {
                         "modalidades"
                 )
         );
-        List<BlockPos> var5 = BlockUtil.method34561(8.0F);
+        List<BlockPos> var5 = BlockUtil.getBlockPositionsAroundPlayer(8.0F);
         String var6 = var1.getNarrationMessage().replaceAll("§.", "").toLowerCase();
 
         for (String var8 : var4) {
@@ -275,7 +275,7 @@ public class ChestStealer extends Module {
         }
 
         for (BlockPos var11 : var5) {
-            if (BlockUtil.getBlockFromPosition(var11) instanceof ChestBlock || BlockUtil.getBlockFromPosition(var11) instanceof Class3467) {
+            if (BlockUtil.getBlockAt(var11) instanceof ChestBlock || BlockUtil.getBlockAt(var11) instanceof Class3467) {
                 return true;
             }
         }
@@ -295,7 +295,7 @@ public class ChestStealer extends Module {
                     return !InvManager.isHoe(var1);
                 } else if (!(var4 instanceof PotionItem)) {
                     if (var4 instanceof BlockItem) {
-                        return !BlockFly.shouldPlaceItem(var4);
+                        return !BlockFly.isPlacableBlockItem(var4);
                     } else if (!(var4 instanceof ArrowItem)
                             && (!(var4 instanceof BowItem) || !Client.getInstance().moduleManager.getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
                         if (var4 == Items.WATER_BUCKET && Client.getInstance().moduleManager.getModuleByClass(AutoMLG.class).isEnabled()) {

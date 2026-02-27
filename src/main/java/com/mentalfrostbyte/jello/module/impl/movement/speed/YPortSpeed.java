@@ -46,7 +46,7 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.getMotion().y > 0.33) {
-            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
+            MovementUtil.setPlayerYMotion(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
             MovementUtil.strafe(MovementUtil.getSpeed());
         }
     }
@@ -69,7 +69,7 @@ public class YPortSpeed extends Module {
                             this.field23541 = !this.field23541;
                             MovementUtil.setMotion(var1, 0.312);
                             var1.setY(-0.43 + (double) MovementUtil.getJumpBoost() * 0.1);
-                            MultiUtilities.setPlayerYMotion(var1.getY());
+                            MovementUtil.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
                             var1.setY(-0.1);
@@ -77,11 +77,11 @@ public class YPortSpeed extends Module {
                         }
                         break;
                     case "OldNCP":
-                        if (mc.player.onGround && MultiUtilities.isMoving()) {
+                        if (mc.player.onGround && MovementUtil.isMoving()) {
                             this.field23545 = 2;
                         }
 
-                        if (this.field23545 == 1 && MultiUtilities.isMoving()) {
+                        if (this.field23545 == 1 && MovementUtil.isMoving()) {
                             this.field23545 = 2;
                             this.field23543 = 1.38 * MovementUtil.getSpeed() - 0.01;
                         } else if (this.field23545 == 2) {
@@ -111,7 +111,7 @@ public class YPortSpeed extends Module {
                         this.field23543 = Math.max(this.field23543, MovementUtil.getSpeed());
                         MovementUtil.setMotion(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
-                        MultiUtilities.setPlayerYMotion(var1.getY());
+                        MovementUtil.setPlayerYMotion(var1.getY());
                 }
             }
         }
@@ -130,7 +130,7 @@ public class YPortSpeed extends Module {
                         && MultiUtilities.isAboveBounds(mc.player, 1.0F)
                         && !mc.player.onGround
                         && this.field23545 == 3) {
-                    MultiUtilities.setPlayerYMotion(-0.3994);
+                    MovementUtil.setPlayerYMotion(-0.3994);
                 }
 
                 double var4 = mc.player.getPosX() - mc.player.prevPosX;

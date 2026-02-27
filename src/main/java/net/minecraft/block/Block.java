@@ -68,7 +68,7 @@ public class Block extends AbstractBlock implements IItemProvider {
    }
 
    public static Block method11537(Item var0) {
-      return !(var0 instanceof BlockItem) ? Blocks.AIR : ((BlockItem)var0).method11845();
+      return !(var0 instanceof BlockItem) ? Blocks.AIR : ((BlockItem)var0).getBlock();
    }
 
    public static BlockState method11538(BlockState var0, BlockState var1, World var2, BlockPos var3) {

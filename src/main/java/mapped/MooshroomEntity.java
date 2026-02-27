@@ -214,7 +214,7 @@ public class MooshroomEntity extends CowEntity implements Class1020 {
    private Optional<Pair<Effect, Integer>> method5035(ItemStack var1) {
       Item var4 = var1.getItem();
       if (var4 instanceof BlockItem) {
-         Block var5 = ((BlockItem)var4).method11845();
+         Block var5 = ((BlockItem)var4).getBlock();
          if (var5 instanceof Class3490) {
             Class3490 var6 = (Class3490)var5;
             return Optional.<Pair<Effect, Integer>>of(Pair.of(var6.method12186(), var6.method12187()));

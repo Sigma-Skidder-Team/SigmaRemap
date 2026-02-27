@@ -99,7 +99,7 @@ public class SimsESP extends Module {
     @EventTarget
     public void method16213(EventRender3D var1) {
         if (this.isEnabled()) {
-            for (Entity var5 : BlockUtil.method34549(MultiUtilities.method17680())) {
+            for (Entity var5 : BlockUtil.sortPlayersByDistanceDescending(MultiUtilities.method17680())) {
                 if (var5 != mc.player && !Client.getInstance().combatManager.isTargetABot(var5)) {
                     method16216(
                             var5.lastTickPosX + (var5.getPosX() - var5.lastTickPosX)

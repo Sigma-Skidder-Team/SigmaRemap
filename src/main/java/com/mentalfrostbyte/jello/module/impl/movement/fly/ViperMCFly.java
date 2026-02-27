@@ -43,7 +43,7 @@ public class ViperMCFly extends Module {
     public void onDisable() {
         MovementUtil.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            MultiUtilities.setPlayerYMotion(-0.0789);
+            MovementUtil.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -79,7 +79,7 @@ public class ViperMCFly extends Module {
                             var1.setY(-MovementUtil.getJumpValue());
                         }
 
-                        MultiUtilities.setPlayerYMotion(var1.getY());
+                        MovementUtil.setPlayerYMotion(var1.getY());
                         MovementUtil.setMotion(var1, MovementUtil.getSpeed());
                     }
                 } else {
@@ -95,7 +95,7 @@ public class ViperMCFly extends Module {
                                 : this.field23596;
                     }
 
-                    MultiUtilities.setPlayerYMotion(var1.getY());
+                    MovementUtil.setPlayerYMotion(var1.getY());
                     MovementUtil.setMotion(var1, var4);
                 }
             } else {

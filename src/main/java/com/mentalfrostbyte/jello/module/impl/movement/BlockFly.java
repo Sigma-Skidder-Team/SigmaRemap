@@ -3,24 +3,27 @@ package com.mentalfrostbyte.jello.module.impl.movement;
 import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
-import com.mentalfrostbyte.jello.module.impl.movement.blockfly.*;
-import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyAACMode;
+import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyHypixelMode;
+import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyNCPMode;
+import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlySmoothMode;
 import com.mentalfrostbyte.jello.module.settings.impl.BooleanSetting;
 import com.mentalfrostbyte.jello.module.settings.impl.ModeSetting;
+import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
+import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.render.animation.Animation;
 import com.mentalfrostbyte.jello.util.render.animation.MathHelper;
-import com.mentalfrostbyte.jello.util.ClientColors;
-import mapped.*;
-import net.minecraft.block.BannerBlock;
+import mapped.InventoryScreen;
+import mapped.RenderUtil;
 import net.minecraft.block.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.BlockItem;
@@ -36,8 +39,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BlockFly extends ModuleWithModuleSettings {
-    public static List<Block> blocksToNotPlace;
-    public int field23884;
+    public static List<Block> INVALID_BLOCKS;
+    public int lastSpoofedSlot;
     public Animation field23885 = new Animation(114, 114, Animation.Direction.BACKWARDS);
     public int field23886 = 0;
 
@@ -56,7 +59,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         this.registerSetting(
                 new BooleanSetting("Intelligent Block Picker", "Always get the biggest blocks stack.", true));
         this.registerSetting(new BooleanSetting("No Sprint", "Disable sprint.", false));
-        blocksToNotPlace = Arrays.asList(
+        INVALID_BLOCKS = Arrays.asList(
                 Blocks.AIR,
                 Blocks.WATER,
                 Blocks.LAVA,
@@ -99,125 +102,121 @@ public class BlockFly extends ModuleWithModuleSettings {
                 Blocks.ACACIA_SAPLING);
     }
 
-    public static boolean shouldPlaceItem(Item var0) {
-        if (!(var0 instanceof BlockItem)) {
+    public static boolean isPlacableBlockItem(Item item) {
+        if (!(item instanceof BlockItem)) {
             return false;
         } else {
-            Block var3 = ((BlockItem) var0).method11845();
-            return !blocksToNotPlace.contains(var3)
-                    && !(var3 instanceof AbstractButtonBlock)
-                    && !(var3 instanceof BushBlock)
-                    && !(var3 instanceof TrapDoorBlock)
-                    && !(var3 instanceof AbstractPressurePlateBlock)
-                    && !(var3 instanceof SandBlock)
-                    && !(var3 instanceof OreBlock)
-                    && !(var3 instanceof SkullBlock)
-                    && !(var3 instanceof BedBlock)
-                    && !(var3 instanceof BannerBlock)
-                    && !(var3 instanceof ChestBlock)
-                    && !(var3 instanceof DoorBlock);
+            Block block = ((BlockItem) item).getBlock();
+            return !INVALID_BLOCKS.contains(block)
+                    && !(block instanceof AbstractButtonBlock)
+                    && !(block instanceof BushBlock)
+                    && !(block instanceof TrapDoorBlock)
+                    && !(block instanceof AbstractPressurePlateBlock)
+                    && !(block instanceof SandBlock)
+                    && !(block instanceof OreBlock)
+                    && !(block instanceof SkullBlock)
+                    && !(block instanceof BedBlock)
+                    && !(block instanceof BannerBlock)
+                    && !(block instanceof ChestBlock)
+                    && !(block instanceof DoorBlock);
         }
     }
 
-    public boolean method16732() {
-        return this.getBooleanValueFromSettingName("No Sprint") && this.isEnabled();
+    public boolean shouldntSprint() {
+        return !this.getBooleanValueFromSettingName("No Sprint") || !this.isEnabled();
     }
 
-    public void method16734() {
-        try {
-            for (int var3 = 36; var3 < 45; var3++) {
-                int var4 = var3 - 36;
-                if (mc.player.container.getSlot(var3).getHasStack()
-                        && shouldPlaceItem(mc.player.container.getSlot(var3).getStack().getItem())
-                        && mc.player.container.getSlot(var3).getStack().count != 0) {
-                    if (mc.player.inventory.currentItem == var4) {
-                        return;
-                    }
-
-                    mc.player.inventory.currentItem = var4;
-                    if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")
-                            && (this.field23884 < 0 || this.field23884 != var4)) {
-                        mc.getConnection().getNetworkManager().sendPacket(new CHeldItemChangePacket(var4));
-                        this.field23884 = var4;
-                    }
-                    break;
+    public void selectPlaceableHotbarSlot() {
+        for (int containerSlot = 36; containerSlot < 45; containerSlot++) {
+            int hotbarIndex = containerSlot - 36;
+            if (mc.player.container.getSlot(containerSlot).getHasStack()
+                    && isPlacableBlockItem(mc.player.container.getSlot(containerSlot).getStack().getItem())
+                    && mc.player.container.getSlot(containerSlot).getStack().count != 0) {
+                if (mc.player.inventory.currentItem == hotbarIndex) {
+                    return;
                 }
+
+                mc.player.inventory.currentItem = hotbarIndex;
+                if (this.getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")
+                        && (this.lastSpoofedSlot < 0 || this.lastSpoofedSlot != hotbarIndex)) {
+                    mc.getConnection().getNetworkManager().sendPacket(new CHeldItemChangePacket(hotbarIndex));
+                    this.lastSpoofedSlot = hotbarIndex;
+                }
+                break;
             }
-        } catch (Exception var5) {
         }
     }
 
-    public int getValidItemCount() {
-        int var3 = 0;
+    public int countPlaceableBlocks() {
+        int total = 0;
 
-        for (int var4 = 0; var4 < 45; var4++) {
-            if (mc.player.container.getSlot(var4).getHasStack()) {
-                ItemStack var5 = mc.player.container.getSlot(var4).getStack();
-                Item var6 = var5.getItem();
-                if (shouldPlaceItem(var6)) {
-                    var3 += var5.count;
+        for (int slotIndex = 0; slotIndex < 45; slotIndex++) {
+            if (mc.player.container.getSlot(slotIndex).getHasStack()) {
+                ItemStack stack = mc.player.container.getSlot(slotIndex).getStack();
+                Item item = stack.getItem();
+                if (isPlacableBlockItem(item)) {
+                    total += stack.count;
                 }
             }
         }
 
-        return var3;
+        return total;
     }
 
-    public void method16736() {
-        String var3 = this.getStringSettingValueByName("Picking mode");
-        if ((!var3.equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) && this.getValidItemCount() != 0) {
-            int var4 = 43;
+    public void refillHotbarWithBlocks() {
+        String pickingMode = this.getStringSettingValueByName("Picking mode");
+        if ((!pickingMode.equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) && this.countPlaceableBlocks() != 0) {
+            int targetContainerSlot = 43;
             if (!this.getBooleanValueFromSettingName("Intelligent Block Picker")) {
-                if (!this.method16738()) {
-                    int var5 = -1;
+                if (!this.hasPlaceableBlockInHotbar()) {
+                    int sourceSlot = -1;
 
-                    for (int var6 = 9; var6 < 36; var6++) {
-                        if (mc.player.container.getSlot(var6).getHasStack()) {
-                            Item var7 = mc.player.container.getSlot(var6).getStack().getItem();
-                            if (shouldPlaceItem(var7)) {
-                                var5 = var6;
+                    for (int slotIndex = 9; slotIndex < 36; slotIndex++) {
+                        if (mc.player.container.getSlot(slotIndex).getHasStack()) {
+                            Item slot = mc.player.container.getSlot(slotIndex).getStack().getItem();
+                            if (isPlacableBlockItem(slot)) {
+                                sourceSlot = slotIndex;
                                 break;
                             }
                         }
                     }
 
-                    for (int var9 = 36; var9 < 45; var9++) {
-                        if (!mc.player.container.getSlot(var9).getHasStack()) {
-                            var4 = var9;
+                    for (int slotIndex = 36; slotIndex < 45; slotIndex++) {
+                        if (!mc.player.container.getSlot(slotIndex).getHasStack()) {
+                            targetContainerSlot = slotIndex;
                             break;
                         }
                     }
 
-                    if (var5 >= 0) {
-                        if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                    if (sourceSlot >= 0) {
+                        if (!(mc.currentScreen instanceof InventoryScreen) && pickingMode.equals("FakeInv")) {
                             mc.getConnection()
                                     .sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                         }
 
-                        this.method16740(var5, var4 - 36);
-                        if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                        this.swapSlotToHotbar(sourceSlot, targetContainerSlot - 36);
+                        if (!(mc.currentScreen instanceof InventoryScreen) && pickingMode.equals("FakeInv")) {
                             mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                         }
                     }
                 }
             } else {
-                int var8 = this.method16737();
-                if (!this.method16738()) {
-                    for (int var11 = 36; var11 < 45; var11++) {
-                        if (!mc.player.container.getSlot(var11).getHasStack()) {
-                            var4 = var11;
+                int sourceSlot = this.findLargestBlockStackSlot();
+                if (!this.hasPlaceableBlockInHotbar()) {
+                    for (int slotIndex = 36; slotIndex < 45; slotIndex++) {
+                        if (!mc.player.container.getSlot(slotIndex).getHasStack()) {
+                            targetContainerSlot = slotIndex;
                             break;
                         }
                     }
                 } else {
-                    for (int var10 = 36; var10 < 45; var10++) {
-                        if (mc.player.container.getSlot(var10).getHasStack()) {
-                            Item var12 = mc.player.container.getSlot(var10).getStack().getItem();
-                            if (shouldPlaceItem(var12)) {
-                                var4 = var10;
-                                if (mc.player.container.getSlot(var10).getStack().count == mc.player.container
-                                        .getSlot(var8).getStack().count) {
-                                    var4 = -1;
+                    for (int slotIndex = 36; slotIndex < 45; slotIndex++) {
+                        if (mc.player.container.getSlot(slotIndex).getHasStack()) {
+                            Item slot = mc.player.container.getSlot(slotIndex).getStack().getItem();
+                            if (isPlacableBlockItem(slot)) {
+                                targetContainerSlot = slotIndex;
+                                if (mc.player.container.getSlot(slotIndex).getStack().count == mc.player.container.getSlot(sourceSlot).getStack().count) {
+                                    targetContainerSlot = -1;
                                 }
                                 break;
                             }
@@ -225,20 +224,14 @@ public class BlockFly extends ModuleWithModuleSettings {
                     }
                 }
 
-                if (var4 >= 0 && mc.player.container.getSlot(var4).slotNumber != var8) {
-                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")/*
-                                                                                                 * && JelloPortal.
-                                                                                                 * getCurrentVersionApplied
-                                                                                                 * () <= ViaVerList.
-                                                                                                 * _1_11_1_or_2.
-                                                                                                 * getVersionNumber()
-                                                                                                 */) {
+                if (targetContainerSlot >= 0 && mc.player.container.getSlot(targetContainerSlot).slotNumber != sourceSlot) {
+                    if (!(mc.currentScreen instanceof InventoryScreen) && pickingMode.equals("FakeInv")) {
                         mc.getConnection()
                                 .sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
 
-                    this.method16740(var8, var4 - 36);
-                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
+                    this.swapSlotToHotbar(sourceSlot, targetContainerSlot - 36);
+                    if (!(mc.currentScreen instanceof InventoryScreen) && pickingMode.equals("FakeInv")) {
                         mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     }
                 }
@@ -246,32 +239,32 @@ public class BlockFly extends ModuleWithModuleSettings {
         }
     }
 
-    public int method16737() {
-        int var3 = -1;
-        int var4 = 0;
-        if (this.getValidItemCount() != 0) {
-            for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.player.container.getSlot(var5).getHasStack()) {
-                    Item var6 = mc.player.container.getSlot(var5).getStack().getItem();
-                    ItemStack var7 = mc.player.container.getSlot(var5).getStack();
-                    if (shouldPlaceItem(var6) && var7.count > var4) {
-                        var4 = var7.count;
-                        var3 = var5;
+    public int findLargestBlockStackSlot() {
+        int bestSlot = -1;
+        int bestCount = 0;
+        if (this.countPlaceableBlocks() != 0) {
+            for (int slotIndex = 9; slotIndex < 45; slotIndex++) {
+                if (mc.player.container.getSlot(slotIndex).getHasStack()) {
+                    Item slot = mc.player.container.getSlot(slotIndex).getStack().getItem();
+                    ItemStack stack = mc.player.container.getSlot(slotIndex).getStack();
+                    if (isPlacableBlockItem(slot) && stack.count > bestCount) {
+                        bestCount = stack.count;
+                        bestSlot = slotIndex;
                     }
                 }
             }
 
-            return var3;
+            return bestSlot;
         } else {
             return -1;
         }
     }
 
-    public boolean method16738() {
-        for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.player.container.getSlot(var3).getHasStack()) {
-                Item var4 = mc.player.container.getSlot(var3).getStack().getItem();
-                if (shouldPlaceItem(var4)) {
+    public boolean hasPlaceableBlockInHotbar() {
+        for (int slotIndex = 36; slotIndex < 45; slotIndex++) {
+            if (mc.player.container.getSlot(slotIndex).getHasStack()) {
+                Item slot = mc.player.container.getSlot(slotIndex).getStack().getItem();
+                if (isPlacableBlockItem(slot)) {
                     return true;
                 }
             }
@@ -280,39 +273,39 @@ public class BlockFly extends ModuleWithModuleSettings {
         return false;
     }
 
-    public boolean canPlaceItem(Hand var1) {
-        if (!this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {
-            return this.getValidItemCount() != 0;
+    public boolean canPlaceWithHand(Hand var1) {
+        if (!this.getParent().getStringSettingValueByName("ItemSpoof").equals("None")) {
+            return this.countPlaceableBlocks() != 0;
         } else
-            return shouldPlaceItem(mc.player.getHeldItem(var1).getItem());
+            return isPlacableBlockItem(mc.player.getHeldItem(var1).getItem());
     }
 
-    public void method16740(int var1, int var2) {
+    public void swapSlotToHotbar(int var1, int var2) {
         mc.playerController.windowClick(mc.player.container.windowId, var1, var2, ClickType.SWAP, mc.player);
     }
 
-    public void method16741(EventMove var1) {
+    public void performTowering(EventMove event) {
         if (mc.timer.timerSpeed == 0.8038576F) {
             mc.timer.timerSpeed = 1.0F;
         }
 
-        if (this.getValidItemCount() != 0 && (!mc.player.collidedVertically
+        if (this.countPlaceableBlocks() != 0 && (!mc.player.collidedVertically
                 || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-            if (!MultiUtilities.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
-                String var4 = this.getStringSettingValueByName("Tower Mode");
-                switch (var4) {
+            if (!MovementUtil.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
+                String mode = this.getStringSettingValueByName("Tower Mode");
+                switch (mode) {
                     case "NCP":
-                        if (var1.getY() > 0.0) {
+                        if (event.getY() > 0.0) {
                             if (MovementUtil.getJumpBoost() == 0) {
-                                if (var1.getY() > 0.247 && var1.getY() < 0.249) {
-                                    var1.setY(
-                                            (double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
+                                if (event.getY() > 0.247 && event.getY() < 0.249) {
+                                    event.setY(
+                                            (double) ((int) (mc.player.getPosY() + event.getY())) - mc.player.getPosY());
                                 }
                             } else {
-                                double var6 = (int) (mc.player.getPosY() + var1.getY());
-                                if (var6 != (double) ((int) mc.player.getPosY())
-                                        && mc.player.getPosY() + var1.getY() - var6 < 0.15) {
-                                    var1.setY(var6 - mc.player.getPosY());
+                                double yFloor = (int) (mc.player.getPosY() + event.getY());
+                                if (yFloor != (double) ((int) mc.player.getPosY())
+                                        && mc.player.getPosY() + event.getY() - yFloor < 0.15) {
+                                    event.setY(yFloor - mc.player.getPosY());
                                 }
                             }
                         }
@@ -320,38 +313,38 @@ public class BlockFly extends ModuleWithModuleSettings {
                         if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
-                                if (!MultiUtilities.isMoving()) {
+                                if (!MovementUtil.isMoving()) {
                                     MovementUtil.strafe(0.0);
-                                    MovementUtil.setMotion(var1, 0.0);
+                                    MovementUtil.setMotion(event, 0.0);
                                 }
 
-                                var1.setY(MovementUtil.getJumpValue());
+                                event.setY(MovementUtil.getJumpValue());
                             } else {
-                                var1.setY(-1.0E-5);
+                                event.setY(-1.0E-5);
                             }
                         }
                         break;
                     case "AAC":
-                        if (var1.getY() > 0.247 && var1.getY() < 0.249) {
-                            var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
-                            if (mc.gameSettings.keyBindJump.pressed && !MultiUtilities.isMoving()) {
+                        if (event.getY() > 0.247 && event.getY() < 0.249) {
+                            event.setY((double) ((int) (mc.player.getPosY() + event.getY())) - mc.player.getPosY());
+                            if (mc.gameSettings.keyBindJump.pressed && !MovementUtil.isMoving()) {
                                 MovementUtil.strafe(0.0);
-                                MovementUtil.setMotion(var1, 0.0);
+                                MovementUtil.setMotion(event, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
-                            var1.setY(-1.0E-10);
+                            event.setY(-1.0E-10);
                         }
                         break;
                     case "Vanilla":
                         if (mc.gameSettings.keyBindJump.pressed
                                 && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                                 && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0, 0.0))
-                                        .count() == 0L) {
+                                .count() == 0L) {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
-                            var1.setY(0.0);
-                            MovementUtil.setMotion(var1, 0.0);
+                            event.setY(0.0);
+                            MovementUtil.setMotion(event, 0.0);
                             mc.timer.timerSpeed = 0.8038576F;
                         }
                 }
@@ -364,17 +357,17 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
                 mc.player.jumpTicks = 20;
-                var1.setY(MovementUtil.getJumpValue());
+                event.setY(MovementUtil.getJumpValue());
             }
-        } else if (!MultiUtilities.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
+        } else if (!MovementUtil.isMoving() || this.getBooleanValueFromSettingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
-            MovementUtil.setMotion(var1, MovementUtil.getSpeed());
+            MovementUtil.setMotion(event, MovementUtil.getSpeed());
             MovementUtil.strafe(MovementUtil.getSpeed());
         }
 
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
-            MultiUtilities.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerYMotion(event.getY());
         }
     }
 
@@ -387,7 +380,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     public void onTick(TickEvent var1) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSettingName("Show Block Amount")) {
-                this.field23886 = this.getValidItemCount();
+                this.field23886 = this.countPlaceableBlocks();
             }
         }
     }
@@ -414,7 +407,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                             mc.mainWindow.getWidth() / 2,
                             mc.mainWindow.getHeight() - 138
                                     - (int) (25.0F * MathHelper.calculateTransition(this.field23885.calcPercent(), 0.0F,
-                                            1.0F, 1.0F)),
+                                    1.0F, 1.0F)),
                             this.field23885.calcPercent());
                 }
             }

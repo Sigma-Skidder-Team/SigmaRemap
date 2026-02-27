@@ -20,13 +20,13 @@ public class VanillaESP extends Module {
             for (Entity var5 : mc.world.getAllEntities()) {
                 if (!Client.getInstance().combatManager.isTargetABot(var5)) {
                     boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690
-                            && this.access().getBooleanValueFromSettingName("Show Players");
+                            && this.getParent().getBooleanValueFromSettingName("Show Players");
                     boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689
-                            && this.access().getBooleanValueFromSettingName("Show Mobs");
+                            && this.getParent().getBooleanValueFromSettingName("Show Mobs");
                     boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691
-                            && this.access().getBooleanValueFromSettingName("Show Passives");
+                            && this.getParent().getBooleanValueFromSettingName("Show Passives");
                     boolean var9 = !var5.isInvisible()
-                            || this.access().getBooleanValueFromSettingName("Show Invisibles");
+                            || this.getParent().getBooleanValueFromSettingName("Show Invisibles");
                     var5.setGlowing((var7 || var6 || var8) && var9 && var5 != mc.player);
                 }
             }

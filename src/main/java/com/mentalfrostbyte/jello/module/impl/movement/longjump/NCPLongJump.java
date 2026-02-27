@@ -51,20 +51,20 @@ public class NCPLongJump extends Module {
             if (mc.player.onGround) {
                 this.field23478 = 0;
                 this.field23477++;
-                if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSettingName("Auto Disable")) {
-                    this.access().toggle();
+                if (this.field23479 && var1.getY() != 0.599 && this.getParent().getBooleanValueFromSettingName("Auto Disable")) {
+                    this.getParent().toggle();
                     MovementUtil.setMotion(var1, MovementUtil.method37076() * 0.8);
                     return;
                 }
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) && this.field23477 > 0 && MultiUtilities.isMoving()) {
+                    if (this.getParent().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.isValidBlockPosition(var4) && this.field23477 > 0 && MovementUtil.isMoving()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
                         var1.setZ(mc.player.getMotion().z);
-                    } else if (this.access().getBooleanValueFromSettingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.isMoving()) {
+                    } else if (this.getParent().getBooleanValueFromSettingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MovementUtil.isMoving()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
@@ -98,7 +98,7 @@ public class NCPLongJump extends Module {
                         }
                     }
 
-                    if (mc.player.collidedHorizontally || !MultiUtilities.isMoving()) {
+                    if (mc.player.collidedHorizontally || !MovementUtil.isMoving()) {
                         this.field23480 = var5;
                     }
 
@@ -107,10 +107,10 @@ public class NCPLongJump extends Module {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
                             case "Basic":
-                                var1.setY(((LongJump) this.access()).method16730(this.field23478));
+                                var1.setY(((LongJump) this.getParent()).method16730(this.field23478));
                                 break;
                             case "High":
-                                var1.setY(((LongJump) this.access()).method16731(this.field23478));
+                                var1.setY(((LongJump) this.getParent()).method16731(this.field23478));
                                 if (MultiUtilities.isHypixel()
                                         && Client.getInstance().moduleManager.getModuleByClass(NoFall.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
@@ -129,12 +129,12 @@ public class NCPLongJump extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSettingName("Auto Jump")) {
+                if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.getParent().getBooleanValueFromSettingName("Auto Jump")) {
                     MovementUtil.setMotion(var1, MovementUtil.method37076() * 0.2);
                 }
             }
 
-            MultiUtilities.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerYMotion(var1.getY());
         }
     }
 

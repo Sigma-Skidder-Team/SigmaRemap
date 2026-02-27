@@ -86,7 +86,7 @@ public class HypixelFly extends Module {
             IPacket pack = event.getPacket();
             if (this.isEnabled()) {
                 if (pack instanceof SPlayerPositionLookPacket) {
-                    this.access().toggle();
+                    this.getParent().toggle();
                 }
             }
         }
@@ -161,7 +161,7 @@ public class HypixelFly extends Module {
             double var10 = curMode.equals("Basic") ? MovementUtil.method37076() : MovementUtil.method37076() - 0.008;
             if (this.flySpeed < var10) {
                 this.flySpeed = var10;
-            } else if (!MultiUtilities.isMoving()) {
+            } else if (!MovementUtil.isMoving()) {
                 this.flySpeed = var10;
             }
 
@@ -169,7 +169,7 @@ public class HypixelFly extends Module {
             if (!mc.player.onGround || !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23563++;
                 event.setY(0.0);
-                MultiUtilities.setPlayerYMotion(0.0);
+                MovementUtil.setPlayerYMotion(0.0);
                 if (this.field23563 % 5 < 4) {
                     double var12 = mc.player.getPosX();
                     double var14 = mc.player.getPosY();
@@ -183,7 +183,7 @@ public class HypixelFly extends Module {
             boolean var21 = var19 < 1.0E-4;
             if (this.getBooleanValueFromSettingName("No Collision") && this.flySpeed > var10) {
                 List<Vector3d> var22 = new ArrayList();
-                float var23 = MathHelper.wrapDegrees(MovementUtil.method37086());
+                float var23 = MathHelper.wrapDegrees(MovementUtil.getMovementDirectionYaw());
                 if (var23 > 0.0F && var23 < 90.0F) {
                     var22.add(new Vector3d(1.0, 0.0, 0.0));
                     var22.add(new Vector3d(0.0, 0.0, 1.0));

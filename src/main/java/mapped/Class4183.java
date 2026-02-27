@@ -105,7 +105,7 @@ public class Class4183 extends Class4180 {
             this.field20463,
             BlockPos.ZERO
          )
-         .method8337(this.field20455);
+         .add(this.field20455);
       this.field20455 = new BlockPos(this.field20455.getX(), this.method12948(this.field20455, var1, var11), this.field20455.getZ());
       return super.method12896(var1, var2, var3, var4, var5, var6, var7);
    }

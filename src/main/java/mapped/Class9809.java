@@ -82,7 +82,7 @@ public class Class9809 {
             var2.pop();
          }
       } else {
-         Block var14 = ((BlockItem)var8).method11845();
+         Block var14 = ((BlockItem)var8).getBlock();
          if (!(var14 instanceof Class3251)) {
             Object var17;
             if (!(var14 instanceof AbstractBannerBlock)) {

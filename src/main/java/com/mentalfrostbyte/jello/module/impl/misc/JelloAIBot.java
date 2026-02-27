@@ -55,7 +55,7 @@ public class JelloAIBot extends Module {
             }
         }
 
-        List var6 = BlockUtil.getVisibleEntities(var3);
+        List var6 = BlockUtil.sortEntitiesByDistanceAscending(var3);
         return var6.size() != 0 ? (Entity) var6.get(0) : null;
     }
 

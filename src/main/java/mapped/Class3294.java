@@ -29,7 +29,7 @@ public class Class3294 extends BlockItem {
       BlockPos var4 = var1.getPos();
       World var5 = var1.getWorld();
       BlockState var6 = var5.getBlockState(var4);
-      Block var7 = this.method11845();
+      Block var7 = this.getBlock();
       if (!var6.isIn(var7)) {
          return ScaffoldingBlock.method12085(var5, var4) != 7 ? var1 : null;
       } else {
@@ -57,7 +57,7 @@ public class Class3294 extends BlockItem {
             }
 
             var6 = var5.getBlockState(var10);
-            if (!var6.isIn(this.method11845())) {
+            if (!var6.isIn(this.getBlock())) {
                if (var6.method23441(var1)) {
                   return BlockItemUseContext.method18344(var1, var10, var8);
                }

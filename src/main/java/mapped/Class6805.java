@@ -154,7 +154,7 @@ public class Class6805<T> implements ITickList<T> {
    public void method20732(MutableBoundingBox var1, BlockPos var2) {
       for (Class8269 var6 : this.method20730(var1, false, false)) {
          if (var1.method38396(var6.field35556)) {
-            BlockPos var7 = var6.field35556.method8337(var2);
+            BlockPos var7 = var6.field35556.add(var2);
             Object var8 = var6.method28874();
             this.method20735(new Class8269<T>(var7, (T)var8, var6.field35557, var6.field35558));
          }

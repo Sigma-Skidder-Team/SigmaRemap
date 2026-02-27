@@ -64,9 +64,9 @@ public enum Class2227 {
    }
 
    public BlockPos method8965(BlockPos var1) {
-      var1 = var1.method8350(this.field14585, 1);
+      var1 = var1.offset(this.field14585, 1);
       if (this.field14586 != null) {
-         var1 = var1.method8350(this.field14586, 1);
+         var1 = var1.offset(this.field14586, 1);
       }
 
       return var1;

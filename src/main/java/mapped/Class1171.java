@@ -22,7 +22,7 @@ public class Class1171 extends Class1155<Class1171> {
          if (!(var13 instanceof BlockItem)) {
             var15 = null;
          } else {
-            var15 = Class1305.method6196(this.field6346.field6846).field6838.get(var14).method172(((BlockItem)var13).method11845());
+            var15 = Class1305.method6196(this.field6346.field6846).field6838.get(var14).method172(((BlockItem)var13).getBlock());
          }
 
          this.method5577(var1, var15, var4 + Class1305.method6194(this.field6346.field6846, var14), var3, var2 % 2 == 0);

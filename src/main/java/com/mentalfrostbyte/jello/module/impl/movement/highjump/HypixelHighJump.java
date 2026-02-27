@@ -54,7 +54,7 @@ public class HypixelHighJump extends Module {
             this.field23406 = !this.field23406;
          }
 
-         MultiUtilities.setPlayerYMotion(var1.getY());
+         MovementUtil.setPlayerYMotion(var1.getY());
       }
    }
 

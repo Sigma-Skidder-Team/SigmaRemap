@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import org.newdawn.slick.TrueTypeFont;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -130,8 +131,8 @@ public class MinerTracker {
                     this.field39618 = this.field39613.get(var7);
                     this.field39613.remove(var7);
                     if (this.field39613.size() == 0) {
-                        MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
-                        MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
+                        MovementUtil.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+                        MovementUtil.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
                         this.method31738();
                         return;
                     }
@@ -147,16 +148,16 @@ public class MinerTracker {
                     if (!this.mc.player.onGround && var20 > 60.0F
                             || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getMotion().length() > 0.24
                             || var20 > 110.0F) {
-                        MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.25);
-                        MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.25);
+                        MovementUtil.setPlayerXMotion(this.mc.player.getMotion().x * 0.25);
+                        MovementUtil.setPlayerZMotion(this.mc.player.getMotion().z * 0.25);
                     }
                 }
 
                 if (var10 < var12
                         && (var14 || var8.field44281.size() > 0
                         && (double) this.mc.player.position.y > var8.field44271.method33970())) {
-                    MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
-                    MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
+                    MovementUtil.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+                    MovementUtil.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
                 }
 
                 float var43 = RotationHelper.getRotationsBetween(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
@@ -173,8 +174,8 @@ public class MinerTracker {
                     this.mc.player.moveStrafing = (float) (var23 * var26);
                 } else {
                     if (this.mc.player.isSprinting()) {
-                        MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.9);
-                        MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.9);
+                        MovementUtil.setPlayerXMotion(this.mc.player.getMotion().x * 0.9);
+                        MovementUtil.setPlayerZMotion(this.mc.player.getMotion().z * 0.9);
                     }
 
                     this.mc.player.moveForward = 0.0F;
@@ -230,8 +231,8 @@ public class MinerTracker {
                 this.mc.player.rotationYaw = var37;
                 if (var36 && !this.mc.player.onGround
                         && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
-                    MultiUtilities.setPlayerXMotion(0.0);
-                    MultiUtilities.setPlayerZMotion(0.0);
+                    MovementUtil.setPlayerXMotion(0.0);
+                    MovementUtil.setPlayerZMotion(0.0);
                 } else {
                     if (Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()
                             && !MultiUtilities.isAboveBounds(this.mc.player, 5.0F)) {
@@ -270,7 +271,7 @@ public class MinerTracker {
                     }
                 }
 
-                BlockUtil.method34545(var4);
+                BlockUtil.sortBlockPositionsByDistanceToPlayer(var4);
                 if (var4.isEmpty()) {
                     this.field39616 = null;
                 } else if (this.field39616 != null) {
@@ -284,16 +285,16 @@ public class MinerTracker {
                         this.field39616 = (BlockPos) var4.get(0);
                     }
 
-                    Direction var13 = BlockUtil.method34580(this.field39616);
-                    float[] var11 = BlockUtil.method34542(this.field39616, var13);
+                    Direction var13 = RotationHelper.getCardinalDirectionToBlock(this.field39616);
+                    float[] var11 = RotationHelper.getBlockPlacementRotations(this.field39616, var13);
                     event.setYaw(var11[0]);
                     event.setPitch(var11[1]);
                     this.mc.player.swingArm(Hand.MAIN_HAND);
-                    this.mc.playerController.onPlayerDamageBlock(this.field39616, BlockUtil.method34580(this.field39616));
+                    this.mc.playerController.onPlayerDamageBlock(this.field39616, RotationHelper.getCardinalDirectionToBlock(this.field39616));
                 } else {
                     this.field39616 = (BlockPos) var4.get(0);
-                    Direction var14 = BlockUtil.method34580(this.field39616);
-                    float[] var15 = BlockUtil.method34542(this.field39616, var14);
+                    Direction var14 = RotationHelper.getCardinalDirectionToBlock(this.field39616);
+                    float[] var15 = RotationHelper.getBlockPlacementRotations(this.field39616, var14);
                     event.setYaw(var15[0]);
                     event.setPitch(var15[1]);
                     EventKeyPress var12 = new EventKeyPress(0, false, this.field39616);
@@ -351,7 +352,7 @@ public class MinerTracker {
                 }
             }
 
-            BlockPos var17 = BlockUtil.method34564(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
+            BlockPos var17 = BlockUtil.getBlockPosFromRayTrace(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
             if (var17 != null) {
                 if (this.field39613 != null && this.field39613.size() > 0) {
                     int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor(), 0.02F);

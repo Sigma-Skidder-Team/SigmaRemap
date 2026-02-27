@@ -67,7 +67,7 @@ public class ItemColors {
 
       var3.method33259(
          (var1, var2) -> {
-            BlockState var5x = ((BlockItem)var1.getItem()).method11845().getDefaultState();
+            BlockState var5x = ((BlockItem)var1.getItem()).getBlock().getDefaultState();
             return var0.method29465(var5x, (IBlockDisplayReader)null, (BlockPos)null, var2);
          },
          Blocks.GRASS_BLOCK,

@@ -39,7 +39,7 @@ public class HypixelGamePlay extends Module {
 
     @Override
     public void initialize() {
-        this.field23626 = (GamePlay) this.access();
+        this.field23626 = (GamePlay) this.getParent();
     }
 
     @EventTarget

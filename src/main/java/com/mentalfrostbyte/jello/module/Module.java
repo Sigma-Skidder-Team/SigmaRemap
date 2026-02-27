@@ -308,7 +308,7 @@ public abstract class Module {
         this.field23394 = var1;
     }
 
-    public Module access() {
+    public Module getParent() {
         return this.field23394 != null ? this.field23394 : this;
     }
 

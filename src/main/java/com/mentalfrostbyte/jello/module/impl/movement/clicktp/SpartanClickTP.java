@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -32,7 +31,7 @@ public class SpartanClickTP extends Module {
 
     @Override
     public void onDisable() {
-        MultiUtilities.setPlayerYMotion(-0.08);
+        MovementUtil.setPlayerYMotion(-0.08);
         double var3 = MovementUtil.getSpeed();
         MovementUtil.strafe(var3);
         mc.timer.timerSpeed = 1.0F;
@@ -40,11 +39,11 @@ public class SpartanClickTP extends Module {
 
     @EventTarget
     private void method16104(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.getParent().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
                         mc.player.rotationYaw, mc.player.rotationPitch,
-                        this.access().getNumberValueBySettingName("Maximum range"));
+                        this.getParent().getNumberValueBySettingName("Maximum range"));
                 BlockPos var5 = null;
                 if (var4 != null) {
                     var5 = var4.getPos();
@@ -75,15 +74,15 @@ public class SpartanClickTP extends Module {
                         && var4.z == (double) this.field23465.getZ() + 0.5) {
                     Client.getInstance().notificationManager
                             .send(new Notification("ClickTP", "Successfully teleported"));
-                    if (!this.access().getBooleanValueFromSettingName("Auto Disable")) {
+                    if (!this.getParent().getBooleanValueFromSettingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
-                        MultiUtilities.setPlayerYMotion(-0.08);
+                        MovementUtil.setPlayerYMotion(-0.08);
                         double var5 = MovementUtil.getSpeed();
                         MovementUtil.strafe(var5);
                         mc.timer.timerSpeed = 1.0F;
                     } else {
-                        this.access().toggle();
+                        this.getParent().toggle();
                     }
                 }
             }

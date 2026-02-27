@@ -70,7 +70,7 @@ public class Class7473 {
 
       Direction var6 = this.field32114.getOpposite();
       int var5 = this.method24198(var1, var6) - 1;
-      return var5 >= 0 ? var1.method8350(var6, var5) : null;
+      return var5 >= 0 ? var1.offset(var6, var5) : null;
    }
 
    private int method24197() {
@@ -155,7 +155,7 @@ public class Class7473 {
 
    public void method24204() {
       BlockState var3 = Blocks.NETHER_PORTAL.getDefaultState().with(NetherPortalBlock.field19060, this.field32113);
-      BlockPos.method8359(this.field32116, this.field32116.method8350(Direction.UP, this.field32117 - 1).method8350(this.field32114, this.field32118 - 1))
+      BlockPos.method8359(this.field32116, this.field32116.offset(Direction.UP, this.field32117 - 1).offset(this.field32114, this.field32118 - 1))
          .forEach(var2 -> this.field32112.setBlockState(var2, var3, 18));
    }
 

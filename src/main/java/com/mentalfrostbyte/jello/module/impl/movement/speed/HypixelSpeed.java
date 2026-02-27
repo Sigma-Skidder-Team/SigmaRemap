@@ -22,11 +22,11 @@ import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 public class HypixelSpeed extends Module {
-    private int field23414;
-    private double field23415;
-    private double field23416;
-    private double field23417;
-    private Class2094 field23418 = Class2094.field13640;
+    private int hopStage;
+    private double targetMoveSpeed;
+    private double lastGroundY;
+    private double criticalsOffsetAccumulator;
+    private Class2094 hopProfile = Class2094.field13640;
 
     public HypixelSpeed() {
         super(ModuleCategory.MOVEMENT, "Hypixel", "Speed for Hypixel");
@@ -38,17 +38,17 @@ public class HypixelSpeed extends Module {
 
     @Override
     public void onEnable() {
-        this.field23415 = MovementUtil.method37076();
-        this.field23414 = 6;
-        this.field23418 = Class2094.field13640;
-        this.field23416 = -1.0;
-        this.field23417 = 0.0;
+        this.targetMoveSpeed = MovementUtil.method37076();
+        this.hopStage = 6;
+        this.hopProfile = Class2094.field13640;
+        this.lastGroundY = -1.0;
+        this.criticalsOffsetAccumulator = 0.0;
     }
 
     @Override
     public void onDisable() {
-        if (this.field23418 == Class2094.field13641 && mc.player.getMotion().y > 0.0 && this.field23414 == 0) {
-            MultiUtilities.setPlayerYMotion(-MovementUtil.getJumpValue() - 1.0E-5 - 0.0625);
+        if (this.hopProfile == Class2094.field13641 && mc.player.getMotion().y > 0.0 && this.hopStage == 0) {
+            MovementUtil.setPlayerYMotion(-MovementUtil.getJumpValue() - 1.0E-5 - 0.0625);
         }
 
         if (Math.abs((double) mc.timer.timerSpeed - 1.4123) < 0.001
@@ -63,11 +63,11 @@ public class HypixelSpeed extends Module {
         if (mc.player.onGround) {
             if (!Client.getInstance().moduleManager.getModuleByClass(Criticals.class).isEnabled2()
                     || KillAura.target == null && KillAura.timedTarget == null
-                    || this.field23418 != Class2094.field13641) {
-                this.field23417 = 0.0;
+                    || this.hopProfile != Class2094.field13641) {
+                this.criticalsOffsetAccumulator = 0.0;
             } else if (var1.isPre()) {
-                if (this.field23417 > 3.0) {
-                    this.field23417 = 0.0;
+                if (this.criticalsOffsetAccumulator > 3.0) {
+                    this.criticalsOffsetAccumulator = 0.0;
                     mc.getConnection().sendPacket(new CPlayerPacket(true));
                 }
 
@@ -81,19 +81,19 @@ public class HypixelSpeed extends Module {
     @HigherPriority
     public void method16038(EventMove var1) {
         if (!this.isEnabled()) {
-            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
-                this.field23416 = -1.0;
+            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F) || mc.player.getPosY() < this.lastGroundY) {
+                this.lastGroundY = -1.0;
             }
         } else {
             mc.player.jumpTicks = 0;
             if (mc.player.onGround) {
-                this.field23416 = mc.player.getPosY();
+                this.lastGroundY = mc.player.getPosY();
                 if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                     mc.timer.timerSpeed = 1.0F;
                 }
 
-                if (this.field23414 >= 0 && Step.field23887 >= 2) {
-                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.isMoving()) && !MultiUtilities.inLiquid(mc.player)) {
+                if (this.hopStage >= 0 && Step.field23887 >= 2) {
+                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSettingName("AutoJump") && MovementUtil.isMoving()) && !MultiUtilities.inLiquid(mc.player)) {
                         mc.player.jump();
                         var1.setY(MovementUtil.getJumpValue());
                         MovementUtil.setMotion(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.13);
@@ -101,78 +101,78 @@ public class HypixelSpeed extends Module {
                             mc.timer.timerSpeed = 1.4123F;
                         }
 
-                        this.field23414 = 0;
-                        this.field23418 = Class2094.field13640;
-                    } else if (MultiUtilities.isMoving() && this.getBooleanValueFromSettingName("GroundSpeed") && !MultiUtilities.inLiquid(mc.player)) {
+                        this.hopStage = 0;
+                        this.hopProfile = Class2094.field13640;
+                    } else if (MovementUtil.isMoving() && this.getBooleanValueFromSettingName("GroundSpeed") && !MultiUtilities.inLiquid(mc.player)) {
                         mc.player.stepHeight = 0.5F;
                         mc.player.jump();
                         var1.setY(0.399 + (double) MovementUtil.getJumpBoost() * 0.1 + 1.0E-14);
                         MovementUtil.setMotion(var1, 0.51 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.098);
-                        this.field23414 = 0;
+                        this.hopStage = 0;
                         if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.1123F;
                         }
 
-                        this.field23418 = Class2094.field13641;
+                        this.hopProfile = Class2094.field13641;
                     } else {
-                        this.field23417 = 0.0;
+                        this.criticalsOffsetAccumulator = 0.0;
                     }
                 } else {
                     MovementUtil.setMotion(var1, 0.25);
-                    if (this.field23414 < 0) {
-                        this.field23414++;
+                    if (this.hopStage < 0) {
+                        this.hopStage++;
                     }
                 }
-            } else if (this.field23414 >= 0) {
+            } else if (this.hopStage >= 0) {
                 double var4 = MovementUtil.getSpeed();
                 if (!Client.getInstance().moduleManager.getModuleByClass(Timer.class).isEnabled()) {
                     mc.timer.timerSpeed = 1.0F;
                 }
 
-                switch (Class7845.field33649[this.field23418.ordinal()]) {
+                switch (Class7845.field33649[this.hopProfile.ordinal()]) {
                     case 1:
-                        if (this.field23414 == 0) {
-                            this.field23415 = 0.3893478969348657 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.077;
+                        if (this.hopStage == 0) {
+                            this.targetMoveSpeed = 0.3893478969348657 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.077;
                         } else {
-                            double var8 = 0.99375 - (double) this.field23414 * 1.0E-13;
-                            this.field23415 *= var8;
+                            double var8 = 0.99375 - (double) this.hopStage * 1.0E-13;
+                            this.targetMoveSpeed *= var8;
                         }
 
                         if (MovementUtil.getJumpBoost() == 0 && !Client.getInstance().moduleManager.getModuleByClass(BlockFly.class).isEnabled()) {
-                            this.method16043(var1, this.field23414);
+                            this.applyVerticalMotionDamping(var1, this.hopStage);
                         }
 
-                        if (this.field23417 > 3.0) {
-                            this.field23417 = 0.0;
+                        if (this.criticalsOffsetAccumulator > 3.0) {
+                            this.criticalsOffsetAccumulator = 0.0;
                             mc.getConnection().sendPacket(new CPlayerPacket(true));
                         }
                         break;
                     case 2:
-                        if (this.field23414 == 0) {
+                        if (this.hopStage == 0) {
                             double var6 = 0.399 + (double) MovementUtil.getJumpBoost() * 0.1 + 1.0E-5;
                             if (this.getBooleanValueFromSettingName("BorderJump")
                                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.expand(0.0, -var6 - 0.0625, 0.0)).count()
                                     == 0L) {
-                                this.field23415 = 0.4103345672948576 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.085;
-                                this.field23416 = -1.0;
+                                this.targetMoveSpeed = 0.4103345672948576 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.085;
+                                this.lastGroundY = -1.0;
                             } else {
                                 var1.setY(-var6 - 0.0625);
-                                this.field23417 = this.field23417 - var1.getY();
-                                this.field23415 = 0.3 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.067;
+                                this.criticalsOffsetAccumulator = this.criticalsOffsetAccumulator - var1.getY();
+                                this.targetMoveSpeed = 0.3 + Math.random() * 1.0E-6 + (double) MovementUtil.getSpeedBoost() * 0.067;
                             }
-                        } else if (this.field23414 == 1 && var1.getY() < 0.0) {
-                            this.field23415 *= 0.7;
+                        } else if (this.hopStage == 1 && var1.getY() < 0.0) {
+                            this.targetMoveSpeed *= 0.7;
                         } else {
-                            this.field23415 *= 0.981;
+                            this.targetMoveSpeed *= 0.981;
                         }
                 }
 
-                if (this.field23415 < var4 || mc.player.collidedHorizontally || !MultiUtilities.isMoving() || MultiUtilities.inLiquid(mc.player)) {
-                    this.field23415 = var4;
+                if (this.targetMoveSpeed < var4 || mc.player.collidedHorizontally || !MovementUtil.isMoving() || MultiUtilities.inLiquid(mc.player)) {
+                    this.targetMoveSpeed = var4;
                 }
 
-                MovementUtil.setMotion(var1, this.field23415);
-                this.field23414++;
+                MovementUtil.setMotion(var1, this.targetMoveSpeed);
+                this.hopStage++;
             }
         }
     }
@@ -182,7 +182,7 @@ public class HypixelSpeed extends Module {
     public void method16039(JumpEvent var1) {
         if (!Jesus.isWalkingOnLiquid() && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
             if (this.getBooleanValueFromSettingName("Auto Jump") || mc.player.isJumping) {
-                if (this.field23414 < 0) {
+                if (this.hopStage < 0) {
                     var1.setCancelled(true);
                 }
             }
@@ -193,14 +193,14 @@ public class HypixelSpeed extends Module {
     public void method16040(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
-                this.field23414 = -2;
+                this.hopStage = -2;
             }
         }
     }
 
     @EventTarget
     public void method16041(WorldLoadEvent var1) {
-        this.field23416 = -1.0;
+        this.lastGroundY = -1.0;
     }
 
     @EventTarget
@@ -210,13 +210,13 @@ public class HypixelSpeed extends Module {
                 && !MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)
                 && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtil.getJumpValue() + 1.0E-5 + 0.0625))
                 && Step.field23887 >= 2
-                && !(this.field23416 < 0.0)
-                && this.field23418 == Class2094.field13641
-                && !(mc.player.getPosY() < this.field23416)) {
-            mc.player.positionVec.y = this.field23416;
-            mc.player.lastTickPosY = this.field23416;
-            mc.player.chasingPosY = this.field23416;
-            mc.player.prevPosY = this.field23416;
+                && !(this.lastGroundY < 0.0)
+                && this.hopProfile == Class2094.field13641
+                && !(mc.player.getPosY() < this.lastGroundY)) {
+            mc.player.positionVec.y = this.lastGroundY;
+            mc.player.lastTickPosY = this.lastGroundY;
+            mc.player.chasingPosY = this.lastGroundY;
+            mc.player.prevPosY = this.lastGroundY;
             if (MovementUtil.isMoving()) {
                 mc.player.cameraYaw = 0.099999994F;
             }
@@ -226,10 +226,10 @@ public class HypixelSpeed extends Module {
     @Override
     public boolean isEnabled2() {
         return this.isEnabled()
-                && (!mc.player.onGround || mc.player.isJumping || this.getBooleanValueFromSettingName("AutoJump") || this.field23418 == Class2094.field13641);
+                && (!mc.player.onGround || mc.player.isJumping || this.getBooleanValueFromSettingName("AutoJump") || this.hopProfile == Class2094.field13641);
     }
 
-    private void method16043(EventMove var1, int var2) {
+    private void applyVerticalMotionDamping(EventMove var1, int var2) {
         if (var2 != 0) {
             if (var2 != 1) {
                 if (var2 != 2) {
@@ -247,7 +247,7 @@ public class HypixelSpeed extends Module {
         }
     }
 
-    public void method16044() {
-        this.field23414 = 0;
+    public void resetHopStage() {
+        this.hopStage = 0;
     }
 }

@@ -68,7 +68,7 @@ public class MineplexSpeed extends Module {
                     this.field23553 = 1;
                 }
 
-                if (!MultiUtilities.isMoving()) {
+                if (!MovementUtil.isMoving()) {
                     this.field23555 = 0.3;
                 }
 
@@ -85,7 +85,7 @@ public class MineplexSpeed extends Module {
                     this.field23552++;
                 }
 
-                if (this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.isMoving()) {
+                if (this.getBooleanValueFromSettingName("AutoJump") && MovementUtil.isMoving()) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                 }

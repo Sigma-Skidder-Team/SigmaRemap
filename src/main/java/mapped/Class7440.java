@@ -78,7 +78,7 @@ public class Class7440 {
       ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, -1, -1);
-      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Mirror.field13614, var0.method28821(), var5);
+      BlockPos var7 = Class8969.method32905(var5.add(var6), Mirror.field13614, var0.method28821(), var5);
       var4.setBlockState(var7, Blocks.BEACON.getDefaultState().rotate(var0.method28821()));
       BlockPos var8 = var7.add(0, 1, 0);
       var4.setBlockState(var8, var1.getDefaultState());
@@ -95,7 +95,7 @@ public class Class7440 {
       ServerWorld var4 = var0.method28808();
       BlockPos var5 = var0.method28807();
       BlockPos var6 = new BlockPos(-1, 1, -1);
-      BlockPos var7 = Class8969.method32905(var5.method8337(var6), Mirror.field13614, var0.method28821(), var5);
+      BlockPos var7 = Class8969.method32905(var5.add(var6), Mirror.field13614, var0.method28821(), var5);
       var4.setBlockState(var7, Blocks.LECTERN.getDefaultState().rotate(var0.method28821()));
       BlockState var8 = var4.getBlockState(var7);
       ItemStack var9 = method24036(var0.method28806(), var0.method28818(), var1);

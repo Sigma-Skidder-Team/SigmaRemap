@@ -644,7 +644,7 @@ public class Class6137 {
 
    private static OptionalInt method18975(ServerWorld var0, BlockPos var1, BlockPos var2, BlockPos var3, boolean var4) throws CommandSyntaxException {
       MutableBoundingBox var7 = new MutableBoundingBox(var1, var2);
-      MutableBoundingBox var8 = new MutableBoundingBox(var3, var3.method8337(var7.method38397()));
+      MutableBoundingBox var8 = new MutableBoundingBox(var3, var3.add(var7.method38397()));
       BlockPos var9 = new BlockPos(var8.minX - var7.minX, var8.minY - var7.minY, var8.minZ - var7.minZ);
       int var10 = var7.method38398() * var7.method38399() * var7.method38400();
       if (var10 > 32768) {
@@ -656,7 +656,7 @@ public class Class6137 {
             for (int var13 = var7.minY; var13 <= var7.maxY; var13++) {
                for (int var14 = var7.minX; var14 <= var7.maxX; var14++) {
                   BlockPos var15 = new BlockPos(var14, var13, var12);
-                  BlockPos var16 = var15.method8337(var9);
+                  BlockPos var16 = var15.add(var9);
                   BlockState var17 = var0.getBlockState(var15);
                   if (!var4 || !var17.isIn(Blocks.AIR)) {
                      if (var17 != var0.getBlockState(var16)) {

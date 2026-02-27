@@ -24,7 +24,7 @@ public class Peek extends Command {
    public void run(String var1, ChatCommandArguments[] var2, ChatCommandExecutor var3) throws CommandException {
       if (var2.length == 0) {
          ItemStack var6 = mc.player.inventory.method4028();
-         if (var6.getItem() instanceof BlockItem && ((BlockItem)var6.getItem()).method11845() instanceof ContainerBlock) {
+         if (var6.getItem() instanceof BlockItem && ((BlockItem)var6.getItem()).getBlock() instanceof ContainerBlock) {
             method18337(var6);
             var3.send("Now peeking shulker");
          } else {

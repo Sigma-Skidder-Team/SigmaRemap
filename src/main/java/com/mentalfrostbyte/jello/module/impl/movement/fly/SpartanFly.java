@@ -121,9 +121,9 @@ public class SpartanFly extends Module {
                         : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
             }
 
-            MultiUtilities.setPlayerXMotion(var1.getX());
-            MultiUtilities.setPlayerYMotion(var1.getY());
-            MultiUtilities.setPlayerZMotion(var1.getZ());
+            MovementUtil.setPlayerXMotion(var1.getX());
+            MovementUtil.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerZMotion(var1.getZ());
         }
     }
 

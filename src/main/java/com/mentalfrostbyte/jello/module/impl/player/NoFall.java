@@ -60,7 +60,7 @@ public class NoFall extends Module {
                         if (mc.world.getCollisionShapes(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.setY(var1.getY() + var13);
-                            MultiUtilities.setPlayerYMotion(var1.getY());
+                            MovementUtil.setPlayerYMotion(var1.getY());
                             var6 = Double.MAX_VALUE;
                             break;
                         }
@@ -73,7 +73,7 @@ public class NoFall extends Module {
 
                 if (Math.abs(var6) < 0.1) {
                     var1.setY(var1.getY() + var6);
-                    MultiUtilities.setPlayerYMotion(var1.getY());
+                    MovementUtil.setPlayerYMotion(var1.getY());
                 }
             }
         }

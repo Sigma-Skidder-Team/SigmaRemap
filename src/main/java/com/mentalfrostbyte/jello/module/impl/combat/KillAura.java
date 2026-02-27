@@ -290,7 +290,7 @@ public class KillAura extends Module {
             mc.player.renderYawOffset = event.getYaw();
         }
 
-        var canAttackNow = autoblockController.method36821(this.attackTickCounter);
+        var canAttackNow = autoblockController.canAttack(this.attackTickCounter);
 
         var cooledAttack = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown")
                 ? mc.player.getCooledAttackStrength(0.0F)

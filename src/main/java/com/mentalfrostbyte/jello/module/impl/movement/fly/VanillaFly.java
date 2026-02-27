@@ -44,7 +44,7 @@ public class VanillaFly extends Module {
 
     @Override
     public void onDisable() {
-        MultiUtilities.setPlayerYMotion(-0.08);
+        MovementUtil.setPlayerYMotion(-0.08);
         double plrSpeed = MovementUtil.getSpeed();
         MovementUtil.strafe(plrSpeed);
         if (this.sneakCancelled) {
@@ -143,7 +143,7 @@ public class VanillaFly extends Module {
 
             MovementUtil.setMotion(event, speed);
             event.setY(verticalSpeed);
-            MultiUtilities.setPlayerYMotion(event.getY());
+            MovementUtil.setPlayerYMotion(event.getY());
         }
     }
 

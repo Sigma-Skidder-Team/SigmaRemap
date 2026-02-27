@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 
@@ -44,7 +43,7 @@ public class OmegaCraftFly extends Module {
     public void onDisable() {
         MovementUtil.strafe(0.2);
         if (mc.player.getMotion().y > 0.03) {
-            MultiUtilities.setPlayerYMotion(-0.0784);
+            MovementUtil.setPlayerYMotion(-0.0784);
         }
     }
 
@@ -109,9 +108,9 @@ public class OmegaCraftFly extends Module {
             MovementUtil.setMotion(var1, var6);
         }
 
-        MultiUtilities.setPlayerXMotion(var1.getX());
-        MultiUtilities.setPlayerYMotion(var1.getY());
-        MultiUtilities.setPlayerZMotion(var1.getZ());
+        MovementUtil.setPlayerXMotion(var1.getX());
+        MovementUtil.setPlayerYMotion(var1.getY());
+        MovementUtil.setPlayerZMotion(var1.getZ());
     }
 
     @EventTarget

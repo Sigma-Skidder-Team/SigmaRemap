@@ -16,8 +16,10 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import com.mentalfrostbyte.jello.util.player.Rots;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import mapped.*;
-import net.minecraft.item.ItemStack;
+import mapped.ItemUseContext;
+import mapped.PositionFacing;
+import mapped.RayTraceResult;
+import mapped.RotationHelper;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.util.Direction;
@@ -25,17 +27,16 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Vector3d;
 
 public class BlockFlySmoothMode extends Module {
-    private float pitch;
     private float yaw;
-    private BlockCache field23971;
-    private int field23972 = -1;
-    private int field23973;
-    private int field23974;
-    private Hand field23975;
-    private BlockFly field23976 = null;
+    private float pitch;
+    private PositionFacing cache;
+    private int oldSlot = -1;
+    private int aacTicks;
+    private int groundTicks;
+    private Hand hand;
+    private BlockFly parentModule = null;
     private boolean field23977;
     private boolean field23978 = false;
     private double field23979;
@@ -46,76 +47,47 @@ public class BlockFlySmoothMode extends Module {
         this.registerSetting(new ModeSetting("Speed Mode", "Speed mode", 0, "None", "Jump", "AAC", "Cubecraft", "Slow", "Sneak"));
     }
 
-    public static Vector3d method16892(BlockPos var0, Direction var1) {
-        double var4 = (double) var0.getX() + 0.5;
-        double var6 = (double) var0.getY() + 0.5;
-        double var8 = (double) var0.getZ() + 0.5;
-        var4 += (double) var1.getXOffset() / 2.0;
-        var8 += (double) var1.getZOffset() / 2.0;
-        var6 += (double) var1.getYOffset() / 2.0;
-        double var10 = 0.2;
-        if (var1 != Direction.UP && var1 != Direction.DOWN) {
-            var6 += method16893(var10, -var10);
-        } else {
-            var4 += method16893(var10, -var10);
-            var8 += method16893(var10, -var10);
-        }
-
-        if (var1 == Direction.WEST || var1 == Direction.EAST) {
-            var8 += method16893(var10, -var10);
-        }
-
-        if (var1 == Direction.SOUTH || var1 == Direction.NORTH) {
-            var4 += method16893(var10, -var10);
-        }
-
-        return new Vector3d(var4, var6, var8);
-    }
-
-    public static double method16893(double var0, double var2) {
-        return Math.random() * (var0 - var2) + var2;
-    }
-
     @Override
     public void initialize() {
-        this.field23976 = (BlockFly) this.access();
+        this.parentModule = (BlockFly) this.getParent();
     }
 
     @Override
     public void onEnable() {
-        this.field23972 = mc.player.inventory.currentItem;
+        this.oldSlot = mc.player.inventory.currentItem;
         this.yaw = this.pitch = 999.0F;
-        ((BlockFly) this.access()).field23884 = -1;
+        ((BlockFly) this.getParent()).lastSpoofedSlot = -1;
         this.field23979 = -1.0;
         this.field23978 = false;
         if (mc.player.onGround) {
             this.field23979 = mc.player.getPosY();
         }
 
-        this.field23974 = -1;
+        this.groundTicks = -1;
     }
 
     @Override
     public void onDisable() {
-        if (this.field23972 != -1 && this.access().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
-            mc.player.inventory.currentItem = this.field23972;
+        if (this.oldSlot != -1 && this.getParent().getStringSettingValueByName("ItemSpoof").equals("Switch")) {
+            mc.player.inventory.currentItem = this.oldSlot;
         }
 
-        this.field23972 = -1;
-        if (((BlockFly) this.access()).field23884 >= 0) {
+        this.oldSlot = -1;
+        if (((BlockFly) this.getParent()).lastSpoofedSlot >= 0) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
-            ((BlockFly) this.access()).field23884 = -1;
+            ((BlockFly) this.getParent()).lastSpoofedSlot = -1;
         }
 
         MovementUtil.strafe(MovementUtil.getSpeed() * 0.9);
         mc.timer.timerSpeed = 1.0F;
-        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23974 == 0) {
-            MultiUtilities.setPlayerYMotion(-0.0789);
+
+        if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.groundTicks == 0) {
+            MovementUtil.setPlayerYMotion(-0.0789);
         }
     }
 
     @EventTarget
-    public void method16885(SafeWalkEvent var1) {
+    public void onSafewalk(SafeWalkEvent event) {
         if (this.isEnabled()) {
             if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && !Client.getInstance().moduleManager.getModuleByClass(Fly.class).isEnabled()) {
                 if (mc.world
@@ -126,72 +98,71 @@ public class BlockFlySmoothMode extends Module {
                         .count()
                         == 0L
                         && mc.player.fallDistance < 1.0F) {
-                    var1.setSafe(true);
+                    event.setSafe(true);
                 }
             } else if (mc.player.onGround && Client.getInstance().moduleManager.getModuleByClass(SafeWalk.class).isEnabled()) {
-                var1.setSafe(true);
+                event.setSafe(true);
             }
         }
     }
 
     @EventTarget
     @LowerPriority
-    public void method16886(EventUpdate event) {
-        if (this.isEnabled() && this.field23976.getValidItemCount() != 0) {
+    public void onMotion(EventUpdate event) {
+        if (this.isEnabled() && this.parentModule.countPlaceableBlocks() != 0) {
             if (!event.isPre()) {
                 if (this.yaw != 999.0F) {
-                    this.field23976.method16736();
-                    if (this.field23971 != null) {
-                        BlockRayTraceResult var13 = BlockUtil.method34568(this.yaw, this.pitch, 5.0F, event);
-                        if (var13.getType() == RayTraceResult.Type.MISS) {
+                    this.parentModule.refillHotbarWithBlocks();
+                    if (this.cache != null) {
+                        BlockRayTraceResult result = RotationHelper.rayTraceBlocksFromRotations(this.yaw, this.pitch, 5.0F, event);
+                        if (result.getType() == RayTraceResult.Type.MISS) {
                             return;
                         }
 
-                        if (var13.getFace() == Direction.UP
-                                && (double) var13.getPos().getY() <= mc.player.getPosY() - 1.0
+                        if (result.getFace() == Direction.UP
+                                && (double) result.getPos().getY() <= mc.player.getPosY() - 1.0
                                 && mc.player.onGround) {
                             return;
                         }
 
                         int var14 = mc.player.inventory.currentItem;
-                        if (!this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {
-                            this.field23976.method16734();
+                        if (!this.getParent().getStringSettingValueByName("ItemSpoof").equals("None")) {
+                            this.parentModule.selectPlaceableHotbarSlot();
                         }
 
-                        ItemStack var15 = mc.player.getHeldItem(Hand.MAIN_HAND);
-                        new ItemUseContext(mc.player, Hand.MAIN_HAND, var13);
-                        int var17 = var15.getCount();
-                        mc.playerController.func_217292_a(mc.player, mc.world, this.field23975, var13);
-                        this.field23971 = null;
-                        if (!this.access().getBooleanValueFromSettingName("NoSwing")) {
-                            mc.player.swingArm(this.field23975);
+                        new ItemUseContext(mc.player, Hand.MAIN_HAND, result);
+
+                        mc.playerController.func_217292_a(mc.player, mc.world, this.hand, result);
+                        this.cache = null;
+                        if (!this.getParent().getBooleanValueFromSettingName("NoSwing")) {
+                            mc.player.swingArm(this.hand);
                         } else {
-                            mc.getConnection().sendPacket(new CAnimateHandPacket(this.field23975));
+                            mc.getConnection().sendPacket(new CAnimateHandPacket(this.hand));
                         }
 
-                        if (this.access().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.access().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
+                        if (this.getParent().getStringSettingValueByName("ItemSpoof").equals("Spoof") || this.getParent().getStringSettingValueByName("ItemSpoof").equals("LiteSpoof")) {
                             mc.player.inventory.currentItem = var14;
                         }
                     }
                 }
             } else {
-                this.field23973++;
+                this.aacTicks++;
                 this.field23980--;
                 event.setMoving(true);
-                this.field23975 = Hand.MAIN_HAND;
-                if (BlockFly.shouldPlaceItem(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
+                this.hand = Hand.MAIN_HAND;
+                if (BlockFly.isPlacableBlockItem(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                         && (
-                        mc.player.getHeldItem(this.field23975).isEmpty()
-                                || !BlockFly.shouldPlaceItem(mc.player.getHeldItem(this.field23975).getItem())
+                        mc.player.getHeldItem(this.hand).isEmpty()
+                                || !BlockFly.isPlacableBlockItem(mc.player.getHeldItem(this.hand).getItem())
                 )) {
-                    this.field23975 = Hand.OFF_HAND;
+                    this.hand = Hand.OFF_HAND;
                 }
 
                 double var4 = event.getX();
                 double var6 = event.getZ();
                 double var8 = event.getY();
                 if (!mc.player.collidedHorizontally && !mc.gameSettings.keyBindJump.pressed) {
-                    double[] var10 = this.method16891();
+                    double[] var10 = BlockUtil.getExtend(getNumberValueBySettingName("Extend"));
                     var4 = var10[0];
                     var6 = var10[1];
                 }
@@ -217,18 +188,16 @@ public class BlockFlySmoothMode extends Module {
                 }
 
                 BlockPos var18 = new BlockPos(var4, var8 - 1.0, var6);
-                if (!BlockUtil.isValidBlockPosition(var18) && this.field23976.canPlaceItem(this.field23975) && this.field23980 <= 0) {
-                    BlockCache var11 = BlockUtil.findValidBlockCache(var18, false);
-                    this.field23971 = var11;
-                    float[] rots = BlockUtil.method34565();
+                if (!BlockUtil.isValidBlockPosition(var18) && this.parentModule.canPlaceWithHand(this.hand) && this.field23980 <= 0) {
+                    PositionFacing var11 = BlockUtil.findPlaceableNeighbor(var18, false);
+                    this.cache = var11;
+                    float[] rots = RotationHelper.getMovementDirectionBlockRotations();
                     if (var11 != null && rots != null) {
                         this.yaw = rots[0];
                         this.pitch = rots[1];
-                    } else {
-                        Rots.rotating = false;
                     }
                 } else {
-                    this.field23971 = null;
+                    this.cache = null;
                 }
 
                 if (this.yaw != 999.0F) {
@@ -247,7 +216,7 @@ public class BlockFlySmoothMode extends Module {
                 }
 
                 if (mc.player.rotationYaw != event.getYaw() && mc.player.rotationPitch != event.getPitch()) {
-                    this.field23973 = 0;
+                    this.aacTicks = 0;
                 }
             }
         }
@@ -255,134 +224,134 @@ public class BlockFlySmoothMode extends Module {
 
     @EventTarget
     @HigherPriority
-    public void method16887(EventMove var1) {
-        if (this.isEnabled() && this.field23976.getValidItemCount() != 0) {
+    public void onMove(EventMove event) {
+        if (this.isEnabled() && this.parentModule.countPlaceableBlocks() != 0) {
             if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.field23979 = mc.player.getPosY();
             }
 
-            if (this.access().getBooleanValueFromSettingName("No Sprint")) {
+            if (this.getParent().getBooleanValueFromSettingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
             if (mc.player.onGround) {
-                this.field23974 = 0;
-            } else if (this.field23974 >= 0) {
-                this.field23974++;
+                this.groundTicks = 0;
+            } else if (this.groundTicks >= 0) {
+                this.groundTicks++;
             }
 
-            if (this.field23976 == null) {
-                this.field23976 = (BlockFly) this.access();
+            if (this.parentModule == null) {
+                this.parentModule = (BlockFly) this.getParent();
             }
 
-            String var4 = this.getStringSettingValueByName("Speed Mode");
-            switch (var4) {
+            String speedMode = this.getStringSettingValueByName("Speed Mode");
+            switch (speedMode) {
                 case "Jump":
-                    if (mc.player.onGround && MultiUtilities.isMoving() && !mc.player.isSneaking() && !this.field23977) {
+                    if (mc.player.onGround && MovementUtil.isMoving() && !mc.player.isSneaking() && !this.field23977) {
                         this.field23978 = false;
                         mc.player.jump();
-                        ((Speed) Client.getInstance().moduleManager.getModuleByClass(Speed.class)).method16764();
+                        ((Speed) Client.getInstance().moduleManager.getModuleByClass(Speed.class)).resetHopStage();
                         this.field23978 = true;
-                        var1.setY(mc.player.getMotion().y);
-                        var1.setX(mc.player.getMotion().x);
-                        var1.setZ(mc.player.getMotion().z);
+                        event.setY(mc.player.getMotion().y);
+                        event.setX(mc.player.getMotion().x);
+                        event.setZ(mc.player.getMotion().z);
                     }
                     break;
                 case "AAC":
-                    if (this.field23973 == 0 && mc.player.onGround) {
-                        MovementUtil.setMotion(var1, MovementUtil.getSpeed() * 0.82);
+                    if (this.aacTicks == 0 && mc.player.onGround) {
+                        MovementUtil.setMotion(event, MovementUtil.getSpeed() * 0.82);
                     }
                     break;
                 case "Cubecraft":
                     double var6 = 0.2;
-                    float var8 = this.method16894(MathHelper.wrapDegrees(mc.player.rotationYaw));
+                    float var8 = RotationHelper.getDirection(MathHelper.wrapDegrees(mc.player.rotationYaw));
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (MultiUtilities.isMoving() && !mc.player.isSneaking() && !this.field23977) {
-                            var1.setY(1.00000000000001);
+                        if (MovementUtil.isMoving() && !mc.player.isSneaking() && !this.field23977) {
+                            event.setY(1.00000000000001);
                         }
-                    } else if (this.field23974 == 1) {
-                        if (var1.getY() <= 0.9) {
-                            this.field23974 = -1;
+                    } else if (this.groundTicks == 1) {
+                        if (event.getY() <= 0.9) {
+                            this.groundTicks = -1;
                         } else {
-                            var1.setY(0.122);
+                            event.setY(0.122);
                             mc.timer.timerSpeed = 0.7F;
                             var6 = 2.4;
                         }
-                    } else if (this.field23974 == 2) {
-                        if (var1.getY() > 0.05) {
-                            this.field23974 = -1;
+                    } else if (this.groundTicks == 2) {
+                        if (event.getY() > 0.05) {
+                            this.groundTicks = -1;
                         } else {
                             mc.timer.timerSpeed = 0.7F;
                             var6 = 0.28;
                         }
-                    } else if (this.field23974 == 3) {
+                    } else if (this.groundTicks == 3) {
                         mc.timer.timerSpeed = 0.3F;
                         var6 = 2.4;
-                    } else if (this.field23974 == 4) {
+                    } else if (this.groundTicks == 4) {
                         var6 = 0.28;
                         mc.timer.timerSpeed = 1.0F;
-                    } else if (this.field23974 == 6) {
-                        var1.setY(-1.023456987345906);
+                    } else if (this.groundTicks == 6) {
+                        event.setY(-1.023456987345906);
                     }
 
-                    if (!MultiUtilities.isMoving()) {
+                    if (!MovementUtil.isMoving()) {
                         var6 = 0.0;
                     }
 
                     if (mc.player.fallDistance < 1.0F) {
-                        MovementUtil.setMotion(var1, var6, var8, var8, 360.0F);
+                        MovementUtil.setMotionWithTurnLimit(event, var6, var8, var8, 360.0F);
                     }
 
-                    MultiUtilities.setPlayerYMotion(var1.getY());
+                    MovementUtil.setPlayerYMotion(event.getY());
                     break;
                 case "Slow":
                     if (mc.player.onGround) {
-                        var1.setX(var1.getX() * 0.75);
-                        var1.setZ(var1.getZ() * 0.75);
+                        event.setX(event.getX() * 0.75);
+                        event.setZ(event.getZ() * 0.75);
                     } else {
-                        var1.setX(var1.getX() * 0.93);
-                        var1.setZ(var1.getZ() * 0.93);
+                        event.setX(event.getX() * 0.93);
+                        event.setZ(event.getZ() * 0.93);
                     }
                     break;
                 case "Sneak":
                     if (mc.player.onGround) {
-                        var1.setX(var1.getX() * 0.65);
-                        var1.setZ(var1.getZ() * 0.65);
+                        event.setX(event.getX() * 0.65);
+                        event.setZ(event.getZ() * 0.65);
                     } else {
-                        var1.setX(var1.getX() * 0.85);
-                        var1.setZ(var1.getZ() * 0.85);
+                        event.setX(event.getX() * 0.85);
+                        event.setZ(event.getZ() * 0.85);
                     }
             }
 
-            this.field23976.method16741(var1);
+            this.parentModule.performTowering(event);
         }
     }
 
     @EventTarget
     @LowerPriority
-    public void method16888(SendPacketEvent var1) {
+    public void onPacket(SendPacketEvent event) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.getPacket() instanceof CHeldItemChangePacket && ((BlockFly) this.access()).field23884 >= 0) {
-                var1.setCancelled(true);
+            if (event.getPacket() instanceof CHeldItemChangePacket && ((BlockFly) this.getParent()).lastSpoofedSlot >= 0) {
+                event.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    public void method16889(JumpEvent var1) {
+    public void onJump(JumpEvent event) {
         if (this.isEnabled() && this.field23978) {
-            if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.isMoving() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
-                var1.setCancelled(true);
+            if (this.getParent().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
+                    && (!MovementUtil.isMoving() || this.getParent().getBooleanValueFromSettingName("Tower while moving"))) {
+                event.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    public void method16890(Render2DEvent var1) {
-        if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23974 >= 0) {
+    public void onRender(Render2DEvent event) {
+        if (this.isEnabled() && this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.groundTicks >= 0) {
             if (!(mc.player.fallDistance > 1.2F)) {
                 if (!(mc.player.chasingPosY < this.field23979)) {
                     if (!mc.player.isJumping) {
@@ -397,79 +366,5 @@ public class BlockFlySmoothMode extends Module {
                 }
             }
         }
-    }
-
-    public double[] method16891() {
-        double var3 = mc.player.getPosX();
-        double var5 = mc.player.getPosZ();
-        double var7 = mc.player.movementInput.moveForward;
-        double var9 = mc.player.movementInput.moveStrafe;
-        float var11 = mc.player.rotationYaw;
-        BlockPos var12 = new BlockPos(var3, mc.player.getPosY() - 1.0, var5);
-        double var13 = var3;
-        double var15 = var5;
-        double var17 = 0.0;
-
-        for (double var19 = this.getNumberValueBySettingName("Extend") * 2.0F;
-             BlockUtil.isValidBlockPosition(var12);
-             var12 = new BlockPos(var13, mc.player.getPosY() - 1.0, var15)
-        ) {
-            if (++var17 > var19) {
-                var17 = var19;
-            }
-
-            var13 = var3
-                    + (var7 * 0.45 * Math.cos(Math.toRadians(var11 + 90.0F)) + var9 * 0.45 * Math.sin(Math.toRadians(var11 + 90.0F))) * var17;
-            var15 = var5
-                    + (var7 * 0.45 * Math.sin(Math.toRadians(var11 + 90.0F)) - var9 * 0.45 * Math.cos(Math.toRadians(var11 + 90.0F))) * var17;
-            if (var17 == var19) {
-                break;
-            }
-        }
-
-        return new double[]{var13, var15};
-    }
-
-    public float method16894(float var1) {
-        float var4 = 0.0F;
-        float var5 = mc.player.moveStrafing;
-        float var6 = mc.player.moveForward;
-        if (!(var5 > 0.0F)) {
-            if (var5 < 0.0F) {
-                if (!(var6 > 0.0F)) {
-                    if (!(var6 < 0.0F)) {
-                        var1 += 90.0F;
-                    } else {
-                        var1 -= 45.0F;
-                    }
-                } else {
-                    var1 += 45.0F;
-                }
-            }
-        } else if (!(var6 > 0.0F)) {
-            if (!(var6 < 0.0F)) {
-                var1 -= 90.0F;
-            } else {
-                var1 += 45.0F;
-            }
-        } else {
-            var1 -= 45.0F;
-        }
-
-        if (var1 >= 45.0F && var1 <= 135.0F) {
-            var4 = 90.0F;
-        } else if (var1 >= 135.0F || var1 <= -135.0F) {
-            var4 = 180.0F;
-        } else if (var1 <= -45.0F && var1 >= -135.0F) {
-            var4 = -90.0F;
-        } else if (var1 >= -45.0F && var1 <= 45.0F) {
-            var4 = 0.0F;
-        }
-
-        if (var6 < 0.0F) {
-            var4 -= 180.0F;
-        }
-
-        return var4 + 90.0F;
     }
 }

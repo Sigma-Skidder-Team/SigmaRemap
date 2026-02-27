@@ -22,7 +22,7 @@ public class BoatFly extends PremiumModule {
     public void method16416(TickEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getRidingEntity() != null) {
-                float var4 = MovementUtil.method37086();
+                float var4 = MovementUtil.getMovementDirectionYaw();
                 float var5 = this.getNumberValueBySettingName("Speed");
                 double var6 = Math.cos(Math.toRadians(var4)) * (double) var5;
                 double var8 = Math.sin(Math.toRadians(var4)) * (double) var5;

@@ -9,7 +9,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.settings.impl.*;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.ClientColors;
 import mapped.*;
 import net.minecraft.block.BedBlock;
@@ -76,7 +75,7 @@ public class Nuker extends Module {
                     var1.setPitch(var4[1]);
                     EventKeyPress var5 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().eventManager.call(var5);
-                    mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
+                    mc.playerController.onPlayerDamageBlock(this.field23566, RotationHelper.getCardinalDirectionToBlock(this.field23566));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -91,7 +90,7 @@ public class Nuker extends Module {
                     var1.setPitch(var6[1]);
                     EventKeyPress var8 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().eventManager.call(var8);
-                    mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
+                    mc.playerController.onPlayerDamageBlock(this.field23566, RotationHelper.getCardinalDirectionToBlock(this.field23566));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
@@ -101,7 +100,7 @@ public class Nuker extends Module {
             } else {
                 for (BlockPos var9 : this.field23567) {
                     mc.getConnection().sendPacket(new CPlayerDiggingPacket(
-                            CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, BlockUtil.method34580(var9)));
+                            CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, RotationHelper.getCardinalDirectionToBlock(var9)));
                     if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {

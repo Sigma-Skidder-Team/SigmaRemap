@@ -81,7 +81,7 @@ public class Class2602 extends Class2595 {
          if (this.field16847 != Class1987.field12971) {
             if (this.field16847 == Class1987.field12972) {
                Direction var5 = this.field16846.method3387();
-               BlockPos var6 = this.field16846.getPosition().method8350(var5, 10);
+               BlockPos var6 = this.field16846.getPosition().offset(var5, 10);
                this.field16845.method4230().method21654((double)var6.getX(), (double)(var6.getY() - 1), (double)var6.getZ(), 1.0);
                if (this.field16845.getDistance(this.field16846) > 12.0F) {
                   this.field16844 = 0;

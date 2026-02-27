@@ -17,7 +17,7 @@ public class FuncraftGameplay extends Module {
 
     @Override
     public void initialize() {
-        this.field23579 = (GamePlay) this.access();
+        this.field23579 = (GamePlay) this.getParent();
     }
 
     @EventTarget

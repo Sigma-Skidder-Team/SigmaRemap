@@ -213,7 +213,7 @@ public class AutoMiner extends Module {
          var4.addAll(var6.field27685);
       }
 
-      BlockUtil.method34545(var4);
+      BlockUtil.sortBlockPositionsByDistanceToPlayer(var4);
       return var4.size() <= 0 ? null : (BlockPos) var4.get(0);
    }
 
@@ -224,7 +224,7 @@ public class AutoMiner extends Module {
          var3.addAll(var5.field27685);
       }
 
-      BlockUtil.method34545(var3);
+      BlockUtil.sortBlockPositionsByDistanceToPlayer(var3);
       if (var3.size() > 1) {
          List<BlockPos> var10 = new ArrayList<>();
          var10.add(var3.get(0));

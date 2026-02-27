@@ -54,7 +54,7 @@ public class MinemenAntiKB extends Module {
             }
         }
 
-        MultiUtilities.setPlayerYMotion(var1.getY());
+        MovementUtil.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

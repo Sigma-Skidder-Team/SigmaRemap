@@ -49,17 +49,17 @@ public class Cubecraft2Fly extends PremiumModule {
     @Override
     public void onDisable() {
         MovementUtil.strafe(0.2);
-        MultiUtilities.setPlayerYMotion(-0.0789);
+        MovementUtil.setPlayerYMotion(-0.0789);
         if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             MovementUtil.strafe(0.0);
-            MultiUtilities.setPlayerYMotion(-0.0789);
+            MovementUtil.setPlayerYMotion(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
             MovementUtil.strafe(0.0);
-            MultiUtilities.setPlayerYMotion(0.0);
+            MovementUtil.setPlayerYMotion(0.0);
             this.field23696 = -3;
             this.field23697.reset();
             this.field23697.start();
@@ -106,7 +106,7 @@ public class Cubecraft2Fly extends PremiumModule {
                         : (!this.field23699 ? 2.8 : 3.7));
             }
 
-            MultiUtilities.setPlayerYMotion(var1.getY());
+            MovementUtil.setPlayerYMotion(var1.getY());
         } else {
             if (this.field23696 < 0) {
                 if (this.field23696 != -3) {

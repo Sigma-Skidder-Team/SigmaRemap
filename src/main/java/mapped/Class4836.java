@@ -55,8 +55,8 @@ public class Class4836 extends Class4837 {
       }
 
       ItemStack var8 = new ItemStack(Items.field38149, 1);
-      if (var4.getItem() instanceof BlockItem && ((BlockItem)var4.getItem()).method11845() instanceof Class3490) {
-         Class3490 var9 = (Class3490)((BlockItem)var4.getItem()).method11845();
+      if (var4.getItem() instanceof BlockItem && ((BlockItem)var4.getItem()).getBlock() instanceof Class3490) {
+         Class3490 var9 = (Class3490)((BlockItem)var4.getItem()).getBlock();
          Effect var7 = var9.method12186();
          Class3284.method11816(var8, var7, var9.method12187());
       }

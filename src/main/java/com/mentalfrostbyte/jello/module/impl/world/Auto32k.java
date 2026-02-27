@@ -48,9 +48,9 @@ public class Auto32k extends Module {
         this.field23870 = null;
 
         for (BlockPos var4 : BlockUtil
-                .method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
-            if (!(BlockUtil.method34550(mc.player, var4) < 2.0F)
-                    && BlockUtil.method34535(mc.player, var4)
+                .sortBlockPositionsByDistanceToPlayer(BlockUtil.getBlockPositionsAroundPlayer(mc.playerController.getBlockReachDistance()))) {
+            if (!(BlockUtil.getCenteredDistanceToEntity(mc.player, var4) < 2.0F)
+                    && BlockUtil.isBlockWithinReach(mc.player, var4)
                     && (double) var4.getY() >= mc.player.getPosY() - 2.0
                     && (double) var4.getY() <= mc.player.getPosY() - 1.0
                     && this.method16717(var4)) {
@@ -228,8 +228,8 @@ public class Auto32k extends Module {
                     if (this.field23870 != null) {
                         if (this.field23873 != 0) {
                             if (this.field23873 == 1) {
-                                float yaw = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
-                                float pitch = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
+                                float yaw = RotationHelper.getBlockRotations(this.field23870.up(), Direction.UP)[0];
+                                float pitch = RotationHelper.getBlockRotations(this.field23870.up(), Direction.UP)[1];
                                 Rots.rotating = true;
                                 Rots.prevYaw = yaw;
                                 Rots.prevPitch = pitch;
@@ -243,7 +243,7 @@ public class Auto32k extends Module {
 
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
-                                Vector3d var7 = BlockUtil.method34572(Direction.UP, this.field23870);
+                                Vector3d var7 = BlockUtil.getRandomHitVecOnFace(Direction.UP, this.field23870);
                                 BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.UP, this.field23870,
                                         false);
                                 ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world,
@@ -255,7 +255,7 @@ public class Auto32k extends Module {
                                             CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.movementInput.sneaking = true;
                                     mc.player.inventory.currentItem = this.field23872;
-                                    Vector3d var10 = BlockUtil.method34572(Direction.UP, this.field23870.up());
+                                    Vector3d var10 = BlockUtil.getRandomHitVecOnFace(Direction.UP, this.field23870.up());
                                     BlockRayTraceResult var11 = new BlockRayTraceResult(var10, Direction.UP,
                                             this.field23870.up(), false);
                                     mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var11);
@@ -267,8 +267,8 @@ public class Auto32k extends Module {
                                 }
                             }
                         } else {
-                            float yaw = BlockUtil.method34543(this.field23870, Direction.UP)[0];
-                            float pitch = BlockUtil.method34543(this.field23870, Direction.UP)[1];
+                            float yaw = RotationHelper.getBlockRotations(this.field23870, Direction.UP)[0];
+                            float pitch = RotationHelper.getBlockRotations(this.field23870, Direction.UP)[1];
                             Rots.rotating = true;
                             Rots.prevYaw = yaw;
                             Rots.prevPitch = pitch;
@@ -346,8 +346,8 @@ public class Auto32k extends Module {
             }
 
             if (var1.getPacket() instanceof CUseEntityPacket) {
-                float var4 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[0];
-                float var5 = BlockUtil.method34543(this.field23870.up(), Direction.UP)[1];
+                float var4 = RotationHelper.getBlockRotations(this.field23870.up(), Direction.UP)[0];
+                float var5 = RotationHelper.getBlockRotations(this.field23870.up(), Direction.UP)[1];
             }
 
             if (var1.getPacket() instanceof CPlayerPacket) {

@@ -235,7 +235,7 @@ public class DynamicLights {
          Item var3 = var0.getItem();
          if (var3 instanceof BlockItem) {
             BlockItem var4 = (BlockItem)var3;
-            Block var5 = var4.method11845();
+            Block var5 = var4.getBlock();
             if (var5 != null) {
                return var5.getDefaultState().getLightValue();
             }

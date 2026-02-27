@@ -73,13 +73,13 @@ public class Class4185 extends Class4180 {
          .method36427((BlockPos)Class3191.method11409().get(this.field20471))
          .method36434(Class7095.field30526);
       BlockPos var11 = (BlockPos)Class3191.method11408().get(this.field20471);
-      BlockPos var12 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
+      BlockPos var12 = this.field20455.add(Class8969.method32896(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
       int var13 = var1.method6736(Heightmap.Type.WORLD_SURFACE_WG, var12.getX(), var12.getZ());
       BlockPos var14 = this.field20455;
       this.field20455 = this.field20455.add(0, var13 - 90 - 1, 0);
       boolean var15 = super.method12896(var1, var2, var3, var4, var5, var6, var7);
       if (this.field20471.equals(Class3191.method11410())) {
-         BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
+         BlockPos var16 = this.field20455.add(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
          BlockState var17 = var1.getBlockState(var16.down());
          if (!var17.isAir() && !var17.isIn(Blocks.LADDER)) {
             var1.setBlockState(var16, Blocks.SNOW_BLOCK.getDefaultState(), 3);

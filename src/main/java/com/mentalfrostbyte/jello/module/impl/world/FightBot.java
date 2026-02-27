@@ -71,7 +71,7 @@ public class FightBot extends PremiumModule {
         entities.removeIf(entity -> !(entity instanceof PlayerEntity)
                 || !Client.getInstance().combatManager.isTargetABot(entity));
 
-        List<Entity> validTargets = BlockUtil.getVisibleEntities(entities);
+        List<Entity> validTargets = BlockUtil.sortEntitiesByDistanceAscending(entities);
         return validTargets.size() <= 1 ? validTargets : validTargets.subList(0, Math.min(3, validTargets.size() - 1));
     }
 }

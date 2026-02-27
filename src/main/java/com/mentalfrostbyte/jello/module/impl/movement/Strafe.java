@@ -20,7 +20,7 @@ public class Strafe extends Module {
             lastSpeed = MovementUtil.getSpeed();
             float strafeDirection = MovementUtil.lenientStrafe()[1];
             float forwardDirection = MovementUtil.lenientStrafe()[2];
-            float playerAngle = MovementUtil.method37086();
+            float playerAngle = MovementUtil.getMovementDirectionYaw();
 
             double cosAngle = Math.cos(Math.toRadians(playerAngle));
             double sinAngle = Math.sin(Math.toRadians(playerAngle));

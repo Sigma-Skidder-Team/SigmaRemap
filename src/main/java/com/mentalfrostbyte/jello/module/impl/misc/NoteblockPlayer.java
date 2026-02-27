@@ -127,9 +127,9 @@ public class NoteblockPlayer extends Module {
                                                 && Math.sqrt(mc.player.getPosition()
                                                         .distanceSq(var8.field28401)) < (double) mc.playerController
                                                                 .getBlockReachDistance()) {
-                                            float[] var9 = BlockUtil.method34542(var8.field28401, Direction.UP);
+                                            float[] var9 = RotationHelper.getBlockPlacementRotations(var8.field28401, Direction.UP);
                                             if ((double) var8.field28401.getY() > mc.player.getPosY() + 1.0) {
-                                                var9 = BlockUtil.method34542(var8.field28401, Direction.DOWN);
+                                                var9 = RotationHelper.getBlockPlacementRotations(var8.field28401, Direction.DOWN);
                                             }
 
                                             Rots.prevYaw = var9[0];
@@ -177,7 +177,7 @@ public class NoteblockPlayer extends Module {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition()
                     .distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
+                float[] var6 = RotationHelper.getBlockPlacementRotations(var5.field28401, Direction.UP);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
                 Rots.prevPitch = var6[1];
@@ -204,7 +204,7 @@ public class NoteblockPlayer extends Module {
         for (Class6463 var5 : var1) {
             if (var5.field28402 == -1.0F && Math.sqrt(mc.player.getPosition()
                     .distanceSq(var5.field28401)) < (double) mc.playerController.getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
+                float[] var6 = RotationHelper.getBlockPlacementRotations(var5.field28401, Direction.UP);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
                 Rots.prevPitch = var6[1];
@@ -230,7 +230,7 @@ public class NoteblockPlayer extends Module {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController
                             .getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
+                float[] var6 = RotationHelper.getBlockPlacementRotations(var5.field28401, Direction.UP);
                 mc.player.swingArm(Hand.MAIN_HAND);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
@@ -257,7 +257,7 @@ public class NoteblockPlayer extends Module {
             if (this.method16411(var5.field28402, var5.field28403)
                     && Math.sqrt(mc.player.getPosition().distanceSq(var5.field28401)) < (double) mc.playerController
                             .getBlockReachDistance()) {
-                float[] var6 = BlockUtil.method34542(var5.field28401, Direction.UP);
+                float[] var6 = RotationHelper.getBlockPlacementRotations(var5.field28401, Direction.UP);
                 mc.player.swingArm(Hand.MAIN_HAND);
                 Rots.rotating = true;
                 Rots.prevYaw = var6[0];
@@ -370,7 +370,7 @@ public class NoteblockPlayer extends Module {
             this.field23638 = 0;
             this.field23641.clear();
 
-            for (BlockPos var4 : BlockUtil.method34561(mc.playerController.getBlockReachDistance())) {
+            for (BlockPos var4 : BlockUtil.getBlockPositionsAroundPlayer(mc.playerController.getBlockReachDistance())) {
                 BlockState var5 = mc.world.getBlockState(var4);
                 if (var5.getBlock() instanceof NoteBlock) {
                     Class6463 var6 = new Class6463(var4);

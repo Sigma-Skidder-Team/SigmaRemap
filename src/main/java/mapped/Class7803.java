@@ -58,20 +58,20 @@ public class Class7803 {
 
    public static AxisAlignedBB method26052(Class964 var0) {
       BlockPos var3 = var0.getPos();
-      BlockPos var4 = var3.method8337(var0.method3942().add(-1, -1, -1));
+      BlockPos var4 = var3.add(var0.method3942().add(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new AxisAlignedBB(var3, var5);
    }
 
    public static MutableBoundingBox method26053(Class964 var0) {
       BlockPos var3 = var0.getPos();
-      BlockPos var4 = var3.method8337(var0.method3942().add(-1, -1, -1));
+      BlockPos var4 = var3.add(var0.method3942().add(-1, -1, -1));
       BlockPos var5 = Class8969.method32905(var4, Mirror.field13614, var0.method3946(), var3);
       return new MutableBoundingBox(var3, var5);
    }
 
    public static void method26054(BlockPos var0, BlockPos var1, Rotation var2, ServerWorld var3) {
-      BlockPos var6 = Class8969.method32905(var0.method8337(var1), Mirror.field13614, var2, var0);
+      BlockPos var6 = Class8969.method32905(var0.add(var1), Mirror.field13614, var2, var0);
       var3.setBlockState(var6, Blocks.COMMAND_BLOCK.getDefaultState());
       CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
       var7.method4009().method3562("test runthis");
@@ -148,7 +148,7 @@ public class Class7803 {
    }
 
    public static MutableBoundingBox method26059(BlockPos var0, BlockPos var1, Rotation var2) {
-      BlockPos var5 = var0.method8337(var1).add(-1, -1, -1);
+      BlockPos var5 = var0.add(var1).add(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Mirror.field13614, var2, var0);
       MutableBoundingBox var7 = MutableBoundingBox.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
       int var8 = Math.min(var7.minX, var7.maxX);

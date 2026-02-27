@@ -103,7 +103,7 @@ public class MineplexFly extends Module {
                 float var4 = mc.player.rotationYaw + 90.0F;
                 if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
-                        if (this.field23674 && !MultiUtilities.isMoving()) {
+                        if (this.field23674 && !MovementUtil.isMoving()) {
                             this.field23674 = !this.field23674;
                             this.field23671 = 0.5;
                         }
@@ -119,12 +119,12 @@ public class MineplexFly extends Module {
                             this.field23672 -= 0.02;
                         }
 
-                        if (this.field23669 > 6 && !MultiUtilities.isMoving()) {
+                        if (this.field23669 > 6 && !MovementUtil.isMoving()) {
                             this.field23672 -= 0.05;
                         }
 
                         var1.setY(this.field23672);
-                        if (mc.player.collidedHorizontally || !MultiUtilities.isMoving()) {
+                        if (mc.player.collidedHorizontally || !MovementUtil.isMoving()) {
                             this.field23671 = 0.35;
                         }
 
@@ -133,7 +133,7 @@ public class MineplexFly extends Module {
                 } else {
                     if (this.field23669 > 0) {
                         MovementUtil.setMotion(var1, 0.0);
-                        this.access().toggle();
+                        this.getParent().toggle();
                         return;
                     }
 
@@ -159,7 +159,7 @@ public class MineplexFly extends Module {
                         mc.player.jump();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
-                        this.field23674 = MultiUtilities.isMoving();
+                        this.field23674 = MovementUtil.isMoving();
                         var1.setY(this.field23672);
                         this.field23673 = mc.player.getPosY();
                         this.field23668++;

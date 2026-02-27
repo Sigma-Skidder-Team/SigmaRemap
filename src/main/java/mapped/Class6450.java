@@ -221,7 +221,7 @@ public class Class6450 {
 
     private static int method19589(CommandSource var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<CachedBlockInfo> var4, Class2109 var5) throws CommandSyntaxException {
         MutableBoundingBox var8 = new MutableBoundingBox(var1, var2);
-        BlockPos var9 = var3.method8337(var8.method38397());
+        BlockPos var9 = var3.add(var8.method38397());
         MutableBoundingBox var10 = new MutableBoundingBox(var3, var9);
         if (!var5.method8779() && var10.method38390(var8)) {
             throw field28360.create();
@@ -242,7 +242,7 @@ public class Class6450 {
                         for (int var19 = var8.minY; var19 <= var8.maxY; var19++) {
                             for (int var20 = var8.minX; var20 <= var8.maxX; var20++) {
                                 BlockPos var21 = new BlockPos(var20, var19, var18);
-                                BlockPos var22 = var21.method8337(var17);
+                                BlockPos var22 = var21.add(var17);
                                 CachedBlockInfo var23 = new CachedBlockInfo(var12, var21, false);
                                 BlockState var24 = var23.method37548();
                                 if (var4.test(var23)) {
