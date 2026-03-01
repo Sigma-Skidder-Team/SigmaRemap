@@ -65,7 +65,7 @@ public class Class4296 extends Widget2 {
       if (this.field20813 == null) {
          int var4 = this.widthA - 30;
          int var5 = this.xA + 5;
-         RenderUtil.method11455(
+         RenderUtil.drawImage(
                (float) var5,
                (float) ((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
                (float) var4,

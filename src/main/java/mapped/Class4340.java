@@ -131,7 +131,7 @@ public class Class4340 extends Class4339 {
 
       super.draw(partialTicks);
       int var8 = Math.round(QuadraticEasing.easeInQuad(1.0F - this.field21211.calcPercent(), 0.0F, 1.0F, 1.0F) * 30.0F);
-      RenderUtil.method11450(
+      RenderUtil.drawImage(
             (float) (this.xA - var8 + 18),
             (float) (this.heightA - 46),
             22.0F,

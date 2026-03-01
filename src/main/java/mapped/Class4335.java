@@ -63,7 +63,7 @@ public class Class4335 extends Class4333 {
                Class4368 var6 = (Class4368)var5;
                RenderUtil.drawString(ResourceList.regular17, 20.0F, (float)(this.getHeightA() - 26), var6.field21351.getDescription(), -14540254);
                RenderUtil.startScissor(5.0F, (float)(this.getHeightA() - 27), 12.0F, 24.0F);
-               RenderUtil.method11455(5.0F, (float)(this.getHeightA() - 27), 24.0F, 24.0F, Class4334.field21177);
+               RenderUtil.drawImage(5.0F, (float)(this.getHeightA() - 27), 24.0F, 24.0F, Class4334.field21177);
                RenderUtil.endScissor();
                break;
             }

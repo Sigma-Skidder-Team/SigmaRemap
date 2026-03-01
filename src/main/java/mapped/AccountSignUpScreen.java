@@ -98,7 +98,7 @@ public class AccountSignUpScreen extends InteractiveWidget {
 
                   if (var7.method36701() != null) {
                         RenderUtil.startScissor((float) (this.xA + var6), (float) (this.yA + var5), 190.0F, 50.0F);
-                        RenderUtil.method11455((float) (this.xA + var6), (float) (this.yA + var5), 190.0F, 190.0F,
+                        RenderUtil.drawImage((float) (this.xA + var6), (float) (this.yA + var5), 190.0F, 190.0F,
                                     var7.method36701());
                         RenderUtil.endScissor();
                   }

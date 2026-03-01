@@ -118,7 +118,7 @@ public class Class4349 extends Widget2 {
    }
 
    public void method13583() {
-      RenderUtil.method11450(
+      RenderUtil.drawImage(
             (float) (this.xA + 13), (float) (this.yA + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(),
             ClientColors.LIGHT_GREYISH_BLUE.getColor(), true);
       RenderUtil.method11464((float) (this.xA + 13), (float) (this.yA + 13), 75.0F, 75.0F, 20.0F, 1.0F);

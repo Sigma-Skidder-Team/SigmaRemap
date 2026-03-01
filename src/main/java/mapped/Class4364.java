@@ -25,7 +25,7 @@ public class Class4364 extends InteractiveWidget {
       GL11.glTranslatef((float)var4, (float)var5, 0.0F);
       GL11.glRotatef(this.field21333.calcPercent() * 360.0F, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-var4), (float)(-var5), 0.0F);
-      RenderUtil.method11455((float)this.xA, (float)this.yA, 20.0F, 20.0F, !this.method13298() ? Class4334.field21163 : Class4334.field21164);
+      RenderUtil.drawImage((float)this.xA, (float)this.yA, 20.0F, 20.0F, !this.method13298() ? Class4334.field21163 : Class4334.field21164);
       GL11.glPopMatrix();
       super.draw(partialTicks);
    }

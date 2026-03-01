@@ -1,6 +1,7 @@
 package com.mentalfrostbyte.jello.util.world;
 
 import com.google.common.collect.ImmutableList;
+import com.mentalfrostbyte.jello.util.MathUtils;
 import com.mentalfrostbyte.jello.util.player.MovementUtil;
 import mapped.*;
 import net.minecraft.block.Block;
@@ -317,5 +318,57 @@ public class BlockUtil {
         }
 
         return new double[]{candidateX, candidateZ};
+    }
+
+    public static Vector3d rayTraceBlocksFromRotations(BlockPos var0, Direction var1) {
+        double var4 = (double) var0.getX() + 0.5;
+        double var6 = (double) var0.getY() + 0.5;
+        double var8 = (double) var0.getZ() + 0.5;
+        var4 += (double) var1.getXOffset() / 2.0;
+        var8 += (double) var1.getZOffset() / 2.0;
+        var6 += (double) var1.getYOffset() / 2.0;
+        double var10 = 0.2;
+        if (var1 != Direction.UP && var1 != Direction.DOWN) {
+            var6 += MathUtils.method16815(var10, -var10);
+        } else {
+            var4 += MathUtils.method16815(var10, -var10);
+            var8 += MathUtils.method16815(var10, -var10);
+        }
+
+        if (var1 == Direction.WEST || var1 == Direction.EAST) {
+            var8 += MathUtils.method16815(var10, -var10);
+        }
+
+        if (var1 == Direction.SOUTH || var1 == Direction.NORTH) {
+            var4 += MathUtils.method16815(var10, -var10);
+        }
+
+        return new Vector3d(var4, var6, var8);
+    }
+
+    public static Vector3d getRandomizedHitVec(BlockPos var0, Direction var1) {
+        double var4 = (double) var0.getX() + 0.5;
+        double var6 = (double) var0.getY() + 0.5;
+        double var8 = (double) var0.getZ() + 0.5;
+        var4 += (double) var1.getXOffset() / 2.0;
+        var8 += (double) var1.getZOffset() / 2.0;
+        var6 += (double) var1.getYOffset() / 2.0;
+        double var10 = 0.2;
+        if (var1 != Direction.UP && var1 != Direction.DOWN) {
+            var6 += MathUtils.method16117(var10, -var10);
+        } else {
+            var4 += MathUtils.method16117(var10, -var10);
+            var8 += MathUtils.method16117(var10, -var10);
+        }
+
+        if (var1 == Direction.WEST || var1 == Direction.EAST) {
+            var8 += MathUtils.method16117(var10, -var10);
+        }
+
+        if (var1 == Direction.SOUTH || var1 == Direction.NORTH) {
+            var4 += MathUtils.method16117(var10, -var10);
+        }
+
+        return new Vector3d(var4, var6, var8);
     }
 }

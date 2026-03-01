@@ -68,7 +68,7 @@ public class Class4359 extends InteractiveWidget {
                (float) this.getHeightA(),
                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), partialTicks * partialTicks));
          if (var8 != 0.0F) {
-            RenderUtil.method11455((float) this.getXA() + (float) this.getWidthA() * var8, (float) this.getYA(), 5.0F,
+            RenderUtil.drawImage((float) this.getXA() + (float) this.getWidthA() * var8, (float) this.getYA(), 5.0F,
                   5.0F, ResourceList.shadowRightPNG);
          }
       }

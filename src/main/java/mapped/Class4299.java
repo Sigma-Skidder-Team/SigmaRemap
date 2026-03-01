@@ -69,7 +69,7 @@ public class Class4299 extends Widget2 {
       RenderUtil.method11415(this);
 
       for (int var4 = 0; var4 < 3; var4++) {
-         RenderUtil.method11455((float) (this.xA + 288 * var4), (float) this.yA, 288.0F, 512.0F, this.field20829);
+         RenderUtil.drawImage((float) (this.xA + 288 * var4), (float) this.yA, 288.0F, 512.0F, this.field20829);
       }
 
       float var16 = 60.0F / (float) Minecraft.getFps();
@@ -108,7 +108,7 @@ public class Class4299 extends Widget2 {
       float var18 = (float) (System.currentTimeMillis() % (long) 3400) / 3400;
 
       for (int var19 = 0; var19 < 4; var19++) {
-         RenderUtil.method11455((float) (this.xA + 288 * var19) - 288.0F * var18, (float) (this.yA + var8), 288.0F,
+         RenderUtil.drawImage((float) (this.xA + 288 * var19) - 288.0F * var18, (float) (this.yA + var8), 288.0F,
                112.0F, this.field20830);
       }
 

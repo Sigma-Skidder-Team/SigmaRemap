@@ -253,7 +253,7 @@ public class ShulkerInfo extends Module {
                 int var19 = ResourceRegistry.JelloLightFont20.getWidth("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.disableLighting();
-                RenderUtil.method11450(
+                RenderUtil.drawImage(
                         (float) (var17 + var18 - 17 - var19 / 4),
                         (float) (var16 + 7),
                         (float) (40 + var19),

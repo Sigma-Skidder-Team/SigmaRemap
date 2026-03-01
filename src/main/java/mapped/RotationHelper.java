@@ -517,4 +517,90 @@ public class RotationHelper {
             return null;
         }
     }
+
+    public static float method16816(float var1) {
+        float var4 = 0.0F;
+        float var5 = Module.mc.player.moveStrafing;
+        float var6 = Module.mc.player.moveForward;
+        if (!(var5 > 0.0F)) {
+            if (var5 < 0.0F) {
+                if (!(var6 > 0.0F)) {
+                    if (!(var6 < 0.0F)) {
+                        var1 += 90.0F;
+                    } else {
+                        var1 -= 45.0F;
+                    }
+                } else {
+                    var1 += 45.0F;
+                }
+            }
+        } else if (!(var6 > 0.0F)) {
+            if (!(var6 < 0.0F)) {
+                var1 -= 90.0F;
+            } else {
+                var1 += 45.0F;
+            }
+        } else {
+            var1 -= 45.0F;
+        }
+
+        if (var1 >= 45.0F && var1 <= 135.0F) {
+            var4 = 90.0F;
+        } else if (var1 >= 135.0F || var1 <= -135.0F) {
+            var4 = 180.0F;
+        } else if (var1 <= -45.0F && var1 >= -135.0F) {
+            var4 = -90.0F;
+        } else if (var1 >= -45.0F && var1 <= 45.0F) {
+            var4 = 0.0F;
+        }
+
+        if (var6 < 0.0F) {
+            var4 -= 180.0F;
+        }
+
+        return var4 + 90.0F;
+    }
+
+    public static float getDirection23(float var1) {
+        float var4 = 0.0F;
+        float var5 = Module.mc.player.moveStrafing;
+        float var6 = Module.mc.player.moveForward;
+        if (!(var5 > 0.0F)) {
+            if (var5 < 0.0F) {
+                if (!(var6 > 0.0F)) {
+                    if (!(var6 < 0.0F)) {
+                        var1 += 90.0F;
+                    } else {
+                        var1 -= 45.0F;
+                    }
+                } else {
+                    var1 += 45.0F;
+                }
+            }
+        } else if (!(var6 > 0.0F)) {
+            if (!(var6 < 0.0F)) {
+                var1 -= 90.0F;
+            } else {
+                var1 += 45.0F;
+            }
+        } else {
+            var1 -= 45.0F;
+        }
+
+        if (var1 >= 45.0F && var1 <= 135.0F) {
+            var4 = 90.0F;
+        } else if (var1 >= 135.0F || var1 <= -135.0F) {
+            var4 = 180.0F;
+        } else if (var1 <= -45.0F && var1 >= -135.0F) {
+            var4 = -90.0F;
+        } else if (var1 >= -45.0F && var1 <= 45.0F) {
+            var4 = 0.0F;
+        }
+
+        if (var6 < 0.0F) {
+            var4 -= 180.0F;
+        }
+
+        return var4 + 90.0F;
+    }
 }

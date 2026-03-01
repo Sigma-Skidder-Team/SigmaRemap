@@ -9,7 +9,7 @@ public class Class4361 extends InteractiveWidget {
 
    @Override
    public void draw(float partialTicks) {
-      RenderUtil.method11455((float)this.xA, (float)this.yA, 30.0F, 30.0F, !this.method13298() ? Class4334.field21177 : Class4334.field21178);
+      RenderUtil.drawImage((float)this.xA, (float)this.yA, 30.0F, 30.0F, !this.method13298() ? Class4334.field21177 : Class4334.field21178);
       super.draw(partialTicks);
    }
 }

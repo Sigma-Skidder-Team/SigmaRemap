@@ -188,13 +188,13 @@ public class JelloMainMenuScreen extends Screen {
          int var17 = (int) (600.0F * var16);
          int var18 = (int) (450.0F * var16);
          byte var19 = 0;
-         RenderUtil.method11455(
+         RenderUtil.drawImage(
                (float) this.field20967 - (float) var17 * var12,
                (float) this.field20966,
                (float) (this.getWidthA() * 2 + var17),
                (float) (this.getHeightA() + 114),
                ResourceList.backgroundPNG);
-         RenderUtil.method11455(
+         RenderUtil.drawImage(
                (float) this.field20967 - (float) var18 * var12,
                (float) this.field20966,
                (float) (this.getWidthA() * 2 + var18),
@@ -207,7 +207,7 @@ public class JelloMainMenuScreen extends Screen {
             GL11.glPopMatrix();
          }
 
-         RenderUtil.method11455(
+         RenderUtil.drawImage(
                (float) this.field20967 - (float) var19 * var12,
                (float) this.field20966,
                (float) (this.getWidthA() * 2 + var19),
@@ -220,7 +220,7 @@ public class JelloMainMenuScreen extends Screen {
             var26 = ResourceList.logoLarge2xPNG;
          }
 
-         RenderUtil.method11450(
+         RenderUtil.drawImage(
                (float) this.field20967,
                (float) (this.field20966 - 50),
                (float) (this.getWidthA() * 2),

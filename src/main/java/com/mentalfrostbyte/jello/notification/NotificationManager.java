@@ -111,7 +111,7 @@ public class NotificationManager {
                         var5.field43604,
                         var12);
                 RenderUtil.endScissor();
-                RenderUtil.method11455(
+                RenderUtil.drawImage(
                         (float) (var7 + this.field39927 / 2),
                         (float) (var8 + this.field39927 / 2),
                         (float) (this.field39924 - this.field39927),

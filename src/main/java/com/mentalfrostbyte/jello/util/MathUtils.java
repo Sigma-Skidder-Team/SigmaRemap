@@ -34,6 +34,14 @@ public class MathUtils {
         return Math.random() * (var0 - var2) + var2;
     }
 
+    public static double method16815(double var0, double var2) {
+        return Math.random() * (var0 - var2) + var2;
+    }
+
+    public static double method16117(double var0, double var2) {
+        return Math.random() * (var0 - var2) + var2;
+    }
+
     public Vec2d method30787(Vec2d var1, Vec2d var2, Vec2d var3, double var4) {
         double var8 = (1.0 - var4) * (1.0 - var4) * var1.getX() + 2.0 * var4 * (1.0 - var4) * var2.getX() + var4 * var4 * var3.getX();
         double var10 = (1.0 - var4) * (1.0 - var4) * var1.getY() + 2.0 * var4 * (1.0 - var4) * var2.getY() + var4 * var4 * var3.getY();

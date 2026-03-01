@@ -78,7 +78,7 @@ public class ClassicDirectLogin extends Screen {
 
    @Override
    public void draw(float partialTicks) {
-      RenderUtil.method11455(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
+      RenderUtil.drawImage(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
             ResourceList.mainmenubackground);
       RenderUtil.drawRect(0.0F, 0.0F, (float) this.getWidthA(), (float) this.getHeightA(),
             MultiUtilities.applyAlpha(ClientColors.PALE_RED.getColor(), 0.1F));

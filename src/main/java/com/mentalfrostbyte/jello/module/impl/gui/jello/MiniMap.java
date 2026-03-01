@@ -167,10 +167,10 @@ public class MiniMap extends Module {
                             float var12 = (float) field23709 * var7;
                             RenderUtil.drawBlurredBackground(field23711, field23712,
                                     field23711 + field23710, field23712 + field23709);
-                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.shoutIconPNG);
+                            RenderUtil.drawImage(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (field23710 / 2) + var9;
                             float var14 = -var12 / 2.0F + (float) (field23709 / 2) + var10;
-                            RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.gingerbreadIconPNG);
+                            RenderUtil.drawImage(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.gingerbreadIconPNG);
                             RenderUtil.method11453(
                                     var13,
                                     var14,

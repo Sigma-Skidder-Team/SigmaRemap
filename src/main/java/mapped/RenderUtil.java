@@ -640,49 +640,45 @@ public class RenderUtil {
                 (float) var4.getImageHeight(), false);
     }
 
-    public static void drawImage(float var0, float var1, float var2, float var3, Texture var4, int var5) {
-        drawImage(var0, var1, var2, var3, var4, var5, 0.0F, 0.0F, (float) var4.getImageWidth(),
-                (float) var4.getImageHeight(), true);
+    public static void drawImage(float x, float y, float width, float height, Texture texture, int color) {
+        drawImage(x, y, width, height, texture, color, 0.0F, 0.0F, (float) texture.getImageWidth(), (float) texture.getImageHeight(), true);
     }
 
-    public static void method11450(float var0, float var1, float var2, float var3, Texture var4, int var5,
-                                   boolean var6) {
-        drawImage(var0, var1, var2, var3, var4, var5, 0.0F, 0.0F, (float) var4.getImageWidth(),
-                (float) var4.getImageHeight(), var6);
+    public static void drawImage(float x, float y, float width, float height, Texture texture, int color, boolean linearFiltering) {
+        drawImage(x, y, width, height, texture, color, 0.0F, 0.0F, (float) texture.getImageWidth(),
+                (float) texture.getImageHeight(), linearFiltering);
     }
 
-    public static void method11451(float var0, float var1, float var2, float var3, Texture var4, int var5, float var6,
-                                   float var7, float var8, float var9) {
+    public static void method11451(float var0, float var1, float var2, float var3, Texture var4, int var5, float var6, float var7, float var8, float var9) {
         drawImage(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, true);
     }
 
-    public static void drawImage(float var0, float var1, float var2, float var3, Texture var4, int var5, float var6,
-                                 float var7, float var8, float var9, boolean var10) {
-        if (var4 != null) {
+    public static void drawImage(float x, float y, float width, float height, Texture texture, int color, float tlX, float tlY, float siW, float siH, boolean linearFiltering) {
+        if (texture != null) {
             RenderSystem.color4f(0.0F, 0.0F, 0.0F, 1.0F);
             GL11.glColor4f(0.0F, 0.0F, 0.0F, 0.0F);
-            var0 = (float) Math.round(var0);
-            var2 = (float) Math.round(var2);
-            var1 = (float) Math.round(var1);
-            var3 = (float) Math.round(var3);
-            float var13 = (float) (var5 >> 24 & 0xFF) / 255.0F;
-            float var14 = (float) (var5 >> 16 & 0xFF) / 255.0F;
-            float var15 = (float) (var5 >> 8 & 0xFF) / 255.0F;
-            float var16 = (float) (var5 & 0xFF) / 255.0F;
+            x = (float) Math.round(x);
+            width = (float) Math.round(width);
+            y = (float) Math.round(y);
+            height = (float) Math.round(height);
+            float alpha = (float) (color >> 24 & 0xFF) / 255.0F;
+            float red = (float) (color >> 16 & 0xFF) / 255.0F;
+            float green = (float) (color >> 8 & 0xFF) / 255.0F;
+            float blue = (float) (color & 0xFF) / 255.0F;
             RenderSystem.enableBlend();
             RenderSystem.disableTexture();
             RenderSystem.blendFuncSeparate(770, 771, 1, 0);
-            RenderSystem.color4f(var14, var15, var16, var13);
+            RenderSystem.color4f(red, green, blue, alpha);
             GL11.glEnable(3042);
             GL11.glEnable(3553);
-            var4.bind();
-            float var17 = var2 / (float) var4.getTextureWidth() / (var2 / (float) var4.getImageWidth());
-            float var18 = var3 / (float) var4.getTextureHeight() / (var3 / (float) var4.getImageHeight());
-            float var19 = var8 / (float) var4.getImageWidth() * var17;
-            float var20 = var9 / (float) var4.getImageHeight() * var18;
-            float var21 = var6 / (float) var4.getImageWidth() * var17;
-            float var22 = var7 / (float) var4.getImageHeight() * var18;
-            if (!var10) {
+            texture.bind();
+            float var17 = width / (float) texture.getTextureWidth() / (width / (float) texture.getImageWidth());
+            float var18 = height / (float) texture.getTextureHeight() / (height / (float) texture.getImageHeight());
+            float var19 = siW / (float) texture.getImageWidth() * var17;
+            float var20 = siH / (float) texture.getImageHeight() * var18;
+            float var21 = tlX / (float) texture.getImageWidth() * var17;
+            float var22 = tlY / (float) texture.getImageHeight() * var18;
+            if (!linearFiltering) {
                 GL11.glTexParameteri(3553, 10240, 9729);
             } else {
                 GL11.glTexParameteri(3553, 10240, 9728);
@@ -690,13 +686,13 @@ public class RenderUtil {
 
             GL11.glBegin(7);
             GL11.glTexCoord2f(var21, var22);
-            GL11.glVertex2f(var0, var1);
+            GL11.glVertex2f(x, y);
             GL11.glTexCoord2f(var21, var22 + var20);
-            GL11.glVertex2f(var0, var1 + var3);
+            GL11.glVertex2f(x, y + height);
             GL11.glTexCoord2f(var21 + var19, var22 + var20);
-            GL11.glVertex2f(var0 + var2, var1 + var3);
+            GL11.glVertex2f(x + width, y + height);
             GL11.glTexCoord2f(var21 + var19, var22);
-            GL11.glVertex2f(var0 + var2, var1);
+            GL11.glVertex2f(x + width, y);
             GL11.glEnd();
             GL11.glDisable(3553);
             GL11.glDisable(3042);
@@ -760,7 +756,7 @@ public class RenderUtil {
                 MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), alphaValue));
     }
 
-    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
+    public static void drawImage(float var0, float var1, float var2, float var3, Texture var4) {
         drawImage(var0, var1, var2, var3, var4, -1);
     }
 
@@ -770,7 +766,7 @@ public class RenderUtil {
         GL11.glTranslatef(var0 + var2 / 2.0F, var1 + var3 / 2.0F, 0.0F);
         GL11.glRotatef(var5, var6, var7, var8);
         GL11.glTranslatef(-var0 - var2 / 2.0F, -var1 - var3 / 2.0F, 0.0F);
-        method11455(var0, var1, var2, var3, var4);
+        drawImage(var0, var1, var2, var3, var4);
         GL11.glPopMatrix();
     }
 
@@ -999,25 +995,25 @@ public class RenderUtil {
         }
     }
 
-    public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
+    public static void drawRoundedRect(float x, float y, float width, float height, float radius, float alpha) {
         GL11.glAlphaFunc(519, 0.0F);
-        int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5);
-        drawImage(var0 - var4, var1 - var4, var4, var4, ResourceList.shadowCorner1PNG, var8);
-        drawImage(var0 + var2, var1 - var4, var4, var4, ResourceList.shadowCorner2PNG, var8);
-        drawImage(var0 - var4, var1 + var3, var4, var4, ResourceList.shadowCorner3PNG, var8);
-        drawImage(var0 + var2, var1 + var3, var4, var4, ResourceList.shadowCorner4PNG, var8);
-        method11450(var0 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
-        method11450(var0 + var2, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
-        method11450(var0, var1 - var4, var2, var4, ResourceList.shadowTopPNG, var8, false);
-        method11450(var0, var1 + var3, var2, var4, ResourceList.shadowBottomPNG, var8, false);
+        int color = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), alpha);
+        drawImage(x - radius, y - radius, radius, radius, ResourceList.shadowCorner1PNG, color);
+        drawImage(x + width, y - radius, radius, radius, ResourceList.shadowCorner2PNG, color);
+        drawImage(x - radius, y + height, radius, radius, ResourceList.shadowCorner3PNG, color);
+        drawImage(x + width, y + height, radius, radius, ResourceList.shadowCorner4PNG, color);
+        drawImage(x - radius, y, radius, height, ResourceList.shadowLeftPNG, color, false);
+        drawImage(x + width, y, radius, height, ResourceList.shadowRightPNG, color, false);
+        drawImage(x, y - radius, width, radius, ResourceList.shadowTopPNG, color, false);
+        drawImage(x, y + height, width, radius, ResourceList.shadowBottomPNG, color, false);
     }
 
     public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
         int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var5);
-        method11450(var0, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
-        method11450(var0 + var2 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
-        method11450(var0, var1, var2, var4, ResourceList.shadowBottomPNG, var8, false);
-        method11450(var0, var1 + var3 - var4, var2, var4, ResourceList.shadowTopPNG, var8, false);
+        drawImage(var0, var1, var4, var3, ResourceList.shadowRightPNG, var8, false);
+        drawImage(var0 + var2 - var4, var1, var4, var3, ResourceList.shadowLeftPNG, var8, false);
+        drawImage(var0, var1, var2, var4, ResourceList.shadowBottomPNG, var8, false);
+        drawImage(var0, var1 + var3 - var4, var2, var4, ResourceList.shadowTopPNG, var8, false);
     }
 
     public static void method11465(int var0, int var1, int var2, int var3, int var4) {

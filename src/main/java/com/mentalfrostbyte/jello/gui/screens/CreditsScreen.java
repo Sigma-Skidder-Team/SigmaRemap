@@ -83,7 +83,7 @@ public class CreditsScreen extends Screen {
 
       float var5 = var4 - (float) this.field21073;
       float var6 = (float) (var3 - this.field21074);
-      RenderUtil.method11455(
+      RenderUtil.drawImage(
             (float) this.field21074, (float) this.field21073, (float) (this.getWidthA() * 2),
             (float) (this.getHeightA() + 114), ResourceList.panoramaPNG);
       float var7 = 0.5F;

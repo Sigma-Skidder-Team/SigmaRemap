@@ -71,7 +71,7 @@ public class BoxOutlineESP extends Module {
                                     GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                                     GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
                                     GL11.glScalef(-0.11F, -0.11F, -0.11F);
-                                    RenderUtil.method11450(
+                                    RenderUtil.drawImage(
                                             -var2.getWidth() * 22.0F,
                                             -var2.getHeight() * 5.5F,
                                             var2.getWidth() * 44.0F,

@@ -38,7 +38,7 @@ public class Class4254 extends InteractiveWidget {
 
       this.drawBackground((int) (-25.0F * var4));
       this.method13225();
-      RenderUtil.method11455((float) (this.xA + 20), (float) this.yA, 100.0F, 100.0F, this.field20631);
+      RenderUtil.drawImage((float) (this.xA + 20), (float) this.yA, 100.0F, 100.0F, this.field20631);
       int var5 = this.xA + 12 - (ResourceList.regular20.getWidth(this.name) - this.widthA) / 2;
       int var6 = this.yA + 102;
       GL11.glAlphaFunc(516, 0.1F);

@@ -228,15 +228,15 @@ public class GuiManager {
         }
     }
 
-    public void method33464() {
+    public void drawWatermark() {
         if (Minecraft.getInstance().world != null) {
             GL11.glDisable(2896);
-            int var3 = 0;
-            int var4 = 0;
-            int var5 = 170;
+            int x = 0;
+            int y = 0;
+            int imageWidth = 170;
 
             if (Minecraft.getInstance().gameSettings.showDebugInfo) {
-                var3 = Minecraft.getInstance().mainWindow.getWidth() / 2 - var5 / 2;
+                x = Minecraft.getInstance().mainWindow.getWidth() / 2 - imageWidth / 2;
             }
 
             if (Client.getInstance().clientMode != ClientMode.JELLO) {
@@ -257,7 +257,7 @@ public class GuiManager {
                         MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F,
+                RenderUtil.drawImage((float) x, y, 170.0F, 104.0F,
                         !(scaleFactor > 1.0F) ? ResourceList.jelloWatermarkPNG
                                 : ResourceList.jelloWatermark2xPNG);
             }

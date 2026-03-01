@@ -17,7 +17,7 @@ public class EventUpdate extends CancellableEvent {
     private float pitch;
     private float yaw;
     private boolean ground;
-    private boolean field21495;
+    private boolean moving;
     private final List<Runnable> runnables = new ArrayList<>();
 
     public EventUpdate(double var1, double var3, double var5, float var7, float var8, boolean var9) {
@@ -28,7 +28,7 @@ public class EventUpdate extends CancellableEvent {
         this.yaw = var8;
         this.ground = var9;
         this.pre = true;
-        this.field21495 = false;
+        this.moving = false;
     }
 
     public void postUpdate() {
@@ -40,11 +40,11 @@ public class EventUpdate extends CancellableEvent {
     }
 
     public boolean isMoving() {
-        return this.field21495;
+        return this.moving;
     }
 
     public void setMoving(boolean var1) {
-        this.field21495 = var1;
+        this.moving = var1;
     }
 
     public double getX() {

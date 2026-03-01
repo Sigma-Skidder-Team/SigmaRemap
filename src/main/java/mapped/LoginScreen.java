@@ -105,7 +105,7 @@ public class LoginScreen extends InteractiveWidget {
 
                   if (var5.method36701() != null) {
                         RenderUtil.startScissor((float) (this.xA + 316), (float) (this.yA + 255), 190.0F, 50.0F);
-                        RenderUtil.method11455((float) (this.xA + 316), (float) (this.yA + 255), 190.0F, 190.0F,
+                        RenderUtil.drawImage((float) (this.xA + 316), (float) (this.yA + 255), 190.0F, 190.0F,
                                     var5.method36701());
                         RenderUtil.endScissor();
                   }

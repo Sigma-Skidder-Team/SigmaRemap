@@ -238,7 +238,7 @@ public class MusicManager {
                     GL11.glTranslated(60.0, mc.mainWindow.getHeight() - 55, 0.0);
                     GL11.glScalef(var18, var18, 0.0F);
                     GL11.glTranslated(-60.0, -(mc.mainWindow.getHeight() - 55), 0.0);
-                    RenderUtil.method11455(10.0F, (float) (mc.mainWindow.getHeight() - 110), 100.0F, 100.0F,
+                    RenderUtil.drawImage(10.0F, (float) (mc.mainWindow.getHeight() - 110), 100.0F, 100.0F,
                             this.notificationImage);
                     RenderUtil.drawRoundedRect(10.0F, (float) (mc.mainWindow.getHeight() - 110), 100.0F, 100.0F,
                             14.0F, 0.3F);

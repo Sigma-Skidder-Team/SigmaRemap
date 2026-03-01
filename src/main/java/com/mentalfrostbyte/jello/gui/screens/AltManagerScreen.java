@@ -398,7 +398,7 @@ public class AltManagerScreen extends Screen {
 
         float var5 = var4 - this.field21006;
         float var6 = (float) (var3 - this.field21005);
-        RenderUtil.method11455((float) this.field21005, this.field21006, (float) (this.getWidthA() * 2),
+        RenderUtil.drawImage((float) this.field21005, this.field21006, (float) (this.getWidthA() * 2),
                 (float) (this.getHeightA() + 114), ResourceList.panoramaPNG);
         float var7 = 0.5F;
         if (var4 != this.field21006) {

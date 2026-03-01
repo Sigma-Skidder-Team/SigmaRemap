@@ -232,7 +232,7 @@ public class Client {
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
-            this.guiManager.method33464();
+            this.guiManager.drawWatermark();
             RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
             RenderSystem.enableAlphaTest();

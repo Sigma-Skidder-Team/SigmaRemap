@@ -93,7 +93,7 @@ public class GuiSwitch extends Screen {
             int var4 = 40;
             float var5 = -field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
             float var6 = -field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
-            RenderUtil.method11455(
+            RenderUtil.drawImage(
                     (float) var4 * var5,
                     (float) var4 * var6,
                     (float) (Minecraft.getInstance().mainWindow.getWidth() + var4),
@@ -123,7 +123,7 @@ public class GuiSwitch extends Screen {
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
                     MultiUtilities.applyAlpha(0, 0.75F * (1.0F - field21069.calcPercent())));
-            RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
+            RenderUtil.drawImage((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
         }
     }
 

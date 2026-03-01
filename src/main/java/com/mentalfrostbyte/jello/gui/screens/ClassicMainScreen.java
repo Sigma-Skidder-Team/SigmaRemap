@@ -138,7 +138,7 @@ public class ClassicMainScreen extends Screen {
                                 (int) ((float) (-this.getWidthA() / 200) + this.field21104 / 200.0F),
                                 (int) ((float) (-this.getHeightA() / 100) + this.field21105 / 100.0F) - var4,
                                 0.0);
-                RenderUtil.method11455(-10.0F, -10.0F, (float) (this.getWidthA() + 20),
+                RenderUtil.drawImage(-10.0F, -10.0F, (float) (this.getWidthA() + 20),
                                 (float) (this.getHeightA() + 20),
                                 ResourceList.mainmenubackground);
                 GL11.glPopMatrix();

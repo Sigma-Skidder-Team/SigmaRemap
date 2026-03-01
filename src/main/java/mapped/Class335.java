@@ -1,7 +1,7 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyNCPMode;
 import com.mentalfrostbyte.jello.module.impl.world.AutoCrystal;
+import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -21,7 +21,7 @@ public class Class335 implements Runnable {
 
    @Override
    public void run() {
-      BlockRayTraceResult var3 = new BlockRayTraceResult(BlockFlyNCPMode.method16814(this.field1459, Direction.UP), Direction.UP, this.field1459, false);
+      BlockRayTraceResult var3 = new BlockRayTraceResult(BlockUtil.rayTraceBlocksFromRotations(this.field1459, Direction.UP), Direction.UP, this.field1459, false);
       int var4 = AutoCrystal.method16395().player.inventory.currentItem;
       AutoCrystal.method16396().player.inventory.currentItem = this.field1460;
       AutoCrystal.method16397().playerController.syncCurrentPlayItem();
