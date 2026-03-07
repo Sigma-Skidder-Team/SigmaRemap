@@ -99,7 +99,7 @@ public class NotificationManager {
                 RenderUtil.drawRect(
                         (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923),
                         (float) (var8 + this.field39924 - 1), var11);
-                RenderUtil.drawBlurredBackground(var7, var8, var7 + this.field39923 - this.field39927,
+                RenderUtil.startScissorNoGL(var7, var8, var7 + this.field39923 - this.field39927,
                         var8 + this.field39924);
                 RenderUtil.drawString(
                         this.field39929, (float) (var7 + this.field39924 + this.field39927 - 2),
@@ -153,9 +153,9 @@ public class NotificationManager {
                             + (float) this.field39927 * this.method31994(var3));
 
             for (int var8 = 0; var8 < 3; var8++) {
-                var4.field43608[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7,
+                var4.field43608[var8] = RenderUtil.sampleScreenColor(var6 + this.field39923 / 3 * var8, var7,
                         var4.field43608[var8]);
-                var4.field43609[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8,
+                var4.field43609[var8] = RenderUtil.sampleScreenColor(var6 + this.field39923 / 3 * var8,
                         var7 + this.field39924, var4.field43609[var8]);
             }
         }

@@ -205,7 +205,7 @@ public class ActiveMods extends Module {
         GL11.glReadPixels(var1, Minecraft.getInstance().mainWindow.getHeight() - var2, 1, 1, 6407, 5120, var6);
         Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
         if (var3 != null) {
-            var7 = MultiUtilities.method17681(var7, var3, 0.08F);
+            var7 = MultiUtilities.blendColor(var7, var3, 0.08F);
         }
 
         return var7;

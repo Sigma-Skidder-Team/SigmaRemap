@@ -46,7 +46,7 @@ public class UICheckBox extends InteractiveWidget {
                 (float) this.widthA,
                 (float) this.heightA,
                 10.0F,
-                MultiUtilities.applyAlpha(MultiUtilities.method17690(-14047489, ClientColors.DEEP_TEAL.getColor(),
+                MultiUtilities.applyAlpha(MultiUtilities.blendColors(-14047489, ClientColors.DEEP_TEAL.getColor(),
                         !this.isMouseDownOverComponent() ? 1.0F : 0.9F), scale));
         GL11.glPushMatrix();
         GL11.glTranslatef((float) (this.getXA() + this.getWidthA() / 2), (float) (this.getYA() + this.getHeightA() / 2),

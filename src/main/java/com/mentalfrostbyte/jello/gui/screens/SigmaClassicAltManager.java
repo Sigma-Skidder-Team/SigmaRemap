@@ -149,7 +149,7 @@ public class SigmaClassicAltManager extends Screen {
             ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             Class2218.field14492,
             Class2218.field14488);
-      RenderUtil.method11441(
+      ColorHelper.method11441(
             ResourceRegistry.DefaultClientFont,
             (float) (this.getWidthA() / 2),
             40.0F,

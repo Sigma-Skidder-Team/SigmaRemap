@@ -448,7 +448,7 @@ public class MusicPlayer extends Widget2 {
          var9 = 0.0F;
       }
 
-      RenderUtil.method11421(var13, var14, var13 + var11, var14 + var12, true);
+      RenderUtil.startScissor(var13, var14, var13 + var11, var14 + var12, true);
       RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float) var13 - (float) var10 * var9 - 50.0F * var9,

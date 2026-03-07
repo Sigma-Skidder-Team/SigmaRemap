@@ -19,7 +19,7 @@ public class Class4371 extends InteractiveWidget {
             (float) this.yA + (float) this.widthA / 2.0F,
             (float) this.widthA,
             MultiUtilities.applyAlpha(
-                  MultiUtilities.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor(), 0.8F), partialTicks));
+                  MultiUtilities.blendColors(this.field21365, ClientColors.DEEP_TEAL.getColor(), 0.8F), partialTicks));
       RenderUtil.drawCircle(
             (float) this.xA + (float) this.widthA / 2.0F,
             (float) this.yA + (float) this.widthA / 2.0F,

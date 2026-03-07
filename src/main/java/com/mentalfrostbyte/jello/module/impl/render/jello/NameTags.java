@@ -53,7 +53,7 @@ public class NameTags extends Module {
     }
 
     public int backgroundColor = MultiUtilities.applyAlpha(MultiUtilities
-            .method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.DEEP_TEAL.getColor(), 75.0F), 0.5F);
+            .blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.DEEP_TEAL.getColor(), 75.0F), 0.5F);
     private final HashMap<BlockPos, FurnaceTracker> field24000 = new HashMap<>();
     private BlockPos field24001;
     private final List<Entity> entities = new ArrayList<>();

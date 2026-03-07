@@ -87,7 +87,7 @@ public class Class4355 extends InteractiveWidget {
             (float) (this.xA + 35),
             (float) (this.yA + this.heightA / 2),
             20.0F,
-            MultiUtilities.method17690(this.field21293, ClientColors.DEEP_TEAL.getColor(), 0.9F));
+            MultiUtilities.blendColors(this.field21293, ClientColors.DEEP_TEAL.getColor(), 0.9F));
       RenderUtil.drawCircle((float) (this.xA + 35), (float) (this.yA + this.heightA / 2), 17.0F, this.field21293);
       RenderUtil.drawRoundedRect(
             (float) this.xA, (float) this.yA, (float) this.widthA, (float) this.heightA, 14.0F,

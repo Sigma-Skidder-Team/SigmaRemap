@@ -22,7 +22,7 @@ public class Class4294 extends Widget2 {
    public Animation field20805 = new Animation(300, 300, Animation.Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+   private int field20808 = MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
          ClientColors.DEEP_TEAL.getColor(), 20.0F);
 
    public Class4294(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
@@ -50,7 +50,7 @@ public class Class4294 extends Widget2 {
    @Override
    public void draw(float partialTicks) {
       this.method13225();
-      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+      this.field20808 = MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             ClientColors.DEEP_TEAL.getColor(), 2.0F);
       int var4 = ((Class4339) this.screen.getScreen()).method13513();
       int var5 = Math.max(0, this.yA - var4);
@@ -68,7 +68,7 @@ public class Class4294 extends Widget2 {
                   Math.max(20, var6),
                   MultiUtilities.applyAlpha(
                         !this.isMouseDownOverComponent() ? ClientColors.LIGHT_GREYISH_BLUE.getColor() : this.field20808, var7));
-            RenderUtil.method11421(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
+            RenderUtil.startScissor(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
                this.method13169();
                this.method13170();

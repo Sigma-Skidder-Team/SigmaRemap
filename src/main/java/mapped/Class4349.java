@@ -20,7 +20,7 @@ public class Class4349 extends Widget2 {
    private float field21255 = 0.0F;
    private int field21256 = 0;
    private int field21257 = 0;
-   private int field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+   private int field21258 = MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
          ClientColors.DEEP_TEAL.getColor(), 20.0F);
 
    public Class4349(GuiComponent var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
@@ -50,7 +50,7 @@ public class Class4349 extends Widget2 {
       this.method13225();
       this.field21252 = (float) ((double) this.field21252 + (this.field21254 ? 0.2 : -0.2));
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
-      this.field21258 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+      this.field21258 = MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
             ClientColors.DEEP_TEAL.getColor(), 2.0F);
       if (this.field21254 || this.isMouseDownOverComponent() || this.method13298()) {
          RenderUtil.drawRect(
@@ -99,7 +99,7 @@ public class Class4349 extends Widget2 {
                MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.65F));
       }
 
-      RenderUtil.method11421(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
+      RenderUtil.startScissor(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
       if (this.field21249 != null) {
          this.method13584();
          RenderUtil.endScissor();
@@ -154,7 +154,7 @@ public class Class4349 extends Widget2 {
             Class2218.field14492,
             Class2218.field14492);
       if (!this.field21249.isEmailAValidEmailFormat()) {
-         RenderUtil.method11441(
+         ColorHelper.method11441(
                ResourceRegistry.DefaultClientFont,
                (float) (this.xA + this.widthA / 2),
                (float) (this.yA + 32),
@@ -164,7 +164,7 @@ public class Class4349 extends Widget2 {
                Class2218.field14489,
                true);
       } else {
-         RenderUtil.method11441(
+         ColorHelper.method11441(
                ResourceRegistry.DefaultClientFont,
                (float) (this.xA + this.widthA / 2),
                (float) (this.yA + 29),

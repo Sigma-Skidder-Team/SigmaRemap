@@ -79,7 +79,7 @@ public class Class4252 extends InteractiveWidget {
             MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), var3));
       RenderUtil.drawCircle(
             (float) var0, (float) var1, (float) (var6 - 6),
-            MultiUtilities.applyAlpha(MultiUtilities.method17690(var2, ClientColors.DEEP_TEAL.getColor(), 0.7F), var3));
+            MultiUtilities.applyAlpha(MultiUtilities.blendColors(var2, ClientColors.DEEP_TEAL.getColor(), 0.7F), var3));
       RenderUtil.drawCircle((float) var0, (float) var1, (float) (var6 - 7), MultiUtilities.applyAlpha(var2, var3));
    }
 

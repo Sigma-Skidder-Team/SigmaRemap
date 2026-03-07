@@ -40,7 +40,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
       int var6 = (int)((float)this.getHeightA() * this.field20581);
       int var7 = this.getXA() - (var5 - this.getWidthA()) / 2;
       int var8 = this.getYA() - (var6 - this.getHeightA()) / 2;
-      RenderUtil.drawBlurredBackground(
+      RenderUtil.startScissorNoGL(
          this.getAbsoluteX() + var7 - this.xA,
          this.getAbsoluteY() + var8 - this.yA,
          this.getAbsoluteX() + var7 - this.xA + var5,
@@ -51,7 +51,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
          (float)var8,
          (float)(var7 + var5),
          (float)(var8 + var6),
-         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), partialTicks)
+         MultiUtilities.applyAlpha(MultiUtilities.blendColors(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), partialTicks)
       );
       if (this.getTypedText() != null) {
          RenderUtil.method11440(

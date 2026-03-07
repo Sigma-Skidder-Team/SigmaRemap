@@ -75,7 +75,7 @@ public class Class4266 extends InteractiveWidget {
          if (this.field20687) {
             BufferedImage var6 = ImageUtil.method35039(this.getAbsoluteX(), this.getAbsoluteY(), this.widthA,
                   this.heightA, 3, 10, true);
-            this.field20684 = MultiUtilities.method17682(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22)))
+            this.field20684 = MultiUtilities.averageColors(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22)))
                   .getRGB();
             this.field20684 = MultiUtilities.method17691(this.field20684, 0.25F);
             if (this.field20688 != null) {
@@ -120,7 +120,7 @@ public class Class4266 extends InteractiveWidget {
                int var7 = this.heightA / 2;
                int var8 = this.yA + (var11.field30491 ? 0 : var7);
                int var9 = this.widthA / 2;
-               RenderUtil.method11421(this.xA, var8, this.xA + this.widthA, var8 + var7, true);
+               RenderUtil.startScissor(this.xA, var8, this.xA + this.widthA, var8 + var7, true);
                RenderUtil.drawFilledArc(
                      (float) (this.xA + var9),
                      (float) (var8 + this.heightA / 4),

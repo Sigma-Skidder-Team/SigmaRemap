@@ -68,7 +68,7 @@ public class MultiUtilities {
         return var2;
     }
 
-    public static Color method17681(Color var0, Color var1, float var2) {
+    public static Color blendColor(Color var0, Color var1, float var2) {
         float var5 = 1.0F - var2;
         float var6 = (float) var0.getRed() * var2 + (float) var1.getRed() * var5;
         float var7 = (float) var0.getGreen() * var2 + (float) var1.getGreen() * var5;
@@ -76,7 +76,7 @@ public class MultiUtilities {
         return new Color(var6 / 255.0F, var7 / 255.0F, var8 / 255.0F);
     }
 
-    public static Color method17682(Color... var0) {
+    public static Color averageColors(Color... var0) {
         if (var0 != null) {
             if (var0.length > 0) {
                 float var3 = 1.0F / (float) var0.length;
@@ -115,7 +115,7 @@ public class MultiUtilities {
         return (int) (alpha * 255.0F) << 24 | color & 16777215;
     }
 
-    public static int method17690(int var0, int var1, float var2) {
+    public static int blendColors(int var0, int var1, float var2) {
         int var5 = var0 >> 24 & 0xFF;
         int var6 = var0 >> 16 & 0xFF;
         int var7 = var0 >> 8 & 0xFF;

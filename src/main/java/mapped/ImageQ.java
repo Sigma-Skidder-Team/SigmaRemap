@@ -22,7 +22,7 @@ public class ImageQ extends Widget2 {
             (float) this.widthA,
             (float) this.heightA,
             this.field20792,
-            MultiUtilities.method17690(
+            MultiUtilities.blendColors(
                   ClientColors.DEEP_TEAL.getColor(), ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                   !this.method13298() ? 0.0F : (!this.isMouseDownOverComponent() ? 0.15F : 0.3F)));
       super.draw(partialTicks);

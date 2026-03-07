@@ -129,7 +129,7 @@ public class Class4259 extends InteractiveWidget {
       TextureManager var10000 = var4.getTextureManager();
       var4.getTextureManager();
       var10000.bindTexture(TextureManager.RESOURCE_LOCATION_EMPTY);
-      RenderUtil.method11421(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
+      RenderUtil.startScissor(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
       GL11.glPushMatrix();
       GL11.glTranslatef((float) (this.xA + this.widthA / 2), (float) (this.yA + this.heightA / 2), 0.0F);
       GL11.glScalef(var9, var9, 0.0F);

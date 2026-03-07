@@ -63,7 +63,7 @@ public class KeyStrokes extends Module {
                         for (Keystroke keystroke : Keystroke.values()) {
                             KeyPosition topLeftKey = keystroke.getTopLeftPosition();
                             KeyPosition bottomRightKey = keystroke.getBottomRightPosition();
-                            RenderUtil.drawBlurredBackground(
+                            RenderUtil.startScissorNoGL(
                                     this.xBase + topLeftKey.x,
                                     this.yBase + topLeftKey.y,
                                     this.xBase + topLeftKey.x + bottomRightKey.x,
@@ -121,7 +121,7 @@ public class KeyStrokes extends Module {
                         Keystroke keyStroke = animationData.keyStroke;
                         KeyPosition topLeftPosition = keyStroke.getTopLeftPosition();
                         KeyPosition bottomRightPosition = keyStroke.getBottomRightPosition();
-                        RenderUtil.drawBlurredBackground(
+                        RenderUtil.startScissorNoGL(
                                 this.xBase + topLeftPosition.x,
                                 this.yBase + topLeftPosition.y,
                                 this.xBase + topLeftPosition.x + bottomRightPosition.x,

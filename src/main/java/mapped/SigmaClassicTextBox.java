@@ -31,7 +31,7 @@ public class SigmaClassicTextBox extends UIInput {
             (float) (this.xA + this.widthA + 2),
             (float) (this.yA + this.heightA),
             2,
-            MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.DEEP_TEAL.getColor(),
+            MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(), ClientColors.DEEP_TEAL.getColor(),
                   625.0F));
       super.draw(partialTicks);
    }

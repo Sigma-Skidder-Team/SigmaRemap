@@ -4,19 +4,19 @@ import com.mentalfrostbyte.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
-import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.EventRender3D;
+import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.util.render.blur.BlurEngine;
 import com.mentalfrostbyte.jello.unmapped.ResourceList;
-import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.Class8224;
 import com.mentalfrostbyte.jello.util.ClientColors;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
+import com.mentalfrostbyte.jello.util.render.blur.BlurEngine;
 import mapped.QuadraticEasing;
 import mapped.RenderUtil;
+import mapped.TabGuiSelectionEffect;
 import net.minecraft.client.Minecraft;
 
 import java.awt.*;
@@ -26,55 +26,51 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TabGUI extends Module {
-    private static final int field23762 = 3;
-    public static TabGUI field23788;
-    public List<ModuleCategory> field23772 = new ArrayList<ModuleCategory>();
-    public HashMap<ModuleCategory, Float> field23773 = new HashMap<ModuleCategory, Float>();
-    public HashMap<Module, Float> field23774 = new HashMap<Module, Float>();
-    public boolean field23781 = false;
-    public ArrayList<Class8224> field23789 = new ArrayList<Class8224>();
-    public int field23790 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.0625F);
-    public int field23791 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F);
-    public List<ModuleCategory> field23792 = this.method16597();
-    public int field23793 = MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.05F);
-    private final Color[] field23763 = new Color[3];
-    private final Color[] field23764 = new Color[3];
-    private final Color[] field23765 = new Color[3];
-    private final Color[] field23766 = new Color[3];
-    private final Color[] field23767 = new Color[3];
-    private final int field23768 = 10;
-    private int field23769 = 90;
-    private final int field23770 = 150;
-    private int field23771 = 150;
-    private int field23775 = 0;
-    private int field23776 = 0;
-    private int field23777 = 0;
-    private final int field23778 = 30;
-    private final int field23779 = 4;
-    private float field23780 = 1.0F;
-    private ModuleCategory field23782;
-    private int field23783 = 0;
-    private int field23784;
-    private Module field23785;
-    private final int field23786 = 170;
-    private float field23787 = 0.0F;
+    public HashMap<ModuleCategory, Float> categoryTextOffset = new HashMap<>();
+    public HashMap<Module, Float> moduleTextOffset = new HashMap<>();
+    public boolean submenuOpen = false;
+    public ArrayList<TabGuiSelectionEffect> effects = new ArrayList<>();
+    public int HIGHTLIGHT_FILL = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor(), 0.0625F);
+    public int HIGHTLIGHT_SHADOW_TINT = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F);
+    public List<ModuleCategory> categories = this.getCategories();
+    public int HQ_BLUR_BACKGROUND = MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor(), 0.05F);
+    private final Color[] catGradientTop = new Color[3];
+    private final Color[] catGradientBottom = new Color[3];
+    private final Color[] modGradientTop = new Color[3];
+    private final Color[] modGradientBottom = new Color[3];
+    private final Color[] modGradientMid = new Color[3];
+    private final int INITIAL_X = 10;
+    private int y = 90;
+    private final int CATEGORY_WIDTH = 150;
+    private int categoryHeight = 150;
+    private int selectedCategoryIndex = 0;
+    private int categorySelectorY = 0;
+    private int moduleSelectorY = 0;
+    private final int ROW_HEIGHT = 30;
+    private final int ROW_PADDING = 4;
+    private float animSpeed = 1.0F;
+    private ModuleCategory selectedCategory;
+    private int modulePanelHeight = 0;
+    private int selectedModuleIndex;
+    private Module selectedModule;
+    private final int MODULE_WIDTH = 170;
+    private float categoryScrollOffset = 0.0F;
 
     public TabGUI() {
         super(ModuleCategory.GUI, "TabGUI", "Manage mods without opening the ClickGUI");
         this.setAvailableOnClassic(false);
-        field23788 = this;
     }
 
     @EventTarget
     @HigestPriority
-    private void method16590(Render2DEvent var1) {
+    private void onRender(Render2DEvent event) {
         if (this.isEnabled() && mc.player != null) {
             if (Client.getInstance().guiManager.getHqIngameBlur()) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                        BlurEngine.drawBlur(this.field23768, this.field23769, this.field23770, this.field23771);
-                        if (this.field23781) {
-                            BlurEngine.drawBlur(170, this.field23769, this.field23786, this.field23783);
+                        BlurEngine.drawBlur(this.INITIAL_X, this.y, this.CATEGORY_WIDTH, this.categoryHeight);
+                        if (this.submenuOpen) {
+                            BlurEngine.drawBlur(170, this.y, this.MODULE_WIDTH, this.modulePanelHeight);
                         }
                     }
                 }
@@ -84,50 +80,50 @@ public class TabGUI extends Module {
 
     @EventTarget
     @HigestPriority
-    private void method16591(EventRender var1) {
+    private void onRender(EventRender event) {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                    this.field23771 = 5 * this.field23778 + this.field23779;
-                    float var4 = Math.abs((float) this.method16592() - this.field23787);
-                    boolean var5 = (float) this.method16592() - this.field23787 < 0.0F;
-                    this.field23787 = this.field23787
-                            + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
-                    this.field23769 = var1.getYOffset();
-                    this.method16600(this.field23768, this.field23769, this.field23770, this.field23771,
-                            this.field23763, null, this.field23764, 1.0F);
-                    RenderUtil.startScissor((float) this.field23768, (float) this.field23769, (float) this.field23770,
-                            (float) this.field23771);
-                    this.method16596(
-                            this.field23768,
-                            this.field23769 - Math.round(this.field23787),
-                            this.field23792.size() * this.field23778 + this.field23779,
-                            this.field23770,
-                            this.field23775,
-                            false,
-                            1.0F);
-                    this.method16595(this.field23768, this.field23769 - Math.round(this.field23787), this.field23792);
+                    this.categoryHeight = 5 * this.ROW_HEIGHT + this.ROW_PADDING;
+                    float var4 = Math.abs((float) this.getDesiredCategoryScroll() - this.categoryScrollOffset);
+                    boolean var5 = (float) this.getDesiredCategoryScroll() - this.categoryScrollOffset < 0.0F;
+                    this.categoryScrollOffset = this.categoryScrollOffset
+                            + Math.min(var4, var4 * 0.14F * this.animSpeed) * (float) (!var5 ? 1 : -1);
+                    this.y = event.getYOffset();
+                    this.drawPanelBackground(this.INITIAL_X, this.y, this.CATEGORY_WIDTH, this.categoryHeight,
+                            this.catGradientTop, null, this.catGradientBottom);
+                    RenderUtil.startScissor((float) this.INITIAL_X, (float) this.y, (float) this.CATEGORY_WIDTH,
+                            (float) this.categoryHeight);
+                    this.drawSelector(
+                            this.INITIAL_X,
+                            this.y - Math.round(this.categoryScrollOffset),
+                            this.categories.size() * this.ROW_HEIGHT + this.ROW_PADDING,
+                            this.CATEGORY_WIDTH,
+                            this.selectedCategoryIndex,
+                            false
+                    );
+                    this.method16595(this.INITIAL_X, this.y - Math.round(this.categoryScrollOffset), this.categories);
                     RenderUtil.endScissor();
-                    if (this.field23781) {
-                        this.field23783 = this.method16593(this.field23782).size() * this.field23778 + this.field23779;
-                        this.method16600(170, this.field23769, this.field23786, this.field23783, this.field23765,
-                                this.field23767, this.field23766, 1.0F);
-                        this.method16596(170, this.field23769, this.field23783, this.field23786, this.field23784, true,
-                                1.0F);
-                        this.method16594(170, this.field23769, this.method16593(this.field23782), 1.0F);
+                    if (this.submenuOpen) {
+                        this.modulePanelHeight = this.getModulesForCategory(this.selectedCategory).size() * this.ROW_HEIGHT + this.ROW_PADDING;
+                        this.drawPanelBackground(170, this.y, this.MODULE_WIDTH, this.modulePanelHeight, this.modGradientTop,
+                                this.modGradientMid, this.modGradientBottom);
+                        this.drawSelector(170, this.y, this.modulePanelHeight, this.MODULE_WIDTH, this.selectedModuleIndex, true
+                        );
+                        this.method16594(170, this.y, this.getModulesForCategory(this.selectedCategory));
                     }
 
-                    var1.addOffset(this.field23771 + 10);
+                    event.addOffset(this.categoryHeight + 10);
                 }
             }
         }
     }
 
-    private int method16592() {
-        return Math.max(this.field23775 * this.field23778 - 4 * this.field23778, 0);
+    private int getDesiredCategoryScroll() {
+        return Math.max(this.selectedCategoryIndex * this.ROW_HEIGHT - 4 * this.ROW_HEIGHT, 0);
     }
 
-    private List<Module> method16593(ModuleCategory var1) {
+    private List<Module> getModulesForCategory(ModuleCategory var1) {
         ArrayList var4 = new ArrayList();
 
         for (Module var6 : Client.getInstance().moduleManager.getModulesByCategory(var1)) {
@@ -137,38 +133,38 @@ public class TabGUI extends Module {
         return var4;
     }
 
-    private void method16594(int var1, int var2, List<Module> var3, float var4) {
+    private void method16594(int var1, int var2, List<Module> var3) {
         int var7 = 0;
 
         for (Module var9 : var3) {
-            if (this.field23784 == var7) {
-                this.field23785 = var9;
+            if (this.selectedModuleIndex == var7) {
+                this.selectedModule = var9;
             }
 
-            if (!this.field23774.containsKey(var9)) {
-                this.field23774.put(var9, 0.0F);
+            if (!this.moduleTextOffset.containsKey(var9)) {
+                this.moduleTextOffset.put(var9, 0.0F);
             }
 
-            if (this.field23784 == var7 && this.field23774.get(var9) < 14.0F) {
-                this.field23774.put(var9, this.field23774.get(var9) + this.field23780);
-            } else if (this.field23784 != var7 && this.field23774.get(var9) > 0.0F) {
-                this.field23774.put(var9, this.field23774.get(var9) - this.field23780);
+            if (this.selectedModuleIndex == var7 && this.moduleTextOffset.get(var9) < 14.0F) {
+                this.moduleTextOffset.put(var9, this.moduleTextOffset.get(var9) + this.animSpeed);
+            } else if (this.selectedModuleIndex != var7 && this.moduleTextOffset.get(var9) > 0.0F) {
+                this.moduleTextOffset.put(var9, this.moduleTextOffset.get(var9) - this.animSpeed);
             }
 
             if (var9.isEnabled()) {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloMediumFont20,
-                        (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloMediumFont20.getHeight() / 2 + 3
-                                + var7 * this.field23778),
+                        (float) (var1 + 11) + this.moduleTextOffset.get(var9),
+                        (float) (var2 + this.ROW_HEIGHT / 2 - ResourceRegistry.JelloMediumFont20.getHeight() / 2 + 3
+                                + var7 * this.ROW_HEIGHT),
                         var9.getName(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor());
             } else {
                 RenderUtil.drawString(
                         ResourceRegistry.JelloLightFont20,
-                        (float) (var1 + 11) + this.field23774.get(var9),
-                        (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
-                                + var7 * this.field23778),
+                        (float) (var1 + 11) + this.moduleTextOffset.get(var9),
+                        (float) (var2 + this.ROW_HEIGHT / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
+                                + var7 * this.ROW_HEIGHT),
                         var9.getName(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor());
             }
@@ -181,127 +177,127 @@ public class TabGUI extends Module {
         int var6 = 0;
 
         for (ModuleCategory var8 : var3) {
-            if (this.field23775 == var6) {
-                this.field23782 = var8;
+            if (this.selectedCategoryIndex == var6) {
+                this.selectedCategory = var8;
             }
 
-            if (!this.field23773.containsKey(var8)) {
-                this.field23773.put(var8, 0.0F);
+            if (!this.categoryTextOffset.containsKey(var8)) {
+                this.categoryTextOffset.put(var8, 0.0F);
             }
 
-            if (this.field23775 == var6 && this.field23773.get(var8) < 14.0F) {
-                this.field23773.put(var8, this.field23773.get(var8) + this.field23780);
-            } else if (this.field23775 != var6 && this.field23773.get(var8) > 0.0F) {
-                this.field23773.put(var8, this.field23773.get(var8) - this.field23780);
+            if (this.selectedCategoryIndex == var6 && this.categoryTextOffset.get(var8) < 14.0F) {
+                this.categoryTextOffset.put(var8, this.categoryTextOffset.get(var8) + this.animSpeed);
+            } else if (this.selectedCategoryIndex != var6 && this.categoryTextOffset.get(var8) > 0.0F) {
+                this.categoryTextOffset.put(var8, this.categoryTextOffset.get(var8) - this.animSpeed);
             }
 
             RenderUtil.drawString(
                     ResourceRegistry.JelloLightFont20,
-                    (float) (var1 + 11) + this.field23773.get(var8),
-                    (float) (var2 + this.field23778 / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
-                            + var6 * this.field23778),
+                    (float) (var1 + 11) + this.categoryTextOffset.get(var8),
+                    (float) (var2 + this.ROW_HEIGHT / 2 - ResourceRegistry.JelloLightFont20.getHeight() / 2 + 2
+                            + var6 * this.ROW_HEIGHT),
                     var8.toString(),
                     -1);
             var6++;
         }
     }
 
-    private void method16596(int var1, int var2, int var3, int var4, int var5, boolean var6, float var7) {
-        int var10 = 0;
+    private void drawSelector(int var1, int var2, int var3, int var4, int var5, boolean var6) {
+        int var10;
         if (var6) {
-            if (var6) {
-                float var11 = (float) (var5 * this.field23778 - this.field23777);
-                if (this.field23777 > var5 * this.field23778) {
-                    this.field23777 = (int) ((float) this.field23777
-                            + (!(var11 * 0.14F * this.field23780 >= 1.0F) ? var11 * 0.14F * this.field23780
-                                    : -this.field23780));
-                }
-
-                if (this.field23777 < var5 * this.field23778) {
-                    this.field23777 = (int) ((float) this.field23777
-                            + (!(var11 * 0.14F * this.field23780 <= 1.0F) ? var11 * 0.14F * this.field23780
-                                    : this.field23780));
-                }
-
-                if (var11 > 0.0F && this.field23777 > var5 * this.field23778) {
-                    this.field23777 = var5 * this.field23778;
-                }
-
-                if (var11 < 0.0F && this.field23777 < var5 * this.field23778) {
-                    this.field23777 = var5 * this.field23778;
-                }
-
-                var10 = this.field23777;
+            float var11 = (float) (var5 * this.ROW_HEIGHT - this.moduleSelectorY);
+            if (this.moduleSelectorY > var5 * this.ROW_HEIGHT) {
+                this.moduleSelectorY = (int) ((float) this.moduleSelectorY
+                        + (!(var11 * 0.14F * this.animSpeed >= 1.0F) ? var11 * 0.14F * this.animSpeed
+                        : -this.animSpeed));
             }
+
+            if (this.moduleSelectorY < var5 * this.ROW_HEIGHT) {
+                this.moduleSelectorY = (int) ((float) this.moduleSelectorY
+                        + (!(var11 * 0.14F * this.animSpeed <= 1.0F) ? var11 * 0.14F * this.animSpeed
+                        : this.animSpeed));
+            }
+
+            if (var11 > 0.0F && this.moduleSelectorY > var5 * this.ROW_HEIGHT) {
+                this.moduleSelectorY = var5 * this.ROW_HEIGHT;
+            }
+
+            if (var11 < 0.0F && this.moduleSelectorY < var5 * this.ROW_HEIGHT) {
+                this.moduleSelectorY = var5 * this.ROW_HEIGHT;
+            }
+
+            var10 = this.moduleSelectorY;
         } else {
-            float var15 = (float) (var5 * this.field23778 - this.field23776);
-            if (this.field23776 > var5 * this.field23778) {
-                this.field23776 = (int) ((float) this.field23776
-                        + (!(var15 * 0.14F * this.field23780 >= 1.0F) ? var15 * 0.14F * this.field23780
-                                : -this.field23780));
+            float var15 = (float) (var5 * this.ROW_HEIGHT - this.categorySelectorY);
+            if (this.categorySelectorY > var5 * this.ROW_HEIGHT) {
+                this.categorySelectorY = (int) ((float) this.categorySelectorY
+                        + (!(var15 * 0.14F * this.animSpeed >= 1.0F) ? var15 * 0.14F * this.animSpeed
+                        : -this.animSpeed));
             }
 
-            if (this.field23776 < var5 * this.field23778) {
-                this.field23776 = (int) ((float) this.field23776
-                        + (!(var15 * 0.14F * this.field23780 <= 1.0F) ? var15 * 0.14F * this.field23780
-                                : this.field23780));
+            if (this.categorySelectorY < var5 * this.ROW_HEIGHT) {
+                this.categorySelectorY = (int) ((float) this.categorySelectorY
+                        + (!(var15 * 0.14F * this.animSpeed <= 1.0F) ? var15 * 0.14F * this.animSpeed
+                        : this.animSpeed));
             }
 
-            if (var15 > 0.0F && this.field23776 > var5 * this.field23778) {
-                this.field23776 = var5 * this.field23778;
+            if (var15 > 0.0F && this.categorySelectorY > var5 * this.ROW_HEIGHT) {
+                this.categorySelectorY = var5 * this.ROW_HEIGHT;
             }
 
-            if (var15 < 0.0F && this.field23776 < var5 * this.field23778) {
-                this.field23776 = var5 * this.field23778;
+            if (var15 < 0.0F && this.categorySelectorY < var5 * this.ROW_HEIGHT) {
+                this.categorySelectorY = var5 * this.ROW_HEIGHT;
             }
 
-            var10 = this.field23776;
+            var10 = this.categorySelectorY;
         }
 
-        if (Math.round(this.field23787) > 0 && this.field23776 > 120) {
-            this.field23776 = Math.max(this.field23776, 120 + Math.round(this.field23787));
+        if (Math.round(this.categoryScrollOffset) > 0 && this.categorySelectorY > 120) {
+            this.categorySelectorY = Math.max(this.categorySelectorY, 120 + Math.round(this.categoryScrollOffset));
         }
 
         RenderUtil.drawRect(
                 (float) var1,
                 var10 >= 0 ? (float) (var10 + var2) : (float) var2,
                 (float) (var1 + var4),
-                var10 + this.field23779 + this.field23778 <= var3
-                        ? (float) (var10 + var2 + this.field23778 + this.field23779)
-                        : (float) (var2 + var3 + this.field23779),
-                this.field23790);
+                var10 + this.ROW_PADDING + this.ROW_HEIGHT <= var3
+                        ? (float) (var10 + var2 + this.ROW_HEIGHT + this.ROW_PADDING)
+                        : (float) (var2 + var3 + this.ROW_PADDING),
+                this.HIGHTLIGHT_FILL);
         RenderUtil.drawImage(
                 (float) var1,
-                var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10)
+                var10 + this.ROW_PADDING + this.ROW_HEIGHT <= var3 ? (float) (var10 + var2 + this.ROW_HEIGHT - 10)
                         : (float) (var2 + var3 - 10),
                 (float) var4,
                 14.0F,
                 ResourceList.shadowTopPNG,
-                this.field23791);
+                this.HIGHTLIGHT_SHADOW_TINT);
         RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F,
-                ResourceList.shadowBottomPNG, this.field23791);
-        RenderUtil.drawBlurredBackground(
+                ResourceList.shadowBottomPNG, this.HIGHTLIGHT_SHADOW_TINT);
+        RenderUtil.startScissorNoGL(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
                 var1 + var4,
-                var10 + this.field23779 + this.field23778 <= var3 ? var10 + var2 + this.field23778 + this.field23779
-                        : var2 + var3 + this.field23779);
-        Iterator var16 = this.field23789.iterator();
+                var10 + this.ROW_PADDING + this.ROW_HEIGHT <= var3 ? var10 + var2 + this.ROW_HEIGHT + this.ROW_PADDING
+                        : var2 + var3 + this.ROW_PADDING);
+        Iterator<TabGuiSelectionEffect> iterator = this.effects.iterator();
 
-        while (var16.hasNext()) {
-            Class8224 var12 = (Class8224) var16.next();
-            if (var12.field35322 == var6) {
-                float var13 = var12.field35323.calcPercent();
-                int var14 = MultiUtilities.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
+        while (iterator.hasNext()) {
+            TabGuiSelectionEffect next = iterator.next();
+            if (next.submenu == var6) {
+                float animation = next.animation.calcPercent();
+                int color = MultiUtilities.applyAlpha(-5658199, (1.0F - animation * (0.5F + animation * 0.5F)) * 0.8F);
+
                 if (Client.getInstance().guiManager.getHqIngameBlur()) {
-                    var14 = MultiUtilities.applyAlpha(-1, (1.0F - var13) * 0.14F);
+                    color = MultiUtilities.applyAlpha(-1, (1.0F - animation) * 0.14F);
                 }
 
                 RenderUtil.drawFilledArc(
                         (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2,
-                        (float) var4 * QuadraticEasing.easeOutQuad(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14);
-                if (var12.field35323.calcPercent() == 1.0F) {
-                    var16.remove();
+                        (float) var4 * QuadraticEasing.easeOutQuad(animation, 0.0F, 1.0F, 1.0F) + 4.0F, color);
+
+                if (next.animation.calcPercent() == 1.0F) {
+                    iterator.remove();
                 }
             }
         }
@@ -309,34 +305,61 @@ public class TabGUI extends Module {
         RenderUtil.endScissor();
     }
 
-    private List<ModuleCategory> method16597() {
-        ArrayList var3 = new ArrayList();
-        var3.add(ModuleCategory.MOVEMENT);
-        var3.add(ModuleCategory.PLAYER);
-        var3.add(ModuleCategory.COMBAT);
-        var3.add(ModuleCategory.ITEM);
-        var3.add(ModuleCategory.RENDER);
-        var3.add(ModuleCategory.WORLD);
-        var3.add(ModuleCategory.MISC);
-        return var3;
+    private List<ModuleCategory> getCategories() {
+        List<ModuleCategory> categories = new ArrayList<>();
+        categories.add(ModuleCategory.MOVEMENT);
+        categories.add(ModuleCategory.PLAYER);
+        categories.add(ModuleCategory.COMBAT);
+        categories.add(ModuleCategory.ITEM);
+        categories.add(ModuleCategory.RENDER);
+        categories.add(ModuleCategory.WORLD);
+        categories.add(ModuleCategory.MISC);
+        return categories;
     }
 
     @EventTarget
-    private void method16598(EventRender3D var1) {
+    private void onRender3D(EventRender3D event) {
         if (this.isEnabled() && mc.player != null) {
-            this.method16601();
-            this.field23780 = (float) Math.max(Math.round(6.0F - (float) Minecraft.getFps() / 10.0F), 1);
+            this.updateSampledPanelColors();
+            this.animSpeed = (float) Math.max(Math.round(6.0F - (float) Minecraft.getFps() / 10.0F), 1);
         }
     }
 
     @EventTarget
-    private void method16599(EventKeyPress var1) {
+    private void onKey(EventKeyPress event) {
         if (this.isEnabled()) {
-            switch (var1.getKey()) {
+            switch (event.getKey()) {
                 case 257:
-                    if (this.field23781) {
-                        this.field23785.toggle();
-                        this.field23789.add(new Class8224(this, this.field23781));
+                    if (this.submenuOpen) {
+                        this.selectedModule.toggle();
+                        this.effects.add(new TabGuiSelectionEffect(this.submenuOpen));
+                    }
+                    break;
+                case 262:
+                    this.effects.add(new TabGuiSelectionEffect(this.submenuOpen));
+                    if (this.submenuOpen) {
+                        this.selectedModule.toggle();
+                    }
+
+                    this.submenuOpen = true;
+                    break;
+                case 263:
+                    this.submenuOpen = false;
+                    break;
+                case 264:
+                    if (!this.submenuOpen) {
+                        this.selectedCategoryIndex++;
+                        this.selectedModuleIndex = 0;
+                    } else {
+                        this.selectedModuleIndex++;
+                    }
+                    break;
+                case 265:
+                    if (!this.submenuOpen) {
+                        this.selectedCategoryIndex--;
+                        this.selectedModuleIndex = 0;
+                    } else {
+                        this.selectedModuleIndex--;
                     }
                     break;
                 case 258:
@@ -345,104 +368,77 @@ public class TabGUI extends Module {
                 case 261:
                 default:
                     return;
-                case 262:
-                    this.field23789.add(new Class8224(this, this.field23781));
-                    if (this.field23781) {
-                        this.field23785.toggle();
-                    }
-
-                    this.field23781 = true;
-                    break;
-                case 263:
-                    this.field23781 = false;
-                    break;
-                case 264:
-                    if (!this.field23781) {
-                        this.field23775++;
-                        this.field23784 = 0;
-                    } else {
-                        this.field23784++;
-                    }
-                    break;
-                case 265:
-                    if (!this.field23781) {
-                        this.field23775--;
-                        this.field23784 = 0;
-                    } else {
-                        this.field23784--;
-                    }
             }
 
-            if (this.field23775 >= this.field23792.size()) {
-                this.field23775 = 0;
-                this.field23776 = this.field23775 * this.field23778 - this.field23778;
-            } else if (this.field23775 < 0) {
-                this.field23775 = this.field23792.size() - 1;
-                this.field23776 = this.field23775 * this.field23778 + this.field23778;
+            if (this.selectedCategoryIndex >= this.categories.size()) {
+                this.selectedCategoryIndex = 0;
+                this.categorySelectorY = -this.ROW_HEIGHT;
+            } else if (this.selectedCategoryIndex < 0) {
+                this.selectedCategoryIndex = this.categories.size() - 1;
+                this.categorySelectorY = this.selectedCategoryIndex * this.ROW_HEIGHT + this.ROW_HEIGHT;
             }
 
-            if (this.field23784 >= this.method16593(this.field23782).size()) {
-                this.field23784 = this.method16593(this.field23782).size() - 1;
-            } else if (this.field23784 < 0) {
-                this.field23784 = 0;
+            if (this.selectedModuleIndex >= this.getModulesForCategory(this.selectedCategory).size()) {
+                this.selectedModuleIndex = this.getModulesForCategory(this.selectedCategory).size() - 1;
+            } else if (this.selectedModuleIndex < 0) {
+                this.selectedModuleIndex = 0;
             }
         }
     }
 
-    private void method16600(int var1, int var2, int var3, int var4, Color[] var5, Color[] var6, Color[] var7,
-            float var8) {
-        boolean var11 = Client.getInstance().guiManager.getHqIngameBlur();
-        int var14 = MultiUtilities.method17682(var5).getRGB();
-        int var15 = MultiUtilities.method17682(var7).getRGB();
-        if (var6 != null) {
-            int var16 = MultiUtilities.method17682(var6).getRGB();
-            var14 = MultiUtilities.method17690(var14, var16, 0.75F);
-            var15 = MultiUtilities.method17690(var15, var16, 0.75F);
+    private void drawPanelBackground(int x, int y, int width, int height, Color[] topColors, Color[] midColorsOrNull, Color[] bottomColors) {
+        boolean hqBlur = Client.getInstance().guiManager.getHqIngameBlur();
+        int top = MultiUtilities.averageColors(topColors).getRGB();
+        int bottom = MultiUtilities.averageColors(bottomColors).getRGB();
+        if (midColorsOrNull != null) {
+            int var16 = MultiUtilities.averageColors(midColorsOrNull).getRGB();
+            top = MultiUtilities.blendColors(top, var16, 0.75F);
+            bottom = MultiUtilities.blendColors(bottom, var16, 0.75F);
         }
 
-        if (!var11) {
-            RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
+        if (!hqBlur) {
+            RenderUtil.drawVerticalGradientRect(x, y, x + width, y + height, top, bottom);
         } else {
-            RenderUtil.startScissor((float) var1, (float) var2, (float) var3, (float) var4);
+            RenderUtil.startScissor((float) x, (float) y, (float) width, (float) height);
             BlurEngine.endBlur();
             RenderUtil.endScissor();
-            RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4),
-                    this.field23793);
+            RenderUtil.drawRect((float) x, (float) y, (float) (x + width), (float) (y + height),
+                    this.HQ_BLUR_BACKGROUND);
         }
 
-        RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
+        RenderUtil.drawRoundedRect((float) x, (float) y, (float) width, (float) height, 8.0F, 0.7f);
     }
 
-    private void method16601() {
+    private void updateSampledPanelColors() {
         if (!Client.getInstance().guiManager.getHqIngameBlur()) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                    for (int var4 = 0; var4 < 3; var4++) {
-                        this.field23763[var4] = this.method16602(this.field23768 + this.field23770 / 3 * var4,
-                                this.field23769, this.field23763[var4]);
-                        this.field23764[var4] = this.method16602(
-                                this.field23768 + this.field23770 / 3 * var4, this.field23769 + this.field23771,
-                                this.field23764[var4]);
-                        this.field23765[var4] = this.method16602(this.field23768 + this.field23770 + 56 * var4,
-                                this.field23769, this.field23765[var4]);
-                        this.field23766[var4] = this.method16602(
-                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783,
-                                this.field23766[var4]);
-                        this.field23767[var4] = this.method16602(
-                                this.field23768 + this.field23770 + 56 * var4, this.field23769 + this.field23783 / 2,
-                                this.field23767[var4]);
+                    for (int i = 0; i < 3; i++) {
+                        this.catGradientTop[i] = this.sampleScreenColor(this.INITIAL_X + this.CATEGORY_WIDTH / 3 * i,
+                                this.y, this.catGradientTop[i]);
+                        this.catGradientBottom[i] = this.sampleScreenColor(
+                                this.INITIAL_X + this.CATEGORY_WIDTH / 3 * i, this.y + this.categoryHeight,
+                                this.catGradientBottom[i]);
+                        this.modGradientTop[i] = this.sampleScreenColor(this.INITIAL_X + this.CATEGORY_WIDTH + 56 * i,
+                                this.y, this.modGradientTop[i]);
+                        this.modGradientBottom[i] = this.sampleScreenColor(
+                                this.INITIAL_X + this.CATEGORY_WIDTH + 56 * i, this.y + this.modulePanelHeight,
+                                this.modGradientBottom[i]);
+                        this.modGradientMid[i] = this.sampleScreenColor(
+                                this.INITIAL_X + this.CATEGORY_WIDTH + 56 * i, this.y + this.modulePanelHeight / 2,
+                                this.modGradientMid[i]);
                     }
                 }
             }
         }
     }
 
-    private Color method16602(int var1, int var2, Color var3) {
-        Color var6 = RenderUtil.getColorFromScreen(var1, var2, var3);
-        if (var3 != null) {
-            var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23780);
+    private Color sampleScreenColor(int var1, int var2, Color previous) {
+        Color sampled = RenderUtil.sampleScreenColor(var1, var2, previous);
+        if (previous != null) {
+            sampled = MultiUtilities.blendColor(sampled, previous, 0.08F * this.animSpeed);
         }
 
-        return var6;
+        return sampled;
     }
 }

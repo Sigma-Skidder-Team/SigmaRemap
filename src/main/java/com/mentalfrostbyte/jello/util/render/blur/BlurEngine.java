@@ -95,7 +95,7 @@ public class BlurEngine {
                     1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.scaleFactor, 1.0
             );
             int var4 = 35;
-            RenderUtil.drawBlurredBackground(frameBuffWidth, frameBuffHeight - var4, screenWidth, screenHeight + var4);
+            RenderUtil.startScissorNoGL(frameBuffWidth, frameBuffHeight - var4, screenWidth, screenHeight + var4);
             blurShader.render(mc.timer.renderPartialTicks);
             RenderUtil.endScissor();
             GL11.glEnable(3008);

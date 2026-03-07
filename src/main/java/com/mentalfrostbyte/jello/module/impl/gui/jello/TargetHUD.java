@@ -138,7 +138,7 @@ public class TargetHUD extends Module {
     private void renderTHUd(int var1) {
         if (mc.currentScreen == null || mc.currentScreen instanceof ChatScreen) {
             GL11.glPushMatrix();
-            RenderUtil.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
+            RenderUtil.startScissor(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
             EntityRendererManager var4 = Minecraft.getInstance().getRenderManager();
             Class5743 var5 = new Class5743(var4);
             float var6 = 150;
@@ -235,9 +235,9 @@ public class TargetHUD extends Module {
     }
 
     private Color method16476(int var1, int var2, Color var3) {
-        Color var6 = RenderUtil.getColorFromScreen(var1, var2, var3);
+        Color var6 = RenderUtil.sampleScreenColor(var1, var2, var3);
         if (var3 != null) {
-            var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23686);
+            var6 = MultiUtilities.blendColor(var6, var3, 0.08F * this.field23686);
         }
 
         return var6;
@@ -276,7 +276,7 @@ public class TargetHUD extends Module {
                 float var10 = var8[1] - var8[0];
                 float var11 = var3 - var8[0];
                 float var12 = var11 / var10;
-                return MultiUtilities.method17681(var9[0], var9[1], 1.0F - var12);
+                return MultiUtilities.blendColor(var9[0], var9[1], 1.0F - var12);
             } else {
                 return var2[0];
             }

@@ -107,7 +107,7 @@ public class Class4348 extends Widget2 {
                   (float) this.widthA,
                   (float) this.widthA,
                   this.field21246,
-                  MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
+                  MultiUtilities.applyAlpha(MultiUtilities.blendColors(ClientColors.LIGHT_GREYISH_BLUE.getColor(),
                         ClientColors.DEEP_TEAL.getColor(), 0.7F), 0.8F));
          }
 
@@ -168,7 +168,7 @@ public class Class4348 extends Widget2 {
       int var6 = (int) (var3 / 60000L % 60L);
       int var7 = (int) (var3 / 3600000L % 24L);
       int var8 = (int) (var3 / 86400000L);
-      RenderUtil.drawBlurredBackground(
+      RenderUtil.startScissorNoGL(
             this.getAbsoluteX() + this.method13280(),
             this.getAbsoluteY() + this.method13282(),
             this.getAbsoluteX() + this.method13280() + this.widthA,
@@ -202,7 +202,7 @@ public class Class4348 extends Widget2 {
                   (float) (this.xA + var12),
                   (float) (this.yA + var13),
                   "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
-                  MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor(),
+                  MultiUtilities.blendColors(ClientColors.DEEP_TEAL.getColor(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.2F));
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             RenderUtil.drawString(
@@ -210,7 +210,7 @@ public class Class4348 extends Widget2 {
                   (float) (this.xA + var12),
                   (float) (this.yA + var13),
                   "Unbanned!",
-                  MultiUtilities.method17690(ClientColors.DARK_SLATE_GREY.getColor(),
+                  MultiUtilities.blendColors(ClientColors.DARK_SLATE_GREY.getColor(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
          } else {
             RenderUtil.drawString(
@@ -218,7 +218,7 @@ public class Class4348 extends Widget2 {
                   (float) (this.xA + var12),
                   (float) (this.yA + var13),
                   "Permanently banned!",
-                  MultiUtilities.method17690(ClientColors.PALE_YELLOW.getColor(),
+                  MultiUtilities.blendColors(ClientColors.PALE_YELLOW.getColor(),
                         ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
          }
       } else {
@@ -227,7 +227,7 @@ public class Class4348 extends Widget2 {
                (float) (this.xA + var12),
                (float) (this.yA + var13),
                "Compromised ban (unbannable)!",
-               MultiUtilities.method17690(ClientColors.DARK_OLIVE.getColor(),
+               MultiUtilities.blendColors(ClientColors.DARK_OLIVE.getColor(),
                      ClientColors.LIGHT_GREYISH_BLUE.getColor(), 0.3F));
       }
 

@@ -93,7 +93,7 @@ public class Class4236 extends PNGIconButton implements Class4238 {
             var10[3],
             this.method13025(),
             MultiUtilities.applyAlpha(
-                  MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+                  MultiUtilities.blendColors(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
                     partialTicks));
       if (this.getTypedText() != null) {
          RenderUtil.method11440(

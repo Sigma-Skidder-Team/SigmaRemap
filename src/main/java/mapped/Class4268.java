@@ -46,7 +46,7 @@ public class Class4268 extends InteractiveWidget {
             (float) this.widthA,
             (float) this.heightA,
             8.0F,
-            MultiUtilities.method17690(-3092272, -2171170, this.field20691));
+            MultiUtilities.blendColors(-3092272, -2171170, this.field20691));
       RenderUtil.method11474(
             (float) this.xA, (float) this.yA + 3.0F * this.field20691, (float) this.widthA, (float) this.heightA, 8.0F,
             -986896);

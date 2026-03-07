@@ -165,7 +165,7 @@ public class MiniMap extends Module {
                             GL11.glTranslatef((float) (-field23710 / 2), (float) (-field23709 / 2), 0.0F);
                             float var11 = (float) field23710 * var7;
                             float var12 = (float) field23709 * var7;
-                            RenderUtil.drawBlurredBackground(field23711, field23712,
+                            RenderUtil.startScissorNoGL(field23711, field23712,
                                     field23711 + field23710, field23712 + field23709);
                             RenderUtil.drawImage(0.0F, 0.0F, 0.0F, 0.0F, ResourceList.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (field23710 / 2) + var9;

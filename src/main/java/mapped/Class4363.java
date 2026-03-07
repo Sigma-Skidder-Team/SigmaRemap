@@ -197,7 +197,7 @@ public class Class4363 extends InteractiveWidget {
 
       boolean var8 = this.field21330.calcPercent() < 1.0F;
       if (var8) {
-         RenderUtil.drawBlurredBackground(
+         RenderUtil.startScissorNoGL(
                this.getAbsoluteX(), this.getAbsoluteY(), this.getAbsoluteX() + this.getWidthA() + 140,
                this.getAbsoluteY() + this.getHeightA() + this.method13647());
       }

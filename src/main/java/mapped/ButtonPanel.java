@@ -37,7 +37,7 @@ public class ButtonPanel extends InteractiveWidget {
    public void draw(float partialTicks) {
       float var4 = !this.isHovered() ? 0.3F : (!this.isDragging() ? (!this.isMouseDownOverComponent() ? Math.max(partialTicks * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = MultiUtilities.applyAlpha(
-         MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+         MultiUtilities.blendColors(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
          (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * partialTicks
       );
       int var6 = var5 >> 24 & 0xFF;

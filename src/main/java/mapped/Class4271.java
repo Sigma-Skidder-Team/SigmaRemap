@@ -104,7 +104,7 @@ public class Class4271 extends InteractiveWidget {
          RenderUtil.endScissor();
       }
 
-      RenderUtil.drawBlurredBackground(
+      RenderUtil.startScissorNoGL(
             this.getAbsoluteX(), this.getAbsoluteY(), this.getAbsoluteX() + this.getWidthA(),
             this.getAbsoluteY() + this.getHeightA() + this.method13108());
       GL11.glPushMatrix();
